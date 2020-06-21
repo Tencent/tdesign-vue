@@ -2,9 +2,9 @@
   <div>
     <t-pagination
       v-model="current"
-      :total="100"
+      :total="49"
       @change="onChange"
-      :page-size="5"
+      :page-size="10"
     />
   </div>
 </template>
@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      current: 12,
+      current: 2,
     };
   },
   methods: {
