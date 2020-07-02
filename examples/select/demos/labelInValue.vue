@@ -2,6 +2,7 @@
   <div>
     <t-select
       v-model="value"
+      labelInValue
       class="demo-select-base"
       @change="handleChange"
       @visible-change="visibleChange"
@@ -10,7 +11,23 @@
         v-for="(item, index) in options"
         :value="item.value"
         :label="item.label"
-        :disabled="item.disabled"
+        :key="index"
+      >
+        {{ item.label }}
+      </t-option>
+    </t-select>
+    <t-select
+      v-model="value2"
+      labelInValue
+      multiple
+      class="demo-select-base"
+      @change="handleChange"
+      @visible-change="visibleChange"
+    >
+      <t-option
+        v-for="(item, index) in options"
+        :value="item.value"
+        :label="item.label"
         :key="index"
       >
         {{ item.label }}
@@ -29,12 +46,20 @@ export default {
       }, {
         label: '香蕉banana~~~',
         value: 'banana',
-        disabled: true,
       }, {
         label: '橘子orange~~~',
         value: 'orange',
       }],
-      value: '',
+      value: {
+        value: 'apple',
+        text: '苹果apple~~~~',
+      },
+      value2: [
+        {
+          value: 'apple',
+          text: '苹果apple~~~~',
+        },
+      ],
     };
   },
   methods: {
