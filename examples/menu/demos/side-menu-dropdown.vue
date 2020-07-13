@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" active="2-1" height="550px">
+  <t-menu theme="light" active="2-1" height="550px" :collapsed="collapsed">
     <img slot="logo" class="t-menu__logo" src="https://main.qcloudimg.com/raw/9fe1217de2bd7eb623f70648a046e341/head-logo.png" alt="logo">
     <t-menu-item name="item1">
       <t-icon slot="icon" name="user"/>菜单内容一
@@ -16,7 +16,7 @@
       <t-icon slot="icon" name="user" />菜单内容三
     </t-menu-item>
     <div slot="options">
-      <t-icon name="user" @click="changeCollapsed" />
+      <t-icon name="user" @click.native="changeCollapsed" />
     </div>
   </t-menu>
 </template>
@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       disabled: true,
+      collapsed: false,
     };
   },
   methods: {
