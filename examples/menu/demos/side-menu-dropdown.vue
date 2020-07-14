@@ -11,7 +11,13 @@
       <t-menu-item name="2-2">菜单内容二</t-menu-item>
       <t-menu-item name="2-3">菜单内容三</t-menu-item>
     </t-submenu>
-    <t-menu-item name="item3"><t-icon slot="icon" name="user" />菜单内容二</t-menu-item>
+    <t-submenu name="3">
+      <t-icon slot="icon" name="user" />
+      <span slot="title">侧边内容三</span>
+      <t-menu-item name="3-1">菜单内容一</t-menu-item>
+      <t-menu-item name="3-2">菜单内容二</t-menu-item>
+      <t-menu-item name="3-3">菜单内容三</t-menu-item>
+    </t-submenu>
     <t-menu-item name="item4" :disabled="disabled">
       <t-icon slot="icon" name="user" />菜单内容三
     </t-menu-item>
