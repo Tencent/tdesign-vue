@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" active="2-1" mode="popup" height="550px" :collapsed="collapsed">
+  <t-menu theme="light" active="2-1" mode="accordion" height="550px" :collapsed="collapsed">
     <t-menu-item name="item1">
       <t-icon slot="icon" name="user"/>菜单内容一
     </t-menu-item>
