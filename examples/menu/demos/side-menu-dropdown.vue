@@ -1,6 +1,5 @@
 <template>
-  <t-menu theme="light" active="2-1" height="550px" :collapsed="collapsed">
-    <img slot="logo" class="t-menu__logo" src="https://main.qcloudimg.com/raw/9fe1217de2bd7eb623f70648a046e341/head-logo.png" alt="logo">
+  <t-menu theme="light" active="2-1" mode="popup" height="550px" :collapsed="collapsed">
     <t-menu-item name="item1">
       <t-icon slot="icon" name="user"/>菜单内容一
     </t-menu-item>
@@ -18,9 +17,13 @@
       <t-menu-item name="3-2">菜单内容二</t-menu-item>
       <t-menu-item name="3-3">菜单内容三</t-menu-item>
     </t-submenu>
-    <t-menu-item name="item4" :disabled="disabled">
-      <t-icon slot="icon" name="user" />菜单内容三
-    </t-menu-item>
+    <t-submenu name="4">
+      <t-icon slot="icon" name="user" />
+      <span slot="title">侧边内容四</span>
+      <t-menu-item name="4-1">菜单内容一</t-menu-item>
+      <t-menu-item name="4-2">菜单内容二</t-menu-item>
+      <t-menu-item name="4-3">菜单内容三</t-menu-item>
+    </t-submenu>
     <div slot="options">
       <t-icon name="user" @click.native="changeCollapsed" />
     </div>
