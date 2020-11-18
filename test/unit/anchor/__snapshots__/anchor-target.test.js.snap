@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnchorTarget <slot> should render default slot 1`] = `
+<h1 id="test-target" class="t-anchor-target">this is default slots<div class="t-popup-reference" style="position: relative;"> <svg class="t-icon t-icon-file-copy">
+      <use xlink:href="#t-icon-file-copy"></use>
+    </svg>
+    <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
+      <div class="resize-sensor-expand" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
+        <div style="position: absolute; left: 0px; top: 0px; transition: 0s;"></div>
+      </div>
+      <div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
+        <div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"></div>
+      </div>
+    </div>
+  </div>
+</h1>
+`;
