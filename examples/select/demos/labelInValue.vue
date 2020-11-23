@@ -41,23 +41,23 @@ export default {
   data() {
     return {
       options: [{
-        label: '苹果apple~~~~',
-        value: 'apple',
+        label: '上海',
+        value: 'shanghai',
       }, {
-        label: '香蕉banana~~~',
-        value: 'banana',
+        label: '北京',
+        value: 'beijing',
       }, {
-        label: '橘子orange~~~',
-        value: 'orange',
+        label: '深圳',
+        value: 'shenzhen',
       }],
       value: {
-        value: 'apple',
-        text: '苹果apple~~~~',
+        value: '上海',
+        text: 'shanghai',
       },
       value2: [
         {
-          value: 'apple',
-          text: '苹果apple~~~~',
+          value: '上海',
+          text: 'shanghai',
         },
       ],
     };
