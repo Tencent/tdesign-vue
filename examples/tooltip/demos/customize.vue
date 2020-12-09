@@ -3,7 +3,7 @@
     <t-tooltip content="文字提示仅展示文本内容" theme="primary" :visibleArrow="true">
       <t-button>primary</t-button>
     </t-tooltip>
-    <t-tooltip content="文字提示仅展示文本" theme="success" :visibleArrow="true">
+    <t-tooltip content="文字提示仅展示文本内容" theme="success" :visibleArrow="true">
       <t-button>success</t-button>
     </t-tooltip>
     <t-tooltip content="文字提示仅展示文本内容" theme="danger" :visibleArrow="true">
@@ -21,7 +21,7 @@
 .tooltip {
   display: flex;
 }
-.tooltip .t-button {
+.tooltip .t-popup-reference {
   margin-right: 10px;
 }
 </style>
