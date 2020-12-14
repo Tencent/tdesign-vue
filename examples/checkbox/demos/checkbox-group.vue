@@ -1,31 +1,39 @@
 <template>
   <div class="tdesign-checkbox-group">
-    <t-checkbox-group
-      name="city"
-      v-model="value"
-      :options="options"
-      @change="onChange"
-    ></t-checkbox-group>
-    <br />
-    <t-checkbox-group
-      :default-value="['bj', 'sz']"
-      :options="options"
-      @change="onChange"
-    ></t-checkbox-group>
-    <br />
-    <t-checkbox-group
-      disabled
-      :default-value="['gz']"
-      :options="optionsWithDisabled"
-      @change="onChange"
-    ></t-checkbox-group>
-    <br />
-    <t-checkbox-group :default-value="['sz']" @change="onChange">
-      <t-checkbox value="bj">北京</t-checkbox>
-      <t-checkbox value="sh">上海</t-checkbox>
-      <t-checkbox value="gz">广州</t-checkbox>
-      <t-checkbox value="sz" disabled>深圳</t-checkbox>
-    </t-checkbox-group>
+    <div>
+      <t-checkbox-group
+        name="city"
+        v-model="value"
+        :options="options"
+        @change="onChange"
+      ></t-checkbox-group>
+    </div>
+
+    <div>
+      <t-checkbox-group
+        :default-value="['bj', 'sz']"
+        :options="options"
+        @change="onChange"
+      ></t-checkbox-group>
+    </div>
+
+    <div>
+      <t-checkbox-group
+        disabled
+        :default-value="['gz']"
+        :options="optionsWithDisabled"
+        @change="onChange"
+      ></t-checkbox-group>
+    </div>
+
+    <div>
+      <t-checkbox-group :default-value="['sz']" @change="onChange">
+        <t-checkbox value="bj">北京</t-checkbox>
+        <t-checkbox value="sh">上海</t-checkbox>
+        <t-checkbox value="gz">广州</t-checkbox>
+        <t-checkbox value="sz" disabled>深圳</t-checkbox>
+      </t-checkbox-group>
+    </div>
   </div>
 </template>
 
@@ -81,3 +89,10 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+.t-checkbox-group {
+  margin-bottom: 16px;
+}
+</style>
