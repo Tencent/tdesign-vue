@@ -57,7 +57,7 @@ describe('AnchorItem', () => {
       expect(provide.registerLink).toBeCalledWith(props.href);
       a.trigger('click');
       expect(provide.handleScrollTo).toBeCalledWith(props.href);
-      expect(provide.handleLinkClick).toBeCalledWith(expect.any(MouseEvent), omit(props, 'target'));
+      expect(provide.handleLinkClick).toBeCalledWith(omit(props, 'target'), expect.any(MouseEvent));
       wrapper.setData({
         href: '#test-b',
       });

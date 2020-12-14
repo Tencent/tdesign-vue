@@ -62,10 +62,10 @@ describe('Anchor', () => {
       const link = wrapper.find(AnchorItem);
       link.find('a').trigger('click');
       expect(onClick).toBeCalledTimes(1);
-      expect(onClick).toBeCalledWith(expect.any(MouseEvent), {
+      expect(onClick).toBeCalledWith({
         href: '#test-a',
         title: '',
-      });
+      }, expect.any(MouseEvent));
     });
     it('should emit change event', () => {
       const onChange = jest.fn();
@@ -116,7 +116,7 @@ describe('Anchor', () => {
       document.body.innerHTML = '<div id="container"></div>';
       const wrapper = mount(Anchor, {
         propsData: {
-          container: 'container',
+          attach: '#container',
         },
       });
       expect(wrapper.vm.scrollContainer).toEqual(document.getElementById('container'));
@@ -126,7 +126,7 @@ describe('Anchor', () => {
       const dom = document.getElementById('container2');
       const wrapper = mount(Anchor, {
         propsData: {
-          container: () => dom,
+          attach: () => dom,
         },
       });
       expect(wrapper.vm.scrollContainer).toEqual(dom);
