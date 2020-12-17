@@ -1,14 +1,16 @@
 <template>
-  <t-table
-    :data="data"
-    :columns="columns"
-    :rowKey="rowKey"
-    :border="border"
-    :hover="hover"
-    :stripe="stripe"
-    :height="height"
-    :size="size">
-  </t-table>
+  <div>
+    <t-table
+      :data="data"
+      :columns="columns"
+      :rowKey="rowKey"
+      :border="border"
+      :hover="hover"
+      :stripe="stripe"
+      :height="height"
+      :size="size">
+    </t-table>
+  </div>
 </template>
 <script>
 export default {
