@@ -1,14 +1,12 @@
 <template>
   <t-table
-    style="width: 800px;"
     :data="data"
     :columns="columns"
     :rowKey="rowKey"
-    :border="border"
+    :bordered="true"
     :hover="hover"
     :stripe="stripe"
-    :size="size"
-    :width="width">
+    :size="size">
   </t-table>
 </template>
 <script>
@@ -37,8 +35,8 @@ export default {
         {
           fixed: 'left',
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '150',
+          minWidth: '150',
           className: 'row',
           ellipsis: true,
           colKey: 'type',
@@ -47,8 +45,8 @@ export default {
         {
           fixed: 'left',
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '150',
+          minWidth: '150',
           className: 'test',
           ellipsis: true,
           colKey: 'platform',
@@ -56,8 +54,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test2',
           ellipsis: true,
           colKey: 'property',
@@ -65,8 +63,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test4',
           ellipsis: true,
           colKey: 'default',
@@ -74,8 +72,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test3',
           ellipsis: true,
           colKey: 'needed',
@@ -84,8 +82,8 @@ export default {
         {
           align: 'left',
           fixed: 'right',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'row',
           ellipsis: true,
           colKey: 'description',
@@ -94,10 +92,8 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      border: true,
       hover: true,
       stripe: true,
-      width: 1200,
     };
   },
 };

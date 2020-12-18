@@ -2,12 +2,12 @@
   <div>
     <div style="margin-bottom: 10px;">
       columns 中通过定义 scopedSlots 或者 render 方法来实现自定义单元格的渲染。
-      其中 key 值为 'title' 时，代表通过插槽的方式自定义表头。其中 key 值为 'col' 时，代表通过插槽的方式自定义内容部分的单元格。</div>
+      其中 key 值为 'title' 时，代表用指定插槽自定义表头。其中 key 值为 'col' 时，代表用指定插槽自定义内容部分的单元格。</div>
     <t-table
       :data="data"
       :columns="columns"
       :rowKey="rowKey"
-      :border="border"
+      :bordered="bordered"
       :hover="hover"
       :stripe="stripe"
       :size="size">
@@ -115,7 +115,7 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      border: true,
+      bordered: true,
       hover: true,
       stripe: true,
       height: 100,
