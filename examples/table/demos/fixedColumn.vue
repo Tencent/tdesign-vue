@@ -1,6 +1,6 @@
 <template>
   <t-table
-    style="width: 1000px;"
+    style="width: 800px;"
     :data="data"
     :columns="columns"
     :rowKey="rowKey"
