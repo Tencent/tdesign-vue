@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <t-table
-      :data="data"
-      :columns="columns"
-      :rowKey="rowKey"
-      :border="border"
-      :hover="hover"
-      :stripe="stripe"
-      :height="height"
-      :size="size">
-    </t-table>
-  </div>
+  <t-table
+    :data="data"
+    :columns="columns"
+    :rowKey="rowKey"
+    :bordered="bordered"
+    :hover="hover"
+    :stripe="stripe"
+    :height="height"
+    :size="size">
+  </t-table>
 </template>
 <script>
 export default {
@@ -100,7 +98,7 @@ export default {
       height: 100,
       rowKey: 'property',
       size: 'small',
-      border: true,
+      bordered: true,
       hover: true,
       stripe: true,
     };
