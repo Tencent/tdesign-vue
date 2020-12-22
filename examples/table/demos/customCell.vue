@@ -2,22 +2,25 @@
   <div>
     <div style="margin-bottom: 10px;">
       columns 中通过定义 scopedSlots 或者 render 方法来实现自定义单元格的渲染。
-      其中 key 值为 'title' 时，代表通过插槽的方式自定义表头。其中 key 值为 'customRender' 时，代表通过插槽的方式自定义内容部分的单元格。</div>
+      其中 key 值为 'title' 时，代表用指定插槽自定义表头。其中 key 值为 'col' 时，代表用指定插槽自定义内容部分的单元格。</div>
     <t-table
       :data="data"
       :columns="columns"
       :rowKey="rowKey"
-      :border="border"
+      :bordered="bordered"
       :hover="hover"
       :stripe="stripe"
       :size="size">
       <!-- 自定义表头 支持 slot -->
       <span slot='type'>
-        <t-icon name="view-module"/>类型
+        <t-icon name="view-module"/> 类型
       </span>
       <!-- 自定义单元格 支持 slot -->
       <span slot='platform' slot-scope='{record}'>
         <t-icon name="attach"/><a href="#" class="link">{{ record.platform }}</a>
+      </span>
+      <span slot='default' slot-scope='{record}'>
+        未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 {{record.default}}
       </span>
     </t-table>
   </div>
@@ -65,7 +68,7 @@ export default {
           colKey: 'platform',
           title: '平台',
           scopedSlots: {
-            customRender: 'platform',
+            col: 'platform',
           },
         },
         {
@@ -77,7 +80,7 @@ export default {
           colKey: 'property',
           title: '属性名',
           render({ index, record }) {
-            return `${index}: ${record.property}`;
+            return `render 方法渲染的单元格：${index}: ${record.property}`;
           },
         },
         {
@@ -112,7 +115,7 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      border: true,
+      bordered: true,
       hover: true,
       stripe: true,
       height: 100,
