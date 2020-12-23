@@ -65,6 +65,31 @@ describe('AnchorItem', () => {
       expect(provide.unregisterLink).toBeCalledWith(props.href);
       expect(provide.registerLink).toBeCalledWith('#test-b');
     });
+    it('should render title by function', async () => {
+      const provide = {
+        active: '',
+        registerLink: jest.fn(),
+        unregisterLink: jest.fn(),
+      };
+      const title = 'this is title function';
+      const props = {
+        href: '#test',
+        title: h => h('span', title),
+      };
+      const wrapper = mount({
+        provide: {
+          tAnchor: provide,
+        },
+        data() {
+          return props;
+        },
+        render() {
+          return <AnchorItem href={this.href} title={this.title}/>;
+        },
+      });
+      const a = wrapper.find('a');
+      expect(a.element.querySelector('span').innerHTML).toEqual(title);
+    });
   });
 
 
