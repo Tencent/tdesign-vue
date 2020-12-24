@@ -54,14 +54,41 @@ describe('Anchor', () => {
           return (
             <Anchor onClick={onClick}>
               <AnchorItem href="#test-a" />
-              <AnchorItem href="#test-b" />
             </Anchor>
           );
         },
       }).find(Anchor);
       const link = wrapper.find(AnchorItem);
       link.find('a').trigger('click');
-      expect(onClick).toBeCalledTimes(1);
+      expect(onClick).toBeCalledWith({
+        href: '#test-a',
+        title: '',
+      }, expect.any(MouseEvent));
+    });
+    it('should trigger onClick props', () => {
+      const onClick = jest.fn();
+      const wrapper = mount({
+        render(h) {
+          return h(Anchor, {
+            props: {
+              onClick,
+            },
+          }, [
+            h(AnchorItem, {
+              props: {
+                href: '#test-a',
+              },
+            }),
+            h(AnchorItem, {
+              props: {
+                href: '#test-b',
+              },
+            }),
+          ]);
+        },
+      }).find(Anchor);
+      const link = wrapper.find(AnchorItem);
+      link.find('a').trigger('click');
       expect(onClick).toBeCalledWith({
         href: '#test-a',
         title: '',
@@ -77,6 +104,42 @@ describe('Anchor', () => {
               <AnchorItem href="#test-b" />
             </Anchor>
           );
+        },
+      }).find(Anchor);
+      const links = wrapper.findAll(AnchorItem);
+      links
+        .at(0)
+        .find('a')
+        .trigger('click');
+      expect(onChange).toBeCalledTimes(1);
+      expect(onChange).toBeCalledWith('#test-a', '');
+      links
+        .at(1)
+        .find('a')
+        .trigger('click');
+      expect(onChange).toBeCalledTimes(2);
+      expect(onChange).toBeCalledWith('#test-b', '#test-a');
+    });
+    it('should trigger onChange props', () => {
+      const onChange = jest.fn();
+      const wrapper = mount({
+        render(h) {
+          return h(Anchor, {
+            props: {
+              onChange,
+            },
+          }, [
+            h(AnchorItem, {
+              props: {
+                href: '#test-a',
+              },
+            }),
+            h(AnchorItem, {
+              props: {
+                href: '#test-b',
+              },
+            }),
+          ]);
         },
       }).find(Anchor);
       const links = wrapper.findAll(AnchorItem);

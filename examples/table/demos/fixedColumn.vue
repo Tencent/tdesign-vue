@@ -3,56 +3,50 @@
     :data="data"
     :columns="columns"
     :rowKey="rowKey"
-    :border="border"
+    :bordered="true"
     :hover="hover"
     :stripe="stripe"
-    :height="height"
     :size="size">
   </t-table>
 </template>
 <script>
 export default {
   data() {
-    const item = {
-      property: 'data',
-      platform: '公有',
-      type: 'any[]',
-      default: '[]',
-      needed: 'Y',
-      description: '数据源',
-    };
-    const data = [];
-    for (let i = 0;i < 20; i ++) {
-      data.push({
-        ...item,
-        index: i,
-      });
-    }
     return {
-      data,
-      columns: [
+      data: [
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'row',
-          ellipsis: true,
-          colKey: 'index',
-          title: 'index',
+          platform: '公有',
+          property: 'data',
+          type: 'any[]',
+          default: '[]',
+          needed: 'Y',
+          description: '数据源',
         },
         {
+          platform: '公有',
+          property: 'rowkey',
+          type: 'String',
+          default: '-1',
+          needed: 'Y',
+          description: '指定rowkey',
+        },
+      ],
+      columns: [
+        {
+          fixed: 'left',
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '150',
+          minWidth: '150',
           className: 'row',
           ellipsis: true,
           colKey: 'type',
           title: '类型',
         },
         {
+          fixed: 'left',
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '150',
+          minWidth: '150',
           className: 'test',
           ellipsis: true,
           colKey: 'platform',
@@ -60,8 +54,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test2',
           ellipsis: true,
           colKey: 'property',
@@ -69,8 +63,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test4',
           ellipsis: true,
           colKey: 'default',
@@ -78,8 +72,8 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          width: '200',
+          minWidth: '200',
           className: 'test3',
           ellipsis: true,
           colKey: 'needed',
@@ -87,18 +81,17 @@ export default {
         },
         {
           align: 'left',
-          width: '100',
-          minWidth: '100',
+          fixed: 'right',
+          width: '200',
+          minWidth: '200',
           className: 'row',
           ellipsis: true,
           colKey: 'description',
           title: '说明',
         },
       ],
-      height: 100,
       rowKey: 'property',
       size: 'small',
-      border: true,
       hover: true,
       stripe: true,
     };
