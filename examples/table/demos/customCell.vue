@@ -1,15 +1,29 @@
 <template>
-  <t-table
-    style="width: 1000px;"
-    :data="data"
-    :columns="columns"
-    :rowKey="rowKey"
-    :border="border"
-    :hover="hover"
-    :stripe="stripe"
-    :size="size"
-    :width="width">
-  </t-table>
+  <div>
+    <div style="margin-bottom: 10px;">
+      columns 中通过定义 scopedSlots 或者 render 方法来实现自定义单元格的渲染。
+      其中 key 值为 'title' 时，代表用指定插槽自定义表头。其中 key 值为 'col' 时，代表用指定插槽自定义内容部分的单元格。</div>
+    <t-table
+      :data="data"
+      :columns="columns"
+      :rowKey="rowKey"
+      :bordered="bordered"
+      :hover="hover"
+      :stripe="stripe"
+      :size="size">
+      <!-- 自定义表头 支持 slot -->
+      <span slot='type'>
+        <t-icon name="view-module"/> 类型
+      </span>
+      <!-- 自定义单元格 支持 slot -->
+      <span slot='platform' slot-scope='{record}'>
+        <t-icon name="attach"/><a href="#" class="link">{{ record.platform }}</a>
+      </span>
+      <span slot='default' slot-scope='{record}'>
+        未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 {{record.default}}
+      </span>
+    </t-table>
+  </div>
 </template>
 <script>
 export default {
@@ -35,17 +49,17 @@ export default {
       ],
       columns: [
         {
-          fixed: 'left',
           align: 'left',
           width: '100',
           minWidth: '100',
           className: 'row',
           ellipsis: true,
           colKey: 'type',
-          title: '类型',
+          scopedSlots: {
+            title: 'type',
+          },
         },
         {
-          fixed: 'left',
           align: 'left',
           width: '100',
           minWidth: '100',
@@ -53,6 +67,9 @@ export default {
           ellipsis: true,
           colKey: 'platform',
           title: '平台',
+          scopedSlots: {
+            col: 'platform',
+          },
         },
         {
           align: 'left',
@@ -61,7 +78,10 @@ export default {
           className: 'test2',
           ellipsis: true,
           colKey: 'property',
-          title: '属性',
+          title: '属性名',
+          render({ index, record }) {
+            return `render 方法渲染的单元格：${index}: ${record.property}`;
+          },
         },
         {
           align: 'left',
@@ -70,7 +90,9 @@ export default {
           className: 'test4',
           ellipsis: true,
           colKey: 'default',
-          title: '默认值',
+          title() {
+            return '默认值';
+          },
         },
         {
           align: 'left',
@@ -83,7 +105,6 @@ export default {
         },
         {
           align: 'left',
-          fixed: 'right',
           width: '100',
           minWidth: '100',
           className: 'row',
@@ -94,11 +115,17 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      border: true,
+      bordered: true,
       hover: true,
       stripe: true,
-      width: 1200,
+      height: 100,
     };
   },
 };
 </script>
+<style scoped>
+.link {
+  color: #0052d9;
+  text-decoration: none;
+}
+</style>

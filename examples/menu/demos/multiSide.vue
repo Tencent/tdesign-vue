@@ -25,7 +25,7 @@
       <t-menu-item name="4-3">菜单内容三</t-menu-item>
     </t-submenu>
     <div slot="options">
-      <t-icon name="user" @click.native="changeCollapsed" />
+      <t-icon :name="iconName" @click.native="changeCollapsed" />
     </div>
   </t-menu>
 </template>
@@ -37,6 +37,11 @@ export default {
       disabled: true,
       collapsed: false,
     };
+  },
+  computed: {
+    iconName() {
+      return this.collapsed ? 'chevron-right' : 'chevron-left';
+    },
   },
   methods: {
     changeCollapsed() {
