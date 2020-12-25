@@ -64,7 +64,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'test',
-          ellipsis: true,
           colKey: 'platform',
           title: '平台',
           scopedSlots: {
@@ -76,7 +75,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'test2',
-          ellipsis: true,
           colKey: 'property',
           title: '属性名',
           render({ index, record }) {
@@ -88,7 +86,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'test4',
-          ellipsis: true,
           colKey: 'default',
           title() {
             return '默认值';
