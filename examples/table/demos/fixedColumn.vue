@@ -15,7 +15,7 @@ export default {
     return {
       data: [
         {
-          platform: '公有',
+          platform: '公有，代表这个数据可以是被公开的',
           property: 'data',
           type: 'any[]',
           default: '[]',
