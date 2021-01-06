@@ -3,30 +3,30 @@
     <p>【方式一】函数式调用-主函数：this.$notify('info', { title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
     <br>
     <div>
-      <t-button @click="$notify('info', {title: '标题名称',content: '用户表示普通操作的消息通知'})">info</t-button>
-      <t-button @click="$notify('success', {title: '标题名称',content: '用户表示操作顺利的消息通知'})">success</t-button>
-      <t-button @click="$notify('warning', {title: '标题名称',content: '用户表示操作引起一定后果的消息通知'})">warning</t-button>
-      <t-button @click="$notify('error', {title: '标题名称',content: '用户表示操作引起严重后果的消息通知'})">error</t-button>
+      <t-button @click="$notify('info', { title: '标题名称',content: '用户表示普通操作的消息通知' })">info</t-button>
+      <t-button @click="$notify('success', { title: '标题名称',content: '用户表示操作顺利的消息通知' })">success</t-button>
+      <t-button @click="$notify('warning', { title: '标题名称',content: '用户表示操作引起一定后果的消息通知' })">warning</t-button>
+      <t-button @click="$notify('error', { title: '标题名称',content: '用户表示操作引起严重后果的消息通知' })">error</t-button>
     </div>
     <br><br>
 
     <p>【方式二】函数式调用-主题函数：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
     <br>
     <div>
-      <t-button @click="$notify.info({title: '标题名称',content: '用户表示普通操作的消息通知'})">info</t-button>
-      <t-button @click="$notify.success({title: '标题名称',content: '用户表示操作顺利的消息通知'})">success</t-button>
-      <t-button @click="$notify.warning({title: '标题名称',content: '用户表示操作引起一定后果的消息通知'})">warning</t-button>
-      <t-button @click="$notify.error({title: '标题名称',content: '用户表示操作引起严重后果的消息通知'})">error</t-button>
+      <t-button @click="$notify.info({ title: '标题名称',content: '用户表示普通操作的消息通知' })">info</t-button>
+      <t-button @click="$notify.success({ title: '标题名称',content: '用户表示操作顺利的消息通知' })">success</t-button>
+      <t-button @click="$notify.warning({ title: '标题名称',content: '用户表示操作引起一定后果的消息通知' })">warning</t-button>
+      <t-button @click="$notify.error({ title: '标题名称',content: '用户表示操作引起严重后果的消息通知' })">error</t-button>
     </div>
     <br><br>
 
     <p>【方式三】函数式调用-时间设置：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知', duration: 1000 })</p>
     <br>
     <div>
-      <t-button @click="$notify.info({title: '标题名称',content: '用户表示普通操作的消息通知', duration: 1000})">1000s</t-button>
-      <t-button @click="$notify.success({title: '标题名称',content: '用户表示操作顺利的消息通知', duration: 2000})">2000s</t-button>
-      <t-button @click="$notify.warning({title: '标题名称',content: '用户表示操作引起一定后果的消息通知'})">默认时长</t-button>
-      <t-button @click="$notify.error({title: '标题名称',content: '用户表示操作引起严重后果的消息通知', duration: 0, closeBtn: true})">永久显示</t-button>
+      <t-button @click="$notify.info({ title: '标题名称',content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
+      <t-button @click="$notify.success({ title: '标题名称',content: '用户表示操作顺利的消息通知', duration: 2000 })">2000s</t-button>
+      <t-button @click="$notify.warning({ title: '标题名称',content: '用户表示操作引起一定后果的消息通知' })">默认时长</t-button>
+      <t-button @click="$notify.error({ title: '标题名称',content: '用户表示操作引起严重后果的消息通知', duration: 0, closeBtn: true })">永久显示</t-button>
     </div>
     <br><br>
 
