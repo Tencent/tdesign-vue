@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-tooltip-demo">
     <t-tooltip content="文字提示仅展示文本内容">
       <t-button>default</t-button>
     </t-tooltip>
