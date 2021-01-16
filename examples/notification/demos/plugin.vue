@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>【方式一】函数式调用-主函数：this.$notify('info', { title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
+    <p>组件内调用-主函数：this.$notify('info', { title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
     <br>
     <div>
       <t-button @click="$notify('info', { title: '标题名称',content: '用户表示普通操作的消息通知' })">info</t-button>
@@ -10,7 +10,7 @@
     </div>
     <br><br>
 
-    <p>【方式二】函数式调用-主题函数：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
+    <p>组件内调用-主题函数：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知' })</p>
     <br>
     <div>
       <t-button @click="$notify.info({ title: '标题名称',content: '用户表示普通操作的消息通知' })">info</t-button>
@@ -20,7 +20,7 @@
     </div>
     <br><br>
 
-    <p>【方式三】函数式调用-时间设置：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知', duration: 1000 })</p>
+    <p>组件内调用-时间设置：this.$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知', duration: 1000 })</p>
     <br>
     <div>
       <t-button @click="$notify.info({ title: '标题名称',content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
@@ -31,7 +31,7 @@
     <br><br>
 
 
-    <p>【方式四】函数式调用-自定义内容：this.$notify.info({ title: '标题名称', content: '用户表示普通操作信息提示' })</p>
+    <p>组件内调用-自定义内容：this.$notify.info({ title: '标题名称', content: '用户表示普通操作信息提示' })</p>
     <br>
     <div>
       <t-button @click="$notify.info({ title: '标题名称', content: '用户表示普通操作信息提示' })">普通信息</t-button>
@@ -42,11 +42,27 @@
     </div>
     <br><br>
 
+    <p>按需引入：NotifyPlugin.info({ content: '用户表示普通操作信息提示', duration: 1000 })</p>
+    <br>
+    <div class='t-demo-message-theme'>
+      <t-button @click="NotifyPlugin.info({ title: '标题', content: '用户表示普通操作信息提示' })">info</t-button>
+      <t-button @click="NotifyPlugin.success({ title: '标题', content: '用户表示操作顺利达成' })">success</t-button>
+      <t-button @click="NotifyPlugin.warning({ title: '标题', content: '用户表示操作引起一定后果' })">warning</t-button>
+      <t-button @click="NotifyPlugin.error({ title: '标题', content: '用户表示操作引起严重的后果' })">error</t-button>
+    </div>
+    <br><br>
+
   </div>
 </template>
 
 <script>
+import { NotifyPlugin } from '@/src/notification';
 export default {
+  data() {
+    return {
+      NotifyPlugin,
+    };
+  },
   methods: {
     closeBtn(close) {
       return <b class='t-message-close' onClick={close}>x</b>;
