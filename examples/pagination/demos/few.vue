@@ -5,7 +5,7 @@
       :total="49"
       :on-change="onChange"
       @change="onPageChange"
-      :page-size="10"
+      :page-size="pageSize"
     />
   </div>
 </template>
@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       current: 2,
+      pageSize: 10,
       onChange: (index, event) => {
         console.log('fire on prop');
         console.log(`转到第${index}页`);
