@@ -6,7 +6,7 @@
       show-jumper
       show-sizer
       :total="100"
-      :page-size="5"
+      :page-size="pageSize"
     />
   </div>
 </template>
@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       index: 1,
+      pageSize: 5,
     };
   },
 };
