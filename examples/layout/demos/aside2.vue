@@ -1,14 +1,12 @@
 <template>
   <div class="tdesign-demo-item--layout">
     <t-layout>
-      <t-header>
-        Header
-      </t-header>
+      <t-header> Header </t-header>
       <t-layout>
         <t-aside>
           <h2 class="logo">LOGO</h2>
           <div class="trigger">
-            <span class="t-icon t-icon-arrow-left"></span>
+            <t-icon name="chevron-left" />
           </div>
         </t-aside>
         <t-layout>
