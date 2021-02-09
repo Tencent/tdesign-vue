@@ -15,11 +15,11 @@ describe('Anchor', () => {
             </Anchor>
           );
         },
-      }).find(Anchor);
+      }).findComponent(Anchor);
       const { vm } = wrapper;
       expect(vm.$data.links).toEqual(['#test-a', '#test-b']);
       wrapper
-        .findAll(AnchorItem)
+        .findAllComponents(AnchorItem)
         .at(1)
         .destroy();
       expect(vm.$data.links).toEqual(['#test-a']);
@@ -36,10 +36,10 @@ describe('Anchor', () => {
             </Anchor>
           );
         },
-      }).find(Anchor);
+      }).findComponent(Anchor);
       const { vm } = wrapper;
       expect(vm.$data.active).toBe('');
-      const link = wrapper.find(AnchorItem);
+      const link = wrapper.findComponent(AnchorItem);
       link.find('a').trigger('click');
       expect(vm.$data.active).toBe('#test-a');
     });
@@ -57,8 +57,8 @@ describe('Anchor', () => {
             </Anchor>
           );
         },
-      }).find(Anchor);
-      const link = wrapper.find(AnchorItem);
+      }).findComponent(Anchor);
+      const link = wrapper.findComponent(AnchorItem);
       link.find('a').trigger('click');
       expect(onClick).toBeCalledWith({
         href: '#test-a',
@@ -86,8 +86,8 @@ describe('Anchor', () => {
             }),
           ]);
         },
-      }).find(Anchor);
-      const link = wrapper.find(AnchorItem);
+      }).findComponent(Anchor);
+      const link = wrapper.findComponent(AnchorItem);
       link.find('a').trigger('click');
       expect(onClick).toBeCalledWith({
         href: '#test-a',
@@ -105,8 +105,8 @@ describe('Anchor', () => {
             </Anchor>
           );
         },
-      }).find(Anchor);
-      const links = wrapper.findAll(AnchorItem);
+      }).findComponent(Anchor);
+      const links = wrapper.findAllComponents(AnchorItem);
       links
         .at(0)
         .find('a')
@@ -141,8 +141,8 @@ describe('Anchor', () => {
             }),
           ]);
         },
-      }).find(Anchor);
-      const links = wrapper.findAll(AnchorItem);
+      }).findComponent(Anchor);
+      const links = wrapper.findAllComponents(AnchorItem);
       links
         .at(0)
         .find('a')
@@ -222,7 +222,7 @@ describe('Anchor', () => {
             </Anchor>
           );
         },
-      }).find(Anchor);
+      }).findComponent(Anchor);
     }
     /**
      *
@@ -261,7 +261,7 @@ describe('Anchor', () => {
       const anchors = getAnchor();
       setAnchorTop(anchors, [-400, -200, 0, 200, 400]);
       const event = new Event('scroll');
-      const { vm } = wrapper.find(Anchor);
+      const { vm } = wrapper.findComponent(Anchor);
       window.dispatchEvent(event);
       expect(vm.active).toEqual('#anchor-3');
     });
@@ -270,7 +270,7 @@ describe('Anchor', () => {
       const anchors = getAnchor();
       setAnchorTop(anchors, [-400, -200, -10, 190, 400]);
       const event = new Event('scroll');
-      const { vm } = wrapper.find(Anchor);
+      const { vm } = wrapper.findComponent(Anchor);
       window.dispatchEvent(event);
       expect(vm.active).toEqual('#anchor-4');
     });

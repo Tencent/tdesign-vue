@@ -19,7 +19,7 @@ describe('AnchorTarget', () => {
         id: 'test-target',
       },
     });
-    const a = wrapper.find(Icon);
+    const a = wrapper.findComponent(Icon);
     a.trigger('click');
     expect(text).toEqual(`${location.href}#test-target`);
   });
