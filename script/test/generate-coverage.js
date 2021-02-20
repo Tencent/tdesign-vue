@@ -1,4 +1,6 @@
 const fs = require('fs');
+const camelCase = require('camelcase');
+
 const utils = require('../utils');
 
 const DomParser = require('dom-parser');
@@ -21,16 +23,13 @@ fs.readFile(utils.resolveCwd('test/unit/coverage/index.html'), 'utf8', (err, htm
 
       if (col === 0) {
         const [, name] = item.getAttribute('data-value').split('src/');
-        key = name;
+        name && (key = camelCase(name));
       } else if (col === 8) {
         value = `${item.getAttribute('data-value')}%`;
       } else if (col === 9) {
         result[key] = value;
       }
     });
-
-    // 特殊case处理
-    result.inputnumber = result['input-number'];
 
     const finalRes = `module.exports = ${JSON.stringify(result, null, 2)}`;
     fs.writeFileSync(utils.resolveCwd('site/config/test-coverage.js'), finalRes);
