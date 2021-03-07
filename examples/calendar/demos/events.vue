@@ -7,10 +7,10 @@
     <t-calendar
       :value="value"
       :preventCellContextmenu="preventCellContextmenu"
-      @cellClick="onCellClick"
-      @cellDoubleClick="onCellDoubleClick"
-      @cellRightClick="onCellRightClick"
-      @controllerChange="onControllerChange"
+      @click-cell="cellClick"
+      @double-click-cell="cellDoubleClick"
+      @right-click-cell="cellRightClick"
+      @controller-change="controllerChange"
     ></t-calendar>
 
     <t-alert
@@ -18,12 +18,13 @@
       theme="warning"
       message="暂无数据，您可以点击一下日历的单元格看看（双击会改变当前选中日期）😀"
     />
-    <t-list v-else class="demo-list">
-      <t-list-item v-for="(item, index) in histories" :key="index">
-        {{ item }}
-        并得到组件传出的参数（您看控制台）...
-      </t-list-item>
-    </t-list>
+    <div  v-else class="demo-list">
+      <t-list>
+        <t-list-item v-for="(item, index) in histories" :key="index">
+          【{{ histories.length - index }}】{{ item }}，并得到组件传出的参数（您看控制台）...
+        </t-list-item>
+      </t-list>
+    </div>
   </div>
 </template>
 
@@ -41,39 +42,33 @@ export default {
     };
   },
   methods: {
-    onCellClick(cellEmitData) {
-      const output = this.getDateStr(cellEmitData.data);
-      this.appendHistories(`鼠标左键单击单元格 ${output}`, cellEmitData);
+    cellClick(options) {
+      this.appendHistories(`鼠标左键单击单元格 ${options.cell.formattedDate}`, options);
     },
-    onCellDoubleClick(cellEmitData) {
-      this.value = cellEmitData.data; // 双击的时候改变当前选中日期
-      const output = this.getDateStr(cellEmitData.data);
-      this.appendHistories(`鼠标双击单元格 ${output}`, cellEmitData);
+    cellDoubleClick(options) {
+      this.appendHistories(`鼠标双击单元格 ${options.cell.formattedDate}`, options);
     },
-    onCellRightClick(cellEmitData) {
-      const output = this.getDateStr(cellEmitData.data);
-      this.appendHistories(`鼠标右键点击元格 ${output}`, cellEmitData);
+    cellRightClick(options) {
+      this.appendHistories(`鼠标右键点击元格 ${options.cell.formattedDate}`, options);
     },
-    onControllerChange(data) {
+    controllerChange(data) {
       this.appendHistories('控件值变化', data);
     },
-    appendHistories(content, data) {
-      this.histories.unshift(`${content} [${new Date().getTime()}]`);
-      console.info(JSON.stringify(data, null, 2));
-    },
-    getDateStr(date) {
-      const y = date.getFullYear();
-      const m = date.getMonth();
-      const d = date.getDate();
-      const output = `${y}-${m}-${d}`;
-      return output;
+    appendHistories(content, options) {
+      this.histories.unshift(content);
+      console.info(options);
     },
   },
 };
 </script>
 
+
 <style scoped>
 .demo-list {
   max-height: 130px;
+  overflow: auto;
+  border: 1px solid #eeeeee;
+  border-top: none 0;
+  border-bottom: none 0;
 }
 </style>
