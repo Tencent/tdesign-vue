@@ -2,7 +2,7 @@
   <div>
     <t-select
       v-model="value"
-      labelInValue
+      valueType="object"
       class="demo-select-base"
       @change="handleChange"
       @visible-change="visibleChange"
@@ -18,7 +18,7 @@
     </t-select>
     <t-select
       v-model="value2"
-      labelInValue
+      valueType="object"
       multiple
       class="demo-select-base"
       @change="handleChange"
@@ -50,21 +50,13 @@ export default {
         label: '深圳',
         value: 'shenzhen',
       }],
-      value: {
-        value: '上海',
-        text: 'shanghai',
-      },
-      value2: [
-        {
-          value: '上海',
-          text: 'shanghai',
-        },
-      ],
+      value: 'shanghai',
+      value2: ['shanghai'],
     };
   },
   methods: {
     handleChange(value) {
-      console.log(value);
+      console.log('已选值为：', value);
     },
     visibleChange(val) {
       console.log('visible', val);
