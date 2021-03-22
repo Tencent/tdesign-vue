@@ -6,7 +6,9 @@
     :bordered="true"
     :hover="hover"
     :stripe="stripe"
-    :size="size">
+    :size="size"
+    :onScrollX="onScrollX"
+    @scroll-x="scrollX">
   </t-table>
 </template>
 <script>
@@ -95,6 +97,14 @@ export default {
       hover: true,
       stripe: true,
     };
+  },
+  methods: {
+    onScrollX() {
+      console.log('@scroll-x与onScrollX任选一种方式即可，onScrollY事件类似');
+    },
+    scrollX() {
+      console.log('scroll-x');
+    },
   },
 };
 </script>
