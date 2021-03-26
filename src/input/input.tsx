@@ -90,6 +90,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
           value={this.value}
           class={`${name}__inner`}
           onInput={this.onInput}
+          onCompositionend={this.onCompositionend}
         />
         {suffixIcon ? <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span> : null}
       </div>
@@ -128,14 +129,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       input?.blur();
     },
     onInput(e: InputEvent): void {
-      if (this.composing) return;
-      const { target } = e;
-      const val = (target as HTMLInputElement).value;
-      this.$emit('change', val, { e: InputEvent });
-      this.$emit('input', val);
-      isFunction(this.onChange) && this.onChange(val, { e: InputEvent });
-      // 受控
-      this.$nextTick(() => this.setInputValue(this.value));
+      if (e.isComposing) return;
+      this.inputValueChangeHandle(e);
     },
     emitEvent(name: string, e: FocusEvent | KeyboardEvent | InputEvent) {
       this.$emit(name, this.value, { e });
@@ -174,6 +169,18 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     emitBlur(e: FocusEvent) {
       this.focused = false;
       this.emitEvent('blur', e);
+    },
+    onCompositionend(e: InputEvent) {
+      this.inputValueChangeHandle(e);
+    },
+    inputValueChangeHandle(e: InputEvent) {
+      const { target } = e;
+      const val = (target as HTMLInputElement).value;
+      this.$emit('change', val, { e: InputEvent });
+      this.$emit('input', val);
+      isFunction(this.onChange) && this.onChange(val, { e: InputEvent });
+      // 受控
+      this.$nextTick(() => this.setInputValue(this.value));
     },
   },
 });
