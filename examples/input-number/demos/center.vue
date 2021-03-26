@@ -53,6 +53,9 @@ export default {
       },
     };
   },
+  mounted() {
+    this.value = 4;
+  },
   methods: {
     handleChange(v, ctx) {
       console.info('change', v, ctx);

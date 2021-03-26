@@ -38,6 +38,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
+        autofocus: this.autofocus,
         disabled: this.disabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,

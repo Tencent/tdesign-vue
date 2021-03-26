@@ -40,4 +40,5 @@ export * from './progress';
 export * from './transfer';
 export * from './badge';
 export * from './loading';
+export * from './textarea';
 export * from './time-picker';
