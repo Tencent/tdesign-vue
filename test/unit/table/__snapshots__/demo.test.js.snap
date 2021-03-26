@@ -5369,14 +5369,10 @@ exports[`Table selectMultiple demo works fine 1`] = `
               >
                 <label
                   class="t-checkbox t-is-indeterminate"
-                  style="display: inline-block"
-                  type="function VueComponent (options) {
-        this._init(options);
-      }"
                 >
                   <input
                     class="t-checkbox__former"
-                    name=""
+                    indeterminate="indeterminate"
                     type="checkbox"
                     value=""
                   />
@@ -5449,14 +5445,9 @@ exports[`Table selectMultiple demo works fine 1`] = `
               >
                 <label
                   class="t-checkbox t-is-checked"
-                  style="display: inline-block"
-                  type="function VueComponent (options) {
-        this._init(options);
-      }"
                 >
                   <input
                     class="t-checkbox__former"
-                    name=""
                     type="checkbox"
                     value=""
                   />
@@ -5534,15 +5525,10 @@ exports[`Table selectMultiple demo works fine 1`] = `
               >
                 <label
                   class="t-checkbox t-is-checked t-is-disabled"
-                  style="display: inline-block"
-                  type="function VueComponent (options) {
-        this._init(options);
-      }"
                 >
                   <input
                     class="t-checkbox__former"
-                    disabled=""
-                    name=""
+                    disabled="disabled"
                     type="checkbox"
                     value=""
                   />
@@ -5620,14 +5606,9 @@ exports[`Table selectMultiple demo works fine 1`] = `
               >
                 <label
                   class="t-checkbox"
-                  style="display: inline-block"
-                  type="function VueComponent (options) {
-        this._init(options);
-      }"
                 >
                   <input
                     class="t-checkbox__former"
-                    name=""
                     type="checkbox"
                     value=""
                   />
@@ -5705,15 +5686,10 @@ exports[`Table selectMultiple demo works fine 1`] = `
               >
                 <label
                   class="t-checkbox t-is-disabled"
-                  style="display: inline-block"
-                  type="function VueComponent (options) {
-        this._init(options);
-      }"
                 >
                   <input
                     class="t-checkbox__former"
-                    disabled=""
-                    name=""
+                    disabled="disabled"
                     type="checkbox"
                     value=""
                   />

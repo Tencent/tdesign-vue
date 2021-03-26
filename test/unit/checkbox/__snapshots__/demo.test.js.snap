@@ -2,106 +2,389 @@
 
 exports[`Checkbox base demo works fine 1`] = `
 <div>
-  <label
-    class="t-checkbox"
-  >
-    <input
-      class="t-checkbox__former"
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+  <div>
+    <label
+      class="t-checkbox"
     >
-      未选中项
-    </span>
-  </label>
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        默认状态
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        未选中状态
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        选中状态
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-indeterminate"
+    >
+      <input
+        class="t-checkbox__former"
+        indeterminate="indeterminate"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        半选状态
+      </span>
+    </label>
+  </div>
    
-  <label
-    class="t-checkbox"
-  >
-    <input
-      class="t-checkbox__former"
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
-    >
-      未选悬停项
-    </span>
-  </label>
+  <br />
    
-  <label
-    class="t-checkbox t-is-checked"
-  >
-    <input
-      class="t-checkbox__former"
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+  <div>
+    <label
+      class="t-checkbox t-is-checked"
     >
-      选中项
-    </span>
-  </label>
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        语法糖（v-model）
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        受控属性
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        非受控属性
+      </span>
+    </label>
+  </div>
    
-  <label
-    class="t-checkbox t-is-disabled"
-  >
-    <input
-      class="t-checkbox__former"
-      disabled=""
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
-    >
-      未选禁用项
-    </span>
-  </label>
+  <br />
    
-  <label
-    class="t-checkbox t-is-checked t-is-disabled"
-  >
-    <input
-      class="t-checkbox__former"
-      disabled=""
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+  <div>
+    <label
+      class="t-checkbox t-is-disabled"
     >
-      选中禁用项
-    </span>
-  </label>
+      <input
+        class="t-checkbox__former"
+        disabled="disabled"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        未选中禁用状态
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked t-is-disabled"
+    >
+      <input
+        class="t-checkbox__former"
+        disabled="disabled"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        选中禁用状态
+      </span>
+    </label>
+  </div>
 </div>
 `;
 
 exports[`Checkbox checkbox group demo works fine 1`] = `
+<div
+  class="tdesign-checkbox-group"
+>
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        禁用全部
+      </span>
+    </label>
+  </div>
+   
+  <div>
+    <div
+      class="t-checkbox-group"
+    >
+      <label
+        class="t-checkbox t-is-checked"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="北京"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          北京
+        </span>
+      </label>
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="上海"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          上海
+        </span>
+      </label>
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="广州"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          广州
+        </span>
+      </label>
+      <label
+        class="t-checkbox t-is-disabled"
+      >
+        <input
+          class="t-checkbox__former"
+          disabled="disabled"
+          name=""
+          type="checkbox"
+          value="深圳"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          深圳（禁用&自定义文本）
+        </span>
+      </label>
+    </div>
+     
+    <span
+      class="demo-checkbox-row-desc"
+    >
+      选中值：[
+  "北京"
+]
+    </span>
+  </div>
+   
+  <div>
+    <div
+      class="t-checkbox-group"
+    >
+      <label
+        class="t-checkbox t-is-checked"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="Vue"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          Vue
+        </span>
+      </label>
+       
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="React"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          React
+        </span>
+      </label>
+       
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="Angular"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          Angular
+        </span>
+      </label>
+       
+      <label
+        class="t-checkbox t-is-disabled"
+      >
+        <input
+          class="t-checkbox__former"
+          disabled="disabled"
+          name=""
+          type="checkbox"
+          value="Miniprogram"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          Miniprogram
+        </span>
+      </label>
+       
+      <span
+        class="demo-checkbox-row-desc"
+      >
+        选中值：[
+  "Vue"
+]
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox checkbox-all demo works fine 1`] = `
 <div
   class="tdesign-checkbox-group"
 >
@@ -114,9 +397,9 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
       >
         <input
           class="t-checkbox__former"
-          name="city"
+          name=""
           type="checkbox"
-          value="bj"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -124,78 +407,17 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
         <span
           class="t-checkbox__label"
         >
-          北京
+          全选
         </span>
       </label>
       <label
         class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name="city"
-          type="checkbox"
-          value="sh"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          上海
-        </span>
-      </label>
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name="city"
-          type="checkbox"
-          value="gz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          广州
-        </span>
-      </label>
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name="city"
-          type="checkbox"
-          value="sz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          深圳
-        </span>
-      </label>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="t-checkbox-group"
-    >
-      <label
-        class="t-checkbox t-is-checked"
       >
         <input
           class="t-checkbox__former"
           name=""
           type="checkbox"
-          value="bj"
+          value="北京"
         />
         <span
           class="t-checkbox__input"
@@ -213,7 +435,7 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
           class="t-checkbox__former"
           name=""
           type="checkbox"
-          value="sh"
+          value="上海"
         />
         <span
           class="t-checkbox__input"
@@ -231,7 +453,7 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
           class="t-checkbox__former"
           name=""
           type="checkbox"
-          value="gz"
+          value="广州"
         />
         <span
           class="t-checkbox__input"
@@ -242,294 +464,92 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
           广州
         </span>
       </label>
-      <label
-        class="t-checkbox t-is-checked"
-      >
-        <input
-          class="t-checkbox__former"
-          name=""
-          type="checkbox"
-          value="sz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          深圳
-        </span>
-      </label>
     </div>
-  </div>
-   
-  <div>
-    <div
-      class="t-checkbox-group"
-    >
-      <label
-        class="t-checkbox t-is-disabled"
-      >
-        <input
-          class="t-checkbox__former"
-          disabled=""
-          name=""
-          type="checkbox"
-          value="bj"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          北京
-        </span>
-      </label>
-      <label
-        class="t-checkbox t-is-disabled"
-      >
-        <input
-          class="t-checkbox__former"
-          disabled=""
-          name=""
-          type="checkbox"
-          value="sh"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          上海
-        </span>
-      </label>
-      <label
-        class="t-checkbox t-is-checked t-is-disabled"
-      >
-        <input
-          class="t-checkbox__former"
-          disabled=""
-          name=""
-          type="checkbox"
-          value="gz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          广州
-        </span>
-      </label>
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name=""
-          type="checkbox"
-          value="sz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          深圳
-        </span>
-      </label>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="t-checkbox-group"
-    >
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name=""
-          type="checkbox"
-          value="bj"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          北京
-        </span>
-      </label>
-       
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name=""
-          type="checkbox"
-          value="sh"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          上海
-        </span>
-      </label>
-       
-      <label
-        class="t-checkbox"
-      >
-        <input
-          class="t-checkbox__former"
-          name=""
-          type="checkbox"
-          value="gz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          广州
-        </span>
-      </label>
-       
-      <label
-        class="t-checkbox t-is-checked t-is-disabled"
-      >
-        <input
-          class="t-checkbox__former"
-          disabled=""
-          name=""
-          type="checkbox"
-          value="sz"
-        />
-        <span
-          class="t-checkbox__input"
-        />
-        <span
-          class="t-checkbox__label"
-        >
-          深圳
-        </span>
-      </label>
-    </div>
+     
+    <!---->
   </div>
 </div>
 `;
 
-exports[`Checkbox indeterminate demo works fine 1`] = `
-<div
-  class="tdesign-checkbox-indeterminate"
->
-  <label
-    class="t-checkbox t-is-indeterminate"
+exports[`Checkbox link demo works fine 1`] = `
+<div>
+  <div
+    class="demo-checkbox-row"
   >
-    <input
-      class="t-checkbox__former"
-      name=""
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <div
+      class="t-checkbox-group"
     >
-      全选
-    </span>
-  </label>
-   
-  <br />
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name="city"
+          type="checkbox"
+          value="北京"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          北京
+        </span>
+      </label>
+      <label
+        class="t-checkbox t-is-checked"
+      >
+        <input
+          class="t-checkbox__former"
+          name="city"
+          type="checkbox"
+          value="上海"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          上海
+        </span>
+      </label>
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name="city"
+          type="checkbox"
+          value="深圳"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          深圳
+        </span>
+      </label>
+    </div>
+  </div>
    
   <div
-    class="t-checkbox-group"
+    class="demo-checkbox-row-desc"
   >
-    <label
-      class="t-checkbox t-is-checked"
+    
+    选中值: [
+  "上海"
+]
+    
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
+      type="button"
     >
-      <input
-        class="t-checkbox__former"
-        name="city"
-        type="checkbox"
-        value="bj"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        北京
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name="city"
-        type="checkbox"
-        value="sh"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        上海
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name="city"
-        type="checkbox"
-        value="gz"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        广州
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name="city"
-        type="checkbox"
-        value="sz"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        深圳
-      </span>
-    </label>
+      重置
+    </button>
   </div>
 </div>
 `;

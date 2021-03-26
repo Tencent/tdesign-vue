@@ -1,15 +1,11 @@
 :: BASE_DOC ::
 
-### 半选样式
-::: demo demos/indeterminate 
-:::
-
-### 受控的checkbox
-::: demo demos/demo 
-:::
-
-### checkbox组
+### 1.3 复选框组
 ::: demo demos/checkbox-group 
+:::
+
+### 1.4 全选
+::: demo demos/checkbox-all
 :::
 
 :: BASE_PROPS ::

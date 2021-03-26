@@ -65,11 +65,11 @@ describe('Checkbox', () => {
 describe('Checkbox CheckboxGroup', () => {
   // test props api
   describe(':props', () => {
-    it(':defaultValue', () => {
+    it(':defaultChecked', () => {
       const wrapper = mount({
         render() {
           return (
-            <CheckboxGroup defaultValue={['sz']}>
+            <CheckboxGroup defaultChecked={['sz']}>
               <Checkbox value="gz">广州</Checkbox>
               <Checkbox value="sz" disabled>深圳</Checkbox>
             </CheckboxGroup>
@@ -78,11 +78,11 @@ describe('Checkbox CheckboxGroup', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
-    it(':value', () => {
+    it(':checked', () => {
       const wrapper = mount({
         render() {
           return (
-            <CheckboxGroup value={['sz']}>
+            <CheckboxGroup checked={['sz']}>
               <Checkbox value="gz">广州</Checkbox>
               <Checkbox value="sz" disabled>深圳</Checkbox>
             </CheckboxGroup>

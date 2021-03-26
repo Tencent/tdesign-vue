@@ -2,96 +2,125 @@ import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import Checkbox from './checkbox';
 import checkboxGroupProps from '../../types/checkbox-group/props';
-import { CheckboxOption, CheckboxValue, CheckboxOptionObj } from '@TdTypes/checkbox/TdCheckboxProps';
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
+import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from '@TdTypes/checkbox/TdCheckboxProps';
+import intersection from 'lodash/intersection';
 
 const name = `${prefix}-checkbox-group`;
 
 export default Vue.extend({
   name,
-
   components: {
     Checkbox,
   },
-
   provide(): any {
     return {
       checkboxGroup: this,
     };
   },
-
+  model: {
+    prop: 'value',
+    event: 'change',
+  },
   props: { ...checkboxGroupProps },
 
-  data() {
-    return {
-      valueList: [],
-    };
+  computed: {
+    optionList(): Array<CheckboxOptionObj> {
+      if (!this.options) return [];
+      return this.options.map((item) => {
+        let r: CheckboxOptionObj = {};
+        if (typeof item !== 'object') {
+          r = { label: String(item), value: item } ;
+        } else {
+          r = { ...item };
+          r.disabled = r.disabled === undefined ? this.disabled : r.disabled;
+        }
+        return r;
+      });
+    },
+    intersectionLen(): number {
+      const values = this.optionList.map(item => item.value);
+      if (this.value instanceof Array) {
+        const n = intersection(this.value, values);
+        return n.length;
+      }
+      return 0;
+    },
+    isCheckAll(): boolean {
+      return this.intersectionLen === this.optionList.length - 1;
+    },
+    indeterminate(): boolean {
+      return !this.isCheckAll && this.intersectionLen < this.optionList.length && this.intersectionLen !== 0;
+    },
   },
 
-  render(h): VNode {
-    const { $scopedSlots, value } = this;
-    let children: VNode[] | VNode | string = $scopedSlots.default && $scopedSlots.default(null);
-
-    if (this.options && this.options.length) {
-      children = this.options.map((option: CheckboxOption) => {
-        let itemValue: CheckboxValue;
-        let label: TNode | TNodeReturnValue;
-        let disabled: boolean;
-        let name: string;
-
-        if (isString(option) || isNumber(option)) {
-          itemValue = option as CheckboxValue;
-          label = String(option);
-          ({ disabled, name } = this);
-        } else {
-          const checkboxOption = option as CheckboxOptionObj;
-          ({ value: itemValue, label } = checkboxOption);
-          if (typeof label === 'function') label = label(h);
-          disabled = 'disabled' in checkboxOption ? checkboxOption.disabled : this.disabled;
-          name = 'name' in checkboxOption ? checkboxOption.name : this.name;
-        }
-        return (
-          <Checkbox
-            key={`checkbox-group-options-${itemValue}`}
-            name={name}
-            checked={value && value.indexOf(itemValue) > -1}
-            disabled={disabled}
-            value={itemValue}
-          >
-            {label}
-          </Checkbox>
-        );
-      });
-    }
-
+  render(): VNode {
     return (
       <div class={name}>
-        {children}
+        {!!this.optionList.length && this.optionList.map((option) => {
+          if (option.checkAll) return this.renderCheckAll(option);
+          return (
+            <Checkbox
+              key={`checkbox-group-options-${option.value}`}
+              props={{ ...option }}
+              checked={this.isOptionChecked(option)}
+            >
+              {this.renderLabel(option)}
+            </Checkbox>
+          );
+        })}
+        {this.$scopedSlots.default && this.$scopedSlots.default(null)}
       </div>
     );
   },
 
   methods: {
-    handleCheckboxChange(targetValue: string | number) {
-      const value = this.value ? [...this.value] : [];
-      const valueIndex: number = value.indexOf(targetValue);
-      if (valueIndex === -1) {
-        value.push(targetValue);
+    renderCheckAll(option: CheckboxOptionObj) {
+      return (
+        <Checkbox
+          checked={this.isCheckAll}
+          indeterminate={this.indeterminate}
+          onChange={this.onCheckAllChange}
+          data-name='TDESIGN_CHECK_ALL'
+          props={{ ...option }}
+        >{this.renderLabel(option)}</Checkbox>
+      );
+    },
+    renderLabel(option: CheckboxOptionObj) {
+      if (typeof option.label === 'function') {
+        return option.label(this.$createElement);
+      }
+      return option.label;
+    },
+    isOptionChecked(option: CheckboxOptionObj) {
+      if (this.value instanceof Array) {
+        return this.value.includes(option.value);
+      }
+      return false;
+    },
+    emitChange(val: CheckboxGroupValue, e?: Event) {
+      this.$emit('change', val, { e });
+      (typeof this.onChange === 'function') && this.onChange(val, { e });
+    },
+    handleCheckboxChange(data: { checked: boolean; e: Event; option: TdCheckboxProps }) {
+      const oValue = data.option.value;
+      if (this.value instanceof Array) {
+        const val = [...this.value];
+        if (data.checked) {
+          val.push(oValue);
+        } else {
+          const i = val.indexOf(oValue);
+          val.splice(i, 1);
+        }
+        this.emitChange(val, data.e);
+      }
+    },
+    onCheckAllChange(checked: boolean, context: { e: Event }) {
+      if (checked) {
+        const val = this.optionList.filter(item => !item.checkAll).map(item => item.value);
+        this.emitChange(val, context.e);
       } else {
-        value.splice(valueIndex, 1);
+        this.emitChange([], context.e);
       }
-      this.$emit('input', value);
-      this.$emit('change', value);
-      if (typeof this.onChange === 'function') {
-        this.onChange(value);
-      }
-    },
-    addValue(value: any) {
-      this.valueList = [...this.valueList, value];
-    },
-    delValue(value: any) {
-      this.valueList = this.valueList.filter((val: any) => val !== value);
     },
   },
 });

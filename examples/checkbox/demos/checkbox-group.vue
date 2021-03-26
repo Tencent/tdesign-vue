@@ -1,37 +1,19 @@
 <template>
   <div class="tdesign-checkbox-group">
     <div>
-      <t-checkbox-group
-        name="city"
-        v-model="value"
-        :options="options"
-        @change="onChange"
-      ></t-checkbox-group>
+      <t-checkbox v-model="disabled">禁用全部</t-checkbox>
     </div>
-
     <div>
-      <t-checkbox-group
-        :default-value="['bj', 'sz']"
-        :options="options"
-        @change="onChange"
-      ></t-checkbox-group>
+      <t-checkbox-group v-model="city" :options="options" :disabled="disabled"/>
+      <span class='demo-checkbox-row-desc' v-if="city.length">选中值：{{city}}</span>
     </div>
-
     <div>
-      <t-checkbox-group
-        disabled
-        :default-value="['gz']"
-        :options="optionsWithDisabled"
-        @change="onChange"
-      ></t-checkbox-group>
-    </div>
-
-    <div>
-      <t-checkbox-group :default-value="['sz']" @change="onChange">
-        <t-checkbox value="bj">北京</t-checkbox>
-        <t-checkbox value="sh">上海</t-checkbox>
-        <t-checkbox value="gz">广州</t-checkbox>
-        <t-checkbox value="sz" disabled>深圳</t-checkbox>
+      <t-checkbox-group v-model="program" :disabled="disabled">
+        <t-checkbox value="Vue">Vue</t-checkbox>
+        <t-checkbox value="React">React</t-checkbox>
+        <t-checkbox value="Angular">Angular</t-checkbox>
+        <t-checkbox value="Miniprogram" disabled>Miniprogram</t-checkbox>
+        <span class='demo-checkbox-row-desc' v-if="program.length">选中值：{{program}}</span>
       </t-checkbox-group>
     </div>
   </div>
@@ -41,58 +23,41 @@
 export default {
   data() {
     return {
-      value: [],
+      city: ['北京'],
+      program: ['Vue'],
+      disabled: false,
       options: [
         {
-          value: 'bj',
+          value: '北京',
           label: '北京',
         },
         {
-          value: 'sh',
+          value: '上海',
           label: '上海',
         },
         {
-          value: 'gz',
+          value: '广州',
           label: '广州',
         },
         {
-          value: 'sz',
-          label: '深圳',
-        },
-      ],
-      optionsWithDisabled: [
-        {
-          value: 'bj',
-          label: '北京',
-        },
-        {
-          value: 'sh',
-          label: '上海',
-        },
-        {
-          value: 'gz',
-          label: '广州',
-        },
-        {
-          value: 'sz',
-          label: '深圳',
-          disabled: false,
+          value: '深圳',
+          // 此处可自定义文本内容
+          label: () => '深圳（禁用&自定义文本）',
+          // 禁用该选项
+          disabled: true,
         },
       ],
     };
   },
-  methods: {
-    onChange(checkedValues) {
-      console.log('checkedValues:', checkedValues);
-      console.log('value:', this.value);
-    },
-  },
 };
 </script>
 
-
 <style scoped>
-.t-checkbox-group {
+.tdesign-checkbox-group > div {
   margin-bottom: 16px;
+}
+.demo-checkbox-row-desc {
+  color:rgba(0, 0, 0, 0.6);
+  padding-left: 24px;
 }
 </style>

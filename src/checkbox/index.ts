@@ -4,7 +4,7 @@ import mapProps from '../utils/map-props';
 import setInstallFn from '../utils/setInstallFn';
 
 const Checkbox = mapProps(['checked'], { model: { prop: 'checked', event: 'change' } })(_Checkbox);
-const CheckboxGroup = mapProps(['value'])(_Group);
+const CheckboxGroup = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_Group);
 
 setInstallFn('Checkbox', Checkbox);
 setInstallFn('CheckboxGroup', CheckboxGroup);

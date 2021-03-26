@@ -21,7 +21,6 @@ exports[`Transfer base demo works fine 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name=""
             type="checkbox"
             value=""
           />
@@ -62,7 +61,7 @@ exports[`Transfer base demo works fine 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                disabled=""
+                disabled="disabled"
                 name=""
                 type="checkbox"
                 value="0"
@@ -159,7 +158,7 @@ exports[`Transfer base demo works fine 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                disabled=""
+                disabled="disabled"
                 name=""
                 type="checkbox"
                 value="4"
@@ -240,7 +239,6 @@ exports[`Transfer base demo works fine 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name=""
             type="checkbox"
             value=""
           />
