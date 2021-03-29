@@ -1,7 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 
 import { TimeInputInstance, TimeInputType } from './type/index.d';
-import RenderComponent from '../utils/render-component';
 import {
   componentName,
   meridianZHList,
@@ -14,10 +13,6 @@ const name = `${prefix}-time-picker-input`;
 
 export default (Vue as VueConstructor<TimeInputInstance>).extend({
   name,
-
-  components: {
-    RenderComponent,
-  },
 
   props: {
     // 格式化标准

@@ -1,6 +1,5 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import CLASSNAMES from '../utils/classnames';
 import Icon from '../icon/iconfont';
 import { addClass, removeClass } from '../utils/dom';
@@ -17,7 +16,6 @@ export default Vue.extend({
 
   components: {
     [Icon.name]: Icon,
-    RenderComponent,
   },
 
   props: {

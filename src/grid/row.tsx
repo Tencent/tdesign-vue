@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import responsiveObserver from '../utils/responsive-observer';
 import props from '../../types/row/props';
 
@@ -8,10 +7,6 @@ const name = `${prefix}-row`;
 
 export default Vue.extend({
   name,
-
-  components: {
-    RenderComponent,
-  },
 
   props: { ...props },
 

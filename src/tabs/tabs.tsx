@@ -1,6 +1,5 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import TTabNav from './tab-nav.vue';
 import TTabPanel from './tab-panel';
 import { TabValue } from '@TdTypes/tabs/TdTabsProps';
@@ -16,7 +15,6 @@ export default Vue.extend({
   },
 
   components: {
-    RenderComponent,
     TTabPanel,
     TTabNav,
   },

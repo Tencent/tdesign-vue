@@ -3,7 +3,6 @@ import moment from 'moment';
 
 import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType } from './type/index.d';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import CLASSNAMES from '../utils/classnames';
 import pickerPanel from './panel';
 import Input from './input';
@@ -20,7 +19,6 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
   name,
 
   components: {
-    RenderComponent,
     pickerPanel,
   },
 

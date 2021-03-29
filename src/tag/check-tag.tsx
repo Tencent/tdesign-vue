@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import RenderComponent from '../utils/render-component';
 import config from '../config';
 import props from '../../types/check-tag/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -9,9 +8,6 @@ const name = `${prefix}-tag`;
 
 export default Vue.extend({
   name: `${prefix}-check-tag`,
-  components: {
-    RenderComponent,
-  },
   props: { ...props },
   computed: {
     tagClass(): Array<any> {

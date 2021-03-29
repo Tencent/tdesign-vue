@@ -1,16 +1,11 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import props from '../../types/aside/props';
 
 const name = `${prefix}-aside`;
 
 export default Vue.extend({
   name,
-
-  components: {
-    RenderComponent,
-  },
 
   props: { ...props },
 

@@ -1,15 +1,10 @@
 import Vue, { PropType } from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 
 const name = `${prefix}-badge`;
 
 export default Vue.extend({
   name,
-
-  components: {
-    RenderComponent,
-  },
 
   props: {
     count: {

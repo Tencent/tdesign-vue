@@ -91,7 +91,6 @@
 import config from '../config';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
-import RenderComponent from '../utils/render-component';
 import TIconChevronLeft from '../icon/chevron-left';
 import TIconChevronRight from '../icon/chevron-right';
 import TIconChevronLeftDouble from '../icon/chevron-left-double';
@@ -111,7 +110,6 @@ const PaginationLocalReceiver = getLocalRecevierMixins('pagination');
 export default mixins(PaginationLocalReceiver).extend({
   name,
   components: {
-    RenderComponent,
     TIconChevronLeft,
     TIconChevronRight,
     TIconChevronLeftDouble,

@@ -1,6 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
 import { prefix } from '../config';
-import RenderComponent from '../utils/render-component';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import { on, off, getScroll, scrollTo, getSuperAttach } from '../utils/dom';
@@ -15,9 +14,6 @@ interface Anchor extends Vue {
 }
 export default (Vue as VueConstructor<Anchor>).extend({
   name,
-  components: {
-    RenderComponent,
-  },
 
   props: { ...props },
   provide(): any {
