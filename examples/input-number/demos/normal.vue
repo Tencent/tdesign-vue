@@ -2,11 +2,9 @@
   <div>
     <t-input-number
       v-model="value"
+      theme="normal"
       :max="15"
-      :min="-5"
-      :step="1.2"
-      :decimal-places="2"
-      @change="onChange"
+      :min="-2"
     ></t-input-number>
   </div>
 </template>
@@ -15,13 +13,8 @@
 export default {
   data() {
     return {
-      value: 3.2,
+      value: 3,
     };
-  },
-  methods: {
-    onChange(ev) {
-      console.info(ev);
-    },
   },
 };
 </script>

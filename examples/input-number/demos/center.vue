@@ -2,7 +2,7 @@
   <div>
     <t-input-number
       v-model="value"
-      mode="row"
+      theme="row"
       size="medium"
       :max="15"
       :min="-2"
@@ -52,9 +52,6 @@ export default {
         console.info('onKeypress', v, ctx);
       },
     };
-  },
-  mounted() {
-    this.value = 4;
   },
   methods: {
     handleChange(v, ctx) {
