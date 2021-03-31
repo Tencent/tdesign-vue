@@ -46,7 +46,7 @@ exports[`Radio base demo works fine 1`] = `
     </label>
      
     <label
-      class="t-radio t-is-disabled"
+      class="t-radio t-is-checked t-is-disabled"
     >
       <input
         class="t-radio__former"
