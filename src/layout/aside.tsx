@@ -25,7 +25,7 @@ export default Vue.extend({
 
   render() {
     const styles = this.width ? {
-      height: this.width,
+      width: this.width,
     } : {};
     return (
       <aside class="t-layout--sider" style={styles}>
