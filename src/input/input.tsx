@@ -130,7 +130,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       input?.blur();
     },
     onInput(e: InputEvent): void {
-      if (e.isComposing) return;
+      const checkInputType = e.inputType && e.inputType !== 'insertText';
+      if (e.isComposing || checkInputType) return;
       this.inputValueChangeHandle(e);
     },
     emitEvent(name: string, e: FocusEvent | KeyboardEvent | InputEvent) {
