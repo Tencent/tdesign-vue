@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-table :columns="columns" :data="data" :selected-row-keys="selectedRowKeys"
+    <t-table :columns="columns" :data="data" :selected-row-keys="selectedRowKeys" :row-key="'tid'"
              @select-change="rehandleSelectChange">
       <template #status="{ record }">
         <p v-if="record.status === 0" class="status">健康</p>
@@ -22,7 +22,7 @@ export default {
       selectedRowKeys: [1, '2'],
       columns: [
         { colKey: 'row-selection', type: 'multiple',
-          disabled: ({ index }) => index === 1 || index === 3, width: 50 },
+          disabled: ({ index }) => index === 1 || index === 3, width: 100 },
         { colKey: 'instance', title: '集群名称', width: 150 },
         { colKey: 'status', title: '状态', width: 100, scopedSlots: { col: 'status' } },
         { colKey: 'owner', title: '管理员' },
@@ -30,10 +30,10 @@ export default {
         { colKey: 'op', width: 200, scopedSlots: { title: 'op-column', col: 'op' } },
       ],
       data: [
-        { id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', description: 'test' },
-        { id: '2', instance: 'JQTest2', status: 1, owner: 'jenny', description: 'test' },
-        { id: 3, instance: 'JQTest3', status: 0, owner: 'jenny', description: 'test' },
-        { id: 4, instance: 'JQTest4', status: 1, owner: 'peter', description: 'test' },
+        { tid: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', description: 'test' },
+        { tid: '2', instance: 'JQTest2', status: 1, owner: 'jenny', description: 'test' },
+        { tid: 3, instance: 'JQTest3', status: 0, owner: 'jenny', description: 'test' },
+        { tid: 4, instance: 'JQTest4', status: 1, owner: 'peter', description: 'test' },
       ],
     };
   },

@@ -5341,7 +5341,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
         >
           <colgroup>
             <col
-              style="width: 50px;"
+              style="width: 100px;"
             />
             <col
               style="width: 150px;"
