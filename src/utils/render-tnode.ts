@@ -66,6 +66,13 @@ export const RenderTNodeTemplate = Vue.extend({
 export const renderTNodeJSX = (vm: Vue, name: string) => {
   const propsNode = vm[name];
   if (typeof propsNode === 'function') return propsNode(vm.$createElement);
-  if (!propsNode && vm.$scopedSlots[name]) return vm.$scopedSlots[name](null);
+  if ([undefined, null, ''].includes(propsNode) && vm.$scopedSlots[name]) return vm.$scopedSlots[name](null);
   return propsNode;
+};
+
+// content 优先级控制：name1 优先级高于 name2
+export const renderContent = (vm: Vue, name1: string, name2: string) => {
+  const node1 = renderTNodeJSX(vm, name1);
+  const node2 = renderTNodeJSX(vm, name2);
+  return [undefined, null, ''].includes(node1) ? node2 : node1;
 };

@@ -3,39 +3,15 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import TIconLoading from '../icon/loading';
 import props from '@TdTypes/button/props';
+import { renderContent } from '../utils/render-tnode';
 
 const name = `${prefix}-button`;
 
 export default Vue.extend({
   name,
   props,
-  methods: {
-    renderPropContent(h: CreateElement, propName: 'content' | 'default') {
-      const propsContent = this[propName];
-      if (typeof propsContent === 'function') {
-        return propsContent(h);
-      }
-      if (typeof propsContent !== 'undefined') {
-        return propsContent;
-      }
-      return undefined;
-    },
-    renderContent(h: CreateElement) {
-      const propsContent = this.renderPropContent(h, 'content');
-      const propsDefault = this.renderPropContent(h, 'default');
-
-      if (typeof propsContent !== 'undefined') {
-        return propsContent;
-      }
-      if (typeof propsDefault !== 'undefined') {
-        return propsDefault;
-      }
-
-      return this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
-    },
-  },
   render(h: CreateElement): VNode {
-    let buttonContent: JsxNode = this.renderContent(h);
+    let buttonContent: JsxNode = renderContent(this, 'default', 'content');
     let icon: JsxNode;
 
     if (this.loading) {
