@@ -12,16 +12,17 @@ export default Vue.extend({
   components: {
     Checkbox,
   },
-  provide(): any {
-    return {
-      checkboxGroup: this,
-    };
-  },
   model: {
     prop: 'value',
     event: 'change',
   },
   props: { ...checkboxGroupProps },
+
+  data() {
+    return {
+      checkedMap: {},
+    };
+  },
 
   computed: {
     optionList(): Array<CheckboxOptionObj> {
@@ -46,6 +47,9 @@ export default Vue.extend({
       return 0;
     },
     isCheckAll(): boolean {
+      if (this.value instanceof Array && this.value.length !== this.optionList.length - 1) {
+        return false;
+      }
       return this.intersectionLen === this.optionList.length - 1;
     },
     indeterminate(): boolean {
@@ -56,13 +60,13 @@ export default Vue.extend({
   render(): VNode {
     return (
       <div class={name}>
-        {!!this.optionList.length && this.optionList.map((option) => {
+        {!!this.optionList.length && this.optionList.map((option, index) => {
           if (option.checkAll) return this.renderCheckAll(option);
           return (
             <Checkbox
-              key={`checkbox-group-options-${option.value}`}
+              key={index}
               props={{ ...option }}
-              checked={this.isOptionChecked(option)}
+              checked={this.checkedMap[option.value]}
             >
               {this.renderLabel(option)}
             </Checkbox>
@@ -91,12 +95,6 @@ export default Vue.extend({
       }
       return option.label;
     },
-    isOptionChecked(option: CheckboxOptionObj) {
-      if (this.value instanceof Array) {
-        return this.value.includes(option.value);
-      }
-      return false;
-    },
     emitChange(val: CheckboxGroupValue, e?: Event) {
       this.$emit('change', val, { e });
       (typeof this.onChange === 'function') && this.onChange(val, { e });
@@ -112,14 +110,25 @@ export default Vue.extend({
           val.splice(i, 1);
         }
         this.emitChange(val, data.e);
+        this.setCheckedMap(data.option.value, data.checked);
       }
+    },
+    setCheckedMap(value: string | number, checked: boolean) {
+      this.checkedMap[value] = checked;
     },
     onCheckAllChange(checked: boolean, context: { e: Event }) {
       if (checked) {
-        const val = this.optionList.filter(item => !item.checkAll).map(item => item.value);
+        const val = [];
+        for (let i = 0, len = this.optionList.length; i < len; i++) {
+          const item = this.optionList[i];
+          if (item.checkAll) continue;
+          val.push(item.value);
+          this.checkedMap[item.value] = true;
+        }
         this.emitChange(val, context.e);
       } else {
         this.emitChange([], context.e);
+        this.checkedMap = {};
       }
     },
   },

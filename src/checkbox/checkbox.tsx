@@ -1,23 +1,16 @@
-import Vue, { VueConstructor, VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import checkboxProps from '@TdTypes/checkbox/props';
 
 const name = `${prefix}-checkbox`;
 
-interface CheckboxInstance extends Vue {
-  checkboxGroup: any;
-}
-
-export default (Vue as VueConstructor<CheckboxInstance>).extend({
+export default Vue.extend({
   name,
   inheritAttrs: false,
   model: {
     prop: 'checked',
     event: 'change',
-  },
-  inject: {
-    checkboxGroup: { default: undefined },
   },
   props: { ...checkboxProps },
   computed: {
@@ -25,13 +18,19 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
       return [
         `${name}`,
         {
-          [CLASSNAMES.STATUS.checked]: this.checked$,
+          [CLASSNAMES.STATUS.checked]: this.checked,
           [CLASSNAMES.STATUS.disabled]: this.disabled$,
           [CLASSNAMES.STATUS.indeterminate]: this.indeterminate,
         },
       ];
     },
-    isCheckAll(): boolean {
+    checkboxGroup(): any {
+      if (this.$parent.$options.name === `${prefix}-checkbox-group`) {
+        return this.$parent;
+      }
+      return null;
+    },
+    isCheckAllOption(): boolean {
       return this.$attrs['data-name'] === 'TDESIGN_CHECK_ALL';
     },
     disabled$(): boolean {
@@ -40,16 +39,6 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
     },
     name$(): string {
       return this.name || (this.checkboxGroup && this.checkboxGroup.name);
-    },
-    checked$(): boolean {
-      if (this.isCheckAll) return this.checked;
-      if (this.checkboxGroup) {
-        const val = this.checkboxGroup.value;
-        if (val instanceof Array) {
-          return val.includes(this.value);
-        }
-      }
-      return this.checked;
     },
   },
 
@@ -64,7 +53,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
           indeterminate={this.indeterminate}
           name={this.name$}
           value={this.value}
-          checked={this.checked$}
+          checked={this.checked}
           onChange={this.handleChange}
         ></input>
         <span class={`${name}__input`}></span><span class={`${name}__label`}>
@@ -80,7 +69,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
       this.$emit('change', target.checked, { e });
       (typeof this.onChange === 'function') && this.onChange(target.checked, { e });
       e.stopPropagation();
-      if (this.checkboxGroup && !this.isCheckAll) {
+      if (this.checkboxGroup && !this.isCheckAllOption) {
         this.checkboxGroup.handleCheckboxChange({ checked: target.checked, e, option: this.$props });
       }
     },
