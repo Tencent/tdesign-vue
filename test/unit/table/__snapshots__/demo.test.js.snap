@@ -2176,7 +2176,7 @@ exports[`Table customCell demo works fine 1`] = `
           >
             <tr>
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 colspan="1"
                 key="type"
                 rowspan="1"
@@ -2204,7 +2204,7 @@ exports[`Table customCell demo works fine 1`] = `
                 平台
               </td>
               <td
-                class="align-left test2"
+                class="align-left text-ellipsis test2"
                 colspan="1"
                 key="property"
                 rowspan="1"
@@ -2222,7 +2222,7 @@ exports[`Table customCell demo works fine 1`] = `
                 默认值
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class="align-left test3"
                 colspan="1"
                 key="needed"
                 rowspan="1"
@@ -2231,7 +2231,7 @@ exports[`Table customCell demo works fine 1`] = `
                 是否必传
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 colspan="1"
                 key="description"
                 rowspan="1"
@@ -2248,7 +2248,7 @@ exports[`Table customCell demo works fine 1`] = `
               class=""
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 key="type"
                 length="6"
                 style="overflow: hidden;"
@@ -2278,7 +2278,7 @@ exports[`Table customCell demo works fine 1`] = `
                 </span>
               </td>
               <td
-                class="align-left test2"
+                class="align-left text-ellipsis test2"
                 key="property"
                 length="6"
                 style="overflow: hidden;"
@@ -2298,7 +2298,7 @@ exports[`Table customCell demo works fine 1`] = `
                 </span>
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class="align-left test3"
                 key="needed"
                 length="6"
                 style="overflow: hidden;"
@@ -2306,7 +2306,7 @@ exports[`Table customCell demo works fine 1`] = `
                 Y
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 key="description"
                 length="6"
                 style="overflow: hidden;"
@@ -2318,7 +2318,7 @@ exports[`Table customCell demo works fine 1`] = `
               class=""
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 key="type"
                 length="6"
                 style="overflow: hidden;"
@@ -2348,7 +2348,7 @@ exports[`Table customCell demo works fine 1`] = `
                 </span>
               </td>
               <td
-                class="align-left test2"
+                class="align-left text-ellipsis test2"
                 key="property"
                 length="6"
                 style="overflow: hidden;"
@@ -2368,7 +2368,7 @@ exports[`Table customCell demo works fine 1`] = `
                 </span>
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class="align-left test3"
                 key="needed"
                 length="6"
                 style="overflow: hidden;"
@@ -2376,7 +2376,7 @@ exports[`Table customCell demo works fine 1`] = `
                 Y
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class="align-left row"
                 key="description"
                 length="6"
                 style="overflow: hidden;"
@@ -3760,7 +3760,6 @@ exports[`Table fixedHeader demo works fine 1`] = `
     >
       <div
         class="t-table__header"
-        style="width: 100%;"
       >
         <table
           style="table-layout: fixed;"

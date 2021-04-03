@@ -53,7 +53,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'row',
-          ellipsis: true,
           colKey: 'type',
           scopedSlots: {
             title: 'type',
@@ -77,6 +76,7 @@ export default {
           className: 'test2',
           colKey: 'property',
           title: '属性名',
+          ellipsis: true,
           render({ index, record }) {
             return `render 方法渲染的单元格：${index}: ${record.property}`;
           },
@@ -96,7 +96,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'test3',
-          ellipsis: true,
           colKey: 'needed',
           title: '是否必传',
         },
@@ -105,7 +104,6 @@ export default {
           width: '100',
           minWidth: '100',
           className: 'row',
-          ellipsis: true,
           colKey: 'description',
           title: '说明',
         },
