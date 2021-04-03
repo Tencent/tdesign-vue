@@ -208,7 +208,7 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
       class="t-checkbox-group"
     >
       <label
-        class="t-checkbox t-is-checked"
+        class="t-checkbox"
       >
         <input
           class="t-checkbox__former"
@@ -296,11 +296,10 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
       class="t-checkbox-group"
     >
       <label
-        class="t-checkbox t-is-checked"
+        class="t-checkbox"
       >
         <input
           class="t-checkbox__former"
-          name=""
           type="checkbox"
           value="Vue"
         />
@@ -319,7 +318,6 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
       >
         <input
           class="t-checkbox__former"
-          name=""
           type="checkbox"
           value="React"
         />
@@ -338,7 +336,6 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
       >
         <input
           class="t-checkbox__former"
-          name=""
           type="checkbox"
           value="Angular"
         />
@@ -358,7 +355,6 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
         <input
           class="t-checkbox__former"
           disabled="disabled"
-          name=""
           type="checkbox"
           value="Miniprogram"
         />
@@ -498,7 +494,7 @@ exports[`Checkbox link demo works fine 1`] = `
         </span>
       </label>
       <label
-        class="t-checkbox t-is-checked"
+        class="t-checkbox"
       >
         <input
           class="t-checkbox__former"
