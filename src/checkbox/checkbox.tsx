@@ -18,17 +18,14 @@ export default Vue.extend({
       return [
         `${name}`,
         {
-          [CLASSNAMES.STATUS.checked]: this.checked,
+          [CLASSNAMES.STATUS.checked]: this.checked$,
           [CLASSNAMES.STATUS.disabled]: this.disabled$,
           [CLASSNAMES.STATUS.indeterminate]: this.indeterminate,
         },
       ];
     },
     checkboxGroup(): any {
-      if (this.$parent.$options.name === `${prefix}-checkbox-group`) {
-        return this.$parent;
-      }
-      return null;
+      return this.getGroup();
     },
     isCheckAllOption(): boolean {
       return this.$attrs['data-name'] === 'TDESIGN_CHECK_ALL';
@@ -39,6 +36,12 @@ export default Vue.extend({
     },
     name$(): string {
       return this.name || (this.checkboxGroup && this.checkboxGroup.name);
+    },
+    checked$(): boolean {
+      if (this.checkboxGroup && this.checkboxGroup.checkedMap && !this.isCheckAllOption) {
+        return this.checkboxGroup.checkedMap[this.value];
+      }
+      return this.checked;
     },
   },
 
@@ -53,7 +56,7 @@ export default Vue.extend({
           indeterminate={this.indeterminate}
           name={this.name$}
           value={this.value}
-          checked={this.checked}
+          checked={this.checked$}
           onChange={this.handleChange}
         ></input>
         <span class={`${name}__input`}></span><span class={`${name}__label`}>
@@ -69,9 +72,25 @@ export default Vue.extend({
       this.$emit('change', target.checked, { e });
       (typeof this.onChange === 'function') && this.onChange(target.checked, { e });
       e.stopPropagation();
-      if (this.checkboxGroup && !this.isCheckAllOption) {
+      if (this.checkboxGroup && this.checkboxGroup.handleCheckboxChange && !this.isCheckAllOption) {
         this.checkboxGroup.handleCheckboxChange({ checked: target.checked, e, option: this.$props });
       }
+    },
+    getGroup() {
+      const groupName = `${prefix}-checkbox-group`;
+      let parent = this.$parent;
+      let i = 0;
+      while (parent && parent.$options) {
+        if (parent.$options.name === groupName) {
+          break;
+        }
+        parent = parent.$parent;
+        i = i + 1;
+        if (i >= 2) {
+          break;
+        };
+      }
+      return parent;
     },
   },
 });

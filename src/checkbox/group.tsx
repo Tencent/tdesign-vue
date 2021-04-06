@@ -24,6 +24,21 @@ export default Vue.extend({
     };
   },
 
+  watch: {
+    values: {
+      immediate: true,
+      handler() {
+        if (this.value instanceof Array) {
+          const map = {};
+          this.value.forEach((item: string | number) => {
+            map[item] = true;
+          });
+          this.checkedMap = map;
+        }
+      },
+    },
+  },
+
   computed: {
     optionList(): Array<CheckboxOptionObj> {
       if (!this.options) return [];
@@ -37,6 +52,12 @@ export default Vue.extend({
         }
         return r;
       });
+    },
+    values(): string {
+      if (this.value instanceof Array) {
+        return this.value.join();
+      }
+      return '';
     },
     intersectionLen(): number {
       const values = this.optionList.map(item => item.value);
