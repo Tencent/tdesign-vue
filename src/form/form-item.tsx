@@ -99,7 +99,7 @@ export default Vue.extend({
     },
     innerRules(): ErrorList {
       const parent = this.$parent as FormInstance;
-      const rules: ErrorList = parent && parent.rules;
+      const rules = parent && parent.rules;
       return (rules && rules[this.name]) || (this.rules || []);
     },
   },

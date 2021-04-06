@@ -69,6 +69,11 @@ export default Vue.extend({
       });
     },
     submitHandler(e: MouseEvent) {
+      const { preventSubmitDefault } = this.$props;
+      if (preventSubmitDefault) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       this.validate().then((r) => {
         this.emitEvent('submit', {
           result: r,

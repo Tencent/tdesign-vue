@@ -101,8 +101,7 @@ export default {
     onReset() {
       this.$message.success('重置成功');
     },
-    onSubmit({ result, firstError, e }) {
-      e.preventDefault();
+    onSubmit({ result, firstError }) {
       if (result === true) {
         this.$message.success('提交成功');
       } else {
