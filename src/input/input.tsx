@@ -130,7 +130,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       input?.blur();
     },
     onInput(e: InputEvent): void {
-      const checkInputType = e.inputType && e.inputType !== 'insertText';
+      // 输入的时候inputType是insertText，删除的时候inputType是deleteContentBackward
+      const checkInputType = e.inputType && e.inputType !== 'insertText' && e.inputType !== 'deleteContentBackward';
       if (e.isComposing || checkInputType) return;
       this.inputValueChangeHandle(e);
     },
