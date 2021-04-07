@@ -16,8 +16,8 @@
       :load="load"
     >
       <template #icon="{node}">
-        <t-icon v-if="node.children && !node.expanded" name="caret-right" />
-        <t-icon v-else-if="node.children && node.expanded" name="caret-down" />
+        <t-icon v-if="node.getChildren() && !node.expanded" name="caret-right" />
+        <t-icon v-else-if="node.getChildren() && node.expanded" name="caret-down" />
         <t-icon v-else name="attach" />
       </template>
     </t-tree>
@@ -43,7 +43,7 @@ export default {
   methods: {
     icon(createElement, node) {
       let name = 'file';
-      if (node.children) {
+      if (node.getChildren()) {
         if (node.expanded) {
           name = 'folder-open';
         } else {

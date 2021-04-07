@@ -1,4 +1,4 @@
-import _Tree from './Tree';
+import TdTree from './td-tree';
 import mapProps from '../utils/map-props';
 import setInstallFn from '../utils/setInstallFn';
 
@@ -20,7 +20,7 @@ const Tree = mapProps([
     prop: 'value',
     event: 'change',
   },
-})(_Tree);
+})(TdTree);
 
 setInstallFn('Tree', Tree);
 

@@ -1,10 +1,15 @@
 <template>
   <div class="tdesign-tree-base">
-    <t-tree
-      :data="items"
-      expand-all
-      :empty="empty"
-    />
+    <h3>normal:</h3>
+    <t-tree :data="items"/>
+    <h3>string:</h3>
+    <t-tree :data="items" empty="string empty"/>
+    <h3>render:</h3>
+    <t-tree :data="items" :empty="empty"/>
+    <h3>slot:</h3>
+    <t-tree :data="items">
+      <div slot="empty">slot empty</div>
+    </t-tree>
   </div>
 </template>
 
@@ -12,17 +17,13 @@
 export default {
   data() {
     return {
-      items: [{
-        children: [{
-        }, {
-        }],
-      }, {
-        children: [{
-        }, {
-        }],
-      }],
-      empty(createElement, node) {
-        return `value: ${node.value}`;
+      items: null,
+      empty(createElement) {
+        return createElement('div', {
+          domProps: {
+            innerHTML: 'render empty',
+          },
+        });
       },
     };
   },

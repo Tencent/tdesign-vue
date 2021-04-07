@@ -82,7 +82,7 @@ export default {
       this.showIcon = !this.showIcon;
     },
     renderLine(createElement, node) {
-      return new Array(node.level + 1).join('_');
+      return new Array(node.getLevel() + 1).join('_');
     },
   },
 };
