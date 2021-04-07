@@ -2388,11 +2388,6 @@ exports[`Table customCell demo works fine 1`] = `
           <tfoot />
         </table>
       </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
-      </div>
     </div>
   </div>
 </div>
@@ -2640,11 +2635,6 @@ exports[`Table draggable demo works fine 1`] = `
         <tfoot />
       </table>
     </div>
-    <div
-      class="t-table-pagination"
-    >
-      <!---->
-    </div>
   </div>
 </div>
 `;
@@ -2765,11 +2755,6 @@ exports[`Table empty demo works fine 1`] = `
             </tr>
           </tfoot>
         </table>
-      </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
       </div>
     </div>
   </div>
@@ -2892,11 +2877,6 @@ exports[`Table empty demo works fine 1`] = `
             </tr>
           </tfoot>
         </table>
-      </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
       </div>
     </div>
   </div>
@@ -3527,11 +3507,6 @@ exports[`Table expandable demo works fine 1`] = `
           <tfoot />
         </table>
       </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
-      </div>
     </div>
   </div>
 </div>
@@ -3739,11 +3714,6 @@ exports[`Table fixedColumn demo works fine 1`] = `
         </tbody>
         <tfoot />
       </table>
-    </div>
-    <div
-      class="t-table-pagination"
-    >
-      <!---->
     </div>
   </div>
 </div>
@@ -5096,11 +5066,6 @@ exports[`Table fixedHeader demo works fine 1`] = `
         </table>
       </div>
     </div>
-    <div
-      class="t-table-pagination"
-    >
-      <!---->
-    </div>
   </div>
 </div>
 `;
@@ -5316,11 +5281,6 @@ exports[`Table multiHeader demo works fine 1`] = `
         </tbody>
         <tfoot />
       </table>
-    </div>
-    <div
-      class="t-table-pagination"
-    >
-      <!---->
     </div>
   </div>
 </div>
@@ -5758,11 +5718,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
           </tbody>
           <tfoot />
         </table>
-      </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
       </div>
     </div>
   </div>
@@ -6202,11 +6157,6 @@ exports[`Table selectSingle demo works fine 1`] = `
           </tbody>
           <tfoot />
         </table>
-      </div>
-      <div
-        class="t-table-pagination"
-      >
-        <!---->
       </div>
     </div>
   </div>
