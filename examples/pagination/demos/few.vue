@@ -16,18 +16,17 @@ export default {
     return {
       current: 2,
       pageSize: 10,
-      onChange: (index, event) => {
+      onChange: (index, pageInfo) => {
         console.log('fire on prop');
         console.log(`转到第${index}页`);
-        console.log(event);
+        console.log(pageInfo);
       },
     };
   },
   methods: {
-    onPageChange(index, event) {
-      console.log('fire on event');
+    onPageChange(index, pageInfo) {
       console.log(`转到第${index}页`);
-      console.log(event);
+      console.log(pageInfo);
     },
   },
 };

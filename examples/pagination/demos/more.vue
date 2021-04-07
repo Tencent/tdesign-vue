@@ -18,9 +18,9 @@ export default {
     };
   },
   methods: {
-    onChange(index, event) {
+    onChange(index, pageInfo) {
       console.log(`转到第${index}页`);
-      console.log(event);
+      console.log(pageInfo);
     },
   },
 };

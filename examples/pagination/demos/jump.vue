@@ -20,13 +20,13 @@ export default {
     };
   },
   methods: {
-    onChange(index, event) {
+    onChange(index, pageInfo) {
       console.log(`转到第${index}页`);
-      console.log(event);
+      console.log(pageInfo);
     },
-    onPagesizeChange(pageSize, event) {
+    onPagesizeChange(pageSize, pageInfo) {
       console.log(`${pageSize}`);
-      console.log(event);
+      console.log(pageInfo);
     },
   },
 };

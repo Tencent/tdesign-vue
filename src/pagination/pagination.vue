@@ -324,8 +324,8 @@ export default mixins(PaginationLocalReceiver).extend({
         this.currentIndex = current;
         this.jumpIndex = current;
         const pageInfo = {
-          curr: current,
-          prev,
+          current,
+          previous: prev,
           pageSize: this.pageSize,
         };
         this.$emit('change', current, pageInfo);
@@ -381,8 +381,8 @@ export default mixins(PaginationLocalReceiver).extend({
        * @param {Number} index 当前页
        */
       const pageInfo = {
-        curr: isIndexChange ? pageCount : this.currentIndex,
-        prev: this.currentIndex,
+        current: isIndexChange ? pageCount : this.currentIndex,
+        previous: this.currentIndex,
         pageSize,
       };
       this.$emit('update:pageSize', pageSize);
