@@ -9,9 +9,6 @@
     <t-badge :count="100">
       <t-button>按钮</t-button>
     </t-badge>
-    <t-badge :count="100" content="文字">
-      <t-button>按钮</t-button>
-    </t-badge>
   </div>
 </template>
 

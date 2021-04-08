@@ -5,7 +5,7 @@ exports[`Badge base demo works fine 1`] = `
   <h3
     class="demo-t-badge-title"
   >
-    1.红点样式徽标数：
+    1.红点样式：
   </h3>
    
   <div
@@ -19,7 +19,6 @@ exports[`Badge base demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--dot"
-      style="background: rgb(227, 77, 89);"
     />
   </div>
    
@@ -31,7 +30,6 @@ exports[`Badge base demo works fine 1`] = `
   
     <sup
       class="t-badge--dot"
-      style="background: rgb(227, 77, 89);"
     />
   </div>
    
@@ -52,14 +50,13 @@ exports[`Badge base demo works fine 1`] = `
     </svg>
     <sup
       class="t-badge--dot"
-      style="background: rgb(227, 77, 89);"
     />
   </div>
    
   <h3
     class="demo-t-badge-title"
   >
-    2.数字样式徽标数：
+    2.数字样式徽标：
   </h3>
    
   <div
@@ -73,7 +70,6 @@ exports[`Badge base demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -90,7 +86,6 @@ exports[`Badge base demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       99
     </sup>
@@ -107,7 +102,6 @@ exports[`Badge base demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       99+
     </sup>
@@ -116,7 +110,7 @@ exports[`Badge base demo works fine 1`] = `
   <h3
     class="demo-t-badge-title"
   >
-    3.自定义式徽标数：
+    3.自定义式徽标：
   </h3>
    
   <div
@@ -130,7 +124,6 @@ exports[`Badge base demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       new
     </sup>
@@ -151,7 +144,6 @@ exports[`Badge custom demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--dot"
-      style="background: rgb(227, 77, 89);"
     />
   </div>
    
@@ -204,7 +196,6 @@ exports[`Badge number demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -221,7 +212,6 @@ exports[`Badge number demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       0
     </sup>
@@ -238,26 +228,8 @@ exports[`Badge number demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       99+
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
-      type="button"
-    >
-      按钮
-    </button>
-    <sup
-      class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
-    >
-      文字
     </sup>
   </div>
 </div>
@@ -276,7 +248,6 @@ exports[`Badge offset demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -293,7 +264,7 @@ exports[`Badge offset demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89); right: -10px; top: -10px;"
+      style="right: 10px; top: 10px;"
     >
       2
     </sup>
@@ -310,7 +281,7 @@ exports[`Badge offset demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89); right: 10px; top: -10px;"
+      style="right: -10px; top: 10px;"
     >
       2
     </sup>
@@ -327,7 +298,7 @@ exports[`Badge offset demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89); right: 10px; top: 10px;"
+      style="right: -10px; top: -10px;"
     >
       2
     </sup>
@@ -344,7 +315,7 @@ exports[`Badge offset demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89); right: -10px; top: 10px;"
+      style="right: 10px; top: -10px;"
     >
       2
     </sup>
@@ -365,7 +336,6 @@ exports[`Badge shape demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -382,7 +352,6 @@ exports[`Badge shape demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--round"
-      style="background: rgb(227, 77, 89);"
     >
       99
     </sup>
@@ -409,7 +378,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -426,7 +394,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       99
     </sup>
@@ -443,7 +410,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle"
-      style="background: rgb(227, 77, 89);"
     >
       99+
     </sup>
@@ -466,7 +432,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle t-size-s"
-      style="background: rgb(227, 77, 89);"
     >
       2
     </sup>
@@ -483,7 +448,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle t-size-s"
-      style="background: rgb(227, 77, 89);"
     >
       99
     </sup>
@@ -500,7 +464,6 @@ exports[`Badge size demo works fine 1`] = `
     </button>
     <sup
       class="t-badge--circle t-size-s"
-      style="background: rgb(227, 77, 89);"
     >
       99+
     </sup>

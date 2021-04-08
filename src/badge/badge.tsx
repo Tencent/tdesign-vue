@@ -1,64 +1,26 @@
-import Vue, { PropType } from 'vue';
+import Vue from 'vue';
 import { prefix } from '../config';
+import props from '@TdTypes/badge/props';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-badge`;
 
 export default Vue.extend({
   name,
 
-  props: {
-    count: {
-      type: Number,
-    },
-    maxCount: {
-      type: Number,
-      default: 99,
-    },
-    content: {
-      type: [String, Function],
-    },
-    dot: {
-      type: Boolean,
-    },
-    color: {
-      type: String,
-      default: '#E34D59',
-    },
-    shape: {
-      type: String,
-      default: 'circle',
-      validator(v: string): boolean {
-        return ['circle', 'round'].includes(v);
-      },
-    },
-    size: {
-      type: String,
-      default: 'medium',
-      validator(v: string): boolean {
-        return ['medium', 'small'].includes(v);
-      },
-    },
-    showZero: {
-      type: Boolean,
-    },
-    offset: {
-      type: Array as PropType<Array<number>>,
-      validator(v: number[]): boolean {
-        return v.length === 2;
-      },
-    },
-  },
+  props: { ...props },
+
   methods: {
     getContent() {
       if (this.dot) return '';
-      if (typeof this.content === 'string') {
-        return this.content;
-      } if (typeof  this.content === 'function') {
-        return this.content();
+      if (typeof this.count === 'function') {
+        return renderTNodeJSX(this, 'count');
       }
-      if (typeof this.count === 'number') {
-        return this.count > this.maxCount ? `${this.maxCount}+` : this.count;
+      if (isNaN(Number(this.count))) {
+        return this.count;
       }
+      const count = Number(this.count);
+      return count > this.maxCount ? `${this.maxCount}+` : count;
     },
     isSmall() {
       return this.size === 'small';
@@ -71,18 +33,16 @@ export default Vue.extend({
       return !this.showZero && this.isZero();
     },
     getOffset() {
-      if (!this.offset) return { xOffset: void 0, yOffset: void 0 };
-      const [xOffset, yOffset] = this.offset;
+      if (!this.offset) return {};
+      let [xOffset, yOffset]: Array<string | number> = this.offset;
+      xOffset = isNaN(Number(xOffset)) ? xOffset : `${xOffset}px`;
+      yOffset = isNaN(Number(yOffset)) ? yOffset : `${yOffset}px`;
       return { xOffset, yOffset };
     },
   },
 
   render() {
-    const {
-      dot,
-      shape,
-      color,
-    } = this.$props;
+    const { dot, shape, color } = this.$props;
 
     const content = this.getContent();
     const isHidden = this.isHidden();
@@ -99,16 +59,19 @@ export default Vue.extend({
     ];
     const inlineStyle = {
       background: `${color}`,
-      right: xOffset ? `${-xOffset}px` : void 0,
-      top: yOffset ? `${-yOffset}px` : void 0,
+      right: xOffset,
+      top: yOffset,
     };
 
     return (
       <div class={name}>
         {children ? children : null}
-        {isHidden ? null : <sup class={badgeClassNames} style={inlineStyle }>{content}</sup>}
+        {isHidden ? null : (
+          <sup class={badgeClassNames} style={inlineStyle}>
+            {content}
+          </sup>
+        )}
       </div>
     );
   },
-
 });

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="demo-t-badge-title">1.红点样式徽标数：</h3>
+    <h3 class="demo-t-badge-title">1.红点样式：</h3>
     <t-badge dot>
       <t-button>按钮</t-button>
     </t-badge>
@@ -22,18 +22,18 @@
       </svg>
     </t-badge>
 
-    <h3 class="demo-t-badge-title">2.数字样式徽标数：</h3>
-    <t-badge :count="2">
+    <h3 class="demo-t-badge-title">2.数字样式徽标：</h3>
+    <t-badge count="2">
       <t-button>按钮</t-button>
     </t-badge>
-    <t-badge :count="99">
+    <t-badge count="99">
       <t-button>按钮</t-button>
     </t-badge>
-    <t-badge :count="999">
+    <t-badge count="999">
       <t-button>按钮</t-button>
     </t-badge>
-    <h3 class="demo-t-badge-title">3.自定义式徽标数：</h3>
-    <t-badge content="new">
+    <h3 class="demo-t-badge-title">3.自定义式徽标：</h3>
+    <t-badge count="new">
       <t-button>按钮</t-button>
     </t-badge>
   </div>
