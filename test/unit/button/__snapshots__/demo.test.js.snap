@@ -320,101 +320,151 @@ exports[`Button loading demo works fine 1`] = `
 `;
 
 exports[`Button size demo works fine 1`] = `
-<div>
+<div
+  style="width: 600px;"
+>
   <div
-    class="tdesign-demo-block"
+    class="tdesign-demo-block t-row t-row-start t-row-top"
   >
-    <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      主按钮
-    </button>
+      <button
+        class="t-button t-size-s t-button--variant-base t-button--theme-default"
+        type="button"
+      >
+        主按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-s t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      次要按钮
-    </button>
+      <button
+        class="t-button t-size-s t-button--variant-outline t-button--theme-default"
+        type="button"
+      >
+        次要按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-s t-button--variant-dashed t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      虚框按钮
-    </button>
+      <button
+        class="t-button t-size-s t-button--variant-dashed t-button--theme-default"
+        type="button"
+      >
+        虚框按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-s t-button--variant-text t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      文字按钮
-    </button>
+      <button
+        class="t-button t-size-s t-button--variant-text t-button--theme-default"
+        type="button"
+      >
+        文字按钮
+      </button>
+    </div>
   </div>
    
   <div
-    class="tdesign-demo-block"
+    class="tdesign-demo-block t-row t-row-start t-row-top"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      主按钮
-    </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-default"
+        type="button"
+      >
+        主按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      次要按钮
-    </button>
+      <button
+        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+        type="button"
+      >
+        次要按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      虚框按钮
-    </button>
+      <button
+        class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
+        type="button"
+      >
+        虚框按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      文字按钮
-    </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default"
+        type="button"
+      >
+        文字按钮
+      </button>
+    </div>
   </div>
    
   <div
-    class="tdesign-demo-block"
+    class="tdesign-demo-block t-row t-row-start t-row-top"
   >
-    <button
-      class="t-button t-size-l t-button--variant-base t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      主按钮
-    </button>
+      <button
+        class="t-button t-size-l t-button--variant-base t-button--theme-default"
+        type="button"
+      >
+        主按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-l t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      次要按钮
-    </button>
+      <button
+        class="t-button t-size-l t-button--variant-outline t-button--theme-default"
+        type="button"
+      >
+        次要按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-l t-button--variant-dashed t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      虚框按钮
-    </button>
+      <button
+        class="t-button t-size-l t-button--variant-dashed t-button--theme-default"
+        type="button"
+      >
+        虚框按钮
+      </button>
+    </div>
      
-    <button
-      class="t-button t-size-l t-button--variant-text t-button--theme-default"
-      type="button"
+    <div
+      class="t-col t-col-3"
     >
-      文字按钮
-    </button>
+      <button
+        class="t-button t-size-l t-button--variant-text t-button--theme-default"
+        type="button"
+      >
+        文字按钮
+      </button>
+    </div>
   </div>
 </div>
 `;
