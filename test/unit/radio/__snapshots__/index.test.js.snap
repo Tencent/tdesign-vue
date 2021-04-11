@@ -170,10 +170,11 @@ exports[`Radio RadioGroup :props :disabled 1`] = `
   class="t-radio-group t-radio-group-outline t-radio-group-medium"
 >
   <label
-    class="t-radio"
+    class="t-radio t-is-disabled"
   >
     <input
       class="t-radio__former"
+      disabled=""
       name=""
       type="radio"
       value="bj"
@@ -188,10 +189,11 @@ exports[`Radio RadioGroup :props :disabled 1`] = `
     </span>
   </label>
   <label
-    class="t-radio"
+    class="t-radio t-is-disabled"
   >
     <input
       class="t-radio__former"
+      disabled=""
       name=""
       type="radio"
       value="gz"
