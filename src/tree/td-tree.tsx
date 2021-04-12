@@ -493,13 +493,39 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       return nodes.map((node: TreeNode) => node.getModel());
     },
     appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]): void {
-      return this.store.appendNodes(para, item);
+      let list = [];
+      if (Array.isArray(item)) {
+        list = item;
+      } else {
+        list = [item];
+      }
+      list.forEach((item) => {
+        const val = item?.value || '';
+        const node = getNode(this.store, val);
+        if (node) {
+          this.store.appendNodes(para, node);
+        } else {
+          this.store.appendNodes(para, item);
+        }
+      });
     },
     insertBefore(value: TreeNodeValue, item: TreeOptionData): void {
-      return this.store.insertBefore(value, item);
+      const val = item?.value || '';
+      const node = getNode(this.store, val);
+      if (node) {
+        this.store.insertBefore(value, node);
+      } else {
+        this.store.insertBefore(value, item);
+      }
     },
     insertAfter(value: TreeNodeValue, item: TreeOptionData): void {
-      return this.store.insertAfter(value, item);
+      const val = item?.value || '';
+      const node = getNode(this.store, val);
+      if (node) {
+        this.store.insertAfter(value, node);
+      } else {
+        this.store.insertAfter(value, item);
+      }
     },
     remove(value?: TreeNodeValue): void {
       return this.store.remove(value);

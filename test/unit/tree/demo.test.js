@@ -18,7 +18,7 @@ import line from '@/examples/tree/demos/line.vue';
 import operations from '@/examples/tree/demos/operations.vue';
 
 // unit test for component in examples.
-describe('Tree Demo', () => {
+describe('Tree:demo', () => {
   it('base demo works fine', () => {
     const wrapper = mount(base);
     expect(wrapper.element).toMatchSnapshot();

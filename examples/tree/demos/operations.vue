@@ -54,6 +54,7 @@
       <t-button theme="primary" @click="getActiveIndex">获取高亮节点在子节点中的位置</t-button>
       <t-button theme="primary" @click="setActiveChecked">选中高亮节点</t-button>
       <t-button theme="primary" @click="setActiveExpanded">展开高亮节点</t-button>
+      <t-button theme="primary" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
     </div>
   </div>
 </template>
@@ -126,7 +127,7 @@ export default {
       const node = this.getActivedNode();
       let nodes = [];
       if (node) {
-        nodes = node.getChildren(true);
+        nodes = node.getChildren(true) || [];
       }
       console.info('getActiveChildren:', nodes.map(node => node.value));
     },
@@ -163,27 +164,65 @@ export default {
       }
       return item;
     },
+    getPlainData(item) {
+      const root = item;
+      if (!root) return null;
+      const children = item.getChildren(true) || [];
+      const list = [root].concat(children);
+      const nodeMap = {};
+      const nodeList = list.map((item) => {
+        const node = {
+          walkData() {
+            const data = {
+              ...this.data,
+            };
+            const itemChildren = this.getChildren();
+            if (Array.isArray(itemChildren)) {
+              data.children = [];
+              itemChildren.forEach((childItem) => {
+                const childNode = nodeMap[childItem.value];
+                const childData = childNode.walkData();
+                data.children.push(childData);
+              });
+            }
+            return data;
+          },
+          ...item,
+        };
+        nodeMap[item.value] = node;
+        return node;
+      });
+      const [rootNode] = nodeList;
+      const data = rootNode.walkData();
+      return data;
+    },
     append(node) {
       const { tree } = this.$refs;
       const item = this.getInsertItem();
-      if (!node) {
-        tree.appendTo('', item);
-      } else {
-        tree.appendTo(node.value, item);
+      if (item) {
+        if (!node) {
+          tree.appendTo('', item);
+        } else {
+          tree.appendTo(node.value, item);
+        }
+        this.setLabel(item.value);
       }
-      this.setLabel(item.value);
     },
     insertBefore(node) {
       const { tree } = this.$refs;
       const item = this.getInsertItem();
-      tree.insertBefore(node.value, item);
-      this.setLabel(item.value);
+      if (item) {
+        tree.insertBefore(node.value, item);
+        this.setLabel(item.value);
+      }
     },
     insertAfter(node) {
       const { tree } = this.$refs;
       const item = this.getInsertItem();
-      tree.insertAfter(node.value, item);
-      this.setLabel(item.value);
+      if (item) {
+        tree.insertAfter(node.value, item);
+        this.setLabel(item.value);
+      };
     },
     setUseActived() {
       this.useActived = !this.useActived;
@@ -219,6 +258,12 @@ export default {
       const node = this.getActivedNode();
       const index = tree.getIndex(node.value);
       console.info('getIndex', index);
+    },
+    getActivePlainData() {
+      const node = this.getActivedNode();
+      const data = this.getPlainData(node);
+      console.log('getActivePlainData', data);
+      return data;
     },
     remove(node) {
       const { tree } = this.$refs;

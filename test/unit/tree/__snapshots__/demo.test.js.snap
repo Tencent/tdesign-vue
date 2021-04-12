@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tree Demo activable demo works fine 1`] = `
+exports[`Tree:demo activable demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -188,7 +188,7 @@ exports[`Tree Demo activable demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo base demo works fine 1`] = `
+exports[`Tree:demo base demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -271,7 +271,7 @@ exports[`Tree Demo base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo checkable demo works fine 1`] = `
+exports[`Tree:demo checkable demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -1063,7 +1063,7 @@ exports[`Tree Demo checkable demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo disabled demo works fine 1`] = `
+exports[`Tree:demo disabled demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -1483,7 +1483,7 @@ exports[`Tree Demo disabled demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo empty demo works fine 1`] = `
+exports[`Tree:demo empty demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -1549,7 +1549,7 @@ exports[`Tree Demo empty demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo expand-all demo works fine 1`] = `
+exports[`Tree:demo expand-all demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -1843,7 +1843,7 @@ exports[`Tree Demo expand-all demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo expand-level demo works fine 1`] = `
+exports[`Tree:demo expand-level demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2032,7 +2032,7 @@ exports[`Tree Demo expand-level demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo expand-mutex demo works fine 1`] = `
+exports[`Tree:demo expand-mutex demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2133,7 +2133,7 @@ exports[`Tree Demo expand-mutex demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo filter demo works fine 1`] = `
+exports[`Tree:demo filter demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2234,7 +2234,7 @@ exports[`Tree Demo filter demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo icon demo works fine 1`] = `
+exports[`Tree:demo icon demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2392,7 +2392,7 @@ exports[`Tree Demo icon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo label demo works fine 1`] = `
+exports[`Tree:demo label demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2810,7 +2810,7 @@ exports[`Tree Demo label demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo lazy demo works fine 1`] = `
+exports[`Tree:demo lazy demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -2893,9 +2893,9 @@ exports[`Tree Demo lazy demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo line demo works fine 1`] = `
+exports[`Tree:demo line demo works fine 1`] = `
 <div
-  class="tdesign-tree-base"
+  class="tdesign-tree-line"
 >
   <div
     class="operations"
@@ -2926,7 +2926,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t77"
+        data-value="1"
         style="--level: 0;"
       >
         <span
@@ -2959,7 +2959,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t78"
+        data-value="1.1"
         style="--level: 1;"
       >
         <span
@@ -2983,7 +2983,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t79"
+        data-value="1.2"
         style="--level: 1;"
       >
         <span
@@ -3007,7 +3007,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t80"
+        data-value="2"
         style="--level: 0;"
       >
         <span
@@ -3040,7 +3040,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t81"
+        data-value="2.1"
         style="--level: 1;"
       >
         <span
@@ -3077,7 +3077,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t82"
+        data-value="2.1.1"
         style="--level: 2;"
       >
         <span
@@ -3114,7 +3114,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="3"
-        data-value="t83"
+        data-value="2.1.1.1"
         style="--level: 3;"
       >
         <span
@@ -3151,7 +3151,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t84"
+        data-value="2.1.1.1.1"
         style="--level: 4;"
       >
         <span
@@ -3175,7 +3175,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t85"
+        data-value="2.1.1.1.2"
         style="--level: 4;"
       >
         <span
@@ -3199,7 +3199,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t86"
+        data-value="2.1.2"
         style="--level: 2;"
       >
         <span
@@ -3223,7 +3223,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t87"
+        data-value="2.2"
         style="--level: 1;"
       >
         <span
@@ -3247,7 +3247,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t88"
+        data-value="3"
         style="--level: 0;"
       >
         <span
@@ -3280,7 +3280,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t89"
+        data-value="3.1"
         style="--level: 1;"
       >
         <span
@@ -3304,7 +3304,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t90"
+        data-value="3.2"
         style="--level: 1;"
       >
         <span
@@ -3328,7 +3328,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t91"
+        data-value="4"
         style="--level: 0;"
       >
         <span
@@ -3363,9 +3363,16 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t92"
+        data-value="1"
         style="--level: 0;"
       >
+        <div
+          class="custom-line custom-line-first"
+        >
+          <div
+            class="custom-line-box"
+          />
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3396,10 +3403,31 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t93"
+        data-value="1.1"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-first custom-line-leaf"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3417,10 +3445,31 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t94"
+        data-value="1.2"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3438,9 +3487,16 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t95"
+        data-value="2"
         style="--level: 0;"
       >
+        <div
+          class="custom-line"
+        >
+          <div
+            class="custom-line-box"
+          />
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3471,10 +3527,20 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t96"
+        data-value="2.1"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-first"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3505,10 +3571,23 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t97"
+        data-value="2.1.1"
         style="--level: 2;"
       >
-        __
+        <div
+          class="custom-line custom-line-first"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class=""
+            />
+          </div>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3539,10 +3618,26 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="3"
-        data-value="t98"
+        data-value="2.1.1.1"
         style="--level: 3;"
       >
-        ___
+        <div
+          class="custom-line custom-line-first custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class=""
+            />
+          </div>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3573,10 +3668,40 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t99"
+        data-value="2.1.1.1.1"
         style="--level: 4;"
       >
-        ____
+        <div
+          class="custom-line custom-line-first custom-line-leaf"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class=""
+            />
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3594,10 +3719,40 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t100"
+        data-value="2.1.1.1.2"
         style="--level: 4;"
       >
-        ____
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class=""
+            />
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3615,10 +3770,34 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t101"
+        data-value="2.1.2"
         style="--level: 2;"
       >
-        __
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class="custom-line-cross"
+            />
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3636,10 +3815,31 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t102"
+        data-value="2.2"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3657,9 +3857,16 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t103"
+        data-value="3"
         style="--level: 0;"
       >
+        <div
+          class="custom-line"
+        >
+          <div
+            class="custom-line-box"
+          />
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3690,10 +3897,31 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t104"
+        data-value="3.1"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-first custom-line-leaf"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3711,10 +3939,31 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t105"
+        data-value="3.2"
         style="--level: 1;"
       >
-        _
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          >
+            <span
+              class=""
+            />
+          </div>
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3732,9 +3981,27 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t106"
+        data-value="4"
         style="--level: 0;"
       >
+        <div
+          class="custom-line custom-line-leaf custom-line-last"
+        >
+          <div
+            class="custom-line-box"
+          />
+          <i
+            class="custom-line-icon"
+          >
+            <svg
+              class="t-icon t-icon-heart-filled"
+            >
+              <use
+                xlink:href="#t-icon-heart-filled"
+              />
+            </svg>
+          </i>
+        </div>
         <span
           class="t-tree__icon"
           ignore="active"
@@ -3767,7 +4034,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t107"
+        data-value="1"
         style="--level: 0;"
       >
         <span
@@ -3800,7 +4067,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t108"
+        data-value="1.1"
         style="--level: 1;"
       >
         <span
@@ -3824,7 +4091,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t109"
+        data-value="1.2"
         style="--level: 1;"
       >
         <span
@@ -3848,7 +4115,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t110"
+        data-value="2"
         style="--level: 0;"
       >
         <span
@@ -3881,7 +4148,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t111"
+        data-value="2.1"
         style="--level: 1;"
       >
         <span
@@ -3918,7 +4185,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t112"
+        data-value="2.1.1"
         style="--level: 2;"
       >
         <span
@@ -3955,7 +4222,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="3"
-        data-value="t113"
+        data-value="2.1.1.1"
         style="--level: 3;"
       >
         <span
@@ -3992,7 +4259,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t114"
+        data-value="2.1.1.1.1"
         style="--level: 4;"
       >
         <span
@@ -4016,7 +4283,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="4"
-        data-value="t115"
+        data-value="2.1.1.1.2"
         style="--level: 4;"
       >
         <span
@@ -4040,7 +4307,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t116"
+        data-value="2.1.2"
         style="--level: 2;"
       >
         <span
@@ -4064,7 +4331,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t117"
+        data-value="2.2"
         style="--level: 1;"
       >
         <span
@@ -4088,7 +4355,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t118"
+        data-value="3"
         style="--level: 0;"
       >
         <span
@@ -4121,7 +4388,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t119"
+        data-value="3.1"
         style="--level: 1;"
       >
         <span
@@ -4145,7 +4412,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t120"
+        data-value="3.2"
         style="--level: 1;"
       >
         <span
@@ -4169,7 +4436,7 @@ exports[`Tree Demo line demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t121"
+        data-value="4"
         style="--level: 0;"
       >
         <span
@@ -4191,7 +4458,7 @@ exports[`Tree Demo line demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo load demo works fine 1`] = `
+exports[`Tree:demo load demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -4274,7 +4541,7 @@ exports[`Tree Demo load demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo operations demo works fine 1`] = `
+exports[`Tree:demo operations demo works fine 1`] = `
 <div
   class="tdesign-tree-operations"
 >
@@ -4555,11 +4822,18 @@ exports[`Tree Demo operations demo works fine 1`] = `
     >
       展开高亮节点
     </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点与其子节点的数据
+    </button>
   </div>
 </div>
 `;
 
-exports[`Tree Demo sync demo works fine 1`] = `
+exports[`Tree:demo sync demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
@@ -5038,7 +5312,7 @@ exports[`Tree Demo sync demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Demo vmodel demo works fine 1`] = `
+exports[`Tree:demo vmodel demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
