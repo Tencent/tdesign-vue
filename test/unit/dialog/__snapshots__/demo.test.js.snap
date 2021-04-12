@@ -1,5 +1,258 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dialog async demo works fine 1`] = `
+<div>
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-default"
+    type="button"
+  >
+    异步加载类按钮
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            保存订单
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          订单保存中，请稍后
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
+              type="button"
+            >
+              <svg
+                class="t-icon t-icon-loading"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              <span
+                class="t-button__text"
+              >
+                保存中...
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`Dialog attach demo works fine 1`] = `
+<div>
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    挂载在body
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    挂载特定元素
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    挂载函数返回节点
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <!---->
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            挂载到id为app的元素
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          <div>
+            <div>
+              通过querySelect指定元素挂载
+            </div>
+             
+            <div>
+              支持原生document.querySelect选择元素
+            </div>
+             
+            <div>
+              querySelect获取到的第一个元素为挂载点
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <!---->
+  </transition-stub>
+  <div
+    class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+    style="z-index: 2500; display: none;"
+  >
+    <div
+      class="t-dialog-mask"
+    />
+    <div
+      class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+      style="max-height: calc(100% - 20%);"
+    >
+      <div
+        class="t-dialog__header"
+      >
+        <h5
+          class="title"
+        >
+          函数返回挂载节点
+        </h5>
+      </div>
+      <div
+        class="t-dialog__body"
+      >
+        <div>
+          <div>
+            指定函数返回的节点为挂载点
+          </div>
+           
+          <div>
+            函数返回为DOM节点对象
+          </div>
+           
+          <div>
+            我是内容
+          </div>
+           
+          <div>
+            我是内容
+          </div>
+           
+          <div>
+            我是内容
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-dialog__footer"
+      >
+        <div>
+          <button
+            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            type="button"
+          >
+            取消
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            确认
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Dialog base demo works fine 1`] = `
 <div>
   <button
@@ -79,47 +332,466 @@ exports[`Dialog base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dialog others demo works fine 1`] = `
+exports[`Dialog custom body demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载在body
+    隐藏底部
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载特定元素
+    隐藏标题
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载函数返回节点
+    渲染函数定义内容
   </button>
    
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    插槽方式定义内容
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            标题
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          <div>
+            <h1>
+              参数传递优先于插槽内容
+            </h1>
+            这是渲染函数输出结果
+          </div>
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            对话框标题
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          <div>
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`Dialog custom demo works fine 1`] = `
+<div>
+  <p>
+    底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。
+  </p>
   <br />
    
-  <br />
-   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    模态对话框
+    自定义底部按钮（文字）
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    普通对话框
+    自定义底部按钮（任何按钮属性）
   </button>
    
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    自定义底部按钮（自定义组件）
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          自定义底部按钮，直接传入文字
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              关闭
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              前往支付
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          自定义底部按钮，传入 ButttonProps
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+              variant="outline"
+            >
+              我知道了
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+              variant="base"
+            >
+              前往购物车
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          自定义底部按钮，传入自定义组件
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
+              disabled="disabled"
+              type="button"
+            >
+              我知道了
+            </button>
+          </div>
+        </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`Dialog drag demo works fine 1`] = `
+<div>
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -131,223 +803,17 @@ exports[`Dialog others demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    非模态可拖拽
+    非模态对话框-不可拖拽
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    模态对话框-不支持拖拽
   </button>
    
   <br />
-   
-  <transition-stub
-    duration="300"
-    name="t-dialog-zoom__vue"
-  >
-    <div
-      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
-    >
-      <div
-        class="t-dialog-mask"
-      />
-      <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
-        style="max-height: calc(100% - 20%);"
-      >
-        <div
-          class="t-dialog__header"
-        >
-          <h5
-            class="title"
-          >
-            挂载在body
-          </h5>
-        </div>
-        <div
-          class="t-dialog__body"
-        >
-          <div>
-            <div>
-              我是被挂载到body元素的对话框
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              取消
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              确认
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition-stub>
-   
-  <transition-stub
-    duration="300"
-    name="t-dialog-zoom__vue"
-  >
-    <div
-      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
-    >
-      <div
-        class="t-dialog-mask"
-      />
-      <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
-        style="max-height: calc(100% - 20%);"
-      >
-        <div
-          class="t-dialog__header"
-        >
-          <h5
-            class="title"
-          >
-            挂载到id为app的元素
-          </h5>
-        </div>
-        <div
-          class="t-dialog__body"
-        >
-          <div>
-            <div>
-              通过querySelect指定元素挂载
-            </div>
-             
-            <div>
-              支持原生document.querySelect选择元素
-            </div>
-             
-            <div>
-              querySelect获取到的第一个元素为挂载点
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              取消
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              确认
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition-stub>
-   
-  <transition-stub
-    duration="300"
-    name="t-dialog-zoom__vue"
-  >
-    <div
-      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
-    >
-      <div
-        class="t-dialog-mask"
-      />
-      <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
-        style="max-height: calc(100% - 20%);"
-      >
-        <div
-          class="t-dialog__header"
-        >
-          <h5
-            class="title"
-          >
-            函数返回挂载节点
-          </h5>
-        </div>
-        <div
-          class="t-dialog__body"
-        >
-          <div>
-            <div>
-              指定函数返回的节点为挂载点
-            </div>
-             
-            <div>
-              函数返回为DOM节点对象
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              取消
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              确认
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition-stub>
    
   <transition-stub
     duration="300"
@@ -379,66 +845,6 @@ exports[`Dialog others demo works fine 1`] = `
           <div>
             <div>
               默认点击蒙层或按ESC可关闭
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              取消
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              确认
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition-stub>
-   
-  <transition-stub
-    duration="300"
-    name="t-dialog-zoom__vue"
-  >
-    <div
-      class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
-    >
-      <div
-        class="t-dialog t-dialog--default t-dialog--top"
-        style="max-height: calc(100% - 20%);"
-      >
-        <div
-          class="t-dialog__header"
-        >
-          <h5
-            class="title"
-          >
-            普通对话框
-          </h5>
-        </div>
-        <div
-          class="t-dialog__body"
-        >
-          <div>
-            <div>
-              普通对话框不可拖拽
             </div>
              
             <div>
@@ -547,6 +953,403 @@ exports[`Dialog others demo works fine 1`] = `
             class="title"
           >
             非模态对话框-不可拖拽
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          <div>
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`Dialog icon demo works fine 1`] = `
+<div>
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx v-transfer-dom"
+      style="z-index: 2500;"
+    >
+      <div
+        class="t-dialog t-dialog--default t-dialog--top"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-info"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            下单确认
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          信息已全部保存，是否确认下单？
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <br />
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx v-transfer-dom"
+      style="z-index: 2500;"
+    >
+      <div
+        class="t-dialog t-dialog--default t-dialog--top"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-warning"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            温馨提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          系统重启后会短暂影响页面访问，确认重启吗？
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <br />
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx v-transfer-dom"
+      style="z-index: 2500;"
+    >
+      <div
+        class="t-dialog t-dialog--default t-dialog--top"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-error"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            推送失败
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          请检查推送数据是否符合要求
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <br />
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx v-transfer-dom"
+      style="z-index: 2500;"
+    >
+      <div
+        class="t-dialog t-dialog--default t-dialog--top"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-check-circle-filled t-is-success"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM690.8655168 353.58818368L464.56401024 579.82818368 328.82684416 444.09785152 283.57201024 489.35268544 464.59134592 670.3720192 509.84617984 625.1171872 736.120352 398.8430176 690.8655168 353.58818368Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            操作成功
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          是否前往查看订单列表
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <br />
+   
+  <!---->
+   
+  <!---->
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`Dialog modal demo works fine 1`] = `
+<div>
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    模态对话框
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    非模态对话框
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            模态对话框
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          <div>
+            <div>
+              默认点击蒙层或按ESC可关闭
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+             
+            <div>
+              我是内容
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <h5
+            class="title"
+          >
+            非模态对话框
           </h5>
         </div>
         <div
@@ -790,6 +1593,359 @@ exports[`Dialog position demo works fine 1`] = `
           class="t-dialog__body"
         >
           自定义对话框距离窗口顶部位置，top: 50px
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`Dialog warning demo works fine 1`] = `
+<div>
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    提示反馈
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-info"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            提示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    成功反馈
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-check-circle-filled t-is-success"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM690.8655168 353.58818368L464.56401024 579.82818368 328.82684416 444.09785152 283.57201024 489.35268544 464.59134592 670.3720192 509.84617984 625.1171872 736.120352 398.8430176 690.8655168 353.58818368Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            恭喜
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    警示反馈
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-warning"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            警示
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    错误反馈
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <svg
+            class="t-icon t-icon-info-circle-filled t-is-error"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+          <h5
+            class="title"
+          >
+            错误
+          </h5>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              取消
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    自定义icon
+  </button>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="z-index: 2500; display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          <div>
+            <svg
+              class="t-icon t-icon-check-circle-filled"
+              color="orange"
+            >
+              <use
+                xlink:href="#t-icon-check-circle-filled"
+              />
+            </svg>
+             
+            <span
+              style="vertical-align: middle;"
+            >
+              对话框标题
+            </span>
+          </div>
+        </div>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
         </div>
         <div
           class="t-dialog__footer"

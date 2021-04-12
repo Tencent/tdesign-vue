@@ -5,7 +5,6 @@ import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { getPropsApiByEvent } from '../utils/helper';
-import { getAttach } from '../utils/dom';
 import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 
@@ -111,18 +110,6 @@ export default Vue.extend({
       }
     },
   },
-  data() {
-    return {
-      attachTarget: null,
-    };
-  },
-  mounted() {
-    const { attach } = this;
-    // attach默认值为空''，返回false才不会被重新挂载
-    if (!attach) return false;
-    this.attachTarget = getAttach(attach);
-  },
-
   methods: {
     disPreventScrollThrough(disabled: boolean) {
       // 防止滚动穿透,modal形态才需要
@@ -358,7 +345,7 @@ export default Vue.extend({
         onAfterLeave={this.afterLeave}
       >
         {(!this.destroyOnClose || this.visible) && (
-          <div v-show={this.visible} class={ctxClass} style={ctxStyle} v-transfer-dom={this.attachTarget || false}>
+          <div v-show={this.visible} class={ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
             {view}
           </div>
         )}

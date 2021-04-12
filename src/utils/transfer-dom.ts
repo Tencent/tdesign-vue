@@ -16,29 +16,21 @@ interface TransferElement extends HTMLElement {
 }
 /**
  * Get target DOM Node
- * @param {(Node|string|Boolean)} [node=document.body] DOM Node, CSS selector, or Boolean
+ * @param {(Node|String|Boolean|Function)} [node=document.body] DOM Node, CSS selector, or Boolean
  * @return {Node} The target that the el will be appended to
  */
 function getTarget(node: any): any {
-  if (node === void 0) {
+  const attachNode = typeof node === 'function' ? node() : node;
+  if (!attachNode) {
     return document.body;
   }
-
-  if (typeof node === 'string' && node.indexOf('?') === 0) {
-    return document.body;
-  } if (typeof node === 'string' && node.indexOf('?') > 0) {
-    // [node] = node.split('?')[0];
-    [node] = node.split('?');
+  if (typeof attachNode === 'string') {
+    return document.querySelector(attachNode);
   }
-
-  if (node === 'body' || node === true) {
-    return document.body;
+  if (attachNode instanceof window.Node) {
+    return attachNode;
   }
-
-  if (node instanceof window.Node) {
-    return node;
-  }
-  return document.querySelector(node) || document.body;
+  return document.body;
 }
 
 function getShouldUpdate(node: any) {
@@ -65,7 +57,7 @@ const TransferDom = {
     const home = document.createComment('');
     let hasMovedOut = false;
     const target = getTarget(value);
-    if (value !== false) {
+    if (value && target) {
       parentNode.replaceChild(home, el); // moving out, el is no longer in the document
       target.appendChild(el); // moving into new place
       hasMovedOut = true;
@@ -95,13 +87,13 @@ const TransferDom = {
       // remove from document and leave placeholder
       parentNode.replaceChild(home, el);
       // append to target
-      getTarget(value).appendChild(el);
+      getTarget(value)?.appendChild?.(el);
       el.__transferDomData = Object.assign(
         {},
         el.__transferDomData,
         { hasMovedOut: true, target: getTarget(value) }
       );
-    } else if (hasMovedOut && value === false) {
+    } else if (hasMovedOut && !value) {
       // previously moved, coming back home
       parentNode.replaceChild(el, home);
       el.__transferDomData = Object.assign(
@@ -111,13 +103,13 @@ const TransferDom = {
       );
     } else if (value) {
       // already moved, going somewhere else
-      getTarget(value).appendChild(el);
+      getTarget(value)?.appendChild?.(el);
     }
   },
   unbind: function unbind(el: TransferElement) {
     el.className = el.className.replace('v-transfer-dom', '');
     if (el.__transferDomData && el.__transferDomData.hasMovedOut === true) {
-      el.__transferDomData.parentNode && el.__transferDomData.parentNode.appendChild(el);
+      el.__transferDomData.parentNode && el.__transferDomData.parentNode?.appendChild?.(el);
     }
     el.__transferDomData = null;
   },
