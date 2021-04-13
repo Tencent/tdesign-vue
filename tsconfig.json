@@ -60,7 +60,7 @@
   "include": [
     "./**/*.ts",
     "./**/*.tsx"
-  ],
+, "src/drawer/drawer.ts"  ],
   "exclude": [
     "node_modules",
     "tools",

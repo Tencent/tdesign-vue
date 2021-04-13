@@ -27,7 +27,7 @@ function getTarget(node: any): any {
   if (typeof attachNode === 'string') {
     return document.querySelector(attachNode);
   }
-  if (attachNode instanceof window.Node) {
+  if (window && (attachNode instanceof window.Node)) {
     return attachNode;
   }
   return document.body;

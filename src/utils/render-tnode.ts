@@ -62,11 +62,16 @@ export const RenderTNodeTemplate = Vue.extend({
   },
 });
 
-// 通过JSX的方式渲染TNode
-export const renderTNodeJSX = (vm: Vue, name: string) => {
+// 通过JSX的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
+export const renderTNodeJSX = (vm: Vue, name: string, defaultNode?: VNode) => {
   const propsNode = vm[name];
+  if (propsNode === false) return;
+  if (propsNode === true && defaultNode) {
+    return vm.$scopedSlots[name] ? vm.$scopedSlots[name](null) : defaultNode;
+  }
   if (typeof propsNode === 'function') return propsNode(vm.$createElement);
-  if ([undefined, null, ''].includes(propsNode) && vm.$scopedSlots[name]) return vm.$scopedSlots[name](null);
+  const isPropsEmpty = [undefined, null, ''].includes(propsNode);
+  if (isPropsEmpty && vm.$scopedSlots[name]) return vm.$scopedSlots[name](null);
   return propsNode;
 };
 
