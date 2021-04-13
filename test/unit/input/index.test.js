@@ -124,7 +124,7 @@ describe('Input', () => {
       });
       const inputWrapper = wrapper.findComponent(Input);
       const inputElemWrapper = wrapper.find('input');
-      inputElemWrapper.trigger('change');
+      inputElemWrapper.setValue('text');
       expect(inputWrapper.emitted().change).toBeTruthy();
       expect(fn).toBeCalled();
     });

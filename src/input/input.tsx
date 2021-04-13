@@ -59,6 +59,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       keydown: this.handleKeydonw,
       keyup: this.handleKeyUp,
       keypresss: this.handleKeypress,
+      // input的change事件是失去焦点或者keydown的时候执行。这与api定义的change不符，所以不做任何变化。
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      change: () => { },
     });
 
     const wrapperAttrs = omit(this.$attrs, Object.keys(this.inputAttrs));
@@ -130,8 +133,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       input?.blur();
     },
     onInput(e: InputEvent): void {
-      // 输入的时候inputType是insertText，删除的时候inputType是deleteContentBackward
-      const checkInputType = e.inputType && e.inputType !== 'insertText' && e.inputType !== 'deleteContentBackward';
+      // 中文输入的时候inputType是insertCompositionText所以中文输入的时候禁止触发。
+      const checkInputType = e.inputType && e.inputType === 'insertCompositionText';
       if (e.isComposing || checkInputType) return;
       this.inputValueChangeHandle(e);
     },
