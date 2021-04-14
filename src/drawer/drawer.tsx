@@ -85,7 +85,7 @@ export default Vue.extend({
         {this.showOverlay && <div class='t-drawer__mask' onClick={this.handleWrapperClick}/>}
         <div class={this.wraperClasses} style={this.wraperStyles}>
           <div class='t-drawer__header'>{renderTNodeJSX(this, 'header')}</div>
-          <div class='t-drawer__close-btn'>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
+          <div class='t-drawer__close-btn' onClick={this.onCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
           <div class="t-drawer__body">{body}</div>
           <div class="t-drawer__footer">{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>

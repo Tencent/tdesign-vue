@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-drawer :visible.sync="visible" header="Drawer" :onClickConfirm="onClickConfirm">
+    <t-drawer :visible.sync="visible" header="Drawer" :onClickConfirm="onClickConfirm" :closeBtn="true">
       <p>This is a controlled drawer</p>
     </t-drawer>
     <t-button theme="primary" @click="handleClick">Open a Drawer</t-button>
