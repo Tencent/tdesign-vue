@@ -88,18 +88,18 @@ export function removeClass(el: Element, cls: string): any {
   }
 };
 
-export const getAttach = (attach: AttachNode = 'body') => {
-  let r;
-  if (!attach) return document.querySelector('body');
-  if (isString(attach)) {
-    const at = attach as string;
-    r = attach === 'document' ? document : document.querySelector(at);
-  } else if (typeof attach === 'function') {
-    r = attach();
-  } else {
-    console.error('TDesign Error: attach type must a string or function.');
+export const getAttach = (node: any): HTMLElement => {
+  const attachNode = typeof node === 'function' ? node() : node;
+  if (!attachNode) {
+    return document.body;
   }
-  return r;
+  if (typeof attachNode === 'string') {
+    return document.querySelector(attachNode);
+  }
+  if (attachNode instanceof HTMLElement) {
+    return attachNode;
+  }
+  return document.body;
 };
 
 export const getSuperAttach = (attach: SuperAttachNode = 'body') => {

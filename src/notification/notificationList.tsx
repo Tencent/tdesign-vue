@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import Notification from './notification';
-import { TdNotificationProps, PlacementList } from '@TdTypes/notification/TdNotificationProps';
-
-const DEFAULT_Z_INDEX = 6000;
-const _margin = 16;
+import { TdNotificationProps, NotificationOptions } from '@TdTypes/notification/TdNotificationProps';
+import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
 
 export default Vue.extend({
   components: { Notification },
@@ -26,8 +24,15 @@ export default Vue.extend({
   data() {
     return {
       list: [],
-      zIndex: DEFAULT_Z_INDEX,
     };
+  },
+  computed: {
+    styles(): Styles {
+      return {
+        zIndex: DEFAULT_Z_INDEX,
+        ...PLACEMENT_OFFSET[this.placement],
+      };
+    },
   },
   methods: {
     add(options: TdNotificationProps): number {
@@ -40,16 +45,20 @@ export default Vue.extend({
     removeAll() {
       this.list = [];
     },
-    notificationStyles(item: { offset: PlacementList; zIndex: number }) {
-      const styles = {};
-      this.placement.split('-').forEach((direction: 'left' | 'top' | 'bottom' | 'right') => {
-        let margin = _margin;
-        if (item.offset && item.offset[direction]) {
-          margin += item.offset[direction];
-        }
-        styles[`margin-${direction}`] = `${margin}px`;
-      });
-      styles['z-index'] = item.zIndex ? item.zIndex : this.zIndex;
+    getOffset(val: string | number) {
+      if (!val) return;
+      return isNaN(Number(val)) ? val : `${val}px`;
+    },
+    notificationStyles(item: { offset: NotificationOptions['offset']; zIndex: number }) {
+      const styles: Styles = {
+        marginBottom: DISTANCE,
+      };
+      if (item.offset) {
+        styles.position = 'relative';
+        styles.left = this.getOffset(item.offset[0]);
+        styles.top = this.getOffset(item.offset[1]);
+      }
+      if (item.zIndex) styles['z-index'] = item.zIndex;
       return styles;
     },
     getListeners(index: number) {
@@ -62,7 +71,7 @@ export default Vue.extend({
   render() {
     if (!this.list.length) return;
     return (
-      <div class={`t-notification__show--${this.placement}`} style={`z-index: ${this.zIndex}`}>
+      <div class={`t-notification__show--${this.placement}`} style={this.styles}>
         {this.list
           .map((item, index) => (
             <t-notification

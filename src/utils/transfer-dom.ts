@@ -2,6 +2,7 @@
 // Thanks to: https://github.com/airyland/vux/blob/v2/src/directives/transfer-dom/index.js
 
 import { DirectiveBinding } from 'vue/types/options';
+import { getAttach } from './dom';
 
 // Thanks to: https://github.com/calebroseland/vue-dom-portal
 interface TransferData {
@@ -13,24 +14,6 @@ interface TransferData {
 interface TransferElement extends HTMLElement {
   __transferDomData?: TransferData;
   parentNode: HTMLElement;
-}
-/**
- * Get target DOM Node
- * @param {(Node|String|Boolean|Function)} [node=document.body] DOM Node, CSS selector, or Boolean
- * @return {Node} The target that the el will be appended to
- */
-function getTarget(node: any): any {
-  const attachNode = typeof node === 'function' ? node() : node;
-  if (!attachNode) {
-    return document.body;
-  }
-  if (typeof attachNode === 'string') {
-    return document.querySelector(attachNode);
-  }
-  if (window && (attachNode instanceof window.Node)) {
-    return attachNode;
-  }
-  return document.body;
 }
 
 function getShouldUpdate(node: any) {
@@ -56,7 +39,7 @@ const TransferDom = {
     const { parentNode } = el;
     const home = document.createComment('');
     let hasMovedOut = false;
-    const target = getTarget(value);
+    const target = getAttach(value);
     if (value && target) {
       parentNode.replaceChild(home, el); // moving out, el is no longer in the document
       target.appendChild(el); // moving into new place
@@ -87,11 +70,11 @@ const TransferDom = {
       // remove from document and leave placeholder
       parentNode.replaceChild(home, el);
       // append to target
-      getTarget(value)?.appendChild?.(el);
+      getAttach(value)?.appendChild?.(el);
       el.__transferDomData = Object.assign(
         {},
         el.__transferDomData,
-        { hasMovedOut: true, target: getTarget(value) }
+        { hasMovedOut: true, target: getAttach(value) }
       );
     } else if (hasMovedOut && !value) {
       // previously moved, coming back home
@@ -99,11 +82,11 @@ const TransferDom = {
       el.__transferDomData = Object.assign(
         {},
         el.__transferDomData,
-        { hasMovedOut: false, target: getTarget(value) }
+        { hasMovedOut: false, target: getAttach(value) }
       );
     } else if (value) {
       // already moved, going somewhere else
-      getTarget(value)?.appendChild?.(el);
+      getAttach(value)?.appendChild?.(el);
     }
   },
   unbind: function unbind(el: TransferElement) {

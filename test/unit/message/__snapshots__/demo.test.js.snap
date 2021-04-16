@@ -4,24 +4,22 @@ exports[`Message close demo works fine 1`] = `
 <div class="t-demo-message">
   <div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
       <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
-    </svg>计时结束触发事件 duration-end（10s）</div>
+    </svg>计时结束触发事件 duration-end（10s）<span class="t-message-close"></span></div>
   <!---->
   <div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
       <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
-    </svg>点击关闭按钮触发事件 click-close-btn <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close t-message-close">
-      <path fill-opacity=".9" fill-rule="evenodd" d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"></path>
-    </svg></div>
+    </svg>点击关闭按钮触发事件 click-close-btn <span class="t-message-close"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close"><path fill-opacity=".9" fill-rule="evenodd" d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"></path></svg></span></div>
   <div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
       <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
-    </svg>自定义关闭按钮（文字）<span class="t-message-close"> 关闭 </span></div>
+    </svg>自定义关闭按钮（文字）<span class="t-message-close">关闭</span></div>
   <div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
       <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
-    </svg>自定义关闭按钮（函数）<span class="t-message-close"> <div class="t-message-close"><b>x</b></div> </span></div>
+    </svg>自定义关闭按钮（函数）<span class="t-message-close"><div class="t-message-close"><b>x</b></div></span></div>
   <div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
       <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
     </svg>
     自定义关闭按钮（插槽）
-    <span class="t-message-close"> <div class="t-message-close"><b>x</b></div> </span>
+    <span class="t-message-close"><div class="t-message-close"><b>x</b></div></span>
   </div>
 </div>
 `;
@@ -66,6 +64,30 @@ exports[`Message offset demo works fine 1`] = `
 
 exports[`Message placement demo works fine 1`] = `
 <div>
+  <div
+    class="t-message-offset"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入横向偏移量"
+        type="text"
+      />
+    </div>
+     
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入纵向偏移量"
+        type="text"
+      />
+    </div>
+  </div>
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
@@ -411,7 +433,9 @@ exports[`Message plugin demo works fine 1`] = `
 `;
 
 exports[`Message toggle demo works fine 1`] = `
-<div>
+<div
+  id="t-demo-message-toggle"
+>
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
@@ -443,6 +467,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用户表示普通操作信息提示
+    <span
+      class="t-message-close"
+    />
   </div>
    
   <div
@@ -461,6 +488,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用户表示操作顺利达成
+    <span
+      class="t-message-close"
+    />
   </div>
    
   <div
@@ -479,6 +509,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用户表示操作引起一定后果
+    <span
+      class="t-message-close"
+    />
   </div>
    
   <div
@@ -497,6 +530,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用户表示操作引起严重的后果
+    <span
+      class="t-message-close"
+    />
   </div>
    
   <div
@@ -515,6 +551,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用于帮助用户操作的信息提示
+    <span
+      class="t-message-close"
+    />
   </div>
    
   <div
@@ -533,6 +572,9 @@ exports[`Message type demo works fine 1`] = `
       />
     </svg>
     用于表示操作正在生效的过程中
+    <span
+      class="t-message-close"
+    />
   </div>
 </div>
 `;

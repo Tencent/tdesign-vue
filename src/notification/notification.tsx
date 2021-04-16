@@ -1,8 +1,9 @@
-import Vue, { CreateElement, VNode } from 'vue';
+import Vue, { CreateElement } from 'vue';
 import { prefix } from '../config';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconClose from '../icon/close';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from '@TdTypes/notification/props';
 
 const name = `${prefix}-notification`;
@@ -49,56 +50,27 @@ export default Vue.extend({
       }
       return icon;
     },
-    renderClose(h: CreateElement) {
-      const { closeBtn } = this;
-      if (typeof closeBtn === 'boolean') {
-        return closeBtn && <t-icon-close nativeOnClick={this.close} class='t-message-close' />;
-      }
-      let close: TNodeReturnValue = null;
-      if (typeof closeBtn === 'function') {
-        close = closeBtn(h);
-      } else if (typeof closeBtn === 'string') {
-        close = closeBtn;
-      } else if (typeof this.$scopedSlots.closeBtn === 'function') {
-        close = this.$scopedSlots.closeBtn(null);
-      }
-      if (close) {
-        return (<div class='t-icon-close' onClick={this.close}> { close } </div>);
-      }
+    renderClose() {
+      const defaultClose = <t-icon-close />;
+      return (
+        <span class='t-message-close' onClick={this.close}>
+          {renderTNodeJSX(this, 'closeBtn', defaultClose)}
+        </span>
+      );
     },
-    renderContent(h: CreateElement) {
-      let content: VNode[] | VNode | string = '';
-
-      switch (typeof this.content) {
-        case 'function': {
-          content = <div class={`${name}__content`}>{this.content(h)}</div>;
-          break;
-        }
-        case 'string': {
-          content = this.content ? (<div class={`${name}__content`}>{this.content}</div>) : '';
-          break;
-        }
-      };
-      content = this.$scopedSlots.default ? <div class={`${name}__content`}>{this.$scopedSlots.default(null)}</div> : content;
-
-      return content;
-    },
-    renderFooter(h: CreateElement) {
-      let footer: VNode[] | VNode | string = '';
-
-      if (this.footer) {
-        footer = this.footer(h);
-      };
-      footer = this.$scopedSlots.footer ? this.$scopedSlots.footer(null) : footer;
-
-      return footer;
+    renderContent() {
+      return (
+        <div class={`${name}__content`}>
+          {renderContent(this, 'default', 'content')}
+        </div>
+      );
     },
   },
   render(h: CreateElement) {
     const icon = this.renderIcon(h);
-    const close = this.renderClose(h);
-    const content = this.renderContent(h);
-    const footer = this.renderFooter(h);
+    const close = this.renderClose();
+    const content = this.renderContent();
+    const footer = renderTNodeJSX(this, 'footer');
 
     return (
       <div class={`${name}`}>

@@ -141,11 +141,6 @@ const MessagePlugin: Vue.PluginObject<undefined> = {
   },
 };
 
-/**
- * 这样定义后，用户可以直接引入方法然后调用，示例如下：
- * import { showMessage } from 'message/index.ts';
- * showMessage();
- */
 Object.keys(extraApi).forEach((funcName) => {
   MessagePlugin[funcName] = extraApi[funcName];
 });
