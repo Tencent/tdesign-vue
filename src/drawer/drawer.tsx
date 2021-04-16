@@ -112,7 +112,7 @@ export default Vue.extend({
       if (this.visible) {
         this.parentNode.style.cssText += marginStr;
       } else {
-        this.parentNode.style.cssText = this.parentNode.style.cssText.replace(/(?<=margin:).+(?=;)/, '');
+        this.parentNode.style.cssText = this.parentNode.style.cssText.replace(/margin:.+;/, '');
       }
     },
     getBtnText(api: FooterButton) {
