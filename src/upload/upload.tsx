@@ -1,10 +1,10 @@
 import Vue from 'vue';
+import { VNode } from 'vue/types/umd';
 import { prefix } from '../config';
 import Dragger from './dragger';
+import { HTMLInputEvent, UploadFile, UploadProgressEvent } from './interface';
 import UploadList from './uploadList';
 import xhr from './xhr';
-import { UploadFile, UploadProgressEvent, HTMLInputEvent } from './interface';
-import { VNode } from 'vue/types/umd';
 
 const name = `${prefix}-upload`;
 
@@ -86,12 +86,16 @@ export default Vue.extend({
   methods: {
     handleChange(event: HTMLInputEvent): void {
       const { files } = event.target;
+      this.$emit('change', files);
+      if (!this.autoUpload) return;
       this.uploadFiles({ files });
       (this.$refs.input as Vue & { value: any }).value = null;
     },
 
     handleDragChange(files: FileList): void {
       if (this.disabled) return;
+      this.$emit('change', files);
+      if (!this.autoUpload) return;
       this.uploadFiles({ files });
     },
 

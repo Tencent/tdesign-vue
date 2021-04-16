@@ -40,7 +40,7 @@ export default Vue.extend({
       this.dragActive = false;
     },
 
-    handleDragover(): void {
+    handleDragover(event: DragEvent): void {
       event.preventDefault();
     },
 
