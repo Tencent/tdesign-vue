@@ -9,7 +9,7 @@ describe('List', () => {
       propsData: {
         header: 'header',
         footer: 'footer',
-        asyncLoading: 'asyncLoading',
+        asyncLoading: 'loading',
         size: 'large',
       },
     });
@@ -21,13 +21,14 @@ describe('List', () => {
   it('equals footer to "footer"', () => {
     expect(cmp.vm.footer).toEqual('footer');
   });
-  it('equals asyncLoading to "asyncLoading"', () => {
-    expect(cmp.vm.asyncLoading).toEqual('asyncLoading');
+  it('equals asyncLoading to "loading"', () => {
+    expect(cmp.vm.asyncLoading).toEqual('loading');
   });
   it('equals size to "large"', () => {
     expect(cmp.vm.size).toEqual('large');
   });
-  it('equals layout to "horizontal"', () => {
-    expect(cmp.vm.layout).toEqual('horizontal');
-  });
+  // 待设计稿输出
+  // it('equals layout to "horizontal"', () => {
+  //   expect(cmp.vm.layout).toEqual('horizontal');
+  // });
 });
