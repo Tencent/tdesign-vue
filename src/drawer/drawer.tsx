@@ -97,11 +97,13 @@ export default Vue.extend({
     handlePushMode() {
       if (this.mode !== 'push') return;
       this.$nextTick(() => {
+        if (!this.parentNode) return;
         this.parentNode.style.cssText = 'transition: margin 300ms cubic-bezier(0.7, 0.3, 0.1, 1) 0s;';
       });
     },
     // push 动画效果处理
     updatePushMode() {
+      if (!this.parentNode) return;
       if (this.mode !== 'push' || !this.parentNode) return;
       const marginStr = {
         left: `margin: 0 0 0 ${this.sizeValue}`,
