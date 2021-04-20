@@ -136,19 +136,16 @@ export default {
       //   pageSize: 10,
       //   total: 120,
       //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (val) => {
-      //     this.pagination.current = val;
-      //   },
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onPageSizeChange: (val) => {
-      //     this.pagination.pageSize = val;
+      //   onChange: (pageInfo.current) => {
+      //     this.pagination.current = pageInfo.current;
+      //     this.pagination.pageSize = pageInfo.pageSize;
       //   },
       // },
     };
   },
   methods: {
-    rehandlePageChange(curr, pageInfo) {
-      console.log('分页变化', curr, pageInfo);
+    rehandlePageChange(pageInfo) {
+      console.log('分页变化', pageInfo);
     },
     rehandleChange(changeParams, triggerAndData) {
       console.log('统一Change', changeParams, triggerAndData);

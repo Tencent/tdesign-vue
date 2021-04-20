@@ -3,7 +3,6 @@
     <t-pagination
       v-model="current"
       :total="100"
-      @change="onChange"
       :page-size.sync="pageSize"
     />
   </div>
@@ -16,12 +15,6 @@ export default {
       current: 12,
       pageSize: 5,
     };
-  },
-  methods: {
-    onChange(index, pageInfo) {
-      console.log(`转到第${index}页`);
-      console.log(pageInfo);
-    },
   },
 };
 </script>

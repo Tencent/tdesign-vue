@@ -4,8 +4,9 @@
       v-model="current"
       :total="100"
       @change="onChange"
-      :pageSize.sync="pageSize"
-      @pageSizeChange="onPageSizeChange"
+      :page-size.sync="pageSize"
+      @page-size-change="onPageSizeChange"
+      @current-change="onCurrentChange"
     />
   </div>
 </template>
@@ -19,11 +20,14 @@ export default {
     };
   },
   methods: {
-    onPageSizeChange(val) {
-      console.log('size:', val);
+    onPageSizeChange(size) {
+      console.log('page-size:', size);
     },
-    onChange(index, pageInfo) {
+    onCurrentChange(index, pageInfo) {
       console.log(`转到第${index}页`);
+      console.log(pageInfo);
+    },
+    onChange(pageInfo) {
       console.log(pageInfo);
     },
   },

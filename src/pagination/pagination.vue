@@ -1,16 +1,16 @@
 <template>
-  <div :class="_class" v-if="_pageCount > 1">
+  <div :class="paginationClass" v-if="pageCount > 1">
     <!--数据统计区-->
-    <div v-if="totalContent" :class="_totalClass">
+    <div v-if="totalContent" :class="totalClass">
       <slot name="totalContent">
         {{ t(locale.total, { total: total }) }}
       </slot>
     </div>
     <!-- select-->
     <template v-if="pageSizeOption.length">
-      <t-select :size="size" :value="pageSize" :disabled="disabled" :class="_sizerClass" @change="onSelectorChange">
+      <t-select :size="size" :value="pageSize" :disabled="disabled" :class="sizerClass" @change="onSelectorChange">
         <t-option
-          v-for="(item, index) in _pageSizeOption"
+          v-for="(item, index) in pageSizeOptions"
           :value="item.value"
           :label="t(item.label, { size: item.value })"
           :key="index"
@@ -19,15 +19,15 @@
       </t-select>
     </template>
     <!-- 向前按钮-->
-    <div :class="_preBtnClass" @click="prevPage" :disabled="disabled || currentIndex === 1">
+    <div :class="preBtnClass" @click="prevPage" :disabled="disabled || current === 1">
       <t-icon-chevron-left></t-icon-chevron-left>
     </div>
     <!-- 页数 -->
-    <template v-if="!_isSimple">
-      <ul :class="_btnWrapClass">
+    <template v-if="!isSimple">
+      <ul :class="btnWrapClass">
         <li :class="getButtonClass(1)" v-if="isFolded" @click="toPage(1)">1</li>
         <li
-          :class="_btnMoreClass"
+          :class="btnMoreClass"
           v-if="isFolded && isPrevMoreShow"
           @click="prevMorePage"
           @mouseover="prevMore = true"
@@ -42,7 +42,7 @@
           {{ i }}
         </li>
         <li
-          :class="_btnMoreClass"
+          :class="btnMoreClass"
           v-if="isFolded && isNextMoreShow"
           @click="nextMorePage"
           @mouseover="nextMore = true"
@@ -53,34 +53,34 @@
           </template>
           <template v-else><t-icon-ellipsis></t-icon-ellipsis></template>
         </li>
-        <li :class="getButtonClass(_pageCount)" v-if="isFolded" @click="toPage(_pageCount)">{{ _pageCount }}</li>
+        <li :class="getButtonClass(pageCount)" v-if="isFolded" @click="toPage(pageCount)">{{ pageCount }}</li>
       </ul>
     </template>
     <template v-else>
       <t-select
         :size="size"
-        :value="currentIndex"
+        :value="current"
         :disabled="disabled"
-        :class="_simpleClass"
+        :class="simpleClass"
         @change="toPage"
       >
         <t-option
-          v-for="item in _pageCountOption"
+          v-for="item in pageCountOption"
           :value="item"
-          :label="`${item}/${_pageCount}`"
-          :key="`${item}/${_pageCount}`"
+          :label="`${item}/${pageCount}`"
+          :key="`${item}/${pageCount}`"
         />
       </t-select>
     </template>
     <!-- 向后按钮-->
-    <div :class="_nextBtnClass" @click="nextPage" :disabled="disabled || currentIndex === _pageCount">
+    <div :class="nextBtnClass" @click="nextPage" :disabled="disabled || current === pageCount">
       <t-icon-chevron-right></t-icon-chevron-right>
     </div>
     <!-- 跳转-->
     <template v-if="showJumper">
-      <div :class="_jumperClass">
+      <div :class="jumperClass">
         {{ t(locale.jumpTo) }}
-        <t-input :class="_jumperInputClass" v-model="jumpIndex" @keydown.enter="jumpToPage" @blur="jumpToPage" />
+        <t-input :class="jumperInputClass" v-model="jumpIndex" @keydown.enter.native="jumpToPage" @blur="jumpToPage" />
         {{ t(locale.page) }}
       </div>
     </template>
@@ -120,7 +120,7 @@ export default mixins(PaginationLocalReceiver).extend({
   },
   model: {
     prop: 'current',
-    event: 'change',
+    event: 'current-change',
   },
   props: {
     ...props,
@@ -148,25 +148,15 @@ export default mixins(PaginationLocalReceiver).extend({
   data() {
     return {
       jumpIndex: this.current,
-      currentIndex: this.current,
       prevMore: false,
       nextMore: false,
     };
-  },
-  watch: {
-    current: {
-      handler(v: number): void {
-        this.currentIndex = v;
-        this.jumpIndex = v;
-      },
-      immediate: true,
-    },
   },
   computed: {
     /**
      * 样式计算
      */
-    _class(): ClassName {
+    paginationClass(): ClassName {
       return [
         `${name}`,
         CLASSNAMES.SIZE[this.size],
@@ -175,10 +165,10 @@ export default mixins(PaginationLocalReceiver).extend({
         },
       ];
     },
-    _totalClass(): ClassName {
+    totalClass(): ClassName {
       return [`${name}__total`];
     },
-    _sizerClass(): ClassName {
+    sizerClass(): ClassName {
       return [
         `${name}__select`,
         // {
@@ -186,28 +176,28 @@ export default mixins(PaginationLocalReceiver).extend({
         // },
       ];
     },
-    _preBtnClass(): ClassName {
+    preBtnClass(): ClassName {
       return [
         `${name}__btn`,
         `${name}__btn--prev`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.currentIndex === 1,
+          [CLASSNAMES.STATUS.disabled]: this.disabled || this.current === 1,
         },
       ];
     },
-    _nextBtnClass(): ClassName {
+    nextBtnClass(): ClassName {
       return [
         `${name}__btn`,
         `${name}__btn--next`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.currentIndex === this._pageCount,
+          [CLASSNAMES.STATUS.disabled]: this.disabled || this.current === this.pageCount,
         },
       ];
     },
-    _btnWrapClass(): ClassName {
+    btnWrapClass(): ClassName {
       return [`${name}__pager`];
     },
-    _btnMoreClass(): ClassName {
+    btnMoreClass(): ClassName {
       return [
         `${name}__number`,
         `${name}__number--more`,
@@ -216,10 +206,10 @@ export default mixins(PaginationLocalReceiver).extend({
         },
       ];
     },
-    _jumperClass(): ClassName {
+    jumperClass(): ClassName {
       return [`${name}__jump`];
     },
-    _jumperInputClass(): ClassName {
+    jumperInputClass(): ClassName {
       return [
         `${name}__input`,
         // {
@@ -227,24 +217,24 @@ export default mixins(PaginationLocalReceiver).extend({
         // },
       ];
     },
-    _simpleClass(): ClassName {
+    simpleClass(): ClassName {
       return [`${name}__select`];
     },
-    _isSimple(): boolean {
+    isSimple(): boolean {
       return this.theme === 'simple';
     },
-    _pageCount(): number {
+    pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
     },
-    _pageCountOption(): Array<number> {
+    pageCountOption(): Array<number> {
       const ans = [];
-      for (let i = 1; i <= this._pageCount; i++) {
+      for (let i = 1; i <= this.pageCount; i++) {
         ans.push(i);
       }
       return ans;
     },
-    _pageSizeOption(): Array<{ label: string; value: number }> {
+    pageSizeOptions(): Array<{ label: string; value: number }> {
       const { pageSize } = this;
       const locale = this.locale as any;
       const pageSizeOption = this.pageSizeOption as TdPaginationProps['pageSizeOption'];
@@ -273,11 +263,11 @@ export default mixins(PaginationLocalReceiver).extend({
     },
 
     isPrevMoreShow(): boolean {
-      return 2 + this.curPageLeftCount < this.currentIndex;
+      return 2 + this.curPageLeftCount < this.current;
     },
 
     isNextMoreShow(): boolean {
-      return this._pageCount - 1 - this.curPageRightCount > this.currentIndex;
+      return this.pageCount - 1 - this.curPageRightCount > this.current;
     },
 
     pages(): Array<number> {
@@ -287,15 +277,15 @@ export default mixins(PaginationLocalReceiver).extend({
 
       if (this.isFolded) {
         if (this.isPrevMoreShow && this.isNextMoreShow) {
-          start = this.currentIndex - this.curPageLeftCount;
-          end = this.currentIndex + this.curPageRightCount;
+          start = this.current - this.curPageLeftCount;
+          end = this.current + this.curPageRightCount;
         } else {
-          start = this.isPrevMoreShow ? this._pageCount - this.foldedMaxPageBtn + 1 : 2;
-          end = this.isPrevMoreShow ? this._pageCount - 1 : this.foldedMaxPageBtn;
+          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : 2;
+          end = this.isPrevMoreShow ? this.pageCount - 1 : this.foldedMaxPageBtn;
         }
       } else {
         start = 1;
-        end = this._pageCount;
+        end = this.pageCount;
       }
 
       for (let i = start; i <= end; i++) {
@@ -305,7 +295,7 @@ export default mixins(PaginationLocalReceiver).extend({
     },
 
     isFolded(): boolean {
-      return this._pageCount > this.maxPageBtn;
+      return this.pageCount > this.maxPageBtn;
     },
   },
   methods: {
@@ -316,46 +306,51 @@ export default mixins(PaginationLocalReceiver).extend({
       let current = pageIndex;
       if (pageIndex < 1) {
         current = 1;
-      } else if (pageIndex > this._pageCount) {
-        current = this._pageCount;
+      } else if (pageIndex > this.pageCount) {
+        current = this.pageCount;
       }
-      if (this.currentIndex !== current) {
-        const prev = this.currentIndex;
-        this.currentIndex = current;
+      if (this.current !== current) {
+        const prev = this.current;
         this.jumpIndex = current;
         const pageInfo = {
           current,
           previous: prev,
           pageSize: this.pageSize,
         };
-        this.$emit('change', current, pageInfo);
+        this.$emit('change', pageInfo);
         if (typeof this.onChange === 'function') {
-          this.onChange(current, pageInfo);
+          this.onChange(pageInfo);
         }
-        this.currentIndex = current;
+        this.$emit('update:current', current);
+        this.$emit('current-change', current, pageInfo);
+        if (typeof this.onCurrentChange === 'function') {
+          this.onCurrentChange(current, pageInfo);
+        }
       }
     },
     prevPage(): void {
-      this.toPage(this.currentIndex - 1);
+      this.toPage(this.current - 1);
     },
     nextPage(): void {
-      this.toPage(this.currentIndex + 1);
+      this.toPage(this.current + 1);
     },
     prevMorePage(): void {
-      this.toPage(this.currentIndex - this.foldedMaxPageBtn);
+      this.toPage(this.current - this.foldedMaxPageBtn);
     },
     nextMorePage(): void {
-      this.toPage(this.currentIndex + this.foldedMaxPageBtn);
+      this.toPage(this.current + this.foldedMaxPageBtn);
     },
     jumpToPage(): void {
-      this.toPage(Number(this.jumpIndex));
+      const jumpIndex = Number(this.jumpIndex);
+      if (isNaN(jumpIndex)) return;
+      this.toPage(jumpIndex);
     },
     getButtonClass(index: number): ClassName {
       return [
         `${name}__number`,
         {
           [CLASSNAMES.STATUS.disabled]: this.disabled,
-          [CLASSNAMES.STATUS.current]: this.currentIndex === index,
+          [CLASSNAMES.STATUS.current]: this.current === index,
         },
       ];
     },
@@ -371,7 +366,7 @@ export default mixins(PaginationLocalReceiver).extend({
 
       let isIndexChange = false;
 
-      if (this.currentIndex > pageCount) {
+      if (this.current > pageCount) {
         isIndexChange = true;
       }
 
@@ -381,15 +376,16 @@ export default mixins(PaginationLocalReceiver).extend({
        * @param {Number} index 当前页
        */
       const pageInfo = {
-        current: isIndexChange ? pageCount : this.currentIndex,
-        previous: this.currentIndex,
+        current: isIndexChange ? pageCount : this.current,
+        previous: this.current,
         pageSize,
       };
       this.$emit('update:pageSize', pageSize);
-      this.$emit('pageSizeChange', pageSize, pageInfo);
+      this.$emit('page-size-change', pageSize, pageInfo);
       if (typeof this.onPageSizeChange === 'function') {
         this.onPageSizeChange(pageSize, pageInfo);
       }
+      this.$emit('change', pageInfo);
       if (isIndexChange) {
         this.toPage(pageCount);
       }
