@@ -23,10 +23,10 @@ describe('InputNumber', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it(':formatter, with 6%', () => {
+    it(':format, with 6%', () => {
       const wrapper = mount({
         render() {
-          return <InputNumber value={6} formatter={v => `${v}%`} />;
+          return <InputNumber value={6} format={v => `${v}%`} />;
         },
       });
       const inputNumber = wrapper.find('input');

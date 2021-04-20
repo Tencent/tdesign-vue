@@ -4,7 +4,7 @@
       v-model="value"
       :max="15"
       :min="-2"
-      :formatter="value => `${value}%`"
+      :format="value => `${value}%`"
       @change="onChange"
     ></t-input-number>
   </div>

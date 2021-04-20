@@ -151,7 +151,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
 </div>
 `;
 
-exports[`InputNumber formatter demo works fine 1`] = `
+exports[`InputNumber format demo works fine 1`] = `
 <div>
   <div
     class="t-input-number t-size-m"
@@ -472,7 +472,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder="请输入"
+        placeholder="输入"
         ref="refInputElem"
       />
     </div>

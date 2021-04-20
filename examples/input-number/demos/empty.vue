@@ -2,7 +2,7 @@
   <div>
     <t-input-number
       v-model="value"
-      placeholder="请输入"
+      placeholder="输入"
     ></t-input-number>
   </div>
 </template>

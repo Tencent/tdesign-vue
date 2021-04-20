@@ -18,7 +18,7 @@ exports[`InputNumber :props :disabled, function can not be call 1`] = `
 </div>
 `;
 
-exports[`InputNumber :props :formatter, with 6% 1`] = `
+exports[`InputNumber :props :format, with 6% 1`] = `
 <div class="t-input-number t-size-m"><span class="t-input-number__decrease"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-remove t-size-m"><path fill-opacity=".9" fill-rule="evenodd" d="M128 480L896 480 896 544 128 544Z"></path></svg></span>
   <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner t-input-number-text-align"></div>
   <div class="t-input-number__increase"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-add t-size-m">

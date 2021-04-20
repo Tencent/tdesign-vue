@@ -177,14 +177,14 @@ export default Vue.extend({
     increaseIcon(): TNodeReturnValue {
       return this.theme === 'column' ? <chevron-up size={this.size} /> : <add size={this.size} />;
     },
-    displayValue(): string {
+    displayValue(): string | number {
       if (this.value === undefined) return;
       // inputing
       if (this.inputing && this.userInput !== null) {
         return this.filterValue;
       }
       // end input
-      return this.formatter && !this.inputing ? this.formatter(this.value) : this.value.toFixed(this.digitsNum);
+      return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
   },
   methods: {

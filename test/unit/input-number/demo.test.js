@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import center from '@/examples/input-number/demos/center.vue';
 import defaultDemo from '@/examples/input-number/demos/default.vue';
 import disabled from '@/examples/input-number/demos/disabled.vue';
-import formatter from '@/examples/input-number/demos/formatter.vue';
+import format from '@/examples/input-number/demos/format.vue';
 import left from '@/examples/input-number/demos/left.vue';
 import size from '@/examples/input-number/demos/size.vue';
 import step from '@/examples/input-number/demos/step.vue';
@@ -21,8 +21,8 @@ describe('InputNumber', () => {
     const wrapper = mount(disabled);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('formatter demo works fine', () => {
-    const wrapper = mount(formatter);
+  it('format demo works fine', () => {
+    const wrapper = mount(format);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('left demo works fine', () => {
