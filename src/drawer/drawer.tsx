@@ -124,14 +124,21 @@ export default Vue.extend({
       return typeof api === 'object' ? api : {};
     },
     getDefaultFooter() {
+      const defaultCancel = (
+        <t-button variant='outline' onClick={this.cancelBtnAction} props={this.getBtnProps(this.cancelBtn)}>
+          { this.getBtnText(this.cancelBtn) }
+        </t-button>
+      );
+      const defaultConfirm = (
+        <t-button onClick={this.confirmBtnAction} props={this.getBtnProps(this.confirmBtn)}>
+          { this.getBtnText(this.confirmBtn) }
+        </t-button>
+      );
+      const baseTypes = ['string', 'object'];
       return (
         <div>
-          <t-button variant="outline" onClick={this.cancelBtnAction} props={this.getBtnProps(this.cancelBtn)}>
-            { this.getBtnText(this.cancelBtn) }
-          </t-button>
-          <t-button onClick={this.confirmBtnAction} props={this.getBtnProps(this.confirmBtn)}>
-            { this.getBtnText(this.confirmBtn) }
-          </t-button>
+          {baseTypes.includes(typeof this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
+          {baseTypes.includes(typeof this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
         </div>
       );
     },
