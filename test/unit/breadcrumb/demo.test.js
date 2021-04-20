@@ -2,6 +2,8 @@ import { mount } from '@vue/test-utils';
 import base from '@/examples/breadcrumb/demos/base.vue';
 import custom from '@/examples/breadcrumb/demos/custom.vue';
 import to from '@/examples/breadcrumb/demos/to.vue';
+import href from '@/examples/breadcrumb/demos/href.vue';
+import options from '@/examples/breadcrumb/demos/options.vue';
 
 // unit test for component in examples.
 describe('Breadcrumb', () => {
@@ -18,13 +20,11 @@ describe('Breadcrumb', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('href demo works fine', () => {
-    const demo = require('@/examples/breadcrumb/demos/href.vue');
-    const wrapper = mount(demo);
+    const wrapper = mount(href);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('options demo works fine', () => {
-    const demo = require('@/examples/breadcrumb/demos/options.vue');
-    const wrapper = mount(demo);
+    const wrapper = mount(options);
     expect(wrapper.element).toMatchSnapshot();
   });
 });
