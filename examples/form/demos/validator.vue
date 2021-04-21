@@ -29,6 +29,13 @@
           :options="courseOptions"
         ></t-checkbox-group>
       </t-form-item>
+      <t-form-item label="学院" name='college'>
+        <t-select v-model="formData.college" class="demo-select-base" clearable>
+          <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
+            {{ item.label }}
+          </t-option>
+        </t-select>
+      </t-form-item>
       <t-form-item label="入学时间" name='date' :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]">
         <t-input v-model="formData.date"></t-input>
       </t-form-item>
@@ -49,6 +56,7 @@ const INITIAL_DATA = {
   password: '',
   email: '',
   gender: '',
+  college: '',
   date: '',
   content: {
     url: '',
@@ -64,6 +72,11 @@ export default {
         { label: '数学', value: '2' },
         { label: '英语', value: '3' },
         { label: '体育', value: '4' },
+      ],
+      options: [
+        { label: '计算机学院', value: '1' },
+        { label: '软件学院', value: '2' },
+        { label: '物联网学院', value: '3' },
       ],
       rules: {
         account: [
@@ -100,6 +113,7 @@ export default {
   methods: {
     onReset() {
       this.$message.success('重置成功');
+      console.log('formData', this.formData);
     },
     onSubmit({ result, firstError }) {
       if (result === true) {
@@ -112,3 +126,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.demo-select-base {
+  width: 300px;
+}
+</style>

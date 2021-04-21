@@ -143,14 +143,20 @@ export default Vue.extend({
     },
     renderTipsInfo(): VNode {
       const parent = this.$parent as FormInstance;
+      let helpVNode: VNode;
       if (this.help) {
-        return <span class={CLASS_NAMES.extra}>{this.help}</span>;
+        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
       }
-      if (!parent.showErrorMessage) return;
       const list = this.errorList;
-      if (list && list[0] && list[0].message) {
-        return <span class={CLASS_NAMES.extra}>{list[0].message}</span>;
+      if (parent.showErrorMessage && list && list[0] && list[0].message) {
+        return (
+          <div>
+            <span class={CLASS_NAMES.extra}>{list[0].message}</span>
+            {helpVNode}
+          </div>
+        );
       }
+      return helpVNode;
     },
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (iconName: string) => (
