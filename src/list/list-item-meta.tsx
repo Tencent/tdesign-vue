@@ -18,13 +18,12 @@ export default Vue.extend({
           </div>
         );
       }
-      return renderTNodeJSX(this, 'avator');
+      return <div class={`${name}-avatar`}>{renderTNodeJSX(this, 'avator')}</div>;
     },
   },
   render(): VNode {
     const propsTitleContent = renderTNodeJSX(this, 'title');
     const propsDescriptionContent = renderTNodeJSX(this, 'description');
-
 
     const listItemMetaContent: ScopedSlotReturnValue = [
       this.renderAvatar(),
