@@ -3,7 +3,7 @@
 exports[`Menu single demo works fine 1`] = `
 <div>
   <div
-    class="t-head-menu t-menu-mode__dropdown t-menu--light"
+    class="t-head-menu t-menu-mode__normal t-menu--light"
   >
     <div
       class="t-head-menu__inner"
@@ -26,6 +26,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
             菜单内容一
           </span>
@@ -34,6 +35,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
             已选内容
           </span>
@@ -42,14 +44,21 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
-            菜单内容二
+            <a
+              href="https://www.tencent.com"
+              target="_blank"
+            >
+              菜单内容二
+            </a>
           </span>
         </li>
          
         <li
           class="t-menu__item t-is-disabled"
         >
+           
           <span>
             菜单内容三
           </span>
@@ -105,7 +114,7 @@ exports[`Menu single demo works fine 1`] = `
   <br />
    
   <div
-    class="t-head-menu t-menu-mode__dropdown t-menu--dark"
+    class="t-head-menu t-menu-mode__normal t-menu--dark"
   >
     <div
       class="t-head-menu__inner"
@@ -128,6 +137,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
             已选内容
           </span>
@@ -136,6 +146,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
             菜单内容一
           </span>
@@ -144,6 +155,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item"
         >
+           
           <span>
             菜单内容二
           </span>
@@ -152,6 +164,7 @@ exports[`Menu single demo works fine 1`] = `
         <li
           class="t-menu__item t-is-disabled"
         >
+           
           <span>
             菜单内容三
           </span>

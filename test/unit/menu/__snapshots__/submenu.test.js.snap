@@ -8,7 +8,7 @@ exports[`Submenu props :disabled 1`] = `
 `;
 
 exports[`Submenu props :name 1`] = `
-<ul class="t-submenu">
+<ul class="t-submenu" name="1">
   <!---->
   <!---->
 </ul>

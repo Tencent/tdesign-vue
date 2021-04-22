@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeadMenu props :active 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
@@ -11,7 +11,7 @@ exports[`HeadMenu props :active 1`] = `
 `;
 
 exports[`HeadMenu props :height 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
@@ -21,7 +21,7 @@ exports[`HeadMenu props :height 1`] = `
 `;
 
 exports[`HeadMenu props :theme 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
@@ -31,7 +31,7 @@ exports[`HeadMenu props :theme 1`] = `
 `;
 
 exports[`HeadMenu slot <default> 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu">
@@ -43,7 +43,7 @@ exports[`HeadMenu slot <default> 1`] = `
 `;
 
 exports[`HeadMenu slot <logo> 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo">
       <div></div>
@@ -55,7 +55,7 @@ exports[`HeadMenu slot <logo> 1`] = `
 `;
 
 exports[`HeadMenu slot <options> 1`] = `
-<div class="t-head-menu t-menu-mode__dropdown t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
