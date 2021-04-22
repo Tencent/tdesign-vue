@@ -34,7 +34,6 @@
 
     <t-dialog
       :visible="visible3"
-      :closeBtn="true"
       header="提示"
       body="自定义底部按钮，传入自定义组件"
       :confirmBtn="getConfirmBtn"

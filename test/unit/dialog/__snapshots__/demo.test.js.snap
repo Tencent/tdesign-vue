@@ -27,12 +27,25 @@ exports[`Dialog async demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            保存订单
-          </h5>
+          保存订单
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -126,12 +139,25 @@ exports[`Dialog attach demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            挂载到id为app的元素
-          </h5>
+          挂载到id为app的元素
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -199,12 +225,25 @@ exports[`Dialog attach demo works fine 1`] = `
       <div
         class="t-dialog__header"
       >
-        <h5
-          class="title"
-        >
-          函数返回挂载节点
-        </h5>
+        函数返回挂载节点
       </div>
+      <span
+        class="t-dialog__close"
+      >
+        <svg
+          class="t-icon t-icon-close"
+          name="close"
+          version="1.1"
+          viewBox="0 0 1024 1024"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+            fill-opacity=".9"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </span>
       <div
         class="t-dialog__body"
       >
@@ -280,12 +319,25 @@ exports[`Dialog base demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            对话框标题
-          </h5>
+          对话框标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -309,23 +361,6 @@ exports[`Dialog base demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            name="close"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
       </div>
     </div>
   </transition-stub>
@@ -338,14 +373,14 @@ exports[`Dialog custom body demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    隐藏底部
+    隐藏标题
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    隐藏标题
+    隐藏底部
   </button>
    
   <button
@@ -378,6 +413,26 @@ exports[`Dialog custom body demo works fine 1`] = `
         style="max-height: calc(100% - 20%);"
       >
         <div
+          class="t-dialog__header"
+        />
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <div
           class="t-dialog__body"
         >
           对话框内容
@@ -422,16 +477,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            提示
-          </h5>
-        </div>
-        <div
-          class="t-dialog__body"
-        >
-          对话框内容
+          提示
         </div>
         <span
           class="t-dialog__close"
@@ -450,6 +496,14 @@ exports[`Dialog custom body demo works fine 1`] = `
             />
           </svg>
         </span>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        />
       </div>
     </div>
   </transition-stub>
@@ -472,12 +526,25 @@ exports[`Dialog custom body demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            标题
-          </h5>
+          标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -528,12 +595,25 @@ exports[`Dialog custom body demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            对话框标题
-          </h5>
+          对话框标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -633,12 +713,25 @@ exports[`Dialog custom demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            提示
-          </h5>
+          提示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -684,12 +777,25 @@ exports[`Dialog custom demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            提示
-          </h5>
+          提示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -737,12 +843,25 @@ exports[`Dialog custom demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            提示
-          </h5>
+          提示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -767,23 +886,6 @@ exports[`Dialog custom demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            name="close"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
       </div>
     </div>
   </transition-stub>
@@ -833,12 +935,25 @@ exports[`Dialog drag demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            模态对话框
-          </h5>
+          模态对话框
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -893,12 +1008,25 @@ exports[`Dialog drag demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            非模态对话框-可拖拽
-          </h5>
+          非模态对话框-可拖拽
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -949,12 +1077,25 @@ exports[`Dialog drag demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            非模态对话框-不可拖拽
-          </h5>
+          非模态对话框-不可拖拽
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1021,12 +1162,25 @@ exports[`Dialog icon demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            下单确认
-          </h5>
+          下单确认
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1083,12 +1237,25 @@ exports[`Dialog icon demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            温馨提示
-          </h5>
+          温馨提示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1145,12 +1312,25 @@ exports[`Dialog icon demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            推送失败
-          </h5>
+          推送失败
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1207,12 +1387,25 @@ exports[`Dialog icon demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            操作成功
-          </h5>
+          操作成功
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1286,12 +1479,25 @@ exports[`Dialog modal demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            模态对话框
-          </h5>
+          模态对话框
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1346,12 +1552,25 @@ exports[`Dialog modal demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            非模态对话框
-          </h5>
+          非模态对话框
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1482,12 +1701,25 @@ exports[`Dialog position demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            对话框标题
-          </h5>
+          对话框标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1532,12 +1764,25 @@ exports[`Dialog position demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            对话框标题
-          </h5>
+          对话框标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1583,12 +1828,25 @@ exports[`Dialog position demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          <h5
-            class="title"
-          >
-            对话框标题
-          </h5>
+          对话框标题
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1657,12 +1915,25 @@ exports[`Dialog warning demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            提示
-          </h5>
+          提示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1727,12 +1998,25 @@ exports[`Dialog warning demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            恭喜
-          </h5>
+          恭喜
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1797,12 +2081,25 @@ exports[`Dialog warning demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            警示
-          </h5>
+          警示
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1867,12 +2164,25 @@ exports[`Dialog warning demo works fine 1`] = `
               fill-rule="evenodd"
             />
           </svg>
-          <h5
-            class="title"
-          >
-            错误
-          </h5>
+          错误
         </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M760.9780096 217.6L806.2328448 262.85483392 557.312 511.744 806.2328448 760.6580096 760.9780096 805.9128448 512.064 556.992 263.17483392 805.9128448 217.92 760.6580096 466.816 511.744 217.92 262.85483392 263.17483392 217.6 512.064 466.496 760.9780096 217.6Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <div
           class="t-dialog__body"
         >
@@ -1942,6 +2252,9 @@ exports[`Dialog warning demo works fine 1`] = `
             </span>
           </div>
         </div>
+        <span
+          class="t-dialog__close"
+        />
         <div
           class="t-dialog__body"
         >

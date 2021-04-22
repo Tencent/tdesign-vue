@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     close() {
-      console.error('===close');
       this.visible = false;
     },
     onConfirm() {

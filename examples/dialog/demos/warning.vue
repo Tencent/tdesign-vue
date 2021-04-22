@@ -35,7 +35,7 @@
 
     <t-button theme="primary" @click="visible4 = true">错误反馈</t-button>
     <t-dialog
-      theme="error"
+      theme="danger"
       header="错误"
       body="对话框内容"
       :visible.sync="visible4"
@@ -47,6 +47,7 @@
     <t-button theme="primary" @click="visible5 = true">自定义icon</t-button>
     <t-dialog
       body="对话框内容"
+      :closeBtn="false"
       :visible.sync="visible5"
       @click-confirm="onClickConfirm"
       :onClose="close4"
@@ -73,12 +74,14 @@ export default Vue.extend({
     };
   },
   methods: {
-    onClickConfirm(close: Function, e: Event): void {
+    onClickConfirm(e: Event): void {
       // todo something else here
       this.sendingRequest();
-      // close dialog
-      close();
-      // stop propagation
+      this.visible1 = false;
+      this.visible2 = false;
+      this.visible3 = false;
+      this.visible4 = false;
+      this.visible5 = false;
       e.stopPropagation();
     },
     sendingRequest() {

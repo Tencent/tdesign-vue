@@ -6,6 +6,8 @@ import props from '../../types/drawer/props';
 import { FooterButton, CloseContext } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
+type FooterButtonType = 'confirm' | 'cancel';
+
 const name = `${prefix}-drawer`;
 
 export default Vue.extend({
@@ -117,28 +119,28 @@ export default Vue.extend({
         this.parentNode.style.cssText = this.parentNode.style.cssText.replace(/margin:.+;/, '');
       }
     },
-    getBtnText(api: FooterButton) {
-      return typeof api === 'object' ? api.content : api;
+    getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
+      const isCancel = btnType === 'cancel';
+      const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
+      const variant = isCancel ? 'outline' : 'base';
+      const isApiObject = typeof btnApi === 'object';
+      return (
+        <t-button variant={variant} onClick={clickAction} props={isApiObject ? btnApi : {}}>
+          { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
+        </t-button>
+      );
     },
-    getBtnProps(api: FooterButton) {
-      return typeof api === 'object' ? api : {};
+    isUseDefault(btnApi: FooterButton) {
+      const baseTypes = ['string', 'object'];
+      return Boolean(btnApi && baseTypes.includes(typeof btnApi));
     },
     getDefaultFooter() {
-      const defaultCancel = (
-        <t-button variant='outline' onClick={this.cancelBtnAction} props={this.getBtnProps(this.cancelBtn)}>
-          { this.getBtnText(this.cancelBtn) }
-        </t-button>
-      );
-      const defaultConfirm = (
-        <t-button onClick={this.confirmBtnAction} props={this.getBtnProps(this.confirmBtn)}>
-          { this.getBtnText(this.confirmBtn) }
-        </t-button>
-      );
-      const baseTypes = ['string', 'object'];
+      const defaultCancel = this.getDefaultBtn('cancel', this.cancelBtn);
+      const defaultConfirm = this.getDefaultBtn('confirm', this.confirmBtn);
       return (
         <div>
-          {baseTypes.includes(typeof this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
-          {baseTypes.includes(typeof this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
+          {this.isUseDefault(this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
+          {this.isUseDefault(this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
         </div>
       );
     },

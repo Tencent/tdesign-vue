@@ -20,7 +20,6 @@ export default Vue.extend({
       const mydialog = this.$dialog({
         header: 'Dialog-Plugin',
         body: 'Hi, darling! Do you want to be my lover?',
-        closeBtn: true,
         onClickConfirm: (e) => {
           console.log('confirm clicked', e);
           mydialog.hide();
@@ -35,6 +34,7 @@ export default Vue.extend({
       });
       dialogNode.update({
         header: 'Updated-Dialog-Plugin',
+        cancelBtn: '',
         onClickConfirm: (e) => {
           console.log('confirm button has been clicked!');
           console.log('e: ', e);

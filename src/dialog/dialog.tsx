@@ -1,4 +1,4 @@
-import Vue, { CreateElement } from 'vue';
+import Vue from 'vue';
 import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import TButton, { ButtonProps } from '../button';
@@ -7,6 +7,10 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { getPropsApiByEvent } from '../utils/helper';
 import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+
+type FooterButton = string | ButtonProps | TNode;
+type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-dialog`;
 
@@ -41,13 +45,19 @@ function InitDragEvent(dragBox: HTMLElement) {
     document.addEventListener('mouseup', mouseUpHandler);
   });
 }
+
 export default Vue.extend({
   name,
+
   components: {
     TIconClose,
     TIconInfoCircleFilled,
+    TIconCheckCircleFilled,
+    TButton,
   },
+
   props: { ...props },
+
   computed: {
     // 是否模态形式的对话框
     isModal(): boolean {
@@ -57,11 +67,9 @@ export default Vue.extend({
     isModeless(): boolean {
       return this.mode === 'modeless';
     },
-
     maskClass(): ClassName {
       return [`${name}-mask`, !this.showOverlay && `${name}-mask--hidden`];
     },
-
     dialogClass(): ClassName {
       const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`];
       if (['modeless', 'modal'].includes(this.mode)) {
@@ -69,7 +77,6 @@ export default Vue.extend({
       }
       return dialogClass;
     },
-
     dialogStyle(): Styles {
       const { top, placement } = this;
       let topStyle = {};
@@ -91,16 +98,19 @@ export default Vue.extend({
       return { width: GetCSSValue(this.width), ...topStyle };
     },
   },
+
   watch: {
     visible(value) {
       this.disPreventScrollThrough(value);
       this.addKeyboardEvent(value);
     },
   },
+
   beforeDestroy() {
     this.disPreventScrollThrough(false);
     this.addKeyboardEvent(false);
   },
+
   // 注册v-draggable指令,传入ture时候初始化拖拽事件
   directives: {
     draggable(el, binding) {
@@ -110,6 +120,7 @@ export default Vue.extend({
       }
     },
   },
+
   methods: {
     disPreventScrollThrough(disabled: boolean) {
       // 防止滚动穿透,modal形态才需要
@@ -153,7 +164,6 @@ export default Vue.extend({
         e,
       });
     },
-
     cancelBtnAction(e: MouseEvent) {
       this.emitEvent('click-cancel', e);
       this.emitCloseEvent({
@@ -172,13 +182,11 @@ export default Vue.extend({
     afterLeave() {
       this.emitEvent('closed');
     },
-
     emitEvent(name: string, event?: Event) {
       this.$emit(name, event);
       const handleName = getPropsApiByEvent(name);
       typeof this[handleName] === 'function' && this[handleName](event);
     },
-
     emitCloseEvent(context: CloseContext) {
       this.$emit('close', context);
       typeof this.onClose === 'function' && this.onClose(context);
@@ -199,122 +207,42 @@ export default Vue.extend({
       const icon = {
         info: <TIconInfoCircleFilled class="t-is-info" />,
         warning: <TIconInfoCircleFilled class="t-is-warning" />,
-        error: <TIconInfoCircleFilled class="t-is-error" />,
+        danger: <TIconInfoCircleFilled class="t-is-error" />,
         success: <TIconCheckCircleFilled class="t-is-success" />,
       };
       return icon[this.theme];
     },
-    renderHeader(h: CreateElement) {
-      const target = this.header;
-      let view;
-      let isShow = true;
-      if (typeof target === 'boolean') {
-        isShow = target;
-      }
-      if (typeof target === 'string') {
-        view = <h5 class="title">{target}</h5>;
-      } else if (typeof target === 'function') {
-        view = target(h);
-      } else if (typeof this.$scopedSlots.header === 'function') {
-        view = this.$scopedSlots.header(null);
-      }
+    getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
+      const isCancel = btnType === 'cancel';
+      const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
+      const variant = isCancel ? 'outline' : 'base';
+      const isApiObject = typeof btnApi === 'object';
       return (
-        isShow && (
-          <div class={`${name}__header`}>
-            {this.getIcon()}
-            {view}
-          </div>
-        )
+        <t-button variant={variant} onClick={clickAction} props={isApiObject ? btnApi : {}}>
+          { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
+        </t-button>
       );
     },
-    renderBody(h: CreateElement) {
-      const target = this.body;
-      let view;
-      if (typeof target === 'string' && target) {
-        view = target;
-      } else if (typeof target === 'function') {
-        view = target(h);
-      } else if (typeof this.$scopedSlots.body === 'function') {
-        view = this.$scopedSlots.body(null);
-      }
-      return view && <div class={`${name}__body`}>{view}</div>;
+    isUseDefault(btnApi: FooterButton) {
+      const baseTypes = ['string', 'object'];
+      return Boolean(btnApi && baseTypes.includes(typeof btnApi));
     },
-    renderDefaultBtn(h: CreateElement, type: string, btnNode: string | Function | ButtonProps) {
-      if (!btnNode) return null;
-      const r = {
-        confirm: {
-          theme: 'primary',
-          variant: 'base',
-          onClick: this.confirmBtnAction,
-        },
-        cancel: {
-          theme: 'default',
-          variant: 'outline',
-          onClick: this.cancelBtnAction,
-        },
-      }[type];
-      if (typeof btnNode === 'function') {
-        return btnNode(h);
-      }
-      if (typeof btnNode === 'object') {
-        return (
-          <TButton variant={r.variant} onClick={r.onClick} {...{ props: btnNode }}>
-            {btnNode.content}
-          </TButton>
-        );
-      }
+    getDefaultFooter() {
+      const defaultCancel = this.getDefaultBtn('cancel', this.cancelBtn);
+      const defaultConfirm = this.getDefaultBtn('confirm', this.confirmBtn);
       return (
-        <TButton variant={r.variant} onClick={r.onClick}>
-          {btnNode}
-        </TButton>
-      );
-    },
-
-    renderFooter(h: CreateElement) {
-      const defaultView = (
         <div>
-          {this.renderDefaultBtn(h, 'cancel', this.cancelBtn)}
-          {this.renderDefaultBtn(h, 'confirm', this.confirmBtn)}
+          {this.isUseDefault(this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
+          {this.isUseDefault(this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
         </div>
       );
-      const target = this.footer;
-      let view;
-      if (target === false) return;
-
-      if (target === true) {
-        view = typeof this.$scopedSlots.footer === 'function' ? this.$scopedSlots.footer(null) : defaultView;
-      } else if (typeof target === 'function') {
-        view = target(h);
-      }
-
-      return <div class={`${name}__footer`}>{view || defaultView}</div>;
     },
-    renderCloseBtn(h: CreateElement) {
-      const defaultView = <t-icon-close name="close"></t-icon-close>;
-      const target = this.closeBtn;
-      let view;
-      let isShow = true;
-      if (typeof target === 'boolean') {
-        isShow = target;
-      }
-
-      if (typeof target === 'string') {
-        view = target;
-      } else if (typeof target === 'function') {
-        view = target(h);
-      } else if (typeof this.$scopedSlots.closeBtn === 'function') {
-        view = this.$scopedSlots.closeBtn(null);
-      }
-
-      return (
-        isShow && (
-          <span class={`${name}__close`} onClick={this.closeBtnAcion}>
-            {view || defaultView}
-          </span>
-        )
-      );
-    },
-    renderDialog(h: CreateElement) {
+    renderDialog() {
+      // header 值为 true 显示空白头部
+      const defaultHeader = <h5 class="title"></h5>;
+      const defaultCloseBtn = <t-icon-close name="close"></t-icon-close>;
+      const body = renderContent(this, 'default', 'body');
+      const defaultFooter = this.getDefaultFooter();
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
         <div
@@ -323,17 +251,18 @@ export default Vue.extend({
           style={this.dialogStyle}
           v-draggable={this.isModeless && this.draggable}
         >
-          {this.renderHeader(h)}
-          {this.renderBody(h)}
-          {this.renderFooter(h)}
-          {this.renderCloseBtn(h)}
+          <div class={`${name}__header`}>{this.getIcon()}{renderTNodeJSX(this, 'header', defaultHeader)}</div>
+          <span class={`${name}__close`} onClick={this.closeBtnAcion}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</span>
+          <div class={`${name}__body`}>{body}</div>
+          <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>
       );
     },
   },
-  render(h: CreateElement) {
+
+  render() {
     const maskView = this.isModal && <div key="mask" class={this.maskClass} onClick={this.overlayAction}></div>;
-    const dialogView = this.renderDialog(h);
+    const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
     const ctxClass = [`${name}-ctx`, { 't-dialog-ctx--fixed': this.mode === 'modal' }];
