@@ -1,12 +1,12 @@
-import _Upload from './upload';
-import mapProps from '../utils/map-props';
+import Upload from './upload';
 import setInstallFn from '../utils/setInstallFn';
-
-const Upload = mapProps([
-  { name: 'fileList', event: 'change' },
-])(_Upload);
 
 setInstallFn('Upload', Upload);
 
-export { Upload };
+export {
+  Upload,
+};
+
+setInstallFn('Upload', Upload);
+
 export default Upload;

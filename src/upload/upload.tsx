@@ -1,10 +1,25 @@
-import Vue from 'vue';
-import { VNode } from 'vue/types/umd';
+/* eslint-disable no-param-reassign */
+import Vue, { VNode } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import Dragger from './dragger';
-import { HTMLInputEvent, UploadFile, UploadProgressEvent } from './interface';
-import UploadList from './uploadList';
+import ImageCard from './image';
+import FlowList from './flow-list';
 import xhr from './xhr';
+import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import TIconUpload from '../icon/upload';
+import TButton from '../button';
+import SingleFile from './single-file';
+import { renderContent } from '../utils/render-tnode';
+import props from '@TdTypes/upload/props';
+import findIndex from 'lodash/findIndex';
+import {
+  HTMLInputEvent,
+  SuccessContext,
+  ProgressContext,
+  RemoveOptions,
+  FlowRemoveContext,
+} from './interface';
 
 const name = `${prefix}-upload`;
 
@@ -13,117 +28,143 @@ export default Vue.extend({
 
   components: {
     Dragger,
+    SingleFile,
+    ImageCard,
+    FlowList,
   },
 
-  props: {
-    accept: String,
-    action: {
-      type: [String],
-    },
-    method: {
-      type: String,
-      default: 'POST',
-    },
-    beforeUpload: {
-      type: Function,
-      default() {
-        return () => true;
-      },
-    },
-    data: [Object, Function],
-    headers: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    disabled: Boolean,
-    multiple: Boolean,
-    name: {
-      type: String,
-      default: 'file',
-    },
-    withCredentials: Boolean,
-    customRequest: Function,
-    transformFile: {
-      type: Function,
-      default: (file: any) => file,
-    },
-    autoUpload: Boolean,
-    submit: Function,
-    abort: Function,
-    drag: Boolean,
-    showFileList: {
-      type: Boolean,
-      default: true,
-    },
-    fileList: {
-      type: Array,
-      default: (): any => ([]),
-    },
-    defaultFileList: {
-      type: Array,
-      default: (): any => ([]),
-    },
-    listType: {
-      type: String,
-      default: '',
-      validator(v: string): boolean {
-        return ['', 'default', 'picture'].includes(v);
-      },
-    },
-    limit: Number,
-    beforeRemove: {
-      type: Function,
-      default: (): boolean => true,
-    },
+  model: {
+    prop: 'files',
+    event: 'change',
   },
 
-  data: () => ({
-    dragActive: false,
-  }),
+  props: { ...props },
+
+  data() {
+    return {
+      dragActive: false,
+      // 加载中的文件
+      loadingFile: null as UploadFile,
+      // 等待上传的文件队列
+      toUploadFiles: [],
+    };
+  },
+
+  computed: {
+    // 默认文件上传风格：文件进行上传和上传成功后不显示 tips
+    showTips(): boolean {
+      if (this.theme === 'file') {
+        const noFile = (!this.files || !this.files.length) && (!this.loadingFile);
+        return this.tips && noFile;
+      }
+      return Boolean(this.tips);
+    },
+    // 完全自定义上传
+    showCustomDisplay(): boolean {
+      return this.theme === 'custom';
+    },
+    // 单文件非拖拽类文件上传
+    showSingleDisplay(): boolean {
+      return (!this.draggable) && ['file', 'file-input'].includes(this.theme);
+    },
+    // 单文件非拖拽勒图片上传
+    showImgCard(): boolean {
+      return !this.draggable && this.theme === 'image';
+    },
+    // 拖拽类单文件或图片上传
+    singleDraggable(): boolean {
+      return !this.multiple && this.draggable && ['file', 'file-input', 'image'].includes(this.theme);
+    },
+    showUploadList(): boolean {
+      return this.multiple && ['file-flow', 'image-flow'].includes(this.theme);
+    },
+    tipsClasses(): ClassName {
+      return ['t-upload__tips t-upload__small', { 't-upload__tips-imgcard': this.showImgCard }];
+    },
+  },
 
   methods: {
     handleChange(event: HTMLInputEvent): void {
       const { files } = event.target;
-      this.$emit('change', files);
-      if (!this.autoUpload) return;
-      this.uploadFiles({ files });
-      (this.$refs.input as Vue & { value: any }).value = null;
+      if (this.disabled) return;
+      this.uploadFiles(files);
+      (this.$refs.input as HTMLInputElement).value = '';
     },
 
     handleDragChange(files: FileList): void {
       if (this.disabled) return;
-      this.$emit('change', files);
-      if (!this.autoUpload) return;
-      this.uploadFiles({ files });
+      this.uploadFiles(files);
     },
 
-    uploadFiles({ files }: { files: FileList }): void {
-      const arrayFiles = [...files];
-      const postedFiles = this.multiple ? arrayFiles : [arrayFiles[0]];
-      postedFiles.forEach(async (file: File): Promise<void> => {
-        file = this.transformFile(file); // eslint-disable-line
-        const isUpload = this.beforeUpload(file);
-        const uploadFile: UploadFile = {
-          ...file,
-          uid: Date.now() + file.name,
-          lastModified: file.lastModified,
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          originFileObj: file,
-          percent: 0,
-          status: 'progress',
-        };
-        if (isUpload) {
-          this.upload(uploadFile);
+    handleSingleRemove(e: MouseEvent) {
+      const changeCtx =  { trigger: 'remove' };
+      this.$emit('change', [], changeCtx);
+      this.onChange && this.onChange([], changeCtx);
+      this.$emit('remove', { e });
+      this.onRemove && this.onRemove({ e });
+    },
+
+    handleMultipleRemove(options: RemoveOptions) {
+      const changeCtx =  { trigger: 'remove', ...options };
+      const files = this.files.concat();
+      files.splice(options.index, 1);
+      this.$emit('change', files, changeCtx);
+      this.onChange && this.onChange(files, changeCtx);
+      this.$emit('remove', options);
+      this.onRemove && this.onRemove(options);
+    },
+
+    handleListRemove(context: FlowRemoveContext) {
+      const { file } = context;
+      const index = findIndex(this.toUploadFiles, o => o.name === file.name);
+      if (index >= 0) {
+        this.toUploadFiles.splice(index, 1);
+      } else {
+        const index = findIndex(this.files, o => o.name === file.name);
+        this.handleMultipleRemove({ e: context.e, index });
+      }
+    },
+
+    uploadFiles(files: FileList) {
+      [...files].forEach((fileRaw: File) => {
+        if (this.limit && this.files.length >= this.limit) return;
+        let file: UploadFile | File = fileRaw;
+        if (typeof this.format === 'function') {
+          file = this.format(fileRaw);
         }
+        const uploadFile: UploadFile = {
+          raw: fileRaw,
+          lastModified: fileRaw.lastModified,
+          name: fileRaw.name,
+          size: fileRaw.size,
+          type: fileRaw.type,
+          percent: 0,
+          status: 'waiting',
+          ...file,
+        };
+        this.handleBeforeUpload(file).then((canUpload) => {
+          if (!canUpload) return;
+          const newFiles = this.toUploadFiles.concat();
+          newFiles.push(uploadFile);
+          this.toUploadFiles = [...new Set(newFiles)];
+          this.loadingFile = file;
+          // this.$emit('waiting-upload-files-change', this.toUploadFiles);
+          // this.onWaitingUploadFilesChange && this.onWaitingUploadFilesChange(this.toUploadFiles);
+          if (this.autoUpload) {
+            this.upload(uploadFile);
+          }
+        });
       });
     },
 
     async upload(file: UploadFile): Promise<void> {
-      const request = this.customRequest || xhr;
+      if (!this.action) {
+        console.error('TDesign Upload Error: action is required.');
+        return;
+      }
+      file.status = 'progress';
+      this.loadingFile = file;
+      const request = xhr;
       request({
         action: this.action,
         data: this.data,
@@ -132,113 +173,204 @@ export default Vue.extend({
         headers: this.headers,
         withCredentials: this.withCredentials,
         onError: this.onError,
-        onProgress: this.onProgress,
-        onSuccess: this.onSuccess,
-      });
-      this.fileList.push(file);
-    },
-
-    onError({ event, file }: { event: ProgressEvent; file: UploadFile }): void {
-      const fileList = [].concat(this.fileList);
-      const [targetFile] = fileList.filter((item: UploadFile) => item.uid === file.uid);
-      if (!targetFile) {
-        return;
-      }
-      targetFile.status = 'fail';
-      const params = { event, file: targetFile, fileList };
-      this.$emit('fail', params);
-    },
-
-    onProgress({ event, file }: { event: any; file: UploadFile }): void {
-      const [targetFile] = this.fileList.filter((item: UploadFile) => item.uid === file.uid);
-      if (!targetFile) {
-        return;
-      }
-      targetFile.status = 'progress';
-      targetFile.percent = event.percent;
-      this.$emit('progress', {
-        event,
-        file: targetFile,
-        fileList: this.fileList,
+        onProgress: this.handleProgress,
+        onSuccess: this.handleSuccess,
       });
     },
 
-    onSuccess({ event, file, response }: { event: UploadProgressEvent; file: UploadFile; response: any }): void {
-      const [targetFile] = this.fileList.filter((item: UploadFile) => item.uid === file.uid);
-      if (!targetFile) {
-        return;
-      }
-      targetFile.status = 'success';
-      targetFile.percent = 100;
-      this.$emit('success', {
-        event,
-        file: targetFile,
-        fileList: this.fileList,
-        response,
+    multipleUpload(files: Array<UploadFile>) {
+      files.forEach((file) => {
+        this.upload(file);
       });
     },
 
-    handleRemove(file: UploadFile): void {
-      const canBeRemoved = (this.beforeRemove as (file: UploadFile) => boolean)(file);
-      if (!canBeRemoved) return;
-      const findIndex = this.fileList.findIndex((item: UploadFile) => item.uid === file.uid);
-      this.fileList.splice(findIndex, 1);
+    onError({ event, file }: { event: ProgressEvent; file: UploadFile }) {
+      file.status = 'fail';
+      this.loadingFile = null;
+      const context = { e: event, file };
+      this.$emit('fail', context);
+      this.onFail && this.onFail(context);
     },
 
-    handlePreview(file: UploadFile) {
-      this.$emit('preview', file);
+    handleProgress({ event, file, percent }: ProgressContext) {
+      file.percent = percent;
+      this.loadingFile = file;
+      const progressCtx = { percent, e: event, file };
+      this.$emit('progress', progressCtx);
+      this.onProgress && this.onProgress(progressCtx);
     },
 
-    handleClick(): void {
+    handleSuccess({ event, file, response }: SuccessContext) {
+      file.status = 'success';
+      file.url = response.url || file.url;
+      // 从待上传文件队列中移除上传成功的文件
+      const index = findIndex(this.toUploadFiles, o => o.name === file.name);
+      this.toUploadFiles.splice(index, 1);
+      // 上传成功的文件发送到 files
+      const newFile: UploadFile = { ...file, response };
+      const files = this.multiple ? this.files.concat(newFile) : [newFile];
+      const context = { e: event, response, trigger: 'upload-success' };
+      this.$emit('change', files, context);
+      this.onChange && this.onChange(files, context);
+      const sContext = { file, fileList: files, e: event, response };
+      this.$emit('success', sContext);
+      this.onSuccess && this.onSuccess(sContext);
+      this.loadingFile = null;
+    },
+
+    handlePreview({ file, event }: {file: UploadFile; event: ProgressEvent}) {
+      // console.log(file, event);
+      return { file, event };
+      // const [targetFile] = this.files.filter((item: UploadFile) => item.id === file.id);
+      // if (!targetFile) {
+      //   return;
+      // }
+      // this.$emit('preview', {
+      //   event,
+      //   file: targetFile,
+      // });
+    },
+
+    triggerUpload() {
       if (this.disabled) return;
       (this.$refs.input as HTMLInputElement).click();
     },
 
-    handleDragenter(): void {
+    handleDragenter(e: DragEvent) {
       if (this.disabled) return;
-      this.$emit('dragenter');
+      this.$emit('dragenter', { e });
       this.dragActive = true;
+      this.onDragenter && this.onDragenter({ e });
     },
 
-    handleDragleave(): void {
+    handleDragleave(e: DragEvent) {
       if (this.disabled) return;
-      this.$emit('dragleave');
+      this.$emit('dragleave', { e });
       this.dragActive = false;
+      this.onDragleave && this.onDragleave({ e });
+    },
+
+    handleBeforeUpload(file: File | UploadFile): Promise<boolean> {
+      if (typeof this.beforeUpload === 'function') {
+        const r = this.beforeUpload(file);
+        if (r instanceof Promise) return r;
+        return new Promise(resolve => resolve(r));
+      }
+      return new Promise(resolve => resolve(true));
+    },
+
+    cancelUpload() {
+      (this.$refs.input as HTMLInputElement).value = '';
+    },
+
+    getDefaultTrigger() {
+      if (this.theme === 'file-input' || this.showUploadList) {
+        return <TButton variant='outline'>选择文件</TButton>;
+      }
+      return (
+        <TButton variant='outline'>
+          <TIconUpload slot='icon'/>点击上传
+        </TButton>
+      );
+    },
+
+    renderInput() {
+      return (
+        <input
+          ref='input'
+          type='file'
+          disabled={this.disabled}
+          onChange={this.handleChange}
+          multiple={this.multiple}
+          accept={this.accept}
+          hidden
+        />
+      );
+    },
+    // 渲染单文件预览：设计稿有两种单文件预览方式，文本型和输入框型
+    renderSingleDisplay(triggerElement: ScopedSlotReturnValue) {
+      return (
+        <SingleFile
+          file={this.files && this.files[0]}
+          loadingFile={this.loadingFile}
+          display={this.theme}
+          remove={this.handleSingleRemove}
+          placeholder={this.placeholder}
+        >
+          <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
+        </SingleFile>
+      );
+    },
+    renderDraggerTrigger() {
+      const params = {
+        dragActive: this.dragActive,
+        uploadingFile: this.multiple ? this.toUploadFiles : this.loadingFile,
+      };
+      const triggerElement = renderContent(this, 'default', 'trigger', { params });
+      return (
+        <Dragger
+          onChange={this.handleDragChange}
+          onDragenter={this.handleDragenter}
+          onDragleave={this.handleDragleave}
+          loadingFile={this.loadingFile}
+          file={this.files && this.files[0]}
+          display={this.theme}
+          cancel={this.cancelUpload}
+          trigger={this.triggerUpload}
+          remove={this.handleSingleRemove}
+        >
+          {triggerElement}
+        </Dragger>
+      );
+    },
+    renderTrigger() {
+      const defaultNode = this.getDefaultTrigger();
+      return renderContent(this, 'default', 'trigger', defaultNode);
+    },
+    renderCustom(triggerElement: VNode) {
+      return this.draggable
+        ? this.renderDraggerTrigger()
+        : <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>;
     },
   },
 
   render(): VNode {
-    const triggerSlot = this.$scopedSlots.trigger || this.$scopedSlots.default;
-    const triggerElement = triggerSlot && triggerSlot({ dragActive: this.dragActive });
+    const triggerElement = this.renderTrigger();
     return (
-      <section>
-        <div onClick={this.handleClick}>
-          {
-            this.drag
-              ? <Dragger
-                  onChange={this.handleDragChange}
-                  onDragenter={this.handleDragenter}
-                  onDragleave={this.handleDragleave}>
-                    {triggerElement}
-                </Dragger>
-              : triggerElement
-          }
-          <input type="file" hidden ref="input" onChange={this.handleChange} multiple={this.multiple} accept={this.accept} />
-        </div>
-
-        {
-          this.showFileList
-            ? <UploadList
-                fileList={this.fileList}
-                listType={this.listType}
-                handleRemove={this.handleRemove}
-                preview={this.handlePreview}
-                limit={this.limit}
-                handleUpload={this.handleClick}>
-              </UploadList>
-            : ''
-        }
-      </section>
+      <div class='t-upload'>
+        {this.renderInput()}
+        {this.showCustomDisplay && this.renderCustom(triggerElement)}
+        {this.showSingleDisplay && this.renderSingleDisplay(triggerElement)}
+        {this.singleDraggable && this.renderDraggerTrigger()}
+        {this.showImgCard && (
+          <ImageCard
+            files={this.files}
+            multiple={this.multiple}
+            remove={this.handleMultipleRemove}
+            trigger={this.triggerUpload}
+            loadingFile={this.loadingFile}
+            toUploadFiles={this.toUploadFiles}
+          ></ImageCard>
+        )}
+        {this.showUploadList && (
+          <FlowList
+            files={this.files}
+            placeholder={this.placeholder}
+            autoUpload={this.autoUpload}
+            toUploadFiles={this.toUploadFiles}
+            remove={this.handleListRemove}
+            upload={this.multipleUpload}
+            cancel={this.cancelUpload}
+            display={this.theme}
+            onChange={this.handleDragChange}
+            onDragenter={this.handleDragenter}
+            onDragleave={this.handleDragleave}
+          >
+            <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
+          </FlowList>
+        )}
+        {this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}
+      </div>
     );
   },
 });

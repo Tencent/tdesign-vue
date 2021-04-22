@@ -62,22 +62,50 @@ export const RenderTNodeTemplate = Vue.extend({
   },
 });
 
-// 通过JSX的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
-export const renderTNodeJSX = (vm: Vue, name: string, defaultNode?: VNode) => {
+interface JSXRenderContext {
+  defaultNode?: VNode;
+  params?: Record<string, any>;
+}
+
+/**
+ * 通过JSX的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
+ * @param vm 组件示例
+ * @param name 插槽和属性名称
+ * @param defaultNode 默认渲染内容，当属性值为 true 时默认渲染该内容
+ * @example renderTNodeJSX(this, 'closeBtn')
+ * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
+ * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
+ */
+export const renderTNodeJSX = (vm: Vue, name: string, options?: VNode | JSXRenderContext) => {
+  const params = options && 'params' in options ? options.params : null;
+  const defaultNode = options && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];
   if (propsNode === false) return;
   if (propsNode === true && defaultNode) {
-    return vm.$scopedSlots[name] ? vm.$scopedSlots[name](null) : defaultNode;
+    return vm.$scopedSlots[name] ? vm.$scopedSlots[name](params) : defaultNode;
   }
   if (typeof propsNode === 'function') return propsNode(vm.$createElement);
-  const isPropsEmpty = [undefined, null, ''].includes(propsNode);
-  if (isPropsEmpty && vm.$scopedSlots[name]) return vm.$scopedSlots[name](null);
+  const isPropsEmpty = [undefined, params, ''].includes(propsNode);
+  if (isPropsEmpty && vm.$scopedSlots[name]) return vm.$scopedSlots[name](params);
   return propsNode;
 };
 
-// content 优先级控制：name1 优先级高于 name2
-export const renderContent = (vm: Vue, name1: string, name2: string) => {
-  const node1 = renderTNodeJSX(vm, name1);
-  const node2 = renderTNodeJSX(vm, name2);
-  return [undefined, null, ''].includes(node1) ? node2 : node1;
+/**
+ * 用于处理相同名称的 TNode 渲染
+ * @param vm 组件实例
+ * @param name1 第一个名称
+ * @param name2 第二个名称
+ * @param defaultNode 默认渲染内容：当 name1 和 name2 都为空时会启动默认内容渲染
+ * @example renderContent(this, 'default', 'content')
+ * @example renderContent(this, 'default', 'content', '我是默认内容')
+ * @example renderContent(this, 'default', 'content', { defaultNode: '我是默认内容', params })
+ */
+export const renderContent = (vm: Vue, name1: string, name2: string, options?: VNode | JSXRenderContext) => {
+  const params = options && 'params' in options ? options.params : null;
+  let defaultNode = (options && 'defaultNode' in options) && options.defaultNode;
+  defaultNode = (options && 'context' in options) && options;
+  const node1 = renderTNodeJSX(vm, name1, { params });
+  const node2 = renderTNodeJSX(vm, name2, { params });
+  const r = [undefined, null, ''].includes(node1) ? node2 : node1;
+  return [undefined, null, ''].includes(r) ? defaultNode : r;
 };

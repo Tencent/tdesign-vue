@@ -1,4 +1,4 @@
-import { XhrOptions, UploadProgressEvent } from './interface';
+import { XhrOptions } from './interface';
 
 export default function xhr({
   action,
@@ -22,7 +22,7 @@ export default function xhr({
   Object.keys(sendData).forEach((key) => {
     formData.append(key, data[key]);
   });
-  formData.append(name, file.originFileObj);
+  formData.append(name, file.raw);
 
   // custom request headers
   Object.keys(headers).forEach((key) => {
@@ -31,16 +31,17 @@ export default function xhr({
 
   xhr.open('post', action, true);
 
-  xhr.onerror = (event: UploadProgressEvent) => onError({ event, file });
+  xhr.onerror = (event: ProgressEvent) => onError({ event, file });
 
-  xhr.onprogress = function (event: UploadProgressEvent) {
+  xhr.onprogress = function (event: ProgressEvent) {
+    let percent = 0;
     if (event.total > 0) {
-      event.percent = event.loaded / event.total * 100; // eslint-disable-line
+      percent = Math.round((event.loaded / event.total) * 100);
     }
-    onProgress({ event, file });
+    onProgress({ event, percent, file });
   };
 
-  xhr.onload = function (event: UploadProgressEvent) {
+  xhr.onload = function (event: ProgressEvent) {
     if (xhr.status < 200 || xhr.status >= 300) {
       return onError({ event });
     }
