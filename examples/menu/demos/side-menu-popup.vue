@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" active="2-1" height="550px" :collapsed="collapsed" expandMutex @expand="handleExpand">
+  <t-menu theme="light" active="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
     <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
     <t-menu-item value="item1">
       <t-icon slot="icon" name="user"/>菜单内容一
@@ -31,6 +31,7 @@
 export default {
   data() {
     return {
+      expanded: ['2'],
       disabled: true,
       collapsed: false,
     };
