@@ -5,6 +5,7 @@ import { Button as TButton } from '../button';
 import props from '../../types/drawer/props';
 import { FooterButton, CloseContext } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import TransferDom from '../utils/transfer-dom';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -19,6 +20,10 @@ export default Vue.extend({
   },
 
   props: { ...props },
+
+  directives: {
+    TransferDom,
+  },
 
   computed: {
     drawerClasses(): ClassName {

@@ -1,13 +1,9 @@
 import { VueConstructor } from 'vue';
 
-import TransferDom from './utils/transfer-dom';
 import * as plugins from './plugins';
 import * as components from './components';
 
 function install(Vue: VueConstructor, config?: object): void {
-  // 增加指令v-transfer-dom，用于元素指定挂载点的
-  Vue.directive('transfer-dom', TransferDom);
-
   Object.keys(components).forEach((key) => {
     if (key.match(/plugin/)) {
       return;

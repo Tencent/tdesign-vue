@@ -8,6 +8,7 @@ import { getPropsApiByEvent } from '../utils/helper';
 import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import TransferDom from '../utils/transfer-dom';
 
 type FooterButton = string | ButtonProps | TNode;
 type FooterButtonType = 'confirm' | 'cancel';
@@ -119,6 +120,7 @@ export default Vue.extend({
         InitDragEvent(el);
       }
     },
+    TransferDom,
   },
 
   methods: {
