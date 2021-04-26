@@ -23,21 +23,21 @@
 export default {
   data() {
     const item = {
-      property: 'data',
       platform: '公有',
       type: 'any[]',
       default: '[]',
       needed: 'Y',
       description: '数据源',
-      detail: {
-        name: '嵌套信息读取',
-      },
     };
     const data = [];
     for (let i = 0; i < 100; i ++) {
       data.push({
         ...item,
         index: i,
+        detail: {
+          name: `读取 ${i} 个数据的嵌套信息值`,
+        },
+        property: `property-${i}`,
       });
     }
     return {
