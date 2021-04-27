@@ -43,10 +43,7 @@
 </template>
 
 <script>
-import TIcon from '@/src/icon/svg';
-
 export default {
-  components: { TIcon },
   data() {
     return {
       showLine: true,

@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import TIconCheckCircleFilled from '@/src/icon/check-circle-filled.tsx';
+import TIconCheckCircleFilled from '@tencent/tdesign-vue/lib/icon/check-circle-filled';
 
 export default {
   components: { TIconCheckCircleFilled },

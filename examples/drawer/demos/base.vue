@@ -9,7 +9,7 @@
 
 <script>
 import Vue from 'vue';
-import { MessagePlugin as Message } from '@/src/message';
+import { MessagePlugin as Message } from '@tencent/tdesign-vue';
 export default Vue.extend({
   data() {
     return {

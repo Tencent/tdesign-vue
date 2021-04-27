@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { NotifyPlugin } from '@/src/notification';
+import { NotifyPlugin } from '@tencent/tdesign-vue';
 export default {
   data() {
     return {

@@ -37,8 +37,8 @@
 </template>
 <script>
 
-import TIconClose from '@/src/icon/close.tsx';
-import TIconCheck from '@/src/icon/check.tsx';
+import TIconClose from '@tencent/tdesign-vue/lib/icon/close';
+import TIconCheck from '@tencent/tdesign-vue/lib/icon/check';
 
 export default {
   components: { TIconClose, TIconCheck },

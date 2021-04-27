@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { MessagePlugin } from '@/src/message';
+import { MessagePlugin } from '@tencent/tdesign-vue';
 
 export default {
   data() {

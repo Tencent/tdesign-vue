@@ -12,7 +12,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { DialogPlugin } from '@/src/dialog';
+import { DialogPlugin } from '@tencent/tdesign-vue';
 
 export default Vue.extend({
   methods: {
