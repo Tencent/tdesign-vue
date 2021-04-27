@@ -5,5 +5,6 @@ import { TdPopupProps } from '@TdTypes/popup/TdPopupProps';
 setInstallFn('Popup', Popup);
 
 export type PopupProps = TdPopupProps;
+export * from '@TdTypes/popup/TdPopupProps';
 export { Popup };
 export default Popup;

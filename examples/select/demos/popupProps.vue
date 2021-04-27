@@ -4,15 +4,8 @@
       v-model="value"
       placeholder="-请选择-"
       :options="options"
-      size="small"
-      style="width: 200px;display: inline-block;margin-right: 20px;"
-    />
-    <t-select
-      v-model="value"
-      placeholder="-请选择-"
-      :options="options"
-      size="large"
-      style="width: 200px;display: inline-block;"
+      :popupProps="popupProps"
+      style="width: 200px;"
     />
   </div>
 </template>
@@ -23,18 +16,23 @@ export default {
     return {
       options: [
         {
-          label: '选项一',
+          label: '已选择的选项',
           value: '1',
         },
         {
-          label: '选项二',
+          label: '短的选项二',
           value: '2',
         },
         {
-          label: '选项三',
+          label: '很长很长很很长很长很长的选项三',
           value: '3',
         },
       ],
+      popupProps: {
+        overlayStyle: {
+          width: '300px',
+        },
+      },
       value: '1',
     };
   },

@@ -3,36 +3,22 @@
     <t-select
       v-model="value"
       valueType="object"
-      class="demo-select-base"
+      clearable
+      placeholder="-请选择-"
+      :options="options"
+      style="width: 200px;display: inline-block;margin-right: 20px;"
       @change="handleChange"
-      @visible-change="visibleChange"
-    >
-      <t-option
-        v-for="(item, index) in options"
-        :value="item.value"
-        :label="item.label"
-        :key="index"
-      >
-        {{ item.label }}
-      </t-option>
-    </t-select>
+    />
     <t-select
       v-model="value2"
       valueType="object"
+      clearable
       multiple
-      class="demo-select-base"
+      placeholder="-请选择-"
+      :options="options"
+      style="width: 200px;display: inline-block;"
       @change="handleChange"
-      @visible-change="visibleChange"
-    >
-      <t-option
-        v-for="(item, index) in options"
-        :value="item.value"
-        :label="item.label"
-        :key="index"
-      >
-        {{ item.label }}
-      </t-option>
-    </t-select>
+    />
   </div>
 </template>
 
@@ -50,24 +36,14 @@ export default {
         label: '深圳',
         value: 'shenzhen',
       }],
-      value: 'shanghai',
-      value2: ['shanghai'],
+      value: { value: 'shanghai', label: '上海' },
+      value2: [{ value: 'shanghai', label: '上海' }],
     };
   },
   methods: {
     handleChange(value) {
-      console.log('已选值为：', value);
-    },
-    visibleChange(val) {
-      console.log('visible', val);
+      console.log('handleChange:', value);
     },
   },
 };
 </script>
-<style scoped>
-  .demo-select-base {
-    width: 200px;
-    display: inline-block;
-    margin: 0 20px;
-  }
-</style>
