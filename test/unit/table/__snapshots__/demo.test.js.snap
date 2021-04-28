@@ -919,12 +919,14 @@ exports[`Table base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-m"
+              class="t-select t-size-m t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="10"
+              >
+                10
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
                 version="1.1"
@@ -1895,12 +1897,14 @@ exports[`Table base demo works fine 2`] = `
             />
              
             <div
-              class="t-select t-size-m"
+              class="t-select t-size-m t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="10"
+              >
+                10
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
                 version="1.1"

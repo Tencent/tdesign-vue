@@ -156,7 +156,7 @@ export default Vue.extend({
       return this.filterable;
     },
     selectedSingle(): string {
-      if (!this.multiple && typeof this.value === 'string') {
+      if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
         let target: Array<Options> = [];
         if (this.options && this.options.length) {
           target = this.options.filter(item => get(item, this.realValue) === this.value);

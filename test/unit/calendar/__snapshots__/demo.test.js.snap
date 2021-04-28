@@ -24,12 +24,14 @@ exports[`Calendar base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -83,12 +85,14 @@ exports[`Calendar base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -856,12 +860,14 @@ exports[`Calendar card demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -915,12 +921,14 @@ exports[`Calendar card demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -1731,12 +1739,14 @@ exports[`Calendar cardCell demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -1790,12 +1800,14 @@ exports[`Calendar cardCell demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -2538,12 +2550,14 @@ exports[`Calendar cell demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -2597,12 +2611,14 @@ exports[`Calendar cell demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -3575,12 +3591,14 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -3634,12 +3652,14 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -4925,12 +4945,14 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -4984,12 +5006,14 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -5703,12 +5727,14 @@ exports[`Calendar events demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -5762,12 +5788,14 @@ exports[`Calendar events demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -6515,12 +6543,14 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -6574,12 +6604,14 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -7327,12 +7359,14 @@ exports[`Calendar filter demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -7386,12 +7420,14 @@ exports[`Calendar filter demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -7951,12 +7987,14 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         />
          
         <div
-          class="t-select t-size-m"
+          class="t-select t-size-m t-select-selected"
         >
           <span
             class="t-select-selectedSingle"
-            title=""
-          />
+            title="3"
+          >
+            3
+          </span>
           <svg
             class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
             version="1.1"
@@ -8019,12 +8057,14 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -8078,12 +8118,14 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="12"
+                >
+                  12
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -8872,12 +8914,14 @@ exports[`Calendar head demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -8931,12 +8975,14 @@ exports[`Calendar head demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -9703,12 +9749,14 @@ exports[`Calendar mode demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s"
+                class="t-select t-size-s t-select-selected"
               >
                 <span
                   class="t-select-selectedSingle"
-                  title=""
-                />
+                  title="2020"
+                >
+                  2020
+                </span>
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                   version="1.1"
@@ -10033,12 +10081,14 @@ exports[`Calendar range demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -10092,12 +10142,14 @@ exports[`Calendar range demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -10790,12 +10842,14 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="2020"
+              >
+                2020
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -10849,12 +10903,14 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="12"
+              >
+                12
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -11413,12 +11469,14 @@ exports[`Calendar value demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="1998"
+              >
+                1998
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
@@ -11472,12 +11530,14 @@ exports[`Calendar value demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s"
+              class="t-select t-size-s t-select-selected"
             >
               <span
                 class="t-select-selectedSingle"
-                title=""
-              />
+                title="11"
+              >
+                11
+              </span>
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
                 version="1.1"
