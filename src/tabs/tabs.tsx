@@ -77,8 +77,10 @@ export default Vue.extend({
       if (typeof this.onRemove === 'function') {
         this.onRemove(eventData);
       }
-      if ((panel instanceof TTabPanel) && (typeof panel.onRemove === 'function')) {
-        panel.onRemove();
+      if ((panel instanceof TTabPanel)) {
+        if (typeof panel.onRemove === 'function') {
+          panel.onRemove();
+        }
         panel.$emit('remove');
       }
     },
