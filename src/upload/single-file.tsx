@@ -49,7 +49,7 @@ export default Vue.extend({
     inputName(): string {
       const fileName = this.file && this.file.name;
       const loadingName = this.loadingFile && this.loadingFile.name;
-      return loadingName || fileName;
+      return this.showProgress ? loadingName : fileName;
     },
     inputText(): string {
       return this.inputName || this.placeholder;
@@ -91,7 +91,7 @@ export default Vue.extend({
       return (
         <div class='t-upload__single-progress'>
           <TIconLoading size='20px'></TIconLoading>
-          <span class='t-upload__single-percent'>{this.percentNum}%</span>
+          <span class='t-upload__single-percent'>{this.percentNum >= 100 ? 99 : this.percentNum}%</span>
         </div>
       );
     },

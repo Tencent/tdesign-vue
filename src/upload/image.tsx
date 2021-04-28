@@ -26,11 +26,15 @@ export default Vue.extend({
       type: Function as PropType<(options: RemoveOptions) => void>,
     },
     multiple: Boolean,
+    max: Number,
   },
 
   computed: {
     showTrigger(): boolean {
-      return Boolean(this.multiple || (!this.multiple && (!this.files || !this.files[0])));
+      if (this.multiple) {
+        return !this.max || this.files.length < this.max;
+      }
+      return !(this.files && this.files[0]);
     },
   },
 
@@ -44,7 +48,7 @@ export default Vue.extend({
     return (
       <ul class='t-upload-card'>
         {this.files && this.files.map((file, index) => (
-            <li class='t-upload-card__item'>
+            <li class='t-upload-card__item t-is--background'>
               <div class='t-upload-card__content'>
                   <img class='t-upload-card__image' src={file.url}/>
                   <div class='t-upload-card__mask' onClick={this.onMaskClick}>
@@ -61,11 +65,11 @@ export default Vue.extend({
                     </span>
                   </div>
                 </div>
-              <p class='t-upload-card__name'>{file.name}</p>
+              {/* <p class='t-upload-card__name'>{file.name}</p> */}
             </li>
         ))}
         {this.showTrigger && (
-          <li class='t-upload-card__item t-is--empty' onClick={this.trigger}>
+          <li class='t-upload-card__item t-is--background' onClick={this.trigger}>
             {this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class='t-upload-card-container'>
                 <TIconLoading></TIconLoading>

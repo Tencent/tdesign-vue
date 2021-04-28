@@ -42,10 +42,10 @@ export default function xhr({
   };
 
   xhr.onload = function (event: ProgressEvent) {
-    if (xhr.status < 200 || xhr.status >= 300) {
-      return onError({ event });
-    }
     let response;
+    if (xhr.status < 200 || xhr.status >= 300) {
+      return onError({ event, file, response });
+    }
     const text = xhr.responseText || xhr.response;
     try {
       response = JSON.parse(text);
