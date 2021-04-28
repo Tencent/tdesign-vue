@@ -24,7 +24,7 @@ exports[`Calendar base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -85,7 +85,7 @@ exports[`Calendar base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -783,7 +783,7 @@ exports[`Calendar card demo works fine 1`] = `
         />
          
         <div
-          class="t-select t-size-m t-select-selected"
+          class="t-select t-size-m"
         >
           <span
             class="t-select-selectedSingle"
@@ -860,7 +860,7 @@ exports[`Calendar card demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -921,7 +921,7 @@ exports[`Calendar card demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -1669,7 +1669,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
         />
          
         <div
-          class="t-select t-size-m t-select-selected"
+          class="t-select t-size-m"
         >
           <span
             class="t-select-selectedSingle"
@@ -1739,7 +1739,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -1800,7 +1800,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -2550,7 +2550,7 @@ exports[`Calendar cell demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -2611,7 +2611,7 @@ exports[`Calendar cell demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -3591,7 +3591,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -3652,7 +3652,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -4945,7 +4945,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -5006,7 +5006,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -5727,7 +5727,7 @@ exports[`Calendar events demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -5788,7 +5788,7 @@ exports[`Calendar events demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -6543,7 +6543,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -6604,7 +6604,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -7359,7 +7359,7 @@ exports[`Calendar filter demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -7420,7 +7420,7 @@ exports[`Calendar filter demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -7987,7 +7987,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         />
          
         <div
-          class="t-select t-size-m t-select-selected"
+          class="t-select t-size-m"
         >
           <span
             class="t-select-selectedSingle"
@@ -8057,7 +8057,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -8118,7 +8118,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -8914,7 +8914,7 @@ exports[`Calendar head demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -8975,7 +8975,7 @@ exports[`Calendar head demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -9679,7 +9679,7 @@ exports[`Calendar mode demo works fine 1`] = `
         />
          
         <div
-          class="t-select t-size-m t-select-selected"
+          class="t-select t-size-m"
         >
           <span
             class="t-select-selectedSingle"
@@ -9749,7 +9749,7 @@ exports[`Calendar mode demo works fine 1`] = `
               />
                
               <div
-                class="t-select t-size-s t-select-selected"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select-selectedSingle"
@@ -10081,7 +10081,7 @@ exports[`Calendar range demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -10142,7 +10142,7 @@ exports[`Calendar range demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -10842,7 +10842,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -10903,7 +10903,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -11469,7 +11469,7 @@ exports[`Calendar value demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"
@@ -11530,7 +11530,7 @@ exports[`Calendar value demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-s t-select-selected"
+              class="t-select t-size-s"
             >
               <span
                 class="t-select-selectedSingle"

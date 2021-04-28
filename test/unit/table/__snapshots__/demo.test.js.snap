@@ -919,7 +919,7 @@ exports[`Table base demo works fine 1`] = `
             />
              
             <div
-              class="t-select t-size-m t-select-selected"
+              class="t-select t-size-m"
             >
               <span
                 class="t-select-selectedSingle"
@@ -1897,7 +1897,7 @@ exports[`Table base demo works fine 2`] = `
             />
              
             <div
-              class="t-select t-size-m t-select-selected"
+              class="t-select t-size-m"
             >
               <span
                 class="t-select-selectedSingle"

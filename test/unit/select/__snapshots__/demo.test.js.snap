@@ -15,7 +15,7 @@ exports[`Select base demo works fine 1`] = `
       />
        
       <div
-        class="t-select t-size-m t-select-selected"
+        class="t-select t-size-m"
       >
         <span
           class="t-select-selectedSingle"

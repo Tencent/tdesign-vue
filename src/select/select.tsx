@@ -75,7 +75,6 @@ export default Vue.extend({
           [CLASSNAMES.SIZE[this.size]]: this.size,
           [`${prefix}-has-prefix`]: this.$scopedSlots.prefixIcon,
           [`${prefix}-no-border`]: !this.bordered,
-          [`${prefix}-select-selected`]: this.selectedSingle || this.selectedMultiple.length,
         },
       ];
     },

@@ -8,7 +8,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -26,7 +26,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -275,7 +275,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -293,7 +293,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -478,7 +478,7 @@ exports[`Calendar :props :mode 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -578,7 +578,7 @@ exports[`Calendar :props :range 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -596,7 +596,7 @@ exports[`Calendar :props :range 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -815,7 +815,7 @@ exports[`Calendar :props :theme 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -833,7 +833,7 @@ exports[`Calendar :props :theme 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -1119,7 +1119,7 @@ exports[`Calendar :props :value 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="1998" class="t-select-selectedSingle">1998</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="1998" class="t-select-selectedSingle">1998</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
@@ -1137,7 +1137,7 @@ exports[`Calendar :props :value 1`] = `
         <div>
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
-            <div class="t-select t-size-s t-select-selected"><span title="11" class="t-select-selectedSingle">11</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
+            <div class="t-select t-size-s"><span title="11" class="t-select-selectedSingle">11</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
                 <path fill-opacity=".9" fill-rule="evenodd" d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"></path>
               </svg></div>
             <div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;">
