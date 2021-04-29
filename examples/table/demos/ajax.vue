@@ -7,7 +7,6 @@
     :bordered="bordered"
     :hover="hover"
     :stripe="stripe"
-    :size="size"
     :loading="isLoading"
     :pagination="pagination"
     @page-change="rehandlePageChange"
@@ -56,7 +55,6 @@ export default {
       rowKey: 'property',
       tableLayout: 'auto',
       verticalAlign: 'top',
-      size: 'small',
       bordered: true,
       hover: true,
       stripe: true,

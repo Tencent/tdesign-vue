@@ -6,7 +6,6 @@
     :bordered="true"
     :hover="hover"
     :stripe="stripe"
-    :size="size"
     :onScrollX="onScrollX"
     @scroll-x="scrollX">
   </t-table>
@@ -93,7 +92,6 @@ export default {
         },
       ],
       rowKey: 'property',
-      size: 'small',
       hover: true,
       stripe: true,
     };

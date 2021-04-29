@@ -10,7 +10,7 @@
       :bordered="bordered"
       :hover="hover"
       :stripe="stripe"
-      :size="size">
+    >
       <!-- 自定义表头 支持 slot -->
       <span slot='type'>
         <t-icon name="view-module"/> 类型
@@ -109,7 +109,6 @@ export default {
         },
       ],
       rowKey: 'property',
-      size: 'small',
       bordered: true,
       hover: true,
       stripe: true,

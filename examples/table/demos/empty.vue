@@ -5,7 +5,7 @@
       :data="data"
       :columns="columns"
       :rowKey="rowKey"
-      :size="size">
+    >
     </t-table>
     <div style="margin-bottom: 10px;">自定义空表格</div>
     <t-table
@@ -13,7 +13,7 @@
       :columns="columns"
       :empty="empty"
       :rowKey="rowKey"
-      :size="size">
+    >
       <!-- 自定义空表格 -->
       <span
         slot='empty'
@@ -85,7 +85,6 @@ export default {
         },
       ],
       rowKey: 'property',
-      size: 'small',
       empty: {
         customRender: 'empty',
       },

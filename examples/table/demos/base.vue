@@ -119,7 +119,7 @@ export default {
       rowKey: 'property',
       tableLayout: 'auto',
       verticalAlign: 'top',
-      size: 'small',
+      size: 'medium',
       bordered: true,
       hover: true,
       stripe: true,
