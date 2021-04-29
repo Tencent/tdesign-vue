@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       current: 12,
-      pageSize: 15,
+      pageSize: 10,
     };
   },
 };
