@@ -13,11 +13,11 @@
     >
       <!-- 自定义表头 支持 slot -->
       <span slot='type'>
-        <t-icon name="view-module"/> 类型
+        <t-icon-app /> 类型
       </span>
       <!-- 自定义单元格 支持 slot -->
       <span slot='platform' slot-scope='{record}'>
-        <t-icon name="attach"/><a href="#" class="link">{{ record.platform }}</a>
+        <t-icon-attach /><a href="#" class="link">{{ record.platform }}</a>
       </span>
       <span slot='default' slot-scope='{record}'>
         未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 {{record.default}}
@@ -26,7 +26,13 @@
   </div>
 </template>
 <script>
+import TIconApp from '@tencent/tdesign-vue/lib/icon/app';
+import TIconAttach from '@tencent/tdesign-vue/lib/icon/attach';
 export default {
+  components: {
+    TIconApp,
+    TIconAttach,
+  },
   data() {
     return {
       data: [
