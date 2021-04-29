@@ -6,9 +6,10 @@ setInstallFn('BaseTable', BaseTable);
 setInstallFn('PrimaryTable', PrimaryTable);
 setInstallFn('Table', PrimaryTable);
 
+const Table = PrimaryTable;
 
 // 扩展输出
-export { BaseTable, PrimaryTable };
+export { BaseTable, PrimaryTable, Table };
 
 // 默认输出
 export default PrimaryTable;
