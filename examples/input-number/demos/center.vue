@@ -10,14 +10,14 @@
       :on-change="onChange"
       :on-focus="onFocus"
       :on-blur="onBlur"
-      :on-keydown-enter="onKeydownEnter"
+      :on-enter="onKeydownEnter"
       :on-keydown="onKeydown"
       :on-keyup="onKeyup"
       :on-keypress="onKeypress"
       @change="handleChange"
       @focus="handleFocus"
       @blur="handleBlur"
-      @keydown-enter="handleKeydownEnter"
+      @enter="handleKeydownEnter"
       @keydown="handleKeydown"
       @keyup="handleKeyup"
       @keypress="handleKeypress"
@@ -40,7 +40,7 @@ export default {
         console.info('onBlur', v, ctx);
       },
       onKeydownEnter: (v, ctx) => {
-        console.info('onKeydownEnter', v, ctx);
+        console.info('onEnter', v, ctx);
       },
       onKeydown: (v, ctx) => {
         console.info('onKeydown', v, ctx);
@@ -64,7 +64,7 @@ export default {
       console.info('blur', v, ctx);
     },
     handleKeydownEnter(v, ctx) {
-      console.info('keydown-enter', v, ctx);
+      console.info('enter', v, ctx);
     },
     handleKeydown(v, ctx) {
       console.info('keydown', v, ctx);

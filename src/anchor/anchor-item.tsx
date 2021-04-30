@@ -12,7 +12,7 @@ interface Anchor extends Vue {
     handleScrollTo(target: string): void;
     registerLink(href: string): void;
     unregisterLink(href: string): void;
-    handleLinkClick(link: { href: string; title: string }, e: MouseEvent): void;
+    handleLinkClick(link: { href: string; title: string; e: MouseEvent}): void;
   };
 }
 
@@ -58,13 +58,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
     handleClick(e: MouseEvent): void {
       const { href, tAnchor, title } = this;
       tAnchor.handleScrollTo(href);
-      tAnchor.handleLinkClick(
-        {
-          href,
-          title: typeof title === 'string' ? title : undefined,
-        },
-        e
-      );
+      tAnchor.handleLinkClick({
+        href,
+        title: typeof title === 'string' ? title : undefined,
+        e,
+      });
     },
     /**
      * 更加props和slot渲染title

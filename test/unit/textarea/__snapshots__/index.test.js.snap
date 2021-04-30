@@ -14,7 +14,7 @@ exports[`Textarea :props :disabled 1`] = `
 
 exports[`Textarea :props :maxlength 1`] = `
 <div>
-  <div class="t-textarea"><textarea placeholder="" maxlength="10" class="t-textarea__inner t-resize-none"></textarea><span class="t-textarea__limit">0/10</span></div>
+  <div class="t-textarea"><textarea placeholder="" maxlength="10" class="t-textarea__inner t-resize-none"></textarea><span class="t-textarea__limit">9/10</span></div>
 </div>
 `;
 

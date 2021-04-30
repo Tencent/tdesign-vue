@@ -24,6 +24,7 @@ module.exports = {
     '^@TdTypes/(.*)$': '<rootDir>/types/$1',
     '^@Button/(.*)$': '<rootDir>/src/button/index.ts',
     '^@Pagination/(.*)$': '<rootDir>/src/pagination/index.ts',
+    '^@Input/(.*)$': '<rootDir>/src/input/index.ts',
     '^@Breadcrumb/(.*)$': '<rootDir>/src/breadcrumb/index.ts',
     '^@Radio/(.*)$': '<rootDir>/src/radio/index.ts',
     '^@Checkbox/(.*)$': '<rootDir>/src/checkbox/index.ts',

@@ -6,6 +6,7 @@ import props from '../../types/drawer/props';
 import { FooterButton, CloseContext } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
+import { emitEvent } from '../utils/event';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -92,7 +93,7 @@ export default Vue.extend({
         {this.showOverlay && <div class='t-drawer__mask' onClick={this.handleWrapperClick}/>}
         <div class={this.wraperClasses} style={this.wraperStyles}>
           <div class='t-drawer__header'>{renderTNodeJSX(this, 'header')}</div>
-          <div class='t-drawer__close-btn' onClick={this.onCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
+          <div class='t-drawer__close-btn' onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
           <div class="t-drawer__body">{body}</div>
           <div class="t-drawer__footer">{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>
@@ -149,47 +150,33 @@ export default Vue.extend({
         </div>
       );
     },
-    onCloseBtnClick(e: MouseEvent) {
-      this.$emit('click-close-btn', e);
-      if (this.onClickCloseBtn) {
-        this.onClickCloseBtn(e);
-      }
-      this.closeDrawer({ trigger: 'clickCloseBtn', e });
+    handleCloseBtnClick(e: MouseEvent) {
+      emitEvent<[{e: MouseEvent }]>(this, 'close-btn-click', { e });
+      this.closeDrawer({ trigger: 'close-btn', e });
     },
     handleWrapperClick(e: MouseEvent) {
-      this.$emit('click-overlay', e);
-      if (this.onClickOverlay) {
-        this.onClickOverlay(e);
-      }
-      if (this.closeOnClickOverlay) {
-        this.closeDrawer({ trigger: 'clickOverlay', e });
+      emitEvent<[{e: MouseEvent }]>(this, 'overlay-click', { e });
+      if (this.closeOnOverlayClick) {
+        this.closeDrawer({ trigger: 'overlay', e });
       }
     },
     onKeyDown(e: KeyboardEvent) {
-      if (this.closeOnKeydownEsc && e.key === 'Escape') {
-        this.$emit('keydown-esc', e);
-        if (this.onKeydownEsc) {
-          this.onKeydownEsc(e);
+      if (e.key === 'Escape') {
+        emitEvent<[{e: KeyboardEvent }]>(this, 'esc-keydown', { e });
+        if (this.closeOnEscKeydown) {
+          this.closeDrawer({ trigger: 'esc', e });
         }
-        this.closeDrawer({ trigger: 'keydownEsc', e });
       }
     },
     confirmBtnAction(e: MouseEvent) {
-      this.$emit('click-confirm', e);
-      if (this.onClickConfirm) {
-        this.onClickConfirm(e);
-      }
+      emitEvent<[{e: MouseEvent }]>(this, 'confirm', { e });
     },
     cancelBtnAction(e: MouseEvent) {
-      this.$emit('click-cancel', e);
-      if (this.onClickCancel) {
-        this.onClickCancel(e);
-      }
-      this.closeDrawer({ trigger: 'clickCancel', e });
+      emitEvent<[{e: MouseEvent }]>(this, 'cancel', { e });
+      this.closeDrawer({ trigger: 'cancel', e });
     },
     closeDrawer(params: CloseContext) {
-      this.$emit('close', params);
-      typeof this.onClose === 'function' && this.onClose(params);
+      emitEvent<[CloseContext]>(this, 'close', params);
       this.$emit('update:visible', false);
     },
   },

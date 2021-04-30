@@ -12,13 +12,13 @@
     <t-message
       v-if="isShowMsg"
       :closeBtn="true"
-      @click-close-btn="isShowMsg = false"
-    >点击关闭按钮触发事件 click-close-btn </t-message>
+      @close-btn-click="isShowMsg = false"
+    >点击关闭按钮触发事件 close-btn-click </t-message>
 
     <t-message
       v-if="closableMsg"
       closeBtn="关闭"
-      @click-close-btn="closableMsg = false"
+      @close-btn-click="closableMsg = false"
     >自定义关闭按钮（文字）</t-message>
 
     <t-message :closeBtn="closeBtn" v-if="closableMsg1">自定义关闭按钮（函数）</t-message>

@@ -10,14 +10,14 @@
     <t-button @click="visible2 = !visible2">处理定时关闭事件（3s）</t-button>
     <t-notification
       v-if="visible"
-      @click-close-btn="visible = false"
+      @close-btn-click="visible = false"
       title="处理开关事件"
       content="这是一条消息通知" />
     <t-notification
       v-if="visible2"
       :duration="3000"
       @duration-end="visible2 = false"
-      @click-close-btn="visible2 = false"
+      @close-btn-click="visible2 = false"
       title="处理定时关闭事件（3s）"
       content="这是一条消息通知" />
   </div>

@@ -1,10 +1,7 @@
 <template>
   <t-transfer
-    theme="primary"
     :data="list"
     v-model="targetValue"
-    :checked-value="checkedValue"
-    :search="true"
   />
 </template>
 <script>
@@ -19,8 +16,7 @@ export default {
   data() {
     return {
       list,
-      targetValue: [],
-      checkedValue: [],
+      targetValue: list.map(item => item.value).filter(v => parseInt(v, 10) % 2 === 0), // 偶数
     };
   },
 };

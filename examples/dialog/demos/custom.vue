@@ -11,7 +11,7 @@
       body="自定义底部按钮，直接传入文字"
       confirmBtn="前往支付"
       cancelBtn="关闭"
-      :onClickConfirm="onConfirm"
+      :onConfirm="onConfirm"
       :onClose="close1"
     >
     </t-dialog>
@@ -20,9 +20,11 @@
       :visible="visible2"
       header="提示"
       body="自定义底部按钮，传入 ButttonProps"
+      :onConfirm="onConfirm2"
       :confirmBtn="{
         content: '前往购物车',
         variant: 'base',
+
       }"
       :cancelBtn="{
         content: '我知道了',
@@ -70,6 +72,10 @@ export default {
     onConfirm() {
       this.visible1 = false;
       alert('跳转支付~');
+    },
+    onConfirm2() {
+      this.visible2 = false;
+      alert('前往购物车~');
     },
   },
 };

@@ -140,7 +140,7 @@ describe('Message', () => {
 
   // test events
   describe('@event', () => {
-    it('@click-close-btn', async () => {
+    it('@close-btn-click', async () => {
       const wrapper = mount({
         render() {
           return <Message closeBtn={true}></Message>;
@@ -148,7 +148,7 @@ describe('Message', () => {
       });
       const msg = wrapper.findComponent(Message);
       await msg.find('.t-icon-close').trigger('click');
-      expect(msg.emitted()['click-close-btn']).toBeTruthy();
+      expect(msg.emitted()['close-btn-click']).toBeTruthy();
     });
 
     it('@duration-end', (done) => {

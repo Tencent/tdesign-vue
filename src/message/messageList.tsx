@@ -62,7 +62,7 @@ export const MessageList = Vue.extend({
     },
     getListeners(index: number) {
       return {
-        'click-close-btn': () => this.remove(index),
+        'close-btn-click': () => this.remove(index),
         'duration-end': () => this.remove(index),
       };
     },

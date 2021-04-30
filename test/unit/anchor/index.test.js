@@ -63,7 +63,8 @@ describe('Anchor', () => {
       expect(onClick).toBeCalledWith({
         href: '#test-a',
         title: '',
-      }, expect.any(MouseEvent));
+        e: expect.any(MouseEvent),
+      });
     });
     it('should trigger onClick props', () => {
       const onClick = jest.fn();
@@ -92,7 +93,8 @@ describe('Anchor', () => {
       expect(onClick).toBeCalledWith({
         href: '#test-a',
         title: '',
-      }, expect.any(MouseEvent));
+        e: expect.any(MouseEvent),
+      });
     });
     it('should emit change event', () => {
       const onChange = jest.fn();

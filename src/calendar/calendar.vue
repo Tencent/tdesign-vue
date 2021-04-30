@@ -482,16 +482,16 @@ export default mixins().extend({
       };
     },
     clickCell(e: MouseEvent, cellData: CalendarCell) {
-      this.execCellEvent(e, cellData, 'click-cell');
+      this.execCellEvent(e, cellData, 'cell-click');
     },
     doubleClickCell(e: MouseEvent, cellData: CalendarCell) {
-      this.execCellEvent(e, cellData, 'double-click-cell');
+      this.execCellEvent(e, cellData, 'cell-double-click');
     },
     rightClickCell(e: MouseEvent, cellData: CalendarCell) {
       if (this.preventCellContextmenu) {
         e.preventDefault();
       }
-      this.execCellEvent(e, cellData, 'right-click-cell');
+      this.execCellEvent(e, cellData, 'cell-right-click');
     },
     execCellEvent(e: MouseEvent, cellData: CalendarCell, emitName: string) {
       const options: CellEventOption = {

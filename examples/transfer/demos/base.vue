@@ -2,16 +2,17 @@
   <t-transfer
     :data="list"
     v-model="targetValue"
-    @checkChange="checkChange"
+    :checked.sync="checked"
+    @change="onChange"
+    @checkedChange="handleCheckedChange"
   />
 </template>
 <script>
 const list = [];
 for (let i = 0; i < 20; i++) {
   list.push({
-    key: i.toString(),
-    title: `内容${i + 1}`,
-    description: `第${i + 1}段信息`,
+    value: i.toString(),
+    label: `内容${i + 1}`,
     disabled: i % 4 < 1,
   });
 }
@@ -20,12 +21,15 @@ export default {
     return {
       list,
       targetValue: [],
+      checked: [],
     };
   },
   methods: {
-    checkChange(sourceChecked, targetChecked) {
-      console.log('sourceChecked', sourceChecked);
-      console.log('targetChecked', targetChecked);
+    handleCheckedChange({ checked, sourceChecked, targetChecked, type }) {
+      console.log('handleCheckedChange', { checked, sourceChecked, targetChecked, type });
+    },
+    onChange(newTargetValue) {
+      console.log(newTargetValue);
     },
   },
 };

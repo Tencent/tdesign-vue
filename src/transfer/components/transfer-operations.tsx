@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { PropType, CreateElement } from 'vue';
 import TButton from '../../button';
 import { prefix } from '../../config';
 
@@ -16,7 +16,9 @@ export default Vue.extend({
       type: Boolean,
       required: true,
     },
-    operations: [String, Array, Function],
+    operation: {
+      type: [String, Array, Function, Boolean] as PropType<Array<string | TNode> | TNode<{ direction: 'left' | 'right' }>>,
+    },
   },
   methods: {
     moveToRight() {
@@ -31,56 +33,63 @@ export default Vue.extend({
     getIconLeft() {
       return <t-icon name="chevron-left"/>;
     },
-    getIcon(order: string) {
-      let iconFun;
-      if (!this.operations || !this.operations.length) {
-        iconFun = order === 'up' ? this.getIconRight : this.getIconLeft;
-      } else {
-        iconFun = (): void => null;
+    getIcon(direction: 'left' | 'right') {
+      if (typeof this.operation === 'function') {
+        return null;
       }
-      return iconFun;
-    },
-    buttonContent(order: string) {
-      let renderButtonContent;
-      // 处理传进来的operations是数组，函数，字符型类型以及不传
-      if (this.operations instanceof Array && this.operations.length) {
-        const buttonOrder = order === 'up' ? 0 : 1;
-        if (typeof this.operations[buttonOrder] === 'function') {
-          const operationFunc = this.operations[buttonOrder] as Function;
-          renderButtonContent = operationFunc();
-        } else if (typeof this.operations[buttonOrder] === 'string') {
-          renderButtonContent = this.operations[buttonOrder];
-        }
-      } else if (typeof this.operations === 'function') {
-        renderButtonContent = this.operations();
-      } else if (typeof this.operations === 'string') {
-        renderButtonContent = this.operations;
-      } else {
-        renderButtonContent = null;
+      if (direction === 'right' && this.operation && typeof this.operation[0] === 'function') {
+        return null;
+      }
+      if (direction === 'left' && this.operation && typeof this.operation[1] === 'function') {
+        return null;
       }
 
-      return renderButtonContent;
+      if (this.$scopedSlots.operation) {
+        return null;
+      }
+
+      return direction === 'left' ? this.getIconLeft : this.getIconRight;
+    },
+    // right:去右边，left:去左边
+    _renderButton(h: CreateElement, direction: 'left' | 'right') {
+      if (typeof this.$scopedSlots.operation === 'function') {
+        return this.$scopedSlots.operation({
+          direction,
+        });
+      }
+      if (typeof this.operation === 'function') {
+        const renderContent = this.operation;
+        return renderContent(h, { direction });
+      }
+      let renderContent: string | TNode;
+      if (Array.isArray(this.operation)) {
+        const [left, right] = this.operation;
+        renderContent = direction === 'right' ? right : left;
+      } else {
+        renderContent = '';
+      }
+      return renderContent;
     },
   },
-  render() {
+  render(h) {
     const { leftDisabled, rightDisabled } = this.$props;
     return (
       <div class={name}>
         <TButton
-          variant={leftDisabled ? 'outline' : 'base'}
-          disabled={leftDisabled}
-          onClick={this.moveToRight}
-          icon={this.getIcon('up')}
-        >
-          {this.buttonContent('up')}
-        </TButton>
-        <TButton
           variant={rightDisabled ? 'outline' : 'base'}
           disabled={rightDisabled}
-          onClick={this.moveToLeft}
-          icon={this.getIcon('down')}
+          onClick={this.moveToRight}
+          icon={this.getIcon('right')}
         >
-          {this.buttonContent('down')}
+          {this._renderButton(h, 'right')}
+        </TButton>
+        <TButton
+          variant={leftDisabled ? 'outline' : 'base'}
+          disabled={leftDisabled}
+          onClick={this.moveToLeft}
+          icon={this.getIcon('left')}
+        >
+          {this._renderButton(h, 'left')}
         </TButton>
       </div>
     );

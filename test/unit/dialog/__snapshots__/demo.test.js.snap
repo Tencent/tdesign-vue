@@ -1686,6 +1686,7 @@ exports[`Dialog position demo works fine 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
+    onclickconfirm="function () { [native code] }"
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"

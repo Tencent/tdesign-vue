@@ -56,7 +56,7 @@ export default Vue.extend({
       input?.blur();
     },
 
-    onInput(e: any): void {
+    handleInput(e: any): void {
       const { target } = e;
       const val = (target as HTMLInputElement).value;
       this.$emit('input', val);
@@ -105,13 +105,13 @@ export default Vue.extend({
       <div>
         <div class={`${name}`}>
           <textarea
-            onInput={this.onInput}
+            onInput={this.handleInput}
             {...{ attrs: this.inputAttrs, on: inputEvents }}
             value={this.value}
             class={classes}
           ></textarea>
           {this.maxlength ? (
-            <span class={`${name}__limit`}>{`${this.value?.length || 0}/${this.maxlength}`}</span>
+            <span class={`${name}__limit`}>{`${String(this.value)?.length || 0}/${this.maxlength}`}</span>
           ) : null}
         </div>
       </div>
