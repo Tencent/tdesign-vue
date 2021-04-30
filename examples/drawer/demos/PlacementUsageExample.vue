@@ -4,8 +4,8 @@
     <t-drawer
       header="标题名称"
       :visible="visible"
-      @click-cancel="visible = false"
-      :onClickOverlay="() => visible = false"
+      @cancel="visible = false"
+      :onOverlayClick="() => visible = false"
       :placement="placement"
     >
       <p>This is a drawer</p>

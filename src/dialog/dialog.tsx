@@ -4,11 +4,11 @@ import TIconClose from '../icon/close';
 import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import { getPropsApiByEvent } from '../utils/helper';
 import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
+import { emitEvent } from '../utils/event';
 
 type FooterButton = string | ButtonProps | TNode;
 type FooterButtonType = 'confirm' | 'cancel';
@@ -139,59 +139,54 @@ export default Vue.extend({
     },
     keyboardEvent(e: KeyboardEvent) {
       if (e.code === 'Escape') {
-        this.emitEvent('keydown-esc', e);
-        // 根据closeOnKeydownEsc判断按下ESC时是否触发close事件
-        if (this.closeOnKeydownEsc) {
+        emitEvent<[{e: KeyboardEvent}]>(this, 'esc-keydown', { e });
+        // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
+        if (this.closeOnEscKeydown) {
           this.emitCloseEvent({
-            trigger: 'keydownEsc',
+            trigger: 'esc',
             e,
           });
         }
       }
     },
     overlayAction(e: MouseEvent) {
-      this.emitEvent('click-overlay', e);
+      emitEvent<[{e: MouseEvent}]>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
-      if (this.closeOnClickOverlay) {
+      if (this.closeOnOverlayClick) {
         this.emitCloseEvent({
-          trigger: 'clickOverlay',
+          trigger: 'overlay',
           e,
         });
       }
     },
     closeBtnAcion(e: MouseEvent) {
-      this.emitEvent('click-close-btn', e);
+      emitEvent<[{e: MouseEvent}]>(this, 'close-btn-click', { e });
       this.emitCloseEvent({
-        trigger: 'clickCloseBtn',
+        trigger: 'close-btn',
         e,
       });
     },
     cancelBtnAction(e: MouseEvent) {
-      this.emitEvent('click-cancel', e);
+      emitEvent<[{e: MouseEvent}]>(this, 'cancel', { e });
       this.emitCloseEvent({
-        trigger: 'clickCancel',
+        trigger: 'cancel',
         e,
       });
     },
     confirmBtnAction(e: MouseEvent) {
-      this.emitEvent('click-confirm', e);
+      emitEvent<[{e: MouseEvent}]>(this, 'confirm', { e });
     },
     // 打开弹窗动画结束时事件
     afterEnter() {
-      this.emitEvent('opened');
+      emitEvent(this, 'opened');
     },
     // 关闭弹窗动画结束时事件
     afterLeave() {
-      this.emitEvent('closed');
+      emitEvent(this, 'closed');
     },
-    emitEvent(name: string, event?: Event) {
-      this.$emit(name, event);
-      const handleName = getPropsApiByEvent(name);
-      typeof this[handleName] === 'function' && this[handleName](event);
-    },
+
     emitCloseEvent(context: CloseContext) {
-      this.$emit('close', context);
-      typeof this.onClose === 'function' && this.onClose(context);
+      emitEvent<[CloseContext]>(this, 'close', context);
       // 默认关闭弹窗
       this.$emit('update:visible', false);
     },

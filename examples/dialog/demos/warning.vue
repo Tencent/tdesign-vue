@@ -6,7 +6,7 @@
       header="提示"
       body="对话框内容"
       :visible.sync="visible1"
-      @click-confirm="onClickConfirm"
+      @confirm="onClickConfirm"
       :onClose="close1"
     >
     </t-dialog>
@@ -17,7 +17,7 @@
       header="恭喜"
       body="对话框内容"
       :visible.sync="visible2"
-      @click-confirm="onClickConfirm"
+      @confirm="onClickConfirm"
       :onClose="close2"
     >
     </t-dialog>
@@ -28,7 +28,7 @@
       header="警示"
       body="对话框内容"
       :visible.sync="visible3"
-      @click-confirm="onClickConfirm"
+      @confirm="onClickConfirm"
       :onClose="close3"
     >
     </t-dialog>
@@ -39,7 +39,7 @@
       header="错误"
       body="对话框内容"
       :visible.sync="visible4"
-      @click-confirm="onClickConfirm"
+      @confirm="onClickConfirm"
       :onClose="close4"
     >
     </t-dialog>
@@ -49,8 +49,8 @@
       body="对话框内容"
       :closeBtn="false"
       :visible.sync="visible5"
-      @click-confirm="onClickConfirm"
-      :onClose="close4"
+      @confirm="onClickConfirm"
+      :onClose="close5"
     >
       <div slot="header">
         <t-icon name="check-circle-filled" color="orange" />
@@ -99,6 +99,9 @@ export default Vue.extend({
     },
     close4() {
       this.visible4 = false;
+    },
+    close5() {
+      this.visible5 = false;
     },
   },
 });

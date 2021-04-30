@@ -9,7 +9,7 @@
       :visible.sync="visibleBody"
       attach="body"
       header="挂载在body"
-      :onClickConfirm="()=>this.visibleBody = false"
+      :onConfirm="()=>this.visibleBody = false"
     >
       <div slot="body">
         <div>我是被挂载到body元素的对话框</div>
@@ -24,7 +24,7 @@
       :visible.sync="visibleIdAttach"
       attach="#app"
       header="挂载到id为app的元素"
-      :onClickConfirm="()=>this.visibleIdAttach = false"
+      :onConfirm="()=>this.visibleIdAttach = false"
     >
       <div slot="body">
         <div>通过querySelect指定元素挂载</div>
@@ -39,7 +39,7 @@
       :visible.sync="visibleFunctionAttach"
       :attach="getAttach"
       header="函数返回挂载节点"
-      :onClickConfirm="()=>this.visibleFunctionAttach = false"
+      :onConfirm="()=>this.visibleFunctionAttach = false"
     >
       <div slot="body">
         <div>指定函数返回的节点为挂载点</div>

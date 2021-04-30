@@ -93,7 +93,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
           ref="refInputElem"
           value={this.value}
           class={`${name}__inner`}
-          onInput={this.onInput}
+          onInput={this.handleInput}
           onCompositionend={this.onCompositionend}
         />
         {suffixIcon ? <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span> : null}
@@ -132,7 +132,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       const input = this.$refs.refInputElem as HTMLInputElement;
       input?.blur();
     },
-    onInput(e: InputEvent): void {
+    handleInput(e: InputEvent): void {
       // 中文输入的时候inputType是insertCompositionText所以中文输入的时候禁止触发。
       const checkInputType = e.inputType && e.inputType === 'insertCompositionText';
       if (e.isComposing || checkInputType) return;
@@ -147,7 +147,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       if (this.disabled) return;
       const { code } = e;
       if (code === 'Enter') {
-        this.emitEvent('keydown-enter', e);
+        this.emitEvent('enter', e);
       } else {
         this.emitEvent('keydown', e);
       }
@@ -163,9 +163,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     emitClear(e: MouseEvent) {
       this.$emit('clear', { e });
       isFunction(this.onClear) && this.onClear({ e });
-      this.$emit('change', '', { e: MouseEvent });
+      this.$emit('change', '', { e });
       this.$emit('input', '');
-      isFunction(this.onChange) && this.onChange('', { e: MouseEvent });
+      isFunction(this.onChange) && this.onChange('', { e });
     },
     emitFocus(e: FocusEvent) {
       if (this.disabled) return;
@@ -182,9 +182,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       const val = (target as HTMLInputElement).value;
-      this.$emit('change', val, { e: InputEvent });
+      this.$emit('change', val, { e });
       this.$emit('input', val);
-      isFunction(this.onChange) && this.onChange(val, { e: InputEvent });
+      isFunction(this.onChange) && this.onChange(val, { e });
       // 受控
       this.$nextTick(() => this.setInputValue(this.value));
     },

@@ -10,7 +10,7 @@
       :visible.sync="visibleModal"
       mode="modal"
       draggable
-      :onClickConfirm="()=>this.visibleModal = false"
+      :onConfirm="()=>this.visibleModal = false"
     >
       <div slot="body">
         <div>默认点击蒙层或按ESC可关闭</div>
@@ -24,7 +24,7 @@
       :visible.sync="visibleModelessDrag"
       mode="modeless"
       draggable
-      :onClickConfirm="()=>this.visibleModelessDrag = false"
+      :onConfirm="()=>this.visibleModelessDrag = false"
     >
       <div slot="body">
         <div>我是内容</div>
@@ -36,7 +36,7 @@
       header="非模态对话框-不可拖拽"
       :visible.sync="visibleModeless"
       mode="modeless"
-      :onClickConfirm="()=>this.visibleModeless = false"
+      :onConfirm="()=>this.visibleModeless = false"
     >
       <div slot="body">
         <div>我是内容</div>

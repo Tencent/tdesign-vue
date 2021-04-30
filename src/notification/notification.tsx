@@ -20,7 +20,7 @@ export default Vue.extend({
     if (this.duration > 0) {
       const timer = setTimeout(() => {
         clearTimeout(timer);
-        this.$emit('duration-end', this);
+        this.$emit('duration-end');
         if (this.onDurationEnd) {
           this.onDurationEnd();
         };
@@ -29,9 +29,9 @@ export default Vue.extend({
   },
   methods: {
     close(e?: MouseEvent) {
-      this.$emit('click-close-btn', e, this);
-      if (this.onClickCloseBtn) {
-        this.onClickCloseBtn(e);
+      this.$emit('close-btn-click', { e });
+      if (this.onCloseBtnClick) {
+        this.onCloseBtnClick({ e });
       };
     },
     renderIcon(h: CreateElement) {

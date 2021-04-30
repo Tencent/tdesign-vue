@@ -7,9 +7,9 @@
     <t-calendar
       :value="value"
       :preventCellContextmenu="preventCellContextmenu"
-      @click-cell="cellClick"
-      @double-click-cell="cellDoubleClick"
-      @right-click-cell="cellRightClick"
+      @cell-click="cellClick"
+      @cell-double-click="cellDoubleClick"
+      @cell-right-click="cellRightClick"
       @controller-change="controllerChange"
     ></t-calendar>
 

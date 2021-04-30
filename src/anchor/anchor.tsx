@@ -130,13 +130,12 @@ export default (Vue as VueConstructor<Anchor>).extend({
     },
     /**
      * 监听AnchorLink点击事件
-     * @param {{ href: string; title: string }} link
-     * @param {MouseEvent} e
+     * @param {{ href: string; title: string , e: MouseEvent }} link
      */
-    handleLinkClick(link: { href: string; title: string }, e: MouseEvent): void {
-      this.$emit('click', link, e);
+    handleLinkClick(link: { href: string; title: string ; e: MouseEvent}): void {
+      this.$emit('click', link);
       if (this.onClick) {
-        this.onClick(link, e);
+        this.onClick(link);
       }
     },
     /**

@@ -259,10 +259,10 @@ export default Vue.extend({
     },
     handleKeydownEnter(e: KeyboardEvent) {
       if (e.key !== 'Enter') return;
-      if (this.onKeydownEnter) {
-        this.onKeydownEnter(this.value, { e });
+      if (this.onEnter) {
+        this.onEnter(this.value, { e });
       }
-      this.$emit('keydown-enter', this.value, { e });
+      this.$emit('enter', this.value, { e });
     },
     handleKeydown(e: KeyboardEvent) {
       if (this.onKeydown) {

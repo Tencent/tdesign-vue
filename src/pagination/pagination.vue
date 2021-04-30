@@ -288,7 +288,7 @@ export default mixins(PaginationLocalReceiver).extend({
     },
   },
   methods: {
-    toPage(pageIndex: number): void {
+    toPage(pageIndex: number, isTriggerChange?: boolean) {
       if (this.disabled) {
         return;
       }
@@ -306,9 +306,11 @@ export default mixins(PaginationLocalReceiver).extend({
           previous: prev,
           pageSize: this.pageSize,
         };
-        this.$emit('change', pageInfo);
-        if (typeof this.onChange === 'function') {
-          this.onChange(pageInfo);
+        if (isTriggerChange !== false) {
+          this.$emit('change', pageInfo);
+          if (typeof this.onChange === 'function') {
+            this.onChange(pageInfo);
+          }
         }
         this.$emit('update:current', current);
         this.$emit('current-change', current, pageInfo);
@@ -376,7 +378,7 @@ export default mixins(PaginationLocalReceiver).extend({
       }
       this.$emit('change', pageInfo);
       if (isIndexChange) {
-        this.toPage(pageCount);
+        this.toPage(pageCount, false);
       }
     },
   },

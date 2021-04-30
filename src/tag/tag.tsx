@@ -43,13 +43,13 @@ export default Vue.extend({
     },
   },
   methods: {
-    handleClose(event: MouseEvent): void {
-      this.$emit('close', event);
-      (typeof this.onClose === 'function') && this.onClose(event);
+    handleClose(e: MouseEvent): void {
+      this.$emit('close', { e });
+      (typeof this.onClose === 'function') && this.onClose({ e });
     },
-    handleClick(event: MouseEvent): void {
-      this.$emit('click', event);
-      (typeof this.onClick === 'function') && this.onClick(event);
+    handleClick(e: MouseEvent): void {
+      this.$emit('click', { e });
+      (typeof this.onClick === 'function') && this.onClick({ e });
     },
   },
   render() {

@@ -23,11 +23,11 @@ export default Vue.extend({
     },
   },
   methods: {
-    handleClick(event: MouseEvent): void {
+    handleClick(e: MouseEvent): void {
       if (!this.disabled) {
-        this.$emit('click', event);
+        this.$emit('click', { e });
         this.$emit('change', !this.checked);
-        if (typeof this.onClick === 'function') this.onClick(event);
+        if (typeof this.onClick === 'function') this.onClick({ e });
         if (typeof this.onChange === 'function') this.onChange(!this.checked);
       }
     },
