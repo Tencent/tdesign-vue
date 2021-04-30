@@ -1,4 +1,7 @@
 import Vue from 'vue';
+import { TransferListOptionBase } from './type/transfer';
+
+export { emitEvent } from '../utils/event';
 
 function findTopNode(vm: Vue): Vue {
   // 找到t-transfer这层父节点
@@ -11,4 +14,18 @@ function findTopNode(vm: Vue): Vue {
   return vm;
 }
 
-export { findTopNode };
+function getTransferListOption<T>(prop: T | Array<T>): TransferListOptionBase<T> {
+  if (Array.isArray(prop)) {
+    return {
+      source: prop[0],
+      target: prop[1],
+    };
+  }
+  return {
+    source: prop,
+    target: prop,
+  };
+}
+
+export { findTopNode, getTransferListOption };
+

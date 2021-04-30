@@ -43,6 +43,9 @@
       "@Pagination": [
         "src/pagination/index.ts"
       ],
+      "@Input": [
+        "src/input/index.ts"
+      ],
       "@Radio": [
         "src/radio/index.ts"
       ],

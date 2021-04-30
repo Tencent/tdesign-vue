@@ -13,6 +13,7 @@ export type EmitEventName = {
  * @param args 事件参数
  * @example emitEvent<[SearchEvent]>(this, 'search', {query: ''});
  * @example emitEvent<[TransferValue[], TargetParams]>(this, 'change', newTargetValue, params);
+ * @example emitEvent<[SearchEvent[], TargetParams]>(this, { event: 'search', method: 'onChange' }, {query: ''});
  */
 export function emitEvent<T extends any[]>(vm: Vue, eventName: EmitEventName, ...args: T) {
   let emitEventName: string;

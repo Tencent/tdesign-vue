@@ -1,26 +1,23 @@
 <template>
   <t-transfer
-    theme="primary"
     :data="list"
-    v-model="targetValue"
-    :checked-value="checkedValue"
-    :search="true"
+    :checked.sync="checked"
   />
 </template>
 <script>
 const list = [];
 for (let i = 0; i < 20; i++) {
   list.push({
-    value: i.toString(),
+    value: i,
     label: `内容${i + 1}`,
+    disabled: i % 4 < 1,
   });
 }
 export default {
   data() {
     return {
       list,
-      targetValue: [],
-      checkedValue: [],
+      checked: list.map(item => item.value).filter(v => v % 2 === 0), // 偶数
     };
   },
 };

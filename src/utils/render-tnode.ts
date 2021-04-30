@@ -84,16 +84,32 @@ export const renderTNodeJSX = (vm: Vue, name: string, options?: VNode | JSXRende
   if (propsNode === true && defaultNode) {
     return vm.$scopedSlots[name] ? vm.$scopedSlots[name](params) : defaultNode;
   }
-  if (typeof propsNode === 'function') return propsNode(vm.$createElement);
+  if (typeof propsNode === 'function') return propsNode(vm.$createElement, params);
   const isPropsEmpty = [undefined, params, ''].includes(propsNode);
   if (isPropsEmpty && vm.$scopedSlots[name]) return vm.$scopedSlots[name](params);
   return propsNode;
 };
 
+
+/**
+ * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与renderTNodeJSX区别在于 属性值为undefined时会渲染默认节点
+ * @param vm 组件示例
+ * @param name 插槽和属性名称
+ * @param defaultNode 默认渲染内容，不传属性值时会渲染
+ * @example renderTNodeJSX(this, 'closeBtn')
+ * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
+ * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
+ */
+export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: VNode | JSXRenderContext) => {
+  const defaultNode = options && 'defaultNode' in options ? options.defaultNode : options;
+  return renderTNodeJSX(vm, name, options) || defaultNode;
+};
+
+
 /**
  * 用于处理相同名称的 TNode 渲染
  * @param vm 组件实例
- * @param name1 第一个名称
+ * @param name1 第一个名称，优先级高于 name2
  * @param name2 第二个名称
  * @param defaultNode 默认渲染内容：当 name1 和 name2 都为空时会启动默认内容渲染
  * @example renderContent(this, 'default', 'content')
