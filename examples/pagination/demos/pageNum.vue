@@ -6,7 +6,7 @@
       v-model="current"
       :on-page-size-change="onPageSizeChange"
       show-sizer
-      :page-size-option="[10,20,30,100,200]"
+      :page-size-options="pageSizeOptions"
     />
   </div>
 </template>
@@ -15,8 +15,14 @@
 export default {
   data() {
     return {
-      pageSize: 20,
+      pageSize: 30,
       current: 1,
+      pageSizeOptions: [
+        { label: '每页 10 条', value: 10 },
+        { label: '每页 30 条', value: 30 },
+        { label: '每页 100 条', value: 100 },
+        { label: '每页 50 条', value: 50 },
+      ],
     };
   },
   methods: {

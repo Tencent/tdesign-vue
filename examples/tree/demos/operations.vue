@@ -125,6 +125,7 @@ export default {
     },
     getActiveChildren() {
       const node = this.getActivedNode();
+      if (!node) return;
       let nodes = [];
       if (node) {
         nodes = node.getChildren(true) || [];
@@ -137,6 +138,7 @@ export default {
     getActiveChecked() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       const nodes = tree.getItems(node.value);
       console.info(
         'getChecked:',
@@ -230,18 +232,21 @@ export default {
     getActiveParent() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       const parent = tree.getParent(node.value);
       console.info('getParent', parent?.value);
     },
     getActiveParents() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       const parents = tree.getParents(node.value);
       console.info('getParents', parents.map(node => node.value));
     },
     setActiveChecked() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       tree.setItem(node?.value, {
         checked: true,
       });
@@ -249,6 +254,7 @@ export default {
     setActiveExpanded() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       tree.setItem(node?.value, {
         expanded: true,
       });
@@ -256,11 +262,13 @@ export default {
     getActiveIndex() {
       const { tree } = this.$refs;
       const node = this.getActivedNode();
+      if (!node) return;
       const index = tree.getIndex(node.value);
       console.info('getIndex', index);
     },
     getActivePlainData() {
       const node = this.getActivedNode();
+      if (!node) return;
       const data = this.getPlainData(node);
       console.log('getActivePlainData', data);
       return data;

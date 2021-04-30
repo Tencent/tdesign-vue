@@ -47,6 +47,7 @@ export default Vue.extend({
       loadingFile: null as UploadFile,
       // 等待上传的文件队列
       toUploadFiles: [],
+      errorMsg: '',
     };
   },
 
@@ -80,6 +81,9 @@ export default Vue.extend({
     },
     tipsClasses(): ClassName {
       return ['t-upload__tips t-upload__small', { 't-upload__tips-imgcard': this.showImgCard }];
+    },
+    errorClasses(): ClassName {
+      return this.tipsClasses.concat('t-upload__tips-error');
     },
   },
 
@@ -126,8 +130,14 @@ export default Vue.extend({
     },
 
     uploadFiles(files: FileList) {
-      [...files].forEach((fileRaw: File) => {
-        if (this.limit && this.files.length >= this.limit) return;
+      let tmpFiles = [...files];
+      if (this.max) {
+        tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
+        if (tmpFiles.length !== files.length) {
+          console.warn(`TDesign Upload Warn: you can only upload ${this.max} files`);
+        }
+      }
+      tmpFiles.forEach((fileRaw: File) => {
         let file: UploadFile | File = fileRaw;
         if (typeof this.format === 'function') {
           file = this.format(fileRaw);
@@ -162,6 +172,7 @@ export default Vue.extend({
         console.error('TDesign Upload Error: action is required.');
         return;
       }
+      this.errorMsg = '';
       file.status = 'progress';
       this.loadingFile = file;
       const request = xhr;
@@ -184,9 +195,15 @@ export default Vue.extend({
       });
     },
 
-    onError({ event, file }: { event: ProgressEvent; file: UploadFile }) {
+    onError(options: { event: ProgressEvent; file: UploadFile; response?: any }) {
+      const { event, file, response } = options;
       file.status = 'fail';
-      this.loadingFile = null;
+      this.loadingFile = file;
+      let res = response;
+      if (typeof this.formatResponse === 'function') {
+        res = this.formatResponse(response);
+      }
+      this.errorMsg = (res && res.error) ?? '上传失败';
       const context = { e: event, file };
       this.$emit('fail', context);
       this.onFail && this.onFail(context);
@@ -350,6 +367,7 @@ export default Vue.extend({
             trigger={this.triggerUpload}
             loadingFile={this.loadingFile}
             toUploadFiles={this.toUploadFiles}
+            max={this.max}
           ></ImageCard>
         )}
         {this.showUploadList && (
@@ -369,7 +387,8 @@ export default Vue.extend({
             <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
           </FlowList>
         )}
-        {this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}
+        {!this.errorMsg && this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}
+        {this.errorMsg && <small class={this.errorClasses}>{this.errorMsg}</small>}
       </div>
     );
   },

@@ -7,12 +7,12 @@
       </slot>
     </div>
     <!-- select-->
-    <template v-if="pageSizeOption.length">
+    <template v-if="pageSizeOptions.length">
       <t-select :size="size" :value="pageSize" :disabled="disabled" :class="sizerClass" @change="onSelectorChange">
         <t-option
-          v-for="(item, index) in pageSizeOptions"
+          v-for="(item, index) in sizeOptions"
           :value="item.value"
-          :label="t(item.label, { size: item.value })"
+          :label="item.label"
           :key="index"
         >
         </t-option>
@@ -100,7 +100,6 @@ import TInput from '../input';
 import { Select } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import props from '../../types/pagination/props';
-import { TdPaginationProps } from '../../types/pagination/TdPaginationProps';
 
 const { prefix } = config;
 const name = `${prefix}-pagination`;
@@ -234,24 +233,14 @@ export default mixins(PaginationLocalReceiver).extend({
       }
       return ans;
     },
-    pageSizeOptions(): Array<{ label: string; value: number }> {
-      const { pageSize } = this;
-      const locale = this.locale as any;
-      const pageSizeOption = this.pageSizeOption as TdPaginationProps['pageSizeOption'];
-
-      const isNumber = (val: any) => typeof val === 'number';
-      const data = pageSizeOption.map((item: { label: string; value: any }) => ({
-        label: isNumber(item) ? locale.itemsPerPage : item.label.replace(/\d+/, '{size}'),
-        value: isNumber(item) ? item : item.value,
-      }));
-      return data.find((item: { value: number }) => item.value === pageSize)
-        ? data
-        : data
-          .concat({
-            value: pageSize,
-            label: (data[0] && data[0].label) || locale.itemsPerPage,
-          })
-          .sort((a: any, b: any) => a.value - b.value);
+    sizeOptions(): Array<{ label: string; value: number }> {
+      const options = this.pageSizeOptions.map(option => typeof option === 'object'
+        ? option
+        : {
+          label: `${option} 条/页`,
+          value: Number(option),
+        });
+      return options.sort((a, b) => a.value - b.value);
     },
 
     curPageLeftCount(): number {

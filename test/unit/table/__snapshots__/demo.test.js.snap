@@ -910,8 +910,8 @@ exports[`Table base demo works fine 1`] = `
           class="t-pagination__select"
         >
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -921,76 +921,25 @@ exports[`Table base demo works fine 1`] = `
             <div
               class="t-select t-size-m"
             >
-              <svg
-                class="t-icon t-icon- t-size-m t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="10"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="10"
               >
-                
-        10
-      
+                10
               </span>
-               
-              <div
-                class="t-input t-size-m t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="10"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-m t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-m t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -1939,8 +1888,8 @@ exports[`Table base demo works fine 2`] = `
           class="t-pagination__select"
         >
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -1950,76 +1899,25 @@ exports[`Table base demo works fine 2`] = `
             <div
               class="t-select t-size-m"
             >
-              <svg
-                class="t-icon t-icon- t-size-m t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="10"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="10"
               >
-                
-        10
-      
+                10
               </span>
-               
-              <div
-                class="t-input t-size-m t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="10"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-m t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-m t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"

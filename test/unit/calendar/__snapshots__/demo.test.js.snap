@@ -15,8 +15,8 @@ exports[`Calendar base demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -26,76 +26,25 @@ exports[`Calendar base demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -127,8 +76,8 @@ exports[`Calendar base demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -138,76 +87,25 @@ exports[`Calendar base demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -876,8 +774,8 @@ exports[`Calendar card demo works fine 1`] = `
       class="demo-select-base"
     >
       <div
-        class="t-popup-reference"
-        style="width: 100%; position: relative;"
+        class="t-popup-reference t-select-popup-reference"
+        style="position: relative;"
       >
         <transition-stub
           appear="true"
@@ -887,76 +785,25 @@ exports[`Calendar card demo works fine 1`] = `
         <div
           class="t-select t-size-m"
         >
-          <svg
-            class="t-icon t-icon- t-size-m t-select-left-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-"
-            />
-          </svg>
-           
-          <span
-            class="t-select-placeholder"
-            style="display: none;"
-          >
-             请选择
-          </span>
-           
-          <input
-            name="t-select"
-            style="width: 0px;"
-            type="hidden"
-            value="card"
-          />
-            
           <span
             class="t-select-selectedSingle"
             title="card"
           >
-            
-        card
-      
+            card
           </span>
-           
-          <div
-            class="t-input t-size-m t-select-input"
-            style="display: none;"
-          >
-            <input
-              class="t-input__inner"
-              placeholder="card"
-              type="text"
-            />
-          </div>
-           
           <svg
             class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <use
-              xlink:href="#t-icon-chevron-down"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-close t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-close"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-loading t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-loading"
+            <path
+              d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
-         
         <div
           class="resize-sensor"
           dir="ltr"
@@ -1004,8 +851,8 @@ exports[`Calendar card demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -1015,76 +862,25 @@ exports[`Calendar card demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -1116,8 +912,8 @@ exports[`Calendar card demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -1127,76 +923,25 @@ exports[`Calendar card demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -1915,8 +1660,8 @@ exports[`Calendar cardCell demo works fine 1`] = `
       class="demo-select-base"
     >
       <div
-        class="t-popup-reference"
-        style="width: 100%; position: relative;"
+        class="t-popup-reference t-select-popup-reference"
+        style="position: relative;"
       >
         <transition-stub
           appear="true"
@@ -1926,76 +1671,25 @@ exports[`Calendar cardCell demo works fine 1`] = `
         <div
           class="t-select t-size-m"
         >
-          <svg
-            class="t-icon t-icon- t-size-m t-select-left-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-"
-            />
-          </svg>
-           
-          <span
-            class="t-select-placeholder"
-            style="display: none;"
-          >
-             请选择
-          </span>
-           
-          <input
-            name="t-select"
-            style="width: 0px;"
-            type="hidden"
-            value="card"
-          />
-            
           <span
             class="t-select-selectedSingle"
             title="card"
           >
-            
-        card
-      
+            card
           </span>
-           
-          <div
-            class="t-input t-size-m t-select-input"
-            style="display: none;"
-          >
-            <input
-              class="t-input__inner"
-              placeholder="card"
-              type="text"
-            />
-          </div>
-           
           <svg
             class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <use
-              xlink:href="#t-icon-chevron-down"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-close t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-close"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-loading t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-loading"
+            <path
+              d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
-         
         <div
           class="resize-sensor"
           dir="ltr"
@@ -2036,8 +1730,8 @@ exports[`Calendar cardCell demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -2047,76 +1741,25 @@ exports[`Calendar cardCell demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -2148,8 +1791,8 @@ exports[`Calendar cardCell demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -2159,76 +1802,25 @@ exports[`Calendar cardCell demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -2949,8 +2541,8 @@ exports[`Calendar cell demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -2960,76 +2552,25 @@ exports[`Calendar cell demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -3061,8 +2602,8 @@ exports[`Calendar cell demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -3072,76 +2613,25 @@ exports[`Calendar cell demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -4092,8 +3582,8 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -4103,76 +3593,25 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -4204,8 +3643,8 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -4215,76 +3654,25 @@ exports[`Calendar cellAppend demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -5548,8 +4936,8 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -5559,76 +4947,25 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -5660,8 +4997,8 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -5671,76 +5008,25 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -6432,8 +5718,8 @@ exports[`Calendar events demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -6443,76 +5729,25 @@ exports[`Calendar events demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -6544,8 +5779,8 @@ exports[`Calendar events demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -6555,76 +5790,25 @@ exports[`Calendar events demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -7350,8 +6534,8 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -7361,76 +6545,25 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -7462,8 +6595,8 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -7473,76 +6606,25 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -8268,8 +7350,8 @@ exports[`Calendar filter demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -8279,76 +7361,25 @@ exports[`Calendar filter demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -8380,8 +7411,8 @@ exports[`Calendar filter demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -8391,76 +7422,25 @@ exports[`Calendar filter demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -8998,8 +7978,8 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
       class="demo-select-base"
     >
       <div
-        class="t-popup-reference"
-        style="width: 100%; position: relative;"
+        class="t-popup-reference t-select-popup-reference"
+        style="position: relative;"
       >
         <transition-stub
           appear="true"
@@ -9009,76 +7989,25 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         <div
           class="t-select t-size-m"
         >
-          <svg
-            class="t-icon t-icon- t-size-m t-select-left-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-"
-            />
-          </svg>
-           
-          <span
-            class="t-select-placeholder"
-            style="display: none;"
-          >
-             请选择
-          </span>
-           
-          <input
-            name="t-select"
-            style="width: 0px;"
-            type="hidden"
-            value="3"
-          />
-            
           <span
             class="t-select-selectedSingle"
             title="3"
           >
-            
-        3
-      
+            3
           </span>
-           
-          <div
-            class="t-input t-size-m t-select-input"
-            style="display: none;"
-          >
-            <input
-              class="t-input__inner"
-              placeholder="3"
-              type="text"
-            />
-          </div>
-           
           <svg
             class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <use
-              xlink:href="#t-icon-chevron-down"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-close t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-close"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-loading t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-loading"
+            <path
+              d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
-         
         <div
           class="resize-sensor"
           dir="ltr"
@@ -9119,8 +8048,8 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -9130,76 +8059,25 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -9231,8 +8109,8 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -9242,76 +8120,25 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="12"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="12"
                 >
-                  
-        12
-      
+                  12
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="12"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -10078,8 +8905,8 @@ exports[`Calendar head demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -10089,76 +8916,25 @@ exports[`Calendar head demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -10190,8 +8966,8 @@ exports[`Calendar head demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -10201,76 +8977,25 @@ exports[`Calendar head demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -10945,8 +9670,8 @@ exports[`Calendar mode demo works fine 1`] = `
       class="demo-select-base"
     >
       <div
-        class="t-popup-reference"
-        style="width: 100%; position: relative;"
+        class="t-popup-reference t-select-popup-reference"
+        style="position: relative;"
       >
         <transition-stub
           appear="true"
@@ -10956,76 +9681,25 @@ exports[`Calendar mode demo works fine 1`] = `
         <div
           class="t-select t-size-m"
         >
-          <svg
-            class="t-icon t-icon- t-size-m t-select-left-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-"
-            />
-          </svg>
-           
-          <span
-            class="t-select-placeholder"
-            style="display: none;"
-          >
-             请选择
-          </span>
-           
-          <input
-            name="t-select"
-            style="width: 0px;"
-            type="hidden"
-            value="year"
-          />
-            
           <span
             class="t-select-selectedSingle"
             title="year"
           >
-            
-        year
-      
+            year
           </span>
-           
-          <div
-            class="t-input t-size-m t-select-input"
-            style="display: none;"
-          >
-            <input
-              class="t-input__inner"
-              placeholder="year"
-              type="text"
-            />
-          </div>
-           
           <svg
             class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <use
-              xlink:href="#t-icon-chevron-down"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-close t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-close"
-            />
-          </svg>
-           
-          <svg
-            class="t-icon t-icon-loading t-size-m t-select-right-icon"
-            style="display: none;"
-          >
-            <use
-              xlink:href="#t-icon-loading"
+            <path
+              d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
-         
         <div
           class="resize-sensor"
           dir="ltr"
@@ -11066,8 +9740,8 @@ exports[`Calendar mode demo works fine 1`] = `
         >
           <div>
             <div
-              class="t-popup-reference"
-              style="width: 100%; position: relative;"
+              class="t-popup-reference t-select-popup-reference"
+              style="position: relative;"
             >
               <transition-stub
                 appear="true"
@@ -11077,76 +9751,25 @@ exports[`Calendar mode demo works fine 1`] = `
               <div
                 class="t-select t-size-s"
               >
-                <svg
-                  class="t-icon t-icon- t-size-s t-select-left-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-"
-                  />
-                </svg>
-                 
-                <span
-                  class="t-select-placeholder"
-                  style="display: none;"
-                >
-                   请选择
-                </span>
-                 
-                <input
-                  name="t-select"
-                  style="width: 0px;"
-                  type="hidden"
-                  value="2020"
-                />
-                  
                 <span
                   class="t-select-selectedSingle"
                   title="2020"
                 >
-                  
-        2020
-      
+                  2020
                 </span>
-                 
-                <div
-                  class="t-input t-size-s t-select-input"
-                  style="display: none;"
-                >
-                  <input
-                    class="t-input__inner"
-                    placeholder="2020"
-                    type="text"
-                  />
-                </div>
-                 
                 <svg
                   class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <use
-                    xlink:href="#t-icon-chevron-down"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-close t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-close"
-                  />
-                </svg>
-                 
-                <svg
-                  class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                  style="display: none;"
-                >
-                  <use
-                    xlink:href="#t-icon-loading"
+                  <path
+                    d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </div>
-               
               <div
                 class="resize-sensor"
                 dir="ltr"
@@ -11449,8 +10072,8 @@ exports[`Calendar range demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -11460,76 +10083,25 @@ exports[`Calendar range demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -11561,8 +10133,8 @@ exports[`Calendar range demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -11572,76 +10144,25 @@ exports[`Calendar range demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -12312,8 +10833,8 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -12323,76 +10844,25 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="2020"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="2020"
               >
-                
-        2020
-      
+                2020
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="2020"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -12424,8 +10894,8 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -12435,76 +10905,25 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="12"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="12"
               >
-                
-        12
-      
+                12
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="12"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -13041,8 +11460,8 @@ exports[`Calendar value demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -13052,76 +11471,25 @@ exports[`Calendar value demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="1998"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="1998"
               >
-                
-        1998
-      
+                1998
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="1998"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
@@ -13153,8 +11521,8 @@ exports[`Calendar value demo works fine 1`] = `
       >
         <div>
           <div
-            class="t-popup-reference"
-            style="width: 100%; position: relative;"
+            class="t-popup-reference t-select-popup-reference"
+            style="position: relative;"
           >
             <transition-stub
               appear="true"
@@ -13164,76 +11532,25 @@ exports[`Calendar value demo works fine 1`] = `
             <div
               class="t-select t-size-s"
             >
-              <svg
-                class="t-icon t-icon- t-size-s t-select-left-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-"
-                />
-              </svg>
-               
-              <span
-                class="t-select-placeholder"
-                style="display: none;"
-              >
-                 请选择
-              </span>
-               
-              <input
-                name="t-select"
-                style="width: 0px;"
-                type="hidden"
-                value="11"
-              />
-                
               <span
                 class="t-select-selectedSingle"
                 title="11"
               >
-                
-        11
-      
+                11
               </span>
-               
-              <div
-                class="t-input t-size-s t-select-input"
-                style="display: none;"
-              >
-                <input
-                  class="t-input__inner"
-                  placeholder="11"
-                  type="text"
-                />
-              </div>
-               
               <svg
                 class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
+                version="1.1"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <use
-                  xlink:href="#t-icon-chevron-down"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-close t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-close"
-                />
-              </svg>
-               
-              <svg
-                class="t-icon t-icon-loading t-size-s t-select-right-icon"
-                style="display: none;"
-              >
-                <use
-                  xlink:href="#t-icon-loading"
+                <path
+                  d="M514.72285696 704.7972396800001L520.12398592 703.85630784C525.44129472 702.4731296 530.472656 699.70458368 534.64508928 695.5504467200001L534.64508928 695.5504467200001 910.3632832 320.41891840000005 865.108448 275.16408320000005 512.02827328 627.72684352 160.0351072 275.20768640000006 114.78027328 320.46252160000006 489.38601344 695.5130879999999C496.31708544 702.46731264 505.65104192 705.56179008 514.72285696 704.7972396800001Z"
+                  fill-opacity=".9"
+                  fill-rule="evenodd"
                 />
               </svg>
             </div>
-             
             <div
               class="resize-sensor"
               dir="ltr"
