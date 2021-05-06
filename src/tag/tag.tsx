@@ -34,6 +34,7 @@ export default Vue.extend({
         {
           [`${name}--ellipsis`]: this.maxWidth,
           [`${name}--close`]: this.closable,
+          [`${name}--disabled`]: this.disabled,
         },
       ];
     },
@@ -44,10 +45,12 @@ export default Vue.extend({
   },
   methods: {
     handleClose(e: MouseEvent): void {
+      if (this.disabled) return;
       this.$emit('close', { e });
       (typeof this.onClose === 'function') && this.onClose({ e });
     },
     handleClick(e: MouseEvent): void {
+      if (this.disabled) return;
       this.$emit('click', { e });
       (typeof this.onClick === 'function') && this.onClick({ e });
     },

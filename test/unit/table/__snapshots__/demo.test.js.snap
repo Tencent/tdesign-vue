@@ -3,7 +3,7 @@
 exports[`Table ajax demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s t-table-valign__top"
+    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
   >
     <div
       class="t-table-content"
@@ -95,7 +95,7 @@ exports[`Table ajax demo works fine 1`] = `
 exports[`Table base demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s t-table-valign__top"
+    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
   >
     <div
       class="t-table-content"
@@ -1073,7 +1073,7 @@ exports[`Table base demo works fine 1`] = `
 exports[`Table base demo works fine 2`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s t-table-valign__top"
+    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
   >
     <div
       class="t-table-content"
@@ -2060,7 +2060,7 @@ exports[`Table customCell demo works fine 1`] = `
    
   <div>
     <div
-      class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s"
+      class="t-table t-table--bordered t-table--striped t-table--hoverable"
     >
       <div
         class="t-table-content"
@@ -2102,10 +2102,15 @@ exports[`Table customCell demo works fine 1`] = `
               >
                 <span>
                   <svg
-                    class="t-icon t-icon-view-module"
+                    class="t-icon t-icon-app"
+                    version="1.1"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use
-                      xlink:href="#t-icon-view-module"
+                    <path
+                      d="M832 512C867.3462208 512 896 540.653776 896 576L896 832C896 867.3462208 867.3462208 896 832 896L576 896C540.653776 896 512 867.3462208 512 832L512 576C512 540.653776 540.653776 512 576 512L832 512ZM384 512C419.346224 512 448 540.653776 448 576L448 832C448 867.3462208 419.346224 896 384 896L128 896C92.653776 896 64 867.3462208 64 832L64 576C64 540.653776 92.653776 512 128 512L384 512ZM832 576L576 576 576 832 832 832 832 576ZM384 576L128 576 128 832 384 832 384 576ZM704 64C810.0386688 64 896 149.961328 896 256 896 362.038672 810.0386688 448 704 448 597.961328 448 512 362.038672 512 256 512 149.961328 597.961328 64 704 64ZM384 64C419.346224 64 448 92.653776 448 128L448 384C448 419.346224 419.346224 448 384 448L128 448C92.653776 448 64 419.346224 64 384L64 128C64 92.653776 92.653776 64 128 64L384 64ZM704 128C633.307552 128 576 185.307552 576 256 576 326.692448 633.307552 384 704 384 774.692448 384 832 326.692448 832 256 832 185.307552 774.692448 128 704 128ZM384 128L128 128 128 384 384 384 384 128Z"
+                      fill-opacity=".9"
+                      fill-rule="evenodd"
                     />
                   </svg>
                    类型
@@ -2183,9 +2188,14 @@ exports[`Table customCell demo works fine 1`] = `
                 <span>
                   <svg
                     class="t-icon t-icon-attach"
+                    version="1.1"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use
-                      xlink:href="#t-icon-attach"
+                    <path
+                      d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
+                      fill-opacity=".9"
+                      fill-rule="evenodd"
                     />
                   </svg>
                   <a
@@ -2254,9 +2264,14 @@ exports[`Table customCell demo works fine 1`] = `
                 <span>
                   <svg
                     class="t-icon t-icon-attach"
+                    version="1.1"
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use
-                      xlink:href="#t-icon-attach"
+                    <path
+                      d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
+                      fill-opacity=".9"
+                      fill-rule="evenodd"
                     />
                   </svg>
                   <a
@@ -2574,7 +2589,7 @@ exports[`Table empty demo works fine 1`] = `
    
   <div>
     <div
-      class="t-table t-size-s"
+      class="t-table"
     >
       <div
         class="t-table-content"
@@ -2692,7 +2707,7 @@ exports[`Table empty demo works fine 1`] = `
    
   <div>
     <div
-      class="t-table t-size-s"
+      class="t-table"
     >
       <div
         class="t-table-content"
@@ -3448,7 +3463,7 @@ exports[`Table expandable demo works fine 1`] = `
 exports[`Table fixedColumn demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s t-table__cell--fixed t-table--has-fixed"
+    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table__cell--fixed t-table--has-fixed"
   >
     <div
       class="t-table-content"
@@ -3657,7 +3672,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
 exports[`Table fixedHeader demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s t-table__header--fixed"
+    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table__header--fixed"
   >
     <div
       class="t-table-content"

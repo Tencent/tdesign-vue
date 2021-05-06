@@ -22,6 +22,12 @@ exports[`Tag base demo works fine 1`] = `
         超链接
       </span>
     </a>
+     
+    <span
+      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--disabled"
+    >
+      disabled 标签
+    </span>
   </div>
 </div>
 `;

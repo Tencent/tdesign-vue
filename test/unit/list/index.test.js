@@ -54,7 +54,15 @@ describe('List', () => {
     it(':asyncLoading is a string', () => {
       const wrapper = mount({
         render() {
-          return <List asyncLoading={'asyncLoading'}>text</List>;
+          return <List asyncLoading={'loading'}>text</List>;
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+    it(':asyncLoading is loading-more', () => {
+      const wrapper = mount({
+        render() {
+          return <List asyncLoading='loading-more'>text</List>;
         },
       });
       expect(wrapper).toMatchSnapshot();

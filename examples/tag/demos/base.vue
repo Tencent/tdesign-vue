@@ -5,6 +5,7 @@
       <a class="demo-link">
         <t-tag>超链接</t-tag>
       </a>
+      <t-tag disabled>disabled 标签</t-tag>
     </div>
   </div>
 </template>
