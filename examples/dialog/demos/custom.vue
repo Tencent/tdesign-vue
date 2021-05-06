@@ -1,10 +1,63 @@
 <template>
   <div>
-    <p>底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。</p><br>
-    <t-button theme="primary" @click="visible1 = true">自定义底部按钮（文字）</t-button>
-    <t-button theme="primary" @click="visible2 = true">自定义底部按钮（任何按钮属性）</t-button>
-    <t-button theme="primary" @click="visible3 = true">自定义底部按钮（自定义组件）</t-button>
+    <p>主体自定义</p><br>
+    <div>
+      <t-button theme="primary" @click="bodyVisible1 = true">隐藏标题</t-button>
+      <t-button theme="primary" @click="bodyVisible2 = true">隐藏底部</t-button>
+      <t-button theme="primary" @click="bodyVisible3 = true">渲染函数定义内容</t-button>
+      <t-button theme="primary" @click="bodyVisible4 = true">插槽方式定义内容</t-button>
+      <t-dialog :header="false" body="对话框内容" :visible="bodyVisible1" :onClose="bodyClose1" :onClickConfirm="bodyClose1" >
+        <div slot="body">
+          <div>不需要标题的内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+        </div>
+      </t-dialog>
 
+      <t-dialog
+        :visible="bodyVisible2"
+        header="提示"
+        body="对话框内容"
+        :footer="false"
+        :onClose="bodyClose2" :onClickConfirm="bodyClose2"
+      >
+        <div slot="body">
+          <div>不需要底部按钮的内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+        </div>
+      </t-dialog>
+
+      <t-dialog
+        :visible="bodyVisible3"
+        header="标题"
+        :body="renderDialog3Body"
+        :onClose="bodyClose3" :onClickConfirm="bodyClose3"
+      >
+        <div slot="body">被渲染函数覆盖的插槽内容</div>
+      </t-dialog>
+
+      <t-dialog header="对话框标题" :visible="bodyVisible4" :onClose="bodyClose4" :onClickConfirm="bodyClose4" >
+        <div slot="body">
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+          <div>我是内容</div>
+        </div>
+      </t-dialog>
+    </div>
+    <br>
+    <p>按钮自定义</p><br>
+    <p>底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。</p><br>
+    <t-button theme="primary" @click="visible1 = true">按钮文字</t-button>
+    <t-button theme="primary" @click="visible2 = true">按钮属性</t-button>
+    <t-button theme="primary" @click="visible3 = true">自定义组件</t-button>
     <t-dialog
       :visible.sync="visible1"
       header="提示"
@@ -54,6 +107,10 @@ export default {
       visible1: false,
       visible2: false,
       visible3: false,
+      bodyVisible1: false,
+      bodyVisible2: false,
+      bodyVisible3: false,
+      bodyVisible4: false,
     };
   },
   methods: {
@@ -73,9 +130,22 @@ export default {
       this.visible1 = false;
       alert('跳转支付~');
     },
-    onConfirm2() {
-      this.visible2 = false;
-      alert('前往购物车~');
+
+    renderDialog3Body() {
+      return this.$createElement('div', [this.$createElement('h1', '参数传递优先于插槽内容'), '这是渲染函数输出结果']);
+    },
+
+    bodyClose1() {
+      this.bodyVisible1 = false;
+    },
+    bodyClose2() {
+      this.bodyVisible2 = false;
+    },
+    bodyClose3() {
+      this.bodyVisible3 = false;
+    },
+    bodyClose4() {
+      this.bodyVisible4 = false;
     },
   },
 };

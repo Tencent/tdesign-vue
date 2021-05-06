@@ -273,7 +273,7 @@ exports[`Progress :props :theme :theme circle progress has t-circle--outer and t
   <div class="t-progress--circle t-progress--status--undefined" style="width: 112px; height: 112px; font-size: 17.5px;">
     <div class="t-progress--info">0%</div> <svg width="112" height="112" viewBox="0 0 112 112">
       <circle cx="56" cy="56" r="50" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-      <circle cx="56" cy="56" r="50" stroke-width="6" fill="none" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-circle--inner" style="stroke-linecap: buff;"></circle>
+      <circle cx="56" cy="56" r="50" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-circle--inner" style="stroke-linecap: buff;"></circle>
     </svg>
   </div>
 </div>
@@ -311,7 +311,7 @@ exports[`Progress :props :theme :theme:circle 1`] = `
   <div class="t-progress--circle t-progress--status--undefined" style="width: 112px; height: 112px; font-size: 17.5px;">
     <div class="t-progress--info">0%</div> <svg width="112" height="112" viewBox="0 0 112 112">
       <circle cx="56" cy="56" r="50" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-      <circle cx="56" cy="56" r="50" stroke-width="6" fill="none" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-circle--inner" style="stroke-linecap: buff;"></circle>
+      <circle cx="56" cy="56" r="50" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-circle--inner" style="stroke-linecap: buff;"></circle>
     </svg>
   </div>
 </div>

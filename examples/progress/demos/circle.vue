@@ -45,10 +45,6 @@
         <div class="t-progress-demo-margin">大尺寸</div>
         <t-progress theme="circle" :percentage="75" :size="'large'" style="margin-top: 40px;"></t-progress>
       </div>
-      <div class="t-progress-demo-inner">
-        <div class="t-progress-demo-margin">自定义尺寸与颜色</div>
-        <t-progress theme="circle" :percentage="75" :size="240" :color="'#00f'"  :trackColor="'#0f0' " :stroke-width="30"></t-progress>
-      </div>
     </div>
   </div>
 </template>

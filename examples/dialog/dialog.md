@@ -11,19 +11,11 @@
 ::: demo demos/position 
 :::
 
-### 3. 自定义主体内容
-::: demo demos/custom/body 
-:::
-
-### 4. 挂载元素
+### 3. 挂载元素
 ::: demo demos/attach 
 :::
 
-### 5. 拖拽
-::: demo demos/drag 
-:::
-
-### 6. 插件函数式调用
+### 4. 插件函数式调用
 ::: demo demos/plugin Plugin 
 :::
 

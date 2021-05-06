@@ -30,6 +30,8 @@
       :visible.sync="visible3"
       @confirm="onClickConfirm"
       :onClose="close3"
+      :cancelBtn="null"
+
     >
     </t-dialog>
 
@@ -41,6 +43,7 @@
       :visible.sync="visible4"
       @confirm="onClickConfirm"
       :onClose="close4"
+      :cancelBtn="null"
     >
     </t-dialog>
 

@@ -57,6 +57,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="94.2477796076938  219.9114857512855"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -110,6 +111,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="314.1592653589793  0"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -167,6 +169,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="157.07963267948966  157.07963267948966"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -238,6 +241,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="314.1592653589793  0"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -305,6 +309,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="235.61944901923448  78.53981633974483"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -372,6 +377,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="157.07963267948966  157.07963267948966"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -438,6 +444,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="32"
               stroke-dasharray="60.31857894892403  140.74335088082273"
+              stroke-linecap="round"
               stroke-width="4"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,72)"
@@ -495,6 +502,7 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="94.2477796076938  219.9114857512855"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -557,66 +565,10 @@ exports[`Progress circle demo works fine 1`] = `
               fill="none"
               r="74"
               stroke-dasharray="348.71678454846705  116.23892818282235"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,160)"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="t-progress-demo-inner"
-    >
-      <div
-        class="t-progress-demo-margin"
-      >
-        自定义尺寸与颜色
-      </div>
-       
-      <div
-        class="t-progress"
-      >
-        <!---->
-         
-        <!---->
-         
-        <div
-          class="t-progress--circle t-progress--status--undefined"
-          style="width: 240px; height: 240px; font-size: 28.3px;"
-        >
-          <div
-            class="t-progress--info"
-          >
-            75%
-          </div>
-           
-          <svg
-            height="240"
-            viewBox="0 0 240 240"
-            width="240"
-          >
-            <circle
-              class="t-circle--outer"
-              cx="120"
-              cy="120"
-              fill="none"
-              r="90"
-              stroke="#0f0"
-              stroke-width="30"
-            />
-             
-            <circle
-              class="t-circle--inner"
-              cx="120"
-              cy="120"
-              fill="none"
-              r="90"
-              stroke-dasharray="424.1150082346221  141.3716694115407"
-              stroke-width="30"
-              style="stroke: #00f; stroke-linecap: buff;"
-              transform="matrix(0,-1,1,0,0,240)"
             />
           </svg>
         </div>
@@ -668,6 +620,7 @@ exports[`Progress custom demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="263.89378290154264  50.265482457436704"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"
@@ -779,6 +732,7 @@ exports[`Progress custom demo works fine 1`] = `
             fill="none"
             r="80"
             stroke-dasharray="150.79644737231007  351.85837720205683"
+            stroke-linecap="round"
             stroke-width="20"
             style="stroke-linecap: round;"
             transform="matrix(0,-1,1,0,0,200)"
@@ -859,6 +813,7 @@ exports[`Progress custom demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="138.2300767579509  175.92918860102844"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke: #52CC8D; stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"
@@ -942,6 +897,7 @@ exports[`Progress custom demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="138.2300767579509  175.92918860102844"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"
@@ -1042,7 +998,7 @@ exports[`Progress line demo works fine 1`] = `
         >
           <div
             class="t-progress--inner"
-            style="width: 30%;"
+            style="width: 60%;"
           />
         </div>
          
@@ -1087,7 +1043,7 @@ exports[`Progress line demo works fine 1`] = `
         >
           <div
             class="t-progress--inner"
-            style="width: 30%;"
+            style="width: 60%;"
           />
         </div>
          
@@ -1132,7 +1088,7 @@ exports[`Progress line demo works fine 1`] = `
         >
           <div
             class="t-progress--inner"
-            style="width: 30%;"
+            style="width: 60%;"
           />
         </div>
          
@@ -1162,138 +1118,6 @@ exports[`Progress line demo works fine 1`] = `
     <div
       class="t-progress-domo-margin"
     >
-      active
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          30%
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      不显示数字
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <!---->
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      自定义内容
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          75day
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      自定义颜色与高度
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="height: 30px; background-color: rgb(0, 255, 0); border-radius: 30px;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%; background: rgb(0, 0, 255);"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          30%
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
       渐变色
     </div>
      
@@ -1309,74 +1133,14 @@ exports[`Progress line demo works fine 1`] = `
         >
           <div
             class="t-progress--inner"
-            style="width: 30%;"
+            style="width: 60%;"
           />
         </div>
          
         <div
           class="t-progress--info"
         >
-          30%
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <br />
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          30%
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <br />
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          30%
+          60%
         </div>
       </div>
        
@@ -1584,184 +1348,8 @@ exports[`Progress plump demo works fine 1`] = `
     <div
       class="t-progress-domo-margin"
     >
-      active
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <!---->
-       
-      <div
-        class="t-progress--bar t-progress--plump t-progress--status--active"
-        style="border-radius: undefinedpx;"
-      >
-        <div
-          class="t-progress--inner"
-          style="width: 30%;"
-        >
-          <div
-            class="t-progress--info"
-            style="color: rgb(255, 255, 255);"
-          >
-            30%
-          </div>
-        </div>
-      </div>
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      不显示数字
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <!---->
-       
-      <div
-        class="t-progress--bar t-progress--plump t-progress--status--undefined"
-        style="border-radius: undefinedpx;"
-      >
-        <div
-          class="t-progress--inner"
-          style="width: 30%;"
-        >
-          <!---->
-        </div>
-      </div>
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      自定义内容
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <div
-        class="t-progress--thin t-progress--status--active"
-      >
-        <div
-          class="t-progress--bar"
-          style="border-radius: undefinedpx;"
-        >
-          <div
-            class="t-progress--inner"
-            style="width: 30%;"
-          />
-        </div>
-         
-        <div
-          class="t-progress--info"
-        >
-          75day
-        </div>
-      </div>
-       
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
-      自定义颜色与高度
-    </div>
-     
-    <div
-      class="t-progress"
-    >
-      <!---->
-       
-      <div
-        class="t-progress--bar t-progress--plump t-progress--status--active"
-        style="height: 30px; background-color: rgb(0, 255, 0); border-radius: 30px;"
-      >
-        <div
-          class="t-progress--inner"
-          style="width: 30%; background: rgb(0, 0, 255);"
-        >
-          <div
-            class="t-progress--info"
-            style="color: rgb(255, 255, 255);"
-          >
-            30%
-          </div>
-        </div>
-      </div>
-       
-      <!---->
-    </div>
-     
-    <div
-      class="t-progress-domo-margin"
-    >
       渐变色
     </div>
-     
-    <div
-      class="t-progress"
-    >
-      <!---->
-       
-      <div
-        class="t-progress--bar t-progress--plump t-progress--status--active"
-        style="border-radius: undefinedpx;"
-      >
-        <div
-          class="t-progress--inner"
-          style="width: 30%;"
-        >
-          <div
-            class="t-progress--info"
-            style="color: rgb(255, 255, 255);"
-          >
-            30%
-          </div>
-        </div>
-      </div>
-       
-      <!---->
-    </div>
-     
-    <br />
-     
-    <div
-      class="t-progress"
-    >
-      <!---->
-       
-      <div
-        class="t-progress--bar t-progress--plump t-progress--status--active"
-        style="border-radius: undefinedpx;"
-      >
-        <div
-          class="t-progress--inner"
-          style="width: 30%;"
-        >
-          <div
-            class="t-progress--info"
-            style="color: rgb(255, 255, 255);"
-          >
-            30%
-          </div>
-        </div>
-      </div>
-       
-      <!---->
-    </div>
-     
-    <br />
      
     <div
       class="t-progress"
@@ -1842,6 +1430,7 @@ exports[`Progress size demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="94.2477796076938  219.9114857512855"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1903,6 +1492,7 @@ exports[`Progress size demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="235.61944901923448  78.53981633974483"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1964,6 +1554,7 @@ exports[`Progress size demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="157.07963267948966  157.07963267948966"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -2025,6 +1616,7 @@ exports[`Progress size demo works fine 1`] = `
               fill="none"
               r="50"
               stroke-dasharray="314.1592653589793  0"
+              stroke-linecap="round"
               stroke-width="6"
               style="stroke-linecap: buff;"
               transform="matrix(0,-1,1,0,0,112)"
@@ -2085,6 +1677,7 @@ exports[`Progress size demo works fine 1`] = `
             fill="none"
             r="32"
             stroke-dasharray="60.31857894892403  140.74335088082273"
+            stroke-linecap="round"
             stroke-width="4"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,72)"
@@ -2136,6 +1729,7 @@ exports[`Progress size demo works fine 1`] = `
             fill="none"
             r="74"
             stroke-dasharray="348.71678454846705  116.23892818282235"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,160)"
@@ -2267,6 +1861,7 @@ exports[`Progress status demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="251.32741228718348  62.83185307179585"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"
@@ -2394,6 +1989,7 @@ exports[`Progress status demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="251.32741228718348  62.83185307179585"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"
@@ -2560,6 +2156,7 @@ exports[`Progress status demo works fine 1`] = `
             fill="none"
             r="50"
             stroke-dasharray="251.32741228718348  62.83185307179585"
+            stroke-linecap="round"
             stroke-width="6"
             style="stroke-linecap: buff;"
             transform="matrix(0,-1,1,0,0,112)"

@@ -240,6 +240,7 @@ export default Vue.extend({
       const defaultCloseBtn = <t-icon-close name="close"></t-icon-close>;
       const body = renderContent(this, 'default', 'body');
       const defaultFooter = this.getDefaultFooter();
+      const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
         <div
@@ -250,7 +251,7 @@ export default Vue.extend({
         >
           <div class={`${name}__header`}>{this.getIcon()}{renderTNodeJSX(this, 'header', defaultHeader)}</div>
           <span class={`${name}__close`} onClick={this.closeBtnAcion}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</span>
-          <div class={`${name}__body`}>{body}</div>
+          <div class={bodyClassName}>{body}</div>
           <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>
       );
