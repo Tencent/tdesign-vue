@@ -19,7 +19,7 @@ export default Vue.extend({
       default: undefined,
       validator(val: string | Function | number): boolean {
         if (typeof val === 'string') {
-          return ['loading', 'loading-more'].includes(val);
+          return [LOADING, LOAD_MORE].includes(val);
         }
         return true;
       },

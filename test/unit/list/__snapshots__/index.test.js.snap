@@ -20,10 +20,10 @@ exports[`List :props :asyncLoading is a string 1`] = `
 </div>
 `;
 
-exports[`List :props :asyncLoading is loading-more 1`] = `
+exports[`List :props :asyncLoading is load-more 1`] = `
 <div class="t-list t-size-m">
   <ul class="t-list-items">text</ul>
-  <div class="t-list__load t-list__load--loading-more"><span>点击加载更多</span></div>
+  <div class="t-list__load t-list__load--load-more"><span>点击加载更多</span></div>
 </div>
 `;
 

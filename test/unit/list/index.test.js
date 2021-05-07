@@ -59,10 +59,10 @@ describe('List', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
-    it(':asyncLoading is loading-more', () => {
+    it(':asyncLoading is load-more', () => {
       const wrapper = mount({
         render() {
-          return <List asyncLoading='loading-more'>text</List>;
+          return <List asyncLoading='load-more'>text</List>;
         },
       });
       expect(wrapper).toMatchSnapshot();
