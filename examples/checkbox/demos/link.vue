@@ -3,11 +3,11 @@
     <div class="demo-checkbox-row">
       <!-- name 非必需 -->
       <t-checkbox-group v-model="checked" :options="['北京', '上海', '深圳']" name='city'></t-checkbox-group>
+      <t-button variant="text" @click="checked = ['上海']">重置</t-button>
     </div>
 
     <div class="demo-checkbox-row-desc">
       选中值: {{ checked }}
-      <t-button variant="text" @click="checked = ['上海']">重置</t-button>
     </div>
   </div>
 </template>

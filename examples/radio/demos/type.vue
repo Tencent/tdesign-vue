@@ -15,8 +15,6 @@
         <t-radio-button value="1">选项一</t-radio-button>
         <t-radio-button value="2">选项二</t-radio-button>
         <t-radio-button value="3">选项三</t-radio-button>
-      </t-radio-group>
-      <t-radio-group default-value="1">
         <t-radio-button value="1" disabled>选中禁用态</t-radio-button>
         <t-radio-button value="2" disabled>未选中禁用态</t-radio-button>
       </t-radio-group>
@@ -27,10 +25,8 @@
         <t-radio-button value="bj">选项一</t-radio-button>
         <t-radio-button value="gz">选项二</t-radio-button>
         <t-radio-button value="sz">选项三</t-radio-button>
-      </t-radio-group>
-      <t-radio-group buttonStyle="solid" default-value="bj">
-        <t-radio-button value="bj" disabled>选中禁用态</t-radio-button>
-        <t-radio-button value="gz" disabled>未选中禁用态</t-radio-button>
+        <t-radio-button value="gz" disabled>选中禁用态</t-radio-button>
+        <t-radio-button value="bj" disabled>未选中禁用态</t-radio-button>
       </t-radio-group>
     </div>
   </div>
