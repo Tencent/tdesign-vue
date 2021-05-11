@@ -4,7 +4,6 @@
     <a class="demo-link">
       <t-tag>超链接</t-tag>
     </a>
-    <t-tag disabled>失效标签</t-tag>
   </div>
 </template>
 

@@ -21,4 +21,9 @@
 ::: demo demos/disabled
 :::
 
+### 1.9 超长省略文本标签
+
+::: demo demos/long-text
+:::
+
 :: BASE_PROPS ::

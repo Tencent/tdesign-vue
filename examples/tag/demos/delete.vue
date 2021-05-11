@@ -1,18 +1,28 @@
 <template>
   <div class="tag-demo">
-    <t-tag
-      v-for="(tag, index) in tags"
-      :key="index"
-      :theme="tag.type"
-      :variant="tag.variant"
-      :maxWidth="tag.maxWidth"
-      :closable="tag.showClose"
-      :icon="tag.icon"
-      @click="handleClick"
-      @close="handleClose(index)"
-    >
-      {{ tag.name }}
-    </t-tag>
+    <div class="tdesign-demo-block">
+      可删除
+      <t-tag
+        v-for="(tag, index) in tags"
+        :key="index"
+        :theme="tag.type"
+        :variant="tag.variant"
+        :maxWidth="tag.maxWidth"
+        :closable="tag.showClose"
+        :icon="tag.icon"
+        @click="handleClick"
+        @close="handleClose(index)"
+      >
+        {{ tag.name }}
+      </t-tag>
+    </div>
+    <div class="tdesign-demo-block">
+      可添加
+      <t-tag @click="handleClickAdd">
+        <t-icon-add />
+        添加标签
+      </t-tag>
+    </div>
   </div>
 </template>
 
@@ -31,32 +41,15 @@ export default {
     return {
       tags: [
         {
-          name: '隐藏叉',
-          type: 'default',
-          showClose: false,
-        },
-        {
-          name: '显示叉',
+          name: '可删除标签',
           type: 'default',
           showClose: true,
         },
         {
-          name: '默认标签',
+          name: '可删除标签',
           type: 'default',
           icon: () => <t-icon-discount />,
           showClose: true,
-        },
-        {
-          name: '默认超过八个字超出部分隐藏',
-          type: 'default',
-          maxWidth: 150,
-          showClose: false,
-        },
-        {
-          name: '添加标签',
-          type: 'default',
-          icon: () => <t-icon-add />,
-          showClose: false,
         },
       ],
     };
@@ -68,16 +61,18 @@ export default {
     handleClick(event) {
       console.log(event);
     },
+    handleClickAdd() {
+      this.tags.push({ name: Math.random().toString(), type: 'default', showClose: true });
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.tag-demo {
-  width: 800px;
+.tag-demo .tdesign-demo-block {
   display: flex;
   > * {
-    margin-right: 30px;
+    margin-left: 30px;
   }
 }
 </style>
