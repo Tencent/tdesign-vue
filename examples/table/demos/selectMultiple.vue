@@ -21,8 +21,8 @@ export default {
     return {
       selectedRowKeys: [1, '2'],
       columns: [
-        { colKey: 'row-selection', type: 'multiple',
-          disabled: ({ index }) => index === 1 || index === 3, width: 100 },
+        { colKey: 'row-select', type: 'multiple',
+          disabled: ({ index }) => index === 1 || index === 3, width: 50 },
         { colKey: 'instance', title: '集群名称', width: 150 },
         { colKey: 'status', title: '状态', width: 100, scopedSlots: { col: 'status' } },
         { colKey: 'owner', title: '管理员' },

@@ -87,7 +87,6 @@ export default {
   }
 }
 .more-detail {
-  margin: 0px 100px;
   > p {
     display: inline-block;
     margin: 5px;

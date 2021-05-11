@@ -21,7 +21,7 @@ export default {
     return {
       selectedRowKeys: [],
       columns: [
-        { colKey: 'row-select', type: 'single', width: 50 },
+        { colKey: 'row-select', type: 'single', width: 40 },
         { colKey: 'instance', title: '集群名称', width: 150 },
         { colKey: 'status', title: '状态', width: 100, scopedSlots: { col: 'status' } },
         { colKey: 'owner', title: '管理员' },

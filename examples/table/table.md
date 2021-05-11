@@ -5,6 +5,12 @@
 ::: demo demos/ajax
 :::
 
+### 1.10.筛选
+
+::: demo demos/filter-controlled
+:::
+
+
 ### 属性配置
 
 | 属性          | 类型                                            | 默认值           | 必传 | 说明                                      |
