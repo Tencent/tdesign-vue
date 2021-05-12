@@ -146,7 +146,9 @@ exports[`ListItemMeta :props :avatar 1`] = `
 
 exports[`ListItemMeta :props :avatar is a function, () => VNode. 1`] = `
 <div class="t-list-item__meta">
-  <div class="t-list-item__meta-avatar"></div>
+  <div class="t-list-item__meta-avatar">
+    <p>avatar</p>
+  </div>
   <div class="t-list-item__meta-content"></div>
 </div>
 `;

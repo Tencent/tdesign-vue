@@ -18,7 +18,7 @@ export default Vue.extend({
           </div>
         );
       }
-      return <div class={`${name}-avatar`}>{renderTNodeJSX(this, 'avator')}</div>;
+      return <div class={`${name}-avatar`}>{renderTNodeJSX(this, 'avatar')}</div>;
     },
   },
   render(): VNode {
