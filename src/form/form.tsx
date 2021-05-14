@@ -96,7 +96,7 @@ export default Vue.extend({
       reset: this.resetHandler,
     };
     return (
-      <form class={this.formClass} {...{ on }}>
+      <form ref="form" class={this.formClass} {...{ on }}>
         {this.$slots.default}
       </form>
     );
