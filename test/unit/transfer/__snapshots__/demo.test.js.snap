@@ -518,7 +518,7 @@ exports[`Transfer base demo works fine 1`] = `
     class="t-transfer-operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
       disabled="disabled"
       type="button"
     >
@@ -529,9 +529,12 @@ exports[`Transfer base demo works fine 1`] = `
           xlink:href="#t-icon-chevron-right"
         />
       </svg>
+      <span
+        class="t-button__text"
+      />
     </button>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
       disabled="disabled"
       type="button"
     >
@@ -542,6 +545,9 @@ exports[`Transfer base demo works fine 1`] = `
           xlink:href="#t-icon-chevron-left"
         />
       </svg>
+      <span
+        class="t-button__text"
+      />
     </button>
   </div>
   <div

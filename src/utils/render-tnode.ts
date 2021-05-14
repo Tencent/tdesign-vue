@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { PropType, CreateElement, VNode, VNodeChildren, RenderContext } from 'vue/types/umd';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 // 组件render属性的ts类型
 type RenderTsTypesSimple = string | number | boolean;
@@ -76,9 +77,9 @@ interface JSXRenderContext {
  * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
  */
-export const renderTNodeJSX = (vm: Vue, name: string, options?: VNode | JSXRenderContext) => {
-  const params = options && 'params' in options ? options.params : null;
-  const defaultNode = options && 'defaultNode' in options ? options.defaultNode : options;
+export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
+  const params = typeof options === 'object' && 'params' in options ? options.params : null;
+  const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];
   if (propsNode === false) return;
   if (propsNode === true && defaultNode) {
@@ -90,7 +91,6 @@ export const renderTNodeJSX = (vm: Vue, name: string, options?: VNode | JSXRende
   return propsNode;
 };
 
-
 /**
  * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与renderTNodeJSX区别在于 属性值为undefined时会渲染默认节点
  * @param vm 组件示例
@@ -100,11 +100,10 @@ export const renderTNodeJSX = (vm: Vue, name: string, options?: VNode | JSXRende
  * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
  */
-export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: VNode | JSXRenderContext) => {
-  const defaultNode = options && 'defaultNode' in options ? options.defaultNode : options;
+export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
+  const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   return renderTNodeJSX(vm, name, options) || defaultNode;
 };
-
 
 /**
  * 用于处理相同名称的 TNode 渲染
@@ -117,9 +116,9 @@ export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: VNode | J
  * @example renderContent(this, 'default', 'content', { defaultNode: '我是默认内容', params })
  */
 export const renderContent = (vm: Vue, name1: string, name2: string, options?: VNode | JSXRenderContext) => {
-  const params = options && 'params' in options ? options.params : null;
-  let defaultNode = (options && 'defaultNode' in options) && options.defaultNode;
-  defaultNode = (options && 'context' in options) && options;
+  const params = typeof options === 'object' && 'params' in options ? options.params : null;
+  let defaultNode = (typeof options === 'object' && 'defaultNode' in options) && options.defaultNode;
+  defaultNode = (typeof options === 'object' && 'context' in options) && options;
   const node1 = renderTNodeJSX(vm, name1, { params });
   const node2 = renderTNodeJSX(vm, name2, { params });
   const r = [undefined, null, ''].includes(node1) ? node2 : node1;

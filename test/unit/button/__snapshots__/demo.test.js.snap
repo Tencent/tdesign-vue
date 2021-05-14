@@ -195,7 +195,7 @@ exports[`Button icon demo works fine 1`] = `
       class="demo-button-col"
     >
       <button
-        class="t-button t-size-m t-button--variant-base t-button--theme-default t-button--icon-only t-button--shape-circle"
+        class="t-button t-size-m t-button--variant-base t-button--theme-default t-button--shape-circle"
         type="button"
       >
         <svg
@@ -210,10 +210,13 @@ exports[`Button icon demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
+        <span
+          class="t-button__text"
+        />
       </button>
        
       <button
-        class="t-button t-size-m t-button--variant-base t-button--theme-default t-button--icon-only t-button--shape-circle"
+        class="t-button t-size-m t-button--variant-base t-button--theme-default t-button--shape-circle"
         type="button"
       >
         <svg
@@ -228,6 +231,9 @@ exports[`Button icon demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
+        <span
+          class="t-button__text"
+        />
       </button>
     </div>
      

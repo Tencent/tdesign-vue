@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>默认</div>
+    <!-- 重要：strokeWidth 大小不能超过 size 的一半，否则无法渲染出环形 -->
     <div class="t-progress-demo-box">
       <div class="t-progress-demo-inner">
         <div class="t-progress-demo-margin">默认样式</div>
