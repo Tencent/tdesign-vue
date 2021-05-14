@@ -454,6 +454,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       }
 
       const ctx: TypeContext = {
+        node: node.getModel(),
         e: mouseEvent,
       };
 
