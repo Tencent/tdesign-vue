@@ -4,6 +4,7 @@ import TIconClose from '../icon/close';
 import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
+import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -54,6 +55,7 @@ export default Vue.extend({
     TIconClose,
     TIconInfoCircleFilled,
     TIconCheckCircleFilled,
+    TIconErrorCircleFilled,
     TButton,
   },
 
@@ -203,8 +205,8 @@ export default Vue.extend({
     getIcon() {
       const icon = {
         info: <TIconInfoCircleFilled class="t-is-info" />,
-        warning: <TIconInfoCircleFilled class="t-is-warning" />,
-        danger: <TIconInfoCircleFilled class="t-is-error" />,
+        warning: <TIconErrorCircleFilled class="t-is-warning" />,
+        danger: <TIconErrorCircleFilled class="t-is-error" />,
         success: <TIconCheckCircleFilled class="t-is-success" />,
       };
       return icon[this.theme];
