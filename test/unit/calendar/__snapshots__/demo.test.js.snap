@@ -13,7 +13,9 @@ exports[`Calendar base demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -74,7 +76,9 @@ exports[`Calendar base demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -771,7 +775,7 @@ exports[`Calendar card demo works fine 1`] = `
     </label>
      
     <div
-      class="demo-select-base"
+      class="demo-select-base t-select-wrap"
     >
       <div
         class="t-popup-reference t-select-popup-reference"
@@ -849,7 +853,9 @@ exports[`Calendar card demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -910,7 +916,9 @@ exports[`Calendar card demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -1657,7 +1665,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
     </label>
      
     <div
-      class="demo-select-base"
+      class="demo-select-base t-select-wrap"
     >
       <div
         class="t-popup-reference t-select-popup-reference"
@@ -1728,7 +1736,9 @@ exports[`Calendar cardCell demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -1789,7 +1799,9 @@ exports[`Calendar cardCell demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -2539,7 +2551,9 @@ exports[`Calendar cell demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -2600,7 +2614,9 @@ exports[`Calendar cell demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -3580,7 +3596,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -3641,7 +3659,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -4934,7 +4954,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -4995,7 +5017,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -5716,7 +5740,9 @@ exports[`Calendar events demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -5777,7 +5803,9 @@ exports[`Calendar events demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -6532,7 +6560,9 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -6593,7 +6623,9 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -7348,7 +7380,9 @@ exports[`Calendar filter demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -7409,7 +7443,9 @@ exports[`Calendar filter demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -7975,7 +8011,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
     </label>
      
     <div
-      class="demo-select-base"
+      class="demo-select-base t-select-wrap"
     >
       <div
         class="t-popup-reference t-select-popup-reference"
@@ -8046,7 +8082,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -8107,7 +8145,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -8903,7 +8943,9 @@ exports[`Calendar head demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -8964,7 +9006,9 @@ exports[`Calendar head demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -9667,7 +9711,7 @@ exports[`Calendar mode demo works fine 1`] = `
     </label>
      
     <div
-      class="demo-select-base"
+      class="demo-select-base t-select-wrap"
     >
       <div
         class="t-popup-reference t-select-popup-reference"
@@ -9738,7 +9782,9 @@ exports[`Calendar mode demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <div>
+          <div
+            class="t-select-wrap"
+          >
             <div
               class="t-popup-reference t-select-popup-reference"
               style="position: relative;"
@@ -10070,7 +10116,9 @@ exports[`Calendar range demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -10131,7 +10179,9 @@ exports[`Calendar range demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -10831,7 +10881,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -10892,7 +10944,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -11458,7 +11512,9 @@ exports[`Calendar value demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"
@@ -11519,7 +11575,9 @@ exports[`Calendar value demo works fine 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <div>
+        <div
+          class="t-select-wrap"
+        >
           <div
             class="t-popup-reference t-select-popup-reference"
             style="position: relative;"

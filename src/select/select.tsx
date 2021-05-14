@@ -409,7 +409,7 @@ export default Vue.extend({
     const emptySlot: ScopedSlotReturnValue = renderTNodeJSX(this, 'empty');
     const loadingTextSlot: ScopedSlotReturnValue = renderTNodeJSX(this, 'loadingText');
     return (
-      <div ref='select'>
+      <div ref='select' class={`${name}-wrap`}>
         <Popup
           ref='popup'
           class={`${name}-popup-reference`}

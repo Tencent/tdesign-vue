@@ -723,7 +723,7 @@ exports[`Table base demo works fine 1`] = `
         </div>
          
         <div
-          class="t-pagination__select"
+          class="t-select-wrap t-pagination__select"
         >
           <div
             class="t-popup-reference t-select-popup-reference"
@@ -1517,7 +1517,7 @@ exports[`Table base demo works fine 2`] = `
         </div>
          
         <div
-          class="t-pagination__select"
+          class="t-select-wrap t-pagination__select"
         >
           <div
             class="t-popup-reference t-select-popup-reference"

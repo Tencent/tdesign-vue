@@ -5,7 +5,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -23,7 +23,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -272,7 +272,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -290,7 +290,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -475,7 +475,7 @@ exports[`Calendar :props :mode 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -575,7 +575,7 @@ exports[`Calendar :props :range 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -593,7 +593,7 @@ exports[`Calendar :props :range 1`] = `
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -812,7 +812,7 @@ exports[`Calendar :props :theme 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="2020" class="t-select-selectedSingle">2020</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -830,7 +830,7 @@ exports[`Calendar :props :theme 1`] = `
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="12" class="t-select-selectedSingle">12</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -1116,7 +1116,7 @@ exports[`Calendar :props :value 1`] = `
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="1998" class="t-select-selectedSingle">1998</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">
@@ -1134,7 +1134,7 @@ exports[`Calendar :props :value 1`] = `
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div>
+        <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
             <div class="t-select t-size-s"><span title="11" class="t-select-selectedSingle">11</span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-size-s t-select-right-icon">

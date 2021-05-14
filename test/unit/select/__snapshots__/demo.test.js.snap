@@ -3,6 +3,7 @@
 exports[`Select base demo works fine 1`] = `
 <div>
   <div
+    class="t-select-wrap"
     style="width: 200px;"
   >
     <div
