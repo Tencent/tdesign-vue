@@ -11,7 +11,7 @@ exports[`HeadMenu props :active 1`] = `
 `;
 
 exports[`HeadMenu props :height 1`] = `
-<div class="t-head-menu t-menu-mode__normal t-menu--light">
+<div class="t-head-menu t-menu-mode__normal t-menu--light" height="750px">
   <div class="t-head-menu__inner">
     <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>

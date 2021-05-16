@@ -227,7 +227,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -279,7 +278,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -331,7 +329,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -383,7 +380,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -435,7 +431,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -487,7 +482,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -539,7 +533,6 @@ exports[`Anchor target demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"

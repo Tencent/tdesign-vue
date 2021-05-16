@@ -14,7 +14,6 @@ exports[`Select base demo works fine 1`] = `
         appear="true"
         name="t-popup_animation"
       />
-       
       <div
         class="t-select t-size-m"
       >

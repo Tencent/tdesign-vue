@@ -24,7 +24,6 @@ exports[`Calendar base demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -87,7 +86,6 @@ exports[`Calendar base demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -785,7 +783,6 @@ exports[`Calendar card demo works fine 1`] = `
           appear="true"
           name="t-popup_animation"
         />
-         
         <div
           class="t-select t-size-m"
         >
@@ -864,7 +861,6 @@ exports[`Calendar card demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -927,7 +923,6 @@ exports[`Calendar card demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -1675,7 +1670,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
           appear="true"
           name="t-popup_animation"
         />
-         
         <div
           class="t-select t-size-m"
         >
@@ -1747,7 +1741,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -1810,7 +1803,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -2562,7 +2554,6 @@ exports[`Calendar cell demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -2625,7 +2616,6 @@ exports[`Calendar cell demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -3607,7 +3597,6 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -3670,7 +3659,6 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -4965,7 +4953,6 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -5028,7 +5015,6 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -5751,7 +5737,6 @@ exports[`Calendar events demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -5814,7 +5799,6 @@ exports[`Calendar events demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -6571,7 +6555,6 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -6634,7 +6617,6 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -7391,7 +7373,6 @@ exports[`Calendar filter demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -7454,7 +7435,6 @@ exports[`Calendar filter demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -8021,7 +8001,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           appear="true"
           name="t-popup_animation"
         />
-         
         <div
           class="t-select t-size-m"
         >
@@ -8093,7 +8072,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -8156,7 +8134,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -8954,7 +8931,6 @@ exports[`Calendar head demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -9017,7 +8993,6 @@ exports[`Calendar head demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -9721,7 +9696,6 @@ exports[`Calendar mode demo works fine 1`] = `
           appear="true"
           name="t-popup_animation"
         />
-         
         <div
           class="t-select t-size-m"
         >
@@ -9793,7 +9767,6 @@ exports[`Calendar mode demo works fine 1`] = `
                 appear="true"
                 name="t-popup_animation"
               />
-               
               <div
                 class="t-select t-size-s"
               >
@@ -10127,7 +10100,6 @@ exports[`Calendar range demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -10190,7 +10162,6 @@ exports[`Calendar range demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -10892,7 +10863,6 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -10955,7 +10925,6 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -11523,7 +11492,6 @@ exports[`Calendar value demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >
@@ -11586,7 +11554,6 @@ exports[`Calendar value demo works fine 1`] = `
               appear="true"
               name="t-popup_animation"
             />
-             
             <div
               class="t-select t-size-s"
             >

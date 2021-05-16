@@ -46,7 +46,7 @@ export default Vue.extend({
   },
   methods: {
     renderIcon(): VNode {
-      let iconContent: VNode;
+      let iconContent;
       if (typeof this.icon === 'function') {
         iconContent = this.icon(this.$createElement);
       } else if (this.$scopedSlots.icon) {

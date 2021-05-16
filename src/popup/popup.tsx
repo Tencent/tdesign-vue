@@ -1,35 +1,11 @@
-<template>
-  <div :class="name+'-reference'" ref="reference">
-    <transition :name="`${name}_animation`" appear >
-      <div
-        :class="name"
-        ref="popper"
-        v-show="!disabled && showPopper"
-        role="tooltip"
-        :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
-      >
-        <div :class="_class" :style="overlayStyle">
-          <slot name="content">
-            <template v-if="typeof content === 'string'">{{content}}</template>
-            <render-component :render='content' v-else-if="typeof content === 'function'" />
-          </slot>
-          <div v-if="showArrow" :class="name+'__arrow'" data-popper-arrow></div>
-        </div>
-      </div>
-    </transition>
-    <slot />
-  </div>
-</template>
-
-<script lang="ts">
 import Vue from 'vue';
 import { createPopper } from '@popperjs/core';
 import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 import config from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { on, off, addClass, removeClass, getAttach } from '../utils/dom';
-import RenderComponent from '../utils/render-component';
-import props from '@TdTypes/popup/props';
+import props from '../../types/popup/props';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
 const { prefix } = config;
@@ -54,10 +30,6 @@ const hideTimeout = 150;
 export default Vue.extend({
   name,
 
-  components: {
-    RenderComponent,
-  },
-
   props: { ...props },
 
   data() {
@@ -73,14 +45,15 @@ export default Vue.extend({
     };
   },
   computed: {
-    _class(): ClassName {
-      return [
+    overlayClasses(): ClassName {
+      const base =  [
         `${name}-content`,
         {
           [`${name}-content--arrow`]: this.showArrow,
           [CLASSNAMES.STATUS.disabled]: this.disabled,
         },
-      ].concat(this.overlayClassName);
+      ] as ClassName;
+      return base.concat(this.overlayClassName);
     },
     manualTrigger(): boolean {
       return this.trigger.indexOf('manual') > -1;
@@ -288,6 +261,26 @@ export default Vue.extend({
       }
     },
   },
-});
 
-</script>
+  render() {
+    return (
+      <div class={`${name}-reference`} ref="reference">
+        <transition name={`${name}_animation`} appear>
+          <div
+            class={name}
+            ref='popper'
+            v-show={!this.disabled && this.showPopper}
+            role='tooltip'
+            aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
+          >
+            <div class={this.overlayClasses} style={this.overlayStyle}>
+              {renderTNodeJSX(this, 'content')}
+              {this.showArrow && <div class={`${name}__arrow`} data-popper-arrow></div>}
+            </div>
+          </div>
+        </transition>
+        {renderContent(this, 'default', 'triggerElement')}
+      </div>
+    );
+  },
+});

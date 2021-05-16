@@ -6,7 +6,6 @@
       placeholder="-请选择-"
       :clearable="true"
       :popupProps="popupProps"
-      @change="handleChange"
       style="width: 200px;display: inline-block;margin-right: 20px;"
 
     >

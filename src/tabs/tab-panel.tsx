@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue';
+import Vue from 'vue';
 import { CreateElement } from 'vue/types/umd';
 import { prefix } from '../config';
 import props from '@TdTypes/tab-panel/props';
@@ -16,7 +16,7 @@ export default Vue.extend({
   },
 
   methods: {
-    getContent(h: CreateElement): VNode | VNode[] {
+    getContent(h: CreateElement) {
       if (typeof this.default === 'function') {
         return this.default(h);
       }

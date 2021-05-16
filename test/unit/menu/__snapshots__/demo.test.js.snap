@@ -115,6 +115,7 @@ exports[`Menu single demo works fine 1`] = `
    
   <div
     class="t-head-menu t-menu-mode__normal t-menu--dark"
+    height="120px"
   >
     <div
       class="t-head-menu__inner"
