@@ -5,7 +5,7 @@ import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import { CloseContext, TdDialogProps } from '@TdTypes/dialog/TdDialogProps';
+import { DialogCloseContext, TdDialogProps } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
@@ -187,7 +187,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdDialogProps['onClosed']>>(this, 'closed');
     },
 
-    emitCloseEvent(context: CloseContext) {
+    emitCloseEvent(context: DialogCloseContext) {
       emitEvent<Parameters<TdDialogProps['onClose']>>(this, 'close', context);
       // 默认关闭弹窗
       this.$emit('update:visible', false);

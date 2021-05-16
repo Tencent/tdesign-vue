@@ -11,6 +11,7 @@ setInstallFn('Submenu', Submenu);
 setInstallFn('MenuItem', MenuItem);
 setInstallFn('MenuGroup', MenuGroup);
 
+// export * from '../../types/menu/TdMenuProps';
 export {
   Menu,
   HeadMenu,

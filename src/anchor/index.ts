@@ -7,5 +7,6 @@ setInstallFnc('Anchor', Anchor);
 setInstallFnc('AnchorItem', AnchorItem);
 setInstallFnc('AnchorTarget', AnchorTarget);
 
+export * from '../../types/anchor/TdAnchorProps';
 export { Anchor, AnchorItem, AnchorTarget };
 export default Anchor;

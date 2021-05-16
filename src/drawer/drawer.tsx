@@ -3,7 +3,7 @@ import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
 import props from '../../types/drawer/props';
-import { FooterButton, CloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
+import { FooterButton, DrawerCloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
@@ -175,7 +175,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdDrawerProps['onCancel']>>(this, 'cancel', { e });
       this.closeDrawer({ trigger: 'cancel', e });
     },
-    closeDrawer(params: CloseContext) {
+    closeDrawer(params: DrawerCloseContext) {
       emitEvent<Parameters<TdDrawerProps['onClose']>>(this, 'close', params);
       this.$emit('update:visible', false);
     },
