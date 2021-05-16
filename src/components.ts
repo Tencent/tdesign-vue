@@ -1,5 +1,5 @@
-export { Message } from './message';
-export { Notification } from './notification';
+export * from './message';
+export * from './notification';
 export * from './dialog';
 export * from './addon';
 export * from './alert-swiper';
