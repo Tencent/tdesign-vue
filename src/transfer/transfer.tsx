@@ -16,6 +16,7 @@ import {
   SearchOption,
   PageInfo,
   TdPaginationProps,
+  TdTransferProps,
 } from './type/transfer';
 import props from '@TdTypes/transfer/props';
 import { getTransferListOption, emitEvent } from './utils';
@@ -158,7 +159,7 @@ export default Vue.extend({
       const params: TargetParams = {
         type: toDirection, movedValue: checkedValue,
       };
-      emitEvent<[TransferValue[], TargetParams]>(this, 'change', newTargetValue, params);
+      emitEvent<Parameters<TdTransferProps['onChange']>>(this, 'change', newTargetValue, params);
     },
     // 点击移到右边按钮触发的函数
     transferToRight() {
@@ -181,7 +182,7 @@ export default Vue.extend({
       // 支持checked.sync
       this.$emit('update:checked', checked);
       this.checkedValue[listType] = val;
-      emitEvent(this, 'checked-change', event);
+      emitEvent<Parameters<TdTransferProps['onCheckedChange']>>(this, 'checked-change', event);
     },
     filterMethod(transferList: Array<TransferItemOption>, targetValueList: Array<TransferValue>, needMatch: boolean): Array<TransferItemOption> {
       return transferList.filter((item) => {
@@ -197,15 +198,13 @@ export default Vue.extend({
         bottomDistance,
         type: listType,
       };
-      emitEvent(this, 'scroll', event);
+      emitEvent<Parameters<TdTransferProps['onScroll']>>(this, 'scroll', event);
     },
     handleSearch(e: SearchEvent) {
-      emitEvent<[SearchEvent]>(this, 'search', e);
+      emitEvent<Parameters<TdTransferProps['onSearch']>>(this, 'search', e);
     },
     handlePageChange(pageInfo: PageInfo, listType: TransferListType) {
-      emitEvent(this, 'page-change', {
-        page: pageInfo, context: { type: listType },
-      });
+      emitEvent<Parameters<TdTransferProps['onPageChange']>>(this, 'page-change', pageInfo, { type: listType });
     },
     renderTransferList(listType: TransferListType) {
       const scopedSlots = lodash.pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem']);

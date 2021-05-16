@@ -3,7 +3,7 @@ import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
 import props from '../../types/drawer/props';
-import { FooterButton, CloseContext } from '../../types/drawer/TdDrawerProps';
+import { FooterButton, CloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
@@ -151,32 +151,32 @@ export default Vue.extend({
       );
     },
     handleCloseBtnClick(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent }]>(this, 'close-btn-click', { e });
+      emitEvent<Parameters<TdDrawerProps['onCloseBtnClick']>>(this, 'close-btn-click', { e });
       this.closeDrawer({ trigger: 'close-btn', e });
     },
     handleWrapperClick(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent }]>(this, 'overlay-click', { e });
+      emitEvent<Parameters<TdDrawerProps['onOverlayClick']>>(this, 'overlay-click', { e });
       if (this.closeOnOverlayClick) {
         this.closeDrawer({ trigger: 'overlay', e });
       }
     },
     onKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        emitEvent<[{e: KeyboardEvent }]>(this, 'esc-keydown', { e });
+        emitEvent<Parameters<TdDrawerProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         if (this.closeOnEscKeydown) {
           this.closeDrawer({ trigger: 'esc', e });
         }
       }
     },
     confirmBtnAction(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent }]>(this, 'confirm', { e });
+      emitEvent<Parameters<TdDrawerProps['onConfirm']>>(this, 'confirm', { e });
     },
     cancelBtnAction(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent }]>(this, 'cancel', { e });
+      emitEvent<Parameters<TdDrawerProps['onCancel']>>(this, 'cancel', { e });
       this.closeDrawer({ trigger: 'cancel', e });
     },
     closeDrawer(params: CloseContext) {
-      emitEvent<[CloseContext]>(this, 'close', params);
+      emitEvent<Parameters<TdDrawerProps['onClose']>>(this, 'close', params);
       this.$emit('update:visible', false);
     },
   },

@@ -5,7 +5,7 @@ import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import { CloseContext } from '@TdTypes/dialog/TdDialogProps';
+import { CloseContext, TdDialogProps } from '@TdTypes/dialog/TdDialogProps';
 import props from '@TdTypes/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
@@ -141,7 +141,7 @@ export default Vue.extend({
     },
     keyboardEvent(e: KeyboardEvent) {
       if (e.code === 'Escape') {
-        emitEvent<[{e: KeyboardEvent}]>(this, 'esc-keydown', { e });
+        emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown) {
           this.emitCloseEvent({
@@ -152,7 +152,7 @@ export default Vue.extend({
       }
     },
     overlayAction(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent}]>(this, 'overlay-click', { e });
+      emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
       if (this.closeOnOverlayClick) {
         this.emitCloseEvent({
@@ -162,33 +162,33 @@ export default Vue.extend({
       }
     },
     closeBtnAcion(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent}]>(this, 'close-btn-click', { e });
+      emitEvent<Parameters<TdDialogProps['onCloseBtnClick']>>(this, 'close-btn-click', { e });
       this.emitCloseEvent({
         trigger: 'close-btn',
         e,
       });
     },
     cancelBtnAction(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent}]>(this, 'cancel', { e });
+      emitEvent<Parameters<TdDialogProps['onCancel']>>(this, 'cancel', { e });
       this.emitCloseEvent({
         trigger: 'cancel',
         e,
       });
     },
     confirmBtnAction(e: MouseEvent) {
-      emitEvent<[{e: MouseEvent}]>(this, 'confirm', { e });
+      emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
     },
     // 打开弹窗动画结束时事件
     afterEnter() {
-      emitEvent(this, 'opened');
+      emitEvent<Parameters<TdDialogProps['onOpened']>>(this, 'opened');
     },
     // 关闭弹窗动画结束时事件
     afterLeave() {
-      emitEvent(this, 'closed');
+      emitEvent<Parameters<TdDialogProps['onClosed']>>(this, 'closed');
     },
 
     emitCloseEvent(context: CloseContext) {
-      emitEvent<[CloseContext]>(this, 'close', context);
+      emitEvent<Parameters<TdDialogProps['onClose']>>(this, 'close', context);
       // 默认关闭弹窗
       this.$emit('update:visible', false);
     },

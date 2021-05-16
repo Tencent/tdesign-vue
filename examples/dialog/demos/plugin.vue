@@ -20,7 +20,7 @@ export default Vue.extend({
       const mydialog = this.$dialog({
         header: 'Dialog-Plugin',
         body: 'Hi, darling! Do you want to be my lover?',
-        onConfirm: (e) => {
+        onConfirm: ({ e }) => {
           console.log('confirm clicked', e);
           mydialog.hide();
         },
@@ -35,7 +35,7 @@ export default Vue.extend({
       dialogNode.update({
         header: 'Updated-Dialog-Plugin',
         cancelBtn: '',
-        onConfirm: (e) => {
+        onConfirm: ({ e }) => {
           console.log('confirm button has been clicked!');
           console.log('e: ', e);
           dialogNode.hide();
@@ -49,7 +49,7 @@ export default Vue.extend({
         body: 'Are you sure to delete it?',
         confirmBtn: 'ok',
         cancelBtn: 'cancel',
-        onConfirm: (e) => {
+        onConfirm: ({ e }) => {
           console.log('confirm button has been clicked!');
           console.log('e: ', e);
           confirmDia.hide();
@@ -70,7 +70,7 @@ export default Vue.extend({
           variant: 'base',
           theme: 'danger',
         },
-        onConfirm: (e) => {
+        onConfirm: ({ e }) => {
           console.log('confrim e: ', e);
           alertDia.hide();
         },
@@ -88,7 +88,7 @@ export default Vue.extend({
         body: 'Are you sure to delete it?',
         confirmBtn: 'ok',
         cancelBtn: 'cancel',
-        onConfirm: (e) => {
+        onConfirm: ({ e }) => {
           console.log('confirm button has been clicked!');
           console.log('e: ', e);
           confirmDia.hide();

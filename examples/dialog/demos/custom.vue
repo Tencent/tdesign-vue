@@ -73,7 +73,6 @@
       :visible="visible2"
       header="提示"
       body="自定义底部按钮，传入 ButttonProps"
-      :onConfirm="onConfirm2"
       :confirmBtn="{
         content: '前往购物车',
         variant: 'base',
