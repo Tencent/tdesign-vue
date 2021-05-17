@@ -34,11 +34,9 @@ export default Vue.extend({
       if (scopedSlots.length) {
         const panelSlots = scopedSlots.filter((vnode) => {
           const {
-            componentOptions: {
-              tag = '',
-            } = {},
+            tag,
           } = vnode;
-          return tag === `${prefix}-tab-panel`;
+          return tag?.endsWith(`${prefix}-tab-panel`);
         });
         const panels = panelSlots.map(({ componentInstance }) => componentInstance);
         const isChanged = !(panels.length === this.panels.length
@@ -74,6 +72,7 @@ export default Vue.extend({
         e: event,
       };
       this.$emit('remove', eventData);
+      panel.$emit('remove');
       if (typeof this.onRemove === 'function') {
         this.onRemove(eventData);
       }
@@ -81,7 +80,6 @@ export default Vue.extend({
         if (typeof panel.onRemove === 'function') {
           panel.onRemove();
         }
-        panel.$emit('remove');
       }
     },
 

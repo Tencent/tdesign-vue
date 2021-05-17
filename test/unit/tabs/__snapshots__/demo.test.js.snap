@@ -299,6 +299,79 @@ exports[`Tabs custom demo works fine 1`] = `
 </div>
 `;
 
+exports[`Tabs icon demo works fine 1`] = `
+<div
+  class="t-demo-tabs"
+>
+  <div
+    class="t-demo-tabs__desc"
+  >
+    <p>
+      目前支持常规，卡片两种类型选项卡
+    </p>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      切换到卡片型选项卡
+    </button>
+  </div>
+   
+  <div
+    class="t-tabs"
+  >
+    <div
+      class="t-tabs__header t-is-top"
+    >
+      <div
+        class="t-tabs__nav"
+      >
+        <!---->
+         
+        <div
+          class="t-tabs__nav-container t-is-top"
+        >
+          <!---->
+           
+          <!---->
+           
+          <div
+            class="t-tabs__nav-scroll"
+          >
+            <div
+              class="t-tabs__nav-wrap"
+            >
+              <div
+                class="t-tabs__bar t-is-top"
+              />
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-tabs__content"
+    >
+      <div
+        class="t-tab-panel"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          normal选项卡1内容
+        </p>
+      </div>
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Tabs operation demo works fine 1`] = `
 <div
   class="t-demo-tabs"

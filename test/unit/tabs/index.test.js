@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Tabs from '@/src/tabs/index.ts';
+import TabPanel from '@/src/tabs/tab-panel.tsx';
 import Vue from 'vue';
 
 // every component needs four parts: props/events/slots/functions.
@@ -33,7 +34,7 @@ describe('Tabs', () => {
     it(':size', () => {
       const wrapper = mount({
         render() {
-          return <Tabs value={'large'} />;
+          return <Tabs size={'large'} />;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -54,6 +55,22 @@ describe('Tabs', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
+    it(':disabled', () => {
+      const wrapper = mount({
+        render() {
+          return <Tabs disabled={true} />;
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
+    it(':defaultValue', () => {
+      const wrapper = mount({
+        render() {
+          return <Tabs defaultValue={1} />;
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 
   // test events
@@ -69,6 +86,89 @@ describe('Tabs', () => {
       tabs.find('.t-tabs__add-btn').trigger('click');
       await Vue.nextTick();
       expect(tabs.emitted().add).toBeTruthy();
+    });
+    it('@change', async () => {
+      const fn = jest.fn();
+      const wrapper = mount({
+        render() {
+          return <Tabs onChange={fn} value={2}>
+            <TabPanel value={1} label={'1'}>1</TabPanel>
+            <TabPanel value={2} label={'2'}>2</TabPanel>
+          </Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      const tabs = wrapper.findComponent(Tabs);
+      tabs.vm.$el.getElementsByClassName('t-tabs__nav-item')[0].click();
+      expect(tabs.emitted().change).toBeTruthy();
+    });
+    it('@remove', async () => {
+      const fn = jest.fn();
+      const wrapper = mount({
+        render() {
+          return <Tabs theme={'card'} onRemove={fn} value={2}>
+            <TabPanel value={1} label={'1'} removable={true}>1</TabPanel>
+            <TabPanel value={2} label={'2'} removable={true}>2</TabPanel>
+          </Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      const tabs = wrapper.findComponent(Tabs);
+      tabs.vm.$el.getElementsByClassName('remove-btn')[0].dispatchEvent(new Event('click'));
+      expect(tabs.emitted().remove).toBeTruthy();
+    });
+  });
+
+
+  // test additional function
+  describe('additional function', () => {
+    it('panel:default && panel:panel', async () => {
+      const wrapper = mount({
+        render() {
+          return <Tabs value={2}>
+            <TabPanel value={1} label={'1'} default={() => 1}></TabPanel>
+            <TabPanel value={2} label={'2'} panel={() => 2}></TabPanel>
+          </Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      expect(wrapper).toMatchSnapshot();
+    });
+    it('panel default slot:function | panel slot:function', async () => {
+      const wrapper = mount({
+        render() {
+          return <Tabs value={2}>
+            <TabPanel value={1} label={'1'}>{() => 1}</TabPanel>
+            <TabPanel value={2} label={'2'}><span slot="panel">{() => 2}</span></TabPanel>
+          </Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      expect(wrapper).toMatchSnapshot();
+    });
+    it('no valid panel', async () => {
+      const wrapper = mount({
+        render() {
+          return <Tabs value={2}>123</Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      expect(wrapper).toMatchSnapshot();
+    });
+    it('@remove on panel', async () => {
+      const fn = jest.fn();
+      const wrapper = mount({
+        render() {
+          return <Tabs theme={'card'} value={2}>
+            <TabPanel value={1} label={'1'} onRemove={fn} removable={true}>1</TabPanel>
+            <TabPanel value={2} label={'2'} onRemove={fn} removable={true}>2</TabPanel>
+          </Tabs>;
+        },
+      });
+      await Vue.nextTick();
+      const tabs = wrapper.findComponent(Tabs);
+      tabs.vm.$el.getElementsByClassName('remove-btn')[0].dispatchEvent(new Event('click'));
+      expect(fn).toBeCalled();
     });
   });
 
