@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import * as lodash from 'lodash';
+import pick from 'lodash/pick';
 import { prefix } from '../config';
 import TransferList from './components/transfer-list';
 import TransferOperations from './components/transfer-operations';
@@ -207,7 +207,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdTransferProps['onPageChange']>>(this, 'page-change', pageInfo, { type: listType });
     },
     renderTransferList(listType: TransferListType) {
-      const scopedSlots = lodash.pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem']);
+      const scopedSlots = pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem']);
       return (
         <transfer-list
           checkboxProps={this.checkboxProps}
