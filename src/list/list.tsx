@@ -1,11 +1,11 @@
 import Vue, { VNode, PropType } from 'vue';
 import { prefix } from '../config';
-import props from '@TdTypes/list/props';
+import props from '../../types/list/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import TIconLoading from '../icon/loading';
 import CLASSNAMES from '../utils/classnames';
 import { LOAD_MORE, LOADING } from './const';
-import { TdListProps } from '@TdTypes/list/TdListProps';
+import { TdListProps } from '../../types/list/TdListProps';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 const name = `${prefix}-list`;

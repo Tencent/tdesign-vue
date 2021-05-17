@@ -1,6 +1,6 @@
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../config';
-import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import { UploadFile } from '../../types/upload/TdUploadProps';
 import TIconLoading from '../icon/loading';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';

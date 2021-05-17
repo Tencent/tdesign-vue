@@ -3,7 +3,7 @@ import _Select from './select';
 import OptionGroup from './optionGroup';
 import Option from './option';
 import setInstallFn from '../utils/setInstallFn';
-import { TdSelectProps, TdOptionProps, TdOptionGroupProps } from '@TdTypes/select/TdSelectProps';
+import { TdSelectProps, TdOptionProps, TdOptionGroupProps } from '../../types/select/TdSelectProps';
 
 const Select = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_Select);
 

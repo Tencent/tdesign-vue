@@ -1,8 +1,8 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
-import props from '@TdTypes/radio-group/props';
-import { RadioOptionObj, RadioOption, RadioValue } from '@TdTypes/radio/TdRadioProps';
+import props from '../../types/radio-group/props';
+import { RadioOptionObj, RadioOption, RadioValue } from '../../types/radio/TdRadioProps';
 import { prefix } from '../config';
 import Radio from './radio';
 

@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import props from '@TdTypes/list-item-meta/props';
+import props from '../../types/list-item-meta/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 

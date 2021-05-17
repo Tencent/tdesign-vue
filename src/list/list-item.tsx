@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import props from '@TdTypes/list-item/props';
+import props from '../../types/list-item/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-list-item`;

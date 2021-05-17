@@ -1,4 +1,4 @@
-import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import { UploadFile } from '../../types/upload/TdUploadProps';
 
 export interface XhrOptions {
   action: string;

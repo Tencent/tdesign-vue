@@ -1,7 +1,7 @@
 import Vue, { PropType } from 'vue';
 import TIconClearCircleFilled from '../icon/clear-circle-filled';
 import TIconLoading from '../icon/loading';
-import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import { UploadFile } from '../../types/upload/TdUploadProps';
 
 export default Vue.extend({
   name: 'TUploadSingleFile',

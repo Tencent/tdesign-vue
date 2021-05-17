@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import checkboxProps from '@TdTypes/checkbox/props';
+import checkboxProps from '../../types/checkbox/props';
 
 const name = `${prefix}-checkbox`;
 

@@ -62,8 +62,9 @@
   },
   "include": [
     "./**/*.ts",
-    "./**/*.tsx"
-, "src/drawer/drawer.ts"  ],
+    "./**/*.tsx",
+    "scripts/rollup.config.js"
+  ],
   "exclude": [
     "node_modules",
     "tools",

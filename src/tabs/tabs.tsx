@@ -2,8 +2,8 @@ import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import TTabNav from './tab-nav.vue';
 import TTabPanel from './tab-panel';
-import { TabValue } from '@TdTypes/tabs/TdTabsProps';
-import props from '@TdTypes/tabs/props';
+import { TabValue } from '../../types/tabs/TdTabsProps';
+import props from '../../types/tabs/props';
 
 const name = `${prefix}-tabs`;
 

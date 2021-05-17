@@ -18,7 +18,7 @@ import {
   TdPaginationProps,
   TdTransferProps,
 } from './type/transfer';
-import props from '@TdTypes/transfer/props';
+import props from '../../types/transfer/props';
 import { getTransferListOption, emitEvent } from './utils';
 
 const name = `${prefix}-transfer`;

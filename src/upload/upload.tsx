@@ -6,12 +6,12 @@ import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from './xhr';
-import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import { UploadFile } from '../../types/upload/TdUploadProps';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
-import props from '@TdTypes/upload/props';
+import props from '../../types/upload/props';
 import findIndex from 'lodash/findIndex';
 import {
   HTMLInputEvent,

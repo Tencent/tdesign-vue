@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { CreateElement } from 'vue/types/umd';
 import { prefix } from '../config';
-import props from '@TdTypes/tab-panel/props';
+import props from '../../types/tab-panel/props';
 
 export default Vue.extend({
   name: `${prefix}-tab-panel`,

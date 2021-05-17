@@ -1,5 +1,5 @@
 import Vue, { VNode, PropType } from 'vue';
-import { UploadFile } from '@TdTypes/upload/TdUploadProps';
+import { UploadFile } from '../../types/upload/TdUploadProps';
 import TButton from '../button';
 import { returnFileSize } from './util';
 import { FlowRemoveContext } from './interface';

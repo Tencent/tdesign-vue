@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import props from '@TdTypes/textarea/props';
+import props from '../../types/textarea/props';
 import isFunction from 'lodash/isFunction';
 import { getPropsApiByEvent } from '../utils/helper';
 

@@ -2,19 +2,19 @@ import TreeNode from '../../common/js/tree/tree-node';
 
 import {
   TdTreeProps,
-  TreeNodeValue as TdTreeNodeValue,
   TreeNodeModel,
   TreeInstanceFunctions,
-} from '@TdTypes/tree/TdTreeProps';
+  TreeNodeValue as TdTreeNodeValue,
+  TreeNodeState as TdTreeNodeState,
+} from '../../types/tree/TdTreeProps';
 
 import {
   TypeTreeEventState,
 } from '../../common/js/tree/types';
 
-export {
-  TreeNodeValue,
-  TreeNodeState,
-} from '@TdTypes/tree/TdTreeProps';
+export type TreeNodeState = TdTreeNodeState;
+
+export type TreeNodeValue = TdTreeNodeValue;
 
 export type TypeValueMode = TdTreeProps['valueMode'];
 

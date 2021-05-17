@@ -1,6 +1,6 @@
 import _Textarea from './textarea';
 import mapProps from '../utils/map-props';
-import { TdTextareaProps } from '@TdTypes/textarea/TdTextareaProps';
+import { TdTextareaProps } from '../../types/textarea/TdTextareaProps';
 import setInstallFn from '../utils/setInstallFn';
 
 const Textarea = mapProps(['value'])(_Textarea);

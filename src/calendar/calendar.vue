@@ -152,8 +152,8 @@ import {
   CalendarCell,
   ControllerOptions,
   TdCalendarProps,
-} from '@TdTypes/calendar/TdCalendarProps';
-import props from '@TdTypes/calendar/props';
+} from '../../types/calendar/TdCalendarProps';
+import props from '../../types/calendar/props';
 
 // 通用库
 import dayjs from 'dayjs';
