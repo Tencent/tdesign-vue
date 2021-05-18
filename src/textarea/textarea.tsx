@@ -102,18 +102,16 @@ export default Vue.extend({
       },
     ];
     return (
-      <div>
-        <div class={`${name}`}>
-          <textarea
-            onInput={this.handleInput}
-            {...{ attrs: this.inputAttrs, on: inputEvents }}
-            value={this.value}
-            class={classes}
-          ></textarea>
-          {this.maxlength ? (
-            <span class={`${name}__limit`}>{`${String(this.value)?.length || 0}/${this.maxlength}`}</span>
-          ) : null}
-        </div>
+      <div class={`${name}`}>
+        <textarea
+          onInput={this.handleInput}
+          {...{ attrs: this.inputAttrs, on: inputEvents }}
+          value={this.value}
+          class={classes}
+        ></textarea>
+        {this.maxlength ? (
+          <span class={`${name}__limit`}>{`${String(this.value)?.length || 0}/${this.maxlength}`}</span>
+        ) : null}
       </div>
     );
   },
