@@ -21,8 +21,7 @@ export default Vue.extend({
     } else if (this.$scopedSlots.icon) {
       icon = this.$scopedSlots.icon(null);
     }
-
-    const iconOnly = icon && (typeof buttonContent === 'undefined' || buttonContent === '');
+    const iconOnly = icon && !Boolean(buttonContent);
 
     const buttonClass = [
       `${name}`,
