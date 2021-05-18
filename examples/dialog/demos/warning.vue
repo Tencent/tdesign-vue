@@ -64,9 +64,8 @@
 
   </div>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue';
-import { DialogProps } from '@tencent/tdesign-vue';
 export default Vue.extend({
   data() {
     return {
@@ -78,7 +77,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    onClickConfirm(context: Parameters<DialogProps['onConfirm']>[0]) {
+    onClickConfirm(context) {
       const { e } = context;
       // todo something else here
       this.sendingRequest();
