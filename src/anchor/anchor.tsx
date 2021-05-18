@@ -2,7 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
-import { on, off, getScroll, scrollTo, getSuperAttach } from '../utils/dom';
+import { on, off, getScroll, scrollTo, getScrollContainer } from '../utils/dom';
 import props from '../../types/anchor/props';
 
 const name = `${prefix}-anchor`;
@@ -44,8 +44,8 @@ export default (Vue as VueConstructor<Anchor>).extend({
      * 2. 如果是method则获取方法返回值
      */
     getScrollContainer(): void {
-      const { attach } = this;
-      this.scrollContainer = getSuperAttach(attach) as HTMLElement;
+      const { container } = this;
+      this.scrollContainer = getScrollContainer(container) as HTMLElement;
       on(this.scrollContainer, 'scroll', this.handleScroll);
       this.handleScroll();
     },

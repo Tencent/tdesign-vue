@@ -9,7 +9,9 @@ declare type JsxNode = TNodeReturnValue;
 
 declare type AttachNodeReturnValue = HTMLDocument | HTMLElement | Element | Document;
 declare type AttachNode = CSSSelector | (() => AttachNodeReturnValue);
-declare type SuperAttachNode = (() => Window) | AttachNode;
+// 与滚动相关的容器类型，因为 document 上没有 scroll 相关属性, 因此排除document
+declare type ScrollContainerElement = Window | HTMLElement
+declare type ScrollContainer = (() => ScrollContainerElement) | CSSSelector;
 
 declare interface Styles {
   [css: string]: string | number;

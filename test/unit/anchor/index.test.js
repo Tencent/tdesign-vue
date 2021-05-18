@@ -181,7 +181,7 @@ describe('Anchor', () => {
       document.body.innerHTML = '<div id="container"></div>';
       const wrapper = mount(Anchor, {
         propsData: {
-          attach: '#container',
+          container: '#container',
         },
       });
       expect(wrapper.vm.scrollContainer).toEqual(document.getElementById('container'));
@@ -191,7 +191,7 @@ describe('Anchor', () => {
       const dom = document.getElementById('container2');
       const wrapper = mount(Anchor, {
         propsData: {
-          attach: () => dom,
+          container: () => dom,
         },
       });
       expect(wrapper.vm.scrollContainer).toEqual(dom);

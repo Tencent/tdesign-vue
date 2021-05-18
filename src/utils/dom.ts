@@ -23,7 +23,6 @@ export const on = (((): any => {
   };
 })());
 
-
 export const off = (((): any => {
   if (!isServer && document.removeEventListener) {
     return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
@@ -93,7 +92,7 @@ export const getAttach = (node: any): HTMLElement => {
   if (!attachNode) {
     return document.body;
   }
-  if (typeof attachNode === 'string') {
+  if (isString(attachNode)) {
     return document.querySelector(attachNode);
   }
   if (attachNode instanceof HTMLElement) {
@@ -102,20 +101,21 @@ export const getAttach = (node: any): HTMLElement => {
   return document.body;
 };
 
-export const getSuperAttach = (attach: SuperAttachNode = 'body') => {
-  let r;
-  const map = {
-    window: Window,
-    document: Document,
-  };
-  if (isString(attach)) {
-    r = ['window', 'document'].includes(attach) ? map[attach] : document.querySelector(attach);
-  } else if (typeof attach === 'function') {
-    r = attach();
-  } else {
-    console.error('TDesign Error: attach type must a string or function.');
+/**
+ * 获取滚动容器
+ * 因为document不存在scroll等属性, 因此排除document
+ * window | HTMLElement
+ * @param {ScrollContainerElement} [container='body']
+ * @returns {ScrollContainer}
+ */
+export const getScrollContainer = (container: ScrollContainer = 'body'): ScrollContainerElement => {
+  if (isString(container)) {
+    return document.querySelector(container) as HTMLElement;
   }
-  return r;
+  if (typeof container === 'function') {
+    return container();
+  }
+  return container;
 };
 
 /**
