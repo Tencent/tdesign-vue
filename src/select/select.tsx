@@ -38,9 +38,7 @@ export default Vue.extend({
         trigger: 'click',
         placement: 'bottom-left' as string,
         overlayClassName: '' as ClassName,
-        overlayStyle: {
-          width: '',
-        } as Styles,
+        overlayStyle: trigger => ({ width: `${trigger.offsetWidth}px` }),
       } as PopupProps,
       width: 0,
       focusing: false, // filterable时，输入框是否在focus中
@@ -184,9 +182,6 @@ export default Vue.extend({
     },
     popupObject(): PopupProps {
       const propsObject = this.popupProps ? Object.assign({}, this.defaultProps, this.popupProps) : this.defaultProps;
-      if ((!this.popupProps || !this.popupProps.overlayStyle || !this.popupProps.overlayStyle.width) && this.width) {
-        propsObject.overlayStyle.width = `${this.width}px`;
-      }
       return propsObject;
     },
     displayOptions(): Array<Options> {
@@ -248,7 +243,6 @@ export default Vue.extend({
         }
       }
       this.$emit('visible-change', val);
-      this.monitorWidth();
     },
     onOptionClick(value: string | number, e: MouseEvent) {
       if (this.value !== value) {
@@ -348,7 +342,6 @@ export default Vue.extend({
       }
       this.$emit('change', value);
       isFunction(this.onChange) && this.onChange(value);
-      this.monitorWidth();
     },
     createOption(value: string | number) {
       this.$emit('create', value);
@@ -367,11 +360,6 @@ export default Vue.extend({
       this.$emit('blur', { value: this.value, e });
       isFunction(this.onBlur) && this.onBlur({ value: this.value, e });
       this.focusing = false;
-    },
-    monitorWidth() {
-      this.$nextTick(() => {
-        this.width = this.$el && this.$el.clientWidth;
-      });
     },
     hoverEvent(v: boolean) {
       this.isHover = v;

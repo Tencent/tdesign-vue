@@ -42,6 +42,8 @@ export default Vue.extend({
       resizeSensor: null,
       popperJS: null,
       timeout: null,
+      refOverlayElm: null,
+      caledOverlayStyle: null,
     };
   },
   computed: {
@@ -138,6 +140,7 @@ export default Vue.extend({
     if (this.manualTrigger) {
       this.showPopper = !!this.visible;
     }
+    this.updateOverlayStyle();
   },
   beforeDestroy(): void {
     this.doDestroy(true);
@@ -187,6 +190,7 @@ export default Vue.extend({
       // 监听trigger元素尺寸变化
       this.resizeSensor = new ResizeSensor(this.referenceElm, () => {
         this.popperJS.update();
+        this.updateOverlayStyle();
       });
     },
 
@@ -195,6 +199,29 @@ export default Vue.extend({
         this.popperJS.update();
       } else {
         this.createPopperJS();
+      }
+    },
+
+    updateOverlayStyle() {
+      const { overlayStyle } = this;
+      const referenceElm = this.$refs.reference as HTMLElement;
+      const refOverlayElm = this.$refs.overlay as HTMLElement;
+      if (typeof overlayStyle === 'function' && referenceElm && refOverlayElm) {
+        const userOverlayStyle = overlayStyle(referenceElm);
+        this.setOverlayStyle(userOverlayStyle);
+      } else if (typeof overlayStyle === 'object' && refOverlayElm) {
+        this.setOverlayStyle(overlayStyle);
+      }
+    },
+
+    setOverlayStyle(styles: Styles) {
+      const refOverlayElm = this.$refs.overlay as HTMLElement;
+      if (typeof styles === 'object' && refOverlayElm) {
+        refOverlayElm.setAttribute(
+          'style',
+          Object.keys(styles).map(key => `${key}: ${styles[key]}`)
+            .join(';')
+        );
       }
     },
 
@@ -273,7 +300,7 @@ export default Vue.extend({
             role='tooltip'
             aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
           >
-            <div class={this.overlayClasses} style={this.overlayStyle}>
+            <div class={this.overlayClasses} ref="overlay">
               {renderTNodeJSX(this, 'content')}
               {this.showArrow && <div class={`${name}__arrow`} data-popper-arrow></div>}
             </div>
