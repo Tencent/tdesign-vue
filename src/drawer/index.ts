@@ -1,10 +1,9 @@
-import Drawer from './drawer';
-import setInstallFn from '../utils/setInstallFn';
+import _Drawer from './drawer';
+import withInstall from '../utils/withInstall';
 import { TdDrawerProps } from '../../types/drawer/TdDrawerProps';
 
-setInstallFn('Drawer', Drawer);
-
-export type DrawerProps = TdDrawerProps;
 export * from '../../types/drawer/TdDrawerProps';
-export { Drawer };
+export type DrawerProps = TdDrawerProps;
+
+export const Drawer = withInstall('Drawer', _Drawer);
 export default Drawer;

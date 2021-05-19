@@ -1,11 +1,10 @@
-import Dialog from './dialog';
-import DialogPlugin from './plugin';
-import setInstallFn from '../utils/setInstallFn';
+import _Dialog from './dialog';
+import withInstall from '../utils/withInstall';
 import { TdDialogProps } from '../../types/dialog/TdDialogProps';
-
-setInstallFn('Dialog', Dialog);
 
 export * from '../../types/dialog/TdDialogProps';
 export type DialogProps = TdDialogProps;
-export { Dialog, DialogPlugin };
+
+export const Dialog = withInstall('Dialog', _Dialog);
+export { default as DialogPlugin } from './plugin';
 export default Dialog;

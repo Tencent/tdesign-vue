@@ -1,10 +1,7 @@
-import Badge from './badge';
-import setInstallFn from '../utils/setInstallFn';
-
-setInstallFn('Badge', Badge);
+import _Badge from './badge';
+import withInstall from '../utils/withInstall';
 
 export * from '../../types/badge/TdBadgeProps';
-export { Badge };
+
+export const Badge = withInstall('Badge', _Badge);
 export default Badge;
-
-

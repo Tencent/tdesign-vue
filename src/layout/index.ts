@@ -1,15 +1,13 @@
-import Layout from './layout';
-import Header from './header';
-import Footer from './footer';
-import Aside from './aside';
-import Content from './content';
-import setInstallFn from '../utils/setInstallFn';
+import _Layout from './layout';
+import _Header from './header';
+import _Footer from './footer';
+import _Aside from './aside';
+import _Content from './content';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('Layout', Layout);
-setInstallFn('Header', Header);
-setInstallFn('Footer', Footer);
-setInstallFn('Aside', Aside);
-setInstallFn('Content', Content);
-
-export { Layout, Header, Footer, Aside, Content };
+export const Aside = withInstall('Aside', _Aside);
+export const Layout = withInstall('Layout', _Layout);
+export const Header = withInstall('Header', _Header);
+export const Footer = withInstall('Footer', _Footer);
+export const Content = withInstall('Content', _Content);
 export default Layout;

@@ -7,7 +7,7 @@ import props from '../../types/anchor/props';
 
 const name = `${prefix}-anchor`;
 
-interface Anchor extends Vue {
+export interface Anchor extends Vue {
   scrollContainer: ANCHOR_CONTAINER;
   // 执行scrollTo设置的flag, 用来禁止执行handleScroll
   handleScrollLock: boolean;

@@ -6,7 +6,7 @@ import CLASSNAMES from '../utils/classnames';
 import props from '../../types/option-group/props';
 const name = `${prefix}-option-group`;
 
-interface Select extends Vue {
+export interface Select extends Vue {
   tSelect: {
     size: string;
   };

@@ -1,26 +1,20 @@
 import _Radio from './radio';
 import _Group from './group';
-import RadioButton from './radio-button';
+import _RadioButton from './radio-button';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 import { TdRadioProps, TdRadioGroupProps } from '../../types/radio/TdRadioProps';
 
-const Radio = mapProps(['checked'], { model: { prop: 'checked', event: 'change' } })(_Radio);
-const RadioGroup = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_Group);
-
-setInstallFn('Radio', Radio);
-setInstallFn('RadioGroup', RadioGroup);
-setInstallFn('RadioButton', RadioButton);
-
 export * from '../../types/radio/TdRadioProps';
-
 export type RadioProps = TdRadioProps;
 export type RadioGroupProps = TdRadioGroupProps;
 
-export {
-  Radio,
-  RadioGroup,
-  RadioButton,
-};
+export const Radio = withInstall('Radio', mapProps(['checked'], {
+  model: { prop: 'checked', event: 'change' },
+})(_Radio));
+export const RadioGroup = withInstall('RadioGroup', mapProps(['value'], {
+  model: { prop: 'value', event: 'change' },
+})(_Group));
+export const RadioButton = withInstall('RadioButton', _RadioButton);
 
 export default Radio;

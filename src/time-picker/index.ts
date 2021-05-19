@@ -1,11 +1,8 @@
 import _TimePicker from './time-picker';
-import setInstallFn from '../utils/setInstallFn';
 import mapProps from '../utils/map-props';
+import withInstall from '../utils/withInstall';
 
-const TimePicker = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_TimePicker);
-
-
-setInstallFn('TimePicker', TimePicker);
-
-export { TimePicker };
+export const TimePicker = withInstall('TimePicker', mapProps(['value'], {
+  model: { prop: 'value', event: 'change' },
+})(_TimePicker));
 export default TimePicker;

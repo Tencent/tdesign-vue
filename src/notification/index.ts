@@ -1,11 +1,10 @@
-import NotifyPlugin from './plugin';
-import Notification from './notification';
-import setInstallFn from '../utils/setInstallFn';
+import _Notification from './notification';
+import withInstall from '../utils/withInstall';
 import { TdNotificationProps } from '../../types/notification/TdNotificationProps';
-
-setInstallFn('Notification', Notification);
 
 export * from '../../types/notification/TdNotificationProps';
 export type NotificationProps = TdNotificationProps;
-export { Notification, NotifyPlugin };
+
+export { default as NotifyPlugin } from './plugin';
+export const Notification = withInstall('Notification', _Notification);
 export default Notification;

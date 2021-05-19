@@ -1,12 +1,10 @@
 import _Tabs from './tabs';
-import TabPanel from './tab-panel';
+import _TabPanel from './tab-panel';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 
-const Tabs = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_Tabs);
-
-setInstallFn('Tabs', Tabs);
-setInstallFn('TabPanel', TabPanel);
-
-export { Tabs, TabPanel };
+export const Tabs = withInstall('Tabs', mapProps(['value'], {
+  model: { prop: 'value', event: 'change' },
+})(_Tabs));
+export const TabPanel = withInstall('TabPanel', _TabPanel);
 export default Tabs;

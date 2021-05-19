@@ -1,9 +1,6 @@
-import Loading from './loading';
-import setInstallFn from '../utils/setInstallFn';
-import LoadingPlugin from './plugin';
+import _Loading from './loading';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('Loading', Loading);
-export { Loading, LoadingPlugin };
-
+export { default as LoadingPlugin } from './plugin';
+export const Loading = withInstall('Loading', _Loading);
 export default Loading;
-

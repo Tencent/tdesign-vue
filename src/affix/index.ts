@@ -1,8 +1,7 @@
-import Affix from './affix';
-import setInstallFnc from '../utils/setInstallFn';
+import _Affix from './affix';
+import withInstall from '../utils/withInstall';
 
-setInstallFnc('Affix', Affix);
+export const Affix = withInstall('Affix', _Affix);
 
 export * from '../../types/affix/TdAffixProps';
-export { Affix };
 export default Affix;

@@ -1,19 +1,11 @@
-import Tag from './tag';
+import _Tag from './tag';
 import _CheckTag from './check-tag';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 
-const CheckTag = mapProps(
+export const Tag = withInstall('Tag', _Tag);
+export const CheckTag = withInstall('CheckTag', mapProps(
   ['checked'],
-  {
-    model: {
-      prop: 'checked', event: 'change',
-    },
-  }
-)(_CheckTag);
-
-setInstallFn('Tag', Tag);
-setInstallFn('CheckTag', CheckTag);
-
-export { Tag, CheckTag };
+  { model: { prop: 'checked', event: 'change' } },
+)(_CheckTag));
 export default Tag;

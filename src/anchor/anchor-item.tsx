@@ -6,7 +6,7 @@ import props from '../../types/anchor-item/props';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 const name = `${prefix}-anchor-item`;
-interface Anchor extends Vue {
+export interface Anchor extends Vue {
   tAnchor: {
     active: string;
     handleScrollTo(target: string): void;

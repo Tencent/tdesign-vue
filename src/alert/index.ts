@@ -1,10 +1,9 @@
-import Alert from './alert';
-import setInstallFn from '../utils/setInstallFn';
+import _Alert from './alert';
+import withInstall from '../utils/withInstall';
 import { TdAlertProps } from '../../types/alert/TdAlertProps';
 
-setInstallFn('Alert', Alert);
-
-export type AlertProps = TdAlertProps;
 export * from '../../types/alert/TdAlertProps';
-export { Alert };
+export type AlertProps = TdAlertProps;
+
+export const Alert = withInstall('Alert', _Alert);
 export default Alert;

@@ -1,23 +1,11 @@
 import _Transfer from './transfer';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 
-const Transfer = mapProps([
-  {
-    name: 'value',
-  },
-  {
-    name: 'checked',
-    event: 'update:checked',
-  },
+export const Transfer = withInstall('Transfer', mapProps([
+  { name: 'value' },
+  { name: 'checked', event: 'update:checked' },
 ], {
-  model: {
-    prop: 'value',
-    event: 'change',
-  },
-})(_Transfer);
-
-setInstallFn('Transfer', Transfer);
-
-export { Transfer };
+  model: { prop: 'value', event: 'change' },
+})(_Transfer));
 export default Transfer;

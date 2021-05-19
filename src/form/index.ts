@@ -1,12 +1,11 @@
-import Form from './form';
-import FormItem from './form-item';
-import setInstallFn from '../utils/setInstallFn';
+import _Form from './form';
+import _FormItem from './form-item';
+import withInstall from '../utils/withInstall';
 import { TdFormProps } from '../../types/form/TdFormProps';
-
-setInstallFn('Form', Form);
-setInstallFn('FormItem', FormItem);
 
 export * from '../../types/form/TdFormProps';
 export type FormProps = TdFormProps;
-export { Form, FormItem };
+
+export const Form = withInstall('Form', _Form);
+export const FormItem = withInstall('FormItem', _FormItem);
 export default Form;

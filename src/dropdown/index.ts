@@ -1,7 +1,5 @@
-import Dropdown from './dropdown';
-import setInstallFn from '../utils/setInstallFn';
+import _Dropdown from './dropdown';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('Dropdown', Dropdown);
-
-export { Dropdown };
+export const Dropdown = withInstall('Dropdown', _Dropdown);
 export default Dropdown;

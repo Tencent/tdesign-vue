@@ -1,13 +1,11 @@
+
 import _Input from './input';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 import { TdInputProps } from '../../types/input/TdInputProps';
 
-const Input = mapProps(['value'])(_Input);
-
-setInstallFn('Input', Input);
-
-export type InputProps = TdInputProps;
 export * from '../../types/input/TdInputProps';
-export { Input };
+export type InputProps = TdInputProps;
+
+export const Input = withInstall('Input', mapProps(['value'])(_Input));
 export default Input;

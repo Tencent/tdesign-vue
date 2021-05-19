@@ -1,7 +1,5 @@
-import Tooltip from './tooltip.vue';
-import setInstallFn from '../utils/setInstallFn';
+import _Tooltip from './tooltip.vue';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('Tooltip', Tooltip);
-
-export { Tooltip };
+export const Tooltip = withInstall('Tooltip', _Tooltip);
 export default Tooltip;

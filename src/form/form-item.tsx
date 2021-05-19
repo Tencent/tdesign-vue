@@ -14,7 +14,7 @@ type Result = ValidateResult<TdFormProps['data']>;
 
 type FormInstance = InstanceType<typeof Form>;
 
-const enum VALIDATE_STATUS {
+export const enum VALIDATE_STATUS {
   TO_BE_VALIDATED = 'not',
   SUCCESS = 'success',
   FAIL = 'fail',

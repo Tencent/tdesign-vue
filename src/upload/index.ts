@@ -1,12 +1,5 @@
-import Upload from './upload';
-import setInstallFn from '../utils/setInstallFn';
+import _Upload from './upload';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('Upload', Upload);
-
-export {
-  Upload,
-};
-
-setInstallFn('Upload', Upload);
-
+export const Upload = withInstall('Upload', _Upload);
 export default Upload;

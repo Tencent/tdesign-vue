@@ -1,15 +1,8 @@
-import BaseTable from './BaseTable/index';
-import PrimaryTable from './PrimaryTable/index';
-import setInstallFn from '../utils/setInstallFn';
+import _PrimaryTable from './PrimaryTable/index';
+import _BaseTable from './BaseTable/index';
+import withInstall from '../utils/withInstall';
 
-setInstallFn('BaseTable', BaseTable);
-setInstallFn('PrimaryTable', PrimaryTable);
-setInstallFn('Table', PrimaryTable);
-
-const Table = PrimaryTable;
-
-// 扩展输出
-export { BaseTable, PrimaryTable, Table };
-
-// 默认输出
+export const PrimaryTable = withInstall('PrimaryTable', _PrimaryTable);
+export const BaseTable = withInstall('BaseTable', _BaseTable);
+export const Table = withInstall('Table', _PrimaryTable);
 export default PrimaryTable;

@@ -1,10 +1,9 @@
-import Button from './button';
-import setInstallFn from '../utils/setInstallFn';
+import _Button from './button';
+import withInstall from '../utils/withInstall';
 import { TdButtonProps } from '../../types/button/TdButtonProps';
 
-setInstallFn('Button', Button);
-
-export type ButtonProps = TdButtonProps;
 export * from '../../types/button/TdButtonProps';
-export { Button };
+export type ButtonProps = TdButtonProps;
+
+export const Button = withInstall('Button', _Button);
 export default Button;

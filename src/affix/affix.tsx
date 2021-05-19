@@ -4,7 +4,7 @@ import { on, off, getScrollContainer } from '../utils/dom';
 import affixProps from '../../types/affix/props';
 import isFunction from 'lodash/isFunction';
 
-interface Affix extends Vue {
+export interface Affix extends Vue {
   scrollContainer: ScrollContainerElement;
 }
 

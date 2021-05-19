@@ -1,10 +1,9 @@
-import Popup from './popup';
-import setInstallFn from '../utils/setInstallFn';
+import _Popup from './popup';
+import withInstall from '../utils/withInstall';
 import { TdPopupProps } from '../../types/popup/TdPopupProps';
 
-setInstallFn('Popup', Popup);
-
-export type PopupProps = TdPopupProps;
 export * from '../../types/popup/TdPopupProps';
-export { Popup };
+export type PopupProps = TdPopupProps;
+
+export const Popup = withInstall('Popup', _Popup);
 export default Popup;

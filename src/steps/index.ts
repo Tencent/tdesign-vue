@@ -1,11 +1,11 @@
 import _Steps from './steps';
-import StepItem from '../step-item';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 
-const Steps = mapProps(['current'], { model: { prop: 'current', event: 'change' } })(_Steps);
+const LocalSteps = mapProps(
+  ['current'],
+  { model: { prop: 'current', event: 'change' } }
+)(_Steps);
 
-setInstallFn('Steps', Steps);
-setInstallFn('StepItem', StepItem);
-export { Steps };
+export const Steps = withInstall('Steps', LocalSteps);
 export default Steps;

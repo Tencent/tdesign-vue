@@ -1,10 +1,8 @@
 import _Switch from './switch';
 import mapProps from '../utils/map-props';
-import setInstallFn from '../utils/setInstallFn';
+import withInstall from '../utils/withInstall';
 
-const Switch = mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_Switch);
-
-setInstallFn('Switch', Switch);
-
-export { Switch };
+export const Switch = withInstall('Switch', mapProps(['value'], {
+  model: { prop: 'value', event: 'change' },
+})(_Switch));
 export default Switch;

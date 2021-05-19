@@ -4,7 +4,7 @@ import props from '../../types/aside/props';
 import Layout from './layout';
 
 const name = `${prefix}-aside`;
-interface AsideInstance extends Vue {
+export interface AsideInstance extends Vue {
   layout: InstanceType<typeof Layout>;
 }
 

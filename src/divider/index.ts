@@ -1,12 +1,9 @@
-import Divider from './divider';
-import setInstallFn from '../utils/setInstallFn';
+import _Divider from './divider';
+import withInstall from '../utils/withInstall';
 import { TdDividerProps } from '../../types/divider/TdDividerProps';
-
-setInstallFn('Divider', Divider);
 
 export type DividerProps = TdDividerProps;
 export * from '../../types/divider/TdDividerProps';
+
+export const Divider = withInstall('Divider', _Divider);
 export default Divider;
-export {
-  Divider,
-};

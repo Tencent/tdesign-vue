@@ -3,7 +3,7 @@ import props from '../../types/radio/props';
 import Radio, { radioBtnName as name } from './radio';
 import { RadioGroupInstance } from './instance-types';
 
-interface RadioButtonInstance extends Vue {
+export interface RadioButtonInstance extends Vue {
   radioGroup: RadioGroupInstance;
 }
 

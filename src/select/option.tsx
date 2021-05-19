@@ -11,7 +11,7 @@ import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
 const name = `${prefix}-option`;
 const selectName = `${prefix}-select`;
-interface OptionInstance extends Vue {
+export interface OptionInstance extends Vue {
   tSelect: SelectInstance;
 }
 

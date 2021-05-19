@@ -1,9 +1,8 @@
-import TreeSelect from './tree-select';
-import setInstallFn from '../utils/setInstallFn';
+import _TreeSelect from './tree-select';
+import withInstall from '../utils/withInstall';
+
 import { TdTreeSelectProps } from '../../types/tree-select/TdTreeSelectProps';
 
-setInstallFn('TreeSelect', TreeSelect);
-
 export type TreeSelectProps = TdTreeSelectProps;
-export { TreeSelect };
+export const TreeSelect = withInstall('TreeSelect', _TreeSelect);
 export default TreeSelect;

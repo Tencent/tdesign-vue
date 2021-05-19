@@ -1,12 +1,12 @@
-import Anchor from './anchor';
-import AnchorItem from './anchor-item';
-import AnchorTarget from './anchor-target';
-import setInstallFnc from '../utils/setInstallFn';
-
-setInstallFnc('Anchor', Anchor);
-setInstallFnc('AnchorItem', AnchorItem);
-setInstallFnc('AnchorTarget', AnchorTarget);
+import _Anchor from './anchor';
+import _AnchorItem from './anchor-item';
+import _AnchorTarget from './anchor-target';
+import withInstall from '../utils/withInstall';
 
 export * from '../../types/anchor/TdAnchorProps';
-export { Anchor, AnchorItem, AnchorTarget };
+
+export const Anchor = withInstall('Anchor', _Anchor);
+export const AnchorItem = withInstall('AnchorItem', _AnchorItem);
+export const AnchorTarget = withInstall('AnchorTarget', _AnchorTarget);
+
 export default Anchor;
