@@ -27,6 +27,7 @@ const banner = `/**
 const input = 'src/dist.ts';
 const inputList = [
   'src/**/*.ts',
+  'src/**/*.tsx',
   '!src/dist.ts',
   '!src/**/*.d.ts',
   '!src/**/demos',
@@ -45,6 +46,7 @@ const getPlugins = ({
     esbuild({
       target: 'esnext',
       minify: false,
+      jsxFactory: 'h',
     }),
     babel({
       babelHelpers: 'bundled',
