@@ -6,10 +6,25 @@ const name = `${prefix}-layout`;
 export default Vue.extend({
   name,
 
-  props: {},
-
   data() {
-    return {};
+    return {
+      hasSider: false,
+    };
+  },
+
+  provide(): any {
+    return {
+      layout: this,
+    };
+  },
+
+  created() {
+    this.$on('aside-mounted', () => {
+      this.hasSider = true;
+    });
+    this.$on('aside-unmounted', () => {
+      this.hasSider = false;
+    });
   },
 
   methods: {
@@ -19,30 +34,21 @@ export default Vue.extend({
   },
 
   computed: {
-    hasSider() {
-      if (this.$slots) {
-        const defaultSlot = (this.$slots as any).default;
-        const containSider = defaultSlot.some((vnode: any) => {
-          const tag = vnode.componentOptions && vnode.componentOptions.tag;
-          return tag === `${prefix}-aside`;
-        }) as boolean;
-        return containSider;
-      }
-      return false;
+    classes(): Array<string|object>  {
+      return  [
+        name,
+        {
+          [`${name}-has-sider`]: this.hasSider,
+        },
+      ];
     },
   },
 
   watch: {},
 
   render() {
-    const classes: Array<string|object> = [
-      name,
-      {
-        [`${name}-has-sider`]: this.hasSider,
-      },
-    ];
     return (
-      <section class={classes}>
+      <section class={this.classes}>
         {this.renderContent()}
       </section>
     );
