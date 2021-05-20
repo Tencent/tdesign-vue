@@ -1,11 +1,13 @@
 import Vue, { VueConstructor, CreateElement, VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import { omit, getPropsApiByEvent } from '../utils/helper';
+import { omit } from '../utils/helper';
 import ClearIcon from '../icon/clear-circle-filled';
 import props from '../../types/input/props';
 import { InputValue } from '../../types/input/TdInputProps';
 import isFunction from 'lodash/isFunction';
+import { emitEvent } from '../utils/event';
+import { TdInputProps } from '@TdTypes/input/TdInputProps';
 
 const name = `${prefix}-input`;
 
@@ -138,43 +140,39 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       if (e.isComposing || checkInputType) return;
       this.inputValueChangeHandle(e);
     },
-    emitEvent(name: string, e: FocusEvent | KeyboardEvent | InputEvent) {
-      this.$emit(name, this.value, { e });
-      const eventPropsName = getPropsApiByEvent(name);
-      isFunction(this[eventPropsName]) && this[eventPropsName]();
-    },
+
     handleKeydonw(e: KeyboardEvent) {
       if (this.disabled) return;
       const { code } = e;
       if (code === 'Enter') {
-        this.emitEvent('enter', e);
+        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
       } else {
-        this.emitEvent('keydown', e);
+        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', this.value, { e });
       }
     },
     handleKeyUp(e: KeyboardEvent) {
       if (this.disabled) return;
-      this.emitEvent('keyup', e);
+      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', this.value, { e });
     },
     handleKeypress(e: KeyboardEvent) {
       if (this.disabled) return;
-      this.emitEvent('keypress', e);
+      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', this.value, { e });
     },
     emitClear(e: MouseEvent) {
-      this.$emit('clear', { e });
+      emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       isFunction(this.onClear) && this.onClear({ e });
-      this.$emit('change', '', { e });
-      this.$emit('input', '');
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'input', '', { e });
       isFunction(this.onChange) && this.onChange('', { e });
     },
     emitFocus(e: FocusEvent) {
       if (this.disabled) return;
       this.focused = true;
-      this.emitEvent('focus', e);
+      emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
     emitBlur(e: FocusEvent) {
       this.focused = false;
-      this.emitEvent('blur', e);
+      emitEvent<Parameters<TdInputProps['onBlur']>>(this, 'blur', this.value, { e });
     },
     onCompositionend(e: InputEvent) {
       this.inputValueChangeHandle(e);
@@ -182,8 +180,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       const val = (target as HTMLInputElement).value;
-      this.$emit('change', val, { e });
-      this.$emit('input', val);
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'input', val, { e });
       isFunction(this.onChange) && this.onChange(val, { e });
       // 受控
       this.$nextTick(() => this.setInputValue(this.value));
