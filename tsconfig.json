@@ -57,6 +57,9 @@
       ],
       "@Popup": [
         "src/popup/index.ts"
+      ],
+      "@Tree": [
+        "src/tree/index.ts"
       ]
     }
   },

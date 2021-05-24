@@ -1,6 +1,7 @@
 import TdTree from './td-tree';
 import mapProps from '../utils/map-props';
 import setInstallFn from '../utils/setInstallFn';
+import { TdTreeProps } from '@TdTypes/tree/TdTreeProps';
 
 const Tree = mapProps([
   {
@@ -24,5 +25,7 @@ const Tree = mapProps([
 
 setInstallFn('Tree', Tree);
 
+export * from '@TdTypes/tree/TdTreeProps';
+export type TreeProps = TdTreeProps;
 export { Tree };
 export default Tree;
