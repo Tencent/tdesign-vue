@@ -280,7 +280,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
     },
     // 初始化树结构
     build() {
-      const list = this.data;
+      let list = this.data;
       const {
         activable,
         activeMultiple,
@@ -300,64 +300,66 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
         filter,
       } = this;
 
-      if (list && list.length > 0) {
-        const store = new TreeStore({
-          keys: this.keys,
-          activable,
-          activeMultiple,
-          checkable,
-          checkStrictly,
-          expandAll,
-          expandLevel,
-          expandMutex,
-          expandParent,
-          disabled,
-          load,
-          lazy,
-          valueMode: valueMode as TypeValueMode,
-          filter,
-          onLoad: (info: TypeEventState) => {
-            this.handleLoad(info);
-          },
-          onUpdate: () => {
-            this.refresh();
-          },
-        });
-
-        // 初始化数据
-        this.store = store;
-        store.append(list);
-
-        // 初始化选中状态
-        if (Array.isArray(value)) {
-          store.setChecked(value);
-        }
-
-        // 初始化展开状态
-        if (Array.isArray(expanded)) {
-          const expandedMap = new Map();
-          expanded.forEach((val) => {
-            expandedMap.set(val, true);
-            if (expandParent) {
-              const node = store.getNode(val);
-              node.getParents().forEach((tn) => {
-                expandedMap.set(tn.value, true);
-              });
-            }
-          });
-          const expandedArr = Array.from(expandedMap.keys());
-          store.setExpanded(expandedArr);
-        }
-
-        // 初始化激活状态
-        if (Array.isArray(actived)) {
-          store.setActived(actived);
-        }
-
-        // 树的数据初始化之后，需要立即进行一次视图刷新
-        store.refreshNodes();
-        this.refresh();
+      if (!Array.isArray(list)) {
+        list = [];
       }
+
+      const store = new TreeStore({
+        keys: this.keys,
+        activable,
+        activeMultiple,
+        checkable,
+        checkStrictly,
+        expandAll,
+        expandLevel,
+        expandMutex,
+        expandParent,
+        disabled,
+        load,
+        lazy,
+        valueMode: valueMode as TypeValueMode,
+        filter,
+        onLoad: (info: TypeEventState) => {
+          this.handleLoad(info);
+        },
+        onUpdate: () => {
+          this.refresh();
+        },
+      });
+
+      // 初始化数据
+      this.store = store;
+      store.append(list);
+
+      // 初始化选中状态
+      if (Array.isArray(value)) {
+        store.setChecked(value);
+      }
+
+      // 初始化展开状态
+      if (Array.isArray(expanded)) {
+        const expandedMap = new Map();
+        expanded.forEach((val) => {
+          expandedMap.set(val, true);
+          if (expandParent) {
+            const node = store.getNode(val);
+            node.getParents().forEach((tn) => {
+              expandedMap.set(tn.value, true);
+            });
+          }
+        });
+        const expandedArr = Array.from(expandedMap.keys());
+        store.setExpanded(expandedArr);
+      }
+
+      // 初始化激活状态
+      if (Array.isArray(actived)) {
+        store.setActived(actived);
+      }
+
+      // 树的数据初始化之后，需要立即进行一次视图刷新
+      store.refreshNodes();
+      this.refresh();
     },
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);

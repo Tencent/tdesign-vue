@@ -18,14 +18,39 @@ describe('Tree:init', () => {
         render() {
           return (
             <Tree data={null}>
-              <div slot="empty" id="tree-empty">
+              <div slot="empty" class="tree-empty">
                 暂无数据
               </div>
             </Tree>
           );
         },
       });
-      expect(wrapper.find('#tree-empty').exists()).toBe(true);
+      expect(wrapper.find('.tree-empty').exists()).toBe(true);
+    });
+
+    it('`data` is empty, can insert root item', (done) => {
+      const wrapper = mount({
+        mounted() {
+          const { tree } = this.$refs;
+          tree.appendTo('', {
+            value: 'insert1',
+          });
+          setTimeout(() => {
+            expect(wrapper.find('.tree-empty').exists()).toBe(false);
+            expect(wrapper.find('[data-value="insert1"]').exists()).toBe(true);
+            done();
+          });
+        },
+        render() {
+          return (
+            <Tree ref="tree" data={null}>
+              <div slot="empty" class="tree-empty">
+                暂无数据
+              </div>
+            </Tree>
+          );
+        },
+      });
     });
 
     it('`data` get tree data', () => {
@@ -44,14 +69,14 @@ describe('Tree:init', () => {
         render() {
           return (
             <Tree data={data}>
-              <div slot="empty" id="tree-empty">
+              <div slot="empty" class="tree-empty">
                 暂无数据
               </div>
             </Tree>
           );
         },
       });
-      expect(wrapper.find('#tree-empty').exists()).toBe(false);
+      expect(wrapper.find('.tree-empty').exists()).toBe(false);
       expect(wrapper.find('[data-value="t1"]').exists()).toBe(true);
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
       expect(wrapper.find('[data-value="t2"]').exists()).toBe(true);
