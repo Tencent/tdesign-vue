@@ -1,17 +1,18 @@
 // @ts-check
+import { tmpdir } from 'os';
 import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
-import esbuild from 'rollup-plugin-esbuild';
+import vuePlugin from 'rollup-plugin-vue';
 import postcss from 'rollup-plugin-postcss';
 import replace from '@rollup/plugin-replace';
 import analyzer from 'rollup-plugin-analyzer';
-import commonjs from '@rollup/plugin-commonjs';
-import vuePlugin from 'rollup-plugin-vue';
-import multiInput from 'rollup-plugin-multi-input';
 import { terser } from 'rollup-plugin-terser';
-import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
+import typescript from 'rollup-plugin-typescript2';
+import multiInput from 'rollup-plugin-multi-input';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 import pkg from '../package.json';
 
@@ -43,10 +44,9 @@ const getPlugins = ({
     nodeResolve(),
     commonjs(),
     vuePlugin(),
-    esbuild({
-      target: 'esnext',
-      minify: false,
-      jsxFactory: 'h',
+    typescript({
+      tsconfig: 'tsconfig.json',
+      cacheRoot: `${tmpdir()}/.rpt2_cache`,
     }),
     babel({
       babelHelpers: 'bundled',

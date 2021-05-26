@@ -10,14 +10,12 @@ import Tag from '../tag';
 import Tree from '../tree';
 import Input from '../input';
 
-import {
-  isFunction,
-  isArray,
-  isEmpty,
-  isNumber,
-  isString,
-  isBoolean,
-} from 'lodash';
+import isArray from 'lodash/isArray';
+import isEmpty from 'lodash/isEmpty';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
+import isBoolean from 'lodash/isBoolean';
+import isFunction from 'lodash/isFunction';
 
 import CLASSNAMES from '../utils/classnames';
 import props from '../../types/tree-select/props';
