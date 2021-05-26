@@ -238,6 +238,9 @@ export default Vue.extend({
       }
       this.change(current, context.node);
       this.actived = value;
+      if (!this.multiple) {
+        (this.$refs.popup as any).showPopper = false;
+      }
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
