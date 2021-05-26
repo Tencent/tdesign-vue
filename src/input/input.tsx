@@ -4,10 +4,9 @@ import CLASSNAMES from '../utils/classnames';
 import { omit } from '../utils/helper';
 import ClearIcon from '../icon/clear-circle-filled';
 import props from '../../types/input/props';
-import { InputValue } from '../../types/input/TdInputProps';
+import { InputValue, TdInputProps } from '../../types/input/TdInputProps';
 import isFunction from 'lodash/isFunction';
 import { emitEvent } from '../utils/event';
-import { TdInputProps } from '@TdTypes/input/TdInputProps';
 
 const name = `${prefix}-input`;
 
