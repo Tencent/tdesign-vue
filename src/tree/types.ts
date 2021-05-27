@@ -12,6 +12,8 @@ import {
   TypeTreeEventState,
 } from '../../common/js/tree/types';
 
+export type TypeTdTreeProps = TdTreeProps;
+
 export type TreeNodeState = TdTreeNodeState;
 
 export type TreeNodeValue = TdTreeNodeValue;
@@ -28,11 +30,6 @@ export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
   event?: Event;
   path?: TreeNode[];
-};
-
-export interface TypeContext {
-  node?: TypeTreeNodeModel;
-  e?: MouseEvent;
 };
 
 export interface TypeMark {

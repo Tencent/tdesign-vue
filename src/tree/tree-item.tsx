@@ -19,6 +19,11 @@ export const TreeItemProps = {
 export default Vue.extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
+  data() {
+    return {
+      data: null,
+    };
+  },
   methods: {
     getStyles(): string {
       const { level } = this.node;
@@ -114,21 +119,19 @@ export default Vue.extend({
           iconNode = scopedSlots.icon({
             node: node?.getModel(),
           });
-        } else {
-          if (!node.vmIsLeaf) {
-            iconNode = (<TIconChevronRight/>);
-          } else {
-            iconNode = '';
+        } else if (!node.vmIsLeaf) {
+          iconNode = (<TIconChevronRight/>);
+          if (node.loading && node.expanded) {
+            iconNode = (<TIconLoading/>);
           }
+        } else {
+          iconNode = '';
         }
       } else {
         iconNode = getTNode(icon, {
           createElement,
           node,
         });
-      }
-      if (!node.vmIsLeaf && node.loading && node.expanded && icon !== false) {
-        iconNode = (<TIconLoading/>);
       }
       iconNode = (
         <span
@@ -263,6 +266,11 @@ export default Vue.extend({
       };
       this.$emit('change', state);
     },
+  },
+  created() {
+    if (this.node) {
+      this.data = this.node.data;
+    }
   },
   render(createElement: CreateElement) {
     const {

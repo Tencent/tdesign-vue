@@ -87,4 +87,8 @@ describe('Tree:demo', () => {
     const wrapper = mount(operations);
     expect(wrapper.element).toMatchSnapshot();
   });
+  it('state demo works fine', () => {
+    const wrapper = mount(operations);
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });

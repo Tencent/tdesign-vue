@@ -1,5 +1,4 @@
-import Vue, { VNode } from 'vue';
-import upperFirst from 'lodash/upperFirst';
+import { VNode } from 'vue';
 import TreeStore from '../../common/js/tree/tree-store';
 import TreeNode from '../../common/js/tree/tree-node';
 import {
@@ -9,6 +8,8 @@ import {
   TypeGetTNodeOption,
   TypeTargetNode,
 } from './types';
+
+export { emitEvent } from '../utils/event';
 
 export function getParentsToRoot(element?: HTMLElement, root?: HTMLElement): HTMLElement[] {
   const list = [];
@@ -110,11 +111,3 @@ export function getNode(store: TreeStore, item: TypeTargetNode): TreeNode {
   node = store.getNode(val);
   return node;
 };
-
-export function callEmit(instance: Vue, name: string, args: unknown[]): void {
-  const propName = `on${upperFirst(name)}`;
-  if (typeof instance[propName] === 'function') {
-    instance[propName](...args);
-  };
-  instance.$emit(name, ...args);
-}

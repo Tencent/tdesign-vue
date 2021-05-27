@@ -17,6 +17,7 @@
     >
       <template #icon="{node}">
         <t-icon v-if="node.getChildren() && !node.expanded" name="caret-right" />
+        <t-icon v-else-if="node.getChildren() && node.expanded && node.loading" name="loading" />
         <t-icon v-else-if="node.getChildren() && node.expanded" name="caret-down" />
         <t-icon v-else name="attach" />
       </template>
@@ -44,6 +45,9 @@ export default {
       if (node.getChildren()) {
         if (node.expanded) {
           name = 'folder-open';
+          if (node.loading) {
+            name = 'loading';
+          }
         } else {
           name = 'folder';
         }
@@ -69,7 +73,7 @@ export default {
             }];
           }
           resolve(nodes);
-        }, 100);
+        }, 500);
       });
     },
   },

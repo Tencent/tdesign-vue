@@ -5,10 +5,10 @@ import TreeNode from '../../common/js/tree/tree-node';
 import TreeItem from './tree-item';
 import props from '../../types/tree/props';
 import {
+  TypeTdTreeProps,
   TreeNodeValue,
   TypeValueMode,
   TypeEventState,
-  TypeContext,
   TreeNodeState,
   TypeTreeNodeModel,
   TypeTreeInstance,
@@ -23,7 +23,7 @@ import {
   getMark,
   getTNode,
   getNode,
-  callEmit,
+  emitEvent,
 } from './util';
 
 export default (Vue as VueConstructor<TypeTreeInstance>).extend({
@@ -369,11 +369,11 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       const node = getNode(this.store, item);
       const actived = node.setActived(isActived);
       const { mouseEvent } = this;
-      const ctx: TypeContext = {
+      const ctx = {
         node: node.getModel(),
         e: mouseEvent,
       };
-      callEmit(this, 'active', [actived, ctx]);
+      emitEvent<Parameters<TypeTdTreeProps['onActive']>>(this, 'active', actived, ctx);
       return actived;
     },
     toggleExpanded(item: TypeTargetNode): TreeNodeValue[] {
@@ -384,11 +384,11 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       const node = getNode(this.store, item);
       const expanded = node.setExpanded(isExpanded);
       const { mouseEvent } = this;
-      const ctx: TypeContext = {
+      const ctx = {
         node: node.getModel(),
         e: mouseEvent,
       };
-      callEmit(this, 'expand', [expanded, ctx]);
+      emitEvent<Parameters<TypeTdTreeProps['onExpand']>>(this, 'expand', expanded, ctx);
       return expanded;
     },
     toggleChecked(item: TypeTargetNode): TreeNodeValue[] {
@@ -398,18 +398,18 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
     setChecked(item: TypeTargetNode, isChecked: boolean): TreeNodeValue[] {
       const node = getNode(this.store, item);
       const checked = node.setChecked(isChecked);
-      const ctx: TypeContext = {
+      const ctx = {
         node: node.getModel(),
       };
-      callEmit(this, 'change', [checked, ctx]);
+      emitEvent<Parameters<TypeTdTreeProps['onChange']>>(this, 'change', checked, ctx);
       return checked;
     },
     handleLoad(info: TypeEventState): void {
       const { node } = info;
-      const ctx: TypeContext = {
+      const ctx = {
         node: node.getModel(),
       };
-      callEmit(this, 'load', [ctx]);
+      emitEvent<Parameters<TypeTdTreeProps['onLoad']>>(this, 'load', ctx);
     },
     handleClick(state: TypeEventState): void {
       const { expandOnClickNode } = this;
@@ -455,12 +455,12 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
         this.toggleActived(node);
       }
 
-      const ctx: TypeContext = {
+      const ctx = {
         node: node.getModel(),
         e: mouseEvent,
       };
+      emitEvent<Parameters<TypeTdTreeProps['onClick']>>(this, 'click', ctx);
 
-      callEmit(this, 'click', [ctx]);
       this.mouseEvent = null;
     },
     handleChange(state: TypeEventState): void {

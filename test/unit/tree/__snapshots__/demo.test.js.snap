@@ -4833,6 +4833,298 @@ exports[`Tree:demo operations demo works fine 1`] = `
 </div>
 `;
 
+exports[`Tree:demo state demo works fine 1`] = `
+<div
+  class="tdesign-tree-operations"
+>
+  <h3
+    class="title"
+  >
+    render:
+  </h3>
+   
+  <div
+    class="t-tree t-tree--hoverable t-tree--fx"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="node1"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <span
+          class="t-tree__label t-tree__label--strictly"
+        >
+          1 | value: node1
+        </span>
+        <span
+          class="t-tree__space"
+        />
+        <span
+          class="t-tree__operations"
+          ignore="active,expand"
+        >
+          value: node1
+        </span>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="node2"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <span
+          class="t-tree__label t-tree__label--strictly"
+        >
+          2 | value: node2
+        </span>
+        <span
+          class="t-tree__space"
+        />
+        <span
+          class="t-tree__operations"
+          ignore="active,expand"
+        >
+          value: node2
+        </span>
+      </div>
+    </transition-group-stub>
+  </div>
+   
+  <h3
+    class="title"
+  >
+    scope slot:
+  </h3>
+   
+  <div
+    class="operations"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      插入节点使用高亮节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      type="button"
+    >
+      子节点展开触发父节点展开
+    </button>
+  </div>
+   
+  <div
+    class="operations"
+  >
+    <div
+      class="t-addon t-addon--prepend"
+    >
+      <span
+        class="t-addon__prepend"
+      >
+        filter:
+      </span>
+      <div
+        class="t-input t-size-m"
+      >
+        <input
+          class="t-input__inner"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="t-tree t-tree--hoverable t-tree--fx"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="node1"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="node1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1 | value: node1
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="node2"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="node2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2 | value: node2
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+    </transition-group-stub>
+  </div>
+   
+  <h3
+    class="title"
+  >
+    api:
+  </h3>
+   
+  <div
+    class="operations"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取 value 为 'node1' 的单个节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取所有节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点的所有子节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取所有高亮节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点下的选中节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      插入一个根节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点的父节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点的所有父节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点在子节点中的位置
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      选中高亮节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      展开高亮节点
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      获取高亮节点与其子节点的数据
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Tree:demo sync demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
