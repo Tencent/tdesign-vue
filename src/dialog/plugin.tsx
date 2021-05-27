@@ -64,7 +64,7 @@ const extraApi: ExtraApi = {
   alert,
 };
 
-const DialogPlugin: Vue.PluginObject<undefined> = {
+const _DialogPlugin: Vue.PluginObject<undefined> = {
   install: () => {
     Vue.prototype.$dialog = createDialog;
     Object.keys(extraApi).forEach((funcName) => {
@@ -74,7 +74,19 @@ const DialogPlugin: Vue.PluginObject<undefined> = {
 };
 
 Object.keys(extraApi).forEach((funcName) => {
-  DialogPlugin[funcName] = extraApi[funcName];
+  _DialogPlugin[funcName] = extraApi[funcName];
 });
 
+export const DialogPlugin: (
+  Vue.PluginObject<undefined>
+  & DialogMethod
+  & ExtraApi
+) = _DialogPlugin as any;
 export default DialogPlugin;
+
+declare module 'vue/types/vue' {
+  // Bind to `this` keyword
+  interface Vue {
+    $dialog: DialogMethod & ExtraApi;
+  }
+};

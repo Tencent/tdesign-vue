@@ -40,13 +40,24 @@ const getPlugins = ({
   isProd = false,
   analyze = false,
 } = {}) => {
+  const compilerOptions = isProd
+    // 只生成一次
+    ? {
+      declaration: true,
+      declarationMap: true,
+      declarationDir: './typings',
+    }
+    : {};
+
   const plugins = [
     nodeResolve(),
     commonjs(),
     vuePlugin(),
     typescript({
-      tsconfig: 'tsconfig.json',
+      tsconfig: 'tsconfig.build.json',
       cacheRoot: `${tmpdir()}/.rpt2_cache`,
+      tsconfigOverride: { compilerOptions },
+      useTsconfigDeclarationDir: true,
     }),
     babel({
       babelHelpers: 'bundled',
@@ -108,6 +119,7 @@ const esmConfig = {
     dir: 'es/',
     format: 'esm',
     sourcemap: true,
+    chunkFileNames: '_chunks/dep-[hash].js',
   },
 };
 
@@ -122,6 +134,7 @@ const cjsConfig = {
     format: 'cjs',
     sourcemap: true,
     exports: 'named',
+    chunkFileNames: '_chunks/dep-[hash].js',
   },
 };
 

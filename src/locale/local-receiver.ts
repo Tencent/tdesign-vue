@@ -5,7 +5,7 @@ import defaultLocale from './zh_CN';
 
 const name = `${config.prefix}-locale-receiver`;
 
-interface Placement {
+export interface Placement {
   [propName: string]: string | number;
 };
 

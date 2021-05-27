@@ -87,7 +87,7 @@ const extraApi: ExtraApi = {
   },
 };
 
-const NotificationPlugin: Vue.PluginObject<undefined> = {
+const _NotificationPlugin: Vue.PluginObject<undefined> = {
   install: () => {
     Vue.prototype.$notify = showThemeNotification;
     Object.keys(extraApi).forEach((funcName) => {
@@ -97,7 +97,19 @@ const NotificationPlugin: Vue.PluginObject<undefined> = {
 };
 
 Object.keys(extraApi).forEach((funcName) => {
-  NotificationPlugin[funcName] = extraApi[funcName];
+  _NotificationPlugin[funcName] = extraApi[funcName];
 });
 
+export const NotificationPlugin: (
+  Vue.PluginObject<undefined>
+  & NotificationMethod
+  & ExtraApi
+) = _NotificationPlugin as any;
 export default NotificationPlugin;
+
+declare module 'vue/types/vue' {
+  // Bind to `this` keyword
+  interface Vue {
+    $notify: NotificationMethod & ExtraApi;
+  }
+};
