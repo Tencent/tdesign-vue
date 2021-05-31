@@ -6,7 +6,7 @@ import isString from 'lodash/isString';
 
 const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 
-const trim =  (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
+const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
 export const on = (((): any => {
   if (!isServer && document.addEventListener) {

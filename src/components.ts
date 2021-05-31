@@ -42,4 +42,5 @@ export * from './badge';
 export * from './loading';
 export * from './textarea';
 export * from './time-picker';
+export * from './affix';
 export * from './tree-select';
