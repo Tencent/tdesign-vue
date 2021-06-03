@@ -284,7 +284,9 @@ export default Vue.extend({
       this.$emit('keypress', this.value, { e });
     },
     handleStartInput() {
+      if (this.value === undefined) return;
       this.inputing = true;
+
       this.filterValue = this.value.toFixed(this.digitsNum);
     },
     handleEndInput(e: FocusEvent) {
