@@ -45,11 +45,11 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
       <div class="t-calendar__control-section-cell" style="height: auto;">
         <div class="t-radio-group t-radio-group-outline t-radio-group-small"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
       </div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
-          隐藏周末</button></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
+          隐藏周末</span></button></div>
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
           今天
-        </button></div>
+        </span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel">
@@ -312,11 +312,11 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
       <div class="t-calendar__control-section-cell" style="height: auto;">
         <div class="t-radio-group t-radio-group-outline t-radio-group-small"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
       </div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
-          显示周末</button></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
+          显示周末</span></button></div>
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
           今天
-        </button></div>
+        </span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel">
@@ -501,9 +501,9 @@ exports[`Calendar :props :mode 1`] = `
       <div class="t-calendar__control-section-cell">
         <!---->
       </div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
           本月
-        </button></div>
+        </span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel">
@@ -615,11 +615,11 @@ exports[`Calendar :props :range 1`] = `
       <div class="t-calendar__control-section-cell" style="height: auto;">
         <div class="t-radio-group t-radio-group-outline t-radio-group-small"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
       </div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
-          隐藏周末</button></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
+          隐藏周末</span></button></div>
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
           今天
-        </button></div>
+        </span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel">
@@ -1156,11 +1156,11 @@ exports[`Calendar :props :value 1`] = `
       <div class="t-calendar__control-section-cell" style="height: auto;">
         <div class="t-radio-group t-radio-group-outline t-radio-group-small"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
       </div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
-          隐藏周末</button></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default">
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
+          隐藏周末</span></button></div>
+      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-default"><span class="t-button__text">
           今天
-        </button></div>
+        </span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel">

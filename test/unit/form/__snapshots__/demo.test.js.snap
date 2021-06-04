@@ -263,14 +263,22 @@ exports[`Form base demo works fine 1`] = `
             style="margin-right: 10px;"
             type="submit"
           >
-            提交
+            <span
+              class="t-button__text"
+            >
+              提交
+            </span>
           </button>
            
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
           >
-            重置
+            <span
+              class="t-button__text"
+            >
+              重置
+            </span>
           </button>
         </div>
       </div>

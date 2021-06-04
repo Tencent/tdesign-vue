@@ -9,21 +9,33 @@ exports[`Button base demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-default"
       type="button"
     >
-      默认按钮
+      <span
+        class="t-button__text"
+      >
+        默认按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
   </div>
    
@@ -34,28 +46,44 @@ exports[`Button base demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      主要按钮
+      <span
+        class="t-button__text"
+      >
+        主要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-primary"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-primary"
       type="button"
     >
-      文字按钮
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
     </button>
   </div>
    
@@ -66,28 +94,44 @@ exports[`Button base demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-danger"
       type="button"
     >
-      主要按钮
+      <span
+        class="t-button__text"
+      >
+        主要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-danger"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-danger"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-danger"
       type="button"
     >
-      文字按钮
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
     </button>
   </div>
 </div>
@@ -104,28 +148,44 @@ exports[`Button block demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-default t-size-full-width"
       type="button"
     >
-      主按钮
+      <span
+        class="t-button__text"
+      >
+        主按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
       type="button"
     >
-      文字按钮
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
     </button>
   </div>
 </div>
@@ -332,7 +392,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-s t-button--variant-base t-button--theme-default"
         type="button"
       >
-        主按钮
+        <span
+          class="t-button__text"
+        >
+          主按钮
+        </span>
       </button>
     </div>
      
@@ -343,7 +407,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-s t-button--variant-outline t-button--theme-default"
         type="button"
       >
-        次要按钮
+        <span
+          class="t-button__text"
+        >
+          次要按钮
+        </span>
       </button>
     </div>
      
@@ -354,7 +422,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-s t-button--variant-dashed t-button--theme-default"
         type="button"
       >
-        虚框按钮
+        <span
+          class="t-button__text"
+        >
+          虚框按钮
+        </span>
       </button>
     </div>
      
@@ -365,7 +437,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-s t-button--variant-text t-button--theme-default"
         type="button"
       >
-        文字按钮
+        <span
+          class="t-button__text"
+        >
+          文字按钮
+        </span>
       </button>
     </div>
   </div>
@@ -380,7 +456,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-m t-button--variant-base t-button--theme-default"
         type="button"
       >
-        主按钮
+        <span
+          class="t-button__text"
+        >
+          主按钮
+        </span>
       </button>
     </div>
      
@@ -391,7 +471,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-m t-button--variant-outline t-button--theme-default"
         type="button"
       >
-        次要按钮
+        <span
+          class="t-button__text"
+        >
+          次要按钮
+        </span>
       </button>
     </div>
      
@@ -402,7 +486,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
         type="button"
       >
-        虚框按钮
+        <span
+          class="t-button__text"
+        >
+          虚框按钮
+        </span>
       </button>
     </div>
      
@@ -413,7 +501,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-m t-button--variant-text t-button--theme-default"
         type="button"
       >
-        文字按钮
+        <span
+          class="t-button__text"
+        >
+          文字按钮
+        </span>
       </button>
     </div>
   </div>
@@ -428,7 +520,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-l t-button--variant-base t-button--theme-default"
         type="button"
       >
-        主按钮
+        <span
+          class="t-button__text"
+        >
+          主按钮
+        </span>
       </button>
     </div>
      
@@ -439,7 +535,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-l t-button--variant-outline t-button--theme-default"
         type="button"
       >
-        次要按钮
+        <span
+          class="t-button__text"
+        >
+          次要按钮
+        </span>
       </button>
     </div>
      
@@ -450,7 +550,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-l t-button--variant-dashed t-button--theme-default"
         type="button"
       >
-        虚框按钮
+        <span
+          class="t-button__text"
+        >
+          虚框按钮
+        </span>
       </button>
     </div>
      
@@ -461,7 +565,11 @@ exports[`Button size demo works fine 1`] = `
         class="t-button t-size-l t-button--variant-text t-button--theme-default"
         type="button"
       >
-        文字按钮
+        <span
+          class="t-button__text"
+        >
+          文字按钮
+        </span>
       </button>
     </div>
   </div>
@@ -477,28 +585,44 @@ exports[`Button theme demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      主要按钮
+      <span
+        class="t-button__text"
+      >
+        主要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-primary"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-primary"
       type="button"
     >
-      文字按钮
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
     </button>
   </div>
    
@@ -509,28 +633,44 @@ exports[`Button theme demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-danger"
       type="button"
     >
-      主要按钮
+      <span
+        class="t-button__text"
+      >
+        主要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-danger"
       type="button"
     >
-      次要按钮
+      <span
+        class="t-button__text"
+      >
+        次要按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-danger"
       type="button"
     >
-      虚框按钮
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-danger"
       type="button"
     >
-      文字按钮
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
     </button>
   </div>
 </div>

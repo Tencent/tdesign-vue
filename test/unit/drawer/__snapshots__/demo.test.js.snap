@@ -40,13 +40,21 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -198,7 +206,11 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-default"
       type="button"
     >
-      Open
+      <span
+        class="t-button__text"
+      >
+        Open
+      </span>
     </button>
   </div>
 </div>
@@ -240,14 +252,22 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
           class="t-button t-size-m t-button--variant-base t-button--theme-default"
           type="button"
         >
-          确定
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
         </button>
          
         <button
           class="t-button t-size-m t-button--variant-outline t-button--theme-default"
           type="button"
         >
-          取消
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
         </button>
       </div>
     </div>
@@ -286,13 +306,21 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            confrim
+            <span
+              class="t-button__text"
+            >
+              confrim
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            cancel
+            <span
+              class="t-button__text"
+            >
+              cancel
+            </span>
           </button>
         </div>
       </div>
@@ -332,14 +360,22 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            cancel
+            <span
+              class="t-button__text"
+            >
+              cancel
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default t-is-disabled"
             disabled="disabled"
             type="button"
           >
-            OK
+            <span
+              class="t-button__text"
+            >
+              OK
+            </span>
           </button>
         </div>
       </div>
@@ -350,7 +386,11 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
   >
-    Open(插槽定义)
+    <span
+      class="t-button__text"
+    >
+      Open(插槽定义)
+    </span>
   </button>
   
     
@@ -359,7 +399,11 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
   >
-    Open(属性定义)
+    <span
+      class="t-button__text"
+    >
+      Open(属性定义)
+    </span>
   </button>
   
     
@@ -368,7 +412,11 @@ exports[`Drawer Demo HeaderUsageExample wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
   >
-    Open(单独设置确认/取消按钮)
+    <span
+      class="t-button__text"
+    >
+      Open(单独设置确认/取消按钮)
+    </span>
   </button>
 </div>
 `;
@@ -522,7 +570,11 @@ exports[`Drawer Demo ModeUsageExample wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    Open
+    <span
+      class="t-button__text"
+    >
+      Open
+    </span>
   </button>
 </div>
 `;
@@ -559,13 +611,21 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -576,7 +636,11 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    Open
+    <span
+      class="t-button__text"
+    >
+      Open
+    </span>
   </button>
 </div>
 `;
@@ -616,13 +680,21 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -716,7 +788,11 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
       class="t-button t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      Open
+      <span
+        class="t-button__text"
+      >
+        Open
+      </span>
     </button>
   </div>
 </div>
@@ -757,13 +833,21 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -980,7 +1064,11 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
     class="btn-top-margin t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    Open
+    <span
+      class="t-button__text"
+    >
+      Open
+    </span>
   </button>
 </div>
 `;
@@ -993,7 +1081,11 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
   >
-    Open
+    <span
+      class="t-button__text"
+    >
+      Open
+    </span>
   </button>
 </div>
 `;
@@ -1074,13 +1166,21 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -1091,7 +1191,11 @@ exports[`Drawer Demo operation wroks fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    Open
+    <span
+      class="t-button__text"
+    >
+      Open
+    </span>
   </button>
 </div>
 `;
@@ -1142,13 +1246,21 @@ exports[`Drawer base demo works fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -1159,7 +1271,11 @@ exports[`Drawer base demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    Open a Drawer
+    <span
+      class="t-button__text"
+    >
+      Open a Drawer
+    </span>
   </button>
 </div>
 `;

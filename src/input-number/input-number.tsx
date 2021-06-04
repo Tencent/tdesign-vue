@@ -7,6 +7,7 @@ import ChevronUp from '../icon/chevron-up';
 import CLASSNAMES from '../utils/classnames';
 import props from '../../types/input-number/props';
 import { ChangeSource } from '../../types/input-number/TdInputNumberProps';
+import { addClickAnimation, removeClickAnimation } from '../utils/animation';
 
 const name = `${prefix}-input-number`;
 
@@ -187,6 +188,14 @@ export default Vue.extend({
       return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
   },
+  mounted() {
+    addClickAnimation(this.$refs.decrease as HTMLElement);
+    addClickAnimation(this.$refs.increase as HTMLElement);
+  },
+  beforeDestroy() {
+    removeClickAnimation(this.$refs.decrease as HTMLElement);
+    removeClickAnimation(this.$refs.increase as HTMLElement);
+  },
   methods: {
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
@@ -363,7 +372,7 @@ export default Vue.extend({
       <div {...this.cmptWrapClasses}>
         {
           this.theme !== 'normal'
-          && <span {...this.reduceClasses} {...this.reduceEvents}>
+          && <span ref="decrease" {...this.reduceClasses} {...this.reduceEvents}>
             {this.decreaseIcon}
           </span>
         }
@@ -377,7 +386,7 @@ export default Vue.extend({
         </div>
         {
           this.theme !== 'normal'
-          && <div {...this.addClasses} {...this.addEvents}>
+          && <div ref="increase" {...this.addClasses} {...this.addEvents}>
             {this.increaseIcon}
           </div>
         }

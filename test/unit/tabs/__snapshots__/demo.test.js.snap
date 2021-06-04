@@ -15,7 +15,11 @@ exports[`Tabs ban demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      切换到卡片型选项卡
+      <span
+        class="t-button__text"
+      >
+        切换到卡片型选项卡
+      </span>
     </button>
   </div>
    
@@ -152,7 +156,11 @@ exports[`Tabs combination demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      切换到卡片型选项卡
+      <span
+        class="t-button__text"
+      >
+        切换到卡片型选项卡
+      </span>
     </button>
   </div>
    
@@ -313,7 +321,11 @@ exports[`Tabs icon demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      切换到卡片型选项卡
+      <span
+        class="t-button__text"
+      >
+        切换到卡片型选项卡
+      </span>
     </button>
   </div>
    
@@ -460,36 +472,52 @@ exports[`Tabs position demo works fine 1`] = `
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       top
     
+      </span>
     </button>
      
     <button
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       right
     
+      </span>
     </button>
      
     <button
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       bottom
     
+      </span>
     </button>
      
     <button
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       left
     
+      </span>
     </button>
   </div>
    
@@ -562,18 +590,26 @@ exports[`Tabs size demo works fine 1`] = `
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       medium
     
+      </span>
     </button>
      
     <button
       class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       large
     
+      </span>
     </button>
   </div>
    

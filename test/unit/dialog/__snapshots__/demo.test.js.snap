@@ -6,7 +6,11 @@ exports[`Dialog async demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-default"
     type="button"
   >
-    异步加载类按钮
+    <span
+      class="t-button__text"
+    >
+      异步加载类按钮
+    </span>
   </button>
    
   <transition-stub
@@ -57,7 +61,11 @@ exports[`Dialog async demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
@@ -95,21 +103,33 @@ exports[`Dialog attach demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载在body
+    <span
+      class="t-button__text"
+    >
+      挂载在body
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载特定元素
+    <span
+      class="t-button__text"
+    >
+      挂载特定元素
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    挂载函数返回节点
+    <span
+      class="t-button__text"
+    >
+      挂载函数返回节点
+    </span>
   </button>
    
   <transition-stub
@@ -187,13 +207,21 @@ exports[`Dialog attach demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -271,13 +299,21 @@ exports[`Dialog attach demo works fine 1`] = `
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
             type="button"
           >
-            取消
+            <span
+              class="t-button__text"
+            >
+              取消
+            </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
-            确认
+            <span
+              class="t-button__text"
+            >
+              确认
+            </span>
           </button>
         </div>
       </div>
@@ -292,7 +328,11 @@ exports[`Dialog base demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    基础确认对话框
+    <span
+      class="t-button__text"
+    >
+      基础确认对话框
+    </span>
   </button>
    
   <transition-stub
@@ -343,13 +383,21 @@ exports[`Dialog base demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -365,28 +413,44 @@ exports[`Dialog custom body demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    隐藏标题
+    <span
+      class="t-button__text"
+    >
+      隐藏标题
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    隐藏底部
+    <span
+      class="t-button__text"
+    >
+      隐藏底部
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    渲染函数定义内容
+    <span
+      class="t-button__text"
+    >
+      渲染函数定义内容
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    插槽方式定义内容
+    <span
+      class="t-button__text"
+    >
+      插槽方式定义内容
+    </span>
   </button>
    
   <transition-stub
@@ -435,13 +499,21 @@ exports[`Dialog custom body demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -549,13 +621,21 @@ exports[`Dialog custom body demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -635,13 +715,21 @@ exports[`Dialog custom body demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -663,28 +751,44 @@ exports[`Dialog custom demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      隐藏标题
+      <span
+        class="t-button__text"
+      >
+        隐藏标题
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      隐藏底部
+      <span
+        class="t-button__text"
+      >
+        隐藏底部
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      渲染函数定义内容
+      <span
+        class="t-button__text"
+      >
+        渲染函数定义内容
+      </span>
     </button>
      
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      插槽方式定义内容
+      <span
+        class="t-button__text"
+      >
+        插槽方式定义内容
+      </span>
     </button>
      
     <transition-stub
@@ -734,13 +838,21 @@ exports[`Dialog custom demo works fine 1`] = `
                 class="t-button t-size-m t-button--variant-outline t-button--theme-default"
                 type="button"
               >
-                取消
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
               </button>
               <button
                 class="t-button t-size-m t-button--variant-base t-button--theme-default"
                 type="button"
               >
-                确认
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
               </button>
             </div>
           </div>
@@ -850,13 +962,21 @@ exports[`Dialog custom demo works fine 1`] = `
                 class="t-button t-size-m t-button--variant-outline t-button--theme-default"
                 type="button"
               >
-                取消
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
               </button>
               <button
                 class="t-button t-size-m t-button--variant-base t-button--theme-default"
                 type="button"
               >
-                确认
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
               </button>
             </div>
           </div>
@@ -937,13 +1057,21 @@ exports[`Dialog custom demo works fine 1`] = `
                 class="t-button t-size-m t-button--variant-outline t-button--theme-default"
                 type="button"
               >
-                取消
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
               </button>
               <button
                 class="t-button t-size-m t-button--variant-base t-button--theme-default"
                 type="button"
               >
-                确认
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
               </button>
             </div>
           </div>
@@ -968,21 +1096,33 @@ exports[`Dialog custom demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    按钮文字
+    <span
+      class="t-button__text"
+    >
+      按钮文字
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    按钮属性
+    <span
+      class="t-button__text"
+    >
+      按钮属性
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    自定义组件
+    <span
+      class="t-button__text"
+    >
+      自定义组件
+    </span>
   </button>
    
   <transition-stub
@@ -1033,13 +1173,21 @@ exports[`Dialog custom demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              关闭
+              <span
+                class="t-button__text"
+              >
+                关闭
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              前往支付
+              <span
+                class="t-button__text"
+              >
+                前往支付
+              </span>
             </button>
           </div>
         </div>
@@ -1096,14 +1244,22 @@ exports[`Dialog custom demo works fine 1`] = `
               type="button"
               variant="outline"
             >
-              我知道了
+              <span
+                class="t-button__text"
+              >
+                我知道了
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
               variant="base"
             >
-              前往购物车
+              <span
+                class="t-button__text"
+              >
+                前往购物车
+              </span>
             </button>
           </div>
         </div>
@@ -1159,14 +1315,22 @@ exports[`Dialog custom demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
               disabled="disabled"
               type="button"
             >
-              我知道了
+              <span
+                class="t-button__text"
+              >
+                我知道了
+              </span>
             </button>
           </div>
         </div>
@@ -1182,21 +1346,33 @@ exports[`Dialog drag demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    非模态对话框-可拖拽
+    <span
+      class="t-button__text"
+    >
+      非模态对话框-可拖拽
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    非模态对话框-不可拖拽
+    <span
+      class="t-button__text"
+    >
+      非模态对话框-不可拖拽
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    模态对话框-不支持拖拽
+    <span
+      class="t-button__text"
+    >
+      模态对话框-不支持拖拽
+    </span>
   </button>
    
   <br />
@@ -1261,13 +1437,21 @@ exports[`Dialog drag demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1328,13 +1512,21 @@ exports[`Dialog drag demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1395,13 +1587,21 @@ exports[`Dialog drag demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1469,13 +1669,21 @@ exports[`Dialog icon demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1541,13 +1749,21 @@ exports[`Dialog icon demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1613,13 +1829,21 @@ exports[`Dialog icon demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1685,13 +1909,21 @@ exports[`Dialog icon demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1717,21 +1949,33 @@ exports[`Dialog modal demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    模态对话框
+    <span
+      class="t-button__text"
+    >
+      模态对话框
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    非模态对话框
+    <span
+      class="t-button__text"
+    >
+      非模态对话框
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    模态对话框-不可拖拽
+    <span
+      class="t-button__text"
+    >
+      模态对话框-不可拖拽
+    </span>
   </button>
    
   <transition-stub
@@ -1794,13 +2038,21 @@ exports[`Dialog modal demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1861,13 +2113,21 @@ exports[`Dialog modal demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1929,13 +2189,21 @@ exports[`Dialog modal demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -1997,13 +2265,21 @@ exports[`Dialog modal demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2032,35 +2308,55 @@ exports[`Dialog plugin demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    dialog
+    <span
+      class="t-button__text"
+    >
+      dialog
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    handleDialogNode
+    <span
+      class="t-button__text"
+    >
+      handleDialogNode
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    confirm
+    <span
+      class="t-button__text"
+    >
+      confirm
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    alert
+    <span
+      class="t-button__text"
+    >
+      alert
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    DialogPlugin.confirm
+    <span
+      class="t-button__text"
+    >
+      DialogPlugin.confirm
+    </span>
   </button>
 </div>
 `;
@@ -2071,21 +2367,33 @@ exports[`Dialog position demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    默认位置
+    <span
+      class="t-button__text"
+    >
+      默认位置
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    垂直居中
+    <span
+      class="t-button__text"
+    >
+      垂直居中
+    </span>
   </button>
    
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    自定义top
+    <span
+      class="t-button__text"
+    >
+      自定义top
+    </span>
   </button>
    
   <transition-stub
@@ -2137,13 +2445,21 @@ exports[`Dialog position demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2198,13 +2514,21 @@ exports[`Dialog position demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2260,13 +2584,21 @@ exports[`Dialog position demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2282,7 +2614,11 @@ exports[`Dialog warning demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    提示反馈
+    <span
+      class="t-button__text"
+    >
+      提示反馈
+    </span>
   </button>
    
   <transition-stub
@@ -2345,13 +2681,21 @@ exports[`Dialog warning demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2363,7 +2707,11 @@ exports[`Dialog warning demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    成功反馈
+    <span
+      class="t-button__text"
+    >
+      成功反馈
+    </span>
   </button>
    
   <transition-stub
@@ -2426,13 +2774,21 @@ exports[`Dialog warning demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2444,7 +2800,11 @@ exports[`Dialog warning demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    警示反馈
+    <span
+      class="t-button__text"
+    >
+      警示反馈
+    </span>
   </button>
    
   <transition-stub
@@ -2507,7 +2867,11 @@ exports[`Dialog warning demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2519,7 +2883,11 @@ exports[`Dialog warning demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    错误反馈
+    <span
+      class="t-button__text"
+    >
+      错误反馈
+    </span>
   </button>
    
   <transition-stub
@@ -2582,7 +2950,11 @@ exports[`Dialog warning demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>
@@ -2594,7 +2966,11 @@ exports[`Dialog warning demo works fine 1`] = `
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
-    自定义icon
+    <span
+      class="t-button__text"
+    >
+      自定义icon
+    </span>
   </button>
    
   <transition-stub
@@ -2648,13 +3024,21 @@ exports[`Dialog warning demo works fine 1`] = `
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
               type="button"
             >
-              取消
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
             </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-default"
               type="button"
             >
-              确认
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
             </button>
           </div>
         </div>

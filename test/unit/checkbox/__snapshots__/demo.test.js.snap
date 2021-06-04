@@ -438,7 +438,11 @@ exports[`Checkbox link demo works fine 1`] = `
       class="t-button t-size-s t-button--variant-base t-button--theme-default"
       type="button"
     >
-      重置
+      <span
+        class="t-button__text"
+      >
+        重置
+      </span>
     </button>
   </div>
 </div>

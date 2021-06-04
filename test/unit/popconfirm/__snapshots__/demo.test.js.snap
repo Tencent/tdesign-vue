@@ -20,7 +20,11 @@ exports[`Popconfirm base demo works fine 1`] = `
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
           type="button"
         >
-          Hover
+          <span
+            class="t-button__text"
+          >
+            Hover
+          </span>
         </button>
         <div
           class="resize-sensor"
@@ -61,7 +65,11 @@ exports[`Popconfirm base demo works fine 1`] = `
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
           type="button"
         >
-          Hover
+          <span
+            class="t-button__text"
+          >
+            Hover
+          </span>
         </button>
         <div
           class="resize-sensor"

@@ -193,8 +193,12 @@ exports[`Calendar base demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -205,9 +209,13 @@ exports[`Calendar base demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -837,7 +845,11 @@ exports[`Calendar card demo works fine 1`] = `
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
-      今天（当前高亮日期）
+      <span
+        class="t-button__text"
+      >
+        今天（当前高亮日期）
+      </span>
     </button>
   </div>
    
@@ -2731,8 +2743,12 @@ exports[`Calendar cell demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -2743,9 +2759,13 @@ exports[`Calendar cell demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -3776,8 +3796,12 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -3788,9 +3812,13 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -5134,8 +5162,12 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-danger"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           隐藏周末
+            </span>
           </button>
         </div>
          
@@ -5146,9 +5178,13 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           今天
         
+            </span>
           </button>
         </div>
       </div>
@@ -5920,8 +5956,12 @@ exports[`Calendar events demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           隐藏周末
+            </span>
           </button>
         </div>
          
@@ -5932,9 +5972,13 @@ exports[`Calendar events demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           今天
         
+            </span>
           </button>
         </div>
       </div>
@@ -6740,8 +6784,12 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           隐藏周末
+            </span>
           </button>
         </div>
          
@@ -6752,9 +6800,13 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           今天
         
+            </span>
           </button>
         </div>
       </div>
@@ -7560,8 +7612,12 @@ exports[`Calendar filter demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           显示周末
+            </span>
           </button>
         </div>
          
@@ -7572,9 +7628,13 @@ exports[`Calendar filter demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           今天
         
+            </span>
           </button>
         </div>
       </div>
@@ -8262,8 +8322,12 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           隐藏周末
+            </span>
           </button>
         </div>
          
@@ -8274,9 +8338,13 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           今天
         
+            </span>
           </button>
         </div>
       </div>
@@ -9123,8 +9191,12 @@ exports[`Calendar head demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -9135,9 +9207,13 @@ exports[`Calendar head demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -9907,9 +9983,13 @@ exports[`Calendar mode demo works fine 1`] = `
             class="t-button t-size-s t-button--variant-base t-button--theme-default"
             type="button"
           >
-            
+            <span
+              class="t-button__text"
+            >
+              
           本月
         
+            </span>
           </button>
         </div>
       </div>
@@ -10296,8 +10376,12 @@ exports[`Calendar range demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -10308,9 +10392,13 @@ exports[`Calendar range demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -11061,8 +11149,12 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -11073,9 +11165,13 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
@@ -11692,8 +11788,12 @@ exports[`Calendar value demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           隐藏周末
+          </span>
         </button>
       </div>
        
@@ -11704,9 +11804,13 @@ exports[`Calendar value demo works fine 1`] = `
           class="t-button t-size-s t-button--variant-base t-button--theme-default"
           type="button"
         >
-          
+          <span
+            class="t-button__text"
+          >
+            
           今天
         
+          </span>
         </button>
       </div>
     </div>
