@@ -270,7 +270,6 @@ export default {
       const node = this.getActivedNode();
       if (!node) return;
       const data = this.getPlainData(node);
-      console.log('getActivePlainData', data);
       return data;
     },
     remove(node) {

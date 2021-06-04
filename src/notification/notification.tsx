@@ -71,13 +71,14 @@ export default Vue.extend({
     const close = this.renderClose();
     const content = this.renderContent();
     const footer = renderTNodeJSX(this, 'footer');
+    const title = renderTNodeJSX(this, 'title');
 
     return (
       <div class={`${name}`}>
         {icon}
         <div class={`${name}__main`}>
           <div class={`${name}__title__wrap`}>
-            <span class={`${name}__title`}>{this.title}</span>
+            <span class={`${name}__title`}>{title}</span>
             {close}
           </div>
           {content}

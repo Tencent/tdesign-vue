@@ -72,10 +72,10 @@ interface JSXRenderContext {
  * 通过JSX的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
  * @param vm 组件示例
  * @param name 插槽和属性名称
- * @param defaultNode 默认渲染内容，当属性值为 true 时默认渲染该内容
- * @example renderTNodeJSX(this, 'closeBtn')
- * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
- * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
+ * @param options 值可能为默认渲染节点，也可能是默认渲染节点和参数的集合
+ * @example renderTNodeJSX(this, 'closeBtn')  优先级 props function 大于 插槽
+ * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。 当属性值为 true 时则渲染 <t-icon-close />
+ * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })。 params 为渲染节点时所需的参数
  */
 export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
@@ -92,13 +92,12 @@ export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturn
 };
 
 /**
- * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与renderTNodeJSX区别在于 属性值为undefined时会渲染默认节点
+ * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与 renderTNodeJSX 区别在于 属性值为 undefined 时会渲染默认节点
  * @param vm 组件示例
  * @param name 插槽和属性名称
- * @param defaultNode 默认渲染内容，不传属性值时会渲染
  * @example renderTNodeJSX(this, 'closeBtn')
- * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)
- * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })
+ * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。this.closeBtn 为空时，则兜底渲染 <t-icon-close />
+ * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params }) 。params 为渲染节点时所需的参数
  */
 export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;

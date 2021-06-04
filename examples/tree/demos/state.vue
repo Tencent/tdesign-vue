@@ -56,13 +56,8 @@ export default {
       return variant;
     },
   },
-  mounted() {
-    const { tree } = this.$refs;
-    console.log('tree:', tree);
-  },
   methods: {
     icon(createElement, node) {
-      console.log('render icon', node);
       const { data } = node;
       let name = 'file';
       if (node.getChildren()) {
