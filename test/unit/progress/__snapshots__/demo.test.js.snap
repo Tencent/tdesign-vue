@@ -184,14 +184,15 @@ exports[`Progress circle demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-check-line t-progress--icon"
+              class="t-icon t-icon-check t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M283.568 489.36l45.264-45.264 135.76 135.76L690.88 353.6l45.264 45.264L509.84 625.12l-45.248 45.248z"
-                p-id="4547"
+                d="M402.9169184 763.46881088L407.35241728 759.72593536 407.35241728 759.72593536C409.12022784 757.9518048 410.63754048 756.02214208 411.90433344 753.98102464L873.9229504 292.3899263999999 828.6681152 247.13509119999992 384.0738432 691.1020115199999 161.04067712 467.62941951999994 115.7858432 512.8842540799999 362.1198656 759.70367488C373.1973664 770.84261696 390.437104 772.0960345599999 402.9169184 763.46881088Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
               />
             </svg>
           </div>
@@ -245,14 +246,13 @@ exports[`Progress circle demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-clear-line t-progress--icon"
+              class="t-icon t-icon-close t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M647.76 330.976l45.264 45.264-135.776 135.744 135.776 135.776-45.264 45.264L512 557.248l-135.744 135.776-45.264-45.264L466.736 512l-135.76-135.744 45.264-45.264 135.744 135.76z"
-                p-id="4422"
+                d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
               />
             </svg>
           </div>
@@ -306,14 +306,16 @@ exports[`Progress circle demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-error-line t-progress--icon"
+              class="t-icon t-icon-error t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M544 672v64h-64v-64h64z m0-384v320h-64V288h64z"
-                p-id="4297"
+                clip-rule="evenodd"
+                d="M544 128H480V704H544V128ZM544 832H480V896H544V832Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
               />
             </svg>
           </div>
@@ -931,7 +933,7 @@ exports[`Progress line demo works fine 1`] = `
           class="t-progress--info"
         >
           <svg
-            class="t-icon t-icon-clear-circle-filled t-progress--icon"
+            class="t-icon t-icon-close-circle-filled t-progress--icon"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
@@ -1277,14 +1279,13 @@ exports[`Progress size demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-clear-line t-progress--icon"
+              class="t-icon t-icon-close t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M647.76 330.976l45.264 45.264-135.776 135.744 135.776 135.776-45.264 45.264L512 557.248l-135.744 135.776-45.264-45.264L466.736 512l-135.76-135.744 45.264-45.264 135.744 135.76z"
-                p-id="4422"
+                d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
               />
             </svg>
           </div>
@@ -1332,14 +1333,16 @@ exports[`Progress size demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-error-line t-progress--icon"
+              class="t-icon t-icon-error t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M544 672v64h-64v-64h64z m0-384v320h-64V288h64z"
-                p-id="4297"
+                clip-rule="evenodd"
+                d="M544 128H480V704H544V128ZM544 832H480V896H544V832Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
               />
             </svg>
           </div>
@@ -1387,14 +1390,15 @@ exports[`Progress size demo works fine 1`] = `
             class="t-progress--info"
           >
             <svg
-              class="t-icon t-icon-check-line t-progress--icon"
+              class="t-icon t-icon-check t-progress--icon"
               version="1.1"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M283.568 489.36l45.264-45.264 135.76 135.76L690.88 353.6l45.264 45.264L509.84 625.12l-45.248 45.248z"
-                p-id="4547"
+                d="M402.9169184 763.46881088L407.35241728 759.72593536 407.35241728 759.72593536C409.12022784 757.9518048 410.63754048 756.02214208 411.90433344 753.98102464L873.9229504 292.3899263999999 828.6681152 247.13509119999992 384.0738432 691.1020115199999 161.04067712 467.62941951999994 115.7858432 512.8842540799999 362.1198656 759.70367488C373.1973664 770.84261696 390.437104 772.0960345599999 402.9169184 763.46881088Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
               />
             </svg>
           </div>
@@ -1601,14 +1605,16 @@ exports[`Progress status demo works fine 1`] = `
           class="t-progress--info"
         >
           <svg
-            class="t-icon t-icon-error-line t-progress--icon"
+            class="t-icon t-icon-error t-progress--icon"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M544 672v64h-64v-64h64z m0-384v320h-64V288h64z"
-              p-id="4297"
+              clip-rule="evenodd"
+              d="M544 128H480V704H544V128ZM544 832H480V896H544V832Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>
@@ -1666,7 +1672,7 @@ exports[`Progress status demo works fine 1`] = `
           class="t-progress--info"
         >
           <svg
-            class="t-icon t-icon-clear-circle-filled t-progress--icon"
+            class="t-icon t-icon-close-circle-filled t-progress--icon"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
@@ -1712,14 +1718,13 @@ exports[`Progress status demo works fine 1`] = `
           class="t-progress--info"
         >
           <svg
-            class="t-icon t-icon-clear-line t-progress--icon"
+            class="t-icon t-icon-close t-progress--icon"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M647.76 330.976l45.264 45.264-135.776 135.744 135.776 135.776-45.264 45.264L512 557.248l-135.744 135.776-45.264-45.264L466.736 512l-135.76-135.744 45.264-45.264 135.744 135.76z"
-              p-id="4422"
+              d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
             />
           </svg>
         </div>
@@ -1857,14 +1862,16 @@ exports[`Progress status demo works fine 1`] = `
           class="t-progress--info"
         >
           <svg
-            class="t-icon t-icon-error-line t-progress--icon"
+            class="t-icon t-icon-error t-progress--icon"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M544 672v64h-64v-64h64z m0-384v320h-64V288h64z"
-              p-id="4297"
+              clip-rule="evenodd"
+              d="M544 128H480V704H544V128ZM544 832H480V896H544V832Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </div>

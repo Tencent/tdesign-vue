@@ -2,7 +2,7 @@ import Vue, { VueConstructor, CreateElement, VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { omit } from '../utils/helper';
-import ClearIcon from '../icon/clear-circle-filled';
+import ClearIcon from '../icon/close-circle-filled';
 import props from '../../types/input/props';
 import { InputValue, TdInputProps } from '../../types/input/TdInputProps';
 import isFunction from 'lodash/isFunction';

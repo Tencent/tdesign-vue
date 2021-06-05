@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import TIconClearCircleFilled from '../icon/clear-circle-filled';
+import TIconClearCircleFilled from '../icon/close-circle-filled';
 import TIconLoading from '../icon/loading';
 import { UploadFile } from '../../types/upload/TdUploadProps';
 

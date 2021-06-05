@@ -10,14 +10,6 @@
       <div class="t-demo-icon-name">add-circle</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="add-rectangle"/>
-      <div class="t-demo-icon-name">add-rectangle</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="add"/>
-      <div class="t-demo-icon-name">add</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="app"/>
       <div class="t-demo-icon-name">app</div>
     </div>
@@ -150,10 +142,6 @@
       <div class="t-demo-icon-name">chevron-down-rectangle</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="chevron-down"/>
-      <div class="t-demo-icon-name">chevron-down</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="chevron-left-circle"/>
       <div class="t-demo-icon-name">chevron-left-circle</div>
     </div>
@@ -164,10 +152,6 @@
     <div class="t-demo-icon">
       <t-icon name="chevron-left-double"/>
       <div class="t-demo-icon-name">chevron-left-double</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="chevron-left"/>
-      <div class="t-demo-icon-name">chevron-left</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="chevron-right-circle"/>
@@ -182,10 +166,6 @@
       <div class="t-demo-icon-name">chevron-right-double</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="chevron-right"/>
-      <div class="t-demo-icon-name">chevron-right</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="chevron-up-circle"/>
       <div class="t-demo-icon-name">chevron-up-circle</div>
     </div>
@@ -194,24 +174,16 @@
       <div class="t-demo-icon-name">chevron-up-rectangle</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="chevron-up"/>
-      <div class="t-demo-icon-name">chevron-up</div>
+      <t-icon name="close-circle-filled"/>
+      <div class="t-demo-icon-name">close-circle-filled</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="clear-circle-filled"/>
-      <div class="t-demo-icon-name">clear-circle-filled</div>
+      <t-icon name="close-circle"/>
+      <div class="t-demo-icon-name">close-circle</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="clear-circle"/>
-      <div class="t-demo-icon-name">clear-circle</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="clear-rectangle"/>
-      <div class="t-demo-icon-name">clear-rectangle</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="close"/>
-      <div class="t-demo-icon-name">close</div>
+      <t-icon name="close-rectangle"/>
+      <div class="t-demo-icon-name">close-rectangle</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="cloud-download"/>
@@ -252,10 +224,6 @@
     <div class="t-demo-icon">
       <t-icon name="download"/>
       <div class="t-demo-icon-name">download</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="edit"/>
-      <div class="t-demo-icon-name">edit</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="ellipsis"/>
@@ -338,40 +306,16 @@
       <div class="t-demo-icon-name">fork</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="format-horizontal-align-bottom"/>
-      <div class="t-demo-icon-name">format-horizontal-align-bottom</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="format-horizontal-align-center"/>
-      <div class="t-demo-icon-name">format-horizontal-align-center</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="format-horizontal-align-top"/>
-      <div class="t-demo-icon-name">format-horizontal-align-top</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="format-vertical-align-center"/>
-      <div class="t-demo-icon-name">format-vertical-align-center</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="format-vertical-align-left"/>
-      <div class="t-demo-icon-name">format-vertical-align-left</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="format-vertical-align-right"/>
-      <div class="t-demo-icon-name">format-vertical-align-right</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="forward"/>
       <div class="t-demo-icon-name">forward</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="fullsreen-exit"/>
-      <div class="t-demo-icon-name">fullsreen-exit</div>
+      <t-icon name="fullscreen-exit"/>
+      <div class="t-demo-icon-name">fullscreen-exit</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="fullsreen"/>
-      <div class="t-demo-icon-name">fullsreen</div>
+      <t-icon name="fullscreen"/>
+      <div class="t-demo-icon-name">fullscreen</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="gender-female"/>
@@ -392,10 +336,6 @@
     <div class="t-demo-icon">
       <t-icon name="heart"/>
       <div class="t-demo-icon-name">heart</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="help-circle-filled"/>
-      <div class="t-demo-icon-name">help-circle-filled</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="help-circle"/>
@@ -498,10 +438,6 @@
       <div class="t-demo-icon-name">logo-windows</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="mail"/>
-      <div class="t-demo-icon-name">mail</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="menu-fold"/>
       <div class="t-demo-icon-name">menu-fold</div>
     </div>
@@ -574,10 +510,6 @@
       <div class="t-demo-icon-name">pin</div>
     </div>
     <div class="t-demo-icon">
-      <t-icon name="play-circle"/>
-      <div class="t-demo-icon-name">play-circle</div>
-    </div>
-    <div class="t-demo-icon">
       <t-icon name="poweroff"/>
       <div class="t-demo-icon-name">poweroff</div>
     </div>
@@ -600,10 +532,6 @@
     <div class="t-demo-icon">
       <t-icon name="refresh"/>
       <div class="t-demo-icon-name">refresh</div>
-    </div>
-    <div class="t-demo-icon">
-      <t-icon name="remove"/>
-      <div class="t-demo-icon-name">remove</div>
     </div>
     <div class="t-demo-icon">
       <t-icon name="rollback"/>
@@ -780,6 +708,122 @@
     <div class="t-demo-icon">
       <t-icon name="zoom-out"/>
       <div class="t-demo-icon-name">zoom-out</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-horizontal-align-bottom"/>
+      <div class="t-demo-icon-name">format-horizontal-align-bottom</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-horizontal-align-top"/>
+      <div class="t-demo-icon-name">format-horizontal-align-top</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-horizontal-align-center"/>
+      <div class="t-demo-icon-name">format-horizontal-align-center</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-vertical-align-center"/>
+      <div class="t-demo-icon-name">format-vertical-align-center</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-vertical-align-left"/>
+      <div class="t-demo-icon-name">format-vertical-align-left</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="format-vertical-align-right"/>
+      <div class="t-demo-icon-name">format-vertical-align-right</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="help-circle-filled"/>
+      <div class="t-demo-icon-name">help-circle-filled</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="add-rectangle"/>
+      <div class="t-demo-icon-name">add-rectangle</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="error"/>
+      <div class="t-demo-icon-name">error</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="add"/>
+      <div class="t-demo-icon-name">add</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="caret-down-small"/>
+      <div class="t-demo-icon-name">caret-down-small</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="chevron-down"/>
+      <div class="t-demo-icon-name">chevron-down</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="caret-right-small"/>
+      <div class="t-demo-icon-name">caret-right-small</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="chevron-left"/>
+      <div class="t-demo-icon-name">chevron-left</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="chevron-up"/>
+      <div class="t-demo-icon-name">chevron-up</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="close"/>
+      <div class="t-demo-icon-name">close</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="chevron-right"/>
+      <div class="t-demo-icon-name">chevron-right</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="control-platform"/>
+      <div class="t-demo-icon-name">control-platform</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="dashboard"/>
+      <div class="t-demo-icon-name">dashboard</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="edit-1"/>
+      <div class="t-demo-icon-name">edit-1</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="mail"/>
+      <div class="t-demo-icon-name">mail</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="edit"/>
+      <div class="t-demo-icon-name">edit</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="play-circle"/>
+      <div class="t-demo-icon-name">play-circle</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="precise-monitor"/>
+      <div class="t-demo-icon-name">precise-monitor</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="remove"/>
+      <div class="t-demo-icon-name">remove</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="resources-list"/>
+      <div class="t-demo-icon-name">resources-list</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="root-list"/>
+      <div class="t-demo-icon-name">root-list</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="user-circle"/>
+      <div class="t-demo-icon-name">user-circle</div>
+    </div>
+    <div class="t-demo-icon">
+      <t-icon name="round"/>
+      <div class="t-demo-icon-name">round</div>
     </div>
   </div>
 </template>
