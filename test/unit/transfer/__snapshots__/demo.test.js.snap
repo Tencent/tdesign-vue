@@ -16,7 +16,6 @@ exports[`Transfer base demo works fine 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t-transfer"
             type="checkbox"
             value=""
           />
@@ -556,7 +555,6 @@ exports[`Transfer base demo works fine 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t-transfer"
             type="checkbox"
             value=""
           />

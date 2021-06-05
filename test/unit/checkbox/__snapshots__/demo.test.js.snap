@@ -103,10 +103,11 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
 >
   <div>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-indeterminate"
     >
       <input
         class="t-checkbox__former"
+        indeterminate="indeterminate"
         type="checkbox"
         value=""
       />
@@ -358,6 +359,16 @@ exports[`Checkbox controlled demo works fine 1`] = `
 exports[`Checkbox link demo works fine 1`] = `
 <div>
   <div
+    class="demo-checkbox-row-desc"
+  >
+    
+    选中值: [
+  "上海"
+]
+  
+  </div>
+   
+  <div
     class="demo-checkbox-row"
   >
     <div
@@ -418,23 +429,17 @@ exports[`Checkbox link demo works fine 1`] = `
         </span>
       </label>
     </div>
-     
+  </div>
+   
+  <div
+    class="demo-checkbox-row"
+  >
     <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-default"
+      class="t-button t-size-s t-button--variant-base t-button--theme-default"
       type="button"
     >
       重置
     </button>
-  </div>
-   
-  <div
-    class="demo-checkbox-row-desc"
-  >
-    
-    选中值: [
-  "上海"
-]
-  
   </div>
 </div>
 `;
