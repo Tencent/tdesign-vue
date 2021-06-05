@@ -24,6 +24,12 @@ export default Vue.extend({
     };
   },
 
+  provide(): { checkboxGroup: any} {
+    return {
+      checkboxGroup: this,
+    };
+  },
+
   watch: {
     values: {
       immediate: true,

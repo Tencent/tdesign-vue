@@ -1,11 +1,16 @@
-import Vue, { VNode } from 'vue';
+import Vue, { VNode, VueConstructor } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import checkboxProps from '../../types/checkbox/props';
+import Group from './group';
 
 const name = `${prefix}-checkbox`;
 
-export default Vue.extend({
+interface CheckboxInstance extends Vue {
+  checkboxGroup: InstanceType<typeof Group>;
+}
+
+export default (Vue as VueConstructor<CheckboxInstance>).extend({
   name,
   inheritAttrs: false,
   model: {
@@ -13,6 +18,9 @@ export default Vue.extend({
     event: 'change',
   },
   props: { ...checkboxProps },
+  inject: {
+    checkboxGroup: { default: undefined },
+  },
   computed: {
     labelClasses(): ClassName {
       return [
@@ -23,9 +31,6 @@ export default Vue.extend({
           [CLASSNAMES.STATUS.indeterminate]: this.indeterminate,
         },
       ];
-    },
-    checkboxGroup(): any {
-      return this.getGroup();
     },
     isCheckAllOption(): boolean {
       return this.$attrs['data-name'] === 'TDESIGN_CHECK_ALL';
@@ -75,22 +80,6 @@ export default Vue.extend({
       if (this.checkboxGroup && this.checkboxGroup.handleCheckboxChange && !this.isCheckAllOption) {
         this.checkboxGroup.handleCheckboxChange({ checked: target.checked, e, option: this.$props });
       }
-    },
-    getGroup() {
-      const groupName = `${prefix}-checkbox-group`;
-      let parent = this.$parent;
-      let i = 0;
-      while (parent && parent.$options) {
-        if (parent.$options.name === groupName) {
-          break;
-        }
-        parent = parent.$parent;
-        i = i + 1;
-        if (i >= 2) {
-          break;
-        };
-      }
-      return parent;
     },
   },
 });
