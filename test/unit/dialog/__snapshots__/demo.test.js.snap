@@ -15,7 +15,7 @@ exports[`Dialog async demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -127,7 +127,7 @@ exports[`Dialog attach demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -213,7 +213,7 @@ exports[`Dialog attach demo works fine 1`] = `
   </transition-stub>
   <div
     class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-    style="z-index: 2500; display: none;"
+    style="display: none;"
   >
     <div
       class="t-dialog-mask"
@@ -307,7 +307,7 @@ exports[`Dialog base demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -403,7 +403,7 @@ exports[`Dialog custom body demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -465,7 +465,7 @@ exports[`Dialog custom body demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -514,7 +514,7 @@ exports[`Dialog custom body demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -583,7 +583,7 @@ exports[`Dialog custom body demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -710,7 +710,7 @@ exports[`Dialog custom demo works fine 1`] = `
     >
       <div
         class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-        style="z-index: 2500; display: none;"
+        style="display: none;"
       >
         <div
           class="t-dialog-mask"
@@ -773,7 +773,7 @@ exports[`Dialog custom demo works fine 1`] = `
     >
       <div
         class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-        style="z-index: 2500; display: none;"
+        style="display: none;"
       >
         <div
           class="t-dialog-mask"
@@ -823,7 +823,7 @@ exports[`Dialog custom demo works fine 1`] = `
     >
       <div
         class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-        style="z-index: 2500; display: none;"
+        style="display: none;"
       >
         <div
           class="t-dialog-mask"
@@ -893,7 +893,7 @@ exports[`Dialog custom demo works fine 1`] = `
     >
       <div
         class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-        style="z-index: 2500; display: none;"
+        style="display: none;"
       >
         <div
           class="t-dialog-mask"
@@ -1015,7 +1015,7 @@ exports[`Dialog custom demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -1079,7 +1079,7 @@ exports[`Dialog custom demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -1145,7 +1145,7 @@ exports[`Dialog custom demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -1237,7 +1237,7 @@ exports[`Dialog drag demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -1313,7 +1313,7 @@ exports[`Dialog drag demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
@@ -1382,7 +1382,7 @@ exports[`Dialog drag demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
@@ -1455,7 +1455,6 @@ exports[`Dialog icon demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top"
@@ -1530,7 +1529,6 @@ exports[`Dialog icon demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top"
@@ -1605,7 +1603,6 @@ exports[`Dialog icon demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top"
@@ -1680,7 +1677,6 @@ exports[`Dialog icon demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top"
@@ -1788,7 +1784,7 @@ exports[`Dialog modal demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -1864,7 +1860,7 @@ exports[`Dialog modal demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
@@ -1934,7 +1930,7 @@ exports[`Dialog modal demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
@@ -2004,7 +2000,7 @@ exports[`Dialog modal demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
@@ -2151,7 +2147,7 @@ exports[`Dialog position demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2215,7 +2211,7 @@ exports[`Dialog position demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2278,7 +2274,7 @@ exports[`Dialog position demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2353,7 +2349,7 @@ exports[`Dialog warning demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2436,7 +2432,7 @@ exports[`Dialog warning demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2519,7 +2515,7 @@ exports[`Dialog warning demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2596,7 +2592,7 @@ exports[`Dialog warning demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"
@@ -2673,7 +2669,7 @@ exports[`Dialog warning demo works fine 1`] = `
   >
     <div
       class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-      style="z-index: 2500; display: none;"
+      style="display: none;"
     >
       <div
         class="t-dialog-mask"

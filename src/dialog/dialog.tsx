@@ -92,6 +92,7 @@ export default Vue.extend({
           transform: 'translate(-50%, 0)',
           transformOrigin: '25% 25%',
           maxHeight: `calc(100% - ${topValue})`,
+          zIndex: this.zIndex,
         };
       } else if (placement === 'top') {
         topStyle = {

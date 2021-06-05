@@ -17,7 +17,7 @@
 :::
 
 ### 弹出模式
-push 模式下需设置 attach 为 body。（抽屉组件默认挂载到元素本身所在的位置）
+整个页面的 push 模式需设置 attach 为 body。（抽屉组件默认挂载到元素本身所在的位置）
 ::: demo demos/ModeUsageExample 
 :::
 
