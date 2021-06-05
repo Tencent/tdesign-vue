@@ -78,8 +78,8 @@ interface JSXRenderContext {
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })。 params 为渲染节点时所需的参数
  */
 export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
-  const params = typeof options === 'object' && 'params' in options ? options.params : null;
-  const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
+  const params = typeof options === 'object' && ('params' in options) ? options.params : null;
+  const defaultNode = typeof options === 'object' && ('defaultNode' in options) ? options.defaultNode : options;
   const propsNode = vm[name];
   if (propsNode === false) return;
   if (propsNode === true && defaultNode) {

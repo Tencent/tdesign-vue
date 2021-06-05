@@ -1,26 +1,26 @@
 <template>
-  <t-steps direction="vertical" :current="current" status="process">
-    <t-step title="步骤1" content="这里是提示文字">
+  <t-steps direction="vertical" :current="current" :onChange="onCurChanged">
+    <t-step-item :title="renderTitle" content="这里是提示文字">
       <template slot="extra" v-if="current === 0">
-        <t-button size="small" variant="base" @click="current++">Next</t-button>
+        <t-button size="small" variant="base" @click.stop="current++">Next</t-button>
       </template>
-    </t-step>
-    <t-step title="步骤2" content="这里是提示文字">
+    </t-step-item>
+    <t-step-item title="步骤2" content="这里是提示文字">
       <template slot="extra" v-if="current === 1">
-        <t-button size="small" variant="text" @click="current--">Pre</t-button>
-        <t-button size="small" variant="base" @click="current++">Next</t-button>
+        <t-button size="small" variant="text" @click.stop="current--">Pre</t-button>
+        <t-button size="small" variant="base" @click.stop="current++">Next</t-button>
       </template>
-    </t-step>
-    <t-step title="步骤3" content="这里是提示文字">
+    </t-step-item>
+    <t-step-item title="步骤3" content="这里是提示文字">
       <template slot="extra" v-if="current === 2">
-        <t-button size="small" variant="base" @click="current++">Next</t-button>
+        <t-button size="small" variant="base" @click.stop="current++">Next</t-button>
       </template>
-    </t-step>
-    <t-step title="步骤4" content="这里是提示文字">
+    </t-step-item>
+    <t-step-item title="步骤4" content="这里是提示文字">
       <template slot="extra" v-if="current === 3">
-        <t-button size="small" @click="current--">Pre</t-button>
+        <t-button size="small" @click.stop="current--">Pre</t-button>
       </template>
-    </t-step>
+    </t-step-item>
   </t-steps>
 </template>
 
@@ -30,6 +30,17 @@ export default {
     return {
       current: 1,
     };
+  },
+  methods: {
+    onCurChanged(cur, pre) {
+      this.current = cur;
+      console.log('TDesign Steps:', `current: ${cur}, previous: ${pre}`);
+    },
+    renderTitle() {
+      return (
+        <div class="demo">步骤1</div>
+      );
+    },
   },
 };
 </script>
