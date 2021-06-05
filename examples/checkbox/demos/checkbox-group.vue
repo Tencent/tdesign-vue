@@ -1,7 +1,7 @@
 <template>
   <div class="tdesign-checkbox-group">
     <div>
-      <t-checkbox :onChange="handleSelectAll">全选</t-checkbox>
+      <t-checkbox :checked="checkAll" :onChange="handleSelectAll">全选</t-checkbox>
       <t-checkbox v-model="disabled">禁用全部</t-checkbox>
     </div>
     <div>
@@ -32,6 +32,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    checkAll() {
+      return this.options.length === this.city.length;
+    },
   },
   methods: {
     handleSelectAll(checked) {
