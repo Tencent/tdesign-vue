@@ -57,6 +57,7 @@ export default Vue.extend({
       return [
         't-upload__dragger',
         { 't-upload__dragger-center': !this.loadingFile && !this.file },
+        { 't-upload__dragger-error': this.loadingFile && this.loadingFile.status === 'fail' },
       ];
     },
     size(): number {

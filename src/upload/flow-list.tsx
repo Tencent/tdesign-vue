@@ -121,6 +121,10 @@ export default Vue.extend({
       event.preventDefault();
     },
 
+    onViewClick(event: MouseEvent, file: UploadFile) {
+      this.$emit('imgPreview', event, file);
+    },
+
     renderDrager() {
       return (
         <div
@@ -172,7 +176,7 @@ export default Vue.extend({
                     )}
                     <div class="t-upload-card__mask">
                       {file.url && <span class="t-upload-card__mask__item">
-                        <TIconBrowse/>
+                        <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
                       </span>}
                       <span class="t-upload-card__mask__item" onClick={(e: MouseEvent) => this.remove({ e, index, file })}>
                         <TIconDelete/>

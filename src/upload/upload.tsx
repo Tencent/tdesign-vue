@@ -9,6 +9,7 @@ import xhr from './xhr';
 import { UploadFile } from '../../types/upload/TdUploadProps';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
+import TDialog from '../dialog';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
 import props from '../../types/upload/props';
@@ -31,6 +32,7 @@ export default Vue.extend({
     SingleFile,
     ImageCard,
     FlowList,
+    TDialog,
   },
 
   model: {
@@ -48,6 +50,8 @@ export default Vue.extend({
       // 等待上传的文件队列
       toUploadFiles: [],
       errorMsg: '',
+      showImageViewDialog: false,
+      showImageViewUrl: '',
     };
   },
 
@@ -79,6 +83,9 @@ export default Vue.extend({
     showUploadList(): boolean {
       return this.multiple && ['file-flow', 'image-flow'].includes(this.theme);
     },
+    showImgDialog(): boolean {
+      return ['image', 'image-flow', 'custom'].includes(this.theme);
+    },
     tipsClasses(): ClassName {
       return ['t-upload__tips t-upload__small', { 't-upload__tips-imgcard': this.showImgCard }];
     },
@@ -88,6 +95,13 @@ export default Vue.extend({
   },
 
   methods: {
+    // handle event of preview img dialog event
+    handlePreviewImg(event: MouseEvent, file: UploadFile) {
+      if (!file.url) throw new Error('Error file');
+      this.showImageViewUrl = file.url;
+      this.showImageViewDialog = true;
+    },
+
     handleChange(event: HTMLInputEvent): void {
       const { files } = event.target;
       if (this.disabled) return;
@@ -280,6 +294,12 @@ export default Vue.extend({
       (this.$refs.input as HTMLInputElement).value = '';
     },
 
+    // close image view dialog
+    cancelPreviewImgDialog() {
+      this.showImageViewDialog = false;
+      this.showImageViewUrl = '';
+    },
+
     getDefaultTrigger() {
       if (this.theme === 'file-input' || this.showUploadList) {
         return <TButton variant='outline'>选择文件</TButton>;
@@ -368,6 +388,7 @@ export default Vue.extend({
             loadingFile={this.loadingFile}
             toUploadFiles={this.toUploadFiles}
             max={this.max}
+            onImgPreview={this.handlePreviewImg}
           ></ImageCard>
         )}
         {this.showUploadList && (
@@ -380,12 +401,28 @@ export default Vue.extend({
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}
+            onImgPreview={this.handlePreviewImg}
             onChange={this.handleDragChange}
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
           >
             <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
           </FlowList>
+        )}
+        {this.showImgDialog && (
+          <TDialog
+            visible={this.showImageViewDialog}
+            showOverlay
+            width='auto'
+            top='10%'
+            class='t-upload-dialog'
+            footer={false}
+            header={false}
+            onClose={this.cancelPreviewImgDialog}>
+              <p class='t-dialog__body-img-box'>
+                <img class='' src={this.showImageViewUrl} alt='' />
+              </p>
+          </TDialog>
         )}
         {!this.errorMsg && this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}
         {this.errorMsg && <small class={this.errorClasses}>{this.errorMsg}</small>}
