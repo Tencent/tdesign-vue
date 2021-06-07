@@ -36,7 +36,7 @@ exports[`Transfer base demo works fine 1`] = `
       class="t-transfer-list__body"
     >
       <div
-        class="t-transfer-list__content"
+        class="t-transfer-list__content narrow-scrollbar"
       >
         <div
           class="t-checkbox-group"
