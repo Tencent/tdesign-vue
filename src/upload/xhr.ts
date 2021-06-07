@@ -24,12 +24,12 @@ export default function xhr({
   });
   formData.append(name, file.raw);
 
+  xhr.open('post', action, true);
+
   // custom request headers
   Object.keys(headers).forEach((key) => {
     xhr.setRequestHeader(key, headers[key]);
   });
-
-  xhr.open('post', action, true);
 
   xhr.onerror = (event: ProgressEvent) => onError({ event, file });
 
