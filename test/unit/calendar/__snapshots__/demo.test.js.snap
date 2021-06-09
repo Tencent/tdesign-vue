@@ -11,7 +11,7 @@ exports[`Calendar base demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -74,7 +74,7 @@ exports[`Calendar base demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -863,7 +863,7 @@ exports[`Calendar card demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -926,7 +926,7 @@ exports[`Calendar card demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -1746,7 +1746,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -1809,7 +1809,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -2561,7 +2561,7 @@ exports[`Calendar cell demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -2624,7 +2624,7 @@ exports[`Calendar cell demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -3614,7 +3614,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -3677,7 +3677,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -4980,7 +4980,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -5043,7 +5043,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -5774,7 +5774,7 @@ exports[`Calendar events demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -5837,7 +5837,7 @@ exports[`Calendar events demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -6602,7 +6602,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -6665,7 +6665,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -7430,7 +7430,7 @@ exports[`Calendar filter demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -7493,7 +7493,7 @@ exports[`Calendar filter demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -8140,7 +8140,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -8203,7 +8203,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         </div>
          
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-month"
         >
           <div
             class="t-select-wrap"
@@ -9009,7 +9009,7 @@ exports[`Calendar head demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -9072,7 +9072,7 @@ exports[`Calendar head demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -9856,7 +9856,7 @@ exports[`Calendar mode demo works fine 1`] = `
         class="t-calendar__control-section"
       >
         <div
-          class="t-calendar__control-section-cell"
+          class="t-calendar__control-section-cell t-calendar__control-section-year"
         >
           <div
             class="t-select-wrap"
@@ -10194,7 +10194,7 @@ exports[`Calendar range demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -10257,7 +10257,7 @@ exports[`Calendar range demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -10967,7 +10967,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -11030,7 +11030,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
@@ -11606,7 +11606,7 @@ exports[`Calendar value demo works fine 1`] = `
       class="t-calendar__control-section"
     >
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-year"
       >
         <div
           class="t-select-wrap"
@@ -11669,7 +11669,7 @@ exports[`Calendar value demo works fine 1`] = `
       </div>
        
       <div
-        class="t-calendar__control-section-cell"
+        class="t-calendar__control-section-cell t-calendar__control-section-month"
       >
         <div
           class="t-select-wrap"
