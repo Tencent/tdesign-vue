@@ -22,7 +22,7 @@ export default Vue.extend({
   methods: {
     parseFlex(flex: any) {
       if (typeof flex === 'number') {
-        return `${flex} ${flex} auto`;
+        return `${flex} ${flex} 0`;
       }
       if (/^\d+(\.\d+)?(px|em|rem|%)$/.test(flex)) {
         return `0 0 ${flex}`;
