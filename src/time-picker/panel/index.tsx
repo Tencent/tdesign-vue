@@ -1,15 +1,18 @@
 import Vue, { VueConstructor } from 'vue';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { createPopper } from '@popperjs/core';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import ResizeSensor from 'css-element-queries/src/ResizeSensor';
+
 import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../type';
 import { componentName, EPickerCols } from '../constant';
 import { panelProps } from './props';
-import ResizeSensor from 'css-element-queries/src/ResizeSensor';
-import panelCol from './panelCol';
+import PanelCol from './panel-col';
 import TButton from '../../button';
 
-
 const name = `${componentName}-panel`;
+
+dayjs.extend(customParseFormat);
 
 export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
   name,
@@ -20,21 +23,22 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
     };
   },
   components: {
-    panelCol,
+    PanelCol,
+    TButton,
   },
   props: panelProps(),
   computed: {
-    sectioncomponentName() {
+    sectionComponentName() {
       return `${name}-section`;
     },
     classNames() {
       return this.rangePicker ? [
         name,
-        this.sectioncomponentName,
+        this.sectionComponentName,
       ] : [name];
     },
     value() {
-      return this.moment.map(el => el || moment());
+      return this.dayjs.map(el => el || dayjs());
     },
     rangePicker() {
       return this.value.length > 1;
@@ -117,64 +121,38 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
     },
     renderFooter() {
       const confirmAction = this.confirmBtnClick.bind(this);
-      return <div class={`${this.sectioncomponentName}__footer`}>
+      return <div class={`${this.sectionComponentName}__footer`}>
         {
-          this.rangePicker || <TButton theme="default" onClick={this.nowAction}>此刻</TButton>
+          this.rangePicker || <t-button theme="primary" variant="text" onClick={this.nowAction}>此刻</t-button>
         }
-        <TButton class={`${this.sectioncomponentName}__footer-button`}  onClick={confirmAction}>确定</TButton>
+        <t-button theme="primary" variant="base" class={`${this.sectionComponentName}__footer-button`}
+                 onClick={confirmAction}>确定</t-button>
       </div>;
     },
-    renderHeader(index: number) {
-      let time;
-      if (this.cols.includes(EPickerCols.zh)) {
-        // 凌晨/早上/上午/下午/晚上
-        time = moment(this.value[index]).locale('zh-cn')
-          .format(this.format)
-          .replace(/(凌晨|早上)/, '上午')
-          .replace(/(晚上)/, '下午');
-      } else {
-        time = moment(this.value[index]).locale('en')
-          .format(this.format);
-      }
-      return <div class={`${name}__header`}>
-        {
-          time
-        }
-      </div>;
-    },
+
     renderBody() {
-      return <div class={`${this.sectioncomponentName}__body`}>
+      return <div class={`${this.sectionComponentName}__body`}>
         {
           this.renderSinglePicker(0)
         }
         {
-          this.rangePicker
-          && <div class={`${name}__gap`}>
-            <div class={`${name}__gap-top`}>
-              至
-            </div>
-          </div>
-        }
-        {
           this.rangePicker && this.renderSinglePicker(1)
         }
-    </div>;
+      </div>;
     },
     renderSinglePicker(index: number) {
       const val = this.value[index];
       const ref = `panelCol_${index}`;
       return <div class={`${name}`}>
-        {this.renderHeader(index)}
         <panel-col
           ref={ref}
           value={val}
-          range={this.range}
           cols={this.cols}
           steps={this.steps}
           hideDisabledTime={this.hideDisabledTime}
           disableTime={this.disableTime}
           format={this.format}
-          ontime-pick={(col: EPickerCols, time: string|number) => this.handleTimePick(col, time, index)}>
+          ontime-pick={(col: EPickerCols, time: string | number) => this.handleTimePick(col, time, index)}>
         </panel-col>
       </div>;
     },
@@ -188,9 +166,9 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
      * 时间 item 点击选择处理函数
      * @param col 选择的哪一列 上午/下午 hour minute second am/pm
      * @param time 选择的时间 如果col是：上午/下午或者am/pm 则time是 string，如果是hour或minute或second则time是 number
-     * @param isEnd 是否是结束时间
+     * @param index
      */
-    handleTimePick(col: EPickerCols, time: string|number, index: number) {
+    handleTimePick(col: EPickerCols, time: string | number, index: number) {
       this.$emit('time-pick', col, time, index, this.value[index]);
     },
   },
@@ -198,12 +176,12 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
     const { classNames } = this;
     return <transition name={`${name}_animation`}>
       <div
-          class={`${classNames.join(' ')} ${name}__container`}
-          ref="panel"
-          v-show={this.isShowPanel}
-          >
-          {this.renderBody()}
-          {this.renderFooter()}
+        class={`${classNames.join(' ')} ${name}__container`}
+        ref="panel"
+        v-show={this.isShowPanel}
+      >
+        {this.renderBody()}
+        {this.renderFooter()}
       </div>
     </transition>;
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-block">
-    <t-time-picker format="HH:m:s a" :disableTime="disableTime" />
+    <t-time-picker format="hh:mm:ss a" :disableTime="disableTime" :hideDisabledTime="false" />
   </div>
 </template>
 
@@ -8,12 +8,11 @@
 export default {
   name: 'twelveHours',
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
-    disableTime(h, m, s) {
-      return (((h < 13) || ((h === 13) && (m < 30))) && (s > 0));
+    disableTime(h, m) {
+      return h < 6 || m < 30;
     },
   },
 };

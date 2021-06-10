@@ -1,8 +1,9 @@
-import moment from 'moment';
+import { PropType } from 'vue';
+import dayjs from 'dayjs';
+
 import { BooleanType } from '../props';
 import * as Props from '../../../types/time-picker/props';
 import { EPickerCols } from '../constant';
-import { PropType } from 'vue';
 
 const ElementRefType = {
   type: typeof Element === 'undefined' ? Object : Element,
@@ -27,13 +28,9 @@ export const panelProps = () => ({
   refDom: {
     ...ElementRefType,
   },
-  moment: {
-    type: Array as PropType<Array<moment.Moment | undefined>>,
-    default: () => [moment()] as Array<moment.Moment | undefined>,
-  },
-  range: {
-    type: Array as PropType<Array<moment.Moment>>,
-    default: () => [] as Array<moment.Moment>,
+  dayjs: {
+    type: Array as PropType<Array<dayjs.Dayjs | undefined>>,
+    default: () => [dayjs()] as Array<dayjs.Dayjs | undefined>,
   },
   format: {
     type: String,
@@ -70,14 +67,14 @@ export const panelColProps = () => ({
     default: () => [EPickerCols.zh, EPickerCols.hour, EPickerCols.minute, EPickerCols.second],
   },
   value: {
-    type: Object as PropType<moment.Moment>,
+    type: Object as PropType<dayjs.Dayjs>,
     ...({
-      default: undefined,
+      default: () => (dayjs()),
     }),
   },
   range: {
-    type: Array as PropType<Array<moment.Moment>>,
-    default: () => [] as Array<moment.Moment>,
+    type: Array as PropType<Array<dayjs.Dayjs>>,
+    default: () => [] as Array<dayjs.Dayjs>,
   },
   steps: {
     type: Array as PropType<Array<string | number>>,

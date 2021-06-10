@@ -1,5 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
 import { TimePickerPanelColInstance } from '../type';
 import { panelColProps } from './props';
 import { componentName, EPickerCols, zhList, enList, pmList } from '../constant';
@@ -7,8 +9,13 @@ import { componentName, EPickerCols, zhList, enList, pmList } from '../constant'
 import { prefix } from '../../config';
 
 const name = `${prefix}-time-picker-pane-col`;
+
+// TODO 不是很好的方式 如果主题样式改变item的高度 这样并不会同步
 const timeItemHeight = 40;
+const timeItemMargin = 8;
 const middleGapHeight = 20;
+
+dayjs.extend(customParseFormat);
 
 export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
   name,
@@ -20,28 +27,30 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
   },
   props: panelColProps(),
   watch: {
-    value(newMVal: moment.Moment) {
+    value(newMVal: dayjs.Dayjs) {
+      const { hour, minute, second, zh, en } = EPickerCols;
       const newH = newMVal.get('hour');
       const newM = newMVal.get('minute');
       const newS = newMVal.get('second');
-      this.scrollToTime(EPickerCols.hour, newH, 'smooth');
-      this.scrollToTime(EPickerCols.minute, newM, 'smooth');
-      this.scrollToTime(EPickerCols.second, newS, 'smooth');
+      this.scrollToTime(hour, newH, 'smooth');
+      this.scrollToTime(minute, newM, 'smooth');
+      this.scrollToTime(second, newS, 'smooth');
       const meridianZH = this.isPm ? zhList[1] : zhList[0];
       const meridianEN = this.isPm ? enList[1] : enList[0];
-      this.scrollToTime(EPickerCols.zh, meridianZH, 'smooth');
-      this.scrollToTime(EPickerCols.en, meridianEN, 'smooth');
+      this.scrollToTime(zh, meridianZH, 'smooth');
+      this.scrollToTime(en, meridianEN, 'smooth');
     },
   },
   computed: {
     valStr() {
       // 这里的操作会修改数据，所以不能使用value直接格式化，否则出现loop update的问题
       // 需要生成一个新的时间对象
-      return moment(this.value).locale('en')
-        .format('a HH:mm:ss');
+      return dayjs(this.value, this.format)
+        .locale('en')
+        .format(this.format);
     },
     isPm() {
-      return moment.localeData().isPM(this.valStr);
+      return dayjs(this.valStr, this.format).hour() >= 12;
     },
   },
   methods: {
@@ -53,7 +62,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           res = enList;
           break;
         case EPickerCols.hour:
-          count = (/[h]{1}/.test(this.format)) ? 11 : 23;
+          count = /[h]{1}/.test(this.format) ? 11 : 23;
           res = this.generateTimeList(count, Number(this.steps[0]));
           break;
         case EPickerCols.minute:
@@ -74,7 +83,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       const res = [];
       let count = num;
       while (count >= 0) {
-        if (!(/[h]{1}/.test(this.format)) && count < 10) {
+        if (!/[h]{1}/.test(this.format) && count < 10) {
           res.push(`0${count}`);
         } else {
           res.push(count);
@@ -83,18 +92,55 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       }
       return res.reverse();
     },
-    scrollToTime(col: EPickerCols, time: number | string, behavior: ScrollBehavior = 'auto') {
-      let timeIndex: number;
-      if (col === EPickerCols.en) {
-        timeIndex = enList.indexOf(time as string);
-      } else if (col === EPickerCols.zh) {
-        timeIndex = zhList.indexOf(time as string);
-      } else {
-        timeIndex = Number(time);
-        if (col === EPickerCols.hour && (/[h]{1}/.test(this.format))) {
-          timeIndex %= 12;
+    calculateTimeIdx(time: number | string, step: number | string, type: EPickerCols): number {
+      let timeIdx = time;
+      if (this.hideDisabledTime && this.disableTime) {
+        // 如果有hideDisableTime 需要进行filter计算它的time(index)
+        const { hour, minute, second } = EPickerCols;
+        const currentHour = Number(this.value.get('hour'));
+        const currentMin = Number(this.value.get('minute'));
+        const currentSec = Number(this.value.get('second'));
+
+        const timeList = this.generateColTime(type);
+        switch (type) {
+          case hour:
+            timeIdx = timeList.filter(t => !this.disableTime(Number(t), currentMin, currentSec)).indexOf(timeIdx);
+            break;
+          case minute:
+            timeIdx = timeList.filter(t => !this.disableTime(currentHour, Number(t), currentSec)).indexOf(timeIdx);
+            break;
+          case second:
+            timeIdx = timeList.filter(t => !this.disableTime(currentHour, currentMin, Number(t))).indexOf(timeIdx);
+            break;
         }
       }
+      return Math.floor(Number(timeIdx) / Number(step));
+    },
+    // 处理滚动距离
+    scrollToTime(col: EPickerCols, time: number | string, behavior: ScrollBehavior = 'auto') {
+      let timeIndex: number;
+      const { en, zh, hour, minute, second } = EPickerCols;
+      switch (col) {
+        case en:
+          timeIndex = enList.indexOf(time as string);
+          break;
+        case zh:
+          timeIndex = zhList.indexOf(time as string);
+          break;
+        case hour:
+          timeIndex = this.calculateTimeIdx(time, this.steps[0], hour);
+          if (/[h]{1}/.test(this.format)) {
+            timeIndex %= 12;
+          }
+          break;
+        case minute:
+          timeIndex = this.calculateTimeIdx(time, this.steps[1], minute);
+          break;
+        case second:
+          timeIndex = this.calculateTimeIdx(time, this.steps[2], second);
+          break;
+      }
+
       const distance = this.calcScrollYDistance(timeIndex);
       const scroller = this.$refs[`${col}_scroller`] as Element;
       if (!distance || !scroller) return;
@@ -105,26 +151,31 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         behavior,
       });
     },
+
     initTimeScrollPos() {
       this.cols.forEach((col: EPickerCols) => {
         this.scrollToTime(col, this.splitValue[col]);
       });
     },
     generateColRows(col: EPickerCols) {
-      return this.generateColTime(col)
-        .map((el: number | string) => {
-          const isCurrent = this.isCurrent(col, el);
-          if (isCurrent) {
-            this.splitValue[col] = el;
-          }
-          const classNames = [
-            `${componentName}-panel__body-scroll-item`,
-            this.timeItemCanUsed(col, el) ? '' : `${prefix}-is-disabled`,
-            isCurrent ? `${prefix}-is-current` : '',
-            !this.timeItemCanUsed(col, el) && this.hideDisabledTime ? `${prefix}-is-hidden` : '',
-          ];
-          return <li class={classNames} onclick={(e: MouseEvent) => this.handletTimeItemClick(e, col, el)}>{el}</li>;
-        });
+      return this.generateColTime(col).map((el: number | string) => {
+        if (!this.timeItemCanUsed(col, el) && this.hideDisabledTime) return null;
+
+        const isCurrent = this.isCurrent(col, el);
+        if (isCurrent) {
+          this.splitValue[col] = el;
+        }
+        const classNames = [
+          `${componentName}-panel__body-scroll-item`,
+          this.timeItemCanUsed(col, el) ? '' : `${prefix}-is-disabled`,
+          isCurrent ? `${prefix}-is-current` : '',
+        ];
+        return (
+          <li class={classNames} onclick={(e: MouseEvent) => this.handletTimeItemClick(e, col, el)}>
+            {el}
+          </li>
+        );
+      });
     },
     handletTimeItemClick(e: MouseEvent, col: EPickerCols, time: number | string) {
       const canUse = this.timeItemCanUsed(col, time);
@@ -134,7 +185,8 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       }
     },
     calcScrollYDistance(index: number): number {
-      return (index * timeItemHeight) + ((timeItemHeight - middleGapHeight) / 2);
+      const timeItemTotalHeight = timeItemHeight + timeItemMargin;
+      return (index * timeItemTotalHeight) + ((timeItemTotalHeight - middleGapHeight) / 2);
     },
     /**
      * 判断是否是当前时间
@@ -152,7 +204,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         case EPickerCols.second:
           colVal = this.value.get(col);
           // 处理使用 12 小时制，但是获取的 hour 超过12的问题
-          if (col === EPickerCols.hour && (/[h]{1}/.test(this.format))) {
+          if (col === EPickerCols.hour && /[h]{1}/.test(this.format)) {
             colVal %= 12;
           }
           return colVal === Number(colItem);
@@ -164,20 +216,11 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
      * @param time
      */
     timeItemCanUsed(col: EPickerCols, time: string | number): boolean {
-      const [start, end] = this.range;
-      const startIsPm = start && moment.localeData().isPM(start.format());
-      const endIsPm = end && moment.localeData().isPM(end.format());
       const newH = Number(this.value.get('hour'));
       const newM = Number(this.value.get('minute'));
       const newS = Number(this.value.get('second'));
-      let timeTmp;
+      let timeTmp: number;
       switch (col) {
-        case EPickerCols.en:
-        case EPickerCols.zh:
-          timeTmp = pmList.includes(time as string);
-          if (endIsPm === false && timeTmp) return false;
-          if (startIsPm === false && !timeTmp) return false;
-          break;
         case EPickerCols.hour:
           timeTmp = Number(time);
           if (this.disableTime && this.disableTime(timeTmp, newM, newS)) {
@@ -203,18 +246,14 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       return this.cols.map(col => this.renderScroller(col));
     },
     renderScroller(col: EPickerCols) {
-      return <ul class={`${componentName}-panel__body-scroll`} ref={`${col}_scroller`}>
-        {
-          this.generateColRows(col)
-        }
-      </ul>;
+      return (
+        <ul class={`${componentName}-panel__body-scroll`} ref={`${col}_scroller`}>
+          {this.generateColRows(col)}
+        </ul>
+      );
     },
   },
   render() {
-    return <div class={`${componentName}-panel__body`}>
-      {
-        this.renderScrollers()
-      }
-    </div>;
+    return <div class={`${componentName}-panel__body`}>{this.renderScrollers()}</div>;
   },
 });

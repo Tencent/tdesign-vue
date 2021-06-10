@@ -1,6 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 
-import { TimeInputInstance, TimeInputType } from './type/index.d';
+import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './type';
+import RenderComponent from '../utils/render-component';
 import {
   componentName,
   meridianZHList,
@@ -9,19 +10,23 @@ import {
 } from './constant';
 
 import { prefix } from '../config';
+
 const name = `${prefix}-time-picker-input`;
 
 export default (Vue as VueConstructor<TimeInputInstance>).extend({
   name,
 
+  components: {
+    RenderComponent,
+  },
   props: {
     // 格式化标准
     format: {
       type: String,
     },
     // 时间
-    moment: {
-      type: [Object, undefined],
+    dayjs: {
+      type: [Object, Array, undefined],
       default: undefined,
     },
     // placeholder
@@ -31,19 +36,30 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
     allowInput: {
       type: Boolean,
     },
+    isRangePicker: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  computed: {
+    displayTimeList(): Array<InputTime | undefined> {
+      return this.isRangePicker ? this.dayjs : [this.dayjs];
+    },
   },
 
   methods: {
     // 输入事件
-    onInput(e: any, type: TimeInputType): void {
+    onInput(e: Event, type: TimeInputType, index: number): void {
       if (!this.allowInput) return;
-      const { target, data } = e;
-      const { value } = (target as HTMLInputElement);
+      const { target, data } = e as InputEvent;
+      const { value } = target;
       const { $props: { format } } = this;
+      const curDayJs = this.displayTimeList[index];
       let number = Number(value);
       if (
         (
-          this.moment[type] === '00'
+          curDayJs[type] === '00'
           && number === 0
         ) || value === ''
       ) {
@@ -52,6 +68,7 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
         this.$emit('change', {
           value: -1,
           type,
+          index,
         });
       } else if (`${number}`.length > 2) {
         // 当前输入的数值大于两位数
@@ -66,17 +83,20 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
           case 'hour':
             if (number > ((/[h]{1}/.test(format)) ? 12 : 24) || number < 0) {
               emitChange = false;
-            };
+            }
+            ;
             break;
           case 'minute':
             if (number > 59 || number < 0) {
               emitChange = false;
-            };
+            }
+            ;
             break;
           case 'second':
             if (number > 59 || number < 0) {
               emitChange = false;
-            };
+            }
+            ;
             break;
           default:
             break;
@@ -84,22 +104,24 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
         if (emitChange) this.$emit('change', {
           value: number,
           type,
+          index,
         });
       }
       // 完全受控
       this.$nextTick(() => {
-        if (this.moment[type] !== undefined) this.setInputValue(this.moment[type], target);
+        if (curDayJs[type] !== undefined) this.setInputValue(curDayJs[type], target);
       });
     },
     // 失去焦点
-    onBlur(_e: any, type: TimeInputType): void {
+    onBlur(_e: Event, type: TimeInputType, index: number): void {
       // todo 无填充需要填充
-      if (this.moment[type] === undefined) {
-        this.$emit('blurDefault', type);
+      const curDayJs = this.displayTimeList[index];
+      if (curDayJs[type] === undefined) {
+        this.$emit('blurDefault', type, index);
       }
     },
     // 键盘监听
-    onKeydown(e: any, type: TimeInputType): void {
+    onKeydown(e: any, type: TimeInputType, index: number): void {
       if (!this.allowInput) return;
       const { which } = e;
       const {
@@ -107,11 +129,12 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
           format,
         },
       } = this;
+      const curDayJs = this.displayTimeList[index];
       // 增加减少
       if ([38, 40].includes(which)) {
         if (type === 'meridian') return;
         // 加减
-        const current = this.moment[type] ? Number(this.moment[type]) : 0;
+        const current = curDayJs[type] ? Number(curDayJs[type]) : 0;
         const operate = (which === 38 ? 1 : -1);
         let result = current + operate;
         // 边界检测
@@ -133,6 +156,7 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
         this.$emit('change', {
           value: result,
           type,
+          index,
         });
       } else if ([37, 39].includes(which)) {
         // 移动方向
@@ -149,8 +173,8 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
       }
     },
     // 切换上下午
-    onToggleMeridian() {
-      this.$emit('toggleMeridian');
+    onToggleMeridian(index: number) {
+      this.$emit('toggleMeridian', index);
     },
     // 设置输入框原始值，使其完全受控
     setInputValue(v: string | number, input: HTMLInputElement): void {
@@ -170,16 +194,17 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
       const {
         $props: {
           format,
-          moment,
           placeholder,
+          allowInput,
         },
       } = this;
+
       // 判定placeholder展示
-      if (
-        moment.hour === undefined
-        && moment.minute === undefined
-        && moment.second === undefined
-      ) {
+      function isEmptyDayjs(val: InputTime) {
+        return (val === undefined) || (val.hour === undefined && val.minute === undefined && val.second === undefined);
+      }
+      const isEmptyVal = this.displayTimeList.every(date => isEmptyDayjs(date));
+      if (isEmptyVal) {
         return <span class={`${componentName}__input-placeholder`}>{placeholder}</span>;
       }
       const itemClasses = [
@@ -188,57 +213,62 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
       const inputClass = [
         `${componentName}__input-item-input`,
       ];
-      // 渲染组件 - 默认有小时输入
-      const render = [
-        <span class={itemClasses}>
+      const render: any = [];
+      this.displayTimeList.forEach((inputTime: InputTime | undefined, index: number) => {
+        if (index > 0) render.push('-');
+        // 渲染组件 - 默认有小时输入
+        render.push(<span class={itemClasses}>
           <input
             class={inputClass}
-            value={moment.hour}
+            value={inputTime.hour}
+            disabled={!allowInput}
             id="time"
-            onKeydown={(e: Event) => this.onKeydown(e, 'hour')}
-            onInput={(e: Event) => this.onInput(e, 'hour')}
-            onBlur={(e: Event) => this.onBlur(e, 'hour')} />
-        </span>,
-      ];
-      // 判断分秒输入
-      if (/[hH]{1,2}:m{1,2}/.test(format)) {
-        // 需要分钟输入器
-        render.push(<span class={itemClasses}>
-            &#58;<input
-              class={inputClass}
-              value={moment.minute}
-              onKeydown={(e: Event) => this.onKeydown(e, 'minute')}
-              onInput={(e: Event) => this.onInput(e, 'minute')}
-              onBlur={(e: Event) => this.onBlur(e, 'minute')} />
-          </span>);
-        // 需要秒输入器
-        if (/[hH]{1,2}:m{1,2}:s{1,2}/.test(format)) {
+            onKeydown={(e: Event) => this.onKeydown(e, 'hour', index)}
+            onInput={(e: Event) => this.onInput(e, 'hour', index)}
+            onBlur={(e: Event) => this.onBlur(e, 'hour', index)}/>
+        </span>);
+        // 判断分秒输入
+        if (/[hH]{1,2}:m{1,2}/.test(format)) {
+          // 需要分钟输入器
           render.push(<span class={itemClasses}>
-            &#58;<input
+              &#58;<input
+            class={inputClass}
+            value={inputTime.minute}
+            disabled={!allowInput}
+            onKeydown={(e: Event) => this.onKeydown(e, 'minute', index)}
+            onInput={(e: Event) => this.onInput(e, 'minute', index)}
+            onBlur={(e: Event) => this.onBlur(e, 'minute', index)}/>
+            </span>);
+          // 需要秒输入器
+          if (/[hH]{1,2}:m{1,2}:s{1,2}/.test(format)) {
+            render.push(<span class={itemClasses}>
+              &#58;<input
               class={inputClass}
-              value={moment.second}
-              onKeydown={(e: Event) => this.onKeydown(e, 'second')}
-              onInput={(e: Event) => this.onInput(e, 'second')}
-              onBlur={(e: Event) => this.onBlur(e, 'second')} />
+              value={inputTime.second}
+              disabled={!allowInput}
+              onKeydown={(e: Event) => this.onKeydown(e, 'second', index)}
+              onInput={(e: Event) => this.onInput(e, 'second', index)}
+              onBlur={(e: Event) => this.onBlur(e, 'second', index)}/>
+              </span>);
+          }
+        }
+        // 判断上下午位置
+        if ((/[h]{1}/.test(format)) && (format.includes('A') || format.includes('a'))) {
+          const tmp = (meridianBeforeFormatREG.test(format) ? meridianZHList : meridianENList)
+            .find((item: { value: string; label: string }) => item.value === inputTime.meridian);
+          const text = tmp ? tmp.label : '';
+          // 放在前面or后面
+          render[meridianBeforeFormatREG.test(format) ? 'unshift' : 'push'](<span
+            class={itemClasses}
+            onClick={() => this.onToggleMeridian(index)}>
+              <input
+                readonly
+                class={inputClass}
+                value={text}
+                onKeydown={(e: Event) => this.onKeydown(e, 'meridian', index)}/>
             </span>);
         }
-      }
-      // 判断上下午位置
-      if ((/[h]{1}/.test(format)) && (format.includes('A') || format.includes('a'))) {
-        const text = (meridianBeforeFormatREG.test(format) ? meridianZHList : meridianENList)
-          .find((item: { value: string; label: string }) => item.value === moment.meridian).label;
-        // 放在前面or后面
-        render[meridianBeforeFormatREG.test(format) ? 'unshift' : 'push'](<span
-          class={itemClasses}
-          onClick={this.onToggleMeridian}>
-            <input
-              readonly
-              class={inputClass}
-              value={text}
-              onKeydown={(e: Event) => this.onKeydown(e, 'meridian')} />
-          </span>);
-      }
-
+      });
       return render;
     },
     // ==== 渲染逻辑层 END ====

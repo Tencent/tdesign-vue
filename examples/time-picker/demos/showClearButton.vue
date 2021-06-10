@@ -1,7 +1,7 @@
 <template>
   <div class="tdesign-demo-block">
     <h1>具备清空按钮</h1>
-    <t-time-picker />
+    <t-time-picker v-model="time1" clearable />
     <h1>禁止清空按钮</h1>
     <t-time-picker :clearable="false" />
   </div>
@@ -12,6 +12,7 @@ export default {
   name: 'clearable',
   data() {
     return {
+      time1: '11:12:10',
     };
   },
 };

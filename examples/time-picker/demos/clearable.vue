@@ -1,18 +1,25 @@
 <template>
   <div class="tdesign-demo-block">
-    <t-time-picker format="a hh:mm:ss" :disableTime="disableTime" placeholder="选择时间" />
+    <h1>具备清空按钮</h1>
+    <t-time-picker v-model="time1" />
+    <h1>禁止清空按钮</h1>
+    <t-time-picker v-model="time2" :clearable="disabledClear" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'twelveHours',
+  name: 'clearable',
   data() {
-    return {};
+    return {
+      time1: '11:12:10',
+      time2: '11:12:10',
+      disabledClear: false,
+    };
   },
   methods: {
-    disableTime(h) {
-      return h < 6;
+    onClear() {
+      this.time1 = null;
     },
   },
 };

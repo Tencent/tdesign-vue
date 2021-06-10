@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-demo-block">
     <h1>允许输入</h1>
-    <t-time-picker allowInput />
+    <t-time-picker v-model="time1" allowInput />
     <h1>禁止输入</h1>
-    <t-time-picker :allowInput="false" />
+    <t-time-picker v-model="time2" :allowInput="false" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   name: 'canInput',
   data() {
     return {
-      time1: '20:22',
+      time1: '20:22:33',
       time2: '22:22:22',
     };
   },

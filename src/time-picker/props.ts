@@ -1,5 +1,6 @@
 import { meridianBeforeFormatREG, meridianAfterFormatREG } from './constant';
 import { PropType } from 'vue';
+import dayjs from 'dayjs';
 
 // 布尔类型
 export const BooleanType = {
@@ -53,6 +54,9 @@ export default () => ({
   },
   defaultValue: {
     ...ObjectArrayType,
+    ...({
+      default: dayjs(),
+    }),
   },
   disabled: {
     ...BooleanType,
@@ -97,6 +101,9 @@ export default () => ({
   },
   value: {
     ...ObjectArrayType,
+    ...({
+      default: dayjs(),
+    }),
   },
   onChange: {
     ...FunctionType,
