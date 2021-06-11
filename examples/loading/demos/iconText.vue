@@ -1,3 +1,5 @@
 <template>
-  <t-loading :loading="true" :text="'加载中'"></t-loading>
+  <div>
+    <t-loading text="拼命加载中..."></t-loading>
+  </div>
 </template>

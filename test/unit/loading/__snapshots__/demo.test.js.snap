@@ -1,52 +1,245 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading base demo works fine 1`] = `
-<span
-  class="t-loading"
+exports[`Loading attach demo works fine 1`] = `
+<div
+  class="loading-attach-demo"
 >
-  <svg
-    class="t-icon t-icon-loading"
+  <div
+    class="loading-attach-demo__title"
+    id="alice"
   >
-    <use
-      xlink:href="#t-icon-loading"
+    Hello, I'm Alice.
+  </div>
+   
+  <div
+    class="loading-attach-demo__title"
+    id="bob"
+  >
+    Hi, I'm Bob.
+  </div>
+   
+  <div
+    class="t-loading t-size-m t-loading-mask t-loading-lock t-loading__wrapper v-transfer-dom"
+  >
+    <svg
+      class="t-icon-loading"
+      height="36px"
+      style="display: inline-block; vertical-align: middle;"
+      viewBox="0 0 200 200"
+      width="36px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        id="load"
+      >
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="right"
+          x1="150"
+          x2="150"
+          y1="20"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(1, 81, 217);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="right"
+          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+          style="fill: url(#right);"
+        />
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="left"
+          x1="50"
+          x2="50"
+          y1="0"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(255, 255, 255);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="left"
+          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+          style="fill: url(#left);"
+        />
+        <circle
+          class="top"
+          cx="100"
+          cy="10"
+          r="10"
+          style="fill: #0151D9;"
+        />
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Loading base demo works fine 1`] = `
+<div
+  class="t-loading-demo"
+>
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+  >
+    <svg
+      class="t-icon-loading"
+      height="36px"
+      style="display: inline-block; vertical-align: middle;"
+      viewBox="0 0 200 200"
+      width="36px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        id="load"
+      >
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="right"
+          x1="150"
+          x2="150"
+          y1="20"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(1, 81, 217);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="right"
+          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+          style="fill: url(#right);"
+        />
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="left"
+          x1="50"
+          x2="50"
+          y1="0"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(255, 255, 255);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="left"
+          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+          style="fill: url(#left);"
+        />
+        <circle
+          class="top"
+          cx="100"
+          cy="10"
+          r="10"
+          style="fill: #0151D9;"
+        />
+      </g>
+    </svg>
+  </div>
+   
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+  >
+    <img
+      class="t-icon-loading"
+      src="https://tdesign.gtimg.com/icon/loading.png"
     />
-  </svg>
-</span>
+  </div>
+</div>
 `;
 
 exports[`Loading delay demo works fine 1`] = `
-<div>
-  <slot />
-   
-  <div
-    class="switch-demo"
-  >
-    
-    Loading state:
-    
+<div
+  class="loading-delay-demo"
+>
+  <div>
     <div
-      class="t-switch t-size-m"
+      class="t-loading t-size-s t-loading-lock v-transfer-dom"
+    />
+     
+    <div
+      class="switch-demo"
     >
-      <span
-        class="t-switch__handle"
-      />
-      <div
-        class="t-switch__content t-size-m"
-      />
+      <!---->
     </div>
   </div>
+   
+  <br />
+   
+  <div
+    class="wrap"
+  >
+    <div
+      class="t-loading-parent__relative"
+    >
+      <div
+        class="wrap"
+      >
+        
+      </div>
+    </div>
+  </div>
+   
+  <button
+    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      快速重新加载数据（无loading）
+    </span>
+  </button>
+   
+  <button
+    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      慢速重新加载数据
+    </span>
+  </button>
 </div>
 `;
 
 exports[`Loading fullscreen demo works fine 1`] = `
 <div>
-  <slot />
+  <div
+    class="t-loading t-size-m t-loading-fullscreen t-loading-lock v-transfer-dom"
+  />
    
   <div
     class="switch-demo"
   >
     
-    Loading state:
+    全局加载开关（开启加载1秒后自动归位）：
     
     <div
       class="t-switch t-size-m"
@@ -63,75 +256,113 @@ exports[`Loading fullscreen demo works fine 1`] = `
 `;
 
 exports[`Loading iconText demo works fine 1`] = `
-<span
-  class="t-loading t-loading-text"
->
-  <svg
-    class="t-icon t-icon-loading"
-  >
-    <use
-      xlink:href="#t-icon-loading"
-    />
-  </svg>
-  <span>
-    加载中
-  </span>
-</span>
-`;
-
-exports[`Loading indicatorSlot demo works fine 1`] = `
 <div>
-  <span
-    class="t-loading"
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
   >
     <svg
-      class="t-icon t-icon-loading"
+      class="t-icon-loading"
+      height="36px"
+      style="display: inline-block; vertical-align: middle;"
+      viewBox="0 0 200 200"
+      width="36px"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <use
-        xlink:href="#t-icon-loading"
-      />
+      <g
+        id="load"
+      >
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="right"
+          x1="150"
+          x2="150"
+          y1="20"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(1, 81, 217);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="right"
+          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+          style="fill: url(#right);"
+        />
+        <lineargradient
+          gradientUnits="userSpaceOnUse"
+          id="left"
+          x1="50"
+          x2="50"
+          y1="0"
+          y2="180"
+        >
+          <stop
+            offset="0"
+            style="stop-color: rgb(255, 255, 255);"
+          />
+          <stop
+            offset="1"
+            style="stop-color: rgb(128, 168, 236);"
+          />
+        </lineargradient>
+        <path
+          class="left"
+          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+          style="fill: url(#left);"
+        />
+        <circle
+          class="top"
+          cx="100"
+          cy="10"
+          r="10"
+          style="fill: #0151D9;"
+        />
+      </g>
     </svg>
-  </span>
+    <div
+      class="t-loading-text"
+    >
+      拼命加载中...
+    </div>
+  </div>
 </div>
-`;
-
-exports[`Loading preventScrollThrough demo works fine 1`] = `
-<span
-  class="t-loading"
->
-  <svg
-    class="t-icon t-icon-loading"
-  >
-    <use
-      xlink:href="#t-icon-loading"
-    />
-  </svg>
-</span>
 `;
 
 exports[`Loading service demo works fine 1`] = `
 <div>
   <div
-    class="switch-demo"
+    class="loading-service-demo"
+    id="loading-service-demo"
   >
-    
-    开启函数方式调用:
-    
-    <div
-      class="t-switch t-size-m"
-    >
-      <span
-        class="t-switch__handle"
-      />
-      <div
-        class="t-switch__content t-size-m"
-      />
-    </div>
+    我是service的容器
   </div>
    
-  <div>
-    函数方式调用只支持全屏模式
-  </div>
+  <button
+    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      服务方式加载（全屏）
+    </span>
+  </button>
+   
+  <button
+    class="t-loading__btn t-button t-size-s t-button--variant-base t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      服务方式加载（局部）
+    </span>
+  </button>
 </div>
 `;
 
@@ -139,67 +370,277 @@ exports[`Loading size demo works fine 1`] = `
 <div
   class="loading-demo"
 >
-  <span>
-    小
-  </span>
-   
-  <span
-    class="t-loading t-size-s"
-  >
-    <svg
-      class="t-icon t-icon-loading"
+  <div>
+    <div
+      class="t-loading t-size-s t-loading-lock v-transfer-dom"
     >
-      <use
-        xlink:href="#t-icon-loading"
-      />
-    </svg>
-  </span>
+      <svg
+        class="t-icon-loading"
+        height="14px"
+        style="display: inline-block; vertical-align: middle;"
+        viewBox="0 0 200 200"
+        width="14px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="load"
+        >
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="right"
+            x1="150"
+            x2="150"
+            y1="20"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(1, 81, 217);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="right"
+            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+            style="fill: url(#right);"
+          />
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="left"
+            x1="50"
+            x2="50"
+            y1="0"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(255, 255, 255);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="left"
+            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+            style="fill: url(#left);"
+          />
+          <circle
+            class="top"
+            cx="100"
+            cy="10"
+            r="10"
+            style="fill: #0151D9;"
+          />
+        </g>
+      </svg>
+      <div
+        class="t-loading-text"
+      >
+        加载中（小）...
+      </div>
+    </div>
+  </div>
    
-  <span>
-    中
-  </span>
-   
-  <span
-    class="t-loading"
-  >
-    <svg
-      class="t-icon t-icon-loading"
+  <div>
+    <div
+      class="t-loading t-size-m t-loading-lock v-transfer-dom"
     >
-      <use
-        xlink:href="#t-icon-loading"
-      />
-    </svg>
-  </span>
+      <svg
+        class="t-icon-loading"
+        height="36px"
+        style="display: inline-block; vertical-align: middle;"
+        viewBox="0 0 200 200"
+        width="36px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="load"
+        >
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="right"
+            x1="150"
+            x2="150"
+            y1="20"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(1, 81, 217);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="right"
+            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+            style="fill: url(#right);"
+          />
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="left"
+            x1="50"
+            x2="50"
+            y1="0"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(255, 255, 255);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="left"
+            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+            style="fill: url(#left);"
+          />
+          <circle
+            class="top"
+            cx="100"
+            cy="10"
+            r="10"
+            style="fill: #0151D9;"
+          />
+        </g>
+      </svg>
+      <div
+        class="t-loading-text"
+      >
+        加载中（中）...
+      </div>
+    </div>
+  </div>
    
-  <span>
-    大
-  </span>
-   
-  <span
-    class="t-loading t-size-l"
-  >
-    <svg
-      class="t-icon t-icon-loading"
+  <div>
+    <div
+      class="t-loading t-size-l t-loading-lock v-transfer-dom"
     >
-      <use
-        xlink:href="#t-icon-loading"
-      />
-    </svg>
-  </span>
+      <svg
+        class="t-icon-loading"
+        height="56px"
+        style="display: inline-block; vertical-align: middle;"
+        viewBox="0 0 200 200"
+        width="56px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="load"
+        >
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="right"
+            x1="150"
+            x2="150"
+            y1="20"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(1, 81, 217);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="right"
+            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+            style="fill: url(#right);"
+          />
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="left"
+            x1="50"
+            x2="50"
+            y1="0"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(255, 255, 255);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="left"
+            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+            style="fill: url(#left);"
+          />
+          <circle
+            class="top"
+            cx="100"
+            cy="10"
+            r="10"
+            style="fill: #0151D9;"
+          />
+        </g>
+      </svg>
+      <div
+        class="t-loading-text"
+      >
+        加载中（大）...
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Loading text demo works fine 1`] = `
-<span
-  class="t-loading"
+<div
+  class="t-loading-demo"
 >
-  加载中...
-</span>
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+  >
+    <div
+      class="t-loading-text"
+    >
+      静态文字加载中...
+    </div>
+  </div>
+   
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+  >
+    <div
+      class="t-loading-text"
+    >
+      <span>
+        变量文字加载中...
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+  >
+    <div
+      class="t-loading-text"
+    >
+      插槽文字加载中...
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Loading wrap demo works fine 1`] = `
 <div
-  class="loading-demo"
+  class="loading-wrap-demo"
 >
   <div
     class="t-loading-parent__relative"
@@ -207,21 +648,116 @@ exports[`Loading wrap demo works fine 1`] = `
     <div>
       this is loading component
     </div>
+     
+    <div>
+      this is loading component
+    </div>
+     
+    <div>
+      this is loading component
+    </div>
+     
+    <div>
+      this is loading component
+    </div>
+     
+    <div>
+      this is loading component
+    </div>
     <div
       class="t-loading__wrapper t-loading-mask"
     >
-      <span
-        class="t-loading"
+      <svg
+        class="t-icon-loading"
+        height="14px"
+        style="display: inline-block; vertical-align: middle;"
+        viewBox="0 0 200 200"
+        width="14px"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-icon t-icon-loading"
+        <g
+          id="load"
         >
-          <use
-            xlink:href="#t-icon-loading"
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="right"
+            x1="150"
+            x2="150"
+            y1="20"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(1, 81, 217);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="right"
+            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
+            style="fill: url(#right);"
           />
-        </svg>
-      </span>
+          <lineargradient
+            gradientUnits="userSpaceOnUse"
+            id="left"
+            x1="50"
+            x2="50"
+            y1="0"
+            y2="180"
+          >
+            <stop
+              offset="0"
+              style="stop-color: rgb(255, 255, 255);"
+            />
+            <stop
+              offset="1"
+              style="stop-color: rgb(128, 168, 236);"
+            />
+          </lineargradient>
+          <path
+            class="left"
+            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
+            style="fill: url(#left);"
+          />
+          <circle
+            class="top"
+            cx="100"
+            cy="10"
+            r="10"
+            style="fill: #0151D9;"
+          />
+        </g>
+      </svg>
     </div>
+  </div>
+   
+  <br />
+   
+  <div>
+    <button
+      class="t-button t-size-s t-button--variant-base t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        加载中
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-s t-button--variant-base t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        加载完成
+      </span>
+    </button>
   </div>
 </div>
 `;
