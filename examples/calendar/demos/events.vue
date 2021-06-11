@@ -20,7 +20,8 @@
     />
     <div  v-else class="demo-list">
       <t-list>
-        <t-list-item v-for="(item, index) in histories" :key="index">
+        <t-list-item v-for="(item, index) in histories"
+                     :key="index">
           【{{ histories.length - index }}】{{ item }}，并得到组件传出的参数（您看控制台）...
         </t-list-item>
       </t-list>

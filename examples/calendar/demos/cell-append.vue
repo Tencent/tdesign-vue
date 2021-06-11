@@ -1,8 +1,10 @@
 <template>
   <t-calendar>
-    <div slot="cellAppend" slot-scope="scope">
-      <div class="cellAppend" @click="showCellData(scope.data)"
-           :class="getCellAppendCls(scope.data)">
+    <div slot="cellAppend"
+         slot-scope="scope">
+      <div class="cellAppend"
+           :class="getCellAppendCls(scope.data)"
+           @click="showCellData(scope.data)">
         {{ getDateStr(scope.data) }}
       </div>
     </div>

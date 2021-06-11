@@ -57,27 +57,13 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
     <table class="t-calendar__table">
       <thead class="t-calendar__table-head">
         <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell">
-            三
-          </th>
-          <th class="t-calendar__table-head-cell">
-            四
-          </th>
-          <th class="t-calendar__table-head-cell">
-            五
-          </th>
-          <th class="t-calendar__table-head-cell">
-            六
-          </th>
-          <th class="t-calendar__table-head-cell">
-            日
-          </th>
-          <th class="t-calendar__table-head-cell">
-            一
-          </th>
-          <th class="t-calendar__table-head-cell">
-            二
-          </th>
+          <th class="t-calendar__table-head-cell">三</th>
+          <th class="t-calendar__table-head-cell">四</th>
+          <th class="t-calendar__table-head-cell">五</th>
+          <th class="t-calendar__table-head-cell">六</th>
+          <th class="t-calendar__table-head-cell">日</th>
+          <th class="t-calendar__table-head-cell">一</th>
+          <th class="t-calendar__table-head-cell">二</th>
         </tr>
       </thead>
       <tbody class="t-calendar__table-body">
@@ -324,21 +310,11 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
     <table class="t-calendar__table">
       <thead class="t-calendar__table-head">
         <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell">
-            一
-          </th>
-          <th class="t-calendar__table-head-cell">
-            二
-          </th>
-          <th class="t-calendar__table-head-cell">
-            三
-          </th>
-          <th class="t-calendar__table-head-cell">
-            四
-          </th>
-          <th class="t-calendar__table-head-cell">
-            五
-          </th>
+          <th class="t-calendar__table-head-cell">一</th>
+          <th class="t-calendar__table-head-cell">二</th>
+          <th class="t-calendar__table-head-cell">三</th>
+          <th class="t-calendar__table-head-cell">四</th>
+          <th class="t-calendar__table-head-cell">五</th>
           <!---->
           <!---->
         </tr>
@@ -627,27 +603,13 @@ exports[`Calendar :props :range 1`] = `
     <table class="t-calendar__table">
       <thead class="t-calendar__table-head">
         <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell">
-            一
-          </th>
-          <th class="t-calendar__table-head-cell">
-            二
-          </th>
-          <th class="t-calendar__table-head-cell">
-            三
-          </th>
-          <th class="t-calendar__table-head-cell">
-            四
-          </th>
-          <th class="t-calendar__table-head-cell">
-            五
-          </th>
-          <th class="t-calendar__table-head-cell">
-            六
-          </th>
-          <th class="t-calendar__table-head-cell">
-            日
-          </th>
+          <th class="t-calendar__table-head-cell">一</th>
+          <th class="t-calendar__table-head-cell">二</th>
+          <th class="t-calendar__table-head-cell">三</th>
+          <th class="t-calendar__table-head-cell">四</th>
+          <th class="t-calendar__table-head-cell">五</th>
+          <th class="t-calendar__table-head-cell">六</th>
+          <th class="t-calendar__table-head-cell">日</th>
         </tr>
       </thead>
       <tbody class="t-calendar__table-body">
@@ -861,27 +823,13 @@ exports[`Calendar :props :theme 1`] = `
     <table class="t-calendar__table">
       <thead class="t-calendar__table-head">
         <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell">
-            一
-          </th>
-          <th class="t-calendar__table-head-cell">
-            二
-          </th>
-          <th class="t-calendar__table-head-cell">
-            三
-          </th>
-          <th class="t-calendar__table-head-cell">
-            四
-          </th>
-          <th class="t-calendar__table-head-cell">
-            五
-          </th>
-          <th class="t-calendar__table-head-cell">
-            六
-          </th>
-          <th class="t-calendar__table-head-cell">
-            日
-          </th>
+          <th class="t-calendar__table-head-cell">一</th>
+          <th class="t-calendar__table-head-cell">二</th>
+          <th class="t-calendar__table-head-cell">三</th>
+          <th class="t-calendar__table-head-cell">四</th>
+          <th class="t-calendar__table-head-cell">五</th>
+          <th class="t-calendar__table-head-cell">六</th>
+          <th class="t-calendar__table-head-cell">日</th>
         </tr>
       </thead>
       <tbody class="t-calendar__table-body">
@@ -1168,27 +1116,13 @@ exports[`Calendar :props :value 1`] = `
     <table class="t-calendar__table">
       <thead class="t-calendar__table-head">
         <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell">
-            一
-          </th>
-          <th class="t-calendar__table-head-cell">
-            二
-          </th>
-          <th class="t-calendar__table-head-cell">
-            三
-          </th>
-          <th class="t-calendar__table-head-cell">
-            四
-          </th>
-          <th class="t-calendar__table-head-cell">
-            五
-          </th>
-          <th class="t-calendar__table-head-cell">
-            六
-          </th>
-          <th class="t-calendar__table-head-cell">
-            日
-          </th>
+          <th class="t-calendar__table-head-cell">一</th>
+          <th class="t-calendar__table-head-cell">二</th>
+          <th class="t-calendar__table-head-cell">三</th>
+          <th class="t-calendar__table-head-cell">四</th>
+          <th class="t-calendar__table-head-cell">五</th>
+          <th class="t-calendar__table-head-cell">六</th>
+          <th class="t-calendar__table-head-cell">日</th>
         </tr>
       </thead>
       <tbody class="t-calendar__table-body">

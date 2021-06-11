@@ -90,9 +90,11 @@
       <table class="t-calendar__table" v-if="curSelectedMode === 'month'">
         <thead class="t-calendar__table-head">
           <tr class="t-calendar__table-head-row">
+
             <template v-for="item in cellColHeaders">
               <th v-if="checkMonthCellColHeaderVisibled(item)" :key="item.num" class="t-calendar__table-head-cell">
-                {{ item.display }}
+                <RenderTNodeTemplate v-if="isWeekRender" :render="week" :params="getCalendarWeekSlotData(item)"></RenderTNodeTemplate>
+                <slot v-else name="week" :data="getCalendarWeekSlotData(item)">{{ item.display }}</slot>
               </th>
             </template>
           </tr>
@@ -135,7 +137,7 @@
             >
               <!-- cell slot for year mode -->
               <RenderTNodeTemplate v-if="cell" slot="cell" :render="cell" :params="createCalendarCell(item)"></RenderTNodeTemplate>
-              <slot v-else name="cell" slot="cell" :params="createCalendarCell(item)"></slot>
+              <slot v-else name="cell" slot="cell" :data="createCalendarCell(item)"></slot>
               <!-- cellAppend slot for year mode -->
               <RenderTNodeTemplate v-if="cellAppend" slot="cellAppend" :render="cellAppend" :params="createCalendarCell(item)"></RenderTNodeTemplate>
               <slot v-else name="cellAppend" slot="cellAppend" :data="createCalendarCell(item)"></slot>
@@ -152,6 +154,8 @@ import {
   CalendarCell,
   ControllerOptions,
   TdCalendarProps,
+  CalendarWeek,
+  WeekDay,
 } from '../../types/calendar/TdCalendarProps';
 import props from '../../types/calendar/props';
 
@@ -258,6 +262,10 @@ export default mixins().extend({
       return [`${COMPONENT_NAME}--${this.theme}`];
     },
 
+    isWeekRender(): boolean {
+      return typeof this.week === 'function';
+    },
+
     rangeFromTo(): CalendarRange {
       if (!this.range || this.range.length < 2) {
         return null;
@@ -289,25 +297,26 @@ export default mixins().extend({
     // 日历主体头部（日历模式下使用）
     cellColHeaders(): CellColHeader[] {
       const re: CellColHeader[] = [];
-      const min = 1;
-      const max = 7;
+      const min: WeekDay = 1;
+      const max: WeekDay = 7;
 
       for (let i = this.firstDayOfWeek; i <= max; i++) {
         re.push({
-          num: i,
-          display: utils.getDayCn(i),
+          num: i as WeekDay,
+          display: this.getWeekDisplay(i),
         });
       }
       if (this.firstDayOfWeek > min) {
         for (let i = min; i < this.firstDayOfWeek; i++) {
           re.push({
-            num: i,
-            display: utils.getDayCn(i),
+            num: i as WeekDay,
+            display: this.getWeekDisplay(i),
           });
         }
       }
       return re;
     },
+
     // 年份下拉框数据源
     yearSelectOptionList(): YearMonthOption[] {
       const re: YearMonthOption[] = [];
@@ -472,6 +481,14 @@ export default mixins().extend({
     },
   },
   methods: {
+    getCalendarWeekSlotData(item: CellColHeader): CalendarWeek {
+      return {
+        day: item.num,
+      };
+    },
+    getWeekDisplay(weekNum: number): string {
+      return (typeof(this.week) === 'object' && this.week[weekNum - 1]) ? this.week[weekNum - 1] : utils.getDayCn(weekNum);
+    },
     checkMonthCellItemShowed(cellData: CalendarCell): boolean {
       return this.isShowWeekend || cellData.day < 6;
     },
