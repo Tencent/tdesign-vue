@@ -3,7 +3,7 @@
 exports[`Menu single demo works fine 1`] = `
 <div>
   <div
-    class="t-head-menu t-menu-mode__normal t-menu--light"
+    class="t-menu t-head-menu t-menu-mode__normal t-menu--light"
   >
     <div
       class="t-head-menu__inner"
@@ -18,34 +18,36 @@ exports[`Menu single demo works fine 1`] = `
           width="136"
         />
       </div>
-       
       <ul
         class="t-menu"
       >
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             菜单内容一
           </span>
         </li>
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-is-active t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             已选内容
           </span>
         </li>
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             <a
               href="https://www.tencent.com"
               target="_blank"
@@ -56,16 +58,16 @@ exports[`Menu single demo works fine 1`] = `
         </li>
          
         <li
-          class="t-menu__item t-is-disabled"
+          class="t-menu__item t-is-disabled t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             菜单内容三
           </span>
         </li>
          
       </ul>
-       
       <div
         class="t-menu__options"
       >
@@ -108,13 +110,12 @@ exports[`Menu single demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
   </div>
    
   <br />
    
   <div
-    class="t-head-menu t-menu-mode__normal t-menu--dark"
+    class="t-menu t-head-menu t-menu-mode__normal t-menu--dark"
     height="120px"
   >
     <div
@@ -130,49 +131,51 @@ exports[`Menu single demo works fine 1`] = `
           width="136"
         />
       </div>
-       
       <ul
         class="t-menu"
       >
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-is-active t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             已选内容
           </span>
         </li>
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             菜单内容一
           </span>
         </li>
          
         <li
-          class="t-menu__item"
+          class="t-menu__item t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             菜单内容二
           </span>
         </li>
          
         <li
-          class="t-menu__item t-is-disabled"
+          class="t-menu__item t-is-disabled t-menu__item--plain"
         >
-           
-          <span>
+          <span
+            class="t-menu__content"
+          >
             菜单内容三
           </span>
         </li>
          
       </ul>
-       
       <div
         class="t-menu__options"
       >
@@ -215,7 +218,6 @@ exports[`Menu single demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
   </div>
 </div>
 `;

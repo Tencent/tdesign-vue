@@ -1,36 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Submenu props :disabled 1`] = `
-<ul class="t-submenu t-is-disabled">
-  <!---->
-  <!---->
-</ul>
-`;
+exports[`Submenu props :disabled 1`] = `<li class="t-submenu t-is-disabled"></li>`;
 
-exports[`Submenu props :name 1`] = `
-<ul class="t-submenu" name="1">
-  <!---->
-  <!---->
-</ul>
-`;
+exports[`Submenu props :name 1`] = `<li class="t-submenu" name="1"></li>`;
 
 exports[`Submenu slot <default> 1`] = `
-<ul class="t-submenu">
-  <!---->
-  <!---->
-</ul>
+<li class="t-submenu">
+  <div class="t-menu__item"><span class="t-menu__content"></span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-submenu-icon">
+      <path fill-opacity=".9" fill-rule="evenodd" d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z" clip-rule="evenodd"></path>
+    </svg></div>
+  <ul class="t-menu__popup">
+    <div></div>
+  </ul>
+</li>
 `;
 
 exports[`Submenu slot <icon> 1`] = `
-<ul class="t-submenu">
-  <!---->
-  <!---->
-</ul>
+<li class="t-submenu">
+  <div class="t-menu__item">
+    <div></div><span class="t-menu__content"></span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-submenu-icon">
+      <path fill-opacity=".9" fill-rule="evenodd" d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z" clip-rule="evenodd"></path>
+    </svg>
+  </div>
+  <ul class="t-menu__popup"></ul>
+</li>
 `;
 
 exports[`Submenu slot <title> 1`] = `
-<ul class="t-submenu">
-  <!---->
-  <!---->
-</ul>
+<li class="t-submenu">
+  <div class="t-menu__item"><span class="t-menu__content"><div></div></span><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-chevron-down t-submenu-icon">
+      <path fill-opacity=".9" fill-rule="evenodd" d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z" clip-rule="evenodd"></path>
+    </svg></div>
+  <ul class="t-menu__popup"></ul>
+</li>
 `;

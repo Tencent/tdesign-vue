@@ -1,5 +1,5 @@
 <template>
-  <t-head-menu active="2-1" expandType="popup">
+  <t-head-menu value="2-1" expandType="popup">
     <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
     <t-submenu value="1">
       <span slot="title">菜单1</span>

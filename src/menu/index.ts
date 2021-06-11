@@ -1,9 +1,10 @@
-import _Menu from './menu.vue';
-import _HeadMenu from './head-menu.vue';
-import _Submenu from './submenu.vue';
-import _MenuItem from './menu-item.vue';
-import _MenuGroup from './menu-group.vue';
+import _Menu from './menu';
+import _HeadMenu from './head-menu';
+import _Submenu from './submenu';
+import _MenuItem from './menu-item';
+import _MenuGroup from './menu-group';
 import withInstall from '../utils/withInstall';
+
 
 // export * from '../../types/menu/TdMenuProps';
 

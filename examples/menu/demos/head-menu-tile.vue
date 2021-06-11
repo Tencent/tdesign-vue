@@ -1,5 +1,5 @@
 <template>
-  <t-head-menu @change="changeHandler" theme="dark" :active="active">
+  <t-head-menu @change="changeHandler" theme="dark" :value="active">
     <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
     <t-menu-item :value="`${index+1}`" v-for="(menu,index) in menus" :key="index">
       {{menu.title}}

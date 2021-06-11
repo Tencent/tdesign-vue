@@ -26,7 +26,7 @@ describe('Menu', () => {
     it(':active', () => {
       const wrapper = mount({
         render() {
-          return <Menu active={'2-1'}></Menu>;
+          return <Menu value={'2-1'}></Menu>;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -72,7 +72,7 @@ describe('Menu', () => {
   describe('slot', () => {
     it('<logo>', () => {
       const wrapper = mount(Menu, {
-        scopedSlots: {
+        slots: {
           logo: '<div></div>',
         },
       });
@@ -81,7 +81,7 @@ describe('Menu', () => {
 
     it('<default>', () => {
       const wrapper = mount(Menu, {
-        scopedSlots: {
+        slots: {
           default: '<div></div>',
         },
       });
@@ -90,7 +90,7 @@ describe('Menu', () => {
 
     it('<options>', () => {
       const wrapper = mount(Menu, {
-        scopedSlots: {
+        slots: {
           options: '<div></div>',
         },
       });

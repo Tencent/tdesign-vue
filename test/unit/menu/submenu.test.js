@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { Submenu } from '@/src/menu/index.ts';
+import { Menu, Submenu } from '@/src/menu/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Submenu', () => {
@@ -7,6 +7,9 @@ describe('Submenu', () => {
   describe('props', () => {
     it(':name', () => {
       const wrapper = mount({
+        provide: {
+          TdMenu: Menu,
+        },
         render() {
           return <Submenu name='1'></Submenu>;
         },
@@ -16,6 +19,9 @@ describe('Submenu', () => {
 
     it(':disabled', () => {
       const wrapper = mount({
+        provide: {
+          TdMenu: Menu,
+        },
         render() {
           return <Submenu disabled={true}></Submenu>;
         },
@@ -27,8 +33,11 @@ describe('Submenu', () => {
   describe('slot', () => {
     it('<icon>', () => {
       const wrapper = mount(Submenu, {
-        scopedSlots: {
+        slots: {
           icon: '<div></div>',
+        },
+        provide: {
+          TdMenu: Menu,
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -36,8 +45,11 @@ describe('Submenu', () => {
 
     it('<default>', () => {
       const wrapper = mount(Submenu, {
-        scopedSlots: {
+        slots: {
           default: '<div></div>',
+        },
+        provide: {
+          TdMenu: Menu,
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -45,8 +57,11 @@ describe('Submenu', () => {
 
     it('<title>', () => {
       const wrapper = mount(Submenu, {
-        scopedSlots: {
+        slots: {
           title: '<div></div>',
+        },
+        provide: {
+          TdMenu: Menu,
         },
       });
       expect(wrapper).toMatchSnapshot();

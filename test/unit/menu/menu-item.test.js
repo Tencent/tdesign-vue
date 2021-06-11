@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { MenuItem } from '@/src/menu/index.ts';
+import { MenuItem, Menu } from '@/src/menu/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('MenuItem', () => {
@@ -8,7 +8,11 @@ describe('MenuItem', () => {
     it(':name', () => {
       const wrapper = mount({
         render() {
-          return <MenuItem name="1-1"></MenuItem>;
+          return (
+            <Menu>
+              <MenuItem name="1-1"></MenuItem>
+            </Menu>
+          );
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -17,7 +21,11 @@ describe('MenuItem', () => {
     it(':route', () => {
       const wrapper = mount({
         render() {
-          return <MenuItem route={'/user/list'}></MenuItem>;
+          return (
+            <Menu>
+              <MenuItem route={'/user/list'}></MenuItem>
+            </Menu>
+          );
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -26,7 +34,11 @@ describe('MenuItem', () => {
     it(':disabled', () => {
       const wrapper = mount({
         render() {
-          return <MenuItem disabled={true}></MenuItem>;
+          return (
+            <Menu>
+              <MenuItem disabled={true}></MenuItem>
+            </Menu>
+          );
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -35,8 +47,19 @@ describe('MenuItem', () => {
 
   describe('slot', () => {
     it('<icon>', () => {
-      const wrapper = mount(MenuItem, {
-        scopedSlots: {
+      const wrapper = mount({
+        provide: {
+          TdMenu: Menu,
+        },
+        render() {
+          return (
+            <Menu>
+              <MenuItem />
+            </Menu>
+          );
+        },
+      }, {
+        slots: {
           icon: '<div></div>',
         },
       });
@@ -44,8 +67,19 @@ describe('MenuItem', () => {
     });
 
     it('<default>', () => {
-      const wrapper = mount(MenuItem, {
-        scopedSlots: {
+      const wrapper = mount({
+        provide: {
+          TdMenu: Menu,
+        },
+        render() {
+          return (
+            <Menu>
+              <MenuItem />
+            </Menu>
+          );
+        },
+      }, {
+        slots: {
           default: '<div></div>',
         },
       });

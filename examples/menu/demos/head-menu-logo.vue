@@ -1,5 +1,5 @@
 <template>
-  <t-head-menu theme="light" active="item2">
+  <t-head-menu theme="light" value="item2">
     <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
     <t-menu-item value="item1">菜单内容一</t-menu-item>
     <t-menu-item value="item2">已选内容</t-menu-item>

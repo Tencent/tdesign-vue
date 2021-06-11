@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-head-menu theme="light" active="item2" @change="changeHandler">
+    <t-head-menu theme="light" value="item2" @change="changeHandler">
       <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       <t-menu-item value="item1">菜单内容一</t-menu-item>
       <t-menu-item value="item2">已选内容</t-menu-item>
@@ -15,7 +15,7 @@
 
     <br />
 
-    <t-head-menu theme="dark" active="item1" height="120px">
+    <t-head-menu theme="dark" value="item1" height="120px">
       <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="item1">已选内容</t-menu-item>
       <t-menu-item value="item2">菜单内容一</t-menu-item>

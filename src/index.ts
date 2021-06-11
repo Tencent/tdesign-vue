@@ -1,5 +1,5 @@
 import { VueConstructor } from 'vue';
-
+import VueCompositionAPI from '@vue/composition-api';
 import * as components from './components';
 
 function install(Vue: VueConstructor, config?: object) {
@@ -8,6 +8,7 @@ function install(Vue: VueConstructor, config?: object) {
       ? Vue.use(components[key])
       : Vue.use(components[key], config);
   });
+  Vue.use(VueCompositionAPI);
 }
 
 export * from './components';

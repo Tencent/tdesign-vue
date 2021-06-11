@@ -17,7 +17,7 @@ describe('HeadMenu', () => {
     it(':active', () => {
       const wrapper = mount({
         render() {
-          return <HeadMenu active={'2-1'}></HeadMenu>;
+          return <HeadMenu value={'2-1'}></HeadMenu>;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -36,7 +36,7 @@ describe('HeadMenu', () => {
   describe('slot', () => {
     it('<logo>', () => {
       const wrapper = mount(HeadMenu, {
-        scopedSlots: {
+        slots: {
           logo: '<div></div>',
         },
       });
@@ -45,7 +45,7 @@ describe('HeadMenu', () => {
 
     it('<default>', () => {
       const wrapper = mount(HeadMenu, {
-        scopedSlots: {
+        slots: {
           default: '<div></div>',
         },
       });
@@ -54,7 +54,7 @@ describe('HeadMenu', () => {
 
     it('<options>', () => {
       const wrapper = mount(HeadMenu, {
-        scopedSlots: {
+        slots: {
           options: '<div></div>',
         },
       });
