@@ -43,7 +43,6 @@ export default Vue.extend({
       popperJS: null,
       timeout: null,
       refOverlayElm: null,
-      caledOverlayStyle: null,
     };
   },
   computed: {
@@ -92,6 +91,10 @@ export default Vue.extend({
       if (this.trigger === 'manual') {
         this.showPopper = val;
       }
+    },
+    overlayStyle() {
+      this.popperJS.update();
+      this.updateOverlayStyle();
     },
   },
   mounted() {
