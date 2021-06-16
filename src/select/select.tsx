@@ -374,10 +374,10 @@ export default Vue.extend({
           styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement) || {};
         }
         if (typeof styles === 'object' && !styles.width) {
-          const elWidth = (this.$refs.select as HTMLElement).offsetWidth;
-          const popupWidth = (this.$refs.popup as any).$refs.overlay.offsetWidth;
+          const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
+          const popupWidth = (this.$refs.popup as any).$refs.overlay.getBoundingClientRect().width;
           const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH  ? elWidth : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
-          Vue.set(this.defaultProps.overlayStyle, 'width', `${width}px`);
+          Vue.set(this.defaultProps.overlayStyle, 'width', `${Math.ceil(width)}px`);
         }
       });
     },
