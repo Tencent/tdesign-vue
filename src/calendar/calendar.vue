@@ -5,7 +5,7 @@
     <div class="t-calendar__control" v-if="isControllerVisible">
       <div class="t-calendar__control-section">
         <!-- 年份选择 -->
-        <div class="t-calendar__control-section-cell t-calendar__control-section-year" v-if="isYearVisible">
+        <div class="t-calendar__control-section-cell" v-if="isYearVisible">
           <TSelect
             v-model="curSelectedYear"
             :size="controlSize"
@@ -25,7 +25,7 @@
           </TSelect>
         </div>
         <!-- 月份选择 -->
-        <div class="t-calendar__control-section-cell t-calendar__control-section-month" v-if="curSelectedMode === 'month' && isMonthVisible">
+        <div class="t-calendar__control-section-cell" v-if="curSelectedMode === 'month' && isMonthVisible">
           <TSelect
             v-model="curSelectedMonth"
             :size="controlSize"
