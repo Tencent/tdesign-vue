@@ -66,6 +66,8 @@ export default Vue.extend({
     pagination: [Boolean, Object],
     footer: [Function, String],
     checkAll: Boolean,
+    t: Function,
+    locale: Object,
   },
   data() {
     return {
@@ -183,7 +185,8 @@ export default Vue.extend({
       );
     },
     renderEmpty() {
-      const defaultNode: VNode = typeof this.empty === 'string' ? (<template>{this.empty}</template>) : null;
+      const empty = this.empty || this.t(this.locale.empty);
+      const defaultNode: VNode = typeof empty === 'string' ? (<span>{empty}</span>) : null;
       return (
         <div class="t-transfer-empty">
           {renderTNodeJSXDefault(this, 'empty', {
@@ -219,7 +222,15 @@ export default Vue.extend({
                 onChange={this.handleCheckedAllChange}
               />
             }
-            <span>{this.checkedValue.length} / {this.dataSource.length}项</span>
+            <span>{
+              this.t(
+                this.locale.title,
+                {
+                  checked: this.checkedValue.length,
+                  total: this.dataSource.length,
+                }
+              )
+            }</span>
           </div>
           {this.renderTitle()}
         </div>

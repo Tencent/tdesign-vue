@@ -21,7 +21,6 @@ const createDialog: DialogMethod = (props: DialogOptions) => {
       }),
     },
   }).$mount();
-
   const container = getAttach(options.attach);
   if (container) {
     container.appendChild(dialog.$el);

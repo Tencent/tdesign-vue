@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import pick from 'lodash/pick';
 import { prefix } from '../config';
 import TransferList from './components/transfer-list';
@@ -18,13 +17,15 @@ import {
   TdPaginationProps,
   TdTransferProps,
 } from './type/transfer';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import props from '../../types/transfer/props';
 import { getTransferListOption, emitEvent } from './utils';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('transfer')).extend({
   name,
   components: {
     TransferList,
@@ -227,6 +228,8 @@ export default Vue.extend({
           onSearch={this.handleSearch}
           onPageChange={($event: any) => this.handlePageChange($event, listType)}
           scopedSlots={scopedSlots}
+          t={this.t}
+          locale={this.locale}
         ></transfer-list>
       );
     },

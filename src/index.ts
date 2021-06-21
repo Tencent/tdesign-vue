@@ -1,7 +1,6 @@
 import { VueConstructor } from 'vue';
 import VueCompositionAPI from '@vue/composition-api';
 import * as components from './components';
-
 function install(Vue: VueConstructor, config?: object) {
   Object.keys(components).forEach((key) => {
     /plugin/i.test(key)

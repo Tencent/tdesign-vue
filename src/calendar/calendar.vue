@@ -90,7 +90,6 @@
       <table class="t-calendar__table" v-if="curSelectedMode === 'month'">
         <thead class="t-calendar__table-head">
           <tr class="t-calendar__table-head-row">
-
             <template v-for="item in cellColHeaders">
               <th v-if="checkMonthCellColHeaderVisibled(item)" :key="item.num" class="t-calendar__table-head-cell">
                 <RenderTNodeTemplate v-if="isWeekRender" :render="week" :params="getCalendarWeekSlotData(item)"></RenderTNodeTemplate>
@@ -107,6 +106,8 @@
                 :key="`${item.weekNum}-${item.day}`"
                 :item="item"
                 :theme="theme"
+                :t="t"
+                :locale="locale"
                 @click.native="clickCell($event, item)"
                 @dblclick.native="doubleClickCell($event, item)"
                 @contextmenu.native="rightClickCell($event, item)"
@@ -131,6 +132,8 @@
               :key="item.num"
               :item="item"
               :theme="theme"
+              :t="t"
+              :locale="locale"
               @click.native="clickCell($event, item)"
               @dblclick.native="doubleClickCell($event, item)"
               @contextmenu.native="rightClickCell($event, item)"
@@ -158,12 +161,11 @@ import {
   WeekDay,
 } from '../../types/calendar/TdCalendarProps';
 import props from '../../types/calendar/props';
-
 // 通用库
 import dayjs from 'dayjs';
 import calendar from 'dayjs/plugin/calendar';
-
 import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import * as utils from './utils';
 import { getPropsApiByEvent } from '../utils/helper';
 
@@ -173,8 +175,6 @@ import {
   MIN_YEAR,
   FIRST_MONTH_OF_YEAR,
   LAST_MONTH_OF_YEAR,
-  TEXT_MAP,
-  MODE_OPTION_LIST,
   DEFAULT_YEAR_CELL_NUMINROW,
 } from './const';
 
@@ -194,6 +194,7 @@ import {
   ModeOption,
   CellColHeader,
   CellEventOption,
+  TextConfigType,
 } from './type';
 
 dayjs.extend(calendar);
@@ -232,8 +233,10 @@ const getDefaultControllerConfigData = (visible = true): Record<string, any> => 
   },
 });
 
+const CalendarLocalReceiver = getLocalRecevierMixins('calendar');
+
 // 组件逻辑
-export default mixins().extend({
+export default mixins(CalendarLocalReceiver).extend({
   name: COMPONENT_NAME,
   components: {
     TSelect,
@@ -257,6 +260,23 @@ export default mixins().extend({
     };
   },
   computed: {
+    TEXT_MAP(): TextConfigType {
+      const { t, locale } = this;
+      const r: TextConfigType = {
+        // showWeekend: '显示周末',
+        showWeekend: t(locale.showWeekend),
+        // hideWeekend: '隐藏周末',
+        hideWeekend: t(locale.hideWeekend),
+        // today: '今天',
+        today: t(locale.today),
+        // thisMonth: '本月',
+        thisMonth: t(locale.thisMonth),
+      };
+      return r;
+    },
+    weekDipalyText(): TdCalendarProps['week'] {
+      return this.week || this.t(this.locale.week).split(',');
+    },
     // 组件最外层的class名（除去前缀，class名和theme参数一致）
     calendarCls(): Record<string, any> {
       return [`${COMPONENT_NAME}--${this.theme}`];
@@ -338,7 +358,7 @@ export default mixins().extend({
         const disabled = this.checkMonthAndYearSelecterDisabled(i, this.curSelectedMonth);
         re.push({
           value: i,
-          label: `${i}年`,
+          label: this.t(this.locale.yearSelection, { year: i }),
           disabled,
         });
       }
@@ -351,7 +371,7 @@ export default mixins().extend({
         const disabled = this.checkMonthAndYearSelecterDisabled(this.curSelectedYear, i);
         re.push({
           value: i,
-          label: `${i}月`,
+          label: this.t(this.locale.monthSelection, { month: i }),
           disabled,
         });
       }
@@ -360,7 +380,10 @@ export default mixins().extend({
 
     // 模式选项数据源
     modeSelectOptionList(): ModeOption[] {
-      return MODE_OPTION_LIST;
+      return [
+        { value: 'month', label: this.t(this.locale.monthRadio) },
+        { value: 'year', label: this.t(this.locale.yearRadio)  },
+      ];
     },
     // month模式下日历单元格的数据
     monthCellsData(): CalendarCell[][] {
@@ -411,7 +434,7 @@ export default mixins().extend({
     },
 
     weekendBtnText(): string {
-      return this.isShowWeekend ? TEXT_MAP.hideWeekend : TEXT_MAP.showWeekend;
+      return this.isShowWeekend ? this.TEXT_MAP.hideWeekend : this.TEXT_MAP.showWeekend;
     },
     weekendBtnVBind(): object {
       const c = this.controllerConfigData.weekend;
@@ -419,7 +442,7 @@ export default mixins().extend({
     },
 
     currentBtnText(): string {
-      return this.curSelectedMode === 'month' ? TEXT_MAP.today : TEXT_MAP.thisMonth;
+      return this.curSelectedMode === 'month' ? this.TEXT_MAP.today : this.TEXT_MAP.thisMonth;
     },
     currentBtnVBind(): object {
       const c = this.controllerConfigData.current;
@@ -487,7 +510,10 @@ export default mixins().extend({
       };
     },
     getWeekDisplay(weekNum: number): string {
-      return (typeof(this.week) === 'object' && this.week[weekNum - 1]) ? this.week[weekNum - 1] : utils.getDayCn(weekNum);
+      const weekText = this.weekDipalyText;
+      return (typeof(weekText) === 'object' && weekText[weekNum - 1])
+        ? weekText[weekNum - 1]
+        : utils.getDayCn(weekNum);
     },
     checkMonthCellItemShowed(cellData: CalendarCell): boolean {
       return this.isShowWeekend || cellData.day < 6;

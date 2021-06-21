@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import TButton, { ButtonProps } from '../button';
@@ -8,6 +7,8 @@ import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import { DialogCloseContext, TdDialogProps } from '../../types/dialog/TdDialogProps';
 import props from '../../types/dialog/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 
@@ -48,7 +49,7 @@ function InitDragEvent(dragBox: HTMLElement) {
   });
 }
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('dialog')).extend({
   name,
 
   components: {
@@ -228,12 +229,14 @@ export default Vue.extend({
       return Boolean(btnApi && baseTypes.includes(typeof btnApi));
     },
     getDefaultFooter() {
-      const defaultCancel = this.getDefaultBtn('cancel', this.cancelBtn);
-      const defaultConfirm = this.getDefaultBtn('confirm', this.confirmBtn);
+      const cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
+      const confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
+      const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
+      const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
       return (
         <div>
-          {this.isUseDefault(this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
-          {this.isUseDefault(this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
+          {this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
+          {this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
         </div>
       );
     },

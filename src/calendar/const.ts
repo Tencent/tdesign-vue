@@ -1,4 +1,3 @@
-import { ModeOption } from './type';
 import { prefix } from '../config';
 
 /** 常量 */
@@ -30,22 +29,9 @@ export const DEFAULT_YEAR_CELL_NUMINROW = 4;
 export const THEME_LIST: string[] = ['full', 'card'];
 // 日历组件模式的可选值
 export const MODE_LIST: string[] = ['month', 'year'];
-// 日历组件模式选项列表
-export const MODE_OPTION_LIST: ModeOption[] = [
-  { value: 'month', label: '月' },
-  { value: 'year', label: '年' },
-];
 // 日历组件首列星期的可选值
 export const FIRST_DAY_OF_WEEK_LIST: number[] = [1, 2, 3, 4, 5, 6, 7];
 
-/** map */
-// 一些固定的文本
-export const TEXT_MAP: Record<string, string> = {
-  showWeekend: '显示周末',
-  hideWeekend: '隐藏周末',
-  today: '今天',
-  thisMonth: '本月',
-};
 // 星期的显示值
 export const DAY_CN_MAP: Record<string, string> = {
   1: '一',
@@ -86,9 +72,7 @@ export default {
   DEFAULT_THEME,
   DEFAULT_YEAR_CELL_NUMINROW,
 
-  TEXT_MAP,
   MODE_LIST,
-  MODE_OPTION_LIST,
   FIRST_DAY_OF_WEEK_LIST,
 
   THEME_LIST,
