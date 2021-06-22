@@ -1,16 +1,3 @@
-<template>
-  <div class="t-date-picker-presets">
-    <slot v-bind:clickPresets="clickPreset">
-      <ul v-if="presets">
-        <li v-for="(value, key) in presets" v-bind:key="key">
-          <t-button theme="primary" variant="text" v-on:click="clickPreset(value)">{{ key }}</t-button>
-        </li>
-      </ul>
-    </slot>
-  </div>
-</template>
-
-<script lang="ts">
 import Vue, { PropType } from 'vue';
 import { CalendarPresetsMethods, CalendarPresetsProps, DateValue } from './type';
 
@@ -36,5 +23,23 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
       this.$emit('clickRange', value);
     },
   },
+  render() {
+    const { presets } = this.$props;
+    if (presets) {
+      return (
+        <div class="t-date-picker-presets">
+          <ul>
+          {
+            presets && Object.keys(presets).map((key: string) => (
+              <li key={key}>
+                <t-button theme="primary" variant="text" onClick={() => this.clickPreset(presets[key])}>{ key }</t-button>
+              </li>
+            ))
+          }
+          </ul>
+        </div>
+      );
+    }
+    return null;
+  },
 });
-</script>

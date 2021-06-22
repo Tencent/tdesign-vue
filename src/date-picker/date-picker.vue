@@ -62,7 +62,7 @@
             :is="range ? 'TDateRange' : 'TDate'"
             :value="range ? [start, end] : start"
             :mode="mode"
-            :first-day-of-week="firstDayOfWeek"
+            :first-day-of-week="0"
             @change="dateClick"
           />
           <calendar-presets
@@ -118,7 +118,7 @@ import TPopup from '../popup';
 
 import { CustomLocale, DatePickerData, DatePickerMethods, DatePickerComputed, DateValue } from './type';
 import { COMPONENT_NAME, strings } from './constants';
-import CalendarPresets from './calendar-presets.vue';
+import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
 import TTimePanel from '../time-picker/panel/panel-col';
