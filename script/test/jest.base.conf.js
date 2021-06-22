@@ -8,14 +8,7 @@ module.exports = {
   verbose: true,
   rootDir: path.resolve(__dirname, '../../'),
   testURL: 'http://localhost/',
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'vue',
-    'json',
-  ],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'vue', 'json'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^@tencent/tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
@@ -52,13 +45,13 @@ module.exports = {
   },
   reporters: [
     'default',
-    ['./node_modules/jest-html-reporter', {
-      pageTitle: 'TDesign Test Report',
-    }],
+    [
+      './node_modules/jest-html-reporter',
+      {
+        pageTitle: 'TDesign Test Report',
+      },
+    ],
   ],
   snapshotSerializers: ['jest-serializer-vue'],
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 };
