@@ -2862,28 +2862,7 @@ exports[`Dialog warning demo works fine 1`] = `
         <div
           class="t-dialog__footer"
         >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                取消
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                确认
-              </span>
-            </button>
-          </div>
+          <div />
         </div>
       </div>
     </div>
@@ -2955,28 +2934,7 @@ exports[`Dialog warning demo works fine 1`] = `
         <div
           class="t-dialog__footer"
         >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                取消
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                确认
-              </span>
-            </button>
-          </div>
+          <div />
         </div>
       </div>
     </div>

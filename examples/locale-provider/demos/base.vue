@@ -4,7 +4,7 @@
     <br>
     <t-calendar></t-calendar>
     <br>
-    <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked"/>
+    <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked" :search="true" />
     <br><br>
     <div style="width: 480px">
       <t-dialog :visible="true" header="confirm" body="Would you like to be my friends？" mode="normal" theme="info"></t-dialog>
@@ -16,6 +16,10 @@
     <t-drawer :visible.sync="drawerVisible" header="Drawer" :onConfirm="() => drawerVisible = false" :closeBtn="true">
       <p>This is a controlled drawer</p>
     </t-drawer>
+    <br><br>
+    <t-popconfirm theme="default" content="Do you want to delete">
+      <t-button>Popconfirm</t-button>
+    </t-popconfirm>
   </t-locale-provider>
 </template>
 
@@ -44,6 +48,7 @@ const GLOBAL_CONFIG = {
   transfer: {
     title: '{checked} / {total}',
     empty: 'Empty Data',
+    placeholder: 'keyword to search',
   },
   dialog: {
     confirm: 'ok',
@@ -51,6 +56,10 @@ const GLOBAL_CONFIG = {
   },
   drawer: {
     confirm: 'confirm',
+    cancel: 'cancel',
+  },
+  popconfirm: {
+    confirm: 'ok',
     cancel: 'cancel',
   },
 };

@@ -1,28 +1,36 @@
 <template>
   <div class="popconfirm-demo">
     <div class="tdesign-demo-block">
-      <t-popconfirm content="基础气泡确认框文案示意文字按钮" icon='browse'>
-        <t-button theme="primary">使用string</t-button>
-      </t-popconfirm>
-      <t-popconfirm content="事件通知类型偏向于提示">
-        <t-icon name="browse" style="color: #0052d9" slot='icon'/>
-        <t-button theme="primary">使用VNode</t-button>
-      </t-popconfirm>
-      <t-popconfirm content="事件通知类型偏向于警示" :icon='customIcon'>
-        <t-button theme="primary">使用Function</t-button>
-      </t-popconfirm>
-    </div>
+      <div class="demo-item">
+        <t-popconfirm content="基础气泡确认框文案示意文字按钮">
+          <t-button>默认</t-button>
+        </t-popconfirm>
+      </div>
 
-    <div class="tdesign-demo-block">
-      <t-popconfirm content="基础气泡确认框文案示意文字按钮">
-        <t-button>默认</t-button>
-      </t-popconfirm>
-      <t-popconfirm content="事件通知类型偏向于提示">
-        <t-button theme="primary">提示</t-button>
-      </t-popconfirm>
-      <t-popconfirm theme="error" content="事件通知类型偏向于警告">
-        <t-button theme="danger">警告</t-button>
-      </t-popconfirm>
+      <div class="demo-item">
+        <t-popconfirm content="事件通知类型偏向于提示">
+          <t-icon name="browse" style="color: #0052d9" slot='icon'/>
+          <t-button theme="primary">插槽定义ICON</t-button>
+        </t-popconfirm>
+      </div>
+
+      <div class="demo-item">
+        <t-popconfirm content="事件通知类型偏向于警示" :icon='customIcon'>
+          <t-button theme="primary">属性定义ICON</t-button>
+        </t-popconfirm>
+      </div>
+
+      <div class="demo-item">
+        <t-popconfirm theme="warning" content="事件通知类型偏向于提示">
+          <t-button theme="danger" variant="outline">警告</t-button>
+        </t-popconfirm>
+      </div>
+
+      <div class="demo-item">
+        <t-popconfirm theme="danger" content="事件通知类型偏向于高危提醒">
+          <t-button theme="danger">危险</t-button>
+        </t-popconfirm>
+      </div>
     </div>
   </div>
 </template>
@@ -36,12 +44,4 @@ export default {
   },
 };
 </script>
-<style>
-.popconfirm-demo .tdesign-demo-block {
-  display: flex;
-  justify-content: space-around;
-}
-.tdesign-demo-block + .tdesign-demo-block {
-  margin-top: 24px;
-}
-</style>
+

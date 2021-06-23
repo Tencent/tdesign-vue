@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tdesign-demo-block">
-      <t-button>默认按钮</t-button>
+      <t-button theme="primary">主要按钮</t-button>
       <t-button variant="outline">次要按钮</t-button>
       <t-button variant="dashed">虚框按钮</t-button>
     </div>
@@ -16,6 +16,9 @@
       <t-button theme="danger" variant="outline">次要按钮</t-button>
       <t-button theme="danger" variant="dashed">虚框按钮</t-button>
       <t-button theme="danger" variant="text">文字按钮</t-button>
+    </div>
+    <div class="tdesign-demo-block">
+      <t-button theme="primary" variant="base" loading>加载中</t-button>
     </div>
   </div>
 </template>

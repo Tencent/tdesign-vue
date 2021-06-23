@@ -6,6 +6,7 @@ import CLASSNAMES from '../utils/classnames';
 import { on, off, addClass, removeClass, getAttach } from '../utils/dom';
 import props from '../../types/popup/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
 const { prefix } = config;
@@ -35,7 +36,6 @@ export default Vue.extend({
   data() {
     return {
       name,
-      showPopper: false,
       currentPlacement: '',
       popperElm: null,
       referenceElm: null,
@@ -73,23 +73,11 @@ export default Vue.extend({
     },
   },
   watch: {
-    showPopper(val): void {
-      if (this.disabled) {
-        return;
-      }
+    visible(val) {
       if (val) {
         this.updatePopper();
       } else {
         this.destroyPopper();
-      }
-      this.$emit('visibleChange', val);
-      if (typeof this.onVisibleChange === 'function') {
-        this.onVisibleChange(val);
-      }
-    },
-    visible(val): void {
-      if (this.trigger === 'manual') {
-        this.showPopper = val;
       }
     },
     overlayStyle() {
@@ -117,22 +105,24 @@ export default Vue.extend({
     on(reference, 'click', this.handleClick);
 
     if (this.clickTrigger) {
-      on(reference, 'click', this.doToggle);
+      on(reference, 'click', () => this.doToggle({ trigger: 'trigger-element-click' }));
       on(document, 'click', this.handleDocumentClick);
     }
     if (this.hoverTrigger) {
-      on(reference, 'mouseenter', this.doShow);
-      on(popper, 'mouseenter', this.doShow);
-      on(reference, 'mouseleave', this.doClose);
-      on(popper, 'mouseleave', this.doClose);
+      const show = () => this.doShow({ trigger: 'trigger-element-hover' });
+      const close = () => this.doClose({ trigger: 'trigger-element-hover' });
+      on(reference, 'mouseenter', show);
+      on(popper, 'mouseenter', show);
+      on(reference, 'mouseleave', close);
+      on(popper, 'mouseleave', close);
     }
     if (this.focusTrigger) {
       if (reference.querySelector('input, textarea')) {
-        on(reference, 'focusin', this.doShow);
-        on(reference, 'focusout', this.doClose);
+        on(reference, 'focusin', () => this.doShow({ trigger: 'trigger-element-focus' }));
+        on(reference, 'focusout', () => this.doClose({ trigger: 'trigger-element-blur' }));
       } else {
-        on(reference, 'mousedown', this.doShow);
-        on(reference, 'mouseup', this.doClose);
+        on(reference, 'mousedown', () => this.doShow({ trigger: 'trigger-element-click' }));
+        on(reference, 'mouseup', () => this.doClose({ trigger: 'trigger-element-click' }));
       }
     }
     if (this.contextMenuTrigger) {
@@ -141,7 +131,8 @@ export default Vue.extend({
       on(document, 'click', this.handleDocumentClick);
     }
     if (this.manualTrigger) {
-      this.showPopper = !!this.visible;
+      on(reference, 'click', () => this.doToggle({ trigger: 'trigger-element-click' }));
+      on(document, 'click', this.handleDocumentClick);
     }
     this.updateOverlayStyle();
   },
@@ -229,7 +220,7 @@ export default Vue.extend({
     },
 
     doDestroy(forceDestroy: boolean): void {
-      if (!this.popperJS || (this.showPopper && !forceDestroy)) return;
+      if (!this.popperJS || (this.visible && !forceDestroy)) return;
       this.popperJS.destroy();
       this.popperJS = null;
     },
@@ -244,35 +235,39 @@ export default Vue.extend({
       }
     },
 
-    doToggle(): void {
-      this.showPopper = !this.showPopper;
+    doToggle(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+      this.emitPopVisible(!this.visible, context);
     },
-    doShow(): void {
+    doShow(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
-        this.showPopper = true;
+        this.emitPopVisible(true, context);
       }, this.clickTrigger ? 0 : showTimeout);
     },
-    doClose(): void {
+    doClose(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(() => {
-        this.showPopper = false;
+        this.emitPopVisible(false, context);
       }, this.clickTrigger ? 0 : hideTimeout);
     },
     handleFocus(): void {
       addClass(this.referenceElm, 'focusing');
-      if (this.clickTrigger || this.focusTrigger) this.showPopper = true;
+      if (this.clickTrigger || this.focusTrigger) {
+        this.emitPopVisible(true, { trigger: 'trigger-element-focus' });
+      }
     },
     handleClick(): void {
       removeClass(this.referenceElm, 'focusing');
     },
     handleBlur(): void {
       removeClass(this.referenceElm, 'focusing');
-      if (this.clickTrigger || this.focusTrigger) this.showPopper = false;
+      if (this.clickTrigger || this.focusTrigger) {
+        this.emitPopVisible(false, { trigger: 'trigger-element-blur' });
+      }
     },
     handleKeydown(ev: KeyboardEvent): void {
-      if (ev.keyCode === 27 && this.manualTrigger) { // esc
-        this.doClose();
+      if (ev.code === 'Escape' && this.manualTrigger) { // esc
+        this.doClose({ trigger: 'keydown-esc' });
       }
     },
     handleDocumentClick(e: Event): void {
@@ -283,11 +278,17 @@ export default Vue.extend({
         || reference.contains(e.target as Node)
         || !popper
         || popper.contains(e.target as Node)) return;
-      this.showPopper = false;
+      this.emitPopVisible(false, { trigger: 'document' });
     },
     handleRightClick(e: MouseEvent): void {
       if (e.button === 2) {
-        this.doToggle();
+        this.doToggle({ trigger: 'context-menu' });
+      }
+    },
+    emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
+      this.$emit('visible-change', val, context);
+      if (typeof this.onVisibleChange === 'function') {
+        this.onVisibleChange(val, context);
       }
     },
   },
@@ -299,9 +300,9 @@ export default Vue.extend({
           <div
             class={name}
             ref='popper'
-            v-show={!this.disabled && this.showPopper}
+            v-show={!this.disabled && this.visible}
             role='tooltip'
-            aria-hidden={(this.disabled || !this.showPopper) ? 'true' : 'false'}
+            aria-hidden={(this.disabled || !this.visible) ? 'true' : 'false'}
           >
             <div class={this.overlayClasses} ref="overlay">
               {renderTNodeJSX(this, 'content')}

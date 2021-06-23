@@ -228,15 +228,24 @@ export default mixins(getLocalRecevierMixins('dialog')).extend({
       const baseTypes = ['string', 'object'];
       return Boolean(btnApi && baseTypes.includes(typeof btnApi));
     },
+    // locale 全局配置，插槽，props，默认值，决定了按钮最终呈现
     getDefaultFooter() {
-      const cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
-      const confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
-      const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
-      const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
+      let cancelBtn = null;
+      if (![undefined, null].includes(this.cancelBtn)) {
+        cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
+        const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
+        cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
+      }
+      let confirmBtn = null;
+      if (![undefined, null].includes(this.cancelBtn)) {
+        confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
+        const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
+        confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
+      }
       return (
         <div>
-          {this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
-          {this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
+          {cancelBtn}
+          {confirmBtn}
         </div>
       );
     },

@@ -1,9 +1,9 @@
-import Vue, { CreateElement, VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import TIconLoading from '../icon/loading';
 import props from '../../types/button/props';
-import { renderContent } from '../utils/render-tnode';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { addClickAnimation, removeClickAnimation } from '../utils/animation';
 
 const name = `${prefix}-button`;
@@ -17,17 +17,9 @@ export default Vue.extend({
   beforeDestroy() {
     removeClickAnimation(this.$refs.button as HTMLElement);
   },
-  render(h: CreateElement): VNode {
+  render(): VNode {
     let buttonContent: JsxNode = renderContent(this, 'default', 'content');
-    let icon: JsxNode;
-
-    if (this.loading) {
-      icon = <TIconLoading/>;
-    } else if (typeof this.icon === 'function') {
-      icon = this.icon(h);
-    } else if (this.$scopedSlots.icon) {
-      icon = this.$scopedSlots.icon(null);
-    }
+    const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
     const iconOnly = icon && !Boolean(buttonContent);
 
     const buttonClass = [

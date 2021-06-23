@@ -22,6 +22,7 @@ export default {
   transfer: {
     title: '{checked} / {total} 项',
     empty: '暂无数据',
+    placeholder: '请输入关键词搜索',
   },
   timePicker: {
     nowtime: '此刻',
