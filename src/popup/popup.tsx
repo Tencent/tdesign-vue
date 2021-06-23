@@ -43,6 +43,7 @@ export default Vue.extend({
       popperJS: null,
       timeout: null,
       refOverlayElm: null,
+      hasDocumentEvent: false,
     };
   },
   computed: {
@@ -76,8 +77,14 @@ export default Vue.extend({
     visible(val) {
       if (val) {
         this.updatePopper();
+        if (!this.hasDocumentEvent && (this.manualTrigger || this.contextMenuTrigger || this.clickTrigger)) {
+          on(document, 'click', this.handleDocumentClick);
+          this.hasDocumentEvent = true;
+        }
       } else {
         this.destroyPopper();
+        off(document, 'click', this.handleDocumentClick);
+        this.hasDocumentEvent = false;
       }
     },
     overlayStyle() {
@@ -88,25 +95,16 @@ export default Vue.extend({
   mounted() {
     this.currentPlacement = this.currentPlacement || this.placement;
     this.popperElm = this.popperElm || this.$refs.popper;
-    this.referenceElm = this.referenceElm || this.$refs.reference;
+    this.referenceElm = this.referenceElm || this.$el;
     if (!this.popperElm || !this.referenceElm) return;
 
     this.createPopperJS();
     const reference = this.referenceElm;
     const popper = this.popperElm;
-
-    if (!this.clickTrigger) {
-      on(reference, 'focusin', this.handleFocus);
-      on(popper, 'focusin', this.handleFocus);
-      on(reference, 'focusout', this.handleBlur);
-      on(popper, 'focusout', this.handleBlur);
-    }
+    // 无论哪种触发方式都支持 esc 隐藏浮层
     on(reference, 'keydown', this.handleKeydown);
-    on(reference, 'click', this.handleClick);
-
     if (this.clickTrigger) {
-      on(reference, 'click', () => this.doToggle({ trigger: 'trigger-element-click' }));
-      on(document, 'click', this.handleDocumentClick);
+      on(reference, 'click', (e: MouseEvent) => this.doToggle({ e, trigger: 'trigger-element-click' }));
     }
     if (this.hoverTrigger) {
       const show = () => this.doShow({ trigger: 'trigger-element-hover' });
@@ -128,11 +126,9 @@ export default Vue.extend({
     if (this.contextMenuTrigger) {
       reference.oncontextmenu = (): boolean => false;
       on(reference, 'mousedown', this.handleRightClick);
-      on(document, 'click', this.handleDocumentClick);
     }
     if (this.manualTrigger) {
       on(reference, 'click', () => this.doToggle({ trigger: 'trigger-element-click' }));
-      on(document, 'click', this.handleDocumentClick);
     }
     this.updateOverlayStyle();
   },
@@ -154,14 +150,11 @@ export default Vue.extend({
     off(reference, 'mouseup', this.doClose);
     off(reference, 'mouseleave', this.doClose);
     off(reference, 'mouseenter', this.doShow);
-    off(document, 'click', this.handleDocumentClick);
   },
   methods: {
     createPopperJS(): void {
       const overlayContainer = getAttach(this.attach);
-
       overlayContainer.appendChild(this.popperElm);
-
       if (this.popperJS && this.popperJS.destroy) {
         this.popperJS.destroy();
       }
@@ -180,7 +173,6 @@ export default Vue.extend({
         ],
       });
       this.popperElm.addEventListener('click', stop);
-
       // 监听trigger元素尺寸变化
       this.resizeSensor = new ResizeSensor(this.referenceElm, () => {
         this.popperJS.update();
@@ -198,7 +190,7 @@ export default Vue.extend({
 
     updateOverlayStyle() {
       const { overlayStyle } = this;
-      const referenceElm = this.$refs.reference as HTMLElement;
+      const referenceElm = this.$el as HTMLElement;
       const refOverlayElm = this.$refs.overlay as HTMLElement;
       if (typeof overlayStyle === 'function' && referenceElm && refOverlayElm) {
         const userOverlayStyle = overlayStyle(referenceElm);
@@ -235,7 +227,7 @@ export default Vue.extend({
       }
     },
 
-    doToggle(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+    doToggle(context: PopupVisibleChangeContext): void {
       this.emitPopVisible(!this.visible, context);
     },
     doShow(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
@@ -271,11 +263,9 @@ export default Vue.extend({
       }
     },
     handleDocumentClick(e: Event): void {
-      const reference = this.referenceElm;
       const popper = this.popperElm;
-      if (!this.$el || !reference
+      if (!this.$el
         || this.$el.contains(e.target as Element)
-        || reference.contains(e.target as Node)
         || !popper
         || popper.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
@@ -295,7 +285,7 @@ export default Vue.extend({
 
   render() {
     return (
-      <div class={`${name}-reference`} ref="reference">
+      <div class={`${name}-reference`}>
         <transition name={`${name}_animation`} appear>
           <div
             class={name}
