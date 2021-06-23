@@ -1,15 +1,16 @@
 import { PropType } from 'vue';
 import dayjs from 'dayjs';
 
-import { BooleanType } from '../props';
 import * as Props from '../../../types/time-picker/props';
 import { EPickerCols } from '../constant';
 
-const ElementRefType = {
-  type: typeof Element === 'undefined' ? Object : Element,
-  ...({
-    default: null,
-  }),
+// 布尔类型
+const BooleanType = {
+  type: Boolean,
+  default: true,
+  validator(v: boolean): boolean {
+    return typeof v === 'boolean';
+  },
 };
 
 export const panelProps = () => ({
@@ -25,16 +26,13 @@ export const panelProps = () => ({
       default: false,
     }),
   },
-  refDom: {
-    ...ElementRefType,
-  },
-  dayjs: {
+  value: {
     type: Array as PropType<Array<dayjs.Dayjs | undefined>>,
     default: () => [dayjs()] as Array<dayjs.Dayjs | undefined>,
   },
   format: {
     type: String,
-    default: 'a HH:mm:ss',
+    default: 'HH:mm:ss',
   },
   steps: {
     type: Array as PropType<Array<string | number>>,
@@ -54,13 +52,16 @@ export const panelProps = () => ({
   disableTime: {
     ...Props.default.disableTime,
   },
+  isFooterDisplay: {
+    ...BooleanType,
+  },
 });
 
 
 export const panelColProps = () => ({
   format: {
     type: String,
-    default: 'a HH:mm:ss',
+    default: 'HH:mm:ss',
   },
   cols: {
     type: Array as PropType<Array<EPickerCols>>,

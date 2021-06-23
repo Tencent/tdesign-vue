@@ -47,14 +47,15 @@
       </div>
       <template slot="content" role="dropdown">
         <div ref="dropdownPopup" v-if="isOpen || inlineView" v-bind:class="pickerStyles">
-          <div v-show="enableTimePicker && showTime" style="width: 320px">
-            <t-time-panel
-              ref="timePanel"
+          <div v-show="enableTimePicker && showTime">
+            <t-time-picker-panel
+              ref="timePickerPanel"
               format="HH:mm:ss"
               :cols="[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]"
               :steps="steps"
-              :value="timeVlaue"
+              :value="[timeVlaue]"
               v-on:time-pick="(col, time) => this.handleTimePick(col, time)"
+              :isFooterDisplay="false"
             />
           </div>
           <component
@@ -83,11 +84,7 @@
               <t-button v-else-if="enableTimePicker" theme="primary" variant="text" v-on:click="toggleTime">
                 {{ locales.selectDate }}
               </t-button>
-              <t-button
-                v-if="range || enableTimePicker"
-                theme="primary"
-                v-on:click="clickedApply"
-              >
+              <t-button v-if="range || enableTimePicker" theme="primary" v-on:click="clickedApply">
                 {{ locales.applyLabel }}
               </t-button>
             </div>
@@ -121,11 +118,11 @@ import { COMPONENT_NAME, strings } from './constants';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
-import TTimePanel from '../time-picker/panel/panel-col';
+import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/constant';
 import { dateIndexOf, firstUpperCase } from './utils';
 import EmbedTo from './embed-to';
-import { TimePickerPanelColInstance } from '../time-picker/type';
+import { TimePickerPanelInstance } from '../time-picker/type';
 
 dayjs.extend(isBetween);
 
@@ -144,7 +141,7 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
     CalendarPresets,
     TDate,
     TDateRange,
-    TTimePanel,
+    TTimePickerPanel,
   },
   directives: { EmbedTo },
   props: {
@@ -521,11 +518,8 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       this.timeVlaue = dayjs(this.start);
 
       this.showTime = !this.showTime;
-      this.$nextTick(() => {
-        const timePanelRef = this.$refs.timePanel as TimePickerPanelColInstance;
-
-        timePanelRef && timePanelRef.initTimeScrollPos();
-      });
+      const timePickerPanel = this.$refs.timePickerPanel as TimePickerPanelInstance;
+      timePickerPanel.panelColUpate();
     },
 
     clickAway() {

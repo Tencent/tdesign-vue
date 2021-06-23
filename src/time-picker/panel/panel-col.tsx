@@ -10,10 +10,7 @@ import { prefix } from '../../config';
 
 const name = `${prefix}-time-picker-pane-col`;
 
-// TODO 不是很好的方式 如果主题样式改变item的高度 这样并不会同步
-const timeItemHeight = 40;
-const timeItemMargin = 8;
-const middleGapHeight = 20;
+const timeItemMargin = 8; // 找不到获取margin的方式 暂时留着了
 
 dayjs.extend(customParseFormat);
 
@@ -21,26 +18,11 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
   name,
   data() {
     return {
-      currentMiddle: 0,
       splitValue: Object.create(null),
+      timeArr: [EPickerCols.hour, EPickerCols.minute, EPickerCols.second],
     };
   },
   props: panelColProps(),
-  watch: {
-    value(newMVal: dayjs.Dayjs) {
-      const { hour, minute, second, zh, en } = EPickerCols;
-      const newH = newMVal.get('hour');
-      const newM = newMVal.get('minute');
-      const newS = newMVal.get('second');
-      this.scrollToTime(hour, newH, 'smooth');
-      this.scrollToTime(minute, newM, 'smooth');
-      this.scrollToTime(second, newS, 'smooth');
-      const meridianZH = this.isPm ? zhList[1] : zhList[0];
-      const meridianEN = this.isPm ? enList[1] : enList[0];
-      this.scrollToTime(zh, meridianZH, 'smooth');
-      this.scrollToTime(en, meridianEN, 'smooth');
-    },
-  },
   computed: {
     valStr() {
       // 这里的操作会修改数据，所以不能使用value直接格式化，否则出现loop update的问题
@@ -52,30 +34,28 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     isPm() {
       return dayjs(this.valStr, this.format).hour() >= 12;
     },
+    currentTimes() {
+      return [Number(this.value.get('hour')), Number(this.value.get('minute')), Number(this.value.get('second'))];
+    },
   },
   methods: {
+    getTimeItemHeight(col: EPickerCols): number {
+      const cols = this.$refs[`${col}_scroller`] as Element;
+      return cols.querySelector('li').offsetHeight;
+    },
     generateColTime(col: EPickerCols): Array<number | string> {
       let res;
       let count: number;
-      switch (col) {
-        case EPickerCols.en:
-          res = enList;
-          break;
-        case EPickerCols.hour:
+      if (this.timeArr.includes(col)) {
+        const colIdx = this.timeArr.indexOf(col);
+        if (col === EPickerCols.hour) {
           count = /[h]{1}/.test(this.format) ? 11 : 23;
-          res = this.generateTimeList(count, Number(this.steps[0]));
-          break;
-        case EPickerCols.minute:
+        } else {
           count = 59;
-          res = this.generateTimeList(count, Number(this.steps[1]));
-          break;
-        case EPickerCols.second:
-          count = 59;
-          res = this.generateTimeList(count, Number(this.steps[2]));
-          break;
-        case EPickerCols.zh:
-          res = zhList;
-          break;
+        }
+        res = this.generateTimeList(count, Number(this.steps[colIdx]));
+      } else {
+        res = col === EPickerCols.en ? enList : zhList;
       }
       return res;
     },
@@ -92,56 +72,39 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       }
       return res.reverse();
     },
+    disableFilter(preIdx: number, col: EPickerCols) {
+    // 如果有hideDisableTime 需要进行filter计算它的time(index)
+      let filteredIdx = preIdx;
+      if (this.hideDisabledTime && this.disableTime) {
+        const timeList = this.generateColTime(col);
+        const index = this.timeArr.indexOf(col);
+        filteredIdx = timeList.filter((t) => {
+          const params = this.currentTimes;
+          params[index] = Number(t);
+          return this.disableTime && !this.disableTime?.apply(this, params);
+        }).indexOf(preIdx);
+      }
+      return filteredIdx;
+    },
     calculateTimeIdx(time: number | string, step: number | string, type: EPickerCols): number {
       let timeIdx = time;
-      if (this.hideDisabledTime && this.disableTime) {
-        // 如果有hideDisableTime 需要进行filter计算它的time(index)
-        const { hour, minute, second } = EPickerCols;
-        const currentHour = Number(this.value.get('hour'));
-        const currentMin = Number(this.value.get('minute'));
-        const currentSec = Number(this.value.get('second'));
-
-        const timeList = this.generateColTime(type);
-        switch (type) {
-          case hour:
-            timeIdx = timeList.filter(t => !this.disableTime(Number(t), currentMin, currentSec)).indexOf(timeIdx);
-            break;
-          case minute:
-            timeIdx = timeList.filter(t => !this.disableTime(currentHour, Number(t), currentSec)).indexOf(timeIdx);
-            break;
-          case second:
-            timeIdx = timeList.filter(t => !this.disableTime(currentHour, currentMin, Number(t))).indexOf(timeIdx);
-            break;
-        }
-      }
+      timeIdx = this.disableFilter(Number(timeIdx), type);
       return Math.floor(Number(timeIdx) / Number(step));
     },
     // 处理滚动距离
     scrollToTime(col: EPickerCols, time: number | string, behavior: ScrollBehavior = 'auto') {
       let timeIndex: number;
-      const { en, zh, hour, minute, second } = EPickerCols;
-      switch (col) {
-        case en:
-          timeIndex = enList.indexOf(time as string);
-          break;
-        case zh:
-          timeIndex = zhList.indexOf(time as string);
-          break;
-        case hour:
-          timeIndex = this.calculateTimeIdx(time, this.steps[0], hour);
-          if (/[h]{1}/.test(this.format)) {
-            timeIndex %= 12;
-          }
-          break;
-        case minute:
-          timeIndex = this.calculateTimeIdx(time, this.steps[1], minute);
-          break;
-        case second:
-          timeIndex = this.calculateTimeIdx(time, this.steps[2], second);
-          break;
+      if (this.timeArr.includes(col)) {
+        const colIdx = this.timeArr.indexOf(col);
+        timeIndex = this.calculateTimeIdx(time, this.steps[colIdx], col);
+        if (col === EPickerCols.hour && /[h]{1}/.test(this.format)) {
+          timeIndex %= 12;
+        }
+      } else {
+        timeIndex = col === EPickerCols.en ? enList.indexOf(time as string) : zhList.indexOf(time as string);
       }
-
-      const distance = this.calcScrollYDistance(timeIndex);
+      const timeItemTotalHeight = this.getTimeItemHeight(col) + timeItemMargin;
+      const distance = (timeIndex * timeItemTotalHeight) + (timeItemTotalHeight / 2);
       const scroller = this.$refs[`${col}_scroller`] as Element;
       if (!distance || !scroller) return;
       if (scroller.scrollTop === distance) return;
@@ -151,8 +114,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         behavior,
       });
     },
-
-    initTimeScrollPos() {
+    updateTimeScrollPos() {
       this.cols.forEach((col: EPickerCols) => {
         this.scrollToTime(col, this.splitValue[col]);
       });
@@ -177,22 +139,13 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         );
       });
     },
-    handletTimeItemClick(e: MouseEvent, col: EPickerCols, time: number | string) {
+    handletTimeItemClick(_e: MouseEvent, col: EPickerCols, time: number | string) {
       const canUse = this.timeItemCanUsed(col, time);
       if (canUse) {
         this.scrollToTime(col, time, 'smooth');
         this.$emit('time-pick', col, time);
       }
     },
-    calcScrollYDistance(index: number): number {
-      const timeItemTotalHeight = timeItemHeight + timeItemMargin;
-      return (index * timeItemTotalHeight) + ((timeItemTotalHeight - middleGapHeight) / 2);
-    },
-    /**
-     * 判断是否是当前时间
-     * @param col
-     * @param colItem
-     */
     isCurrent(col: EPickerCols, colItem: string | number) {
       let colVal;
       switch (col) {
@@ -210,35 +163,12 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           return colVal === Number(colItem);
       }
     },
-    /**
-     * 时间是否可用
-     * @param col
-     * @param time
-     */
     timeItemCanUsed(col: EPickerCols, time: string | number): boolean {
-      const newH = Number(this.value.get('hour'));
-      const newM = Number(this.value.get('minute'));
-      const newS = Number(this.value.get('second'));
-      let timeTmp: number;
-      switch (col) {
-        case EPickerCols.hour:
-          timeTmp = Number(time);
-          if (this.disableTime && this.disableTime(timeTmp, newM, newS)) {
-            return false;
-          }
-          break;
-        case EPickerCols.minute:
-          timeTmp = Number(time);
-          if (this.disableTime && this.disableTime(newH, timeTmp, newS)) {
-            return false;
-          }
-          break;
-        case EPickerCols.second:
-          timeTmp = Number(time);
-          if (this.disableTime && this.disableTime(newH, newM, timeTmp)) {
-            return false;
-          }
-          break;
+      if (this.timeArr.includes(col)) {
+        const index = this.timeArr.indexOf(col);
+        const params = this.currentTimes;
+        params[index] = Number(time);
+        return !(this.disableTime && this.disableTime?.apply(this, params));
       }
       return true;
     },
@@ -247,13 +177,64 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     },
     renderScroller(col: EPickerCols) {
       return (
-        <ul class={`${componentName}-panel__body-scroll`} ref={`${col}_scroller`}>
+        <ul
+          class={`${componentName}-panel__body-scroll`}
+          ref={`${col}_scroller`}
+          onMousewheel={() => this.handleScroll(col)}
+        >
           {this.generateColRows(col)}
         </ul>
       );
     },
+    // 当存在大于1的step时 需要手动处理获取最近的step
+    closestLookup(avaliableArr: Array<any>, calcVal: number, step: number) {
+      if (step <= 1) return calcVal;
+      return avaliableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
+    },
+    // 处理滚动选择时间
+    handleScroll(col: EPickerCols) {
+      let scrollVal: number|string;
+      const cols = this.$refs[`${col}_scroller`] as Element;
+      const avaliableList = this.generateColTime(col);
+      const { scrollTop } = cols; // 当前滚动的高度;
+      const itemHeight = this.getTimeItemHeight(col);
+
+      if (this.timeArr.includes(col)) {
+        // 处理时间相关col的滚动
+        const colIdx = this.timeArr.indexOf(col);
+        const max = col === EPickerCols.hour ? 23 : 59;
+        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin)) * Number(this.steps[colIdx]))), max);
+        scrollVal = this.closestLookup(avaliableList, scrollVal, Number(this.steps[colIdx]));
+        if (this.disableTime && this.hideDisabledTime) {
+          scrollVal = avaliableList.filter((t) => {
+            const params = this.currentTimes;
+            params[colIdx] = Number(t);
+            return !this.disableTime?.apply(this, params);
+          })[scrollVal] as number;
+        }
+      } else {
+        // 处理非时间col的相关的滚动
+        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin))), 1);
+        scrollVal = col === EPickerCols.zh ? zhList[scrollVal] : enList[scrollVal];
+      }
+      this.timeItemCanUsed(col, scrollVal) && this.$emit('time-pick', col, scrollVal);
+    },
+    renderActiveMask() {
+      return (
+        <div class={`${componentName}-panel__body-active-mask`}>
+          {this.cols.map((_col, idx) => (
+            <div key={idx} />
+          ))}
+        </div>
+      );
+    },
   },
   render() {
-    return <div class={`${componentName}-panel__body`}>{this.renderScrollers()}</div>;
+    return (
+      <div class={`${componentName}-panel__body`}>
+        {this.renderActiveMask()}
+        {this.renderScrollers()}
+      </div>
+    );
   },
 });

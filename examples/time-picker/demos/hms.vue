@@ -13,8 +13,8 @@ export default {
     };
   },
   methods: {
-    timechange(date, time) {
-      console.log(date, time);
+    timechange(time) {
+      console.log(time);
     },
     open() {
       console.log('open');
