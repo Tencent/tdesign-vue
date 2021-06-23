@@ -27,6 +27,10 @@ export default Vue.extend({
         return ['file', 'file-input', 'image', 'custom'].includes(val);
       },
     },
+    autoUpload: {
+      type: Boolean,
+      default: true,
+    },
     cancel: Function as PropType<(e: MouseEvent) => void>,
     trigger: Function as PropType<(e: MouseEvent) => void>,
     remove: Function as PropType<(e: MouseEvent) => void>,
@@ -45,7 +49,7 @@ export default Vue.extend({
       return this.display === 'image';
     },
     imageUrl(): string {
-      return this.file && this.file.url;
+      return (this.file && this.file.url) || (this.loadingFile && this.loadingFile.url);
     },
     percent(): number {
       return this.loadingFile && this.loadingFile.percent;
@@ -135,6 +139,9 @@ export default Vue.extend({
     },
 
     renderUploading() {
+      if (this.autoUpload === false) {
+        return '';
+      }
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
       }

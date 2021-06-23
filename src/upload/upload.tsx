@@ -166,12 +166,13 @@ export default Vue.extend({
           status: 'waiting',
           ...file,
         };
+        uploadFile.url = this.getLocalFileURL(fileRaw);
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
           newFiles.push(uploadFile);
           this.toUploadFiles = [...new Set(newFiles)];
-          this.loadingFile = file;
+          this.loadingFile = uploadFile;
           // this.$emit('waiting-upload-files-change', this.toUploadFiles);
           // this.onWaitingUploadFilesChange && this.onWaitingUploadFilesChange(this.toUploadFiles);
           if (this.autoUpload) {
@@ -291,6 +292,7 @@ export default Vue.extend({
     },
 
     cancelUpload() {
+      if (!this.files[0] && this.loadingFile) this.loadingFile = null;
       (this.$refs.input as HTMLInputElement).value = '';
     },
 
@@ -309,6 +311,16 @@ export default Vue.extend({
           <TIconUpload slot='icon'/>点击上传
         </TButton>
       );
+    },
+
+    getLocalFileURL(file: File) {
+      let url = null ;
+      if (window.webkitURL !== undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+      } else if (window.URL !== undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+      }
+      return url ;
     },
 
     renderInput() {
@@ -351,6 +363,7 @@ export default Vue.extend({
           onDragleave={this.handleDragleave}
           loadingFile={this.loadingFile}
           file={this.files && this.files[0]}
+          autoUpload={this.autoUpload}
           display={this.theme}
           cancel={this.cancelUpload}
           trigger={this.triggerUpload}
