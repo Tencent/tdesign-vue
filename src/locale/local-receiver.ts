@@ -9,7 +9,7 @@ export interface Placement {
   [propName: string]: string | number;
 };
 
-interface LocalComponent extends Vue {
+export interface LocalComponent extends Vue {
   globalLocale: Locale;
 };
 
