@@ -4,7 +4,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -22,7 +22,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
           </div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell t-calendar__control-section-month">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -257,7 +257,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -275,7 +275,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
           </div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell t-calendar__control-section-month">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -450,7 +450,7 @@ exports[`Calendar :props :mode 1`] = `
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -550,7 +550,7 @@ exports[`Calendar :props :range 1`] = `
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -568,7 +568,7 @@ exports[`Calendar :props :range 1`] = `
           </div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell t-calendar__control-section-month">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -773,7 +773,7 @@ exports[`Calendar :props :theme 1`] = `
 <div class="t-calendar t-calendar--card">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -791,7 +791,7 @@ exports[`Calendar :props :theme 1`] = `
           </div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell t-calendar__control-section-month">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -1063,7 +1063,7 @@ exports[`Calendar :props :value 1`] = `
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell t-calendar__control-section-year">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>
@@ -1081,7 +1081,7 @@ exports[`Calendar :props :value 1`] = `
           </div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell t-calendar__control-section-month">
+      <div class="t-calendar__control-section-cell">
         <div class="t-select-wrap">
           <div class="t-popup-reference t-select-popup-reference" style="position: relative;">
             <transition-stub name="t-popup_animation" appear="true"></transition-stub>

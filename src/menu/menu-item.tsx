@@ -31,7 +31,16 @@ export default defineComponent({
       } else if (props.to) {
         const router = props.router || (ctx.root as Record<string, any>).$router;
         const methods: string = props.replace ? 'replace' : 'push';
-        router[methods](props.to);
+        router[methods](props.to).catch((err: Error) => {
+          // vue-router 3.1.0+ push/replace cause NavigationDuplicated error
+          // https://github.com/vuejs/vue-router/issues/2872
+          // 当前path和目标path相同时，会抛出NavigationDuplicated的错误
+          if (err.name !== 'NavigationDuplicated'
+          && !err.message.includes('Avoided redundant navigation to current location')
+          ) {
+            throw (err);
+          }
+        });
       }
     };
 

@@ -5,7 +5,14 @@
       placeholder="-请选择-"
       :options="options"
       :popupProps="popupProps"
-      style="width: 200px;"
+      style="width: 200px;display: inline-block;"
+    />
+    <t-select
+      v-model="value"
+      placeholder="-请选择-"
+      :options="options"
+      :popupProps="popupProps2"
+      style="width: 200px;display: inline-block;margin-left: 20px;"
     />
   </div>
 </template>
@@ -28,10 +35,15 @@ export default {
           value: '3',
         },
       ],
+      // 自定义下拉选项宽度为300px
       popupProps: {
         overlayStyle: {
           width: '300px',
         },
+      },
+      // 定义下拉宽度始终与触发浮层的元素（即select组件）等宽
+      popupProps2: {
+        overlayStyle: trigger => ({ width: `${trigger.offsetWidth}px` }),
       },
       value: '1',
     };

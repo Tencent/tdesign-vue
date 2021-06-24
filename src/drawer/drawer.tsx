@@ -1,10 +1,11 @@
-import Vue from 'vue';
 import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
 import props from '../../types/drawer/props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 
@@ -12,7 +13,7 @@ type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('drawer')).extend({
   name,
 
   components: {
@@ -140,13 +141,24 @@ export default Vue.extend({
       const baseTypes = ['string', 'object'];
       return Boolean(btnApi && baseTypes.includes(typeof btnApi));
     },
+    // locale 全局配置，插槽，props，默认值，决定了按钮最终呈现
     getDefaultFooter() {
-      const defaultCancel = this.getDefaultBtn('cancel', this.cancelBtn);
-      const defaultConfirm = this.getDefaultBtn('confirm', this.confirmBtn);
+      let cancelBtn = null;
+      if (![undefined, null].includes(this.cancelBtn)) {
+        cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
+        const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
+        cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
+      }
+      let confirmBtn = null;
+      if (![undefined, null].includes(this.confirmBtn)) {
+        confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
+        const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
+        confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
+      }
       return (
         <div>
-          {this.isUseDefault(this.cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn')}
-          {this.isUseDefault(this.confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn')}
+          {cancelBtn}
+          {confirmBtn}
         </div>
       );
     },

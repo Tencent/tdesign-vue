@@ -4,8 +4,6 @@ import { prefix } from '../../config';
 import { SearchOption } from '../type/transfer';
 
 const name = `${prefix}-transfer-search`;
-const searchPlaceholder = '请输入';
-
 
 export default Vue.extend({
   name,
@@ -22,9 +20,10 @@ export default Vue.extend({
     search: {
       type: [Boolean, Object] as PropType<SearchOption>,
     },
+    placeholder: String,
   },
   render(_, context): VNode {
-    const { searchValue, search } = context.props;
+    const { searchValue, search, placeholder } = context.props;
     const inputProps = typeof search === 'object' ? search : {
       clearable: true,
     };
@@ -50,7 +49,7 @@ export default Vue.extend({
           value={searchValue}
           onChange={handleChange}
           on-enter={handleEnter}
-          placeholder={searchPlaceholder}
+          placeholder={placeholder}
         >
           <t-icon name="search" slot="suffix-icon"></t-icon>
         </t-input>

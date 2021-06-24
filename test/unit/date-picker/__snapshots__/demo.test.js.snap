@@ -1,0 +1,516 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker base demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker datePresets demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker datePresetsAlt demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    日期: 2020-12-28T00:00:00.000Z
+  </div>
+</div>
+`;
+
+exports[`DatePicker datePresetsTime demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker dateRange demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker month demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m t-date-picker--month-picker"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker year demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-input t-size-m t-date-picker--month-picker"
+    theme="primary"
+  >
+    <div
+      class="t-popup-reference t-date-picker-popup-reference"
+      style="position: relative;"
+    >
+      <transition-stub
+        appear="true"
+        name="t-popup_animation"
+      />
+      <div
+        class="t-form-controls"
+      >
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
+          <span
+            class="t-input__suffix"
+          >
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

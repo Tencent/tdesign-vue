@@ -115,7 +115,7 @@ export default mixins(PaginationLocalReceiver).extend({
     TIconChevronRightDouble,
     TIconEllipsis,
     TInput,
-    Select,
+    TSelect: Select,
   },
   model: {
     prop: 'current',
@@ -237,7 +237,7 @@ export default mixins(PaginationLocalReceiver).extend({
       const options = this.pageSizeOptions.map(option => typeof option === 'object'
         ? option
         : {
-          label: `${option} 条/页`,
+          label: this.t(this.locale.itemsPerPage, { size: option }),
           value: Number(option),
         });
       return options.sort((a, b) => a.value - b.value);

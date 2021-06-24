@@ -3,8 +3,7 @@
   <div>
     <h1>使用插槽</h1>
     <t-calendar>
-      <template slot="week"
-                slot-scope="scope">
+      <template slot="week" slot-scope="scope">
         {{ scope.data.day === 7 ? '星期天' : `星期${scope.data.day}` }}
       </template>
     </t-calendar>
@@ -12,7 +11,7 @@
     <br>
 
     <h1>使用week属性 - Array</h1>
-    <t-calendar :week="week">
+    <t-calendar :week="week" :firstDayOfWeek="7">
     </t-calendar>
 
     <br>

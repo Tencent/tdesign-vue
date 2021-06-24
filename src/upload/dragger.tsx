@@ -128,7 +128,7 @@ export default Vue.extend({
 
     renderImage() {
       return (
-        <div class='t-upload__draggar-img-wrap'>
+        <div class='t-upload__dragger-img-wrap'>
           {this.imageUrl && <img src={this.imageUrl || 'default.png'}></img>}
         </div>
       );

@@ -1,36 +1,64 @@
+import Vue from 'vue';
 import LoadingComponent from './loading';
-import { VueConstructor, PluginObject } from 'vue';
-import { LoadingProps } from './type/index';
-import { getAttach } from '../utils/dom';
+import { prefix } from '../config';
+import { getAttach, removeClass } from '../utils/dom';
+import { TdLoadingProps, LoadingInstance } from '../../types/loading/TdLoadingProps';
 
-function createLoading(options: LoadingProps) {
-  const loadingObj = new LoadingComponent({
-    propsData: { ...options, fullscreen: true, isService: true },
+const lockClass = `${prefix}-loading-lock`;
+
+function createLoading(props: TdLoadingProps): LoadingInstance {
+  const loading = new LoadingComponent({
+    propsData: { ...props, isService: true },
   }).$mount();
-  if (options.loading) {
-    document.body.appendChild(loadingObj.$el);
+
+  const container = getAttach(props.attach);
+  if (container) {
+    container.appendChild(loading.$el);
   } else {
-    document.body.removeChild(getAttach('body > .t-loading-parent__relative'));
+    console.error('attach is not exist');
   }
 
-  return {
-    show: () => {
-      loadingObj.loading = true;
-    },
+  const loadingInstance: LoadingInstance = {
     hide: () => {
-      loadingObj.loading = false;
+      loading.loading = false;
+      container.contains(loading.$el) && container.removeChild(loading.$el);
+      // 清除attach逃逸的loading
+      if (loading.attach) {
+        while (container.getElementsByClassName('t-loading').length) {
+          container.removeChild(container.getElementsByClassName('t-loading')[0]);
+        }
+      }
     },
   };
+
+  return loadingInstance;
 }
-const LoadingPlugin = createLoading as (typeof createLoading & PluginObject<void>);
-LoadingPlugin.show = (options: LoadingProps) => {
-  createLoading({ ...options, loading: true });
-};
-LoadingPlugin.hide = (options: LoadingProps) => {
-  createLoading({ ...options, loading: false });
-};
-LoadingPlugin.install = (Vue: VueConstructor) => {
-  Vue.prototype.$loading = LoadingPlugin; // eslint-disable-line
+
+function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
+  // 全屏加载
+  if (typeof props === 'boolean' && props) {
+    return createLoading({
+      fullscreen: true,
+      loading: true,
+    });
+  }
+
+  // 销毁全屏实例
+  if (typeof props === 'boolean' && !props) {
+    removeClass(document.body, lockClass);
+    document.body.removeChild(getAttach('body > .t-loading-fullscreen'));
+    return;
+  }
+
+  // 自定义配置
+  const options = { ...(props as TdLoadingProps) };
+  return createLoading(options);
+}
+
+const LoadingPlugin: Vue.PluginObject<undefined> = {
+  install: () => {
+    Vue.prototype.$loading = produceLoading;
+  },
 };
 
 export default LoadingPlugin;

@@ -118,8 +118,9 @@ export const renderContent = (vm: Vue, name1: string, name2: string, options?: V
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
   let defaultNode = (typeof options === 'object' && 'defaultNode' in options) && options.defaultNode;
   defaultNode = (typeof options === 'object' && 'context' in options) && options;
-  const node1 = renderTNodeJSX(vm, name1, { params });
-  const node2 = renderTNodeJSX(vm, name2, { params });
+  const toParams = params ? { params } : undefined;
+  const node1 = renderTNodeJSX(vm, name1, toParams);
+  const node2 = renderTNodeJSX(vm, name2, toParams);
   const r = [undefined, null, ''].includes(node1) ? node2 : node1;
   return [undefined, null, ''].includes(r) ? defaultNode : r;
 };

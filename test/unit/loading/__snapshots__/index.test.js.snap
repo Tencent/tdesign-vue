@@ -1,3 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading <slot> <indicator> 1`] = `<span class="t-loading"><svg class="t-icon t-icon-loading"><use xlink:href="#t-icon-loading"></use></svg></span>`;
+exports[`Loading <slot> <indicator> 1`] = `
+<div class="t-loading t-size-m t-loading-lock v-transfer-dom"><svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 200 200" class="t-icon-loading" style="display: inline-block; vertical-align: middle;">
+    <g id="load">
+      <linearGradient id="right" gradientUnits="userSpaceOnUse" x1="150" y1="20" x2="150" y2="180">
+        <stop offset="0" style="stop-color: rgb(1, 81, 217);"></stop>
+        <stop offset="1" style="stop-color: rgb(128, 168, 236);"></stop>
+      </linearGradient>
+      <path d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z" class="right" style="fill: url(#right);"></path>
+      <linearGradient id="left" gradientUnits="userSpaceOnUse" x1="50" y1="0" x2="50" y2="180">
+        <stop offset="0" style="stop-color: rgb(255, 255, 255);"></stop>
+        <stop offset="1" style="stop-color: rgb(128, 168, 236);"></stop>
+      </linearGradient>
+      <path d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z" class="left" style="fill: url(#left);"></path>
+      <circle cx="100" cy="10" r="10" class="top" style="fill: #0151D9;"></circle>
+    </g>
+  </svg></div>
+`;

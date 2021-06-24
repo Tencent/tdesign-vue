@@ -176,7 +176,7 @@ export default Vue.extend({
   methods: {
     async popupVisibleChange(visible: boolean) {
       if (this.focusing && !visible) {
-        (this.$refs.popup as any).showPopper = true;
+        this.visible = true;
         return;
       }
       await (this.visible = visible);
@@ -237,7 +237,7 @@ export default Vue.extend({
       this.change(current, context.node);
       this.actived = value;
       if (!this.multiple) {
-        (this.$refs.popup as any).showPopper = false;
+        this.visible = false;
       }
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
@@ -323,7 +323,7 @@ export default Vue.extend({
           trigger={popupObject.trigger}
           overlayStyle={popupObject.overlayStyle}
           overlayClassName={popupClass}
-          onVisibleChange={this.popupVisibleChange}
+          on={{ 'visible-change': this.popupVisibleChange }}
         >
           <div
             class={classes}

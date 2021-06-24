@@ -1,3 +1,4 @@
+export * from './locale';
 export * from './message';
 export * from './notification';
 export * from './dialog';
@@ -9,6 +10,7 @@ export * from './breadcrumb';
 export * from './breadcrumbItem';
 export * from './button';
 export * from './calendar';
+export * from './date-picker';
 export * from './checkbox';
 export * from './drawer';
 export * from './form';

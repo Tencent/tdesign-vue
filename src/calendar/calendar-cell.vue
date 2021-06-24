@@ -15,10 +15,7 @@
 import Vue from 'vue';
 
 // 组件的一些常量
-import {
-  COMPONENT_NAME,
-  MONTH_CN_MAP,
-} from './const';
+import { COMPONENT_NAME } from './const';
 
 // 组件相关的自定义类型
 import { CalendarCell } from '../../types/calendar/TdCalendarProps';
@@ -34,6 +31,8 @@ export default Vue.extend({
       type: String,
       default: (): string => null,
     },
+    t: Function,
+    locale: Object,
   },
   computed: {
     allowSlot(): boolean {
@@ -47,7 +46,8 @@ export default Vue.extend({
         const dateNum = this.item.date.getDate();
         return (dateNum > 9 ? `${dateNum}` : `0${dateNum}`);
       }
-      return MONTH_CN_MAP[(this.item.date.getMonth() + 1).toString()];
+      const map = this.t(this.locale.cellMonth).split(',');
+      return map[(this.item.date.getMonth()).toString()];
     },
     cellCls(): Record<string, any> {
       return [
