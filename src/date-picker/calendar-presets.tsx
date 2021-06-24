@@ -17,10 +17,11 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
     presets: {
       type: Object as PropType<CalendarPresetsProps['presets']>,
     },
+    onClickRange: Function,
   },
   methods: {
     clickPreset(value: DateValue) {
-      this.$emit('clickRange', value);
+      this.$props.onClickRange(value);
     },
   },
   render() {

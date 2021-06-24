@@ -1,102 +1,3 @@
-<template>
-  <div v-bind:class="classes">
-    <t-popup
-      ref="popup"
-      class="t-date-picker-popup-reference"
-      v-bind:trigger="'click'"
-      v-bind:placement="'bottom-left'"
-      v-bind:disabled="false"
-      v-bind:destroy-on-hide="true"
-      v-bind:show-arrow="false"
-      v-bind="popupProps"
-      v-bind:on-visible-change="() => {}"
-      v-bind:overlayClassName="'t-date-picker'"
-    >
-      <div class="t-form-controls" v-on:click.stop="controlToggle">
-        <slot name="beforeAddon"></slot>
-
-        <slot
-          v-bind:startDate="start"
-          v-bind:endDate="end"
-          v-bind:rangeText="rangeText"
-          v-bind:startText="startText"
-          v-bind:endText="endText"
-          v-bind:trigger="triggerEvent"
-        >
-          <t-input
-            ref="native"
-            v-model="formattedValue"
-            v-bind:disabled="disabled"
-            v-bind:clearable="clearable"
-            v-bind:placeholder="placeholder"
-            v-bind:readonly="!allowInput"
-            v-bind:allow-input="allowInput ? 1 : 0"
-            v-bind:size="size"
-            v-bind="inputOptions"
-            v-on:clear="clear(true)"
-            v-on="inputListeners"
-          >
-            <slot name="beforeIcon" slot="prefix-icon"></slot>
-            <slot name="afterIcon" slot="suffix-icon">
-              <t-icon-calendar v-if="!enableTimePicker" />
-              <t-icon-time v-else />
-            </slot>
-          </t-input>
-        </slot>
-        <slot name="afterAddon"></slot>
-      </div>
-      <template slot="content" role="dropdown">
-        <div ref="dropdownPopup" v-if="isOpen || inlineView" v-bind:class="pickerStyles">
-          <div v-show="enableTimePicker && showTime">
-            <t-time-picker-panel
-              ref="timePickerPanel"
-              format="HH:mm:ss"
-              :cols="[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]"
-              :steps="steps"
-              :value="[timeVlaue]"
-              v-on:time-pick="(col, time) => this.handleTimePick(col, time)"
-              :isFooterDisplay="false"
-            />
-          </div>
-          <component
-            v-if="!showTime"
-            :is="range ? 'TDateRange' : 'TDate'"
-            :value="range ? [start, end] : start"
-            :mode="mode"
-            :first-day-of-week="0"
-            @change="dateClick"
-          />
-          <calendar-presets
-            v-if="presets !== false && range"
-            v-bind:presets="presets"
-            v-bind:locales="locales"
-            v-on:clickRange="clickRange"
-          >
-            <template v-slot:box_title="{ clickPresets }">
-              <slot name="presets" v-bind:clickPresets="clickPresets"></slot>
-            </template>
-          </calendar-presets>
-          <div class="t-date-picker--apply">
-            <div class="t-align-items-end">
-              <t-button v-if="enableTimePicker && !showTime" theme="primary" variant="text" v-on:click="toggleTime">
-                {{ locales.selectTime }}
-              </t-button>
-              <t-button v-else-if="enableTimePicker" theme="primary" variant="text" v-on:click="toggleTime">
-                {{ locales.selectDate }}
-              </t-button>
-              <t-button v-if="range || enableTimePicker" theme="primary" v-on:click="clickedApply">
-                {{ locales.applyLabel }}
-              </t-button>
-            </div>
-          </div>
-        </div>
-      </template>
-    </t-popup>
-    <!-- .t-form-controls end -->
-  </div>
-</template>
-
-<script lang="ts">
 import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
@@ -160,15 +61,11 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       inline: false,
       dateFormat: '',
       multiSeparator: ',',
-      inputOptions: this.inputProps,
-      popupOptions: this.popupProps,
       foundation: null,
       inlineView: false,
       showTime: false,
       els: [],
       isOpen: false,
-      EPickerCols,
-      steps: [1, 1, 1],
       timeVlaue: dayjs(),
     };
   },
@@ -435,7 +332,8 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
         case 'date':
           this.start = this.normalizeDatetime(value, this.start);
           this.selectedDates = [this.start];
-          this.clickedApply();
+          // 有时间选择时，点击日期不关闭弹窗
+          this.clickedApply(!this.enableTimePicker);
           break;
         case 'range':
           if (this.inSelection) {
@@ -489,11 +387,6 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
     close() {
       if (!this.disabled) {
         this.tempValue = '';
-        const tPopup: any = this.$refs.popup;
-        if (tPopup) {
-          tPopup.showPopper = false;
-        }
-
         this.isOpen = false;
         this.showTime = false;
         this.$emit('close', this.selectedDates);
@@ -518,8 +411,10 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       this.timeVlaue = dayjs(this.start);
 
       this.showTime = !this.showTime;
-      const timePickerPanel = this.$refs.timePickerPanel as TimePickerPanelInstance;
-      timePickerPanel.panelColUpate();
+      this.$nextTick(() => {
+        const timePickerPanel = this.$refs.timePickerPanel as TimePickerPanelInstance;
+        timePickerPanel && timePickerPanel.panelColUpate();
+      });
     },
 
     clickAway() {
@@ -687,12 +582,6 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
         this.end = end || start;
       }
     },
-    controlToggle() {
-      const scopedSlots = this.$scopedSlots;
-      if (scopedSlots.altControl) {
-        this.toggle();
-      }
-    },
     formatDate(date: Date, format = ''): string {
       let dateFormat = format || this.dateFormat || this.locales.format;
       const arrTime = ['H', 'h', 'm', 's'];
@@ -721,20 +610,101 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       }
 
       this.initClickaway(tip);
-
-      const tPopup: any = this.$refs.popup;
-      if (tPopup) {
-        tPopup.showPopper = true;
-      }
-    },
-    triggerEvent(event: string, ...args: any[]): any {
-      // let vm: any = this;
-      const fn: any = this[event];
-      if (typeof fn === 'function') {
-        return fn(...args);
-      }
-      return null;
     },
   },
+  render() {
+    const { popupProps, disabled, clearable, placeholder, allowInput, size, inputProps, enableTimePicker, presets, mode, range } = this.$props;
+
+    const { start, end, showTime, timeVlaue, locales, isOpen } = this.$data;
+    const panelProps = {
+      value: range ? [start, end] : start,
+      mode,
+      firstDayOfWeek: 0,
+      onChange: this.dateClick,
+    };
+    const panelComponent = range ? <TDateRange {...{ props: { ...panelProps } }} /> : <TDate {...{ props: { ...panelProps } }} />;
+
+    const popupContent = () => (
+      <div ref="dropdownPopup" class={this.pickerStyles}>
+        {
+          enableTimePicker && showTime && (
+            <div>
+              <t-time-picker-panel
+                ref="timePickerPanel"
+                format="HH:mm:ss"
+                cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
+                steps={[1, 1, 1]}
+                value={[timeVlaue]}
+                ontime-pick={this.handleTimePick}
+                isFooterDisplay={false}
+              />
+            </div>
+          )
+        }
+        {
+          !showTime && panelComponent
+        }
+        {
+          presets !== false && range && (
+            <calendar-presets
+              presets={presets}
+              locales={locales}
+              {...{ props: { onClickRange: this.clickRange } }}
+            />
+          )
+        }
+        <div class="t-date-picker--apply">
+          {
+            enableTimePicker && (
+              <t-button theme="primary" variant="text" onClick={this.toggleTime}>
+                {showTime ? locales.selectDate : locales.selectTime}
+              </t-button>
+            )
+          }
+          {
+            (range || enableTimePicker) && (
+              <t-button theme="primary" onClick={this.clickedApply}>
+                {locales.applyLabel}
+              </t-button>
+            )
+          }
+        </div>
+      </div>
+    );
+    return (
+      <div class={this.classes}>
+        <t-popup
+          ref="popup"
+          class="t-date-picker-popup-reference"
+          trigger="click"
+          placement="bottom-left"
+          disabled={disabled}
+          destroyOnHide
+          showArrow={false}
+          visible={isOpen}
+          popupProps={popupProps}
+          overlayClassName="t-date-picker"
+          content={popupContent}
+        >
+          <div class="t-form-controls" onClick={this.toggle}>
+            <t-input
+              ref="native"
+              v-model={this.formattedValue}
+              disabled={disabled}
+              clearable={clearable}
+              placeholder={placeholder}
+              readonly={!allowInput}
+              allowInput={allowInput ? 1 : 0}
+              size={size}
+              inputProps={inputProps}
+              onClear={() => this.clear(true)}
+              {...{ props: { ...this.inputListeners } }}
+              suffixIcon={() => enableTimePicker ? <t-icon-time /> : <t-icon-calendar />}
+            >
+            </t-input>
+          </div>
+        </t-popup>
+      </div>
+    );
+  },
 });
-</script>

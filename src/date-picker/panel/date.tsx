@@ -34,6 +34,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
     maxDate: Date,
     firstDayOfWeek: Number,
     disabledDate: Function,
+    onChange: Function,
   },
   data() {
     return {
@@ -85,11 +86,11 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
       return this[`click${firstUpperCase(this.type)}`];
     },
     clickDate(date: Date) {
-      this.$emit('change', date);
+      this.$props.onChange(date);
     },
     clickMonth(date: Date) {
       if (this.mode === 'month') {
-        this.$emit('change', date);
+        this.$props.onChange(date);
       } else {
         this.$data.type = 'date';
         this.$data.year = date.getFullYear();
@@ -98,7 +99,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
     },
     clickYear(date: Date) {
       if (this.mode === 'year') {
-        this.$emit('change', date);
+        this.$props.onChange(date);
       } else {
         this.$data.type = 'month';
         this.$data.year = date.getFullYear();
@@ -156,7 +157,6 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
           first-day-of-week={this.$props.firstDayOfWeek}
           data={this.tableData}
           {...{
-            // on: { 'update:type': this.onTypeChange },
             props: {
               onCellClick: this.getClickHandler(),
             },

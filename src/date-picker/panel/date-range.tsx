@@ -41,6 +41,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     maxDate: Date,
     firstDayOfWeek: Number,
     disabledDate: Function,
+    onChange: Function,
   },
   data() {
     return {
@@ -211,7 +212,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
         this.isFirstClick = false;
         this.firstClickValue = date;
       } else {
-        this.$emit('change', [this.startValue, setDateTime(date, 23, 59, 59)]);
+        this.$props.onChange([this.startValue, setDateTime(date, 23, 59, 59)]);
         this.isFirstClick = true;
       }
     },
@@ -222,7 +223,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
           this.isFirstClick = false;
           this.firstClickValue = date;
         } else {
-          this.$emit('change', [this.startValue, this.endValue]);
+          this.$props.onChange([this.startValue, this.endValue]);
           this.isFirstClick = true;
         }
       } else {
@@ -240,7 +241,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
           if (this.endValue < this.startValue) {
             this.endValue = this.startValue;
           }
-          this.$emit('change', [this.startValue, this.endValue]);
+          this.$props.onChange([this.startValue, this.endValue]);
           this.isFirstClick = true;
         }
       } else {

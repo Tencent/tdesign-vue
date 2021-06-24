@@ -1,4 +1,4 @@
-import _DatePicker from './date-picker.vue';
+import _DatePicker from './date-picker';
 import withInstall from '../utils/withInstall';
 import { TdDatePickerProps } from '@TdTypes/date-picker/TdDatePickerProps';
 

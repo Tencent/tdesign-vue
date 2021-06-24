@@ -9,7 +9,7 @@ exports[`DatePicker base demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -19,9 +19,8 @@ exports[`DatePicker base demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -46,9 +45,7 @@ exports[`DatePicker base demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -85,7 +82,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -95,9 +92,8 @@ exports[`DatePicker datePresets demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -122,9 +118,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -161,7 +155,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -171,46 +165,33 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
-        <button
-          class="t-button t-size-m t-button--variant-text t-button--theme-primary"
-          type="button"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-input--suffix"
         >
+          <input
+            class="t-input__inner"
+            readonly="readonly"
+            type="text"
+          />
           <span
-            class="t-button__text"
+            class="t-input__suffix"
           >
-            
-        最近7天
-      
+            <svg
+              class="t-icon t-icon-calendar"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M384 128L384 192 640 192 640 128 704 128 704 192 832 192C867.3462208 192 896 220.653776 896 256L896 832C896 867.3462208 867.3462208 896 832 896L192 896C156.653776 896 128 867.3462208 128 832L128 256C128 220.653776 156.653776 192 192 192L320 192 320 128 384 128ZM320 256L192 256 192 832 832 832 832 256 704 256 704 320 640 320 640 256 384 256 384 320 320 320 320 256ZM192 384L832 384 832 448 192 448 192 384Z"
+                fill-opacity=".9"
+                fill-rule="evenodd"
+              />
+            </svg>
           </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-text t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            
-        最近3天
-      
-          </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-text t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            
-        今天
-      
-          </span>
-        </button>
-         
+        </div>
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -251,7 +232,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -261,9 +242,8 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -288,9 +268,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -327,7 +305,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -337,9 +315,8 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -364,9 +341,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -403,7 +378,7 @@ exports[`DatePicker month demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -413,9 +388,8 @@ exports[`DatePicker month demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -440,9 +414,7 @@ exports[`DatePicker month demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
@@ -479,7 +451,7 @@ exports[`DatePicker year demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-date-picker-popup-reference t-popup-reference"
+      class="t-popup-reference t-date-picker-popup-reference"
       style="position: relative;"
     >
       <transition-stub
@@ -489,9 +461,8 @@ exports[`DatePicker year demo works fine 1`] = `
       <div
         class="t-form-controls"
       >
-         
         <div
-          allow-input="0"
+          allowinput="0"
           class="t-input t-size-m t-input--suffix"
         >
           <input
@@ -516,9 +487,7 @@ exports[`DatePicker year demo works fine 1`] = `
             </svg>
           </span>
         </div>
-         
       </div>
-       
       <div
         class="resize-sensor"
         dir="ltr"
