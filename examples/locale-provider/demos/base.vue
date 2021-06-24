@@ -27,7 +27,7 @@
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const GLOBAL_CONFIG = {
   pagination: {
-    itemsPerPage: '{itemsPerPage} items per page',
+    itemsPerPage: '{size} items per page',
     jumpTo: 'jump to',
     page: '',
     total: 'Total {total}',
