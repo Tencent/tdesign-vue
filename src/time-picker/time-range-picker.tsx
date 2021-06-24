@@ -5,6 +5,7 @@ import isFunction from 'lodash/isFunction';
 import isEqual from 'lodash/isEqual';
 
 import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType, TimePickerPanelInstance } from './type';
+import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import PickerPanel from './panel';
@@ -107,10 +108,15 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       this.inputTime[index][type] = '00';
     },
     // 面板展示隐藏
-    panelVisibleChange(val: boolean) {
-      this.isShowPanel = val;
-      if (val) return this.$emit('open');
-      this.$emit('close');
+    panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
+      if (context) {
+        const isClickDoc = context.trigger === 'document';
+        this.isShowPanel = !isClickDoc;
+        this.$emit(isClickDoc ? 'close' : 'open');
+      } else {
+        this.isShowPanel = val;
+        this.$emit(val ? 'open' : 'close');
+      }
     },
     // 切换上下午
     toggleInputMeridiem(index: number) {
@@ -267,7 +273,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
         disabled={disabled}
         visible={this.isShowPanel}
         overlayClassName={`${componentName}-panel__container`}
-        onVisibleChange={this.panelVisibleChange}
+        on={{ 'visible-change': this.panelVisibleChange }}
       >
         {this.renderInput()}
         <template slot="content">
