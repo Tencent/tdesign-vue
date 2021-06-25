@@ -1,6 +1,6 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import config from '../config';
-import { Locale } from './local-provider';
+import { Locale, ComponentLocale, LocalRule } from './type';
 import defaultLocale from './zh_CN';
 
 const name = `${config.prefix}-locale-receiver`;
@@ -9,41 +9,46 @@ export interface Placement {
   [propName: string]: string | number;
 };
 
+export interface LocalComponent extends Vue {
+  globalLocale: Locale;
+};
+
 export default function getLocalRecevierMixins(componentName: string) { // eslint-disable-line
-  return Vue.extend({
+  return (Vue as VueConstructor<LocalComponent>).extend({
     name,
     inject: {
       globalLocale: {
-        default: defaultLocale,
+        default: undefined,
       },
     },
 
-    data() {
-      return {
-        locale: {},
-      };
-    },
-
-    watch: {
-      globalLocale: {
-        immediate: true,
-        handler(v: Locale): void {
-          this.locale = v[componentName] as Locale;
-        },
+    computed: {
+      locale(): ComponentLocale {
+        const defaultData = defaultLocale[componentName];
+        if (this.globalLocale && this.globalLocale[componentName]) {
+          return this.globalLocale[componentName];
+        }
+        return defaultData;
       },
     },
 
     methods: {
-      t(pattern: string, placement: Placement): string {
-        const regx = /\{\s*([\w-]+)\s*\}/g;
-        const translated = pattern.replace(regx, (match, key) => {
-          if (placement) {
-            return String(placement[key]);
-          }
-          return '';
-        });
-
-        return translated;
+      t(pattern: LocalRule<Placement>, placement?: Placement): string {
+        if (typeof pattern === 'string') {
+          if (!placement) return pattern;
+          const regx = /\{\s*([\w-]+)\s*\}/g;
+          const translated = pattern.replace(regx, (match, key) => {
+            if (placement) {
+              return String(placement[key]);
+            }
+            return '';
+          });
+          return translated;
+        }
+        if (typeof pattern === 'function') {
+          return pattern(placement);
+        }
+        return '';
       },
     },
   });

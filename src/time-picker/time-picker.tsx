@@ -2,18 +2,20 @@ import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType } from './type';
-import RenderComponent from '../utils/render-component';
+
+import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './type';
+import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import PickerPanel from './panel';
-import Input from './input';
+import TInput from '../input';
 import TIconTime from '../icon/time';
-import TIconClose from '../icon/close';
-import { clickOut } from '../utils/dom';
+import TPopup from '../popup';
+import InputItems from './input-items';
+
 import props from '../../types/time-picker/props';
 
-import { EPickerCols, pmList, amList } from './constant';
+import { EPickerCols, pmList, amList, EMPTY_VALUE, componentName, AM } from './constant';
 
 const name = `${prefix}-time-picker`;
 
@@ -23,10 +25,11 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
   name,
 
   components: {
-    RenderComponent,
     PickerPanel,
     TIconTime,
-    TIconClose,
+    TPopup,
+    TInput,
+    InputItems,
   },
 
   model: {
@@ -49,8 +52,6 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       time: time ? dayjs(time, this.format) : undefined,
       // 初始值转input展示对象
       inputTime: time ? this.setInputValue(dayjs(time, this.format)) : undefined,
-      // 初始化是否是range
-      isRange: Array.isArray(time),
       needClear: false,
     };
   },
@@ -68,11 +69,6 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       const isDefault = (this.inputTime as any).some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
       return isDefault ? '' : `${name}__group-text`;
     },
-    // 是否展示清空按钮
-    clearVisible(): boolean {
-      // 如果可以展示清空按钮并且时间值为空
-      return this.clearable && !!this.time;
-    },
   },
 
   watch: {
@@ -87,33 +83,9 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
         this.time = this.value ? dayjs(this.value, this.format) : undefined;
         this.inputTime = this.setInputValue(dayjs(this.value, this.format));
       },
-      deep: true,
     },
   },
-
-  mounted() {
-    this.initEvent(this.$el);
-  },
-
   methods: {
-    initEvent(el: Element) {
-      this.els.push(el);
-      if (this.els.length > 1) {
-        clickOut(this.els, () => {
-          this.isShowPanel = false;
-        });
-      }
-    },
-    getPanelDom(el: Element) {
-      this.initEvent(el);
-    },
-    // input外框
-    handlerClickInput() {
-      if (this.disabled) {
-        return;
-      }
-      this.isShowPanel = true;
-    },
     // 输入变化
     inputChange(data: TimeInputEvent) {
       const { type, value } = data;
@@ -124,7 +96,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
         },
       } = this;
       let newTime = time;
-      if (value === -1) {
+      if (value === EMPTY_VALUE) {
         // 特殊标识，需要清空input
         this.inputTime[type] = undefined;
         // 需要重置该类型时间
@@ -141,27 +113,34 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       // 设置时间
       newTime = newTime.set(type, value);
       // 生成变动
-
       this.time = dayjs(newTime);
       // 转化展示数据
       this.inputTime = this.setInputValue(dayjs(newTime));
+      const panelRef = this.$refs.panel as TimePickerPanelInstance;
+      panelRef.panelColUpate();
     },
     // 输入失焦，赋值默认
     inputBlurDefault(type: TimeInputType) {
       this.inputTime[type] = '00';
     },
     // 面板展示隐藏
-    panelVisibleChange(val: boolean) {
-      if (val) return this.$emit('open');
-      this.$emit('close');
+    panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
+      if (context) {
+        const isClickDoc = context.trigger === 'document';
+        this.isShowPanel = !isClickDoc;
+        this.$emit(isClickDoc ? 'close' : 'open');
+      } else {
+        this.isShowPanel = val;
+        this.$emit(val ? 'open' : 'close');
+      }
     },
     // 切换上下午
-    toggleInputMeridian() {
+    toggleInputMeridiem() {
       const {
         $data: { time },
       } = this;
       const current = time.format('a');
-      const currentHour = time.hours() + (current === 'am' ? 12 : -12);
+      const currentHour = time.hour() + (current === AM ? 12 : -12);
       // 时间变动
       this.inputChange({
         type: 'hour',
@@ -193,21 +172,19 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       this.time = _setTime;
 
       this.inputTime = this.setInputValue(_setTime);
+      this.$emit('change', dayjs(_setTime).format(this.format));
+      isFunction(this.onChange) && this.onChange(dayjs(_setTime).format(this.format));
     },
     // 确定按钮
     makeSure() {
-      this.isShowPanel = false;
+      this.panelVisibleChange(false);
       this.output();
     },
     // 此刻按钮
     nowAction() {
-      this.isShowPanel = false;
       const currentTime = dayjs();
       // 如果此刻在不可选的时间上, 直接return
-      if (
-        isFunction(this.disableTime)
-        && this.disableTime(currentTime.get('hour'), currentTime.get('minute'), currentTime.get('second'))
-      ) {
+      if (isFunction(this.disableTime) && this.disableTime(currentTime.get('hour'), currentTime.get('minute'), currentTime.get('second'))) {
         return;
       }
       this.time = currentTime;
@@ -224,11 +201,11 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
     },
     // 设置输入框展示
     setInputValue(val: dayjs.Dayjs | undefined): InputTime | undefined {
-      const ans: any = {
+      const ans: InputTime = {
         hour: undefined,
         minute: undefined,
         second: undefined,
-        meridian: 'am',
+        meridiem: 'AM',
       };
       if (!val) return ans;
       return this.dayjs2InputTime(val);
@@ -238,12 +215,14 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       const {
         $props: { format },
       } = this;
-      if (!val) return {
-        hour: undefined,
-        minute: undefined,
-        second: undefined,
-        meridian: 'am',
-      };
+      if (!val) {
+        return {
+          hour: undefined,
+          minute: undefined,
+          second: undefined,
+          meridiem: 'AM',
+        };
+      }
 
       let hour: number | string = val.hour();
       let minute: number | string = val.minute();
@@ -267,44 +246,40 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
         hour,
         minute,
         second,
-        meridian: val.format('a'),
+        meridiem: val.format('a'),
       };
     },
     // 清除选中
     clear() {
-      if (this.clearVisible) {
-        this.time = undefined;
-        this.needClear = true;
-        this.inputTime = this.setInputValue(undefined);
-      }
-    },
-    renderInputItem() {
-      const item = this.inputTime;
-      return (
-        <Input
-          size={this.size}
-          dayjs={item}
-          format={this.format}
-          allowInput={this.allowInput}
-          placeholder={this.placeholder}
-          onToggleMeridian={() => this.toggleInputMeridian()}
-          onBlurDefault={(type: TimeInputType) => this.inputBlurDefault(type)}
-          onChange={(e: TimeInputEvent) => this.inputChange(e)}
-        ></Input>
-      );
+      this.time = undefined;
+      this.needClear = true;
+      this.inputTime = this.setInputValue(undefined);
+      this.$emit('onChange', undefined);
     },
     renderInput() {
-      const inputClassName = [`${name}__group`];
-      if (this.disabled) {
-        inputClassName.push('disabled');
-        inputClassName.push(`${name}__input-disabled`);
-      }
-      if (this.isShowPanel) {
-        inputClassName.push('active');
-      }
       return (
-        <div class={inputClassName} onClick={this.handlerClickInput}>
-          {this.renderInputItem()}
+        <div class={`${name}__group`} onClick={() => this.isShowPanel = true}>
+          <t-input
+            disabled={this.disabled}
+            size={this.size}
+            onClear={this.clear}
+            clearable={this.clearable}
+            readonly
+            value={this.time ? ' ' : undefined}
+          >
+            <t-icon-time slot="suffix-icon"></t-icon-time>
+          </t-input>
+          <input-items
+            size={this.size}
+            dayjs={this.inputTime}
+            disabled={this.disabled}
+            format={this.format}
+            allowInput={this.allowInput}
+            placeholder={this.placeholder}
+            onToggleMeridiem={() => this.toggleInputMeridiem()}
+            onBlurDefault={(type: TimeInputType) => this.inputBlurDefault(type)}
+            onChange={(e: TimeInputEvent) => this.inputChange(e)}
+          />
         </div>
       );
     },
@@ -313,44 +288,40 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
   render() {
     // 初始化数据
     const {
-      $props: { size, className },
+      $props: { size, className, disabled },
     } = this;
     // 样式类名
     const classes = [name, CLASSNAMES.SIZE[size] || '', className];
 
     return (
-      <span class={classes} ref="timePickerReference">
+      <t-popup
+        ref="popup"
+        placement="bottom-left"
+        class={classes}
+        trigger="click"
+        disabled={disabled}
+        visible={this.isShowPanel}
+        overlayClassName={`${componentName}-panel__container`}
+        on={{ 'visible-change': this.panelVisibleChange }}
+      >
         {this.renderInput()}
-        <PickerPanel
-          ref="panel"
-          format={this.format}
-          dayjs={this.panelValue}
-          disabled={this.disabled}
-          isShowPanel={this.isShowPanel}
-          ondom={this.getPanelDom}
-          ontime-pick={this.pickTime}
-          onsure={this.makeSure}
-          onnow-action={this.nowAction}
-          onvisible-change={this.panelVisibleChange}
-          steps={this.steps}
-          hideDisabledTime={this.hideDisabledTime}
-          disableTime={this.disableTime}
-          refDom={this.$refs.timePickerReference}
-          isFocus={this.focus}
-        />
-        {
-          <span class={[`${name}__icon-wrap`]} onClick={this.clear}>
-            {this.clearVisible ? (
-              <t-icon-close class={[`${name}__icon`, `${name}__icon-clear`]} size={this.size} />
-            ) : (
-              <t-icon-time
-                class={[`${name}__icon`, `${name}__icon-time`, `${name}__icon-time-show`]}
-                size={this.size}
-              />
-            )}
-          </span>
-        }
-      </span>
+        <template slot="content">
+          <picker-panel
+            ref="panel"
+            format={this.format}
+            value={this.panelValue}
+            disabled={this.disabled}
+            isShowPanel={this.isShowPanel}
+            ontime-pick={this.pickTime}
+            onsure={this.makeSure}
+            onnow-action={this.nowAction}
+            steps={this.steps}
+            hideDisabledTime={this.hideDisabledTime}
+            disableTime={this.disableTime}
+            isFocus={this.focus}
+          />
+        </template>
+      </t-popup>
     );
   },
 });

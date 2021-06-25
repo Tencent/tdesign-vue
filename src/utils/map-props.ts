@@ -1,4 +1,4 @@
-import Vue, { ComponentOptions, CreateElement } from 'vue';
+import Vue, { ComponentOptions, CreateElement, VueConstructor } from 'vue';
 
 const defaultModel = {
   prop: 'value',
@@ -76,8 +76,8 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
   return propOptionMap;
 }
 
-export default function (props: (string | PropOption)[], options: Option = {}): any {
-  function mapProps(componentConstructor: Vue): any {
+export default function (props: (string | PropOption)[], options: Option = {}) {
+  function mapProps(componentConstructor: VueConstructor) {
     const component: ComponentOptions<Vue> = (componentConstructor as any).prototype.constructor.options;
     const model = options.model || defaultModel;
     const propOptionMap = getPropOptionMap(props, { model });

@@ -1,8 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
-import { createPopper } from '@popperjs/core';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 
 import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../type';
 import { componentName, EPickerCols } from '../constant';
@@ -19,7 +17,7 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
   data() {
     return {
       panel: null,
-      resizeSensor: null,
+      isSetup: false,
     };
   },
   components: {
@@ -32,22 +30,23 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
       return `${name}-section`;
     },
     classNames() {
-      return this.rangePicker ? [
-        name,
-        this.sectionComponentName,
-      ] : [name];
+      return this.rangePicker ? [name, this.sectionComponentName] : [name];
     },
-    value() {
-      return this.dayjs.map(el => el || dayjs());
+    colValues() {
+      return this.value.map(el => el || dayjs());
     },
     rangePicker() {
-      return this.value.length > 1;
+      return this.colValues.length > 1;
     },
     formatField() {
       const match = this.format.match(/(a\s+|A\s+)?(h+|H+)?:?(m+)?:?(s+)?(\s+a|A)?/);
       const [, startAChart, hour, minute, second, endAChart] = match;
       return {
-        startAChart, hour, minute, second, endAChart,
+        startAChart,
+        hour,
+        minute,
+        second,
+        endAChart,
       };
     },
     cols() {
@@ -64,86 +63,53 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
   },
   watch: {
     isShowPanel(val: boolean) {
-      this.switchPanel(val);
       if (val) {
-        const panelCol0 = this.$refs.panelCol_0 as TimePickerPanelColInstance;
-        const panelCol1 = this.$refs.panelCol_1 as TimePickerPanelColInstance;
-        this.$nextTick(() => {
-          panelCol0 && panelCol0.initTimeScrollPos();
-          panelCol1 && panelCol1.initTimeScrollPos();
-        });
+        this.panelColUpate();
       }
     },
   },
-  mounted() {
-    this.$emit('dom', this.$el);
-  },
   methods: {
+    panelColUpate() {
+      const panelCol0 = this.$refs.panelCol_0 as TimePickerPanelColInstance;
+      const panelCol1 = this.$refs.panelCol_1 as TimePickerPanelColInstance;
+      this.$nextTick(() => {
+        panelCol0 && panelCol0.updateTimeScrollPos();
+        panelCol1 && panelCol1.updateTimeScrollPos();
+      });
+    },
     scrollToTime(colIndex: number, col: EPickerCols, time: number | string, behavior: ScrollBehavior) {
       const scroller = this.$refs[`panelCol_${colIndex}`] as TimePickerPanelColInstance;
       scroller && scroller.scrollToTime(col, time, behavior);
     },
-    updatePanel(): void {
-      if (this.panel) {
-        this.panel.update();
-      } else {
-        this.createPanel();
-      }
-    },
-    switchPanel(val: boolean): void {
-      if (this.disabled) {
-        return;
-      }
-      if (val) {
-        this.updatePanel();
-      }
-      this.$emit('visible-change', val);
-    },
-    createPanel(): void {
-      const overlayContainer = document.body;
-      overlayContainer.appendChild(this.$refs.panel as Element);
-
-      if (this.panel && this.panel.destroy) {
-        this.panel.destroy();
-      }
-      this.panel = createPopper(this.refDom, this.$refs.panel as HTMLElement, {
-        placement: 'bottom-start',
-        onFirstUpdate: () => {
-          this.$nextTick(() => {
-            this.updatePanel();
-          });
-        },
-      });
-      this.resizeSensor = new ResizeSensor(this.refDom, this.panel.update);
-    },
-    destroyPanel() {
-      this.panel?.destroy();
-    },
     renderFooter() {
       const confirmAction = this.confirmBtnClick.bind(this);
-      return <div class={`${this.sectionComponentName}__footer`}>
-        {
-          this.rangePicker || <t-button theme="primary" variant="text" onClick={this.nowAction}>此刻</t-button>
-        }
-        <t-button theme="primary" variant="base" class={`${this.sectionComponentName}__footer-button`}
-                 onClick={confirmAction}>确定</t-button>
-      </div>;
+      return (
+        <div class={`${this.sectionComponentName}__footer`}>
+          {/* 样式设置为row-reverse 这样不用特地为确定写个绝对布局 */}
+          <t-button theme="primary" variant="base" onClick={confirmAction}>
+            确定
+          </t-button>
+          {this.rangePicker || (
+            <t-button theme="primary" variant="text" onClick={this.nowAction}>
+              此刻
+            </t-button>
+          )}
+        </div>
+      );
     },
 
     renderBody() {
-      return <div class={`${this.sectionComponentName}__body`}>
-        {
-          this.renderSinglePicker(0)
-        }
-        {
-          this.rangePicker && this.renderSinglePicker(1)
-        }
-      </div>;
+      return (
+        <div class={`${this.sectionComponentName}__body`}>
+          {this.renderSinglePicker(0)}
+          {this.rangePicker && this.renderSinglePicker(1)}
+        </div>
+      );
     },
     renderSinglePicker(index: number) {
-      const val = this.value[index];
+      const val = this.colValues[index];
       const ref = `panelCol_${index}`;
-      return <div class={`${name}`}>
+      return (
         <panel-col
           ref={ref}
           value={val}
@@ -152,15 +118,16 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
           hideDisabledTime={this.hideDisabledTime}
           disableTime={this.disableTime}
           format={this.format}
-          ontime-pick={(col: EPickerCols, time: string | number) => this.handleTimePick(col, time, index)}>
-        </panel-col>
-      </div>;
+          ontime-pick={(col: EPickerCols, time: string | number) => this.handleTimePick(col, time, index)}
+        />
+      );
     },
     confirmBtnClick() {
       this.$emit('sure');
     },
     nowAction() {
       this.$emit('now-action');
+      this.panelColUpate();
     },
     /**
      * 时间 item 点击选择处理函数
@@ -169,20 +136,16 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
      * @param index
      */
     handleTimePick(col: EPickerCols, time: string | number, index: number) {
-      this.$emit('time-pick', col, time, index, this.value[index]);
+      this.$emit('time-pick', col, time, index, this.colValues[index]);
     },
   },
   render() {
-    const { classNames } = this;
-    return <transition name={`${name}_animation`}>
-      <div
-        class={`${classNames.join(' ')} ${name}__container`}
-        ref="panel"
-        v-show={this.isShowPanel}
-      >
+    const { isFooterDisplay, classNames } = this;
+    return (
+      <div class={classNames}>
         {this.renderBody()}
-        {this.renderFooter()}
+        {isFooterDisplay ? this.renderFooter() : null}
       </div>
-    </transition>;
+    );
   },
 });

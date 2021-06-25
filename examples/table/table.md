@@ -7,8 +7,7 @@
 
 ### 1.10.筛选
 
-::: demo demos/filter-controlled
-:::
+敬请期待
 
 
 ### 属性配置

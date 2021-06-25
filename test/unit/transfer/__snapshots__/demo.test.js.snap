@@ -27,7 +27,7 @@ exports[`Transfer base demo works fine 1`] = `
           />
         </label>
         <span>
-          0 / 20项
+          0 / 20 项
         </span>
       </div>
       <span />
@@ -566,7 +566,7 @@ exports[`Transfer base demo works fine 1`] = `
           />
         </label>
         <span>
-          0 / 0项
+          0 / 0 项
         </span>
       </div>
       <span />
@@ -577,7 +577,9 @@ exports[`Transfer base demo works fine 1`] = `
       <div
         class="t-transfer-empty"
       >
-        暂无数据
+        <span>
+          暂无数据
+        </span>
       </div>
     </div>
     <div

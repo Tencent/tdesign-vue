@@ -21,8 +21,4 @@ describe('Popup', () => {
   it('equals disabled to true', () => {
     expect(cmp.vm.disabled).toEqual(true);
   });
-
-  it('equals disabled to true', () => {
-    expect(cmp.vm.clickTrigger).toEqual(true);
-  });
 });

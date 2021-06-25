@@ -7,94 +7,148 @@ exports[`Popconfirm base demo works fine 1`] = `
   <div
     class="tdesign-demo-block"
   >
-    <div>
-      <div
-        class="t-popup-reference"
-        style="position: relative;"
-      >
-        <transition-stub
-          appear="true"
-          name="t-popup_animation"
-        />
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            Hover
-          </span>
-        </button>
+    <div
+      class="demo-item"
+    >
+      <div>
         <div
-          class="resize-sensor"
-          dir="ltr"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+          class="t-popup-reference"
+          style="position: relative;"
         >
+          <transition-stub
+            appear="true"
+            name="t-popup_animation"
+          />
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              删除订单
+            </span>
+          </button>
           <div
-            class="resize-sensor-expand"
+            class="resize-sensor"
+            dir="ltr"
             style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
           >
             <div
-              style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-            />
-          </div>
-          <div
-            class="resize-sensor-shrink"
-            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-          >
+              class="resize-sensor-expand"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+              />
+            </div>
             <div
-              style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-            />
+              class="resize-sensor-shrink"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <slot />
     </div>
      
-    <div>
-      <div
-        class="t-popup-reference"
-        style="position: relative;"
-      >
-        <transition-stub
-          appear="true"
-          name="t-popup_animation"
-        />
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            Hover
-          </span>
-        </button>
+    <div
+      class="demo-item"
+    >
+      <div>
         <div
-          class="resize-sensor"
-          dir="ltr"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+          class="t-popup-reference"
+          style="position: relative;"
         >
+          <transition-stub
+            appear="true"
+            name="t-popup_animation"
+          />
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              点我看按钮
+            </span>
+          </button>
           <div
-            class="resize-sensor-expand"
+            class="resize-sensor"
+            dir="ltr"
             style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
           >
             <div
-              style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-            />
-          </div>
-          <div
-            class="resize-sensor-shrink"
-            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-          >
+              class="resize-sensor-expand"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+              />
+            </div>
             <div
-              style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-            />
+              class="resize-sensor-shrink"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <slot />
+    </div>
+     
+    <div
+      class="demo-item"
+    >
+      <div>
+        <div
+          class="t-popup-reference"
+          style="position: relative;"
+        >
+          <transition-stub
+            appear="true"
+            name="t-popup_animation"
+          />
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              提交审核
+            </span>
+          </button>
+          <div
+            class="resize-sensor"
+            dir="ltr"
+            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+          >
+            <div
+              class="resize-sensor-expand"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+              />
+            </div>
+            <div
+              class="resize-sensor-shrink"
+              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+            >
+              <div
+                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

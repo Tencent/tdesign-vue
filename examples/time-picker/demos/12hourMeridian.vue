@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-block">
-    <t-time-picker format="a hh:mm:ss" :disableTime="disableTime" placeholder="选择时间" />
+    <t-time-picker v-model="value" format="a hh:mm:ss" placeholder="选择时间" />
   </div>
 </template>
 
@@ -8,12 +8,9 @@
 export default {
   name: 'twelveHours',
   data() {
-    return {};
-  },
-  methods: {
-    disableTime(h) {
-      return h < 6;
-    },
+    return {
+      value: 'PM 10:20:30',
+    };
   },
 };
 </script>

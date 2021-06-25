@@ -234,7 +234,7 @@ export default Vue.extend({
     },
     visibleChange(val: boolean) {
       if (this.focusing && !val) {
-        (this.$refs.popup as any).showPopper = true;
+        this.visible = true;
         return;
       }
       this.visible = val;
@@ -243,7 +243,6 @@ export default Vue.extend({
           this.searchInput = '';
         }
       }
-      this.$emit('visible-change', val);
       val && this.monitorWidth();
     },
     onOptionClick(value: string | number, e: MouseEvent) {
@@ -296,7 +295,7 @@ export default Vue.extend({
       isFunction(this.onRemove) && this.onRemove({ value: val, data: removeOption[0], e });
     },
     hideMenu() {
-      (this.$refs.popup as any).showPopper = false;
+      this.visible = false;
     },
     clearSelect(e: MouseEvent) {
       e.stopPropagation();
@@ -307,7 +306,7 @@ export default Vue.extend({
       }
       this.focusing = false;
       this.searchInput = '';
-      (this.$refs.popup as any).showPopper = false;
+      this.visible = false;
       this.$emit('clear', { e });
       isFunction(this.onClear) && this.onClear({ e });
     },
@@ -366,6 +365,15 @@ export default Vue.extend({
     hoverEvent(v: boolean) {
       this.isHover = v;
     },
+    getOverlayElm(): HTMLElement {
+      let r;
+      try {
+        r = (this.$refs.popup as any).$refs.overlay || (this.$refs.popup as any).$refs.component.$refs.overlay;
+      } catch (e) {
+        console.warn('TDesign Warn:', e);
+      }
+      return r;
+    },
     // 打开浮层时，监听trigger元素和浮层宽度，取max
     monitorWidth() {
       this.$nextTick(() => {
@@ -375,7 +383,7 @@ export default Vue.extend({
         }
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
-          const popupWidth = (this.$refs.popup as any).$refs.overlay.getBoundingClientRect().width;
+          const popupWidth = this.getOverlayElm().getBoundingClientRect().width;
           const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH  ? elWidth : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
           Vue.set(this.defaultProps.overlayStyle, 'width', `${Math.ceil(width)}px`);
         }
@@ -385,7 +393,6 @@ export default Vue.extend({
   render(): VNode {
     const {
       classes,
-      visible,
       popupObject,
       disabled,
       popClass,
@@ -417,14 +424,14 @@ export default Vue.extend({
       <div ref='select' class={`${name}-wrap`}>
         <Popup
           ref='popup'
+          visible={this.visible}
           class={`${name}-popup-reference`}
-          visible={visible}
           placement={popupObject.placement}
           trigger={popupObject.trigger}
           disabled={disabled}
           overlayClassName={popClass}
           overlayStyle={popupObject.overlayStyle}
-          onVisibleChange={ this.visibleChange }
+          on={{ 'visible-change': this.visibleChange }}
         >
           <div class={classes} onMouseenter={ this.hoverEvent.bind(null, true) } onMouseleave={ this.hoverEvent.bind(null, false) }>
             {

@@ -1,39 +1,20 @@
-import Vue, { VNode } from 'vue';
-import Icon from '../icon';
-import Button from '../button';
-import Popup from '../popup/index';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { prefix } from '../config';
+import Popup from '../popup/index';
+import props from '@TdTypes/popconfirm/props';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from '../../types/popconfirm/TdPopconfirmProps';
 
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('popconfirm')).extend({
   name,
-  props: {
-    theme: {
-      type: String,
-      default: 'default',
-      validator(v: string): boolean {
-        return (
-          [
-            'default',
-            'info',
-            'warning',
-            'error',
-          ].indexOf(v) > -1
-        );
-      },
-    },
-    icon: [String, Function],
-    content: [String, Function],
-    cancelText: {
-      type: [String, Function],
-      default: '取消',
-    },
-    confirmText: {
-      type: [String, Function],
-      default: '确定',
-    },
+  props: { ... props },
+  model: {
+    prop: 'visible',
+    event: 'visible-change',
   },
   data() {
     return {
@@ -44,132 +25,126 @@ export default Vue.extend({
   computed: {
     iconName(): string {
       const iconMap = {
-        info: 'info-circle-filled',
+        default: 'info-circle-filled',
         warning: 'error-circle-filled',
-        error: 'error-circle-filled',
+        danger: 'error-circle-filled',
       };
       return iconMap[this.theme] || '';
     },
     iconColor(): string {
       let color = '';
       switch (this.theme) {
-        case 'warning':    // 黄色
+        case 'warning':
           color = '#FFAA00';
           break;
-        case 'error':
-          color = '#FF3E00';   // 红色
+        case 'danger':
+          color = '#E34D59';
           break;
         default:
-          color = '#0052D9';   // 蓝色
+          color = '#0052D9';
       }
       return `color:${color}`;
     },
   },
   methods: {
-    handleClose(event: any): void {
-      this.$emit('close', event);
+    handleCancel(e: MouseEvent) {
+      this.$emit('cancel', { e });
+      this.onCancel && this.onCancel({ e });
+      const cancelContext: PopconfirmVisibleChangeContext = { e, trigger: 'cancel' };
+      this.$emit('visible-change', false, cancelContext);
+      this.onVisibleChange && this.onVisibleChange(false, cancelContext);
     },
-    handleCancel(event: any): void {
-      this.setVisible(false, event);
-      this.$emit('cancel', event);
-    },
-    handleConfirm(event: any): void {
-      this.setVisible(false, event);
-      this.$emit('confirm', event);
-    },
-    setVisible(visible: boolean, event: any): void {
-      (this.$refs.popup as any).doClose();
-      this.$emit('visibleChange', visible, event);
+    handleConfirm(e: MouseEvent) {
+      this.$emit('confirm', { e });
+      this.onConfirm && this.onConfirm({ e });
+      const confirmContext: PopconfirmVisibleChangeContext = { e, trigger: 'confirm' };
+      this.$emit('visible-change', false, confirmContext);
+      this.onVisibleChange && this.onVisibleChange(false, confirmContext);
     },
     renderIcon(): JsxNode {
-      // 优先级 slot > Funtion > string
-      if (this.$slots.icon) {
-        return this.$slots.icon;
+      // 优先级 slot > Funtion
+      if (this.$scopedSlots.icon) {
+        return this.$scopedSlots.icon(null);
       }
       const arg = this.icon;
       if (typeof arg === 'function') {
-        return arg();
+        return (arg as Function)();
       }
-      const iconName = arg || this.iconName;
-      return iconName ? <Icon name={iconName} style={this.iconColor} /> : '';
+      return <t-icon name={this.iconName} style={this.iconColor} />;
     },
-    renderContent(): JsxNode {
-      // 优先级 slot > Function > string
-      if (this.$slots.content) {
-        return this.$slots.content;
-      }
-      const node = this.content;
-      if (typeof node === 'function') {
-        return (node as Function)();
-      }
-      return <div>{node}</div>;
+    getBtnText(api: TdPopconfirmProps['cancelBtn']) {
+      return typeof api === 'object' ? api.content : api;
     },
-    renderCancel(): JsxNode {
-      if (this.$slots.cancelText) {
-        return this.$slots.cancelText;
-      }
-      if (typeof this.cancelText === 'function') {
-        return this.cancelText();
-      }
+    getBtnProps(api: TdPopconfirmProps['confirmBtn']) {
+      return typeof api === 'object' ? api : {};
+    },
+    renderCancel(cancelBtn: TdPopconfirmProps['cancelBtn']) {
       return (
-        <Button
-          size='small'
-          variant='outline'
-          onclick={this.handleCancel}
-        >{this.cancelText}</Button>
+        <t-button variant="outline" size='small' props={this.getBtnProps(cancelBtn)}>
+          {this.getBtnText(cancelBtn)}
+        </t-button>
       );
     },
-    renderConfirm(): JsxNode {
-      if (this.$slots.confirmText) {
-        return this.$slots.confirmText;
-      }
-      if (typeof this.confirmText === 'function') {
-        return this.confirmText();
-      }
+    renderConfirm(confirmBtn: TdPopconfirmProps['confirmBtn']) {
       return (
-        <Button size='small'
-          variant="base"
-          theme="primary"
-          onclick={this.handleConfirm}
-        >{this.confirmText}</Button>
+        <t-button variant="base" size='small' props={this.getBtnProps(confirmBtn)}>
+          {this.getBtnText(confirmBtn)}
+        </t-button>
       );
+    },
+    onPopupVisibleChange(val: boolean, context: PopconfirmVisibleChangeContext) {
+      this.$emit('visible-change', val, context);
+      this.onVisibleChange && this.onVisibleChange(val, context);
     },
   },
   render() {
-    const trigger: VNode[] | VNode | string = this.$scopedSlots.default
-      ? this.$scopedSlots.default(null) : '';
-    const popupProps = {
-      props: {
-        ...this.$attrs,
-        showArrow: true,
-        overlayClassName: name,
-      },
-      ref: 'popup',
-      on: {
-        ...this.$listeners,
-      },
-    };
-
+    const triggerElement = renderContent(this, 'default', 'triggerElement');
+    const popupProps = Object.assign({
+      showArrow: true,
+      overlayClassName: name,
+      trigger: 'manual',
+    }, this.popupProps);
+    const baseTypes = ['string', 'object'];
+    let confirmBtn = null;
+    if (![undefined, null].includes(this.confirmBtn)) {
+      const mBtn = this.confirmBtn || this.t(this.locale.confirm);
+      confirmBtn = baseTypes.includes(typeof mBtn)
+        ? this.renderConfirm(mBtn)
+        : renderTNodeJSX(this, 'confirmBtn');
+    }
+    let cancelBtn = null;
+    if (![undefined, null].includes(this.cancelBtn)) {
+      const cBtn = this.cancelBtn || this.t(this.locale.cancel);
+      cancelBtn = baseTypes.includes(typeof cBtn)
+        ? this.renderCancel(cBtn)
+        : renderTNodeJSX(this, 'cancelBtn');
+    }
     return (
       <div>
-        <Popup {...popupProps}>
+        <Popup
+          ref='popup'
+          visible={this.visible}
+          props={popupProps}
+          on={{ 'visible-change': this.onPopupVisibleChange }}
+        >
           <template slot='content' role='poppconfirm'>
             <div class={`${name}__content`}>
               <div class={`${name}__body`}>
                 {this.renderIcon()}
                 <div class={`${name}__inner`}>
-                  {this.renderContent()}
+                  {renderTNodeJSX(this, 'content')}
                 </div>
               </div>
-              <div class="t-popconfirm__buttons">
-                {this.renderCancel()}
-                {this.renderConfirm()}
-              </div>
+              {Boolean(cancelBtn || confirmBtn) && (
+                <div class='t-popconfirm__buttons'>
+                  <span class='t-popconfirm__cancel' onClick={this.handleCancel}>{cancelBtn}</span>
+                  <span class='t-popconfirm__confirm' onClick={this.handleConfirm}>{confirmBtn}</span>
+                </div>
+              )}
             </div>
           </template>
-          {trigger}
+          {triggerElement}
         </Popup>
-        <slot />
       </div>
     );
   },
