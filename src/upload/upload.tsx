@@ -363,11 +363,11 @@ export default Vue.extend({
           onDragleave={this.handleDragleave}
           loadingFile={this.loadingFile}
           file={this.files && this.files[0]}
-          autoUpload={this.autoUpload}
           display={this.theme}
           cancel={this.cancelUpload}
           trigger={this.triggerUpload}
           remove={this.handleSingleRemove}
+          upload={this.upload}
         >
           {triggerElement}
         </Dragger>

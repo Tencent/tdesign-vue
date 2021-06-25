@@ -6,6 +6,7 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
 import { returnFileSize, getCurrentDate } from './util';
+import { clone } from 'lodash';
 
 const name = `${prefix}-upload-dragger`;
 
@@ -27,13 +28,10 @@ export default Vue.extend({
         return ['file', 'file-input', 'image', 'custom'].includes(val);
       },
     },
-    autoUpload: {
-      type: Boolean,
-      default: true,
-    },
     cancel: Function as PropType<(e: MouseEvent) => void>,
     trigger: Function as PropType<(e: MouseEvent) => void>,
     remove: Function as PropType<(e: MouseEvent) => void>,
+    upload: Function as PropType<(file: UploadFile, e: MouseEvent) => void>,
   },
 
   data() {
@@ -72,6 +70,9 @@ export default Vue.extend({
       const fail = (!!this.loadingFile && this.loadingFile.status === 'fail');
       const success = (this.file && this.file.name && !this.loadingFile);
       return fail || success;
+    },
+    waitingUploadFiles(): UploadFile {
+      return clone(this.loadingFile);
     },
   },
 
@@ -139,8 +140,8 @@ export default Vue.extend({
     },
 
     renderUploading() {
-      if (this.autoUpload === false) {
-        return '';
+      if (this.loadingFile.status === 'waiting') {
+        return;
       }
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
@@ -166,7 +167,10 @@ export default Vue.extend({
             <small class='t-upload__small'>文件大小：{returnFileSize(this.size)}</small>
             <small class='t-upload__small'>上传日期：{getCurrentDate()}</small>
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
-              <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+              <div class='t-upload__dragger-btns'>
+                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+                <TButton variant='text' onClick={(e: MouseEvent) => this.upload(this.waitingUploadFiles, e)}>点击上传</TButton>
+              </div>
             )}
             {this.showResultOperate && (
               <div class='t-upload__dragger-btns'>
