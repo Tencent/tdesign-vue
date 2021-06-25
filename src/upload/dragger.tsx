@@ -6,7 +6,6 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
 import { returnFileSize, getCurrentDate } from './util';
-import { clone } from 'lodash';
 
 const name = `${prefix}-upload-dragger`;
 
@@ -47,7 +46,7 @@ export default Vue.extend({
       return this.display === 'image';
     },
     imageUrl(): string {
-      return (this.file && this.file.url) || (this.loadingFile && this.loadingFile.url);
+      return (this.loadingFile && this.loadingFile.url) || (this.file && this.file.url);
     },
     percent(): number {
       return this.loadingFile && this.loadingFile.percent;
@@ -70,9 +69,6 @@ export default Vue.extend({
       const fail = (!!this.loadingFile && this.loadingFile.status === 'fail');
       const success = (this.file && this.file.name && !this.loadingFile);
       return fail || success;
-    },
-    waitingUploadFiles(): UploadFile {
-      return clone(this.loadingFile);
     },
   },
 
@@ -140,18 +136,21 @@ export default Vue.extend({
     },
 
     renderUploading() {
-      if (this.loadingFile.status === 'waiting') {
-        return;
-      }
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
+      } if (this.loadingFile.status === 'progress') {
+        return (
+          <div class='t-upload__single-progress'>
+            <TIconLoading size='20px'></TIconLoading>
+            <span class='t-upload__single-percent'>{this.percentNum}%</span>
+          </div>
+        );
       }
-      return (
-        <div class='t-upload__single-progress'>
-          <TIconLoading size='20px'></TIconLoading>
-          <span class='t-upload__single-percent'>{this.percentNum}%</span>
-        </div>
-      );
+    },
+
+    reupload(e: MouseEvent) {
+      this.remove(e);
+      this.trigger(e);
     },
 
     renderProgress() {
@@ -169,12 +168,12 @@ export default Vue.extend({
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
               <div class='t-upload__dragger-btns'>
                 <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
-                <TButton variant='text' onClick={(e: MouseEvent) => this.upload(this.waitingUploadFiles, e)}>点击上传</TButton>
+                <TButton variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
               </div>
             )}
             {this.showResultOperate && (
               <div class='t-upload__dragger-btns'>
-                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.trigger}>重新上传</TButton>
+                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.reupload}>重新上传</TButton>
                 <TButton variant='text' onClick={this.remove}>删除</TButton>
               </div>
             )}
