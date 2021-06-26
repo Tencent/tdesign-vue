@@ -23,7 +23,7 @@
       <!-- 自由控制浮层显示与否 -->
       <div class='demo-item'>
         <t-popconfirm
-          :value="visible"
+          :visible="visible"
           theme="default"
           content="是否提交审核？（自定义按钮内容）"
           :confirmBtn="confirmBtn"
@@ -42,7 +42,7 @@
 export default {
   data() {
     return {
-      visible: false,
+      visible: true,
     };
   },
   methods: {
@@ -79,8 +79,8 @@ export default {
   display: flex;
   justify-content: flex-start;
 }
-.popconfirm-demo .demo-item + .demo-item {
-  margin-left: 80px;
+.popconfirm-demo .demo-item {
+  width: 240px;
+  text-align: left;
 }
 </style>
-
