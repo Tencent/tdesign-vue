@@ -115,21 +115,17 @@ export default Vue.extend({
   },
 
   methods: {
-    validate(): Promise<Result> {
+    async validate(): Promise<Result> {
       this.resetValidating = true;
-      return new Promise((resolve) => {
-        validate(this.value, this.innerRules)
-          .then((r) => {
-            this.errorList = r;
-            this.verifyStatus = this.errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
-            resolve({
-              [this.name]: r.length === 0 ? true : r,
-            });
-            if (this.needResetField) {
-              this.resetHandler();
-            }
-            this.resetValidating = false;
-          });
+      const r = await validate(this.value, this.innerRules);
+      this.errorList = r;
+      this.verifyStatus = this.errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
+      if (this.needResetField) {
+        this.resetHandler();
+      }
+      this.resetValidating = false;
+      return ({
+        [this.name]: r.length === 0 ? true : r,
       });
     },
     getLabel(): TNodeReturnValue {
@@ -161,7 +157,7 @@ export default Vue.extend({
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (iconName: string) => (
         <span class={CLASS_NAMES.status}>
-          <t-icon name={iconName} size="25px"/>
+          <t-icon name={iconName} size="25px" />
         </span>
       );
       const list = this.errorList;

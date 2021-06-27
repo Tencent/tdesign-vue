@@ -56,43 +56,34 @@ const VALIDATE_MAP = {
 };
 
 // 校验某一条数据的某一条规则
-export function validateOneRule(
+export async function validateOneRule(
   value: ValueType,
   rule: FormRule,
 ): Promise<boolean | FormRule> {
-  return new Promise((resolve) => {
-    let r: boolean | Promise<boolean> = true;
-    Object.keys(rule).forEach((key) => {
-      // 非必填选项，值为空，返回 true
-      if (!rule.required && isValueEmpty(value)) {
-        resolve(true);
-        return;
-      }
-      const validateRule = VALIDATE_MAP[key];
-      if (validateRule && rule[key]) {
-        // rule 值为 true 则表示没有校验参数，只是对值进行默认规则校验
-        const options = rule[key] === true ? {} : rule[key];
-        r = validateRule(value, options);
-        // 校验结果可能是异步 Promise
-        if (r instanceof Promise) {
-          r.then((result) => {
-            resolve(result || rule);
-          });
-        } else {
-          resolve(r || rule);
-        }
-      }
-    });
-  });
+  let r = true;
+  const keys = Object.keys(rule);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    // 非必填选项，值为空，返回 true
+    if (!rule.required && isValueEmpty(value)) {
+      return true;
+    }
+    const validateRule = VALIDATE_MAP[key];
+    if (validateRule && rule[key]) {
+      // rule 值为 true 则表示没有校验参数，只是对值进行默认规则校验
+      const options = rule[key] === true ? {} : rule[key];
+      r = await validateRule(value, options);
+      const result = r || rule;
+      return result;
+    }
+  }
+  return r;
 }
 
 // 全部数据校验
-export function validate(value: ValueType, rules: Array<FormRule>): Promise<ErrorList> {
-  return new Promise((resolve) => {
-    const all = rules.map(rule => validateOneRule(value, rule));
-    Promise.all(all).then((arr) => {
-      const r = arr.filter(item => item !== true) as ErrorList;
-      resolve(r);
-    });
-  });
+export async function validate(value: ValueType, rules: Array<FormRule>): Promise<ErrorList> {
+  const all = rules.map(rule => validateOneRule(value, rule));
+  const arr = await Promise.all(all);
+  const r = arr.filter(item => item !== true) as ErrorList;
+  return r;
 }
