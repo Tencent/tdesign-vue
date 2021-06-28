@@ -3417,7 +3417,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
       </div>
       <div
         class="t-table__body"
-        style="max-height: 100px;"
+        style="max-height: 100px; width: 100%;"
       >
         <table
           style="table-layout: fixed;"

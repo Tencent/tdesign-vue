@@ -20,7 +20,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           </thead>
         </table>
       </div>
-      <div class="t-table__body" style="max-height: 100px;">
+      <div class="t-table__body" style="max-height: 100px; width: 100%;">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
