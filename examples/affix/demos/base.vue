@@ -3,8 +3,12 @@
     <t-affix
       :offset-top="top"
       :offset-bottom="20"
+      ref="affix"
     >
-      <t-button @click="addTop">base</t-button>
+      <t-button
+        @click="addTop"
+        :style="{height: top + 'px'}"
+      >Base</t-button>
     </t-affix>
   </div>
 </template>
@@ -13,13 +17,20 @@
 export default {
   data() {
     return {
-      top: 0,
+      top: 40,
     };
   },
   methods: {
     addTop() {
       this.top += 10;
+      this.$refs?.affix.calcInitValue();
     },
   },
 };
 </script>
+
+style.<style lang="less" scoped>
+.affix-base {
+  text-align: center;
+}
+</style>
