@@ -1,7 +1,9 @@
 <template>
   <div class="box">
     <t-menu theme="light" value="item1" @change="changeHandler" style="margin-right: 50px" height="550px">
-      <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+      <template #logo>
+        <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+      </template>
       <t-menu-item value="item1">仪表盘</t-menu-item>
       <t-menu-item value="item2">资源列表</t-menu-item>
       <t-menu-item value="item3"><a href="https://www.tencent.com" target="_blank">根目录</a></t-menu-item>
@@ -14,64 +16,120 @@
     </t-menu>
 
     <t-menu theme="light" value="dashboard" style="margin-right: 50px" height="550px" >
-      <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+      <template #logo>
+        <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+      </template>
       <t-menu-item value="dashboard">
-        <t-icon slot="icon" name="dashboard"/>仪表盘
+        <template #icon>
+          <t-icon name="dashboard"/>
+        </template>
+        仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
-        <t-icon slot="icon" name="resources-list"/>资源列表
+        <template #icon>
+          <t-icon name="resources-list"/>
+        </template>
+        资源列表
       </t-menu-item>
       <t-menu-item value="root">
-        <t-icon slot="icon" name="root-list"/>根目录
+        <template #icon>
+          <t-icon name="root-list"/>
+        </template>
+        根目录
       </t-menu-item>
       <t-menu-item value="control-platform">
-        <t-icon slot="icon" name="control-platform"/>调度平台
+        <template #icon>
+          <t-icon name="control-platform"/>
+        </template>
+        调度平台
       </t-menu-item>
       <t-menu-item value="precise-monitor">
-        <t-icon slot="icon" name="precise-monitor"/>精准监控
+        <template #icon>
+          <t-icon name="precise-monitor"/>
+        </template>
+        精准监控
       </t-menu-item>
       <t-menu-item value="mail">
-        <t-icon slot="icon" name="mail"/>消息区
+        <template #icon>
+          <t-icon name="mail"/>
+        </template>
+        消息区
       </t-menu-item>
       <t-menu-item value="user-circle">
-        <t-icon slot="icon" name="user-circle"/>个人中心
+        <template #icon>
+          <t-icon name="user-circle"/>
+        </template>
+        个人中心
       </t-menu-item>
       <t-menu-item value="play-circle">
-        <t-icon slot="icon" name="play-circle"/>视频区
+        <template #icon>
+          <t-icon name="play-circle"/>
+        </template>
+        视频区
       </t-menu-item>
       <t-menu-item value="edit1">
-        <t-icon slot="icon" name="edit-1"/>资源编辑
+        <template #icon>
+          <t-icon name="edit-1"/>
+        </template>
+        资源编辑
       </t-menu-item>
     </t-menu>
 
     <t-menu theme="dark" value="dashboard" height="550px" >
       <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="dashboard">
-        <t-icon slot="icon" name="dashboard"/>仪表盘
+        <template #icon>
+          <t-icon name="dashboard"/>
+        </template>
+        仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
-        <t-icon slot="icon" name="resources-list"/>资源列表
+        <template #icon>
+          <t-icon name="resources-list"/>
+        </template>
+        资源列表
       </t-menu-item>
       <t-menu-item value="root">
-        <t-icon slot="icon" name="root-list"/>根目录
+        <template #icon>
+          <t-icon name="root-list"/>
+        </template>
+        根目录
       </t-menu-item>
       <t-menu-item value="control-platform">
-        <t-icon slot="icon" name="control-platform"/>调度平台
+        <template #icon>
+          <t-icon name="control-platform"/>
+        </template>
+        调度平台
       </t-menu-item>
       <t-menu-item value="precise-monitor">
-        <t-icon slot="icon" name="precise-monitor"/>精准监控
+        <template #icon>
+          <t-icon name="precise-monitor"/>
+        </template>
+        精准监控
       </t-menu-item>
       <t-menu-item value="mail">
-        <t-icon slot="icon" name="mail"/>消息区
+        <template #icon>
+          <t-icon name="mail"/>
+        </template>
+        消息区
       </t-menu-item>
       <t-menu-item value="user-circle">
-        <t-icon slot="icon" name="user-circle"/>个人中心
+        <template #icon>
+          <t-icon name="user-circle"/>
+        </template>
+        个人中心
       </t-menu-item>
       <t-menu-item value="play-circle">
-        <t-icon slot="icon" name="play-circle"/>视频区
+        <template #icon>
+          <t-icon name="play-circle"/>
+        </template>
+        视频区
       </t-menu-item>
       <t-menu-item value="edit1">
-        <t-icon slot="icon" name="edit-1"/>资源编辑
+        <template #icon>
+          <t-icon name="edit-1"/>
+        </template>
+        资源编辑
       </t-menu-item>
     </t-menu>
   </div>

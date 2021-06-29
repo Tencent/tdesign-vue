@@ -66,48 +66,45 @@ exports[`Menu single demo works fine 1`] = `
             菜单内容三
           </span>
         </li>
-         
       </ul>
       <div
         class="t-menu__options"
       >
-        <div>
-          <a
-            href="javascript:;"
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-search"
           >
-            <svg
-              class="t-icon t-icon-search"
-            >
-              <use
-                xlink:href="#t-icon-search"
-              />
-            </svg>
-          </a>
-           
-          <a
-            href="javascript:;"
+            <use
+              xlink:href="#t-icon-search"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-notification-filled"
           >
-            <svg
-              class="t-icon t-icon-notification-filled"
-            >
-              <use
-                xlink:href="#t-icon-notification-filled"
-              />
-            </svg>
-          </a>
-           
-          <a
-            href="javascript:;"
+            <use
+              xlink:href="#t-icon-notification-filled"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-home"
           >
-            <svg
-              class="t-icon t-icon-home"
-            >
-              <use
-                xlink:href="#t-icon-home"
-              />
-            </svg>
-          </a>
-        </div>
+            <use
+              xlink:href="#t-icon-home"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -174,48 +171,45 @@ exports[`Menu single demo works fine 1`] = `
             菜单内容三
           </span>
         </li>
-         
       </ul>
       <div
         class="t-menu__options"
       >
-        <div>
-          <a
-            href="javascript:;"
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-search"
           >
-            <svg
-              class="t-icon t-icon-search"
-            >
-              <use
-                xlink:href="#t-icon-search"
-              />
-            </svg>
-          </a>
-           
-          <a
-            href="javascript:;"
+            <use
+              xlink:href="#t-icon-search"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-notification-filled"
           >
-            <svg
-              class="t-icon t-icon-notification-filled"
-            >
-              <use
-                xlink:href="#t-icon-notification-filled"
-              />
-            </svg>
-          </a>
-           
-          <a
-            href="javascript:;"
+            <use
+              xlink:href="#t-icon-notification-filled"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-home"
           >
-            <svg
-              class="t-icon t-icon-home"
-            >
-              <use
-                xlink:href="#t-icon-home"
-              />
-            </svg>
-          </a>
-        </div>
+            <use
+              xlink:href="#t-icon-home"
+            />
+          </svg>
+        </a>
       </div>
     </div>
   </div>

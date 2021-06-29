@@ -1,18 +1,35 @@
 <template>
   <t-menu theme="light" value="2-1" :collapsed="collapsed" height="550px">
-    <span slot="logo">LOGO</span>
+    <template #logo>
+      <span>LOGO</span>
+    </template>
     <t-menu-item value="item1">
-      <t-icon slot="icon" name="dashboard"/>仪表盘
+      <template #icon>
+        <t-icon name="dashboard"/>
+      </template>
+      仪表盘1
     </t-menu-item>
     <t-submenu value="2" mode="popup">
-      <t-icon slot="icon" name="mail" />
+      <template #icon>
+        <t-icon name="mail" />
+      </template>
       <span slot="title">信息区</span>
       <t-menu-item value="2-1">菜单内容一</t-menu-item>
       <t-menu-item value="2-2">菜单内容二</t-menu-item>
       <t-menu-item value="2-3">菜单内容三</t-menu-item>
     </t-submenu>
-    <t-menu-item value="item3"><t-icon slot="icon" name="play-circle" />视频区</t-menu-item>
-    <t-menu-item value="item4" :disabled="true"><t-icon slot="icon" name="edit-1" />资源编辑</t-menu-item>
+    <t-menu-item value="item3">
+      <template #icon>
+        <t-icon name="play-circle" />
+      </template>
+      视频区
+    </t-menu-item>
+    <t-menu-item value="item4" :disabled="true">
+      <template #icon>
+        <t-icon name="edit-1" />
+      </template>
+      资源编辑
+    </t-menu-item>
     <div slot="options">
       <t-icon :name="iconName" @click.native="changeCollapsed" />
     </div>

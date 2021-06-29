@@ -1,8 +1,15 @@
 <template>
   <t-menu theme="light" value="item2" :collapsed="collapsed" @change="changeHandler" height="550px">
-    <img slot="logo" :width="collapsed ? 35 : 136" class="t-menu__logo--center" :src="iconUrl" alt="logo">
+    <template #logo>
+      <img :width="collapsed ? 35 : 136" class="t-menu__logo--center" :src="iconUrl" alt="logo">
+    </template>
     <t-menu-group title="Classification A">
-      <t-menu-item value="item1"><t-icon slot="icon" name="dashboard"/>仪表盘</t-menu-item>
+      <t-menu-item value="item1">
+        <template #icon>
+          <t-icon name="dashboard"/>
+        </template>
+        仪表盘
+      </t-menu-item>
     </t-menu-group>
     <t-menu-group title="Classification B">
       <t-menu-item value="item2">调度平台</t-menu-item>
@@ -11,9 +18,9 @@
     <t-menu-group title="Classification C">
       <t-menu-item value="item4" :disabled="true">精准监控</t-menu-item>
     </t-menu-group>
-    <div slot="options">
+    <template #options>
       <t-icon name="view-list" @click.native="changeCollapsed" />
-    </div>
+    </template>
   </t-menu>
 </template>
 
