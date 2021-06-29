@@ -1,11 +1,11 @@
-import config from './config/index';
+import config from './config';
 import TdesignComponents from './pages/components';
 import TdesignDemoList from './pages/demo-list';
 import TdesignDemoPage from './pages/demo-page';
 
 const demoReq = require.context('../examples', true, /demos[/\\][\w-]+\.vue$/im);
 
-const { navs } = config;
+const { docs } = config;
 
 function getDocsRoutes(docs, type) {
   let docsRoutes = [];
@@ -61,14 +61,14 @@ function getDemoRoutes() {
 const demoRoutes = getDemoRoutes();
 const routes = [
   {
-    path: '/components',
-    redirect: '/components/button',
+    path: '/vue/components',
+    redirect: '/vue/components/button',
     component: TdesignComponents,
-    children: getDocsRoutes(navs.components.docs),
+    children: getDocsRoutes(docs),
   },
   {
     path: '*',
-    redirect: '/components/button',
+    redirect: '/vue/components/button',
   },
   ...demoRoutes,
   {

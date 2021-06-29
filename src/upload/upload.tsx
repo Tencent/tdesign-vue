@@ -52,6 +52,8 @@ export default Vue.extend({
       errorMsg: '',
       showImageViewDialog: false,
       showImageViewUrl: '',
+      // webkitURL is for chrome/webkot, while URL is for mozilla/firefox
+      URL: window.webkitURL || window.URL,
     };
   },
 
@@ -166,14 +168,13 @@ export default Vue.extend({
           status: 'waiting',
           ...file,
         };
+        uploadFile.url = this.getLocalFileURL(fileRaw);
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
           newFiles.push(uploadFile);
           this.toUploadFiles = [...new Set(newFiles)];
-          this.loadingFile = file;
-          // this.$emit('waiting-upload-files-change', this.toUploadFiles);
-          // this.onWaitingUploadFilesChange && this.onWaitingUploadFilesChange(this.toUploadFiles);
+          this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
           }
@@ -246,20 +247,13 @@ export default Vue.extend({
       const sContext = { file, fileList: files, e: event, response };
       this.$emit('success', sContext);
       this.onSuccess && this.onSuccess(sContext);
+      // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
+      this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
       this.loadingFile = null;
     },
 
     handlePreview({ file, event }: {file: UploadFile; event: ProgressEvent}) {
-      // console.log(file, event);
       return { file, event };
-      // const [targetFile] = this.files.filter((item: UploadFile) => item.id === file.id);
-      // if (!targetFile) {
-      //   return;
-      // }
-      // this.$emit('preview', {
-      //   event,
-      //   file: targetFile,
-      // });
     },
 
     triggerUpload() {
@@ -291,6 +285,11 @@ export default Vue.extend({
     },
 
     cancelUpload() {
+      if (!this.files[0] && this.loadingFile) {
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
+        this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
+        this.loadingFile = null;
+      }
       (this.$refs.input as HTMLInputElement).value = '';
     },
 
@@ -309,6 +308,10 @@ export default Vue.extend({
           <TIconUpload slot='icon'/>点击上传
         </TButton>
       );
+    },
+
+    getLocalFileURL(file: File) {
+      return this.URL && this.URL.createObjectURL(file);
     },
 
     renderInput() {
@@ -355,6 +358,7 @@ export default Vue.extend({
           cancel={this.cancelUpload}
           trigger={this.triggerUpload}
           remove={this.handleSingleRemove}
+          upload={this.upload}
         >
           {triggerElement}
         </Dragger>

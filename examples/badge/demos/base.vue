@@ -39,9 +39,9 @@
     </t-badge>
   </div>
 </template>
-<style scoped>
+<style>
 .demo-t-badge-title{
-margin: 20px 0;
+  margin: 20px 0;
 }
 
 .demo-badge-block {
@@ -55,9 +55,6 @@ margin: 20px 0;
   border: 1px solid #DCDCDC;
   box-sizing: border-box;
   border-radius: 2px;
-}
-
-.badge-block + .badge-block {
-  margin-left: 16px;
+  margin-right: 16px;
 }
 </style>

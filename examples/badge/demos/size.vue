@@ -23,17 +23,3 @@
     </t-badge>
   </div>
 </template>
-<style scoped>
-  .demo-t-badge-title {
-      margin: 20px 0;
-  }
-
-  .badge-block {
-  width: 40px;
-  height: 40px;
-  background: #EEEEEE;
-  border: 1px solid #DCDCDC;
-  box-sizing: border-box;
-  border-radius: 2px;
-}
-</style>

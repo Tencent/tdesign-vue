@@ -51,22 +51,19 @@ export default Vue.extend({
       return typeof val === 'function';
     },
     // 对外方法，该方法会触发全部表单组件错误信息显示
-    validate(): Promise<Result> {
+    async validate(): Promise<Result> {
       const list = this.$children
         .filter((child: any) => this.isFunction(child.validate))
         .map((child: any) => child.validate());
-      return new Promise((resolve) => {
-        Promise.all(list)
-          .then((arr) => {
-            const r = arr.reduce((r, err) => Object.assign(r || {}, err));
-            Object.keys(r).forEach((key) => {
-              if (r[key] === true) {
-                delete r[key];
-              }
-            });
-            resolve(isEmpty(r) ? true : r);
-          });
+      const arr = await Promise.all(list);
+      const r = arr.reduce((r, err) => Object.assign(r || {}, err));
+      Object.keys(r).forEach((key) => {
+        if (r[key] === true) {
+          delete r[key];
+        }
       });
+      if (isEmpty(r)) return true;
+      return r;
     },
     submitHandler(e: MouseEvent) {
       const { preventSubmitDefault } = this.$props;

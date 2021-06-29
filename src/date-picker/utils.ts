@@ -363,7 +363,7 @@ export function getWeeks(
     disabledDate = () => false,
     minDate,
     maxDate,
-  }: OptionsType
+  }: OptionsType,
 ) {
   const prependDay = getFirstDayOfMonth({ year, month });
 
@@ -432,7 +432,7 @@ export function getYears(
     disabledDate = () => false,
     minDate,
     maxDate,
-  }: OptionsType
+  }: OptionsType,
 ) {
   const startYear = parseInt((year / 10).toString(), 10) * 10;
   const endYear = startYear + 9;

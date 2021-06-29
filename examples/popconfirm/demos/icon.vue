@@ -2,33 +2,35 @@
   <div class="popconfirm-demo">
     <div class="tdesign-demo-block">
       <div class="demo-item">
-        <t-popconfirm content="基础气泡确认框文案示意文字按钮">
+        <t-popconfirm content="普通事件通知类型偏向于确认" v-model="visible1">
           <t-button>默认</t-button>
         </t-popconfirm>
       </div>
 
       <div class="demo-item">
-        <t-popconfirm content="事件通知类型偏向于提示">
-          <t-icon name="browse" style="color: #0052d9" slot='icon'/>
-          <t-button theme="primary">插槽定义ICON</t-button>
-        </t-popconfirm>
-      </div>
-
-      <div class="demo-item">
-        <t-popconfirm content="事件通知类型偏向于警示" :icon='customIcon'>
-          <t-button theme="primary">属性定义ICON</t-button>
-        </t-popconfirm>
-      </div>
-
-      <div class="demo-item">
-        <t-popconfirm theme="warning" content="事件通知类型偏向于提示">
+        <t-popconfirm theme="warning" content="事件通知类型偏向于提示" v-model="visible2">
           <t-button theme="danger" variant="outline">警告</t-button>
         </t-popconfirm>
       </div>
 
       <div class="demo-item">
-        <t-popconfirm theme="danger" content="事件通知类型偏向于高危提醒">
+        <t-popconfirm theme="danger" content="事件通知类型偏向于高危提醒" v-model="visible3">
           <t-button theme="danger">危险</t-button>
+        </t-popconfirm>
+      </div>
+    </div>
+
+    <div class="tdesign-demo-block">
+      <div class="demo-item">
+        <t-popconfirm content="基础气泡确认框文案示意文字按钮" :popupProps="{ placement: 'bottom' }">
+          <t-icon name="browse" style="color: #0052d9" slot='icon'/>
+          <t-button theme="primary">图标（插槽）</t-button>
+        </t-popconfirm>
+      </div>
+
+      <div class="demo-item">
+        <t-popconfirm content="基础气泡确认框文案示意文字按钮" :icon='customIcon' :popupProps="{ placement: 'bottom' }">
+          <t-button theme="primary">图标（属性）</t-button>
         </t-popconfirm>
       </div>
     </div>
@@ -37,6 +39,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      visible1: true,
+      visible2: true,
+      visible3: true,
+    };
+  },
   methods: {
     customIcon() {
       return (<t-icon name='browse' style="margin-right: 8px"/>);

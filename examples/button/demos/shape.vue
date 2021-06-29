@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-demo-shape">
     <div class="tdesign-demo-block">
       <div class="item"><t-button shape="square" variant="base">主按钮</t-button></div>
       <div class="item"><t-button shape="round" variant="base">主按钮</t-button></div>
@@ -32,7 +32,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.tdesign-demo-item__body {
+.tdesign-demo-shape {
   .t-button + .t-button {
     margin-left: 32px;
   }
@@ -43,12 +43,5 @@ export default {
       width: 150px;
     }
   }
-}
-.tdesign-wrap {
-  display: inline-block;
-  background-color: #bbbbbb;
-  padding: 10px;
-  margin-right: 10px;
-
 }
 </style>

@@ -30,6 +30,7 @@ export default Vue.extend({
     cancel: Function as PropType<(e: MouseEvent) => void>,
     trigger: Function as PropType<(e: MouseEvent) => void>,
     remove: Function as PropType<(e: MouseEvent) => void>,
+    upload: Function as PropType<(file: UploadFile, e: MouseEvent) => void>,
   },
 
   data() {
@@ -45,7 +46,7 @@ export default Vue.extend({
       return this.display === 'image';
     },
     imageUrl(): string {
-      return this.file && this.file.url;
+      return (this.loadingFile && this.loadingFile.url) || (this.file && this.file.url);
     },
     percent(): number {
       return this.loadingFile && this.loadingFile.percent;
@@ -137,13 +138,19 @@ export default Vue.extend({
     renderUploading() {
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
+      } if (this.loadingFile.status === 'progress') {
+        return (
+          <div class='t-upload__single-progress'>
+            <TIconLoading size='20px'></TIconLoading>
+            <span class='t-upload__single-percent'>{this.percentNum}%</span>
+          </div>
+        );
       }
-      return (
-        <div class='t-upload__single-progress'>
-          <TIconLoading size='20px'></TIconLoading>
-          <span class='t-upload__single-percent'>{this.percentNum}%</span>
-        </div>
-      );
+    },
+
+    reupload(e: MouseEvent) {
+      this.remove(e);
+      this.trigger(e);
     },
 
     renderProgress() {
@@ -159,11 +166,14 @@ export default Vue.extend({
             <small class='t-upload__small'>文件大小：{returnFileSize(this.size)}</small>
             <small class='t-upload__small'>上传日期：{getCurrentDate()}</small>
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
-              <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+              <div class='t-upload__dragger-btns'>
+                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+                <TButton variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
+              </div>
             )}
             {this.showResultOperate && (
               <div class='t-upload__dragger-btns'>
-                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.trigger}>重新上传</TButton>
+                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.reupload}>重新上传</TButton>
                 <TButton variant='text' onClick={this.remove}>删除</TButton>
               </div>
             )}
