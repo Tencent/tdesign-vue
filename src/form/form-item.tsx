@@ -180,7 +180,7 @@ export default Vue.extend({
     getIcon(
       statusIcon: TdFormProps['statusIcon'] | TdFormItemProps['statusIcon'],
       slotStatusIcon: NormalizedScopedSlot,
-      props?: TdFormItemProps
+      props?: TdFormItemProps,
     ): TNodeReturnValue {
       const resultIcon = (otherContent?: TNodeReturnValue) => (
         <span class={CLASS_NAMES.status}>{otherContent}</span>

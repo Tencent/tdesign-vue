@@ -206,7 +206,7 @@ export default Vue.extend({
         refOverlayElm.setAttribute(
           'style',
           Object.keys(styles).map(key => `${key}: ${styles[key]}`)
-            .join(';')
+            .join(';'),
         );
       }
     },

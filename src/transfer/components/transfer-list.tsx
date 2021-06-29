@@ -228,7 +228,7 @@ export default Vue.extend({
                 {
                   checked: this.checkedValue.length,
                   total: this.dataSource.length,
-                }
+                },
               )
             }</span>
           </div>
