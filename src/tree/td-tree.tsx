@@ -331,6 +331,10 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       this.store = store;
       store.append(list);
 
+      // 刷新节点，必须在配置选中之前执行
+      // 这样选中态联动判断才能找到父节点
+      store.refreshNodes();
+
       // 初始化选中状态
       if (Array.isArray(value)) {
         store.setChecked(value);
@@ -358,7 +362,6 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       }
 
       // 树的数据初始化之后，需要立即进行一次视图刷新
-      store.refreshNodes();
       this.refresh();
     },
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
