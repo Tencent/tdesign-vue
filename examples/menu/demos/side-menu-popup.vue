@@ -1,30 +1,46 @@
 <template>
 
   <t-menu theme="light" active="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
-    <img slot="logo" :width="collapsed ? 35 : 136" class="t-menu__logo--center" :src="iconUrl" alt="logo">
+    <template #logo>
+      <img :width="collapsed ? 35 : 136" class="t-menu__logo--center" :src="iconUrl" alt="logo">
+    </template>
     <t-menu-item value="item1">
-      <t-icon slot="icon" name="dashboard"/>仪表盘
+      <template #icon>
+        <t-icon name="dashboard"/>
+      </template>
+      仪表盘
     </t-menu-item>
     <t-submenu value="2">
-      <t-icon slot="icon" name="user-circle" />
-      <span slot="title">个人中心</span>
+      <template #icon>
+        <t-icon name="user-circle" />
+      </template>
+      <template #title>
+        <span>个人中心</span>
+      </template>
       <t-menu-item value="2-1">子菜单内容一</t-menu-item>
       <t-menu-item value="2-2">子菜单内容二</t-menu-item>
       <t-menu-item value="2-3">子菜单内容三</t-menu-item>
     </t-submenu>
     <t-submenu value="3">
-      <t-icon slot="icon" name="root-list" />
-      <span slot="title">根目录</span>
+      <template #icon>
+        <t-icon name="root-list" />
+      </template>
+      <template #title>
+        <span>根目录</span>
+      </template>
       <t-menu-item value="3-1">子菜单内容一</t-menu-item>
       <t-menu-item value="3-2">子菜单内容二</t-menu-item>
       <t-menu-item value="3-3">子菜单内容三</t-menu-item>
     </t-submenu>
     <t-menu-item value="item4" :disabled="disabled">
-      <t-icon slot="icon" name="resources-list" />资源列表
+      <template #icon>
+        <t-icon name="resources-list" />
+      </template>
+      资源列表
     </t-menu-item>
-    <div slot="options">
+    <template #options>
       <t-icon name="view-list" @click.native="changeCollapsed" />
-    </div>
+    </template>
   </t-menu>
 </template>
 

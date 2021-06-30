@@ -1,6 +1,8 @@
+import Vue from 'vue';
 import { defineComponent, computed, inject, ref, provide, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '@TdTypes/submenu/props';
+import props from '../../types/submenu/props';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import TIconChevronDown from '../icon/chevron-down';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
 
@@ -11,28 +13,15 @@ export default defineComponent({
     TIconChevronDown,
   },
   props,
-  data() {
-    return {
-      timeout: null,
-      active: false,
-      isCollapsed: false,
-    };
-  },
   setup(props, ctx) {
     const { expandedArray, mode, isHead, selectSubMenu, open } = inject<TdMenuInterface>('TdMenu');
     const menuItems = ref([]); // 因composition-api的缺陷，不用reactive， 详见：https://github.com/vuejs/composition-api/issues/637
-    // const isActive = computed(() => {
-    //   const childIsActive = menuItems.value.some(i => i.value === activeIndexValue.value);
-    //   return activeIndexValue.value === props.value || childIsActive;
-    // });
     const isOpen = computed(() => expandedArray ? expandedArray.value.includes(props.value) : false);
     const popupVisible = ref(false);
     let mouseInChild = false;
     const classes = computed(() => [
       `${prefix}-submenu`,
-      // `${prefix}-menu__item`,
       {
-        // [`${prefix}-head-menu__inner`]: mode === 'normal' && isHead,
         [`${prefix}-is-disabled`]: props.disabled,
         [`${prefix}-is-active`]: isOpen.value,
         [`${prefix}-is-opened`]: popupVisible.value || isOpen.value,
@@ -43,7 +32,6 @@ export default defineComponent({
       { [`${prefix}-is-opened`]: popupVisible.value },
     ]);
     const submenuClass = computed(() => [
-      // `${prefix}-menu-submenu`,
       `${prefix}-menu__item`,
       {
         [`${prefix}-is-opened`]: popupVisible.value || isOpen.value,
@@ -55,39 +43,28 @@ export default defineComponent({
     ]);
 
     // methods
-    const handleMouseenter = () => {
-      if (mode.value === 'popup') {
-        popupVisible.value = true;
+    const handleMouseEnter = () => {
+      mouseInChild = true;
+      if (!popupVisible.value) {
+        open(props.value);
       }
-    };
-    const handleMouseleave = () => {
-      if (mode.value === 'popup') {
-        setTimeout(() => {
-          !mouseInChild && (popupVisible.value = false);
-        }, 200);
-      }
+      popupVisible.value = true;
     };
     let timeout: number;
-    const handlePopup = (flag: boolean) => {
+    const handleMouseLeave = () => {
+      mouseInChild = false;
       clearTimeout(timeout);
-      // ts-dies
       timeout = window.setTimeout(() => {
-        popupVisible.value = flag;
-      }, 100);
+        if (!mouseInChild) {
+          popupVisible.value = false;
+        }
+      }, 300);
     };
     const handleHeadmenuItemClick = () => {
       const isOpen = open(props.value);
       selectSubMenu(isOpen ? menuItems.value : []);
     };
-    const handlePopupMouse = (flag: boolean) => {
-      mouseInChild = flag;
-    };
-    const handleMouseLeaveSubmenu = () => {
-      handlePopupMouse(false);
-      handleMouseleave();
-    };
-    const handleSubmenuItemClick = (e: Event) => {
-      e.stopPropagation();
+    const handleSubmenuItemClick = () => {
       open(props.value);
     };
 
@@ -112,15 +89,11 @@ export default defineComponent({
       mode,
       isHead,
       classes,
-      // isActive,
       subClass,
       popupClass,
       submenuClass,
-      handleMouseenter,
-      handleMouseleave,
-      handlePopupMouse,
-      handleMouseLeaveSubmenu,
-      handlePopup,
+      handleMouseEnter,
+      handleMouseLeave,
       handleSubmenuItemClick,
       handleHeadmenuItemClick,
     };
@@ -129,26 +102,26 @@ export default defineComponent({
     renderHeadSubmenu() {
       const normalSubmenu = [
         <div class={this.submenuClass} onClick={this.handleHeadmenuItemClick}>
-          {this.$slots.title}
+          {renderTNodeJSX(this as Vue, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">
-        {this.$slots.content || this.$slots.default}
+        {renderContent(this as Vue, 'default', 'content')}
         </ul>,
       ];
       const popupSubmenu = [
         <div class={this.submenuClass}
-          onMouseenter={this.handleMouseenter}
-          onMouseleave={this.handleMouseleave}
+          onMouseenter={this.handleMouseEnter}
+          onMouseleave={this.handleMouseLeave}
         >
-          {this.$slots.title}
+          {renderTNodeJSX(this as Vue, 'title')}
           <t-icon-chevron-down class="t-submenu-icon"></t-icon-chevron-down>
         </div>,
         <ul
           class={this.popupClass}
-          onMouseenter={() => this.handlePopupMouse(true)}
-          onMouseleave={this.handleMouseLeaveSubmenu}
+          onMouseenter={this.handleMouseEnter}
+          onMouseleave={this.handleMouseLeave}
           >
-         {this.$slots.content || this.$slots.default}
+         {renderContent(this as Vue, 'default', 'content')}
        </ul>,
       ];
       return this.mode === 'normal' ? normalSubmenu : popupSubmenu;
@@ -158,25 +131,25 @@ export default defineComponent({
       const normalSubmenu = [
         <div class={[`${prefix}-menu__item`]} onClick={this.handleSubmenuItemClick}>
           {this.$slots.icon}
-          <span class={[`${prefix}-menu__content`]}>{this.$slots.title}</span>
+          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
           {hasContent && <t-icon-chevron-down class="t-submenu-icon"></t-icon-chevron-down>}
         </div>,
-        <ul
-          class={this.subClass}
-          onMouseenter={() => this.handlePopupMouse(true)}
-          onMouseleave={() => this.handlePopupMouse(false)}
-        >
-          {this.$slots.content || this.$slots.default}
+        <ul class={this.subClass} >
+          {renderContent(this as Vue, 'default', 'content')}
         </ul>,
       ];
       const popupSubmenu = [
-        <div class="t-menu__item" onMouseenter={() => this.handlePopup(true)} onMouseleave={() => this.handlePopup(false)}>
+        <div class="t-menu__item" onMouseenter={this.handleMouseEnter} onMouseleave={this.handleMouseLeave}>
           {this.$slots.icon}
-          <span class={[`${prefix}-menu__content`]}>{this.$slots.title}</span>
+          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
           <t-icon-chevron-down class="t-submenu-icon"></t-icon-chevron-down>
         </div>,
-        <ul class={this.popupClass} onMouseenter={() => this.handlePopup(true)} onMouseleave={() => this.handlePopup(false)}>
-          {this.$slots.content || this.$slots.default}
+        <ul
+          class={this.popupClass}
+          onMouseenter={this.handleMouseEnter}
+          onMouseleave={this.handleMouseLeave}
+        >
+          {renderContent(this as Vue, 'default', 'content')}
         </ul>,
       ];
 

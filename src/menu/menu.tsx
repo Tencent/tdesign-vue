@@ -30,15 +30,22 @@ export default defineComponent({
     }));
     const activeIndexValue = ref(props.value);
     const expandedArray = ref(props.expanded || []);
+    const deliver = (evt: string) => {
+      const func = `on${evt[0].toUpperCase() + evt.slice(1)}`;
+      return (val: any) => {
+        if (typeof props[func] === 'function') {
+          props[func](val);
+        }
+        ctx.emit(evt, val);
+      };
+    };
+    const emitChange = deliver('change');
+    const emitExpand = deliver('expand');
+    const emitCollapse = deliver('collapsed');
 
     watchEffect(() => {
       mode.value = props.collapsed ? 'popup' : 'normal';
-      // if (typeof props.onCollapsed === 'function') {
-      //   props.onCollapsed({ props.collapsed });
-      // }
-      // ctx.emit('collapsed', props.collapsed);
-
-      // collapsed只能通过props传入，好像这个事件没有意义。todo
+      emitCollapse(mode.value);
     });
 
     provide<TdMenuInterface>('TdMenu', {
@@ -48,27 +55,29 @@ export default defineComponent({
       isHead: false,
       select: (val: MenuValue) => {
         activeIndexValue.value = val;
-        if (typeof props.onChange === 'function') {
-          props.onChange(val);
-        }
-        ctx.emit('change', val);
+        emitChange(val);
       },
       open: (val: MenuValue) => {
         const index = expandedArray.value.indexOf(val);
-        if (props.expandMutex) {
+
+        if (props.expandMutex || mode.value === 'popup') {
           expandedArray.value.splice(0, 1);
           if (index === -1) {
             expandedArray.value.push(val);
+            emitExpand(expandedArray.value);
             return true;
           }
         } else {
           if (index > -1) {
             expandedArray.value.splice(index, 1);
+            emitExpand(expandedArray.value);
             return true;
           }
           expandedArray.value.push(val);
+          emitExpand(expandedArray.value);
           return false;
         }
+        emitExpand(expandedArray.value);
       },
     });
 
@@ -96,89 +105,6 @@ export default defineComponent({
       expandedArray,
     };
   },
-  // methods: {
-  //   updateActiveName() {
-  //     if (this.currentActive === undefined) {
-  //       this.currentActive = -1;
-  //     }
-  //     const active = this.currentActive;
-  //     this.$emit('change', active);
-  //     this.onChange && this.onChange(active);
-  //     this.broadcast(`${prefix}-submenu`, 'change-active-name', false);
-  //     this.broadcast(`${prefix}-menu-item`, 'change-active-name', active);
-  //   },
-  //   changeCollapsed(collapsed) {
-  //     this.currentMode = collapsed ? 'popup' : 'normal';
-  //     this.broadcast(`${prefix}-submenu`, 'change-collapsed', collapsed);
-  //   },
-  //   updateOpenKeys(name) {
-  //     const names = [...this.openedNames];
-  //     const index = names.indexOf(name);
-  //     const submenuName = `${prefix}-submenu`;
-  //     if (this.expandMutex) {
-  //       findComponentsDownward(this, submenuName).forEach((item) => {
-  //         const temp = item;
-  //         temp.isOpen = false;
-  //       });
-  //     }
-  //     if (index >= 0) {
-  //       let currentSubmenu = null;
-  //       findComponentsDownward(this, submenuName).forEach((item) => {
-  //         const temp = item;
-  //         if (item.value === name) {
-  //           currentSubmenu = item;
-  //           temp.isOpen = false;
-  //         }
-  //       });
-  //       findComponentsUpward(currentSubmenu, submenuName).forEach((item) => {
-  //         const temp = item;
-  //         temp.isOpen = true;
-  //       });
-  //       findComponentsDownward(currentSubmenu, submenuName).forEach((item) => {
-  //         const temp = item;
-  //         temp.isOpen = false;
-  //       });
-  //     } else {
-  //       if (this.expandMutex) {
-  //         let currentSubmenu = null;
-  //         findComponentsDownward(this, submenuName).forEach((item) => {
-  //           const temp = item;
-  //           if (item.value === name) {
-  //             currentSubmenu = item;
-  //             temp.isOpen = true;
-  //           }
-  //         });
-  //         findComponentsUpward(currentSubmenu, submenuName).forEach((item) => {
-  //           const temp = item;
-  //           temp.isOpen = true;
-  //         });
-  //       } else {
-  //         findComponentsDownward(this, submenuName).forEach((item) => {
-  //           if (item.value === name) {
-  //             const temp = item;
-  //             temp.isOpen = true;
-  //           }
-  //         });
-  //       }
-  //     }
-  //     const openedNames = findComponentsDownward(this, submenuName).filter(item => item.isOpen)
-  //       .map(item => item.value);
-  //     this.openedNames = [...openedNames];
-  //     this.$emit('expand', openedNames);
-  //     this.onExpand && this.onExpand(openedNames);
-  //   },
-  //   updateOpened() {
-  //     const submenuName = `${prefix}-submenu`;
-  //     const items = findComponentsDownward(this, submenuName);
-
-  //     if (items.length) {
-  //       items.forEach((item) => {
-  //         const temp = item;
-  //         temp.isOpen = this.openedNames.indexOf(item.value) !== -1;
-  //       });
-  //     }
-  //   },
-  // },
   render() {
     return (
       <div class={this.menuClass} style={this.styles}>

@@ -22,6 +22,17 @@ export default defineComponent({
     const openedNames = computed(() => props.expanded);
     const mode = ref(props.expandType);
     const submenu = reactive([]);
+    const deliver = (evt: string) => {
+      const func = `on${evt[0].toUpperCase() + evt.slice(1)}`;
+      return (val: any) => {
+        if (typeof props[func] === 'function') {
+          props[func](val);
+        }
+        ctx.emit(evt, val);
+      };
+    };
+    const emitChange = deliver('change');
+    const emitExpand = deliver('expand');
 
     provide<TdMenuInterface>('TdMenu', {
       mode,
@@ -30,10 +41,7 @@ export default defineComponent({
       activeIndexValue,
       select: (val: MenuValue) => {
         activeIndexValue.value = val;
-        if (typeof props.onChange === 'function') {
-          props.onChange(val);
-        }
-        ctx.emit('change', val);
+        emitChange(val);
       },
       selectSubMenu: (menuItems: TdMenuItem[]) => {
         submenu.length = 0;
@@ -41,11 +49,14 @@ export default defineComponent({
       },
       open: (val: MenuValue) => {
         const index = expandedArray.value.indexOf(val);
+
         expandedArray.value.splice(0, 1);
         if (index === -1) {
           expandedArray.value.push(val);
+          emitExpand(expandedArray.value);
           return true;
         }
+        emitExpand(expandedArray.value);
         return false;
       },
     });
@@ -80,60 +91,6 @@ export default defineComponent({
     };
   },
   methods: {
-    // updateOpenKeys(name) {
-    //   const names = [...this.openedNames];
-    //   const index = names.indexOf(name);
-    //   const submenuName = `${prefix}-submenu`;
-    //   if (this.expandMutex) {
-    //     findComponentsDownward(this, submenuName).forEach((item) => {
-    //       const temp = item;
-    //       temp.isOpen = false;
-    //     });
-    //   }
-    //   if (index >= 0) {
-    //     let currentSubmenu = null;
-    //     findComponentsDownward(this, submenuName).forEach((item) => {
-    //       const temp = item;
-    //       if (item.value === name) {
-    //         currentSubmenu = item;
-    //         temp.isOpen = false;
-    //       }
-    //     });
-    //     findComponentsUpward(currentSubmenu, submenuName).forEach((item) => {
-    //       const temp = item;
-    //       temp.isOpen = true;
-    //     });
-    //     findComponentsDownward(currentSubmenu, submenuName).forEach((item) => {
-    //       const temp = item;
-    //       temp.isOpen = false;
-    //     });
-    //   } else {
-    //     if (this.expandMutex) {
-    //       let currentSubmenu = null;
-    //       findComponentsDownward(this, submenuName).forEach((item) => {
-    //         const temp = item;
-    //         if (temp.value === name) {
-    //           currentSubmenu = item;
-    //           temp.isOpen = true;
-    //         }
-    //       });
-    //       findComponentsUpward(currentSubmenu, submenuName).forEach((item) => {
-    //         const temp = item;
-    //         temp.isOpen = true;
-    //       });
-    //     } else {
-    //       findComponentsDownward(this, submenuName).forEach((item) => {
-    //         const temp = item;
-    //         if (item.value === name) temp.isOpen = true;
-    //       });
-    //     }
-    //   }
-    //   const openedNames = findComponentsDownward(this, submenuName).filter(item => item.isOpen)
-    //     .map(item => item.value);
-    //   this.openedNames = [...openedNames];
-    //   this.$emit('expand', openedNames);
-    //   this.onExpand && this.onExpand(openedNames);
-    // },
     renderNormalSubmenu() {
       if (this.submenu.length === 0) return null;
       return (

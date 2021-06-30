@@ -5435,10 +5435,11 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
+            indeterminate="indeterminate"
             name="1"
             type="checkbox"
             value=""
@@ -5482,10 +5483,11 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
+            indeterminate="indeterminate"
             name="1.1"
             type="checkbox"
             value=""
@@ -5529,7 +5531,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
@@ -5920,10 +5922,11 @@ exports[`Tree:demo vmodel demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
+            indeterminate="indeterminate"
             name="1"
             type="checkbox"
             value=""
@@ -5967,10 +5970,11 @@ exports[`Tree:demo vmodel demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
+            indeterminate="indeterminate"
             name="1.1"
             type="checkbox"
             value=""
@@ -6014,7 +6018,7 @@ exports[`Tree:demo vmodel demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"

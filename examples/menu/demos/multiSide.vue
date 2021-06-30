@@ -2,92 +2,152 @@
   <div class="box">
     <t-menu theme="light" value="2-1" :expanded=expanded height="550px" :collapsed="collapsed">
       <t-menu-item value="item1">
-        <t-icon slot="icon" name="dashboard"/>仪表盘
+        <template #icon>
+          <t-icon name="dashboard"/>
+        </template>
+        仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
-        <t-icon slot="icon" name="resources-list"/>资源列表
+        <template #icon>
+          <t-icon name="resources-list"/>
+        </template>
+        资源列表
       </t-menu-item>
       <t-menu-item value="root">
-        <t-icon slot="icon" name="root-list"/>根目录
+        <template #icon>
+          <t-icon name="root-list"/>
+        </template>
+        根目录
       </t-menu-item>
       <t-submenu value="2">
-        <t-icon slot="icon" name="control-platform" />
-        <span slot="title">调度平台</span>
+        <template #icon>
+          <t-icon name="control-platform" />
+        </template>
+        <template #title>
+          <span>调度平台</span>
+        </template>
         <t-menu-item value="2-1">二级菜单内容</t-menu-item>
         <t-menu-item value="2-2">二级菜单内容</t-menu-item>
         <t-menu-item value="2-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="precise-monitor">
-        <t-icon slot="icon" name="precise-monitor"/>精准监控
+        <template #icon>
+          <t-icon name="precise-monitor"/>
+        </template>
+        精准监控
       </t-menu-item>
       <t-submenu value="3">
-        <t-icon slot="icon" name="mail" />
-        <span slot="title">消息区</span>
+        <template #icon>
+          <t-icon name="mail" />
+        </template>
+        <template #title>
+          <span>消息区</span>
+        </template>
         <t-menu-item value="3-1">二级菜单内容</t-menu-item>
         <t-menu-item value="3-2">二级菜单内容</t-menu-item>
         <t-menu-item value="3-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="user-circle">
-        <t-icon slot="icon" name="user-circle"/>个人中心
+        <template #icon>
+          <t-icon name="user-circle"/>
+        </template>
+        个人中心
       </t-menu-item>
       <t-submenu value="4">
-        <t-icon slot="icon" name="play-circle" />
-        <span slot="title">视频区</span>
+        <template #icon>
+          <t-icon name="play-circle" />
+        </template>
+        <template #title>
+          <span>视频区</span>
+        </template>
         <t-menu-item value="4-1">二级菜单内容</t-menu-item>
         <t-menu-item value="4-2">二级菜单内容</t-menu-item>
         <t-menu-item value="4-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="edit1">
-        <t-icon slot="icon" name="edit-1"/>资源编辑
+        <template #icon>
+          <t-icon name="edit-1"/>
+        </template>
+        资源编辑
       </t-menu-item>
-      <div slot="options">
+      <template #options>
         <t-icon name="view-list" @click.native="changeCollapsed" />
-      </div>
+      </template>
     </t-menu>
 
     <t-menu theme="dark" value="2-1" style="margin-left: 50px" :expanded="expanded2" height="550px" :collapsed="collapsed2">
       <t-menu-item value="item1">
-        <t-icon slot="icon" name="dashboard"/>仪表盘
+        <template #icon>
+          <t-icon name="dashboard"/>
+        </template>
+        仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
-        <t-icon slot="icon" name="resources-list"/>资源列表
+        <template #icon>
+          <t-icon name="resources-list"/>
+        </template>
+        资源列表
       </t-menu-item>
       <t-menu-item value="root">
-        <t-icon slot="icon" name="root-list"/>根目录
+        <template #icon>
+          <t-icon name="root-list"/>
+        </template>
+        根目录
       </t-menu-item>
       <t-submenu value="2">
-        <t-icon slot="icon" name="control-platform" />
-        <span slot="title">调度平台</span>
+        <template #icon>
+          <t-icon name="control-platform" />
+        </template>
+        <template #title>
+          <span>调度平台</span>
+        </template>
         <t-menu-item value="2-1">二级菜单内容</t-menu-item>
         <t-menu-item value="2-2">二级菜单内容</t-menu-item>
         <t-menu-item value="2-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="precise-monitor">
-        <t-icon slot="icon" name="precise-monitor"/>精准监控
+        <template #icon>
+          <t-icon name="precise-monitor"/>
+        </template>
+        精准监控
       </t-menu-item>
       <t-submenu value="3">
-        <t-icon slot="icon" name="mail" />
-        <span slot="title">消息区</span>
+        <template #icon>
+          <t-icon name="mail" />
+        </template>
+        <template #title>
+          <span>消息区</span>
+        </template>
         <t-menu-item value="3-1">二级菜单内容</t-menu-item>
         <t-menu-item value="3-2">二级菜单内容</t-menu-item>
         <t-menu-item value="3-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="user-circle">
-        <t-icon slot="icon" name="user-circle"/>个人中心
+        <template #icon>
+          <t-icon name="user-circle"/>
+        </template>
+        个人中心
       </t-menu-item>
       <t-submenu value="4">
-        <t-icon slot="icon" name="play-circle" />
-        <span slot="title">视频区</span>
+        <template #icon>
+          <t-icon name="play-circle" />
+        </template>
+        <template #title>
+          <span>视频区</span>
+        </template>
         <t-menu-item value="4-1">二级菜单内容</t-menu-item>
         <t-menu-item value="4-2">二级菜单内容</t-menu-item>
         <t-menu-item value="4-3">二级菜单内容</t-menu-item>
       </t-submenu>
       <t-menu-item value="edit1">
-        <t-icon slot="icon" name="edit-1"/>资源编辑
+        <template #icon>
+          <t-icon name="edit-1"/>
+        </template>
+        资源编辑
       </t-menu-item>
-      <div slot="options">
+      <template #options>
         <t-icon name="view-list" @click.native="changeCollapsed2" />
-      </div>
+      </template>
     </t-menu>
   </div>
 </template>

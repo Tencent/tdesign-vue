@@ -1,6 +1,8 @@
 <template>
   <t-head-menu @change="changeHandler" theme="dark" :value="active">
-    <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
+    <template #logo>
+      <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
+    </template>
     <t-menu-item :value="`${index+1}`" v-for="(menu,index) in menus" :key="index">
       {{menu.title}}
       <t-submenu>
@@ -8,11 +10,11 @@
       </t-submenu>
     </t-menu-item>
     <t-menu-item value="4" :disabled="true">菜单4</t-menu-item>
-    <div slot="options">
+    <template #options>
       <a href="javascript:;"><t-icon name="search"/></a>
       <a href="javascript:;"><t-icon name="notification-filled"/></a>
       <a href="javascript:;"><t-icon name="home"/></a>
-    </div>
+    </template>
   </t-head-menu>
 </template>
 
