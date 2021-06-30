@@ -1,5 +1,11 @@
 import { mount } from '@vue/test-utils';
-import { Menu, Submenu } from '@/src/menu/index.ts';
+import { Submenu } from '@/src/menu';
+import { ref } from '@vue/composition-api';
+
+const Menu = {
+  activeIndexValue: ref(''),
+  mode: ref('normal'),
+};
 
 // every component needs four parts: props/events/slots/functions.
 describe('Submenu', () => {

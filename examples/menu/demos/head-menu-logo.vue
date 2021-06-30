@@ -1,6 +1,6 @@
 <template>
   <t-head-menu theme="light" value="item2">
-    <template v-slot:logo>
+    <template #logo>
       <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
     </template>
     <t-menu-item value="item1">菜单内容一</t-menu-item>

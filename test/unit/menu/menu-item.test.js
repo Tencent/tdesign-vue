@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { MenuItem, Menu } from '@/src/menu/index.ts';
+import { MenuItem, Menu } from '@/src/menu';
 
 // every component needs four parts: props/events/slots/functions.
 describe('MenuItem', () => {
