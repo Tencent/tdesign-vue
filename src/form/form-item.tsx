@@ -97,7 +97,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     hasColon(): boolean {
       const parent = this.form;
-      return !!(parent && parent.colon && this.getLabel());
+      return !!(parent && parent.colon && this.getLabelContent());
     },
     needRequiredMark(): boolean {
       const parent = this.form;
@@ -141,7 +141,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
         [this.name]: r.length === 0 ? true : r,
       });
     },
-    getLabel(): TNodeReturnValue {
+    getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
         return this.label(this.$createElement);
       }
@@ -149,6 +149,18 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
         return this.$scopedSlots.label(null);
       }
       return this.label;
+    },
+    getLabel(): TNodeReturnValue {
+      const parent = this.form;
+      const labelWidth = parent && parent.labelWidth;
+      if (Number(labelWidth) === 0) return;
+      return (
+        <div class={this.labelClasses} {...this.labelProps}>
+          <label for={this.for}>
+            {this.getLabelContent()}
+          </label>
+        </div>
+      );
     },
     renderTipsInfo(): VNode {
       const parent = this.form;
@@ -265,11 +277,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
   render(): VNode {
     return (
       <div class={this.classes}>
-        <div class={this.labelClasses} {...this.labelProps}>
-          <label for={this.for}>
-            {this.getLabel()}
-          </label>
-        </div>
+        {this.getLabel()}
         <div class={this.contentClasses}>
           <div class={CLASS_NAMES.controlsContent}>
             {this.$slots.default}
