@@ -1,13 +1,6 @@
 <template>
   <div>
-    <t-form
-      :data="formData"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      scrollToFirstError="smooth"
-      :labelAlign="formData.labelAlign"
-    >
+    <t-form :data="formData" :labelAlign="formData.labelAlign">
       <t-form-item label="对齐方式" name='labelAlign'>
         <t-radio-group v-model="formData.labelAlign" buttonStyle="solid">
           <t-radio-button value="left">左对齐</t-radio-button>
@@ -38,19 +31,6 @@ export default {
     return {
       formData: { ...INITIAL_DATA },
     };
-  },
-  methods: {
-    onReset() {
-      this.$message.success('重置成功');
-    },
-    onSubmit({ result, firstError }) {
-      if (result === true) {
-        this.$message.success('提交成功');
-      } else {
-        console.log('Errors: ', result);
-        this.$message.warning(firstError);
-      }
-    },
   },
 };
 </script>

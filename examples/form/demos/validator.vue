@@ -115,11 +115,11 @@ export default {
       this.$message.success('重置成功');
       console.log('formData', this.formData);
     },
-    onSubmit({ result, firstError }) {
-      if (result === true) {
+    onSubmit({ validateResult, firstError }) {
+      if (validateResult === true) {
         this.$message.success('提交成功');
       } else {
-        console.log('Errors: ', result);
+        console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
       }
     },

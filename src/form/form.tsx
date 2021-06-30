@@ -1,9 +1,13 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import { FormValidateResult, FormRule, TdFormProps } from '../../types/form/TdFormProps';
+import { FormValidateResult, TdFormProps } from '../../types/form/TdFormProps';
 import props from '../../types/form/props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
 import isEmpty from 'lodash/isEmpty';
+import { emitEvent } from '../utils/event';
+import FormItem from './form-item';
+
+type FormItemInstance = InstanceType<typeof FormItem>;
 
 type Result = FormValidateResult<TdFormProps['data']>;
 
@@ -14,6 +18,18 @@ export default Vue.extend({
 
   props: { ...props },
 
+  provide(): { form: Vue } {
+    return {
+      form: this,
+    };
+  },
+
+  data() {
+    return {
+      children: [] as Array<FormItemInstance>,
+    };
+  },
+
   computed: {
     formClass(): ClassName {
       return [
@@ -23,6 +39,16 @@ export default Vue.extend({
         },
       ];
     },
+  },
+
+  created() {
+    this.$on('form-item-created', (formItem: FormItemInstance) => {
+      this.children.push(formItem);
+    });
+    this.$on('form-item-destroyed', (formItem: FormItemInstance) => {
+      const index = this.children.findIndex(item => item === formItem);
+      this.children.splice(index, 1);
+    });
   },
 
   methods: {
@@ -40,21 +66,14 @@ export default Vue.extend({
       const behavior = this.scrollToFirstError as ScrollBehavior;
       dom && dom.scrollIntoView({ behavior });
     },
-    emitEvent(eventName: string, data: { result?: Result; e: Event; firstError?: FormRule }) {
-      this.$emit(eventName, data);
-      const propsApi = `on${eventName[0].toUpperCase()}${eventName.substr(1)}`;
-      if (typeof this[propsApi] === 'function') {
-        this[propsApi](data);
-      }
-    },
     isFunction(val: unknown) {
       return typeof val === 'function';
     },
     // 对外方法，该方法会触发全部表单组件错误信息显示
     async validate(): Promise<Result> {
-      const list = this.$children
-        .filter((child: any) => this.isFunction(child.validate))
-        .map((child: any) => child.validate());
+      const list = this.children
+        .filter(child => this.isFunction(child.validate))
+        .map(child => child.validate());
       const arr = await Promise.all(list);
       const r = arr.reduce((r, err) => Object.assign(r || {}, err));
       Object.keys(r).forEach((key) => {
@@ -65,25 +84,32 @@ export default Vue.extend({
       if (isEmpty(r)) return true;
       return r;
     },
-    submitHandler(e: MouseEvent) {
-      const { preventSubmitDefault } = this.$props;
-      if (preventSubmitDefault) {
-        e.preventDefault();
-        e.stopPropagation();
+    submitHandler(e?: FormSubmitEvent) {
+      if (this.preventSubmitDefault) {
+        e && e.preventDefault();
+        e && e.stopPropagation();
       }
       this.validate().then((r) => {
-        this.emitEvent('submit', {
-          result: r,
+        emitEvent<Parameters<TdFormProps['onSubmit']>>(this, 'submit', {
+          validateResult: r,
           firstError: this.getFirstError(r),
           e,
         });
       });
     },
-    resetHandler(e: MouseEvent) {
-      this.$children
+    resetHandler(e?: FormResetEvent) {
+      this.children
         .filter((child: any) => this.isFunction(child.resetField))
         .map((child: any) => child.resetField());
-      this.emitEvent('reset', { e });
+      emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
+    },
+    // If there is no reset button in form, this function can be used
+    reset() {
+      this.resetHandler();
+    },
+    // If there is no submit button in form, this function can be used
+    submit() {
+      this.submitHandler();
     },
   },
 
