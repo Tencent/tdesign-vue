@@ -1,13 +1,13 @@
 <template>
   <div class="tdesign-checkbox-group">
-    <div>
+    <div class="demo-checkbox-row-desc" v-if="city.length">选中值: {{ city }}</div>
+    <div class="demo-checkbox-all">
       <t-checkbox :checked="checkAll" :indeterminate="indeterminate" :onChange="handleSelectAll">全选</t-checkbox>
       <t-checkbox v-model="disabled">禁用全部</t-checkbox>
     </div>
     <div>
       <t-checkbox-group v-model="city" :options="options" :disabled="disabled" />
     </div>
-    <div class="demo-checkbox-row-desc" v-if="city.length">选中值: {{ city }}</div>
   </div>
 </template>
 
@@ -53,6 +53,10 @@ export default {
 .tdesign-checkbox-group > div {
   margin-bottom: 16px;
 }
+.demo-checkbox-all > label {
+  margin-right: 16px;
+}
+
 .demo-checkbox-row-desc {
   color: rgba(0, 0, 0, 0.6);
 }
