@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
-import { PRO_THEME, CIRCLE_SIZE, CIRCLE_SIZE_PX, STATUS_ICON } from './constants';
+import { PRO_THEME, CIRCLE_SIZE, CIRCLE_SIZE_PX, STATUS_ICON, CIRCLE_FONT_SIZE_RATIO } from './constants';
 import IconsClearCircleFilled from '../icon/close-circle-filled';
 import IconSuccessFill from '../icon/check-circle-filled';
 import IconWarningFill from '../icon/error-circle-filled';
@@ -90,17 +90,24 @@ export default Vue.extend({
       return this.diameter / 2;
     },
     radius(): number {
-      return this.rPoints - this.circleStrokeWidth;
+      return this.rPoints - (this.circleStrokeWidth / 2);
     },
     circleStyle(): Styles {
       if (this.theme !== PRO_THEME.CIRCLE) {
         return {};
       }
-      const fontSizeRatio = this.radius * 0.27;
+
+      let fontSize = this.diameter * CIRCLE_FONT_SIZE_RATIO.MEDIUM;
+      if (this.diameter <= CIRCLE_SIZE_PX.SMALL) {
+        fontSize = this.diameter * CIRCLE_FONT_SIZE_RATIO.SMALL;
+      } else if (this.diameter >= CIRCLE_SIZE_PX.LARGE) {
+        fontSize = this.diameter * CIRCLE_FONT_SIZE_RATIO.LARGE;
+      }
+
       return {
         width: `${this.diameter}px`,
         height: `${this.diameter}px`,
-        fontSize: `${4 + fontSizeRatio}px`,
+        fontSize: `${fontSize}px`,
       };
     },
     // theme=circle 环形进度条 环形宽度
