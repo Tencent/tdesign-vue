@@ -1,12 +1,12 @@
 :: BASE_DOC ::
 
-### 1.3 复选框组
+### 复选框组
 ::: demo demos/checkbox-group 
 :::
-### 1.4 受控复选框
+### 受控复选框
 ::: demo demos/checkbox-controlled
 :::
-### 1.5 全选
+### 全选
 ::: demo demos/checkbox-all
 :::
 

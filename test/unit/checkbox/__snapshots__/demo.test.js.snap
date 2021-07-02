@@ -101,7 +101,17 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
 <div
   class="tdesign-checkbox-group"
 >
-  <div>
+  <div
+    class="demo-checkbox-row-desc"
+  >
+    选中值: [
+  "北京"
+]
+  </div>
+   
+  <div
+    class="demo-checkbox-all"
+  >
     <label
       class="t-checkbox t-is-indeterminate"
     >
@@ -199,14 +209,6 @@ exports[`Checkbox checkbox group demo works fine 1`] = `
         </span>
       </label>
     </div>
-  </div>
-   
-  <div
-    class="demo-checkbox-row-desc"
-  >
-    选中值: [
-  "北京"
-]
   </div>
 </div>
 `;
