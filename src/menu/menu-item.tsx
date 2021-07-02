@@ -1,4 +1,4 @@
-import { defineComponent, computed, inject, onMounted } from '@vue/composition-api';
+import { defineComponent, computed, inject, ref, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from '@TdTypes/menu-item/props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
@@ -11,9 +11,11 @@ export default defineComponent({
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
     const active = computed(() => menu.activeIndexValue.value === props.value);
+    const isDuringAnimation = ref(false);
     const classes = computed(() => [
       `${prefix}-menu__item`,
       {
+        [`${prefix}-clicked`]: isDuringAnimation.value,
         [`${prefix}-is-active`]: active.value,
         [`${prefix}-is-disabled`]: props.disabled,
         [`${prefix}-menu__item--plain`]: !ctx.slots.icon,
@@ -44,6 +46,17 @@ export default defineComponent({
       }
     };
 
+    let clickTime = 0;
+    const handlePointerDown = () => {
+      isDuringAnimation.value = true;
+      clickTime = +new Date();
+    };
+    const handlePointerUp = () => {
+      setTimeout(() => {
+        isDuringAnimation.value = false;
+      }, Math.max(300 - new Date().getTime() + clickTime, 0));
+    };
+
     // lifetimes
     onMounted(() => {
       if (submenu) {
@@ -59,11 +72,13 @@ export default defineComponent({
       active,
       classes,
       handleClick,
+      handlePointerUp,
+      handlePointerDown,
     };
   },
   render() {
     return (
-      <li class={this.classes} onClick={this.handleClick}>
+      <li class={this.classes} onClick={this.handleClick} onPointerdown={this.handlePointerDown} onPointerup={this.handlePointerUp} ref="button">
         {this.$slots.icon}
         <span class={[`${prefix}-menu__content`]}>{this.$slots.default}</span>
       </li>

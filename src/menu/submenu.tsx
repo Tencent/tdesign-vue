@@ -20,6 +20,7 @@ export default defineComponent({
       const childIsActive = menuItems.value.some(i => i.value === activeIndexValue.value);
       return activeIndexValue.value === props.value || childIsActive;
     });
+    const isDuringAnimation = ref(false);
     const popupVisible = ref(false);
     const isOpen = computed(() => {
       if (mode.value === 'popup') {
@@ -43,6 +44,7 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${prefix}-menu__item`,
       {
+        [`${prefix}-clicked`]: isDuringAnimation.value,
         [`${prefix}-is-opened`]: isOpen.value,
         [`${prefix}-is-active`]: !isOpen.value && isActive.value,
       },
@@ -80,6 +82,17 @@ export default defineComponent({
       open(props.value);
     };
 
+    let clickTime = 0;
+    const handlePointerDown = () => {
+      isDuringAnimation.value = true;
+      clickTime = +new Date();
+    };
+    const handlePointerUp = () => {
+      setTimeout(() => {
+        isDuringAnimation.value = false;
+      }, Math.max(300 - new Date().getTime() + clickTime, 0));
+    };
+
     // provide
     provide<TdSubMenuInterface>('TdSubmenu', {
       hasIcon: !!ctx.slots.icon,
@@ -108,12 +121,14 @@ export default defineComponent({
       handleMouseLeave,
       handleSubmenuItemClick,
       handleHeadmenuItemClick,
+      handlePointerDown,
+      handlePointerUp,
     };
   },
   methods: {
     renderHeadSubmenu() {
       const normalSubmenu = [
-        <div class={this.submenuClass} onClick={this.handleHeadmenuItemClick}>
+        <div class={this.submenuClass} onClick={this.handleHeadmenuItemClick} onPointerdown={this.handlePointerDown} onPointerup={this.handlePointerUp}>
           {renderTNodeJSX(this as Vue, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">
@@ -141,7 +156,7 @@ export default defineComponent({
     renderSubmenu() {
       const hasContent = this.$slots.content || this.$slots.default;
       const normalSubmenu = [
-        <div class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
+        <div class={this.submenuClass} onClick={this.handleSubmenuItemClick} onPointerdown={this.handlePointerDown} onPointerup={this.handlePointerUp}>
           {this.$slots.icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
           {hasContent && <t-icon-chevron-down class="t-submenu-icon"></t-icon-chevron-down>}
