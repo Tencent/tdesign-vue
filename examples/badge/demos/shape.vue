@@ -8,3 +8,18 @@
     </t-badge>
   </div>
 </template>
+
+<style>
+.badge-block {
+  width: 40px;
+  height: 40px;
+  background: #EEEEEE;
+  border: 1px solid #DCDCDC;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.t-badge + .t-badge {
+  margin-left: 32px;
+}
+</style>

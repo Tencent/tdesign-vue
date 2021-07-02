@@ -2,12 +2,6 @@
 
 exports[`Badge base demo works fine 1`] = `
 <div>
-  <h3
-    class="demo-t-badge-title"
-  >
-    1.红点样式：
-  </h3>
-   
   <div
     class="demo-badge-block"
   >
@@ -53,70 +47,6 @@ exports[`Badge base demo works fine 1`] = `
       />
     </div>
   </div>
-   
-  <h3
-    class="demo-t-badge-title"
-  >
-    2.数字样式徽标：
-  </h3>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-    >
-      2
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-    >
-      99
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-    >
-      99+
-    </sup>
-  </div>
-   
-  <h3
-    class="demo-t-badge-title"
-  >
-    3.自定义式徽标：
-  </h3>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-    >
-      new
-    </sup>
-  </div>
 </div>
 `;
 
@@ -141,7 +71,20 @@ exports[`Badge custom demo works fine 1`] = `
     />
     <sup
       class="t-badge--circle"
-      style="background: rgb(82, 196, 26);"
+    >
+      new
+    </sup>
+  </div>
+   
+  <div
+    class="t-badge"
+  >
+    <div
+      class="badge-block"
+    />
+    <sup
+      class="t-badge--circle"
+      style="background: rgb(0, 168, 112);"
     >
       99
     </sup>
@@ -155,7 +98,7 @@ exports[`Badge custom demo works fine 1`] = `
     />
     <sup
       class="t-badge--round"
-      style="background: rgb(45, 183, 245);"
+      style="background: rgb(0, 82, 217);"
     >
       99+
     </sup>

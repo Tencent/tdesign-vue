@@ -12,24 +12,22 @@
 
 `<t-content>`：内容容器。
 
-### 侧边栏导航布局
-
-::: demo demos/aside1
-::: 
-
-### 侧边栏导航布局（带header）
-
-::: demo demos/aside2 
-::: 
-
-### 侧边栏导航布局（侧栏在右侧）
-
-::: demo demos/aside3 
+::: demo demos/base layout
 ::: 
 
 ### 顶部导航布局
 
-::: demo demos/top 
+::: demo demos/top layout
 :::
+
+### 侧边栏导航布局
+
+::: demo demos/aside1 layout
+::: 
+
+### 混合型导航布局（含header和侧边栏）
+
+::: demo demos/aside2 layout
+::: 
 
 :: BASE_PROPS ::

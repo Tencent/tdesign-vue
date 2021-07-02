@@ -1,21 +1,21 @@
 :: BASE_DOC ::
 
-### 2. 大小
+### 大小
 
 ::: demo demos/size 
 :::
 
-### 3. 有包裹
+### 有包裹
 
 ::: demo demos/wrap 
 :::
 
-### 4. 有延时，避免闪烁
+### 有延时，避免闪烁
 
 ::: demo demos/delay 
 :::
 
-### 5. 挂载位置
+### 挂载位置
 
 可通过 `attach` 挂载到指定元素
 
@@ -24,12 +24,12 @@
 ::: demo demos/attach
 :::
 
-### 6. 全屏加载
+### 全屏加载
 
 ::: demo demos/fullscreen 
 :::
 
-### 7. 函数方式调用
+### 函数方式调用
 
 ::: demo demos/service 
 :::

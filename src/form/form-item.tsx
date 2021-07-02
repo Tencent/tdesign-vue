@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue';
+import Vue, { VNode, VueConstructor } from 'vue';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import { ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType } from '../../types/form/TdFormProps';
@@ -22,10 +22,18 @@ export const enum VALIDATE_STATUS {
 
 const name = `${prefix}-form-item`;
 
-export default Vue.extend({
+export interface FormItemContructor extends Vue {
+  form: FormInstance;
+}
+
+export default (Vue as VueConstructor<FormItemContructor>).extend({
   name,
 
   props: { ...props },
+
+  inject: {
+    form: { default: undefined },
+  },
 
   data() {
     return {
@@ -43,7 +51,7 @@ export default Vue.extend({
       return [CLASS_NAMES.formItem, CLASS_NAMES.row, FORM_ITEM_CLASS_PREFIX + this.name];
     },
     labelClasses(): ClassName {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const labelAlign = parent && parent.labelAlign;
       const layout = parent && parent.layout;
       let otherClasses = [];
@@ -63,7 +71,7 @@ export default Vue.extend({
       ];
     },
     errorClasses(): string {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       if (!parent.showErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) return CLASS_NAMES.success;
       if (!this.errorList.length) return;
@@ -75,7 +83,7 @@ export default Vue.extend({
       return [CLASS_NAMES.controls, CLASS_NAMES.col, getErrorClass];
     },
     labelProps(): Record<string, any> {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const labelProps: Record<string, any> = {};
       const labelWidth = parent && parent.labelWidth;
       if (labelWidth) {
@@ -84,21 +92,21 @@ export default Vue.extend({
       return labelProps;
     },
     value(): ValueType {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       return parent && parent.data && lodashGet(parent.data, this.name);
     },
     hasColon(): boolean {
-      const parent = this.$parent as FormInstance;
-      return !!(parent && parent.colon && this.getLabel());
+      const parent = this.form;
+      return !!(parent && parent.colon && this.getLabelContent());
     },
     needRequiredMark(): boolean {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const allowMark = parent && parent.requiredMark;
       const isRequired = this.innerRules.filter(rule => rule.required).length > 0;
       return Boolean(allowMark && isRequired);
     },
     innerRules(): ErrorList {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const rules = parent && parent.rules;
       return (rules && rules[this.name]) || (this.rules || []);
     },
@@ -112,6 +120,11 @@ export default Vue.extend({
 
   mounted() {
     this.initialValue = cloneDeep(this.value);
+    this.form.$emit('form-item-created', this);
+  },
+
+  beforeDestroy() {
+    this.form.$emit('form-item-destroyed', this);
   },
 
   methods: {
@@ -128,7 +141,7 @@ export default Vue.extend({
         [this.name]: r.length === 0 ? true : r,
       });
     },
-    getLabel(): TNodeReturnValue {
+    getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
         return this.label(this.$createElement);
       }
@@ -137,8 +150,20 @@ export default Vue.extend({
       }
       return this.label;
     },
+    getLabel(): TNodeReturnValue {
+      const parent = this.form;
+      const labelWidth = parent && parent.labelWidth;
+      if (Number(labelWidth) === 0) return;
+      return (
+        <div class={this.labelClasses} {...this.labelProps}>
+          <label for={this.for}>
+            {this.getLabelContent()}
+          </label>
+        </div>
+      );
+    },
     renderTipsInfo(): VNode {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       let helpVNode: VNode;
       if (this.help) {
         helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
@@ -200,7 +225,7 @@ export default Vue.extend({
       return null;
     },
     getSuffixIcon(): TNodeReturnValue {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const { statusIcon } = this;
       const slotStatusIcon = this.$scopedSlots.statusIcon;
       const parentStatusIcon = parent.statusIcon;
@@ -212,7 +237,7 @@ export default Vue.extend({
       if (resultIcon) return resultIcon;
     },
     getEmptyValue(): ValueType {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       const type = Object.prototype.toString.call(lodashGet(parent.data, this.name));
       let emptyValue: ValueType = undefined;
       if (type === '[object Array]') {
@@ -224,7 +249,7 @@ export default Vue.extend({
       return emptyValue;
     },
     resetField(): void {
-      const parent = this.$parent as FormInstance;
+      const parent = this.form;
       if (!this.name) {
         return;
       }
@@ -252,11 +277,7 @@ export default Vue.extend({
   render(): VNode {
     return (
       <div class={this.classes}>
-        <div class={this.labelClasses} {...this.labelProps}>
-          <label for={this.for}>
-            {this.getLabel()}
-          </label>
-        </div>
+        {this.getLabel()}
         <div class={this.contentClasses}>
           <div class={CLASS_NAMES.controlsContent}>
             {this.$slots.default}

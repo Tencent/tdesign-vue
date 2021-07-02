@@ -28,9 +28,3 @@ export default {
   },
 };
 </script>
-
-style.<style lang="less" scoped>
-.affix-base {
-  text-align: center;
-}
-</style>

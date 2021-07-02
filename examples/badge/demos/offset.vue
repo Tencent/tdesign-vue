@@ -29,7 +29,7 @@
   background: #EEEEEE;
   border: 1px solid #DCDCDC;
   box-sizing: border-box;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .badge-block + .badge-block {
