@@ -46,7 +46,7 @@ export default defineComponent({
       {
         [`${prefix}-clicked`]: isDuringAnimation.value,
         [`${prefix}-is-opened`]: isOpen.value,
-        [`${prefix}-is-active`]: !isOpen.value && isActive.value,
+        [`${prefix}-is-active`]: isActive.value,
       },
     ]);
     const subClass = computed(() => [

@@ -13,7 +13,6 @@ exports[`Menu single demo works fine 1`] = `
       >
         <img
           alt="logo"
-          class="t-menu__logo--center"
           src="https://www.tencent.com/img/index/menu_logo_hover.png"
           width="136"
         />
@@ -86,10 +85,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-notification-filled"
+            class="t-icon t-icon-mail"
           >
             <use
-              xlink:href="#t-icon-notification-filled"
+              xlink:href="#t-icon-mail"
             />
           </svg>
         </a>
@@ -98,10 +97,22 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-home"
+            class="t-icon t-icon-user"
           >
             <use
-              xlink:href="#t-icon-home"
+              xlink:href="#t-icon-user"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-ellipsis"
+          >
+            <use
+              xlink:href="#t-icon-ellipsis"
             />
           </svg>
         </a>
@@ -123,7 +134,6 @@ exports[`Menu single demo works fine 1`] = `
       >
         <img
           alt="logo"
-          class="t-menu__logo--center"
           src="https://www.tencent.com/img/index/menu_logo.png"
           width="136"
         />
@@ -191,10 +201,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-notification-filled"
+            class="t-icon t-icon-mail"
           >
             <use
-              xlink:href="#t-icon-notification-filled"
+              xlink:href="#t-icon-mail"
             />
           </svg>
         </a>
@@ -203,10 +213,22 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-home"
+            class="t-icon t-icon-user"
           >
             <use
-              xlink:href="#t-icon-home"
+              xlink:href="#t-icon-user"
+            />
+          </svg>
+        </a>
+         
+        <a
+          href="javascript:;"
+        >
+          <svg
+            class="t-icon t-icon-ellipsis"
+          >
+            <use
+              xlink:href="#t-icon-ellipsis"
             />
           </svg>
         </a>
