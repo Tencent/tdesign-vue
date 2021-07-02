@@ -1,27 +1,27 @@
 :: BASE_DOC ::
 
-### 1.5 尺寸
+### 尺寸
 
 ::: demo demos/size
 :::
 
 
-### 1.6 形状
+### 形状
 
 ::: demo demos/shape
 :::
 
-### 1.7 主题
+### 主题
 
 ::: demo demos/theme
 :::
 
-### 1.8 失效标签
+### 失效标签
 
 ::: demo demos/disabled
 :::
 
-### 1.9 超长省略文本标签
+### 超长省略文本标签
 
 ::: demo demos/long-text
 :::
