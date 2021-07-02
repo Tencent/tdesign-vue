@@ -22,7 +22,7 @@ export const enum VALIDATE_STATUS {
 
 const name = `${prefix}-form-item`;
 
-interface FormItemContructor extends Vue {
+export interface FormItemContructor extends Vue {
   form: FormInstance;
 }
 
