@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3 class="demo-t-badge-title">1.红点样式：</h3>
     <div class="demo-badge-block">
       <t-badge dot>
         <div class="badge-block"></div>
@@ -23,20 +22,6 @@
         </svg>
       </t-badge>
     </div>
-    <h3 class="demo-t-badge-title">2.数字样式徽标：</h3>
-    <t-badge count="2">
-      <div class="badge-block"></div>
-    </t-badge>
-    <t-badge count="99">
-      <div class="badge-block"></div>
-    </t-badge>
-    <t-badge count="999">
-      <div class="badge-block"></div>
-    </t-badge>
-    <h3 class="demo-t-badge-title">3.自定义式徽标：</h3>
-    <t-badge count="new">
-      <div class="badge-block"></div>
-    </t-badge>
   </div>
 </template>
 <style>
@@ -54,7 +39,10 @@
   background: #EEEEEE;
   border: 1px solid #DCDCDC;
   box-sizing: border-box;
-  border-radius: 2px;
-  margin-right: 16px;
+  border-radius: 3px;
+}
+
+.tbadge-block + .t-badge {
+  margin-left: 32px;
 }
 </style>

@@ -27,7 +27,12 @@ export default {
 };
 </script>
 <style scoped>
-.t-progress-domo-margin{
-  margin: 10px 0 5px
+div > .t-progress-domo-margin:first-child {
+  margin-top: 0
+}
+
+.t-progress-domo-margin {
+  margin: 16px 0 4px
 }
 </style>
+
