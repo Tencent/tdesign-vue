@@ -1527,62 +1527,69 @@ exports[`Tree:demo empty demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
 >
-  <h3>
-    normal:
-  </h3>
-   
   <div
     class="t-tree t-tree--fx"
   >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    />
     <div
       class="t-tree__empty"
     >
       暂无数据
     </div>
   </div>
-   
-  <h3>
-    string:
-  </h3>
+  <br />
    
   <div
     class="t-tree t-tree--fx"
   >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    />
     <div
       class="t-tree__empty"
     >
-      string empty
+      😊 空数据（string）
     </div>
   </div>
-   
-  <h3>
-    render:
-  </h3>
+  <br />
    
   <div
     class="t-tree t-tree--fx"
   >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    />
     <div
       class="t-tree__empty"
     >
       <div>
-        render empty
+        😊 空数据（ empty props ）
       </div>
     </div>
   </div>
-   
-  <h3>
-    slot:
-  </h3>
+  <br />
    
   <div
     class="t-tree t-tree--fx"
   >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    />
     <div
       class="t-tree__empty"
     >
       <div>
-        slot empty
+        😊 空数据（slot）
       </div>
     </div>
   </div>

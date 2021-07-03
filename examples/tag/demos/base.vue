@@ -1,11 +1,23 @@
 <template>
   <div class="tag-demo">
-    <t-tag>默认</t-tag>
+    <t-tag @click="onClick">默认</t-tag>
     <a class="demo-link">
       <t-tag>超链接</t-tag>
     </a>
   </div>
 </template>
+
+<script>
+
+export default {
+  methods: {
+    onClick({ e }) {
+      e.stopPropagation();
+    },
+  },
+};
+</script>
+
 
 <style lang="less" scoped>
 .tag-demo {

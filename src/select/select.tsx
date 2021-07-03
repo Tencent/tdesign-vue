@@ -1,5 +1,6 @@
 import Vue, { VNode } from 'vue';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -22,7 +23,7 @@ const name = `${prefix}-select`;
 // 用户设置overStyle width时，以设置的为准
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('select')).extend({
   name,
   model: {
     prop: 'value',
@@ -389,6 +390,14 @@ export default Vue.extend({
         }
       });
     },
+    getEmpty() {
+      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      return useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty');
+    },
+    getLoadingText() {
+      const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
+      return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
+    },
   },
   render(): VNode {
     const {
@@ -408,7 +417,6 @@ export default Vue.extend({
       tipsClass,
       loading,
       loadingText,
-      empty,
       emptyClass,
       hasOptions,
       realValue,
@@ -416,10 +424,10 @@ export default Vue.extend({
       showCreateOption,
       displayOptions,
     } = this;
-    const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
-    const prefixIconSlot: ScopedSlotReturnValue = renderTNodeJSX(this, 'prefixIcon');
-    const emptySlot: ScopedSlotReturnValue = renderTNodeJSX(this, 'empty');
-    const loadingTextSlot: ScopedSlotReturnValue = renderTNodeJSX(this, 'loadingText');
+    const children = renderTNodeJSX(this, 'default');
+    const prefixIconSlot = renderTNodeJSX(this, 'prefixIcon');
+    const emptySlot = this.getEmpty();
+    const loadingTextSlot = this.getLoadingText();
     return (
       <div ref='select' class={`${name}-wrap`}>
         <Popup
@@ -503,7 +511,7 @@ export default Vue.extend({
             }
             {
               !loading && !displayOptions.length && !showCreateOption && (
-                <li class={emptyClass}>{ emptySlot ? emptySlot : empty }</li>
+                <li class={emptyClass}>{ emptySlot }</li>
               )
             }
             {
