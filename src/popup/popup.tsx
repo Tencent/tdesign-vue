@@ -276,6 +276,11 @@ export default Vue.extend({
       }
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
+      // 处理按钮设置了disabled，里面子元素点击还是冒泡上来的情况
+      if (this.referenceElm?.querySelector?.('button:disabled')) {
+        return;
+      }
+
       this.$emit('visible-change', val, context);
       if (typeof this.onVisibleChange === 'function') {
         this.onVisibleChange(val, context);

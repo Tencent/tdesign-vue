@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      input: '',
+      input: 'Welcom to TDesign',
     };
   },
   methods: {

@@ -1,4 +1,6 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
@@ -28,7 +30,7 @@ import { RemoveOptions } from './types';
 
 const name = `${prefix}-tree-select`;
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('treeSelect')).extend({
   name,
   model: {
     prop: 'value',
@@ -158,10 +160,16 @@ export default Vue.extend({
       return this.placeholder;
     },
     loadingTextSlot(): ScopedSlotReturnValue {
-      return renderTNodeJSX(this, 'loadingText');
+      const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
+      return useLocale
+        ? <div class={`${prefix}-select-empty`}>{ this.t(this.locale.loadingText) }</div>
+        : renderTNodeJSX(this, 'loadingText');
     },
     emptySlot(): ScopedSlotReturnValue {
-      return renderTNodeJSX(this, 'empty');
+      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      return useLocale
+        ? <div class={`${prefix}-select-empty`}>{ this.t(this.locale.empty) }</div>
+        : renderTNodeJSX(this, 'empty');
     },
     prefixIconSlot(): ScopedSlotReturnValue {
       return renderTNodeJSX(this, 'prefixIcon');
@@ -280,9 +288,9 @@ export default Vue.extend({
         onExpand={this.treeNodeExpand}
         {...{ props: treeProps }}
       >
-        {
-          this.emptySlot && (<span slot="empty">{this.emptySlot}</span>)
-        }
+        <template slot='empty'>
+          {this.emptySlot}
+        </template>
       </Tree>
     );
     const searchInput = (
@@ -347,9 +355,7 @@ export default Vue.extend({
           </div>
           <div slot="content">
             <p v-show={this.showLoading} class={`${prefix}-select-loading-tips`}>
-              {
-                this.loadingTextSlot ? <span>{this.loadingTextSlot}</span> : this.loadingText
-              }
+              {this.loadingTextSlot}
             </p>
             {treeItem}
           </div>
