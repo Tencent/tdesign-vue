@@ -2,11 +2,13 @@ import { defineComponent, computed, inject, ref, onMounted } from '@vue/composit
 import { prefix } from '../config';
 import props from '@TdTypes/menu-item/props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
+import Ripple from '../utils/ripple';
 const name = `${prefix}-menu-item`;
 
 export default defineComponent({
   name,
   props: { ...props },
+  directives: { ripple: Ripple },
   setup(props, ctx) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
@@ -46,18 +48,6 @@ export default defineComponent({
       }
     };
 
-    let clickTime = 0;
-    const handlePointerDown = () => {
-      if (active.value) return;
-      isDuringAnimation.value = true;
-      clickTime = +new Date();
-    };
-    const handlePointerUp = () => {
-      setTimeout(() => {
-        isDuringAnimation.value = false;
-      }, Math.max(300 - new Date().getTime() + clickTime, 0));
-    };
-
     // lifetimes
     onMounted(() => {
       if (submenu) {
@@ -73,13 +63,11 @@ export default defineComponent({
       active,
       classes,
       handleClick,
-      handlePointerUp,
-      handlePointerDown,
     };
   },
   render() {
     return (
-      <li class={this.classes} onClick={this.handleClick} onPointerdown={this.handlePointerDown} onPointerup={this.handlePointerUp} ref="button">
+      <li v-ripple={this.menu.theme.value === 'light' ? '#E7E7E7' : '#383838'} class={this.classes} onClick={this.handleClick} ref="button">
         {this.$slots.icon}
         <span class={[`${prefix}-menu__content`]}>{this.$slots.default}</span>
       </li>
