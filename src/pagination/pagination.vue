@@ -1,5 +1,5 @@
 <template>
-  <div :class="paginationClass" v-if="pageCount > 1">
+  <div :class="paginationClass" v-if="total > 0">
     <!--数据统计区-->
     <div v-if="totalContent" :class="totalClass">
       <slot name="totalContent">
