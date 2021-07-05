@@ -7,6 +7,8 @@
 import { DirectiveBinding } from 'vue/types/options';
 
 const Ripple = {
+  startTimeId: null as NodeJS.Timeout,
+  finishTimeId: null as NodeJS.Timeout,
   bind(el: HTMLElement, binding: DirectiveBinding) {
     const period = 200;
     const bg = typeof binding.value === 'boolean' ? 'rgba(0, 0, 0, 0.35)' : binding.value;
@@ -16,14 +18,14 @@ const Ripple = {
       const elBorder = parseInt((getComputedStyle(el).borderWidth).replace('px', ''), 10);
       const width  = el.offsetWidth;
       const height = el.offsetHeight;
-      const style  = window.getComputedStyle(el);
+      const style  = getComputedStyle(el);
       const border = (elBorder > 0) ? elBorder : 0;
 
       const ripple = document.createElement('div');
       const rippleContainer = document.createElement('div');
 
-      ripple.style.marginTop = '0px';
-      ripple.style.marginLeft = '0px';
+      ripple.style.marginTop = '0';
+      ripple.style.marginLeft = '0';
       ripple.style.right = `${width + 20}px`;
       ripple.style.width = `${width + 20}px`;
       ripple.style.height = '100%';
@@ -32,14 +34,14 @@ const Ripple = {
       ripple.style.pointerEvents = 'none';
       ripple.style.position = 'relative';
       ripple.style.zIndex = '0';
-      ripple.style.backgroundColor  = bg;
+      ripple.style.backgroundColor = bg;
 
       rippleContainer.style.position = 'absolute';
       rippleContainer.style.left = `${0 - border}px`;
       rippleContainer.style.top = `${0 - border}px`;
-      rippleContainer.style.width   = `${width}px`;
-      rippleContainer.style.height  = `${height}px`;
-      rippleContainer.style.borderRadius  = style.borderRadius;
+      rippleContainer.style.width = `${width}px`;
+      rippleContainer.style.height = `${height}px`;
+      rippleContainer.style.borderRadius = style.borderRadius;
       rippleContainer.style.pointerEvents = 'none';
       rippleContainer.style.overflow = 'hidden';
 
@@ -56,7 +58,8 @@ const Ripple = {
       rippleContainer.appendChild(ripple);
       el.appendChild(rippleContainer);
 
-      setTimeout(() => {
+      clearTimeout(Ripple.startTimeId);
+      Ripple.startTimeId = setTimeout(() => {
         ripple.style.right  = '10px';
       }, 0);
 
@@ -65,7 +68,8 @@ const Ripple = {
 
         el.removeEventListener('pointerup', handleClearRipple, false);
 
-        setTimeout(() => {
+        clearTimeout(Ripple.finishTimeId);
+        Ripple.finishTimeId = setTimeout(() => {
           rippleContainer.parentNode.removeChild(rippleContainer);
 
           // reset zIndex
