@@ -1,9 +1,13 @@
-import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
+// import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
+import { VNode } from 'vue';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import upperFirst from 'lodash/upperFirst';
 import TreeStore from '../../common/js/tree/tree-store';
 import TreeNode from '../../common/js/tree/tree-node';
 import TreeItem from './tree-item';
 import props from '../../types/tree/props';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import {
   TypeTdTreeProps,
   TreeNodeValue,
@@ -11,7 +15,7 @@ import {
   TypeEventState,
   TreeNodeState,
   TypeTreeNodeModel,
-  TypeTreeInstance,
+  // TypeTreeInstance,
   TypeTargetNode,
 } from './types';
 import {
@@ -21,12 +25,12 @@ import {
 } from './constants';
 import {
   getMark,
-  getTNode,
   getNode,
   emitEvent,
 } from './util';
 
-export default (Vue as VueConstructor<TypeTreeInstance>).extend({
+// export default (Vue as VueConstructor<TypeTreeInstance>).extend({
+export default mixins(getLocalRecevierMixins('tree')).extend({
   name: TREE_NAME,
   model: {
     prop: 'value',
@@ -498,7 +502,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
       const nodes = this.store.getNodes(value);
       return nodes.map((node: TreeNode) => node.getModel());
     },
-    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]): void {
+    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
       let list = [];
       if (Array.isArray(item)) {
         list = item;
@@ -515,7 +519,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
         }
       });
     },
-    insertBefore(value: TreeNodeValue, item: TreeOptionData): void {
+    insertBefore(value: TreeNodeValue, item: TreeOptionData) {
       const val = item?.value || '';
       const node = getNode(this.store, val);
       if (node) {
@@ -524,7 +528,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
         this.store.insertBefore(value, item);
       }
     },
-    insertAfter(value: TreeNodeValue, item: TreeOptionData): void {
+    insertAfter(value: TreeNodeValue, item: TreeOptionData) {
       const val = item?.value || '';
       const node = getNode(this.store, val);
       if (node) {
@@ -533,7 +537,7 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
         this.store.insertAfter(value, item);
       }
     },
-    remove(value?: TreeNodeValue): void {
+    remove(value?: TreeNodeValue) {
       return this.store.remove(value);
     },
     getIndex(value: TreeNodeValue): number {
@@ -561,39 +565,31 @@ export default (Vue as VueConstructor<TypeTreeInstance>).extend({
   created() {
     this.build();
   },
-  render(createElement: CreateElement): VNode {
+  render(): VNode {
     const {
       classList,
       treeNodes,
-      $scopedSlots,
-      empty,
     } = this;
 
-    let emptyNode = null;
+    let emptyNode: TNodeReturnValue = null;
     let treeNodeList = null;
 
     if (treeNodes.length <= 0) {
-      if ($scopedSlots?.empty) {
-        emptyNode = $scopedSlots.empty(null);
-      } else if (empty) {
-        emptyNode = getTNode(empty, {
-          createElement,
-        });
-      }
-      emptyNode = (
-        <div
-          class={CLASS_NAMES.treeEmpty}
-        >{emptyNode}</div>
+      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      emptyNode =  (
+        <div class={CLASS_NAMES.treeEmpty}>
+          {useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty')}
+        </div>
       );
-    } else {
-      treeNodeList = (
+    }
+    treeNodeList = (
         <transition-group
           name={FX.treeNode}
           tag="div"
           class={CLASS_NAMES.treeList}
         >{treeNodes}</transition-group>
-      );
-    }
+    );
+
 
     return (
       <div class={classList}>

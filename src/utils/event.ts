@@ -25,7 +25,9 @@ export function emitEvent<T extends any[]>(vm: Vue, eventName: EmitEventName, ..
     emitEventName = eventName.event;
     emitEventMethodName = eventName.method;
   }
-  vm.$emit(emitEventName, ...args);
+  if (vm.$listeners[`${eventName}`]) {
+    vm.$emit(emitEventName, ...args);
+  }
   if (typeof vm.$props[emitEventMethodName] === 'function') {
     vm.$props[emitEventMethodName](...args);
   }

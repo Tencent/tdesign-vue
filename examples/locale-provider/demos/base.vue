@@ -20,6 +20,37 @@
     <t-popconfirm theme="default" content="Do you want to delete">
       <t-button>Popconfirm</t-button>
     </t-popconfirm>
+    <br><br>
+    <t-tree :data="[]"/>
+    <br><br>
+    <t-select
+      v-model="selectValue1"
+      :options="options1"
+      placeholder="multiple select"
+      filterable
+      multiple
+      style="width: 400px;"
+    />
+    <br><br>
+    <t-select
+      v-model="selectValue2"
+      placeholder="multiple remote select"
+      :options="options2"
+      :onSearch="remoteFilterMethod"
+      :loading="selectLoading"
+      multiple
+      filterable
+      reserveKeyword
+      style="width: 400px;"
+    />
+    <br><br>
+    <t-tree-select
+      v-model="treeValue"
+      :data="treeOptions"
+      filterable
+      placeholder="tree select"
+      style="width: 400px;"
+    />
   </t-locale-provider>
 </template>
 
@@ -62,6 +93,17 @@ const GLOBAL_CONFIG = {
     confirm: 'ok',
     cancel: 'cancel',
   },
+  tree: {
+    empty: 'Empty Data',
+  },
+  select: {
+    empty: 'Empty Data',
+    loadingText: 'loading...',
+  },
+  treeSelect: {
+    empty: 'Empty Data',
+    loadingText: 'loading...',
+  },
 };
 
 const transferList = [];
@@ -73,6 +115,31 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
+const SELECET_OPTIONS = [
+  { label: 'Shanghai', value: 'shanghai' },
+  { label: 'Beijing', value: 'beijing' },
+  { label: 'Shenzhen', value: 'shenzhen' },
+];
+
+const TREE_OPTIONS = [
+  {
+    label: '1',
+    value: '1',
+    children: [
+      { label: '1.1', value: '1.1' },
+      { label: '1.2', value: '1.2' },
+    ],
+  },
+  {
+    label: '2',
+    value: '2',
+    children: [
+      { label: '2.1', value: '2.1' },
+      { label: '2.2', value: '2.2' },
+    ],
+  },
+];
+
 export default {
   data() {
     return {
@@ -82,6 +149,13 @@ export default {
       transferChecked: [],
       transferTargetValue: [],
       drawerVisible: false,
+      selectValue1: [],
+      selectValue2: [],
+      options1: SELECET_OPTIONS.concat(),
+      options2: SELECET_OPTIONS.concat(),
+      selectLoading: false,
+      treeValue: '',
+      treeOptions: TREE_OPTIONS,
     };
   },
   methods: {
@@ -91,6 +165,16 @@ export default {
         cancelBtn: 'cancel',
         confirmBtn: 'confirm',
       });
+    },
+    remoteFilterMethod(filterWords) {
+      this.selectLoading = true;
+      const timer = setTimeout(() => {
+        this.options2 = filterWords
+          ? SELECET_OPTIONS.slice(1, 2)
+          : SELECET_OPTIONS.concat();
+        this.selectLoading = false;
+        clearTimeout(timer);
+      }, 100);
     },
   },
 };

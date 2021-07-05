@@ -4,6 +4,8 @@ import config from '../config';
 import TIconClose from '../icon/close';
 import props from '../../types/tag/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { TdTagProps } from '../../types/tag/TdTagProps';
+import { emitEvent } from '../utils/event';
 
 const { prefix } = config;
 const name = `${prefix}-tag`;
@@ -46,13 +48,11 @@ export default Vue.extend({
   methods: {
     handleClose(e: MouseEvent): void {
       if (this.disabled) return;
-      this.$emit('close', { e });
-      (typeof this.onClose === 'function') && this.onClose({ e });
+      emitEvent<Parameters<TdTagProps['onClose']>>(this, 'close', { e });
     },
     handleClick(e: MouseEvent): void {
       if (this.disabled) return;
-      this.$emit('click', { e });
-      (typeof this.onClick === 'function') && this.onClick({ e });
+      emitEvent<Parameters<TdTagProps['onClick']>>(this, 'click', { e });
     },
   },
   render() {

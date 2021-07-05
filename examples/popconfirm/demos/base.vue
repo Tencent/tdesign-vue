@@ -34,6 +34,11 @@
         </t-popconfirm>
       </div>
 
+      <div class='demo-item'>
+        <t-popconfirm theme="default" content="确认删除订单吗">
+          <t-button disabled>禁用按钮</t-button>
+        </t-popconfirm>
+      </div>
     </div>
   </div>
 </template>
