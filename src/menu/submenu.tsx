@@ -84,6 +84,7 @@ export default defineComponent({
 
     let clickTime = 0;
     const handlePointerDown = () => {
+      if (isActive.value) return;
       isDuringAnimation.value = true;
       clickTime = +new Date();
     };
