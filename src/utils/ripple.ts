@@ -67,6 +67,13 @@ const Ripple = {
         }
       }
 
+      // fix
+      const initPosition = el.style.position ? el.style.position : getComputedStyle(el).position;
+      if (initPosition === '' || initPosition === 'static') {
+        // eslint-disable-next-line no-param-reassign
+        el.style.position = 'relative';
+      }
+
       rippleContainer.appendChild(ripple);
       el.appendChild(rippleContainer);
 
@@ -83,6 +90,8 @@ const Ripple = {
         clearTimeout(Ripple.finishTimeId);
         Ripple.finishTimeId = setTimeout(() => {
           rippleContainer.parentNode.removeChild(rippleContainer);
+          // eslint-disable-next-line no-param-reassign
+          el.style.position = initPosition !== 'static' ? initPosition : '';
 
           // reset zIndex
           for (let n = el.children.length, i = 0; i < n; ++i) {
