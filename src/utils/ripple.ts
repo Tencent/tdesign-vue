@@ -6,6 +6,15 @@
 
 import { DirectiveBinding } from 'vue/types/options';
 
+type TStyle = Record<string, string>;
+const setStyle = (el: HTMLElement, style: TStyle) => {
+  const keys = Object.keys(style);
+  keys.forEach((key) => {
+    // eslint-disable-next-line no-param-reassign
+    el.style[key] = style[key];
+  });
+};
+
 const Ripple = {
   startTimeId: null as NodeJS.Timeout,
   finishTimeId: null as NodeJS.Timeout,
@@ -24,31 +33,34 @@ const Ripple = {
       const ripple = document.createElement('div');
       const rippleContainer = document.createElement('div');
 
-      ripple.style.marginTop = '0';
-      ripple.style.marginLeft = '0';
-      ripple.style.right = `${width + 20}px`;
-      ripple.style.width = `${width + 20}px`;
-      ripple.style.height = '100%';
-      ripple.style.transition = `all ${period}ms cubic-bezier(.38, 0, .24, 1)`;
-      ripple.style.transform = 'skewX(-8deg)';
-      ripple.style.pointerEvents = 'none';
-      ripple.style.position = 'relative';
-      ripple.style.zIndex = '0';
-      ripple.style.backgroundColor = bg;
-
-      rippleContainer.style.position = 'absolute';
-      rippleContainer.style.left = `${0 - border}px`;
-      rippleContainer.style.top = `${0 - border}px`;
-      rippleContainer.style.width = `${width}px`;
-      rippleContainer.style.height = `${height}px`;
-      rippleContainer.style.borderRadius = style.borderRadius;
-      rippleContainer.style.pointerEvents = 'none';
-      rippleContainer.style.overflow = 'hidden';
+      setStyle(ripple, {
+        marginTop: '0',
+        marginLeft: '0',
+        right: `${width + 20}px`,
+        width: `${width + 20}px`,
+        height: '100%',
+        transition: `all ${period}ms cubic-bezier(.38, 0, .24, 1)`,
+        transform: 'skewX(-8deg)',
+        pointerEvents: 'none',
+        position: 'relative',
+        zIndex: '0',
+        backgroundColor: bg,
+      });
+      setStyle(rippleContainer, {
+        position: 'absolute',
+        left: `${0 - border}px`,
+        top: `${0 - border}px`,
+        width: `${width}px`,
+        height: `${height}px`,
+        borderRadius: style.borderRadius,
+        pointerEvents: 'none',
+        overflow: 'hidden',
+      });
 
       // fix zIndex：避免遮盖内部元素
       const elMap = new WeakMap();
       for (let n = el.children.length, i = 0; i < n; ++i) {
-        const child: Element = el.children[i];
+        const child = el.children[i];
         if ((child as HTMLElement).style.zIndex === '') {
           (child as HTMLElement).style.zIndex = '1';
           elMap.set(child, true);
