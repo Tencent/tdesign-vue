@@ -27,7 +27,7 @@ exports[`Menu single demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            菜单内容一
+            内容列表
           </span>
         </li>
          
@@ -42,27 +42,12 @@ exports[`Menu single demo works fine 1`] = `
         </li>
          
         <li
-          class="t-menu__item t-menu__item--plain"
-        >
-          <span
-            class="t-menu__content"
-          >
-            <a
-              href="https://www.tencent.com"
-              target="_blank"
-            >
-              菜单内容二
-            </a>
-          </span>
-        </li>
-         
-        <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
         >
           <span
             class="t-menu__content"
           >
-            菜单内容三
+            内容列表
           </span>
         </li>
       </ul>
@@ -158,17 +143,7 @@ exports[`Menu single demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            菜单内容一
-          </span>
-        </li>
-         
-        <li
-          class="t-menu__item t-menu__item--plain"
-        >
-          <span
-            class="t-menu__content"
-          >
-            菜单内容二
+            内容列表
           </span>
         </li>
          
@@ -178,7 +153,7 @@ exports[`Menu single demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            菜单内容三
+            内容列表
           </span>
         </li>
       </ul>
