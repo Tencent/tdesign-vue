@@ -5,6 +5,8 @@ import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import { on, off, getScroll, scrollTo, getScrollContainer } from '../utils/dom';
 import props from '../../types/anchor/props';
 
+import Affix from '../affix';
+
 const name = `${prefix}-anchor`;
 
 export interface Anchor extends Vue {
@@ -25,7 +27,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     return {
       links: [] as string[],
       active: '',
-      activeLineStyle: false as (boolean | { top: string; height: string}),
+      activeLineStyle: false as boolean | { top: string; height: string },
     };
   },
   watch: {
@@ -132,7 +134,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
      * 监听AnchorLink点击事件
      * @param {{ href: string; title: string , e: MouseEvent }} link
      */
-    handleLinkClick(link: { href: string; title: string ; e: MouseEvent}): void {
+    handleLinkClick(link: { href: string; title: string; e: MouseEvent }): void {
       this.$emit('click', link);
       if (this.onClick) {
         this.onClick(link);
@@ -203,17 +205,24 @@ export default (Vue as VueConstructor<Anchor>).extend({
   },
 
   render() {
-    const { $scopedSlots: { default: children }, size, affix, activeLineStyle } = this;
-    const className = [name, CLASSNAMES.SIZE[size], {
-      [`${prefix}--affix`]: affix,
-    }];
-    return <div class={className}>
-      <div class={`${name}_line`}>
-        {
-          activeLineStyle && <div class="point" style={activeLineStyle} ></div>
-        }
+    const {
+      $scopedSlots: { default: children },
+      size,
+      affixProps,
+      activeLineStyle,
+    } = this;
+    const className = [name, CLASSNAMES.SIZE[size]];
+
+    const Content = (
+      <div class={className}>
+        <div class={`${name}_line`}>{activeLineStyle && <div class="point" style={activeLineStyle}></div>}</div>
+        {children && children(null)}
       </div>
-      {children && children(null)}
-    </div>;
+    );
+
+    if (affixProps) {
+      return <Affix {...{ props: affixProps }}>{Content}</Affix>;
+    }
+    return Content;
   },
 });

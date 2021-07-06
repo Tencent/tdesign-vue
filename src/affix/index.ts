@@ -6,5 +6,4 @@ export const Affix = withInstall('Affix', _Affix);
 
 export * from '../../types/affix/TdAffixProps';
 export type AffixProps = TdAffixProps;
-
 export default Affix;
