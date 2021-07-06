@@ -2,7 +2,7 @@
 
   <t-menu theme="light" active="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
     <template #logo>
-      <img :width="collapsed ? 35 : 136" class="t-menu__logo--center" :src="iconUrl" alt="logo">
+      <img :width="collapsed ? 35 : 136"  :src="iconUrl" alt="logo">
     </template>
     <t-menu-item value="item1">
       <template #icon>

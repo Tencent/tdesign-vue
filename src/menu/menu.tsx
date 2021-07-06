@@ -10,6 +10,7 @@ export default defineComponent({
   props: { ...props },
   setup(props, ctx) {
     const mode = ref(props.expandType);
+    const theme = computed(() => props.theme);
     const menuClass = computed(() => [
       `${prefix}-default-menu`,
       `${prefix}-menu-mode__${mode.value}`,
@@ -52,6 +53,7 @@ export default defineComponent({
       activeIndexValue,
       expandedArray,
       mode,
+      theme,
       isHead: false,
       select: (val: MenuValue) => {
         activeIndexValue.value = val;

@@ -3,6 +3,7 @@ import { Submenu } from '@/src/menu';
 import { ref } from '@vue/composition-api';
 
 const Menu = {
+  theme: ref('light'),
   activeIndexValue: ref(''),
   mode: ref('normal'),
 };
