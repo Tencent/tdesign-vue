@@ -300,7 +300,7 @@ export default Vue.extend({
     },
     handleEndInput(e: FocusEvent) {
       this.inputing = false;
-      const value = this.toValidNumber(this.filterValue);
+      const value = this.toDecimalPlaces(this.toValidNumber(this.filterValue));
       if (value !== this.value) {
         this.updateValue(value);
         this.handleAction(value, 'input', e);
