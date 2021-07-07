@@ -20,10 +20,16 @@ const Ripple = {
   finishTimeId: null as NodeJS.Timeout,
   bind(el: HTMLElement, binding: DirectiveBinding) {
     const period = 200;
-    const bg = typeof binding.value === 'boolean' ? 'rgba(0, 0, 0, 0.35)' : binding.value;
+    const defaultBg = 'rgba(0, 0, 0, 0.35)';
+    let bg = typeof binding.value === 'boolean' ? defaultBg : binding.value;
 
     el.addEventListener('pointerdown', () => {
       if (el.classList.contains('t-is-active') || el.classList.contains('t-is-disabled')) return;
+
+      if (bg === defaultBg && el.dataset.ripple) {
+        bg = el.dataset.ripple;
+      }
+
       const elBorder = parseInt((getComputedStyle(el).borderWidth).replace('px', ''), 10);
       const width  = el.offsetWidth;
       const height = el.offsetHeight;
