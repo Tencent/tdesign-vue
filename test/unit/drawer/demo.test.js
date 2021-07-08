@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils';
 import demo from '@/examples/drawer/demos/base.vue';
-import CurrentDOMModeUsageExample from '@/examples/drawer/demos/CurrentDOMModeUsageExample.vue';
+import CurrentDOMModeUsageExample from '@/examples/drawer/demos/attach-parent.vue';
 import destroy from '@/examples/drawer/demos/destroy.vue';
-import HeaderUsageExample from '@/examples/drawer/demos/HeaderUsageExample.vue';
-import ModeUsageExample from '@/examples/drawer/demos/ModeUsageExample.vue';
-import NoMaskUsageExample from '@/examples/drawer/demos/NoMaskUsageExample.vue';
+import CustomUsageExample from '@/examples/drawer/demos/custom.vue';
+import PopupUsageExample from '@/examples/drawer/demos/popup.vue';
+import NoMaskUsageExample from '@/examples/drawer/demos/no-mask.vue';
 import operation from '@/examples/drawer/demos/operation.vue';
-import PlacementUsageExample from '@/examples/drawer/demos/PlacementUsageExample.vue';
-import SizeUsageExample from '@/examples/drawer/demos/SizeUsageExample.vue';
+import PlacementUsageExample from '@/examples/drawer/demos/placement.vue';
+import SizeUsageExample from '@/examples/drawer/demos/size.vue';
 
 // unit test for component in examples.
 describe('Drawer', () => {
@@ -24,12 +24,12 @@ describe('Drawer', () => {
     const wrapper = mount(destroy);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo HeaderUsageExample wroks fine', () => {
-    const wrapper = mount(HeaderUsageExample);
+  it('Demo CustomUsageExample wroks fine', () => {
+    const wrapper = mount(CustomUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo ModeUsageExample wroks fine', () => {
-    const wrapper = mount(ModeUsageExample);
+  it('Demo PopupUsageExample wroks fine', () => {
+    const wrapper = mount(PopupUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('Demo NoMaskUsageExample wroks fine', () => {

@@ -1095,6 +1095,493 @@ exports[`Tree:demo checkable demo works fine 1`] = `
 </div>
 `;
 
+exports[`Tree:demo controlled demo works fine 1`] = `
+<div
+  class="tdesign-tree-base"
+>
+  <div
+    class="t-addon t-addon--prepend"
+  >
+    <span
+      class="t-addon__prepend"
+    >
+      checked:
+    </span>
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        type="text"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-addon t-addon--prepend"
+  >
+    <span
+      class="t-addon__prepend"
+    >
+      expanded:
+    </span>
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        type="text"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-addon t-addon--prepend"
+  >
+    <span
+      class="t-addon__prepend"
+    >
+      actived:
+    </span>
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        type="text"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-tree t-tree--fx"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="1"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            indeterminate="indeterminate"
+            name="1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="1"
+        data-value="1.1"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            indeterminate="indeterminate"
+            name="1.1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="2"
+        data-value="1.1.1"
+        style="--level: 2;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="1.1.1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1.1
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="3"
+        data-value="1.1.1.1"
+        style="--level: 3;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="1.1.1.1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1.1.1
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="3"
+        data-value="1.1.1.2"
+        style="--level: 3;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="1.1.1.2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1.1.2
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="2"
+        data-value="1.1.2"
+        style="--level: 2;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="1.1.2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1.2
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="1"
+        data-value="1.2"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="1.2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.2
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-active"
+        data-level="0"
+        data-value="2"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2 这个节点不允许展开, 不允许激活
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="1"
+        data-value="2.1"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="2.1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2.1 这个节点不允许选中
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="1"
+        data-value="2.2"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="2.2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2.2
+          </span>
+        </label>
+        <span
+          class="t-tree__space"
+        />
+      </div>
+    </transition-group-stub>
+  </div>
+</div>
+`;
+
 exports[`Tree:demo disabled demo works fine 1`] = `
 <div
   class="tdesign-tree-base"
@@ -5793,493 +6280,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             class="t-checkbox__label"
           >
             2.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="1"
-        data-value="2.2"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="2.2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            2.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-    </transition-group-stub>
-  </div>
-</div>
-`;
-
-exports[`Tree:demo vmodel demo works fine 1`] = `
-<div
-  class="tdesign-tree-base"
->
-  <div
-    class="t-addon t-addon--prepend"
-  >
-    <span
-      class="t-addon__prepend"
-    >
-      checked:
-    </span>
-    <div
-      class="t-input t-size-m"
-    >
-      <input
-        class="t-input__inner"
-        type="text"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-addon t-addon--prepend"
-  >
-    <span
-      class="t-addon__prepend"
-    >
-      expanded:
-    </span>
-    <div
-      class="t-input t-size-m"
-    >
-      <input
-        class="t-input__inner"
-        type="text"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-addon t-addon--prepend"
-  >
-    <span
-      class="t-addon__prepend"
-    >
-      actived:
-    </span>
-    <div
-      class="t-input t-size-m"
-    >
-      <input
-        class="t-input__inner"
-        type="text"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-tree t-tree--fx"
-  >
-    <transition-group-stub
-      class="t-tree__list"
-      name="t-tree-toggle"
-      tag="div"
-    >
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="0"
-        data-value="1"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            indeterminate="indeterminate"
-            name="1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="1"
-        data-value="1.1"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            indeterminate="indeterminate"
-            name="1.1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="2"
-        data-value="1.1.1"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="1.1.1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="3"
-        data-value="1.1.1.1"
-        style="--level: 3;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="1.1.1.1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.1.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="3"
-        data-value="1.1.1.2"
-        style="--level: 3;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="1.1.1.2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.1.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="2"
-        data-value="1.1.2"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="1.1.2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="1"
-        data-value="1.2"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="1.2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-active"
-        data-level="0"
-        data-value="2"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            2 这个节点不允许展开, 不允许激活
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item"
-        data-level="1"
-        data-value="2.1"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="2.1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            2.1 这个节点不允许选中
           </span>
         </label>
         <span

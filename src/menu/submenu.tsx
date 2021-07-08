@@ -4,6 +4,7 @@ import { prefix } from '../config';
 import props from '../../types/submenu/props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import TIconChevronDown from '../icon/chevron-down';
+import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
 
 const name = `${prefix}-submenu`;
@@ -12,15 +13,19 @@ export default defineComponent({
   components: {
     TIconChevronDown,
   },
+  directives: {
+    ripple: Ripple,
+  },
   props,
   setup(props, ctx) {
-    const { activeIndexValue, expandedArray, mode, isHead, selectSubMenu, open } = inject<TdMenuInterface>('TdMenu');
+    const { theme, activeIndexValue, expandedArray, mode, isHead, selectSubMenu, open } = inject<TdMenuInterface>('TdMenu');
     const menuItems = ref([]); // 因composition-api的缺陷，不用reactive， 详见：https://github.com/vuejs/composition-api/issues/637
     const isActive = computed(() => {
       const childIsActive = menuItems.value.some(i => i.value === activeIndexValue.value);
       return activeIndexValue.value === props.value || childIsActive;
     });
     const popupVisible = ref(false);
+    const rippleColor = computed(() => theme.value === 'light' ? '#E7E7E7' : '#383838');
     const isOpen = computed(() => {
       if (mode.value === 'popup') {
         return popupVisible.value;
@@ -44,7 +49,7 @@ export default defineComponent({
       `${prefix}-menu__item`,
       {
         [`${prefix}-is-opened`]: isOpen.value,
-        [`${prefix}-is-active`]: !isOpen.value && isActive.value,
+        [`${prefix}-is-active`]: isActive.value,
       },
     ]);
     const subClass = computed(() => [
@@ -104,6 +109,7 @@ export default defineComponent({
       subClass,
       popupClass,
       submenuClass,
+      rippleColor,
       handleMouseEnter,
       handleMouseLeave,
       handleSubmenuItemClick,
@@ -113,7 +119,7 @@ export default defineComponent({
   methods: {
     renderHeadSubmenu() {
       const normalSubmenu = [
-        <div class={this.submenuClass} onClick={this.handleHeadmenuItemClick}>
+        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleHeadmenuItemClick}>
           {renderTNodeJSX(this as Vue, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">
@@ -141,7 +147,7 @@ export default defineComponent({
     renderSubmenu() {
       const hasContent = this.$slots.content || this.$slots.default;
       const normalSubmenu = [
-        <div class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
+        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {this.$slots.icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
           {hasContent && <t-icon-chevron-down class="t-submenu-icon"></t-icon-chevron-down>}

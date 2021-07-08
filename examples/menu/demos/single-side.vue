@@ -2,7 +2,7 @@
   <div class="box">
     <t-menu theme="light" value="item1" @change="changeHandler" style="margin-right: 50px" height="550px">
       <template #logo>
-        <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+        <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
       <t-menu-item value="item1">仪表盘</t-menu-item>
       <t-menu-item value="item2">资源列表</t-menu-item>
@@ -17,7 +17,7 @@
 
     <t-menu theme="light" value="dashboard" style="margin-right: 50px" height="550px" >
       <template #logo>
-        <img width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+        <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
       <t-menu-item value="dashboard">
         <template #icon>
@@ -76,7 +76,7 @@
     </t-menu>
 
     <t-menu theme="dark" value="dashboard" height="550px" >
-      <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
+      <img slot="logo" width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="dashboard">
         <template #icon>
           <t-icon name="dashboard"/>

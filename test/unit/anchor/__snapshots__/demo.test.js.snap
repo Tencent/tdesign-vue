@@ -5,101 +5,103 @@ exports[`Anchor base demo works fine 1`] = `
   class="anchor-demo"
   id="http://example.com#default"
 >
-  <div
-    class="t-anchor t-size-m"
-  >
+  <div>
     <div
-      class="t-anchor_line"
-    />
-    <div
-      class="t-anchor-item"
+      class="t-anchor t-size-m"
     >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#default"
-        target="_self"
-        title="定义"
+      <div
+        class="t-anchor_line"
+      />
+      <div
+        class="t-anchor-item"
       >
-        定义
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#multiple"
-        target="_self"
-        title="服务功能"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#default"
+          target="_self"
+          title="定义"
+        >
+          定义
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        服务功能
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#small"
-        target="_self"
-        title="使用指南"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#multiple"
+          target="_self"
+          title="服务功能"
+        >
+          服务功能
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        使用指南
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#large"
-        target="_self"
-        title="创建签名"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#small"
+          target="_self"
+          title="使用指南"
+        >
+          使用指南
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        创建签名
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#container"
-        target="_self"
-        title="创建内容"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#large"
+          target="_self"
+          title="创建签名"
+        >
+          创建签名
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        创建内容
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#anchor-target-6"
-        target="_self"
-        title="保密协议"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#container"
+          target="_self"
+          title="创建内容"
+        >
+          创建内容
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        保密协议
-      </a>
-    </div>
-     
-    <div
-      class="t-anchor-item"
-    >
-      <a
-        class="t-anchor-item_link"
-        href="#http://example.com#anchor-target-7"
-        target="_self"
-        title="其他"
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#anchor-target-6"
+          target="_self"
+          title="保密协议"
+        >
+          保密协议
+        </a>
+      </div>
+       
+      <div
+        class="t-anchor-item"
       >
-        其他
-      </a>
+        <a
+          class="t-anchor-item_link"
+          href="#http://example.com#anchor-target-7"
+          target="_self"
+          title="其他"
+        >
+          其他
+        </a>
+      </div>
     </div>
   </div>
 </div>

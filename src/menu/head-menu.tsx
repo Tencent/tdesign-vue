@@ -13,6 +13,7 @@ export default defineComponent({
   setup(props, ctx) {
     const activeIndexValue = ref(props.defaultValue || props.value || '');
     const expandedArray = ref(props.defaultExpanded || props.expanded || []);
+    const theme = computed(() => props.theme);
     const menuClass = computed(() => [
       't-menu',
       't-head-menu',
@@ -36,6 +37,7 @@ export default defineComponent({
 
     provide<TdMenuInterface>('TdMenu', {
       mode,
+      theme,
       isHead: true,
       expandedArray,
       activeIndexValue,

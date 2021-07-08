@@ -11,6 +11,10 @@ export default Vue.extend({
   props,
   methods: {
     renderAvatar() {
+      if (!(this.avatar || this.$scopedSlots.avatar)) {
+        return;
+      }
+
       if (this.avatar && typeof this.avatar === 'string') {
         return (
           <div class={`${name}-avatar`}>

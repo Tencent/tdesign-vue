@@ -4,8 +4,4 @@
 
 {{ href }}
 
-### options选项
-
-{{ options }}
-
 :: BASE_PROPS ::

@@ -8,7 +8,7 @@ import checkable from '@/examples/tree/demos/checkable.vue';
 import disabled from '@/examples/tree/demos/disabled.vue';
 import load from '@/examples/tree/demos/load.vue';
 import lazy from '@/examples/tree/demos/lazy.vue';
-import vmodel from '@/examples/tree/demos/vmodel.vue';
+import controlled from '@/examples/tree/demos/controlled.vue';
 import sync from '@/examples/tree/demos/sync.vue';
 import filter from '@/examples/tree/demos/filter.vue';
 import empty from '@/examples/tree/demos/empty.vue';
@@ -55,8 +55,8 @@ describe('Tree:demo', () => {
     const wrapper = mount(lazy);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('vmodel demo works fine', () => {
-    const wrapper = mount(vmodel);
+  it('controlled demo works fine', () => {
+    const wrapper = mount(controlled);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('sync demo works fine', () => {

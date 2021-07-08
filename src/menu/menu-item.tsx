@@ -1,19 +1,23 @@
-import { defineComponent, computed, inject, onMounted } from '@vue/composition-api';
+import { defineComponent, computed, inject, ref, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from '@TdTypes/menu-item/props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
+import Ripple from '../utils/ripple';
 const name = `${prefix}-menu-item`;
 
 export default defineComponent({
   name,
   props: { ...props },
+  directives: { ripple: Ripple },
   setup(props, ctx) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
     const active = computed(() => menu.activeIndexValue.value === props.value);
+    const isDuringAnimation = ref(false);
     const classes = computed(() => [
       `${prefix}-menu__item`,
       {
+        [`${prefix}-clicked`]: isDuringAnimation.value,
         [`${prefix}-is-active`]: active.value,
         [`${prefix}-is-disabled`]: props.disabled,
         [`${prefix}-menu__item--plain`]: !ctx.slots.icon,
@@ -63,7 +67,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <li class={this.classes} onClick={this.handleClick}>
+      <li v-ripple={this.menu.theme.value === 'light' ? '#E7E7E7' : '#383838'} class={this.classes} onClick={this.handleClick} ref="button">
         {this.$slots.icon}
         <span class={[`${prefix}-menu__content`]}>{this.$slots.default}</span>
       </li>

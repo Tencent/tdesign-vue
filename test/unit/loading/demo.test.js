@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import base from '@/examples/loading/demos/base.vue';
 import delay from '@/examples/loading/demos/delay.vue';
 import fullscreen from '@/examples/loading/demos/fullscreen.vue';
-import iconText from '@/examples/loading/demos/iconText.vue';
+import iconText from '@/examples/loading/demos/icon-text.vue';
 import attach from '@/examples/loading/demos/attach.vue';
 import service from '@/examples/loading/demos/service.vue';
 import size from '@/examples/loading/demos/size.vue';
