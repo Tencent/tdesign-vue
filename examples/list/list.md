@@ -13,7 +13,7 @@
 :::
 
 ### 头部及尾部
-::: demo demos/headerFooter list
+::: demo demos/header-footer 
 :::
 
 ### 滚动事件

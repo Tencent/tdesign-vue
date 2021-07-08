@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import type from '@/examples/message/demos/type.vue';
 import close from '@/examples/message/demos/close.vue';
-import closeAll from '@/examples/message/demos/closeAll.vue';
+import closeAll from '@/examples/message/demos/close-all.vue';
 import offset from '@/examples/message/demos/offset.vue';
 import placement from '@/examples/message/demos/placement.vue';
 import plugin from '@/examples/message/demos/plugin.vue';

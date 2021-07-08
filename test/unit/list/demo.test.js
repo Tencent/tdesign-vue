@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils';
 import base from '@/examples/list/demos/base.vue';
 import extra from '@/examples/list/demos/extra.vue';
-import headerFooter from '@/examples/list/demos/headerFooter.vue';
-import imageText from '@/examples/list/demos/imageText.vue';
+import headerFooter from '@/examples/list/demos/header-footer.vue';
+import imageText from '@/examples/list/demos/image-text.vue';
 import multiline from '@/examples/list/demos/multiline.vue';
 import operation from '@/examples/list/demos/operation.vue';
 import scroll from '@/examples/list/demos/scroll.vue';
