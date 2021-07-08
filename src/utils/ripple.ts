@@ -1,7 +1,8 @@
 /**
  * 用法
  * v-ripple
- * v-ripple="动画条的背景色" eg: v-ripple="#808080"
+ * 固定色值 v-ripple="动画条的背景色" eg: v-ripple="#808080"
+ * 动态色值(推荐) v-ripple="true" data.ripple="rippleColor"
  */
 
 import { DirectiveBinding } from 'vue/types/options';

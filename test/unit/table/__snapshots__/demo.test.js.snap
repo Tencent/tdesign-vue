@@ -804,6 +804,7 @@ exports[`Table base demo works fine 1`] = `
         >
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             1
           </li>
@@ -812,6 +813,7 @@ exports[`Table base demo works fine 1`] = `
            
           <li
             class="t-pagination__number t-is-current"
+            data-ripple=""
           >
             
         2
@@ -819,6 +821,7 @@ exports[`Table base demo works fine 1`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         3
@@ -826,6 +829,7 @@ exports[`Table base demo works fine 1`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         4
@@ -833,6 +837,7 @@ exports[`Table base demo works fine 1`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         5
@@ -858,6 +863,7 @@ exports[`Table base demo works fine 1`] = `
            
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             12
           </li>
@@ -1600,6 +1606,7 @@ exports[`Table base demo works fine 2`] = `
         >
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             1
           </li>
@@ -1608,6 +1615,7 @@ exports[`Table base demo works fine 2`] = `
            
           <li
             class="t-pagination__number t-is-current"
+            data-ripple=""
           >
             
         2
@@ -1615,6 +1623,7 @@ exports[`Table base demo works fine 2`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         3
@@ -1622,6 +1631,7 @@ exports[`Table base demo works fine 2`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         4
@@ -1629,6 +1639,7 @@ exports[`Table base demo works fine 2`] = `
           </li>
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             
         5
@@ -1654,6 +1665,7 @@ exports[`Table base demo works fine 2`] = `
            
           <li
             class="t-pagination__number"
+            data-ripple=""
           >
             12
           </li>
