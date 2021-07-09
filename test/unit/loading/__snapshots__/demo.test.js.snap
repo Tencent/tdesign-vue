@@ -21,70 +21,11 @@ exports[`Loading attach demo works fine 1`] = `
   <div
     class="t-loading t-size-m t-loading-mask t-loading-lock t-loading__wrapper v-transfer-dom"
   >
-    <svg
-      class="t-icon-loading"
-      height="36px"
-      style="display: inline-block; vertical-align: middle;"
-      viewBox="0 0 200 200"
-      width="36px"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="t-loading__gradient t-loading__gradient-medium t-icon-loading"
     >
-      <g
-        id="load"
-      >
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="right"
-          x1="150"
-          x2="150"
-          y1="20"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(1, 81, 217);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="right"
-          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-          style="fill: url(#right);"
-        />
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="left"
-          x1="50"
-          x2="50"
-          y1="0"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(255, 255, 255);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="left"
-          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-          style="fill: url(#left);"
-        />
-        <circle
-          class="top"
-          cx="100"
-          cy="10"
-          r="10"
-          style="fill: #0151D9;"
-        />
-      </g>
-    </svg>
+      <div />
+    </div>
   </div>
 </div>
 `;
@@ -96,70 +37,11 @@ exports[`Loading base demo works fine 1`] = `
   <div
     class="t-loading t-size-m t-loading-lock v-transfer-dom"
   >
-    <svg
-      class="t-icon-loading"
-      height="36px"
-      style="display: inline-block; vertical-align: middle;"
-      viewBox="0 0 200 200"
-      width="36px"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="t-loading__gradient t-loading__gradient-medium t-icon-loading"
     >
-      <g
-        id="load"
-      >
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="right"
-          x1="150"
-          x2="150"
-          y1="20"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(1, 81, 217);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="right"
-          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-          style="fill: url(#right);"
-        />
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="left"
-          x1="50"
-          x2="50"
-          y1="0"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(255, 255, 255);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="left"
-          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-          style="fill: url(#left);"
-        />
-        <circle
-          class="top"
-          cx="100"
-          cy="10"
-          r="10"
-          style="fill: #0151D9;"
-        />
-      </g>
-    </svg>
+      <div />
+    </div>
   </div>
    
   <div
@@ -260,70 +142,11 @@ exports[`Loading iconText demo works fine 1`] = `
   <div
     class="t-loading t-size-m t-loading-lock v-transfer-dom"
   >
-    <svg
-      class="t-icon-loading"
-      height="36px"
-      style="display: inline-block; vertical-align: middle;"
-      viewBox="0 0 200 200"
-      width="36px"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="t-loading__gradient t-loading__gradient-medium t-icon-loading"
     >
-      <g
-        id="load"
-      >
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="right"
-          x1="150"
-          x2="150"
-          y1="20"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(1, 81, 217);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="right"
-          d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-          style="fill: url(#right);"
-        />
-        <lineargradient
-          gradientUnits="userSpaceOnUse"
-          id="left"
-          x1="50"
-          x2="50"
-          y1="0"
-          y2="180"
-        >
-          <stop
-            offset="0"
-            style="stop-color: rgb(255, 255, 255);"
-          />
-          <stop
-            offset="1"
-            style="stop-color: rgb(128, 168, 236);"
-          />
-        </lineargradient>
-        <path
-          class="left"
-          d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-          style="fill: url(#left);"
-        />
-        <circle
-          class="top"
-          cx="100"
-          cy="10"
-          r="10"
-          style="fill: #0151D9;"
-        />
-      </g>
-    </svg>
+      <div />
+    </div>
     <div
       class="t-loading-text"
     >
@@ -374,70 +197,11 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading t-size-s t-loading-lock v-transfer-dom"
     >
-      <svg
-        class="t-icon-loading"
-        height="14px"
-        style="display: inline-block; vertical-align: middle;"
-        viewBox="0 0 200 200"
-        width="14px"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="t-loading__gradient t-loading__gradient-small t-icon-loading"
       >
-        <g
-          id="load"
-        >
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="right"
-            x1="150"
-            x2="150"
-            y1="20"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(1, 81, 217);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="right"
-            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-            style="fill: url(#right);"
-          />
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="left"
-            x1="50"
-            x2="50"
-            y1="0"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(255, 255, 255);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="left"
-            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-            style="fill: url(#left);"
-          />
-          <circle
-            class="top"
-            cx="100"
-            cy="10"
-            r="10"
-            style="fill: #0151D9;"
-          />
-        </g>
-      </svg>
+        <div />
+      </div>
       <div
         class="t-loading-text"
       >
@@ -450,70 +214,11 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading t-size-m t-loading-lock v-transfer-dom"
     >
-      <svg
-        class="t-icon-loading"
-        height="36px"
-        style="display: inline-block; vertical-align: middle;"
-        viewBox="0 0 200 200"
-        width="36px"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="t-loading__gradient t-loading__gradient-medium t-icon-loading"
       >
-        <g
-          id="load"
-        >
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="right"
-            x1="150"
-            x2="150"
-            y1="20"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(1, 81, 217);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="right"
-            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-            style="fill: url(#right);"
-          />
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="left"
-            x1="50"
-            x2="50"
-            y1="0"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(255, 255, 255);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="left"
-            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-            style="fill: url(#left);"
-          />
-          <circle
-            class="top"
-            cx="100"
-            cy="10"
-            r="10"
-            style="fill: #0151D9;"
-          />
-        </g>
-      </svg>
+        <div />
+      </div>
       <div
         class="t-loading-text"
       >
@@ -526,70 +231,11 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading t-size-l t-loading-lock v-transfer-dom"
     >
-      <svg
-        class="t-icon-loading"
-        height="56px"
-        style="display: inline-block; vertical-align: middle;"
-        viewBox="0 0 200 200"
-        width="56px"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="t-loading__gradient t-loading__gradient-large t-icon-loading"
       >
-        <g
-          id="load"
-        >
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="right"
-            x1="150"
-            x2="150"
-            y1="20"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(1, 81, 217);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="right"
-            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-            style="fill: url(#right);"
-          />
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="left"
-            x1="50"
-            x2="50"
-            y1="0"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(255, 255, 255);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="left"
-            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-            style="fill: url(#left);"
-          />
-          <circle
-            class="top"
-            cx="100"
-            cy="10"
-            r="10"
-            style="fill: #0151D9;"
-          />
-        </g>
-      </svg>
+        <div />
+      </div>
       <div
         class="t-loading-text"
       >
@@ -667,70 +313,11 @@ exports[`Loading wrap demo works fine 1`] = `
     <div
       class="t-loading__wrapper t-loading-mask"
     >
-      <svg
-        class="t-icon-loading"
-        height="14px"
-        style="display: inline-block; vertical-align: middle;"
-        viewBox="0 0 200 200"
-        width="14px"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="t-loading__gradient t-loading__gradient-small t-icon-loading"
       >
-        <g
-          id="load"
-        >
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="right"
-            x1="150"
-            x2="150"
-            y1="20"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(1, 81, 217);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="right"
-            d="M100,0v20c44.1,0,80,35.9,80,80c0,44.1-35.9,80-80,80v20c55.2,0,100-44.8,100-100S155.2,0,100,0z"
-            style="fill: url(#right);"
-          />
-          <lineargradient
-            gradientUnits="userSpaceOnUse"
-            id="left"
-            x1="50"
-            x2="50"
-            y1="0"
-            y2="180"
-          >
-            <stop
-              offset="0"
-              style="stop-color: rgb(255, 255, 255);"
-            />
-            <stop
-              offset="1"
-              style="stop-color: rgb(128, 168, 236);"
-            />
-          </lineargradient>
-          <path
-            class="left"
-            d="M20,100c0-44.1,35.9-80,80-80V0C44.8,0,0,44.8,0,100s44.8,100,100,100v-20C55.9,180,20,144.1,20,100z"
-            style="fill: url(#left);"
-          />
-          <circle
-            class="top"
-            cx="100"
-            cy="10"
-            r="10"
-            style="fill: #0151D9;"
-          />
-        </g>
-      </svg>
+        <div />
+      </div>
     </div>
   </div>
    
