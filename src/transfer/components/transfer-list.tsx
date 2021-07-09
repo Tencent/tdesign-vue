@@ -141,7 +141,7 @@ export default Vue.extend({
     },
     handleCheckedAllChange(checked: boolean): void {
       if (checked) {
-        const allValue = this.dataSource.map(item => item.value);
+        const allValue = this.dataSource.filter(item => !item.disabled).map(item => item.value);
         this.handleCheckedChange(allValue);
       } else {
         this.handleCheckedChange([]);
