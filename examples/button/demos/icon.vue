@@ -2,7 +2,7 @@
   <div class="demo-button-icon">
     <div class="demo-button-row">
       <div class="demo-button-col">
-        <t-button>
+        <t-button theme="primary">
           <t-icon-add slot="icon"/>
           新建
         </t-button>
@@ -12,10 +12,10 @@
         </t-button>
       </div>
       <div class="demo-button-col">
-        <t-button shape="circle">
+        <t-button shape="circle" theme="primary">
           <t-icon-discount slot="icon"/>
         </t-button>
-        <t-button shape="circle">
+        <t-button shape="circle" theme="primary">
           <t-icon-cloud-download slot="icon"/>
         </t-button>
       </div>

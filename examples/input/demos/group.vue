@@ -8,12 +8,6 @@
     </div>
     <div>
       <t-input-group separate>
-        <t-input :style="{ width: '100px' }" default-value="0731"/>
-        <t-input :style="{ marginLeft: '-1px' }" default-value="12345677"/>
-      </t-input-group>
-    </div>
-    <div>
-      <t-input-group separate>
         <t-input />
         <t-input />
       </t-input-group>
