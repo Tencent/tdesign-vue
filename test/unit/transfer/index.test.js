@@ -92,7 +92,7 @@ describe('Transfer', () => {
 
         const len = wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').length; // wrapper.vm.$el.getElementsByTagName('li').length
         expect(len).toBe(data.length);
-        expect(wrapper.vm.$el.getElementsByClassName('t-checkbox t-is-disabled').length).toBe(7);
+        expect(wrapper.vm.$el.getElementsByClassName('t-checkbox t-is-disabled').length).toBe(8);
       });
 
       it('data label',  async () => {

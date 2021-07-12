@@ -1,8 +1,7 @@
 <template>
-  <t-transfer
-    :data="list"
-    v-model="targetValue"
-  />
+  <div>
+    <t-transfer :data="list" v-model="targetValue" />
+  </div>
 </template>
 <script>
 const list = [];

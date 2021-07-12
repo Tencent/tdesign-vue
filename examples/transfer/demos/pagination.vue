@@ -1,12 +1,14 @@
 <template>
-  <t-transfer
-    theme="primary"
-    :data="list"
-    v-model="targetValue"
-    :checked-value="checkedValue"
-    :pagination="pagination"
-    :onPageChange="handlePageChange"
-  />
+  <div>
+    <t-transfer
+      theme="primary"
+      :data="list"
+      v-model="targetValue"
+      :checked-value="checkedValue"
+      :pagination="pagination"
+      :onPageChange="handlePageChange"
+    />
+  </div>
 </template>
 <script>
 const list = [];
@@ -22,14 +24,15 @@ export default {
       list,
       targetValue: [],
       checkedValue: [],
-      pagination: [{
-        pageSize: 10,
-        defaultCurrent: 1,
-      },
-      {
-        pageSize: 5,
-        defaultCurrent: 1,
-      },
+      pagination: [
+        {
+          pageSize: 10,
+          defaultCurrent: 1,
+        },
+        {
+          pageSize: 5,
+          defaultCurrent: 1,
+        },
       ],
     };
   },

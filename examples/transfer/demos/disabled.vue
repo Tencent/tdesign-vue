@@ -1,9 +1,7 @@
 <template>
-  <t-transfer
-    :data="list"
-    :disabled="[false, true]"
-    :default-value="targetValue"
-  />
+  <div>
+    <t-transfer :data="list" :disabled="[false, true]" :default-value="targetValue" />
+  </div>
 </template>
 <script>
 const list = [];
