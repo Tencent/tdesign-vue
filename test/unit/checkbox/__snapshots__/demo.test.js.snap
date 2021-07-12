@@ -437,7 +437,7 @@ exports[`Checkbox link demo works fine 1`] = `
     class="demo-checkbox-row"
   >
     <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-default"
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span

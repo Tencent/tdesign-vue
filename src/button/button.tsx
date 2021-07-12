@@ -22,8 +22,13 @@ export default Vue.extend({
     const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
     const iconOnly = icon && !Boolean(buttonContent);
     let { theme } = this;
-    if (this.variant === 'base' && typeof this.theme === 'undefined') {
-      theme = 'primary';
+
+    if (!this.theme) {
+      if (this.variant === 'base') {
+        theme = 'primary';
+      } else {
+        theme = 'default';
+      }
     }
 
     const buttonClass = [

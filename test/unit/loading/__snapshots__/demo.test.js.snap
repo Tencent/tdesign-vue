@@ -88,7 +88,7 @@ exports[`Loading delay demo works fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    class="t-button t-size-s t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -99,7 +99,7 @@ exports[`Loading delay demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    class="t-button t-size-s t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -166,7 +166,7 @@ exports[`Loading service demo works fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-s t-button--variant-base t-button--theme-default"
+    class="t-button t-size-s t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -177,7 +177,7 @@ exports[`Loading service demo works fine 1`] = `
   </button>
    
   <button
-    class="t-loading__btn t-button t-size-s t-button--variant-base t-button--theme-default"
+    class="t-loading__btn t-button t-size-s t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -325,7 +325,7 @@ exports[`Loading wrap demo works fine 1`] = `
    
   <div>
     <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-default"
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -336,7 +336,7 @@ exports[`Loading wrap demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-default"
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span

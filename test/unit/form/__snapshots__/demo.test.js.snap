@@ -271,7 +271,7 @@ exports[`Form base demo works fine 1`] = `
           </button>
            
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="reset"
           >
             <span

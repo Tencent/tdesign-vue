@@ -8,7 +8,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -295,7 +295,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -1590,7 +1590,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -2091,7 +2091,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -2102,7 +2102,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -2113,7 +2113,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -2594,7 +2594,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -2605,7 +2605,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -3475,7 +3475,7 @@ exports[`Tree:demo line demo works fine 1`] = `
     class="operations"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -3486,7 +3486,7 @@ exports[`Tree:demo line demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -5235,7 +5235,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -5583,7 +5583,7 @@ exports[`Tree:demo state demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span

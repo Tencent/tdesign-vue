@@ -190,7 +190,7 @@ exports[`Calendar base demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -206,7 +206,7 @@ exports[`Calendar base demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -2698,7 +2698,7 @@ exports[`Calendar cell demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -2714,7 +2714,7 @@ exports[`Calendar cell demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -3737,7 +3737,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -3753,7 +3753,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -5105,7 +5105,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -5869,7 +5869,7 @@ exports[`Calendar events demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -5885,7 +5885,7 @@ exports[`Calendar events demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -6683,7 +6683,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -6699,7 +6699,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -7497,7 +7497,7 @@ exports[`Calendar filter demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -7513,7 +7513,7 @@ exports[`Calendar filter demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -8197,7 +8197,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -8213,7 +8213,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -9052,7 +9052,7 @@ exports[`Calendar head demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -9068,7 +9068,7 @@ exports[`Calendar head demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -9830,7 +9830,7 @@ exports[`Calendar mode demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -10223,7 +10223,7 @@ exports[`Calendar range demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -10239,7 +10239,7 @@ exports[`Calendar range demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -10982,7 +10982,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -10998,7 +10998,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -11607,7 +11607,7 @@ exports[`Calendar value demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -11623,7 +11623,7 @@ exports[`Calendar value demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-s t-button--variant-base t-button--theme-default"
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -12466,7 +12466,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -12482,7 +12482,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -13243,7 +13243,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -13259,7 +13259,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -14006,7 +14006,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -14022,7 +14022,7 @@ exports[`Calendar week demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-default"
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span

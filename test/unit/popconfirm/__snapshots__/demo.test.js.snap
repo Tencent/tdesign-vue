@@ -20,7 +20,7 @@ exports[`Popconfirm base demo works fine 1`] = `
             name="t-popup_animation"
           />
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -68,7 +68,7 @@ exports[`Popconfirm base demo works fine 1`] = `
             name="t-popup_animation"
           />
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -116,7 +116,7 @@ exports[`Popconfirm base demo works fine 1`] = `
             name="t-popup_animation"
           />
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -164,7 +164,7 @@ exports[`Popconfirm base demo works fine 1`] = `
             name="t-popup_animation"
           />
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-is-disabled"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
             disabled="disabled"
             type="button"
           >
