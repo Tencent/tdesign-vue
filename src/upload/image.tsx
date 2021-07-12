@@ -56,9 +56,8 @@ export default Vue.extend({
                   <span class='t-upload-card__mask__item' onClick={(e: MouseEvent) => e.stopPropagation()}>
                     <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
                   </span>
-                  {/* <span class='t-upload-card__mask__item'>
-                    <TIconBrowse/>
-                  </span> */}
+                  <span class="t-upload-card__mask__item-divider"></span>
+
                   <span class='t-upload-card__mask__item' onClick={(e: MouseEvent) => e.stopPropagation()}>
                     <IIconDelete nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
                   </span>

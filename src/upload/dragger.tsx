@@ -141,7 +141,7 @@ export default Vue.extend({
       } if (this.loadingFile.status === 'progress') {
         return (
           <div class='t-upload__single-progress'>
-            <TIconLoading size='20px'></TIconLoading>
+            <TIconLoading></TIconLoading>
             <span class='t-upload__single-percent'>{this.percentNum}%</span>
           </div>
         );
@@ -167,14 +167,14 @@ export default Vue.extend({
             <small class='t-upload__small'>上传日期：{getCurrentDate()}</small>
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
               <div class='t-upload__dragger-btns'>
-                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
-                <TButton variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
+                <TButton theme="primary" variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+                <TButton theme="primary" variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
               </div>
             )}
             {this.showResultOperate && (
               <div class='t-upload__dragger-btns'>
-                <TButton variant='text' class='t-upload__dragger-progress-cancel' onClick={this.reupload}>重新上传</TButton>
-                <TButton variant='text' onClick={this.remove}>删除</TButton>
+                <TButton theme="primary" variant="text" class='t-upload__dragger-progress-cancel' onClick={this.reupload}>重新上传</TButton>
+                <TButton theme="primary" variant='text' onClick={this.remove}>删除</TButton>
               </div>
             )}
           </div>

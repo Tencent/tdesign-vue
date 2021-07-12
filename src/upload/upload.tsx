@@ -88,8 +88,11 @@ export default Vue.extend({
     showImgDialog(): boolean {
       return ['image', 'image-flow', 'custom'].includes(this.theme);
     },
+    showErrorMsg(): boolean {
+      return !this.showUploadList && !!this.errorMsg;
+    },
     tipsClasses(): ClassName {
-      return ['t-upload__tips t-upload__small', { 't-upload__tips-imgcard': this.showImgCard }];
+      return ['t-upload__tips t-upload__small'];
     },
     errorClasses(): ClassName {
       return this.tipsClasses.concat('t-upload__tips-error');
@@ -429,7 +432,7 @@ export default Vue.extend({
           </TDialog>
         )}
         {!this.errorMsg && this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}
-        {this.errorMsg && <small class={this.errorClasses}>{this.errorMsg}</small>}
+        {this.showErrorMsg && <small class={this.errorClasses}>{this.errorMsg}</small>}
       </div>
     );
   },

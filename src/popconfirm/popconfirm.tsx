@@ -80,14 +80,14 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
     },
     renderCancel(cancelBtn: TdPopconfirmProps['cancelBtn']) {
       return (
-        <t-button variant="outline" size='small' props={this.getBtnProps(cancelBtn)}>
+        <t-button theme="default" size='small' props={this.getBtnProps(cancelBtn)}>
           {this.getBtnText(cancelBtn)}
         </t-button>
       );
     },
     renderConfirm(confirmBtn: TdPopconfirmProps['confirmBtn']) {
       return (
-        <t-button variant="base" size='small' props={this.getBtnProps(confirmBtn)}>
+        <t-button theme="primary" size='small' props={this.getBtnProps(confirmBtn)}>
           {this.getBtnText(confirmBtn)}
         </t-button>
       );
