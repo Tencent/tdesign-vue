@@ -2,7 +2,7 @@ import Vue from 'vue';
 import LoadingComponent from './loading';
 import { prefix } from '../config';
 import { getAttach, removeClass } from '../utils/dom';
-import { TdLoadingProps, LoadingInstance } from '../../types/loading/TdLoadingProps';
+import { TdLoadingProps, LoadingInstance, LoadingMethod } from '../../types/loading/TdLoadingProps';
 
 const lockClass = `${prefix}-loading-lock`;
 
@@ -55,10 +55,21 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   return createLoading(options);
 }
 
-const LoadingPlugin: Vue.PluginObject<undefined> = {
+const _LoadingPlugin: Vue.PluginObject<undefined> = {
   install: () => {
     Vue.prototype.$loading = produceLoading;
   },
 };
 
+export const LoadingPlugin: (
+  Vue.PluginObject<undefined>
+) = _LoadingPlugin as any;
+
 export default LoadingPlugin;
+
+declare module 'vue/types/vue' {
+  // Bind to `this` keyword
+  interface Vue {
+    $loading: LoadingMethod;
+  }
+};
