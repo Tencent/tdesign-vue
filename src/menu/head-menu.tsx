@@ -15,8 +15,8 @@ export default defineComponent({
     const expandedArray = ref(props.defaultExpanded || props.expanded || []);
     const theme = computed(() => props.theme);
     const menuClass = computed(() => [
-      't-menu',
-      't-head-menu',
+      `${prefix}-menu`,
+      `${prefix}-head-menu`,
       `${prefix}-menu-mode__${props.expandType}`,
       `${prefix}-menu--${props.theme}`,
     ]);
@@ -111,14 +111,14 @@ export default defineComponent({
   render() {
     return (
       <div class={this.menuClass}>
-        <div class="t-head-menu__inner">
-          <div class="t-menu__logo">
+        <div class={`${prefix}-head-menu__inner`}>
+          <div class={`${prefix}-menu__logo`}>
             {this.$slots.logo}
           </div>
-          <ul class="t-menu">
+          <ul class={`${prefix}-menu`}>
             {this.$slots.default}
           </ul>
-          <div class="t-menu__options">
+          <div class={`${prefix}-menu__options`}>
             {this.$slots.options}
           </div>
         </div>

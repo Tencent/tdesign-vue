@@ -110,15 +110,15 @@ export default defineComponent({
   render() {
     return (
       <div class={this.menuClass} style={this.styles}>
-        <div class="t-default-menu__inner">
+        <div class={`${prefix}-default-menu__inner`}>
           {
-            this.$slots.logo && (<div class="t-menu__logo">{this.$slots.logo}</div>)
+            this.$slots.logo && (<div class={`${prefix}-menu__logo`}>{this.$slots.logo}</div>)
           }
           <ul class={this.innerClasses}>
             {this.$slots.default}
           </ul>
           {
-            this.$slots.options && (<div class="t-menu__options">{this.$slots.options}</div>)
+            this.$slots.options && (<div class={`${prefix}-menu__options`}>{this.$slots.options}</div>)
           }
         </div>
       </div>

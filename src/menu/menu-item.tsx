@@ -1,4 +1,4 @@
-import { defineComponent, computed, inject, ref, onMounted } from '@vue/composition-api';
+import { defineComponent, computed, inject, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from '@TdTypes/menu-item/props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
@@ -13,11 +13,9 @@ export default defineComponent({
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
     const active = computed(() => menu.activeIndexValue.value === props.value);
-    const isDuringAnimation = ref(false);
     const classes = computed(() => [
       `${prefix}-menu__item`,
       {
-        [`${prefix}-clicked`]: isDuringAnimation.value,
         [`${prefix}-is-active`]: active.value,
         [`${prefix}-is-disabled`]: props.disabled,
         [`${prefix}-menu__item--plain`]: !ctx.slots.icon,
