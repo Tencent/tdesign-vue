@@ -4,7 +4,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { TimePickerPanelColInstance } from '../type';
 import { panelColProps } from './props';
-import { componentName, EPickerCols, zhList, enList, pmList } from '../constant';
+import { componentName, EPickerCols } from '../constant';
 
 import { prefix } from '../../config';
 
@@ -27,9 +27,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     valStr() {
       // 这里的操作会修改数据，所以不能使用value直接格式化，否则出现loop update的问题
       // 需要生成一个新的时间对象
-      return dayjs(this.value, this.format)
-        .locale('en')
-        .format(this.format);
+      return dayjs(this.value, this.format).format(this.format);
     },
     isPm() {
       return dayjs(this.valStr, this.format).hour() >= 12;
@@ -55,7 +53,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         }
         res = this.generateTimeList(count, Number(this.steps[colIdx]));
       } else {
-        res = col === EPickerCols.en ? enList : zhList;
+        res = this.localeMeridiems;
       }
       return res;
     },
@@ -101,7 +99,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           timeIndex %= 12;
         }
       } else {
-        timeIndex = col === EPickerCols.en ? enList.indexOf(time as string) : zhList.indexOf(time as string);
+        timeIndex = this.localeMeridiems.indexOf((time as string).toUpperCase());
       }
       const timeItemTotalHeight = this.getTimeItemHeight(col) + timeItemMargin;
       const distance = (timeIndex * timeItemTotalHeight) + (timeItemTotalHeight / 2);
@@ -129,8 +127,10 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         }
         const classNames = [
           `${componentName}-panel__body-scroll-item`,
-          this.timeItemCanUsed(col, el) ? '' : `${prefix}-is-disabled`,
-          isCurrent ? `${prefix}-is-current` : '',
+          {
+            [`${prefix}-is-disabled`]: !this.timeItemCanUsed(col, el),
+            [`${prefix}-is-current`]: isCurrent,
+          },
         ];
         return (
           <li class={classNames} onclick={(e: MouseEvent) => this.handletTimeItemClick(e, col, el)}>
@@ -149,9 +149,8 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     isCurrent(col: EPickerCols, colItem: string | number) {
       let colVal;
       switch (col) {
-        case EPickerCols.zh:
-        case EPickerCols.en:
-          return this.isPm === pmList.includes(colItem as string);
+        case EPickerCols.meridiem:
+          return this.isPm === (colItem === this.localeMeridiems[1]);
         case EPickerCols.hour:
         case EPickerCols.minute:
         case EPickerCols.second:
@@ -202,7 +201,10 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       if (this.timeArr.includes(col)) {
         // 处理时间相关col的滚动
         const colIdx = this.timeArr.indexOf(col);
-        const max = col === EPickerCols.hour ? 23 : 59;
+        let max = 59;
+        if (col === EPickerCols.hour) {
+          max = /[h]{1}/.test(this.format) ? 11 : 23;
+        }
         scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin)) * Number(this.steps[colIdx]))), max);
         scrollVal = this.closestLookup(avaliableList, scrollVal, Number(this.steps[colIdx]));
         if (this.disableTime && this.hideDisabledTime) {
@@ -215,7 +217,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       } else {
         // 处理非时间col的相关的滚动
         scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin))), 1);
-        scrollVal = col === EPickerCols.zh ? zhList[scrollVal] : enList[scrollVal];
+        scrollVal = this.localeMeridiems[scrollVal];
       }
       this.timeItemCanUsed(col, scrollVal) && this.$emit('time-pick', col, scrollVal);
     },

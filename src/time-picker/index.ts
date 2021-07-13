@@ -4,7 +4,7 @@ import _TimeRangePicker from './time-range-picker';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 
-import { TdTimePickerProps } from '../../types/time-picker/TdTimePickerProps';
+import { TdTimePickerProps, TdTimeRangePickerProps } from '../../types/time-picker/TdTimePickerProps';
 
 const TimePicker = withInstall(
   'TimePicker',
@@ -17,6 +17,7 @@ const TimeRangePicker = withInstall(
 );
 
 export type TimePickerProps  = TdTimePickerProps;
+export type TimeRangePickerProps  = TdTimeRangePickerProps;
 
 export * from '../../types/time-picker/TdTimePickerProps';
 

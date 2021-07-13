@@ -35,7 +35,7 @@ export default Vue.extend({
                 <span>
                   {startYear}
                 </span>
-          至
+                  {' 至 '}
                 <span>
                   {startYear + 9}
                 </span>
@@ -69,13 +69,13 @@ export default Vue.extend({
         </span>
 
         <span class="t-date-picker-header-controller">
-          <t-button class="t-date-picker-header-controller__btn" variant="text" size="small" onClick={() => onBtnClick(-1)}>
+          <t-button class="t-date-picker-header-controller__btn" variant="text" onClick={() => onBtnClick(-1)}>
             <t-icon-chevron-left />
           </t-button>
-          <t-button class="t-date-picker-header-controller__btn" variant="text" size="small" onClick={() => onBtnClick(0)}>
+          <t-button class="t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now" variant="text" onClick={() => onBtnClick(0)}>
             <t-icon-round />
           </t-button>
-          <t-button class="t-date-picker-header-controller__btn" variant="text" size="small" onClick={() => onBtnClick(1)}>
+          <t-button class="t-date-picker-header-controller__btn" variant="text" onClick={() => onBtnClick(1)}>
             <t-icon-chevron-right />
           </t-button>
         </span>

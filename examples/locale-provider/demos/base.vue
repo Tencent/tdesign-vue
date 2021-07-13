@@ -51,6 +51,17 @@
       placeholder="tree select"
       style="width: 400px;"
     />
+    <br><br>
+    <!-- date-picker未覆盖完locale-config 先隐藏 -->
+    <!-- <t-date-picker
+      placeholder="please select the date"
+      style="width: 400px;"
+    />
+    <br><br> -->
+    <t-time-picker
+      placeholder="please select the time"
+      format="hh:mm:ss a"
+    />
   </t-locale-provider>
 </template>
 
@@ -103,6 +114,41 @@ const GLOBAL_CONFIG = {
   treeSelect: {
     empty: 'Empty Data',
     loadingText: 'loading...',
+  },
+  datePicker: {
+    weekdays: {
+      shorthand: 'Sun,Mon,Tue,Wed,Thu,Fri,Sat',
+      longhand: 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
+    },
+    months: {
+      shorthand: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+      longhand: MONTHS.join(','),
+    },
+    rangeSeparator: ' to ',
+    direction: 'ltr',
+    format: 'YYYYMMDD',
+    dayAriaLabel: 'Day',
+    weekAbbreviation: 'Wk',
+    yearAriaLabel: 'Year',
+    applyLabel: 'Apply',
+    cancelLabel: 'Cancel',
+    weekLabel: 'W',
+    clearLabel: 'Clear',
+    presets: {
+      Today: 'Today',
+      'Last 2 days': 'Last 2 days',
+      'Last 7 days': 'Last 7 days',
+      'Last 14 days': 'Last 14 days',
+      'Last 30 days': 'Last 30 days',
+      'Next 30 Days': 'Next 30 Days',
+      'Month to date': 'Month to date',
+    },
+  },
+  timePicker: {
+    nowtime: 'now',
+    confirm: 'ok',
+    anteMeridiem: 'AM',
+    postMeridiem: 'PM',
   },
 };
 

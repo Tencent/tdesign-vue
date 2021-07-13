@@ -12,10 +12,13 @@ import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
 import TIconCalendar from '../icon/calendar';
 import TIconTime from '../icon/time';
+import TIconClose from '../icon/close';
 import TPopup from '../popup';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 
-import { CustomLocale, DatePickerData, DatePickerMethods, DatePickerComputed, DateValue } from './type';
-import { COMPONENT_NAME, strings } from './constants';
+import { CustomLocale, DatePickerInstance, DateValue } from './type';
+import { COMPONENT_NAME } from './constants';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
@@ -31,11 +34,12 @@ const onOpenDebounce = debounce((vm?: any) => {
   vm.createPopover();
 }, 250);
 
-export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed, TdDatePickerProps>({
+export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
   name: COMPONENT_NAME,
   components: {
     TIconTime,
     TIconCalendar,
+    TIconClose,
     TPopup,
     TButton,
     TInput,
@@ -51,7 +55,6 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
   data() {
     return {
       tempValue: '',
-      locale: '',
       locales: {},
       monthDate: new Date(),
       start: new Date(),
@@ -194,7 +197,7 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
     this.attachDatepicker();
   },
   methods: {
-    handleTimePick(col, time) {
+    handleTimePick(col: EPickerCols, time: number) {
       const start = new Date(this.start);
       start[`set${firstUpperCase(col)}s`](time);
       this.start = start;
@@ -210,11 +213,8 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       }
     },
     attachDatepicker(): any {
-      const { locale = '' } = strings;
-      this.locale = locale;
-      if (locale) {
-        this.setLocales(locale);
-      }
+      // language init
+      this.setLocales();
 
       this.initClickaway(this.$el);
       const startDate: Date = new Date();
@@ -239,24 +239,14 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
         this.open();
       }
     },
-    getLocales(locale: string | CustomLocale): CustomLocale {
-      // @todo add locale to props
-      const { localeTranslations } = strings;
-      const defaultLocale = localeTranslations[strings.locale];
-      let locales: CustomLocale = { ...defaultLocale };
-
-      if (locale && typeof locale === 'object') {
-        Object.assign(locales, locale);
-      } else if (typeof locale === 'string') {
-        locales = localeTranslations[locale] || { ...defaultLocale };
-      }
-
+    getLocales(): CustomLocale {
+      const locales = this.locale as Record<string, any>;
       locales.rangeSeparator = locales.rangeSeparator;
-      locales.daysOfWeek = locales.weekdays.shorthand.slice(0);
-      locales.monthNames = locales.months.shorthand.slice(0);
+      locales.daysOfWeek = locales.weekdays.shorthand.split(',');
+      locales.monthNames = locales.months.shorthand.split(',');
 
       if (this.mode === 'month') {
-        locales.monthNames = locales.months.longhand.slice(0);
+        locales.monthNames = locales.months.longhand.split(',');
       }
 
       // update day names order to firstDay
@@ -269,8 +259,8 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       }
       return locales;
     },
-    setLocales(locale: string | CustomLocale) {
-      const locales = this.getLocales(locale);
+    setLocales() {
+      const locales = this.getLocales();
       this.locales = locales;
     },
     /**
@@ -611,9 +601,25 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
 
       this.initClickaway(tip);
     },
+    getPlaceholderText() {
+      const { placeholder, mode } = this.$props;
+
+      return placeholder || (this.locales.placeholder && this.locales.placeholder[mode]);
+    },
   },
   render() {
-    const { popupProps, disabled, clearable, placeholder, allowInput, size, inputProps, enableTimePicker, presets, mode, range } = this.$props;
+    const {
+      popupProps,
+      disabled,
+      clearable,
+      allowInput,
+      size,
+      inputProps,
+      enableTimePicker,
+      presets,
+      mode,
+      range,
+    } = this.$props;
 
     const { start, end, showTime, timeVlaue, locales, isOpen } = this.$data;
     const panelProps = {
@@ -622,55 +628,60 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
       firstDayOfWeek: 0,
       onChange: this.dateClick,
     };
-    const panelComponent = range ? <TDateRange {...{ props: { ...panelProps } }} /> : <TDate {...{ props: { ...panelProps } }} />;
+    const panelComponent = range ? (
+      <TDateRange {...{ props: { ...panelProps } }} />
+    ) : (
+      <TDate {...{ props: { ...panelProps } }} />
+    );
 
     const popupContent = () => (
       <div ref="dropdownPopup" class={this.pickerStyles}>
+        {enableTimePicker && showTime && (
+          <div>
+            <t-time-picker-panel
+              ref="timePickerPanel"
+              format="HH:mm:ss"
+              cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
+              steps={[1, 1, 1]}
+              value={[timeVlaue]}
+              ontime-pick={this.handleTimePick}
+              isFooterDisplay={false}
+            />
+          </div>
+        )
+        }
+        {!showTime && panelComponent}
+        {presets !== false && range && (
+          <calendar-presets presets={presets} locales={locales} {...{ props: { onClickRange: this.clickRange } }} />
+        )}
         {
-          enableTimePicker && showTime && (
-            <div>
-              <t-time-picker-panel
-                ref="timePickerPanel"
-                format="HH:mm:ss"
-                cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
-                steps={[1, 1, 1]}
-                value={[timeVlaue]}
-                ontime-pick={this.handleTimePick}
-                isFooterDisplay={false}
-              />
+          (range || enableTimePicker) && (
+            <div class="t-date-picker--apply">
+              {
+                enableTimePicker && (
+                  <t-button theme="primary" variant="text" onClick={this.toggleTime}>
+                    {showTime ? locales.selectDate : locales.selectTime}
+                  </t-button>
+                )
+              }
+              {
+                (range || enableTimePicker) && (
+                  <t-button theme="primary" onClick={this.clickedApply}>
+                    {locales.confirm}
+                  </t-button>
+                )
+              }
             </div>
           )
         }
-        {
-          !showTime && panelComponent
-        }
-        {
-          presets !== false && range && (
-            <calendar-presets
-              presets={presets}
-              locales={locales}
-              {...{ props: { onClickRange: this.clickRange } }}
-            />
-          )
-        }
-        <div class="t-date-picker--apply">
-          {
-            enableTimePicker && (
-              <t-button theme="primary" variant="text" onClick={this.toggleTime}>
-                {showTime ? locales.selectDate : locales.selectTime}
-              </t-button>
-            )
-          }
-          {
-            (range || enableTimePicker) && (
-              <t-button theme="primary" onClick={this.clickedApply}>
-                {locales.applyLabel}
-              </t-button>
-            )
-          }
-        </div>
       </div>
     );
+    const inputClassNames = [
+      't-form-controls',
+      {
+        [CLASSNAMES.STATUS.active]: this.isOpen,
+      },
+    ];
     return (
       <div class={this.classes}>
         <t-popup
@@ -686,13 +697,13 @@ export default Vue.extend<DatePickerData, DatePickerMethods, DatePickerComputed,
           overlayClassName="t-date-picker"
           content={popupContent}
         >
-          <div class="t-form-controls" onClick={this.toggle}>
+          <div class={inputClassNames} onClick={this.toggle}>
             <t-input
               ref="native"
               v-model={this.formattedValue}
               disabled={disabled}
               clearable={clearable}
-              placeholder={placeholder}
+              placeholder={this.getPlaceholderText()}
               readonly={!allowInput}
               allowInput={allowInput ? 1 : 0}
               size={size}

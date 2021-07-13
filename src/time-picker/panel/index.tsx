@@ -1,7 +1,8 @@
-import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
+import mixins from '../../utils/mixins';
+import getLocalRecevierMixins from '../../locale/local-receiver';
 import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../type';
 import { componentName, EPickerCols } from '../constant';
 import { panelProps } from './props';
@@ -12,7 +13,7 @@ const name = `${componentName}-panel`;
 
 dayjs.extend(customParseFormat);
 
-export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
+export default mixins(getLocalRecevierMixins<TimePickerPanelInstance>('timePicker')).extend({
   name,
   data() {
     return {
@@ -24,6 +25,7 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
     PanelCol,
     TButton,
   },
+
   props: panelProps(),
   computed: {
     sectionComponentName() {
@@ -53,12 +55,15 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
       if (!this.formatField) [EPickerCols.hour, EPickerCols.minute, EPickerCols.second];
       const { startAChart, hour, minute, second, endAChart } = this.formatField;
       const res = [];
-      startAChart && res.push(EPickerCols.zh);
+      startAChart && res.push(EPickerCols.meridiem);
       hour && res.push(EPickerCols.hour);
       minute && res.push(EPickerCols.minute);
       second && res.push(EPickerCols.second);
-      endAChart && res.push(EPickerCols.en);
+      endAChart && res.push(EPickerCols.meridiem);
       return res;
+    },
+    localeMeridiems() {
+      return [this.locale.anteMeridiem, this.locale.postMeridiem];
     },
   },
   watch: {
@@ -87,11 +92,11 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
         <div class={`${this.sectionComponentName}__footer`}>
           {/* 样式设置为row-reverse 这样不用特地为确定写个绝对布局 */}
           <t-button theme="primary" variant="base" onClick={confirmAction}>
-            确定
+            {this.t(this.locale.confirm)}
           </t-button>
           {this.rangePicker || (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
-              此刻
+              {this.t(this.locale.nowtime)}
             </t-button>
           )}
         </div>
@@ -119,6 +124,7 @@ export default (Vue as VueConstructor<TimePickerPanelInstance>).extend({
           disableTime={this.disableTime}
           format={this.format}
           ontime-pick={(col: EPickerCols, time: string | number) => this.handleTimePick(col, time, index)}
+          localeMeridiems={this.localeMeridiems}
         />
       );
     },

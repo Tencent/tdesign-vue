@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import { prefix } from '../../config';
 import TDatePickerCell from './cell';
+import { Cell } from '../type';
 
 const name = `${prefix}-date-picker-table`;
 
-const DAY_NAMES = ['一', '二', '三', '四', '五', '六', '日'];
+const DAY_NAMES = ['日', '一', '二', '三', '四', '五', '六'];
 
 export default Vue.extend({
   name,
@@ -19,8 +20,8 @@ export default Vue.extend({
     data: Array,
     firstDayOfWeek: Number,
     /**
-         * 星期的显示名字，规定从星期一开始，实际显示顺序会根据 firstDayOfWeek 进行计算
-         */
+     * 星期的显示名字，规定从星期一开始，实际显示顺序会根据 firstDayOfWeek 进行计算
+     */
     dayNames: { type: Array, default: () => DAY_NAMES },
     onCellClick: { type: Function },
     onCellMouseEnter: { type: Function },
@@ -43,38 +44,41 @@ export default Vue.extend({
     }
 
     const panelClass = `t-date-${type}`;
+
     return (
-            <table class={panelClass}>
-                {
-                    type === 'date' && (
-                        <thead>
-                            <tr>
-                                {
-                                    weekArr.map((value: string, i: number) => (
-                                        <th key={i}>{ value }</th>
-                                    ))
-                                }
-                            </tr>
-                        </thead>
-                    )
-                }
-                <tbody>
-                    {
-                        data.map((row: any[], i: any) => (
-                            <tr key={i}>
-                                {
-                                    row.map((col: any, j: any) => (
-                                        <t-date-picker-cell
-                                            {...{ props: { ...col, onClick: onCellClick, onMouseEnter: onCellMouseEnter } }}
-                                            key={j}
-                                        />
-                                    ))
-                                }
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+      <div class={panelClass}>
+        <table>
+          {
+            type === 'date' && (
+              <thead>
+                <tr>
+                  {
+                    weekArr.map((value: string, i: number) => (
+                      <th key={i}>{value}</th>
+                    ))
+                  }
+                </tr>
+              </thead>
+            )
+          }
+          <tbody>
+            {
+              data.map((row: Cell[], i: number) => (
+                <tr key={i}>
+                  {
+                    row.map((col: Cell, j: number) => (
+                      <t-date-picker-cell
+                        {...{ props: { ...col, onClick: onCellClick, onMouseEnter: onCellMouseEnter } }}
+                        key={j}
+                      />
+                    ))
+                  }
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     );
   },
 });
