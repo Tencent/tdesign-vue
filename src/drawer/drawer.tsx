@@ -30,12 +30,12 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
   computed: {
     drawerClasses(): ClassName {
       return [
-        't-drawer',
-        `t-drawer-${this.placement}`,
+        name,
+        `${name}-${this.placement}`,
         {
-          't-drawer-open': this.visible,
-          't-drawer-attach': this.showInAttachedElement,
-          't-drawer-no-mask': !this.showOverlay,
+          [`${name}-open`]: this.visible,
+          [`${name}-attach`]: this.showInAttachedElement,
+          [`${name}-no-mask`]: !this.showOverlay,
         },
       ];
     },
@@ -56,13 +56,19 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
       };
     },
     wraperClasses(): ClassName {
-      return ['t-drawer__content-wrapper', `t-drawer__content-wrapper-${this.placement}`];
+      return [`${name}__content-wrapper`, `${name}__content-wrapper-${this.placement}`];
     },
     parentNode(): HTMLElement {
       return this.$el && this.$el.parentNode as HTMLElement;
     },
     modeAndPlacement(): string {
       return [this.mode, this.placement].join();
+    },
+    footerStyle(): Styles {
+      return {
+        display: 'flex',
+        justifyContent: this.placement === 'right' ? 'flex-start' : 'flex-end',
+      };
     },
   },
 
@@ -91,12 +97,12 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
         onkeydown={this.onKeyDown}
         v-transfer-dom={this.attach}
       >
-        {this.showOverlay && <div class='t-drawer__mask' onClick={this.handleWrapperClick}/>}
+        {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick}/>}
         <div class={this.wraperClasses} style={this.wraperStyles}>
-          <div class='t-drawer__header'>{renderTNodeJSX(this, 'header')}</div>
-          <div class='t-drawer__close-btn' onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
-          <div class="t-drawer__body">{body}</div>
-          <div class="t-drawer__footer">{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+          <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div>
+          <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
+          <div class={`${name}__body`}>{body}</div>
+          <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>
       </div>
     );
@@ -129,10 +135,10 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
     getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
       const isCancel = btnType === 'cancel';
       const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
-      const variant = isCancel ? 'outline' : 'base';
+      const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button variant={variant} onClick={clickAction} props={isApiObject ? btnApi : {}}>
+        <t-button theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}}>
           { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
         </t-button>
       );
@@ -156,9 +162,10 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
         confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
       }
       return (
-        <div>
+        <div style={this.footerStyle}>
+          {this.placement === 'right' ? confirmBtn : null}
           {cancelBtn}
-          {confirmBtn}
+          {this.placement !== 'right' ? confirmBtn : null}
         </div>
       );
     },

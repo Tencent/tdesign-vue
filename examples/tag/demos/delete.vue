@@ -10,18 +10,27 @@
         :maxWidth="tag.maxWidth"
         :closable="tag.showClose"
         :icon="tag.icon"
+        :disabled="!!tag.disabled"
         @click="handleClick"
         @close="handleClose(index)"
       >
         {{ tag.name }}
       </t-tag>
     </div>
-    <div class="tdesign-demo-block">
+    <div class="tdesign-demo-block editable">
       可添加
-      <t-tag @click="handleClickAdd">
+      <t-tag v-if="!inputVisible" @click="handleClickAdd">
         <t-icon-add />
         添加标签
       </t-tag>
+      <t-input
+        v-else
+        ref="input"
+        size="small"
+        style="width: 94px"
+        @blur="handleInputEnter"
+        @enter="handleInputEnter"
+      />
     </div>
   </div>
 </template>
@@ -29,6 +38,7 @@
 <script>
 import TIconAdd from '@tencent/tdesign-vue/lib/icon/add';
 import TIconDiscount from '@tencent/tdesign-vue/lib/icon/discount';
+import Vue from 'vue';
 
 export default {
   components: {
@@ -39,6 +49,7 @@ export default {
   },
   data() {
     return {
+      inputVisible: false,
       tags: [
         {
           name: '可删除标签',
@@ -51,6 +62,12 @@ export default {
           icon: () => <t-icon-discount />,
           showClose: true,
         },
+        {
+          name: '可删除标签',
+          type: 'default',
+          showClose: true,
+          disabled: true,
+        },
       ],
     };
   },
@@ -61,8 +78,17 @@ export default {
     handleClick(event) {
       console.log(event);
     },
+    handleInputEnter(val) {
+      if (val) {
+        this.tags.push({ name: val, type: 'default', showClose: true });
+      }
+      this.inputVisible = false;
+    },
     handleClickAdd() {
-      this.tags.push({ name: Math.random().toString(), type: 'default', showClose: true });
+      this.inputVisible = true;
+      Vue.nextTick(() => {
+        this.$refs.input.focus();
+      });
     },
   },
 };
@@ -74,5 +100,9 @@ export default {
   > * {
     margin-left: 30px;
   }
+}
+
+.editable .t-tag {
+  cursor: pointer;
 }
 </style>

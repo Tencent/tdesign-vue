@@ -11,7 +11,8 @@ exports[`Tag base demo works fine 1`] = `
   </span>
    
   <a
-    class="demo-link"
+    href="https://www.tencent.com/zh-cn"
+    target="_blank"
   >
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -78,10 +79,27 @@ exports[`Tag delete demo works fine 1`] = `
         />
       </svg>
     </span>
+    <span
+      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close t-is-disabled t-tag--disabled"
+    >
+      
+      可删除标签
+    
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
   </div>
    
   <div
-    class="tdesign-demo-block"
+    class="tdesign-demo-block editable"
   >
     
     可添加
@@ -112,13 +130,13 @@ exports[`Tag disabled demo works fine 1`] = `
   class="tdesign-tag-disabled tag-demo"
 >
   <span
-    class="check-tag t-tag t-tag--check t-tag--default t-tag--disabled"
+    class="check-tag t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled"
   >
     失效标签
   </span>
    
   <span
-    class="t-tag t-tag--default t-size-m t-tag--dark t-tag--disabled"
+    class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
   >
     失效标签
   </span>
@@ -156,9 +174,9 @@ exports[`Tag long-text demo works fine 1`] = `
   <span
     class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis"
     style="max-width: 150px;"
-    title="超长省略文本标签超长省略文本标签"
+    title="默认超八个字超长文本标签超长省略文本标签"
   >
-    超长省略文本标签超长省略文本标签
+    默认超八个字超长文本标签超长省略文本标签
   </span>
 </div>
 `;
@@ -215,6 +233,13 @@ exports[`Tag selectable demo works fine 1`] = `
   >
     
     未选
+  
+  </span>
+  <span
+    class="t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled"
+  >
+    
+    Disabled
   
   </span>
 </div>
@@ -290,19 +315,19 @@ exports[`Tag size demo works fine 1`] = `
   <span
     class="t-tag t-tag--default t-size-s t-tag--dark"
   >
-    标签 小
+    小型标签
   </span>
    
   <span
     class="t-tag t-tag--default t-size-m t-tag--dark"
   >
-    标签 中
+    默认标签
   </span>
    
   <span
     class="t-tag t-tag--default t-size-l t-tag--dark"
   >
-    标签 大
+    大型标签
   </span>
 </div>
 `;
@@ -330,21 +355,15 @@ exports[`Tag theme demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--info t-size-m t-tag--dark"
+      class="t-tag t-tag--warning t-size-m t-tag--dark"
     >
       标签三
     </span>
      
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--dark"
-    >
-      标签四
-    </span>
-     
-    <span
       class="t-tag t-tag--danger t-size-m t-tag--dark"
     >
-      标签五
+      标签四
     </span>
   </div>
    
@@ -367,21 +386,15 @@ exports[`Tag theme demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--info t-size-m t-tag--light"
+      class="t-tag t-tag--warning t-size-m t-tag--light"
     >
       标签三
     </span>
      
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--light"
-    >
-      标签四
-    </span>
-     
-    <span
       class="t-tag t-tag--danger t-size-m t-tag--light"
     >
-      标签五
+      标签四
     </span>
   </div>
    
@@ -404,21 +417,15 @@ exports[`Tag theme demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--info t-size-m t-tag--plain"
+      class="t-tag t-tag--warning t-size-m t-tag--plain"
     >
       标签三
     </span>
      
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--plain"
-    >
-      标签四
-    </span>
-     
-    <span
       class="t-tag t-tag--danger t-size-m t-tag--plain"
     >
-      标签五
+      标签四
     </span>
   </div>
 </div>

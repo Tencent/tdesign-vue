@@ -17,6 +17,7 @@ export default Vue.extend({
         `${name}--default`,
         {
           [`${name}--checked`]: !this.disabled && this.checked,
+          [`${prefix}-is-disabled`]: this.disabled,
           [`${name}--disabled`]: this.disabled,
         },
       ];
