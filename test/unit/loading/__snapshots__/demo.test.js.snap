@@ -43,15 +43,6 @@ exports[`Loading base demo works fine 1`] = `
       <div />
     </div>
   </div>
-   
-  <div
-    class="t-loading t-size-m t-loading-lock v-transfer-dom"
-  >
-    <img
-      class="t-icon-loading"
-      src="https://tdesign.gtimg.com/icon/loading.png"
-    />
-  </div>
 </div>
 `;
 
@@ -140,10 +131,10 @@ exports[`Loading fullscreen demo works fine 1`] = `
 exports[`Loading iconText demo works fine 1`] = `
 <div>
   <div
-    class="t-loading t-size-m t-loading-lock v-transfer-dom"
+    class="t-loading t-size-s t-loading-lock v-transfer-dom"
   >
     <div
-      class="t-loading__gradient t-loading__gradient-medium t-icon-loading"
+      class="t-loading__gradient t-loading__gradient-small t-icon-loading"
     >
       <div />
     </div>
