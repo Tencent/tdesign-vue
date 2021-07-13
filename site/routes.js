@@ -18,12 +18,8 @@ function getDocsRoutes(docs, type) {
       children = item.children.sort((a, b) => {
         const nameA = a.name.toUpperCase();
         const nameB = b.name.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
+        if (nameA < nameB) return -1;
+        if (nameA > nameB) return 1;
         return 0;
       });
     }
@@ -32,6 +28,7 @@ function getDocsRoutes(docs, type) {
     } else {
       docRoute = {
         path: item.name,
+        meta: item.meta || {},
         component: item.component,
       };
       docsRoutes.push(docRoute);

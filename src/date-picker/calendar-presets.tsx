@@ -33,7 +33,7 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
           {
             presets && Object.keys(presets).map((key: string) => (
               <li key={key}>
-                <t-button theme="primary" variant="text" onClick={() => this.clickPreset(presets[key])}>{ key }</t-button>
+                <a onClick={() => this.clickPreset(presets[key])}>{ key }</a>
               </li>
             ))
           }

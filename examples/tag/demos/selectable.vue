@@ -4,6 +4,7 @@
       v-for="(tag, index) in tags"
       :key="index"
       :defaultChecked="tag.defaultChecked"
+      :disabled="!!tag.disabled"
       @click="handleClick(tag, index)"
       @change="handleChange"
     >
@@ -23,6 +24,10 @@ export default {
         },
         {
           name: '未选',
+        },
+        {
+          name: 'Disabled',
+          disabled: true,
         },
       ],
     };

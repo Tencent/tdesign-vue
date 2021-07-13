@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-demo-shape">
     <div class="tdesign-demo-block">
-      <div class="item"><t-button shape="square" variant="base">填充按钮</t-button></div>
-      <div class="item"><t-button shape="round" variant="base">填充按钮</t-button></div>
-      <div class="item"><t-button shape="circle" variant="base"><t-icon-calendar slot="icon"/></t-button></div>
+      <div class="item"><t-button theme="primary" shape="square" variant="base">填充按钮</t-button></div>
+      <div class="item"><t-button theme="primary" shape="round" variant="base">填充按钮</t-button></div>
+      <div class="item"><t-button theme="primary" shape="circle" variant="base"><t-icon-calendar slot="icon"/></t-button></div>
     </div>
     <div class="tdesign-demo-block">
       <div class="item"><t-button shape="square" variant="outline">描边按钮</t-button></div>

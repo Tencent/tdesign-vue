@@ -82,16 +82,16 @@ export default Vue.extend({
       let status = null;
       switch (file.status) {
         case 'success':
-          status = <div class='t-upload__flow-status'><TIconCheckCircleFilled size='13px'/><span>上传成功</span></div>;
+          status = <div class='t-upload__flow-status'><TIconCheckCircleFilled /><span>上传成功</span></div>;
           break;
         case 'fail':
-          status = <div class='t-upload__flow-status'><TIconErrorCircleFilled size='13px'/><span>上传失败</span></div>;
+          status = <div class='t-upload__flow-status'><TIconErrorCircleFilled /><span>上传失败</span></div>;
           break;
         case 'progress':
-          status = <div class='t-upload__flow-status'><TIconLoading size='13px'/><span>上传中{file.percent}%</span></div>;
+          status = <div class='t-upload__flow-status'><TIconLoading /><span>上传中{Math.min(file.percent, 99)}%</span></div>;
           break;
         case 'waiting':
-          status = <div class='t-upload__flow-status'><TIconTimeFilled size='13px'/><span>待上传</span></div>;
+          status = <div class='t-upload__flow-status'><TIconTimeFilled /><span>待上传</span></div>;
           break;
       }
       return status;
@@ -177,6 +177,7 @@ export default Vue.extend({
                     <div class="t-upload-card__mask">
                       {file.url && <span class="t-upload-card__mask__item">
                         <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
+                        <span class="t-upload-card__mask__item-divider"></span>
                       </span>}
                       <span class="t-upload-card__mask__item" onClick={(e: MouseEvent) => this.remove({ e, index, file })}>
                         <TIconDelete/>
@@ -203,8 +204,8 @@ export default Vue.extend({
         {this.display === 'file-flow' && this.renderFileList()}
         {this.display === 'image-flow' && this.renderImgList()}
         <div class='t-upload__flow-bottom'>
-          <TButton variant='outline' onClick={this.cancel}>取消</TButton>
-          <TButton disabled={!this.allowUpload} onClick={(e: MouseEvent) => this.upload(this.waitingUploadFiles, e)}>
+          <TButton theme='default' onClick={this.cancel}>取消</TButton>
+          <TButton disabled={!this.allowUpload} theme='primary' onClick={(e: MouseEvent) => this.upload(this.waitingUploadFiles, e)}>
             {this.uploadText}
           </TButton>
         </div>

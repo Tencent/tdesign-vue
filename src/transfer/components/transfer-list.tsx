@@ -216,7 +216,7 @@ export default Vue.extend({
             {
               this.checkAll
               && <checkbox
-                disabled={this.disabled}
+                disabled={this.disabled || !this.dataSource.length}
                 checked={this.isAllChecked}
                 indeterminate={this.indeterminate}
                 onChange={this.handleCheckedAllChange}

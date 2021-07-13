@@ -148,32 +148,6 @@ exports[`Input group demo works fine 1`] = `
     >
       <div
         class="t-input t-size-m"
-        style="width: 100px;"
-      >
-        <input
-          class="t-input__inner"
-          type="text"
-        />
-      </div>
-       
-      <div
-        class="t-input t-size-m"
-        style="margin-left: -1px;"
-      >
-        <input
-          class="t-input__inner"
-          type="text"
-        />
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="t-input-group t-input-group--separate"
-    >
-      <div
-        class="t-input t-size-m"
       >
         <input
           class="t-input__inner"

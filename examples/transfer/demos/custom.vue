@@ -10,7 +10,7 @@
         {{props.direction === 'left' ? '移除' : '加入'}}
       </template>
       <template v-slot:footer="props" :name="123">
-        <div style="padding:10px;border-top:1px solid #aaa;">
+        <div style="padding:10px;border-top:1px solid #E7E7E7;">
           <span v-if="props.type === 'source'">选中并加入</span>
           <span v-else>选中并移除</span>
         </div>

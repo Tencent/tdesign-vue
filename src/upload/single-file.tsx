@@ -1,6 +1,8 @@
 import Vue, { PropType } from 'vue';
 import TIconClearCircleFilled from '../icon/close-circle-filled';
 import TIconLoading from '../icon/loading';
+import TIconErrorCircleFilled from '../icon/error-circle-filled';
+import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { UploadFile } from '../../types/upload/TdUploadProps';
 
 export default Vue.extend({
@@ -8,6 +10,8 @@ export default Vue.extend({
 
   components: {
     TIconClearCircleFilled,
+    TIconCheckCircleFilled,
+    TIconErrorCircleFilled,
     TIconLoading,
   },
 
@@ -45,6 +49,9 @@ export default Vue.extend({
     },
     showProgress(): boolean {
       return this.loadingFile && this.loadingFile.status === 'progress';
+    },
+    showDelete(): boolean {
+      return this.file && this.file.name && !this.loadingFile;
     },
     inputName(): string {
       const fileName = this.file && this.file.name;
@@ -87,14 +94,30 @@ export default Vue.extend({
         }
       }, 10);
     },
+
+
     renderProgress() {
+      if (this.loadingFile.status === 'fail') {
+        return <TIconErrorCircleFilled />;
+      }
+
       return (
         <div class='t-upload__single-progress'>
-          <TIconLoading size='20px'></TIconLoading>
+          <TIconLoading></TIconLoading>
           <span class='t-upload__single-percent'>{this.percentNum >= 100 ? 99 : this.percentNum}%</span>
         </div>
       );
     },
+
+    renderResult() {
+      if (!!this.loadingFile && this.loadingFile.status === 'fail') {
+        return <TIconErrorCircleFilled />;
+      } if (this.file && this.file.name && !this.loadingFile) {
+        return <TIconCheckCircleFilled />;
+      }
+      return '';
+    },
+
     // 文本型预览
     renderFilePreviewAsText() {
       if (!this.inputName) return;
@@ -103,7 +126,7 @@ export default Vue.extend({
           <span class='t-upload__single-name'>{this.inputName}</span>
           {this.showProgress
             ? this.renderProgress()
-            : <TIconClearCircleFilled size='16px' nativeOnClick={(e: MouseEvent) => this.remove(e)}/>}
+            : <TIconClearCircleFilled class="t-upload-icon-delete" nativeOnClick={(e: MouseEvent) => this.remove(e)}/>}
         </div>
       );
     },
@@ -114,6 +137,7 @@ export default Vue.extend({
           <div class={this.inputTextClass}>
             {<span class='t-upload__single-input-text'>{this.inputText}</span>}
             {this.showProgress && this.renderProgress()}
+            {this.renderResult()}
           </div>
         </div>
       );
@@ -126,7 +150,7 @@ export default Vue.extend({
         {this.showInput && this.renderFilePreviewAsInput()}
         {this.$scopedSlots.default && this.$scopedSlots.default(null)}
         {this.showTextPreview && this.renderFilePreviewAsText()}
-        {this.showInput && <span class='t-upload__single-input-delete' onClick={(e: MouseEvent) => this.remove(e)}>删除</span>}
+        {this.showInput && this.showDelete && <span class='t-upload__single-input-delete' onClick={(e: MouseEvent) => this.remove(e)}>删除</span>}
       </div>
     );
   },

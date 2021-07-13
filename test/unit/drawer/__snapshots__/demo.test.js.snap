@@ -35,15 +35,17 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
         <div
           class="t-drawer__footer"
         >
-          <div>
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
             <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
               type="button"
             >
               <span
                 class="t-button__text"
               >
-                取消
+                确认
               </span>
             </button>
             <button
@@ -53,7 +55,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
               <span
                 class="t-button__text"
               >
-                确认
+                取消
               </span>
             </button>
           </div>
@@ -203,7 +205,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
     <br />
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
     >
       <span
@@ -249,7 +251,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
         class="t-drawer__footer"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-default"
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -303,7 +305,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       >
         <div>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -355,19 +357,11 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              cancel
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-is-disabled"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
             disabled="disabled"
             type="button"
           >
@@ -377,13 +371,23 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
               OK
             </span>
           </button>
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              cancel
+            </span>
+          </button>
         </div>
       </div>
     </div>
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-default"
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -396,7 +400,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
     
   
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-default"
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -409,7 +413,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
     
   
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-default"
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -448,15 +452,17 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
               class="t-button__text"
             >
-              取消
+              确认
             </span>
           </button>
           <button
@@ -466,7 +472,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              确认
+              取消
             </span>
           </button>
         </div>
@@ -517,15 +523,17 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
               class="t-button__text"
             >
-              取消
+              确认
             </span>
           </button>
           <button
@@ -535,7 +543,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              确认
+              取消
             </span>
           </button>
         </div>
@@ -828,15 +836,17 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
               class="t-button__text"
             >
-              取消
+              确认
             </span>
           </button>
           <button
@@ -846,7 +856,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              确认
+              取消
             </span>
           </button>
         </div>
@@ -1078,7 +1088,7 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
   <!---->
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-default"
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
   >
     <span
@@ -1113,7 +1123,9 @@ exports[`Drawer Demo operation wroks fine 1`] = `
       <div
         class="t-drawer__body"
       >
-        <div>
+        <div
+          class="t-drawer-demo-div"
+        >
           <span>
             Label A
           </span>
@@ -1128,7 +1140,9 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </div>
         </div>
          
-        <div>
+        <div
+          class="t-drawer-demo-div"
+        >
           <span>
             Label B
           </span>
@@ -1143,7 +1157,9 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </div>
         </div>
          
-        <div>
+        <div
+          class="t-drawer-demo-div"
+        >
           <span>
             Label C
           </span>
@@ -1161,15 +1177,17 @@ exports[`Drawer Demo operation wroks fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
               class="t-button__text"
             >
-              取消
+              确认
             </span>
           </button>
           <button
@@ -1179,7 +1197,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              确认
+              取消
             </span>
           </button>
         </div>
@@ -1241,15 +1259,17 @@ exports[`Drawer base demo works fine 1`] = `
       <div
         class="t-drawer__footer"
       >
-        <div>
+        <div
+          style="display: flex; justify-content: flex-start;"
+        >
           <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
               class="t-button__text"
             >
-              取消
+              确认
             </span>
           </button>
           <button
@@ -1259,7 +1279,7 @@ exports[`Drawer base demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-              确认
+              取消
             </span>
           </button>
         </div>

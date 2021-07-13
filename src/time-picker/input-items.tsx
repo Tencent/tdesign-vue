@@ -1,20 +1,20 @@
-import Vue, { VueConstructor } from 'vue';
-
 import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './type';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
+
 import {
   componentName,
-  meridiemZHList,
-  meridiemENList,
-  meridiemBeforeFormatREG,
+  amFormat,
   KEYBOARD_DIRECTION,
   EMPTY_VALUE,
+  meridiemList,
 } from './constant';
 
 import { prefix } from '../config';
 
 const name = `${prefix}-time-picker-input-items`; // t-time-picker-input-items
 
-export default (Vue as VueConstructor<TimeInputInstance>).extend({
+export default mixins(getLocalRecevierMixins<TimeInputInstance>('timePicker')).extend({
   name,
 
   props: {
@@ -242,10 +242,10 @@ export default (Vue as VueConstructor<TimeInputInstance>).extend({
         }
         // 判断上下午位置
         if (/[h]{1}/.test(format) && (format.includes('A') || format.includes('a'))) {
-          const tmp = (meridiemBeforeFormatREG.test(format) ? meridiemZHList : meridiemENList).find((item: { value: string; label: string }) => item.value === inputTime.meridiem.toUpperCase());
-          const text = tmp ? tmp.label : '';
+          const localeMeridiemList = [this.locale.anteMeridiem, this.locale.postMeridiem];
+          const text = localeMeridiemList[meridiemList.indexOf(inputTime.meridiem.toUpperCase())];
           // 放在前面or后面
-          render[meridiemBeforeFormatREG.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => this.onToggleMeridiem(index)}>
+          render[amFormat.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => this.onToggleMeridiem(index)}>
               <input
                 readonly
                 class={inputClass}

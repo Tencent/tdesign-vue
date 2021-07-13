@@ -11,8 +11,8 @@ export default defineComponent({
   },
   render() {
     return (
-      <div class="t-menu-group">
-        <div class="t-menu-group-title">
+      <div class={`${prefix}-menu-group`}>
+        <div class={`${prefix}-menu-group-title`}>
           {this.title}
         </div>
         {this.$slots.default}

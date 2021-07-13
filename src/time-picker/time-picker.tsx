@@ -1,8 +1,9 @@
-import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './type';
 import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
 import { prefix } from '../config';
@@ -15,13 +16,13 @@ import InputItems from './input-items';
 
 import props from '../../types/time-picker/props';
 
-import { EPickerCols, pmList, amList, EMPTY_VALUE, componentName, AM } from './constant';
+import { EPickerCols, EMPTY_VALUE, componentName, amFormat, pmFormat, AM } from './constant';
 
 const name = `${prefix}-time-picker`;
 
 dayjs.extend(customParseFormat);
 
-export default (Vue as VueConstructor<TimePickerInstance>).extend({
+export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).extend({
   name,
 
   components: {
@@ -31,7 +32,6 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
     TInput,
     InputItems,
   },
-
   model: {
     prop: 'value',
     event: 'change',
@@ -139,7 +139,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       const {
         $data: { time },
       } = this;
-      const current = time.format('a');
+      const current = time.format('A');
       const currentHour = time.hour() + (current === AM ? 12 : -12);
       // 时间变动
       this.inputChange({
@@ -149,31 +149,31 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
     },
     // 选中时间发生变动
     pickTime(col: EPickerCols, change: string | number, index: number, value: Record<string, any>) {
-      const {
-        $data: { time },
-      } = this;
-      let _setTime = time;
-      if ([EPickerCols.hour, EPickerCols.minute, EPickerCols.second].includes(col)) {
-        // 时分秒 dayjs hour minute second api变动时间
-        _setTime = value.set(col, change);
+      const { time, format } = this;
+      let setTime = time;
+
+      if (EPickerCols.hour === col) {
+        setTime = value.set(col, value.hour() >= 12 && (amFormat.test(format) || pmFormat.test(format)) ? Number(change) + 12 : change);
+      } else if ([EPickerCols.minute, EPickerCols.second].includes(col)) {
+        setTime = value.set(col, change);
       } else {
         // 当前上下午
         let currentHour = value.hour();
         // 上下午
-        if (amList.includes(change as string)) {
+        if (change === this.locale.anteMeridiem) {
           // 上午
           currentHour -= 12;
-        } else if (pmList.includes(change as string)) {
+        } else if (change === this.locale.postMeridiem) {
           // 下午
           currentHour += 12;
         }
-        _setTime = value.hour(currentHour);
+        setTime = value.hour(currentHour);
       }
-      this.time = _setTime;
+      this.time = setTime;
 
-      this.inputTime = this.setInputValue(_setTime);
-      this.$emit('change', dayjs(_setTime).format(this.format));
-      isFunction(this.onChange) && this.onChange(dayjs(_setTime).format(this.format));
+      this.inputTime = this.setInputValue(setTime);
+      this.$emit('change', dayjs(setTime).format(this.format));
+      isFunction(this.onChange) && this.onChange(dayjs(setTime).format(this.format));
     },
     // 确定按钮
     makeSure() {
@@ -205,7 +205,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
         hour: undefined,
         minute: undefined,
         second: undefined,
-        meridiem: 'AM',
+        meridiem: AM,
       };
       if (!val) return ans;
       return this.dayjs2InputTime(val);
@@ -220,7 +220,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
           hour: undefined,
           minute: undefined,
           second: undefined,
-          meridiem: 'AM',
+          meridiem: AM,
         };
       }
 
@@ -257,8 +257,12 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       this.$emit('onChange', undefined);
     },
     renderInput() {
+      const classes = [`${name}__group`,
+        {
+          [`${prefix}-is-focused`]: this.isShowPanel,
+        }];
       return (
-        <div class={`${name}__group`} onClick={() => this.isShowPanel = true}>
+        <div class={classes} onClick={() => this.isShowPanel = true}>
           <t-input
             disabled={this.disabled}
             size={this.size}
@@ -266,6 +270,7 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
             clearable={this.clearable}
             readonly
             value={this.time ? ' ' : undefined}
+            class={this.isShowPanel ? `${prefix}-is-focused` : ''}
           >
             <t-icon-time slot="suffix-icon"></t-icon-time>
           </t-input>

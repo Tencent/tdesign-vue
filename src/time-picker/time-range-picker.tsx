@@ -1,9 +1,10 @@
-import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import isFunction from 'lodash/isFunction';
 import isEqual from 'lodash/isEqual';
 
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType, TimePickerPanelInstance } from './type';
 import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
 import { prefix } from '../config';
@@ -15,13 +16,13 @@ import TPopup from '../popup';
 import InputItems from './input-items';
 import props from '../../types/time-range-picker/props';
 
-import { EPickerCols, pmList, amList, TIME_PICKER_EMPTY, EMPTY_VALUE, componentName, AM } from './constant';
+import { EPickerCols, TIME_PICKER_EMPTY, EMPTY_VALUE, componentName, amFormat, pmFormat, AM } from './constant';
 
 const name = `${prefix}-time-picker`;
 
 dayjs.extend(customParseFormat);
 
-export default (Vue as VueConstructor<TimePickerInstance>).extend({
+export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).extend({
   name: `${prefix}-time-range-picker`,
 
   components: {
@@ -128,32 +129,31 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
     },
     // 选中时间发生变动
     pickTime(col: EPickerCols, change: string | number, index: number, value: Record<string, any>) {
-      const {
-        $data: { time },
-      } = this;
+      const { time, format } = this;
       const panelRef = this.$refs.panel as TimePickerPanelInstance;
       let shouldUpdatePanel = false;
-      let _setTime = time[index];
-      if ([EPickerCols.hour, EPickerCols.minute, EPickerCols.second].includes(col)) {
-        // 时分秒 dayjs hour minute second api变动时间
-        _setTime = value.set(col, change);
+      let setTime = time[index];
+      if (EPickerCols.hour === col) {
+        setTime = value.set(col, value.hour() >= 12 && (amFormat.test(format) || pmFormat.test(format)) ? Number(change) + 12 : change);
+      } else if ([EPickerCols.minute, EPickerCols.second].includes(col)) {
+        setTime = value.set(col, change);
       } else {
         // 当前上下午
         let currentHour = value.hour();
         // 上下午
-        if (amList.includes(change as string)) {
+        if (change === this.locale.anteMeridiem) {
           // 上午
           currentHour -= 12;
-        } else if (pmList.includes(change as string)) {
+        } else if (change === this.locale.postMeridiem) {
           // 下午
           currentHour += 12;
         }
-        _setTime = value.hour(currentHour);
+        setTime = value.hour(currentHour);
       }
-      this.time[index] = _setTime;
+      this.time[index] = setTime;
       // 处理初始化为空的逻辑
       if (index === 0 && !this.time[1]) {
-        this.time[1] = _setTime;
+        this.time[1] = setTime;
         shouldUpdatePanel = true;
       } else if (index === 1 && !this.time[0]) {
         this.time[0] = dayjs()
@@ -228,8 +228,12 @@ export default (Vue as VueConstructor<TimePickerInstance>).extend({
       isFunction(this.onChange) && this.onChange(values);
     },
     renderInput() {
+      const classes = [`${name}__group`,
+        {
+          [`${prefix}-is-focused`]: this.isShowPanel,
+        }];
       return (
-        <div class={`${name}__group`} onClick={() => this.isShowPanel = true}>
+        <div class={classes} onClick={() => this.isShowPanel = true}>
           <t-input
             disabled={this.disabled}
             size={this.size}

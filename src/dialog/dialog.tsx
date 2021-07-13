@@ -216,10 +216,10 @@ export default mixins(getLocalRecevierMixins('dialog')).extend({
     getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
       const isCancel = btnType === 'cancel';
       const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
-      const variant = isCancel ? 'outline' : 'base';
+      const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button variant={variant} onClick={clickAction} props={isApiObject ? btnApi : {}}>
+        <t-button variant="base" theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}}>
           { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
         </t-button>
       );

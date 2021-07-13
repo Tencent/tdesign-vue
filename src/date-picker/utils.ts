@@ -405,7 +405,6 @@ export function getWeeks(
       });
       prependDay.setDate(prependDay.getDate() - 1);
       if (prependDay.getDay() === Math.abs(firstDayOfWeek + 6) % 7) break;
-      break;
     }
   }
 

@@ -1,8 +1,7 @@
 <template>
-  <t-transfer
-    :data="list"
-    :checked.sync="checked"
-  />
+  <div>
+    <t-transfer :data="list" :checked.sync="checked" />
+  </div>
 </template>
 <script>
 const list = [];

@@ -1,15 +1,15 @@
 <template>
   <div>
     <t-drawer :visible="visible" @close="handleClose" header='标题名称'>
-      <div>
+      <div class="t-drawer-demo-div">
         <span>Label A</span>
         <t-input />
       </div>
-      <div>
+      <div class="t-drawer-demo-div">
         <span>Label B</span>
         <t-input />
       </div>
-      <div>
+      <div class="t-drawer-demo-div">
         <span>Label C</span>
         <t-input />
       </div>
@@ -42,5 +42,8 @@ export default Vue.extend({
 <style scoped>
 .t-button {
   margin-right: 20px;
+}
+.t-drawer-demo-div {
+  margin-bottom: 24px;
 }
 </style>

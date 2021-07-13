@@ -7,11 +7,19 @@
       </t-radio-group>
     </div>
     <t-tree-select
+      v-if="type === 'default'"
       v-model="value"
       :data="options"
       clearable
       filterable
-      :filter="filterFunc"
+      placeholder="请选择"
+    />
+    <t-tree-select
+      v-else
+      v-model="value"
+      :data="options"
+      clearable
+      :filter="filterFunction"
       placeholder="请选择"
     />
   </div>
@@ -44,14 +52,6 @@ export default {
         }],
       }],
     };
-  },
-  computed: {
-    filterFunc() {
-      if (this.type === 'default') {
-        return null;
-      }
-      return this.filterFunction;
-    },
   },
   methods: {
     filterFunction(searchText, node) {

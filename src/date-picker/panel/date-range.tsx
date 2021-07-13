@@ -139,7 +139,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       };
     },
     getData({ year, month, type }) {
-      const { disabledDate, minDate, maxDate, firstDayOfWeek, startValue, endValue } = this;
+      const { disabledDate, minDate, maxDate, startValue, endValue } = this;
+      const { firstDayOfWeek } = this.$props;
       let data;
 
       const start = startValue;
@@ -274,9 +275,11 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
   render() {
     const {
       leftType,
-      firstDayOfWeek,
       rightType,
     } = this.$data;
+    const {
+      firstDayOfWeek,
+    } = this.$props;
     return (
       <div class="t-date-range">
         <div class="t-date">

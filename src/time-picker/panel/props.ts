@@ -65,7 +65,7 @@ export const panelColProps = () => ({
   },
   cols: {
     type: Array as PropType<Array<EPickerCols>>,
-    default: () => [EPickerCols.zh, EPickerCols.hour, EPickerCols.minute, EPickerCols.second],
+    default: () => [EPickerCols.hour, EPickerCols.minute, EPickerCols.second],
   },
   value: {
     type: Object as PropType<dayjs.Dayjs>,
@@ -88,5 +88,8 @@ export const panelColProps = () => ({
   },
   disableTime: {
     ...Props.default.disableTime,
+  },
+  localeMeridiems: {
+    type: Array as PropType<Array<string>>,
   },
 });

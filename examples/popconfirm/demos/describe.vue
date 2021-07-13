@@ -26,10 +26,11 @@
 <style lang="less" scoped>
 .title {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
 }
 .describe {
   margin-top: 10px;
-  color: rgb(153, 153, 153);
+  font-size: 12px;
+  color: rgba(0, 0, 0, .6);
 }
 </style>
