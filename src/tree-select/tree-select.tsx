@@ -120,10 +120,10 @@ export default mixins(getLocalRecevierMixins('treeSelect')).extend({
       if (this.disabled) {
         return false;
       }
-      if (!this.multiple && this.selectedSingle && this.filterable) {
+      if (!this.multiple && this.selectedSingle && (this.filterable || isFunction(this.filter))) {
         return this.visible;
       }
-      return this.filterable;
+      return this.filterable || isFunction(this.filter);
     },
     showTree(): boolean {
       return !this.loading;
