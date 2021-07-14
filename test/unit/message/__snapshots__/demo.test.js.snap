@@ -204,86 +204,23 @@ exports[`Message placement demo works fine 1`] = `
 exports[`Message plugin demo works fine 1`] = `
 <div>
   <p>
-    组件内调用-信息设置：this.$message.info('用户表示普通操作信息提示')
+    组件实例方法调用
   </p>
    
-  <br />
-   
-  <div
-    class="t-demo-message-theme"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        info
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        success
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        warning
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        error
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        question
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        loading
-      </span>
-    </button>
-  </div>
-   
-  <br />
-  <br />
+  <p>
+    this.$message.success('用户表示普通操作信息提示')
+  </p>
    
   <p>
-    组件内调用-时间设置：this.$message.info('用户表示普通操作信息提示', 1000)
+    this.$message.success({ content: '用户表示普通操作信息提示', duration: 1000 })
+  </p>
+   
+  <p>
+    this.$message('success', '用户表示普通操作信息提示')
+  </p>
+   
+  <p>
+    this.$message('success', { content: '用户表示普通操作信息提示', duration: 1000 })
   </p>
    
   <br />
@@ -362,165 +299,23 @@ exports[`Message plugin demo works fine 1`] = `
   <br />
    
   <p>
-    组件内调用-设置更多内容：this.$message.info({ content: '用户表示普通操作信息提示', duration: 1000 })
+    插件方法调用
   </p>
    
-  <br />
-   
-  <div
-    class="t-demo-message-obj"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        普通信息
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        显示关闭按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        设置显示时间
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        自定义内容
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        自定义关闭按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        loading
-      </span>
-    </button>
-  </div>
-   
-  <br />
-  <br />
-   
   <p>
-    组件内调用-主函数：this.$message({ content: '用户表示普通操作信息提示', duration: 1000 })
+    MessagePlugin.success('用户表示普通操作信息提示')
   </p>
    
-  <br />
-   
-  <div
-    class="t-demo-message-main"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        普通信息
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        显示关闭按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        设置显示时间
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        自定义内容
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        自定义关闭按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        loading
-      </span>
-    </button>
-  </div>
-   
-  <br />
-  <br />
+  <p>
+    MessagePlugin.success({ content: '用户表示普通操作信息提示', duration: 1000 })
+  </p>
    
   <p>
-    按需引入：MessagePlugin.info({ content: '用户表示普通操作信息提示', duration: 1000 })
+    MessagePlugin('success', '用户表示普通操作信息提示')
+  </p>
+   
+  <p>
+    MessagePlugin('success', { content: '用户表示普通操作信息提示', duration: 1000 })
   </p>
    
   <br />
