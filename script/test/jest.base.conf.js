@@ -20,6 +20,7 @@ module.exports = {
     '^@Input/(.*)$': '<rootDir>/src/input/index.ts',
     '^@Breadcrumb/(.*)$': '<rootDir>/src/breadcrumb/index.ts',
     '^@Radio/(.*)$': '<rootDir>/src/radio/index.ts',
+    '^@Input/(.*)$': '<rootDir>/src/checkbox/index.ts',
     '^@Checkbox/(.*)$': '<rootDir>/src/checkbox/index.ts',
     '^@Select/(.*)$': '<rootDir>/src/select/index.ts',
     '^@Table/(.*)$': '<rootDir>/src/table/index.ts',

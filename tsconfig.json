@@ -52,6 +52,9 @@
       "@Checkbox": [
         "src/checkbox/index.ts"
       ],
+      "@Input": [
+        "src/input/index.ts"
+      ],
       "@Table": [
         "src/table/index.ts"
       ],

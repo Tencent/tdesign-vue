@@ -1,5 +1,5 @@
 <template>
-  <t-locale-provider :globalLocale="globalLocale">
+  <t-locale-provider :globalLocale="globalLocale" style="padding: 16px">
     <t-pagination v-model="current" :total="100" show-jumper :maxPageBtn="5"/>
     <br>
     <t-calendar></t-calendar>
@@ -21,6 +21,11 @@
       <t-button>Popconfirm</t-button>
     </t-popconfirm>
     <br><br>
+    <t-table
+      :data="[]"
+      :columns="columns"
+      rowKey="id"
+    ></t-table>
     <t-tree :data="[]"/>
     <br><br>
     <t-select
@@ -103,6 +108,9 @@ const GLOBAL_CONFIG = {
   popconfirm: {
     confirm: 'ok',
     cancel: 'cancel',
+  },
+  table: {
+    empty: 'Data is empty.',
   },
   tree: {
     empty: 'Empty Data',
@@ -195,6 +203,20 @@ export default {
       transferChecked: [],
       transferTargetValue: [],
       drawerVisible: false,
+      columns: [
+        {
+          colKey: 'type',
+          title: 'type',
+        },
+        {
+          colKey: 'platform',
+          title: 'platform',
+        },
+        {
+          colKey: 'property',
+          title: 'property',
+        },
+      ],
       selectValue1: [],
       selectValue2: [],
       options1: SELECET_OPTIONS.concat(),
