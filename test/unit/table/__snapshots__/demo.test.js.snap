@@ -1,1714 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table ajax demo works fine 1`] = `
-<div>
-  <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
-  >
-    <div
-      class="t-table-content"
-      style="overflow: auto;"
-    >
-      <table
-        style="table-layout: fixed;"
-      >
-        <colgroup>
-          <col
-            style="width: 200px;"
-          />
-          <col
-            style="width: 200px;"
-          />
-          <col
-            style="width: 200px;"
-          />
-          <col />
-        </colgroup>
-        <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object]"
-        >
-          <tr>
-            <td
-              class="align-center"
-              colspan="1"
-              key="name"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              姓名
-            </td>
-            <td
-              class="align-left"
-              colspan="1"
-              key="gender"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              性别
-            </td>
-            <td
-              class="align-left"
-              colspan="1"
-              key="phone"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              联系方式
-            </td>
-            <td
-              class="align-left"
-              colspan="1"
-              key="email"
-              rowspan="1"
-            >
-              邮箱
-            </td>
-          </tr>
-        </thead>
-        <tbody
-          class="table-body"
-        />
-        <tfoot>
-          <tr>
-            <td
-              colspan="4"
-            >
-              <div
-                class="t-table--empty"
-              >
-                暂无数据
-              </div>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-    <div
-      class="t-table-pagination"
-    >
-      <!---->
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Table base demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
+    style="margin: 16px;"
   >
-    <div
-      class="t-table-content"
-      style="overflow: auto;"
+    <label
+      class="t-checkbox t-is-checked"
     >
-      <table
-        style="table-layout: fixed;"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
       >
-        <colgroup>
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-        </colgroup>
-        <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-        >
-          <tr>
-            <td
-              class="align-center text-ellipsis row"
-              colspan="1"
-              key="index"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              index
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              colspan="1"
-              key="platform"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              平台
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              colspan="1"
-              key="default"
-              rowspan="1"
-            >
-              默认值
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              colspan="1"
-              key="needed"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              是否必传
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              colspan="1"
-              key="detail.name"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              详情信息
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              colspan="1"
-              key="description"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              说明
-            </td>
-          </tr>
-        </thead>
-        <tbody
-          class="table-body"
-        >
-          <tr
-            class=""
-            key="property-10"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              10
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 10 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-11"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              11
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 11 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-12"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              12
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 12 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-13"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              13
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 13 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-14"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              14
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 14 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-15"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              15
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 15 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-16"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              16
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 16 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-17"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              17
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 17 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-18"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              18
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 18 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-19"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              19
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 19 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-        </tbody>
-        <tfoot />
-      </table>
-    </div>
-    <div
-      class="t-table-pagination"
+        显示斑马纹
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
     >
-      <div
-        class="t-pagination t-size-m"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
       >
-        <div
-          class="t-pagination__total"
-        >
-          
-      共 120 项数据
-    
-        </div>
-         
-        <div
-          class="t-select-wrap t-pagination__select"
-        >
-          <div
-            class="t-popup-reference t-select-popup-reference"
-            style="position: relative;"
-          >
-            <transition-stub
-              appear="true"
-              name="t-popup_animation"
-            />
-            <div
-              class="t-select t-size-m"
-            >
-              <span
-                class="t-select-selectedSingle"
-                title="10"
-              >
-                10
-              </span>
-              <svg
-                class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <div
-              class="resize-sensor"
-              dir="ltr"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                class="resize-sensor-expand"
-                style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-              >
-                <div
-                  style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-                />
-              </div>
-              <div
-                class="resize-sensor-shrink"
-                style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-              >
-                <div
-                  style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="t-pagination__btn t-pagination__btn--prev"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M610.5408 226.56L669.3696 285.39136 442.78784 511.97568 669.3696 738.56 610.5408 797.3888 325.12512 511.97568 610.5408 226.56Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-         
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            1
-          </li>
-           
-          <!---->
-           
-          <li
-            class="t-pagination__number t-is-current"
-            data-ripple=""
-          >
-            
-        2
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        3
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        4
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        5
-      
-          </li>
-           
-          <li
-            class="t-pagination__number t-pagination__number--more"
-          >
-            <svg
-              class="t-icon t-icon-ellipsis"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M192 448C227.346224 448 256 476.653776 256 512 256 547.346224 227.346224 576 192 576 156.653776 576 128 547.346224 128 512 128 476.653776 156.653776 448 192 448ZM512 448C547.346224 448 576 476.653776 576 512 576 547.346224 547.346224 576 512 576 476.653776 576 448 547.346224 448 512 448 476.653776 476.653776 448 512 448ZM832 448C867.3462208 448 896 476.653776 896 512 896 547.346224 867.3462208 576 832 576 796.6537792 576 768 547.346224 768 512 768 476.653776 796.6537792 448 832 448Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </li>
-           
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            12
-          </li>
-        </ul>
-         
-        <div
-          class="t-pagination__btn t-pagination__btn--next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Table base demo works fine 2`] = `
-<div>
-  <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table-valign__top"
-  >
-    <div
-      class="t-table-content"
-      style="overflow: auto;"
+        显示表格边框
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
     >
-      <table
-        style="table-layout: fixed;"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
       >
-        <colgroup>
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-          <col
-            style="width: 100px; min-width: 100px;"
-          />
-        </colgroup>
-        <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-        >
-          <tr>
-            <td
-              class="align-center text-ellipsis row"
-              colspan="1"
-              key="index"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              index
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              colspan="1"
-              key="platform"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              平台
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              colspan="1"
-              key="default"
-              rowspan="1"
-            >
-              默认值
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              colspan="1"
-              key="needed"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              是否必传
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              colspan="1"
-              key="detail.name"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              详情信息
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              colspan="1"
-              key="description"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              说明
-            </td>
-          </tr>
-        </thead>
-        <tbody
-          class="table-body"
-        >
-          <tr
-            class=""
-            key="property-10"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              10
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 10 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-11"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              11
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 11 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-12"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              12
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 12 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-13"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              13
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 13 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-14"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              14
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 14 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-15"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              15
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 15 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-16"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              16
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 16 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-17"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              17
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 17 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-18"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              18
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 18 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="property-19"
-          >
-            <td
-              class="align-center text-ellipsis row"
-              key="index"
-              length="6"
-              style="overflow: hidden;"
-            >
-              19
-            </td>
-            <td
-              class="align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
-              key="default"
-              length="6"
-            >
-              []
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="align-left text-ellipsis test3"
-              key="detail.name"
-              length="6"
-              style="overflow: hidden;"
-            >
-              读取 19 个数据的嵌套信息值
-            </td>
-            <td
-              class="align-left text-ellipsis row"
-              key="description"
-              length="6"
-              style="overflow: hidden;"
-            >
-              数据源
-            </td>
-          </tr>
-        </tbody>
-        <tfoot />
-      </table>
-    </div>
-    <div
-      class="t-table-pagination"
-    >
-      <div
-        class="t-pagination t-size-m"
-      >
-        <div
-          class="t-pagination__total"
-        >
-          
-      共 120 项数据
-    
-        </div>
-         
-        <div
-          class="t-select-wrap t-pagination__select"
-        >
-          <div
-            class="t-popup-reference t-select-popup-reference"
-            style="position: relative;"
-          >
-            <transition-stub
-              appear="true"
-              name="t-popup_animation"
-            />
-            <div
-              class="t-select t-size-m"
-            >
-              <span
-                class="t-select-selectedSingle"
-                title="10"
-              >
-                10
-              </span>
-              <svg
-                class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </div>
-            <div
-              class="resize-sensor"
-              dir="ltr"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                class="resize-sensor-expand"
-                style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-              >
-                <div
-                  style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-                />
-              </div>
-              <div
-                class="resize-sensor-shrink"
-                style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-              >
-                <div
-                  style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="t-pagination__btn t-pagination__btn--prev"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M610.5408 226.56L669.3696 285.39136 442.78784 511.97568 669.3696 738.56 610.5408 797.3888 325.12512 511.97568 610.5408 226.56Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-         
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            1
-          </li>
-           
-          <!---->
-           
-          <li
-            class="t-pagination__number t-is-current"
-            data-ripple=""
-          >
-            
-        2
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        3
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        4
-      
-          </li>
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            
-        5
-      
-          </li>
-           
-          <li
-            class="t-pagination__number t-pagination__number--more"
-          >
-            <svg
-              class="t-icon t-icon-ellipsis"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M192 448C227.346224 448 256 476.653776 256 512 256 547.346224 227.346224 576 192 576 156.653776 576 128 547.346224 128 512 128 476.653776 156.653776 448 192 448ZM512 448C547.346224 448 576 476.653776 576 512 576 547.346224 547.346224 576 512 576 476.653776 576 448 547.346224 448 512 448 476.653776 476.653776 448 512 448ZM832 448C867.3462208 448 896 476.653776 896 512 896 547.346224 867.3462208 576 832 576 796.6537792 576 768 547.346224 768 512 768 476.653776 796.6537792 448 832 448Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </li>
-           
-          <li
-            class="t-pagination__number"
-            data-ripple=""
-          >
-            12
-          </li>
-        </ul>
-         
-        <div
-          class="t-pagination__btn t-pagination__btn--next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Table customCell demo works fine 1`] = `
-<div>
-  <div
-    style="margin-bottom: 10px;"
-  >
-    
-    columns 中通过定义 scopedSlots 或者 render 方法来实现自定义单元格的渲染。
-    其中 key 值为 'title' 时，代表用指定插槽自定义表头。其中 key 值为 'col' 时，代表用指定插槽自定义内容部分的单元格。
+        显示悬浮效果
+      </span>
+    </label>
   </div>
    
   <div>
     <div
-      class="t-table t-table--bordered t-table--striped t-table--hoverable"
+      class="t-table t-table--bordered t-table--striped"
     >
       <div
         class="t-table-content"
@@ -1719,54 +73,34 @@ exports[`Table customCell demo works fine 1`] = `
         >
           <colgroup>
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
+            <col />
+            <col />
+            <col />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 200px;"
             />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
+            <col />
           </colgroup>
           <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
-                class="align-left row"
+                class="align-center row"
                 colspan="1"
-                key="type"
+                key="index"
                 rowspan="1"
                 style="overflow: hidden;"
               >
-                <span>
-                  <svg
-                    class="t-icon t-icon-app"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M832 512C867.3462208 512 896 540.653776 896 576L896 832C896 867.3462208 867.3462208 896 832 896L576 896C540.653776 896 512 867.3462208 512 832L512 576C512 540.653776 540.653776 512 576 512L832 512ZM384 512C419.346224 512 448 540.653776 448 576L448 832C448 867.3462208 419.346224 896 384 896L128 896C92.653776 896 64 867.3462208 64 832L64 576C64 540.653776 92.653776 512 128 512L384 512ZM832 576L576 576 576 832 832 832 832 576ZM384 576L128 576 128 832 384 832 384 576ZM704 64C810.0386688 64 896 149.961328 896 256 896 362.038672 810.0386688 448 704 448 597.961328 448 512 362.038672 512 256 512 149.961328 597.961328 64 704 64ZM384 64C419.346224 64 448 92.653776 448 128L448 384C448 419.346224 419.346224 448 384 448L128 448C92.653776 448 64 419.346224 64 384L64 128C64 92.653776 92.653776 64 128 64L384 64ZM704 128C633.307552 128 576 185.307552 576 256 576 326.692448 633.307552 384 704 384 774.692448 384 832 326.692448 832 256 832 185.307552 774.692448 128 704 128ZM384 128L128 128 128 384 384 384 384 128Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                   类型
-    
-                </span>
+                序号
               </td>
               <td
-                class="align-left test"
+                class=""
                 colspan="1"
                 key="platform"
                 rowspan="1"
@@ -1775,38 +109,43 @@ exports[`Table customCell demo works fine 1`] = `
                 平台
               </td>
               <td
-                class="align-left text-ellipsis test2"
+                class=""
                 colspan="1"
-                key="property"
+                key="type"
                 rowspan="1"
-                style="overflow: hidden;"
               >
-                属性名
+                类型
               </td>
               <td
-                class="align-left test4"
+                class=""
                 colspan="1"
                 key="default"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 默认值
               </td>
               <td
-                class="align-left test3"
+                class=""
                 colspan="1"
                 key="needed"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 是否必传
               </td>
               <td
-                class="align-left row"
+                class="text-ellipsis"
+                colspan="1"
+                key="detail.postion"
+                rowspan="1"
+                style="overflow: hidden;"
+              >
+                详情信息
+              </td>
+              <td
+                class=""
                 colspan="1"
                 key="description"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 说明
               </td>
@@ -1816,159 +155,286 @@ exports[`Table customCell demo works fine 1`] = `
             class="table-body"
           >
             <tr
-              class=""
-              key="data"
+              key="0"
             >
               <td
-                class="align-left row"
-                key="type"
-                length="6"
+                class="align-center row"
+                key="index"
+                length="7"
                 style="overflow: hidden;"
               >
-                any[]
+                0
               </td>
               <td
-                class="align-left test"
+                class=""
                 key="platform"
-                length="6"
+                length="7"
                 style="overflow: hidden;"
               >
-                <span>
-                  <svg
-                    class="t-icon t-icon-attach"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                  <a
-                    class="link"
-                    href="#"
-                  >
-                    公有
-                  </a>
-                </span>
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
-                length="6"
-                style="overflow: hidden;"
+                class=""
+                key="type"
+                length="7"
               >
-                render 方法渲染的单元格：0: data
+                String
               </td>
               <td
-                class="align-left test4"
+                class=""
                 key="default"
-                length="6"
-                style="overflow: hidden;"
+                length="7"
               >
-                <span>
-                  
-      未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 []
-    
-                </span>
+                -
               </td>
               <td
-                class="align-left test3"
+                class=""
                 key="needed"
-                length="6"
-                style="overflow: hidden;"
+                length="7"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left row"
-                key="description"
-                length="6"
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
                 style="overflow: hidden;"
+              >
+                读取 0 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="rowkey"
+              key="1"
             >
               <td
-                class="align-left row"
-                key="type"
-                length="6"
+                class="align-center row"
+                key="index"
+                length="7"
                 style="overflow: hidden;"
+              >
+                1
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                私有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Number
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                0
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 1 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="2"
+            >
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                2
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                共有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Array
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                []
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 2 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="3"
+            >
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                3
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                私有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Object
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                {}
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 3 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="4"
+            >
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                4
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                共有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
               >
                 String
               </td>
               <td
-                class="align-left test"
-                key="platform"
-                length="6"
-                style="overflow: hidden;"
-              >
-                <span>
-                  <svg
-                    class="t-icon t-icon-attach"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                  <a
-                    class="link"
-                    href="#"
-                  >
-                    公有
-                  </a>
-                </span>
-              </td>
-              <td
-                class="align-left text-ellipsis test2"
-                key="property"
-                length="6"
-                style="overflow: hidden;"
-              >
-                render 方法渲染的单元格：1: rowkey
-              </td>
-              <td
-                class="align-left test4"
+                class=""
                 key="default"
-                length="6"
-                style="overflow: hidden;"
+                length="7"
               >
-                <span>
-                  
-      未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 -1
-    
-                </span>
+                -
               </td>
               <td
-                class="align-left test3"
+                class=""
                 key="needed"
-                length="6"
-                style="overflow: hidden;"
+                length="7"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left row"
-                key="description"
-                length="6"
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
                 style="overflow: hidden;"
               >
-                指定rowkey
+                读取 4 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
               </td>
             </tr>
           </tbody>
-          <tfoot />
         </table>
       </div>
     </div>
@@ -1976,260 +442,471 @@ exports[`Table customCell demo works fine 1`] = `
 </div>
 `;
 
-exports[`Table draggable demo works fine 1`] = `
+exports[`Table base demo works fine 2`] = `
 <div>
   <div
-    class="t-table"
+    style="margin: 16px;"
   >
-    <div
-      class="t-table-content"
-      style="overflow: auto;"
+    <label
+      class="t-checkbox t-is-checked"
     >
-      <table
-        style="table-layout: fixed;"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
       >
-        <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 250px;"
-          />
-        </colgroup>
-        <thead
-          columnsprops="[object Object],[object Object],[object Object]"
+        显示斑马纹
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        显示表格边框
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        显示悬浮效果
+      </span>
+    </label>
+  </div>
+   
+  <div>
+    <div
+      class="t-table t-table--bordered t-table--striped"
+    >
+      <div
+        class="t-table-content"
+        style="overflow: auto;"
+      >
+        <table
+          style="table-layout: fixed;"
         >
-          <tr>
-            <td
-              class=""
-              colspan="1"
-              key="name"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              <span>
-                Name
-                <span
-                  class="t-table-sort-icon"
-                >
-                  <svg
-                    class="t-icon t-icon-chevron-up"
-                    style="font-size: 12px;"
-                  >
-                    <use
-                      xlink:href="#t-icon-chevron-up"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </td>
-            <td
-              class=""
-              colspan="1"
-              key="age"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              <span>
-                Age
-                <span
-                  class="t-table-double-icons t-table-sort-icon"
-                >
-                  <svg
-                    class="t-icon t-icon-chevron-up"
-                    style="font-size: 12px;"
-                  >
-                    <use
-                      xlink:href="#t-icon-chevron-up"
-                    />
-                  </svg>
-                  <svg
-                    class="t-icon t-icon-chevron-down"
-                    style="font-size: 12px;"
-                  >
-                    <use
-                      xlink:href="#t-icon-chevron-down"
-                    />
-                  </svg>
-                </span>
-              </span>
-            </td>
-            <td
-              class=""
-              colspan="1"
-              key="address"
-              rowspan="1"
-              style="overflow: hidden;"
-            >
-              Address
-            </td>
-          </tr>
-        </thead>
-        <tbody
-          class="table-body"
-        >
-          <tr
-            class=""
-            key="1"
+          <colgroup>
+            <col
+              style="width: 100px;"
+            />
+            <col
+              style="width: 100px;"
+            />
+            <col />
+            <col />
+            <col />
+            <col
+              style="width: 200px;"
+            />
+            <col />
+          </colgroup>
+          <thead
+            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
-            <td
-              class=""
-              key="name"
-              length="3"
-              style="overflow: hidden;"
-            >
-              John Brown
-            </td>
-            <td
-              class=""
-              key="age"
-              length="3"
-              style="overflow: hidden;"
-            >
-              32
-            </td>
-            <td
-              class=""
-              key="address"
-              length="3"
-              style="overflow: hidden;"
-            >
-              New York No. 1 Lake Park
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="2"
+            <tr>
+              <td
+                class="align-center row"
+                colspan="1"
+                key="index"
+                rowspan="1"
+                style="overflow: hidden;"
+              >
+                序号
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="platform"
+                rowspan="1"
+                style="overflow: hidden;"
+              >
+                平台
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="type"
+                rowspan="1"
+              >
+                类型
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="default"
+                rowspan="1"
+              >
+                默认值
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="needed"
+                rowspan="1"
+              >
+                是否必传
+              </td>
+              <td
+                class="text-ellipsis"
+                colspan="1"
+                key="detail.postion"
+                rowspan="1"
+                style="overflow: hidden;"
+              >
+                详情信息
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="description"
+                rowspan="1"
+              >
+                说明
+              </td>
+            </tr>
+          </thead>
+          <tbody
+            class="table-body"
           >
-            <td
-              class=""
-              key="name"
-              length="3"
-              style="overflow: hidden;"
+            <tr
+              key="0"
             >
-              Jim Green
-            </td>
-            <td
-              class=""
-              key="age"
-              length="3"
-              style="overflow: hidden;"
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                0
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                共有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                String
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                -
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                是
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 0 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="1"
             >
-              42
-            </td>
-            <td
-              class=""
-              key="address"
-              length="3"
-              style="overflow: hidden;"
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                1
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                私有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Number
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                0
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 1 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="2"
             >
-              London No. 1 Lake Park
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="3"
-          >
-            <td
-              class=""
-              key="name"
-              length="3"
-              style="overflow: hidden;"
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                2
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                共有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Array
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                []
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 2 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="3"
             >
-              Joe Black
-            </td>
-            <td
-              class=""
-              key="age"
-              length="3"
-              style="overflow: hidden;"
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                3
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                私有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                Object
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                {}
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 3 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+            <tr
+              key="4"
             >
-              20
-            </td>
-            <td
-              class=""
-              key="address"
-              length="3"
-              style="overflow: hidden;"
-            >
-              Sidney No. 1 Lake Park
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="4"
-          >
-            <td
-              class=""
-              key="name"
-              length="3"
-              style="overflow: hidden;"
-            >
-              Jim Red
-            </td>
-            <td
-              class=""
-              key="age"
-              length="3"
-              style="overflow: hidden;"
-            >
-              31
-            </td>
-            <td
-              class=""
-              key="address"
-              length="3"
-              style="overflow: hidden;"
-            >
-              London No. 2 Lake Park
-            </td>
-          </tr>
-          <tr
-            class=""
-            key="5"
-          >
-            <td
-              class=""
-              key="name"
-              length="3"
-              style="overflow: hidden;"
-            >
-              Jim Red 23432
-            </td>
-            <td
-              class=""
-              key="age"
-              length="3"
-              style="overflow: hidden;"
-            >
-              32
-            </td>
-            <td
-              class=""
-              key="address"
-              length="3"
-              style="overflow: hidden;"
-            >
-              London No. 2 Lake Park
-            </td>
-          </tr>
-        </tbody>
-        <tfoot />
-      </table>
+              <td
+                class="align-center row"
+                key="index"
+                length="7"
+                style="overflow: hidden;"
+              >
+                4
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="7"
+                style="overflow: hidden;"
+              >
+                共有
+              </td>
+              <td
+                class=""
+                key="type"
+                length="7"
+              >
+                String
+              </td>
+              <td
+                class=""
+                key="default"
+                length="7"
+              >
+                -
+              </td>
+              <td
+                class=""
+                key="needed"
+                length="7"
+              >
+                是
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
+                length="7"
+                style="overflow: hidden;"
+              >
+                读取 4 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
+              >
+                数据源
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Table empty demo works fine 1`] = `
+exports[`Table customCell demo works fine 1`] = `
 <div>
   <div
-    style="margin-bottom: 10px;"
+    style="margin: 16px;"
   >
-    使用默认空表格样式
+    <ul>
+      <li>
+        单元格默认使用 row[colKey] 渲染数据内容，自定义单元格有以下 3 种方式
+      </li>
+       
+      <li>
+        1) 使用 cell 作为渲染函数，函数参数为：cell(h, {col, colIndex, row, rowIndex})
+      </li>
+       
+      <li>
+        2) 插槽，使用 cell 的值作为插槽名称；如果 cell 值为空，则默认取 colKey 作为插槽名称
+      </li>
+       
+      <li>
+        3)【不推荐使用】使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，单元格的 type 值为 cell，标题的 type 值为 title
+      </li>
+    </ul>
+    <br />
   </div>
    
   <div>
@@ -2245,30 +922,24 @@ exports[`Table empty demo works fine 1`] = `
         >
           <colgroup>
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 80px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 236px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 290px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 235px;"
             />
           </colgroup>
           <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+            columnsprops="[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 colspan="1"
                 key="type"
                 rowspan="1"
@@ -2277,7 +948,7 @@ exports[`Table empty demo works fine 1`] = `
                 类型
               </td>
               <td
-                class="align-left text-ellipsis test"
+                class=""
                 colspan="1"
                 key="platform"
                 rowspan="1"
@@ -2286,38 +957,224 @@ exports[`Table empty demo works fine 1`] = `
                 平台
               </td>
               <td
-                class="align-left text-ellipsis test2"
+                class=""
                 colspan="1"
                 key="property"
                 rowspan="1"
                 style="overflow: hidden;"
               >
-                属性
+                属性名
               </td>
               <td
-                class="align-left text-ellipsis test4"
-                colspan="1"
-                key="default"
-                rowspan="1"
-                style="overflow: hidden;"
-              >
-                默认值
-              </td>
-              <td
-                class="align-left text-ellipsis test3"
-                colspan="1"
-                key="needed"
-                rowspan="1"
-                style="overflow: hidden;"
-              >
-                是否必传
-              </td>
-              <td
-                class="align-left text-ellipsis row"
+                class=""
                 colspan="1"
                 key="description"
                 rowspan="1"
                 style="overflow: hidden;"
+              >
+                render
+              </td>
+            </tr>
+          </thead>
+          <tbody
+            class="table-body"
+          >
+            <tr
+              key="data"
+            >
+              <td
+                class=""
+                key="type"
+                length="4"
+                style="overflow: hidden;"
+              >
+                
+      any[]
+    
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="4"
+                style="overflow: hidden;"
+              >
+                <svg
+                  class="t-icon t-icon-attach"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <a
+                  class="link"
+                  href="#"
+                >
+                  公有
+                </a>
+                （插槽自定义单元格）
+    
+              </td>
+              <td
+                class=""
+                key="property"
+                length="4"
+                style="overflow: hidden;"
+              >
+                <div>
+                  使用 cell 方法自定义单元格：data
+                </div>
+              </td>
+              <td
+                class=""
+                key="description"
+                length="4"
+                style="overflow: hidden;"
+              >
+                render 方法渲染单元格: 0-3
+              </td>
+            </tr>
+            <tr
+              key="rowkey"
+            >
+              <td
+                class=""
+                key="type"
+                length="4"
+                style="overflow: hidden;"
+              >
+                
+      String
+    
+              </td>
+              <td
+                class=""
+                key="platform"
+                length="4"
+                style="overflow: hidden;"
+              >
+                <svg
+                  class="t-icon t-icon-attach"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M523.28704704 165.64509056C573.20928192 117.37435264 652.6132864 118.04204864 701.7167168 167.14547904 748.2069248 213.6356864 750.6537792 287.49092608 709.05728 336.861664L701.7167168 344.85452096 413.82256192 632.7486784 368.567728 587.49384448 656.461888 299.59968704C680.5413248 275.52024448 680.5413248 236.47975552 656.461888 212.40031296 633.9327392 189.87116736 598.57078592 187.85537536 573.74725952 206.5494624L567.77445312 211.6545536 227.6828896 540.58768832C178.76892544 591.03943424 180.01554368 671.5912576 230.4672896 720.5052224 280.77590272 769.280416 359.4239296 771.1300992 411.87988288 726.4762048L419.93678848 719.0391936 803.3943296 335.58165504 848.6491648 380.8364896 465.19162304 764.2940288C388.31550144 841.1701504 263.97466048 842.1322432 185.91815296 766.4549184 113.12225408 695.877856 108.48364416 581.47709312 173.27284928 505.34925504L181.73319488 496.03855232 186.10260736 491.67500224 523.28704704 165.64509056Z"
+                    fill-opacity=".9"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <a
+                  class="link"
+                  href="#"
+                >
+                  公有
+                </a>
+                （插槽自定义单元格）
+    
+              </td>
+              <td
+                class=""
+                key="property"
+                length="4"
+                style="overflow: hidden;"
+              >
+                <div>
+                  使用 cell 方法自定义单元格：rowkey
+                </div>
+              </td>
+              <td
+                class=""
+                key="description"
+                length="4"
+                style="overflow: hidden;"
+              >
+                render 方法渲染单元格: 1-3
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Table empty demo works fine 1`] = `
+<div>
+  <div>
+    <div
+      class="t-table"
+    >
+      <div
+        class="t-table-content"
+        style="overflow: auto;"
+      >
+        <table
+          style="table-layout: fixed;"
+        >
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead
+            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+          >
+            <tr>
+              <td
+                class=""
+                colspan="1"
+                key="type"
+                rowspan="1"
+              >
+                类型
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="platform"
+                rowspan="1"
+              >
+                平台
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="property"
+                rowspan="1"
+              >
+                属性
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="default"
+                rowspan="1"
+              >
+                默认值
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="needed"
+                rowspan="1"
+              >
+                是否必传
+              </td>
+              <td
+                class=""
+                colspan="1"
+                key="description"
+                rowspan="1"
               >
                 说明
               </td>
@@ -2344,11 +1201,8 @@ exports[`Table empty demo works fine 1`] = `
     </div>
   </div>
    
-  <div
-    style="margin-bottom: 10px;"
-  >
-    自定义空表格
-  </div>
+  <br />
+  <br />
    
   <div>
     <div
@@ -2362,80 +1216,62 @@ exports[`Table empty demo works fine 1`] = `
           style="table-layout: fixed;"
         >
           <colgroup>
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
           </colgroup>
           <thead
             columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 colspan="1"
                 key="type"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 类型
               </td>
               <td
-                class="align-left text-ellipsis test"
+                class=""
                 colspan="1"
                 key="platform"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 平台
               </td>
               <td
-                class="align-left text-ellipsis test2"
+                class=""
                 colspan="1"
                 key="property"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 属性
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 colspan="1"
                 key="default"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 默认值
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 colspan="1"
                 key="needed"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 是否必传
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 colspan="1"
                 key="description"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 说明
               </td>
@@ -2449,13 +1285,13 @@ exports[`Table empty demo works fine 1`] = `
               <td
                 colspan="6"
               >
-                <div>
+                <div
+                  class="t-table--empty"
+                >
                   <span
-                    style="display: flex; align-items: center; justify-content: center; height: 100px;"
+                    style="display: flex; align-items: center; justify-content: center; height: 100px; color: rgba(0, 0, 0, 0.26);"
                   >
-                    
-      😄 It's empty.
-    
+                    😊 我是自定义的空内容 😊
                   </span>
                 </div>
               </td>
@@ -2559,7 +1395,6 @@ exports[`Table expandable demo works fine 1`] = `
             class="table-body"
           >
             <tr
-              class=""
               key="1"
             >
               <td
@@ -2639,10 +1474,7 @@ exports[`Table expandable demo works fine 1`] = `
                 </a>
               </td>
             </tr>
-            <tr
-              class=""
-              key="0"
-            >
+            <tr>
               <td
                 class="t-table-expanded-cell"
                 colspan="6"
@@ -2694,7 +1526,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="2"
             >
               <td
@@ -2707,13 +1538,13 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table-expand-box"
                 >
                   <svg
-                    class="t-icon t-icon-chevron-down-circle"
+                    class="t-icon t-icon-chevron-up-circle"
                     version="1.1"
                     viewBox="0 0 1024 1024"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M512 928C282.2495424 928.0000000000001 96 741.7504556800002 95.99999999999989 512.0000000000001 95.99999999999989 282.2495424000001 282.2495423999999 96.00000000000011 511.9999999999999 96.00000000000011 741.75045568 96 927.9999999999999 282.2495424 928 512 928 741.75045568 741.75045568 928 512 928ZM512 864C706.4042316800001 864 864 706.4042316800001 864 512 863.9999999999999 317.59576960000004 706.4042316799998 160 511.9999999999999 160.0000000000001 317.5957695999999 160.0000000000001 159.9999999999999 317.59576960000015 159.9999999999999 512.0000000000001 160 706.4042316800001 317.59576960000004 864.0000000000001 512 864ZM512 672.01855488L285.72583039999984 445.74438464000013 330.98066559999984 400.4895507200001 511.97017024 581.4585548800001 693.0193356799999 400.36695424000004 738.2741702399999 445.62178816000005 512 672.01855488Z"
+                      d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM512 160C317.59576832 160 160 317.59576832 160 512 160 706.4042304 317.59576832 864 512 864 706.4042304 864 864 706.4042304 864 512 864 317.59576832 706.4042304 160 512 160ZM512 351.98144512L738.2741696 578.25561536 693.0193344 623.51044928 512.02982976 442.54144512 330.98066432 623.63304576 285.72582976 578.37821184 512 351.98144512Z"
                       fill-rule="evenodd"
                     />
                   </svg>
@@ -2775,8 +1606,7 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
-              key="0"
+              style="display: none;"
             >
               <td
                 class="t-table-expanded-cell"
@@ -2829,7 +1659,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="3"
             >
               <td
@@ -2910,8 +1739,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
-              key="0"
               style="display: none;"
             >
               <td
@@ -2965,7 +1792,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="4"
             >
               <td
@@ -3046,8 +1872,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
-              key="0"
               style="display: none;"
             >
               <td
@@ -3101,7 +1925,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
           </tbody>
-          <tfoot />
         </table>
       </div>
     </div>
@@ -3112,7 +1935,7 @@ exports[`Table expandable demo works fine 1`] = `
 exports[`Table fixedColumn demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table__cell--fixed t-table--has-fixed"
+    class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed"
   >
     <div
       class="t-table-content"
@@ -3123,39 +1946,42 @@ exports[`Table fixedColumn demo works fine 1`] = `
       >
         <colgroup>
           <col
-            style="width: 150px; min-width: 150px;"
+            style="width: 150px;"
           />
           <col
-            style="width: 150px; min-width: 150px;"
+            style="width: 150px;"
           />
           <col
-            style="width: 200px; min-width: 200px;"
+            style="width: 150px;"
           />
           <col
-            style="width: 200px; min-width: 200px;"
+            style="width: 150px;"
           />
           <col
-            style="width: 200px; min-width: 200px;"
+            style="width: 250px;"
           />
           <col
-            style="width: 200px; min-width: 200px;"
+            style="width: 150px;"
+          />
+          <col
+            style="width: 80px;"
           />
         </colgroup>
         <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
         >
           <tr>
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis row"
+              class="t-table__cell--fixed-left align-center"
               colspan="1"
-              key="type"
+              key="index"
               rowspan="1"
               style="position: sticky; left: 0px; overflow: hidden;"
             >
-              类型
+              序号
             </td>
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis test"
+              class="t-table__cell--fixed-left"
               colspan="1"
               key="platform"
               rowspan="1"
@@ -3164,16 +1990,16 @@ exports[`Table fixedColumn demo works fine 1`] = `
               平台
             </td>
             <td
-              class="align-left text-ellipsis test2"
+              class=""
               colspan="1"
-              key="property"
+              key="type"
               rowspan="1"
               style="overflow: hidden;"
             >
-              属性
+              类型
             </td>
             <td
-              class="align-left text-ellipsis test4"
+              class=""
               colspan="1"
               key="default"
               rowspan="1"
@@ -3182,22 +2008,31 @@ exports[`Table fixedColumn demo works fine 1`] = `
               默认值
             </td>
             <td
-              class="align-left text-ellipsis test3"
+              class=""
+              colspan="1"
+              key="detail.postion"
+              rowspan="1"
+              style="overflow: hidden;"
+            >
+              详情信息
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
               colspan="1"
               key="needed"
               rowspan="1"
-              style="overflow: hidden;"
+              style="position: sticky; right: 0px; overflow: hidden;"
             >
               是否必传
             </td>
             <td
-              class="t-table__cell--fixed-right align-left text-ellipsis row"
+              class="t-table__cell--fixed-right"
               colspan="1"
-              key="description"
+              key="operation"
               rowspan="1"
               style="position: sticky; right: 0px; overflow: hidden;"
             >
-              说明
+              操作
             </td>
           </tr>
         </thead>
@@ -3205,113 +2040,306 @@ exports[`Table fixedColumn demo works fine 1`] = `
           class="table-body"
         >
           <tr
-            class=""
-            key="data"
+            key="0"
           >
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis row"
-              key="type"
-              length="6"
+              class="t-table__cell--fixed-left align-center"
+              key="index"
+              length="7"
               style="position: sticky; left: 0px; overflow: hidden;"
             >
-              any[]
+              0
             </td>
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis test"
+              class="t-table__cell--fixed-left"
               key="platform"
-              length="6"
+              length="7"
               style="position: sticky; left: 0px; overflow: hidden;"
             >
-              公有，代表这个数据可以是被公开的
+              共有
             </td>
             <td
-              class="align-left text-ellipsis test2"
-              key="property"
-              length="6"
+              class=""
+              key="type"
+              length="7"
               style="overflow: hidden;"
             >
-              data
+              String
             </td>
             <td
-              class="align-left text-ellipsis test4"
+              class=""
               key="default"
-              length="6"
+              length="7"
+              style="overflow: hidden;"
+            >
+              -
+            </td>
+            <td
+              class=""
+              key="detail.postion"
+              length="7"
+              style="overflow: hidden;"
+            >
+              读取 0 个数据的嵌套信息值
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="needed"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              是
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="operation"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              删除
+            </td>
+          </tr>
+          <tr
+            key="1"
+          >
+            <td
+              class="t-table__cell--fixed-left align-center"
+              key="index"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              1
+            </td>
+            <td
+              class="t-table__cell--fixed-left"
+              key="platform"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              私有
+            </td>
+            <td
+              class=""
+              key="type"
+              length="7"
+              style="overflow: hidden;"
+            >
+              Number
+            </td>
+            <td
+              class=""
+              key="default"
+              length="7"
+              style="overflow: hidden;"
+            >
+              0
+            </td>
+            <td
+              class=""
+              key="detail.postion"
+              length="7"
+              style="overflow: hidden;"
+            >
+              读取 1 个数据的嵌套信息值
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="needed"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              否
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="operation"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              删除
+            </td>
+          </tr>
+          <tr
+            key="2"
+          >
+            <td
+              class="t-table__cell--fixed-left align-center"
+              key="index"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              2
+            </td>
+            <td
+              class="t-table__cell--fixed-left"
+              key="platform"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              共有
+            </td>
+            <td
+              class=""
+              key="type"
+              length="7"
+              style="overflow: hidden;"
+            >
+              Array
+            </td>
+            <td
+              class=""
+              key="default"
+              length="7"
               style="overflow: hidden;"
             >
               []
             </td>
             <td
-              class="align-left text-ellipsis test3"
-              key="needed"
-              length="6"
+              class=""
+              key="detail.postion"
+              length="7"
               style="overflow: hidden;"
             >
-              Y
+              读取 2 个数据的嵌套信息值
             </td>
             <td
-              class="t-table__cell--fixed-right align-left text-ellipsis row"
-              key="description"
-              length="6"
+              class="t-table__cell--fixed-right"
+              key="needed"
+              length="7"
               style="position: sticky; right: 0px; overflow: hidden;"
             >
-              数据源
+              否
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="operation"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              删除
             </td>
           </tr>
           <tr
-            class=""
-            key="rowkey"
+            key="3"
           >
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis row"
-              key="type"
-              length="6"
+              class="t-table__cell--fixed-left align-center"
+              key="index"
+              length="7"
               style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              3
+            </td>
+            <td
+              class="t-table__cell--fixed-left"
+              key="platform"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              私有
+            </td>
+            <td
+              class=""
+              key="type"
+              length="7"
+              style="overflow: hidden;"
+            >
+              Object
+            </td>
+            <td
+              class=""
+              key="default"
+              length="7"
+              style="overflow: hidden;"
+            >
+              {}
+            </td>
+            <td
+              class=""
+              key="detail.postion"
+              length="7"
+              style="overflow: hidden;"
+            >
+              读取 3 个数据的嵌套信息值
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="needed"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              否
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="operation"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              删除
+            </td>
+          </tr>
+          <tr
+            key="4"
+          >
+            <td
+              class="t-table__cell--fixed-left align-center"
+              key="index"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              4
+            </td>
+            <td
+              class="t-table__cell--fixed-left"
+              key="platform"
+              length="7"
+              style="position: sticky; left: 0px; overflow: hidden;"
+            >
+              共有
+            </td>
+            <td
+              class=""
+              key="type"
+              length="7"
+              style="overflow: hidden;"
             >
               String
             </td>
             <td
-              class="t-table__cell--fixed-left align-left text-ellipsis test"
-              key="platform"
-              length="6"
-              style="position: sticky; left: 0px; overflow: hidden;"
-            >
-              公有
-            </td>
-            <td
-              class="align-left text-ellipsis test2"
-              key="property"
-              length="6"
-              style="overflow: hidden;"
-            >
-              rowkey
-            </td>
-            <td
-              class="align-left text-ellipsis test4"
+              class=""
               key="default"
-              length="6"
+              length="7"
               style="overflow: hidden;"
             >
-              -1
+              -
             </td>
             <td
-              class="align-left text-ellipsis test3"
+              class=""
+              key="detail.postion"
+              length="7"
+              style="overflow: hidden;"
+            >
+              读取 4 个数据的嵌套信息值
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
               key="needed"
-              length="6"
-              style="overflow: hidden;"
-            >
-              Y
-            </td>
-            <td
-              class="t-table__cell--fixed-right align-left text-ellipsis row"
-              key="description"
-              length="6"
+              length="7"
               style="position: sticky; right: 0px; overflow: hidden;"
             >
-              指定rowkey
+              是
+            </td>
+            <td
+              class="t-table__cell--fixed-right"
+              key="operation"
+              length="7"
+              style="position: sticky; right: 0px; overflow: hidden;"
+            >
+              删除
             </td>
           </tr>
         </tbody>
-        <tfoot />
       </table>
     </div>
   </div>
@@ -3321,7 +2349,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
 exports[`Table fixedHeader demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--hoverable t-table__header--fixed"
+    class="t-table t-table__header--fixed"
   >
     <div
       class="t-table-content"
@@ -3335,51 +2363,34 @@ exports[`Table fixedHeader demo works fine 1`] = `
         >
           <colgroup>
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
+            <col />
+            <col />
+            <col />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 200px;"
             />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
+            <col />
           </colgroup>
           <thead
             columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 colspan="1"
                 key="index"
                 rowspan="1"
                 style="overflow: hidden;"
               >
-                index
+                序号
               </td>
               <td
-                class="align-left text-ellipsis row"
-                colspan="1"
-                key="type"
-                rowspan="1"
-                style="overflow: hidden;"
-              >
-                类型
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 colspan="1"
                 key="platform"
                 rowspan="1"
@@ -3388,38 +2399,43 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 平台
               </td>
               <td
-                class="align-left text-ellipsis test2"
+                class=""
                 colspan="1"
-                key="property"
+                key="type"
                 rowspan="1"
-                style="overflow: hidden;"
               >
-                属性
+                类型
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 colspan="1"
                 key="default"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 默认值
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 colspan="1"
                 key="needed"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 是否必传
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class="text-ellipsis"
+                colspan="1"
+                key="detail.postion"
+                rowspan="1"
+                style="overflow: hidden;"
+              >
+                详情信息
+              </td>
+              <td
+                class=""
                 colspan="1"
                 key="description"
                 rowspan="1"
-                style="overflow: hidden;"
               >
                 说明
               </td>
@@ -3429,43 +2445,34 @@ exports[`Table fixedHeader demo works fine 1`] = `
       </div>
       <div
         class="t-table__body"
-        style="max-height: 100px; width: 100%;"
+        style="height: 200px;"
       >
         <table
           style="table-layout: fixed;"
         >
           <colgroup>
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 100px;"
             />
+            <col />
+            <col />
+            <col />
             <col
-              style="width: 100px; min-width: 100px;"
+              style="width: 200px;"
             />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
-            <col
-              style="width: 100px; min-width: 100px;"
-            />
+            <col />
           </colgroup>
           <tbody
             class="table-body"
           >
             <tr
-              class=""
-              key="data"
+              key="0"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3473,60 +2480,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 0
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                String
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                -
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 0 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="1"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3534,60 +2536,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 1
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Number
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                0
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 1 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="2"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3595,60 +2592,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 2
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Array
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
                 []
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
               >
-                Y
+                读取 2 个数据的嵌套信息值
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 key="description"
                 length="7"
-                style="overflow: hidden;"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="3"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3656,60 +2648,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 3
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Object
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                {}
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 3 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="4"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3717,60 +2704,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 4
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                String
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                -
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 4 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="5"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3778,60 +2760,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 5
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Number
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                0
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 5 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="6"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3839,60 +2816,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 6
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Array
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
                 []
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
               >
-                Y
+                读取 6 个数据的嵌套信息值
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 key="description"
                 length="7"
-                style="overflow: hidden;"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="7"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3900,60 +2872,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 7
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Object
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                {}
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 7 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="8"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -3961,60 +2928,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 8
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                String
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                -
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 8 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="9"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4022,60 +2984,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 9
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Number
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                0
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 9 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="10"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4083,60 +3040,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 10
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Array
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
                 []
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
               >
-                Y
+                读取 10 个数据的嵌套信息值
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 key="description"
                 length="7"
-                style="overflow: hidden;"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="11"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4144,60 +3096,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 11
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Object
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                {}
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 11 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="12"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4205,60 +3152,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 12
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                String
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                -
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 12 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="13"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4266,60 +3208,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 13
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Number
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                0
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 13 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="14"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4327,60 +3264,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 14
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Array
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
                 []
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
               >
-                Y
+                读取 14 个数据的嵌套信息值
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 key="description"
                 length="7"
-                style="overflow: hidden;"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="15"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4388,60 +3320,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 15
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Object
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                {}
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 15 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="16"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4449,60 +3376,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 16
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                String
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                -
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                是
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 16 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="17"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4510,60 +3432,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 17
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Number
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                0
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 17 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="18"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4571,60 +3488,55 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 18
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                共有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Array
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
                 []
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
+                length="7"
+              >
+                否
+              </td>
+              <td
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
               >
-                Y
+                读取 18 个数据的嵌套信息值
               </td>
               <td
-                class="align-left text-ellipsis row"
+                class=""
                 key="description"
                 length="7"
-                style="overflow: hidden;"
               >
                 数据源
               </td>
             </tr>
             <tr
-              class=""
-              key="data"
+              key="19"
             >
               <td
-                class="align-left text-ellipsis row"
+                class="align-center"
                 key="index"
                 length="7"
                 style="overflow: hidden;"
@@ -4632,56 +3544,51 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 19
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="type"
-                length="7"
-                style="overflow: hidden;"
-              >
-                any[]
-              </td>
-              <td
-                class="align-left text-ellipsis test"
+                class=""
                 key="platform"
                 length="7"
                 style="overflow: hidden;"
               >
-                公有
+                私有
               </td>
               <td
-                class="align-left text-ellipsis test2"
-                key="property"
+                class=""
+                key="type"
                 length="7"
-                style="overflow: hidden;"
               >
-                data
+                Object
               </td>
               <td
-                class="align-left text-ellipsis test4"
+                class=""
                 key="default"
                 length="7"
-                style="overflow: hidden;"
               >
-                []
+                {}
               </td>
               <td
-                class="align-left text-ellipsis test3"
+                class=""
                 key="needed"
                 length="7"
-                style="overflow: hidden;"
               >
-                Y
+                否
               </td>
               <td
-                class="align-left text-ellipsis row"
-                key="description"
+                class="text-ellipsis"
+                key="detail.postion"
                 length="7"
                 style="overflow: hidden;"
+              >
+                读取 19 个数据的嵌套信息值
+              </td>
+              <td
+                class=""
+                key="description"
+                length="7"
               >
                 数据源
               </td>
             </tr>
           </tbody>
-          <tfoot />
         </table>
       </div>
     </div>
@@ -4714,7 +3621,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               colspan="4"
               rowspan="1"
             >
-              属性及说明
+              汇总属性
             </td>
             <td
               class=""
@@ -4766,7 +3673,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               colspan="1"
               key="type"
               rowspan="1"
-              style="overflow: hidden;"
+              style="overflow: hidden; border-left: 1px solid #E7E7E7;"
             >
               类型
             </td>
@@ -4794,8 +3701,7 @@ exports[`Table multiHeader demo works fine 1`] = `
           class="table-body"
         >
           <tr
-            class=""
-            key="1"
+            key="data"
           >
             <td
               class="align-left text-ellipsis test"
@@ -4847,8 +3753,7 @@ exports[`Table multiHeader demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class=""
-            key="2"
+            key="rowkey"
           >
             <td
               class="align-left text-ellipsis test"
@@ -4900,7 +3805,6 @@ exports[`Table multiHeader demo works fine 1`] = `
             </td>
           </tr>
         </tbody>
-        <tfoot />
       </table>
     </div>
   </div>
@@ -5015,7 +3919,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
             class="table-body"
           >
             <tr
-              class=""
               key="1"
             >
               <td
@@ -5096,7 +3999,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="2"
             >
               <td
@@ -5178,7 +4080,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="3"
             >
               <td
@@ -5259,7 +4160,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="4"
             >
               <td
@@ -5341,7 +4241,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
               </td>
             </tr>
           </tbody>
-          <tfoot />
         </table>
       </div>
     </div>
@@ -5364,7 +4263,7 @@ exports[`Table selectSingle demo works fine 1`] = `
         >
           <colgroup>
             <col
-              style="width: 40px;"
+              style="width: 50px;"
             />
             <col
               style="width: 150px;"
@@ -5440,7 +4339,6 @@ exports[`Table selectSingle demo works fine 1`] = `
             class="table-body"
           >
             <tr
-              class=""
               key="1"
             >
               <td
@@ -5526,7 +4424,6 @@ exports[`Table selectSingle demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="2"
             >
               <td
@@ -5536,7 +4433,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 style="overflow: hidden;"
               >
                 <label
-                  class="t-radio"
+                  class="t-radio t-is-disabled"
                   style="display: inline-block"
                   type="function VueComponent (options) {
         this._init(options);
@@ -5544,6 +4441,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <input
                     class="t-radio__former"
+                    disabled=""
                     name=""
                     type="radio"
                     value=""
@@ -5612,7 +4510,6 @@ exports[`Table selectSingle demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="3"
             >
               <td
@@ -5698,7 +4595,6 @@ exports[`Table selectSingle demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              class=""
               key="4"
             >
               <td
@@ -5708,7 +4604,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 style="overflow: hidden;"
               >
                 <label
-                  class="t-radio"
+                  class="t-radio t-is-disabled"
                   style="display: inline-block"
                   type="function VueComponent (options) {
         this._init(options);
@@ -5716,6 +4612,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <input
                     class="t-radio__former"
+                    disabled=""
                     name=""
                     type="radio"
                     value=""
@@ -5784,7 +4681,6 @@ exports[`Table selectSingle demo works fine 1`] = `
               </td>
             </tr>
           </tbody>
-          <tfoot />
         </table>
       </div>
     </div>

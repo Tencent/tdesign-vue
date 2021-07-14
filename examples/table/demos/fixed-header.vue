@@ -1,115 +1,66 @@
 <template>
   <t-table
+    rowKey="index"
     :data="data"
     :columns="columns"
-    :rowKey="rowKey"
-    :bordered="bordered"
-    :hover="hover"
-    :stripe="stripe"
-    :height="height"
-    :onScrollY="onScrollY"
-    @scroll-y="scrollY">
-  </t-table>
+    :height="200"
+  ></t-table>
 </template>
 <script>
+const data = [];
+for (let i = 0; i < 20; i ++) {
+  data.push({
+    index: i,
+    platform: i % 2 === 0 ? '共有' : '私有',
+    type: ['String', 'Number', 'Array', 'Object'][i % 4],
+    default: ['-', '0', '[]', '{}'][i % 4],
+    detail: {
+      postion: `读取 ${i} 个数据的嵌套信息值`,
+    },
+    needed: i % 4 === 0 ? '是' : '否',
+    description: '数据源',
+  });
+}
 export default {
   data() {
-    const item = {
-      property: 'data',
-      platform: '公有',
-      type: 'any[]',
-      default: '[]',
-      needed: 'Y',
-      description: '数据源',
-    };
-    const data = [];
-    for (let i = 0;i < 20; i ++) {
-      data.push({
-        ...item,
-        index: i,
-      });
-    }
     return {
       data,
       columns: [
         {
-          align: 'left',
+          align: 'center',
           width: '100',
-          minWidth: '100',
-          className: 'row',
-          ellipsis: true,
           colKey: 'index',
-          title: 'index',
+          title: '序号',
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'row',
-          ellipsis: true,
-          colKey: 'type',
-          title: '类型',
-        },
-        {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test',
-          ellipsis: true,
+          width: 100,
           colKey: 'platform',
           title: '平台',
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test2',
-          ellipsis: true,
-          colKey: 'property',
-          title: '属性',
+          colKey: 'type',
+          title: '类型',
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test4',
-          ellipsis: true,
           colKey: 'default',
           title: '默认值',
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test3',
-          ellipsis: true,
           colKey: 'needed',
           title: '是否必传',
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'row',
+          colKey: 'detail.postion',
+          title: '详情信息',
+          width: 200,
           ellipsis: true,
+        },
+        {
           colKey: 'description',
           title: '说明',
         },
       ],
-      height: 100,
-      rowKey: 'property',
-      bordered: true,
-      hover: true,
-      stripe: true,
     };
-  },
-  methods: {
-    onScrollY() {
-      console.log('@scroll-y与onScrollY任选一种方式即可，onScrollX事件类似');
-    },
-    scrollY() {
-      console.log('scroll-y');
-    },
   },
 };
 </script>
