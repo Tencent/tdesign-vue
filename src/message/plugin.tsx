@@ -150,6 +150,7 @@ export const MessagePlugin: (
   & MessageMethod
   & ExtraApi
 ) = _MessagePlugin as any;
+
 export default MessagePlugin;
 
 declare module 'vue/types/vue' {
