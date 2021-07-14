@@ -1,14 +1,15 @@
 <template>
   <t-table
+    rowKey="index"
     :data="data"
     :columns="columns"
-    rowKey="index"
+    height="200"
     bordered
   ></t-table>
 </template>
 <script>
 const data = [];
-for (let i = 0; i < 5; i ++) {
+for (let i = 0; i < 20; i ++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',

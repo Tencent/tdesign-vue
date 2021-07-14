@@ -1,36 +1,33 @@
 <template>
   <div>
-    <div style="margin-bottom: 10px;">
-      columns 中通过定义 scopedSlots 或者 render 方法来实现自定义单元格的渲染。
-      其中 key 值为 'title' 时，代表用指定插槽自定义表头。其中 key 值为 'col' 时，代表用指定插槽自定义内容部分的单元格。</div>
-    <t-table
-      :data="data"
-      :columns="columns"
-      :rowKey="rowKey"
-      :bordered="bordered"
-      :hover="hover"
-      :stripe="stripe"
-    >
-      <!-- 自定义表头 支持 slot -->
-      <span slot='type'>
-        <t-icon-app /> 类型
-      </span>
-      <!-- 自定义单元格 支持 slot -->
-      <span slot='platform' slot-scope='{record}'>
-        <t-icon-attach /><a href="#" class="link">{{ record.platform }}</a>
-      </span>
-      <span slot='default' slot-scope='{record}'>
-        未指定 scopedSlots 的插槽会默认用来渲染表格内容单元格。 {{record.default}}
-      </span>
+    <div style="margin: 16px;">
+      <ul>
+        <li>单元格默认使用 row[colKey] 渲染数据内容，自定义单元格有以下 3 种方式</li>
+        <li>1) 使用 cell 作为渲染函数，函数参数为：cell(h, {col, colIndex, row, rowIndex})</li>
+        <li>2) 插槽，使用 cell 的值作为插槽名称；如果 cell 值为空，则默认取 colKey 作为插槽名称</li>
+        <li>3)【不推荐使用】使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，单元格的 type 值为 cell，标题的 type 值为 title</li>
+      </ul><br>
+    </div>
+    <t-table :data="data" :columns="columns" rowKey="property">
+
+      <!-- 插槽方式 自定义单元格：cell 的值为插槽名称，参数有：{col, colIndex, row, rowIndex}  -->
+      <template #type-slot-name="{ col, row }">
+        {{ row[col.colKey] }}
+      </template>
+
+      <!-- 插槽方式 自定义单元格， colKey 的值默认为插槽名称  -->
+      <template #platform="{ row }">
+        <t-icon-attach /><a href="#" class="link">{{ row.platform }}</a>（插槽自定义单元格）
+      </template>
+
     </t-table>
   </div>
 </template>
 <script>
-import TIconApp from '@tencent/tdesign-vue/lib/icon/app';
 import TIconAttach from '@tencent/tdesign-vue/lib/icon/attach';
+
 export default {
   components: {
-    TIconApp,
     TIconAttach,
   },
   data() {
@@ -49,76 +46,45 @@ export default {
           property: 'rowkey',
           type: 'String',
           default: '-1',
-          needed: 'Y',
+          needed: 'N',
           description: '指定rowkey',
         },
       ],
       columns: [
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'row',
           colKey: 'type',
-          scopedSlots: {
-            title: 'type',
-          },
+          title: '类型',
+          // type-slot-name 会被用于自定义单元格的插槽名称
+          cell: 'type-slot-name',
+          // scopedSlots: {
+          //   col: 'type-slot-name',
+          // },
+          width: 80,
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test',
+          // 没有 cell 的情况下， platform 会被用作自定义单元格的插槽名称
           colKey: 'platform',
           title: '平台',
-          scopedSlots: {
-            col: 'platform',
-          },
+          width: 236,
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test2',
           colKey: 'property',
           title: '属性名',
-          ellipsis: true,
-          render({ index, record }) {
-            return `render 方法渲染的单元格：${index}: ${record.property}`;
-          },
+          cell: (h, { col, row }) => <div>使用 cell 方法自定义单元格：{row[col.colKey]}</div>,
+          width: 290,
         },
         {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test4',
-          colKey: 'default',
-          title() {
-            return '默认值';
-          },
-        },
-        {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'test3',
-          colKey: 'needed',
-          title: '是否必传',
-        },
-        {
-          align: 'left',
-          width: '100',
-          minWidth: '100',
-          className: 'row',
           colKey: 'description',
-          title: '说明',
+          // render 即可渲染表头，也可以渲染单元格。但 cell 只能渲染单元格，title 只能渲染表头
+          render(h, context) {
+            console.log(context);
+            const { type, rowIndex, colIndex } = context;
+            if (type === 'title') return 'render';
+            return `render 方法渲染单元格: ${rowIndex}-${colIndex}`;
+          },
+          width: 235,
         },
       ],
-      rowKey: 'property',
-      bordered: true,
-      hover: true,
-      stripe: true,
-      height: 100,
     };
   },
 };

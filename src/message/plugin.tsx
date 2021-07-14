@@ -131,25 +131,19 @@ const extraApi: ExtraApi = {
   },
 };
 
-const _MessagePlugin: Vue.PluginObject<undefined> = {
-  install: () => {
-    Vue.prototype.$message = showThemeMessage;
-    // 这样定义后，可以通过 this.$message 调用插件
-    Object.keys(extraApi).forEach((funcName) => {
-      Vue.prototype.$message[funcName] = extraApi[funcName];
-    });
-  },
-};
+export type MessagePluginType = Vue.PluginObject<undefined> & ExtraApi & MessageMethod;
 
+export const MessagePlugin: MessagePluginType = showThemeMessage as MessagePluginType;
+
+// 这样定义后，可以通过 MessagePlugin('success', '消息') 或者 MessagePlugin.success('消息')调用插件
 Object.keys(extraApi).forEach((funcName) => {
-  _MessagePlugin[funcName] = extraApi[funcName];
+  MessagePlugin[funcName] = extraApi[funcName];
 });
 
-export const MessagePlugin: (
-  Vue.PluginObject<undefined>
-  & MessageMethod
-  & ExtraApi
-) = _MessagePlugin as any;
+MessagePlugin.install = () => {
+  // 这样定义后，可以通过 this.$message 调用插件
+  Vue.prototype.$message = MessagePlugin;
+};
 
 export default MessagePlugin;
 

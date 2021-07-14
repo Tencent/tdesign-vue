@@ -42,6 +42,9 @@ export default {
     confirm: '确定',
     cancel: '取消',
   },
+  table: {
+    empty: '暂无数据',
+  },
   select: {
     empty: '暂无数据',
     loadingText: '加载中',

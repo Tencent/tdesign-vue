@@ -55,15 +55,14 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   return createLoading(options);
 }
 
-const _LoadingPlugin: Vue.PluginObject<undefined> = {
-  install: () => {
-    Vue.prototype.$loading = produceLoading;
-  },
-};
+export type LoadingPluginType = Vue.PluginObject<undefined> & LoadingMethod;
 
-export const LoadingPlugin: (
-  Vue.PluginObject<undefined>
-) = _LoadingPlugin as any;
+export const LoadingPlugin: LoadingPluginType = produceLoading as LoadingPluginType;
+
+LoadingPlugin.install = () => {
+  // 这样定义后，可以通过 this.$loading 调用插件
+  Vue.prototype.$loading = produceLoading;
+};
 
 export default LoadingPlugin;
 

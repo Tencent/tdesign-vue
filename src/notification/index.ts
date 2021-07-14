@@ -5,6 +5,6 @@ import { TdNotificationProps } from '../../types/notification/TdNotificationProp
 export * from '../../types/notification/TdNotificationProps';
 export type NotificationProps = TdNotificationProps;
 
-export { default as NotifyPlugin } from './plugin';
+export * from './plugin';
 export const Notification = withInstall('Notification', _Notification);
 export default Notification;

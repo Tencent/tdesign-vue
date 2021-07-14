@@ -28,12 +28,12 @@ const NotificationFunction = (options: NotificationOptions): Promise<Notificatio
   };
   hackOptions.content = options.content ? options.content : '';
 
-  const _a = getAttach(hackOptions.attach);
-  if (!instanceMap.get(_a)) {
-    instanceMap.set(_a, {});
+  const attachEl = getAttach(hackOptions.attach);
+  if (!instanceMap.get(attachEl)) {
+    instanceMap.set(attachEl, {});
   }
-  let _p = instanceMap.get(_a)[hackOptions.placement];
-  if (!_p) {
+  let tmpInstance = instanceMap.get(attachEl)[hackOptions.placement];
+  if (!tmpInstance) {
     const List = new NotificationList({
       propsData: {
         placement: hackOptions.placement,
@@ -41,16 +41,16 @@ const NotificationFunction = (options: NotificationOptions): Promise<Notificatio
     });
     List.add(hackOptions);
     List.$mount();
-    instanceMap.get(_a)[hackOptions.placement] = List;
-    _a.appendChild(List.$el);
-    _p = instanceMap.get(_a)[hackOptions.placement];
+    instanceMap.get(attachEl)[hackOptions.placement] = List;
+    attachEl.appendChild(List.$el);
+    tmpInstance = instanceMap.get(attachEl)[hackOptions.placement];
   } else {
-    _p.add(hackOptions);
+    tmpInstance.add(hackOptions);
   }
 
   return new Promise((resolve) => {
-    _p.$nextTick(() => {
-      const list = _p.$children;
+    tmpInstance.$nextTick(() => {
+      const list = tmpInstance.$children;
       resolve(list[list.length - 1]);
     });
   });
@@ -87,25 +87,25 @@ const extraApi: ExtraApi = {
   },
 };
 
-const _NotificationPlugin: Vue.PluginObject<undefined> = {
-  install: () => {
-    Vue.prototype.$notify = showThemeNotification;
-    Object.keys(extraApi).forEach((funcName) => {
-      Vue.prototype.$notify[funcName] = extraApi[funcName];
-    });
-  },
-};
+export type NotificationPluginType = Vue.PluginObject<undefined> & ExtraApi & NotificationMethod;
 
+export const NotificationPlugin: NotificationPluginType = showThemeNotification as NotificationPluginType;
+
+// 这样定义后，可以通过 NotificationPlugin('success', '消息') 或者 NotificationPlugin.success('消息')调用插件
 Object.keys(extraApi).forEach((funcName) => {
-  _NotificationPlugin[funcName] = extraApi[funcName];
+  NotificationPlugin[funcName] = extraApi[funcName];
 });
 
-export const NotificationPlugin: (
-  Vue.PluginObject<undefined>
-  & NotificationMethod
-  & ExtraApi
-) = _NotificationPlugin as any;
-export default NotificationPlugin;
+NotificationPlugin.install = () => {
+  // 这样定义后，可以通过 this.$notify 调用插件
+  Vue.prototype.$notify = NotificationPlugin;
+  // 这样定义后，可以通过 this.$notification 调用插件
+  Vue.prototype.$notification = NotificationPlugin;
+};
+
+export const NotifyPlugin = NotificationPlugin;
+
+export default NotifyPlugin;
 
 declare module 'vue/types/vue' {
   // Bind to `this` keyword
