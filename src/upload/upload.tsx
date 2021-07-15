@@ -105,6 +105,7 @@ export default Vue.extend({
       if (!file.url) throw new Error('Error file');
       this.showImageViewUrl = file.url;
       this.showImageViewDialog = true;
+      this.$emit('preview', { file, e: event });
     },
 
     handleChange(event: HTMLInputEvent): void {
