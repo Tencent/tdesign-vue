@@ -47,7 +47,7 @@ function getDemoRoutes() {
       const match = key.match(/([\w-]+).demos.([\w-]+).vue/);
       const [, componentName, demoName] = match;
       return {
-        path: `/demos/${componentName}/${demoName}`,
+        path: `/vue/demos/${componentName}/${demoName}`,
         props: { componentName, demo: demoReq(key).default },
         component: TdesignDemoPage,
       };
@@ -69,7 +69,7 @@ const routes = [
   },
   ...demoRoutes,
   {
-    path: '/demos*',
+    path: '/vue/demos*',
     component: TdesignDemoList,
     props: { demoRoutes },
   },
