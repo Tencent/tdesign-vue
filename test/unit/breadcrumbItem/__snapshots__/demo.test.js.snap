@@ -9,8 +9,6 @@ exports[`Breadcrumb-item base demo works fine 1`] = `
   >
     <a
       class="t-breadcrumb--text-oveflow t-link"
-      href=""
-      target="_self"
     >
       <span
         class="t-breadcrumb__inner"
