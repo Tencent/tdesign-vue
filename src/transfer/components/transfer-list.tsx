@@ -239,7 +239,7 @@ export default Vue.extend({
           {this.curPageData.length > 0 ? this.renderContent() : this.renderEmpty()}
         </div>
         {
-          (this.pagination && this.pageSize > 0)
+          (this.pagination && this.pageSize > 0 && this.pageTotal > 0)
           && <div class={`${this.name}__pagination`}>
             <t-pagination
               props={this.paginationProps}
