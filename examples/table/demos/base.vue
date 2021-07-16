@@ -71,10 +71,6 @@ export default {
           width: 200,
           ellipsis: true,
         },
-        {
-          colKey: 'description',
-          title: '说明',
-        },
       ],
       /** 非受控用法：与分页组件对齐 */
       pagination: {

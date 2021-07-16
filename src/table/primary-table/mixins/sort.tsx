@@ -245,10 +245,12 @@ export default Vue.extend({
             class: `${prefix}-table-sort-icon`,
           };
           columnTitle = () => (
-            <span>
-              {title}
+            <div class={`${prefix}-table__cell--sortable`}>
+              <div class={`${prefix}-table__cell--title`}>
+                <div>{title}</div>
+              </div>
               {<SorterButton {...sorterButtonsProps} />}
-            </span>
+            </div>
           );
         } else {
           columnTitle = title;

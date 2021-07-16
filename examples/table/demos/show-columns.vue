@@ -1,9 +1,9 @@
 <template>
   <div>
     <t-table :columns="columns" :data="data" show-columns>
-      <template #status="{ record }">
-        <p v-if="record.status === 0" class="status">健康</p>
-        <p v-if="record.status === 1" class="status unhealth">异常</p>
+      <template #status="{ row }">
+        <p v-if="row.status === 0" class="status">健康</p>
+        <p v-if="row.status === 1" class="status unhealth">异常</p>
       </template>
       <template #op-column><p>操作</p></template>
       <template #op="slotProps">

@@ -84,10 +84,9 @@ exports[`Table base demo works fine 1`] = `
             <col
               style="width: 200px;"
             />
-            <col />
           </colgroup>
           <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
@@ -141,14 +140,6 @@ exports[`Table base demo works fine 1`] = `
               >
                 详情信息
               </td>
-              <td
-                class=""
-                colspan="1"
-                key="description"
-                rowspan="1"
-              >
-                说明
-              </td>
             </tr>
           </thead>
           <tbody
@@ -160,7 +151,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 0
@@ -168,7 +159,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -176,38 +167,31 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 String
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 -
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 是
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 0 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -216,7 +200,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 1
@@ -224,7 +208,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 私有
@@ -232,38 +216,31 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Number
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 0
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 1 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -272,7 +249,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 2
@@ -280,7 +257,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -288,38 +265,31 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Array
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 []
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 2 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -328,7 +298,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 3
@@ -336,7 +306,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 私有
@@ -344,38 +314,31 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Object
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 {}
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 3 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -384,7 +347,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 4
@@ -392,7 +355,7 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -400,38 +363,31 @@ exports[`Table base demo works fine 1`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 String
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 -
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 是
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 4 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
           </tbody>
@@ -526,10 +482,9 @@ exports[`Table base demo works fine 2`] = `
             <col
               style="width: 200px;"
             />
-            <col />
           </colgroup>
           <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           >
             <tr>
               <td
@@ -583,14 +538,6 @@ exports[`Table base demo works fine 2`] = `
               >
                 详情信息
               </td>
-              <td
-                class=""
-                colspan="1"
-                key="description"
-                rowspan="1"
-              >
-                说明
-              </td>
             </tr>
           </thead>
           <tbody
@@ -602,7 +549,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 0
@@ -610,7 +557,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -618,38 +565,31 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 String
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 -
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 是
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 0 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -658,7 +598,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 1
@@ -666,7 +606,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 私有
@@ -674,38 +614,31 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Number
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 0
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 1 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -714,7 +647,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 2
@@ -722,7 +655,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -730,38 +663,31 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Array
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 []
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 2 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -770,7 +696,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 3
@@ -778,7 +704,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 私有
@@ -786,38 +712,31 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 Object
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 {}
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 否
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 3 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
             <tr
@@ -826,7 +745,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class="align-center row"
                 key="index"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 4
@@ -834,7 +753,7 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="platform"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 共有
@@ -842,38 +761,31 @@ exports[`Table base demo works fine 2`] = `
               <td
                 class=""
                 key="type"
-                length="7"
+                length="6"
               >
                 String
               </td>
               <td
                 class=""
                 key="default"
-                length="7"
+                length="6"
               >
                 -
               </td>
               <td
                 class=""
                 key="needed"
-                length="7"
+                length="6"
               >
                 是
               </td>
               <td
                 class="text-ellipsis"
                 key="detail.postion"
-                length="7"
+                length="6"
                 style="overflow: hidden;"
               >
                 读取 4 个数据的嵌套信息值
-              </td>
-              <td
-                class=""
-                key="description"
-                length="7"
-              >
-                数据源
               </td>
             </tr>
           </tbody>
