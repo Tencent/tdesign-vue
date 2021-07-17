@@ -6,9 +6,9 @@ import upperFirst from 'lodash/upperFirst';
 import TreeStore from '../../common/js/tree/tree-store';
 import TreeNode from '../../common/js/tree/tree-node';
 import TreeItem from './tree-item';
-import props from '../../types/tree/props';
+import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { ClassName, TNodeReturnValue, TreeOptionData } from '../../types/common';
+import { ClassName, TNodeReturnValue, TreeOptionData } from '../common';
 import {
   TypeTdTreeProps,
   TreeNodeValue,
@@ -18,7 +18,7 @@ import {
   TypeTreeNodeModel,
   // TypeTreeInstance,
   TypeTargetNode,
-} from './types';
+} from './interface';
 import {
   TREE_NAME,
   CLASS_NAMES,

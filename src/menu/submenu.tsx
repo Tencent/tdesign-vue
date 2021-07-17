@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { defineComponent, computed, inject, ref, provide, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '../../types/submenu/props';
+import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import TIconChevronDown from '../icon/chevron-down';
 import Ripple from '../utils/ripple';

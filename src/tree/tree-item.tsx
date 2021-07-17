@@ -4,9 +4,9 @@ import TIconLoading from '../icon/loading';
 import TCheckBox from '../checkbox';
 import TreeNode from '../../common/js/tree/tree-node';
 import { getTNode } from './util';
-import { TypeEventState } from './types';
+import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
-import { ClassName } from '../../types/common';
+import { ClassName } from '../common';
 
 export const TreeItemProps = {
   node: {

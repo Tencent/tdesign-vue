@@ -1,11 +1,10 @@
-import Vue, { VNode, PropType } from 'vue';
+import Vue, { VNode, PropType, CreateElement } from 'vue';
 import { prefix } from '../../config';
-import { BaseTableCol, RowspanColspan } from '../../../types/base-table/TdBaseTableProps';
-import baseTableProps from '../../../types/base-table/props';
+import { BaseTableCol, RowspanColspan } from '../type';
+import baseTableProps from '../base-table-props';
 import TableCell from './table-cell';
 import get from 'lodash/get';
 import { CustomData, CellData, CellParams } from '../util/interface';
-import { CreateElement } from 'vue/types/umd';
 import { emitEvent } from '../../utils/event';
 
 interface Column extends BaseTableCol {

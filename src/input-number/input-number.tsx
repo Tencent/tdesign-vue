@@ -5,10 +5,10 @@ import Remove from '../icon/remove';
 import ChevronDown from '../icon/chevron-down';
 import ChevronUp from '../icon/chevron-up';
 import CLASSNAMES from '../utils/classnames';
-import props from '../../types/input-number/props';
-import { ChangeSource } from '../../types/input-number/TdInputNumberProps';
+import props from './props';
+import { ChangeSource } from './type';
 import { addClickAnimation, removeClickAnimation } from '../utils/animation';
-import { ClassName, TNodeReturnValue } from '../../types/common';
+import { ClassName, TNodeReturnValue } from '../common';
 
 const name = `${prefix}-input-number`;
 

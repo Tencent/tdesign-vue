@@ -1,7 +1,7 @@
 import _Textarea from './textarea';
 import mapProps from '../utils/map-props';
 import setInstallFn from '../utils/withInstall';
-import { TdTextareaProps } from '../../types/textarea/TdTextareaProps';
+import { TdTextareaProps } from './type';
 
 export type TextareaProps = TdTextareaProps
 

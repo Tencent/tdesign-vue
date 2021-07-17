@@ -1,6 +1,6 @@
 import TreeNode from '../../common/js/tree/tree-node';
 
-import { TNode, TreeOptionData } from '../../types/common';
+import { TNode, TreeOptionData } from '../common';
 
 import {
   TdTreeProps,
@@ -8,7 +8,7 @@ import {
   TreeInstanceFunctions,
   TreeNodeValue as TdTreeNodeValue,
   TreeNodeState as TdTreeNodeState,
-} from '../../types/tree/TdTreeProps';
+} from './type';
 
 import {
   TypeTreeEventState,

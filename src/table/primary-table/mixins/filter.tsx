@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { PrimaryTableCol, TdPrimaryTableProps } from '../../../../types/primary-table/TdPrimaryTableProps';
-import primaryTableProps from '../../../../types/primary-table/props';
-import baseTableProps from '../../../../types/base-table/props';
+import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
+import primaryTableProps from '../../primary-table-props';
+import baseTableProps from '../../base-table-props';
 import { prefix } from '../../../config';
 import { CheckboxGroup } from '../../../checkbox';
 import { RadioGroup } from '../../../radio';

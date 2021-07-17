@@ -5,7 +5,7 @@ import { SIZE_CLASSNAMES } from '../utils/classnames';
 import { addClass, removeClass } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
-import props from '../../types/loading/props';
+import props from './props';
 
 const name = `${prefix}-loading`;
 const fullscreenClass = `${prefix}-loading-fullscreen`;

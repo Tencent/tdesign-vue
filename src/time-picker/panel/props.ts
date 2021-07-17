@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 import dayjs from 'dayjs';
 
-import * as Props from '../../../types/time-picker/props';
+import * as Props from '.././props';
 import { EPickerCols } from '../constant';
 
 // 布尔类型

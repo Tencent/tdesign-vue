@@ -6,13 +6,13 @@ import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from './xhr';
-import { UploadFile } from '../../types/upload/TdUploadProps';
+import { UploadFile } from './type';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
-import props from '../../types/upload/props';
+import props from './props';
 import findIndex from 'lodash/findIndex';
 import {
   HTMLInputEvent,
@@ -21,7 +21,7 @@ import {
   RemoveOptions,
   FlowRemoveContext,
 } from './interface';
-import { ClassName } from '../../types/common';
+import { ClassName } from '../common';
 
 const name = `${prefix}-upload`;
 

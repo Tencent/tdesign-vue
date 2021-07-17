@@ -1,8 +1,8 @@
 import _Dialog from './dialog';
 import withInstall from '../utils/withInstall';
-import { TdDialogProps } from '../../types/dialog/TdDialogProps';
+import { TdDialogProps } from './type';
 
-export * from '../../types/dialog/TdDialogProps';
+export * from './type';
 export type DialogProps = TdDialogProps;
 
 export const Dialog = withInstall('Dialog', _Dialog);

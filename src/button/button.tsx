@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import TIconLoading from '../icon/loading';
-import props from '../../types/button/props';
+import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { addClickAnimation, removeClickAnimation } from '../utils/animation';
 

@@ -5,16 +5,16 @@ import isEqual from 'lodash/isEqual';
 
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
-import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType, TimePickerPanelInstance } from './type';
-import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
+import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType, TimePickerPanelInstance } from './interface';
+import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import PickerPanel from './panel';
 import TInput from '../input';
 import TIconTime from '../icon/time';
-import TPopup from '../popup';
+
 import InputItems from './input-items';
-import props from '../../types/time-range-picker/props';
+import props from './time-range-picker-props';
 
 import { EPickerCols, TIME_PICKER_EMPTY, EMPTY_VALUE, componentName, amFormat, pmFormat, AM } from './constant';
 

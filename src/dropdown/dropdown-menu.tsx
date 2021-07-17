@@ -2,7 +2,7 @@ import Vue from 'vue';
 import DropdownItem from './dropdown-item';
 import bus from './bus';
 import { prefix } from '../config';
-import { TNodeReturnValue } from '../../types/common';
+import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__menu`;
 

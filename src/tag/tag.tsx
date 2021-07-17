@@ -2,11 +2,11 @@ import Vue, { VNode } from 'vue';
 import CLASSNAMES from '../utils/classnames';
 import config from '../config';
 import TIconClose from '../icon/close';
-import props from '../../types/tag/props';
+import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { TdTagProps } from '../../types/tag/TdTagProps';
+import { TdTagProps } from './type';
 import { emitEvent } from '../utils/event';
-import { TNodeReturnValue, ClassName, Styles } from '../../types/common';
+import { TNodeReturnValue, ClassName, Styles } from '../common';
 
 const { prefix } = config;
 const name = `${prefix}-tag`;

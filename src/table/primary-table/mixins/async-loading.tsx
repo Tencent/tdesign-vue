@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
-import primaryTableProps from '../../../../types/primary-table/props';
-import baseTableProps from '../../../../types/base-table/props';
+import primaryTableProps from '../../primary-table-props';
+import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
 import { prefix } from '../../../config';
 import { CreateElement } from 'vue/types/umd';

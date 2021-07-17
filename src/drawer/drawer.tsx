@@ -1,14 +1,14 @@
 import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
-import props from '../../types/drawer/props';
-import { FooterButton, DrawerCloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
+import props from './props';
+import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles } from '../../types/common';
+import { ClassName, Styles } from '../common';
 
 type FooterButtonType = 'confirm' | 'cancel';
 

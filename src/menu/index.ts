@@ -8,7 +8,7 @@ import _MenuGroup from './menu-group';
 import withInstall from '../utils/withInstall';
 
 
-export * from '../../types/menu/TdMenuProps';
+export * from './type';
 
 export const Menu = withInstall('Menu', _Menu, VueCompositionAPI);
 export const HeadMenu = withInstall('HeadMenu', _HeadMenu, VueCompositionAPI);

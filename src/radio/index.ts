@@ -3,9 +3,9 @@ import _Group from './group';
 import _RadioButton from './radio-button';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
-import { TdRadioProps, TdRadioGroupProps } from '../../types/radio/TdRadioProps';
+import { TdRadioProps, TdRadioGroupProps } from './type';
 
-export * from '../../types/radio/TdRadioProps';
+export * from './type';
 export type RadioProps = TdRadioProps;
 export type RadioGroupProps = TdRadioGroupProps;
 

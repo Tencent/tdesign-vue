@@ -1,6 +1,6 @@
 import Vue, { CreateElement, VNode } from 'vue';
-import { TdPrimaryTableProps } from '../../../../types/primary-table/TdPrimaryTableProps';
-import baseTableProps from '../../../../types/base-table/props';
+import { TdPrimaryTableProps } from '../../type';
+import baseTableProps from '../../base-table-props';
 import ExpandBox from '../expand-box';
 import TableRow from '../../base-table/table-row';
 import { ExpandProps, RenderExpandRow } from '../../util/interface';

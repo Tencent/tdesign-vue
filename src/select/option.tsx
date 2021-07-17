@@ -5,11 +5,11 @@ import get from 'lodash/get';
 import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import props from '../../types/option/props';
-import { Options } from '../../types/select/TdSelectProps';
+import props from './option-props';
+import { Options } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
-import { ClassName } from '../../types/common';
+import { ClassName } from '../common';
 const name = `${prefix}-option`;
 const selectName = `${prefix}-select`;
 export interface OptionInstance extends Vue {

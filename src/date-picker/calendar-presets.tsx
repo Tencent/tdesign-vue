@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import { CalendarPresetsMethods, CalendarPresetsProps, DateValue } from './type';
+import { CalendarPresetsMethods, CalendarPresetsProps, DateValue } from './interface';
 
 import { Button as TButton } from '../button';
 

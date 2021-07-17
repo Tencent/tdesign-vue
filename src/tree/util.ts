@@ -7,7 +7,7 @@ import {
   TypeTNodeProp,
   TypeGetTNodeOption,
   TypeTargetNode,
-} from './types';
+} from './interface';
 
 export { emitEvent } from '../utils/event';
 

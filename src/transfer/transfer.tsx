@@ -19,9 +19,9 @@ import {
 } from './type/transfer';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
-import props from '../../types/transfer/props';
+import props from './props';
 import { getTransferListOption, emitEvent } from './utils';
-import { TNode } from '../../types/common';
+import { TNode } from '../common';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';

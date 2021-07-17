@@ -1,9 +1,9 @@
 import _Form from './form';
 import _FormItem from './form-item';
 import withInstall from '../utils/withInstall';
-import { TdFormProps } from '../../types/form/TdFormProps';
+import { TdFormProps } from './type';
 
-export * from '../../types/form/TdFormProps';
+export * from './type';
 export type FormProps = TdFormProps;
 
 export const Form = withInstall('Form', _Form);

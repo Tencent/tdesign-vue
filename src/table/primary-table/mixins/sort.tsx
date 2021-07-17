@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import SorterButton from '../sorter-button';
 import { prefix } from '../../../config';
-import { SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType } from '../../../../types/primary-table/TdPrimaryTableProps';
-import primaryTableProps from '../../../../types/primary-table/props';
-import baseTableProps from '../../../../types/base-table/props';
+import { SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType } from '../../type';
+import primaryTableProps from '../../primary-table-props';
+import baseTableProps from '../../base-table-props';
 import { SortColumnAndOrder } from '../../util/interface';
 import { emitEvent } from '../../../utils/event';
 

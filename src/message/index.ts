@@ -1,8 +1,8 @@
 import _Message from './message';
 import withInstall from '../utils/withInstall';
-import { TdMessageProps } from '../../types/message/TdMessageProps';
+import { TdMessageProps } from './type';
 
-export * from '../../types/message/TdMessageProps';
+export * from './type';
 export type MessageProps = TdMessageProps;
 
 export { default as MessagePlugin } from './plugin';

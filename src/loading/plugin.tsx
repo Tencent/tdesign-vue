@@ -2,7 +2,7 @@ import Vue from 'vue';
 import LoadingComponent from './loading';
 import { prefix } from '../config';
 import { getAttach, removeClass } from '../utils/dom';
-import { TdLoadingProps, LoadingInstance, LoadingMethod } from '../../types/loading/TdLoadingProps';
+import { TdLoadingProps, LoadingInstance, LoadingMethod } from './type';
 
 const lockClass = `${prefix}-loading-lock`;
 

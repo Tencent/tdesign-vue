@@ -1,6 +1,5 @@
-import { BaseTableCol, RenderType } from '../../../types/base-table/TdBaseTableProps';
-import primaryTableProps from '../../../types/primary-table/props';
-import { PrimaryTableCol, SortType, TdPrimaryTableProps } from '../../../types/primary-table/TdPrimaryTableProps';
+import { BaseTableCol, RenderType, PrimaryTableCol, SortType, TdPrimaryTableProps } from '../type';
+import primaryTableProps from '../primary-table-props';
 
 export type CustomRenderName = 'title' | 'cell' | 'render';
 

@@ -1,12 +1,12 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import { FormValidateResult, TdFormProps } from '../../types/form/TdFormProps';
-import props from '../../types/form/props';
+import { FormValidateResult, TdFormProps } from './type';
+import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
 import isEmpty from 'lodash/isEmpty';
 import { emitEvent } from '../utils/event';
 import FormItem from './form-item';
-import { FormResetEvent, FormSubmitEvent, ClassName } from '../../types/common';
+import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
 
 type FormItemInstance = InstanceType<typeof FormItem>;
 

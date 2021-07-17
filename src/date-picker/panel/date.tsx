@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import TDateHeader from '../basic/header';
 import TDateTable from '../basic/table';
-import { DateData, DateMethods, DateComputed, DateProps } from '../type';
+import { DateData, DateMethods, DateComputed, DateProps } from '../interface';
 
 import {
   getWeeks,

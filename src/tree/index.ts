@@ -2,7 +2,7 @@
 import _TdTree from './td-tree';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
-import { TdTreeProps } from '../../types/tree/TdTreeProps';
+import { TdTreeProps } from './type';
 
 export const Tree = withInstall('Tree', mapProps([
   {
@@ -21,6 +21,6 @@ export const Tree = withInstall('Tree', mapProps([
   model: { prop: 'value', event: 'change' },
 })(_TdTree));
 
-export * from '../../types/tree/TdTreeProps';
+export * from './type';
 export type TreeProps = TdTreeProps;
 export default Tree;

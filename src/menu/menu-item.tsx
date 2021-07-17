@@ -1,6 +1,6 @@
 import { defineComponent, computed, inject, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '../../types/menu-item/props';
+import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
 import Ripple from '../utils/ripple';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';

@@ -3,7 +3,7 @@ import Icon from '../icon';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import bus from './bus';
-import { TNodeReturnValue } from '../../types/common';
+import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__item`;
 

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { ComponentRenderProxy } from '@vue/composition-api';
 import { PropType, CreateElement, VNode, VNodeChildren, RenderContext } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { TNode } from '../../types/common';
+import { TNode } from '../common';
 
 // 组件render属性的ts类型
 type RenderTsTypesSimple = string | number | boolean;

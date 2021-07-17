@@ -2,7 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP } from './utils';
-import props from '../../types/anchor-item/props';
+import props from './anchor-item-props';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 const name = `${prefix}-anchor-item`;

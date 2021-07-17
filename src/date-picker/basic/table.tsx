@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { prefix } from '../../config';
 import TDatePickerCell from './cell';
-import { Cell } from '../type';
+import { Cell } from '../interface';
 
 const name = `${prefix}-date-picker-table`;
 

@@ -1,12 +1,12 @@
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../config';
-import { UploadFile } from '../../types/upload/TdUploadProps';
+import { UploadFile } from './type';
 import TIconLoading from '../icon/loading';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
 import { returnFileSize, getCurrentDate } from './util';
-import { ClassName } from '../../types/common';
+import { ClassName } from '../common';
 
 const name = `${prefix}-upload-dragger`;
 

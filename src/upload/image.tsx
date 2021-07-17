@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import { UploadFile } from '../../types/upload/TdUploadProps';
+import { UploadFile } from './type';
 import { RemoveOptions } from './interface';
 import TIconAdd from '../icon/add';
 import IIconDelete from '../icon/delete';

@@ -4,14 +4,14 @@ import TButton, { ButtonProps } from '../button';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import { DialogCloseContext, TdDialogProps } from '../../types/dialog/TdDialogProps';
-import props from '../../types/dialog/props';
+import { DialogCloseContext, TdDialogProps } from './type';
+import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles, TNode } from '../../types/common';
+import { ClassName, Styles, TNode } from '../common';
 
 type FooterButton = string | ButtonProps | TNode;
 type FooterButtonType = 'confirm' | 'cancel';

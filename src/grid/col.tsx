@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import props from '../../types/col/props';
+import props from './col-props';
 
 const name = `${prefix}-col`;
 
