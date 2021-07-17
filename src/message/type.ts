@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-17 22:38:31
  * */
 
 import { TNode, AttachNode } from '../common';
@@ -67,21 +67,21 @@ export type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom
 
 export interface MessageInstance { close: () => void };
 
-export type MessageMethod = (theme: MessageThemeList, message: string | MessageOptions, duration: number) => Promise<MessageInstance>;
+export type MessageMethod = (theme: MessageThemeList, message: string | MessageOptions, duration?: number) => Promise<MessageInstance>;
 
 export type MessageInfoOptions = Omit<MessageOptions, 'theme'>;
 
-export type MessageInfoMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageInfoMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
-export type MessageErrorMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageErrorMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
-export type MessageWarningMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageWarningMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
-export type MessageSuccessMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageSuccessMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
-export type MessageLoadingMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageLoadingMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
-export type MessageQuestionMethod = (message: string | MessageInfoOptions, duration: number) => Promise<MessageInstance>;
+export type MessageQuestionMethod = (message: string | MessageInfoOptions, duration?: number) => Promise<MessageInstance>;
 
 export type MessageCloseMethod = (options: Promise<MessageInstance>) => void;
 
