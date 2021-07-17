@@ -4,6 +4,8 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from '../../types/option-group/props';
+import { ClassName } from '../../types/common';
+
 const name = `${prefix}-option-group`;
 
 export interface Select extends Vue {

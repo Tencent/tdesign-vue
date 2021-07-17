@@ -5,6 +5,8 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconClose from '../icon/close';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from '../../types/notification/props';
+import { TNodeReturnValue } from '../../types/common';
+
 
 const name = `${prefix}-notification`;
 

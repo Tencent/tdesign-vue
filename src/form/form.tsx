@@ -6,6 +6,7 @@ import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
 import isEmpty from 'lodash/isEmpty';
 import { emitEvent } from '../utils/event';
 import FormItem from './form-item';
+import { FormResetEvent, FormSubmitEvent, ClassName } from '../../types/common';
 
 type FormItemInstance = InstanceType<typeof FormItem>;
 

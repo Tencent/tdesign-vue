@@ -106,7 +106,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       h: CreateElement,
       icon: string | Function | undefined,
       iconType: 'prefix-icon' | 'suffix-icon',
-    ): JsxNode {
+    ) {
       if (typeof icon === 'function') {
         return icon(h);
       }

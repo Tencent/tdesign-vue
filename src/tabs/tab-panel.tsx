@@ -34,8 +34,8 @@ export default Vue.extend({
   },
 
   render(h) {
-    const { renderOnHide, active } = this;
-    if (!renderOnHide && !active) return null;
+    const { destroyOnHide, active } = this;
+    if (!destroyOnHide && !active) return null;
     return (
       <div
         class="t-tab-panel"

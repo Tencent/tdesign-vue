@@ -6,6 +6,7 @@ import props from '../../types/tag/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TdTagProps } from '../../types/tag/TdTagProps';
 import { emitEvent } from '../utils/event';
+import { TNodeReturnValue, ClassName, Styles } from '../../types/common';
 
 const { prefix } = config;
 const name = `${prefix}-tag`;

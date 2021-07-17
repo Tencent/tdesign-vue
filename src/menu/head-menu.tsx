@@ -1,9 +1,11 @@
 import { defineComponent, computed, provide, ref, reactive, watch } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '@TdTypes/head-menu/props';
-import { MenuValue } from '@TdTypes/menu/TdMenuProps';
+import props from '../../types/head-menu/props';
+import { MenuValue } from '../../types/menu/TdMenuProps';
 import { TdMenuInterface, TdMenuItem } from './const';
 import { Tabs, TabPanel } from '../tabs';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+
 const name = `${prefix}-head-menu`;
 
 export default defineComponent({
@@ -109,18 +111,19 @@ export default defineComponent({
     },
   },
   render() {
+    if (this.$slots.options) {
+      console.warn('TDesign Warn: `options` slot is going to be deprecated, please use `operations` for slot instead.');
+    }
+    const operations = renderContent(this, 'operations', 'options');
+    const logo = renderTNodeJSX(this, 'logo');
     return (
       <div class={this.menuClass}>
         <div class={`${prefix}-head-menu__inner`}>
-          <div class={`${prefix}-menu__logo`}>
-            {this.$slots.logo}
-          </div>
+          {logo && <div class={`${prefix}-menu__logo`}>{logo}</div>}
           <ul class={`${prefix}-menu`}>
-            {this.$slots.default}
+            {renderContent(this, 'default', 'content')}
           </ul>
-          <div class={`${prefix}-menu__options`}>
-            {this.$slots.options}
-          </div>
+          {operations && <div class={`${prefix}-menu__options`}>{operations}</div>}
         </div>
         {this.mode === 'normal' && this.renderNormalSubmenu()}
       </div>

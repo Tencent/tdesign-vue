@@ -11,6 +11,7 @@ import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
+import { ClassName, Styles, TNode } from '../../types/common';
 
 type FooterButton = string | ButtonProps | TNode;
 type FooterButtonType = 'confirm' | 'cancel';

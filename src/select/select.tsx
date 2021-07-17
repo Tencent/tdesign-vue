@@ -18,6 +18,7 @@ import Option from './option';
 import props from '../../types/select/props';
 import { PopupProps } from '@Popup';
 import { Options, SelectValue } from '../../types/select/TdSelectProps';
+import { ClassName } from '../../types/common';
 const name = `${prefix}-select`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
 // 用户设置overStyle width时，以设置的为准

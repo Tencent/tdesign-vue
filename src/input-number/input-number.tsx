@@ -8,6 +8,7 @@ import CLASSNAMES from '../utils/classnames';
 import props from '../../types/input-number/props';
 import { ChangeSource } from '../../types/input-number/TdInputNumberProps';
 import { addClickAnimation, removeClickAnimation } from '../utils/animation';
+import { ClassName, TNodeReturnValue } from '../../types/common';
 
 const name = `${prefix}-input-number`;
 

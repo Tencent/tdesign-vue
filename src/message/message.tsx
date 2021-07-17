@@ -9,6 +9,7 @@ import TIconClose from '../icon/close';
 import { THEME_LIST } from './const';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from '../../types/message/props';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-message`;
 

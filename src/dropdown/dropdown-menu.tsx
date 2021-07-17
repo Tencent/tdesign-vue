@@ -2,6 +2,7 @@ import Vue from 'vue';
 import DropdownItem from './dropdown-item';
 import bus from './bus';
 import { prefix } from '../config';
+import { TNodeReturnValue } from '../../types/common';
 
 const name = `${prefix}-dropdown__menu`;
 
@@ -42,7 +43,7 @@ export default Vue.extend({
       }
       return this.path.indexOf(itemPath) === 0;
     },
-    renderMenuColumn(children: Array<OptionItem>, showSubmenu: boolean, pathPrefix: string): JsxNode {
+    renderMenuColumn(children: Array<OptionItem>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
       return (
         <div class={`${name}__column ${showSubmenu ? 'submenu__visible' : ''}`} style={{
           maxHeight: `${this.maxColumnHeight}px`,
@@ -78,7 +79,7 @@ export default Vue.extend({
     });
   },
   render() {
-    const columns: JsxNode[] = [];
+    const columns: TNodeReturnValue[] = [];
     let menuItems = this.options as OptionItem[];
     let pathPrefix = '';
     // 根据path渲染

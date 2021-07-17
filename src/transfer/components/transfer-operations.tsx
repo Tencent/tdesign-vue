@@ -1,6 +1,7 @@
 import Vue, { PropType, CreateElement } from 'vue';
 import TButton from '../../button';
 import { prefix } from '../../config';
+import { TNode } from '../../../types/common';
 
 const name = `${prefix}-transfer-operations`;
 export default Vue.extend({

@@ -9,6 +9,7 @@ import { NormalizedScopedSlot } from 'vue/types/vnode';
 import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
+import { ClassName, TNodeReturnValue } from '../../types/common';
 
 type Result = ValidateResult<TdFormProps['data']>;
 

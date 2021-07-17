@@ -4,6 +4,7 @@ import TIconLoading from '../icon/loading';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { UploadFile } from '../../types/upload/TdUploadProps';
+import { ClassName } from '../../types/common';
 
 export default Vue.extend({
   name: 'TUploadSingleFile',

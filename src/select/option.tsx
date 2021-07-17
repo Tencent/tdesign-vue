@@ -9,6 +9,7 @@ import props from '../../types/option/props';
 import { Options } from '../../types/select/TdSelectProps';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
+import { ClassName } from '../../types/common';
 const name = `${prefix}-option`;
 const selectName = `${prefix}-select`;
 export interface OptionInstance extends Vue {

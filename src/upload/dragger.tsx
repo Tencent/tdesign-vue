@@ -6,6 +6,7 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
 import { returnFileSize, getCurrentDate } from './util';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-upload-dragger`;
 

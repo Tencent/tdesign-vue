@@ -3,6 +3,7 @@ import { PLACEMENT_OFFSET } from './const';
 import TMessage from './message';
 import { prefix } from '../config';
 import { MessageOptions } from '../../types/message/TdMessageProps';
+import { Styles } from '../../types/common';
 
 export const DEFAULT_Z_INDEX = 6000;
 

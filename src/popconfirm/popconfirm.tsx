@@ -2,7 +2,7 @@ import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import Popup from '../popup/index';
-import props from '@TdTypes/popconfirm/props';
+import props from '../../types/popconfirm/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from '../../types/popconfirm/TdPopconfirmProps';
 
@@ -61,7 +61,7 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
       this.$emit('visible-change', false, confirmContext);
       this.onVisibleChange && this.onVisibleChange(false, confirmContext);
     },
-    renderIcon(): JsxNode {
+    renderIcon() {
       // 优先级 slot > Funtion
       if (this.$scopedSlots.icon) {
         return this.$scopedSlots.icon(null);

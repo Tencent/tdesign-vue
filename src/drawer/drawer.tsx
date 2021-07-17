@@ -8,6 +8,7 @@ import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
+import { ClassName, Styles } from '../../types/common';
 
 type FooterButtonType = 'confirm' | 'cancel';
 

@@ -1,5 +1,7 @@
 import TreeNode from '../../common/js/tree/tree-node';
 
+import { TNode, TreeOptionData } from '../../types/common';
+
 import {
   TdTreeProps,
   TreeNodeModel,

@@ -21,6 +21,7 @@ import {
   RemoveOptions,
   FlowRemoveContext,
 } from './interface';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-upload`;
 

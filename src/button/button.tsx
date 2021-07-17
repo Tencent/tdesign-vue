@@ -18,7 +18,7 @@ export default Vue.extend({
     removeClickAnimation(this.$refs.button as HTMLElement);
   },
   render(): VNode {
-    let buttonContent: JsxNode = renderContent(this, 'default', 'content');
+    let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
     const iconOnly = icon && !Boolean(buttonContent);
     let { theme } = this;

@@ -69,9 +69,27 @@ exports[`Tabs ban demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          normal选项卡2内容
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          normal选项卡1内容
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -133,9 +151,27 @@ exports[`Tabs base demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡2
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡3
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -210,23 +246,104 @@ exports[`Tabs combination demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡2
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡3
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡4
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡5
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡6
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡7
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡8
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡9
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡10
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -300,7 +417,16 @@ exports[`Tabs custom demo works fine 1`] = `
           原有选项卡内容
         </p>
       </div>
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          原有选项卡内容
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -375,9 +501,27 @@ exports[`Tabs icon demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          normal选项卡2内容
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          normal选项卡3内容
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -451,7 +595,16 @@ exports[`Tabs operation demo works fine 1`] = `
           原有选项卡内容
         </p>
       </div>
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          原有选项卡内容
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -567,9 +720,27 @@ exports[`Tabs position demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡2
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡3
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -659,9 +830,27 @@ exports[`Tabs size demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡2
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡3
+        </p>
+      </div>
     </div>
   </div>
    
@@ -711,9 +900,27 @@ exports[`Tabs size demo works fine 1`] = `
         </p>
       </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡2
+        </p>
+      </div>
        
-      <!---->
+      <div
+        class="t-tab-panel"
+        style="display: none;"
+      >
+        <p
+          style="padding: 25px;"
+        >
+          选项卡3
+        </p>
+      </div>
     </div>
   </div>
 </div>

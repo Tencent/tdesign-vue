@@ -1,4 +1,4 @@
-import { MenuValue } from '@TdTypes/menu/TdMenuProps';
+import { MenuValue } from '../../types/menu/TdMenuProps';
 import { Ref } from '@vue/composition-api';
 import { VNodeChildren } from 'vue';
 

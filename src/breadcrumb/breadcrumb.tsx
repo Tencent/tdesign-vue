@@ -3,6 +3,8 @@ import { prefix } from '../config';
 import props from '../../types/breadcrumb/props';
 import BreadcrumbItem from '../breadcrumbItem/index';
 import { TdBreadcrumbItemProps } from '../../types/breadcrumb/TdBreadcrumbProps';
+import { TNodeReturnValue } from '../../types/common';
+
 const name = `${prefix}-breadcrumb`;
 
 export default Vue.extend({

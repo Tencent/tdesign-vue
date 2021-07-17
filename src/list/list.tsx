@@ -7,6 +7,7 @@ import CLASSNAMES from '../utils/classnames';
 import { LOAD_MORE, LOADING } from './const';
 import { TdListProps } from '../../types/list/TdListProps';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-list`;
 

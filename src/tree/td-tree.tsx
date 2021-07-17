@@ -8,6 +8,7 @@ import TreeNode from '../../common/js/tree/tree-node';
 import TreeItem from './tree-item';
 import props from '../../types/tree/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { ClassName, TNodeReturnValue, TreeOptionData } from '../../types/common';
 import {
   TypeTdTreeProps,
   TreeNodeValue,

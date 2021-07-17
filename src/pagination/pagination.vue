@@ -101,6 +101,7 @@ import TInput from '../input';
 import { Select } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import props from '../../types/pagination/props';
+import { ClassName, Styles } from '../../types/common';
 
 const { prefix } = config;
 const name = `${prefix}-pagination`;

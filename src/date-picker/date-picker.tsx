@@ -690,7 +690,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
           trigger="click"
           placement="bottom-left"
           disabled={disabled}
-          destroyOnHide
+          destroyOnClose
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}

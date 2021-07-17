@@ -2,6 +2,7 @@ import Vue from 'vue';
 import config from '../config';
 import props from '../../types/check-tag/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { TNodeReturnValue } from '../../types/common';
 
 const { prefix } = config;
 const name = `${prefix}-tag`;

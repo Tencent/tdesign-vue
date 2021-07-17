@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Notification from './notification';
 import { TdNotificationProps, NotificationOptions } from '../../types/notification/TdNotificationProps';
 import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
+import { Styles } from '../../types/common';
+
 
 export default Vue.extend({
   components: { Notification },

@@ -4,7 +4,7 @@ import getLocalRecevierMixins from '../locale/local-receiver';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
-import Popup from '../popup';
+import Popup, { PopupProps } from '../popup';
 import IconChevronDown from '../icon/chevron-down';
 import IconClose from '../icon/close';
 import IconLoading from '../icon/loading';
@@ -24,8 +24,9 @@ import props from '../../types/tree-select/props';
 import { InputValue } from '../../types/input/TdInputProps';
 import { TreeSelectValue } from '../../types/tree-select/TdTreeSelectProps';
 import { TreeNodeModel, TreeNodeValue } from '../../types/tree/TdTreeProps';
+import { ClassName, TreeOptionData } from '../../types/common';
 import { prefix } from '../config';
-import { PopupProps } from '@Popup';
+
 import { RemoveOptions } from './types';
 
 const name = `${prefix}-tree-select`;

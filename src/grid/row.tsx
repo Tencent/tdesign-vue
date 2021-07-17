@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import responsiveObserver from '../utils/responsive-observer';
 import props from '../../types/row/props';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-row`;
 

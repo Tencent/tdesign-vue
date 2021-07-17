@@ -3,6 +3,7 @@ import { prefix } from '../config';
 import { on, off, getScrollContainer } from '../utils/dom';
 import affixProps from '../../types/affix/props';
 import isFunction from 'lodash/isFunction';
+import { ScrollContainerElement } from '../../types/common';
 
 const name = `${prefix}-affix`;
 export interface Affix extends Vue {

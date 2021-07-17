@@ -3,6 +3,8 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import checkboxProps from '../../types/checkbox/props';
 import Group from './group';
+import { ClassName } from '../../types/common';
+
 
 const name = `${prefix}-checkbox`;
 

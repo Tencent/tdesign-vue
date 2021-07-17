@@ -7,6 +7,7 @@ import { on, off, addClass, removeClass, getAttach } from '../utils/dom';
 import props from '../../types/popup/props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
+import { Styles, ClassName } from '../../types/common';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
 const { prefix } = config;
@@ -219,7 +220,7 @@ export default Vue.extend({
 
     destroyPopper(): void {
       if (this.popperJS) {
-        if (this.destroyOnHide) {
+        if (this.destroyOnClose) {
           this.popperJS.destroy();
           this.popperJS = null;
           this.popperElm.parentNode.removeChild(this.popperElm);

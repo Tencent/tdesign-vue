@@ -5,6 +5,7 @@ import props from '../../types/radio-group/props';
 import { RadioOptionObj, RadioOption, RadioValue } from '../../types/radio/TdRadioProps';
 import { prefix } from '../config';
 import Radio from './radio';
+import { TNodeReturnValue } from '../../types/common';
 
 const name = `${prefix}-radio-group`;
 

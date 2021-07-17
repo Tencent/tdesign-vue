@@ -12,6 +12,7 @@ import props from '../../types/progress/props';
 // import { RenderTNodeTemplate } from '../utils/render-tnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { Styles } from '../../types/common';
 
 const name = `${prefix}-progress`;
 

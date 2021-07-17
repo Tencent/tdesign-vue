@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import props from '../../types/steps/props';
 import TStepItem from '../step-item/';
+import { ClassName } from '../../types/common';
 
 const name = `${prefix}-steps`;
 export default Vue.extend({
