@@ -29,7 +29,7 @@
         "src/*"
       ],
       "@common/*": [
-        "common/*"
+        "src/_common/*"
       ],
       "@TdTypes/*": [
         "types/*"
@@ -70,8 +70,8 @@
   ],
   "exclude": [
     "node_modules",
-    "tools",
-    "common"
+    "src/_common",
+    "tools"
   ],
   "compileOnSave": false
 }

@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
-import TreeStore from '../../common/js/tree/tree-store';
-import TreeNode from '../../common/js/tree/tree-node';
+import TreeStore from '../_common/js/tree/tree-store';
+import TreeNode from '../_common/js/tree/tree-node';
 import {
   TypeMark,
   TypeLineModel,

@@ -26,7 +26,7 @@ export default {
 };
 </script>
 <style lang='less'>
-@import '../../../common/style/web/_variables.less';
+@import '../../../src/_common/style/web/_variables.less';
 .anchor-container-demo {
   display: flex;
 }
