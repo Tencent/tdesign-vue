@@ -1,4 +1,7 @@
-import { UploadFile } from './type';
+import { UploadFile, TdUploadProps } from './type';
+
+export type UploadProps = TdUploadProps;
+export * from './type';
 
 export interface XhrOptions {
   action: string;
@@ -28,7 +31,7 @@ export interface SuccessContext {
   response: any;
 };
 
-export interface RemoveOptions { e: MouseEvent; file?: UploadFile; index: number };
+export interface UploadRemoveOptions { e: MouseEvent; file?: UploadFile; index: number };
 
 export interface FlowRemoveContext {
   e: MouseEvent;

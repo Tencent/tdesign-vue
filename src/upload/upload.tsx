@@ -18,7 +18,7 @@ import {
   HTMLInputEvent,
   SuccessContext,
   ProgressContext,
-  RemoveOptions,
+  UploadRemoveOptions,
   FlowRemoveContext,
 } from './interface';
 import { ClassName } from '../common';
@@ -129,7 +129,7 @@ export default Vue.extend({
       this.onRemove && this.onRemove({ e });
     },
 
-    handleMultipleRemove(options: RemoveOptions) {
+    handleMultipleRemove(options: UploadRemoveOptions) {
       const changeCtx =  { trigger: 'remove', ...options };
       const files = this.files.concat();
       files.splice(options.index, 1);

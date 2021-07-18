@@ -7,6 +7,9 @@ import {
   TdCalendarProps,
 } from './type';
 
+export * from './type';
+export type CalendarProps = TdCalendarProps;
+
 /**
 * 日历组件的data定义
 */
@@ -84,6 +87,3 @@ export interface TextConfigType {
   today: string;
   thisMonth: string;
 }
-
-export * from './type';
-export type CalendarProps = TdCalendarProps;

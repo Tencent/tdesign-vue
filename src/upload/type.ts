@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-18 13:43:14
+ * updated at 2021-07-18 15:53:07
  * */
 
 import { TNode } from '../common';
@@ -134,7 +134,7 @@ export interface TdUploadProps {
   /**
    * 上传失败后触发
    */
-  onRemove?: (context: RemoveContext) => void;
+  onRemove?: (context: UploadRemoveContext) => void;
   /**
    * 上传成功后触发
    */
@@ -192,6 +192,6 @@ export interface UploadChangeContext { e?: MouseEvent | ProgressEvent; response?
 
 export interface ProgressContext { e: ProgressEvent; file: UploadFile; percent: number };
 
-export interface RemoveContext { index?: number; file?: UploadFile; e: MouseEvent };
+export interface UploadRemoveContext { index?: number; file?: UploadFile; e: MouseEvent };
 
 export interface SuccessContext { e: ProgressEvent; file: UploadFile; fileList: UploadFile[]; response: any };

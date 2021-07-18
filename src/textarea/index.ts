@@ -4,6 +4,6 @@ import setInstallFn from '../utils/withInstall';
 import { TdTextareaProps } from './type';
 
 export type TextareaProps = TdTextareaProps
-
+export * from './type';
 export const Textarea = setInstallFn('Textarea', mapProps(['value'])(_Textarea));
 export default Textarea;

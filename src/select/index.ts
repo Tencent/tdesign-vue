@@ -8,6 +8,7 @@ import { TdSelectProps, TdOptionProps, TdOptionGroupProps } from './type';
 export type SelectProps = TdSelectProps;
 export type OptionProps = TdOptionProps;
 export type OptionGroupProps = TdOptionGroupProps;
+export * from './type';
 
 export const Select = withInstall('Select', mapProps(['value'], {
   model: { prop: 'value', event: 'change' },

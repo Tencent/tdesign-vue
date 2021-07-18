@@ -1,8 +1,14 @@
 import Vue from 'vue';
 import { Instance } from '@popperjs/core';
 import dayjs from 'dayjs';
+import { TdTimePickerProps, TdTimeRangePickerProps } from './type';
 
 import { EPickerCols } from './constant';
+
+export type TimePickerProps  = TdTimePickerProps;
+export type TimeRangePickerProps  = TdTimeRangePickerProps;
+
+export * from './type';
 
 // 输入类型
 export type TimeInputType = 'hour' | 'minute' | 'second' | 'meridiem';

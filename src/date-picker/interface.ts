@@ -2,10 +2,11 @@ import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
 
 import { EPickerCols } from '../time-picker/constant';
-import { DateValue, TdDatePickerProps } from './type';
+import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
 
 export * from './type';
 export type DatePickerProps = TdDatePickerProps;
+export type DateRangePickerProps = TdDateRangePickerProps;
 
 export type DatePickerLocale = {
   placeholder: object;

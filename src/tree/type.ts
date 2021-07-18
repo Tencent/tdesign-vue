@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:12
+ * updated at 2021-07-18 15:53:16
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -104,7 +104,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
   /**
    * 用来定义 value / label / children 在 `options` 中对应的字段别名
    */
-  keys?: KeysType;
+  keys?: TreeKeysType;
   /**
    * 自定义节点内容，值为 false 不显示，值为 true 显示默认 label，值为字符串直接输出该字符串
    * @default true
@@ -363,6 +363,6 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
   isLeaf: () => boolean;
 };
 
-export interface KeysType { value?: string; label?: string; children?: string };
+export interface TreeKeysType { value?: string; label?: string; children?: string };
 
 export type TreeNodeValue = string | number;

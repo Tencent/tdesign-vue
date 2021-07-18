@@ -14,6 +14,10 @@ import {
   TypeTreeEventState,
 } from '../_common/js/tree/types';
 
+
+export type TreeProps = TdTreeProps;
+export * from './type';
+
 export type TypeTdTreeProps = TdTreeProps;
 
 export type TreeNodeState = TdTreeNodeState;

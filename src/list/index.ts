@@ -2,10 +2,12 @@ import _List from './list';
 import _ListItem from './list-item';
 import _ListItemMeta from './list-item-meta';
 import withInstall from '../utils/withInstall';
-import { TdListProps } from './type';
+import { TdListProps, TdListItemProps, TdListItemMetaProps } from './type';
 
 export * from './type';
 export type ListProps = TdListProps;
+export type ListItemProps = TdListItemProps;
+export type ListItemMetaProps = TdListItemMetaProps;
 
 export const List = withInstall('List', _List);
 export const ListItem = withInstall('ListItem', _ListItem);
