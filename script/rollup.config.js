@@ -1,16 +1,15 @@
 // @ts-check
-import { tmpdir } from 'os';
 import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import vuePlugin from 'rollup-plugin-vue';
 import postcss from 'rollup-plugin-postcss';
+import esbuild from 'rollup-plugin-esbuild';
 import replace from '@rollup/plugin-replace';
 import analyzer from 'rollup-plugin-analyzer';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-import typescript from 'rollup-plugin-typescript2';
 import multiInput from 'rollup-plugin-multi-input';
 import nodeResolve from '@rollup/plugin-node-resolve';
 
@@ -40,24 +39,15 @@ const getPlugins = ({
   isProd = false,
   analyze = false,
 } = {}) => {
-  const compilerOptions = isProd
-    // 只生成一次
-    ? {
-      declaration: true,
-      declarationMap: true,
-      declarationDir: './typings',
-    }
-    : {};
-
   const plugins = [
     nodeResolve(),
     commonjs(),
     vuePlugin(),
-    typescript({
+    esbuild({
+      target: 'esnext',
+      minify: false,
+      jsx: 'preserve',
       tsconfig: 'tsconfig.build.json',
-      cacheRoot: `${tmpdir()}/.rpt2_cache`,
-      tsconfigOverride: { compilerOptions },
-      useTsconfigDeclarationDir: true,
     }),
     babel({
       babelHelpers: 'bundled',

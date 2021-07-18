@@ -13,10 +13,9 @@ import {
   TargetParams,
   SearchEvent,
   SearchOption,
-  PageInfo,
-  TdPaginationProps,
   TdTransferProps,
-} from './type/transfer';
+} from './interface';
+import { PageInfo, TdPaginationProps } from '../pagination/type';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import props from './props';

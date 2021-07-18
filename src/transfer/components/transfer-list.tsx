@@ -8,11 +8,10 @@ import {
   EmptyType,
   SearchEvent,
   SearchOption,
-  PageInfo,
-  TdPaginationProps,
-  CheckboxProps,
-} from '../type/transfer';
-import Checkbox from '../../checkbox';
+} from '../interface';
+import { PageInfo, TdPaginationProps } from '../../pagination/type';
+import Checkbox, { CheckboxProps } from '../../checkbox';
+
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
 import TransferListContent from './transfer-list-content';
 import Search from './transfer-search';
