@@ -89,8 +89,10 @@ export default Vue.extend({
       }
     },
     overlayStyle() {
-      this.popperJS.update();
-      this.updateOverlayStyle();
+      if (this.popperJS) {
+        this.popperJS.update();
+        this.updateOverlayStyle();
+      }
     },
   },
   mounted() {
