@@ -7,6 +7,10 @@ export default {
     next: '下一页',
     total: '共 {total} 项数据',
   },
+  cascader: {
+    empty: '暂无数据',
+    loadingText: '加载中',
+  },
   calendar: {
     yearSelection: '{year} 年',
     monthSelection: '{month} 月',

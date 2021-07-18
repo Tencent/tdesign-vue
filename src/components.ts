@@ -1,4 +1,5 @@
 export * from './locale';
+export * from './cascader';
 export * from './message';
 export * from './notification';
 export * from './dialog';
