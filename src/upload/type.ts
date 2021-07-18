@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-18 13:43:14
  * */
 
 import { TNode } from '../common';
@@ -110,7 +110,7 @@ export interface TdUploadProps {
   /**
    * 已上传文件列表发生变化时触发
    */
-  onChange?: (value: Array<UploadFile>, context: ChangeContext) => void;
+  onChange?: (value: Array<UploadFile>, context: UploadChangeContext) => void;
   /**
    * 进入拖拽区域时触发
    */
@@ -188,7 +188,7 @@ export type ResponseType = { error?: string; url?: string } & Record<string, any
 
 export interface TriggerContext { dragActive?: boolean; uploadingFile?: UploadFile | Array<UploadFile> };
 
-export interface ChangeContext { e?: MouseEvent | ProgressEvent; response?: any; trigger: string; index?: number; file?: UploadFile };
+export interface UploadChangeContext { e?: MouseEvent | ProgressEvent; response?: any; trigger: string; index?: number; file?: UploadFile };
 
 export interface ProgressContext { e: ProgressEvent; file: UploadFile; percent: number };
 
