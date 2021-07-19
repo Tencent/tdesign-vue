@@ -4,12 +4,20 @@ exports[`Tabs :props :addable 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -24,12 +32,20 @@ exports[`Tabs :props :defaultValue 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -44,12 +60,20 @@ exports[`Tabs :props :disabled 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -64,12 +88,20 @@ exports[`Tabs :props :placement 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-left">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-left">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap t-is-vertical" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-left"></div>
           </div>
         </div>
@@ -84,12 +116,20 @@ exports[`Tabs :props :size 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -104,14 +144,20 @@ exports[`Tabs :props :theme 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-tabs__nav--card t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
-            <!---->
-          </div>
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);"></div>
         </div>
       </div>
     </div>
@@ -124,12 +170,20 @@ exports[`Tabs :props :value 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -144,12 +198,20 @@ exports[`Tabs additional function no valid panel 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -164,20 +226,26 @@ exports[`Tabs additional function panel default slot:function | panel slot:funct
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
             <div id="1" class="t-tabs__nav-item t-size-m">
-              1
-              <!---->
+              <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
             </div>
             <div id="2" class="t-tabs__nav-item t-is-active t-size-m">
-              2
-              <!---->
+              <div class="t-tabs__nav-item-wrapper t-is-active"><span class="t-tabs__nav-item-text-wrapper">2</span></div>
             </div>
           </div>
         </div>
@@ -195,20 +263,26 @@ exports[`Tabs additional function panel:default && panel:panel 1`] = `
 <div class="t-tabs">
   <div class="t-tabs__header t-is-top">
     <div class="t-tabs__nav">
-      <!---->
+      <div class="t-tabs__operations t-tabs__operations--left">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+      </div>
+      <div class="t-tabs__operations t-tabs__operations--right">
+        <transition-stub name="fade" appear="true" mode="out-in">
+          <!---->
+        </transition-stub>
+        <!---->
+      </div>
       <div class="t-tabs__nav-container t-is-top">
-        <!---->
-        <!---->
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap">
+          <div class="t-tabs__nav-wrap" style="transform: translateX(-0px);">
             <div class="t-tabs__bar t-is-top"></div>
             <div id="1" class="t-tabs__nav-item t-size-m">
-              1
-              <!---->
+              <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
             </div>
             <div id="2" class="t-tabs__nav-item t-is-active t-size-m">
-              2
-              <!---->
+              <div class="t-tabs__nav-item-wrapper t-is-active"><span class="t-tabs__nav-item-text-wrapper">2</span></div>
             </div>
           </div>
         </div>
