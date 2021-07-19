@@ -4,19 +4,13 @@ import CLASSNAMES from '../utils/classnames';
 import TIconLoading from '../icon/loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import { addClickAnimation, removeClickAnimation } from '../utils/animation';
-
+import ripple from '../utils/ripple';
 const name = `${prefix}-button`;
 
 export default Vue.extend({
   name,
   props,
-  mounted() {
-    addClickAnimation(this.$refs.button as HTMLElement);
-  },
-  beforeDestroy() {
-    removeClickAnimation(this.$refs.button as HTMLElement);
-  },
+  directives: { ripple },
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
@@ -55,7 +49,7 @@ export default Vue.extend({
     }
 
     return (
-      <button class={buttonClass} type={this.type} disabled={this.disabled} {...{ on: this.$listeners }} ref="button">
+      <button v-ripple class={buttonClass} type={this.type} disabled={this.disabled} {...{ on: this.$listeners }} ref="button">
         {buttonContent}
       </button>
     );
