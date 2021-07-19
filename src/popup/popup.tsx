@@ -299,6 +299,7 @@ export default Vue.extend({
             v-show={!this.disabled && this.visible}
             role='tooltip'
             aria-hidden={(this.disabled || !this.visible) ? 'true' : 'false'}
+            style={{ zIndex: this.zIndex }}
           >
             <div class={this.overlayClasses} ref="overlay">
               {renderTNodeJSX(this, 'content')}
