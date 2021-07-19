@@ -24,6 +24,14 @@ const banner = `/**
  * @license ${pkg.license}
  */
 `;
+// cssnano 只会保存以 ! 开头的注释
+const header = `/*!
+ * ${name} v${pkg.version}
+ * (c) ${new Date().getFullYear()} ${pkg.author}
+ * @license ${pkg.license}
+ */
+`;
+
 const input = 'src/dist.ts';
 const inputList = [
   'src/**/*.ts',
@@ -58,6 +66,9 @@ const getPlugins = ({
       minimize: isProd,
       sourceMap: true,
       extensions: ['.sass', '.scss', '.css', '.less'],
+      plugins: [
+        require('postcss-header')({ header }),
+      ],
     }),
     json(),
     url(),
