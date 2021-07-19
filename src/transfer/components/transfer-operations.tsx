@@ -1,5 +1,7 @@
 import Vue, { PropType, CreateElement } from 'vue';
 import TButton from '../../button';
+import TIconChevronRight from '../../icon/chevron-right';
+import TIconChevronLeft from '../../icon/chevron-left';
 import { prefix } from '../../config';
 import { TNode } from '../../common';
 
@@ -29,10 +31,10 @@ export default Vue.extend({
       this.$emit('moveToLeft');
     },
     getIconRight() {
-      return <t-icon name="chevron-right"/>;
+      return <TIconChevronRight />;
     },
     getIconLeft() {
-      return <t-icon name="chevron-left"/>;
+      return <TIconChevronLeft />;
     },
     getIcon(direction: 'left' | 'right') {
       if (typeof this.operation === 'function') {

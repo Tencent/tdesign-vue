@@ -524,9 +524,15 @@ exports[`Transfer base demo works fine 1`] = `
       >
         <svg
           class="t-icon t-icon-chevron-right"
+          version="1.1"
+          viewBox="0 0 1024 1024"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <use
-            xlink:href="#t-icon-chevron-right"
+          <path
+            clip-rule="evenodd"
+            d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+            fill-opacity=".9"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
@@ -537,9 +543,15 @@ exports[`Transfer base demo works fine 1`] = `
       >
         <svg
           class="t-icon t-icon-chevron-left"
+          version="1.1"
+          viewBox="0 0 1024 1024"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <use
-            xlink:href="#t-icon-chevron-left"
+          <path
+            clip-rule="evenodd"
+            d="M610.5408 226.56L669.3696 285.39136 442.78784 511.97568 669.3696 738.56 610.5408 797.3888 325.12512 511.97568 610.5408 226.56Z"
+            fill-opacity=".9"
+            fill-rule="evenodd"
           />
         </svg>
       </button>
