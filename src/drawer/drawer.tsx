@@ -103,7 +103,7 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
           <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div>
           <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
           <div class={`${name}__body`}>{body}</div>
-          <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+          {this.footer ? <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div> : null }
         </div>
       </div>
     );
