@@ -145,15 +145,18 @@ export default mixins(getLocalRecevierMixins('select')).extend({
         || (this.multiple && this.value instanceof Array && !this.value.length)
       );
     },
+    canFilter(): boolean {
+      return this.filterable || isFunction(this.filter);
+    },
     showLoading(): boolean {
-      return this.filterable && this.loading && !this.disabled;
+      return this.canFilter && this.loading && !this.disabled;
     },
     showFilter(): boolean {
       if (this.disabled) return false;
-      if (!this.multiple && this.selectedSingle && this.filterable) {
+      if (!this.multiple && this.selectedSingle && this.canFilter) {
         return this.visible;
       }
-      return this.filterable;
+      return this.canFilter;
     },
     selectedSingle(): string {
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
@@ -161,10 +164,18 @@ export default mixins(getLocalRecevierMixins('select')).extend({
         if (this.options && this.options.length) {
           target = this.options.filter(item => get(item, this.realValue) === this.value);
         }
-        return target.length ? get(target[0], this.realLabel) : this.value;
+        if (target.length) {
+          if (get(target[0], this.realLabel) === '') {
+            return get(target[0], this.realValue);
+          }
+          return get(target[0], this.realLabel);
+        }
+        return this.value.toString();
       }
-      if (!this.multiple && typeof this.value === 'object' && get(this.value, this.realLabel) !== undefined) {
-        return get(this.value, this.realLabel);
+      const showText = get(this.value, this.realLabel);
+      // label为空时显示value值
+      if (!this.multiple && typeof this.value === 'object' && showText !== undefined) {
+        return showText === '' ? get(this.value, this.realValue) : showText;
       }
       return '';
     },
@@ -188,7 +199,9 @@ export default mixins(getLocalRecevierMixins('select')).extend({
       return propsObject;
     },
     displayOptions(): Array<Options> {
-      if (isFunction(this.filter)) {
+      if (isFunction(this.onSearch) || this.$listeners.search) {
+        return this.options;
+      } if (this.canFilter && !this.creatable) {
         if (this.searchInput === '') {
           return this.options;
         }
@@ -208,12 +221,17 @@ export default mixins(getLocalRecevierMixins('select')).extend({
       }
     },
     searchInput(val) {
-      if (isFunction(this.filter)) {
-        this.tmpOptions = this.options.filter(option => this.filter(val, option));
-      } else {
+      // 搜索的优先级，远程搜索>filter方法>仅filterable
+      if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
+      } else if (isFunction(this.filter)) {
+        this.tmpOptions = this.options.filter(option => this.filter(val, option));
+      } else if (this.filterable) {
+        // 仅有filterable属性时，默认不区分大小写过滤label
+        this.tmpOptions = this.options.filter(option => option[this.realLabel].toString().toLowerCase()
+          .indexOf(val.toString().toLowerCase()) !== -1);
       }
-      if (this.filterable && val && this.creatable) {
+      if (this.canFilter && val && this.creatable) {
         const tmp = this.options.filter(item => get(item, this.realLabel).toString() === val);
         this.showCreateOption = !tmp.length;
       } else {
@@ -272,12 +290,13 @@ export default mixins(getLocalRecevierMixins('select')).extend({
         }
       }
       if (!this.multiple) {
+        this.searchInput = '';
         this.hideMenu();
       } else {
         if (!this.reserveKeyword) {
           this.searchInput = '';
         }
-        if (this.filterable) {
+        if (this.canFilter) {
           const input = this.$refs.input as HTMLElement;
           input?.focus();
           this.focusing = true;
@@ -313,7 +332,8 @@ export default mixins(getLocalRecevierMixins('select')).extend({
       isFunction(this.onClear) && this.onClear({ e });
     },
     getOptions(option: Options) {
-      if (!option.value && !option.label) return;
+      // create option值不push到options里
+      if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
       const tmp = this.options.filter(item => get(item, this.realValue) === option.value);
       if (!tmp.length) {
         this.hasOptions = true;
@@ -399,6 +419,9 @@ export default mixins(getLocalRecevierMixins('select')).extend({
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
       return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
+    showOption(op: Options) {
+      return this.displayOptions.filter(item => get(item, this.realValue) === get(op, this.realValue)).length;
+    },
   },
   render(): VNode {
     const {
@@ -460,7 +483,7 @@ export default mixins(getLocalRecevierMixins('select')).extend({
                   disabled={disabled}
                   onClose={this.removeTag.bind(null, index)}
                 >
-                  { get(item, realLabel) }
+                  { get(item, realLabel) === '' ? get(item, realValue) : get(item, realLabel) }
                 </tag>
               ))
             }
@@ -503,7 +526,7 @@ export default mixins(getLocalRecevierMixins('select')).extend({
           </div>
           <div slot='content'>
             <ul v-show={showCreateOption} class={`${name}-create-option`}>
-              <t-option value={this.searchInput} label={this.searchInput} />
+              <t-option value={this.searchInput} label={this.searchInput} class={`${name}-create-option-special`} />
             </ul>
             {
               loading && (
@@ -516,11 +539,13 @@ export default mixins(getLocalRecevierMixins('select')).extend({
               )
             }
             {
-              !hasOptions && options.length
+              // options直传时
+              !hasOptions && options.length && !loading
                 ? <ul>
                 {
                   options.map((item: Options, index: number) => (
                       <t-option
+                        v-show={this.showOption(item)}
                         value={get(item, realValue)}
                         label={get(item, realLabel)}
                         disabled={item.disabled || this.multiLimitDisabled(get(item, realValue))}
