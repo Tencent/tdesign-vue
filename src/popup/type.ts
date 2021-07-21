@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-21 15:51:57
  * */
 
 import { TNode, ClassName, Styles, AttachNode } from '../common';
@@ -67,7 +69,7 @@ export interface TdPopupProps {
    */
   defaultVisible?: boolean;
   /**
-   * 组件层级
+   * 组件层级（Web 测试默认为 5500，移动端和小程序默认为 1500）
    */
   zIndex?: number;
   /**
