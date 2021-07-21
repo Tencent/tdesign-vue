@@ -13,7 +13,7 @@ describe('Popup', () => {
         trigger: 'click',
         content: 'txt',
         showArrow: true,
-        destroyOnHide: true,
+        destroyOnClose: true,
       },
     });
   });

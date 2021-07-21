@@ -7,12 +7,195 @@ exports[`TreeSelect base demo works fine 1`] = `
   <div>
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style="width: 0px"
+          >
+            <div>
+              <p
+                class="t-select-loading-tips"
+                style="display: none;"
+              >
+                <div
+                  class="t-select-empty"
+                >
+                  加载中
+                </div>
+              </p>
+              <div
+                class="t-tree t-tree--hoverable t-tree--fx"
+                size="medium"
+              >
+                <transition-group-stub
+                  class="t-tree__list"
+                  name="t-tree-toggle"
+                  tag="div"
+                >
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="1"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="2"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                </transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m t-select-selected"
       >
@@ -78,28 +261,6 @@ exports[`TreeSelect base demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
-      </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
       </div>
     </div>
   </div>
@@ -159,12 +320,195 @@ exports[`TreeSelect filterable demo works fine 1`] = `
   <div>
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style="width: 0px"
+          >
+            <div>
+              <p
+                class="t-select-loading-tips"
+                style="display: none;"
+              >
+                <div
+                  class="t-select-empty"
+                >
+                  加载中
+                </div>
+              </p>
+              <div
+                class="t-tree t-tree--hoverable t-tree--fx"
+                size="medium"
+              >
+                <transition-group-stub
+                  class="t-tree__list"
+                  name="t-tree-toggle"
+                  tag="div"
+                >
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="1"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="2"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                </transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m t-select-selected"
       >
@@ -231,28 +575,6 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           />
         </svg>
       </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -265,12 +587,115 @@ exports[`TreeSelect lazy demo works fine 1`] = `
   <div>
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style="width: 0px"
+          >
+            <div>
+              <p
+                class="t-select-loading-tips"
+                style="display: none;"
+              >
+                <div
+                  class="t-select-empty"
+                >
+                  加载中
+                </div>
+              </p>
+              <div
+                class="t-tree t-tree--hoverable t-tree--fx"
+                size="medium"
+              >
+                <transition-group-stub
+                  class="t-tree__list"
+                  name="t-tree-toggle"
+                  tag="div"
+                >
+                  <div
+                    class="t-tree__item"
+                    data-level="0"
+                    data-value="1"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item"
+                    data-level="0"
+                    data-value="2"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                </transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m"
       >
@@ -330,28 +755,6 @@ exports[`TreeSelect lazy demo works fine 1`] = `
           />
         </svg>
       </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -364,12 +767,273 @@ exports[`TreeSelect multiple demo works fine 1`] = `
   <div>
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style="width: 0px"
+          >
+            <div>
+              <p
+                class="t-select-loading-tips"
+                style="display: none;"
+              >
+                <div
+                  class="t-select-empty"
+                >
+                  加载中
+                </div>
+              </p>
+              <div
+                class="t-tree t-tree--hoverable t-tree--fx"
+                size="medium"
+              >
+                <transition-group-stub
+                  class="t-tree__list"
+                  name="t-tree-toggle"
+                  tag="div"
+                >
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="1"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <label
+                      class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="1"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        1
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <label
+                      class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="1.1"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        1.1
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <label
+                      class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="1.2"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        1.2
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="2"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <label
+                      class="t-checkbox t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="2"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        2
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <label
+                      class="t-checkbox t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="2.1"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        2.1
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <label
+                      class="t-checkbox t-tree__label t-tree__label--strictly"
+                    >
+                      <input
+                        class="t-checkbox__former"
+                        name="2.2"
+                        type="checkbox"
+                        value=""
+                      />
+                      <span
+                        class="t-checkbox__input"
+                      />
+                      <span
+                        class="t-checkbox__label"
+                      >
+                        2.2
+                      </span>
+                    </label>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                </transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m t-select-selected"
       >
@@ -459,28 +1123,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
           />
         </svg>
       </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -493,12 +1135,195 @@ exports[`TreeSelect prefix demo works fine 1`] = `
   <div>
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style="width: 0px"
+          >
+            <div>
+              <p
+                class="t-select-loading-tips"
+                style="display: none;"
+              >
+                <div
+                  class="t-select-empty"
+                >
+                  加载中
+                </div>
+              </p>
+              <div
+                class="t-tree t-tree--hoverable t-tree--fx"
+                size="medium"
+              >
+                <transition-group-stub
+                  class="t-tree__list"
+                  name="t-tree-toggle"
+                  tag="div"
+                >
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="1"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="1.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      1.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="0"
+                    data-value="2"
+                    style="--level: 0;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    >
+                      <svg
+                        class="t-icon t-icon-chevron-right"
+                        version="1.1"
+                        viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          fill-opacity=".9"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.1"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.1
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                  <div
+                    class="t-tree__item t-tree__item--open"
+                    data-level="1"
+                    data-value="2.2"
+                    style="--level: 1;"
+                  >
+                    <span
+                      class="t-tree__icon"
+                      ignore="active"
+                      trigger="expand"
+                    />
+                    <span
+                      class="t-tree__label t-tree__label--strictly"
+                    >
+                      2.2
+                    </span>
+                    <span
+                      class="t-tree__space"
+                    />
+                  </div>
+                </transition-group-stub>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m t-has-prefix"
       >
@@ -568,28 +1393,6 @@ exports[`TreeSelect prefix demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
-      </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
       </div>
     </div>
   </div>

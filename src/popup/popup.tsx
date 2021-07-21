@@ -101,7 +101,10 @@ export default Vue.extend({
     this.referenceElm = this.referenceElm || this.$el;
     if (!this.popperElm || !this.referenceElm) return;
 
-    this.createPopperJS();
+    if (this.visible) {
+      this.createPopperJS();
+    }
+
     const reference = this.referenceElm;
     const popper = this.popperElm;
     // 无论哪种触发方式都支持 esc 隐藏浮层
@@ -222,9 +225,9 @@ export default Vue.extend({
 
     destroyPopper(): void {
       if (this.popperJS) {
+        this.popperJS.destroy();
+        this.popperJS = null;
         if (this.destroyOnClose) {
-          this.popperJS.destroy();
-          this.popperJS = null;
           this.popperElm.parentNode.removeChild(this.popperElm);
         }
       }

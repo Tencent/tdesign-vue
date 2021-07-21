@@ -223,12 +223,28 @@ exports[`Anchor target demo works fine 1`] = `
     定义
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -242,28 +258,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -274,12 +268,28 @@ exports[`Anchor target demo works fine 1`] = `
     服务功能
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -293,28 +303,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -325,12 +313,28 @@ exports[`Anchor target demo works fine 1`] = `
     使用指南
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -344,28 +348,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -376,12 +358,28 @@ exports[`Anchor target demo works fine 1`] = `
     创建签名
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -395,28 +393,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -427,12 +403,28 @@ exports[`Anchor target demo works fine 1`] = `
     创建内容
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -446,28 +438,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -478,12 +448,28 @@ exports[`Anchor target demo works fine 1`] = `
     保密协议
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -497,28 +483,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -529,12 +493,28 @@ exports[`Anchor target demo works fine 1`] = `
     其他
     <div
       class="t-popup-reference t-copy"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-popup-content--arrow"
+          >
+            复制链接
+            <div
+              class="t-popup__arrow"
+              data-popper-arrow="true"
+            />
+          </div>
+        </div>
+      </transition-stub>
       <svg
         class="t-icon t-icon-file-copy"
         name="file-copy"
@@ -548,28 +528,6 @@ exports[`Anchor target demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </div>

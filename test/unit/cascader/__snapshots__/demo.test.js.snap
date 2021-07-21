@@ -7,12 +7,101 @@ exports[`Cascader base demo works fine 1`] = `
   >
     <div
       class="t-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-cascader-dropdown"
+          >
+            <div>
+              <div
+                class="t-cascader-panel t-cascader--normal"
+              >
+                <ul
+                  class="t-cascader-menu t-cascader-menu__seperator"
+                >
+                  <li
+                    class="t-cascader-item t-is-expanded t-size-s"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      上海
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon t-is-expanded"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-s"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      深圳
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                </ul>
+                <ul
+                  class="t-cascader-menu"
+                >
+                  <li
+                    class="t-cascader-item t-is-selected t-is-expanded t-size-s"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      黄浦区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-s"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      静安区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-s"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      浦东新区
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-cascader t-is-active t-size-s"
       >
@@ -36,28 +125,6 @@ exports[`Cascader base demo works fine 1`] = `
           />
         </svg>
       </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -66,12 +133,101 @@ exports[`Cascader base demo works fine 1`] = `
   >
     <div
       class="t-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-cascader-dropdown"
+          >
+            <div>
+              <div
+                class="t-cascader-panel t-cascader--normal"
+              >
+                <ul
+                  class="t-cascader-menu t-cascader-menu__seperator"
+                >
+                  <li
+                    class="t-cascader-item t-is-expanded t-size-m"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      上海
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon t-is-expanded"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-m"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      深圳
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                </ul>
+                <ul
+                  class="t-cascader-menu"
+                >
+                  <li
+                    class="t-cascader-item t-is-selected t-is-expanded t-size-m"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      黄浦区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-m"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      静安区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-m"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      浦东新区
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-cascader t-is-active t-size-m"
       >
@@ -95,28 +251,6 @@ exports[`Cascader base demo works fine 1`] = `
           />
         </svg>
       </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
-      </div>
     </div>
   </div>
    
@@ -125,12 +259,101 @@ exports[`Cascader base demo works fine 1`] = `
   >
     <div
       class="t-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content t-cascader-dropdown"
+          >
+            <div>
+              <div
+                class="t-cascader-panel t-cascader--normal"
+              >
+                <ul
+                  class="t-cascader-menu t-cascader-menu__seperator"
+                >
+                  <li
+                    class="t-cascader-item t-is-expanded t-size-l"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      上海
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon t-is-expanded"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-l"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      深圳
+                    </span>
+                    <svg
+                      class="t-icon t-icon-chevron-right t-cascader-icon"
+                    >
+                      <use
+                        xlink:href="#t-icon-chevron-right"
+                      />
+                    </svg>
+                  </li>
+                </ul>
+                <ul
+                  class="t-cascader-menu"
+                >
+                  <li
+                    class="t-cascader-item t-is-selected t-is-expanded t-size-l"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      黄浦区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-l"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      静安区
+                    </span>
+                  </li>
+                  <li
+                    class="t-cascader-item t-size-l"
+                  >
+                    <span
+                      class="t-cascader-item__label"
+                      role="label"
+                    >
+                      浦东新区
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-cascader t-is-active t-size-l"
       >
@@ -153,28 +376,6 @@ exports[`Cascader base demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
-      </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
       </div>
     </div>
   </div>
