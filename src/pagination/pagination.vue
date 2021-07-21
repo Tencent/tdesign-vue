@@ -25,7 +25,7 @@
     <!-- 页数 -->
     <template v-if="!isSimple">
       <ul :class="btnWrapClass">
-        <li :class="getButtonClass(1)" v-if="isFolded" @click="toPage(1)" :data-ripple="rippleColor" v-ripple="true"><span :style="rippleInnerStyle">1</span></li>
+        <li :class="getButtonClass(1)" v-if="isFolded" @click="toPage(1)">1</li>
         <li
           :class="btnMoreClass"
           v-if="isFolded && isPrevMoreShow"
@@ -38,8 +38,8 @@
           </template>
           <template v-else><t-icon-ellipsis></t-icon-ellipsis></template>
         </li>
-        <li :class="getButtonClass(i)" v-for="i in pages" :key="i" @click="toPage(i)" :data-ripple="rippleColor" v-ripple="true">
-          <span :style="rippleInnerStyle">{{ i }}</span>
+        <li :class="getButtonClass(i)" v-for="i in pages" :key="i" @click="toPage(i)">
+          {{ i }}
         </li>
         <li
           :class="btnMoreClass"
@@ -53,7 +53,7 @@
           </template>
           <template v-else><t-icon-ellipsis></t-icon-ellipsis></template>
         </li>
-        <li :class="getButtonClass(pageCount)" v-if="isFolded" @click="toPage(pageCount)" :data-ripple="rippleColor" v-ripple="true"><span :style="rippleInnerStyle">{{ pageCount }}</span></li>
+        <li :class="getButtonClass(pageCount)" v-if="isFolded" @click="toPage(pageCount)">{{ pageCount }}</li>
       </ul>
     </template>
     <template v-else>
@@ -90,7 +90,6 @@
 <script lang="ts">
 import config from '../config';
 import mixins from '../utils/mixins';
-import ripple from '../utils/ripple';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TIconChevronLeft from '../icon/chevron-left';
 import TIconChevronRight from '../icon/chevron-right';
@@ -101,7 +100,7 @@ import TInput from '../input';
 import { Select } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-import { ClassName, Styles } from '../common';
+import { ClassName } from '../common';
 
 const { prefix } = config;
 const name = `${prefix}-pagination`;
@@ -123,7 +122,6 @@ export default mixins(PaginationLocalReceiver).extend({
     prop: 'current',
     event: 'current-change',
   },
-  directives: { ripple },
   props: {
     ...props,
     /**
@@ -152,16 +150,7 @@ export default mixins(PaginationLocalReceiver).extend({
       jumpIndex: this.current,
       prevMore: false,
       nextMore: false,
-      rippleColor: '',
     };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      const el = this.$el.querySelector?.(`.${prefix}-is-current`);
-      if (el && !this.rippleColor) {
-        this.rippleColor = getComputedStyle(el).backgroundColor;
-      }
-    });
   },
   computed: {
     /**
@@ -175,11 +164,6 @@ export default mixins(PaginationLocalReceiver).extend({
           [CLASSNAMES.STATUS.disabled]: this.disabled,
         },
       ];
-    },
-    rippleInnerStyle(): Styles {
-      return {
-        position: 'relative',
-      };
     },
     totalClass(): ClassName {
       return [`${name}__total`];
