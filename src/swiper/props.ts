@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-20 22:17:08
  * */
 
 import { TdSwiperProps } from './type';
@@ -39,7 +39,7 @@ export default {
   /** 滑动动画时长 */
   duration: {
     type: Number,
-    default: 500,
+    default: 300,
   },
   /** 轮播间隔时间 */
   interval: {
