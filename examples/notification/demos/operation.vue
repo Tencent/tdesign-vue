@@ -9,20 +9,20 @@
     <t-notification theme="info" title="自定义底部" content="使用 props function 自定义底部内容" :footer="footer2" />
     <t-notification theme="info" :title="title" content="1. 使用 props function 自定义标题；2. 使用插槽自定义底部内容">
       <div slot="footer" class="t-notification__detail">
-        <span class="t-notification__detail--item">知道了</span>
+        <t-button class="t-notification__detail--item" theme="default" variant="text">知道了</t-button>
       </div>
     </t-notification>
     <t-notification theme="info" content="1. 使用插槽自定义标题 2. 使用插槽自定义底部内容" v-if="visible">
       <div slot='title'>自定义标题 <small>我是副标题</small></div>
       <div slot="footer" class="t-notification__detail">
-        <span class="t-notification__detail--item">重启</span>
-        <span class="t-notification__detail--item t-is-active" @click="remind">稍后提醒我(10s)</span>
+        <t-button class="t-notification__detail--item" theme="default" variant="text">重启</t-button>
+        <t-button class="t-notification__detail--item" theme="primary" variant="text" @click="remind">稍后提醒我(10s)</t-button>
       </div>
     </t-notification>
     <t-notification theme="info" title="自定义内容">
       <div slot='content'>使用插槽自定义内容</div>
       <div slot="footer" class="t-notification__detail">
-        <span class="t-notification__detail--item">重启</span>
+        <t-button class="t-notification__detail--item" theme="default" variant="text">重启</t-button>
         <t-dropdown :options="options">
           <t-button variant="text" class="tdesign-demo-dropdown"
           >更多 <t-icon name="chevron-down" class="tdesign-demo-arrow"
@@ -62,14 +62,14 @@ export default {
     footer() {
       return (
         <div slot="footer" class="t-notification__detail">
-          <span class="t-notification__detail--item t-is-active">查看详情</span>
+          <t-button class="t-notification__detail--item" theme="primary" variant="text">查看详情</t-button>
         </div>
       );
     },
     footer2() {
       return (
         <div slot="footer" class="t-notification__detail">
-          <span class="t-notification__detail--item t-is-active">查看详情</span>
+          <t-button class="t-notification__detail--item" theme="primary" variant="text">查看详情</t-button>
         </div>
       );
     },

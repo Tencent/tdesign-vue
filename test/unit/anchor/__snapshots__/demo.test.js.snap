@@ -216,7 +216,7 @@ exports[`Anchor target demo works fine 1`] = `
   class="anchor-demo"
   id="http://example.com#anchor-target"
 >
-  <h1
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-1"
   >
@@ -265,9 +265,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h1>
+  </div>
    
-  <h2
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-2"
   >
@@ -316,9 +316,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h2>
+  </div>
    
-  <h3
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-3"
   >
@@ -367,9 +367,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h3>
+  </div>
    
-  <h3
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-4"
   >
@@ -418,9 +418,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h3>
+  </div>
    
-  <h3
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-5"
   >
@@ -469,9 +469,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h3>
+  </div>
    
-  <h3
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-6"
   >
@@ -520,9 +520,9 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h3>
+  </div>
    
-  <h3
+  <div
     class="t-anchor-target"
     id="http://example.com#anchor-target-7"
   >
@@ -571,6 +571,6 @@ exports[`Anchor target demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </h3>
+  </div>
 </div>
 `;

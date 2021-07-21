@@ -49,7 +49,7 @@ export default Vue.extend({
     }
 
     return (
-      <button v-ripple class={buttonClass} type={this.type} disabled={this.disabled} {...{ on: this.$listeners }} ref="button">
+      <button v-ripple class={buttonClass} type={this.type} disabled={this.disabled} {...{ on: this.$listeners }}>
         {buttonContent}
       </button>
     );
