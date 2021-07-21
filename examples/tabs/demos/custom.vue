@@ -1,9 +1,5 @@
 <template>
   <div class="t-demo-tabs">
-    <div class="t-demo-tabs__desc">
-      <p>可以动态增加选项卡，仅支持卡片型</p>
-    </div>
-
     <t-tabs
       :value="value"
       theme="card"

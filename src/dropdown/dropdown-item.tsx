@@ -3,6 +3,7 @@ import Icon from '../icon';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import bus from './bus';
+import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__item`;
 
@@ -54,10 +55,10 @@ export default Vue.extend({
     };
   },
   methods: {
-    renderIcon(): JsxNode {
+    renderIcon(): TNodeReturnValue {
       return this.iconName ? <Icon name={this.iconName} /> : '';
     },
-    renderSuffix(): JsxNode {
+    renderSuffix(): TNodeReturnValue {
       return this.hasChildren ? <Icon class="children-suffix" name="chevron-right" /> : '';
     },
     handleItemClick(): void {

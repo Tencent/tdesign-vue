@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import props from '../../types/list-item/props';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import props from './list-item-props';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
 const name = `${prefix}-list-item`;
 
@@ -9,14 +9,13 @@ export default Vue.extend({
   name,
   props,
   render(): VNode {
-    const propsDefaultContent = renderTNodeJSX(this, 'default');
-    const propsContent = renderTNodeJSX(this, 'content');
+    const content = renderContent(this, 'default', 'content');
     const propsActionContent = renderTNodeJSX(this, 'action');
 
     return (
       <li class={name}>
         <div class={`${name}-main`}>
-          {propsDefaultContent || propsContent}
+          {content}
           {propsActionContent && <li class={`${name}__action`}>{propsActionContent}</li>}
         </div>
       </li>

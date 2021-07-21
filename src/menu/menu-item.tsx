@@ -1,8 +1,10 @@
 import { defineComponent, computed, inject, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '@TdTypes/menu-item/props';
+import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
 import Ripple from '../utils/ripple';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+
 const name = `${prefix}-menu-item`;
 
 export default defineComponent({
@@ -66,8 +68,8 @@ export default defineComponent({
   render() {
     return (
       <li v-ripple={this.menu.theme.value === 'light' ? '#E7E7E7' : '#383838'} class={this.classes} onClick={this.handleClick} ref="button">
-        {this.$slots.icon}
-        <span class={[`${prefix}-menu__content`]}>{this.$slots.default}</span>
+        {renderTNodeJSX(this, 'icon')}
+        <span class={[`${prefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
       </li>
     );
   },

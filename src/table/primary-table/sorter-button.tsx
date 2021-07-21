@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { SortType } from '../../../types/primary-table/TdPrimaryTableProps';
+import { SortType } from '../type';
 import { prefix } from '../../config';
 import { PropType } from 'vue/types/umd';
 import Tooltip from '../../tooltip';
@@ -38,19 +38,16 @@ export default Vue.extend({
     }
     const buttonProps = { on: { ...$listeners }, class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '' };
     const tips = tooltips[nextSortOrder];
-    const sortButton = <span {...buttonProps}>
-      {allowSortTypes
-        .map((direction: string) => {
-          const props = {
-            size: '12px',
-            class: direction === sortOrder ? `${prefix}-table-sort-icon-active` : '',
-          };
-          if (direction === 'asc') {
-            return <TIconChevronUp {...props} />;
-          }
-          return <TIconChevronDown {...props} />;
-        })}
-      </span>;
-    return tips ? <Tooltip content={tips} showArrow={false}>{sortButton}</Tooltip> : sortButton;
+    const sortButton = allowSortTypes
+      .map((direction: string) => {
+        const className = direction === sortOrder ? `${prefix}-table-sort-icon-active` : `${prefix}icon-sort-default`;
+        if (direction === 'asc') {
+          return <TIconChevronUp size='12px'  class={className} />;
+        }
+        return <TIconChevronDown  size='12px'  class={className} />;
+      });
+    return <div class={`${prefix}-table__cell--sort-trigger`} {...buttonProps}>
+      {tips ? <Tooltip style="line-height: 0px;" content={tips} showArrow={false}>{sortButton}</Tooltip> : sortButton}
+    </div>;
   },
 });

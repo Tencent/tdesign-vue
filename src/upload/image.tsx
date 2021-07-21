@@ -1,6 +1,6 @@
 import Vue, { PropType } from 'vue';
-import { UploadFile } from '../../types/upload/TdUploadProps';
-import { RemoveOptions } from './interface';
+import { UploadFile } from './type';
+import { UploadRemoveOptions } from './interface';
 import TIconAdd from '../icon/add';
 import IIconDelete from '../icon/delete';
 import IIconUpload from '../icon/upload';
@@ -21,7 +21,7 @@ export default Vue.extend({
       type: Function as PropType<(e: MouseEvent) => void>,
     },
     remove: {
-      type: Function as PropType<(options: RemoveOptions) => void>,
+      type: Function as PropType<(options: UploadRemoveOptions) => void>,
     },
     multiple: Boolean,
     max: Number,

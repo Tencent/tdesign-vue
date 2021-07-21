@@ -2,7 +2,8 @@ import Vue, { VNode } from 'vue';
 import { PLACEMENT_OFFSET } from './const';
 import TMessage from './message';
 import { prefix } from '../config';
-import { MessageOptions } from '../../types/message/TdMessageProps';
+import { MessageOptions } from './type';
+import { Styles } from '../common';
 
 export const DEFAULT_Z_INDEX = 6000;
 

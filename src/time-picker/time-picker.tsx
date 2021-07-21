@@ -4,17 +4,17 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
-import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './type';
-import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
+import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './interface';
+import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import PickerPanel from './panel';
 import TInput from '../input';
 import TIconTime from '../icon/time';
-import TPopup from '../popup';
+
 import InputItems from './input-items';
 
-import props from '../../types/time-picker/props';
+import props from './props';
 
 import { EPickerCols, EMPTY_VALUE, componentName, amFormat, pmFormat, AM } from './constant';
 

@@ -2,13 +2,13 @@ import Vue, { VNode, VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import get from 'lodash/get';
-import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import props from '../../types/option/props';
-import { Options } from '../../types/select/TdSelectProps';
+import props from './option-props';
+import { Options } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
+import { ClassName } from '../common';
 const name = `${prefix}-option`;
 const selectName = `${prefix}-select`;
 export interface OptionInstance extends Vue {
@@ -56,12 +56,12 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       ];
     },
     show(): boolean {
-      const target = this.tSelect.displayOptions.filter((option: Options) => get(option, this.tSelect.realValue) === this.value);
-      return this.label
-        && this.tSelect
-        && ((isFunction(this.tSelect.filter) && target.length > 0)
-          || (!isFunction(this.tSelect.filter) && this.label.toString().toLowerCase()
-            .indexOf(this.tSelect.searchInput.toLowerCase()) > -1));
+      if (this.tSelect) {
+        const target = this.tSelect.displayOptions.filter((option: Options) => get(option, this.tSelect.realValue) === this.value);
+        const isCreated = this.tSelect.creatable && this.value === this.tSelect.searchInput;
+        return target.length > 0 || isCreated;
+      }
+      return false;
     },
     labelText(): string | number {
       return this.label || this.value;
@@ -102,21 +102,9 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   mounted() {
     this.tSelect && this.tSelect.getOptions(this);
   },
-  beforeDestroy() {
-    if (this.tSelect) {
-      let target = 0;
-      for (let i = 0; i < this.tSelect.options.length; i++) {
-        if (get(this.tSelect.options[i], this.tSelect.realValue) === this.value) {
-          target = i;
-          break;
-        }
-      }
-      this.tSelect.destroyOptions(target);
-    }
-  },
   render(): VNode {
     const {
-      classes, show, labelText, selected, disabled, multiLimitDisabled,
+      classes, labelText, selected, disabled, multiLimitDisabled, show,
     } = this;
     const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
     const optionChild = children ? children : labelText;

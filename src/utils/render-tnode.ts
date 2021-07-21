@@ -1,6 +1,8 @@
 import Vue from 'vue';
+import { ComponentRenderProxy } from '@vue/composition-api';
 import { PropType, CreateElement, VNode, VNodeChildren, RenderContext } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { TNode } from '../common';
 
 // 组件render属性的ts类型
 type RenderTsTypesSimple = string | number | boolean;
@@ -17,6 +19,7 @@ enum RenderWay {
   Unknown = 'unknown'
 }
 
+export type VmType = Vue | ComponentRenderProxy;
 
 /**
  * 根据传入的值（对象），判断渲染该值（对象）的方式
@@ -77,7 +80,7 @@ interface JSXRenderContext {
  * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。 当属性值为 true 时则渲染 <t-icon-close />
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })。 params 为渲染节点时所需的参数
  */
-export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
+export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   const params = typeof options === 'object' && ('params' in options) ? options.params : null;
   const defaultNode = typeof options === 'object' && ('defaultNode' in options) ? options.defaultNode : options;
   const propsNode = vm[name];
@@ -99,7 +102,7 @@ export const renderTNodeJSX = (vm: Vue, name: string, options?: ScopedSlotReturn
  * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。this.closeBtn 为空时，则兜底渲染 <t-icon-close />
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params }) 。params 为渲染节点时所需的参数
  */
-export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
+export const renderTNodeJSXDefault = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   return renderTNodeJSX(vm, name, options) || defaultNode;
 };
@@ -114,7 +117,7 @@ export const renderTNodeJSXDefault = (vm: Vue, name: string, options?: ScopedSlo
  * @example renderContent(this, 'default', 'content', '我是默认内容')
  * @example renderContent(this, 'default', 'content', { defaultNode: '我是默认内容', params })
  */
-export const renderContent = (vm: Vue, name1: string, name2: string, options?: VNode | JSXRenderContext) => {
+export const renderContent = (vm: VmType, name1: string, name2: string, options?: VNode | JSXRenderContext) => {
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
   let defaultNode = (typeof options === 'object' && 'defaultNode' in options) && options.defaultNode;
   defaultNode = (typeof options === 'object' && 'context' in options) && options;

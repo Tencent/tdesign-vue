@@ -1,4 +1,4 @@
-import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './type';
+import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 

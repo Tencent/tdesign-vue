@@ -6,6 +6,7 @@
       "dom.iterable",
       "scripthost"
     ],
+    "declaration": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -29,7 +30,7 @@
         "src/*"
       ],
       "@common/*": [
-        "common/*"
+        "src/_common/*"
       ],
       "@TdTypes/*": [
         "types/*"
@@ -70,8 +71,10 @@
   ],
   "exclude": [
     "node_modules",
-    "tools",
-    "common"
+    "src/_common",
+    "dist",
+    "lib",
+    "es"
   ],
   "compileOnSave": false
 }

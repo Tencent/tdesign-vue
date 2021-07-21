@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
-import { PrimaryTableCol } from '../../../../types/primary-table/TdPrimaryTableProps';
-import primaryTableProps from '../../../../types/primary-table/props';
-import baseTableProps from '../../../../types/base-table/props';
+import { PrimaryTableCol } from '../../type';
+import primaryTableProps from '../../primary-table-props';
+import baseTableProps from '../../base-table-props';
 import { prefix } from '../../../config';
 import { filterDataByIds } from '../../util/common';
 import SelectBox from '../select-box';

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { CreateElement } from 'vue/types/umd';
 import { prefix } from '../config';
-import props from '../../types/tab-panel/props';
+import props from './tab-panel-props';
 
 export default Vue.extend({
   name: `${prefix}-tab-panel`,
@@ -34,8 +34,8 @@ export default Vue.extend({
   },
 
   render(h) {
-    const { renderOnHide, active } = this;
-    if (!renderOnHide && !active) return null;
+    const { destroyOnHide, active } = this;
+    if (!destroyOnHide && !active) return null;
     return (
       <div
         class="t-tab-panel"

@@ -4,8 +4,8 @@ import BulletpointIcon from '../../../icon/bulletpoint';
 import Dialog from '../../../dialog';
 import Checkbox from '../../../checkbox';
 import CheckboxGroup from '../../../checkbox/group';
-import primaryTableProps from '../../../../types/primary-table/props';
-import { TdPrimaryTableProps } from '../../../../types/primary-table/TdPrimaryTableProps';
+import primaryTableProps from '../../primary-table-props';
+import { TdPrimaryTableProps } from '../../type';
 import { prefix } from '../../../config';
 
 const content = '自定义列';

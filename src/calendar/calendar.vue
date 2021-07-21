@@ -153,14 +153,7 @@
 </template>
 
 <script lang="ts">
-import {
-  CalendarCell,
-  ControllerOptions,
-  TdCalendarProps,
-  CalendarWeek,
-  WeekDay,
-} from '../../types/calendar/TdCalendarProps';
-import props from '../../types/calendar/props';
+import props from './props';
 // 通用库
 import dayjs from 'dayjs';
 import calendar from 'dayjs/plugin/calendar';
@@ -185,8 +178,6 @@ import { Button as TButton } from '../button';
 import CalendarCellItem from './calendar-cell.vue';
 import RenderComponent from '../utils/render-component';
 import { RenderTNodeTemplate } from '../utils/render-tnode';
-
-// 组件相关的自定义类型
 import {
   CalendarData,
   CalendarRange,
@@ -195,7 +186,12 @@ import {
   CellColHeader,
   CellEventOption,
   TextConfigType,
-} from './type';
+  CalendarWeek,
+  WeekDay,
+  TdCalendarProps,
+  ControllerOptions,
+  CalendarCell,
+} from './interface';
 
 dayjs.extend(calendar);
 

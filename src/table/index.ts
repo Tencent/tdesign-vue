@@ -2,6 +2,7 @@ import _BaseTable from './base-table/index';
 import _PrimaryTable from './primary-table/index';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
+import { TdBaseTableProps, TdPrimaryTableProps } from './type';
 
 const TPrimaryTable = mapProps([
   {
@@ -21,6 +22,10 @@ const TPrimaryTable = mapProps([
     event: ['filter-change', 'update:filterValue'],
   },
 ])(_PrimaryTable);
+
+export type BaseTableProps = TdBaseTableProps;
+export type PrimaryTableProps = TdPrimaryTableProps;
+export * from './type';
 
 export const BaseTable = withInstall('BaseTable', _BaseTable);
 export const PrimaryTable = withInstall('PrimaryTable', TPrimaryTable);

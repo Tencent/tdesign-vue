@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import props from '../../types/footer/props';
+import props from './footer-props';
 
 const name = `${prefix}-footer`;
 

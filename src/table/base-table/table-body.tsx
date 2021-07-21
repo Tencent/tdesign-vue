@@ -1,8 +1,8 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../../config';
 import TableRow from './table-row';
-import baseTableProps from '../../../types/base-table/props';
-import { BaseTableCol } from '../../../types/base-table/TdBaseTableProps';
+import baseTableProps from '../base-table-props';
+import { BaseTableCol } from '../type';
 
 export default Vue.extend({
   name: `${prefix}-table-body`,

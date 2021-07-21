@@ -2,7 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimePickerPanelColInstance } from '../type';
+import { TimePickerPanelColInstance } from '../interface';
 import { panelColProps } from './props';
 import { componentName, EPickerCols } from '../constant';
 

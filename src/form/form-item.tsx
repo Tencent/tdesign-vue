@@ -1,14 +1,15 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import { prefix } from '../config';
 import { validate } from './form-model';
-import { ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType } from '../../types/form/TdFormProps';
-import props from '../../types/form-item/props';
+import { ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType } from './type';
+import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
 import Form from './form';
 import { NormalizedScopedSlot } from 'vue/types/vnode';
 import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
+import { ClassName, TNodeReturnValue } from '../common';
 
 type Result = ValidateResult<TdFormProps['data']>;
 

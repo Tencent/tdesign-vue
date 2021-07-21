@@ -1,5 +1,5 @@
 <template>
-  <div :class="paginationClass" v-if="total > 0">
+  <div :class="paginationClass">
     <!--数据统计区-->
     <div v-if="totalContent" :class="totalClass">
       <slot name="totalContent">
@@ -25,7 +25,7 @@
     <!-- 页数 -->
     <template v-if="!isSimple">
       <ul :class="btnWrapClass">
-        <li :class="getButtonClass(1)" v-if="isFolded" @click="toPage(1)" :data-ripple="rippleColor" v-ripple="true">1</li>
+        <li :class="getButtonClass(1)" v-if="isFolded" @click="toPage(1)" :data-ripple="rippleColor" v-ripple="true"><span :style="rippleInnerStyle">1</span></li>
         <li
           :class="btnMoreClass"
           v-if="isFolded && isPrevMoreShow"
@@ -39,7 +39,7 @@
           <template v-else><t-icon-ellipsis></t-icon-ellipsis></template>
         </li>
         <li :class="getButtonClass(i)" v-for="i in pages" :key="i" @click="toPage(i)" :data-ripple="rippleColor" v-ripple="true">
-          {{ i }}
+          <span :style="rippleInnerStyle">{{ i }}</span>
         </li>
         <li
           :class="btnMoreClass"
@@ -53,7 +53,7 @@
           </template>
           <template v-else><t-icon-ellipsis></t-icon-ellipsis></template>
         </li>
-        <li :class="getButtonClass(pageCount)" v-if="isFolded" @click="toPage(pageCount)" :data-ripple="rippleColor" v-ripple="true">{{ pageCount }}</li>
+        <li :class="getButtonClass(pageCount)" v-if="isFolded" @click="toPage(pageCount)" :data-ripple="rippleColor" v-ripple="true"><span :style="rippleInnerStyle">{{ pageCount }}</span></li>
       </ul>
     </template>
     <template v-else>
@@ -100,7 +100,8 @@ import TIconEllipsis from '../icon/ellipsis';
 import TInput from '../input';
 import { Select } from '../select';
 import CLASSNAMES from '../utils/classnames';
-import props from '../../types/pagination/props';
+import props from './props';
+import { ClassName, Styles } from '../common';
 
 const { prefix } = config;
 const name = `${prefix}-pagination`;
@@ -174,6 +175,11 @@ export default mixins(PaginationLocalReceiver).extend({
           [CLASSNAMES.STATUS.disabled]: this.disabled,
         },
       ];
+    },
+    rippleInnerStyle(): Styles {
+      return {
+        position: 'relative',
+      };
     },
     totalClass(): ClassName {
       return [`${name}__total`];

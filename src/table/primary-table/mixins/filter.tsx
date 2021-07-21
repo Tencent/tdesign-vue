@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { PrimaryTableCol, TdPrimaryTableProps } from '../../../../types/primary-table/TdPrimaryTableProps';
-import primaryTableProps from '../../../../types/primary-table/props';
-import baseTableProps from '../../../../types/base-table/props';
+import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
+import primaryTableProps from '../../primary-table-props';
+import baseTableProps from '../../base-table-props';
 import { prefix } from '../../../config';
 import { CheckboxGroup } from '../../../checkbox';
 import { RadioGroup } from '../../../radio';
@@ -68,8 +68,9 @@ export default Vue.extend({
         if (column.filter) {
           const title = getTitle(this, column, index);
           column.title = () => (
-              <div>
-                {title}
+            <div class={`${prefix}-table__cell--title`}>
+              <div>{title}</div>
+              <div class={`${prefix}-table__cell--filter`}>
                 <Popup trigger='click' placement='bottom' showArrow overlayClassName={`${prefix}-table-filter-pop`}>
                   {isFunction(this.filterIcon)
                     ? this.filterIcon(this.$createElement)
@@ -80,7 +81,7 @@ export default Vue.extend({
                   </template>
                 </Popup>
               </div>
-          );
+            </div>);
         }
         return column;
       });

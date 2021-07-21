@@ -1,13 +1,14 @@
 import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
-import props from '../../types/drawer/props';
-import { FooterButton, DrawerCloseContext, TdDrawerProps } from '../../types/drawer/TdDrawerProps';
+import props from './props';
+import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
+import { ClassName, Styles } from '../common';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -102,7 +103,7 @@ export default mixins(getLocalRecevierMixins('drawer')).extend({
           <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div>
           <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div>
           <div class={`${name}__body`}>{body}</div>
-          <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+          {this.footer ? <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div> : null }
         </div>
       </div>
     );

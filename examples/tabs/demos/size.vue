@@ -1,7 +1,6 @@
 <template>
   <div class="t-demo-tabs">
     <div class="t-demo-tabs__desc">
-      <p>目前支持medium，large两种类型选项卡</p>
       <t-button class="t-demo-tabs__btn" variant="outline" @click="() => sizeBtnClick(0)">
         {{ sizeArr[0] }}
       </t-button>

@@ -4,6 +4,12 @@ import _Footer from './footer';
 import _Aside from './aside';
 import _Content from './content';
 import withInstall from '../utils/withInstall';
+import { TdHeaderProps, TdFooterProps, TdAsideProps } from './type';
+
+export * from './type';
+export type HeaderProps = TdHeaderProps;
+export type FooterProps = TdFooterProps;
+export type AsideProps = TdAsideProps;
 
 export const Aside = withInstall('Aside', _Aside);
 export const Layout = withInstall('Layout', _Layout);

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import props from '../../types/header/props';
+import props from './header-props';
 
 const name = `${prefix}-header`;
 

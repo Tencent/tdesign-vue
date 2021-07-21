@@ -1,7 +1,6 @@
 <template>
   <div class="t-demo-tabs">
     <div class="t-demo-tabs__desc">
-      <p>目前支持上下左右四个方向，但仅支持常规型选项卡</p>
       <t-button class="t-demo-tabs__btn" variant="outline" @click="() => posBtnClick(0)">
         {{ posArr[0] }}
       </t-button>

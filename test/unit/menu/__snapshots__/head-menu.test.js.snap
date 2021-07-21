@@ -3,9 +3,7 @@
 exports[`HeadMenu props :active 1`] = `
 <div class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
-    <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
-    <div class="t-menu__options"></div>
   </div>
 </div>
 `;
@@ -13,9 +11,7 @@ exports[`HeadMenu props :active 1`] = `
 exports[`HeadMenu props :height 1`] = `
 <div class="t-menu t-head-menu t-menu-mode__normal t-menu--light" height="750px">
   <div class="t-head-menu__inner">
-    <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
-    <div class="t-menu__options"></div>
   </div>
 </div>
 `;
@@ -23,9 +19,7 @@ exports[`HeadMenu props :height 1`] = `
 exports[`HeadMenu props :theme 1`] = `
 <div class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
-    <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
-    <div class="t-menu__options"></div>
   </div>
 </div>
 `;
@@ -33,11 +27,9 @@ exports[`HeadMenu props :theme 1`] = `
 exports[`HeadMenu slot <default> 1`] = `
 <div class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
-    <div class="t-menu__logo"></div>
     <ul class="t-menu">
       <div></div>
     </ul>
-    <div class="t-menu__options"></div>
   </div>
 </div>
 `;
@@ -49,7 +41,6 @@ exports[`HeadMenu slot <logo> 1`] = `
       <div></div>
     </div>
     <ul class="t-menu"></ul>
-    <div class="t-menu__options"></div>
   </div>
 </div>
 `;
@@ -57,7 +48,6 @@ exports[`HeadMenu slot <logo> 1`] = `
 exports[`HeadMenu slot <options> 1`] = `
 <div class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
   <div class="t-head-menu__inner">
-    <div class="t-menu__logo"></div>
     <ul class="t-menu"></ul>
     <div class="t-menu__options">
       <div></div>

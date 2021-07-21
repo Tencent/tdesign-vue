@@ -1,0 +1,333 @@
+import { Instance as popperInstance } from '@popperjs/core/lib/types';
+import dayjs from 'dayjs';
+
+import { EPickerCols } from '../time-picker/constant';
+import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
+
+export * from './type';
+export type DatePickerProps = TdDatePickerProps;
+export type DateRangePickerProps = TdDateRangePickerProps;
+
+export type DatePickerLocale = {
+  placeholder: object;
+  daysOfWeek: string[];
+  monthNames: string[];
+  weekdays: {
+    shorthand: [string, string, string, string, string, string, string];
+    longhand: [string, string, string, string, string, string, string];
+  };
+  months: {
+    shorthand: [string, string, string, string, string, string, string, string, string, string, string, string];
+    longhand: [string, string, string, string, string, string, string, string, string, string, string, string];
+  };
+  firstDayOfWeek: number;
+  rangeSeparator: string;
+  dayAriaLabel: string;
+  weekAbbreviation: string;
+  scrollTitle: string;
+  direction: string;
+  format: string;
+  yearAriaLabel: string;
+  applyLabel: string;
+  cancelLabel: string;
+  weekLabel: string;
+  clearLabel: string;
+  selectTime: string;
+  selectDate: string;
+  presets: { [key: string]: string };
+};
+
+export type CustomLocale = Partial<DatePickerLocale>;
+
+export type TdCSSProperties = Partial<CSSStyleDeclaration>;
+
+export interface DatePickerData {
+  tempValue: string | Date;
+  locale: CustomLocale | string;
+  locales: CustomLocale;
+  monthDate: Date;
+  start: Date;
+  end: Date;
+  selectedDates: Date[];
+  multiSeparator: string;
+  inSelection: boolean;
+  inline: boolean;
+  dateFormat: string;
+  foundation: popperInstance | null;
+  showTime: boolean;
+  inlineView: boolean;
+  els: Element[];
+  isOpen: boolean;
+  timeVlaue: dayjs.Dayjs;
+}
+
+export interface DatePickerMethods {
+  initClickaway: (el: Element) => void;
+  attachDatepicker: () => void;
+  getLocales: () => CustomLocale;
+  setLocales: () => void;
+  onNativeInput(event?: any): void;
+  onNativeFocus(event?: any): void;
+  onClick(event?: any): void;
+  normalizeDatetime: (value: Date, oldValue: Date) => Date;
+  dateClick: (value: Date) => void;
+  hoverDate: (value: Date) => void;
+  toggle: () => void;
+  open: () => void;
+  close: () => void;
+  clickedApply: (closePicker?: boolean) => void;
+  toggleTime: () => void;
+  clickAway: () => void;
+  clickRange: (value: Date[]) => void;
+  clear: (triggerChange: boolean) => void;
+  submitInput: (selectedDates: any[], triggerChange: boolean) => void;
+  parseDate(value: any, format?: string): Date | boolean;
+  isEnabled: (value: Date) => boolean;
+  setDate(inputDate: any, triggerChange?: boolean): void;
+  formatDate: (date: Date, format?: string) => string;
+  createPopover: () => void;
+  getPlaceholderText(): string;
+  handleTimePick(col: EPickerCols, time: number): any;
+}
+
+export interface DatePickerComputed {
+  inputListeners: any;
+  startText: string;
+  endText: string;
+  formattedValue: string;
+  rangeText: string;
+  min: Date | null;
+  max: Date | null;
+  classes: any;
+  pickerStyles: any;
+}
+
+export type DisableDate = Array<DateValue> | DisableDateObj | ((date: Date | string) => boolean);
+
+export interface DisableDateObj {
+  from?: string;
+  to?: string;
+  before?: string;
+  after?: string;
+}
+
+export interface PresetDate {
+  [name: string]: DateValue | (() => DateValue);
+}
+
+
+export interface CalendarComponentProps {
+  monthDate: Date;
+  locales: CustomLocale;
+  selectedDates: Date[];
+  start: Date;
+  end: Date;
+  minDate: Date;
+  maxDate: Date;
+  range: boolean;
+}
+
+export interface CalendarComponentData {
+  showSelector: boolean;
+}
+
+export interface CalendarComponentComputed {
+  monthName: string;
+  year: number;
+  month: number;
+  calendar: any[];
+  months: string[];
+  years: number[];
+}
+
+export interface CalendarComponentMethods {
+  toggleSelect: () => void;
+  dayClass: (date: Date) => {};
+}
+
+export interface CalendarMonthData {
+  showSelector: boolean;
+}
+
+export interface CalendarMonthMethods {
+  monthClasses(idx: number): object;
+  prevYear(): void;
+  nextYear(): void;
+  toggleSelect(): void;
+  onChange(idx: number): void;
+}
+export interface CalendarMonthComputed {
+  year: number;
+  month: number;
+  months: string[];
+  years: number[];
+}
+export interface CalendarMonthProps {
+  mode: string;
+  monthDate: Date;
+  locales: CustomLocale;
+  currentMonth: Date;
+}
+
+export type timeOption = {
+  label: string;
+  value: number;
+  disabled: boolean;
+};
+export type timeColumn = {
+  type: string;
+  items: timeOption[];
+};
+
+export interface CalendarTimeData {
+  hour: null | number;
+  minute: null | number;
+  seconds: null | number;
+  oldvalue: DateValue;
+  scollPadding: TdCSSProperties;
+  noScrollEvent: boolean;
+  delay: number;
+}
+export interface CalendarTimeMethods {
+  setInitData(): void;
+  emitValue(): void;
+  onChange(): void;
+  mapTime(start: number, end: number, step: number, disabledData: any[]): timeOption[];
+  _disabledHours(): string[];
+  _disabledMinutes(): string[];
+  _disabledSeconds(): string[];
+  isHoursDisabled(h: number): boolean;
+  isMinutesDisabled(m: number): boolean;
+  isSecondsDisabled(m: number): boolean;
+  isActive(type: string, value: number): boolean;
+  setTime(val: number, type: string): void;
+  onScrollHours(vm: any, value: number): void;
+  onScrollMinutes(vm: any, value: number): void;
+  onScrollSeconds(vm: any, value: number): void;
+  onScrollTimes(event: MouseEvent, type: string): void;
+  padScollTop(): void;
+  getAvailableHour(): null | number;
+  enableScrollEvent(vm: any): void;
+  setScollTop(): void;
+}
+export interface CalendarTimeComputed {
+  cssClasses: object;
+  hoursOptions: timeOption[];
+  minutesOptions: timeOption[];
+  secondsOptions: timeOption[];
+  columns: timeColumn[];
+  inputListeners: any;
+}
+export interface CalendarTimeProps {
+  value: DateValue;
+  format: string;
+  minuteIncrement: number;
+  secondsIncrement: number;
+  height: number;
+  // check css line height
+  lineHeight: number;
+  disabledHours: number[];
+  disabledMinutes: number[];
+  disabledSeconds: number[];
+  minTime: DateValue;
+  maxTime: DateValue;
+  // behaviour: any;
+  enableSeconds: boolean;
+  inlineView: boolean;
+}
+
+export interface CalendarPreset {
+  label: string;
+  value: DateValue[];
+}
+export interface CalendarPresetsMethods {
+  clickPreset(value: DateValue): void;
+}
+
+export interface CalendarPresetsProps {
+  presets: CalendarPreset;
+  locales: CustomLocale;
+  onClickRange: Function;
+}
+
+export interface DateRangeProps {
+  mode: string;
+  value: Array<Date>;
+  minDate: Date;
+  maxDate: Date;
+  firstDayOfWeek: number;
+  disabledDate: Function;
+  onChange: Function;
+}
+export interface DateProps {
+  mode: string;
+  value: Date;
+  minDate: Date;
+  maxDate: Date;
+  firstDayOfWeek: number;
+  disabledDate: Function;
+  onChange: Function;
+}
+
+export interface DateHeaderProps {
+  year: number;
+  month: number;
+  type: string;
+}
+export interface DateRangeMethods {
+  initialPicker(): void;
+  getLeftAndRightDataFromValue(value: Array<Date>): { leftYear: number; leftMonth: number; rightYear: number; rightMonth: number };
+  getData(value: { year: number; month: number; type: string }): object;
+  getClickHandler(direction: string): object;
+  onHeaderClick(btnType: string, flag: number): void;
+  clickHeader(btnType: string, flag: number, direction: string): void;
+  clickDate(date: Date): void;
+  clickYear(date: Date, type: string): void;
+  clickMonth(date: Date, type: string): void;
+  onMouseEnter(date: Date): void;
+  onTypeChange(): void;
+  handleTypeChange(fdirection: string, type: string): void;
+}
+export interface DateMethods {
+  getClickHandler(): Function;
+  clickHeader(flag: number, direction: string): void;
+  clickDate(date: Date): void;
+  clickYear(date: Date, type: string): void;
+  clickMonth(date: Date, type: string): void;
+  onTypeChange(value: string): void;
+}
+
+export interface DateRangeComputed {
+  leftData: object;
+  rightData: object;
+}
+export interface DateComputed {
+  tableData: object;
+}
+export interface DateRangeData {
+  leftType: string;
+  rightType: string;
+  leftYear: number;
+  rightYear: number;
+  leftMonth: number;
+  rightMonth: number;
+  startValue: Date;
+  endValue: Date;
+  isFirstClick: boolean;
+  firstClickValue: Date;
+}
+export interface DateData {
+  year: number;
+  month: number;
+  type: string;
+}
+
+export interface Cell {
+  active: boolean;
+  disabled: boolean;
+  now: boolean;
+  text: string;
+  value: Date;
+}
+
+export interface DatePickerInstance extends Vue, DatePickerData, DatePickerMethods, DatePickerComputed { }

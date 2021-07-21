@@ -1,10 +1,11 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
-import props from '../../types/radio-group/props';
-import { RadioOptionObj, RadioOption, RadioValue } from '../../types/radio/TdRadioProps';
+import props from './radio-group-props';
+import { RadioOptionObj, RadioOption, RadioValue } from './type';
 import { prefix } from '../config';
 import Radio from './radio';
+import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-radio-group`;
 

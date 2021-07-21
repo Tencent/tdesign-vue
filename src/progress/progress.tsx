@@ -8,10 +8,11 @@ import IconWarningFill from '../icon/error-circle-filled';
 import IconsClearLine from '../icon/close';
 import IconSuccessLine from '../icon/check';
 import IconWarningLine from '../icon/error';
-import props from '../../types/progress/props';
+import props from './props';
 // import { RenderTNodeTemplate } from '../utils/render-tnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { Styles } from '../common';
 
 const name = `${prefix}-progress`;
 

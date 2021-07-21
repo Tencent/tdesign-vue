@@ -14,7 +14,6 @@
       multiple
       placeholder="-请选择-"
       :options="options"
-      filterable
       :filter="filterMethod"
       style="width: 400px;display: inline-block;"
       @blur="handleBlur"

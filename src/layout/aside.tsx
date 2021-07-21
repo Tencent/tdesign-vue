@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import { prefix } from '../config';
-import props from '../../types/aside/props';
+import props from './aside-props';
 import Layout from './layout';
 
 const name = `${prefix}-aside`;

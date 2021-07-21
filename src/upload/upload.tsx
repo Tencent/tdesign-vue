@@ -6,21 +6,23 @@ import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from './xhr';
-import { UploadFile } from '../../types/upload/TdUploadProps';
+import { TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext } from './type';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
-import props from '../../types/upload/props';
+import props from './props';
 import findIndex from 'lodash/findIndex';
 import {
   HTMLInputEvent,
   SuccessContext,
   ProgressContext,
-  RemoveOptions,
+  UploadRemoveOptions,
   FlowRemoveContext,
 } from './interface';
+import { ClassName } from '../common';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-upload`;
 
@@ -100,11 +102,19 @@ export default Vue.extend({
   },
 
   methods: {
+    emitChangeEvent(files: Array<UploadFile>, ctx: UploadChangeContext) {
+      emitEvent<Parameters<TdUploadProps['onChange']>>(this, 'change', files, ctx);
+    },
+    emitRemoveEvent(ctx: UploadRemoveContext) {
+      emitEvent<Parameters<TdUploadProps['onRemove']>>(this, 'remove', ctx);
+    },
     // handle event of preview img dialog event
     handlePreviewImg(event: MouseEvent, file: UploadFile) {
       if (!file.url) throw new Error('Error file');
       this.showImageViewUrl = file.url;
       this.showImageViewDialog = true;
+      const previewCtx = { file, e: event };
+      emitEvent<Parameters<TdUploadProps['onPreview']>>(this, 'preview', previewCtx);
     },
 
     handleChange(event: HTMLInputEvent): void {
@@ -121,20 +131,16 @@ export default Vue.extend({
 
     handleSingleRemove(e: MouseEvent) {
       const changeCtx =  { trigger: 'remove' };
-      this.$emit('change', [], changeCtx);
-      this.onChange && this.onChange([], changeCtx);
-      this.$emit('remove', { e });
-      this.onRemove && this.onRemove({ e });
+      this.emitChangeEvent([], changeCtx);
+      this.emitRemoveEvent({ e });
     },
 
-    handleMultipleRemove(options: RemoveOptions) {
+    handleMultipleRemove(options: UploadRemoveOptions) {
       const changeCtx =  { trigger: 'remove', ...options };
       const files = this.files.concat();
       files.splice(options.index, 1);
-      this.$emit('change', files, changeCtx);
-      this.onChange && this.onChange(files, changeCtx);
-      this.$emit('remove', options);
-      this.onRemove && this.onRemove(options);
+      this.emitChangeEvent(files, changeCtx);
+      this.emitRemoveEvent(options);
     },
 
     handleListRemove(context: FlowRemoveContext) {
@@ -223,16 +229,14 @@ export default Vue.extend({
       }
       this.errorMsg = (res && res.error) ?? '上传失败';
       const context = { e: event, file };
-      this.$emit('fail', context);
-      this.onFail && this.onFail(context);
+      emitEvent<Parameters<TdUploadProps['onFail']>>(this, 'fail', context);
     },
 
     handleProgress({ event, file, percent }: ProgressContext) {
       file.percent = percent;
       this.loadingFile = file;
       const progressCtx = { percent, e: event, file };
-      this.$emit('progress', progressCtx);
-      this.onProgress && this.onProgress(progressCtx);
+      emitEvent<Parameters<TdUploadProps['onProgress']>>(this, 'progress', progressCtx);
     },
 
     handleSuccess({ event, file, response }: SuccessContext) {
@@ -245,11 +249,9 @@ export default Vue.extend({
       const newFile: UploadFile = { ...file, response };
       const files = this.multiple ? this.files.concat(newFile) : [newFile];
       const context = { e: event, response, trigger: 'upload-success' };
-      this.$emit('change', files, context);
-      this.onChange && this.onChange(files, context);
+      this.emitChangeEvent(files, context);
       const sContext = { file, fileList: files, e: event, response };
-      this.$emit('success', sContext);
-      this.onSuccess && this.onSuccess(sContext);
+      emitEvent<Parameters<TdUploadProps['onSuccess']>>(this, 'success', sContext);
       // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
       this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
       this.loadingFile = null;
@@ -266,16 +268,14 @@ export default Vue.extend({
 
     handleDragenter(e: DragEvent) {
       if (this.disabled) return;
-      this.$emit('dragenter', { e });
       this.dragActive = true;
-      this.onDragenter && this.onDragenter({ e });
+      emitEvent<Parameters<TdUploadProps['onDragenter']>>(this, 'dragenter', { e });
     },
 
     handleDragleave(e: DragEvent) {
       if (this.disabled) return;
-      this.$emit('dragleave', { e });
       this.dragActive = false;
-      this.onDragleave && this.onDragleave({ e });
+      emitEvent<Parameters<TdUploadProps['onDragleave']>>(this, 'dragleave', { e });
     },
 
     handleBeforeUpload(file: File | UploadFile): Promise<boolean> {

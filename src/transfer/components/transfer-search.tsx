@@ -1,7 +1,7 @@
 
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../../config';
-import { SearchOption } from '../type/transfer';
+import { SearchOption } from '../interface';
 
 const name = `${prefix}-transfer-search`;
 

@@ -18,7 +18,7 @@ import Vue from 'vue';
 import { COMPONENT_NAME } from './const';
 
 // 组件相关的自定义类型
-import { CalendarCell } from '../../types/calendar/TdCalendarProps';
+import { CalendarCell } from './interface';
 
 export default Vue.extend({
   name: `${COMPONENT_NAME}-cell`,

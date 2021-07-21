@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Breadcrumb from '@/src/breadcrumb/index.ts';
-import BreadcrumbItem from '@/src/breadcrumbItem/index.ts';
+import BreadcrumbItem from '@/src/breadcrumb/breadcrumb-item.tsx';
 
 describe('Breadcrumb', () => {
   describe(':props', () => {

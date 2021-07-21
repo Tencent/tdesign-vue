@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { defineComponent, computed, inject, ref, provide, onMounted } from '@vue/composition-api';
 import { prefix } from '../config';
-import props from '../../types/submenu/props';
+import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import TIconChevronDown from '../icon/chevron-down';
 import Ripple from '../utils/ripple';
@@ -153,29 +153,30 @@ export default defineComponent({
     },
     renderSubmenu() {
       const hasContent = this.$slots.content || this.$slots.default;
+      const icon = renderTNodeJSX(this, 'icon');
       const svgArrow = (
         <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
         </svg>);
       const normalSubmenu = [
         <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
-          {this.$slots.icon}
-          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
+          {icon}
+          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
           {hasContent && svgArrow}
         </div>,
         <ul class={this.subClass} >
-          {renderContent(this as Vue, 'default', 'content')}
+          {renderContent(this, 'default', 'content')}
         </ul>,
       ];
       const popupSubmenu = [
         <div class={this.submenuClass}>
-          {this.$slots.icon}
-          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this as Vue, 'title')}</span>
+          {icon}
+          <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
           {svgArrow}
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
-            {renderContent(this as Vue, 'default', 'content')}
+            {renderContent(this, 'default', 'content')}
           </ul>
         </div>,
       ];

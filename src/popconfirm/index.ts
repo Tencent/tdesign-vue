@@ -1,10 +1,10 @@
 import _Popconfirm from './popconfirm';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
-import { TdPopconfirmProps } from '../../types/popconfirm/TdPopconfirmProps';
+import { TdPopconfirmProps } from './type';
 
 export type PopconfirmProps = TdPopconfirmProps;
-export * from '../../types/popconfirm/TdPopconfirmProps';
+export * from './type';
 
 export const Popconfirm = withInstall('Popconfirm', mapProps(
   ['visible'],

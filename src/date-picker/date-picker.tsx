@@ -1,8 +1,8 @@
 import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
-import props from '../../types/date-picker/props';
-import { TdDatePickerProps } from '../../types/date-picker/TdDatePickerProps';
+import props from './props';
+import { TdDatePickerProps } from './type';
 
 import CLASSNAMES from '../utils/classnames';
 
@@ -17,7 +17,7 @@ import TPopup from '../popup';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 
-import { CustomLocale, DatePickerInstance, DateValue } from './type';
+import { CustomLocale, DatePickerInstance, DateValue } from './interface';
 import { COMPONENT_NAME } from './constants';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
@@ -26,7 +26,7 @@ import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/constant';
 import { dateIndexOf, firstUpperCase } from './utils';
 import EmbedTo from './embed-to';
-import { TimePickerPanelInstance } from '../time-picker/type';
+import { TimePickerPanelInstance } from '../time-picker';
 
 dayjs.extend(isBetween);
 
@@ -690,7 +690,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
           trigger="click"
           placement="bottom-left"
           disabled={disabled}
-          destroyOnHide
+          destroyOnClose
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}

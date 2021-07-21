@@ -1,7 +1,7 @@
-import baseTableProps from '../../../types/base-table/props';
-import { DataType, TdBaseTableProps } from '../../../types/base-table/TdBaseTableProps';
-import { TdPrimaryTableProps, PrimaryTableCol } from '../../../types/primary-table/TdPrimaryTableProps';
-import primaryTableProps from '../../../types/primary-table/props';
+import baseTableProps from '../base-table-props';
+import { DataType, TdBaseTableProps, TdPrimaryTableProps, PrimaryTableCol } from '../type';
+
+import primaryTableProps from '../primary-table-props';
 import SimpleTable from '../base-table';
 import { prefix } from '../../config';
 import mixins from '../../utils/mixins';
@@ -12,7 +12,7 @@ import filter from './mixins/filter';
 import showColumns from './mixins/show-columns';
 import asyncLoadingMixin from './mixins/async-loading';
 import { RenderExpandRow } from '../util/interface';
-import { PageInfo } from '../../../types/pagination/TdPaginationProps';
+import { PageInfo } from '../../pagination/type';
 import { emitEvent } from '../../utils/event';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;

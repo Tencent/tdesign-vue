@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { TransferListOptionBase } from './type/transfer';
+import { TransferListOptionBase } from './interface';
 
 export { emitEvent } from '../utils/event';
 

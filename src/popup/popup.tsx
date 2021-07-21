@@ -4,9 +4,10 @@ import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 import config from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { on, off, addClass, removeClass, getAttach } from '../utils/dom';
-import props from '../../types/popup/props';
+import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
-import { PopupVisibleChangeContext } from '../../types/popup/TdPopupProps';
+import { PopupVisibleChangeContext } from './type';
+import { Styles, ClassName } from '../common';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
 const { prefix } = config;
@@ -88,8 +89,10 @@ export default Vue.extend({
       }
     },
     overlayStyle() {
-      this.popperJS.update();
-      this.updateOverlayStyle();
+      if (this.popperJS) {
+        this.popperJS.update();
+        this.updateOverlayStyle();
+      }
     },
   },
   mounted() {
@@ -219,7 +222,7 @@ export default Vue.extend({
 
     destroyPopper(): void {
       if (this.popperJS) {
-        if (this.destroyOnHide) {
+        if (this.destroyOnClose) {
           this.popperJS.destroy();
           this.popperJS = null;
           this.popperElm.parentNode.removeChild(this.popperElm);
@@ -298,6 +301,7 @@ export default Vue.extend({
             v-show={!this.disabled && this.visible}
             role='tooltip'
             aria-hidden={(this.disabled || !this.visible) ? 'true' : 'false'}
+            style={{ zIndex: this.zIndex }}
           >
             <div class={this.overlayClasses} ref="overlay">
               {renderTNodeJSX(this, 'content')}

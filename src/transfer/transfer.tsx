@@ -13,14 +13,14 @@ import {
   TargetParams,
   SearchEvent,
   SearchOption,
-  PageInfo,
-  TdPaginationProps,
   TdTransferProps,
-} from './type/transfer';
+} from './interface';
+import { PageInfo, TdPaginationProps } from '../pagination/type';
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
-import props from '../../types/transfer/props';
+import props from './props';
 import { getTransferListOption, emitEvent } from './utils';
+import { TNode } from '../common';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';

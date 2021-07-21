@@ -15,7 +15,7 @@
       filterable
       placeholder="-请输入搜索-"
       :options="options2"
-      :onSearch="remoteMethod2"
+      @search="remoteMethod2"
       :loading="loading2"
       reserveKeyword
       style="width: 400px;display: inline-block;"

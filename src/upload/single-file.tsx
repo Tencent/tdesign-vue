@@ -3,7 +3,8 @@ import TIconClearCircleFilled from '../icon/close-circle-filled';
 import TIconLoading from '../icon/loading';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import { UploadFile } from '../../types/upload/TdUploadProps';
+import { UploadFile } from './type';
+import { ClassName } from '../common';
 
 export default Vue.extend({
   name: 'TUploadSingleFile',

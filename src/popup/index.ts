@@ -1,9 +1,9 @@
 import _Popup from './popup';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
-import { TdPopupProps } from '../../types/popup/TdPopupProps';
+import { TdPopupProps } from './type';
 
-export * from '../../types/popup/TdPopupProps';
+export * from './type';
 export type PopupProps = TdPopupProps;
 
 export const Popup = withInstall('Popup', mapProps(

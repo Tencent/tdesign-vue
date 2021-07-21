@@ -3,7 +3,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../../utils/mixins';
 import getLocalRecevierMixins from '../../locale/local-receiver';
-import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../type';
+import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../interface';
 import { componentName, EPickerCols } from '../constant';
 import { panelProps } from './props';
 import PanelCol from './panel-col';

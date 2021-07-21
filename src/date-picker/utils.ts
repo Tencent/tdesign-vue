@@ -1,4 +1,4 @@
-import { TdCSSProperties, DateValue } from './type';
+import { TdCSSProperties, DateValue } from './interface';
 import chunk from 'lodash/chunk';
 
 /**

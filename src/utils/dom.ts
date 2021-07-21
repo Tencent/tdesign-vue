@@ -3,6 +3,7 @@ import Vue from 'vue';
 import raf from 'raf';
 import { easeInOutCubic, EasingFunction } from './easing';
 import isString from 'lodash/isString';
+import { ScrollContainer, ScrollContainerElement } from '../common';
 
 const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 

@@ -1,7 +1,7 @@
 import Vue, { VueConstructor, VNode } from 'vue';
-import props from '../../types/radio/props';
+import props from './props';
 import Radio, { radioBtnName as name } from './radio';
-import { RadioGroupInstance } from './instance-types';
+import { RadioGroupInstance } from './instance';
 
 export interface RadioButtonInstance extends Vue {
   radioGroup: RadioGroupInstance;

@@ -1,9 +1,9 @@
 import PaginationBase from './pagination.vue';
 import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
-import { TdPaginationProps } from '../../types/pagination/TdPaginationProps';
+import { TdPaginationProps } from './type';
 
-export * from '../../types/pagination/TdPaginationProps';
+export * from './type';
 export type PaginationProps = TdPaginationProps;
 
 // 支持非受控属性 defaultCurrent 和 defaultSize

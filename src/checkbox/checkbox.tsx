@@ -1,8 +1,10 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import checkboxProps from '../../types/checkbox/props';
+import checkboxProps from './props';
 import Group from './group';
+import { ClassName } from '../common';
+
 
 const name = `${prefix}-checkbox`;
 
