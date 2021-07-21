@@ -99,7 +99,8 @@ export default Vue.extend({
     // handle：
     handleSelectChange(record: Record<string, any> = {}): void {
       let selectedRowKeys = [...this.selectedRowKeys] as Array<string | number>;
-      const id = get(record, this.reRowKey);
+      const { reRowKey } = this;
+      const id = get(record, reRowKey);
       const selectedRowIndex = selectedRowKeys.indexOf(id);
       const isSelected = selectedRowIndex !== -1;
       if (this.selectColumn.type === 'multiple') {
@@ -111,7 +112,7 @@ export default Vue.extend({
         selectedRowKeys = !isSelected ? [id] : [];
       }
       emitEvent(this, 'select-change', selectedRowKeys, {
-        selectedRowData: filterDataByIds(this.data, selectedRowKeys),
+        selectedRowData: filterDataByIds(this.data, selectedRowKeys, reRowKey),
       });
     },
     handleSelectAll(): void {
@@ -122,7 +123,7 @@ export default Vue.extend({
         ? [...disabledSelectedRowKeys]
         : [...disabledSelectedRowKeys, ...canSelectedRowKeys]) as Array<string | number>;
       const params = {
-        selectedRowData: filterDataByIds(this.data, allIds),
+        selectedRowData: filterDataByIds(this.data, allIds, reRowKey),
       };
       emitEvent(this, 'select-change', allIds, params);
     },
