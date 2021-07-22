@@ -10,6 +10,10 @@ const name = `${prefix}-menu`;
 export default defineComponent({
   name,
   props: { ...props },
+  model: {
+    prop: 'value',
+    event: 'change',
+  },
   setup(props, ctx) {
     const mode = ref(props.expandType);
     const theme = computed(() => props.theme);
@@ -31,7 +35,7 @@ export default defineComponent({
       height: '100%',
       width: props.collapsed ? '64px' : expandWidth,
     }));
-    const activeIndexValue = ref(props.value);
+    const activeIndexValue = ref(props.defaultValue || props.value);
     const expandedArray = ref(props.expanded || []);
     const deliver = (evt: string) => {
       const func = `on${evt[0].toUpperCase() + evt.slice(1)}`;
@@ -58,7 +62,6 @@ export default defineComponent({
       theme,
       isHead: false,
       select: (val: MenuValue) => {
-        activeIndexValue.value = val;
         emitChange(val);
       },
       open: (val: MenuValue) => {

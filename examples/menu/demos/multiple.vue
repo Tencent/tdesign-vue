@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <t-head-menu value="2-1" expandType="popup">
+    <t-head-menu defaultValue="2-1" expandType="popup">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
@@ -20,7 +20,7 @@
         <t-menu-item value="2-2">子菜单2-2</t-menu-item>
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
-      <template #options>
+      <template #operations>
         <a href="javascript:;"><t-icon name="search"/></a>
         <a href="javascript:;"><t-icon name="mail"/></a>
         <a href="javascript:;"><t-icon name="user"/></a>
@@ -28,7 +28,7 @@
       </template>
     </t-head-menu>
 
-    <t-head-menu value="2-1" theme="dark" expandType="popup" style="margin-top: 24px">
+    <t-head-menu defaultValue="2-1" theme="dark" expandType="popup" style="margin-top: 24px">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       </template>
@@ -48,7 +48,7 @@
         <t-menu-item value="2-2">子菜单2-2</t-menu-item>
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
-      <template #options>
+      <template #operations>
         <a href="javascript:;"><t-icon name="search"/></a>
         <a href="javascript:;"><t-icon name="mail"/></a>
         <a href="javascript:;"><t-icon name="user"/></a>

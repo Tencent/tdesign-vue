@@ -1,13 +1,13 @@
 <template>
   <div>
-    <t-head-menu theme="light" value="item2" @change="changeHandler">
+    <t-head-menu theme="light" v-model="menu1Value" @change="changeHandler">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
       <t-menu-item value="item1">内容列表</t-menu-item>
       <t-menu-item value="item2">已选内容</t-menu-item>
       <t-menu-item value="item4" :disabled="true">内容列表</t-menu-item>
-      <template #options>
+      <template #operations>
         <a href="javascript:;"><t-icon name="search"/></a>
         <a href="javascript:;"><t-icon name="mail"/></a>
         <a href="javascript:;"><t-icon name="user"/></a>
@@ -17,12 +17,12 @@
 
     <br />
 
-    <t-head-menu theme="dark" value="item1" height="120px">
+    <t-head-menu theme="dark" v-model="menu2Value" height="120px">
       <img slot="logo" width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="item1">已选内容</t-menu-item>
       <t-menu-item value="item2">内容列表</t-menu-item>
       <t-menu-item value="item4" :disabled="true">内容列表</t-menu-item>
-      <template #options>
+      <template #operations>
         <a href="javascript:;"><t-icon name="search"/></a>
         <a href="javascript:;"><t-icon name="mail"/></a>
         <a href="javascript:;"><t-icon name="user"/></a>
@@ -34,6 +34,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      menu1Value: 'item2',
+      menu2Value: 'item1',
+    };
+  },
   methods: {
     changeHandler(active) {
       console.log('change', active);

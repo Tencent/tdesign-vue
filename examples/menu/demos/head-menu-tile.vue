@@ -10,7 +10,7 @@
       </t-submenu>
     </t-menu-item>
     <t-menu-item value="4" :disabled="true">菜单4</t-menu-item>
-    <template #options>
+    <template #operations>
       <a href="javascript:;"><t-icon name="search"/></a>
       <a href="javascript:;"><t-icon name="mail"/></a>
       <a href="javascript:;"><t-icon name="user"/></a>

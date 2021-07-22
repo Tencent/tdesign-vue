@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-21 15:45:27
  * */
 
 import { TNode } from '../common';
@@ -33,6 +35,10 @@ export interface TdMenuProps {
    * 站点 LOGO
    */
   logo?: TNode;
+  /**
+   * 导航操作区域
+   */
+  operations?: TNode;
   /**
    * 菜单风格
    * @default light
@@ -180,6 +186,13 @@ export interface TdMenuItemProps {
    * 菜单项唯一标识
    */
   value?: MenuValue;
+};
+
+export interface TdMenuGroupProps {
+  /**
+   * 菜单组标题
+   */
+  title?: string | TNode;
 };
 
 export type MenuValue = string | number;
