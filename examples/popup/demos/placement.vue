@@ -5,7 +5,7 @@
       content="这是popup内容"
       placement="top"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>top</t-button>
     </t-popup>
@@ -14,7 +14,7 @@
       content="这是popup内容"
       placement="top-left"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>top-left</t-button>
     </t-popup>
@@ -23,7 +23,7 @@
       content="这是popup内容"
       placement="top-right"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>top-right</t-button>
     </t-popup>
@@ -32,7 +32,7 @@
       content="这是popup内容"
       placement="bottom"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>bottom</t-button>
     </t-popup>
@@ -41,7 +41,7 @@
       content="这是popup内容"
       placement="bottom-left"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>bottom-left</t-button>
     </t-popup>
@@ -50,7 +50,7 @@
       content="这是popup内容"
       placement="bottom-right"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>bottom-right</t-button>
     </t-popup>
@@ -59,7 +59,7 @@
       content="这是popup内容"
       placement="left"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>left</t-button>
     </t-popup>
@@ -68,7 +68,7 @@
       content="这是popup内容"
       placement="left-top"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>left-top</t-button>
     </t-popup>
@@ -77,7 +77,7 @@
       content="这是popup内容"
       placement="left-bottom"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>left-bottom</t-button>
     </t-popup>
@@ -86,7 +86,7 @@
       content="这是popup内容"
       placement="right"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>right</t-button>
     </t-popup>
@@ -95,7 +95,7 @@
       content="这是popup内容"
       placement="right-top"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>right-top</t-button>
     </t-popup>
@@ -104,7 +104,7 @@
       content="这是popup内容"
       placement="right-bottom"
       showArrow
-      destroyOnHide
+      destroyOnClose
     >
       <t-button>right-bottom</t-button>
     </t-popup>
@@ -179,4 +179,3 @@
   bottom: 50px;
 }
 </style>
-

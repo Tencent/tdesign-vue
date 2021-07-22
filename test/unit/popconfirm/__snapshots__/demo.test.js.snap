@@ -13,12 +13,80 @@ exports[`Popconfirm base demo works fine 1`] = `
       <div>
         <div
           class="t-popup-reference"
-          style="position: relative;"
         >
           <transition-stub
             appear="true"
             name="t-popup_animation"
-          />
+          >
+            <div
+              aria-hidden="true"
+              class="t-popup"
+              role="tooltip"
+              style="display: none;"
+            >
+              <div
+                class="t-popup-content t-popup-content--arrow t-popconfirm"
+              >
+                <div
+                  class="t-popconfirm__content"
+                >
+                  <div
+                    class="t-popconfirm__body"
+                  >
+                    <svg
+                      class="t-icon t-icon-info-circle-filled"
+                      style="color: rgb(0, 82, 217);"
+                    >
+                      <use
+                        xlink:href="#t-icon-info-circle-filled"
+                      />
+                    </svg>
+                    <div
+                      class="t-popconfirm__inner"
+                    >
+                      确认删除订单吗
+                    </div>
+                  </div>
+                  <div
+                    class="t-popconfirm__buttons"
+                  >
+                    <span
+                      class="t-popconfirm__cancel"
+                    >
+                      <button
+                        class="t-button t-size-s t-button--variant-base t-button--theme-default"
+                        type="button"
+                      >
+                        <span
+                          class="t-button__text"
+                        >
+                          取消
+                        </span>
+                      </button>
+                    </span>
+                    <span
+                      class="t-popconfirm__confirm"
+                    >
+                      <button
+                        class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+                        type="button"
+                      >
+                        <span
+                          class="t-button__text"
+                        >
+                          确定
+                        </span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="t-popup__arrow"
+                  data-popper-arrow="true"
+                />
+              </div>
+            </div>
+          </transition-stub>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
@@ -29,28 +97,6 @@ exports[`Popconfirm base demo works fine 1`] = `
               删除订单
             </span>
           </button>
-          <div
-            class="resize-sensor"
-            dir="ltr"
-            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-          >
-            <div
-              class="resize-sensor-expand"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-              />
-            </div>
-            <div
-              class="resize-sensor-shrink"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -61,12 +107,70 @@ exports[`Popconfirm base demo works fine 1`] = `
       <div>
         <div
           class="t-popup-reference"
-          style="position: relative;"
         >
           <transition-stub
             appear="true"
             name="t-popup_animation"
-          />
+          >
+            <div
+              aria-hidden="true"
+              class="t-popup"
+              role="tooltip"
+              style="display: none;"
+            >
+              <div
+                class="t-popup-content t-popup-content--arrow t-popconfirm"
+              >
+                <div
+                  class="t-popconfirm__content"
+                >
+                  <div
+                    class="t-popconfirm__body"
+                  >
+                    <svg
+                      class="t-icon t-icon-info-circle-filled"
+                      style="color: rgb(0, 82, 217);"
+                    >
+                      <use
+                        xlink:href="#t-icon-info-circle-filled"
+                      />
+                    </svg>
+                    <div
+                      class="t-popconfirm__inner"
+                    >
+                      你看到了吗？
+                    </div>
+                  </div>
+                  <div
+                    class="t-popconfirm__buttons"
+                  >
+                    <span
+                      class="t-popconfirm__cancel"
+                    />
+                    <span
+                      class="t-popconfirm__confirm"
+                    >
+                      <button
+                        class="t-button t-size-s t-button--variant-outline t-button--theme-primary"
+                        theme="primary"
+                        type="button"
+                      >
+                        <span
+                          class="t-button__text"
+                        >
+                          看到了
+                        </span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="t-popup__arrow"
+                  data-popper-arrow="true"
+                />
+              </div>
+            </div>
+          </transition-stub>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
@@ -77,28 +181,6 @@ exports[`Popconfirm base demo works fine 1`] = `
               点我看按钮
             </span>
           </button>
-          <div
-            class="resize-sensor"
-            dir="ltr"
-            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-          >
-            <div
-              class="resize-sensor-expand"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-              />
-            </div>
-            <div
-              class="resize-sensor-shrink"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -157,12 +239,80 @@ exports[`Popconfirm base demo works fine 1`] = `
       <div>
         <div
           class="t-popup-reference"
-          style="position: relative;"
         >
           <transition-stub
             appear="true"
             name="t-popup_animation"
-          />
+          >
+            <div
+              aria-hidden="true"
+              class="t-popup"
+              role="tooltip"
+              style="display: none;"
+            >
+              <div
+                class="t-popup-content t-popup-content--arrow t-popconfirm"
+              >
+                <div
+                  class="t-popconfirm__content"
+                >
+                  <div
+                    class="t-popconfirm__body"
+                  >
+                    <svg
+                      class="t-icon t-icon-info-circle-filled"
+                      style="color: rgb(0, 82, 217);"
+                    >
+                      <use
+                        xlink:href="#t-icon-info-circle-filled"
+                      />
+                    </svg>
+                    <div
+                      class="t-popconfirm__inner"
+                    >
+                      确认删除订单吗
+                    </div>
+                  </div>
+                  <div
+                    class="t-popconfirm__buttons"
+                  >
+                    <span
+                      class="t-popconfirm__cancel"
+                    >
+                      <button
+                        class="t-button t-size-s t-button--variant-base t-button--theme-default"
+                        type="button"
+                      >
+                        <span
+                          class="t-button__text"
+                        >
+                          取消
+                        </span>
+                      </button>
+                    </span>
+                    <span
+                      class="t-popconfirm__confirm"
+                    >
+                      <button
+                        class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+                        type="button"
+                      >
+                        <span
+                          class="t-button__text"
+                        >
+                          确定
+                        </span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="t-popup__arrow"
+                  data-popper-arrow="true"
+                />
+              </div>
+            </div>
+          </transition-stub>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
             disabled="disabled"
@@ -174,28 +324,6 @@ exports[`Popconfirm base demo works fine 1`] = `
               禁用按钮
             </span>
           </button>
-          <div
-            class="resize-sensor"
-            dir="ltr"
-            style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-          >
-            <div
-              class="resize-sensor-expand"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-              />
-            </div>
-            <div
-              class="resize-sensor-shrink"
-              style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-            >
-              <div
-                style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>

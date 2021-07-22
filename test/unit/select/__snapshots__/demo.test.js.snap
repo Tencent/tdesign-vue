@@ -8,12 +8,72 @@ exports[`Select base demo works fine 1`] = `
   >
     <div
       class="t-popup-reference t-select-popup-reference"
-      style="position: relative;"
     >
       <transition-stub
         appear="true"
         name="t-popup_animation"
-      />
+      >
+        <div
+          aria-hidden="true"
+          class="t-popup"
+          role="tooltip"
+          style="display: none;"
+        >
+          <div
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            style=""
+          >
+            <div>
+              <ul
+                class="t-select-create-option"
+                style="display: none;"
+              >
+                <li
+                  class="t-select-option t-size-m t-select-create-option-special"
+                  style="display: none;"
+                  title=""
+                />
+              </ul>
+              <li
+                class="t-select-empty t-size-m"
+              >
+                暂无数据
+              </li>
+              <span
+                style="display: none;"
+              >
+                <li
+                  class="t-select-option t-is-selected t-size-m"
+                  style="display: none;"
+                  title="已选择的选项"
+                >
+                  
+      已选择的选项
+    
+                </li>
+                <li
+                  class="t-select-option t-size-m"
+                  style="display: none;"
+                  title="短的选项二"
+                >
+                  
+      短的选项二
+    
+                </li>
+                <li
+                  class="t-select-option t-size-m"
+                  style="display: none;"
+                  title="很长很长很很长很长很长的选项三"
+                >
+                  
+      很长很长很很长很长很长的选项三
+    
+                </li>
+              </span>
+            </div>
+          </div>
+        </div>
+      </transition-stub>
       <div
         class="t-select t-size-m"
       >
@@ -36,28 +96,6 @@ exports[`Select base demo works fine 1`] = `
             fill-rule="evenodd"
           />
         </svg>
-      </div>
-      <div
-        class="resize-sensor"
-        dir="ltr"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
-        <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
-        <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
       </div>
     </div>
   </div>
