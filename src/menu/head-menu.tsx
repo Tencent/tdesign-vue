@@ -11,6 +11,10 @@ const name = `${prefix}-head-menu`;
 export default defineComponent({
   name,
   props,
+  model: {
+    prop: 'value',
+    event: 'change',
+  },
   components: { Tabs, TabPanel },
   setup(props, ctx) {
     const activeIndexValue = ref(props.defaultValue || props.value || '');
@@ -44,7 +48,6 @@ export default defineComponent({
       expandedArray,
       activeIndexValue,
       select: (val: MenuValue) => {
-        activeIndexValue.value = val;
         emitChange(val);
       },
       selectSubMenu: (menuItems: TdMenuItem[]) => {
@@ -67,7 +70,7 @@ export default defineComponent({
 
     // methods
     const handleTabChange = (val: MenuValue) => {
-      activeIndexValue.value = val;
+      emitChange(val);
     };
 
     // watch

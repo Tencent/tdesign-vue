@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" value="item2" width="200px" height="550px">
+  <t-menu theme="light" defaultValue="item2" width="200px" height="550px">
     <template #logo>
       <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
     </template>

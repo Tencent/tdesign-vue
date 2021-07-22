@@ -1,6 +1,6 @@
 <template>
 
-  <t-menu theme="light" active="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
+  <t-menu theme="light" defaultValue="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
     <template #logo>
       <img :width="collapsed ? 35 : 136"  :src="iconUrl" alt="logo">
     </template>
@@ -38,7 +38,7 @@
       </template>
       资源列表
     </t-menu-item>
-    <template #options>
+    <template #operations>
       <t-icon name="view-list" @click.native="changeCollapsed" />
     </template>
   </t-menu>
