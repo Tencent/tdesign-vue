@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-22 19:05:40
  * */
 
 import { TNode, SizeEnum } from '../common';
@@ -46,7 +48,7 @@ export interface TdTagProps {
    * 组件风格，用于描述组件不同的应用场景
    * @default default
    */
-  theme?: 'default' | 'primary' | 'info' | 'warning' | 'danger' | 'success';
+  theme?: 'default' | 'primary' | 'warning' | 'danger' | 'success';
   /**
    * 影响标签风格（theme）
    * @default dark
