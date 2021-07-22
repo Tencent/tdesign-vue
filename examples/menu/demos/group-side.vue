@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" value="item2" :collapsed="collapsed" @change="changeHandler" height="550px">
+  <t-menu theme="light" defaultValue="item2" :collapsed="collapsed" @change="changeHandler" height="550px">
     <template #logo>
       <img :width="collapsed ? 35 : 136"  :src="iconUrl" alt="logo">
     </template>
@@ -18,7 +18,7 @@
     <t-menu-group title="Classification C">
       <t-menu-item value="item4" :disabled="true">精准监控</t-menu-item>
     </t-menu-group>
-    <template #options>
+    <template #operations>
       <t-icon name="view-list" @click.native="changeCollapsed" />
     </template>
   </t-menu>

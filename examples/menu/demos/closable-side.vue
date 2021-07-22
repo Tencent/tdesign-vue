@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" value="2-1" :collapsed="collapsed" height="550px">
+  <t-menu theme="light" defaultValue="2-1" :collapsed="collapsed" height="550px">
     <template #logo>
       <span>LOGO</span>
     </template>
@@ -30,9 +30,9 @@
       </template>
       资源编辑
     </t-menu-item>
-    <div slot="options">
+    <template #operations>
       <t-icon :name="iconName" @click.native="changeCollapsed" />
-    </div>
+    </template>
   </t-menu>
 </template>
 
