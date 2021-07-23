@@ -1,13 +1,13 @@
 <template>
   <div>
-    <t-row>
+    <t-row style="margin-bottom: 24px">
       <t-col>
         <t-radio-group v-model="formData.layout" buttonStyle="solid">
           <t-radio-button value="vertical">纵向布局</t-radio-button>
           <t-radio-button value="inline">行内布局</t-radio-button>
         </t-radio-group>
       </t-col>
-    </t-row><br>
+    </t-row>
     <t-form
       :data="formData"
       ref="form"

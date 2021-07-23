@@ -10,6 +10,7 @@
     >
       <t-form-item label="失败" help="校验不通过，请输入正确内容" name='fail'>
         <t-input v-model="formData.fail"></t-input>
+        <t-icon slot="statusIcon" name='close-circle-filled' size="25px" style="color: #E34D59"/>
       </t-form-item>
       <t-form-item label="警告" name='warning'>
         <t-input v-model="formData.warning"></t-input>
@@ -25,19 +26,28 @@
       </t-form-item>
       <t-form-item label="加载中" name='loading'>
         <t-input v-model="formData.loading" placeholder="正在校验中，请稍等"></t-input>
-        <t-icon slot="statusIcon" name='loading' size="25px" style="color: #1890ff"/>
+        <template #statusIcon>
+          <div style="width:25px; display:flex; justify-content: center">
+            <t-loading slot="statusIcon" size="small"></t-loading>
+          </div>
+        </template>
       </t-form-item>
-      <t-form-item label="新增" name='add' help="自定义新增icon">
-        <t-input v-model="formData.add"></t-input>
-        <t-icon slot="statusIcon" name='add-rectangle' size="25px"/>
+      <t-form-item v-for="(item, index) in addlist" :key="item.id" label="新增" :name='item.name'>
+        <t-input v-model="formData[item.name]"></t-input>
+        <t-button v-if="item.id === 0 || item.id === lastAddItem - 1" @click="addItem" slot="statusIcon" variant="dashed">
+          <t-icon name='add' size="16px" style="color: #0004"/>
+        </t-button>
+        <t-button v-if="item.id > 0" @click="removeItem(item, index)" slot="statusIcon" variant="dashed">
+          <t-icon name='remove' size="16px" style="color: #0004"/>
+        </t-button>
       </t-form-item>
-      <t-form-item label="帮助" name='help' help="自定义帮助icon">
+      <t-form-item label="帮助" help="自定义帮助icon" name='help'>
         <t-input v-model="formData.help"></t-input>
-        <t-icon slot="statusIcon" name='help-circle' size="25px"/>
+        <t-icon slot="statusIcon" name='help-circle' size="25px" style="color: #0006"/>
       </t-form-item>
-      <t-form-item :statusIcon="false">
+      <t-form-item :statusIcon="false"  style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button type="reset">重置</t-button>
+        <t-button  theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -71,15 +81,29 @@ export default {
           { required: true, message: '必填', type: 'error' },
         ],
         warningB: [
-          { required: true, type: 'warning' },
+          { required: true, message: '必填', type: 'warning' },
         ],
       },
+      addlist: [
+        { id: 0, name: 'add0' },
+      ],
+      lastAddItem: 1,
     };
   },
   mounted() {
     this.$refs.formValidatorStatus.validate();
   },
   methods: {
+    addItem() {
+      const addNum = this.lastAddItem;
+      INITIAL_DATA[`add${addNum}`] = '';
+      this.addlist.push({ id: addNum, name: `add${addNum}` });
+      this.lastAddItem = this.lastAddItem + 1;
+    },
+    removeItem(item, index) {
+      delete INITIAL_DATA[`add${item.id}`];
+      this.addlist.splice(index, 1);
+    },
     onReset() {
       this.$message.success('重置成功');
     },

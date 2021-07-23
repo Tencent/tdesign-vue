@@ -211,11 +211,15 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const resultIcon = (otherContent?: TNodeReturnValue) => (
         <span class={CLASS_NAMES.status}>{otherContent}</span>
       );
+      const withoutIcon = () => (
+        <span class={[CLASS_NAMES.status, `${CLASS_NAMES.status}-without-icon`]}>
+        </span>
+      );
       if (statusIcon === true) {
         return this.getDefaultIcon();
       }
       if (statusIcon === false) {
-        return false;
+        return withoutIcon();
       }
       if (typeof statusIcon === 'function') {
         return resultIcon(statusIcon(this.$createElement, props));

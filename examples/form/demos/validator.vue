@@ -12,7 +12,7 @@
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
       <t-form-item label="密码" help="这里请填写密码" name='password'>
-        <t-input v-model="formData.password"></t-input>
+        <t-input type="password" v-model="formData.password"></t-input>
       </t-form-item>
       <t-form-item label="邮箱" name='email'>
         <t-input v-model="formData.email"></t-input>
@@ -42,9 +42,9 @@
       <t-form-item label="个人网站" name='content.url'>
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
-      <t-form-item>
+      <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button type="reset">重置</t-button>
+        <t-button  theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>
     </t-form>
   </div>
