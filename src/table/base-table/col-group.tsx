@@ -22,6 +22,9 @@ export default Vue.extend({
           style.width = `${width}px`;
         }
         if (minWidth) {
+          if (!width) {
+            style.width = `${minWidth}px`;
+          }
           style.minWidth = `${minWidth}px`;
         }
         colgroup.push(<col key={colKey} style={style} />);
