@@ -91,7 +91,7 @@ export default Vue.extend({
   },
 
   render() {
-    const { localTBreadcrumb, href, target, to } = this;
+    const { localTBreadcrumb, href, target, to, disabled } = this;
     const { separator } = localTBreadcrumb;
     const separatorSlot = localTBreadcrumb.$slots.separator;
     const separatorPropContent = typeof separator === 'function' ? separator() : separator;
@@ -102,7 +102,7 @@ export default Vue.extend({
     ];
     const textClass = [textFlowClass];
 
-    if (this.disabled) {
+    if (disabled) {
       textClass.push(disableClass);
     }
 
@@ -110,18 +110,21 @@ export default Vue.extend({
       textClass.push(gestureClass);
     }
 
+    const clickEvent = to && !disabled ? { on: { click: this.bindEvent } } : {};
     const textContent = <span ref="breadcrumbText" class={maxLengthClass} style={this.maxWithStyle}>{this.$slots.default}</span>;
-    let itemContent = <span class={textClass} {...{ on: this.$listeners }}>
-                       {textContent}
-                      </span>;
+    let itemContent = (
+      <span class={textClass} {...{ on: this.$listeners }} {...clickEvent}>
+        {textContent}
+      </span>
+    );
 
-    if ((href || to) && !this.disabled) {
+    if (href && !disabled) {
       textClass.push(linkClass);
-      const attrs = href ? { href, target } : {};
-      const clickEvent = to ? { on: { click: this.bindEvent } } : {};
-      itemContent = <a class={textClass} {...{ attrs }}  {...{ on: this.$listeners }} {...clickEvent}>
-                      {textContent}
-                    </a>;
+      itemContent = (
+        <a class={textClass} href={href} target={target}  {...{ on: this.$listeners }}>
+          {textContent}
+        </a>
+      );
     }
     return (
       <div class={itemClass}>
