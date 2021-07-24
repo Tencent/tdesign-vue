@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
+    <!-- <t-locale-provider :globalLocale="globalLocale"> -->
+
     <!-- expanded-row-keys 为受控属性 -->
     <!-- default-expanded-row-keys 为非受控属性 -->
     <t-table
@@ -21,10 +24,13 @@
       </template>
     </t-table>
 
+    <!-- </t-locale-provider> -->
   </div>
 </template>
 
 <script>
+import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
+
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
   { colKey: 'status', title: '状态', width: 100, cell: 'status' },
@@ -52,6 +58,11 @@ export default {
           <p class="title"><b>描述:</b></p><p class="content">{row.description}</p>
         </div>
       ),
+      globalLocale: {
+        table: {
+          expandIcon: h => h && <TIconChevronDown />,
+        },
+      },
     };
   },
   methods: {

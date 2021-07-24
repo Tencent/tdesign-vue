@@ -422,6 +422,22 @@ export default mixins(getLocalRecevierMixins('select')).extend({
     showOption(op: Options) {
       return this.displayOptions.filter(item => get(item, this.realValue) === get(op, this.realValue)).length;
     },
+    getCloseIcon() {
+      if (isFunction(this.locale.clearIcon)) {
+        return (
+          <span class={`${name}-right-icon`} onClick={this.clearSelect}>
+            {this.locale.clearIcon(this.$createElement)}
+          </span>
+        );
+      }
+      return (
+        <t-icon-close
+          class={`${name}-right-icon`}
+          size={this.size}
+          nativeOnClick={this.clearSelect}
+        />
+      );
+    },
   },
   render(): VNode {
     const {
@@ -510,13 +526,7 @@ export default mixins(getLocalRecevierMixins('select')).extend({
               )
             }
             {
-              this.showClose && !this.showLoading && (
-                <t-icon-close
-                  class={`${name}-right-icon`}
-                  size={size}
-                  nativeOnClick={this.clearSelect}
-                />
-              )
+              this.showClose && !this.showLoading && this.getCloseIcon()
             }
             {
               this.showLoading && (

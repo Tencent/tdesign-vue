@@ -16,7 +16,7 @@ import {
   TypeEventState,
   TreeNodeState,
   TypeTreeNodeModel,
-  // TypeTreeInstance,
+  TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
 import {
@@ -30,8 +30,7 @@ import {
   emitEvent,
 } from './util';
 
-// export default (Vue as VueConstructor<TypeTreeInstance>).extend({
-export default mixins(getLocalRecevierMixins('tree')).extend({
+export default mixins(getLocalRecevierMixins<TypeTreeInstance>('tree')).extend({
   name: TREE_NAME,
   model: {
     prop: 'value',

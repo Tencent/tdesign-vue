@@ -220,7 +220,13 @@ export default mixins(getLocalRecevierMixins('dialog')).extend({
       const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button variant="base" theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}}>
+        <t-button
+          variant="base"
+          theme={theme}
+          onClick={clickAction}
+          props={isApiObject ? btnApi : {}}
+          class={`${name}-${btnType}`}
+        >
           { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
         </t-button>
       );

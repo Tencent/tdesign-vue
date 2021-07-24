@@ -1,11 +1,12 @@
-import Vue from 'vue';
 import { prefix } from '../config';
 import props from './props';
 import TStepItem from './step-item';
 import { ClassName } from '../common';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 
 const name = `${prefix}-steps`;
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('steps')).extend({
   name,
   components: {
     TStepItem,
@@ -32,11 +33,6 @@ export default Vue.extend({
           [`${name}--${this.sequence}`]: this.direction === 'vertical',
         },
       ];
-    },
-    valueIndexMap() {
-      const map = {};
-
-      return map;
     },
   },
   render() {

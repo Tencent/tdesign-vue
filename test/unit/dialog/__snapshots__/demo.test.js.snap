@@ -58,7 +58,7 @@ exports[`Dialog async demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -68,7 +68,7 @@ exports[`Dialog async demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading t-dialog-confirm"
               theme="primary"
               type="button"
             >
@@ -205,7 +205,7 @@ exports[`Dialog attach demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -215,7 +215,7 @@ exports[`Dialog attach demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -297,7 +297,7 @@ exports[`Dialog attach demo works fine 1`] = `
       >
         <div>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
             type="button"
           >
             <span
@@ -307,7 +307,7 @@ exports[`Dialog attach demo works fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
             type="button"
           >
             <span
@@ -381,7 +381,7 @@ exports[`Dialog base demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -391,7 +391,7 @@ exports[`Dialog base demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -497,7 +497,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -507,7 +507,7 @@ exports[`Dialog custom body demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -619,7 +619,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -629,7 +629,7 @@ exports[`Dialog custom body demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -713,7 +713,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -723,7 +723,7 @@ exports[`Dialog custom body demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -836,7 +836,7 @@ exports[`Dialog custom demo works fine 1`] = `
           >
             <div>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-default"
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
                 type="button"
               >
                 <span
@@ -846,7 +846,7 @@ exports[`Dialog custom demo works fine 1`] = `
                 </span>
               </button>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
                 type="button"
               >
                 <span
@@ -960,7 +960,7 @@ exports[`Dialog custom demo works fine 1`] = `
           >
             <div>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-default"
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
                 type="button"
               >
                 <span
@@ -970,7 +970,7 @@ exports[`Dialog custom demo works fine 1`] = `
                 </span>
               </button>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
                 type="button"
               >
                 <span
@@ -1055,7 +1055,7 @@ exports[`Dialog custom demo works fine 1`] = `
           >
             <div>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-default"
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
                 type="button"
               >
                 <span
@@ -1065,7 +1065,7 @@ exports[`Dialog custom demo works fine 1`] = `
                 </span>
               </button>
               <button
-                class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
                 type="button"
               >
                 <span
@@ -1171,7 +1171,7 @@ exports[`Dialog custom demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1181,7 +1181,7 @@ exports[`Dialog custom demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1241,7 +1241,7 @@ exports[`Dialog custom demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog-cancel"
               type="button"
               variant="base"
             >
@@ -1252,7 +1252,7 @@ exports[`Dialog custom demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
               variant="base"
             >
@@ -1313,7 +1313,7 @@ exports[`Dialog custom demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1435,7 +1435,7 @@ exports[`Dialog drag demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1445,7 +1445,7 @@ exports[`Dialog drag demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1510,7 +1510,7 @@ exports[`Dialog drag demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1520,7 +1520,7 @@ exports[`Dialog drag demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1585,7 +1585,7 @@ exports[`Dialog drag demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1595,7 +1595,7 @@ exports[`Dialog drag demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1667,7 +1667,7 @@ exports[`Dialog icon demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1677,7 +1677,7 @@ exports[`Dialog icon demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1747,7 +1747,7 @@ exports[`Dialog icon demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1757,7 +1757,7 @@ exports[`Dialog icon demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1827,7 +1827,7 @@ exports[`Dialog icon demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1837,7 +1837,7 @@ exports[`Dialog icon demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -1907,7 +1907,7 @@ exports[`Dialog icon demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -1917,7 +1917,7 @@ exports[`Dialog icon demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2036,7 +2036,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2046,7 +2046,7 @@ exports[`Dialog modal demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2111,7 +2111,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2121,7 +2121,7 @@ exports[`Dialog modal demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2187,7 +2187,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2197,7 +2197,7 @@ exports[`Dialog modal demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2263,7 +2263,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2273,7 +2273,7 @@ exports[`Dialog modal demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2443,7 +2443,7 @@ exports[`Dialog position demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2453,7 +2453,7 @@ exports[`Dialog position demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2512,7 +2512,7 @@ exports[`Dialog position demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2522,7 +2522,7 @@ exports[`Dialog position demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2582,7 +2582,7 @@ exports[`Dialog position demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2592,7 +2592,7 @@ exports[`Dialog position demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2679,7 +2679,7 @@ exports[`Dialog warning demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2689,7 +2689,7 @@ exports[`Dialog warning demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -2772,7 +2772,7 @@ exports[`Dialog warning demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -2782,7 +2782,7 @@ exports[`Dialog warning demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
@@ -3000,7 +3000,7 @@ exports[`Dialog warning demo works fine 1`] = `
         >
           <div>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
               type="button"
             >
               <span
@@ -3010,7 +3010,7 @@ exports[`Dialog warning demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
               <span
