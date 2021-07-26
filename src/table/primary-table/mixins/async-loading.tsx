@@ -11,6 +11,7 @@ export default Vue.extend({
   name: `${prefix}-primary-table-async-loading`,
   props: {
     data: baseTableProps.data,
+    rowKey: baseTableProps.rowKey,
     columns: primaryTableProps.columns,
     asyncLoading: primaryTableProps.asyncLoading,
   },
@@ -55,7 +56,7 @@ export default Vue.extend({
           },
         },
       ];
-      return <TableRow columns={columns}></TableRow>;
+      return <TableRow rowKey={this.rowKey} columns={columns}></TableRow>;
     },
   },
 });

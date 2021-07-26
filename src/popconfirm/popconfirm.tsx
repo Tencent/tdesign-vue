@@ -1,7 +1,7 @@
 import mixins from '../utils/mixins';
 import getLocalRecevierMixins from '../locale/local-receiver';
 import { prefix } from '../config';
-import Popup from '../popup/index';
+import Popup, { PopupProps } from '../popup/index';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
@@ -11,7 +11,7 @@ const popupName = `${prefix}-popup`;
 
 export default mixins(getLocalRecevierMixins('popconfirm')).extend({
   name,
-  props: { ... props },
+  props: { ...props },
   model: {
     prop: 'visible',
     event: 'visible-change',
@@ -44,6 +44,16 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
           color = '#0052D9';
       }
       return `color:${color}`;
+    },
+    innerPopupProps(): PopupProps {
+      return {
+        showArrow: this.showArrow,
+        overlayClassName: name,
+        trigger: 'manual',
+        destroyOnClose: this.destroyOnClose,
+        placement: this.placement,
+        ...this.popupProps,
+      };
     },
   },
   methods: {
@@ -99,11 +109,6 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
   },
   render() {
     const triggerElement = renderContent(this, 'default', 'triggerElement');
-    const popupProps = Object.assign({
-      showArrow: true,
-      overlayClassName: name,
-      trigger: 'manual',
-    }, this.popupProps);
     const baseTypes = ['string', 'object'];
     let confirmBtn = null;
     if (![undefined, null].includes(this.confirmBtn)) {
@@ -124,9 +129,8 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
         <Popup
           ref='popup'
           visible={this.visible}
-          props={popupProps}
+          props={this.innerPopupProps}
           on={{ 'visible-change': this.onPopupVisibleChange }}
-          destroyOnClose
         >
           <template slot='content' role='poppconfirm'>
             <div class={`${name}__content`}>

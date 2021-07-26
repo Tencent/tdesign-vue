@@ -97,7 +97,7 @@ export default Vue.extend({
   },
   mounted() {
     this.currentPlacement = this.currentPlacement || this.placement;
-    this.popperElm = this.popperElm || this.$refs.popper;
+    this.popperElm = this.popperElm || (this.$refs && this.$refs.popper);
     this.referenceElm = this.referenceElm || this.$el;
     if (!this.popperElm || !this.referenceElm) return;
 
@@ -181,7 +181,7 @@ export default Vue.extend({
       this.popperElm.addEventListener('click', stop);
       // 监听trigger元素尺寸变化
       this.resizeSensor = new ResizeSensor(this.referenceElm, () => {
-        this.popperJS.update();
+        this.popperJS && this.popperJS.update();
         this.updateOverlayStyle();
       });
     },
@@ -197,6 +197,7 @@ export default Vue.extend({
     updateOverlayStyle() {
       const { overlayStyle } = this;
       const referenceElm = this.$el as HTMLElement;
+      if (!this.$refs) return;
       const refOverlayElm = this.$refs.overlay as HTMLElement;
       if (typeof overlayStyle === 'function' && referenceElm && refOverlayElm) {
         const userOverlayStyle = overlayStyle(referenceElm);
@@ -207,6 +208,7 @@ export default Vue.extend({
     },
 
     setOverlayStyle(styles: Styles) {
+      if (!this.$refs) return;
       const refOverlayElm = this.$refs.overlay as HTMLElement;
       if (typeof styles === 'object' && refOverlayElm) {
         refOverlayElm.setAttribute(

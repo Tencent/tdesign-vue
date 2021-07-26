@@ -1,4 +1,4 @@
-import _Tooltip from './tooltip.vue';
+import _Tooltip from './tooltip';
 import withInstall from '../utils/withInstall';
 import { TdTooltipProps } from './type';
 

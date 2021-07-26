@@ -147,6 +147,7 @@ exports[`Table base demo works fine 1`] = `
           >
             <tr
               key="0"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -196,6 +197,7 @@ exports[`Table base demo works fine 1`] = `
             </tr>
             <tr
               key="1"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -245,6 +247,7 @@ exports[`Table base demo works fine 1`] = `
             </tr>
             <tr
               key="2"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -294,6 +297,7 @@ exports[`Table base demo works fine 1`] = `
             </tr>
             <tr
               key="3"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -343,6 +347,7 @@ exports[`Table base demo works fine 1`] = `
             </tr>
             <tr
               key="4"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -545,6 +550,7 @@ exports[`Table base demo works fine 2`] = `
           >
             <tr
               key="0"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -594,6 +600,7 @@ exports[`Table base demo works fine 2`] = `
             </tr>
             <tr
               key="1"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -643,6 +650,7 @@ exports[`Table base demo works fine 2`] = `
             </tr>
             <tr
               key="2"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -692,6 +700,7 @@ exports[`Table base demo works fine 2`] = `
             </tr>
             <tr
               key="3"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -741,6 +750,7 @@ exports[`Table base demo works fine 2`] = `
             </tr>
             <tr
               key="4"
+              rowkey="index"
             >
               <td
                 class="align-center row"
@@ -893,6 +903,7 @@ exports[`Table customCell demo works fine 1`] = `
           >
             <tr
               key="data"
+              rowkey="property"
             >
               <td
                 class=""
@@ -952,6 +963,7 @@ exports[`Table customCell demo works fine 1`] = `
             </tr>
             <tr
               key="rowkey"
+              rowkey="property"
             >
               <td
                 class=""
@@ -1308,6 +1320,7 @@ exports[`Table expandable demo works fine 1`] = `
           >
             <tr
               key="1"
+              rowkey="id"
             >
               <td
                 class="t-table-expandable-icon-cell"
@@ -1443,6 +1456,7 @@ exports[`Table expandable demo works fine 1`] = `
             </tr>
             <tr
               key="2"
+              rowkey="id"
             >
               <td
                 class="t-table-expandable-icon-cell"
@@ -1580,6 +1594,7 @@ exports[`Table expandable demo works fine 1`] = `
             </tr>
             <tr
               key="3"
+              rowkey="id"
             >
               <td
                 class="t-table-expandable-icon-cell"
@@ -1717,6 +1732,7 @@ exports[`Table expandable demo works fine 1`] = `
             </tr>
             <tr
               key="4"
+              rowkey="id"
             >
               <td
                 class="t-table-expandable-icon-cell"
@@ -1969,6 +1985,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
         >
           <tr
             key="0"
+            rowkey="index"
           >
             <td
               class="t-table__cell--fixed-left align-center"
@@ -2029,6 +2046,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
           <tr
             key="1"
+            rowkey="index"
           >
             <td
               class="t-table__cell--fixed-left align-center"
@@ -2089,6 +2107,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
           <tr
             key="2"
+            rowkey="index"
           >
             <td
               class="t-table__cell--fixed-left align-center"
@@ -2149,6 +2168,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
           <tr
             key="3"
+            rowkey="index"
           >
             <td
               class="t-table__cell--fixed-left align-center"
@@ -2209,6 +2229,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
           <tr
             key="4"
+            rowkey="index"
           >
             <td
               class="t-table__cell--fixed-left align-center"
@@ -2398,6 +2419,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
           >
             <tr
               key="0"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2454,6 +2476,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="1"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2510,6 +2533,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="2"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2566,6 +2590,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="3"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2622,6 +2647,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="4"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2678,6 +2704,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="5"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2734,6 +2761,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="6"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2790,6 +2818,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="7"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2846,6 +2875,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="8"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2902,6 +2932,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="9"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -2958,6 +2989,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="10"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3014,6 +3046,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="11"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3070,6 +3103,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="12"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3126,6 +3160,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="13"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3182,6 +3217,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="14"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3238,6 +3274,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="15"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3294,6 +3331,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="16"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3350,6 +3388,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="17"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3406,6 +3445,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="18"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3462,6 +3502,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             </tr>
             <tr
               key="19"
+              rowkey="index"
             >
               <td
                 class="align-center"
@@ -3630,6 +3671,7 @@ exports[`Table multiHeader demo works fine 1`] = `
         >
           <tr
             key="data"
+            rowkey="property"
           >
             <td
               class="align-left text-ellipsis test"
@@ -3682,6 +3724,7 @@ exports[`Table multiHeader demo works fine 1`] = `
           </tr>
           <tr
             key="rowkey"
+            rowkey="property"
           >
             <td
               class="align-left text-ellipsis test"
@@ -3848,6 +3891,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
           >
             <tr
               key="1"
+              rowkey="tid"
             >
               <td
                 class=""
@@ -3928,6 +3972,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
             </tr>
             <tr
               key="2"
+              rowkey="tid"
             >
               <td
                 class=""
@@ -4009,6 +4054,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
             </tr>
             <tr
               key="3"
+              rowkey="tid"
             >
               <td
                 class=""
@@ -4089,6 +4135,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
             </tr>
             <tr
               key="4"
+              rowkey="tid"
             >
               <td
                 class=""
@@ -4268,6 +4315,7 @@ exports[`Table selectSingle demo works fine 1`] = `
           >
             <tr
               key="1"
+              rowkey="id"
             >
               <td
                 class=""
@@ -4353,6 +4401,7 @@ exports[`Table selectSingle demo works fine 1`] = `
             </tr>
             <tr
               key="2"
+              rowkey="id"
             >
               <td
                 class=""
@@ -4439,6 +4488,7 @@ exports[`Table selectSingle demo works fine 1`] = `
             </tr>
             <tr
               key="3"
+              rowkey="id"
             >
               <td
                 class=""
@@ -4524,6 +4574,7 @@ exports[`Table selectSingle demo works fine 1`] = `
             </tr>
             <tr
               key="4"
+              rowkey="id"
             >
               <td
                 class=""
