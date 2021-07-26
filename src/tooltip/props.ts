@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-24 16:15:02
+ * updated at 2021-07-26 22:52:44
  * */
 
 import { TdTooltipProps } from './type';
@@ -14,7 +14,7 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 用于设置显示几秒之后消失 */
+  /** 用于设置显示几秒之后消失，初始第一次有效 */
   duration: {
     type: Number,
     default: 3000,

@@ -3,11 +3,14 @@ import getLocalRecevierMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import Popup, { PopupProps } from '../popup/index';
 import props from './props';
-import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent, renderTNodeJSXDefault } from '../utils/render-tnode';
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
-
+import TIconInfoCircleFilled from '../icon/info-circle-filled';
+import TIconErrorCircleFilled from '../icon/error-circle-filled';
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;
+
+type IconConstructor = typeof TIconInfoCircleFilled;
 
 export default mixins(getLocalRecevierMixins('popconfirm')).extend({
   name,
@@ -23,13 +26,13 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
     };
   },
   computed: {
-    iconName(): string {
+    themeIcon(): IconConstructor {
       const iconMap = {
-        default: 'info-circle-filled',
-        warning: 'error-circle-filled',
-        danger: 'error-circle-filled',
+        default: TIconInfoCircleFilled,
+        warning: TIconErrorCircleFilled,
+        danger: TIconErrorCircleFilled,
       };
-      return iconMap[this.theme] || '';
+      return iconMap[this.theme];
     },
     iconColor(): string {
       let color = '';
@@ -72,15 +75,8 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
       this.onVisibleChange && this.onVisibleChange(false, confirmContext);
     },
     renderIcon() {
-      // 优先级 slot > Funtion
-      if (this.$scopedSlots.icon) {
-        return this.$scopedSlots.icon(null);
-      }
-      const arg = this.icon;
-      if (typeof arg === 'function') {
-        return (arg as Function)();
-      }
-      return <t-icon name={this.iconName} style={this.iconColor} />;
+      const Icon = this.themeIcon;
+      return renderTNodeJSXDefault(this, 'icon', <Icon style={this.iconColor} />);
     },
     getBtnText(api: TdPopconfirmProps['cancelBtn']) {
       return typeof api === 'object' ? api.content : api;

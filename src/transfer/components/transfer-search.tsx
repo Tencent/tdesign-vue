@@ -2,7 +2,7 @@
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
-import TIcon from '../../icon';
+import TIconSearch from '../../icon/search';
 import TInput from '../../input';
 
 const name = `${prefix}-transfer-search`;
@@ -53,7 +53,7 @@ export default Vue.extend({
           on-enter={handleEnter}
           placeholder={placeholder}
         >
-          <TIcon name="search" slot="suffix-icon"></TIcon>
+          <TIconSearch slot="suffix-icon" />
         </TInput>
       </div>
     );
