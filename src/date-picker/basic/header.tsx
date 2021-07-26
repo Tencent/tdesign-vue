@@ -1,9 +1,9 @@
 
 import Vue from 'vue';
-import TButton from '../../button';
+import TButton from '../../button/button';
+import TIconRound from '../../icon/round';
 import TIconChevronLeft from '../../icon/chevron-left';
 import TIconChevronRight from '../../icon/chevron-right';
-import TIconRound from '../../icon/round';
 
 export default Vue.extend({
   components: {

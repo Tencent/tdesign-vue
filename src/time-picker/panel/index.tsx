@@ -7,7 +7,7 @@ import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../interfac
 import { componentName, EPickerCols } from '../constant';
 import { panelProps } from './props';
 import PanelCol from './panel-col';
-import TButton from '../../button';
+import TButton from '../../button/button';
 
 const name = `${componentName}-panel`;
 

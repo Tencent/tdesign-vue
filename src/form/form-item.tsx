@@ -10,6 +10,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import { ClassName, TNodeReturnValue } from '../common';
+import TIcon from '../icon';
 
 type Result = ValidateResult<TdFormProps['data']>;
 
@@ -29,6 +30,8 @@ export interface FormItemContructor extends Vue {
 
 export default (Vue as VueConstructor<FormItemContructor>).extend({
   name,
+
+  components: { TIcon },
 
   props: { ...props },
 
