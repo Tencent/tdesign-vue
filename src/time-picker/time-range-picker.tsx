@@ -105,7 +105,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       panelRef.panelColUpdate();
     },
     // 输入失焦，赋值默认
-    inputBlurDefault(type: TimeInputType, index: number) {
+    inputBlurDefault(type: TimeInputType, index: number, e: Event) {
       this.inputTime[index][type] = '00';
     },
     // 面板展示隐藏
@@ -250,10 +250,10 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
             disabled={this.disabled}
             format={this.format}
             allowInput={this.allowInput}
-            placeholder={this.placeholder}
+            placeholder={this.placeholder || this.locale.placeholder}
             isRangePicker
             onToggleMeridiem={(index: number) => this.toggleInputMeridiem(index)}
-            onBlurDefault={(type: TimeInputType, index: number) => this.inputBlurDefault(type, index)}
+            onBlurDefault={(type: TimeInputType, index: number, e: Event) => this.inputBlurDefault(type, index, e)}
             onChange={(e: TimeInputEvent) => this.inputChange(e)}
           />
         </div>

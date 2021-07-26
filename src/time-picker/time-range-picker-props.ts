@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-26 19:19:02
  * */
 
 import { TdTimeRangePickerProps } from '../time-picker/type';
@@ -29,10 +31,6 @@ export default {
   hideDisabledTime: {
     type: Boolean,
     default: true,
-  },
-  /** 透传 Input 组件属性 */
-  inputProps: {
-    type: Object as PropType<TdTimeRangePickerProps['inputProps']>,
   },
   /** 占位符，值为数组表示可分别为开始日期和结束日期设置占位符 */
   placeholder: {

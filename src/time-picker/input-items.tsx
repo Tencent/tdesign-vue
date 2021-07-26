@@ -1,4 +1,4 @@
-import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './interface';
+import { TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
@@ -14,7 +14,7 @@ import { prefix } from '../config';
 
 const name = `${prefix}-time-picker-input-items`; // t-time-picker-input-items
 
-export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).extend({
+export default mixins(getLocalReceiverMixins('timePicker')).extend({
   name,
 
   props: {
@@ -107,12 +107,15 @@ export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).e
       if (curDayJs[type] !== undefined) this.setInputValue(curDayJs[type], target);
     },
     // 失去焦点
-    onBlur(_e: Event, type: TimeInputType, index: number): void {
+    onBlur(_e: Event, type: TimeInputType, index: number, currentValue: number): void {
       // todo 无填充需要填充
       const curDayJs = this.displayTimeList[index];
       if (curDayJs[type] === undefined) {
-        this.$emit('blurDefault', type, index);
+        this.$emit('blurDefault', type, index, _e, currentValue);
       }
+    },
+    onFocus(_e: Event, type: TimeInputType, index: number, currentValue: number): void {
+      this.$emit('focus', type, index, _e, currentValue);
     },
     // 键盘监听
     onKeydown(e: any, type: TimeInputType, index: number): void {
@@ -200,15 +203,17 @@ export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).e
 
       this.displayTimeList.forEach((inputTime: InputTime | undefined, index: number) => {
         if (index > 0) render.push('-');
+        const { hour, minute, second } = inputTime
         // 渲染组件 - 默认有小时输入
         render.push(<span class={itemClasses}>
             <input
               class={inputClass}
-              value={inputTime.hour}
+              value={hour}
               disabled={!allowInput}
               onKeydown={(e: Event) => this.onKeydown(e, 'hour', index)}
               onInput={(e: Event) => this.onInput(e, 'hour', index)}
-              onBlur={(e: Event) => this.onBlur(e, 'hour', index)}
+              onBlur={(e: Event) => this.onBlur(e, 'hour', index, Number(hour))}
+              onFocus={(e: Event) => this.onFocus(e, 'hour', index, Number(hour))}
             />
           </span>);
         // 判断分秒输入
@@ -218,11 +223,12 @@ export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).e
               &#58;
               <input
                 class={inputClass}
-                value={inputTime.minute}
+                value={minute}
                 disabled={!allowInput}
                 onKeydown={(e: Event) => this.onKeydown(e, 'minute', index)}
                 onInput={(e: Event) => this.onInput(e, 'minute', index)}
-                onBlur={(e: Event) => this.onBlur(e, 'minute', index)}
+                onBlur={(e: Event) => this.onBlur(e, 'minute', index, Number(minute))}
+                onFocus={(e: Event) => this.onFocus(e, 'minute', index, Number(minute))}
               />
             </span>);
           // 需要秒输入器
@@ -231,11 +237,12 @@ export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).e
                 &#58;
                 <input
                   class={inputClass}
-                  value={inputTime.second}
+                  value={second}
                   disabled={!allowInput}
                   onKeydown={(e: Event) => this.onKeydown(e, 'second', index)}
                   onInput={(e: Event) => this.onInput(e, 'second', index)}
-                  onBlur={(e: Event) => this.onBlur(e, 'second', index)}
+                  onBlur={(e: Event) => this.onBlur(e, 'second', index, Number(second))}
+                  onFocus={(e: Event) => this.onFocus(e, 'second', index, Number(second))}
                 />
               </span>);
           }
@@ -245,12 +252,13 @@ export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).e
           const localeMeridiemList = [this.locale.anteMeridiem, this.locale.postMeridiem];
           const text = localeMeridiemList[meridiemList.indexOf(inputTime.meridiem.toUpperCase())];
           // 放在前面or后面
-          render[amFormat.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => this.onToggleMeridiem(index)}>
+          render[amFormat.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
               <input
                 readonly
-                class={inputClass}
+                class={[inputClass,`${inputClass}-meridiem`]}
                 value={text}
                 onKeydown={(e: Event) => this.onKeydown(e, 'meridiem', index)}
+                disabled={!allowInput}
               />
             </span>);
         }
