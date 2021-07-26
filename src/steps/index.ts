@@ -4,15 +4,15 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdStepsProps, TdStepItemProps } from './type';
 
+import './style/';
+
 export * from './type';
 export type StepsProps = TdStepsProps;
 export type StepItemProps = TdStepItemProps;
 
-const LocalSteps = mapProps(
+export const StepItem = withInstall('StepItem', _StepItem);
+export const Steps = withInstall('Steps', mapProps(
   ['current'],
   { model: { prop: 'current', event: 'change' } }
-)(_Steps);
-
-export const StepItem = withInstall('StepItem', _StepItem);
-export const Steps = withInstall('Steps', LocalSteps);
+)(_Steps));
 export default Steps;

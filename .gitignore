@@ -1,13 +1,12 @@
 node_modules
 .vscode
 .DS_Store
-.vscode
 
 # build files
 es/
+esm/
 lib/
 dist/
-typings/
 
 _site
 package
