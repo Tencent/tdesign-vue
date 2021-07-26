@@ -39,7 +39,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
             style="display: flex; justify-content: flex-start;"
           >
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
               type="button"
             >
               <span
@@ -49,7 +49,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
               type="button"
             >
               <span
@@ -361,7 +361,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer-confirm"
             disabled="disabled"
             type="button"
           >
@@ -372,7 +372,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span
@@ -456,7 +456,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
             type="button"
           >
             <span
@@ -466,7 +466,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span
@@ -527,7 +527,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
             type="button"
           >
             <span
@@ -537,7 +537,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span
@@ -840,7 +840,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
             type="button"
           >
             <span
@@ -850,7 +850,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span
@@ -1181,7 +1181,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
             type="button"
           >
             <span
@@ -1191,7 +1191,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span
@@ -1263,7 +1263,7 @@ exports[`Drawer base demo works fine 1`] = `
           style="display: flex; justify-content: flex-start;"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer-confirm"
             type="button"
           >
             <span
@@ -1273,7 +1273,7 @@ exports[`Drawer base demo works fine 1`] = `
             </span>
           </button>
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer-cancel"
             type="button"
           >
             <span

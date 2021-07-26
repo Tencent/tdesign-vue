@@ -26,7 +26,10 @@ export default function getLocalRecevierMixins<BasicComponent extends Vue>(compo
       locale(): ComponentLocale {
         const defaultData = defaultLocale[componentName];
         if (this.globalLocale && this.globalLocale[componentName]) {
-          return this.globalLocale[componentName];
+          return {
+            ...defaultData,
+            ...this.globalLocale[componentName],
+          };
         }
         return defaultData;
       },

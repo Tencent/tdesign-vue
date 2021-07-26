@@ -67,7 +67,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <li v-ripple={this.menu.theme.value === 'light' ? '#E7E7E7' : '#383838'} class={this.classes} onClick={this.handleClick} ref="button">
+      <li v-ripple class={this.classes} onClick={this.handleClick} ref="button">
         {renderTNodeJSX(this, 'icon')}
         <span class={[`${prefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
       </li>

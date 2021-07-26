@@ -48,13 +48,21 @@ export default {
   },
   table: {
     empty: '暂无数据',
+    // 展开和收起图标（使用收起图标）
+    expandIcon: null,
+    // 排序图标（使用降序图标）
+    sortIcon: null,
   },
   select: {
     empty: '暂无数据',
     loadingText: '加载中',
+    // 清除按钮
+    clearIcon: null,
   },
   tree: {
     empty: '暂无数据',
+    // 目录层级图标
+    folderIcon: null,
   },
   treeSelect: {
     empty: '暂无数据',
@@ -94,4 +102,5 @@ export default {
       'Month to date': '月初至今',
     },
   },
+  steps: {},
 };

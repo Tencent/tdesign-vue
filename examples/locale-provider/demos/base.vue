@@ -26,7 +26,18 @@
       :columns="columns"
       rowKey="id"
     ></t-table>
+    <!-- 数组件空数据 -->
     <t-tree :data="[]"/>
+    <!-- 数组件自定义层级图标 -->
+    <t-tree :data="treeData" transition/>
+    <br><br>
+    <t-select
+      v-model="selectValue1"
+      :options="options1"
+      placeholder="single select, see close icon, it is configurable"
+      clearable
+      style="width: 400px;"
+    />
     <br><br>
     <t-select
       v-model="selectValue1"
@@ -67,10 +78,23 @@
       placeholder="please select the time"
       format="hh:mm:ss a"
     />
+    <br><br><br>
+    <t-steps :current="2">
+      <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
+      <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
+      <t-step-item title="错误的步骤" status="error" content="自定错误图标"></t-step-item>
+      <t-step-item title="未进行的步骤" content="这里是提示文字"></t-step-item>
+    </t-steps>
+    <br><br>
   </t-locale-provider>
 </template>
 
 <script>
+import TIconError from '@tencent/tdesign-vue/lib/icon/error';
+import TIconCaretRightSmall from '@tencent/tdesign-vue/lib/icon/caret-right-small';
+import TIconCloseCircleFilled from '@tencent/tdesign-vue/lib/icon/close-circle-filled';
+import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
+import TIconCarretDownSmall from '@tencent/tdesign-vue/lib/icon/caret-down-small';
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const GLOBAL_CONFIG = {
   pagination: {
@@ -110,14 +134,18 @@ const GLOBAL_CONFIG = {
     cancel: 'cancel',
   },
   table: {
-    empty: 'Data is empty.',
+    empty: 'Table Data is empty.',
+    expandIcon: h => h && <TIconChevronDown />,
+    sortIcon: h => h && <TIconCarretDownSmall size='18px' />,
   },
   tree: {
-    empty: 'Empty Data',
+    empty: 'Tree Empty Data',
+    folderIcon: h => h && <TIconCaretRightSmall size='20px' />,
   },
   select: {
     empty: 'Empty Data',
     loadingText: 'loading...',
+    clearIcon: h => h && <TIconCloseCircleFilled />,
   },
   treeSelect: {
     empty: 'Empty Data',
@@ -130,7 +158,7 @@ const GLOBAL_CONFIG = {
     },
     months: {
       shorthand: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
-      longhand: MONTHS.join(','),
+      longhand: MONTHS.join(),
     },
     rangeSeparator: ' to ',
     direction: 'ltr',
@@ -157,6 +185,9 @@ const GLOBAL_CONFIG = {
     confirm: 'ok',
     anteMeridiem: 'AM',
     postMeridiem: 'PM',
+  },
+  steps: {
+    errorIcon: h => h && <TIconError />,
   },
 };
 
@@ -194,6 +225,11 @@ const TREE_OPTIONS = [
   },
 ];
 
+const TREE_DATA = [
+  { value: '1', label: '目录图标', children: [{ label: '1.1' }, { label: '1.2' }] },
+  { value: '2', label: '可配置', children: [{ label: '2.1' }, { label: '2.2' }] },
+];
+
 export default {
   data() {
     return {
@@ -224,6 +260,7 @@ export default {
       selectLoading: false,
       treeValue: '',
       treeOptions: TREE_OPTIONS,
+      treeData: TREE_DATA,
     };
   },
   methods: {

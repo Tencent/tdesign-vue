@@ -1,4 +1,6 @@
-import Vue, { VNode, CreateElement } from 'vue';
+import { VNode, CreateElement } from 'vue';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import TIconChevronRight from '../icon/chevron-right';
 import TIconLoading from '../icon/loading';
 import TCheckBox from '../checkbox';
@@ -6,6 +8,7 @@ import TreeNode from '../_common/js/tree/tree-node';
 import { getTNode } from './util';
 import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
+import isFunction from 'lodash/isFunction';
 import { ClassName } from '../common';
 
 export const TreeItemProps = {
@@ -17,7 +20,7 @@ export const TreeItemProps = {
   },
 };
 
-export default Vue.extend({
+export default mixins(getLocalRecevierMixins('tree')).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   data() {
@@ -110,6 +113,12 @@ export default Vue.extend({
       }
       return lineNode;
     },
+    getFolderIcon() {
+      if (isFunction(this.locale.folderIcon)) {
+        return this.locale.folderIcon(this.$createElement);
+      }
+      return <TIconChevronRight/>;
+    },
     renderIcon(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
       const { icon, scopedSlots } = treeScope;
@@ -121,7 +130,7 @@ export default Vue.extend({
             node: node?.getModel(),
           });
         } else if (!node.vmIsLeaf) {
-          iconNode = (<TIconChevronRight/>);
+          iconNode = this.getFolderIcon();
           if (node.loading && node.expanded) {
             iconNode = (<TIconLoading/>);
           }
@@ -136,7 +145,7 @@ export default Vue.extend({
       }
       iconNode = (
         <span
-          class={CLASS_NAMES.treeIcon}
+          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon]}
           trigger="expand"
           ignore="active"
         >{iconNode}</span>

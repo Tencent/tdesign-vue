@@ -28,14 +28,14 @@ export default Vue.extend({
     let children: TNodeReturnValue = $scopedSlots.default && $scopedSlots.default(null);
 
     if (this.options && this.options.length) {
-      children = (this.options).map((option: RadioOption) => {
+      children = this.options.map((option: RadioOption, index) => {
         let opt = option as RadioOptionObj;
         if (isNumber(option) || isString(option)) {
           opt = { value: option, label: option.toString() };
         }
         return (
           <Radio
-            key={`radio-group-options-${opt.value}-${Math.random()}`}
+            key={`radio-group-options-${opt.value}-${index}`}
             name={this.name}
             checked={this.value === opt.value}
             disabled={'disabled' in opt ? opt.disabled : this.disabled}
@@ -47,23 +47,15 @@ export default Vue.extend({
       });
     }
 
-    const groupClass = [
-      `${name}`,
-      `${name}-${this.buttonStyle}`,
-      `${name}-${this.size}`,
-    ];
+    const groupClass = [`${name}`, `${name}-${this.buttonStyle}`, `${name}-${this.size}`];
 
-    return (
-      <div class={groupClass}>
-        {children}
-      </div>
-    );
+    return <div class={groupClass}>{children}</div>;
   },
 
   methods: {
     handleRadioChange(value: RadioValue, context: { e: Event }) {
       this.$emit('change', value, context);
-      typeof this.onChange === 'function' && (this.onChange(value, context));
+      typeof this.onChange === 'function' && this.onChange(value, context);
     },
   },
 });

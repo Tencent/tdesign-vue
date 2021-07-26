@@ -4,7 +4,7 @@ export * from './message';
 export * from './notification';
 export * from './dialog';
 export * from './addon';
-export * from './alert-swiper';
+export * from './swiper';
 export * from './alert';
 export * from './anchor';
 export * from './breadcrumb';

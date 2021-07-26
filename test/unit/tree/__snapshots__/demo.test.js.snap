@@ -56,7 +56,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -90,7 +90,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -110,7 +110,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -130,7 +130,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -164,7 +164,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -184,7 +184,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -221,7 +221,7 @@ exports[`Tree:demo base demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -255,7 +255,7 @@ exports[`Tree:demo base demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -391,7 +391,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -438,7 +438,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -485,7 +485,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -532,7 +532,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -565,7 +565,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -598,7 +598,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -645,7 +645,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -678,7 +678,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -711,7 +711,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -758,7 +758,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -805,7 +805,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -838,7 +838,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -871,7 +871,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -918,7 +918,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -951,7 +951,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -984,7 +984,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1031,7 +1031,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1064,7 +1064,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1168,7 +1168,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1216,7 +1216,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1264,7 +1264,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1311,7 +1311,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1344,7 +1344,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1377,7 +1377,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1424,7 +1424,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1471,7 +1471,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1518,7 +1518,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1551,7 +1551,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1616,7 +1616,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1664,7 +1664,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1712,7 +1712,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1746,7 +1746,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1780,7 +1780,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1828,7 +1828,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1862,7 +1862,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1896,7 +1896,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -1944,7 +1944,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -1978,7 +1978,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2139,7 +2139,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2173,7 +2173,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2207,7 +2207,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2227,7 +2227,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2247,7 +2247,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2281,7 +2281,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2301,7 +2301,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2321,7 +2321,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2355,7 +2355,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2375,7 +2375,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2412,7 +2412,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2446,7 +2446,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2480,7 +2480,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2514,7 +2514,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2548,7 +2548,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2568,7 +2568,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -2631,7 +2631,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2665,7 +2665,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2734,7 +2734,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2768,7 +2768,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2823,7 +2823,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2851,7 +2851,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2894,7 +2894,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2928,7 +2928,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -2983,7 +2983,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3019,7 +3019,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3041,7 +3041,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3063,7 +3063,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3099,7 +3099,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3121,7 +3121,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3158,7 +3158,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3205,7 +3205,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3238,7 +3238,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3271,7 +3271,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3318,7 +3318,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3351,7 +3351,7 @@ exports[`Tree:demo label demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3401,7 +3401,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3435,7 +3435,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3512,7 +3512,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3550,7 +3550,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3574,7 +3574,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3594,7 +3594,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3632,7 +3632,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3670,7 +3670,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3708,7 +3708,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 3; box-shadow: calc(-1 * var(--space)) 0 var(--color),calc(-2 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3746,7 +3746,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 4; box-shadow: calc(-2 * var(--space)) 0 var(--color),calc(-3 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3770,7 +3770,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 4; box-shadow: calc(-2 * var(--space)) 0 var(--color),calc(-3 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3794,7 +3794,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3818,7 +3818,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3838,7 +3838,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -3876,7 +3876,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3900,7 +3900,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3920,7 +3920,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -3962,7 +3962,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           />
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4018,7 +4018,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4060,7 +4060,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4087,7 +4087,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           />
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4132,7 +4132,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </div>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4180,7 +4180,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </div>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4231,7 +4231,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </div>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4296,7 +4296,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4347,7 +4347,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4392,7 +4392,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4434,7 +4434,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4461,7 +4461,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           />
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4517,7 +4517,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4559,7 +4559,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4597,7 +4597,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           </i>
         </div>
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4632,7 +4632,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4670,7 +4670,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4694,7 +4694,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4714,7 +4714,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4752,7 +4752,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4790,7 +4790,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4828,7 +4828,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 3; box-shadow: calc(-1 * var(--space)) 0 var(--color),calc(-2 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4866,7 +4866,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 4; box-shadow: calc(-2 * var(--space)) 0 var(--color),calc(-3 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4890,7 +4890,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 4; box-shadow: calc(-2 * var(--space)) 0 var(--color),calc(-3 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4914,7 +4914,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4938,7 +4938,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -4958,7 +4958,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -4996,7 +4996,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5020,7 +5020,7 @@ exports[`Tree:demo line demo works fine 1`] = `
           style="--level: 1;"
         />
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5040,7 +5040,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5077,7 +5077,7 @@ exports[`Tree:demo load demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -5110,7 +5110,7 @@ exports[`Tree:demo load demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -5166,7 +5166,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5192,7 +5192,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5283,7 +5283,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5316,7 +5316,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5514,7 +5514,7 @@ exports[`Tree:demo state demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5540,7 +5540,7 @@ exports[`Tree:demo state demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5631,7 +5631,7 @@ exports[`Tree:demo state demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5664,7 +5664,7 @@ exports[`Tree:demo state demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -5910,7 +5910,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -5958,7 +5958,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -6006,7 +6006,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -6053,7 +6053,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -6086,7 +6086,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 3;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -6119,7 +6119,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 2;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -6166,7 +6166,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -6213,7 +6213,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 0;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         >
@@ -6260,7 +6260,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />
@@ -6293,7 +6293,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         style="--level: 1;"
       >
         <span
-          class="t-tree__icon"
+          class="t-tree__icon t-folder-icon"
           ignore="active"
           trigger="expand"
         />

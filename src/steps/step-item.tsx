@@ -1,10 +1,13 @@
-import Vue, { VNode, VueConstructor } from 'vue';
+import { VNode } from 'vue';
+import mixins from '../utils/mixins';
+import getLocalRecevierMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import props from './step-item-props';
 import TIconCheck from '../icon/check';
 import TIconClose from '../icon/close';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import Steps from '../steps/steps';
+import isFunction from 'lodash/isFunction';
 import { ClassName } from '../common';
 
 const name = `${prefix}-steps-item`;
@@ -13,9 +16,11 @@ export interface StepItemType extends Vue {
   steps: InstanceType<typeof Steps>;
 }
 
-export default (Vue as VueConstructor<StepItemType>).extend({
+export default mixins(getLocalRecevierMixins<StepItemType>('steps')).extend({
   name,
-  props: { ...props },
+  props: {
+    ...props,
+  },
   components: {
     TIconCheck,
     TIconClose,
@@ -73,7 +78,11 @@ export default (Vue as VueConstructor<StepItemType>).extend({
             icon = <t-icon-check name="check" />;
             break;
           case 'error':
-            icon = <t-icon-close name="close" />;
+            if (isFunction(this.locale.errorIcon)) {
+              icon = this.locale.errorIcon(this.$createElement);
+            } else {
+              icon = <t-icon-close name="close" />;
+            }
             break;
             // default 包含 case 'process' 的情况
           default:

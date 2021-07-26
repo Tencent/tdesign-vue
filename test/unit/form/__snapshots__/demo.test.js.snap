@@ -244,6 +244,7 @@ exports[`Form base demo works fine 1`] = `
      
     <div
       class="t-form__item t-row t-form-item__"
+      style="padding-top: 8px;"
     >
       <div
         class="t-col t-form__label t-form__label--right t-col-1"
@@ -271,7 +272,7 @@ exports[`Form base demo works fine 1`] = `
           </button>
            
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
           >
             <span

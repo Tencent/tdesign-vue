@@ -126,6 +126,7 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
           visible={this.visible}
           props={popupProps}
           on={{ 'visible-change': this.onPopupVisibleChange }}
+          destroyOnClose
         >
           <template slot='content' role='poppconfirm'>
             <div class={`${name}__content`}>
