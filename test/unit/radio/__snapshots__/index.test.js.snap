@@ -118,6 +118,9 @@ exports[`Radio RadioGroup :props :buttonStyle 1`] = `
       深圳
     </span>
   </label>
+  <div
+    class="t-radio-group-solid-bg-block"
+  />
 </div>
 `;
 

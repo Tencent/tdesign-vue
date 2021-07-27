@@ -7046,6 +7046,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 年
               </span>
             </label>
+            <div
+              class="t-radio-group-solid-bg-block"
+            />
           </div>
         </div>
          

@@ -4,8 +4,9 @@ import isNumber from 'lodash/isNumber';
 import props from './radio-group-props';
 import { RadioOptionObj, RadioOption, RadioValue } from './type';
 import { prefix } from '../config';
-import Radio from './radio';
+import Radio, { radioBtnName } from './radio';
 import { TNodeReturnValue } from '../common';
+import CLASSNAMES from '../utils/classnames';
 
 const name = `${prefix}-radio-group`;
 
@@ -17,9 +18,15 @@ export default Vue.extend({
     Radio,
   },
 
-  provide() {
+  provide(): Record<string, any> {
     return {
       radioGroup: this,
+    };
+  },
+
+  data() {
+    return {
+      barStyle: {},
     };
   },
 
@@ -48,14 +55,37 @@ export default Vue.extend({
     }
 
     const groupClass = [`${name}`, `${name}-${this.buttonStyle}`, `${name}-${this.size}`];
+    if (this.buttonStyle === 'solid') {
+      children.push(<div style={this.barStyle} class={`${name}-${this.buttonStyle}-bg-block`}></div>);
+    }
 
     return <div class={groupClass}>{children}</div>;
+  },
+
+  watch: {
+    value() {
+      this.$nextTick(() => {
+        this.calcBarStyle();
+      });
+    },
+  },
+
+  mounted() {
+    this.calcBarStyle();
   },
 
   methods: {
     handleRadioChange(value: RadioValue, context: { e: Event }) {
       this.$emit('change', value, context);
       typeof this.onChange === 'function' && this.onChange(value, context);
+    },
+    calcBarStyle() {
+      if (this.buttonStyle !== 'solid') return;
+
+      const checkedRadio: HTMLElement = this.$el.querySelector(`.${radioBtnName}.${CLASSNAMES.STATUS.checked}`);
+      if (!checkedRadio) return;
+      const { offsetWidth, offsetLeft } = checkedRadio;
+      this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
     },
   },
 });
