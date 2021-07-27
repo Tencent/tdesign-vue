@@ -1920,7 +1920,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               colspan="1"
               key="index"
               rowspan="1"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               序号
             </td>
@@ -1929,7 +1929,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               colspan="1"
               key="platform"
               rowspan="1"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               平台
             </td>
@@ -1965,7 +1965,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               colspan="1"
               key="needed"
               rowspan="1"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               是否必传
             </td>
@@ -1974,7 +1974,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               colspan="1"
               key="operation"
               rowspan="1"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               操作
             </td>
@@ -1991,7 +1991,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left align-center"
               key="index"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               0
             </td>
@@ -1999,7 +1999,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left"
               key="platform"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               共有
             </td>
@@ -2031,7 +2031,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="needed"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               是
             </td>
@@ -2039,7 +2039,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="operation"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               删除
             </td>
@@ -2052,7 +2052,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left align-center"
               key="index"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               1
             </td>
@@ -2060,7 +2060,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left"
               key="platform"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               私有
             </td>
@@ -2092,7 +2092,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="needed"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               否
             </td>
@@ -2100,7 +2100,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="operation"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               删除
             </td>
@@ -2113,7 +2113,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left align-center"
               key="index"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               2
             </td>
@@ -2121,7 +2121,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left"
               key="platform"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               共有
             </td>
@@ -2153,7 +2153,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="needed"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               否
             </td>
@@ -2161,7 +2161,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="operation"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               删除
             </td>
@@ -2174,7 +2174,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left align-center"
               key="index"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               3
             </td>
@@ -2182,7 +2182,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left"
               key="platform"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               私有
             </td>
@@ -2214,7 +2214,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="needed"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               否
             </td>
@@ -2222,7 +2222,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="operation"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               删除
             </td>
@@ -2235,7 +2235,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left align-center"
               key="index"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               4
             </td>
@@ -2243,7 +2243,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-left"
               key="platform"
               length="7"
-              style="position: sticky; left: 0px; overflow: hidden;"
+              style="position: sticky; left: 0px;"
             >
               共有
             </td>
@@ -2275,7 +2275,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="needed"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               是
             </td>
@@ -2283,7 +2283,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               class="t-table__cell--fixed-right"
               key="operation"
               length="7"
-              style="position: sticky; right: 0px; overflow: hidden;"
+              style="position: sticky; right: 0px;"
             >
               删除
             </td>
@@ -2306,6 +2306,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
     >
       <div
         class="t-table__header"
+        style="padding-right: 0px;"
       >
         <table
           style="table-layout: fixed;"

@@ -49,7 +49,7 @@ export default Vue.extend({
     if (align) {
       attrClass.push(`align-${align}`);
     }
-    if (width) {
+    if (width && !fixed) {
       style.overflow = 'hidden';
     }
     if (withBorder) {
