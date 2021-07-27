@@ -10,8 +10,6 @@ import { prefix } from '../../config';
 
 const name = `${prefix}-time-picker-pane-col`;
 
-const timeItemMargin = 8; // 找不到获取margin的方式 暂时留着了
-
 dayjs.extend(customParseFormat);
 
 export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
@@ -34,6 +32,10 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     },
     currentTimes() {
       return [Number(this.value.get('hour')), Number(this.value.get('minute')), Number(this.value.get('second'))];
+    },
+    timeItemMargin() {
+      const maskDom = this.$el?.querySelector?.(`.${componentName}-panel__body-active-mask > div`);
+      return maskDom && parseInt(getComputedStyle(maskDom).margin, 10);
     },
   },
   methods: {
@@ -101,7 +103,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       } else {
         timeIndex = this.localeMeridiems.indexOf((time as string).toUpperCase());
       }
-      const timeItemTotalHeight = this.getTimeItemHeight(col) + timeItemMargin;
+      const timeItemTotalHeight = this.getTimeItemHeight(col) + this.timeItemMargin;
       const distance = (timeIndex * timeItemTotalHeight) + (timeItemTotalHeight / 2);
       const scroller = this.$refs[`${col}_scroller`] as Element;
       if (!distance || !scroller) return;
@@ -205,7 +207,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         if (col === EPickerCols.hour) {
           max = /[h]{1}/.test(this.format) ? 11 : 23;
         }
-        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin)) * Number(this.steps[colIdx]))), max);
+        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin)) * Number(this.steps[colIdx]))), max);
         scrollVal = this.closestLookup(availableList, scrollVal, Number(this.steps[colIdx]));
         if (this.disableTime && this.hideDisabledTime) {
           scrollVal = availableList.filter((t) => {
@@ -216,7 +218,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         }
       } else {
         // 处理非时间col的相关的滚动
-        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin))), 1);
+        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin))), 1);
         scrollVal = this.localeMeridiems[scrollVal];
       }
       this.timeItemCanUsed(col, scrollVal) && this.$emit('time-pick', col, scrollVal);

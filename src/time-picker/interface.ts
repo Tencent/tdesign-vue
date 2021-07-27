@@ -46,22 +46,6 @@ export interface InputEvent extends Event {
   target: HTMLInputElement;
 }
 
-interface TimeInputOnInput {
-  (e: Event, type: TimeInputType): void;
-}
-
-interface TimeInputOnBlur {
-  (e: Event, type: TimeInputType): void;
-}
-
-export interface TimeInputInstance extends Vue {
-  allowInput: boolean;
-  onInput: TimeInputOnInput;
-  onBlur: TimeInputOnBlur;
-  setInputValue: Function;
-  time: Record<string, any>;
-}
-
 // 输入变动数据
 export interface TimeInputEvent {
   type: TimeInputType;
@@ -114,4 +98,5 @@ export interface TimePickerPanelColInstance extends Vue {
   isPm: boolean;
   currentTimes: [number, number, number];
   timeArr: [string, string, string];
+  timeItemMargin: number;
 }
