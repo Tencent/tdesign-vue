@@ -66,9 +66,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       return time ? [dayjs(time, this.format)] : [dayjs()];
     },
     textClassName(): string {
-      const isDefault = (this.inputTime as any).some(
-        (item: InputTime) => !!item.hour && !!item.minute && !!item.second,
-      );
+      const isDefault = (this.inputTime as any).some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
       return isDefault ? '' : `${name}__group-text`;
     },
   },
@@ -89,8 +87,8 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
   },
   methods: {
     // 输入变化
-    inputChange(data: TimeInputEvent) {
-      const { type, value } = data;
+    inputChange(event: TimeInputEvent) {
+      const { type, value } = event;
       const {
         $data: {
           // 鉴别是range还是单picker
@@ -117,14 +115,18 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       // 生成变动
       this.time = dayjs(newTime);
       // 转化展示数据
-      this.inputTime = this.setInputValue(dayjs(newTime));
+      this.inputTime = this.setInputValue(this.time);
+      this.$emit('input', { input: value, value: this.time.format(this.format), e: event });
       const panelRef = this.$refs.panel as TimePickerPanelInstance;
       panelRef.panelColUpdate();
     },
-    // 输入失焦，赋值默认
-    inputBlurDefault(type: TimeInputType, index: number, e: Event, currentVal: number) {
-      this.inputTime[type] = '00';
-      this.$emit('blur', { trigger: type, input: currentVal, value, e });
+    // @blur
+    onBlurDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
+      this.$emit('blur', { trigger, input, value: this.time.format(this.format), e });
+    },
+    // @focus
+    onFocusDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
+      this.$emit('focus', { trigger, input, value: this.time.format(this.format), e });
     },
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
@@ -191,8 +193,8 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       const currentTime = dayjs();
       // 如果此刻在不可选的时间上, 直接return
       if (
-        isFunction(this.disableTime) &&
-        this.disableTime(currentTime.get('hour'), currentTime.get('minute'), currentTime.get('second'))
+        isFunction(this.disableTime)
+        && this.disableTime(currentTime.get('hour'), currentTime.get('minute'), currentTime.get('second'))
       ) {
         return;
       }
@@ -294,7 +296,8 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
             allowInput={this.allowInput}
             placeholder={this.placeholder || this.locale.placeholder}
             onToggleMeridiem={() => this.toggleInputMeridiem()}
-            onBlurDefault={this.inputBlurDefault}
+            onBlurDefault={this.onBlurDefault}
+            onFocusDefault={this.onFocusDefault}
             onChange={(e: TimeInputEvent) => this.inputChange(e)}
           />
         </div>

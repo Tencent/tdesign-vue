@@ -2,13 +2,7 @@ import { TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
-import {
-  componentName,
-  amFormat,
-  KEYBOARD_DIRECTION,
-  EMPTY_VALUE,
-  meridiemList,
-} from './constant';
+import { componentName, amFormat, KEYBOARD_DIRECTION, EMPTY_VALUE, meridiemList } from './constant';
 
 import { prefix } from '../config';
 
@@ -107,15 +101,11 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       if (curDayJs[type] !== undefined) this.setInputValue(curDayJs[type], target);
     },
     // 失去焦点
-    onBlur(_e: Event, type: TimeInputType, index: number, currentValue: number): void {
-      // todo 无填充需要填充
-      const curDayJs = this.displayTimeList[index];
-      if (curDayJs[type] === undefined) {
-        this.$emit('blurDefault', type, index, _e, currentValue);
-      }
+    onBlur(e: FocusEvent, trigger: TimeInputType, index: number, input: number): void {
+      this.allowInput && this.$emit('blurDefault', e, trigger, index, input);
     },
-    onFocus(_e: Event, type: TimeInputType, index: number, currentValue: number): void {
-      this.$emit('focus', type, index, _e, currentValue);
+    onFocus(e: FocusEvent, trigger: TimeInputType, index: number, input: number): void {
+      this.allowInput && this.$emit('focusDefault', e, trigger, index, input);
     },
     // 键盘监听
     onKeydown(e: any, type: TimeInputType, index: number): void {
@@ -167,7 +157,7 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       }
     },
     // 切换上下午
-    onToggleMeridiem(index: number) {
+    onToggleMeridiem(index: number): void {
       this.$emit('toggleMeridiem', index);
     },
     // 设置输入框原始值，使其完全受控
@@ -197,13 +187,15 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       if (isEmptyVal) {
         return <span class={`${componentName}__input-placeholder`}>{placeholder}</span>;
       }
-      const itemClasses = disabled ? [`${componentName}__input-item`, `${componentName}__input-item-disabled`] : [`${componentName}__input-item`];
-      const inputClass =  `${componentName}__input-item-input`;
+      const itemClasses = disabled
+        ? [`${componentName}__input-item`, `${componentName}__input-item-disabled`]
+        : [`${componentName}__input-item`];
+      const inputClass = `${componentName}__input-item-input`;
       const render: any = [];
 
       this.displayTimeList.forEach((inputTime: InputTime | undefined, index: number) => {
         if (index > 0) render.push('-');
-        const { hour, minute, second } = inputTime
+        const { hour, minute, second } = inputTime;
         // 渲染组件 - 默认有小时输入
         render.push(<span class={itemClasses}>
             <input
@@ -212,8 +204,8 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
               disabled={!allowInput}
               onKeydown={(e: Event) => this.onKeydown(e, 'hour', index)}
               onInput={(e: Event) => this.onInput(e, 'hour', index)}
-              onBlur={(e: Event) => this.onBlur(e, 'hour', index, Number(hour))}
-              onFocus={(e: Event) => this.onFocus(e, 'hour', index, Number(hour))}
+              onBlur={(e: FocusEvent) => this.onBlur(e, 'hour', index, Number(hour))}
+              onFocus={(e: FocusEvent) => this.onFocus(e, 'hour', index, Number(hour))}
             />
           </span>);
         // 判断分秒输入
@@ -227,8 +219,8 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
                 disabled={!allowInput}
                 onKeydown={(e: Event) => this.onKeydown(e, 'minute', index)}
                 onInput={(e: Event) => this.onInput(e, 'minute', index)}
-                onBlur={(e: Event) => this.onBlur(e, 'minute', index, Number(minute))}
-                onFocus={(e: Event) => this.onFocus(e, 'minute', index, Number(minute))}
+                onBlur={(e: FocusEvent) => this.onBlur(e, 'minute', index, Number(minute))}
+                onFocus={(e: FocusEvent) => this.onFocus(e, 'minute', index, Number(minute))}
               />
             </span>);
           // 需要秒输入器
@@ -241,8 +233,8 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
                   disabled={!allowInput}
                   onKeydown={(e: Event) => this.onKeydown(e, 'second', index)}
                   onInput={(e: Event) => this.onInput(e, 'second', index)}
-                  onBlur={(e: Event) => this.onBlur(e, 'second', index, Number(second))}
-                  onFocus={(e: Event) => this.onFocus(e, 'second', index, Number(second))}
+                  onBlur={(e: FocusEvent) => this.onBlur(e, 'second', index, Number(second))}
+                  onFocus={(e: FocusEvent) => this.onFocus(e, 'second', index, Number(second))}
                 />
               </span>);
           }
@@ -255,7 +247,7 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
           render[amFormat.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
               <input
                 readonly
-                class={[inputClass,`${inputClass}-meridiem`]}
+                class={[inputClass, `${inputClass}-meridiem`]}
                 value={text}
                 onKeydown={(e: Event) => this.onKeydown(e, 'meridiem', index)}
                 disabled={!allowInput}
