@@ -1,6 +1,7 @@
 <template>
-  <div :id="`${path}#default`" class='anchor-demo'>
-    <t-anchor :affixProps="{ offsetTop: 10 }">
+  <div :id="`${path}#default`" class='anchor-demo' style="display: flex">
+    <div style="flex:1"></div>
+    <t-anchor :affixProps="{ offsetTop: 20 }">
       <t-anchor-item :href="`#${path}#default`" title="定义"></t-anchor-item>
       <t-anchor-item :href="`#${path}#multiple`" title="服务功能"></t-anchor-item>
       <t-anchor-item :href="`#${path}#small`" title="使用指南"></t-anchor-item>
