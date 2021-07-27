@@ -1,28 +1,28 @@
 <template>
   <div class="switch-demo">
     <div class="tdesign-demo-block">
-      <t-switch v-model="checked" :label="['开', '关']">
+      <t-switch size="large" v-model="checked" :label="['开', '关']">
       </t-switch>
-      <t-switch :label="['开', '关']">
-      </t-switch>
-    </div>
-    <div class="tdesign-demo-block">
-      <t-switch v-model="renderChecked" :label="[renderActiveContent, renderInactiveContent]">
-      </t-switch>
-      <t-switch :label="[renderActiveContent, renderInactiveContent]">
+      <t-switch size="large" :label="['开', '关']">
       </t-switch>
     </div>
     <div class="tdesign-demo-block">
-      <t-switch v-model="renderChecked2" :label="renderContent">
+      <t-switch size="large" v-model="renderChecked" :label="[renderActiveContent, renderInactiveContent]">
       </t-switch>
-      <t-switch :label="renderContent">
+      <t-switch size="large" :label="[renderActiveContent, renderInactiveContent]">
       </t-switch>
     </div>
     <div class="tdesign-demo-block">
-      <t-switch v-model="slotChecked">
+      <t-switch size="large" v-model="renderChecked2" :label="renderContent">
+      </t-switch>
+      <t-switch size="large" :label="renderContent">
+      </t-switch>
+    </div>
+    <div class="tdesign-demo-block">
+      <t-switch size="large" v-model="slotChecked">
         <template v-slot:label="slotProps">{{slotProps.value?'开':'关'}}</template>
       </t-switch>
-      <t-switch>
+      <t-switch size="large">
         <template v-slot:label="slotProps">
           <template v-if="slotProps.value">
             <t-icon-check />
