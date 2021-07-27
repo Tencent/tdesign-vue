@@ -63,14 +63,8 @@
         :disabled="disabled"
         :class="simpleClass"
         @change="toPage"
-      >
-        <t-option
-          v-for="item in pageCountOption"
-          :value="item"
-          :label="`${item}/${pageCount}`"
-          :key="`${item}/${pageCount}`"
-        />
-      </t-select>
+        :options="pageCountOption"
+      />
     </template>
     <!-- 向后按钮-->
     <div :class="nextBtnClass" @click="nextPage" :disabled="disabled || current === pageCount">
@@ -227,10 +221,10 @@ export default mixins(PaginationLocalReceiver).extend({
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
     },
-    pageCountOption(): Array<number> {
+    pageCountOption(): Array<{label: string; value: number}> {
       const ans = [];
       for (let i = 1; i <= this.pageCount; i++) {
-        ans.push(i);
+        ans.push({ value: i, label: `${i}/${this.pageCount}` });
       }
       return ans;
     },
