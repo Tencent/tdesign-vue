@@ -33,5 +33,16 @@ module.exports = {
         '@vue/babel-preset-jsx',
       ],
     },
+    production: {
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            modules: false,
+          },
+        ],
+        '@vue/babel-preset-jsx',
+      ],
+    },
   },
 };
