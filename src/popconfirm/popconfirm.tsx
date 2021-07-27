@@ -1,5 +1,5 @@
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import Popup, { PopupProps } from '../popup/index';
 import props from './props';
@@ -12,7 +12,7 @@ const popupName = `${prefix}-popup`;
 
 type IconConstructor = typeof TIconInfoCircleFilled;
 
-export default mixins(getLocalRecevierMixins('popconfirm')).extend({
+export default mixins(getLocalReceiverMixins('popconfirm')).extend({
   name,
   props: { ...props },
   model: {

@@ -13,7 +13,7 @@ export interface LocalComponent extends Vue {
   globalLocale: Locale;
 };
 
-export default function getLocalRecevierMixins<BasicComponent extends Vue>(componentName: string) { // eslint-disable-line
+export default function getLocalReceiverMixins<BasicComponent extends Vue>(componentName: string) { // eslint-disable-line
   return (Vue as VueConstructor<LocalComponent & BasicComponent>).extend({
     name,
     inject: {

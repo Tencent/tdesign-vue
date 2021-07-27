@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -24,7 +24,7 @@ const name = `${prefix}-select`;
 // 用户设置overStyle width时，以设置的为准
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
 
-export default mixins(getLocalRecevierMixins('select')).extend({
+export default mixins(getLocalReceiverMixins('select')).extend({
   name,
   model: {
     prop: 'value',

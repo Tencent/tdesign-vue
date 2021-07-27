@@ -1,11 +1,11 @@
 import mixins from '../../utils/mixins';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 import TIconChevronDown from '../../icon/chevron-down-circle';
 import isFunction from 'lodash/isFunction';
 import { prefix } from '../../config';
 import { Styles } from '../../common';
 
-export default mixins(getLocalRecevierMixins('table')).extend({
+export default mixins(getLocalReceiverMixins('table')).extend({
   name: `${prefix}-expand-box`,
   props: {
     expanded: {

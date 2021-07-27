@@ -4,7 +4,7 @@ import isFunction from 'lodash/isFunction';
 import isEqual from 'lodash/isEqual';
 
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { TimePickerInstance, TimeInputEvent, InputTime, TimeInputType, TimePickerPanelInstance } from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
@@ -22,7 +22,7 @@ const name = `${prefix}-time-picker`;
 
 dayjs.extend(customParseFormat);
 
-export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).extend({
+export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).extend({
   name: `${prefix}-time-range-picker`,
 
   components: {
@@ -95,14 +95,14 @@ export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).
         newTime.minute(0);
         newTime.second(0);
       }
-      // @ts-ignore 设置时间 这里暂时只能ignore掉 没有merdiem的类型
+      // @ts-ignore 设置时间 这里暂时只能ignore掉 没有 meridiem 的类型
       newTime = newTime.set(type, value);
       // 生成变动
       this.time[index] = dayjs(newTime);
       // 转化展示数据
       this.updateInputTime();
       const panelRef = this.$refs.panel as TimePickerPanelInstance;
-      panelRef.panelColUpate();
+      panelRef.panelColUpdate();
     },
     // 输入失焦，赋值默认
     inputBlurDefault(type: TimeInputType, index: number) {
@@ -163,7 +163,7 @@ export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).
         shouldUpdatePanel = true;
       }
       this.updateInputTime();
-      shouldUpdatePanel && panelRef.panelColUpate();
+      shouldUpdatePanel && panelRef.panelColUpdate();
     },
     // 确定按钮
     makeSure() {
@@ -210,14 +210,14 @@ export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).
         }
       });
       this.inputTime = disPlayValues;
-      this.triggleUpdateValue();
+      this.triggerUpdateValue();
     },
     // 清除选中
     clear() {
       this.time = TIME_PICKER_EMPTY;
       this.updateInputTime();
     },
-    triggleUpdateValue() {
+    triggerUpdateValue() {
       const values: Array<string> = [];
       this.time.forEach((time) => {
         if (time) {

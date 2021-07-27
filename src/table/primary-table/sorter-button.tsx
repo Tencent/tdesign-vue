@@ -1,5 +1,5 @@
 import mixins from '../../utils/mixins';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 import { SortType } from '../type';
 import { prefix } from '../../config';
 import { PropType } from 'vue/types/umd';
@@ -14,7 +14,7 @@ const tooltips = {
   cancel: '点击取消排序',
 };
 
-export default mixins(getLocalRecevierMixins('table')).extend({
+export default mixins(getLocalReceiverMixins('table')).extend({
   name: `${prefix}-sorter-button`,
   props: {
     sortType: {

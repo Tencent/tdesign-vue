@@ -1,6 +1,6 @@
 import { TimeInputInstance, TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 
 import {
   componentName,
@@ -14,7 +14,7 @@ import { prefix } from '../config';
 
 const name = `${prefix}-time-picker-input-items`; // t-time-picker-input-items
 
-export default mixins(getLocalRecevierMixins<TimeInputInstance>('timePicker')).extend({
+export default mixins(getLocalReceiverMixins<TimeInputInstance>('timePicker')).extend({
   name,
 
   props: {

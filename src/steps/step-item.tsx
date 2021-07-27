@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import props from './step-item-props';
 import TIconCheck from '../icon/check';
@@ -16,7 +16,7 @@ export interface StepItemType extends Vue {
   steps: InstanceType<typeof Steps>;
 }
 
-export default mixins(getLocalRecevierMixins<StepItemType>('steps')).extend({
+export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
   name,
   props: {
     ...props,

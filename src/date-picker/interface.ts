@@ -58,18 +58,18 @@ export interface DatePickerData {
   inlineView: boolean;
   els: Element[];
   isOpen: boolean;
-  timeVlaue: dayjs.Dayjs;
+  timeValue: dayjs.Dayjs;
 }
 
 export interface DatePickerMethods {
-  initClickaway: (el: Element) => void;
-  attachDatepicker: () => void;
+  initClickAway: (el: Element) => void;
+  attachDatePicker: () => void;
   getLocales: () => CustomLocale;
   setLocales: () => void;
   onNativeInput(event?: any): void;
   onNativeFocus(event?: any): void;
   onClick(event?: any): void;
-  normalizeDatetime: (value: Date, oldValue: Date) => Date;
+  normalizeDateTime: (value: Date, oldValue: Date) => Date;
   dateClick: (value: Date) => void;
   hoverDate: (value: Date) => void;
   toggle: () => void;
@@ -183,8 +183,8 @@ export interface CalendarTimeData {
   hour: null | number;
   minute: null | number;
   seconds: null | number;
-  oldvalue: DateValue;
-  scollPadding: TdCSSProperties;
+  oldValue: DateValue;
+  scrollPadding: TdCSSProperties;
   noScrollEvent: boolean;
   delay: number;
 }
@@ -205,10 +205,10 @@ export interface CalendarTimeMethods {
   onScrollMinutes(vm: any, value: number): void;
   onScrollSeconds(vm: any, value: number): void;
   onScrollTimes(event: MouseEvent, type: string): void;
-  padScollTop(): void;
+  padScrollTop(): void;
   getAvailableHour(): null | number;
   enableScrollEvent(vm: any): void;
-  setScollTop(): void;
+  setScrollTop(): void;
 }
 export interface CalendarTimeComputed {
   cssClasses: object;
@@ -286,7 +286,7 @@ export interface DateRangeMethods {
   clickMonth(date: Date, type: string): void;
   onMouseEnter(date: Date): void;
   onTypeChange(): void;
-  handleTypeChange(fdirection: string, type: string): void;
+  handleTypeChange(direction: string, type: string): void;
 }
 export interface DateMethods {
   getClickHandler(): Function;

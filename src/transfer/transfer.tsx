@@ -17,7 +17,7 @@ import {
 } from './interface';
 import { PageInfo, TdPaginationProps } from '../pagination/type';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import props from './props';
 import { getTransferListOption, emitEvent } from './utils';
 import { TNode } from '../common';
@@ -25,7 +25,7 @@ import { TNode } from '../common';
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
-export default mixins(getLocalRecevierMixins('transfer')).extend({
+export default mixins(getLocalReceiverMixins('transfer')).extend({
   name,
   components: {
     TransferList,

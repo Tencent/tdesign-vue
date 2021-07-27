@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../../utils/mixins';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../interface';
 import { componentName, EPickerCols } from '../constant';
 import { panelProps } from './props';
@@ -13,7 +13,7 @@ const name = `${componentName}-panel`;
 
 dayjs.extend(customParseFormat);
 
-export default mixins(getLocalRecevierMixins<TimePickerPanelInstance>('timePicker')).extend({
+export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicker')).extend({
   name,
   data() {
     return {
@@ -69,12 +69,12 @@ export default mixins(getLocalRecevierMixins<TimePickerPanelInstance>('timePicke
   watch: {
     isShowPanel(val: boolean) {
       if (val) {
-        this.panelColUpate();
+        this.panelColUpdate();
       }
     },
   },
   methods: {
-    panelColUpate() {
+    panelColUpdate() {
       const panelCol0 = this.$refs.panelCol_0 as TimePickerPanelColInstance;
       const panelCol1 = this.$refs.panelCol_1 as TimePickerPanelColInstance;
       this.$nextTick(() => {
@@ -133,7 +133,7 @@ export default mixins(getLocalRecevierMixins<TimePickerPanelInstance>('timePicke
     },
     nowAction() {
       this.$emit('now-action');
-      this.panelColUpate();
+      this.panelColUpdate();
     },
     /**
      * 时间 item 点击选择处理函数

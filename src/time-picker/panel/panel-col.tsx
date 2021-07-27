@@ -133,13 +133,13 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           },
         ];
         return (
-          <li class={classNames} onclick={(e: MouseEvent) => this.handletTimeItemClick(e, col, el)}>
+          <li class={classNames} onclick={(e: MouseEvent) => this.handleTimeItemClick(e, col, el)}>
             {el}
           </li>
         );
       });
     },
-    handletTimeItemClick(_e: MouseEvent, col: EPickerCols, time: number | string) {
+    handleTimeItemClick(_e: MouseEvent, col: EPickerCols, time: number | string) {
       const canUse = this.timeItemCanUsed(col, time);
       if (canUse) {
         this.scrollToTime(col, time, 'smooth');
@@ -186,15 +186,15 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       );
     },
     // 当存在大于1的step时 需要手动处理获取最近的step
-    closestLookup(avaliableArr: Array<any>, calcVal: number, step: number) {
+    closestLookup(availableArr: Array<any>, calcVal: number, step: number) {
       if (step <= 1) return calcVal;
-      return avaliableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
+      return availableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
     },
     // 处理滚动选择时间
     handleScroll(col: EPickerCols) {
       let scrollVal: number|string;
       const cols = this.$refs[`${col}_scroller`] as Element;
-      const avaliableList = this.generateColTime(col);
+      const availableList = this.generateColTime(col);
       const { scrollTop } = cols; // 当前滚动的高度;
       const itemHeight = this.getTimeItemHeight(col);
 
@@ -206,9 +206,9 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           max = /[h]{1}/.test(this.format) ? 11 : 23;
         }
         scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin)) * Number(this.steps[colIdx]))), max);
-        scrollVal = this.closestLookup(avaliableList, scrollVal, Number(this.steps[colIdx]));
+        scrollVal = this.closestLookup(availableList, scrollVal, Number(this.steps[colIdx]));
         if (this.disableTime && this.hideDisabledTime) {
-          scrollVal = avaliableList.filter((t) => {
+          scrollVal = availableList.filter((t) => {
             const params = this.currentTimes;
             params[colIdx] = Number(t);
             return !this.disableTime?.apply(this, params);

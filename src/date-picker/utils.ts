@@ -526,5 +526,3 @@ export function flagActive(data: any[], { ...args }: any) {
     return _item;
   }));
 }
-
-

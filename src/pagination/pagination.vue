@@ -90,7 +90,7 @@
 <script lang="ts">
 import config from '../config';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import TIconChevronLeft from '../icon/chevron-left';
 import TIconChevronRight from '../icon/chevron-right';
 import TIconChevronLeftDouble from '../icon/chevron-left-double';
@@ -105,7 +105,7 @@ import { ClassName } from '../common';
 const { prefix } = config;
 const name = `${prefix}-pagination`;
 
-const PaginationLocalReceiver = getLocalRecevierMixins('pagination');
+const PaginationLocalReceiver = getLocalReceiverMixins('pagination');
 
 export default mixins(PaginationLocalReceiver).extend({
   name,

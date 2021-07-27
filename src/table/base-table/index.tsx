@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import mixins from '../../utils/mixins';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 import { prefix } from '../../config';
 import { flatColumns } from '../util/props-util';
 import baseTableProps from '../base-table-props';
@@ -19,7 +19,7 @@ import { EventNameWithKebab } from '../util/interface';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
-export default mixins(getLocalRecevierMixins('table')).extend({
+export default mixins(getLocalReceiverMixins('table')).extend({
   name: `${prefix}-base-table`,
   model: {
     prop: 'value',

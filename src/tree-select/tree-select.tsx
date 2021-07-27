@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
@@ -31,7 +31,7 @@ import { RemoveOptions } from './interface';
 
 const name = `${prefix}-tree-select`;
 
-export default mixins(getLocalRecevierMixins('treeSelect')).extend({
+export default mixins(getLocalReceiverMixins('treeSelect')).extend({
   name,
   model: {
     prop: 'value',

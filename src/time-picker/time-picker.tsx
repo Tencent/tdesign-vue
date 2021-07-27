@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
@@ -22,7 +22,7 @@ const name = `${prefix}-time-picker`;
 
 dayjs.extend(customParseFormat);
 
-export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).extend({
+export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).extend({
   name,
 
   components: {
@@ -117,7 +117,7 @@ export default mixins(getLocalRecevierMixins<TimePickerInstance>('timePicker')).
       // 转化展示数据
       this.inputTime = this.setInputValue(dayjs(newTime));
       const panelRef = this.$refs.panel as TimePickerPanelInstance;
-      panelRef.panelColUpate();
+      panelRef.panelColUpdate();
     },
     // 输入失焦，赋值默认
     inputBlurDefault(type: TimeInputType) {
