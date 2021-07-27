@@ -179,7 +179,6 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
         return (
           <div>
             <span class={CLASS_NAMES.extra}>{list[0].message}</span>
-            {helpVNode}
           </div>
         );
       }
