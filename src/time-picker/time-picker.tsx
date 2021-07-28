@@ -81,7 +81,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
     value: {
       handler() {
         this.time = this.value ? dayjs(this.value, this.format) : undefined;
-        this.inputTime = this.setInputValue(dayjs(this.value, this.format));
+        this.inputTime =  this.value ? this.setInputValue(dayjs(this.value, this.format)) : undefined;
       },
     },
   },

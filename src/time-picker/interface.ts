@@ -94,6 +94,7 @@ export interface TimePickerPanelColInstance extends Vue {
   updateTimeScrollPos: () => void;
   closestLookup: (availableArr: Array<any>, x: number, step: number) => number;
   disableFilter: (preIdx: number, col: EPickerCols) => any;
+  getScrollDistance: (col: EPickerCols, time: number | string) => number;
   valStr: string;
   isPm: boolean;
   currentTimes: [number, number, number];
