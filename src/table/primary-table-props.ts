@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-28 13:56:34
  * */
 
 import { TdPrimaryTableProps } from '../table/type';
@@ -11,12 +13,12 @@ export default {
   asyncLoading: {
     type: [String, Function] as PropType<TdPrimaryTableProps['asyncLoading']>,
   },
-  /** 列配置 */
+  /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdPrimaryTableProps['columns']>,
     default: (): TdPrimaryTableProps['columns'] => [],
   },
-  /** 展开行内容 */
+  /** 展开行内容，泛型 T 指表格数据类型 */
   expandedRow: {
     type: Function as PropType<TdPrimaryTableProps['expandedRow']>,
   },
@@ -67,13 +69,13 @@ export default {
   defaultSort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['defaultSort']>,
   },
-  /** 分页、排序、过滤等内容变化时触发 */
+  /** 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型 */
   onChange: Function as PropType<TdPrimaryTableProps['onChange']>,
-  /** 展开行发生变化时触发 */
+  /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
   onExpandChange: Function as PropType<TdPrimaryTableProps['onExpandChange']>,
-  /** 过滤参数发生变化时触发 */
+  /** 过滤参数发生变化时触发，泛型 T 指表格数据类型 */
   onFilterChange: Function as PropType<TdPrimaryTableProps['onFilterChange']>,
-  /** 选中行发生变化时触发 */
+  /** 选中行发生变化时触发，泛型 T 指表格数据类型 */
   onSelectChange: Function as PropType<TdPrimaryTableProps['onSelectChange']>,
   /** 排序发生变化时触发。其中 sortBy 表示当前排序的字段，sortType 表示排序的方式，currentDataSource 表示 sorter 排序后的结果，col 表示列配置。sort 值类型为数组时表示多字段排序 */
   onSortChange: Function as PropType<TdPrimaryTableProps['onSortChange']>,

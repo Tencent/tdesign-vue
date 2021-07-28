@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-28 13:56:34
  * */
 
 import { TdBaseTableProps } from '../table/type';
@@ -9,12 +11,12 @@ import { PropType } from 'vue';
 export default {
   /** 是否显示表格边框 */
   bordered: Boolean,
-  /** 列配置 */
+  /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdBaseTableProps['columns']>,
     default: (): TdBaseTableProps['columns'] => [],
   },
-  /** 数据源 */
+  /** 数据源，泛型 T 指表格数据类型 */
   data: {
     type: Array as PropType<TdBaseTableProps['data']>,
     default: (): TdBaseTableProps['data'] => [],
@@ -24,7 +26,7 @@ export default {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
     default: '',
   },
-  /** 展开行内容，可自定义 */
+  /** 展开行内容，可自定义，泛型 T 指表格数据类型 */
   expandedRow: {
     type: [String, Function] as PropType<TdBaseTableProps['expandedRow']>,
   },
@@ -48,7 +50,7 @@ export default {
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },
-  /** 数据源 */
+  /** 行类名，泛型 T 指表格数据类型 */
   rowClassName: {
     type: [String, Function] as PropType<TdBaseTableProps['rowClassName']>,
   },
@@ -58,7 +60,7 @@ export default {
     default: '',
     required: true,
   },
-  /** 用于自定义合并单元格 */
+  /** 用于自定义合并单元格，泛型 T 指表格数据类型 */
   rowspanAndColspan: {
     type: Function as PropType<TdBaseTableProps['rowspanAndColspan']>,
   },
@@ -88,17 +90,17 @@ export default {
       return ['top', 'middle', 'bottom'].includes(val);
     },
   },
-  /** 分页发生变化时触发。参数 newDataSource 表示分页后的数据。本地数据进行分页时，newDataSource 和源数据 data 会不一样 */
+  /** 分页发生变化时触发。参数 newDataSource 表示分页后的数据。本地数据进行分页时，newDataSource 和源数据 data 会不一样。泛型 T 指表格数据类型 */
   onPageChange: Function as PropType<TdBaseTableProps['onPageChange']>,
-  /** 行点击时触发 */
+  /** 行点击时触发，泛型 T 指表格数据类型 */
   onRowClick: Function as PropType<TdBaseTableProps['onRowClick']>,
-  /** 行双击时触发 */
+  /** 行双击时触发，泛型 T 指表格数据类型 */
   onRowDbClick: Function as PropType<TdBaseTableProps['onRowDbClick']>,
-  /** null */
+  /** 鼠标悬浮到行时触发，泛型 T 指表格数据类型 */
   onRowHover: Function as PropType<TdBaseTableProps['onRowHover']>,
-  /** null */
+  /** 鼠标在表格行按下时触发，泛型 T 指表格数据类型 */
   onRowMousedown: Function as PropType<TdBaseTableProps['onRowMousedown']>,
-  /** null */
+  /** 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型 */
   onRowMouseup: Function as PropType<TdBaseTableProps['onRowMouseup']>,
   /** 表格内容横向滚动时触发 */
   onScrollX: Function as PropType<TdBaseTableProps['onScrollX']>,

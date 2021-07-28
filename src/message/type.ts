@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 22:38:31
+ * updated at 2021-07-18 17:26:17
  * */
 
 import { TNode, AttachNode } from '../common';
@@ -15,7 +15,7 @@ export interface TdMessageProps {
    */
   content?: string | TNode;
   /**
-   * 消息显示时长，单位：毫秒。值为 0 表示永久显示
+   * 消息内置计时器，计时到达时会触发 duration-end 事件。单位：毫秒。值为 0 则表示没有计时器。
    * @default 3000
    */
   duration?: number;
