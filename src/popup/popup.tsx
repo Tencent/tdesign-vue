@@ -83,7 +83,7 @@ export default Vue.extend({
           this.hasDocumentEvent = true;
         }
       } else {
-        this.destroyPopper();
+        // destruction is delayed until after animation ends
         off(document, 'click', this.handleDocumentClick);
         this.hasDocumentEvent = false;
       }
@@ -299,7 +299,7 @@ export default Vue.extend({
   render() {
     return (
       <div class={`${name}-reference`}>
-        <transition name={`${name}_animation`} appear>
+        <transition name={`${name}_animation`} appear onAfterLeave={this.destroyPopper}>
           <div
             class={name}
             ref='popper'
