@@ -34,19 +34,9 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
       };
       return iconMap[this.theme];
     },
-    iconColor(): string {
-      let color = '';
-      switch (this.theme) {
-        case 'warning':
-          color = '#FFAA00';
-          break;
-        case 'danger':
-          color = '#E34D59';
-          break;
-        default:
-          color = '#0052D9';
-      }
-      return `color:${color}`;
+    iconCls(): string {
+      const theme = this.theme || 'default';
+      return `${name}__icon--${theme}`;
     },
     innerPopupProps(): PopupProps {
       return {
@@ -76,7 +66,7 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
     },
     renderIcon() {
       const Icon = this.themeIcon;
-      return renderTNodeJSXDefault(this, 'icon', <Icon style={this.iconColor} />);
+      return renderTNodeJSXDefault(this, 'icon', <Icon class={this.iconCls} />);
     },
     getBtnText(api: TdPopconfirmProps['cancelBtn']) {
       return typeof api === 'object' ? api.content : api;
@@ -137,9 +127,9 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
                 </div>
               </div>
               {Boolean(cancelBtn || confirmBtn) && (
-                <div class='t-popconfirm__buttons'>
-                  <span class='t-popconfirm__cancel' onClick={this.handleCancel}>{cancelBtn}</span>
-                  <span class='t-popconfirm__confirm' onClick={this.handleConfirm}>{confirmBtn}</span>
+                <div class={`${name}__buttons`}>
+                  <span class={`${name}__cancel`} onClick={this.handleCancel}>{cancelBtn}</span>
+                  <span class={`${name}__confirm`} onClick={this.handleConfirm}>{confirmBtn}</span>
                 </div>
               )}
             </div>

@@ -34,8 +34,7 @@ exports[`Popconfirm base demo works fine 1`] = `
                     class="t-popconfirm__body"
                   >
                     <svg
-                      class="t-icon t-icon-info-circle-filled"
-                      style="color: rgb(0, 82, 217);"
+                      class="t-icon t-icon-info-circle-filled t-popconfirm__icon--default"
                       version="1.1"
                       viewBox="0 0 1024 1024"
                       xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +132,7 @@ exports[`Popconfirm base demo works fine 1`] = `
                     class="t-popconfirm__body"
                   >
                     <svg
-                      class="t-icon t-icon-info-circle-filled"
-                      style="color: rgb(0, 82, 217);"
+                      class="t-icon t-icon-info-circle-filled t-popconfirm__icon--default"
                       version="1.1"
                       viewBox="0 0 1024 1024"
                       xmlns="http://www.w3.org/2000/svg"
@@ -270,8 +268,7 @@ exports[`Popconfirm base demo works fine 1`] = `
                     class="t-popconfirm__body"
                   >
                     <svg
-                      class="t-icon t-icon-info-circle-filled"
-                      style="color: rgb(0, 82, 217);"
+                      class="t-icon t-icon-info-circle-filled t-popconfirm__icon--default"
                       version="1.1"
                       viewBox="0 0 1024 1024"
                       xmlns="http://www.w3.org/2000/svg"
