@@ -103,7 +103,7 @@ exports[`Cascader base demo works fine 1`] = `
         </div>
       </transition-stub>
       <div
-        class="t-cascader t-is-active t-size-s"
+        class="t-cascader t-size-s"
       >
         <span
           class="t-cascader_content"
@@ -229,7 +229,7 @@ exports[`Cascader base demo works fine 1`] = `
         </div>
       </transition-stub>
       <div
-        class="t-cascader t-is-active t-size-m"
+        class="t-cascader t-size-m"
       >
         <span
           class="t-cascader_content"
@@ -355,7 +355,7 @@ exports[`Cascader base demo works fine 1`] = `
         </div>
       </transition-stub>
       <div
-        class="t-cascader t-is-active t-size-l"
+        class="t-cascader t-size-l"
       >
         <span
           class="t-cascader_content"

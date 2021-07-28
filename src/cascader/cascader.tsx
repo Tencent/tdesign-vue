@@ -66,7 +66,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
         `${name}`,
         {
           [CLASSNAMES.STATUS.disabled]: this.disabled,
-          [CLASSNAMES.STATUS.active]: true,
+          [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
       ];
