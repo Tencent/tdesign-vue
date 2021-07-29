@@ -158,7 +158,7 @@ import props from './props';
 import dayjs from 'dayjs';
 import calendar from 'dayjs/plugin/calendar';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import * as utils from './utils';
 import { getPropsApiByEvent } from '../utils/helper';
 
@@ -229,7 +229,7 @@ const getDefaultControllerConfigData = (visible = true): Record<string, any> => 
   },
 });
 
-const CalendarLocalReceiver = getLocalRecevierMixins('calendar');
+const CalendarLocalReceiver = getLocalReceiverMixins('calendar');
 
 // 组件逻辑
 export default mixins(CalendarLocalReceiver).extend({

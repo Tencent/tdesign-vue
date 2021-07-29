@@ -1,4 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
+import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
@@ -9,8 +10,6 @@ import { componentName, EPickerCols } from '../constant';
 import { prefix } from '../../config';
 
 const name = `${prefix}-time-picker-pane-col`;
-
-const timeItemMargin = 8; // 找不到获取margin的方式 暂时留着了
 
 dayjs.extend(customParseFormat);
 
@@ -34,6 +33,10 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     },
     currentTimes() {
       return [Number(this.value.get('hour')), Number(this.value.get('minute')), Number(this.value.get('second'))];
+    },
+    timeItemMargin() {
+      const maskDom = this.$el?.querySelector?.(`.${componentName}-panel__body-active-mask > div`);
+      return maskDom && parseInt(getComputedStyle(maskDom).margin, 10);
     },
   },
   methods: {
@@ -89,8 +92,8 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       timeIdx = this.disableFilter(Number(timeIdx), type);
       return Math.floor(Number(timeIdx) / Number(step));
     },
-    // 处理滚动距离
-    scrollToTime(col: EPickerCols, time: number | string, behavior: ScrollBehavior = 'auto') {
+    // 获取滚动距离
+    getScrollDistance(col: EPickerCols, time: number | string) {
       let timeIndex: number;
       if (this.timeArr.includes(col)) {
         const colIdx = this.timeArr.indexOf(col);
@@ -101,8 +104,13 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       } else {
         timeIndex = this.localeMeridiems.indexOf((time as string).toUpperCase());
       }
-      const timeItemTotalHeight = this.getTimeItemHeight(col) + timeItemMargin;
+      const timeItemTotalHeight = this.getTimeItemHeight(col) + this.timeItemMargin;
       const distance = (timeIndex * timeItemTotalHeight) + (timeItemTotalHeight / 2);
+      return distance;
+    },
+    // 处理直接点击时间时的滚动
+    scrollToTime(col: EPickerCols, time: number | string, behavior: ScrollBehavior = 'auto') {
+      const distance = this.getScrollDistance(col, time);
       const scroller = this.$refs[`${col}_scroller`] as Element;
       if (!distance || !scroller) return;
       if (scroller.scrollTop === distance) return;
@@ -133,13 +141,13 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           },
         ];
         return (
-          <li class={classNames} onclick={(e: MouseEvent) => this.handletTimeItemClick(e, col, el)}>
+          <li class={classNames} onclick={(e: MouseEvent) => this.handleTimeItemClick(e, col, el)}>
             {el}
           </li>
         );
       });
     },
-    handletTimeItemClick(_e: MouseEvent, col: EPickerCols, time: number | string) {
+    handleTimeItemClick(_e: MouseEvent, col: EPickerCols, time: number | string) {
       const canUse = this.timeItemCanUsed(col, time);
       if (canUse) {
         this.scrollToTime(col, time, 'smooth');
@@ -179,22 +187,22 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         <ul
           class={`${componentName}-panel__body-scroll`}
           ref={`${col}_scroller`}
-          onMousewheel={() => this.handleScroll(col)}
+          onMousewheel={debounce(() => this.handleScroll(col), 50)}
         >
           {this.generateColRows(col)}
         </ul>
       );
     },
     // 当存在大于1的step时 需要手动处理获取最近的step
-    closestLookup(avaliableArr: Array<any>, calcVal: number, step: number) {
+    closestLookup(availableArr: Array<any>, calcVal: number, step: number) {
       if (step <= 1) return calcVal;
-      return avaliableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
+      return availableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
     },
     // 处理滚动选择时间
     handleScroll(col: EPickerCols) {
-      let scrollVal: number|string;
+      let scrollVal: number | string;
       const cols = this.$refs[`${col}_scroller`] as Element;
-      const avaliableList = this.generateColTime(col);
+      const availableList = this.generateColTime(col);
       const { scrollTop } = cols; // 当前滚动的高度;
       const itemHeight = this.getTimeItemHeight(col);
 
@@ -205,10 +213,11 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         if (col === EPickerCols.hour) {
           max = /[h]{1}/.test(this.format) ? 11 : 23;
         }
-        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin)) * Number(this.steps[colIdx]))), max);
-        scrollVal = this.closestLookup(avaliableList, scrollVal, Number(this.steps[colIdx]));
+        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin)) * Number(this.steps[colIdx]))), max);
+        scrollVal = this.closestLookup(availableList, scrollVal, Number(this.steps[colIdx]));
+
         if (this.disableTime && this.hideDisabledTime) {
-          scrollVal = avaliableList.filter((t) => {
+          scrollVal = availableList.filter((t) => {
             const params = this.currentTimes;
             params[colIdx] = Number(t);
             return !this.disableTime?.apply(this, params);
@@ -216,8 +225,17 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         }
       } else {
         // 处理非时间col的相关的滚动
-        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + timeItemMargin))), 1);
+        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin))), 1);
         scrollVal = this.localeMeridiems[scrollVal];
+      }
+      // 矫正滚动距离 吸附效果
+      const distance = this.getScrollDistance(col, scrollVal);
+      if (distance !== scrollTop) {
+        const scroller = this.$refs[`${col}_scroller`] as Element;
+        scroller.scrollTo({
+          top: distance,
+          behavior: 'smooth',
+        });
       }
       this.timeItemCanUsed(col, scrollVal) && this.$emit('time-pick', col, scrollVal);
     },

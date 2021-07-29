@@ -1,17 +1,20 @@
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
-import Popup from '../popup/index';
+import Popup, { PopupProps } from '../popup/index';
 import props from './props';
-import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent, renderTNodeJSXDefault } from '../utils/render-tnode';
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
-
+import TIconInfoCircleFilled from '../icon/info-circle-filled';
+import TIconErrorCircleFilled from '../icon/error-circle-filled';
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;
 
-export default mixins(getLocalRecevierMixins('popconfirm')).extend({
+type IconConstructor = typeof TIconInfoCircleFilled;
+
+export default mixins(getLocalReceiverMixins('popconfirm')).extend({
   name,
-  props: { ... props },
+  props: { ...props },
   model: {
     prop: 'visible',
     event: 'visible-change',
@@ -23,27 +26,27 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
     };
   },
   computed: {
-    iconName(): string {
+    themeIcon(): IconConstructor {
       const iconMap = {
-        default: 'info-circle-filled',
-        warning: 'error-circle-filled',
-        danger: 'error-circle-filled',
+        default: TIconInfoCircleFilled,
+        warning: TIconErrorCircleFilled,
+        danger: TIconErrorCircleFilled,
       };
-      return iconMap[this.theme] || '';
+      return iconMap[this.theme];
     },
-    iconColor(): string {
-      let color = '';
-      switch (this.theme) {
-        case 'warning':
-          color = '#FFAA00';
-          break;
-        case 'danger':
-          color = '#E34D59';
-          break;
-        default:
-          color = '#0052D9';
-      }
-      return `color:${color}`;
+    iconCls(): string {
+      const theme = this.theme || 'default';
+      return `${name}__icon--${theme}`;
+    },
+    innerPopupProps(): PopupProps {
+      return {
+        showArrow: this.showArrow,
+        overlayClassName: name,
+        trigger: 'manual',
+        destroyOnClose: this.destroyOnClose,
+        placement: this.placement,
+        ...this.popupProps,
+      };
     },
   },
   methods: {
@@ -62,15 +65,8 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
       this.onVisibleChange && this.onVisibleChange(false, confirmContext);
     },
     renderIcon() {
-      // 优先级 slot > Funtion
-      if (this.$scopedSlots.icon) {
-        return this.$scopedSlots.icon(null);
-      }
-      const arg = this.icon;
-      if (typeof arg === 'function') {
-        return (arg as Function)();
-      }
-      return <t-icon name={this.iconName} style={this.iconColor} />;
+      const Icon = this.themeIcon;
+      return renderTNodeJSXDefault(this, 'icon', <Icon class={this.iconCls} />);
     },
     getBtnText(api: TdPopconfirmProps['cancelBtn']) {
       return typeof api === 'object' ? api.content : api;
@@ -99,11 +95,6 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
   },
   render() {
     const triggerElement = renderContent(this, 'default', 'triggerElement');
-    const popupProps = Object.assign({
-      showArrow: true,
-      overlayClassName: name,
-      trigger: 'manual',
-    }, this.popupProps);
     const baseTypes = ['string', 'object'];
     let confirmBtn = null;
     if (![undefined, null].includes(this.confirmBtn)) {
@@ -124,9 +115,8 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
         <Popup
           ref='popup'
           visible={this.visible}
-          props={popupProps}
+          props={this.innerPopupProps}
           on={{ 'visible-change': this.onPopupVisibleChange }}
-          destroyOnClose
         >
           <template slot='content' role='poppconfirm'>
             <div class={`${name}__content`}>
@@ -137,9 +127,9 @@ export default mixins(getLocalRecevierMixins('popconfirm')).extend({
                 </div>
               </div>
               {Boolean(cancelBtn || confirmBtn) && (
-                <div class='t-popconfirm__buttons'>
-                  <span class='t-popconfirm__cancel' onClick={this.handleCancel}>{cancelBtn}</span>
-                  <span class='t-popconfirm__confirm' onClick={this.handleConfirm}>{confirmBtn}</span>
+                <div class={`${name}__buttons`}>
+                  <span class={`${name}__cancel`} onClick={this.handleCancel}>{cancelBtn}</span>
+                  <span class={`${name}__confirm`} onClick={this.handleConfirm}>{confirmBtn}</span>
                 </div>
               )}
             </div>

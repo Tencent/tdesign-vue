@@ -1,9 +1,9 @@
 <template>
   <div class="switch-demo">
     <div class="tdesign-demo-block">
-      <t-switch v-model="checked1"></t-switch>
-      <t-switch loading v-model="checked2"></t-switch>
-      <t-switch disabled></t-switch>
+      <t-switch size="large" v-model="checked1"></t-switch>
+      <t-switch size="large" loading v-model="checked2"></t-switch>
+      <t-switch size="large" disabled></t-switch>
     </div>
   </div>
 </template>

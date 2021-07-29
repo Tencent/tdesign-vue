@@ -4,6 +4,8 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdBaseTableProps, TdPrimaryTableProps } from './type';
 
+import './style/';
+
 const TPrimaryTable = mapProps([
   {
     name: 'expandedRowKeys',

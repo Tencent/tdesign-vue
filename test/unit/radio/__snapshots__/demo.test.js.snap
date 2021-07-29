@@ -257,6 +257,9 @@ exports[`Radio radio button demo works fine 1`] = `
           选项四
         </span>
       </label>
+      <div
+        class="t-radio-group-solid-bg-block"
+      />
     </div>
   </div>
 </div>
@@ -594,6 +597,9 @@ exports[`Radio radio button size demo works fine 1`] = `
             深圳
           </span>
         </label>
+        <div
+          class="t-radio-group-solid-bg-block"
+        />
       </div>
     </div>
      
@@ -676,6 +682,9 @@ exports[`Radio radio button size demo works fine 1`] = `
             深圳
           </span>
         </label>
+        <div
+          class="t-radio-group-solid-bg-block"
+        />
       </div>
     </div>
      
@@ -758,6 +767,9 @@ exports[`Radio radio button size demo works fine 1`] = `
             深圳
           </span>
         </label>
+        <div
+          class="t-radio-group-solid-bg-block"
+        />
       </div>
     </div>
   </div>

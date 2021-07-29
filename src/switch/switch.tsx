@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import TIconLoading from '../icon/loading';
+import Loading from '../loading';
 import { SwitchValue } from './type';
 import props from './props';
 import { ClassName, TNodeReturnValue } from '../common';
@@ -118,7 +118,7 @@ export default Vue.extend({
     let loadingContent: TNodeReturnValue;
 
     if (loading) {
-      loadingContent = <TIconLoading/>;
+      loadingContent = <Loading size="small" />;
     } else if (content) {
       switchContent = content;
     }

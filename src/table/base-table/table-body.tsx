@@ -126,7 +126,7 @@ export default Vue.extend({
           scopedSlots,
         };
         // 按行渲染
-        body.push(<TableRow {...props} />);
+        body.push(<TableRow rowKey={this.rowKey} {...props} />);
         provider.renderRows({ rows: body, row, rowIndex: index, columns: this.columns });
       });
       return body;

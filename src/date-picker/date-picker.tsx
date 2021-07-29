@@ -15,7 +15,7 @@ import TIconTime from '../icon/time';
 import TIconClose from '../icon/close';
 import TPopup from '../popup';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 
 import { CustomLocale, DatePickerInstance, DateValue } from './interface';
 import { COMPONENT_NAME } from './constants';
@@ -34,7 +34,7 @@ const onOpenDebounce = debounce((vm?: any) => {
   vm.createPopover();
 }, 250);
 
-export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
+export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
   name: COMPONENT_NAME,
   components: {
     TIconTime,
@@ -69,7 +69,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
       showTime: false,
       els: [],
       isOpen: false,
-      timeVlaue: dayjs(),
+      timeValue: dayjs(),
     };
   },
   computed: {
@@ -194,17 +194,17 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
     },
   },
   mounted() {
-    this.attachDatepicker();
+    this.attachDatePicker();
   },
   methods: {
     handleTimePick(col: EPickerCols, time: number) {
       const start = new Date(this.start);
       start[`set${firstUpperCase(col)}s`](time);
       this.start = start;
-      this.timeVlaue = dayjs(start);
+      this.timeValue = dayjs(start);
       this.dateClick(new Date(start));
     },
-    initClickaway(el: Element) {
+    initClickAway(el: Element) {
       this.els.push(el);
       if (this.els.length > 1) {
         clickOut(this.els, () => {
@@ -212,11 +212,11 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
         });
       }
     },
-    attachDatepicker(): any {
+    attachDatePicker(): any {
       // language init
       this.setLocales();
 
-      this.initClickaway(this.$el);
+      this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
 
@@ -291,7 +291,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
       this.$emit('click', event);
     },
 
-    normalizeDatetime(value: Date, oldValue: Date): Date {
+    normalizeDateTime(value: Date, oldValue: Date): Date {
       const newDate = dayjs(value);
       const oldDate = dayjs(oldValue);
       if (this.enableTimePicker) {
@@ -320,7 +320,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
         case 'year':
         case 'month':
         case 'date':
-          this.start = this.normalizeDatetime(value, this.start);
+          this.start = this.normalizeDateTime(value, this.start);
           this.selectedDates = [this.start];
           // 有时间选择时，点击日期不关闭弹窗
           this.clickedApply(!this.enableTimePicker);
@@ -328,23 +328,23 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
         case 'range':
           if (this.inSelection) {
             this.inSelection = false;
-            this.start = this.normalizeDatetime(value[0], this.end);
-            this.end = this.normalizeDatetime(value[1], this.end);
+            this.start = this.normalizeDateTime(value[0], this.end);
+            this.end = this.normalizeDateTime(value[1], this.end);
 
             if (this.end < this.start) {
               this.inSelection = true;
-              this.start = this.normalizeDatetime(value[0], this.start);
+              this.start = this.normalizeDateTime(value[0], this.start);
             }
           } else {
-            this.start = this.normalizeDatetime(value[0], this.start);
-            this.end = this.normalizeDatetime(value[1], this.end);
+            this.start = this.normalizeDateTime(value[0], this.start);
+            this.end = this.normalizeDateTime(value[1], this.end);
             this.inSelection = true;
           }
           break;
       }
     },
     hoverDate(value: Date) {
-      const dt = this.normalizeDatetime(value, this.end);
+      const dt = this.normalizeDateTime(value, this.end);
       if (this.inSelection && dt > this.start) {
         this.end = dt;
       }
@@ -398,12 +398,12 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
       }
     },
     toggleTime() {
-      this.timeVlaue = dayjs(this.start);
+      this.timeValue = dayjs(this.start);
 
       this.showTime = !this.showTime;
       this.$nextTick(() => {
         const timePickerPanel = this.$refs.timePickerPanel as TimePickerPanelInstance;
-        timePickerPanel && timePickerPanel.panelColUpate();
+        timePickerPanel && timePickerPanel.panelColUpdate();
       });
     },
 
@@ -599,7 +599,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
         return;
       }
 
-      this.initClickaway(tip);
+      this.initClickAway(tip);
     },
     getPlaceholderText() {
       const { placeholder, mode } = this.$props;
@@ -621,7 +621,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
       range,
     } = this.$props;
 
-    const { start, end, showTime, timeVlaue, locales, isOpen } = this.$data;
+    const { start, end, showTime, timeValue, locales, isOpen } = this.$data;
     const panelProps = {
       value: range ? [start, end] : start,
       mode,
@@ -643,7 +643,7 @@ export default mixins(getLocalRecevierMixins<TdDatePickerProps & DatePickerInsta
               format="HH:mm:ss"
               cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
               steps={[1, 1, 1]}
-              value={[timeVlaue]}
+              value={[timeValue]}
               ontime-pick={this.handleTimePick}
               isFooterDisplay={false}
             />

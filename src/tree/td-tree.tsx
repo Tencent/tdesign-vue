@@ -1,7 +1,7 @@
 // import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
 import { VNode } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import upperFirst from 'lodash/upperFirst';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -30,7 +30,7 @@ import {
   emitEvent,
 } from './util';
 
-export default mixins(getLocalRecevierMixins<TypeTreeInstance>('tree')).extend({
+export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
   name: TREE_NAME,
   model: {
     prop: 'value',

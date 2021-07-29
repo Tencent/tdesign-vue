@@ -63,14 +63,8 @@
         :disabled="disabled"
         :class="simpleClass"
         @change="toPage"
-      >
-        <t-option
-          v-for="item in pageCountOption"
-          :value="item"
-          :label="`${item}/${pageCount}`"
-          :key="`${item}/${pageCount}`"
-        />
-      </t-select>
+        :options="pageCountOption"
+      />
     </template>
     <!-- 向后按钮-->
     <div :class="nextBtnClass" @click="nextPage" :disabled="disabled || current === pageCount">
@@ -90,7 +84,7 @@
 <script lang="ts">
 import config from '../config';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import TIconChevronLeft from '../icon/chevron-left';
 import TIconChevronRight from '../icon/chevron-right';
 import TIconChevronLeftDouble from '../icon/chevron-left-double';
@@ -105,7 +99,7 @@ import { ClassName } from '../common';
 const { prefix } = config;
 const name = `${prefix}-pagination`;
 
-const PaginationLocalReceiver = getLocalRecevierMixins('pagination');
+const PaginationLocalReceiver = getLocalReceiverMixins('pagination');
 
 export default mixins(PaginationLocalReceiver).extend({
   name,
@@ -227,10 +221,10 @@ export default mixins(PaginationLocalReceiver).extend({
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
     },
-    pageCountOption(): Array<number> {
+    pageCountOption(): Array<{label: string; value: number}> {
       const ans = [];
       for (let i = 1; i <= this.pageCount; i++) {
-        ans.push(i);
+        ans.push({ value: i, label: `${i}/${this.pageCount}` });
       }
       return ans;
     },

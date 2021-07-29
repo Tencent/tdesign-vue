@@ -73,6 +73,7 @@
     "src/_common",
     "dist",
     "lib",
+    "esm",
     "es"
   ],
   "compileOnSave": false

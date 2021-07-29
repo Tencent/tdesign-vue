@@ -1,8 +1,8 @@
 <template>
   <div class="switch-demo">
     <div class="tdesign-demo-block">
-      <t-switch></t-switch>
-      <t-switch v-model="checked" @change="onChange"></t-switch>
+      <t-switch size="large"></t-switch>
+      <t-switch size="large" v-model="checked" @change="onChange"></t-switch>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 :: BASE_DOC ::
 
-### 默认
+### 触发元素
 ::: demo demos/base
 :::
 
@@ -12,9 +12,11 @@
 ::: demo demos/placement
 :::
 
-
-
 ### 自定义样式
+
+`overlayStyle` 既可以作为 Object 使用，也可以作为 Function 动态使用。
+希望浮层元素和触发元素宽度保持一致时，可以这样使用 `:overlayStyle="triggerElem => ({ width: triggerElem.offsetWidth + 'px' })"`
+
 ::: demo demos/style
 :::
 
@@ -22,7 +24,7 @@
 ::: demo demos/disabled
 :::
 
-### value控制
+### 显示控制
 ::: demo demos/visible
 :::
 
@@ -30,12 +32,8 @@
 ::: demo demos/container
 :::
 
-### 隐藏时销毁popup
+### 隐藏时销毁
 ::: demo demos/destroy 
-:::
-
-### popup状态改变时触发事件
-::: demo demos/event 
 :::
 
 :: BASE_PROPS ::

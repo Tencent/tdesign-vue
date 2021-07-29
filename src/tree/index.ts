@@ -3,6 +3,8 @@ import _TdTree from './td-tree';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 
+import './style/';
+
 export const Tree = withInstall('Tree', mapProps([
   {
     name: 'value',

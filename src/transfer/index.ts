@@ -2,6 +2,8 @@ import _Transfer from './transfer';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 
+import './style/';
+
 export const Transfer = withInstall('Transfer', mapProps([
   { name: 'value' },
   { name: 'checked', event: 'update:checked' },

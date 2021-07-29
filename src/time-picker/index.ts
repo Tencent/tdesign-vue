@@ -4,18 +4,18 @@ import _TimeRangePicker from './time-range-picker';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 
-const TimePicker = withInstall(
+import './style/';
+
+export * from './interface';
+
+export const TimePicker = withInstall(
   'TimePicker',
   mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_TimePicker),
 );
 
-const TimeRangePicker = withInstall(
+export const TimeRangePicker = withInstall(
   'TimeRangePicker',
   mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_TimeRangePicker),
 );
-
-export * from './interface';
-
-export { TimePicker, TimeRangePicker };
 
 export default TimePicker;

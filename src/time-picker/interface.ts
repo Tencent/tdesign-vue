@@ -34,7 +34,7 @@ export interface TimePickerInstance extends Vue {
   formatedValue: string;
 }
 
-export interface PickeData {
+export interface PickerData {
   hour: number | string;
   minute?: number | string;
   second?: number | string;
@@ -44,22 +44,6 @@ export interface PickeData {
 export interface InputEvent extends Event {
   data?: string;
   target: HTMLInputElement;
-}
-
-interface TimeInputOnInput {
-  (e: Event, type: TimeInputType): void;
-}
-
-interface TimeInputOnBlur {
-  (e: Event, type: TimeInputType): void;
-}
-
-export interface TimeInputInstance extends Vue {
-  allowInput: boolean;
-  onInput: TimeInputOnInput;
-  onBlur: TimeInputOnBlur;
-  setInputValue: Function;
-  time: Record<string, any>;
 }
 
 // 输入变动数据
@@ -79,7 +63,7 @@ export interface TimePickerPanelInstance extends Vue {
   renderSinglePicker: (index: number) => HTMLElement;
   handleTimePick: (col: EPickerCols, time: string | number, index: number) => void;
   scrollToTime: (colIndex: number, col: EPickerCols, time: number | string, behavior: ScrollBehavior) => void;
-  panelColUpate: () => void;
+  panelColUpdate: () => void;
   classNames: Array<string>;
   colValues: Array<dayjs.Dayjs>;
   cols: Array<EPickerCols>;
@@ -104,14 +88,16 @@ export interface TimePickerPanelColInstance extends Vue {
   calculateTimeIdx(time: number | string, step: number | string, type: EPickerCols): number;
   splitValue: Record<EPickerCols, number | string>;
   timeItemCanUsed: (col: EPickerCols, time: string | number) => boolean;
-  handletTimeItemClick: (e: MouseEvent, col: EPickerCols, time: number | string) => void;
+  handleTimeItemClick: (e: MouseEvent, col: EPickerCols, time: number | string) => void;
   handleScroll: (col: EPickerCols) => void;
   isCurrent: (col: EPickerCols, colItem: string | number) => boolean;
   updateTimeScrollPos: () => void;
-  closestLookup: (avaliableArr: Array<any>, x: number, step: number) => number;
+  closestLookup: (availableArr: Array<any>, x: number, step: number) => number;
   disableFilter: (preIdx: number, col: EPickerCols) => any;
+  getScrollDistance: (col: EPickerCols, time: number | string) => number;
   valStr: string;
   isPm: boolean;
   currentTimes: [number, number, number];
   timeArr: [string, string, string];
+  timeItemMargin: number;
 }

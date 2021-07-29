@@ -16,7 +16,7 @@
       <div>这是要被忽略的</div>
     </t-swiper>
 
-    <t-swiper duration="500">
+    <t-swiper :duration="500">
       <t-swiper-item>
         <t-alert theme="success" message="【到期提醒】" />
       </t-swiper-item>

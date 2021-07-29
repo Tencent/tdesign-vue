@@ -2,6 +2,8 @@
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
+import TIconSearch from '../../icon/search';
+import TInput from '../../input';
 
 const name = `${prefix}-transfer-search`;
 
@@ -44,15 +46,15 @@ export default Vue.extend({
     };
     return (
       <div class="t-transfer-list-search-wrapper" >
-        <t-input
+        <TInput
           props={{ ...inputProps }}
           value={searchValue}
           onChange={handleChange}
           on-enter={handleEnter}
           placeholder={placeholder}
         >
-          <t-icon name="search" slot="suffix-icon"></t-icon>
-        </t-input>
+          <TIconSearch slot="suffix-icon" />
+        </TInput>
       </div>
     );
   },

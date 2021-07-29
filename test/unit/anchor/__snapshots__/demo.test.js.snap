@@ -4,7 +4,12 @@ exports[`Anchor base demo works fine 1`] = `
 <div
   class="anchor-demo"
   id="http://example.com#default"
+  style="display: flex;"
 >
+  <div
+    style="flex: 1;"
+  />
+   
   <div>
     <div
       class="t-anchor t-size-m"

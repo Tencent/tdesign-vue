@@ -3,8 +3,10 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdPopupProps } from './type';
 
-export * from './type';
+import './style/';
+
 export type PopupProps = TdPopupProps;
+export * from './type';
 
 export const Popup = withInstall('Popup', mapProps(
   ['visible'],

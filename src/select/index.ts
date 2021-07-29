@@ -5,6 +5,8 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdSelectProps, TdOptionProps, TdOptionGroupProps } from './type';
 
+import './style/';
+
 export type SelectProps = TdSelectProps;
 export type OptionProps = TdOptionProps;
 export type OptionGroupProps = TdOptionGroupProps;

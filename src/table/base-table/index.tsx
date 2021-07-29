@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import mixins from '../../utils/mixins';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 import { prefix } from '../../config';
 import { flatColumns } from '../util/props-util';
 import baseTableProps from '../base-table-props';
@@ -19,7 +19,7 @@ import { EventNameWithKebab } from '../util/interface';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
-export default mixins(getLocalRecevierMixins('table')).extend({
+export default mixins(getLocalReceiverMixins('table')).extend({
   name: `${prefix}-base-table`,
   model: {
     prop: 'value',
@@ -218,7 +218,6 @@ export default mixins(getLocalRecevierMixins('table')).extend({
         columns,
         provider: { asyncLoadingProps },
         tableLayout,
-        fixedHeader,
         scrollBarWidth,
         hasFixedColumns,
       } = this;
@@ -230,8 +229,7 @@ export default mixins(getLocalRecevierMixins('table')).extend({
         this.handleScroll(e as WheelEvent);
       }, 10);
       //  fixed table header
-      const headerContainerWidth = fixedHeader && scrollBarWidth > 0 ? `calc(100% - ${scrollBarWidth}px)` : 'fit-content';
-      fixedTable.push(<div class="t-table__header" style={{ width: headerContainerWidth }} ref="scrollHeader">
+      fixedTable.push(<div class="t-table__header" style={{ paddingRight: `${scrollBarWidth}px` }} ref="scrollHeader">
           <table style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
@@ -239,7 +237,6 @@ export default mixins(getLocalRecevierMixins('table')).extend({
         </div>);
       const containerStyle = {
         height: isNaN(Number(this.height)) ? this.height : `${Number(this.height)}px`,
-        maxHeight: isNaN(Number(this.maxHeight)) ? this.maxHeight : `${Number(this.maxHeight)}px`,
         width: hasFixedColumns ? '100%' : undefined,
       };
       // fixed table body
@@ -327,9 +324,10 @@ export default mixins(getLocalRecevierMixins('table')).extend({
       }
     }
     const handleScroll = throttle(this.handleScroll, 100);
+    const maxHeight = isNaN(Number(this.maxHeight)) ? this.maxHeight : `${Number(this.maxHeight)}px`;
     return (
       <div class={commonClass}>
-        <div class="t-table-content" style="overflow: auto;" onScroll={handleScroll}>
+        <div class="t-table-content" style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
           {fixedTableContent ? fixedTableContent : <table style={{ tableLayout }}>{tableContent}</table>}
         </div>
         {body}

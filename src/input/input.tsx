@@ -3,6 +3,8 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { omit } from '../utils/helper';
 import ClearIcon from '../icon/close-circle-filled';
+import BrowseIcon from '../icon/browse';
+import BrowseOffIcon from '../icon/browse-off';
 import props from './props';
 import { InputValue, TdInputProps } from './type';
 import isFunction from 'lodash/isFunction';
@@ -31,6 +33,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
   data() {
     return {
       focused: false,
+      renderType: this.type,
     };
   },
   computed: {
@@ -46,7 +49,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
         placeholder: this.placeholder || undefined,
         maxlength: this.maxlength,
         name: this.name || undefined,
-        type: this.type,
+        type: this.renderType,
       });
     },
   },
@@ -73,6 +76,14 @@ export default (Vue as VueConstructor<InputInstance>).extend({
 
     if (this.showClear) {
       suffixIcon = <ClearIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
+    }
+
+    if (this.type === 'password') {
+      if (this.renderType === 'password') {
+        suffixIcon = <BrowseOffIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+      } else if (this.renderType === 'text') {
+        suffixIcon = <BrowseIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+      }
     }
 
     const classes = [
@@ -156,6 +167,11 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     handleKeypress(e: KeyboardEvent) {
       if (this.disabled) return;
       emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', this.value, { e });
+    },
+    emitPassword() {
+      const { renderType } = this;
+      const toggleType = renderType === 'password' ? 'text' : 'password';
+      this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });

@@ -314,6 +314,9 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           自定义方法
         </span>
       </label>
+      <div
+        class="t-radio-group-solid-bg-block"
+      />
     </div>
   </div>
    

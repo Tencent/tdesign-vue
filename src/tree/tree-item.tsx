@@ -1,6 +1,6 @@
 import { VNode, CreateElement } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import TIconChevronRight from '../icon/chevron-right';
 import TIconLoading from '../icon/loading';
 import TCheckBox from '../checkbox';
@@ -20,7 +20,7 @@ export const TreeItemProps = {
   },
 };
 
-export default mixins(getLocalRecevierMixins('tree')).extend({
+export default mixins(getLocalReceiverMixins('tree')).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   data() {

@@ -1,5 +1,11 @@
 <template>
   <div>
+    <!--
+      1. statusIcon 值为 true，显示默认图标。默认图标有 成功、失败、警告 等，不同的状态图标不同
+      2. statusIcon 值为 false，不显示图标
+      3. statusIcon 值类型为 function，可以自定义右侧状态图标
+      4. statusIcon 为 slot(插槽)，可自定义右侧状态图标
+    -->
     <t-form
       :data="formData"
       :rules="rules"
@@ -10,7 +16,6 @@
     >
       <t-form-item label="失败" help="校验不通过，请输入正确内容" name='fail'>
         <t-input v-model="formData.fail"></t-input>
-        <t-icon slot="statusIcon" name='close-circle-filled' size="25px" style="color: #E34D59"/>
       </t-form-item>
       <t-form-item label="警告" name='warning'>
         <t-input v-model="formData.warning"></t-input>
@@ -41,13 +46,13 @@
           <t-icon name='remove' size="16px" style="color: #0004"/>
         </t-button>
       </t-form-item>
-      <t-form-item label="帮助" help="自定义帮助icon" name='help'>
+      <t-form-item label="帮助" help="自定义帮助icon" :statusIcon="getStatusIcon" name='help'>
         <t-input v-model="formData.help"></t-input>
-        <t-icon slot="statusIcon" name='help-circle' size="25px" style="color: #0006"/>
+        <!-- <t-icon slot="statusIcon" name='help-circle' size="25px" style="color: #0006"/> -->
       </t-form-item>
       <t-form-item :statusIcon="false"  style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button  theme="default" variant="base" type="reset">重置</t-button>
+        <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -114,6 +119,10 @@ export default {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
       }
+    },
+    getStatusIcon(h) {
+      console.log(h);
+      return <t-icon name='help-circle' size="25px" style="color: #0006"/>;
     },
   },
 };

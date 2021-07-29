@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import CLASSNAMES from '../utils/classnames';
 import { prefix } from '../config';
@@ -25,7 +25,7 @@ import {
 type TypeContext = { e?: Event; node?: TreeNode }
 const name = `${prefix}-cascader`;
 
-const cascader = mixins(getLocalRecevierMixins('cascader')).extend({
+const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
   name,
   components: {
     TIconChevronDrown,
@@ -66,7 +66,7 @@ const cascader = mixins(getLocalRecevierMixins('cascader')).extend({
         `${name}`,
         {
           [CLASSNAMES.STATUS.disabled]: this.disabled,
-          [CLASSNAMES.STATUS.active]: true,
+          [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
       ];

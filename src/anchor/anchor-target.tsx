@@ -4,12 +4,14 @@ import { copyText } from '../utils/clipboard';
 import Message from '../message/plugin';
 import TIconFileCopy from '../icon/file-copy';
 import props from './anchor-target-props';
+import TPopup from '../popup';
 
 const name = `${prefix}-anchor-target`;
 export default Vue.extend({
   name,
 
   components: {
+    TPopup,
     TIconFileCopy,
   },
 

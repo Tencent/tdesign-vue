@@ -1,21 +1,24 @@
 import Vue, { VNode, PropType } from 'vue';
 import { prefix } from '../../config';
 import {
-  TransferItemOption,
-  TransferListType,
-  TransferValue,
-  TdTransferProps,
   EmptyType,
   SearchEvent,
   SearchOption,
+  TransferValue,
+  TdTransferProps,
+  TransferListType,
+  TransferItemOption,
 } from '../interface';
-import { PageInfo, TdPaginationProps } from '../../pagination/type';
+import {
+  PageInfo,
+  TdPaginationProps,
+  Pagination as TPagination,
+} from '../../pagination';
 import Checkbox, { CheckboxProps } from '../../checkbox';
 
-import { renderTNodeJSXDefault } from '../../utils/render-tnode';
-import TransferListContent from './transfer-list-content';
 import Search from './transfer-search';
-
+import TransferListContent from './transfer-list-content';
+import { renderTNodeJSXDefault } from '../../utils/render-tnode';
 
 const name = `${prefix}-transfer-list`;
 
@@ -240,7 +243,7 @@ export default Vue.extend({
         {
           (this.pagination && this.pageSize > 0 && this.pageTotal > 0)
           && <div class={`${this.name}__pagination`}>
-            <t-pagination
+            <TPagination
               props={this.paginationProps}
               onChange={this.handlePaginationChange}
             />

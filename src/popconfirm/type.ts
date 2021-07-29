@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-07-24 18:37:55
  * */
 
 import { ButtonProps } from '../button';
@@ -27,13 +29,28 @@ export interface TdPopconfirmProps {
    */
   default?: string | TNode;
   /**
+   * 是否在关闭浮层时销毁浮层
+   * @default true
+   */
+  destroyOnClose?: boolean;
+  /**
    * 确认框图标
    */
   icon?: TNode;
   /**
+   * 浮层出现位置
+   * @default top
+   */
+  placement?: 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
+  /**
    * 透传 Popup 组件属性
    */
   popupProps?: PopupProps;
+  /**
+   * 是否显示浮层箭头
+   * @default true
+   */
+  showArrow?: boolean;
   /**
    * 文字提示风格
    * @default default

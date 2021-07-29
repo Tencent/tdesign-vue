@@ -45,7 +45,7 @@ describe('Table', () => {
       it('`data` is not undefined', () => {
         const wrapper = mount({
           render() {
-            return <Table data={data} columns={columns}></Table>;
+            return <Table rowKey='id' data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper.vm.$el.getElementsByTagName('tr').length).toBe(data.length + 1);
@@ -59,7 +59,7 @@ describe('Table', () => {
         const wrapper = mount({
           render() {
             return (
-              <Table columns={columns} empty={empty}>
+              <Table rowKey='id' columns={columns} empty={empty}>
               </Table>
             );
           },
@@ -168,7 +168,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table data={data} columns={columns}></Table>;
+            return <Table rowKey='id' data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -191,7 +191,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table columns={columns} data={data}></Table>;
+            return <Table rowKey='id' columns={columns} data={data}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -217,7 +217,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table columns={columns} data={data}></Table>;
+            return <Table rowKey='id' columns={columns} data={data}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -227,7 +227,7 @@ describe('Table', () => {
       it('`pagination` visibleWithOnePage is true', () => {
         const wrapper = mount({
           render() {
-            return <Table data={data} columns={columns} pagination={pagination}></Table>;
+            return <Table rowKey='id' data={data} columns={columns} pagination={pagination}></Table>;
           },
         });
         expect(wrapper.find('.t-table-pagination').exists()).toBe(true);
@@ -237,7 +237,7 @@ describe('Table', () => {
       it('`empty` is undefined', () => {
         const wrapper = mount({
           render() {
-            return <Table columns={columns}></Table>;
+            return <Table rowKey='id' columns={columns}></Table>;
           },
         });
         expect(wrapper.find('.t-table--empty').exists()).toBe(true);
@@ -248,7 +248,7 @@ describe('Table', () => {
         });
         mount({
           render() {
-            return <Table columns={columns} empty={empty}></Table>;
+            return <Table rowKey='id' columns={columns} empty={empty}></Table>;
           },
         });
         expect(empty.mock.calls.length).toBe(1);
@@ -259,7 +259,7 @@ describe('Table', () => {
         const loading = true;
         const wrapper = mount({
           render() {
-            return <Table columns={columns} loading={loading}></Table>;
+            return <Table rowKey='id' columns={columns} loading={loading}></Table>;
           },
         });
         expect(wrapper.find('.t-table--loading').exists()).toBe(true);
@@ -270,7 +270,7 @@ describe('Table', () => {
         });
         const wrapper = mount({
           render() {
-            return <Table loading={loading}></Table>;
+            return <Table rowKey='id' loading={loading}></Table>;
           },
         });
         expect(wrapper.find('.loading__container').exists()).toBe(true);
@@ -281,7 +281,7 @@ describe('Table', () => {
       //   };
       //   const wrapper = mount({
       //     render() {
-      //       return <Table columns={columns} loading={loading}></Table>;
+      //       return <Table rowKey='id' columns={columns} loading={loading}></Table>;
       //     },
       //   });
       //   expect(wrapper.find('.t-table--loading-async').exists()).toBe(true);
@@ -309,7 +309,7 @@ describe('Table', () => {
       it('size = "large", verticalAlign="top"', () => {
         const wrapper = mount({
           render() {
-            return <Table size={'large'} verticalAlign={'top'}></Table>;
+            return <Table rowKey='id' size={'large'} verticalAlign={'top'}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -317,7 +317,7 @@ describe('Table', () => {
       it('size = "medium", verticalAlign="bottom"', () => {
         const wrapper = mount({
           render() {
-            return <Table size={'medium'} verticalAlign={'bottom'}></Table>;
+            return <Table rowKey='id' size={'medium'} verticalAlign={'bottom'}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -325,7 +325,7 @@ describe('Table', () => {
       it('height = 100', () => {
         const wrapper = mount({
           render() {
-            return <Table height={100} data={data} columns={columns}></Table>;
+            return <Table rowKey='id' height={100} data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -342,31 +342,6 @@ describe('Table', () => {
         title: 'id',
         cell: 'idcell',
       };
-
-      const wrapper = await mount({
-        render() {
-          const idcell = ({ row, col }) => <div class="cell">{row[col.colKey]}</div>;
-          const scopedSlots = { idcell };
-          return <Table data={data} columns={slotColumns} scopedSlots={scopedSlots}></Table>;
-        },
-      });
-      expect(wrapper.findAll('.cell').length).toBe(data.length);
-    });
-
-    it('Use slot to customize header', async () => {
-      const wrapper = await mount({
-        render() {
-          const slotColumns = columns.slice(0);
-          slotColumns[0] = {
-            colKey: 'id',
-            title: 'columnId',
-          };
-          const columnId = ({ text }) => <div class="header_cell">{text}</div>;
-          const scopedSlots = { columnId };
-          return <Table data={data} columns={slotColumns} scopedSlots={scopedSlots}></Table>;
-        },
-      });
-      expect(wrapper.findAll('.header_cell').length).toBe(1);
     });
     it('Use slot to customize empty content', async () => {
       const empty = h => h({
@@ -374,7 +349,7 @@ describe('Table', () => {
       });
       const wrapper = await mount({
         render() {
-          return <Table empty={empty} columns={columns}></Table>;
+          return <Table rowKey='id' empty={empty} columns={columns}></Table>;
         },
       });
       expect(wrapper.find('.empty__container').exists()).toBe(true);
@@ -422,7 +397,7 @@ describe('Table', () => {
     // it('click sorter icon', async () => {
     //   const wrapper = await mount({
     //     render() {
-    //       return <Table data={data} columns={columns} />;
+    //       return <Table rowKey='id' data={data} columns={columns} />;
     //     },
     //   });
     //   expect(wrapper.find('.table-body tr td').text()).toBe('John Brown');
@@ -447,7 +422,7 @@ describe('Table', () => {
     //     },
     //     render() {
     //       const { asyncLoading } = this;
-    //       return <Table data={data} columns={columns} asyncLoading={asyncLoading} />;
+    //       return <Table rowKey='id' data={data} columns={columns} asyncLoading={asyncLoading} />;
     //     },
     //   });
     //   expect(wrapper.find('.table-body tr td .t-table--loading-async').exists()).toBe(false);
@@ -536,7 +511,7 @@ describe('Table', () => {
         },
         render() {
           const { data, columns } = this;
-          return <Table data={data} columns={columns} />;
+          return <Table rowKey='id' data={data} columns={columns} />;
         },
       });
       expect(wrapper.findAll('.table-body tr').length).toBe(data.length);
@@ -564,7 +539,7 @@ describe('Table', () => {
       };
       const wrapper = await mount({
         render() {
-          return <Table data={data} columns={columns} rowspanAndColspan={rowspanAndColspan} />;
+          return <Table rowKey='id' data={data} columns={columns} rowspanAndColspan={rowspanAndColspan} />;
         },
       });
       const allTr = wrapper.findAll('tr').length;

@@ -3,10 +3,10 @@ import props from './props';
 import TStepItem from './step-item';
 import { ClassName } from '../common';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 
 const name = `${prefix}-steps`;
-export default mixins(getLocalRecevierMixins('steps')).extend({
+export default mixins(getLocalReceiverMixins('steps')).extend({
   name,
   components: {
     TStepItem,

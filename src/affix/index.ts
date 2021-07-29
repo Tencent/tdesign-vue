@@ -2,6 +2,8 @@ import _Affix from './affix';
 import withInstall from '../utils/withInstall';
 import { TdAffixProps } from './type';
 
+import './style/';
+
 export const Affix = withInstall('Affix', _Affix);
 
 export * from './type';

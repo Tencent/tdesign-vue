@@ -10,8 +10,13 @@ import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import { ClassName, TNodeReturnValue } from '../common';
+import TIconCheckCircleFilled from '../icon/check-circle-filled';
+import TIconErrorCircleFilled from '../icon/error-circle-filled';
+import TIconCloseCircleFilled from '../icon/close-circle-filled';
 
 type Result = ValidateResult<TdFormProps['data']>;
+
+type IconConstructor = typeof TIconErrorCircleFilled;
 
 type FormInstance = InstanceType<typeof Form>;
 
@@ -174,32 +179,28 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
         return (
           <div>
             <span class={CLASS_NAMES.extra}>{list[0].message}</span>
-            {helpVNode}
           </div>
         );
       }
       return helpVNode;
     },
     getDefaultIcon(): TNodeReturnValue {
-      const resultIcon = (iconName: string) => (
+      const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
-          <t-icon name={iconName} size="25px" />
+          <Icon size='25px'></Icon>
         </span>
       );
       const list = this.errorList;
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
-        return resultIcon('check-circle-filled');
+        return resultIcon(TIconCheckCircleFilled);
       }
       if (list && list[0]) {
         const type = this.errorList[0].type || 'error';
-        let iconName = 'check-circle-filled';
-        if (type === 'error') {
-          iconName = 'clear-circle-filled';
-        }
-        if (type === 'warning') {
-          iconName = 'error-circle-filled';
-        }
-        return resultIcon(iconName);
+        const icon = {
+          error: TIconCloseCircleFilled,
+          warning: TIconErrorCircleFilled,
+        }[type] || TIconCheckCircleFilled;
+        return resultIcon(icon);
       }
       return null;
     },

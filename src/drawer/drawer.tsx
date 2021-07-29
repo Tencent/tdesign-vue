@@ -5,7 +5,7 @@ import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getLocalRecevierMixins from '../locale/local-receiver';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
@@ -14,7 +14,7 @@ type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
 
-export default mixins(getLocalRecevierMixins('drawer')).extend({
+export default mixins(getLocalReceiverMixins('drawer')).extend({
   name,
 
   components: {
