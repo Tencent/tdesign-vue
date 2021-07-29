@@ -30,8 +30,22 @@ module.exports = function getCssLoaders(extractCss = true) {
     },
   ]);
   if (extractCss) {
-    cssLoader = [MiniCssExtractPlugin.loader].concat(cssLoader);
-    lessLoader = [MiniCssExtractPlugin.loader].concat(lessLoader);
+    cssLoader = [
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          esModule: false,
+        },
+      },
+    ].concat(cssLoader);
+    lessLoader = [
+      {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          esModule: false,
+        },
+      },
+    ].concat(lessLoader);
   } else {
     const styleLoader = {
       loader: 'vue-style-loader',
