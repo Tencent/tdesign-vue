@@ -19,7 +19,10 @@ import ignoreImport from 'rollup-plugin-ignore-import';
 import pkg from '../package.json';
 
 const name = 'tdesign';
-const externalDeps = Object.keys(pkg.dependencies || {});
+const externalDeps = Object.keys(pkg.dependencies || {}).concat([
+  /lodash/,
+  /@babel\/runtime/,
+]);
 const externalPeerDeps = Object.keys(pkg.peerDependencies || {});
 const banner = `/**
  * ${name} v${pkg.version}
@@ -55,7 +58,7 @@ const getPlugins = ({
       tsconfig: 'tsconfig.build.json',
     }),
     babel({
-      babelHelpers: 'bundled',
+      babelHelpers: 'runtime',
       extensions: [...DEFAULT_EXTENSIONS, '.vue', '.ts', '.tsx'],
     }),
     json(),
