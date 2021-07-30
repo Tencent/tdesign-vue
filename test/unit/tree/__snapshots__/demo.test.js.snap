@@ -52,7 +52,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t41"
+        data-value="t47"
         style="--level: 0;"
       >
         <span
@@ -61,14 +61,14 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -77,16 +77,17 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t42"
+        data-value="t48"
         style="--level: 1;"
       >
         <span
@@ -97,16 +98,17 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t43"
+        data-value="t49"
         style="--level: 1;"
       >
         <span
@@ -117,16 +119,17 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t44"
+        data-value="t50"
         style="--level: 0;"
       >
         <span
@@ -135,14 +138,14 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -151,16 +154,17 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t45"
+        data-value="t51"
         style="--level: 1;"
       >
         <span
@@ -171,16 +175,17 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t46"
+        data-value="t52"
         style="--level: 1;"
       >
         <span
@@ -191,11 +196,12 @@ exports[`Tree:demo activable demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -226,14 +232,14 @@ exports[`Tree:demo base demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -242,11 +248,12 @@ exports[`Tree:demo base demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            第一段
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -260,14 +267,14 @@ exports[`Tree:demo base demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -276,11 +283,82 @@ exports[`Tree:demo base demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            第一段
+          </span>
+        </span>
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="0"
+        data-value="t7"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
         </span>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            第一段
+          </span>
+        </span>
+      </div>
+      <div
+        class="t-tree__item"
+        data-level="0"
+        data-value="t10"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <span
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            第一段
+          </span>
+        </span>
       </div>
     </transition-group-stub>
   </div>
@@ -377,7 +455,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -396,14 +474,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -427,9 +505,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -443,14 +518,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -474,9 +549,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -490,14 +562,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -521,9 +593,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -554,9 +623,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -587,9 +653,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -603,14 +666,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -634,9 +697,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -667,9 +727,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.2.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -700,9 +757,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.1.2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -716,14 +770,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -747,9 +801,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -763,14 +814,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -794,9 +845,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -827,9 +875,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -860,9 +905,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -876,14 +918,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -907,9 +949,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -940,9 +979,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.2.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -973,9 +1009,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             1.2.2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -989,14 +1022,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1020,9 +1053,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -1053,9 +1083,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             2.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -1086,9 +1113,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -1154,7 +1178,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -1173,14 +1197,14 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1205,9 +1229,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -1221,14 +1242,14 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1253,9 +1274,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -1269,14 +1287,14 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1300,9 +1318,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1333,9 +1348,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1366,9 +1378,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1382,14 +1391,14 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1413,9 +1422,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1429,14 +1435,14 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1460,9 +1466,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open t-is-active"
@@ -1476,21 +1479,21 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label t-tree__label--strictly t-is-active"
         >
           <input
             class="t-checkbox__former"
@@ -1507,9 +1510,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             2 这个节点不允许展开, 不允许激活
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1540,9 +1540,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             2.1 这个节点不允许选中
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -1573,9 +1570,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
             2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -1602,7 +1596,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-is-disabled t-tree--hoverable t-tree--fx"
+    class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -1612,7 +1606,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled"
         data-level="0"
-        data-value="t47"
+        data-value="t53"
         style="--level: 0;"
       >
         <span
@@ -1621,251 +1615,19 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
           </svg>
         </span>
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t47"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="1"
-        data-value="t48"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t48"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="2"
-        data-value="t49"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t49"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="2"
-        data-value="t50"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t50"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="1"
-        data-value="t51"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t51"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.2
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="2"
-        data-value="t52"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            disabled="disabled"
-            name="t52"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.2.1
-          </span>
-        </label>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="2"
-        data-value="t53"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
         <label
           class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
         >
@@ -1882,18 +1644,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           <span
             class="t-checkbox__label"
           >
-            1.2.2
+            1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="0"
+        data-level="1"
         data-value="t54"
-        style="--level: 0;"
+        style="--level: 1;"
       >
         <span
           class="t-tree__icon t-folder-icon"
@@ -1901,14 +1660,14 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -1930,18 +1689,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           <span
             class="t-checkbox__label"
           >
-            2
+            1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="1"
+        data-level="2"
         data-value="t55"
-        style="--level: 1;"
+        style="--level: 2;"
       >
         <span
           class="t-tree__icon t-folder-icon"
@@ -1964,18 +1720,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           <span
             class="t-checkbox__label"
           >
-            2.1
+            1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open t-is-disabled"
-        data-level="1"
+        data-level="2"
         data-value="t56"
-        style="--level: 1;"
+        style="--level: 2;"
       >
         <span
           class="t-tree__icon t-folder-icon"
@@ -1998,12 +1751,223 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           <span
             class="t-checkbox__label"
           >
+            1.1.2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="1"
+        data-value="t57"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t57"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="2"
+        data-value="t58"
+        style="--level: 2;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t58"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.2.1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="2"
+        data-value="t59"
+        style="--level: 2;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t59"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.2.2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="0"
+        data-value="t60"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t60"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="1"
+        data-value="t61"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t61"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2.1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open t-is-disabled"
+        data-level="1"
+        data-value="t62"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            disabled="disabled"
+            name="t62"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
             2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2135,7 +2099,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t7"
+        data-value="t13"
         style="--level: 0;"
       >
         <span
@@ -2144,14 +2108,14 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2160,16 +2124,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t8"
+        data-value="t14"
         style="--level: 1;"
       >
         <span
@@ -2178,14 +2143,14 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2194,16 +2159,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t9"
+        data-value="t15"
         style="--level: 2;"
       >
         <span
@@ -2214,16 +2180,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1.1
+          <span
+            style="position: relative;"
+          >
+            1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t10"
+        data-value="t16"
         style="--level: 2;"
       >
         <span
@@ -2234,16 +2201,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1.2
+          <span
+            style="position: relative;"
+          >
+            1.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t11"
+        data-value="t17"
         style="--level: 1;"
       >
         <span
@@ -2252,14 +2220,14 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2268,16 +2236,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t12"
+        data-value="t18"
         style="--level: 2;"
       >
         <span
@@ -2288,16 +2257,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2.1
+          <span
+            style="position: relative;"
+          >
+            1.2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="2"
-        data-value="t13"
+        data-value="t19"
         style="--level: 2;"
       >
         <span
@@ -2308,16 +2278,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2.2
+          <span
+            style="position: relative;"
+          >
+            1.2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t14"
+        data-value="t20"
         style="--level: 0;"
       >
         <span
@@ -2326,14 +2297,14 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2342,16 +2313,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t15"
+        data-value="t21"
         style="--level: 1;"
       >
         <span
@@ -2362,16 +2334,17 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="1"
-        data-value="t16"
+        data-value="t22"
         style="--level: 1;"
       >
         <span
@@ -2382,11 +2355,12 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2408,7 +2382,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t17"
+        data-value="t23"
         style="--level: 0;"
       >
         <span
@@ -2417,14 +2391,14 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2433,16 +2407,17 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="1"
-        data-value="t18"
+        data-value="t24"
         style="--level: 1;"
       >
         <span
@@ -2451,14 +2426,14 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2467,16 +2442,17 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="1"
-        data-value="t21"
+        data-value="t27"
         style="--level: 1;"
       >
         <span
@@ -2485,14 +2461,14 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2501,16 +2477,17 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t24"
+        data-value="t30"
         style="--level: 0;"
       >
         <span
@@ -2519,14 +2496,14 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2535,16 +2512,17 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="1"
-        data-value="t25"
+        data-value="t31"
         style="--level: 1;"
       >
         <span
@@ -2555,16 +2533,17 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="1"
-        data-value="t26"
+        data-value="t32"
         style="--level: 1;"
       >
         <span
@@ -2575,11 +2554,12 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2627,7 +2607,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t27"
+        data-value="t33"
         style="--level: 0;"
       >
         <span
@@ -2636,14 +2616,14 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2652,16 +2632,17 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t34"
+        data-value="t40"
         style="--level: 0;"
       >
         <span
@@ -2670,14 +2651,14 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2686,11 +2667,12 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2739,14 +2721,14 @@ exports[`Tree:demo filter demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2755,11 +2737,12 @@ exports[`Tree:demo filter demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -2773,14 +2756,14 @@ exports[`Tree:demo filter demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2789,11 +2772,12 @@ exports[`Tree:demo filter demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2819,7 +2803,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t73"
+        data-value="t79"
         style="--level: 0;"
       >
         <span
@@ -2838,16 +2822,17 @@ exports[`Tree:demo icon demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t74"
+        data-value="t80"
         style="--level: 0;"
       >
         <span
@@ -2866,11 +2851,12 @@ exports[`Tree:demo icon demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2890,7 +2876,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t75"
+        data-value="t81"
         style="--level: 0;"
       >
         <span
@@ -2899,14 +2885,14 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2915,16 +2901,17 @@ exports[`Tree:demo icon demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t76"
+        data-value="t82"
         style="--level: 0;"
       >
         <span
@@ -2933,14 +2920,14 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -2949,11 +2936,12 @@ exports[`Tree:demo icon demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -2979,181 +2967,6 @@ exports[`Tree:demo label demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t61"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t61, label: 1
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="1"
-        data-value="t62"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t62, label: 1.1
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="1"
-        data-value="t63"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t63, label: 1.2
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="0"
-        data-value="t64"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t64, label: 2
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="1"
-        data-value="t65"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t65, label: 2.1
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="1"
-        data-value="t66"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <span
-          class="t-tree__label t-tree__label--strictly"
-        >
-          <strong>
-            value: t66, label: 2.2
-          </strong>
-        </span>
-        <span
-          class="t-tree__space"
-        />
-      </div>
-    </transition-group-stub>
-  </div>
-   
-  <h3>
-    scope slot:
-  </h3>
-   
-  <div
-    class="t-tree t-tree--fx"
-  >
-    <transition-group-stub
-      class="t-tree__list"
-      name="t-tree-toggle"
-      tag="div"
-    >
-      <div
-        class="t-tree__item t-tree__item--open"
-        data-level="0"
         data-value="t67"
         style="--level: 0;"
       >
@@ -3163,40 +2976,30 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
           </svg>
         </span>
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t67"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1
-          </span>
-        </label>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t67, label: 1
+            </strong>
+          </span>
+        </span>
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3209,27 +3012,17 @@ exports[`Tree:demo label demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         />
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t68"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.1
-          </span>
-        </label>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t68, label: 1.1
+            </strong>
+          </span>
+        </span>
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3242,27 +3035,17 @@ exports[`Tree:demo label demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         />
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t69"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            1.2
-          </span>
-        </label>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t69, label: 1.2
+            </strong>
+          </span>
+        </span>
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3276,40 +3059,30 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
           </svg>
         </span>
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t70"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            2
-          </span>
-        </label>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t70, label: 2
+            </strong>
+          </span>
+        </span>
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3322,27 +3095,17 @@ exports[`Tree:demo label demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         />
-        <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t71"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            2.1
-          </span>
-        </label>
         <span
-          class="t-tree__space"
-        />
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t71, label: 2.1
+            </strong>
+          </span>
+        </span>
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3355,12 +3118,228 @@ exports[`Tree:demo label demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         />
+        <span
+          class="t-tree__label t-tree__label--strictly"
+        >
+          <span
+            style="position: relative;"
+          >
+            <strong>
+              value: t72, label: 2.2
+            </strong>
+          </span>
+        </span>
+      </div>
+    </transition-group-stub>
+  </div>
+   
+  <h3>
+    scope slot:
+  </h3>
+   
+  <div
+    class="t-tree t-tree--checkable t-tree--fx"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      name="t-tree-toggle"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="t73"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
         <label
           class="t-checkbox t-tree__label t-tree__label--strictly"
         >
           <input
             class="t-checkbox__former"
-            name="t72"
+            name="t73"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="1"
+        data-value="t74"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t74"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="1"
+        data-value="t75"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t75"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            1.2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="0"
+        data-value="t76"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M384 320L384 704 672 512 384 320Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t76"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="1"
+        data-value="t77"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t77"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            2.1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--open"
+        data-level="1"
+        data-value="t78"
+        style="--level: 1;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon"
+          ignore="active"
+          trigger="expand"
+        />
+        <label
+          class="t-checkbox t-tree__label t-tree__label--strictly"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t78"
             type="checkbox"
             value=""
           />
@@ -3373,9 +3352,6 @@ exports[`Tree:demo label demo works fine 1`] = `
             2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -3397,7 +3373,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t59"
+        data-value="t65"
         style="--level: 0;"
       >
         <span
@@ -3406,14 +3382,14 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3422,16 +3398,17 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
         data-level="0"
-        data-value="t60"
+        data-value="t66"
         style="--level: 0;"
       >
         <span
@@ -3440,14 +3417,14 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3456,11 +3433,12 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -3517,14 +3495,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3533,11 +3511,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3557,11 +3536,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3581,11 +3561,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3599,14 +3580,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3615,11 +3596,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3637,14 +3619,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3653,11 +3635,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3675,14 +3658,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3691,11 +3674,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3713,14 +3697,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3729,11 +3713,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3753,11 +3738,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3777,11 +3763,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3801,11 +3788,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3825,11 +3813,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3843,14 +3832,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3859,11 +3848,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3
+          <span
+            style="position: relative;"
+          >
+            3
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3883,11 +3873,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.1
+          <span
+            style="position: relative;"
+          >
+            3.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3907,11 +3898,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.2
+          <span
+            style="position: relative;"
+          >
+            3.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -3927,11 +3919,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          4
+          <span
+            style="position: relative;"
+          >
+            4
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -3967,14 +3960,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -3983,11 +3976,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4025,11 +4019,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4067,11 +4062,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4092,14 +4088,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4108,11 +4104,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4137,14 +4134,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4153,11 +4150,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4185,14 +4183,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4201,11 +4199,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4236,14 +4235,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4252,11 +4251,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4303,11 +4303,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4354,11 +4355,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4399,11 +4401,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4441,11 +4444,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4466,14 +4470,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4482,11 +4486,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3
+          <span
+            style="position: relative;"
+          >
+            3
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4524,11 +4529,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.1
+          <span
+            style="position: relative;"
+          >
+            3.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4566,11 +4572,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.2
+          <span
+            style="position: relative;"
+          >
+            3.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4604,11 +4611,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          4
+          <span
+            style="position: relative;"
+          >
+            4
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -4637,14 +4645,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4653,11 +4661,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4677,11 +4686,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.1
+          <span
+            style="position: relative;"
+          >
+            1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4701,11 +4711,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1.2
+          <span
+            style="position: relative;"
+          >
+            1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4719,14 +4730,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4735,11 +4746,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4757,14 +4769,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4773,11 +4785,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1
+          <span
+            style="position: relative;"
+          >
+            2.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4795,14 +4808,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4811,11 +4824,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4833,14 +4847,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4849,11 +4863,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4873,11 +4888,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.1
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4897,11 +4913,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.1.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.1.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4921,11 +4938,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.1.2
+          <span
+            style="position: relative;"
+          >
+            2.1.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4945,11 +4963,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2.2
+          <span
+            style="position: relative;"
+          >
+            2.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -4963,14 +4982,14 @@ exports[`Tree:demo line demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -4979,11 +4998,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3
+          <span
+            style="position: relative;"
+          >
+            3
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5003,11 +5023,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.1
+          <span
+            style="position: relative;"
+          >
+            3.1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5027,11 +5048,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          3.2
+          <span
+            style="position: relative;"
+          >
+            3.2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5047,11 +5069,12 @@ exports[`Tree:demo line demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          4
+          <span
+            style="position: relative;"
+          >
+            4
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -5073,7 +5096,7 @@ exports[`Tree:demo load demo works fine 1`] = `
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t57"
+        data-value="t63"
         style="--level: 0;"
       >
         <span
@@ -5097,16 +5120,17 @@ exports[`Tree:demo load demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1
+          <span
+            style="position: relative;"
+          >
+            1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
         data-level="0"
-        data-value="t58"
+        data-value="t64"
         style="--level: 0;"
       >
         <span
@@ -5130,11 +5154,12 @@ exports[`Tree:demo load demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2
+          <span
+            style="position: relative;"
+          >
+            2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -5173,11 +5198,12 @@ exports[`Tree:demo operations demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1 | value: node1
+          <span
+            style="position: relative;"
+          >
+            1 | value: node1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
         <span
           class="t-tree__operations"
           ignore="active,expand"
@@ -5199,11 +5225,12 @@ exports[`Tree:demo operations demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2 | value: node2
+          <span
+            style="position: relative;"
+          >
+            2 | value: node2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
         <span
           class="t-tree__operations"
           ignore="active,expand"
@@ -5269,7 +5296,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -5305,9 +5332,6 @@ exports[`Tree:demo operations demo works fine 1`] = `
             1 | value: node1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5338,9 +5362,6 @@ exports[`Tree:demo operations demo works fine 1`] = `
             2 | value: node2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -5521,11 +5542,12 @@ exports[`Tree:demo state demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          1 | value: node1
+          <span
+            style="position: relative;"
+          >
+            1 | value: node1
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
         <span
           class="t-tree__operations"
           ignore="active,expand"
@@ -5547,11 +5569,12 @@ exports[`Tree:demo state demo works fine 1`] = `
         <span
           class="t-tree__label t-tree__label--strictly"
         >
-          2 | value: node2
+          <span
+            style="position: relative;"
+          >
+            2 | value: node2
+          </span>
         </span>
-        <span
-          class="t-tree__space"
-        />
         <span
           class="t-tree__operations"
           ignore="active,expand"
@@ -5617,7 +5640,7 @@ exports[`Tree:demo state demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -5653,9 +5676,6 @@ exports[`Tree:demo state demo works fine 1`] = `
             1 | value: node1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5686,9 +5706,6 @@ exports[`Tree:demo state demo works fine 1`] = `
             2 | value: node2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>
@@ -5896,7 +5913,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--checkable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -5915,14 +5932,14 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -5947,9 +5964,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -5963,14 +5977,14 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -5995,9 +6009,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open"
@@ -6011,14 +6022,14 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -6042,9 +6053,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6075,9 +6083,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.1.1.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6108,9 +6113,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6124,14 +6126,14 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -6155,9 +6157,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6171,14 +6170,14 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
@@ -6202,9 +6201,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             1.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item t-tree__item--open t-is-active"
@@ -6218,21 +6214,21 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             version="1.1"
             viewBox="0 0 1024 1024"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
-              d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+              d="M384 320L384 704 672 512 384 320Z"
               fill-opacity=".9"
               fill-rule="evenodd"
             />
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label t-tree__label--strictly t-is-active"
         >
           <input
             class="t-checkbox__former"
@@ -6249,9 +6245,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6282,9 +6275,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             2.1
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
       <div
         class="t-tree__item"
@@ -6315,9 +6305,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
             2.2
           </span>
         </label>
-        <span
-          class="t-tree__space"
-        />
       </div>
     </transition-group-stub>
   </div>

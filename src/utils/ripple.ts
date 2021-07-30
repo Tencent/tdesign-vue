@@ -24,10 +24,11 @@ const Ripple = {
     const defaultBg = 'rgba(0, 0, 0, 0.35)';
     let bg = typeof binding.value === 'boolean' ? defaultBg : binding.value;
     const rippleContainer = document.createElement('div');
-    let hasInitContainer = false;
+    let hasCreateContainer = false;
+    let count = 0;
 
     el.addEventListener('pointerdown', (e: PointerEvent) => {
-      if (el.classList.contains('t-is-active') || el.classList.contains('t-is-disabled')) return;
+      if (el.classList.contains('t-is-active') || el.classList.contains('t-is-disabled') || el.classList.contains('t-is-checked')) return;
 
       if (e.button !== 0) return; // 非鼠标左键点击；避免出现动画之后不消失的bug
 
@@ -48,8 +49,8 @@ const Ripple = {
       const height = el.offsetHeight;
       const style  = getComputedStyle(el);
 
-      if (!hasInitContainer) {
-        hasInitContainer = true;
+      if (!hasCreateContainer) {
+        hasCreateContainer = true;
         setStyle(rippleContainer, {
           position: 'absolute',
           left: `${0 - border}px`,
@@ -98,6 +99,7 @@ const Ripple = {
       }
 
       rippleContainer.insertBefore(ripple, rippleContainer.firstChild);
+      count = count + 1;
 
       clearTimeout(Ripple.startTimeId);
       Ripple.startTimeId = setTimeout(() => {
@@ -111,6 +113,8 @@ const Ripple = {
 
         setTimeout(() => {
           rippleContainer.removeChild(ripple);
+          count = count - 1;
+          if (count > 0) return; // 避免因为移除了relative的定位，从而导致动画漂移
           // eslint-disable-next-line no-param-reassign
           el.style.position = initPosition !== 'static' ? initPosition : '';
 
@@ -122,6 +126,9 @@ const Ripple = {
               elMap.delete(child);
             }
           }
+          // 由于容器的尺寸可能会发生变更，因此在动画结束之后，手动移除
+          el.removeChild(rippleContainer);
+          hasCreateContainer = false;
         }, (period * 2) + 100);
       };
       el.addEventListener('pointerup', handleClearRipple, false);

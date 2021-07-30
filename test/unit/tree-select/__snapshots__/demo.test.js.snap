@@ -20,7 +20,7 @@ exports[`TreeSelect base demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px"
+            style="width: 0px;border: 1px solid #dcdcdc"
           >
             <div>
               <p
@@ -54,14 +54,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -70,11 +70,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1
+                      <span
+                        style="position: relative;"
+                      >
+                        1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -90,11 +91,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.1
+                      <span
+                        style="position: relative;"
+                      >
+                        1.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -110,11 +112,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.2
+                      <span
+                        style="position: relative;"
+                      >
+                        1.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -128,14 +131,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -144,11 +147,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2
+                      <span
+                        style="position: relative;"
+                      >
+                        2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -164,11 +168,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.1
+                      <span
+                        style="position: relative;"
+                      >
+                        2.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -184,11 +189,12 @@ exports[`TreeSelect base demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.2
+                      <span
+                        style="position: relative;"
+                      >
+                        2.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                 </transition-group-stub>
               </div>
@@ -336,7 +342,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px"
+            style="width: 0px;border: 1px solid #dcdcdc"
           >
             <div>
               <p
@@ -370,14 +376,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -386,11 +392,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1
+                      <span
+                        style="position: relative;"
+                      >
+                        1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -406,11 +413,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.1
+                      <span
+                        style="position: relative;"
+                      >
+                        1.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -426,11 +434,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.2
+                      <span
+                        style="position: relative;"
+                      >
+                        1.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -444,14 +453,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -460,11 +469,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2
+                      <span
+                        style="position: relative;"
+                      >
+                        2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -480,11 +490,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.1
+                      <span
+                        style="position: relative;"
+                      >
+                        2.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -500,11 +511,12 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.2
+                      <span
+                        style="position: relative;"
+                      >
+                        2.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                 </transition-group-stub>
               </div>
@@ -603,7 +615,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px"
+            style="width: 0px;border: 1px solid #dcdcdc"
           >
             <div>
               <p
@@ -637,14 +649,14 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -653,11 +665,12 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1
+                      <span
+                        style="position: relative;"
+                      >
+                        1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item"
@@ -671,14 +684,14 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -687,11 +700,12 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2
+                      <span
+                        style="position: relative;"
+                      >
+                        2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                 </transition-group-stub>
               </div>
@@ -783,7 +797,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px"
+            style="width: 0px;border: 1px solid #dcdcdc"
           >
             <div>
               <p
@@ -797,7 +811,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
                 size="medium"
               >
                 <transition-group-stub
@@ -817,14 +831,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -848,9 +862,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         1
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -881,9 +892,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         1.1
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -914,9 +922,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         1.2
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -930,14 +935,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -961,9 +966,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         2
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -994,9 +996,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         2.1
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1027,9 +1026,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                         2.2
                       </span>
                     </label>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                 </transition-group-stub>
               </div>
@@ -1151,7 +1147,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px"
+            style="width: 0px;border: 1px solid #dcdcdc"
           >
             <div>
               <p
@@ -1185,14 +1181,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -1201,11 +1197,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1
+                      <span
+                        style="position: relative;"
+                      >
+                        1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1221,11 +1218,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.1
+                      <span
+                        style="position: relative;"
+                      >
+                        1.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1241,11 +1239,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      1.2
+                      <span
+                        style="position: relative;"
+                      >
+                        1.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1259,14 +1258,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       trigger="expand"
                     >
                       <svg
-                        class="t-icon t-icon-chevron-right"
+                        class="t-icon t-icon-caret-right-small"
                         version="1.1"
                         viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           clip-rule="evenodd"
-                          d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
+                          d="M384 320L384 704 672 512 384 320Z"
                           fill-opacity=".9"
                           fill-rule="evenodd"
                         />
@@ -1275,11 +1274,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2
+                      <span
+                        style="position: relative;"
+                      >
+                        2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1295,11 +1295,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.1
+                      <span
+                        style="position: relative;"
+                      >
+                        2.1
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
@@ -1315,11 +1316,12 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     <span
                       class="t-tree__label t-tree__label--strictly"
                     >
-                      2.2
+                      <span
+                        style="position: relative;"
+                      >
+                        2.2
+                      </span>
                     </span>
-                    <span
-                      class="t-tree__space"
-                    />
                   </div>
                 </transition-group-stub>
               </div>

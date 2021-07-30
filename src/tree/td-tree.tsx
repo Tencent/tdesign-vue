@@ -71,12 +71,16 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         disabled,
         hover,
         transition,
+        checkable,
       } = this;
       if (disabled) {
         list.push(CLASS_NAMES.disabled);
       }
       if (hover) {
         list.push(CLASS_NAMES.treeHoverable);
+      }
+      if (checkable) {
+        list.push(CLASS_NAMES.treeCheckable);
       }
       if (transition) {
         list.push(CLASS_NAMES.treeFx);
