@@ -336,6 +336,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
           overlayStyle={popupObject.overlayStyle}
           overlayClassName={popupClass}
           on={{ 'visible-change': this.popupVisibleChange }}
+          expandAnimation={true}
         >
           <div
             class={classes}

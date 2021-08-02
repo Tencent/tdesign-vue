@@ -32,13 +32,14 @@ export default (Vue as VueConstructor<InputInstance>).extend({
   props: { ...props },
   data() {
     return {
+      isHover: false,
       focused: false,
       renderType: this.type,
     };
   },
   computed: {
     showClear(): boolean {
-      return this.value && !this.disabled && this.clearable;
+      return this.value && !this.disabled && this.clearable && this.isHover;
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
@@ -98,7 +99,12 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       },
     ];
     return (
-      <div class={classes} {...{ attrs: wrapperAttrs, on: wrapperEvents }}>
+      <div
+        class={classes}
+        onMouseenter={() => this.mouseEvent(true) }
+        onMouseleave={() => this.mouseEvent(false) }
+        {...{ attrs: wrapperAttrs, on: wrapperEvents }}
+      >
         {prefixIcon ? <span class={`${name}__prefix`}>{prefixIcon}</span> : null}
         <input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
@@ -113,6 +119,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     );
   },
   methods: {
+    mouseEvent(v: boolean) {
+      this.isHover = v;
+    },
     renderIcon(
       h: CreateElement,
       icon: string | Function | undefined,

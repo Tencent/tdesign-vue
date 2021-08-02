@@ -1,4 +1,9 @@
 import Vue, { VNode } from 'vue';
+import isFunction from 'lodash/isFunction';
+import debounce from 'lodash/debounce';
+import get from 'lodash/get';
+import set from 'lodash/set';
+
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -7,18 +12,15 @@ import CLASSNAMES from '../utils/classnames';
 import TIconChevronDown from '../icon/chevron-down';
 import TIconClose from '../icon/close';
 import TIconLoading from '../icon/loading';
-import Input from '../input/index';
+import TInput from '../input/index';
 import Tag from '../tag/index';
-import isFunction from 'lodash/isFunction';
-import debounce from 'lodash/debounce';
-import get from 'lodash/get';
-import set from 'lodash/set';
 import Popup from '../popup/index';
 import Option from './option';
 import props from './props';
 import { PopupProps } from '@Popup';
 import { Options, SelectValue } from './type';
 import { ClassName } from '../common';
+
 const name = `${prefix}-select`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
 // 用户设置overStyle width时，以设置的为准
@@ -55,7 +57,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     TIconChevronDown,
     TIconClose,
     TIconLoading,
-    TInput: Input,
+    TInput,
     Tag,
     Popup,
     TOption: Option,
@@ -87,10 +89,10 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const { visible } = this;
       return [
         `${name}-right-icon`,
+        `${prefix}-fake-arrow`,
         {
-          [CLASSNAMES.STATUS.visible]: visible,
-        },
-      ];
+          [`${prefix}-fake-arrow--active`]: visible,
+        }];
     },
     tipsClass(): ClassName {
       return [
@@ -480,6 +482,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           overlayClassName={popClass}
           overlayStyle={popupObject.overlayStyle}
           on={{ 'visible-change': this.visibleChange }}
+          expandAnimation={true}
         >
           <div class={classes} onMouseenter={ this.hoverEvent.bind(null, true) } onMouseleave={ this.hoverEvent.bind(null, false) }>
             {
@@ -522,7 +525,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               this.showArrow && !this.showLoading && (
-                <t-icon-chevron-down class={this.arrowClass} size={size} />
+                <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
+                </svg>
               )
             }
             {

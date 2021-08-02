@@ -6,15 +6,7 @@
  */
 
 import { DirectiveBinding } from 'vue/types/options';
-
-type TStyle = Record<string, string>;
-const setStyle = (el: HTMLElement, style: TStyle) => {
-  const keys = Object.keys(style);
-  keys.forEach((key) => {
-    // eslint-disable-next-line no-param-reassign
-    el.style[key] = style[key];
-  });
-};
+import setStyle from './set-style';
 
 const Ripple = {
   startTimeId: null as NodeJS.Timeout,

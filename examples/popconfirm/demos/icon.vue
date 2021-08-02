@@ -43,8 +43,8 @@ export default {
   data() {
     return {
       visible1: true,
-      visible2: true,
-      visible3: true,
+      visible2: false,
+      visible3: false,
     };
   },
   methods: {

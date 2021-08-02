@@ -31,7 +31,6 @@ exports[`Calendar base demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -256,16 +255,18 @@ exports[`Calendar base demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -294,7 +295,6 @@ exports[`Calendar base demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -438,16 +438,18 @@ exports[`Calendar base demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -1105,7 +1107,6 @@ exports[`Calendar card demo works fine 1`] = `
           >
             <div
               class="t-popup-content  t-select-dropdown narrow-scrollbar"
-              style=""
             >
               <div>
                 <ul
@@ -1155,16 +1156,18 @@ exports[`Calendar card demo works fine 1`] = `
             card
           </span>
           <svg
-            class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-            version="1.1"
-            viewBox="0 0 1024 1024"
+            class="t-select-right-icon t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
             />
           </svg>
         </div>
@@ -1213,7 +1216,6 @@ exports[`Calendar card demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -1438,16 +1440,18 @@ exports[`Calendar card demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -1476,7 +1480,6 @@ exports[`Calendar card demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -1620,16 +1623,18 @@ exports[`Calendar card demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -2329,7 +2334,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
           >
             <div
               class="t-popup-content  t-select-dropdown narrow-scrollbar"
-              style=""
             >
               <div>
                 <ul
@@ -2379,16 +2383,18 @@ exports[`Calendar cardCell demo works fine 1`] = `
             card
           </span>
           <svg
-            class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-            version="1.1"
-            viewBox="0 0 1024 1024"
+            class="t-select-right-icon t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
             />
           </svg>
         </div>
@@ -2426,7 +2432,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -2651,16 +2656,18 @@ exports[`Calendar cardCell demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -2689,7 +2696,6 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -2833,16 +2839,18 @@ exports[`Calendar cardCell demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -3546,7 +3554,6 @@ exports[`Calendar cell demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -3771,16 +3778,18 @@ exports[`Calendar cell demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -3809,7 +3818,6 @@ exports[`Calendar cell demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -3953,16 +3961,18 @@ exports[`Calendar cell demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -4904,7 +4914,6 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -5129,16 +5138,18 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -5167,7 +5178,6 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -5311,16 +5321,18 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -6575,7 +6587,6 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -6800,16 +6811,18 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -6838,7 +6851,6 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -6982,16 +6994,18 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -7677,7 +7691,6 @@ exports[`Calendar events demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -7902,16 +7915,18 @@ exports[`Calendar events demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -7940,7 +7955,6 @@ exports[`Calendar events demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -8084,16 +8098,18 @@ exports[`Calendar events demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -8810,7 +8826,6 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -9035,16 +9050,18 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -9073,7 +9090,6 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -9217,16 +9233,18 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -9943,7 +9961,6 @@ exports[`Calendar filter demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -10168,16 +10185,18 @@ exports[`Calendar filter demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -10206,7 +10225,6 @@ exports[`Calendar filter demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -10350,16 +10368,18 @@ exports[`Calendar filter demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -10890,7 +10910,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           >
             <div
               class="t-popup-content  t-select-dropdown narrow-scrollbar"
-              style=""
             >
               <div>
                 <ul
@@ -10975,16 +10994,18 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             3
           </span>
           <svg
-            class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-            version="1.1"
-            viewBox="0 0 1024 1024"
+            class="t-select-right-icon t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
             />
           </svg>
         </div>
@@ -11022,7 +11043,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -11247,16 +11267,18 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -11285,7 +11307,6 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -11429,16 +11450,18 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -12196,7 +12219,6 @@ exports[`Calendar head demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -12421,16 +12443,18 @@ exports[`Calendar head demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -12459,7 +12483,6 @@ exports[`Calendar head demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -12603,16 +12626,18 @@ exports[`Calendar head demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -13276,7 +13301,6 @@ exports[`Calendar mode demo works fine 1`] = `
           >
             <div
               class="t-popup-content  t-select-dropdown narrow-scrollbar"
-              style=""
             >
               <div>
                 <ul
@@ -13326,16 +13350,18 @@ exports[`Calendar mode demo works fine 1`] = `
             year
           </span>
           <svg
-            class="t-icon t-icon-chevron-down t-size-m t-select-right-icon"
-            version="1.1"
-            viewBox="0 0 1024 1024"
+            class="t-select-right-icon t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
             />
           </svg>
         </div>
@@ -13373,7 +13399,6 @@ exports[`Calendar mode demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -13598,16 +13623,18 @@ exports[`Calendar mode demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -13911,7 +13938,6 @@ exports[`Calendar range demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -14046,16 +14072,18 @@ exports[`Calendar range demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -14084,7 +14112,6 @@ exports[`Calendar range demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -14228,16 +14255,18 @@ exports[`Calendar range demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -14899,7 +14928,6 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -15124,16 +15152,18 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 2020
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -15162,7 +15192,6 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -15306,16 +15335,18 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 12
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -15843,7 +15874,6 @@ exports[`Calendar value demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -16068,16 +16098,18 @@ exports[`Calendar value demo works fine 1`] = `
                 1998
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -16106,7 +16138,6 @@ exports[`Calendar value demo works fine 1`] = `
               >
                 <div
                   class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                  style=""
                 >
                   <div>
                     <ul
@@ -16250,16 +16281,18 @@ exports[`Calendar value demo works fine 1`] = `
                 11
               </span>
               <svg
-                class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                version="1.1"
-                viewBox="0 0 1024 1024"
+                class="t-select-right-icon t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
-                  d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                  fill-opacity=".9"
-                  fill-rule="evenodd"
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
                 />
               </svg>
             </div>
@@ -17021,7 +17054,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -17246,16 +17278,18 @@ exports[`Calendar week demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -17284,7 +17318,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -17428,16 +17461,18 @@ exports[`Calendar week demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -18117,7 +18152,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -18342,16 +18376,18 @@ exports[`Calendar week demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -18380,7 +18416,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -18524,16 +18559,18 @@ exports[`Calendar week demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -19199,7 +19236,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -19424,16 +19460,18 @@ exports[`Calendar week demo works fine 1`] = `
                   2020
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
@@ -19462,7 +19500,6 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                   <div
                     class="t-popup-content  t-select-dropdown narrow-scrollbar"
-                    style=""
                   >
                     <div>
                       <ul
@@ -19606,16 +19643,18 @@ exports[`Calendar week demo works fine 1`] = `
                   12
                 </span>
                 <svg
-                  class="t-icon t-icon-chevron-down t-size-s t-select-right-icon"
-                  version="1.1"
-                  viewBox="0 0 1024 1024"
+                  class="t-select-right-icon t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    clip-rule="evenodd"
-                    d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-                    fill-opacity=".9"
-                    fill-rule="evenodd"
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
                   />
                 </svg>
               </div>
