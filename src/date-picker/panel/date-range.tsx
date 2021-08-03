@@ -15,6 +15,7 @@ import {
   firstUpperCase,
   setDateTime,
 } from '../utils';
+import dayjs from 'dayjs';
 
 const TODAY = getToday();
 const LEFT = 'left';
@@ -215,7 +216,13 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
         this.isFirstClick = false;
         this.firstClickValue = date;
       } else {
-        this.$props.onChange([this.startValue, setDateTime(date, 23, 59, 59)]);
+        if (dayjs(this.firstClickValue).isBefore(dayjs(date), 'day')) {
+          this.endValue = date;
+        } else {
+          this.endValue = this.firstClickValue;
+          this.startValue = date;
+        }
+        this.$props.onChange([setDateTime(this.startValue, 23, 59, 59), setDateTime(this.endValue, 23, 59, 59)]);
         this.isFirstClick = true;
       }
     },
