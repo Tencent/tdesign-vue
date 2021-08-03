@@ -174,11 +174,11 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
 
       return (date: any) => this[`click${firstUpperCase(type)}`](date, direction);
     },
-    onHeaderClick(btnType: string, flag: number) {
-      this.clickHeader(btnType, flag, LEFT);
-      this.clickHeader(btnType, flag, RIGHT);
+    onHeaderClick(flag: number) {
+      this.clickHeader(flag, LEFT);
+      this.clickHeader(flag, RIGHT);
     },
-    clickHeader(btnType: string, flag: number, direction: string) {
+    clickHeader(flag: number, direction: string) {
       const year = this[`${direction}Year`];
       const month = this[`${direction}Month`];
       const type = this[`${direction}Type`];
@@ -199,8 +199,10 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
 
       if (flag === 1) {
         next = addMonth(current, monthCount);
-      } else {
+      } else if (flag === -1) {
         next = subtractMonth(current, monthCount);
+      } else {
+        next = new Date();
       }
 
       this[`${direction}Year`] = next.getFullYear();
@@ -289,7 +291,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             type={leftType}
             {...{
               props: {
-                onBtnClick: (a: string, b: number) => this.onHeaderClick(a, b),
+                onBtnClick: (b: number) => this.onHeaderClick(b),
                 onTypeChange: (type: string) => this.handleTypeChange(LEFT, type),
               },
             }}
@@ -314,7 +316,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             type={rightType}
             {...{
               props: {
-                onBtnClick: (a: string, b: number) => this.onHeaderClick(a, b),
+                onBtnClick: (b: number) => this.onHeaderClick(b),
                 onTypeChange: (type: string) => this.handleTypeChange(RIGHT, type),
               },
             }}
