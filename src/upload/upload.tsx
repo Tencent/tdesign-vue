@@ -198,6 +198,13 @@ export default Vue.extend({
       }
       this.errorMsg = '';
       file.status = 'progress';
+      // 模拟进度条
+      const timer = setInterval(() => {
+        file.percent += 1;
+        if (file.percent >= 99) {
+          clearInterval(timer);
+        }
+      }, 10);
       this.loadingFile = file;
       const request = xhr;
       request({

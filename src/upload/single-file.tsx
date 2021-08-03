@@ -17,9 +17,7 @@ export default Vue.extend({
   },
 
   data() {
-    return {
-      percentNum: 0,
-    };
+    return {};
   },
 
   props: {
@@ -76,27 +74,7 @@ export default Vue.extend({
     },
   },
 
-  watch: {
-    percent: {
-      immediate: true,
-      handler(val: number) {
-        this.handlePercent(val);
-      },
-    },
-  },
-
   methods: {
-    handlePercent(val: number) {
-      this.percentNum = val;
-      const timer = setInterval(() => {
-        this.percentNum += 1;
-        if (this.percentNum >= 99) {
-          clearInterval(timer);
-        }
-      }, 10);
-    },
-
-
     renderProgress() {
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
@@ -105,7 +83,7 @@ export default Vue.extend({
       return (
         <div class='t-upload__single-progress'>
           <TIconLoading></TIconLoading>
-          <span class='t-upload__single-percent'>{this.percentNum >= 100 ? 99 : this.percentNum}%</span>
+          <span class='t-upload__single-percent'>{Math.min(this.loadingFile.percent, 99)}%</span>
         </div>
       );
     },
