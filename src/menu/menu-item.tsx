@@ -2,7 +2,7 @@ import { defineComponent, computed, inject, onMounted } from '@vue/composition-a
 import { prefix } from '../config';
 import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
-import Ripple from '../utils/ripple';
+import ripple from '../utils/ripple';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-menu-item`;
@@ -10,7 +10,7 @@ const name = `${prefix}-menu-item`;
 export default defineComponent({
   name,
   props: { ...props },
-  directives: { ripple: Ripple },
+  directives: { ripple },
   setup(props, ctx) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
@@ -67,7 +67,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <li v-ripple class={this.classes} onClick={this.handleClick} ref="button">
+      <li v-ripple class={this.classes} onClick={this.handleClick}>
         {renderTNodeJSX(this, 'icon')}
         <span class={[`${prefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
       </li>

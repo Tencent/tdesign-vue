@@ -1,5 +1,6 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
+import TButton from '../button';
 import Add from '../icon/add';
 import Remove from '../icon/remove';
 import ChevronDown from '../icon/chevron-down';
@@ -7,7 +8,6 @@ import ChevronUp from '../icon/chevron-up';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource } from './type';
-import { addClickAnimation, removeClickAnimation } from '../utils/animation';
 import { ClassName, TNodeReturnValue } from '../common';
 
 const name = `${prefix}-input-number`;
@@ -44,6 +44,7 @@ export default Vue.extend({
     Remove,
     ChevronDown,
     ChevronUp,
+    TButton,
   },
   data() {
     return {
@@ -188,14 +189,6 @@ export default Vue.extend({
       // end input
       return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
-  },
-  mounted() {
-    addClickAnimation(this.$refs.decrease as HTMLElement);
-    addClickAnimation(this.$refs.increase as HTMLElement);
-  },
-  beforeDestroy() {
-    removeClickAnimation(this.$refs.decrease as HTMLElement);
-    removeClickAnimation(this.$refs.increase as HTMLElement);
   },
   methods: {
     handleAdd(e: MouseEvent) {
@@ -373,9 +366,7 @@ export default Vue.extend({
       <div {...this.cmptWrapClasses}>
         {
           this.theme !== 'normal'
-          && <span ref="decrease" {...this.reduceClasses} {...this.reduceEvents}>
-            {this.decreaseIcon}
-          </span>
+          && <t-button {...this.reduceClasses} {...this.reduceEvents} variant="outline" icon={this.decreaseIcon} />
         }
         <div {...this.inputWrapProps}>
           <input
@@ -387,9 +378,7 @@ export default Vue.extend({
         </div>
         {
           this.theme !== 'normal'
-          && <div ref="increase" {...this.addClasses} {...this.addEvents}>
-            {this.increaseIcon}
-          </div>
+          && <t-button {...this.addClasses} {...this.addEvents}  variant="outline" icon={this.increaseIcon} />
         }
       </div>
     );

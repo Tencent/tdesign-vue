@@ -49,7 +49,6 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         overlayClassName: '',
         overlayStyle: trigger => ({
           width: `${trigger.offsetWidth}px`,
-          border: '1px solid #dcdcdc',
         }),
       } as PopupProps,
       filterText: '',
