@@ -72,6 +72,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         hover,
         transition,
         checkable,
+        expandOnClickNode,
       } = this;
       if (disabled) {
         list.push(CLASS_NAMES.disabled);
@@ -84,6 +85,9 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       }
       if (transition) {
         list.push(CLASS_NAMES.treeFx);
+      }
+      if (expandOnClickNode) {
+        list.push(CLASS_NAMES.treeBlockNode);
       }
       return list;
     },

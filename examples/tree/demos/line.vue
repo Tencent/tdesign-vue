@@ -1,8 +1,14 @@
 <template>
   <div class="tdesign-tree-line">
     <div class="operations">
-      <t-button :variant="showLine ? 'base' : 'outline'"  @click="toggleLine">显示连线</t-button>
-      <t-button :variant="showIcon ? 'base' : 'outline'"  @click="toggleIcon">显示图标</t-button>
+      <t-form>
+        <t-form-item label="显示连线">
+          <t-switch v-model="showLine"/>
+        </t-form-item>
+        <t-form-item label="显示图标">
+          <t-switch v-model="showIcon"/>
+        </t-form-item>
+      </t-form>
     </div>
     <t-tree
       :data="items"

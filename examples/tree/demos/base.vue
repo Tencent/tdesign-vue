@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-tree-base">
-    <t-tree :data="items" activable transition/>
+    <t-tree :data="items" activable hover transition/>
   </div>
 </template>
 

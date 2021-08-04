@@ -1,9 +1,17 @@
 <template>
   <div class="tdesign-tree-base">
     <div class="operations">
-      <t-button @click="toggleData">切换数据</t-button>
-      <t-button :variant="hover ? 'base' : 'outline'"  @click="toggleHover">提供 hover 状态</t-button>
-      <t-button :variant="transition ? 'base' : 'outline'"  @click="toggleTransition">动画</t-button>
+      <t-form labelWidth="150">
+        <t-form-item label="切换数据">
+          <t-switch @change="toggleData" />
+        </t-form-item>
+        <t-form-item label="提供 hover 状态">
+          <t-switch v-model="hover"/>
+        </t-form-item>
+        <t-form-item label="展开动画">
+          <t-switch v-model="transition"/>
+        </t-form-item>
+      </t-form>
     </div>
     <t-tree
       :data="items"
@@ -66,12 +74,6 @@ export default {
   methods: {
     toggleData() {
       this.items = this.items === data1 ? data2 : data1;
-    },
-    toggleHover() {
-      this.hover = !this.hover;
-    },
-    toggleTransition() {
-      this.transition = !this.transition;
     },
   },
 };

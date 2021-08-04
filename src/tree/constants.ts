@@ -18,6 +18,7 @@ export const CLASS_NAMES = {
   treeIconDown: `${prefix}-icon-arrow-down`,
   tree,
   treeFx: `${tree}--fx`,
+  treeBlockNode: `${tree}--block-node`,
   treeEmpty: `${tree}__empty`,
   treeList: `${tree}__list`,
   treeNode: `${tree}__item`,

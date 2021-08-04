@@ -7,38 +7,108 @@ exports[`Tree:demo activable demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        节点可高亮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 120px;"
+        >
+          <label
+            for=""
+          >
+            节点可高亮
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        节点可多选高亮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 120px;"
+        >
+          <label
+            for=""
+          >
+            节点可多选高亮
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        点击整个节点可触发展开
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 120px;"
+        >
+          <label
+            for=""
+          >
+            整个节点可点击
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -213,7 +283,7 @@ exports[`Tree:demo base demo works fine 1`] = `
   class="tdesign-tree-base"
 >
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--fx"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -372,86 +442,153 @@ exports[`Tree:demo checkable demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        可选
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        严格模式
-      </span>
-    </button>
-     
-    <div
-      class="t-radio-group t-radio-group-outline t-radio-group-medium"
-    >
-      <label
-        class="t-radio t-is-checked"
-      >
-        <input
-          class="t-radio__former"
-          name="value-mode"
-          type="radio"
-          value="onlyLeaf"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
         >
-          onlyLeaf
-        </span>
-      </label>
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name="value-mode"
-          type="radio"
-          value="parentFirst"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
+          <label
+            for=""
+          >
+            可选
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
         >
-          parentFirst
-        </span>
-      </label>
-      <label
-        class="t-radio"
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        <input
-          class="t-radio__former"
-          name="value-mode"
-          type="radio"
-          value="all"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
         >
-          all
-        </span>
-      </label>
-    </div>
+          <label
+            for=""
+          >
+            严格模式
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
+      >
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+        >
+          <label
+            for=""
+          >
+            选中值模式
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-radio-group t-radio-group-outline t-radio-group-medium"
+            >
+              <label
+                class="t-radio t-is-checked"
+              >
+                <input
+                  class="t-radio__former"
+                  name="value-mode"
+                  type="radio"
+                  value="onlyLeaf"
+                />
+                <span
+                  class="t-radio__input"
+                />
+                <span
+                  class="t-radio__label"
+                >
+                  onlyLeaf
+                </span>
+              </label>
+              <label
+                class="t-radio"
+              >
+                <input
+                  class="t-radio__former"
+                  name="value-mode"
+                  type="radio"
+                  value="parentFirst"
+                />
+                <span
+                  class="t-radio__input"
+                />
+                <span
+                  class="t-radio__label"
+                >
+                  parentFirst
+                </span>
+              </label>
+              <label
+                class="t-radio"
+              >
+                <input
+                  class="t-radio__former"
+                  name="value-mode"
+                  type="radio"
+                  value="all"
+                />
+                <span
+                  class="t-radio__input"
+                />
+                <span
+                  class="t-radio__label"
+                >
+                  all
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -1583,16 +1720,41 @@ exports[`Tree:demo disabled demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        禁用树
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+        >
+          <label
+            for=""
+          >
+            是否禁用
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -2054,38 +2216,108 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        切换数据
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 150px;"
+        >
+          <label
+            for=""
+          >
+            切换数据
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        提供 hover 状态
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 150px;"
+        >
+          <label
+            for=""
+          >
+            提供 hover 状态
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        动画
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 150px;"
+        >
+          <label
+            for=""
+          >
+            展开动画
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -2573,31 +2805,79 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        互斥展开
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 120px;"
+        >
+          <label
+            for=""
+          >
+            互斥展开
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        点击节点触发展开
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 120px;"
+        >
+          <label
+            for=""
+          >
+            整个节点可点击
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -2702,7 +2982,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
   >
     <transition-group-stub
       class="t-tree__list"
@@ -3452,27 +3732,73 @@ exports[`Tree:demo line demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        显示连线
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+        >
+          <label
+            for=""
+          >
+            显示连线
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        显示图标
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+        >
+          <label
+            for=""
+          >
+            显示图标
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -5250,27 +5576,75 @@ exports[`Tree:demo operations demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        插入节点使用高亮节点
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 200px;"
+        >
+          <label
+            for=""
+          >
+            插入节点使用高亮节点
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        子节点展开触发父节点展开
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 200px;"
+        >
+          <label
+            for=""
+          >
+            子节点展开触发父节点展开
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
@@ -5594,27 +5968,75 @@ exports[`Tree:demo state demo works fine 1`] = `
   <div
     class="operations"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        插入节点使用高亮节点
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 200px;"
+        >
+          <label
+            for=""
+          >
+            插入节点使用高亮节点
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="t-form__item t-row t-form-item__"
       >
-        子节点展开触发父节点展开
-      </span>
-    </button>
+        <div
+          class="t-col t-form__label t-form__label--right t-col-1"
+          style="min-width: 200px;"
+        >
+          <label
+            for=""
+          >
+            子节点展开触发父节点展开
+          </label>
+        </div>
+        <div
+          class="t-form__controls t-col"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m t-is-checked"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
    
   <div
