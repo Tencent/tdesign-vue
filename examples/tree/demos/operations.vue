@@ -10,8 +10,14 @@
     />
     <h3 class="title">scope slot:</h3>
     <div class="operations">
-      <t-button :variant="btnSetActivedVariant" @click="setUseActived">插入节点使用高亮节点</t-button>
-      <t-button :variant="expandParent ? 'base' : 'outline'"  @click="toggleExpandParent">子节点展开触发父节点展开</t-button>
+      <t-form labelWidth="200">
+        <t-form-item label="插入节点使用高亮节点">
+          <t-switch v-model="useActived"/>
+        </t-form-item>
+        <t-form-item label="子节点展开触发父节点展开">
+          <t-switch v-model="expandParent"/>
+        </t-form-item>
+      </t-form>
     </div>
     <div class="operations">
       <t-addon prepend="filter:">
