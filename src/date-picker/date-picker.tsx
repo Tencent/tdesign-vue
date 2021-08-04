@@ -340,6 +340,8 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             this.end = this.normalizeDateTime(value[1], this.end);
             this.inSelection = true;
           }
+          // 有时间选择时，点击日期不关闭弹窗
+          this.clickedApply(!this.enableTimePicker);
           break;
       }
     },
@@ -655,7 +657,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
           <calendar-presets presets={presets} locales={locales} {...{ props: { onClickRange: this.clickRange } }} />
         )}
         {
-          (range || enableTimePicker) && (
+          enableTimePicker && (
             <div class="t-date-picker--apply">
               {
                 enableTimePicker && (
@@ -665,11 +667,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
                 )
               }
               {
-                (range || enableTimePicker) && (
-                  <t-button theme="primary" onClick={this.clickedApply}>
-                    {locales.confirm}
-                  </t-button>
-                )
+                <t-button theme="primary" onClick={this.clickedApply}>
+                  {locales.confirm}
+                </t-button>
               }
             </div>
           )

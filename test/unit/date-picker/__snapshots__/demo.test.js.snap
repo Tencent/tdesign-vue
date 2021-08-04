@@ -129,7 +129,7 @@ exports[`DatePicker base demo works fine 1`] = `
                   </span>
                 </div>
                 <div
-                  class="t-date-date"
+                  class="t-date-picker-date"
                 >
                   <table>
                     <thead>
@@ -891,7 +891,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -1584,7 +1584,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -2187,18 +2187,6 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                   </li>
                 </ul>
               </div>
-              <div
-                class="t-date-picker--apply"
-              >
-                <button
-                  class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -2370,7 +2358,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -3063,7 +3051,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -3676,18 +3664,6 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                   </li>
                 </ul>
               </div>
-              <div
-                class="t-date-picker--apply"
-              >
-                <button
-                  class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -3863,7 +3839,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -4556,7 +4532,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -5169,18 +5145,6 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                   </li>
                 </ul>
               </div>
-              <div
-                class="t-date-picker--apply"
-              >
-                <button
-                  class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -5352,7 +5316,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -6045,7 +6009,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                     </span>
                   </div>
                   <div
-                    class="t-date-date"
+                    class="t-date-picker-date"
                   >
                     <table>
                       <thead>
@@ -6638,18 +6602,6 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                 </div>
               </div>
               <!---->
-              <div
-                class="t-date-picker--apply"
-              >
-                <button
-                  class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -6808,7 +6760,7 @@ exports[`DatePicker month demo works fine 1`] = `
                   </span>
                 </div>
                 <div
-                  class="t-date-month"
+                  class="t-date-picker-month"
                 >
                   <table>
                     <tbody>
@@ -7135,7 +7087,7 @@ exports[`DatePicker year demo works fine 1`] = `
                   </span>
                 </div>
                 <div
-                  class="t-date-year"
+                  class="t-date-picker-year"
                 >
                   <table>
                     <tbody>
