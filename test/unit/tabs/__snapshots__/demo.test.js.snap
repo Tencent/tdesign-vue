@@ -7,16 +7,47 @@ exports[`Tabs ban demo works fine 1`] = `
   <div
     class="t-demo-tabs__desc"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-radio-group t-radio-group-outline t-radio-group-medium"
     >
-      <span
-        class="t-button__text"
+      <label
+        class="t-radio t-is-checked"
       >
-        切换到卡片型选项卡
-      </span>
-    </button>
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          常规型
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="card"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          卡片型
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
@@ -216,16 +247,47 @@ exports[`Tabs combination demo works fine 1`] = `
   <div
     class="t-demo-tabs__desc"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-radio-group t-radio-group-outline t-radio-group-medium"
     >
-      <span
-        class="t-button__text"
+      <label
+        class="t-radio t-is-checked"
       >
-        切换到卡片型选项卡
-      </span>
-    </button>
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          常规型
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="card"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          卡片型
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
@@ -589,16 +651,47 @@ exports[`Tabs icon demo works fine 1`] = `
   <div
     class="t-demo-tabs__desc"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-radio-group t-radio-group-outline t-radio-group-medium"
     >
-      <span
-        class="t-button__text"
+      <label
+        class="t-radio t-is-checked"
       >
-        切换到卡片型选项卡
-      </span>
-    </button>
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          常规型
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="card"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          卡片型
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
@@ -794,57 +887,85 @@ exports[`Tabs position demo works fine 1`] = `
   <div
     class="t-demo-tabs__desc"
   >
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-radio-group t-radio-group-outline t-radio-group-medium"
     >
-      <span
-        class="t-button__text"
+      <label
+        class="t-radio t-is-checked"
       >
-        
-      top
-    
-      </span>
-    </button>
-     
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="top"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          top
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
       >
-        
-      right
-    
-      </span>
-    </button>
-     
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="right"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          right
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
       >
-        
-      bottom
-    
-      </span>
-    </button>
-     
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="bottom"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          bottom
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
       >
-        
-      left
-    
-      </span>
-    </button>
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="left"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          left
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
@@ -947,31 +1068,47 @@ exports[`Tabs size demo works fine 1`] = `
   <div
     class="t-demo-tabs__desc"
   >
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-radio-group t-radio-group-outline t-radio-group-medium"
     >
-      <span
-        class="t-button__text"
+      <label
+        class="t-radio t-is-checked"
       >
-        
-      medium
-    
-      </span>
-    </button>
-     
-    <button
-      class="t-demo-tabs__btn t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="medium"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          medium
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
       >
-        
-      large
-    
-      </span>
-    </button>
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="large"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          large
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
