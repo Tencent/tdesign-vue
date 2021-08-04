@@ -18,7 +18,7 @@
         <t-input v-model="formData.email"></t-input>
       </t-form-item>
       <t-form-item label="性别" name='gender'>
-        <t-radio-group v-model="formData.gender" buttonStyle="solid">
+        <t-radio-group v-model="formData.gender">
           <t-radio value="male">男</t-radio>
           <t-radio value="femal">女</t-radio>
         </t-radio-group>

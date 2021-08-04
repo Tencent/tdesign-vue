@@ -1,13 +1,14 @@
 <template>
   <div>
+    <div class="controls">
+      <t-radio-group v-model="formData.labelAlign" buttonStyle="solid">
+        <t-radio-button value="left">左对齐</t-radio-button>
+        <t-radio-button value="right">右对齐</t-radio-button>
+        <t-radio-button value="top">顶部对齐</t-radio-button>
+      </t-radio-group>
+    </div>
+
     <t-form :data="formData" :labelAlign="formData.labelAlign">
-      <t-form-item name='labelAlign'>
-        <t-radio-group v-model="formData.labelAlign" buttonStyle="solid">
-          <t-radio-button value="left">左对齐</t-radio-button>
-          <t-radio-button value="right">右对齐</t-radio-button>
-          <t-radio-button value="top">顶部对齐</t-radio-button>
-        </t-radio-group>
-      </t-form-item>
       <t-form-item label="名字" name='name'>
         <t-input v-model="formData.name"></t-input>
       </t-form-item>
@@ -34,3 +35,9 @@ export default {
   },
 };
 </script>
+
+<style lang="less">
+.controls {
+  margin-bottom: 32px;
+}
+</style>
