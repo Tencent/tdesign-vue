@@ -5,8 +5,9 @@ exports[`InputNumber center demo works fine 1`] = `
   <div
     class="t-input-number t-size-m"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -20,7 +21,7 @@ exports[`InputNumber center demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -31,8 +32,9 @@ exports[`InputNumber center demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -44,7 +46,7 @@ exports[`InputNumber center demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -54,8 +56,9 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
   <div
     class="t-input-number t-size-m"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -69,7 +72,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -80,8 +83,9 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -93,7 +97,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -103,8 +107,9 @@ exports[`InputNumber disabled demo works fine 1`] = `
   <div
     class="t-input-number t-size-m t-is-disabled"
   >
-    <span
-      class="t-input-number__decrease t-is-disabled"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease t-is-disabled"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -118,7 +123,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -130,8 +135,9 @@ exports[`InputNumber disabled demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase t-is-disabled"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase t-is-disabled"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -143,7 +149,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -153,8 +159,9 @@ exports[`InputNumber format demo works fine 1`] = `
   <div
     class="t-input-number t-size-m"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -168,7 +175,7 @@ exports[`InputNumber format demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -179,8 +186,9 @@ exports[`InputNumber format demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -192,7 +200,7 @@ exports[`InputNumber format demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -202,8 +210,9 @@ exports[`InputNumber left demo works fine 1`] = `
   <div
     class="t-input-number t-size-m t-is-controls-right"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-chevron-down t-size-m"
@@ -218,7 +227,7 @@ exports[`InputNumber left demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -229,8 +238,9 @@ exports[`InputNumber left demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-chevron-up t-size-m"
@@ -245,7 +255,7 @@ exports[`InputNumber left demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -255,8 +265,9 @@ exports[`InputNumber size demo works fine 1`] = `
   <div
     class="t-input-number t-size-s"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-s"
@@ -270,7 +281,7 @@ exports[`InputNumber size demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -281,8 +292,9 @@ exports[`InputNumber size demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-s"
@@ -294,15 +306,16 @@ exports[`InputNumber size demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
    
   <div
     class="t-input-number t-size-m"
     style="margin: 0px 50px;"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -316,7 +329,7 @@ exports[`InputNumber size demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -327,8 +340,9 @@ exports[`InputNumber size demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -340,14 +354,15 @@ exports[`InputNumber size demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
    
   <div
     class="t-input-number t-size-l"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-l"
@@ -361,7 +376,7 @@ exports[`InputNumber size demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -372,8 +387,9 @@ exports[`InputNumber size demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-l"
@@ -385,7 +401,7 @@ exports[`InputNumber size demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -395,8 +411,9 @@ exports[`InputNumber step demo works fine 1`] = `
   <div
     class="t-input-number t-size-m"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -410,7 +427,7 @@ exports[`InputNumber step demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -421,8 +438,9 @@ exports[`InputNumber step demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -434,7 +452,7 @@ exports[`InputNumber step demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;
@@ -444,8 +462,9 @@ exports[`InputNumber undefined demo works fine 1`] = `
   <div
     class="t-input-number t-size-m"
   >
-    <span
-      class="t-input-number__decrease"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__decrease"
+      type="button"
     >
       <svg
         class="t-icon t-icon-remove t-size-m"
@@ -459,7 +478,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-    </span>
+    </button>
     <div
       class="t-input"
     >
@@ -470,8 +489,9 @@ exports[`InputNumber undefined demo works fine 1`] = `
         ref="refInputElem"
       />
     </div>
-    <div
-      class="t-input-number__increase"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only t-input-number__increase"
+      type="button"
     >
       <svg
         class="t-icon t-icon-add t-size-m"
@@ -483,7 +503,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
           d="M470.39872 553.59872V800H553.59872V553.59872H800V470.39872H553.59872V224H470.39872V470.39872H224V553.59872H470.39872Z"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>
 `;

@@ -47,7 +47,9 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         trigger: 'click',
         placement: 'bottom-left',
         overlayClassName: '',
-        overlayStyle: trigger => ({ width: `${trigger.offsetWidth}px` }),
+        overlayStyle: trigger => ({
+          width: `${trigger.offsetWidth}px`,
+        }),
       } as PopupProps,
       filterText: '',
       filterByText: null,
@@ -333,6 +335,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
           overlayStyle={popupObject.overlayStyle}
           overlayClassName={popupClass}
           on={{ 'visible-change': this.popupVisibleChange }}
+          expandAnimation={true}
         >
           <div
             class={classes}

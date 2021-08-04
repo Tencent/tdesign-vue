@@ -61,7 +61,7 @@ export default {
       );
     },
     cancelBtn() {
-      return <t-button size="small" variant="dashed">取消</t-button>;
+      return <t-button size="small" theme="default">取消</t-button>;
     },
     onVisibleChange(val, context = {}) {
       // trigger 表示触发来源，可以根据触发来源自由控制 visible

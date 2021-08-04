@@ -38,7 +38,6 @@ export default Vue.extend({
     return {
       target: null,
       dragActive: false,
-      percentNum: 0,
     };
   },
 
@@ -73,25 +72,7 @@ export default Vue.extend({
     },
   },
 
-  watch: {
-    percent: {
-      immediate: true,
-      handler(val: number) {
-        this.handlePercent(val);
-      },
-    },
-  },
-
   methods: {
-    handlePercent(val: number) {
-      this.percentNum = val;
-      const timer = setInterval(() => {
-        this.percentNum += 1;
-        if (this.percentNum >= 99) {
-          clearInterval(timer);
-        }
-      }, 10);
-    },
     handleDrop(event: DragEvent) {
       event.preventDefault();
       this.$emit('change', event.dataTransfer.files);
@@ -143,7 +124,7 @@ export default Vue.extend({
         return (
           <div class='t-upload__single-progress'>
             <TIconLoading></TIconLoading>
-            <span class='t-upload__single-percent'>{this.percentNum}%</span>
+            <span class='t-upload__single-percent'>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );
       }

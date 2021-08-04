@@ -221,7 +221,7 @@ export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb
 };
 
 // 用于判断节点内容是否溢出
-export const isNodeOverflow = (ele: Vue | Element | Vue[] | Element[]): boolean => {
+export const isNodeOverflow = (ele: Vue | Element | (Vue | Element)[]): boolean => {
   const { clientWidth = 0, scrollWidth = 0 } = (
     ele as Element & { clientWidth: number; scrollWidth: number }
   );

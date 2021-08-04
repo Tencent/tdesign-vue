@@ -1,7 +1,7 @@
 import { VNode, CreateElement } from 'vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-import TIconChevronRight from '../icon/chevron-right';
+import TIconCaretRightSmall from '../icon/caret-right-small';
 import TIconLoading from '../icon/loading';
 import TCheckBox from '../checkbox';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -10,6 +10,7 @@ import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
 import isFunction from 'lodash/isFunction';
 import { ClassName } from '../common';
+import ripple from '../utils/ripple';
 
 export const TreeItemProps = {
   node: {
@@ -23,6 +24,7 @@ export const TreeItemProps = {
 export default mixins(getLocalReceiverMixins('tree')).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
+  directives: { ripple },
   data() {
     return {
       data: null,
@@ -117,7 +119,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       if (isFunction(this.locale.folderIcon)) {
         return this.locale.folderIcon(this.$createElement);
       }
-      return <TIconChevronRight/>;
+      return <TIconCaretRightSmall/>;
     },
     renderIcon(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
@@ -176,11 +178,15 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       const labelClasses = [
         CLASS_NAMES.treeLabel,
         CLASS_NAMES.treeLabelStrictly,
+        {
+          [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
+        },
       ];
 
       if (node.vmCheckable) {
         labelNode = (
           <TCheckBox
+            v-ripple
             class={labelClasses}
             checked={node.checked}
             indeterminate={node.indeterminate}
@@ -194,8 +200,9 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       } else {
         labelNode = (
           <span
+          v-ripple
             class={labelClasses}
-          >{labelNode}</span>
+          ><span style="position: relative">{labelNode}</span></span>
         );
       }
 
@@ -247,8 +254,8 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
         itemNodes.push(labelNode);
       }
 
-      const spaceNode = (<span class={CLASS_NAMES.treeSpace}></span>);
-      itemNodes.push(spaceNode);
+      // const spaceNode = (<span class={CLASS_NAMES.treeSpace}></span>);
+      // itemNodes.push(spaceNode);
 
       const opNode = this.renderOperations(createElement);
       if (opNode) {

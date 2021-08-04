@@ -1,22 +1,16 @@
 <template>
   <div class="t-demo-tabs">
     <div class="t-demo-tabs__desc">
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => posBtnClick(0)">
-        {{ posArr[0] }}
-      </t-button>
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => posBtnClick(1)">
-        {{ posArr[1] }}
-      </t-button>
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => posBtnClick(2)">
-        {{ posArr[2] }}
-      </t-button>
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => posBtnClick(3)">
-        {{ posArr[3] }}
-      </t-button>
+      <t-radio-group v-model="placement">
+        <t-radio value="top">top</t-radio>
+        <t-radio value="right">right</t-radio>
+        <t-radio value="bottom">bottom</t-radio>
+        <t-radio value="left">left</t-radio>
+      </t-radio-group>
     </div>
     <t-tabs
       :value="value"
-      :placement="currPos"
+      :placement="placement"
       @change="(newValue) => value = newValue"
     >
       <t-tab-panel value="first" label="选项卡1">
@@ -59,16 +53,9 @@
 export default {
   data() {
     return {
-      posArr: ['top', 'right', 'bottom', 'left'],
-      currPos: 'top',
+      placement: 'top',
       value: 'first',
     };
-  },
-
-  methods: {
-    posBtnClick(index) {
-      this.currPos = this.posArr[index];
-    },
   },
 };
 </script>

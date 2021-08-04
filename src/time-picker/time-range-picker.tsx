@@ -300,6 +300,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
         visible={this.isShowPanel}
         overlayClassName={`${componentName}-panel__container`}
         on={{ 'visible-change': this.panelVisibleChange }}
+        expandAnimation={true}
       >
         {this.renderInput()}
         <template slot="content">

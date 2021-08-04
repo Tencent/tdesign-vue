@@ -8,6 +8,7 @@ import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { PopupVisibleChangeContext } from './type';
 import { Styles, ClassName } from '../common';
+import setStyle from '../utils/set-style';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
 const { prefix } = config;
@@ -32,7 +33,12 @@ const hideTimeout = 150;
 export default Vue.extend({
   name,
 
-  props: { ...props },
+  props: {
+    ...props,
+    expandAnimation: {
+      type: Boolean,
+    },
+  },
 
   data() {
     return {
@@ -211,11 +217,8 @@ export default Vue.extend({
       if (!this.$refs) return;
       const refOverlayElm = this.$refs.overlay as HTMLElement;
       if (typeof styles === 'object' && refOverlayElm) {
-        refOverlayElm.setAttribute(
-          'style',
-          Object.keys(styles).map(key => `${key}: ${styles[key]}`)
-            .join(';'),
-        );
+        // 统一追加内联style方法
+        setStyle(refOverlayElm, styles);
       }
     },
 
@@ -225,7 +228,8 @@ export default Vue.extend({
       this.popperJS = null;
     },
 
-    destroyPopper(): void {
+    destroyPopper(el: HTMLElement): void {
+      this.resetExpandStyles(el);
       if (this.popperJS) {
         this.popperJS.destroy();
         this.popperJS = null;
@@ -283,7 +287,7 @@ export default Vue.extend({
         this.doToggle({ trigger: 'context-menu' });
       }
     },
-    emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
+    emitPopVisible(val: boolean, context: PopupVisibleChangeContext): void {
       // 处理按钮设置了disabled，里面子元素点击还是冒泡上来的情况
       if (this.referenceElm?.querySelector?.('button:disabled')) {
         return;
@@ -294,12 +298,62 @@ export default Vue.extend({
         this.onVisibleChange(val, context);
       }
     },
+    // 以下代码用于处理展开-收起动画相关,
+    // 需要使用popup的组件设置非对外暴露的expandAnimation开启 对不需要展开收起动画的其他组件无影响
+    getContentElm(el: HTMLElement): HTMLElement {
+      if (this.expandAnimation) {
+        const content = el.querySelector(`.${name}-content`) as HTMLElement;
+        return content;
+      }
+      return null;
+    },
+    // 动画结束后 清除展开收起动画相关属性 避免造成不必要的影响
+    resetExpandStyles(el: HTMLElement): void {
+      const content = this.getContentElm(el);
+      if (content) {
+        content.style.overflow = '';
+        content.style.maxHeight = '';
+      }
+    },
+    // 设置展开动画初始条件
+    beforeEnter(el: HTMLElement): void {
+      const content = this.getContentElm(el);
+      if (content) {
+        content.style.overflow = 'hidden';
+        content.style.maxHeight = '0';
+      }
+    },
+    // 设置max-height,触发展开动画
+    enter(el: HTMLElement): void {
+      const content = this.getContentElm(el);
+      if (content) content.style.maxHeight = `${content.scrollHeight}px`;
+    },
+    // 设置max-height为0,触发收起动画
+    leave(el: HTMLElement): void {
+      const content = this.getContentElm(el);
+      if (content) content.style.maxHeight = '0';
+    },
+    // 设置收起动画初始条件
+    beforeLeave(el: HTMLElement): void {
+      const content = this.getContentElm(el);
+      if (content) {
+        content.style.overflow = 'hidden';
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      }
+    },
   },
 
   render() {
     return (
       <div class={`${name}-reference`}>
-        <transition name={`${name}_animation`} appear onAfterLeave={this.destroyPopper}>
+        <transition name={`${name}_animation`} appear
+          onBeforeEnter={this.beforeEnter}
+          onEnter={this.enter}
+          onAfterEnter={this.resetExpandStyles}
+          onBeforeLeave={this.beforeLeave}
+          onLeave={this.leave}
+          onAfterLeave={this.destroyPopper}
+        >
           <div
             class={name}
             ref='popper'

@@ -1,12 +1,10 @@
 <template>
   <div class="t-demo-tabs">
     <div class="t-demo-tabs__desc">
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => sizeBtnClick(0)">
-        {{ sizeArr[0] }}
-      </t-button>
-      <t-button class="t-demo-tabs__btn" variant="outline" @click="() => sizeBtnClick(1)">
-        {{ sizeArr[1] }}
-      </t-button>
+      <t-radio-group v-model="size">
+        <t-radio value="medium">medium</t-radio>
+        <t-radio value="large">large</t-radio>
+      </t-radio-group>
     </div>
     <t-tabs
       :value="value1"
@@ -66,17 +64,10 @@
 export default {
   data() {
     return {
-      sizeArr: ['medium', 'large'],
       size: 'medium',
       value1: 'first',
       value2: 'first',
     };
-  },
-
-  methods: {
-    sizeBtnClick(index) {
-      this.size = this.sizeArr[index];
-    },
   },
 };
 </script>

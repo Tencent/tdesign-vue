@@ -71,7 +71,7 @@ export default Vue.extend({
             {this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class='t-upload-card-container t-upload-card__box'>
                 <TIconLoading></TIconLoading>
-                <p>上传中</p>
+                <p>上传中 {Math.min(this.loadingFile.percent, 99)}%</p>
               </div>
             ) : (
               <div class='t-upload-card-container t-upload-card__box'>

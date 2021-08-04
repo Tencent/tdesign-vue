@@ -177,8 +177,8 @@ export default {
 .tdesign-tree-line .custom-line{
   display: flex;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: 9px;
 }
 .tdesign-tree-line .custom-line-box{
   display: flex;
@@ -194,21 +194,21 @@ export default {
   content: '';
   position: absolute;
   display: block;
-  bottom: 20px;
-  left: 12px;
+  bottom: 26px;
+  left: 6px;
   width: 12px;
-  height: 30px;
+  height: 26px;
   border-left: 1px solid #ddd;
   border-bottom: 1px solid #0052D9;
 }
 .tdesign-tree-line .custom-line-leaf span:last-child:before{
-  width: 24px;
+  width: 16px;
 }
 .tdesign-tree-line .custom-line-cross:before{
   content: '';
   display: block;
   position: absolute;
-  left: 12px;
+  left: 6px;
   top: -15px;
   height: 44px;
   width: 1px;
@@ -216,8 +216,8 @@ export default {
 }
 .tdesign-tree-line .custom-line-icon{
   position: absolute;
-  top: 12px;
-  right: -20px;
+  top: 6px;
+  right: -14px;
   display: flex;
   box-sizing: border-box;
   width: 16px;
@@ -233,8 +233,8 @@ export default {
   position: absolute;
   display: block;
   box-sizing: border-box;
-  top: 16px;
-  left: 8px;
+  top: 9px;
+  left: 3px;
   z-index: 1;
   width: 8px;
   height: 8px;

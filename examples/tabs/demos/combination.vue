@@ -1,7 +1,10 @@
 <template>
   <div class="t-demo-tabs">
     <div class="t-demo-tabs__desc">
-      <t-button variant="outline" @click="toggle">{{ desc }}</t-button>
+      <t-radio-group v-model="theme">
+        <t-radio value="normal">常规型</t-radio>
+        <t-radio value="card">卡片型</t-radio>
+      </t-radio-group>
     </div>
     <t-tabs
       v-model="value"
@@ -38,25 +41,9 @@
 export default {
   data() {
     return {
-      isCard: false,
+      theme: 'normal',
       value: '1',
     };
-  },
-
-  computed: {
-    desc() {
-      return `切换到${this.isCard ? '常规型' : '卡片型'}选项卡`;
-    },
-
-    theme() {
-      return this.isCard ? 'card' : 'normal';
-    },
-  },
-
-  methods: {
-    toggle() {
-      this.isCard = !this.isCard;
-    },
   },
 };
 </script>

@@ -88,7 +88,7 @@ export default Vue.extend({
           status = <div class='t-upload__flow-status'><TIconErrorCircleFilled /><span>上传失败</span></div>;
           break;
         case 'progress':
-          status = <div class='t-upload__flow-status'><TIconLoading /><span>上传中{Math.min(file.percent, 99)}%</span></div>;
+          status = <div class='t-upload__flow-status'><TIconLoading /><span>上传中 {Math.min(file.percent, 99)}%</span></div>;
           break;
         case 'waiting':
           status = <div class='t-upload__flow-status'><TIconTimeFilled /><span>待上传</span></div>;
@@ -169,7 +169,7 @@ export default Vue.extend({
                       <div class='t-upload-card__status-wrap'><TIconErrorCircleFilled size='20px'/><p>上传失败</p></div>
                     )}
                     {file.status === 'progress' && (
-                      <div class='t-upload-card__status-wrap'><TIconLoading size='20px'/><p>上传中</p></div>
+                      <div class='t-upload-card__status-wrap'><TIconLoading size='20px'/><p>上传中 {Math.min(file.percent, 99)}</p></div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
                       <img class="t-upload-card__image" src={file.url || '//tdesign.gtimg.com/tdesign-default-img.png'} />

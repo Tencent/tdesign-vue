@@ -23,6 +23,7 @@ export const CLASS_NAMES = {
   treeNode: `${tree}__item`,
   treeNodeOpen: `${tree}__item--open`,
   treeHoverable: `${tree}--hoverable`,
+  treeCheckable: `${tree}--checkable`,
   treeLabel: `${tree}__label`,
   treeLabelStrictly: `${tree}__label--strictly`,
   treeIcon: `${tree}__icon`,

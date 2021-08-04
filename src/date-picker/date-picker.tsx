@@ -696,6 +696,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
           popupProps={popupProps}
           overlayClassName="t-date-picker"
           content={popupContent}
+          expandAnimation={true}
         >
           <div class={inputClassNames} onClick={this.toggle}>
             <t-input
