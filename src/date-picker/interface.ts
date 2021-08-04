@@ -279,7 +279,6 @@ export interface DateRangeMethods {
   getLeftAndRightDataFromValue(value: Array<Date>): { leftYear: number; leftMonth: number; rightYear: number; rightMonth: number };
   getData(value: { year: number; month: number; type: string }): object;
   getClickHandler(direction: string): object;
-  onHeaderClick(flag: number): void;
   clickHeader(flag: number, direction: string): void;
   clickDate(date: Date): void;
   clickYear(date: Date, type: string): void;

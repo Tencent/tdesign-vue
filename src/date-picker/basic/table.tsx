@@ -43,7 +43,7 @@ export default Vue.extend({
       wi = (wi + len + 1) % len;
     }
 
-    const panelClass = `t-date-${type}`;
+    const panelClass = `t-date-picker-${type}`;
 
     return (
       <div class={panelClass}>

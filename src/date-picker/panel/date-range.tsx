@@ -175,16 +175,13 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
 
       return (date: any) => this[`click${firstUpperCase(type)}`](date, direction);
     },
-    onHeaderClick(flag: number) {
-      this.clickHeader(flag, LEFT);
-      this.clickHeader(flag, RIGHT);
-    },
     clickHeader(flag: number, direction: string) {
       const year = this[`${direction}Year`];
       const month = this[`${direction}Month`];
       const type = this[`${direction}Type`];
 
-      let monthCount; let next;
+      let monthCount;
+      let next;
       switch (type) {
         case 'date':
           monthCount = 1;
@@ -298,7 +295,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             type={leftType}
             {...{
               props: {
-                onBtnClick: (b: number) => this.onHeaderClick(b),
+                onBtnClick: (flag: number) => this.clickHeader(flag, LEFT),
                 onTypeChange: (type: string) => this.handleTypeChange(LEFT, type),
               },
             }}
@@ -323,7 +320,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             type={rightType}
             {...{
               props: {
-                onBtnClick: (b: number) => this.onHeaderClick(b),
+                onBtnClick: (flag: number) => this.clickHeader(flag, RIGHT),
                 onTypeChange: (type: string) => this.handleTypeChange(RIGHT, type),
               },
             }}
