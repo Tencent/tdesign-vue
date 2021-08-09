@@ -754,6 +754,7 @@ exports[`Tabs icon demo works fine 1`] = `
       <div
         class="t-tab-panel"
       >
+         
         <p
           style="padding: 25px;"
         >
@@ -765,6 +766,7 @@ exports[`Tabs icon demo works fine 1`] = `
         class="t-tab-panel"
         style="display: none;"
       >
+         
         <p
           style="padding: 25px;"
         >
@@ -776,6 +778,7 @@ exports[`Tabs icon demo works fine 1`] = `
         class="t-tab-panel"
         style="display: none;"
       >
+         
         <p
           style="padding: 25px;"
         >

@@ -11,13 +11,16 @@
       :theme="theme"
       @change="(newValue) => value = newValue"
     >
-      <t-tab-panel value="first" :label="`${theme}选项卡1`">
+      <t-tab-panel value="first">
+        <div slot="label"><t-icon name="home"/> 首页</div>
         <p style="padding: 25px;">{{ `${theme}选项卡1内容` }}</p>
       </t-tab-panel>
-      <t-tab-panel value="second" :label="`${theme}选项卡2`">
+      <t-tab-panel value="second" :label="() => `${theme}选项卡22`">
+        <div slot="label"><t-icon name="calendar"/> 日程</div>
         <p style="padding: 25px;">{{ `${theme}选项卡2内容` }}</p>
       </t-tab-panel>
       <t-tab-panel value="third" :label="`${theme}选项卡3`">
+        <div slot="label"><t-icon name="layers"/> 事项</div>
         <p style="padding: 25px;">{{ `${theme}选项卡3内容` }}</p>
       </t-tab-panel>
     </t-tabs>
