@@ -215,7 +215,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
 
     const Content = (
       <div class={className}>
-        <div class={`${name}_line`}>{activeLineStyle && <div class="point" style={activeLineStyle}></div>}</div>
+        <div class={`${name}_line`}><div class="point" style={activeLineStyle}></div></div>
         {children && children(null)}
       </div>
     );
