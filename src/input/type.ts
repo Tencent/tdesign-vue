@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-06 14:44:03
  * */
 
 import { TNode, SizeEnum } from '../common';
@@ -27,7 +29,11 @@ export interface TdInputProps {
    */
   disabled?: boolean;
   /**
-   * 用户最多可以输入的字符个数
+   * 用户最多可以输入的字符个数，一个中文汉字表示两个字符长度
+   */
+  maxcharacter?: number;
+  /**
+   * 用户最多可以输入的文本长度
    */
   maxlength?: number;
   /**

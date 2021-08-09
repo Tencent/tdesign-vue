@@ -1,14 +1,15 @@
-import Vue, { VueConstructor, CreateElement, VNode } from 'vue';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
-import { omit } from '../utils/helper';
-import ClearIcon from '../icon/close-circle-filled';
+import { InputValue, TdInputProps } from './type';
+import Vue, { CreateElement, VNode, VueConstructor } from 'vue';
+import { getCharacterLength, omit } from '../utils/helper';
+
 import BrowseIcon from '../icon/browse';
 import BrowseOffIcon from '../icon/browse-off';
-import props from './props';
-import { InputValue, TdInputProps } from './type';
-import isFunction from 'lodash/isFunction';
+import CLASSNAMES from '../utils/classnames';
+import ClearIcon from '../icon/close-circle-filled';
 import { emitEvent } from '../utils/event';
+import isFunction from 'lodash/isFunction';
+import { prefix } from '../config';
+import props from './props';
 
 const name = `${prefix}-input`;
 
@@ -203,7 +204,11 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     },
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
-      const val = (target as HTMLInputElement).value;
+      let val = (target as HTMLInputElement).value;
+      if (this.maxcharacter && this.maxcharacter >= 0) {
+        const stringInfo = getCharacterLength(val, this.maxcharacter);
+        val = typeof stringInfo === 'object' && stringInfo.characters;
+      }
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'input', val, { e });
       isFunction(this.onChange) && this.onChange(val, { e });
