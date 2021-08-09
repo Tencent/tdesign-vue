@@ -170,8 +170,19 @@ export default Vue.extend({
       if (this.popperJS && this.popperJS.destroy) {
         this.popperJS.destroy();
       }
+      let placement = placementMap[this.currentPlacement];
+      if (this.expandAnimation) {
+        // 如果有展开收起动画 需要在beforeEnter阶段设置max-height为0 这导致popperjs无法知道overflow了 所以需要在这里手动判断设置placment
+        this.popperElm.style.display = '';
+        const referenceElmBottom = innerHeight - this.referenceElm.getBoundingClientRect().bottom;
+        if (referenceElmBottom < this.popperElm.scrollHeight) {
+          placement = 'top-start';
+        }
+        this.popperElm.style.display = 'none';
+      }
+
       this.popperJS = createPopper(this.referenceElm, this.popperElm, {
-        placement: placementMap[this.currentPlacement],
+        placement,
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
