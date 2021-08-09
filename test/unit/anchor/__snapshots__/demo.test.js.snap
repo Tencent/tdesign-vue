@@ -16,7 +16,11 @@ exports[`Anchor base demo works fine 1`] = `
     >
       <div
         class="t-anchor_line"
-      />
+      >
+        <div
+          class="point"
+        />
+      </div>
       <div
         class="t-anchor-item"
       >
@@ -122,7 +126,11 @@ exports[`Anchor bounds demo works fine 1`] = `
   >
     <div
       class="t-anchor_line"
-    />
+    >
+      <div
+        class="point"
+      />
+    </div>
     <div
       class="t-anchor-item"
     >
