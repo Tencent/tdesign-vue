@@ -1,8 +1,8 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../../config';
-import TableRow from './table-row';
 import baseTableProps from '../base-table-props';
 import { BaseTableCol } from '../type';
+import TableRow from './table-row';
 
 export default Vue.extend({
   name: `${prefix}-table-body`,
@@ -41,9 +41,8 @@ export default Vue.extend({
         if (props[rowIndex] === undefined) {
           props[rowIndex] = {};
         }
-        Object.keys(rowData).forEach((colKey) => {
-          const colIndex = columns.findIndex(col => col.colKey === colKey);
-          const col = columns[colIndex];
+        columns.forEach((col, colIndex) => {
+          const { colKey } = col;
           let { rowspan, colspan } = rowspanAndColspan({
             col,
             colIndex,
