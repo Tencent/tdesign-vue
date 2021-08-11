@@ -5,7 +5,7 @@ import TIconLoading from '../icon/loading';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
-import { returnFileSize, getCurrentDate } from './util';
+import { returnFileSize, getCurrentDate, abridgeName } from './util';
 import { ClassName } from '../common';
 
 const name = `${prefix}-upload-dragger`;
@@ -141,7 +141,7 @@ export default Vue.extend({
           {this.isImage && this.renderImage()}
           <div class='t-upload__dragger-progress-info'>
             <div class='t-upload__dragger-text'>
-              <span class='t-upload__single-name'>{this.inputName}</span>
+              <span class='t-upload__single-name'>{abridgeName(this.inputName)}</span>
               {this.loadingFile && this.renderUploading()}
               {(!this.loadingFile && !!this.file) && <TIconCheckCircleFilled/>}
             </div>
