@@ -463,6 +463,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
         visible={visible}
         trigger={popupProps?.trigger || 'click'}
         on={{ 'visible-change': onVisibleChange }}
+        expandAnimation={true}
         {...popupProps}
       >
         <div class={cascaderInnerClasses}

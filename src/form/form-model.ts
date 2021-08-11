@@ -1,10 +1,12 @@
 // https://github.com/validatorjs/validator.js
 
-import isEmail from 'validator/lib/isEmail';
+import { CustomValidator, ErrorList, FormRule, ValueType } from './type';
+
+import { getCharacterLength } from '../utils/helper';
 import isDate from 'validator/lib/isDate';
-import isURL from 'validator/lib/isURL';
+import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'lodash/isEmpty';
-import { ValueType, FormRule, CustomValidator, ErrorList } from './type';
+import isURL from 'validator/lib/isURL';
 
 // `{} / [] / '' / undefined / null` 等内容被认为是空； 0 和 false 被认为是正常数据，部分数据的值就是 0 或者 false
 export function isValueEmpty(val: ValueType): boolean {
@@ -20,30 +22,13 @@ export function isValueEmpty(val: ValueType): boolean {
     : ['', undefined, null].includes(val);
 }
 
-/**
- * 为避免引入文件较多，组件仅内置部分校验方法，更多校验业务方自行实现
- */
-
-function getStringLength(str: string): number {
-  if (!str || str.length === 0) return 0;
-  let len = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str.charCodeAt(i) > 127 || str.charCodeAt(i) === 94) {
-      len += 2;
-    } else {
-      len = len + 1;
-    }
-  }
-  return len;
-}
-
 const VALIDATE_MAP = {
   date: isDate,
   url: isURL,
   email: isEmail,
   required: (val: ValueType): boolean => !isValueEmpty(val),
   boolean: (val: ValueType): boolean => typeof val === 'boolean',
-  max: (val: ValueType, num: number): boolean => getStringLength(val) <= num,
+  max: (val: ValueType, num: number): boolean => getCharacterLength(val) <= num,
   min: (val: ValueType, num: number): boolean => val.length >= num,
   len: (val: ValueType, num: number): boolean => val.length === num,
   number: (val: ValueType): boolean => !isNaN(val),

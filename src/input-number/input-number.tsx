@@ -174,12 +174,7 @@ export default Vue.extend({
         },
       };
     },
-    decreaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-down size={this.size} /> : <remove size={this.size} />;
-    },
-    increaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-up size={this.size} /> : <add size={this.size} />;
-    },
+
     displayValue(): string | number {
       if (this.value === undefined) return;
       // inputing
@@ -191,6 +186,12 @@ export default Vue.extend({
     },
   },
   methods: {
+    decreaseIcon(): TNodeReturnValue {
+      return this.theme === 'column' ? <chevron-down size={this.size} /> : <remove size={this.size} />;
+    },
+    increaseIcon(): TNodeReturnValue {
+      return this.theme === 'column' ? <chevron-up size={this.size} /> : <add size={this.size} />;
+    },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
       const value = this.value || 0;

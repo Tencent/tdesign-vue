@@ -1,7 +1,7 @@
 import Vue, { VNode, PropType } from 'vue';
 import { UploadFile } from './type';
 import TButton from '../button';
-import { returnFileSize } from './util';
+import { returnFileSize, abridgeName } from './util';
 import { FlowRemoveContext } from './interface';
 import TIconLoading from '../icon/loading';
 import TIconTimeFilled from '../icon/time-filled';
@@ -146,7 +146,7 @@ export default Vue.extend({
           )}
           {this.listFiles.map((file, index) => (
             <tr>
-              <td>{file.name}</td>
+              <td>{abridgeName(file.name, 7, 10)}</td>
               <td>{returnFileSize(file.size)}</td>
               <td>{this.renderStatus(file)}</td>
               <td><span class='t-upload__flow-button' onClick={(e: MouseEvent) => this.remove({ e, index, file })}>删除</span></td>
@@ -184,7 +184,7 @@ export default Vue.extend({
                       </span>
                     </div>
                   </div>
-                  <p class="t-upload-card__name">{file.name}</p>
+                  <p class="t-upload-card__name">{abridgeName(file.name)}</p>
                 </li>
               ))}
             </ul>

@@ -91,7 +91,7 @@ import TIconChevronLeftDouble from '../icon/chevron-left-double';
 import TIconChevronRightDouble from '../icon/chevron-right-double';
 import TIconEllipsis from '../icon/ellipsis';
 import TInput from '../input';
-import { Select } from '../select';
+import { Select, Option } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ClassName } from '../common';
@@ -111,6 +111,7 @@ export default mixins(PaginationLocalReceiver).extend({
     TIconEllipsis,
     TInput,
     TSelect: Select,
+    TOption: Option,
   },
   model: {
     prop: 'current',

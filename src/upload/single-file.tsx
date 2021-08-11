@@ -5,6 +5,7 @@ import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
+import { abridgeName } from './util';
 
 export default Vue.extend({
   name: 'TUploadSingleFile',
@@ -114,7 +115,7 @@ export default Vue.extend({
       return (
         <div class='t-upload__single-input-preview t-input'>
           <div class={this.inputTextClass}>
-            {<span class='t-upload__single-input-text'>{this.inputText}</span>}
+            {<span class='t-upload__single-input-text'>{abridgeName(this.inputText, 4, 6)}</span>}
             {this.showProgress && this.renderProgress()}
             {this.renderResult()}
           </div>
