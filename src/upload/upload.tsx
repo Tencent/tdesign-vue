@@ -1,19 +1,21 @@
 /* eslint-disable no-param-reassign */
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import findIndex from 'lodash/findIndex';
 import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from './xhr';
-import { TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext } from './type';
+import {
+  TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext,
+} from './type';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
 import props from './props';
-import findIndex from 'lodash/findIndex';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -130,13 +132,13 @@ export default Vue.extend({
     },
 
     handleSingleRemove(e: MouseEvent) {
-      const changeCtx =  { trigger: 'remove' };
+      const changeCtx = { trigger: 'remove' };
       this.emitChangeEvent([], changeCtx);
       this.emitRemoveEvent({ e });
     },
 
     handleMultipleRemove(options: UploadRemoveOptions) {
-      const changeCtx =  { trigger: 'remove', ...options };
+      const changeCtx = { trigger: 'remove', ...options };
       const files = this.files.concat();
       files.splice(options.index, 1);
       this.emitChangeEvent(files, changeCtx);
@@ -145,11 +147,11 @@ export default Vue.extend({
 
     handleListRemove(context: FlowRemoveContext) {
       const { file } = context;
-      const index = findIndex(this.toUploadFiles, o => o.name === file.name);
+      const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
       if (index >= 0) {
         this.toUploadFiles.splice(index, 1);
       } else {
-        const index = findIndex(this.files, o => o.name === file.name);
+        const index = findIndex(this.files, (o) => o.name === file.name);
         this.handleMultipleRemove({ e: context.e, index });
       }
     },
@@ -250,14 +252,16 @@ export default Vue.extend({
       file.status = 'success';
       file.url = response.url || file.url;
       // 从待上传文件队列中移除上传成功的文件
-      const index = findIndex(this.toUploadFiles, o => o.name === file.name);
+      const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
       this.toUploadFiles.splice(index, 1);
       // 上传成功的文件发送到 files
       const newFile: UploadFile = { ...file, response };
       const files = this.multiple ? this.files.concat(newFile) : [newFile];
       const context = { e: event, response, trigger: 'upload-success' };
       this.emitChangeEvent(files, context);
-      const sContext = { file, fileList: files, e: event, response };
+      const sContext = {
+        file, fileList: files, e: event, response,
+      };
       emitEvent<Parameters<TdUploadProps['onSuccess']>>(this, 'success', sContext);
       // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
       this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
@@ -289,9 +293,9 @@ export default Vue.extend({
       if (typeof this.beforeUpload === 'function') {
         const r = this.beforeUpload(file);
         if (r instanceof Promise) return r;
-        return new Promise(resolve => resolve(r));
+        return new Promise((resolve) => resolve(r));
       }
-      return new Promise(resolve => resolve(true));
+      return new Promise((resolve) => resolve(true));
     },
 
     cancelUpload() {

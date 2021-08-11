@@ -63,7 +63,7 @@ export default Vue.extend({
         this.$emit('duration-end');
         if (this.onDurationEnd) {
           this.onDurationEnd();
-        };
+        }
       }, this.duration));
     },
     clearTimer() {
@@ -73,7 +73,7 @@ export default Vue.extend({
       this.$emit('close-btn-click', { e });
       if (this.onCloseBtnClick) {
         this.onCloseBtnClick({ e });
-      };
+      }
     },
     renderClose() {
       const defaultClose = <t-icon-close />;

@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdSelectProps } from './type';
 import { PropType } from 'vue';
+import { TdSelectProps } from './type';
 
 export default {
   /** 是否有边框 */

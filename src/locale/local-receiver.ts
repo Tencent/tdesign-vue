@@ -1,17 +1,17 @@
 import Vue, { VueConstructor } from 'vue';
-import config from '../config';
+import { prefix } from '../config';
 import { Locale, ComponentLocale, LocalRule } from './type';
 import defaultLocale from './zh_CN';
 
-const name = `${config.prefix}-locale-receiver`;
+const name = `${prefix}-locale-receiver`;
 
 export interface Placement {
   [propName: string]: string | number;
-};
+}
 
 export interface LocalComponent extends Vue {
   globalLocale: Locale;
-};
+}
 
 export default function getLocalReceiverMixins<BasicComponent extends Vue>(componentName: string) { // eslint-disable-line
   return (Vue as VueConstructor<LocalComponent & BasicComponent>).extend({

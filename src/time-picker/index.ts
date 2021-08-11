@@ -4,7 +4,7 @@ import _TimeRangePicker from './time-range-picker';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 
-import './style/';
+import './style';
 
 export * from './interface';
 

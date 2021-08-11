@@ -7,6 +7,7 @@
 </template>
 <script>
 import TIconMore from '@tencent/tdesign-vue/lib/icon/more';
+
 export default {
   components: {
     TIconMore,

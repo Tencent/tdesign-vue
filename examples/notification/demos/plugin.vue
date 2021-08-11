@@ -31,6 +31,7 @@
 
 <script>
 import { NotifyPlugin } from '@tencent/tdesign-vue';
+
 export default {
   data() {
     return {

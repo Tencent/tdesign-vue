@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdSwitchProps } from './type';
 import { PropType } from 'vue';
+import { TdSwitchProps } from './type';
 
 export default {
   /** 开关内容，[打开时的值，关闭时的值]。示例：[1, 0] */

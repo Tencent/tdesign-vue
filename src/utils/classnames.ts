@@ -1,6 +1,4 @@
-import config from '../config';
-
-const { prefix } = config;
+import { prefix } from '../config';
 
 export const SIZE_CLASSNAMES = {
   small: `${prefix}-size-s`,

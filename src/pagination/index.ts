@@ -3,7 +3,7 @@ import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 import { TdPaginationProps } from './type';
 
-import './style/';
+import './style';
 
 export type PaginationProps = TdPaginationProps;
 export * from './type';

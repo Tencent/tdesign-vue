@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdAnchorItemProps } from '../anchor/type';
 import { PropType } from 'vue';
+import { TdAnchorItemProps } from './type';
 
 export default {
   /** 锚点链接, 如果是 hash 模式需要加上当前 path */

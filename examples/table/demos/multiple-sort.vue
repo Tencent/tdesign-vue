@@ -19,15 +19,27 @@
 <script>
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
-  { colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: true },
-  { colKey: 'survivalTime', title: '存活时间(s)', width: 200, sortType: 'all', sorter: true },
+  {
+    colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: true,
+  },
+  {
+    colKey: 'survivalTime', title: '存活时间(s)', width: 200, sortType: 'all', sorter: true,
+  },
   { colKey: 'owner', title: '管理员', width: 100 },
 ];
 const data = [
-  { id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', survivalTime: 1000 },
-  { id: 2, instance: 'JQTest2', status: 1, owner: 'jenny', survivalTime: 1000 },
-  { id: 3, instance: 'JQTest3', status: 2, owner: 'jenny', survivalTime: 500 },
-  { id: 4, instance: 'JQTest4', status: 1, owner: 'peter', survivalTime: 1500 },
+  {
+    id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', survivalTime: 1000,
+  },
+  {
+    id: 2, instance: 'JQTest2', status: 1, owner: 'jenny', survivalTime: 1000,
+  },
+  {
+    id: 3, instance: 'JQTest3', status: 2, owner: 'jenny', survivalTime: 500,
+  },
+  {
+    id: 4, instance: 'JQTest4', status: 1, owner: 'peter', survivalTime: 1500,
+  },
 ];
 
 export default {

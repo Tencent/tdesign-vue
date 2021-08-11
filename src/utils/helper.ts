@@ -9,9 +9,9 @@ export function omit(obj: object, fields: string[]): object {
     delete shallowCopy[key];
   }
   return shallowCopy;
-};
+}
 
-export function removeEmptyAttrs<T>(obj: T): Partial<T>  {
+export function removeEmptyAttrs<T>(obj: T): Partial<T> {
   const newObj = {};
 
   Object.keys(obj).forEach((key) => {
@@ -48,7 +48,9 @@ export function getBackgroundColor(color: string | string[] | LinearGradient): s
     }
     return `linear-gradient( ${color.join(',')} )`;
   }
-  const { from, to, direction = 'to right', ...rest } = color;
+  const {
+    from, to, direction = 'to right', ...rest
+  } = color;
   let keys = Object.keys(rest);
   if (keys.length) {
     keys = keys.sort((a, b) => parseFloat(a.substr(0, a.length - 1)) - parseFloat(b.substr(0, b.length - 1)));
@@ -70,7 +72,7 @@ export function getPropsApiByEvent(eventName: string) {
  * @returns 当没有传入maxCharacter时返回字符串字符长度，当传入maxCharacter时返回截取之后的字符串和长度。
  */
 export function getCharacterLength(str: string, maxCharacter?: number) {
-  const haveMaxCharacter = typeof maxCharacter  === 'number';
+  const haveMaxCharacter = typeof maxCharacter === 'number';
   if (!str || str.length === 0) {
     if (haveMaxCharacter) {
       return {
@@ -79,7 +81,7 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
       };
     }
     return 0;
-  };
+  }
   let len = 0;
   for (let i = 0; i < str.length; i++) {
     let currentStringLength = 0;
@@ -94,7 +96,7 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
         characters: str.slice(0, i),
       };
     }
-    len = len + currentStringLength;
+    len += currentStringLength;
   }
   if (haveMaxCharacter) {
     return {

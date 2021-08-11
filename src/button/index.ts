@@ -2,7 +2,7 @@ import _Button from './button';
 import withInstall from '../utils/withInstall';
 import { TdButtonProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 export type ButtonProps = TdButtonProps;

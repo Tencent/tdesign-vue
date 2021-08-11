@@ -134,7 +134,7 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据
    */
   onSearch?: (filterWords: string) => void;
-};
+}
 
 export interface TdOptionProps {
   /**
@@ -151,7 +151,7 @@ export interface TdOptionProps {
    * 选项值
    */
   value?: string | number;
-};
+}
 
 export interface TdOptionGroupProps {
   /**
@@ -159,12 +159,12 @@ export interface TdOptionGroupProps {
    * @default ''
    */
   label?: string;
-};
+}
 
-export interface SelectKeysType { value?: string; label?: string };
+export interface SelectKeysType { value?: string; label?: string }
 
 export type SelectValue<SelectOption extends Options = Options> = string | number | SelectOption | Array<SelectValue<SelectOption>>;
 
-export interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent };
+export interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent }
 
 export type Options = { label?: string; value?: string | number; disabled?: boolean } & Record<string, any>;

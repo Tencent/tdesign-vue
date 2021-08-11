@@ -5,8 +5,8 @@
  * updated at 2021-08-06 14:44:03
  * */
 
-import { TdInputProps } from './type';
 import { PropType } from 'vue';
+import { TdInputProps } from './type';
 
 export default {
   /** 是否开启自动填充功能 */

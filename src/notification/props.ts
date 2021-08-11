@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdNotificationProps } from './type';
 import { PropType } from 'vue';
+import { TdNotificationProps } from './type';
 
 export default {
   /** 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例 */

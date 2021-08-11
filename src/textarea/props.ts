@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdTextareaProps } from './type';
 import { PropType } from 'vue';
+import { TdTextareaProps } from './type';
 
 export default {
   /** 自动聚焦 */

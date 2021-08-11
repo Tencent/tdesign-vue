@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdInputNumberProps } from './type';
 import { PropType } from 'vue';
+import { TdInputNumberProps } from './type';
 
 export default {
   /** [小数位数](https://en.wiktionary.org/wiki/decimal_place) */

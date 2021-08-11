@@ -1,9 +1,9 @@
 import Vue, { VueConstructor } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP } from './utils';
 import props from './anchor-item-props';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 const name = `${prefix}-anchor-item`;
 export interface Anchor extends Vue {
@@ -84,7 +84,9 @@ export default (Vue as VueConstructor<Anchor>).extend({
     },
   },
   render() {
-    const { href, target, $scopedSlots, tAnchor } = this;
+    const {
+      href, target, $scopedSlots, tAnchor,
+    } = this;
     const { default: children, title: titleSlot } = $scopedSlots;
     const title = this.renderTitle();
     const titleAttr = typeof title === 'string' ? title : null;

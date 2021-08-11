@@ -1,4 +1,3 @@
-
 /** Vue2 特有全局变量 */
 
 export type TNodeReturnValue = import('vue/types/vnode').ScopedSlotReturnValue;

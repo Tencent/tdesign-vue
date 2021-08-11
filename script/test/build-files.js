@@ -24,7 +24,7 @@ function readFile(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, (err, data) => {
       if (err) {
-        reject(false);
+        reject(new Error('read file error'));
       } else {
         resolve(data.toString());
       }
@@ -32,7 +32,9 @@ function readFile(filePath) {
   });
 }
 
-function validateBuildFiles({ folder, desc, files, fullPath }) {
+function validateBuildFiles({
+  folder, desc, files, fullPath,
+}) {
   const innerFiles = files || components;
   const list = innerFiles.map((fileName) => {
     const file = fullPath ? fileName : `${fileName}/index.js`;

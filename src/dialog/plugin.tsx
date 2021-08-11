@@ -48,7 +48,7 @@ const createDialog: DialogMethod = (props: DialogOptions) => {
 interface ExtraApi {
   confirm: DialogConfirmMethod;
   alert: DialogAlertMethod;
-};
+}
 
 const confirm: DialogConfirmMethod = (props: DialogOptions) => createDialog(props);
 
@@ -88,4 +88,4 @@ declare module 'vue/types/vue' {
   interface Vue {
     $dialog: DialogMethod & ExtraApi;
   }
-};
+}

@@ -19,6 +19,7 @@
 </template>
 <script>
 import TIconApp from '@tencent/tdesign-vue/lib/icon/app';
+
 export default {
   components: {
     TIconApp,

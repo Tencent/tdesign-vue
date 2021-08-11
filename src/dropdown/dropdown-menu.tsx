@@ -49,7 +49,7 @@ export default Vue.extend({
           maxHeight: `${this.maxColumnHeight}px`,
         }}>
           {
-            children.map((item => (
+            children.map(((item) => (
               <DropdownItem
                 busId={this.busId}
                 disabled={item.disabled}

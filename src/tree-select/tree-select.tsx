@@ -1,7 +1,13 @@
 import { VNode } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import isArray from 'lodash/isArray';
+import isEmpty from 'lodash/isEmpty';
+import isNumber from 'lodash/isNumber';
+import isString from 'lodash/isString';
+import isBoolean from 'lodash/isBoolean';
+import isFunction from 'lodash/isFunction';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 import Popup, { PopupProps } from '../popup';
@@ -12,16 +18,8 @@ import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
 import Input, { InputValue } from '../input';
 
-import isArray from 'lodash/isArray';
-import isEmpty from 'lodash/isEmpty';
-import isNumber from 'lodash/isNumber';
-import isString from 'lodash/isString';
-import isBoolean from 'lodash/isBoolean';
-import isFunction from 'lodash/isFunction';
-
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-
 
 import { TreeSelectValue } from './type';
 import { ClassName, TreeOptionData } from '../common';
@@ -47,7 +45,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         trigger: 'click',
         placement: 'bottom-left',
         overlayClassName: '',
-        overlayStyle: trigger => ({
+        overlayStyle: (trigger) => ({
           width: `${trigger.offsetWidth}px`,
         }),
       } as PopupProps,
@@ -132,7 +130,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       return !this.loading;
     },
     popupObject(): PopupProps {
-      const propsObject = this.popupProps ? Object.assign({}, this.defaultProps, this.popupProps) : this.defaultProps;
+      const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
       return propsObject;
     },
     selectedSingle(): TreeSelectValue {
@@ -268,7 +266,9 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     },
   },
   render(): VNode {
-    const { treeProps, popupObject, classes, popupClass, arrowClass } = this;
+    const {
+      treeProps, popupObject, classes, popupClass, arrowClass,
+    } = this;
     const treeItem = (
       <Tree
         ref="tree"

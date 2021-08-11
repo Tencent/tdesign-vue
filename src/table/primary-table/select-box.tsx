@@ -44,7 +44,9 @@ export default Vue.extend({
     return {};
   },
   render(h) {
-    const { checked, indeterminate, type, checkProps, disabled, $listeners } = this;
+    const {
+      checked, indeterminate, type, checkProps, disabled, $listeners,
+    } = this;
     return h(inputType[type], {
       props: {
         checked,

@@ -63,7 +63,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .demo-list {
   max-height: 130px;

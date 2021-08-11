@@ -95,7 +95,6 @@ describe('Calendar', () => {
   });
   // 插槽示例(end)
 
-
   it('week demo works fine', () => {
     const wrapper = mount(week);
     expect(wrapper.element).toMatchSnapshot();

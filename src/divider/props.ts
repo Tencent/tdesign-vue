@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdDividerProps } from './type';
 import { PropType } from 'vue';
+import { TdDividerProps } from './type';
 
 export default {
   /** 文本位置（仅在水平分割线有效） */

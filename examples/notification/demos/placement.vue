@@ -23,11 +23,11 @@ export default {
   computed: {
     infoList() {
       return [
-        {  placement: 'top-left' },
-        {  placement: 'top-right' },
-        {  placement: 'bottom-left' },
-        {  placement: 'bottom-right' },
-      ].map(item => ({
+        { placement: 'top-left' },
+        { placement: 'top-right' },
+        { placement: 'bottom-left' },
+        { placement: 'bottom-right' },
+      ].map((item) => ({
         title: '标题名称',
         content: '这是一条可以自动关闭的消息通知',
         duration: 3000,

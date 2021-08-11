@@ -34,8 +34,8 @@ export default Vue.extend({
   },
 
   computed: {
-    classes(): Array<string|object>  {
-      return  [
+    classes(): Array<string|object> {
+      return [
         name,
         {
           [`${name}-has-sider`]: this.hasSider,

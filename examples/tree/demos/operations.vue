@@ -101,7 +101,7 @@ export default {
     getLabelContent(node) {
       const pathNodes = node.getPath();
       let label = pathNodes
-        .map(itemNode => (itemNode.getIndex() + 1))
+        .map((itemNode) => (itemNode.getIndex() + 1))
         .join('.');
       label = `${label} | value: ${node.value}`;
       return label;
@@ -127,7 +127,7 @@ export default {
     getAllItems() {
       const { tree } = this.$refs;
       const nodes = tree.getItems();
-      console.info('getAllItems:', nodes.map(node => node.value));
+      console.info('getAllItems:', nodes.map((node) => node.value));
     },
     getActiveChildren() {
       const node = this.getActivedNode();
@@ -136,7 +136,7 @@ export default {
       if (node) {
         nodes = node.getChildren(true) || [];
       }
-      console.info('getActiveChildren:', nodes.map(node => node.value));
+      console.info('getActiveChildren:', nodes.map((node) => node.value));
     },
     getAllActived() {
       console.info('getActived value:', this.activeIds.slice(0));
@@ -149,8 +149,8 @@ export default {
       console.info(
         'getChecked:',
         nodes
-          .filter(node => node.checked)
-          .map(node => node.value)
+          .filter((node) => node.checked)
+          .map((node) => node.value),
       );
     },
     getActivedNode() {
@@ -230,7 +230,7 @@ export default {
       if (item) {
         tree.insertAfter(node.value, item);
         this.setLabel(item.value);
-      };
+      }
     },
     setUseActived() {
       this.useActived = !this.useActived;
@@ -247,7 +247,7 @@ export default {
       const node = this.getActivedNode();
       if (!node) return;
       const parents = tree.getParents(node.value);
-      console.info('getParents', parents.map(node => node.value));
+      console.info('getParents', parents.map((node) => node.value));
     },
     setActiveChecked() {
       const { tree } = this.$refs;

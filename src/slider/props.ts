@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdSliderProps } from './type';
 import { PropType } from 'vue';
+import { TdSliderProps } from './type';
 
 export default {
   /** 是否禁用组件 */

@@ -69,15 +69,15 @@ interface ExtraApi {
   error: NotificationErrorMethod;
   close: NotificationCloseMethod;
   closeAll: NotificationCloseAllMethod;
-};
+}
 
 const extraApi: ExtraApi = {
-  info: options => showThemeNotification('info', options),
-  success: options => showThemeNotification('success', options),
-  warning: options => showThemeNotification('warning', options),
-  error: options => showThemeNotification('error', options),
+  info: (options) => showThemeNotification('info', options),
+  success: (options) => showThemeNotification('success', options),
+  warning: (options) => showThemeNotification('warning', options),
+  error: (options) => showThemeNotification('error', options),
   close: (promise) => {
-    promise.then(instance => instance.close());
+    promise.then((instance) => instance.close());
   },
   closeAll: () => {
     instanceMap.forEach((attach) => {
@@ -114,4 +114,4 @@ declare module 'vue/types/vue' {
     $notify: NotificationMethod & ExtraApi;
     $notification: NotificationMethod & ExtraApi;
   }
-};
+}

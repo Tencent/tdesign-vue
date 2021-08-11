@@ -19,4 +19,4 @@ export interface TdDividerProps {
    * @default horizontal
    */
   theme?: 'horizontal' | 'vertical';
-};
+}

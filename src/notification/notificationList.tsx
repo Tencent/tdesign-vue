@@ -4,7 +4,6 @@ import { TdNotificationProps, NotificationOptions } from './type';
 import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
 import { Styles } from '../common';
 
-
 export default Vue.extend({
   components: { Notification },
   props: {

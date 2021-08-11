@@ -112,7 +112,8 @@ export default Vue.extend({
       nodeClasses,
       classes,
       toggle,
-      contentClasses } = this;
+      contentClasses,
+    } = this;
 
     let switchContent: TNodeReturnValue;
     let loadingContent: TNodeReturnValue;

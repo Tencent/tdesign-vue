@@ -5,8 +5,8 @@ import { TdTimePickerProps, TdTimeRangePickerProps } from './type';
 
 import { EPickerCols } from './constant';
 
-export type TimePickerProps  = TdTimePickerProps;
-export type TimeRangePickerProps  = TdTimeRangePickerProps;
+export type TimePickerProps = TdTimePickerProps;
+export type TimeRangePickerProps = TdTimeRangePickerProps;
 
 export * from './type';
 
@@ -78,7 +78,7 @@ export interface TimePickerPanelInstance extends Vue {
 export interface TimePickerPanelColInstance extends Vue {
   renderScrollers: () => Array<HTMLElement>;
   renderScroller: (col: EPickerCols) => HTMLElement;
-  renderActiveMask: () =>  HTMLElement;
+  renderActiveMask: () => HTMLElement;
   scrollToTime: (col: EPickerCols, time: number | string, behavior?: ScrollBehavior) => void;
   getTimeItemHeight: (col: EPickerCols) => number; // 获取每个time item的高度
   generateColTime: (col: EPickerCols) => Array<number | string>;

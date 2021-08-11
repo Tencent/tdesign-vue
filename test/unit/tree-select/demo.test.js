@@ -5,7 +5,6 @@ import filterable from '@/examples/tree-select/demos/filterable.vue';
 import lazy from '@/examples/tree-select/demos/lazy.vue';
 import prefix from '@/examples/tree-select/demos/prefix.vue';
 
-
 // unit test for component in examples.
 describe('TreeSelect', () => {
   it('base demo works fine', () => {

@@ -36,7 +36,7 @@ export default {
         { content: '用于帮助用户操作的信息提示', placement: 'top-right' },
         { content: '用于表示操作正在生效的过程中', placement: 'bottom-left' },
         { content: '用于表示操作正在生效的过程中', placement: 'bottom-right' },
-      ].map(item => ({
+      ].map((item) => ({
         ...item,
         offset: [this.offsetX, this.offsetY],
       }));

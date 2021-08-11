@@ -5,7 +5,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdRadioProps, TdRadioGroupProps } from './type';
 
-import './style/';
+import './style';
 
 export type RadioProps = TdRadioProps;
 export type RadioGroupProps = TdRadioGroupProps;

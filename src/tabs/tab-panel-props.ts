@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdTabPanelProps } from '../tabs/type';
 import { PropType } from 'vue';
+import { TdTabPanelProps } from './type';
 
 export default {
   /** 用于自定义选项卡导航，同 panel */

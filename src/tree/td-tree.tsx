@@ -1,8 +1,8 @@
 // import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
 import { VNode } from 'vue';
+import upperFirst from 'lodash/upperFirst';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-import upperFirst from 'lodash/upperFirst';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import TreeItem from './tree-item';
@@ -278,15 +278,13 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
             nodesMap.set(node.value, nodeView);
           }
           index += 1;
-        } else {
-          if (nodesMap.has(node.value)) {
-            // 节点不可视，存在该视图，需要删除该节点视图
-            const nodeView = nodesMap.get(node.value);
-            const nodeViewIndex = treeNodes.indexOf(nodeView);
-            treeNodes.splice(nodeViewIndex, 1);
-            nodesMap.delete(node.value);
-            nodeView.componentInstance.$destroy();
-          }
+        } else if (nodesMap.has(node.value)) {
+          // 节点不可视，存在该视图，需要删除该节点视图
+          const nodeView = nodesMap.get(node.value);
+          const nodeViewIndex = treeNodes.indexOf(nodeView);
+          treeNodes.splice(nodeViewIndex, 1);
+          nodesMap.delete(node.value);
+          nodeView.componentInstance.$destroy();
         }
       });
     },
@@ -446,7 +444,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         const mark = getMark(
           markName,
           event.target as HTMLElement,
-          event.currentTarget as HTMLElement
+          event.currentTarget as HTMLElement,
         );
         const markValue = mark?.value || '';
         if (markValue.indexOf('expand') >= 0) {
@@ -584,7 +582,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
 
     if (treeNodes.length <= 0) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
-      emptyNode =  (
+      emptyNode = (
         <div class={CLASS_NAMES.treeEmpty}>
           {useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty')}
         </div>
@@ -597,7 +595,6 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
           class={CLASS_NAMES.treeList}
         >{treeNodes}</transition-group>
     );
-
 
     return (
       <div class={classList}>

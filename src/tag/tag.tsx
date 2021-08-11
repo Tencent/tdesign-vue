@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
 import CLASSNAMES from '../utils/classnames';
-import config from '../config';
+import { prefix } from '../config';
 import TIconClose from '../icon/close';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -8,7 +8,6 @@ import { TdTagProps } from './type';
 import { emitEvent } from '../utils/event';
 import { TNodeReturnValue, ClassName, Styles } from '../common';
 
-const { prefix } = config;
 const name = `${prefix}-tag`;
 
 const initVariantList = {
@@ -61,7 +60,7 @@ export default Vue.extend({
     // 关闭按钮 自定义组件使用 nativeOnClick 绑定事件
     const closeIcon: VNode | string = this.closable ? <TIconClose nativeOnClick={this.handleClose} /> : '';
     // 标签内容
-    const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');;
+    const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');
     // 图标
     let icon: VNode;
     if (typeof this.icon === 'function') {

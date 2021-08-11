@@ -3,6 +3,7 @@ import TableCell from './table-cell';
 import { BaseTableCol, CellData } from '../type';
 import baseTableProps from '../base-table-props';
 import { prefix } from '../../config';
+
 interface Column extends BaseTableCol {
   scopedSlots: any;
 }
@@ -66,7 +67,7 @@ export default Vue.extend({
       };
       let customRender;
       if (typeof this.$scopedSlots[scopedSlotsTitle] === 'function') {
-        customRender =  this.$scopedSlots[scopedSlotsTitle] ;
+        customRender = this.$scopedSlots[scopedSlotsTitle];
         console.error('TDesign Table Warn: scopedSlots will be deprecated, please use `cell` and `title` instead.');
       } else if (typeof title === 'string') {
         if (typeof this.$scopedSlots[title] === 'function') {

@@ -2,7 +2,7 @@ import _Cascader from './cascader';
 import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 
-import './style/';
+import './style';
 
 export const Cascader = withInstall(
   'Cascader',

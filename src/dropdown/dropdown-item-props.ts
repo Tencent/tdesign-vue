@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdDropdownItemProps } from '../dropdown/type';
 import { PropType } from 'vue';
+import { TdDropdownItemProps } from './type';
 
 export default {
   /** 是否高亮当前操作项 */

@@ -1,7 +1,7 @@
+import isFunction from 'lodash/isFunction';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import TIconChevronDown from '../../icon/chevron-down-circle';
-import isFunction from 'lodash/isFunction';
 import { prefix } from '../../config';
 import { Styles } from '../../common';
 

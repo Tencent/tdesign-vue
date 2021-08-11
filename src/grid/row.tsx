@@ -91,7 +91,7 @@ export default Vue.extend({
   },
 
   render() {
-    const component =  this.tag;
+    const component = this.tag;
     return (
       <component class={this.classes} style={this.styles}>
         {this.renderContent()}

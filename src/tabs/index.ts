@@ -4,7 +4,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdTabsProps, TdTabPanelProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 export type TabsProps = TdTabsProps;

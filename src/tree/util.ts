@@ -34,15 +34,15 @@ export function getParentMarks(name: string, element?: HTMLElement, root?: HTMLE
         el,
       };
       return mark;
-    }).filter(mark => mark.value)
+    }).filter((mark) => mark.value)
   );
-};
+}
 
 export function getMark(name: string, element?: HTMLElement, root?: HTMLElement): TypeMark {
   const list = getParentMarks(name, element, root);
   const info = list.pop() || null;
   return info;
-};
+}
 
 export function getTNode(prop: TypeTNodeProp, options: TypeGetTNodeOption): string | VNode {
   let tnode = null;
@@ -110,4 +110,4 @@ export function getNode(store: TreeStore, item: TypeTargetNode): TreeNode {
   }
   node = store.getNode(val);
   return node;
-};
+}

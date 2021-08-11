@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdListItemProps } from '../list/type';
 import { PropType } from 'vue';
+import { TdListItemProps } from './type';
 
 export default {
   /** 操作栏 */

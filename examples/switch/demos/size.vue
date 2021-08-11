@@ -25,7 +25,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .switch-demo .tdesign-demo-block {
   width: 300px;

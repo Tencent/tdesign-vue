@@ -103,7 +103,7 @@ export default {
       const addNum = this.lastAddItem;
       INITIAL_DATA[`add${addNum}`] = '';
       this.addlist.push({ id: addNum, name: `add${addNum}` });
-      this.lastAddItem = this.lastAddItem + 1;
+      this.lastAddItem += 1;
     },
     removeItem(item, index) {
       delete INITIAL_DATA[`add${item.id}`];

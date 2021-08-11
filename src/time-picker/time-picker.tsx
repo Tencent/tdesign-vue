@@ -4,7 +4,9 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-import { TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType } from './interface';
+import {
+  TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType,
+} from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -16,7 +18,9 @@ import InputItems from './input-items';
 
 import props from './props';
 
-import { EPickerCols, EMPTY_VALUE, componentName, amFormat, pmFormat, AM } from './constant';
+import {
+  EPickerCols, EMPTY_VALUE, componentName, amFormat, pmFormat, AM,
+} from './constant';
 
 const name = `${prefix}-time-picker`;
 
@@ -81,7 +85,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
     value: {
       handler() {
         this.time = this.value ? dayjs(this.value, this.format) : undefined;
-        this.inputTime =  this.value ? this.setInputValue(dayjs(this.value, this.format)) : undefined;
+        this.inputTime = this.value ? this.setInputValue(dayjs(this.value, this.format)) : undefined;
       },
     },
   },
@@ -122,11 +126,15 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
     },
     // @blur
     onBlurDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
-      this.$emit('blur', { trigger, input, value: this.time.format(this.format), e });
+      this.$emit('blur', {
+        trigger, input, value: this.time.format(this.format), e,
+      });
     },
     // @focus
     onFocusDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
-      this.$emit('focus', { trigger, input, value: this.time.format(this.format), e });
+      this.$emit('focus', {
+        trigger, input, value: this.time.format(this.format), e,
+      });
     },
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {

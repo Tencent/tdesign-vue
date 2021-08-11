@@ -1,4 +1,3 @@
-
 import Vue from 'vue';
 import { prefix } from '../config';
 import IconChevronRight from '../icon/chevron-right';
@@ -22,7 +21,7 @@ export interface LocalTBreadcrumb {
     separator: TNodeReturnValue;
   };
   maxItemWidth: string;
-};
+}
 const localTBreadcrumbOrigin: LocalTBreadcrumb = {
   separator: '',
   theme: 'light',
@@ -37,7 +36,6 @@ export default Vue.extend({
   },
 
   inject: ['tBreadcrumb'],
-
 
   data() {
     return {
@@ -91,7 +89,9 @@ export default Vue.extend({
   },
 
   render() {
-    const { localTBreadcrumb, href, target, to, disabled } = this;
+    const {
+      localTBreadcrumb, href, target, to, disabled,
+    } = this;
     const { separator } = localTBreadcrumb;
     const separatorSlot = localTBreadcrumb.$slots.separator;
     const separatorPropContent = typeof separator === 'function' ? separator() : separator;
@@ -121,7 +121,7 @@ export default Vue.extend({
     if (href && !disabled) {
       textClass.push(linkClass);
       itemContent = (
-        <a class={textClass} href={href} target={target}  {...{ on: this.$listeners }}>
+        <a class={textClass} href={href} target={target} {...{ on: this.$listeners }}>
           {textContent}
         </a>
       );

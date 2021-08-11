@@ -1,4 +1,5 @@
 import Vue, { VNode } from 'vue';
+import get from 'lodash/get';
 import { PrimaryTableCol } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
@@ -6,7 +7,6 @@ import { prefix } from '../../../config';
 import { filterDataByIds } from '../../util/common';
 import SelectBox from '../select-box';
 import { emitEvent } from '../../../utils/event';
-import get from 'lodash/get';
 
 export default Vue.extend({
   name: `${prefix}-primary-table-select`,
@@ -35,14 +35,14 @@ export default Vue.extend({
     isSelectedAll(): boolean {
       return !!(
         this.canSelectedRows.length
-        && this.canSelectedRows.every(record => this.selectedRowKeys.includes(get(record, this.reRowKey)))
+        && this.canSelectedRows.every((record) => this.selectedRowKeys.includes(get(record, this.reRowKey)))
       );
     },
     // 判断 indeterminate
     isSelectedSome(): boolean {
       return (
         !this.isSelectedAll
-        && this.canSelectedRows.some(record => this.selectedRowKeys.includes(get(record, this.reRowKey)))
+        && this.canSelectedRows.some((record) => this.selectedRowKeys.includes(get(record, this.reRowKey)))
       );
     },
   },
@@ -51,7 +51,7 @@ export default Vue.extend({
     getSelectColumns(columns: Array<PrimaryTableCol>): Array<PrimaryTableCol> {
       return columns.map((c: PrimaryTableCol): PrimaryTableCol => {
         const isSelection = ['multiple', 'single'].includes(c.type);
-        const isMultiple = 'multiple' === c.type;
+        const isMultiple = c.type === 'multiple';
         const title = isMultiple ? this.getSelectedHeader() : '';
         return {
           ...c,
@@ -117,8 +117,8 @@ export default Vue.extend({
     },
     handleSelectAll(): void {
       const { selectedRowKeys, canSelectedRows, reRowKey } = this;
-      const canSelectedRowKeys = canSelectedRows.map(record => get(record, reRowKey));
-      const disabledSelectedRowKeys = selectedRowKeys.filter(id => !canSelectedRowKeys.includes(id));
+      const canSelectedRowKeys = canSelectedRows.map((record) => get(record, reRowKey));
+      const disabledSelectedRowKeys = selectedRowKeys.filter((id) => !canSelectedRowKeys.includes(id));
       const allIds = (this.isSelectedAll
         ? [...disabledSelectedRowKeys]
         : [...disabledSelectedRowKeys, ...canSelectedRowKeys]) as Array<string | number>;

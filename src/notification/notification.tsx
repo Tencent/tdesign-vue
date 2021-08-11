@@ -7,7 +7,6 @@ import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { TNodeReturnValue } from '../common';
 
-
 const name = `${prefix}-notification`;
 
 export default Vue.extend({
@@ -25,7 +24,7 @@ export default Vue.extend({
         this.$emit('duration-end');
         if (this.onDurationEnd) {
           this.onDurationEnd();
-        };
+        }
       }, this.duration);
     }
   },
@@ -34,7 +33,7 @@ export default Vue.extend({
       this.$emit('close-btn-click', { e });
       if (this.onCloseBtnClick) {
         this.onCloseBtnClick({ e });
-      };
+      }
     },
     renderIcon(h: CreateElement) {
       let icon: TNodeReturnValue;

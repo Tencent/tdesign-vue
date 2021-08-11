@@ -14,7 +14,6 @@ import {
   TypeTreeEventState,
 } from '../_common/js/tree/types';
 
-
 export type TreeProps = TdTreeProps;
 export * from './type';
 
@@ -36,7 +35,7 @@ export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
   event?: Event;
   path?: TreeNode[];
-};
+}
 
 export interface TypeMark {
   name: string;
@@ -51,7 +50,7 @@ export interface TypeLineModel {
   left: boolean;
 }
 
-export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {};
+export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
 
 export interface TypeGetTNodeOption {
   node?: TreeNode;

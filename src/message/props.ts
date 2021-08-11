@@ -3,8 +3,8 @@
  * updated at 2021-07-18 17:26:17
  * */
 
-import { TdMessageProps } from './type';
 import { PropType } from 'vue';
+import { TdMessageProps } from './type';
 
 export default {
   /** 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例 */

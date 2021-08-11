@@ -1,12 +1,13 @@
 // https://github.com/validatorjs/validator.js
 
-import { CustomValidator, ErrorList, FormRule, ValueType } from './type';
-
-import { getCharacterLength } from '../utils/helper';
 import isDate from 'validator/lib/isDate';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'lodash/isEmpty';
 import isURL from 'validator/lib/isURL';
+import { getCharacterLength } from '../utils/helper';
+import {
+  CustomValidator, ErrorList, FormRule, ValueType,
+} from './type';
 
 // `{} / [] / '' / undefined / null` 等内容被认为是空； 0 和 false 被认为是正常数据，部分数据的值就是 0 或者 false
 export function isValueEmpty(val: ValueType): boolean {
@@ -57,6 +58,7 @@ export async function validateOneRule(
     if (validateRule && rule[key]) {
       // rule 值为 true 则表示没有校验参数，只是对值进行默认规则校验
       const options = rule[key] === true ? {} : rule[key];
+      /* eslint-disable no-await-in-loop */
       r = await validateRule(value, options);
       const result = r || rule;
       return result;
@@ -67,8 +69,8 @@ export async function validateOneRule(
 
 // 全部数据校验
 export async function validate(value: ValueType, rules: Array<FormRule>): Promise<ErrorList> {
-  const all = rules.map(rule => validateOneRule(value, rule));
+  const all = rules.map((rule) => validateOneRule(value, rule));
   const arr = await Promise.all(all);
-  const r = arr.filter(item => item !== true) as ErrorList;
+  const r = arr.filter((item) => item !== true) as ErrorList;
   return r;
 }

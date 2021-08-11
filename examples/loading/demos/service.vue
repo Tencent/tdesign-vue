@@ -18,6 +18,7 @@
 </template>
 <script>
 import { LoadingPlugin } from '@tencent/tdesign-vue';
+
 export default {
   name: 'LoadingPlugin',
   data() {

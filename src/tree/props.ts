@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:12
  * */
 
-import { TdTreeProps } from './type';
 import { PropType } from 'vue';
+import { TdTreeProps } from './type';
 
 export default {
   /** 节点是否可高亮 */

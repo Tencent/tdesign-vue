@@ -119,7 +119,6 @@ describe('Tabs', () => {
     });
   });
 
-
   // test additional function
   describe('additional function', () => {
     it('panel:default && panel:panel', async () => {

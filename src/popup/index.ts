@@ -3,7 +3,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdPopupProps } from './type';
 
-import './style/';
+import './style';
 
 export type PopupProps = TdPopupProps;
 export * from './type';

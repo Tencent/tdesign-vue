@@ -1,4 +1,3 @@
-
 import Vue from 'vue';
 import TButton from '../../button/button';
 import TIconRound from '../../icon/round';
@@ -18,13 +17,15 @@ export default Vue.extend({
     type: {
       type: String,
       default: 'date',
-      validator: v => ['year', 'month', 'date'].indexOf(v) > -1,
+      validator: (v) => ['year', 'month', 'date'].indexOf(v) > -1,
     },
     onBtnClick: Function,
     onTypeChange: Function,
   },
   render() {
-    const { type, year, month, onBtnClick, onTypeChange } = this.$props;
+    const {
+      type, year, month, onBtnClick, onTypeChange,
+    } = this.$props;
     const startYear = parseInt((this.year / 10).toString(), 10) * 10;
     return (
       <div class="t-date-picker-header">

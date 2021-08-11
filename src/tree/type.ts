@@ -168,7 +168,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
    * 异步加载后触发
    */
   onLoad?: (context: { node: TreeNodeModel<DataOption> }) => void;
-};
+}
 
 /** 组件实例方法 */
 export interface TreeInstanceFunctions<DataOption extends TreeOptionData = TreeOptionData> {
@@ -278,7 +278,7 @@ export interface TreeNodeState {
    * @default false
    */
   visible?: boolean;
-};
+}
 
 export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionData> extends TreeNodeState {
   /**
@@ -361,8 +361,8 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
    * 是否为叶子节点
    */
   isLeaf: () => boolean;
-};
+}
 
-export interface TreeKeysType { value?: string; label?: string; children?: string };
+export interface TreeKeysType { value?: string; label?: string; children?: string }
 
 export type TreeNodeValue = string | number;

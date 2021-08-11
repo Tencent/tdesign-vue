@@ -1,9 +1,9 @@
 import Vue, { VNode } from 'vue';
+import intersection from 'lodash/intersection';
 import { prefix } from '../config';
 import Checkbox from './checkbox';
 import checkboxGroupProps from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
-import intersection from 'lodash/intersection';
 
 const name = `${prefix}-checkbox-group`;
 
@@ -51,7 +51,7 @@ export default Vue.extend({
       return this.options.map((item) => {
         let r: CheckboxOptionObj = {};
         if (typeof item !== 'object') {
-          r = { label: String(item), value: item } ;
+          r = { label: String(item), value: item };
         } else {
           r = { ...item };
           r.disabled = r.disabled === undefined ? this.disabled : r.disabled;
@@ -66,7 +66,7 @@ export default Vue.extend({
       return '';
     },
     intersectionLen(): number {
-      const values = this.optionList.map(item => item.value);
+      const values = this.optionList.map((item) => item.value);
       if (this.value instanceof Array) {
         const n = intersection(this.value, values);
         return n.length;

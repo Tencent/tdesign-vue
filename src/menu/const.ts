@@ -1,6 +1,6 @@
-import { MenuValue } from './type';
 import { Ref } from '@vue/composition-api';
 import { VNodeChildren } from 'vue';
+import { MenuValue } from './type';
 
 export interface TdMenuItem {
   value: MenuValue;

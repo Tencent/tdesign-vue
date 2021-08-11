@@ -115,7 +115,6 @@ export interface PresetDate {
   [name: string]: DateValue | (() => DateValue);
 }
 
-
 export interface CalendarComponentProps {
   monthDate: Date;
   locales: CustomLocale;

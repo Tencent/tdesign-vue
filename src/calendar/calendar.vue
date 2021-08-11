@@ -153,10 +153,10 @@
 </template>
 
 <script lang="ts">
-import props from './props';
 // 通用库
 import dayjs from 'dayjs';
 import calendar from 'dayjs/plugin/calendar';
+import props from './props';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import * as utils from './utils';
@@ -198,7 +198,7 @@ dayjs.extend(calendar);
 const createDefaultCurDate = (): dayjs.Dayjs => dayjs(dayjs().format('YYYY-MM-DD'));
 
 const getDefaultControllerConfigData = (visible = true): Record<string, any> => ({
-  visible,         // 是否显示（全部控件）
+  visible, // 是否显示（全部控件）
   disabled: false, // 是否禁用（全部控件）
   // 模式切换单选组件设置
   mode: {
@@ -378,7 +378,7 @@ export default mixins(CalendarLocalReceiver).extend({
     modeSelectOptionList(): ModeOption[] {
       return [
         { value: 'month', label: this.t(this.locale.monthRadio) },
-        { value: 'year', label: this.t(this.locale.yearRadio)  },
+        { value: 'year', label: this.t(this.locale.yearRadio) },
       ];
     },
     // month模式下日历单元格的数据
@@ -507,7 +507,7 @@ export default mixins(CalendarLocalReceiver).extend({
     },
     getWeekDisplay(weekNum: number): string {
       const weekText = this.weekDipalyText;
-      return (typeof(weekText) === 'object' && weekText[weekNum - 1])
+      return (typeof (weekText) === 'object' && weekText[weekNum - 1])
         ? weekText[weekNum - 1]
         : utils.getDayCn(weekNum);
     },

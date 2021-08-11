@@ -379,7 +379,7 @@ export default Vue.extend({
         </div>
         {
           this.theme !== 'normal'
-          && <t-button {...this.addClasses} {...this.addEvents}  variant="outline" icon={this.increaseIcon} />
+          && <t-button {...this.addClasses} {...this.addEvents} variant="outline" icon={this.increaseIcon} />
         }
       </div>
     );

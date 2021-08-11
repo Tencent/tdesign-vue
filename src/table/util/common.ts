@@ -1,6 +1,6 @@
-import { PrimaryTableCol } from '../type';
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
+import { PrimaryTableCol } from '../type';
 
 export function toString(obj: any): string {
   return Object.prototype.toString
@@ -42,7 +42,7 @@ let preScrollTop: any;
 
 export const getScrollDirection = (
   scrollLeft: number,
-  scrollTop: number
+  scrollTop: number,
 ): SCROLL_DIRECTION => {
   let direction = SCROLL_DIRECTION.UNKNOWN;
   if (preScrollTop !== scrollTop) {

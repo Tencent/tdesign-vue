@@ -2,7 +2,7 @@ import _Tooltip from './tooltip';
 import withInstall from '../utils/withInstall';
 import { TdTooltipProps } from './type';
 
-import './style/';
+import './style';
 
 export type TooltipProps = TdTooltipProps;
 export * from './type';

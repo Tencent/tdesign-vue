@@ -116,7 +116,8 @@ export default Vue.extend({
         pageSizeOptions: [],
       };
       return typeof this.pagination === 'object' ? {
-        ...defaultPaginationProps, ...this.pagination,
+        ...defaultPaginationProps,
+        ...this.pagination,
         current: this.currentPage,
         total: this.pageTotal,
         pageSize: this.pageSize,
@@ -129,7 +130,7 @@ export default Vue.extend({
       return !this.isAllChecked && this.checkedValue.length > 0;
     },
     isAllChecked(): boolean {
-      return this.checkedValue.length > 0 && this.dataSource.every(item => this.checkedValue.includes(item.value));
+      return this.checkedValue.length > 0 && this.dataSource.every((item) => this.checkedValue.includes(item.value));
     },
   },
   methods: {
@@ -143,7 +144,7 @@ export default Vue.extend({
     },
     handleCheckedAllChange(checked: boolean): void {
       if (checked) {
-        const allValue = this.dataSource.filter(item => !item.disabled).map(item => item.value);
+        const allValue = this.dataSource.filter((item) => !item.disabled).map((item) => item.value);
         this.handleCheckedChange(allValue);
       } else {
         this.handleCheckedChange([]);

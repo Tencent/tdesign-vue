@@ -1,4 +1,3 @@
-
 import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';

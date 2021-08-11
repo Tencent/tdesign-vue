@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdDrawerProps } from './type';
 import { PropType } from 'vue';
+import { TdDrawerProps } from './type';
 
 export default {
   /** 抽屉挂载的节点，默认挂在组件本身的位置。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */

@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdCheckboxGroupProps } from '../checkbox/type';
 import { PropType } from 'vue';
+import { TdCheckboxGroupProps } from './type';
 
 export default {
   /** 是否禁用组件 */

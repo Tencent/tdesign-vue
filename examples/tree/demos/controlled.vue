@@ -132,19 +132,19 @@ export default {
     },
     onChange(vals, context) {
       console.info('onChange:', vals, context);
-      const checked = vals.filter(val => (val !== '2.1'));
+      const checked = vals.filter((val) => (val !== '2.1'));
       console.info('节点 2.1 不允许选中');
       this.checked = checked;
     },
     onExpand(vals, context) {
       console.info('onExpand:', vals, context);
-      const expanded = vals.filter(val => (val !== '2'));
+      const expanded = vals.filter((val) => (val !== '2'));
       console.info('节点 2 不允许展开');
       this.expanded = expanded;
     },
     onActive(vals, context) {
       console.info('onActive:', vals, context);
-      const actived = vals.filter(val => (val !== '2'));
+      const actived = vals.filter((val) => (val !== '2'));
       console.info('节点 2 不允许激活');
       this.actived = actived;
     },

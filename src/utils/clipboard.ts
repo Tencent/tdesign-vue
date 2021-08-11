@@ -1,6 +1,6 @@
 import clipboard from 'clipboard';
 
-export function copyText(text: string) {
+export default function copyText(text: string) {
   const div = document.createElement('div');
   const clip = new clipboard(div, {
     text() {

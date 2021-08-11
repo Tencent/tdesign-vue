@@ -74,7 +74,7 @@ describe('AnchorItem', () => {
       const title = 'this is title function';
       const props = {
         href: '#test',
-        title: h => h('span', title),
+        title: (h) => h('span', title),
       };
       const wrapper = mount({
         provide: {
@@ -91,7 +91,6 @@ describe('AnchorItem', () => {
       expect(a.element.querySelector('span').innerHTML).toEqual(title);
     });
   });
-
 
   // test slots
   describe('<slot>', () => {

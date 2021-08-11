@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdColProps } from '../grid/type';
 import { PropType } from 'vue';
+import { TdColProps } from './type';
 
 export default {
   /** flex 布局填充。CSS 属性 flex 值。示例：2 / 3 / '100px' / 'auto' / '1 1 200px' */

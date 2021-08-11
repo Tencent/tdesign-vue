@@ -5,6 +5,7 @@ import TIconLoading from '../icon/loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
+
 const name = `${prefix}-button`;
 
 export default Vue.extend({
@@ -14,7 +15,7 @@ export default Vue.extend({
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
-    const iconOnly = icon && !Boolean(buttonContent);
+    const iconOnly = icon && !buttonContent;
     let { theme } = this;
 
     if (!this.theme) {

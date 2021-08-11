@@ -18,7 +18,6 @@ export default {
 };
 </script>
 
-
 <style lang="less" scoped>
 .tag-demo {
   width: 500px;

@@ -4,7 +4,7 @@ import MockDate from 'mockdate';
 import { createRenderer } from 'vue-server-renderer';
 
 const transitionStub = () => ({
-  render: h => h('div'),
+  render: (h) => h('div'),
 });
 config.stubs.transition = transitionStub();
 

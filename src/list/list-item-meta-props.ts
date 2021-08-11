@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdListItemMetaProps } from '../list/type';
 import { PropType } from 'vue';
+import { TdListItemMetaProps } from './type';
 
 export default {
   /** 列表项图片 */

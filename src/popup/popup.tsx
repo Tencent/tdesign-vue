@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import { createPopper } from '@popperjs/core';
 import ResizeSensor from 'css-element-queries/src/ResizeSensor';
-import config from '../config';
+import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import { on, off, addClass, removeClass, getAttach } from '../utils/dom';
+import {
+  on, off, addClass, removeClass, getAttach,
+} from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { PopupVisibleChangeContext } from './type';
@@ -11,7 +13,6 @@ import { Styles, ClassName } from '../common';
 import setStyle from '../utils/set-style';
 
 const stop = (e: MouseEvent): void => e.stopPropagation();
-const { prefix } = config;
 const name = `${prefix}-popup`;
 const placementMap = {
   top: 'top',
@@ -55,7 +56,7 @@ export default Vue.extend({
   },
   computed: {
     overlayClasses(): ClassName {
-      const base =  [
+      const base = [
         `${name}-content`,
         {
           [`${name}-content--arrow`]: this.showArrow,
@@ -331,25 +332,25 @@ export default Vue.extend({
       const content = this.getContentElm(el);
       if (content) {
         content.style.overflow = 'hidden';
-        content.style.maxHeight = '0';
+        content.style.maxHeight = '0';
       }
     },
     // 设置max-height,触发展开动画
     enter(el: HTMLElement): void {
       const content = this.getContentElm(el);
-      if (content) content.style.maxHeight = `${content.scrollHeight}px`;
+      if (content) content.style.maxHeight = `${content.scrollHeight}px`;
     },
     // 设置max-height为0,触发收起动画
     leave(el: HTMLElement): void {
       const content = this.getContentElm(el);
-      if (content) content.style.maxHeight = '0';
+      if (content) content.style.maxHeight = '0';
     },
     // 设置收起动画初始条件
     beforeLeave(el: HTMLElement): void {
       const content = this.getContentElm(el);
       if (content) {
         content.style.overflow = 'hidden';
-        content.style.maxHeight = `${content.scrollHeight}px`;
+        content.style.maxHeight = `${content.scrollHeight}px`;
       }
     },
   },

@@ -21,7 +21,7 @@ describe('utils/event', () => {
       const wrapper = mount(Component, {
         listeners: {
           click: onClick,
-          ['value-change']: onValueChange,
+          'value-change': onValueChange,
         },
       });
       emitEvent(wrapper.vm, 'click');
@@ -50,4 +50,3 @@ describe('utils/event', () => {
     });
   });
 });
-

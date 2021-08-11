@@ -29,9 +29,15 @@ export default Vue.extend({
     };
   },
   render(h) {
-    const { cellData, offsetLeft, isBoundary, isCutOff } = this;
-    const { col, colIndex, row, rowIndex, customData, customRender, withBorder } = cellData;
-    const { colKey, attrs, align, ellipsis, width, className, title, fixed } = col;
+    const {
+      cellData, offsetLeft, isBoundary, isCutOff,
+    } = this;
+    const {
+      col, colIndex, row, rowIndex, customData, customRender, withBorder,
+    } = cellData;
+    const {
+      colKey, attrs, align, ellipsis, width, className, title, fixed,
+    } = col;
 
     // 固定列 单元格属性
     const style: Record<string, any> = {};
@@ -60,7 +66,9 @@ export default Vue.extend({
     }
     if (className) {
       if (typeof className === 'function') {
-        attrClass.push(className({ type: cellData.type, col, colIndex, row, rowIndex }));
+        attrClass.push(className({
+          type: cellData.type, col, colIndex, row, rowIndex,
+        }));
       } else {
         attrClass.push(className);
       }
@@ -69,7 +77,7 @@ export default Vue.extend({
     // 自定义单元格渲染
     let cellContent: VNode;
     if (typeof customRender === 'function') {
-      const  { type, func } = customData;
+      const { type, func } = customData;
       const baseData = {
         col,
         colIndex,
@@ -91,7 +99,7 @@ export default Vue.extend({
     const tdAttrs = {
       attrs: {
         ...attrs,
-        class: [...fixedClass, ...attrClass].filter(notEmpty => notEmpty).join(' '),
+        class: [...fixedClass, ...attrClass].filter((notEmpty) => notEmpty).join(' '),
         key: colKey,
       },
     };

@@ -95,7 +95,7 @@ describe('Transfer', () => {
         expect(wrapper.vm.$el.getElementsByClassName('t-checkbox t-is-disabled').length).toBe(8);
       });
 
-      it('data label',  async () => {
+      it('data label', async () => {
         const wrapper = await mount({
           render() {
             return <Transfer data={data} pagination={pagination}></Transfer>;
@@ -218,7 +218,7 @@ describe('Transfer', () => {
     });
 
     describe('keys', () => {
-      const otherData = data.map(item => ({
+      const otherData = data.map((item) => ({
         name: item.label,
         key: item.value,
       }));
@@ -232,13 +232,12 @@ describe('Transfer', () => {
         });
       });
 
-
       it('data length', async () => {
         const len = wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').length; // wrapper.vm.$el.getElementsByTagName('li').length
         expect(len).toBe(otherData.length);
       });
 
-      it('key label',  async () => {
+      it('key label', async () => {
         wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').forEach((el, index) => {
           expect(el.innerHTML.indexOf(otherData[index].name) > 0).toEqual(true);
         });
@@ -258,7 +257,7 @@ describe('Transfer', () => {
       });
 
       it('function', async () => {
-        const operation = (h, { direction  }) => h('div', `go to ${direction}`);
+        const operation = (h, { direction }) => h('div', `go to ${direction}`);
         const wrapper = await mount({
           render() {
             return <Transfer operation={operation}></Transfer>;
@@ -315,7 +314,6 @@ describe('Transfer', () => {
         expect(wrapper.vm.$el.getElementsByClassName('t-input__inner').length).toBe(2);
       });
     });
-
 
     describe('targetSort', () => {
       it('original', async () => {
@@ -454,10 +452,9 @@ describe('Transfer', () => {
           const domLi = wrapper.vm.$el.querySelectorAll('.t-transfer-list-target')[0].querySelectorAll('li');
           const dom = domLi[count].querySelectorAll('span');
           expect(dom[2].innerHTML).toBe(`内容${i + 1}`);
-          count = count + 1;
+          count += 1;
         });
       });
-
 
       it('v-model', async () => {
         const wrapper = await mount({
@@ -481,7 +478,6 @@ describe('Transfer', () => {
       });
     });
   });
-
 
   describe('Events', () => {
     it('onChange', async () => {

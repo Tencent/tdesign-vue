@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdStepItemProps } from '../steps/type';
 import { PropType } from 'vue';
+import { TdStepItemProps } from './type';
 
 export default {
   /** 步骤描述 */

@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdDateRangePickerProps } from '../date-picker/type';
 import { PropType } from 'vue';
+import { TdDateRangePickerProps } from './type';
 
 export default {
   /** 是否允许输入日期 */

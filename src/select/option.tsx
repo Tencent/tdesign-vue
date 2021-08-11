@@ -1,7 +1,7 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { renderTNodeJSX } from '../utils/render-tnode';
 import get from 'lodash/get';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from './option-props';
@@ -72,7 +72,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       if (!this.tSelect) return false;
       if (this.tSelect.value instanceof Array) {
         if (this.tSelect.labelInValue) {
-          flag = this.tSelect.value.map(item => get(item, this.tSelect.realValue)).indexOf(this.value) !== -1;
+          flag = this.tSelect.value.map((item) => get(item, this.tSelect.realValue)).indexOf(this.value) !== -1;
         } else {
           flag = this.tSelect.value.indexOf(this.value) !== -1;
         }
@@ -108,7 +108,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       classes, labelText, selected, disabled, multiLimitDisabled, show,
     } = this;
     const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
-    const optionChild = children ? children : labelText;
+    const optionChild = children || labelText;
     return (
       <li
         v-show={show}

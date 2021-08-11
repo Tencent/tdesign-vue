@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import TDateHeader from '../basic/header';
 import TDateTable from '../basic/table';
-import { DateData, DateMethods, DateComputed, DateProps } from '../interface';
+import {
+  DateData, DateMethods, DateComputed, DateProps,
+} from '../interface';
 
 import {
   getWeeks,
@@ -11,7 +13,8 @@ import {
   subtractMonth,
   addMonth,
   getToday,
-  firstUpperCase } from '../utils';
+  firstUpperCase,
+} from '../utils';
 
 export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   name: 'TDatePanel',
@@ -45,7 +48,9 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   },
   computed: {
     tableData() {
-      const { year, month, type, value, mode, disabledDate, minDate, maxDate, firstDayOfWeek } = this;
+      const {
+        year, month, type, value, mode, disabledDate, minDate, maxDate, firstDayOfWeek,
+      } = this;
       let data;
 
       const options = {

@@ -1,8 +1,8 @@
 {
   "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "@tencent/eslint-config-tencent",
-    "plugin:vue/essential"
+    "plugin:vue/essential",
+    "eslint-config-airbnb-base",
+    "@vue/typescript/recommended"
   ],
   "env": {
     "browser": true,
@@ -14,7 +14,10 @@
     "cy": "readonly",
     "__VERSION__": true
   },
-  "plugins": ["vue", "@typescript-eslint"],
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
@@ -23,6 +26,20 @@
       "jsx": true
     }
   },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "./script/webpack.base.js"
+      }
+    },
+    "import/extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+    ],
+  },
   "rules": {
     "camelcase": 0,
     "no-new": 1,
@@ -30,25 +47,91 @@
     "no-underscore-dangle": 0,
     "no-confusing-arrow": 0,
     "func-style": 0,
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-require-imports": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/prefer-for-of": 0,
-    "@typescript-eslint/explicit-function-return-type": 0,
     "prefer-default-export": 0,
     "max-len": 0,
-    "@typescript-eslint/ban-ts-ignore": 0
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "no-useless-constructor": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "import/no-unresolved": 0,
+    "import/no-named-as-default": 0,
+    "treatUndefinedAsUnspecified": 0,
+    "no-use-before-define": [
+      0,
+      {
+        "functions": false,
+        "classes": false
+      }
+    ],
+    "no-shadow": 0,
+    "no-unused-expressions": 0,
+    "@typescript-eslint/ban-types": 0,
+    "no-proto": 0,
+    "consistent-return": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "import/export": 0,
+    "no-restricted-globals": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "import/no-cycle": 0,
+    "default-case": 0,
+    "import/extensions": 0,
+    "no-throw-literal": 0,
+    "no-return-assign": 0,
+    "no-continue": 0,
+    "func-names": 0,
+    "prefer-spread": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/no-dynamic-require": 0,
+    "global-require": 0,
+    "no-constant-condition": [
+      "error",
+      {
+        "checkLoops": false
+      }
+    ]
   },
   "overrides": [
     {
-      "files": ["*.vue"],
+      "files": [
+        "*.vue"
+      ],
       "rules": {
         "indent": 2,
-        "vue/html-indent": [2, 2],
+        "vue/html-indent": [
+          2,
+          2
+        ],
         "vue/return-in-computed-property": 1,
         "vue/order-in-components": 2,
-        "vue/component-name-in-template-casing": [2, "kebab-case"],
+        "vue/component-name-in-template-casing": [
+          2,
+          "kebab-case"
+        ],
         "vue/require-default-prop": 0
       }
     },
@@ -64,7 +147,18 @@
       "rules": {
         "no-var-requires": 0,
         "no-console": 0,
-        "no-unused-expressions": 0
+        "no-unused-expressions": 0,
+        "no-alert": 0
+      }
+    },
+    {
+      // enable the rule specifically for TypeScript files
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0
       }
     }
   ]

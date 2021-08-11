@@ -108,7 +108,7 @@ interface ExtraApi {
   loading: MessageLoadingMethod;
   close: MessageCloseMethod;
   closeAll: MessageCloseAllMethod;
-};
+}
 
 const extraApi: ExtraApi = {
   info: (params, duration) => showThemeMessage('info', params, duration),
@@ -118,7 +118,7 @@ const extraApi: ExtraApi = {
   question: (params, duration) => showThemeMessage('question', params, duration),
   loading: (params, duration) => showThemeMessage('loading', params, duration),
   close: (promise) => {
-    promise.then(instance => instance.close());
+    promise.then((instance) => instance.close());
   },
   closeAll: () => {
     if (instanceMap instanceof Map) {
@@ -153,4 +153,4 @@ declare module 'vue/types/vue' {
   interface Vue {
     $message: MessageMethod & ExtraApi;
   }
-};
+}

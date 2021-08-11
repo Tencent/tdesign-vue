@@ -16,7 +16,7 @@ export default {
   },
   created() {
     const timer = setInterval(() => {
-      this.count = this.count - 1;
+      this.count -= 1;
       if (this.count <= 0) {
         clearInterval(timer);
       }

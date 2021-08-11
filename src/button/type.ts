@@ -62,4 +62,4 @@ export interface TdButtonProps {
    * @default base
    */
   variant?: 'base' | 'outline' | 'dashed' | 'text';
-};
+}

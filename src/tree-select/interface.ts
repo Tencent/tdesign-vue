@@ -7,4 +7,4 @@ export interface RemoveOptions<DataOption> {
   value: string | number;
   data: DataOption;
   e: MouseEvent;
-};
+}

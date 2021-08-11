@@ -2,7 +2,9 @@ import { TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
-import { componentName, amFormat, KEYBOARD_DIRECTION, EMPTY_VALUE, meridiemList } from './constant';
+import {
+  componentName, amFormat, KEYBOARD_DIRECTION, EMPTY_VALUE, meridiemList,
+} from './constant';
 
 import { prefix } from '../config';
 
@@ -130,12 +132,10 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
           } else if (result < 0) {
             result = /[h]{1}/.test(format) ? 11 : 23;
           }
-        } else {
-          if (result > 59) {
-            result = 1;
-          } else if (result < 0) {
-            result = 59;
-          }
+        } else if (result > 59) {
+          result = 1;
+        } else if (result < 0) {
+          result = 59;
         }
         // 发送变动
         this.$emit('change', {
@@ -176,14 +176,16 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
     // 渲染输入组件
     switchRenderComponent() {
       const {
-        $props: { format, placeholder, allowInput, disabled },
+        $props: {
+          format, placeholder, allowInput, disabled,
+        },
       } = this;
 
       // 判定placeholder展示
       function isEmptyDayjs(val: InputTime) {
         return val === undefined || (val.hour === undefined && val.minute === undefined && val.second === undefined);
       }
-      const isEmptyVal = this.displayTimeList.every(date => isEmptyDayjs(date));
+      const isEmptyVal = this.displayTimeList.every((date) => isEmptyDayjs(date));
       if (isEmptyVal) {
         return <span class={`${componentName}__input-placeholder`}>{placeholder}</span>;
       }

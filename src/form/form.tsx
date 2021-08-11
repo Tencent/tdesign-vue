@@ -1,9 +1,9 @@
 import Vue, { VNode } from 'vue';
+import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
 import { FormValidateResult, TdFormProps } from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
-import isEmpty from 'lodash/isEmpty';
 import { emitEvent } from '../utils/event';
 import FormItem from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
@@ -47,7 +47,7 @@ export default Vue.extend({
       this.children.push(formItem);
     });
     this.$on('form-item-destroyed', (formItem: FormItemInstance) => {
-      const index = this.children.findIndex(item => item === formItem);
+      const index = this.children.findIndex((item) => item === formItem);
       this.children.splice(index, 1);
     });
   },
@@ -73,8 +73,8 @@ export default Vue.extend({
     // 对外方法，该方法会触发全部表单组件错误信息显示
     async validate(): Promise<Result> {
       const list = this.children
-        .filter(child => this.isFunction(child.validate))
-        .map(child => child.validate());
+        .filter((child) => this.isFunction(child.validate))
+        .map((child) => child.validate());
       const arr = await Promise.all(list);
       const r = arr.reduce((r, err) => Object.assign(r || {}, err));
       Object.keys(r).forEach((key) => {

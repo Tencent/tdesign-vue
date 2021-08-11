@@ -4,7 +4,7 @@ import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 import { TdTagProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 

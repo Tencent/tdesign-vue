@@ -60,7 +60,7 @@ export interface TdDropdownProps {
    * 下拉操作项点击时触发
    */
   onClick?: (dropdownItem: DropdownOption, context: { e: MouseEvent }) => void;
-};
+}
 
 export interface TdDropdownItemProps {
   /**
@@ -91,6 +91,6 @@ export interface TdDropdownItemProps {
    * 点击时触发
    */
   onClick?: (context: { e: KeyboardEvent }) => void;
-};
+}
 
 export type DropdownOption = { children?: Array<TdDropdownItemProps> } & TdDropdownItemProps & Record<string, any>;

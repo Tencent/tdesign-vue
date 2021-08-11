@@ -246,4 +246,3 @@ describe('Select OptionGroup', () => {
     });
   });
 });
-

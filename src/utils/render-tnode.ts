@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import { ComponentRenderProxy } from '@vue/composition-api';
-import { PropType, CreateElement, VNode, VNodeChildren, RenderContext } from 'vue/types/umd';
+import {
+  PropType, CreateElement, VNode, VNodeChildren, RenderContext,
+} from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { TNode } from '../common';
 
 // 组件render属性的ts类型
 type RenderTsTypesSimple = string | number | boolean;
 type RenderTsTypesObject = Record<string, any> | Array<any>;
-type RenderTsTypes  = VNode | VNodeChildren | TNode | RenderTsTypesSimple | RenderTsTypesObject
+type RenderTsTypes = VNode | VNodeChildren | TNode | RenderTsTypesSimple | RenderTsTypesObject
 // 组件render属性的js类型
 const RenderJsTypes = [Function, String, Number, Boolean, Object, Array];
 

@@ -28,4 +28,3 @@ function getTransferListOption<T>(prop: T | Array<T>): TransferListOptionBase<T>
 }
 
 export { findTopNode, getTransferListOption };
-

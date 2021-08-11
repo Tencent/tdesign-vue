@@ -51,7 +51,7 @@ describe('Table', () => {
         expect(wrapper.vm.$el.getElementsByTagName('tr').length).toBe(data.length + 1);
       });
       it('`data` is undefined', () => {
-        const empty = h => h({
+        const empty = (h) => h({
           template: `<div slot="empty" id="empty-container">
             暂无数据
             </div>`,
@@ -265,7 +265,7 @@ describe('Table', () => {
         expect(wrapper.find('.t-table--loading').exists()).toBe(true);
       });
       it('`loading` is rendered with `slot`', () => {
-        const loading = h => h({
+        const loading = (h) => h({
           template: '<div class="loading__container">loading</div>',
         });
         const wrapper = mount({
@@ -344,7 +344,7 @@ describe('Table', () => {
       };
     });
     it('Use slot to customize empty content', async () => {
-      const empty = h => h({
+      const empty = (h) => h({
         template: '<div class="empty__container">empty</div>',
       });
       const wrapper = await mount({

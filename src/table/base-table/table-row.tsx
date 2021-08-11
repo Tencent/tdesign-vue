@@ -1,9 +1,9 @@
 import Vue, { VNode, PropType, CreateElement } from 'vue';
+import get from 'lodash/get';
 import { prefix } from '../../config';
 import { BaseTableCol, RowspanColspan } from '../type';
 import baseTableProps from '../base-table-props';
 import TableCell from './table-cell';
-import get from 'lodash/get';
 import { CustomData, CellData, CellParams } from '../util/interface';
 import { emitEvent } from '../../utils/event';
 
@@ -49,7 +49,9 @@ export default Vue.extend({
   methods: {
     // 渲染行
     renderRow(): Array<VNode> {
-      const { rowData, columns, index: rowIndex, rowspanAndColspanProps } = this;
+      const {
+        rowData, columns, index: rowIndex, rowspanAndColspanProps,
+      } = this;
       const rowBody: Array<VNode> = [];
       const customData: CustomData = {
         type: 'cell',
@@ -70,7 +72,7 @@ export default Vue.extend({
         } else if (typeof cell === 'string' && typeof this.$scopedSlots[cell] === 'function') {
           customRender = (h: CreateElement, params: CellParams) => this.$scopedSlots[cell](params);
         } else if (typeof this.$scopedSlots[colKey] === 'function') {
-          customRender =  (h: CreateElement, params: CellParams) => this.$scopedSlots[colKey](params);
+          customRender = (h: CreateElement, params: CellParams) => this.$scopedSlots[colKey](params);
         } else if (typeof render === 'function') {
           customRender = render;
           customData.func = 'render';
@@ -110,7 +112,9 @@ export default Vue.extend({
     },
   },
   render() {
-    const { rowClass, $attrs, rowData, index, rowKey, current } = this;
+    const {
+      rowClass, $attrs, rowData, index, rowKey, current,
+    } = this;
     const params = {
       row: rowData,
       index,

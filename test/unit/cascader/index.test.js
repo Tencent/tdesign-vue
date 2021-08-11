@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Cascader from '@/src/cascader/index.ts';
+
 const options = [
   {
     label: '上海',

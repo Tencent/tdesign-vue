@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdAnchorProps } from './type';
 import { PropType } from 'vue';
+import { TdAnchorProps } from './type';
 
 export default {
   /** 透传 Affix 组件属性，即让 Anchor 组件支持所有 Affix 组件特性 */

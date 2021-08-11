@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdOptionProps } from '../select/type';
 import { PropType } from 'vue';
+import { TdOptionProps } from './type';
 
 export default {
   /** 是否禁用该选项 */

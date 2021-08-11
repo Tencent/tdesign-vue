@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import isFunction from 'lodash/isFunction';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
@@ -10,7 +11,6 @@ import Popup from '../../../popup';
 import { getTitle } from '../../util/common';
 import TIconFilter from '../../../icon/filter';
 import { emitEvent } from '../../../utils/event';
-import isFunction from 'lodash/isFunction';
 
 type FilterChangeContext = Parameters<TdPrimaryTableProps['onFilterChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;

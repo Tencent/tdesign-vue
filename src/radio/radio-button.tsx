@@ -27,7 +27,9 @@ export default (Vue as VueConstructor<RadioButtonInstance>).extend({
   },
 
   render(): VNode {
-    const { $props, $listeners, $scopedSlots, radioGroup } = this;
+    const {
+      $props, $listeners, $scopedSlots, radioGroup,
+    } = this;
     const children: VNode[] | VNode | string = $scopedSlots.default && $scopedSlots.default(null);
 
     const radioProps = {

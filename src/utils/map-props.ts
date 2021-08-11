@@ -27,7 +27,6 @@ type ParsedPropOption = {
   [propName: string]: any;
 };
 
-
 function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
   { [name: string]: ParsedPropOption } {
   const propOptionMap = {};
@@ -37,7 +36,8 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
   function parseProp(propOption: PropOption): ParsedPropOption {
     const {
       name: propName,
-      ...others } = propOption;
+      ...others
+    } = propOption;
     const camelName = propName.replace(/^[a-z]/, (letter: string) => letter.toUpperCase());
     const defaultName = `default${camelName}`;
     const dataName = `data${camelName}`;
@@ -65,9 +65,9 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
     };
     let propOption: PropOption;
     if (typeof prop === 'string') {
-      propOption = Object.assign({}, defaultOption, { name: prop });
+      propOption = { ...defaultOption, name: prop };
     } else {
-      propOption = Object.assign({}, defaultOption, prop);
+      propOption = { ...defaultOption, ...prop };
     }
 
     propOptionMap[propOption.name] = parseProp(propOption);
@@ -90,10 +90,12 @@ export default function (props: (string | PropOption)[], options: Option = {}) {
     const defineMethods = {};
 
     const propsKeys: string[] = Object.keys(component.props);
-    const camelPropsKeys = propsKeys.map(key => toCamel(key));
+    const camelPropsKeys = propsKeys.map((key) => toCamel(key));
 
     Object.keys(propOptionMap).forEach((propName) => {
-      const { events, alias, defaultName, dataName } = propOptionMap[propName];
+      const {
+        events, alias, defaultName, dataName,
+      } = propOptionMap[propName];
 
       defineProps[propName] = component.props[propName];
       defineProps[defaultName] = component.props[defaultName];
@@ -245,7 +247,7 @@ export default function (props: (string | PropOption)[], options: Option = {}) {
         ...defineMethods,
       },
     });
-  };
+  }
 
   return mapProps;
-};
+}

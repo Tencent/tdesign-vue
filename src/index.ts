@@ -1,5 +1,6 @@
 import { VueConstructor } from 'vue';
 import * as components from './components';
+
 function install(Vue: VueConstructor, config?: object) {
   Object.keys(components).forEach((key) => {
     /plugin/i.test(key)

@@ -1,5 +1,7 @@
 import baseTableProps from '../base-table-props';
-import { DataType, TdBaseTableProps, TdPrimaryTableProps, PrimaryTableCol } from '../type';
+import {
+  DataType, TdBaseTableProps, TdPrimaryTableProps, PrimaryTableCol,
+} from '../type';
 
 import primaryTableProps from '../primary-table-props';
 import SimpleTable from '../base-table';
@@ -30,7 +32,7 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
       return this.asyncLoadingHandler([...data]);
     },
     rehandleColumns(): Array<PrimaryTableCol> {
-      let columns = this.columns.map(col => ({ ...col }));
+      let columns = this.columns.map((col) => ({ ...col }));
       columns = this.getShowColumns([...this.columns]);
       columns = this.getSorterColumns(columns);
       columns = this.getFilterColumns(columns);
@@ -57,19 +59,22 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
 
   },
   render() {
-    const { $props, $scopedSlots, rehandleColumns, rehandleData, showColumns } = this;
-    const scopedSlots = Object.assign(
-      {},
-      $scopedSlots,
-    );
+    const {
+      $props, $scopedSlots, rehandleColumns, rehandleData, showColumns,
+    } = this;
+    const scopedSlots = {
+
+      ...$scopedSlots,
+    };
     const baseTableProps = {
-      props: Object.assign({}, $props, {
+      props: {
+        ...$props,
         data: rehandleData,
         columns: rehandleColumns,
         provider: {
           renderRows: this.renderRows,
         },
-      }),
+      },
       scopedSlots,
       on: {
         ...this.$listeners,

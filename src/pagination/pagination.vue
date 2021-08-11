@@ -82,7 +82,7 @@
 </template>
 
 <script lang="ts">
-import config from '../config';
+import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import TIconChevronLeft from '../icon/chevron-left';
@@ -96,7 +96,6 @@ import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ClassName } from '../common';
 
-const { prefix } = config;
 const name = `${prefix}-pagination`;
 
 const PaginationLocalReceiver = getLocalReceiverMixins('pagination');
@@ -230,7 +229,7 @@ export default mixins(PaginationLocalReceiver).extend({
       return ans;
     },
     sizeOptions(): Array<{ label: string; value: number }> {
-      const options = this.pageSizeOptions.map(option => typeof option === 'object'
+      const options = this.pageSizeOptions.map((option) => typeof option === 'object'
         ? option
         : {
           label: this.t(this.locale.itemsPerPage, { size: option }),

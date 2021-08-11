@@ -119,7 +119,7 @@ const createMonthCellsData = (
     belongTo: number,
     isCurrent: boolean,
     date: Date,
-    weekOrder: number
+    weekOrder: number,
   ): CalendarCell => {
     const day = getDay(date);
     return {
@@ -158,7 +158,7 @@ const createMonthCellsData = (
   // 添加下个月中和当前月最后同一周的日期
   if (arr.length) {
     const nextMonthCellNum = 7 - arr.length;
-    for (let i = 0 ; i < nextMonthCellNum; i++) {
+    for (let i = 0; i < nextMonthCellNum; i++) {
       const date = addDate(end, i + 1);
       arr.push(createCellData(1, false, date, num));
     }
@@ -167,7 +167,6 @@ const createMonthCellsData = (
 
   return daysArr;
 };
-
 
 export {
   getDayCn,

@@ -100,7 +100,6 @@ export default {
           {
             url: {
               protocols: ['http', 'https', 'ftp'],
-              // eslint-disable-next-line @typescript-eslint/camelcase
               require_protocol: true,
             },
             message: '请输入正确的个人主页',

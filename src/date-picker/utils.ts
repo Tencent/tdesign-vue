@@ -1,5 +1,5 @@
-import { TdCSSProperties, DateValue } from './interface';
 import chunk from 'lodash/chunk';
+import { TdCSSProperties, DateValue } from './interface';
 
 /**
  * next Month
@@ -326,7 +326,7 @@ export function subtractMonth(date: Date, num: any): Date {
   const day = date.getDate();
   const newDate = new Date(date);
 
-  let _num  = num;
+  let _num = num;
   // eslint-disable-next-line no-plusplus
   while (_num--) {
     newDate.setDate(0);

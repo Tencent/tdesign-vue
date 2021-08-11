@@ -44,7 +44,7 @@ export default Vue.extend({
       });
     },
     onConfirm() {
-      const confirmDia  = this.$dialog.confirm({
+      const confirmDia = this.$dialog.confirm({
         header: 'Dialog-Confirm-Plugin',
         body: 'Are you sure to delete it?',
         confirmBtn: 'ok',
@@ -83,7 +83,7 @@ export default Vue.extend({
     },
 
     onDialogPluginConfirm() {
-      const confirmDia  = DialogPlugin.confirm({
+      const confirmDia = DialogPlugin.confirm({
         header: 'Dialog-Confirm-Plugin',
         body: 'Are you sure to delete it?',
         confirmBtn: 'ok',

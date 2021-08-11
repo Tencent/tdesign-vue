@@ -61,7 +61,7 @@ export default mixins(getLocalReceiverMixins('steps')).extend({
       this.stepChildren.push(item);
     },
     removeItem(item: InstanceType<typeof TStepItem>) {
-      this.stepChildren = this.stepChildren.filter(t => t !== item);
+      this.stepChildren = this.stepChildren.filter((t) => t !== item);
     },
   },
 });

@@ -4,7 +4,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdCheckboxProps, TdCheckboxGroupProps } from './type';
 
-import './style/';
+import './style';
 
 export type CheckboxProps = TdCheckboxProps;
 export type CheckboxGroupProps = TdCheckboxGroupProps;

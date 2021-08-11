@@ -1,4 +1,5 @@
 import { VNode } from 'vue';
+import isFunction from 'lodash/isFunction';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
@@ -6,8 +7,7 @@ import props from './step-item-props';
 import TIconCheck from '../icon/check';
 import TIconClose from '../icon/close';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
-import Steps from '../steps/steps';
-import isFunction from 'lodash/isFunction';
+import Steps from './steps';
 import { ClassName } from '../common';
 
 const name = `${prefix}-steps-item`;
@@ -42,7 +42,7 @@ export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
       // value 不存在时，使用 index 进行区分每一个步骤
       if (this.value === undefined && this.index < this.current) return 'finish';
       if (this.value !== undefined && this.index < this.steps.indexMap[this.current]) return 'finish';
-      const key = this.value === undefined ? this.index : this.value ;
+      const key = this.value === undefined ? this.index : this.value;
       if (key === this.current) return 'process';
       return 'wait';
     },

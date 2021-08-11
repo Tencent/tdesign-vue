@@ -27,8 +27,12 @@ export default {
     };
   },
   methods: {
-    handleCheckedChange({ checked, sourceChecked, targetChecked, type }) {
-      console.log('handleCheckedChange', { checked, sourceChecked, targetChecked, type });
+    handleCheckedChange({
+      checked, sourceChecked, targetChecked, type,
+    }) {
+      console.log('handleCheckedChange', {
+        checked, sourceChecked, targetChecked, type,
+      });
     },
     onChange(newTargetValue) {
       console.log(newTargetValue);

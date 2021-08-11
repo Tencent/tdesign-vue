@@ -5,7 +5,6 @@ import checkboxProps from './props';
 import Group from './group';
 import { ClassName } from '../common';
 
-
 const name = `${prefix}-checkbox`;
 
 interface CheckboxInstance extends Vue {

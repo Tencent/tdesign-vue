@@ -43,7 +43,7 @@ export default {
       },
       // 定义下拉宽度始终与触发浮层的元素（即select组件）等宽
       popupProps2: {
-        overlayStyle: trigger => ({ width: `${trigger.offsetWidth}px` }),
+        overlayStyle: (trigger) => ({ width: `${trigger.offsetWidth}px` }),
       },
       value: '1',
     };

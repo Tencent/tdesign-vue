@@ -3,7 +3,7 @@ import _BreadcrumbItem from './breadcrumb-item';
 import withInstall from '../utils/withInstall';
 import { TdBreadcrumbProps, TdBreadcrumbItemProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 export type BreadcrumbProps = TdBreadcrumbProps;

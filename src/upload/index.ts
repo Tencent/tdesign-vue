@@ -1,7 +1,7 @@
 import _Upload from './upload';
 import withInstall from '../utils/withInstall';
 
-import './style/';
+import './style';
 
 export * from './interface';
 

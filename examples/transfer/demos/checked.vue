@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       list,
-      checked: list.map(item => item.value).filter(v => v % 2 === 0), // 偶数
+      checked: list.map((item) => item.value).filter((v) => v % 2 === 0), // 偶数
     };
   },
 };

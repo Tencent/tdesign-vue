@@ -6,10 +6,13 @@ import IIconDelete from '../icon/delete';
 import IIconUpload from '../icon/upload';
 import TIconBrowse from '../icon/browse';
 import TIconLoading from '../icon/loading';
+
 export default Vue.extend({
   name: 'TImageUpload',
 
-  components: { TIconAdd, IIconDelete, IIconUpload, TIconBrowse, TIconLoading },
+  components: {
+    TIconAdd, IIconDelete, IIconUpload, TIconBrowse, TIconLoading,
+  },
   props: {
     files: {
       type: Array as PropType<Array<UploadFile>>,

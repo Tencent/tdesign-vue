@@ -1,7 +1,7 @@
 import _Calendar from './calendar.vue';
 import withInstall from '../utils/withInstall';
 
-import './style/';
+import './style';
 
 export * from './interface';
 

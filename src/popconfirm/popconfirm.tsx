@@ -7,6 +7,7 @@ import { renderTNodeJSX, renderContent, renderTNodeJSXDefault } from '../utils/r
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
 import TIconInfoCircleFilled from '../icon/info-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
+
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;
 

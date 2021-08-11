@@ -13,7 +13,9 @@ const name = `${prefix}-upload-dragger`;
 export default Vue.extend({
   name,
 
-  components: { TIconLoading, TIconCheckCircleFilled, TButton, TIconErrorCircleFilled },
+  components: {
+    TIconLoading, TIconCheckCircleFilled, TButton, TIconErrorCircleFilled,
+  },
 
   props: {
     file: {

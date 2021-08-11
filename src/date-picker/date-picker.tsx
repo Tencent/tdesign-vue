@@ -1,12 +1,11 @@
 import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
+import Vue from 'vue';
 import props from './props';
 import { TdDatePickerProps } from './type';
-
 import CLASSNAMES from '../utils/classnames';
 
-import Vue from 'vue';
 import { clickOut } from '../utils/dom';
 import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
@@ -18,7 +17,6 @@ import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
 import { CustomLocale, DatePickerInstance, DateValue } from './interface';
-import { COMPONENT_NAME } from './constants';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
@@ -28,6 +26,8 @@ import { dateIndexOf, firstUpperCase } from './utils';
 import EmbedTo from './embed-to';
 import { TimePickerPanelInstance } from '../time-picker';
 
+export const prefix = 't';
+
 dayjs.extend(isBetween);
 
 const onOpenDebounce = debounce((vm?: any) => {
@@ -35,7 +35,7 @@ const onOpenDebounce = debounce((vm?: any) => {
 }, 250);
 
 export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
-  name: COMPONENT_NAME,
+  name: `${prefix}-date-picker`,
   components: {
     TIconTime,
     TIconCalendar,
@@ -91,7 +91,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       get() {
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         const vm: any = this;
-        const { tempValue, range, mode, isOpen, startText, endText, locales, selectedDates } = vm;
+        const {
+          tempValue, range, mode, isOpen, startText, endText, locales, selectedDates,
+        } = vm;
         const selectedFmtDates: string[] = selectedDates.map((d: Date) => vm.formatDate(d));
 
         if (tempValue) {
@@ -241,7 +243,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     },
     getLocales(): CustomLocale {
       const locales = this.locale as Record<string, any>;
-      locales.rangeSeparator = locales.rangeSeparator;
       locales.daysOfWeek = locales.weekdays.shorthand.split(',');
       locales.monthNames = locales.months.shorthand.split(',');
 
@@ -254,7 +255,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         let iterator = locales.firstDayOfWeek;
         while (iterator > 0) {
           locales.daysOfWeek.push(locales.daysOfWeek.shift());
-          iterator = iterator - 1;
+          iterator -= 1;
         }
       }
       return locales;
@@ -623,7 +624,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       range,
     } = this.$props;
 
-    const { start, end, showTime, timeValue, locales, isOpen } = this.$data;
+    const {
+      start, end, showTime, timeValue, locales, isOpen,
+    } = this.$data;
     const panelProps = {
       value: range ? [start, end] : start,
       mode,

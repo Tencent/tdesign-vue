@@ -1,4 +1,5 @@
 import Vue, { VNode } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import IconPromptFill from '../icon/info-circle-filled';
@@ -6,7 +7,6 @@ import IconSuccessFill from '../icon/check-circle-filled';
 import IconWarningFill from '../icon/error-circle-filled';
 import IconClose from '../icon/close';
 import props from './props';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-alert`;
@@ -86,7 +86,7 @@ export default Vue.extend({
       );
     },
 
-    renderTitle(): VNode  {
+    renderTitle(): VNode {
       const titleContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'title');
       return titleContent ? <div class={`${name}__title`}> {titleContent}</div> : null;
     },
@@ -122,7 +122,7 @@ export default Vue.extend({
       // 如果需要折叠，则元素之间补<br/>；否则不补
       return (
         <div class={`${name}__description`}>
-          { hasCollapse ? (messageContent as Array<string | VNode>).map(content => (
+          { hasCollapse ? (messageContent as Array<string | VNode>).map((content) => (
             <div>
               { content}
             </div>

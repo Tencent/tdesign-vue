@@ -32,7 +32,7 @@ export default Vue.extend({
   render(h: CreateElement) {
     const prepend = this.renderAddon(h, 'prepend', this.prepend);
     const append = this.renderAddon(h, 'append', this.append);
-    const defaultSlot: VNode[] =      this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
+    const defaultSlot: VNode[] = this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
     const className = [
       name,
       {

@@ -1,4 +1,3 @@
-
 import _Addon from './addon';
 import _Input from './input';
 import _InputGroup from './input-group.vue';
@@ -6,7 +5,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdInputProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 export type InputProps = TdInputProps;

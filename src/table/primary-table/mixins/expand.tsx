@@ -1,4 +1,5 @@
 import Vue, { CreateElement, VNode } from 'vue';
+import get from 'lodash/get';
 import { TdPrimaryTableProps } from '../../type';
 import baseTableProps from '../../base-table-props';
 import ExpandBox from '../expand-box';
@@ -6,7 +7,6 @@ import TableRow from '../../base-table/table-row';
 import { ExpandProps, RenderExpandRow } from '../../util/interface';
 import { filterDataByIds, getRecord } from '../../util/common';
 import { prefix } from '../../../config';
-import get from 'lodash/get';
 import { emitEvent } from '../../../utils/event';
 
 type Columns = TdPrimaryTableProps['columns'];
@@ -49,7 +49,9 @@ export default Vue.extend({
       return <ExpandBox expanded={expanded} onClick={(): void => this.handleExpandChange(row)} />;
     },
     // 渲染被展开的TableRow内容
-    renderExpandedRow({ rows, row, columns: defaultColumns, rowIndex }: RenderExpandRow): VNode {
+    renderExpandedRow({
+      rows, row, columns: defaultColumns, rowIndex,
+    }: RenderExpandRow): VNode {
       const columnCounts = defaultColumns.length;
       if (!this.expandedRow) return; // 若无展开渲染函数，则无需处理行数据
 

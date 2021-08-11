@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdBadgeProps } from './type';
 import { PropType } from 'vue';
+import { TdBadgeProps } from './type';
 
 export default {
   /** 颜色 */

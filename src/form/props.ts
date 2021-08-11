@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdFormProps } from './type';
 import { PropType } from 'vue';
+import { TdFormProps } from './type';
 
 export default {
   /** 是否在表单标签字段右侧显示冒号 */

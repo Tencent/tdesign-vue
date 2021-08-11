@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdIconSVGProps } from '../icon/type';
 import { PropType } from 'vue';
+import { TdIconSVGProps } from './type';
 
 export default {
   /** 是否加载组件库内置图标 */

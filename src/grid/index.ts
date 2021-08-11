@@ -3,7 +3,7 @@ import _Row from './row';
 import withInstall from '../utils/withInstall';
 import { TdRowProps, TdColProps } from './type';
 
-import './style/';
+import './style';
 
 export type ColProps = TdColProps;
 export type RowProps = TdRowProps;

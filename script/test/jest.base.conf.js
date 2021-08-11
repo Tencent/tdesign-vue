@@ -12,7 +12,6 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^@tencent/tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
-    '^@tencent/tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
     '^@tencent/tdesign-vue$': '<rootDir>/src/index.ts',
     '^@TdTypes/(.*)$': '<rootDir>/types/$1',
     '^@Button/(.*)$': '<rootDir>/src/button/index.ts',

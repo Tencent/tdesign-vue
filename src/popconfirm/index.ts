@@ -3,7 +3,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdPopconfirmProps } from './type';
 
-import './style/';
+import './style';
 
 export type PopconfirmProps = TdPopconfirmProps;
 export * from './type';

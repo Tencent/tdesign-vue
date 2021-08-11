@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import raf from 'raf';
-import { easeInOutCubic, EasingFunction } from './easing';
 import isString from 'lodash/isString';
+import { easeInOutCubic, EasingFunction } from './easing';
 import { ScrollContainer, ScrollContainerElement } from '../common';
 
 const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
@@ -46,7 +46,7 @@ export function hasClass(el: Element, cls: string): any {
     return el.classList.contains(cls);
   }
   return (` ${el.className} `).indexOf(` ${cls} `) > -1;
-};
+}
 
 export function addClass(el: Element, cls: string): any {
   if (!el) return;
@@ -66,7 +66,7 @@ export function addClass(el: Element, cls: string): any {
   if (!el.classList) {
     el.className = curClass;
   }
-};
+}
 
 export function removeClass(el: Element, cls: string): any {
   if (!el || !cls) return;
@@ -86,7 +86,7 @@ export function removeClass(el: Element, cls: string): any {
   if (!el.classList) {
     el.className = trim(curClass);
   }
-};
+}
 
 export const getAttach = (node: any): HTMLElement => {
   const attachNode = typeof node === 'function' ? node() : node;
@@ -209,7 +209,7 @@ function containerDom(parent: Vue | Element | Iterable<any> | ArrayLike<any>, ch
 export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb: Function): void => {
   on(document, 'click', (event: { target: Element }) => {
     if (Array.isArray(els)) {
-      const flag = Array.from(els).every(item => containerDom(item, event.target) === false);
+      const flag = Array.from(els).every((item) => containerDom(item, event.target) === false);
       flag && cb && cb();
     } else {
       if (containerDom(els, event.target)) {

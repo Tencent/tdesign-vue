@@ -13,7 +13,9 @@ import TIconBrowse from '../icon/browse';
 export default Vue.extend({
   name: 'TUploadFlowList',
 
-  components: { TButton, TIconLoading, TIconCheckCircleFilled, TIconTimeFilled, TIconErrorCircleFilled, TIconBrowse, TIconDelete },
+  components: {
+    TButton, TIconLoading, TIconCheckCircleFilled, TIconTimeFilled, TIconErrorCircleFilled, TIconBrowse, TIconDelete,
+  },
 
   props: {
     // 已上传完成的文件
@@ -49,7 +51,7 @@ export default Vue.extend({
     waitingUploadFiles(): Array<UploadFile> {
       const list: Array<UploadFile> = [];
       this.toUploadFiles.forEach((item) => {
-        const r = this.files.filter(t => t.name === item.name);
+        const r = this.files.filter((t) => t.name === item.name);
         if (!r.length) {
           list.push(item);
         }
@@ -61,10 +63,10 @@ export default Vue.extend({
       return this.files.concat(this.waitingUploadFiles);
     },
     failedList(): Array<UploadFile> {
-      return this.toUploadFiles.filter(file => file.status === 'fail');
+      return this.toUploadFiles.filter((file) => file.status === 'fail');
     },
     processList(): Array<UploadFile> {
-      return this.toUploadFiles.filter(file => file.status === 'progress');
+      return this.toUploadFiles.filter((file) => file.status === 'progress');
     },
     isUploading(): boolean {
       return !!this.processList.length;

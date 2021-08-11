@@ -65,6 +65,6 @@ export interface TdSliderProps {
    * 滑块值变化时触发
    */
   onChange?: () => void;
-};
+}
 
-export interface Marks { [mark: number]: string | TNode<{ value: number }> };
+export interface Marks { [mark: number]: string | TNode<{ value: number }> }

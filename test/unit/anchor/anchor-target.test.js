@@ -3,11 +3,7 @@ import Icon from '../../../src/icon/file-copy';
 
 jest.resetModules();
 let text = '';
-jest.mock('@/src/utils/clipboard', () => ({
-  copyText(arg) {
-    text = arg;
-  },
-}));
+jest.mock('@/src/utils/clipboard', () => (arg) => text = arg);
 
 // every component needs four parts: props/events/slots/functions.
 describe('AnchorTarget', () => {
@@ -23,7 +19,6 @@ describe('AnchorTarget', () => {
     a.trigger('click');
     expect(text).toEqual(`${location.href}#test-target`);
   });
-
 
   // test slots
   describe('<slot>', () => {

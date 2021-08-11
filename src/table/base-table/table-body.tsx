@@ -22,7 +22,7 @@ export default Vue.extend({
       default() {
         return {
           renderRows(): void {
-            return;
+
           },
         };
       },
@@ -60,7 +60,7 @@ export default Vue.extend({
             const preRowIndex = rowIndex - 1;
             leftedRowspan = props[preRowIndex]?.[colKey]?.leftedRowspan || 0;
             if (leftedRowspan > 0) {
-              leftedRowspan = leftedRowspan - 1;
+              leftedRowspan -= 1;
               // 当前单元格跨行置为-1，在渲染时跳过
               rowspan = -1;
             }
@@ -85,7 +85,7 @@ export default Vue.extend({
             if (leftedColspan === 0) {
               leftedColspan = props[rowIndex]?.[preColKey]?.leftedColspan || 0;
               if (leftedColspan > 0) {
-                leftedColspan = leftedColspan - 1;
+                leftedColspan -= 1;
                 // 当前单元格跨行置为-1，在渲染时跳过
                 colspan = -1;
               }
@@ -102,7 +102,9 @@ export default Vue.extend({
       return props;
     },
     renderBody(): Array<VNode> {
-      const { data, rowClassName, provider, $scopedSlots: scopedSlots, rowspanAndColspan } = this;
+      const {
+        data, rowClassName, provider, $scopedSlots: scopedSlots, rowspanAndColspan,
+      } = this;
       const body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
       if (typeof rowspanAndColspan === 'function') {
@@ -126,7 +128,9 @@ export default Vue.extend({
         };
         // 按行渲染
         body.push(<TableRow rowKey={this.rowKey} {...props} />);
-        provider.renderRows({ rows: body, row, rowIndex: index, columns: this.columns });
+        provider.renderRows({
+          rows: body, row, rowIndex: index, columns: this.columns,
+        });
       });
       return body;
     },

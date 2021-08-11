@@ -1,4 +1,5 @@
 import { VNode, CreateElement } from 'vue';
+import isFunction from 'lodash/isFunction';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import TIconCaretRightSmall from '../icon/caret-right-small';
@@ -8,7 +9,6 @@ import TreeNode from '../_common/js/tree/tree-node';
 import { getTNode } from './util';
 import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
-import isFunction from 'lodash/isFunction';
 import { ClassName } from '../common';
 import ripple from '../utils/ripple';
 
@@ -156,7 +156,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
     },
     renderLabel(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
-      const  { label, scopedSlots } = treeScope;
+      const { label, scopedSlots } = treeScope;
       const checkProps = treeScope.checkProps || {};
 
       let labelNode = null;

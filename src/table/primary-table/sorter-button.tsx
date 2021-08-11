@@ -1,11 +1,11 @@
+import { PropType } from 'vue/types/umd';
+import isFunction from 'lodash/isFunction';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import { SortType } from '../type';
 import { prefix } from '../../config';
-import { PropType } from 'vue/types/umd';
 import Tooltip from '../../tooltip';
 import { Styles } from '../../common';
-import isFunction from 'lodash/isFunction';
 import TIconChevronDown from '../../icon/chevron-down';
 
 const tooltips = {
@@ -47,7 +47,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     },
   },
   render() {
-    const { $listeners, sortType, sortOrder, nextSortOrder } = this;
+    const {
+      $listeners, sortType, sortOrder, nextSortOrder,
+    } = this;
     const allowSortTypes = [];
     if (sortType === 'all') {
       allowSortTypes.push('asc', 'desc');

@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdDropdownProps } from './type';
 import { PropType } from 'vue';
+import { TdDropdownProps } from './type';
 
 export default {
   /** 多层级操作时，子层级展开方向（待设计师规划） */

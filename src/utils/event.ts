@@ -32,5 +32,3 @@ export function emitEvent<T extends any[]>(vm: Vue, eventName: EmitEventName, ..
     vm.$props[emitEventMethodName](...args);
   }
 }
-
-

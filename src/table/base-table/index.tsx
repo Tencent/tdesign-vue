@@ -1,10 +1,13 @@
 import { VNode } from 'vue';
+import throttle from 'lodash/throttle';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import { prefix } from '../../config';
 import { flatColumns } from '../util/props-util';
 import baseTableProps from '../base-table-props';
-import { DataType, BaseTableCol, TdBaseTableProps, RowEventContext } from '../type';
+import {
+  DataType, BaseTableCol, TdBaseTableProps, RowEventContext,
+} from '../type';
 import TableBody from './table-body';
 import TableHeader from './table-header';
 import Loading from './loading-content';
@@ -12,7 +15,6 @@ import TableColGroup from './col-group';
 import Pagination from '../../pagination';
 import { getScrollDirection, SCROLL_DIRECTION } from '../util/common';
 import { PageInfo } from '../../pagination/type';
-import throttle from 'lodash/throttle';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { emitEvent } from '../../utils/event';
 import { EventNameWithKebab } from '../util/interface';
@@ -32,7 +34,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       default() {
         return {
           renderRows(): void {
-            return;
+
           },
         };
       },
@@ -93,7 +95,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     },
     // common class
     commonClass(): Array<string> {
-      const { bordered, stripe, hover, size, verticalAlign, hasFixedColumns, fixedHeader } = this;
+      const {
+        bordered, stripe, hover, size, verticalAlign, hasFixedColumns, fixedHeader,
+      } = this;
       const commonClass: Array<string> = ['t-table'];
       if (bordered) {
         commonClass.push('t-table--bordered');
@@ -136,7 +140,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
   },
   methods: {
     renderHeader(): VNode {
-      const { columns, flattedColumns, $scopedSlots: scopedSlots, bordered } = this;
+      const {
+        columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
+      } = this;
       return <TableHeader
               scopedSlots={scopedSlots}
               columns={columns}
@@ -193,21 +199,23 @@ export default mixins(getLocalReceiverMixins('table')).extend({
         <div class="t-table-pagination">
           <Pagination
             props={{ ...paginationProps }}
-            {...{ on: {
-              change: (pageInfo: PageInfo) => {
-                paginationProps.onChange && paginationProps.onChange(pageInfo);
+            {...{
+              on: {
+                change: (pageInfo: PageInfo) => {
+                  paginationProps.onChange && paginationProps.onChange(pageInfo);
+                },
+                'current-change': (current: number, pageInfo: PageInfo) => {
+                  emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
+                  this.defaultCurrent = current;
+                  paginationProps.onCurrentChange && paginationProps.onCurrentChange(current, pageInfo);
+                },
+                'page-size-change': (pageSize: number, pageInfo: PageInfo) => {
+                  emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
+                  this.defaultPageSize = pageSize;
+                  paginationProps.onPageSizeChange && paginationProps.onPageSizeChange(pageSize, pageInfo);
+                },
               },
-              'current-change': (current: number, pageInfo: PageInfo) => {
-                emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
-                this.defaultCurrent = current;
-                paginationProps.onCurrentChange && paginationProps.onCurrentChange(current, pageInfo);
-              },
-              'page-size-change': (pageSize: number, pageInfo: PageInfo) => {
-                emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
-                this.defaultPageSize = pageSize;
-                paginationProps.onPageSizeChange && paginationProps.onPageSizeChange(pageSize, pageInfo);
-              },
-            } }}
+            }}
           />
         </div>
       );
@@ -259,9 +267,11 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       return renderTNodeJSX(this, 'loading', <Loading />);
     },
     renderFooter() {
-      const { flattedColumns: {
-        length: colspan,
-      }, isEmpty } = this;
+      const {
+        flattedColumns: {
+          length: colspan,
+        }, isEmpty,
+      } = this;
       let footerContent: VNode;
       if (isEmpty) {
         footerContent = this.renderEmptyTable();
@@ -328,7 +338,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     return (
       <div class={commonClass}>
         <div class="t-table-content" style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
-          {fixedTableContent ? fixedTableContent : <table style={{ tableLayout }}>{tableContent}</table>}
+          {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
         </div>
         {body}
       </div>

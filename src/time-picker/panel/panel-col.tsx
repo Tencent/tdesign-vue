@@ -180,7 +180,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       return true;
     },
     renderScrollers() {
-      return this.cols.map(col => this.renderScroller(col));
+      return this.cols.map((col) => this.renderScroller(col));
     },
     renderScroller(col: EPickerCols) {
       return (

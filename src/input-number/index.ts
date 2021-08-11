@@ -3,7 +3,7 @@ import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
 import { TdInputNumberProps } from './type';
 
-import './style/';
+import './style';
 
 export type InputNumberProps = TdInputNumberProps;
 export * from './type';

@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import SorterButton from '../sorter-button';
 import { prefix } from '../../../config';
-import { SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType } from '../../type';
+import {
+  SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType,
+} from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import { SortColumnAndOrder } from '../../util/interface';
@@ -120,7 +122,7 @@ export default Vue.extend({
       return sorterFn ? this.recursiveSort([...data], sorterFn) : data;
     },
     getSortColumn(colKey: string) {
-      return this.columns.find(column => column.colKey === colKey);
+      return this.columns.find((column) => column.colKey === colKey);
     },
     getSorterFn(currentSortColumn?: PrimaryTableCol, currentSortOrder?: SortType | string): (a: Record<string, any>, b: Record<string, any>) => number | undefined {
       const { sortArray } = this;
@@ -132,7 +134,7 @@ export default Vue.extend({
       }
       const descending = sortOrder === 'desc';
       let index = 0;
-      this.updatedSortInfoMap = Object.assign({}, this.sortMap);;
+      this.updatedSortInfoMap = { ...this.sortMap };
 
       const getNextSortFn = (a: Record<string, any>, b: Record<string, any>): number => {
         const { sortBy: nextSortColKey, descending } = sortArray[index] || {};
@@ -189,7 +191,7 @@ export default Vue.extend({
       }
       const { sortBy: nextColKey, descending } = sortArray[index + 1];
       const sortOrder = descending ? 'desc' : 'asc';
-      const nextSortColumn = columns.find(column => (column.colKey === nextColKey));
+      const nextSortColumn = columns.find((column) => (column.colKey === nextColKey));
       return {
         sortOrder,
         sortColumn: nextSortColumn,
@@ -209,7 +211,9 @@ export default Vue.extend({
     },
     getSorterColumns(columns: Columns): Columns {
       const sorterColumns: Columns = [];
-      const { $scopedSlots: scopedSlots, sortMap, currentSortOrderMap, multipleSort, sortArray } = this;
+      const {
+        $scopedSlots: scopedSlots, sortMap, currentSortOrderMap, multipleSort, sortArray,
+      } = this;
       columns.forEach((column, index: number) => {
         const { title, sortType, colKey } = column;
         const needSort = this.needSort(column);

@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdAffixProps } from './type';
 import { PropType } from 'vue';
+import { TdAffixProps } from './type';
 
 export default {
   /** 指定滚动的容器。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */

@@ -13,7 +13,7 @@ export function flatColumns(columns: Array<BaseTableCol>): Array<BaseTableCol> {
     }
   });
   return result;
-};
+}
 
 export function treeMap(tree: Array<any>, mapper: Function, childrenName = 'children') {
   return tree.map((node, index) => {

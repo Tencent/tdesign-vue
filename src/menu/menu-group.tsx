@@ -1,6 +1,7 @@
 import { defineComponent } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './menu-group-props';
+
 const name = `${prefix}-menu-group`;
 
 export default defineComponent({

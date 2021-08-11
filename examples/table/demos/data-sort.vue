@@ -39,17 +39,29 @@ import TIconCarretDownSmall from '@tencent/tdesign-vue/lib/icon/caret-down-small
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
-  { colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: (a, b) => a.status - b.status },
-  { colKey: 'survivalTime', title: '存活时间(s)', width: 200, sortType: 'all', sorter: (a, b) => a.survivalTime - b.survivalTime },
+  {
+    colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: (a, b) => a.status - b.status,
+  },
+  {
+    colKey: 'survivalTime', title: '存活时间(s)', width: 200, sortType: 'all', sorter: (a, b) => a.survivalTime - b.survivalTime,
+  },
   { colKey: 'owner', title: '管理员', width: 100 },
 ];
 
 // 本地数据排序，表示组件内部会对参数 data 进行数据排序。如果 data 数据为 10 条，就仅对这 10 条数据进行排序。
 const data = [
-  { id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', survivalTime: 1000 },
-  { id: 2, instance: 'JQTest2', status: 1, owner: 'jenny', survivalTime: 1000 },
-  { id: 3, instance: 'JQTest3', status: 2, owner: 'jenny', survivalTime: 500 },
-  { id: 4, instance: 'JQTest4', status: 1, owner: 'peter', survivalTime: 1500 },
+  {
+    id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', survivalTime: 1000,
+  },
+  {
+    id: 2, instance: 'JQTest2', status: 1, owner: 'jenny', survivalTime: 1000,
+  },
+  {
+    id: 3, instance: 'JQTest3', status: 2, owner: 'jenny', survivalTime: 500,
+  },
+  {
+    id: 4, instance: 'JQTest4', status: 1, owner: 'peter', survivalTime: 1500,
+  },
 ];
 
 export default {
@@ -69,7 +81,7 @@ export default {
       allowMultipleSort: false,
       globalLocale: {
         table: {
-          sortIcon: h => h && <TIconCarretDownSmall size='16px' />,
+          sortIcon: (h) => h && <TIconCarretDownSmall size='16px' />,
         },
       },
     };

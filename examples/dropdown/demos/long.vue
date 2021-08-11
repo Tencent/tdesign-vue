@@ -7,6 +7,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
   data() {
     const options = Array.from({ length: 20 }).map((v, k) => ({

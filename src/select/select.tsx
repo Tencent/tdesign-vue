@@ -4,6 +4,8 @@ import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
 
+import Popup, { PopupProps } from '../popup';
+
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -14,10 +16,9 @@ import TIconClose from '../icon/close';
 import TIconLoading from '../icon/loading';
 import TInput from '../input/index';
 import Tag from '../tag/index';
-import Popup from '../popup/index';
+
 import Option from './option';
 import props from './props';
-import { PopupProps } from '@Popup';
 import { Options, SelectValue } from './type';
 import { ClassName } from '../common';
 
@@ -164,7 +165,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
         let target: Array<Options> = [];
         if (this.options && this.options.length) {
-          target = this.options.filter(item => get(item, this.realValue) === this.value);
+          target = this.options.filter((item) => get(item, this.realValue) === this.value);
         }
         if (target.length) {
           if (get(target[0], this.realLabel) === '') {
@@ -187,7 +188,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           if (typeof item === 'object') {
             return item;
           }
-          const tmp = this.options.filter(op => get(op, this.realValue) === item);
+          const tmp = this.options.filter((op) => get(op, this.realValue) === item);
           const valueLabel = {};
           set(valueLabel, this.realValue, item);
           set(valueLabel, this.realLabel, tmp.length ? get(tmp[0], this.realLabel) : item);
@@ -197,7 +198,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return [];
     },
     popupObject(): PopupProps {
-      const propsObject = this.popupProps ? Object.assign({}, this.defaultProps, this.popupProps) : this.defaultProps;
+      const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
       return propsObject;
     },
     displayOptions(): Array<Options> {
@@ -227,14 +228,14 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
       } else if (isFunction(this.filter)) {
-        this.tmpOptions = this.options.filter(option => this.filter(val, option));
+        this.tmpOptions = this.options.filter((option) => this.filter(val, option));
       } else if (this.filterable) {
         // 仅有filterable属性时，默认不区分大小写过滤label
-        this.tmpOptions = this.options.filter(option => option[this.realLabel].toString().toLowerCase()
+        this.tmpOptions = this.options.filter((option) => option[this.realLabel].toString().toLowerCase()
           .indexOf(val.toString().toLowerCase()) !== -1);
       }
       if (this.canFilter && val && this.creatable) {
-        const tmp = this.options.filter(item => get(item, this.realLabel).toString() === val);
+        const tmp = this.options.filter((item) => get(item, this.realLabel).toString() === val);
         this.showCreateOption = !tmp.length;
       } else {
         this.showCreateOption = false;
@@ -271,11 +272,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       if (this.value !== value) {
         if (this.multiple && this.value instanceof Array) {
           if (this.labelInValue) {
-            const index = this.value.map(item => get(item, this.realValue)).indexOf(value);
+            const index = this.value.map((item) => get(item, this.realValue)).indexOf(value);
             if (index > -1) {
               this.removeTag(index, { e });
             } else {
-              this.value.push(this.options.filter(item => get(item, this.realValue) === value)[0]);
+              this.value.push(this.options.filter((item) => get(item, this.realValue) === value)[0]);
               this.emitChange(this.value);
             }
           } else {
@@ -311,7 +312,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         return;
       }
       const val = this.value[index];
-      const removeOption = this.options.filter(item => get(item, this.realValue) === val);
+      const removeOption = this.options.filter((item) => get(item, this.realValue) === val);
       this.value instanceof Array && this.value.splice(index, 1);
       this.emitChange(this.value);
       this.$emit('remove', { value: val, data: removeOption[0], e });
@@ -336,7 +337,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     getOptions(option: Options) {
       // create option值不push到options里
       if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
-      const tmp = this.options.filter(item => get(item, this.realValue) === option.value);
+      const tmp = this.options.filter((item) => get(item, this.realValue) === option.value);
       if (!tmp.length) {
         this.hasOptions = true;
         const valueLabel = {};
@@ -359,7 +360,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             value = this.selectedMultiple;
           }
         } else {
-          const target = this.options.filter(item => get(item, this.realValue) === val);
+          const target = this.options.filter((item) => get(item, this.realValue) === val);
           value = target.length ? target[0] : '';
         }
       } else {
@@ -408,7 +409,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
           const popupWidth = this.getOverlayElm().getBoundingClientRect().width;
-          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH  ? elWidth : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
+          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH ? elWidth : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
           Vue.set(this.defaultProps.overlayStyle, 'width', `${Math.ceil(width)}px`);
         }
       });
@@ -422,7 +423,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
     showOption(op: Options) {
-      return this.displayOptions.filter(item => get(item, this.realValue) === get(op, this.realValue)).length;
+      return this.displayOptions.filter((item) => get(item, this.realValue) === get(op, this.realValue)).length;
     },
     getCloseIcon() {
       if (isFunction(this.locale.clearIcon)) {
@@ -545,7 +546,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             </ul>
             {
               loading && (
-                <li class={tipsClass}>{ loadingTextSlot ? loadingTextSlot : loadingText }</li>
+                <li class={tipsClass}>{ loadingTextSlot || loadingText }</li>
               )
             }
             {

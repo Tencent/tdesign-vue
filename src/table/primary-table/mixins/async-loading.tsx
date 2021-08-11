@@ -1,9 +1,9 @@
 import Vue, { VNode } from 'vue';
+import { CreateElement } from 'vue/types/umd';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
 import { prefix } from '../../../config';
-import { CreateElement } from 'vue/types/umd';
 
 export const asyncLoadingRow = 'async-loading-row';
 
@@ -30,7 +30,7 @@ export default Vue.extend({
     asyncLoadingHandler(data: Array<any>): Array<any> {
       const { asyncLoading } = this;
       // 异步加载 pullDownLoading 新增一条数据
-      if (!!asyncLoading) {
+      if (asyncLoading) {
         data.push({ colKey: asyncLoadingRow });
       } else {
         const { colKey = '' } = data[data.length - 1] || {};

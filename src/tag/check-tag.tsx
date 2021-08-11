@@ -1,10 +1,9 @@
 import Vue from 'vue';
-import config from '../config';
+import { prefix } from '../config';
 import props from './check-tag-props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TNodeReturnValue } from '../common';
 
-const { prefix } = config;
 const name = `${prefix}-tag`;
 
 export default Vue.extend({

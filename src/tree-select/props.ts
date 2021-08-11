@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:13:24
  * */
 
-import { TdTreeSelectProps } from './type';
 import { PropType } from 'vue';
+import { TdTreeSelectProps } from './type';
 
 export default {
   /** 是否允许清空 */

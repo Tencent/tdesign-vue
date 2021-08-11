@@ -3,8 +3,8 @@
  * updated at 2021-07-20 22:17:08
  * */
 
-import { TdSwiperProps } from './type';
 import { PropType } from 'vue';
+import { TdSwiperProps } from './type';
 
 export default {
   /** 轮播切换动画效果类型 */

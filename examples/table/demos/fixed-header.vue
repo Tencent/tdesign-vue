@@ -8,7 +8,7 @@
 </template>
 <script>
 const data = [];
-for (let i = 0; i < 20; i ++) {
+for (let i = 0; i < 20; i++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',

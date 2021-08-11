@@ -1,4 +1,6 @@
-import { BaseTableCol, RenderType, PrimaryTableCol, SortType, TdPrimaryTableProps } from '../type';
+import {
+  BaseTableCol, RenderType, PrimaryTableCol, SortType, TdPrimaryTableProps,
+} from '../type';
 import primaryTableProps from '../primary-table-props';
 
 export type CustomRenderName = 'title' | 'cell' | 'render';
@@ -18,7 +20,7 @@ export interface TdInstance extends Vue {
     customData: CustomData;
     customRender: Function;
   };
-};
+}
 
 export interface CellParams {
   col: BaseTableCol;
@@ -26,7 +28,7 @@ export interface CellParams {
   row?: object;
   rowIndex?: number;
   record?: object;
-};
+}
 export interface CellData {
   type: string;
   col: BaseTableCol;
@@ -35,7 +37,7 @@ export interface CellData {
   rowIndex?: number;
   customData: CustomData;
   customRender: Function;
-};
+}
 
 export const EventNameWithKebab = [
   'row-hover',

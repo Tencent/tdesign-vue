@@ -36,7 +36,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .cellAppend {
   margin: 10px;

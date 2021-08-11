@@ -1,4 +1,6 @@
 import { VNode } from 'vue';
+import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash/cloneDeep';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -11,8 +13,6 @@ import Popup from '../popup/index';
 import Tag from '../tag/index';
 import item from './item';
 import { ClassName, OptionData } from '../common';
-import isEqual from 'lodash/isEqual';
-import cloneDeep from 'lodash/cloneDeep';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
@@ -22,6 +22,7 @@ import {
   TypeValueMode,
   TypeEventState,
 } from '../tree';
+
 type TypeContext = { e?: Event; node?: TreeNode }
 const name = `${prefix}-cascader`;
 
@@ -116,7 +117,9 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
       );
     },
     selectedSingle(): string {
-      const { multiple, model, path, showAllLevels } = this;
+      const {
+        multiple, model, path, showAllLevels,
+      } = this;
       if (!multiple && model !== '') {
         if (path.length) {
           return (showAllLevels
@@ -244,7 +247,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
         let treeValue: TreeNodeValue[] = [];
         if (Array.isArray(value)) {
           if (value.length > 0 && typeof value[0] === 'object') {
-            treeValue = (value as OptionData[]).map(val => val.value);
+            treeValue = (value as OptionData[]).map((val) => val.value);
           }
         } else if (value) {
           if (typeof value === 'object') {

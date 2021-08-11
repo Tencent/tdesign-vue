@@ -30,7 +30,7 @@ export default {
             },
           },
         },
-        params.formattedDate
+        params.formattedDate,
       );
     },
   },

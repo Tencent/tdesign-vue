@@ -1,9 +1,9 @@
 const fs = require('fs');
 const camelCase = require('camelcase');
 
+const DomParser = require('dom-parser');
 const utils = require('../utils');
 
-const DomParser = require('dom-parser');
 const parser = new DomParser();
 const result = {};
 fs.readFile(utils.resolveCwd('test/unit/coverage/index.html'), 'utf8', (err, html) => {

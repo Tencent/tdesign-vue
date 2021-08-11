@@ -35,7 +35,7 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
       return this.rangePicker ? [name, this.sectionComponentName] : [name];
     },
     colValues() {
-      return this.value.map(el => el || dayjs());
+      return this.value.map((el) => el || dayjs());
     },
     rangePicker() {
       return this.colValues.length > 1;
@@ -53,7 +53,9 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
     },
     cols() {
       if (!this.formatField) [EPickerCols.hour, EPickerCols.minute, EPickerCols.second];
-      const { startAChart, hour, minute, second, endAChart } = this.formatField;
+      const {
+        startAChart, hour, minute, second, endAChart,
+      } = this.formatField;
       const res = [];
       startAChart && res.push(EPickerCols.meridiem);
       hour && res.push(EPickerCols.hour);

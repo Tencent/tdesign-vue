@@ -1,7 +1,10 @@
 import Vue from 'vue';
+import dayjs from 'dayjs';
 import TDateHeader from '../basic/header';
 import TDateTable from '../basic/table';
-import { DateRangeData, DateRangeMethods, DateRangeComputed, DateRangeProps } from '../interface';
+import {
+  DateRangeData, DateRangeMethods, DateRangeComputed, DateRangeProps,
+} from '../interface';
 
 import {
   getWeeks,
@@ -15,7 +18,6 @@ import {
   firstUpperCase,
   setDateTime,
 } from '../utils';
-import dayjs from 'dayjs';
 
 const TODAY = getToday();
 const LEFT = 'left';
@@ -140,7 +142,9 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       };
     },
     getData({ year, month, type }) {
-      const { disabledDate, minDate, maxDate, startValue, endValue } = this;
+      const {
+        disabledDate, minDate, maxDate, startValue, endValue,
+      } = this;
       const { firstDayOfWeek } = this.$props;
       let data;
 

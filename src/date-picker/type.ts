@@ -101,7 +101,7 @@ export interface TdDatePickerProps {
    * 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值
    */
   onInput?: (context: { input: string; value: DateValue; e: InputEvent }) => void;
-};
+}
 
 export interface TdDateRangePickerProps {
   /**
@@ -183,13 +183,13 @@ export interface TdDateRangePickerProps {
    * 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值
    */
   onInput?: (context: { input: string; value: DateRangeValue; partial: DateRangePickerPartial; e: InputEvent }) => void;
-};
+}
 
 export type DisableDate = Array<DateValue> | DisableDateObj | ((date: DateValue) => boolean);
 
-export interface DisableDateObj { from?: string; to?: string; before?: string; after?: string };
+export interface DisableDateObj { from?: string; to?: string; before?: string; after?: string }
 
-export interface PresetDate { [name: string]: DateValue | (() => DateValue) };
+export interface PresetDate { [name: string]: DateValue | (() => DateValue) }
 
 export type DateValue = string | Date | Array<DateValue>;
 
@@ -197,7 +197,7 @@ export type DisableRangeDate = Array<DateValue> | DisableDateObj | ((context: { 
 
 export type DateRangePickerPartial = 'start' | 'end';
 
-export interface PresetRange { [range: string]: DateRange | (() => DateRange)};
+export interface PresetRange { [range: string]: DateRange | (() => DateRange)}
 
 export type DateRange = [DateValue, DateValue];
 

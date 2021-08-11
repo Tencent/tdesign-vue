@@ -6,7 +6,7 @@ import _Content from './content';
 import withInstall from '../utils/withInstall';
 import { TdHeaderProps, TdFooterProps, TdAsideProps } from './type';
 
-import './style/';
+import './style';
 
 export * from './type';
 export type HeaderProps = TdHeaderProps;

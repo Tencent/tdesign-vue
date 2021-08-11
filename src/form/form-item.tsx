@@ -1,14 +1,16 @@
 import Vue, { VNode, VueConstructor } from 'vue';
-import { prefix } from '../config';
-import { validate } from './form-model';
-import { ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType } from './type';
-import props from './form-item-props';
-import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
-import Form from './form';
 import { NormalizedScopedSlot } from 'vue/types/vnode';
 import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
+import { prefix } from '../config';
+import { validate } from './form-model';
+import {
+  ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType,
+} from './type';
+import props from './form-item-props';
+import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
+import Form from './form';
 import { ClassName, TNodeReturnValue } from '../common';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
@@ -108,7 +110,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     needRequiredMark(): boolean {
       const parent = this.form;
       const allowMark = parent && parent.requiredMark;
-      const isRequired = this.innerRules.filter(rule => rule.required).length > 0;
+      const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
       return Boolean(allowMark && isRequired);
     },
     innerRules(): ErrorList {
@@ -245,7 +247,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     getEmptyValue(): ValueType {
       const parent = this.form;
       const type = Object.prototype.toString.call(lodashGet(parent.data, this.name));
-      let emptyValue: ValueType = undefined;
+      let emptyValue: ValueType;
       if (type === '[object Array]') {
         emptyValue = [];
       }

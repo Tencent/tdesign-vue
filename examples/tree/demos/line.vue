@@ -147,7 +147,7 @@ export default {
       const lineChildren = [];
 
       const lines = this.getLineNodes(node)
-        .map(item => createElement('span', {
+        .map((item) => createElement('span', {
           class: {
             'custom-line-cross': item.cross,
           },

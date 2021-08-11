@@ -11,7 +11,6 @@ import attach from '@/examples/dialog/demos/attach.vue';
 import drag from '@/examples/dialog/demos/drag.vue';
 import plugin from '@/examples/dialog/demos/plugin.vue';
 
-
 // unit test for component in examples.
 describe('Dialog', () => {
   it('base demo works fine', () => {

@@ -1,7 +1,7 @@
 import _DatePicker from './date-picker';
 import withInstall from '../utils/withInstall';
 
-import './style/';
+import './style';
 
 export * from './interface';
 

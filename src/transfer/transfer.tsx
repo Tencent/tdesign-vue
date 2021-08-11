@@ -65,7 +65,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       const list: Array<TransferItemOption> = [];
       // 按照 targetValue 顺序，找到原数据
       this.value.forEach((value) => {
-        const item = this.transferData.find(item => item.value === value);
+        const item = this.transferData.find((item) => item.value === value);
         if (item === null) {
           throw `target value "${value}" was not found not from data ${JSON.stringify(this.data)}`;
         }
@@ -76,8 +76,8 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     // 被选中的value
     checkedValue(): TransferListOptionBase<TransferValue[]> {
       return {
-        [SOURCE]: this.sourceList.filter(data => this.checked.includes(data.value)).map(data => data.value),
-        [TARGET]: this.targetList.filter(data => this.checked.includes(data.value)).map(data => data.value),
+        [SOURCE]: this.sourceList.filter((data) => this.checked.includes(data.value)).map((data) => data.value),
+        [TARGET]: this.targetList.filter((data) => this.checked.includes(data.value)).map((data) => data.value),
       };
     },
     hasFooter(): boolean {
@@ -141,17 +141,15 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       const checkedValue = toDirection === TARGET ? this.checkedValue[SOURCE] : this.checkedValue[TARGET];
       // target->source
       if (toDirection === SOURCE) {
-        newTargetValue = oldTargetValue.filter(v => !checkedValue.includes(v));
-      } else {
+        newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
+      } else if (this.targetSort === 'original') {
         // 按照原始顺序
-        if (this.targetSort === 'original') {
-          newTargetValue = this.transferData.filter(item => oldTargetValue.includes(item.value) || checkedValue.includes(item.value))
-            .map(item => item.value);
-        } else if (this.targetSort === 'unshift') {
-          newTargetValue = checkedValue.concat(oldTargetValue);
-        } else {
-          newTargetValue = oldTargetValue.concat(checkedValue);
-        }
+        newTargetValue = this.transferData.filter((item) => oldTargetValue.includes(item.value) || checkedValue.includes(item.value))
+          .map((item) => item.value);
+      } else if (this.targetSort === 'unshift') {
+        newTargetValue = checkedValue.concat(oldTargetValue);
+      } else {
+        newTargetValue = oldTargetValue.concat(checkedValue);
       }
 
       // 清空checked。与toDirection相反

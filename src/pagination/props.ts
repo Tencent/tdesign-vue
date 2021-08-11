@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdPaginationProps } from './type';
 import { PropType } from 'vue';
+import { TdPaginationProps } from './type';
 
 export default {
   /** 当前页 */

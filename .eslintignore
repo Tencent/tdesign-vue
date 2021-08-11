@@ -2,6 +2,7 @@ snapshot*
 dist
 lib
 es
+esm
 node_modules
 src/_common
 static

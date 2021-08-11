@@ -1,5 +1,6 @@
-import { InputValue, TdInputProps } from './type';
 import Vue, { CreateElement, VNode, VueConstructor } from 'vue';
+import isFunction from 'lodash/isFunction';
+import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 
 import BrowseIcon from '../icon/browse';
@@ -7,7 +8,6 @@ import BrowseOffIcon from '../icon/browse-off';
 import CLASSNAMES from '../utils/classnames';
 import ClearIcon from '../icon/close-circle-filled';
 import { emitEvent } from '../utils/event';
-import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import props from './props';
 

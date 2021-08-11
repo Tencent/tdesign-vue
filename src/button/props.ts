@@ -3,8 +3,8 @@
  * updated at 2021-07-17 18:09:07
  * */
 
-import { TdButtonProps } from './type';
 import { PropType } from 'vue';
+import { TdButtonProps } from './type';
 
 export default {
   /** 是否为块级元素 */

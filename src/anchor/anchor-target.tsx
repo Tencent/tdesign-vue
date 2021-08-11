@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { prefix } from '../config';
-import { copyText } from '../utils/clipboard';
+import copyText from '../utils/clipboard';
 import Message from '../message/plugin';
 import TIconFileCopy from '../icon/file-copy';
 import props from './anchor-target-props';

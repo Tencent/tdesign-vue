@@ -58,4 +58,4 @@ export default function xhr({
   xhr.send(formData);
 
   return xhr;
-};
+}

@@ -3,8 +3,8 @@
  * updated at 2021-07-18 19:14:50
  * */
 
-import { TdCascaderProps } from './type';
 import { PropType } from 'vue';
+import { TdCascaderProps } from './type';
 
 export default {
   /** 参考 checkbox 组件 API */

@@ -1,8 +1,8 @@
 import Vue, { VNode } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import props from './list-item-meta-props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
 
 const name = `${prefix}-list-item__meta`;
 

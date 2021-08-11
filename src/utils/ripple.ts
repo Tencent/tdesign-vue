@@ -37,9 +37,9 @@ const Ripple = {
 
       const elBorder = parseInt((getComputedStyle(el).borderWidth).replace('px', ''), 10);
       const border = (elBorder > 0) ? elBorder : 0;
-      const width  = el.offsetWidth;
+      const width = el.offsetWidth;
       const height = el.offsetHeight;
-      const style  = getComputedStyle(el);
+      const style = getComputedStyle(el);
 
       if (!hasCreateContainer) {
         hasCreateContainer = true;
@@ -91,11 +91,11 @@ const Ripple = {
       }
 
       rippleContainer.insertBefore(ripple, rippleContainer.firstChild);
-      count = count + 1;
+      count += 1;
 
       clearTimeout(Ripple.startTimeId);
       Ripple.startTimeId = setTimeout(() => {
-        ripple.style.right  = '-2px';
+        ripple.style.right = '-2px';
       }, 0);
 
       const handleClearRipple = () => {
@@ -105,7 +105,7 @@ const Ripple = {
 
         setTimeout(() => {
           rippleContainer.removeChild(ripple);
-          count = count - 1;
+          count -= 1;
           if (count > 0) return; // 避免因为移除了relative的定位，从而导致动画漂移
           // eslint-disable-next-line no-param-reassign
           el.style.position = initPosition !== 'static' ? initPosition : '';

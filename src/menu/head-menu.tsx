@@ -1,4 +1,6 @@
-import { defineComponent, computed, provide, ref, reactive, watch } from '@vue/composition-api';
+import {
+  defineComponent, computed, provide, ref, reactive, watch,
+} from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './head-menu-props';
 import { MenuValue } from './type';
@@ -104,7 +106,7 @@ export default defineComponent({
         <ul class={[`${prefix}-head-menu__submenu`, `${prefix}-submenu`]}>
           {
             <t-tabs value={this.activeIndexValue} onChange={this.handleTabChange}>
-              { this.submenu.map(item => (
+              { this.submenu.map((item) => (
                 <t-tab-panel value={item.value} label={item.label[0].text} />
               ))}
             </t-tabs>

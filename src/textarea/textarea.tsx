@@ -1,8 +1,8 @@
 import Vue from 'vue';
+import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-import isFunction from 'lodash/isFunction';
 import { getPropsApiByEvent } from '../utils/helper';
 
 const name = `${prefix}-textarea`;

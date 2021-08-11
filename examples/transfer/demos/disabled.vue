@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       list,
-      targetValue: list.map(item => item.value).filter(v => parseInt(v, 10) % 2 === 0), // 偶数
+      targetValue: list.map((item) => item.value).filter((v) => parseInt(v, 10) % 2 === 0), // 偶数
     };
   },
 };

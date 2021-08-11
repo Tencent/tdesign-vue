@@ -77,7 +77,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    * 表单提交时触发。其中 validateResult 表示校验结果，firstError 表示校验不通过的第一个规则提醒
    */
   onSubmit?: (context: SubmitContext<FormData>) => void;
-};
+}
 
 /** 组件实例方法 */
 export interface FormInstanceFunctions<FormData extends Data = Data> {
@@ -121,7 +121,7 @@ export interface TdFormItemProps {
    * 校验状态图标。优先级高级 Form 的 statusIcon
    */
   statusIcon?: boolean | TNode;
-};
+}
 
 export interface FormRule {
   /**
@@ -195,9 +195,9 @@ export interface FormRule {
    * 自定义校验规则
    */
   validator?: CustomValidator;
-};
+}
 
-export interface SubmitContext<T extends Data = Data> { e?: FormSubmitEvent; validateResult: FormValidateResult<T>; firstError?: string };
+export interface SubmitContext<T extends Data = Data> { e?: FormSubmitEvent; validateResult: FormValidateResult<T>; firstError?: string }
 
 export type FormValidateResult<T> = boolean | ValidateResult<T>;
 
@@ -209,6 +209,6 @@ export type ValueType = any;
 
 export type Data = { [key: string]: any };
 
-export interface IsDateOptions { format: string; strictMode: boolean; delimiters: string[] };
+export interface IsDateOptions { format: string; strictMode: boolean; delimiters: string[] }
 
 export type CustomValidator = (val: ValueType) => boolean | Promise<boolean>;

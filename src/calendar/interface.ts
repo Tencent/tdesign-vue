@@ -68,7 +68,6 @@ export interface ModeOption {
   label: string;
 }
 
-
 /**
  * 单元格事件传参类型
  */
