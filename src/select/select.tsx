@@ -3,6 +3,7 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
+import cloneDeep from 'lodash/cloneDeep';
 
 import Popup, { PopupProps } from '../popup';
 
@@ -51,7 +52,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       labelInValue: this.valueType === 'object',
       realValue: this.keys && this.keys.value ? this.keys.value : 'value',
       realLabel: this.keys && this.keys.label ? this.keys.label : 'label',
-      tmpOptions: [],
+      realOptions: [] as Array<Options>,
     };
   },
   components: {
@@ -164,8 +165,8 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     selectedSingle(): string {
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
         let target: Array<Options> = [];
-        if (this.options && this.options.length) {
-          target = this.options.filter((item) => get(item, this.realValue) === this.value);
+        if (this.realOptions && this.realOptions.length) {
+          target = this.realOptions.filter((item) => get(item, this.realValue) === this.value);
         }
         if (target.length) {
           if (get(target[0], this.realLabel) === '') {
@@ -188,7 +189,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           if (typeof item === 'object') {
             return item;
           }
-          const tmp = this.options.filter((op) => get(op, this.realValue) === item);
+          const tmp = this.realOptions.filter((op) => get(op, this.realValue) === item);
           const valueLabel = {};
           set(valueLabel, this.realValue, item);
           set(valueLabel, this.realLabel, tmp.length ? get(tmp[0], this.realLabel) : item);
@@ -201,16 +202,28 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
       return propsObject;
     },
+    filterOptions(): Array<Options> {
+      // filter优先级 filter方法>仅filterable
+      if (isFunction(this.filter)) {
+        return this.realOptions.filter((option) => this.filter(this.searchInput, option));
+      } if (this.filterable) {
+        // 仅有filterable属性时，默认不区分大小写过滤label
+        return this.realOptions.filter((option) => option[this.realLabel].toString().toLowerCase()
+          .indexOf(this.searchInput.toString().toLowerCase()) !== -1);
+      }
+      return [];
+    },
     displayOptions(): Array<Options> {
+      // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
       if (isFunction(this.onSearch) || this.$listeners.search) {
-        return this.options;
+        return this.realOptions;
       } if (this.canFilter && !this.creatable) {
         if (this.searchInput === '') {
-          return this.options;
+          return this.realOptions;
         }
-        return this.tmpOptions;
+        return this.filterOptions;
       }
-      return this.options;
+      return this.realOptions;
     },
   },
   watch: {
@@ -224,22 +237,21 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
     },
     searchInput(val) {
-      // 搜索的优先级，远程搜索>filter方法>仅filterable
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
-      } else if (isFunction(this.filter)) {
-        this.tmpOptions = this.options.filter((option) => this.filter(val, option));
-      } else if (this.filterable) {
-        // 仅有filterable属性时，默认不区分大小写过滤label
-        this.tmpOptions = this.options.filter((option) => option[this.realLabel].toString().toLowerCase()
-          .indexOf(val.toString().toLowerCase()) !== -1);
       }
       if (this.canFilter && val && this.creatable) {
-        const tmp = this.options.filter((item) => get(item, this.realLabel).toString() === val);
+        const tmp = this.realOptions.filter((item) => get(item, this.realLabel).toString() === val);
         this.showCreateOption = !tmp.length;
       } else {
         this.showCreateOption = false;
       }
+    },
+    options: {
+      immediate: true,
+      handler(options: Array<Options>) {
+        this.realOptions = cloneDeep(options);
+      },
     },
   },
   methods: {
@@ -276,7 +288,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             if (index > -1) {
               this.removeTag(index, { e });
             } else {
-              this.value.push(this.options.filter((item) => get(item, this.realValue) === value)[0]);
+              this.value.push(this.realOptions.filter((item) => get(item, this.realValue) === value)[0]);
               this.emitChange(this.value);
             }
           } else {
@@ -312,7 +324,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         return;
       }
       const val = this.value[index];
-      const removeOption = this.options.filter((item) => get(item, this.realValue) === val);
+      const removeOption = this.realOptions.filter((item) => get(item, this.realValue) === val);
       this.value instanceof Array && this.value.splice(index, 1);
       this.emitChange(this.value);
       this.$emit('remove', { value: val, data: removeOption[0], e });
@@ -337,18 +349,18 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     getOptions(option: Options) {
       // create option值不push到options里
       if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
-      const tmp = this.options.filter((item) => get(item, this.realValue) === option.value);
+      const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value);
       if (!tmp.length) {
         this.hasOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
         const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        this.options.push(valueLabelAble);
+        this.realOptions.push(valueLabelAble);
       }
     },
     destroyOptions(index: number) {
-      this.options.splice(index, 1);
+      this.realOptions.splice(index, 1);
     },
     emitChange(val: SelectValue | Array<SelectValue>) {
       let value: SelectValue | Array<SelectValue> | Array<Options> | Options;
@@ -360,7 +372,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             value = this.selectedMultiple;
           }
         } else {
-          const target = this.options.filter((item) => get(item, this.realValue) === val);
+          const target = this.realOptions.filter((item) => get(item, this.realValue) === val);
           value = target.length ? target[0] : '';
         }
       } else {
@@ -422,9 +434,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
       return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
-    showOption(op: Options) {
-      return this.displayOptions.filter((item) => get(item, this.realValue) === get(op, this.realValue)).length;
-    },
     getCloseIcon() {
       if (isFunction(this.locale.clearIcon)) {
         return (
@@ -449,7 +458,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       disabled,
       popClass,
       size,
-      options,
       showPlaceholder,
       placeholder,
       selectedMultiple,
@@ -556,12 +564,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               // options直传时
-              !hasOptions && options.length && !loading
+              !hasOptions && displayOptions.length && !loading
                 ? <ul>
                 {
-                  options.map((item: Options, index: number) => (
+                  displayOptions.map((item: Options, index: number) => (
                       <t-option
-                        v-show={this.showOption(item)}
                         value={get(item, realValue)}
                         label={get(item, realLabel)}
                         disabled={item.disabled || this.multiLimitDisabled(get(item, realValue))}
@@ -572,7 +579,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                   ))
                 }
               </ul>
-                : <span v-show={!loading && options.length}>{children}</span>
+                : <span v-show={!loading && displayOptions.length}>{children}</span>
             }
           </div>
         </Popup>
