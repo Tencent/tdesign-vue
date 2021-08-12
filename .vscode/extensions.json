@@ -1,0 +1,3 @@
+{
+  "recommendations": ["dbaeumer.vscode-eslint"] // 该项目eslintrc暂时没有配置prettier-config 后续增加再调整
+}
