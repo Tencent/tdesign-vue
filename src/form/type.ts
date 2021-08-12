@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-12 15:29:58
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -77,18 +79,26 @@ export interface TdFormProps<FormData extends Data = Data> {
    * 表单提交时触发。其中 validateResult 表示校验结果，firstError 表示校验不通过的第一个规则提醒
    */
   onSubmit?: (context: SubmitContext<FormData>) => void;
-}
+  /**
+   * 校验结束后触发
+   */
+  onValidate?: (result:  FormValidateResult<FormData>) => void;
+};
 
 /** 组件实例方法 */
 export interface FormInstanceFunctions<FormData extends Data = Data> {
   /**
-   * 重置表单
+   * 重置表单，表单里面没有重置按钮时可以使用该方法（<button type="reset" />）
    */
   reset?: () => void;
   /**
-   * 提交表单
+   * 提交表单，表单里面没有重置按钮时可以使用该方法（<button type="submit" />）
    */
   submit?: () => void;
+  /**
+   * 校验函数。fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验
+   */
+  validate?: (param?: FormValidateParams) => void;
 }
 
 export interface TdFormItemProps {
@@ -206,6 +216,10 @@ export type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList };
 export type ErrorList = Array<FormRule>;
 
 export type ValueType = any;
+
+export interface FormValidateParams { fields?: Array<string>; trigger?: ValidateTriggerType };
+
+export type ValidateTriggerType = 'blur' | 'change' | 'all';
 
 export type Data = { [key: string]: any };
 

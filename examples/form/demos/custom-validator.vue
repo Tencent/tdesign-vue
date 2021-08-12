@@ -8,7 +8,7 @@
       @submit="onSubmit"
     >
       <t-form-item label="用户名"  name='account'>
-        <t-input v-model="formData.account"></t-input>
+        <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
       </t-form-item>
       <t-form-item label="密码" name='password'>
         <t-input type="password" v-model="formData.password"></t-input>
@@ -37,7 +37,9 @@ export default {
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
-          { min: 2, message: '至少需要两个字', type: 'error' },
+          {
+            min: 2, message: '至少需要两个字', type: 'error', trigger: 'blur',
+          },
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
@@ -62,6 +64,12 @@ export default {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
       }
+    },
+    handleBlur() {
+      this.$refs.form.validate({
+        fields: ['account'],
+        trigger: 'blur',
+      });
     },
     // 自定义异步校验器
     rePassword(val) {

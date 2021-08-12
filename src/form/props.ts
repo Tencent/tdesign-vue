@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-12 15:29:58
  * */
 
 import { PropType } from 'vue';
@@ -85,4 +87,6 @@ export default {
   onReset: Function as PropType<TdFormProps['onReset']>,
   /** 表单提交时触发。其中 validateResult 表示校验结果，firstError 表示校验不通过的第一个规则提醒 */
   onSubmit: Function as PropType<TdFormProps['onSubmit']>,
+  /** 校验结束后触发 */
+  onValidate: Function as PropType<TdFormProps['onValidate']>,
 };

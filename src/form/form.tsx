@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
-import { FormValidateResult, TdFormProps } from './type';
+import { FormValidateResult, TdFormProps, FormValidateParams } from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
 import { emitEvent } from '../utils/event';
@@ -70,11 +70,16 @@ export default Vue.extend({
     isFunction(val: unknown) {
       return typeof val === 'function';
     },
-    // 对外方法，该方法会触发全部表单组件错误信息显示
-    async validate(): Promise<Result> {
+    needValidate(name: string, fields: string[]) {
+      if (!fields || !Array.isArray(fields)) return true;
+      return fields.indexOf(name) !== -1;
+    },
+    // 对外方法，该方法会触发表单组件错误信息显示
+    async validate(param?: FormValidateParams): Promise<Result> {
+      const { fields, trigger = 'all' } = (param || {});
       const list = this.children
-        .filter((child) => this.isFunction(child.validate))
-        .map((child) => child.validate());
+        .filter((child) => this.isFunction(child.validate) && this.needValidate(child.name, fields))
+        .map((child) => child.validate(trigger));
       const arr = await Promise.all(list);
       const r = arr.reduce((r, err) => Object.assign(r || {}, err));
       Object.keys(r).forEach((key) => {
@@ -82,7 +87,9 @@ export default Vue.extend({
           delete r[key];
         }
       });
-      if (isEmpty(r)) return true;
+      const result = isEmpty(r);
+      emitEvent<Parameters<TdFormProps['onValidate']>>(this, 'validate', result);
+      if (result) return true;
       return r;
     },
     submitHandler(e?: FormSubmitEvent) {

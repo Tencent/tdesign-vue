@@ -6,7 +6,7 @@ import lodashSet from 'lodash/set';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
-  ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType,
+  ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType, ValidateTriggerType,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -122,7 +122,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
 
   watch: {
     value() {
-      this.validate();
+      this.validate('change');
     },
   },
 
@@ -136,9 +136,10 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
   },
 
   methods: {
-    async validate(): Promise<Result> {
+    async validate(trigger: ValidateTriggerType): Promise<Result> {
       this.resetValidating = true;
-      const r = await validate(this.value, this.innerRules);
+      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      const r = await validate(this.value, rules);
       this.errorList = r;
       this.verifyStatus = this.errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
       if (this.needResetField) {
