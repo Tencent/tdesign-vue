@@ -52,6 +52,7 @@ export default Vue.extend({
       timeout: null,
       refOverlayElm: null,
       hasDocumentEvent: false,
+      presetMaxHeight: null, // 组件自身已设置的maxHeight
     };
   },
   computed: {
@@ -175,6 +176,7 @@ export default Vue.extend({
       if (this.expandAnimation) {
         // 如果有展开收起动画 需要在beforeEnter阶段设置max-height为0 这导致popperjs无法知道overflow了 所以需要在这里手动判断设置placment
         this.popperElm.style.display = '';
+        this.presetMaxHeight = parseInt(getComputedStyle(this.getContentElm(this.popperElm)).maxHeight, 10) || Infinity;
         const referenceElmBottom = innerHeight - this.referenceElm.getBoundingClientRect().bottom;
         if (referenceElmBottom < this.popperElm.scrollHeight) {
           placement = 'top-start';
@@ -338,7 +340,11 @@ export default Vue.extend({
     // 设置max-height,触发展开动画
     enter(el: HTMLElement): void {
       const content = this.getContentElm(el);
-      if (content) content.style.maxHeight = `${content.scrollHeight}px`;
+      if (content) {
+        // 对比scrollHeight和组件自身设置的maxHeight 选择小的做展开动画
+        const scrollHeight = Math.min(content.scrollHeight, this.presetMaxHeight);
+        content.style.maxHeight = `${scrollHeight}px`;
+      }
     },
     // 设置max-height为0,触发收起动画
     leave(el: HTMLElement): void {
