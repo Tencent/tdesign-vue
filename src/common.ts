@@ -18,7 +18,6 @@ export type FormSubmitEvent = Event;
 export interface Styles {
   [css: string]: string | number;
 }
-
 /** 通用全局变量 */
 
 export type OptionData = {

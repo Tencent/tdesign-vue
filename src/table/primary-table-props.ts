@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-28 13:56:34
+ * updated at 2021-08-13 15:24:28
  * */
 
 import { TdPrimaryTableProps } from '../table/type';
@@ -20,7 +20,7 @@ export default {
   },
   /** 展开行内容，泛型 T 指表格数据类型 */
   expandedRow: {
-    type: Function as PropType<TdPrimaryTableProps['expandedRow']>,
+    type: [String, Function] as PropType<TdPrimaryTableProps['expandedRow']>,
   },
   /** 展开行 */
   expandedRowKeys: {
