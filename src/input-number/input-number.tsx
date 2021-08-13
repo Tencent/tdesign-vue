@@ -174,7 +174,6 @@ export default Vue.extend({
         },
       };
     },
-
     displayValue(): string | number {
       if (this.value === undefined) return;
       // inputing
@@ -233,6 +232,7 @@ export default Vue.extend({
       return filterVal;
     },
     toValidNumber(s: string) {
+      if (s === '') return undefined;
       const val = Number(s);
       if (isNaN(val) || isNaN(parseFloat(s))) return this.value;
       if (val > this.max) return this.max;
@@ -273,7 +273,17 @@ export default Vue.extend({
         this.onKeydown(this.value, { e });
       }
       this.$emit('keydown', this.value, { e });
-      this.handleKeydownEnter(e);
+      this.handleKey(e);
+    },
+    handleKey(e: KeyboardEvent) {
+      const keyEvent = {
+        ArrowUp: this.handleAdd,
+        ArrowDown: this.handleReduce,
+        Enter: this.handleKeydownEnter,
+      };
+      if (keyEvent[e.key] !== undefined) {
+        keyEvent[e.key](e);
+      }
     },
     handleKeyup(e: KeyboardEvent) {
       if (this.onKeyup) {
@@ -295,7 +305,10 @@ export default Vue.extend({
     },
     handleEndInput(e: FocusEvent) {
       this.inputing = false;
-      const value = this.toDecimalPlaces(this.toValidNumber(this.filterValue));
+      let value = this.toValidNumber(this.filterValue);
+      if (value !== undefined) {
+        value = this.toDecimalPlaces(value);
+      }
       if (value !== this.value) {
         this.updateValue(value);
         this.handleAction(value, 'input', e);
