@@ -3,7 +3,6 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import cloneDeep from 'lodash/cloneDeep';
 
 import Popup, { PopupProps } from '../popup';
 
@@ -250,7 +249,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     options: {
       immediate: true,
       handler(options: Array<Options>) {
-        this.realOptions = cloneDeep(options);
+        this.realOptions = [...options];
       },
     },
   },
