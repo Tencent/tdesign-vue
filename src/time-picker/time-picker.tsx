@@ -176,10 +176,10 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
         // 当前上下午
         let currentHour = value.hour();
         // 上下午
-        if (change === this.locale.anteMeridiem) {
+        if (change === this.locale.anteMeridiem && currentHour > 12) {
           // 上午
           currentHour -= 12;
-        } else if (change === this.locale.postMeridiem) {
+        } else if (change === this.locale.postMeridiem && currentHour < 12) {
           // 下午
           currentHour += 12;
         }
