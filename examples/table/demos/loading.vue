@@ -1,24 +1,33 @@
 <template>
   <div>
-    <div style="margin-bottom: 10px;">设置 loading 自定义数据加载时的显示文案。</div>
+    <div style="margin-bottom: 10px;">默认加载状态</div>
     <t-table
       :data="data"
       :columns="columns"
       :rowKey="rowKey"
       :size="size"
-      :loading="loading">
-    </t-table>
-    <div style="margin: 10px 0 10px;">通过定义名为 loading 的插槽，可以自定义加载状态</div>
+      :loading="true"
+    ></t-table>
+    <div style="margin-bottom: 10px;">插槽定义加载状态</div>
     <t-table
       :data="[]"
       :columns="columns"
       :rowKey="rowKey"
       :size="size"
-      :loading="true">
-      <div slot='loading' :style="style">
-        <t-loading :loading="true" />
+      :loading="true"
+    >
+      <div slot='loading' class='t-table--loading-message'>
+        这里使用插槽自定义加载状态
       </div>
     </t-table>
+    <div style="margin-bottom: 10px;">渲染函数定义加载状态</div>
+    <t-table
+      :data="[]"
+      :columns="columns"
+      :rowKey="rowKey"
+      :size="size"
+      :loading="renderLoading"
+    ></t-table>
   </div>
 </template>
 <script>
@@ -84,7 +93,6 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      loading: true,
       style: {
         height: '100px',
         display: 'flex',
@@ -92,6 +100,11 @@ export default {
         justifyContent: 'center',
       },
     };
+  },
+  methods: {
+    renderLoading(h) {
+      return <div class='t-table--loading-message'>这里使用渲染函数定义加载状态</div>;
+    },
   },
 };
 </script>

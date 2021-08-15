@@ -11,8 +11,10 @@ import TIconChevronDown from '../../icon/chevron-down';
 const tooltips = {
   asc: '点击升序',
   desc: '点击降序',
-  cancel: '点击取消排序',
+  undefined: '点击取消排序',
 };
+
+type SortTypeEnums = Array<'desc' | 'asc'>;
 
 export default mixins(getLocalReceiverMixins('table')).extend({
   name: `${prefix}-sorter-button`,
@@ -28,6 +30,13 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     nextSortOrder: {
       type: String,
       required: false,
+    },
+  },
+  computed: {
+    allowSortTypes(): SortTypeEnums {
+      return this.sortType === 'all'
+        ? ['asc', 'desc']
+        : [this.sortType];
     },
   },
   methods: {
@@ -48,14 +57,8 @@ export default mixins(getLocalReceiverMixins('table')).extend({
   },
   render() {
     const {
-      $listeners, sortType, sortOrder, nextSortOrder,
+      $listeners, allowSortTypes, sortOrder, nextSortOrder,
     } = this;
-    const allowSortTypes = [];
-    if (sortType === 'all') {
-      allowSortTypes.push('asc', 'desc');
-    } else {
-      allowSortTypes.push(sortType);
-    }
     const buttonProps = { on: { ...$listeners }, class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '' };
     const tips = tooltips[nextSortOrder];
     const sortButton = allowSortTypes

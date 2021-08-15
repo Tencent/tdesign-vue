@@ -4,14 +4,19 @@ import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
 import { prefix } from '../../../config';
+import GradientIcon from '../../../loading/icon/gradient';
+import { emitEvent } from '../../../utils/event';
+import { TdPrimaryTableProps } from '../../type';
+import { ClassName } from '../../../common';
 
-export const asyncLoadingRow = 'async-loading-row';
+type AsyncLoadingClickParams = Parameters<TdPrimaryTableProps['onAsyncLoadingClick']>;
+
+export const ASYNC_LOADING_ROW = 'async-loading-row';
 
 export default Vue.extend({
   name: `${prefix}-primary-table-async-loading`,
   props: {
     data: baseTableProps.data,
-    rowKey: baseTableProps.rowKey,
     columns: primaryTableProps.columns,
     asyncLoading: primaryTableProps.asyncLoading,
   },
@@ -21,42 +26,51 @@ export default Vue.extend({
     };
   },
   computed: {
-    isLoadingMore(): boolean {
-      return this.asyncLoading === 'loading-more';
+    classes(): ClassName {
+      return [
+        `${prefix}-table--loading-async`,
+        {
+          [`${prefix}-table--loading-status-${this.asyncLoading}`]: typeof this.asyncLoading === 'string',
+        },
+      ];
     },
   },
   methods: {
-    // 处理 data
-    asyncLoadingHandler(data: Array<any>): Array<any> {
-      const { asyncLoading } = this;
-      // 异步加载 pullDownLoading 新增一条数据
-      if (asyncLoading) {
-        data.push({ colKey: asyncLoadingRow });
-      } else {
-        const { colKey = '' } = data[data.length - 1] || {};
-        colKey === asyncLoadingRow && data.unshift();
+    // 异步加载 pullDownLoading 新增一条数据
+    asyncLoadingHandler(): Array<any> {
+      if (this.asyncLoading) {
+        return this.data.concat({ colKey: ASYNC_LOADING_ROW });
       }
-      return data;
+      return this.data;
+    },
+    onLoadClick() {
+      if (typeof this.asyncLoading !== 'string') return;
+      emitEvent<AsyncLoadingClickParams>(this, 'async-loading-click', { status: this.asyncLoading });
     },
     renderAsyncLoadingRow(): VNode {
       const { asyncLoading } = this;
-      const loadingText = this.isLoadingMore ? '点击加载更多' : '正在加载中，请稍后';
       const columns = [
         {
-          colKey: asyncLoadingRow,
+          colKey: ASYNC_LOADING_ROW,
           attrs: { colSpan: this.columns.length },
-          render: (h: CreateElement): VNode => {
+          render: (h: CreateElement) => {
             if (typeof asyncLoading === 'function') {
-              return asyncLoading(h) as VNode;
+              return asyncLoading(h);
             }
-            return (<div class={`${prefix}-table--loading-async`}>
-              <i class={`${prefix}-icon ${prefix}-icon-spinner`}></i>
-              {loadingText}
-            </div>);
+            const loadingText = {
+              'load-more': '点击加载更多',
+              loading: '正在加载中，请稍后',
+            }[String(this.asyncLoading)];
+            return (
+              <div class={this.classes} onClick={this.onLoadClick}>
+                {this.asyncLoading === 'loading' && <GradientIcon size='small' />}
+                {loadingText}
+              </div>
+            );
           },
         },
       ];
-      return <TableRow rowKey={this.rowKey} columns={columns}></TableRow>;
+      return <TableRow rowKey={ASYNC_LOADING_ROW} columns={columns}></TableRow>;
     },
   },
 });

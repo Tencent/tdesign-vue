@@ -25,7 +25,6 @@ export default Vue.extend({
     },
   },
   methods: {
-    // get
     getExpandColumns(columns: Columns): Columns {
       return this.expandedRow
         ? [
@@ -39,8 +38,6 @@ export default Vue.extend({
         ]
         : columns;
     },
-
-    // render
     // 渲染展开单元格内容
     renderExpandIconCell({ row = {} }: Record<string, any>): VNode {
       const { expandedRowKeys = [] } = this;

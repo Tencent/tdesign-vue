@@ -1,6 +1,18 @@
 <template>
   <div>
-    <t-table :columns="columns" :data="data" :asyncLoading="asyncLoading"></t-table>
+    <t-radio-group v-model="asyncLoading">
+      <t-radio-button value="load-more">加载更多</t-radio-button>
+      <t-radio-button value="loading">加载中</t-radio-button>
+      <t-radio-button value="loading-custom">自定义加载更多</t-radio-button>
+    </t-radio-group>
+
+    <t-table
+      rowKey="key"
+      :columns="columns"
+      :data="data"
+      :asyncLoading="loadingNode"
+      @async-loading-click="onAsyncLoadingClick"
+    ></t-table>
   </div>
 </template>
 
@@ -63,6 +75,23 @@ export default {
       columns,
       asyncLoading: 'loading',
     };
+  },
+  computed: {
+    loadingNode() {
+      return this.asyncLoading === 'loading-custom'
+        ? this.customLoadingNode
+        : this.asyncLoading;
+    },
+  },
+  methods: {
+    customLoadingNode(h) {
+      return <div class='t-table--loading-async'>这是自定义加载状态和内容</div>;
+    },
+    onAsyncLoadingClick({ status }) {
+      if (status === 'load-more') {
+        this.asyncLoading = 'loading';
+      }
+    },
   },
 };
 </script>

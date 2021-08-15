@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-13 15:24:28
+ * updated at 2021-08-15 12:05:55
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -185,7 +185,7 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
   /**
    * 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `loading-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容
    */
-  asyncLoading?: string | TNode;
+  asyncLoading?: 'loading' | 'load-more' | TNode;
   /**
    * 列配置，泛型 T 指表格数据类型
    * @default []
@@ -248,9 +248,17 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
    */
   defaultSort?: TableSort;
   /**
+   * 异步加载区域被点击时触发
+   */
+  onAsyncLoadingClick?: (context: { status: 'loading' | 'load-more' }) => void;
+  /**
    * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型
    */
   onChange?: (data: TableChangeData, context: TableChangeContext<Array<T>>) => void;
+  /**
+   * 表格数据发生变化时触发，比如：本地排序方法 sorter
+   */
+  onDataChange?: (data: Array<T>) => void;
   /**
    * 展开行发生变化时触发，泛型 T 指表格数据类型
    */
@@ -266,7 +274,7 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
   /**
    * 排序发生变化时触发。其中 sortBy 表示当前排序的字段，sortType 表示排序的方式，currentDataSource 表示 sorter 排序后的结果，col 表示列配置。sort 值类型为数组时表示多字段排序
    */
-  onSortChange?: (sort: SortInfo | Array<SortInfo>, options: SortOptions<T>) => void;
+  onSortChange?: (sort: TableSort, options: SortOptions<T>) => void;
 };
 
 export interface PrimaryTableCol<T extends DataType = DataType> extends BaseTableCol {
@@ -351,7 +359,7 @@ export type FilterType = 'input' | 'single' | 'multiple';
 
 export type FilterProps = RadioProps | CheckboxProps | InputProps;
 
-export type SorterFun<T> = (a: T, b: T, options?: { sortType: SortType }) => SortNumber;
+export type SorterFun<T> = (a: T, b: T) => SortNumber;
 
 export type SortNumber = 1 | -1 | 0;
 

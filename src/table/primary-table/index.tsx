@@ -28,8 +28,7 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
   },
   computed: {
     rehandleData(): Array<DataType> {
-      const data = this.sorterHandler();
-      return this.asyncLoadingHandler([...data]);
+      return this.asyncLoadingHandler();
     },
     rehandleColumns(): Array<PrimaryTableCol> {
       let columns = this.columns.map((col) => ({ ...col }));
@@ -56,20 +55,18 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
       }
       this.renderExpandedRow(params);
     },
-
   },
   render() {
     const {
-      $props, $scopedSlots, rehandleColumns, rehandleData, showColumns,
+      $props, $scopedSlots, rehandleColumns, showColumns,
     } = this;
     const scopedSlots = {
-
       ...$scopedSlots,
     };
     const baseTableProps = {
       props: {
         ...$props,
-        data: rehandleData,
+        data: this.rehandleData,
         columns: rehandleColumns,
         provider: {
           renderRows: this.renderRows,

@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-13 15:24:28
+ * updated at 2021-08-15 12:05:55
  * */
 
 import { TdPrimaryTableProps } from '../table/type';
@@ -69,8 +69,12 @@ export default {
   defaultSort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['defaultSort']>,
   },
+  /** 异步加载区域被点击时触发 */
+  onAsyncLoadingClick: Function as PropType<TdPrimaryTableProps['onAsyncLoadingClick']>,
   /** 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型 */
   onChange: Function as PropType<TdPrimaryTableProps['onChange']>,
+  /** 表格数据发生变化时触发，比如：本地排序方法 sorter */
+  onDataChange: Function as PropType<TdPrimaryTableProps['onDataChange']>,
   /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
   onExpandChange: Function as PropType<TdPrimaryTableProps['onExpandChange']>,
   /** 过滤参数发生变化时触发，泛型 T 指表格数据类型 */

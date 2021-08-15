@@ -51,11 +51,6 @@ export const ExpandProps = {
   expandedRow: primaryTableProps.expandedRow,
 };
 
-export type SortColumnAndOrder = {
-  sortOrder: SortType;
-  sortColumn: PrimaryTableCol;
-};
-
 export type RenderExpandRow = {
   row: any;
   rows: any;

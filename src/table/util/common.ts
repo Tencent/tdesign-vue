@@ -80,8 +80,6 @@ export function getTitle(vm: Vue, column: PrimaryTableCol, colIndex: number) {
   let result = null;
   if (isFunction(column.title)) {
     result = column.title(vm.$createElement, { col: column, colIndex });
-  } else if (vm.$scopedSlots[column.colKey]) {
-    result = vm.$scopedSlots[column.colKey](null);
   } else if (isString(column.title)) {
     result = vm.$scopedSlots[column.title]
       ? vm.$scopedSlots[column.title](null)
