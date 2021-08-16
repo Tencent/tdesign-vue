@@ -1,8 +1,11 @@
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
+import debounce from 'lodash/debounce';
+import isObject from 'lodash/isObject';
 import { prefix } from '../config';
-import responsiveObserver from '../utils/responsive-observer';
 import props from './row-props';
 import { ClassName } from '../common';
+import { calcSize } from '../utils/responsive';
+import { TdRowProps } from './type';
 
 const name = `${prefix}-row`;
 
@@ -13,15 +16,15 @@ export default Vue.extend({
 
   data() {
     return {
-      screenSize: '',
-      respHanlerToken: -1,
+      size: calcSize(window.innerWidth),
     };
   },
 
   provide(): { rowContext: any } {
     return {
       rowContext: {
-        getGutter: this.getGutter,
+        gutter: this.gutter,
+        size: this.size,
       },
     };
   },
@@ -37,65 +40,45 @@ export default Vue.extend({
         },
       ];
     },
-    styles() {
-      const gutter = this.getGutter();
-      const margin: any = {};
-      if (gutter[0] > 0) {
-        margin.marginLeft = `${gutter[0] / -2}px`;
-        margin.marginRight = `${gutter[0] / -2}px`;
-      }
-      if (gutter[1] > 0) {
-        margin.marginTop = `${gutter[1] / -2}px`;
-        margin.marginBottom = `${gutter[1] / -2}px`;
+  },
+
+  mounted() {
+    window.addEventListener('resize', this.updateSize);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateSize);
+  },
+
+  methods: {
+    updateSize: debounce(function (this: any) {
+      this.size = calcSize(window.innerWidth);
+    }, 50),
+
+    calcRowMargin(gutter: TdRowProps['gutter'], currentSize: string): string {
+      let margin = '';
+      if (typeof gutter === 'number') {
+        margin = `0 -${gutter / 2}px`;
+      } else if (Array.isArray(gutter) && gutter.length) {
+        margin = `0 -${gutter[0] as any / 2}px`;
+      } else if (isObject(gutter) && gutter[currentSize]) {
+        if (Array.isArray(gutter[currentSize])) {
+          margin = `0 -${gutter[currentSize][0] / 2}px`;
+        } else {
+          margin = `0 -${gutter[currentSize] / 2}px`;
+        }
       }
       return margin;
     },
   },
 
-  watch: {},
+  render(): VNode {
+    const { tag, classes } = this;
 
-  // created() {
-  //   this.$provide.rowContext.getGutter = this.getGutter;
-  // },
+    const rowStyle = {
+      margin: this.calcRowMargin(this.gutter, this.size),
+    };
 
-  mounted() {
-    this.respHanlerToken = responsiveObserver.subscribe((screenSize: string) => {
-      this.screenSize = screenSize;
-    });
-  },
-
-  beforeDestroy() {
-    responsiveObserver.unsubscribe(this.respHanlerToken);
-  },
-
-  methods: {
-    renderContent() {
-      return this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
-    },
-
-    getGutter() {
-      const results = [0, 0];
-      const { gutter, screenSize } = this;
-      const normalizedGutter = Array.isArray(gutter) ? gutter : [gutter, 0];
-      normalizedGutter.forEach((g, index) => {
-        if (typeof g === 'object') {
-          if (g[screenSize] !== undefined) {
-            results[index] = g[screenSize];
-          }
-        } else {
-          results[index] = g || 0;
-        }
-      });
-      return results;
-    },
-  },
-
-  render() {
-    const component = this.tag;
-    return (
-      <component class={this.classes} style={this.styles}>
-        {this.renderContent()}
-      </component>
-    );
+    return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
   },
 });

@@ -518,9 +518,11 @@ exports[`Button size demo works fine 1`] = `
 >
   <div
     class="tdesign-demo-block t-row t-row-start t-row-top"
+    style="margin: 0px -0px;"
   >
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-s t-button--variant-base t-button--theme-primary"
@@ -536,6 +538,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-s t-button--variant-outline t-button--theme-default"
@@ -551,6 +554,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-s t-button--variant-dashed t-button--theme-default"
@@ -566,6 +570,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-s t-button--variant-text t-button--theme-default"
@@ -582,9 +587,11 @@ exports[`Button size demo works fine 1`] = `
    
   <div
     class="tdesign-demo-block t-row t-row-start t-row-top"
+    style="margin: 0px -0px;"
   >
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-m t-button--variant-base t-button--theme-primary"
@@ -600,6 +607,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -615,6 +623,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
@@ -630,6 +639,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-m t-button--variant-text t-button--theme-default"
@@ -646,9 +656,11 @@ exports[`Button size demo works fine 1`] = `
    
   <div
     class="tdesign-demo-block t-row t-row-start t-row-top"
+    style="margin: 0px -0px;"
   >
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-l t-button--variant-base t-button--theme-primary"
@@ -664,6 +676,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-l t-button--variant-outline t-button--theme-default"
@@ -679,6 +692,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-l t-button--variant-dashed t-button--theme-default"
@@ -694,6 +708,7 @@ exports[`Button size demo works fine 1`] = `
      
     <div
       class="t-col t-col-3"
+      style="padding: 0px 0px;"
     >
       <button
         class="t-button t-size-l t-button--variant-text t-button--theme-default"
