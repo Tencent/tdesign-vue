@@ -1,6 +1,6 @@
 import { BaseTableCol } from '../type';
 
-export function flatColumns(columns: Array<BaseTableCol>): Array<BaseTableCol> {
+export default function flatColumns(columns: Array<BaseTableCol>): Array<BaseTableCol> {
   const result: Array<BaseTableCol> = [];
   columns.forEach((column: BaseTableCol) => {
     const { children } = column;
@@ -13,30 +13,4 @@ export function flatColumns(columns: Array<BaseTableCol>): Array<BaseTableCol> {
     }
   });
   return result;
-}
-
-export function treeMap(tree: Array<any>, mapper: Function, childrenName = 'children') {
-  return tree.map((node, index) => {
-    const extra = {};
-    if (node[childrenName]) {
-      extra[childrenName] = treeMap(node[childrenName], mapper, childrenName);
-    }
-    return {
-      ...mapper(node, index),
-      ...extra,
-    };
-  });
-}
-
-export function flatFilter(tree: Array<any>, callback: Function) {
-  return tree.reduce((acc, node) => {
-    if (callback(node)) {
-      acc.push(node);
-    }
-    if (node.children) {
-      const children = flatFilter(node.children, callback);
-      acc.push(...children);
-    }
-    return acc;
-  }, []);
 }

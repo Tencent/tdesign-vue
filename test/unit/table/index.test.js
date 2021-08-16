@@ -357,57 +357,68 @@ describe('Table', () => {
   });
 
   // sort
-  describe(':sort', () => {
-    // TODO: sort目前不好使，暂时注释
-    // const data = [
-    //   {
-    //     key: '1',
-    //     name: 'John Brown',
-    //     age: 32,
-    //     address: 'New York No. 1 Lake Park',
-    //   },
-    //   {
-    //     key: '2',
-    //     name: 'Jim Green',
-    //     age: 42,
-    //     address: 'London No. 1 Lake Park',
-    //   },
-    //   {
-    //     key: '3',
-    //     name: 'Joe Black',
-    //     age: 20,
-    //     address: 'Sidney No. 1 Lake Park',
-    //   },
-    // ];
-    // const columns = [
-    //   {
-    //     title: 'Name',
-    //     colKey: 'name',
-    //   },
-    //   {
-    //     title: 'Age',
-    //     colKey: 'age',
-    //     sorter: (a, b) => a.age - b.age,
-    //   },
-    //   {
-    //     title: 'Address',
-    //     colKey: 'address',
-    //   },
-    // ];
-    // it('click sorter icon', async () => {
-    //   const wrapper = await mount({
-    //     render() {
-    //       return <Table rowKey='id' data={data} columns={columns} />;
-    //     },
-    //   });
-    //   expect(wrapper.find('.table-body tr td').text()).toBe('John Brown');
-    //   const clickDom = wrapper.find('thead tr td .t-table-sort-icon');
-    //   await clickDom.trigger('click');
-    //   expect(wrapper.find('.table-body tr td').text()).toBe('Joe Black');
-    //   await clickDom.trigger('click');
-    //   expect(wrapper.find('.table-body tr td').text()).toBe('Jim Green');
-    // });
-  });
+  // describe(':sort', () => {
+  //   const data = [
+  //     {
+  //       key: '1',
+  //       firstName: 'Eric',
+  //       age: 33,
+  //       email: 'espinke0@apache.org',
+  //     },
+  //     {
+  //       key: '2',
+  //       firstName: 'Gilberta',
+  //       age: 44,
+  //       email: 'gpurves1@issuu.com',
+  //     },
+  //     {
+  //       key: '3',
+  //       firstName: 'Heriberto',
+  //       age: 18,
+  //       email: 'hkment2@nsw.gov.au',
+  //     },
+  //     {
+  //       key: '4',
+  //       firstName: 'Lazarus',
+  //       age: 11,
+  //       email: 'lskures3@apache.org',
+  //     },
+  //     {
+  //       key: '5',
+  //       firstName: 'Zandra',
+  //       age: 22,
+  //       email: 'zcroson5@virginia.edu',
+  //     },
+  //   ];
+  //   const columns = [
+  //     {
+  //       title: 'FirstName',
+  //       colKey: 'firstName',
+  //     },
+  //     {
+  //       title: 'Age',
+  //       colKey: 'age',
+  //       sorter: (a, b) => a.age - b.age,
+  //     },
+  //     {
+  //       title: 'Email',
+  //       colKey: 'email',
+  //     },
+  //   ];
+  //   it('click sorter icon', async () => {
+  //     const wrapper = await mount({
+  //       render() {
+  //         return <Table rowKey='id' data={data} columns={columns} />;
+  //       },
+  //     });
+  //     expect(wrapper.find('.table-body tr td').text()).toBe('Eric');
+  //     const clickDom = wrapper.find('thead tr td .t-table-sort-asc');
+  //     await clickDom.trigger('click');
+  //     expect(wrapper.find('.table-body tr td').text()).toBe('Lazarus');
+  //     await clickDom.trigger('click');
+  //     expect(wrapper.find('.table-body tr td').text()).toBe('Gilberta');
+  //   });
+  // });
 
   // asyncLoading
   describe(':asyncLoading', () => {
@@ -440,27 +451,33 @@ describe('Table', () => {
     const data = [
       {
         key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
+        firstName: 'Eric',
+        lastName: 'Spinke',
+        email: 'espinke0@apache.org',
       },
       {
         key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
+        firstName: 'Gilberta',
+        lastName: 'Purves',
+        email: 'gpurves1@issuu.com',
       },
       {
         key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
+        firstName: 'Heriberto',
+        lastName: 'Kment',
+        email: 'hkment2@nsw.gov.au',
       },
       {
         key: '4',
-        name: 'Jim Red',
-        age: 32,
-        address: 'London No. 2 Lake Park',
+        firstName: 'Lazarus',
+        lastName: 'Skures',
+        email: 'lskures3@apache.org',
+      },
+      {
+        key: '5',
+        firstName: 'Zandra',
+        lastName: 'Croson',
+        email: 'zcroson5@virginia.edu',
       },
     ];
 
@@ -478,32 +495,32 @@ describe('Table', () => {
             filteredInfo = filteredInfo || {};
             const columns = [
               {
-                title: 'Name',
-                colKey: 'name',
-                key: 'name',
+                title: 'FirstName',
+                colKey: 'firstName',
+                key: 'firstName',
                 filters: [
-                  { label: 'Joe', value: 'Joe' },
-                  { label: 'Jim', value: 'Jim' },
+                  { label: 'Heriberto', value: 'Heriberto' },
+                  { label: 'Eric', value: 'Eric' },
                 ],
-                filteredValue: filteredInfo.name || null,
-                onFilter: (value, record) => record.name.includes(value),
+                filteredValue: filteredInfo.firstName || null,
+                onFilter: (value, record) => record.firstName.includes(value),
                 filterMultiple: true,
               },
               {
-                title: 'Age',
-                colKey: 'age',
-                key: 'age',
+                title: 'LastName',
+                colKey: 'lastName',
+                key: 'lastName',
               },
               {
-                title: 'Address',
-                colKey: 'address',
-                key: 'address',
+                title: 'Email',
+                colKey: 'email',
+                key: 'email',
                 filters: [
-                  { label: 'London', value: 'London' },
-                  { label: 'New York', value: 'New York' },
+                  { label: 'hkment2@nsw.gov.au', value: 'hkment2@nsw.gov.au' },
+                  { label: 'lskures3@apache.org', value: 'lskures3@apache.org' },
                 ],
-                filteredValue: filteredInfo.address || null,
-                onFilter: (value, record) => record.address.includes(value),
+                filteredValue: filteredInfo.email || null,
+                onFilter: (value, record) => record.email.includes(value),
               },
             ];
             return columns;
@@ -515,7 +532,7 @@ describe('Table', () => {
         },
       });
       expect(wrapper.findAll('.table-body tr').length).toBe(data.length);
-      await wrapper.setData({ filteredInfo: { name: ['Jim'] } });
+      await wrapper.setData({ filteredInfo: { firstName: ['Jim'] } });
       await wrapper.setData({ filteredInfo: null });
       expect(wrapper.findAll('.table-body tr').length).toBe(data.length);
     });

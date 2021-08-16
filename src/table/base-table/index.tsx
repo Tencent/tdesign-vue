@@ -3,7 +3,7 @@ import throttle from 'lodash/throttle';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import { prefix } from '../../config';
-import { flatColumns } from '../util/props-util';
+import flatColumns from '../util/props-util';
 import baseTableProps from '../base-table-props';
 import {
   DataType, BaseTableCol, TdBaseTableProps, RowEventContext,

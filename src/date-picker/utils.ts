@@ -109,67 +109,6 @@ export function setStyles(el: HTMLElement | SVGElement, styles: TdCSSProperties)
 }
 
 /**
- * 生成区间数组 range(start, stop, step)
- * @param {Number | String} low
- * @param {Number | String} high
- * @param {Number} step
- * @returns {Array}
- * @example
- * range(0, 100, 10) === [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
- * @since version V1.0.0
- */
-
-export function range<T extends number | string>(low: T, high: T, step = 1): T[] {
-  // http://kevin.vanzonneveld.net
-  // +   original by: Waldo Malqui Silva
-  // *     example 1: range ( 0, 12 )
-  // *     returns 1: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  // *     example 2: range( 0, 100, 10 )
-  // *     returns 2: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-  // *     example 3: range( 'a', 'i' )
-  // *     returns 3: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
-  // *     example 4: range( 'c', 'a' )
-  // *     returns 4: ['c', 'b', 'a']
-  // let matrix: number[] = [];
-  const matrix: any[] = [];
-  // let matrix2: number[] = [];
-  let start = 0;
-  let stop = 0;
-  let isStringRange = false;
-
-  if (typeof low === 'number') {
-    start = low * 1;
-  } else {
-    start = String(low).charCodeAt(0);
-    isStringRange = true;
-  }
-  if (typeof high === 'number') {
-    stop = high * 1;
-  } else {
-    stop = String(high).charCodeAt(0);
-    isStringRange = true;
-  }
-
-  const reverse = start > stop;
-
-  if (reverse) {
-    while (start >= stop) {
-      matrix.push(isStringRange ? String.fromCharCode(start) : start);
-      start -= step;
-    }
-  } else {
-    while (start <= stop) {
-      matrix.push(isStringRange ? String.fromCharCode(start) : start);
-      start += step;
-    }
-  }
-
-  return matrix;
-}
-
-// date utils
-
-/**
  * 首字母大写
  * @param {String} str 目标字符串
  * @returns {String}

@@ -20,50 +20,50 @@
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
+    firstName: 'Eric',
+    lastName: 'Spinke',
+    email: 'espinke0@apache.org',
   },
   {
     key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    firstName: 'Gilberta',
+    lastName: 'Purves',
+    email: 'gpurves1@issuu.com',
   },
   {
     key: '3',
-    name: 'Joe Black',
-    age: 20,
-    address: 'Sidney No. 1 Lake Park',
+    firstName: 'Heriberto',
+    lastName: 'Kment',
+    email: 'hkment2@nsw.gov.au',
   },
   {
     key: '4',
-    name: 'Jim Red',
-    age: 31,
-    address: 'London No. 2 Lake Park',
+    firstName: 'Lazarus',
+    lastName: 'Skures',
+    email: 'lskures3@apache.org',
   },
   {
     key: '5',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
+    firstName: 'Zandra',
+    lastName: 'Croson',
+    email: 'zcroson5@virginia.edu',
   },
 ];
 
 const columns = [
   {
-    title: 'Name',
-    colKey: 'name',
+    title: 'FirstName',
+    colKey: 'firstName',
     width: '100',
   },
   {
-    title: 'Age',
-    colKey: 'age',
+    title: 'LastName',
+    colKey: 'lastName',
     width: '100',
   },
   {
-    title: 'Address',
-    colKey: 'address',
+    title: 'Email',
+    colKey: 'email',
     width: '250',
   },
 ];
