@@ -142,6 +142,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const r = await validate(this.value, rules);
       this.errorList = r;
       this.verifyStatus = this.errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
+      if (!rules.length) this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
       if (this.needResetField) {
         this.resetHandler();
       }

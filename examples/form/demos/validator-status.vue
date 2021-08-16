@@ -81,7 +81,9 @@ export default {
         warning: [
           { required: true, message: '必填', type: 'warning' },
         ],
-        success: [],
+        success: [
+          { validator: () => true },
+        ],
         failB: [
           { required: true, message: '必填', type: 'error' },
         ],
