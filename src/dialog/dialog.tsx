@@ -47,6 +47,8 @@ function InitDragEvent(dragBox: HTMLElement) {
     document.addEventListener('mousemove', mouseMoverHander);
     // 鼠标弹起来移除document鼠标监听事件
     document.addEventListener('mouseup', mouseUpHandler);
+    // 拖拽结束移除鼠标监听事件，解决文字拖拽结束事件未解绑问题
+    document.addEventListener('dragend', mouseUpHandler);
   });
 }
 
