@@ -6,6 +6,7 @@
       ref="form"
       @reset="onReset"
       @submit="onSubmit"
+      @validate="onValidate"
     >
       <t-form-item label="用户名"  name='account'>
         <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
@@ -63,6 +64,13 @@ export default {
       } else {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
+      }
+    },
+    onValidate({ validateResult, firstError }) {
+      if (validateResult === true) {
+        console.log('Validate Success');
+      } else {
+        console.log('Validate Errors: ', firstError, validateResult);
       }
     },
     handleBlur() {

@@ -2,11 +2,11 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-12 15:29:58
+ * updated at 2021-08-16 20:08:34
  * */
 
-import { PropType } from 'vue';
 import { TdFormProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 是否在表单标签字段右侧显示冒号 */

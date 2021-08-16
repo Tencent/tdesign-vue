@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-12 15:29:58
+ * updated at 2021-08-16 20:08:34
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -82,7 +82,7 @@ export interface TdFormProps<FormData extends Data = Data> {
   /**
    * 校验结束后触发
    */
-  onValidate?: (result:  FormValidateResult<FormData>) => void;
+  onValidate?: (result:  ValidateResultContext<FormData>) => void;
 };
 
 /** 组件实例方法 */
@@ -131,7 +131,7 @@ export interface TdFormItemProps {
    * 校验状态图标。优先级高级 Form 的 statusIcon
    */
   statusIcon?: boolean | TNode;
-}
+};
 
 export interface FormRule {
   /**
@@ -205,9 +205,9 @@ export interface FormRule {
    * 自定义校验规则
    */
   validator?: CustomValidator;
-}
+};
 
-export interface SubmitContext<T extends Data = Data> { e?: FormSubmitEvent; validateResult: FormValidateResult<T>; firstError?: string }
+export interface SubmitContext<T extends Data = Data> { e?: FormSubmitEvent; validateResult: FormValidateResult<T>; firstError?: string };
 
 export type FormValidateResult<T> = boolean | ValidateResult<T>;
 
@@ -217,12 +217,14 @@ export type ErrorList = Array<FormRule>;
 
 export type ValueType = any;
 
+export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
+
 export interface FormValidateParams { fields?: Array<string>; trigger?: ValidateTriggerType };
 
 export type ValidateTriggerType = 'blur' | 'change' | 'all';
 
 export type Data = { [key: string]: any };
 
-export interface IsDateOptions { format: string; strictMode: boolean; delimiters: string[] }
+export interface IsDateOptions { format: string; strictMode: boolean; delimiters: string[] };
 
 export type CustomValidator = (val: ValueType) => boolean | Promise<boolean>;

@@ -87,10 +87,12 @@ export default Vue.extend({
           delete r[key];
         }
       });
-      const result = isEmpty(r);
-      emitEvent<Parameters<TdFormProps['onValidate']>>(this, 'validate', result);
-      if (result) return true;
-      return r;
+      const result = isEmpty(r) ? true : r;
+      emitEvent<Parameters<TdFormProps['onValidate']>>(this, 'validate', {
+        validateResult: result,
+        firstError: this.getFirstError(result),
+      });
+      return result;
     },
     submitHandler(e?: FormSubmitEvent) {
       if (this.preventSubmitDefault) {
