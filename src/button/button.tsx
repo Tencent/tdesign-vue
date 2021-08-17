@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import TIconLoading from '../icon/loading';
+import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
@@ -14,7 +14,7 @@ export default Vue.extend({
   directives: { ripple },
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
-    const icon = this.loading ? <TIconLoading/> : renderTNodeJSX(this, 'icon');
+    const icon = this.loading ? <TLoading/> : renderTNodeJSX(this, 'icon');
     const iconOnly = icon && !buttonContent;
     let { theme } = this;
 
