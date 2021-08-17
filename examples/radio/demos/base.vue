@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .tdesign-radio-base .tdesign-demo-block {
   display: flex;
   justify-content: space-around;

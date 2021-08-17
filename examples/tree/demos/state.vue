@@ -113,7 +113,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
   .tdesign-tree-state .title{
     margin-top: 10px;
     font-weight: bold;

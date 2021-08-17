@@ -285,7 +285,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .tdesign-demo-item--locale-provider-base {
   margin: 24px -120px 0 0;
 }

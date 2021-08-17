@@ -37,7 +37,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .t-popup-demo-base-item {
   display: inline-block;
 }

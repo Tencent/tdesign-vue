@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .t-demo-message {
   .t-message,
   .t-button {

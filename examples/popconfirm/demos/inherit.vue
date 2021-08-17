@@ -12,6 +12,10 @@
 </template>
 
 <style scoped>
+.popconfirm-demo .demo-item {
+  width: 240px;
+  text-align: left;
+}
 .popconfirm-demo .tdesign-demo-block {
   display: flex;
   justify-content: space-around;

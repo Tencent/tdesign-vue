@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .badge-block {
   width: 40px;
   height: 40px;

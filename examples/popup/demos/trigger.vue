@@ -14,7 +14,7 @@
     </t-popup>
   </div>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 .popup-demo-container{
   display: flex;
   align-items: center;

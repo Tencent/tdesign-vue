@@ -70,14 +70,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../../../src/_common/style/web/_variables.less';
 .link {
   cursor: pointer;
   margin-right: 15px;
 }
 .status {
   position: relative;
-  color: @success-color;
+  color: #00A870;
   margin-left: 10px;
   &::before {
     position: absolute;
@@ -85,7 +84,7 @@ export default {
     left: 0px;
     transform: translateY(-50%);
     content: "";
-    background-color: @success-color;
+    background-color: #00A870;
     width: 6px;
     height: 6px;
     margin-left: -10px;
@@ -93,9 +92,9 @@ export default {
   }
 }
 .status.unhealth {
-  color: @error-color;
+  color: #E34D59;
   &::before {
-    background-color: @error-color;
+    background-color: #E34D59;
   }
 }
 </style>

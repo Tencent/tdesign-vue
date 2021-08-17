@@ -54,3 +54,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.popconfirm-demo .tdesign-demo-block {
+  display: flex;
+  justify-content: flex-start;
+}
+.popconfirm-demo .demo-item {
+  width: 240px;
+  text-align: left;
+}
+</style>

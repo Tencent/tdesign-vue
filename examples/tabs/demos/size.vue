@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
   .t-demo-tabs {
 
     &__desc {

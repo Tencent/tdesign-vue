@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .custom-popup {
     font-weight: bold;
     color: yellow !important;

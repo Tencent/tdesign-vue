@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .controls {
   margin-bottom: 32px;
 }

@@ -30,7 +30,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .t-popup-demo-block {
   width: 300px;
   margin-right: 30px;

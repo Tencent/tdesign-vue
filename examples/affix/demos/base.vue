@@ -6,7 +6,6 @@
       ref="affix"
     >
       <t-button
-        @click="addTop"
         :style="{height: top + 'px'}"
       >Base</t-button>
     </t-affix>
@@ -19,12 +18,6 @@ export default {
     return {
       top: 40,
     };
-  },
-  methods: {
-    addTop() {
-      this.top += 10;
-      this.$refs?.affix.calcInitValue();
-    },
   },
 };
 </script>

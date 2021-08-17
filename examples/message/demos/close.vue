@@ -2,14 +2,6 @@
   <div class="t-demo-message">
 
     <t-message
-      v-if="isShowDurationMsg"
-      :duration="10000"
-      @duration-end="isShowDurationMsg = false"
-    >计时结束触发事件 duration-end（10s）</t-message>
-
-    <t-button v-if="!isShowDurationMsg" @click="isShowDurationMsg = true">再次弹出计时信息</t-button>
-
-    <t-message
       v-if="isShowMsg"
       :closeBtn="true"
       @close-btn-click="isShowMsg = false"
@@ -39,7 +31,6 @@ export default {
   data() {
     return {
       isShowMsg: true,
-      isShowDurationMsg: true,
       closableMsg: true,
       closableMsg1: true,
       closableMsg2: true,
@@ -61,3 +52,12 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+.t-demo-message {
+  .t-message,
+  .t-button {
+    margin-bottom: 16px;
+  }
+}
+</style>

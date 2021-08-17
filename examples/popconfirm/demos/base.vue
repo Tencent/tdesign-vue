@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .popconfirm-demo .tdesign-demo-block {
   display: flex;
   justify-content: flex-start;
