@@ -47,9 +47,9 @@ export default Vue.extend({
     if (fixed) {
       style.position = 'sticky';
       style[fixed] = `${offsetLeft}px`;
-      fixedClass.push(`t-table__cell--fixed-${fixed}`);
+      fixedClass.push(`${prefix}-table__cell--fixed-${fixed}`);
       if (isBoundary) {
-        fixedClass.push(`t-table__cell--fixed-${fixed}-${fixed === 'left' ? 'last' : 'first'}`);
+        fixedClass.push(`${prefix}-table__cell--fixed-${fixed}-${fixed === 'left' ? 'last' : 'first'}`);
       }
     }
     if (align) {
@@ -72,6 +72,9 @@ export default Vue.extend({
       } else {
         attrClass.push(className);
       }
+    }
+    if (['single', 'multiple'].indexOf(col.type) > -1) {
+      attrClass.push(`${prefix}-table__cell--selectable`);
     }
     const record = getRecord(row);
     // 自定义单元格渲染

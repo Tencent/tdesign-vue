@@ -1332,7 +1332,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table-expand-box"
                 >
                   <span
-                    style="transition: all .2s;"
+                    style="transition: all .2s; display: flex; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-down-circle"
@@ -1468,7 +1468,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table-expand-box"
                 >
                   <span
-                    style="transition: all .2s; transform: rotate(-180deg);"
+                    style="transition: all .2s; display: flex; align-items: center; transform: rotate(-180deg);"
                   >
                     <svg
                       class="t-icon t-icon-chevron-down-circle"
@@ -1606,7 +1606,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table-expand-box"
                 >
                   <span
-                    style="transition: all .2s; transform: rotate(-180deg);"
+                    style="transition: all .2s; display: flex; align-items: center; transform: rotate(-180deg);"
                   >
                     <svg
                       class="t-icon t-icon-chevron-down-circle"
@@ -1744,7 +1744,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table-expand-box"
                 >
                   <span
-                    style="transition: all .2s; transform: rotate(-180deg);"
+                    style="transition: all .2s; display: flex; align-items: center; transform: rotate(-180deg);"
                   >
                     <svg
                       class="t-icon t-icon-chevron-down-circle"
@@ -1890,10 +1890,10 @@ exports[`Table fixedColumn demo works fine 1`] = `
       >
         <colgroup>
           <col
-            style="width: 150px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 150px;"
+            style="width: 100px;"
           />
           <col
             style="width: 150px;"
@@ -1905,14 +1905,17 @@ exports[`Table fixedColumn demo works fine 1`] = `
             style="width: 250px;"
           />
           <col
+            style="width: 100px;"
+          />
+          <col
             style="width: 150px;"
           />
           <col
-            style="width: 80px;"
+            style="width: 100px;"
           />
         </colgroup>
         <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
         >
           <tr>
             <td
@@ -1961,6 +1964,15 @@ exports[`Table fixedColumn demo works fine 1`] = `
               详情信息
             </td>
             <td
+              class=""
+              colspan="1"
+              key="description"
+              rowspan="1"
+              style="overflow: hidden;"
+            >
+              说明
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               colspan="1"
               key="needed"
@@ -1990,7 +2002,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left align-center"
               key="index"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               0
@@ -1998,7 +2010,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left"
               key="platform"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               共有
@@ -2006,7 +2018,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="type"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               String
@@ -2014,7 +2026,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="default"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               -
@@ -2022,15 +2034,23 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="detail.postion"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               读取 0 个数据的嵌套信息值
             </td>
             <td
+              class=""
+              key="description"
+              length="8"
+              style="overflow: hidden;"
+            >
+              数据源
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               key="needed"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
               是
@@ -2038,10 +2058,14 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-right"
               key="operation"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
-              删除
+              <a
+                class="link"
+              >
+                删除
+              </a>
             </td>
           </tr>
           <tr
@@ -2051,7 +2075,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left align-center"
               key="index"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               1
@@ -2059,7 +2083,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left"
               key="platform"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               私有
@@ -2067,7 +2091,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="type"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               Number
@@ -2075,7 +2099,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="default"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               0
@@ -2083,15 +2107,23 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="detail.postion"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               读取 1 个数据的嵌套信息值
             </td>
             <td
+              class=""
+              key="description"
+              length="8"
+              style="overflow: hidden;"
+            >
+              数据源
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               key="needed"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
               否
@@ -2099,10 +2131,14 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-right"
               key="operation"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
-              删除
+              <a
+                class="link"
+              >
+                删除
+              </a>
             </td>
           </tr>
           <tr
@@ -2112,7 +2148,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left align-center"
               key="index"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               2
@@ -2120,7 +2156,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left"
               key="platform"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               共有
@@ -2128,7 +2164,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="type"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               Array
@@ -2136,7 +2172,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="default"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               []
@@ -2144,15 +2180,23 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="detail.postion"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               读取 2 个数据的嵌套信息值
             </td>
             <td
+              class=""
+              key="description"
+              length="8"
+              style="overflow: hidden;"
+            >
+              数据源
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               key="needed"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
               否
@@ -2160,10 +2204,14 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-right"
               key="operation"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
-              删除
+              <a
+                class="link"
+              >
+                删除
+              </a>
             </td>
           </tr>
           <tr
@@ -2173,7 +2221,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left align-center"
               key="index"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               3
@@ -2181,7 +2229,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left"
               key="platform"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               私有
@@ -2189,7 +2237,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="type"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               Object
@@ -2197,7 +2245,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="default"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               {}
@@ -2205,15 +2253,23 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="detail.postion"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               读取 3 个数据的嵌套信息值
             </td>
             <td
+              class=""
+              key="description"
+              length="8"
+              style="overflow: hidden;"
+            >
+              数据源
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               key="needed"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
               否
@@ -2221,10 +2277,14 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-right"
               key="operation"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
-              删除
+              <a
+                class="link"
+              >
+                删除
+              </a>
             </td>
           </tr>
           <tr
@@ -2234,7 +2294,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left align-center"
               key="index"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               4
@@ -2242,7 +2302,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-left"
               key="platform"
-              length="7"
+              length="8"
               style="position: sticky; left: 0px;"
             >
               共有
@@ -2250,7 +2310,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="type"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               String
@@ -2258,7 +2318,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="default"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               -
@@ -2266,15 +2326,23 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class=""
               key="detail.postion"
-              length="7"
+              length="8"
               style="overflow: hidden;"
             >
               读取 4 个数据的嵌套信息值
             </td>
             <td
+              class=""
+              key="description"
+              length="8"
+              style="overflow: hidden;"
+            >
+              数据源
+            </td>
+            <td
               class="t-table__cell--fixed-right"
               key="needed"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
               是
@@ -2282,10 +2350,14 @@ exports[`Table fixedColumn demo works fine 1`] = `
             <td
               class="t-table__cell--fixed-right"
               key="operation"
-              length="7"
+              length="8"
               style="position: sticky; right: 0px;"
             >
-              删除
+              <a
+                class="link"
+              >
+                删除
+              </a>
             </td>
           </tr>
         </tbody>
@@ -3817,7 +3889,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
           >
             <tr>
               <td
-                class=""
+                class="t-table__cell--selectable"
                 colspan="1"
                 key="row-select"
                 rowspan="1"
@@ -3895,7 +3967,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               rowkey="tid"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -3976,7 +4048,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               rowkey="tid"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4058,7 +4130,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               rowkey="tid"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4139,7 +4211,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               rowkey="tid"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4258,7 +4330,7 @@ exports[`Table selectSingle demo works fine 1`] = `
           >
             <tr>
               <td
-                class=""
+                class="t-table__cell--selectable"
                 colspan="1"
                 key="row-select"
                 rowspan="1"
@@ -4319,7 +4391,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               rowkey="id"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4405,7 +4477,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               rowkey="id"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4492,7 +4564,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               rowkey="id"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"
@@ -4578,7 +4650,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               rowkey="id"
             >
               <td
-                class=""
+                class="t-table__cell--selectable"
                 key="row-select"
                 length="6"
                 style="overflow: hidden;"

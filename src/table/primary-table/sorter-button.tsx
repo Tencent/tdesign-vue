@@ -43,13 +43,16 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     getSortIcon(direction: string, className: string) {
       const icon = isFunction(this.locale.sortIcon)
         ? this.locale.sortIcon(this.$createElement)
-        : <TIconChevronDown size='12px' />;
+        : <TIconChevronDown size='16px' />;
       let style: Styles = {};
       if (direction === 'asc') {
         style = {
           transform: 'rotate(-180deg)',
+          top: '-1px',
           ...style,
         };
+      } else {
+        style.bottom = '-1px';
       }
       const sortClassName = [`${prefix}-table-sort-icon`, className, `${prefix}-table-sort-${direction}`];
       return <span style={style} class={sortClassName}>{icon}</span>;

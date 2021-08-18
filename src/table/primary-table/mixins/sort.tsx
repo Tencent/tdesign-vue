@@ -160,15 +160,15 @@ export default Vue.extend({
               sortOrder: this.getSortOrder(this.sortMap[colKey]?.descending),
               nextSortOrder: this.getSortOrder(nextSort?.descending),
             },
-            class: `${prefix}-table-sort-icon`,
+            // class: `${prefix}-table-sort-icon`,
           };
           const title = getTitle(this, column, index);
           column.title = () => (
             <div class={`${prefix}-table__cell--sortable`}>
               <div class={`${prefix}-table__cell--title`}>
                 <div>{title}</div>
+                {<SorterButton {...sorterButtonsProps} />}
               </div>
-              {<SorterButton {...sorterButtonsProps} />}
             </div>
           );
         }

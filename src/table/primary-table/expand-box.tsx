@@ -18,7 +18,11 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       const icon = isFunction(this.locale.expandIcon)
         ? this.locale.expandIcon(this.$createElement)
         : <TIconChevronDown />;
-      const style: Styles = { transition: 'all .2s' };
+      const style: Styles = {
+        transition: 'all .2s',
+        display: 'flex',
+        'align-items': 'center',
+      };
       if (!expanded) {
         style.transform = 'rotate(-180deg)';
       }
