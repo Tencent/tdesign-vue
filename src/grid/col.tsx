@@ -63,19 +63,31 @@ export default Vue.extend({
       return flex;
     },
     calcColPadding(gutter: TdRowProps['gutter'], currentSize: string) {
-      let padding = '';
-      if (typeof gutter === 'number') {
-        padding = `0 ${gutter / 2}px`;
+      const paddingObj = {};
+      if (typeof gutter === 'number' && gutter > 0) {
+        Object.assign(paddingObj, {
+          paddingLeft: `${gutter / 2}px`,
+          paddingRight: `${gutter / 2}px`,
+          paddingTop: `${gutter / 2}px`,
+          paddingBottom: `${gutter / 2}px`,
+        });
       } else if (Array.isArray(gutter) && gutter.length) {
-        padding = `0 ${gutter[0] as any / 2}px`;
+        if (gutter[0] as any > 0) Object.assign(paddingObj, { paddingLeft: `${gutter[0] as any / 2}px`, paddingRight: `${gutter[0] as any / 2}px` });
+        if (gutter[1] as any > 0) Object.assign(paddingObj, { paddingTop: `${gutter[1] as any / 2}px`, paddingBottom: `${gutter[1] as any / 2}px` });
       } else if (isObject(gutter) && gutter[currentSize]) {
         if (Array.isArray(gutter[currentSize])) {
-          padding = `0 ${gutter[currentSize][0] / 2}px`;
-        } else {
-          padding = `0 ${gutter[currentSize] / 2}px`;
+          if (gutter[currentSize][0] > 0) Object.assign(paddingObj, { paddingLeft: `${gutter[currentSize][0] / 2}px`, paddingRight: `${gutter[currentSize][0] / 2}px` });
+          if (gutter[currentSize][1] > 0) Object.assign(paddingObj, { paddingTop: `${gutter[currentSize][1] / 2}px`, paddingBottom: `${gutter[currentSize][1] / 2}px` });
+        } else if (gutter[currentSize] > 0) {
+          Object.assign(paddingObj, {
+            paddingLeft: `${gutter[currentSize] / 2}px`,
+            paddingRight: `${gutter[currentSize] / 2}px`,
+            paddingTop: `${gutter[currentSize] / 2}px`,
+            paddingBottom: `${gutter[currentSize] / 2}px`,
+          });
         }
       }
-      return padding;
+      return paddingObj;
     },
   },
 
@@ -88,7 +100,7 @@ export default Vue.extend({
     const { rowContext }: any = this;
     if (rowContext) {
       const { gutter: rowGutter, size: rowSize } = rowContext;
-      styles.padding = this.calcColPadding(rowGutter, rowSize);
+      Object.assign(styles, this.calcColPadding(rowGutter, rowSize));
     }
     const colStyle = { ...styles };
 
