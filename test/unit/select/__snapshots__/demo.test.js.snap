@@ -31,7 +31,9 @@ exports[`Select base demo works fine 1`] = `
                   class="t-select-option t-size-m t-select-create-option-special"
                   style="display: none;"
                   title=""
-                />
+                >
+                  <span />
+                </li>
               </ul>
               <li
                 class="t-select-empty t-size-m"
@@ -46,27 +48,33 @@ exports[`Select base demo works fine 1`] = `
                   style="display: none;"
                   title="已选择的选项"
                 >
-                  
+                  <span>
+                    
       已选择的选项
     
+                  </span>
                 </li>
                 <li
                   class="t-select-option t-size-m"
                   style="display: none;"
                   title="短的选项二"
                 >
-                  
+                  <span>
+                    
       短的选项二
     
+                  </span>
                 </li>
                 <li
                   class="t-select-option t-size-m"
                   style="display: none;"
                   title="很长很长很很长很长很长的选项三"
                 >
-                  
+                  <span>
+                    
       很长很长很很长很长很长的选项三
     
+                  </span>
                 </li>
               </span>
             </div>

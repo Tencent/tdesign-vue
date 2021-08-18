@@ -12,7 +12,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import TIconChevronDown from '../icon/chevron-down';
-import TIconClose from '../icon/close';
+import TIconClose from '../icon/close-circle-filled';
 import TIconLoading from '../icon/loading';
 import TInput from '../input/index';
 import Tag from '../tag/index';
@@ -434,16 +434,17 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
     getCloseIcon() {
+      const closeIconClass = [`${name}-right-icon`, `${name}-right-icon__clear`];
       if (isFunction(this.locale.clearIcon)) {
         return (
-          <span class={`${name}-right-icon`} onClick={this.clearSelect}>
+          <span class={closeIconClass} onClick={this.clearSelect}>
             {this.locale.clearIcon(this.$createElement)}
           </span>
         );
       }
       return (
         <t-icon-close
-          class={`${name}-right-icon`}
+          class={closeIconClass}
           size={this.size}
           nativeOnClick={this.clearSelect}
         />

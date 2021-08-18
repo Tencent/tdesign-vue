@@ -42,471 +42,411 @@ exports[`Transfer base demo works fine 1`] = `
           <div
             class="t-checkbox-group"
           >
-            <li
-              class="t-transfer-list__item"
+            <label
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
-              <label
-                class="t-checkbox t-is-disabled"
+              <input
+                class="t-checkbox__former"
+                disabled="disabled"
+                name=""
+                type="checkbox"
+                value="0"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name=""
-                  type="checkbox"
-                  value="0"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容1
+                <span>
+                  内容1
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="1"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="1"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容2
+                <span>
+                  内容2
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="2"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="2"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容3
+                <span>
+                  内容3
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="3"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="3"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容4
+                <span>
+                  内容4
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
-              <label
-                class="t-checkbox t-is-disabled"
+              <input
+                class="t-checkbox__former"
+                disabled="disabled"
+                name=""
+                type="checkbox"
+                value="4"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name=""
-                  type="checkbox"
-                  value="4"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容5
+                <span>
+                  内容5
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="5"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="5"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容6
+                <span>
+                  内容6
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="6"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="6"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容7
+                <span>
+                  内容7
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="7"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="7"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容8
+                <span>
+                  内容8
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
-              <label
-                class="t-checkbox t-is-disabled"
+              <input
+                class="t-checkbox__former"
+                disabled="disabled"
+                name=""
+                type="checkbox"
+                value="8"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name=""
-                  type="checkbox"
-                  value="8"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容9
+                <span>
+                  内容9
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="9"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="9"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容10
+                <span>
+                  内容10
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="10"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="10"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容11
+                <span>
+                  内容11
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="11"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="11"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容12
+                <span>
+                  内容12
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
-              <label
-                class="t-checkbox t-is-disabled"
+              <input
+                class="t-checkbox__former"
+                disabled="disabled"
+                name=""
+                type="checkbox"
+                value="12"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name=""
-                  type="checkbox"
-                  value="12"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容13
+                <span>
+                  内容13
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="13"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="13"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容14
+                <span>
+                  内容14
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="14"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="14"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容15
+                <span>
+                  内容15
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="15"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="15"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容16
+                <span>
+                  内容16
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
-              <label
-                class="t-checkbox t-is-disabled"
+              <input
+                class="t-checkbox__former"
+                disabled="disabled"
+                name=""
+                type="checkbox"
+                value="16"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name=""
-                  type="checkbox"
-                  value="16"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容17
+                <span>
+                  内容17
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="17"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="17"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容18
+                <span>
+                  内容18
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="18"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="18"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容19
+                <span>
+                  内容19
+                </span>
               </span>
-            </li>
-            <li
-              class="t-transfer-list__item"
+            </label>
+            <label
+              class="t-checkbox t-transfer-list__item"
             >
-              <label
-                class="t-checkbox"
+              <input
+                class="t-checkbox__former"
+                name=""
+                type="checkbox"
+                value="19"
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
               >
-                <input
-                  class="t-checkbox__former"
-                  name=""
-                  type="checkbox"
-                  value="19"
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                />
-              </label>
-              <span>
-                内容20
+                <span>
+                  内容20
+                </span>
               </span>
-            </li>
+            </label>
           </div>
         </div>
       </div>

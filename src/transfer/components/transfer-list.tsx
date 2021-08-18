@@ -14,10 +14,13 @@ import {
   TdPaginationProps,
   Pagination as TPagination,
 } from '../../pagination';
-import Checkbox, { CheckboxProps } from '../../checkbox';
+import {
+  Checkbox as TCheckbox,
+  CheckboxGroup as TCheckboxGroup, CheckboxProps,
+} from '../../checkbox';
 
+import ripple from '../../utils/ripple';
 import Search from './transfer-search';
-import TransferListContent from './transfer-list-content';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
 
 const name = `${prefix}-transfer-list`;
@@ -25,9 +28,12 @@ const name = `${prefix}-transfer-list`;
 export default Vue.extend({
   name,
   components: {
-    TransferListContent,
     Search,
-    Checkbox,
+    TCheckbox,
+    TCheckboxGroup,
+  },
+  directives: {
+    ripple,
   },
   props: {
     checkboxProps: {
@@ -174,17 +180,27 @@ export default Vue.extend({
     },
     renderContent() {
       return (
-        <transfer-list-content
-          checkboxProps={this.checkboxProps}
-          checked={this.checkedValue}
-          disabled={this.disabled}
-          class={`${this.name}__content`}
-          filteredData={this.curPageData}
-          transfer-item={this.transferItem}
-          list-type={this.listType}
-          onCheckedChange={this.handleCheckedChange}
-          onScroll={this.scroll}
-        />
+        <div class={`${name}__content narrow-scrollbar`} onScroll={this.scroll}>
+        <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
+          {
+            this.curPageData.map((item, index) => (
+                <TCheckbox
+                  disabled={this.disabled || item.disabled}
+                  value={item.value}
+                  class={[`${name}__item`, this.checkedValue.includes(item.value) ? `${prefix}-is-checked` : '']}
+                  key={item.key}
+                  v-ripple
+                  {...{ props: this.checkboxProps }}
+                  >
+                    {renderTNodeJSXDefault(this, 'transferItem', {
+                      defaultNode: (<span>{item.label}</span>),
+                      params: { data: item.data, index, type: this.listType },
+                    })}
+                </TCheckbox>
+            ))
+          }
+        </TCheckboxGroup>
+      </div>
       );
     },
     renderEmpty() {
@@ -218,7 +234,7 @@ export default Vue.extend({
           <div>
             {
               this.checkAll
-              && <checkbox
+              && <TCheckbox
                 disabled={this.disabled || !this.dataSource.length}
                 checked={this.isAllChecked}
                 indeterminate={this.indeterminate}

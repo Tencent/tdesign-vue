@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
+import ripple from '../utils/ripple';
 import props from './option-props';
 import { Options } from './type';
 import Checkbox from '../checkbox/index';
@@ -27,6 +28,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   components: {
     TCheckbox: Checkbox,
   },
+  directives: { ripple },
   inject: {
     tSelect: {
       default: undefined,
@@ -117,6 +119,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
         onMouseenter={ this.mouseEvent.bind(true) }
         onMouseleave={ this.mouseEvent.bind(false) }
         onClick={ this.select }
+        v-ripple
       >
         {
           this.tSelect && this.tSelect.multiple
@@ -129,7 +132,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
               >
                 {optionChild}
               </t-checkbox>
-            : optionChild
+            : <span>{optionChild}</span>
         }
       </li>
     );

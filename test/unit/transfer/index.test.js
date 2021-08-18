@@ -30,11 +30,11 @@ describe('Transfer', () => {
             return <Transfer data={data} checked={checkedValue} pagination={pagination} />;
           },
         });
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list__content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {
           const i = Number(item);
-          const domLi = wrapper.vm.$el.querySelectorAll('.t-transfer-list-source')[0].querySelectorAll('li');
-          const [dom] = domLi[i].querySelectorAll('label');
+          const dom = domLabels[i];
           expect(dom.className.indexOf('t-is-checked') > -1).toBe(true);
         });
       });
@@ -55,7 +55,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer-list__item .t-checkbox')[2].click();
+        wrapper.vm.$el.querySelectorAll('.t-transfer-list__item.t-checkbox')[2].click();
         expect(wrapper.vm.$data.checkedValue).toEqual(['1', '5']);
       });
     });
@@ -67,11 +67,11 @@ describe('Transfer', () => {
             return <Transfer data={data} defaultChecked={checkedValue} pagination={pagination} />;
           },
         });
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list__content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {
           const i = Number(item);
-          const domLi = wrapper.vm.$el.querySelectorAll('.t-transfer-list-source')[0].querySelectorAll('li');
-          const [dom] = domLi[i].querySelectorAll('label');
+          const dom = domLabels[i];
           expect(dom.className.indexOf('t-is-checked') > -1).toBe(true);
         });
       });
@@ -447,11 +447,13 @@ describe('Transfer', () => {
         });
 
         let count = 0;
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list-target .t-transfer-list__content')[0].querySelectorAll('.t-checkbox__label');
+
         targetValue.forEach((item) => {
           const i = Number(item);
-          const domLi = wrapper.vm.$el.querySelectorAll('.t-transfer-list-target')[0].querySelectorAll('li');
-          const dom = domLi[count].querySelectorAll('span');
-          expect(dom[2].innerHTML).toBe(`内容${i + 1}`);
+          const dom = domLabels[count].querySelectorAll('span')[0];
+
+          expect(dom.innerHTML).toBe(`内容${i + 1}`);
           count += 1;
         });
       });
@@ -515,10 +517,10 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.findAll('.t-transfer-list-source .t-transfer-list__item .t-checkbox').at(3)
+        wrapper.findAll('.t-transfer-list-source .t-transfer-list__item.t-checkbox').at(3)
           .trigger('click');
 
-        wrapper.findAll('.t-transfer-list-target .t-transfer-list__item .t-checkbox').at(0)
+        wrapper.findAll('.t-transfer-list-target .t-transfer-list__item.t-checkbox').at(0)
           .trigger('click');
 
         await wrapper.vm.$nextTick();
