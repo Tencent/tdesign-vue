@@ -64,7 +64,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       inline: false,
       dateFormat: '',
       multiSeparator: ',',
-      foundation: null,
       inlineView: false,
       showTime: false,
       els: [],
@@ -243,11 +242,11 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     },
     getLocales(): CustomLocale {
       const locales = this.locale as Record<string, any>;
-      locales.daysOfWeek = locales.weekdays.shorthand.split(',');
-      locales.monthNames = locales.months.shorthand.split(',');
+      locales.daysOfWeek = locales.weekdays.shorthand;
+      locales.monthNames = locales.months.shorthand;
 
       if (this.mode === 'month') {
-        locales.monthNames = locales.months.longhand.split(',');
+        locales.monthNames = locales.months.longhand;
       }
 
       // update day names order to firstDay
@@ -421,7 +420,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         this.close();
       }
     },
-    clickRange(value: DateValue, autoApply = false) {
+    clickRange(value: DateValue) {
       if (Array.isArray(value)) {
         const [start, end] = value as dayjs.ConfigType[];
         this.start = dayjs(start).toDate();
@@ -432,9 +431,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         this.end = dayjs(value).toDate();
         this.monthDate = dayjs(value).toDate();
       }
-      if (autoApply) {
-        this.clickedApply();
-      }
+      this.clickedApply();
     },
     clear(triggerChange = false): void {
       // close picker
@@ -693,7 +690,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
           trigger="click"
           placement="bottom-left"
           disabled={disabled}
-          destroyOnClose
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}

@@ -68,12 +68,12 @@
       style="width: 400px;"
     />
     <br><br>
-    <!-- date-picker未覆盖完locale-config 先隐藏 -->
-    <!-- <t-date-picker
+    <t-date-picker
       placeholder="please select the date"
+      mode="date"
       style="width: 400px;"
     />
-    <br><br> -->
+    <br><br>
     <t-time-picker
       placeholder="please select the time"
       format="hh:mm:ss a"
@@ -154,11 +154,11 @@ const GLOBAL_CONFIG = {
   },
   datePicker: {
     weekdays: {
-      shorthand: 'Sun,Mon,Tue,Wed,Thu,Fri,Sat',
-      longhand: 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
+      shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     },
     months: {
-      shorthand: 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',
+      shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       longhand: MONTHS.join(),
     },
     rangeSeparator: ' to ',
@@ -166,11 +166,12 @@ const GLOBAL_CONFIG = {
     format: 'YYYYMMDD',
     dayAriaLabel: 'Day',
     weekAbbreviation: 'Wk',
-    yearAriaLabel: 'Year',
+    yearAriaLabel: '',
     applyLabel: 'Apply',
     cancelLabel: 'Cancel',
     weekLabel: 'W',
     clearLabel: 'Clear',
+    monthAriaLabel: 'th',
     presets: {
       Today: 'Today',
       'Last 2 days': 'Last 2 days',

@@ -1,13 +1,14 @@
-import Vue from 'vue';
 import { prefix } from '../../config';
 import TDatePickerCell from './cell';
-import { Cell } from '../interface';
+import { Cell, DatePickerLocale } from '../interface';
+import mixins from '../../utils/mixins';
+import getLocalReceiverMixins from '../../locale/local-receiver';
 
 const name = `${prefix}-date-picker-table`;
 
 const DAY_NAMES = ['日', '一', '二', '三', '四', '五', '六'];
 
-export default Vue.extend({
+export default mixins(getLocalReceiverMixins('datePicker')).extend({
   name,
   components: {
     TDatePickerCell,
@@ -34,12 +35,17 @@ export default Vue.extend({
       onCellMouseEnter,
       firstDayOfWeek,
     } = this.$props;
+    const {
+      weekdays: {
+        shorthand,
+      },
+    } = this.locale as unknown as DatePickerLocale;
 
     const weekArr = [];
     let wi = firstDayOfWeek;
-    const len = DAY_NAMES.length;
+    const len = shorthand.length;
     while (weekArr.length < len) {
-      weekArr.push(DAY_NAMES[wi]);
+      weekArr.push(shorthand[wi]);
       wi = (wi + len + 1) % len;
     }
 
