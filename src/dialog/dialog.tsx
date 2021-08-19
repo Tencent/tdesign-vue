@@ -246,7 +246,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
         cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
       }
       let confirmBtn = null;
-      if (![undefined, null].includes(this.cancelBtn)) {
+      if (![undefined, null].includes(this.confirmBtn)) {
         confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
         const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
         confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');

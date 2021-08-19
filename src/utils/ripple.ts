@@ -103,6 +103,7 @@ const Ripple = {
         ripple.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 
         el.removeEventListener('pointerup', handleClearRipple, false);
+        el.removeEventListener('pointerleave', handleClearRipple, false);
 
         setTimeout(() => {
           rippleContainer.removeChild(ripple);
@@ -125,6 +126,7 @@ const Ripple = {
         }, (period * 2) + 100);
       };
       el.addEventListener('pointerup', handleClearRipple, false);
+      el.addEventListener('pointerleave', handleClearRipple, false); // 处理鼠标按下不松手直接离开点击block的情况..
     });
   },
 };
