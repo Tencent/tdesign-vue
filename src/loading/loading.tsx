@@ -74,7 +74,7 @@ export default Vue.extend({
       return ret;
     },
     wrapMaskClasses(): Array<string> {
-      return this.showOverlay ? [wrapperClass, maskClass] : [wrapperClass];
+      return this.showOverlay ? [name, wrapperClass, maskClass, SIZE_CLASSNAMES[this.size]] : [wrapperClass];
     },
     fullscreenClasses(): Array<string> {
       return this.loading ? [fullscreenClass, wrapperClass, maskClass] : [fullscreenClass];
@@ -130,8 +130,10 @@ export default Vue.extend({
           {content}
           {this.showWrapLoading && (
             <div class={this.wrapMaskClasses}>
-              {indicator}
-              {text}
+              <div class={`${prefix}-loading-mask-text`}>
+                {indicator}
+                {text}
+              </div>
             </div>
           )}
         </div>

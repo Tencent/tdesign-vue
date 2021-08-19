@@ -7,6 +7,7 @@
       :rowKey="rowKey"
       :size="size"
       :loading="true"
+      height="150"
     ></t-table>
     <div style="margin-bottom: 10px;">插槽定义加载状态</div>
     <t-table
@@ -15,6 +16,7 @@
       :rowKey="rowKey"
       :size="size"
       :loading="true"
+      height="150"
     >
       <div slot='loading' class='t-table--loading-message'>
         这里使用插槽自定义加载状态
@@ -27,6 +29,7 @@
       :rowKey="rowKey"
       :size="size"
       :loading="renderLoading"
+      height="150"
     ></t-table>
   </div>
 </template>

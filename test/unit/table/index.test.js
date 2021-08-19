@@ -262,7 +262,7 @@ describe('Table', () => {
             return <Table rowKey='id' columns={columns} loading={loading}></Table>;
           },
         });
-        expect(wrapper.find('.t-table--loading').exists()).toBe(true);
+        expect(wrapper.find('.t-loading__wrapper').exists()).toBe(true);
       });
       it('`loading` is rendered with `slot`', () => {
         const loading = (h) => h({

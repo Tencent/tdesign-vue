@@ -10,9 +10,9 @@ import {
 } from '../type';
 import TableBody from './table-body';
 import TableHeader from './table-header';
-import Loading from './loading-content';
 import TableColGroup from './col-group';
 import Pagination from '../../pagination';
+import Loading from '../../loading';
 import { getScrollDirection, SCROLL_DIRECTION } from '../util/common';
 import { PageInfo } from '../../pagination/type';
 import { renderTNodeJSX } from '../../utils/render-tnode';
@@ -98,42 +98,42 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       const {
         bordered, stripe, hover, size, verticalAlign, hasFixedColumns, fixedHeader,
       } = this;
-      const commonClass: Array<string> = ['t-table'];
+      const commonClass: Array<string> = [`${prefix}-table`];
       if (bordered) {
-        commonClass.push('t-table--bordered');
+        commonClass.push(`${prefix}-table--bordered`);
       }
       if (stripe) {
-        commonClass.push('t-table--striped');
+        commonClass.push(`${prefix}-table--striped`);
       }
       if (hover) {
-        commonClass.push('t-table--hoverable');
+        commonClass.push(`${prefix}-table--hoverable`);
       }
       // table size
       switch (size) {
         case 'small':
-          commonClass.push('t-size-s');
+          commonClass.push(`${prefix}-size-s`);
           break;
         case 'large':
-          commonClass.push('t-size-l');
+          commonClass.push(`${prefix}-size-l`);
           break;
         default:
       }
       // table verticalAlign
       switch (verticalAlign) {
         case 'top':
-          commonClass.push('t-table-valign__top');
+          commonClass.push(`${prefix}-table-valign__top`);
           break;
         case 'bottom':
-          commonClass.push('t-table-valign__bottom');
+          commonClass.push(`${prefix}-table-valign__bottom`);
           break;
         default:
       }
       // fixed table
       if (hasFixedColumns) {
-        commonClass.push('t-table__cell--fixed t-table--has-fixed');
+        commonClass.push(`${prefix}-table__cell--fixed ${prefix}-table--has-fixed`);
       }
       if (fixedHeader) {
-        commonClass.push('t-table__header--fixed');
+        commonClass.push(`${prefix}-table__header--fixed`);
       }
       return commonClass;
     },
@@ -188,7 +188,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     renderEmptyTable(): VNode {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
-        <div class="t-table--empty">
+        <div class={`${prefix}-table--empty`}>
           {useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty')}
         </div>
       );
@@ -196,7 +196,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     renderPagination(): VNode {
       const paginationProps = this.pagination;
       return (
-        <div class="t-table-pagination">
+        <div class={`${prefix}-table-pagination`}>
           <Pagination
             props={{ ...paginationProps }}
             {...{
@@ -237,7 +237,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
         this.handleScroll(e as WheelEvent);
       }, 10);
       //  fixed table header
-      fixedTable.push(<div class="t-table__header" style={{ paddingRight: `${scrollBarWidth}px` }} ref="scrollHeader">
+      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight: `${scrollBarWidth}px` }} ref="scrollHeader">
           <table style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
@@ -249,7 +249,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       };
       // fixed table body
       fixedTable.push(<div
-          class="t-table__body"
+          class={`${prefix}-table__body`}
           style={containerStyle}
           {...asyncLoadingProps}
           ref="scrollBody"
@@ -264,7 +264,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       return fixedTable;
     },
     renderLoadingContent(): VNode {
-      return renderTNodeJSX(this, 'loading', <Loading />);
+      return renderTNodeJSX(this, 'loading', { defaultNode: <div /> });
     },
     renderFooter() {
       const {
@@ -316,31 +316,29 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     const tableContent: Array<VNode> = [tableColGroup, tableHeader];
     // fixed table
     let fixedTableContent: Array<VNode>;
-    // loading
-    if (isLoading) {
-      body.push(this.renderLoadingContent());
+    // 渲染带有固定列的表格或者固定表头的表格
+    if (fixedHeader) {
+      fixedTableContent = this.renderTableWithFixedHeader();
     } else {
-      // 渲染带有固定列的表格或者固定表头的表格
-      if (fixedHeader) {
-        fixedTableContent = this.renderTableWithFixedHeader();
-      } else {
-        // table body
-        tableContent.push(this.renderBody());
-        tableContent.push(this.renderFooter());
-      }
-      // 渲染分页
-      if (hasPagination) {
-        body.push(this.renderPagination());
-      }
+      // table body
+      tableContent.push(this.renderBody());
+      tableContent.push(this.renderFooter());
+    }
+    // 渲染分页
+    if (hasPagination) {
+      body.push(this.renderPagination());
     }
     const handleScroll = throttle(this.handleScroll, 100);
     const maxHeight = isNaN(Number(this.maxHeight)) ? this.maxHeight : `${Number(this.maxHeight)}px`;
+
     return (
       <div class={commonClass}>
-        <div class="t-table-content" style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
-          {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
-        </div>
-        {body}
+        <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
+          <div class={`${prefix}-table-content`} style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
+            {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
+          </div>
+          {body}
+        </Loading>
       </div>
     );
   },
