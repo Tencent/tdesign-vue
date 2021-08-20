@@ -23,11 +23,7 @@
       <div slot='content'>使用插槽自定义内容</div>
       <div slot="footer" class="t-notification__detail">
         <t-button class="t-notification__detail--item" theme="default" variant="text">重启</t-button>
-        <t-dropdown :options="options">
-          <t-button variant="text" class="tdesign-demo-dropdown"
-          >更多 <t-icon name="chevron-down" class="tdesign-demo-arrow"
-          /></t-button>
-        </t-dropdown>
+        <t-button class="t-notification__detail--item" theme="primary" variant="text">更多</t-button>
       </div>
     </t-notification>
   </div>
