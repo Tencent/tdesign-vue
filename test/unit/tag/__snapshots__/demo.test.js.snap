@@ -198,7 +198,7 @@ exports[`Tag plain demo works fine 1`] = `
   </span>
    
   <span
-    class="t-tag t-tag--info t-size-m t-tag--plain"
+    class="t-tag t-tag--default t-size-m t-tag--plain"
   >
     标签三
   </span>

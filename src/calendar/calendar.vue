@@ -45,43 +45,42 @@
           </TSelect>
         </div>
       </div>
-      <div class="t-calendar__control-section">
-        <!-- 模式选择 -->
-        <div v-if="isModeVisible" class="t-calendar__control-section-cell" style="height: auto">
-          <TRadioGroup
-            v-model="curSelectedMode"
-            :size="controlSize"
-            :disabled="isModeDisabled"
-            v-bind="controllerConfigData.mode.radioGroupProps"
-            @change="controllerChange"
-          >
-            <TRadioButton v-for="item in modeSelectOptionList" :value="item.value" :key="item.value">{{
-              item.label
-            }}</TRadioButton>
-          </TRadioGroup>
-        </div>
-        <!-- 显示\隐藏周末 -->
-        <div v-if="theme === 'full' && isWeekendToggleVisible" class="t-calendar__control-section-cell">
-          <TButton
-            v-if="curSelectedMode === 'month'"
-            :size="controlSize"
-            :disabled="isWeekendToggleDisabled"
-            v-bind="weekendBtnVBind"
-            @click="onWeekendToggleClick()"
-          >
-            {{ weekendBtnText }}</TButton
-          >
-        </div>
-        <!-- 今天\本月 -->
-        <div v-if="theme === 'full' && isCurrentBtnVisible" class="t-calendar__control-section-cell">
-          <TButton :size="controlSize" :disabled="isCurrentBtnDisabled" v-bind="currentBtnVBind" @click="toCurrent()">
-            {{ currentBtnText }}
-          </TButton>
-        </div>
+      <!-- 模式选择 -->
+      <div v-if="isModeVisible" class="t-calendar__control-section" style="height: auto">
+        <TRadioGroup
+          v-model="curSelectedMode"
+          :size="controlSize"
+          :disabled="isModeDisabled"
+          v-bind="controllerConfigData.mode.radioGroupProps"
+          @change="controllerChange"
+        >
+          <TRadioButton v-for="item in modeSelectOptionList" :value="item.value" :key="item.value">{{
+            item.label
+          }}</TRadioButton>
+        </TRadioGroup>
+      </div>
+      <!-- 显示\隐藏周末 -->
+      <div v-if="theme === 'full' && isWeekendToggleVisible" class="t-calendar__control-section">
+        <TButton
+          :theme="isShowWeekend ? 'default' : 'primary'"
+          v-if="curSelectedMode === 'month'"
+          :size="controlSize"
+          :disabled="isWeekendToggleDisabled"
+          v-bind="weekendBtnVBind"
+          @click="onWeekendToggleClick()"
+        >
+          {{ weekendBtnText }}</TButton
+        >
+      </div>
+      <!-- 今天\本月 -->
+      <div v-if="theme === 'full' && isCurrentBtnVisible" class="t-calendar__control-section">
+        <TButton theme="default" :size="controlSize" :disabled="isCurrentBtnDisabled" v-bind="currentBtnVBind" @click="toCurrent()">
+          {{ currentBtnText }}
+        </TButton>
       </div>
     </div>
     <!-- 主体部分 -->
-    <div class="t-calendar__panel">
+    <div class="t-calendar__panel" :class="calendarPanelCls">
       <div class="t-calendar__panel-title">
         <RenderTNodeTemplate v-if="head" :render="head" :params="controllerOptions"></RenderTNodeTemplate>
         <slot v-else name="head" :data="controllerOptions"></slot>
@@ -252,7 +251,7 @@ export default mixins(CalendarLocalReceiver).extend({
       curSelectedMonth: null,
       curSelectedMode: null,
       isShowWeekend: true,
-      controlSize: 'small',
+      controlSize: 'medium',
     };
   },
   computed: {
@@ -276,6 +275,10 @@ export default mixins(CalendarLocalReceiver).extend({
     // 组件最外层的class名（除去前缀，class名和theme参数一致）
     calendarCls(): Record<string, any> {
       return [`${COMPONENT_NAME}--${this.theme}`];
+    },
+
+    calendarPanelCls(): Record<string, any> {
+      return [`${COMPONENT_NAME}__panel--${this.curSelectedMode}`];
     },
 
     isWeekRender(): boolean {
