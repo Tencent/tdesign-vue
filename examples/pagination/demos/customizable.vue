@@ -6,7 +6,6 @@
       v-model="current"
       show-jumper
       show-sizer
-      show-total
       :page-size-options="[10,20,30,100,200]"
     />
   </div>

@@ -4,7 +4,6 @@
       v-model="current"
       :total="685"
       :page-size.sync="pageSize"
-      :show-total="true"
     />
   </div>
 </template>
