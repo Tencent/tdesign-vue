@@ -15,7 +15,7 @@ export default Vue.extend({
         content: '选项一',
         value: 1,
         children: [{
-          content: '选项六',
+          content: '选项九',
           value: 9,
         }],
       }, {
@@ -44,14 +44,14 @@ export default Vue.extend({
         content: '选项三',
         value: 3,
         children: [{
-          content: '选项六',
+          content: '选项十',
           value: 10,
         }],
       }, {
         content: '选项四',
         value: 4,
         children: [{
-          content: '选项六',
+          content: '选项十一',
           value: 11,
         }],
       }],
