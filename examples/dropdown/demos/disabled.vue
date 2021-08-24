@@ -1,7 +1,7 @@
 <template>
   <div>
-    <t-dropdown :options="options" :disabled="true" >
-      <t-button disabled>已禁用</t-button>
+    <t-dropdown :options="options" >
+      <t-button variant="text">更多 <t-icon name="chevron-down" size="14" /></t-button>
     </t-dropdown>
   </div>
 </template>
@@ -12,24 +12,21 @@ export default Vue.extend({
   data() {
     return {
       options: [{
-        text: '选项一',
-        id: 1,
+        content: '选项一',
+        value: 1,
       }, {
-        text: '选项二',
-        id: 2,
+        content: '选项二',
+        value: 2,
       }, {
-        text: '选项三',
-        id: 3,
+        content: '选项三',
+        value: 3,
+        disabled: true,
       }, {
-        text: '选项四',
-        id: 4,
+        content: '选项四',
+        value: 4,
+        disabled: true,
       }],
     };
   },
 });
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

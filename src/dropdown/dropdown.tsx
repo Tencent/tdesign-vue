@@ -2,6 +2,8 @@ import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import Popup from '../popup/index';
 import DropdownMenu from './dropdown-menu';
+import { DropdownOption } from './type';
+import props from './props';
 import bus from './bus';
 
 const name = `${prefix}-dropdown`;
@@ -11,38 +13,7 @@ let instanceCount = 0; // 组件实例数目
 export default Vue.extend({
   name,
   props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    placement: {
-      type: String,
-      default: 'bottom-left',
-    },
-    trigger: {
-      type: String,
-      default: 'hover',
-    },
-    hideAfterItemClick: {
-      type: Boolean,
-      default: true,
-    },
-    options: {
-      type: Array,
-      default: (): [] => [],
-    },
-    maxColumnHeight: {
-      type: Number,
-      default: 300,
-    },
-    minItemWidth: {
-      type: Number,
-      default: 10,
-    },
-    maxItemWidth: {
-      type: Number,
-      default: 100,
-    },
+    ...props,
   },
   data() {
     instanceCount += 1;
@@ -50,25 +21,15 @@ export default Vue.extend({
       busId: `${instanceCount}`,
     };
   },
-  methods: {
-    onShowChangeHandler(visible: boolean) {
-      this.$emit('visibleChange', visible);
-      if (!visible) {
-        bus.$emit(`${this.busId}clearPath`);
-      }
-    },
-  },
   mounted() {
-    // console.log(this.busId);
-    bus.$on(`${this.busId}item-click`, (data: any) => {
+    bus.$on(`${this.busId}item-click`, (data: DropdownOption, e:MouseEvent) => {
       if (this.hideAfterItemClick) {
         const {
           popupElem,
         }: any = this.$refs;
         popupElem.doClose();
       }
-      // console.log(data);
-      this.$emit('click', data);
+      this.$emit('click', data, { e });
     });
   },
   render() {
@@ -78,6 +39,7 @@ export default Vue.extend({
     const popupProps = {
       props: {
         ...this.$attrs,
+        ...this.popupProps,
         disabled: this.disabled,
         showArrow: false,
         placement: this.placement,
@@ -85,20 +47,17 @@ export default Vue.extend({
         overlayClassName: name,
       },
       ref: 'popup',
-      on: {
-        visibleChange: this.onShowChangeHandler,
-      },
     };
 
     return (
-      <Popup {...popupProps} ref="popupElem">
+      <Popup {...popupProps} ref="popupElem" expandAnimation={true}>
         <template slot='content' role='dropdown'>
           <DropdownMenu
             busId={this.busId}
             options={this.options}
-            maxColumnHeight={this.maxColumnHeight}
-            maxItemWidth={this.maxItemWidth}
-            minItemWidth={this.minItemWidth}
+            maxHeight={this.maxHeight}
+            maxColumnWidth={this.maxColumnWidth}
+            minColumnWidth={this.minColumnWidth}
           />
         </template>
         {trigger}

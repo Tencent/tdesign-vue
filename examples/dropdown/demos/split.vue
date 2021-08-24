@@ -1,33 +1,32 @@
 <template>
   <div>
     <t-dropdown :options="options" >
-      <t-button><t-icon-more slot="icon"/></t-button>
+      <t-button theme="primary" variant="outline"><t-icon-ellipsis slot="icon" size="12"/></t-button>
     </t-dropdown>
   </div>
 </template>
 <script>
-import TIconMore from '@tencent/tdesign-vue/lib/icon/more';
+import TIconEllipsis from '@tencent/tdesign-vue/lib/icon/ellipsis';
 
 export default {
   components: {
-    TIconMore,
+    TIconEllipsis,
   },
   data() {
     return {
       options: [{
-        text: '操作一',
-        id: 1,
+        content: '操作一',
+        value: 1,
       }, {
-        text: '操作二',
-        id: 2,
+        content: '操作二',
+        value: 2,
       }, {
-        text: '操作三',
-        disabled: true,
-        id: 3,
+        content: '操作三',
+        value: 3,
+        divider: true,
       }, {
-        text: '额外操作四',
-        id: 4,
-        topSplit: true,
+        content: '操作四',
+        value: 4,
       }],
     };
   },

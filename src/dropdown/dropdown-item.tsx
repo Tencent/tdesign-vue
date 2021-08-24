@@ -1,7 +1,9 @@
 import Vue from 'vue';
-import Icon from '../icon';
+import TIconChevronRight from '../icon/chevron-right';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
+import ripple from '../utils/ripple';
+import itemProps from './dropdown-item-props';
 import bus from './bus';
 import { TNodeReturnValue } from '../common';
 
@@ -9,45 +11,32 @@ const name = `${prefix}-dropdown__item`;
 
 export default Vue.extend({
   name,
+  components: {
+    TIconChevronRight,
+  },
+  directives: { ripple },
   props: {
+    ...itemProps,
     busId: {
       type: String,
-      default: '',
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    active: {
-      type: Boolean,
-      default: false,
-    },
-    id: {
-      type: [String, Number],
       default: '',
     },
     path: {
       type: String,
       default: '',
     },
-    text: {
-      type: String,
-      default: '',
-    },
-    topSplit: {
-      type: Boolean,
-      default: false,
-    },
     hasChildren: {
       type: Boolean,
       default: false,
     },
-    iconName: {
-      type: String,
-      default: '',
+    maxColumnWidth: {
+      type: Number,
+      default: 100,
     },
-    maxItemWidth: Number,
-    minItemWidth: Number,
+    minColumnWidth: {
+      type: Number,
+      default: 10,
+    },
   },
   data() {
     return {
@@ -55,52 +44,48 @@ export default Vue.extend({
     };
   },
   methods: {
-    renderIcon(): TNodeReturnValue {
-      return this.iconName ? <Icon name={this.iconName} /> : '';
-    },
     renderSuffix(): TNodeReturnValue {
-      return this.hasChildren ? <Icon class="children-suffix" name="chevron-right" /> : '';
+      return this.hasChildren ? <TIconChevronRight class="children-suffix" /> : '';
     },
-    handleItemClick(): void {
+    handleItemClick(e:MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
         bus.$emit(`${this.busId}item-click`, {
-          id: this.id,
+          value: this.value,
           path: this.path,
-          text: this.text,
-        });
+          content: this.content,
+        }, e);
+        bus.$emit(`${this.busId}submenuShow`, this.path);
+        this.$emit('click', e); // dropdown item的点击回调
       }
     },
-    handleMouseover(): void {
-      this.focused = true;
+    handleMouseover(e:MouseEvent): void {
       bus.$emit(`${this.busId}submenuShow`, this.path);
-    },
-    handleMouseleave(): void {
-      this.focused = false;
     },
   },
   render() {
-    const classes = {
-      [`${name}`]: true,
-      'has-suffix': this.hasChildren,
-      [CLASSNAMES.STATUS.disabled]: this.disabled,
-      [CLASSNAMES.STATUS.focused]: this.focused,
-      [CLASSNAMES.STATUS.active]: this.active,
-      'top-split': this.topSplit,
-    };
+    const classes = [
+      name,
+      {
+        'has-suffix': this.hasChildren,
+        [`${name}_is_divided`]: this.divider,
+        [CLASSNAMES.STATUS.disabled]: this.disabled,
+        [CLASSNAMES.STATUS.active]: this.active,
+      },
+    ];
 
     return (
       <div class={classes}
         onClick={this.handleItemClick}
         onMouseover={this.handleMouseover}
-        onMouseleave={this.handleMouseleave}
+        style={{
+          maxWidth: `${this.maxColumnWidth}px`,
+          minWidth: `${this.minColumnWidth}px`,
+        }}
+        v-ripple
       >
-        <div class={`${name}__content`} title={this.text}>
-          {this.renderIcon()}
-          <span class={`${name}__content__text`} style={{
-            maxWidth: `${this.maxItemWidth}px`,
-            minWidth: `${this.minItemWidth}px`,
-          }}>
-            {this.text}
+        <div class={`${name}__content`} title={this.content}>
+          <span class={`${name}__content__text`}>
+            {this.content}
           </span>
         </div>
         { this.renderSuffix()}
