@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import TIconChevronRight from '../icon/chevron-right';
 import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import { STATUS_CLASSNAMES } from '../utils/classnames';
 import ripple from '../utils/ripple';
 import itemProps from './dropdown-item-props';
 import bus from './bus';
+import { emitEvent } from '../utils/event';
+
 import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__item`;
@@ -47,7 +49,7 @@ export default Vue.extend({
     renderSuffix(): TNodeReturnValue {
       return this.hasChildren ? <TIconChevronRight class="children-suffix" /> : '';
     },
-    handleItemClick(e:MouseEvent): void {
+    handleItemClick(e: MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
         bus.$emit(`${this.busId}item-click`, {
           value: this.value,
@@ -55,10 +57,10 @@ export default Vue.extend({
           content: this.content,
         }, e);
         bus.$emit(`${this.busId}submenuShow`, this.path);
-        this.$emit('click', e); // dropdown item的点击回调
+        emitEvent(this, 'click', e); // dropdown item的点击回调
       }
     },
-    handleMouseover(e:MouseEvent): void {
+    handleMouseover(): void {
       bus.$emit(`${this.busId}submenuShow`, this.path);
     },
   },
@@ -68,8 +70,8 @@ export default Vue.extend({
       {
         'has-suffix': this.hasChildren,
         [`${name}_is_divided`]: this.divider,
-        [CLASSNAMES.STATUS.disabled]: this.disabled,
-        [CLASSNAMES.STATUS.active]: this.active,
+        [STATUS_CLASSNAMES.disabled]: this.disabled,
+        [STATUS_CLASSNAMES.active]: this.active,
       },
     ];
 

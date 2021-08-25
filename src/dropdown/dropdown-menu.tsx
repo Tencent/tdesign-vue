@@ -44,7 +44,6 @@ export default Vue.extend({
       }
       return this.path.indexOf(itemPath) === 0;
     },
-
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
       const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
       return (
@@ -64,6 +63,7 @@ export default Vue.extend({
                 path={`${pathPrefix}/${item.value}`}
                 maxColumnWidth={this.maxColumnWidth}
                 minColumnWidth={this.minColumnWidth}
+                onClick={item.onClick}
               />
             )))
           }

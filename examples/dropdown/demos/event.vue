@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-dropdown :options="options" @click="clickHandler" :minColumnWidth="95">
+    <t-dropdown :options="options" :minColumnWidth="95">
       <t-button>hover我试试</t-button>
     </t-dropdown>
   </div>
@@ -12,22 +12,22 @@ export default {
       options: [{
         content: '选项一',
         value: 1,
+        onClick: () => this.$message.success('选项一'),
       }, {
         content: '选项二',
         value: 2,
+        onClick: () => this.$message.success('选项二'),
       }, {
         content: '选项三',
         value: 3,
+        onClick: () => this.$message.success('选项三'),
       }, {
         content: '选项四',
         value: 4,
+        onClick: () => this.$message.success('选项四'),
       }],
     };
   },
-  methods: {
-    clickHandler(data) {
-      this.$message.success(`选中【${data.content}】`);
-    },
-  },
+
 };
 </script>

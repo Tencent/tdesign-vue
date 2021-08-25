@@ -2,6 +2,7 @@ import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
 import Popup from '../popup/index';
 import DropdownMenu from './dropdown-menu';
+import { emitEvent } from '../utils/event';
 import { DropdownOption } from './type';
 import props from './props';
 import bus from './bus';
@@ -22,14 +23,14 @@ export default Vue.extend({
     };
   },
   mounted() {
-    bus.$on(`${this.busId}item-click`, (data: DropdownOption, e:MouseEvent) => {
+    bus.$on(`${this.busId}item-click`, (data: DropdownOption, e: MouseEvent) => {
       if (this.hideAfterItemClick) {
         const {
           popupElem,
         }: any = this.$refs;
         popupElem.doClose();
       }
-      this.$emit('click', data, { e });
+      emitEvent(this, 'click', data, { e });
     });
   },
   render() {
