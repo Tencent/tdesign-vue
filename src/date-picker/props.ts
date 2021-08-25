@@ -69,11 +69,11 @@ export default {
   },
   /** 选中值 */
   value: {
-    type: [String, Object, Array] as PropType<TdDatePickerProps['value']>,
+    type: [String, Object, Array, Date] as PropType<TdDatePickerProps['value']>,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
-    type: [String, Object, Array] as PropType<TdDatePickerProps['defaultValue']>,
+    type: [String, Object, Array, Date] as PropType<TdDatePickerProps['defaultValue']>,
   },
   /** 当输入框失去焦点时触发 */
   onBlur: Function as PropType<TdDatePickerProps['onBlur']>,
