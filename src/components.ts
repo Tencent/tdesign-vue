@@ -17,6 +17,7 @@ export * from './calendar';
 export * from './date-picker';
 export * from './checkbox';
 export * from './drawer';
+export * from './dropdown';
 export * from './form';
 export * from './input';
 export * from './list';

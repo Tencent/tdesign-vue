@@ -1,7 +1,7 @@
 <template>
   <div>
-    <t-dropdown :options="options" >
-      <t-button variant="text" class="tdesign-demo-dropdown">更多 <t-icon name="chevron-down" class="tdesign-demo-arrow" /></t-button>
+    <t-dropdown :options="options" :minColumnWidth="100">
+      <t-button variant="text">更多 <t-icon name="chevron-down" size="14" /></t-button>
     </t-dropdown>
   </div>
 </template>
@@ -12,43 +12,50 @@ export default Vue.extend({
   data() {
     return {
       options: [{
-        text: '选项一',
-        id: 1,
+        content: '选项一',
+        value: 1,
+        children: [{
+          content: '选项九',
+          value: 9,
+        }],
       }, {
-        text: '选项二选项二选项二选项二',
-        id: 2,
+        content: '选项二选项二选项二选项二',
+        value: 2,
         children: [
           {
-            text: '选项五',
-            id: 5,
+            content: '选项五',
+            value: 5,
             children: [
               {
-                text: '选项七',
-                id: 7,
+                content: '选项七',
+                value: 7,
 
               }, {
-                text: '选项八',
-                id: 8,
+                content: '选项八',
+                value: 8,
               },
             ],
           }, {
-            text: '选项六',
-            id: 6,
+            content: '选项六',
+            value: 6,
           },
         ],
       }, {
-        text: '选项三',
-        id: 3,
+        content: '选项三',
+        value: 3,
+        children: [{
+          content: '选项十',
+          value: 10,
+        }],
       }, {
-        text: '选项四',
-        id: 4,
+        content: '选项四',
+        value: 4,
+        children: [{
+          content: '选项十一',
+          value: 11,
+        }],
       }],
     };
   },
 });
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

@@ -3,17 +3,9 @@ import DropdownItem from './dropdown-item';
 import bus from './bus';
 import { prefix } from '../config';
 import { TNodeReturnValue } from '../common';
+import { DropdownOption } from './type';
 
 const name = `${prefix}-dropdown__menu`;
-
-interface OptionItem {
-  disabled: boolean;
-  id: string | number; // 不能含有‘/’字符
-  text: string;
-  iconName: string;
-  topSplit: boolean;
-  children: OptionItem[];
-}
 
 export default Vue.extend({
   name,
@@ -26,9 +18,18 @@ export default Vue.extend({
       type: Array,
       default: (): [] => [],
     },
-    maxColumnHeight: Number,
-    maxItemWidth: Number,
-    minItemWidth: Number,
+    maxHeight: {
+      type: Number,
+      default: 300,
+    },
+    maxColumnWidth: {
+      type: Number,
+      default: 100,
+    },
+    minColumnWidth: {
+      type: Number,
+      default: 10,
+    },
   },
   data() {
     return {
@@ -36,32 +37,33 @@ export default Vue.extend({
     };
   },
   methods: {
-    isActive(item: OptionItem, pathPrefix: string, excludeSelf = true): boolean {
-      const itemPath = `${pathPrefix}/${item.id}`;
+    isActive(item: DropdownOption, pathPrefix: string, excludeSelf = true): boolean {
+      const itemPath = `${pathPrefix}/${item.value}`;
       if (excludeSelf && this.path === itemPath) {
         return false;
       }
       return this.path.indexOf(itemPath) === 0;
     },
-    renderMenuColumn(children: Array<OptionItem>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
+    renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
+      const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
       return (
-        <div class={`${name}__column ${showSubmenu ? 'submenu__visible' : ''}`} style={{
-          maxHeight: `${this.maxColumnHeight}px`,
+        <div class={menuClass} style={{
+          maxHeight: `${this.maxHeight}px`,
         }}>
           {
             children.map(((item) => (
               <DropdownItem
                 busId={this.busId}
                 disabled={item.disabled}
-                active={this.isActive(item, pathPrefix)}
-                id={item.id}
-                text={item.text}
-                iconName={item.iconName}
-                topSplit={item.topSplit}
+                active={this.isActive(item, pathPrefix) || item.active}
+                value={item.value}
+                content={item.content}
+                divider={item.divider}
                 hasChildren={item.children && item.children.length > 0}
-                path={`${pathPrefix}/${item.id}`}
-                maxItemWidth={this.maxItemWidth}
-                minItemWidth={this.minItemWidth}
+                path={`${pathPrefix}/${item.value}`}
+                maxColumnWidth={this.maxColumnWidth}
+                minColumnWidth={this.minColumnWidth}
+                onClick={item.onClick}
               />
             )))
           }
@@ -71,7 +73,6 @@ export default Vue.extend({
   },
   mounted() {
     bus.$on(`${this.busId}submenuShow`, (path: string) => {
-      // console.log(path);
       this.path = path;
     });
     bus.$on(`${this.busId}clearPath`, () => {
@@ -80,7 +81,7 @@ export default Vue.extend({
   },
   render() {
     const columns: TNodeReturnValue[] = [];
-    let menuItems = this.options as OptionItem[];
+    let menuItems = this.options as DropdownOption[];
     let pathPrefix = '';
     // 根据path渲染
     while (menuItems && menuItems.length) {
@@ -90,13 +91,12 @@ export default Vue.extend({
       columns.push(this.renderMenuColumn(menuItems, !!activeItem, pathPrefix));
 
       if (activeItem) {
-        pathPrefix = `${pathPrefix}/${activeItem.id}`;
+        pathPrefix = `${pathPrefix}/${activeItem.value}`;
         menuItems = activeItem.children || [];
       } else {
         menuItems = [];
       }
     }
-    // console.log(columns);
     return (
       <div class={name}>
         { columns }

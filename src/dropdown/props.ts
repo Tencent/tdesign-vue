@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-24 14:02:35
  * */
 
-import { PropType } from 'vue';
 import { TdDropdownProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 多层级操作时，子层级展开方向（待设计师规划） */
