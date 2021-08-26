@@ -19,8 +19,9 @@ import Tag from '../tag/index';
 
 import Option from './option';
 import props from './props';
-import { Options, SelectValue } from './type';
+import { Options, SelectValue, TdSelectProps } from './type';
 import { ClassName } from '../common';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-select`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
@@ -267,6 +268,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return false;
     },
     visibleChange(val: boolean) {
+      emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
       if (this.focusing && !val) {
         this.visible = true;
         return;
@@ -281,22 +283,23 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     },
     onOptionClick(value: string | number, e: MouseEvent) {
       if (this.value !== value) {
-        if (this.multiple && this.value instanceof Array) {
+        if (this.multiple) {
+          const tempValue = this.value instanceof Array ? this.value : [];
           if (this.labelInValue) {
-            const index = this.value.map((item) => get(item, this.realValue)).indexOf(value);
+            const index = tempValue.map((item) => get(item, this.realValue)).indexOf(value);
             if (index > -1) {
               this.removeTag(index, { e });
             } else {
-              this.value.push(this.realOptions.filter((item) => get(item, this.realValue) === value)[0]);
-              this.emitChange(this.value);
+              tempValue.push(this.realOptions.filter((item) => get(item, this.realValue) === value)[0]);
+              this.emitChange(tempValue);
             }
           } else {
-            const index = this.value.indexOf(value);
+            const index = tempValue.indexOf(value);
             if (index > -1) {
               this.removeTag(index, { e });
             } else {
-              this.value.push(value);
-              this.emitChange(this.value);
+              tempValue.push(value);
+              this.emitChange(tempValue);
             }
           }
         } else {
@@ -326,8 +329,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const removeOption = this.realOptions.filter((item) => get(item, this.realValue) === val);
       this.value instanceof Array && this.value.splice(index, 1);
       this.emitChange(this.value);
-      this.$emit('remove', { value: val, data: removeOption[0], e });
-      isFunction(this.onRemove) && this.onRemove({ value: val, data: removeOption[0], e });
+      emitEvent<Parameters<TdSelectProps['onRemove']>>(this, 'remove', { value: val, data: removeOption[0], e });
     },
     hideMenu() {
       this.visible = false;
@@ -342,8 +344,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       this.focusing = false;
       this.searchInput = '';
       this.visible = false;
-      this.$emit('clear', { e });
-      isFunction(this.onClear) && this.onClear({ e });
+      emitEvent<Parameters<TdSelectProps['onClear']>>(this, 'clear', { e });
     },
     getOptions(option: Options) {
       // create option值不push到options里
@@ -377,26 +378,21 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       } else {
         value = val;
       }
-      this.$emit('change', value);
-      isFunction(this.onChange) && this.onChange(value);
+      emitEvent<Parameters<TdSelectProps['onChange']>>(this, 'change', value);
     },
     createOption(value: string | number) {
-      this.$emit('create', value);
-      isFunction(this.onCreate) && this.onCreate(value);
+      emitEvent<Parameters<TdSelectProps['onCreate']>>(this, 'create', value);
     },
     debounceOnRemote: debounce(function (this: any) {
-      this.$emit('search', this.searchInput);
-      isFunction(this.onSearch) && this.onSearch(this.searchInput);
+      emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', this.searchInput);
     }, 300),
     focus(e: FocusEvent) {
-      this.$emit('focus', { value: this.value, e });
       this.focusing = true;
-      isFunction(this.onFocus) && this.onFocus({ value: this.value, e });
+      emitEvent<Parameters<TdSelectProps['onFocus']>>(this, 'focus', { value: this.value, e });
     },
     blur(e: FocusEvent) {
-      this.$emit('blur', { value: this.value, e });
-      isFunction(this.onBlur) && this.onBlur({ value: this.value, e });
       this.focusing = false;
+      emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
     },
     hoverEvent(v: boolean) {
       this.isHover = v;

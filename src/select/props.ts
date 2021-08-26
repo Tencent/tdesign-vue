@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-26 15:17:03
  * */
 
-import { PropType } from 'vue';
 import { TdSelectProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 是否有边框 */
@@ -105,4 +107,6 @@ export default {
   onRemove: Function as PropType<TdSelectProps['onRemove']>,
   /** 输入值变化时，触发搜索事件。主要用于远程搜索新数据 */
   onSearch: Function as PropType<TdSelectProps['onSearch']>,
+  /** 下拉框隐藏/显示时触发 */
+  onVisibleChange: Function as PropType<TdSelectProps['onVisibleChange']>,
 };
