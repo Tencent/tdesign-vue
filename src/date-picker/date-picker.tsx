@@ -183,17 +183,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       };
     },
   },
-
-  watch: {
-    value(value, oldValue) {
-      if ((!this.isOpen || this.inlineView) && oldValue && String(value) !== String(oldValue)) {
-        this.setDate(value, false);
-      }
-      if (String(value) !== String(oldValue)) {
-        this.$emit('change', value);
-      }
-    },
-  },
   mounted() {
     this.attachDatePicker();
   },
