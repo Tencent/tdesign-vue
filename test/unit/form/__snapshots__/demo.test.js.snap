@@ -6,10 +6,11 @@ exports[`Form base demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-row t-form-item__name"
+      class="t-form__item t-form-item__name"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1 t-form__label--colon"
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
@@ -18,7 +19,8 @@ exports[`Form base demo works fine 1`] = `
         </label>
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"
@@ -37,10 +39,11 @@ exports[`Form base demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-row t-form-item__tel"
+      class="t-form__item t-form-item__tel"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1 t-form__label--colon"
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
@@ -49,7 +52,8 @@ exports[`Form base demo works fine 1`] = `
         </label>
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"
@@ -68,10 +72,11 @@ exports[`Form base demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-row t-form-item__gender"
+      class="t-form__item t-form-item__gender"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1 t-form__label--colon"
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
@@ -80,7 +85,8 @@ exports[`Form base demo works fine 1`] = `
         </label>
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"
@@ -131,10 +137,11 @@ exports[`Form base demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-row t-form-item__course"
+      class="t-form__item t-form-item__course"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1 t-form__label--colon"
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
@@ -143,7 +150,8 @@ exports[`Form base demo works fine 1`] = `
         </label>
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"
@@ -211,10 +219,11 @@ exports[`Form base demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-row t-form-item__status"
+      class="t-form__item t-form-item__status"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1 t-form__label--colon"
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
@@ -223,7 +232,8 @@ exports[`Form base demo works fine 1`] = `
         </label>
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"
@@ -243,18 +253,20 @@ exports[`Form base demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-row t-form-item__"
+      class="t-form__item t-form-item__"
       style="padding-top: 8px;"
     >
       <div
-        class="t-col t-form__label t-form__label--right t-col-1"
+        class="t-form__label t-form__label--right"
+        style="width: 80px;"
       >
         <label
           for=""
         />
       </div>
       <div
-        class="t-form__controls t-col"
+        class="t-form__controls"
+        style="margin-left: 80px;"
       >
         <div
           class="t-form__controls--content"

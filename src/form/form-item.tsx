@@ -11,7 +11,7 @@ import {
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
 import Form from './form';
-import { ClassName, TNodeReturnValue } from '../common';
+import { ClassName, TNodeReturnValue, Styles } from '../common';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TIconCloseCircleFilled from '../icon/close-circle-filled';
@@ -56,25 +56,21 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
 
   computed: {
     classes(): ClassName {
-      return [CLASS_NAMES.formItem, CLASS_NAMES.row, FORM_ITEM_CLASS_PREFIX + this.name];
+      return [CLASS_NAMES.formItem, FORM_ITEM_CLASS_PREFIX + this.name];
     },
     labelClasses(): ClassName {
       const parent = this.form;
       const labelAlign = parent && parent.labelAlign;
-      const layout = parent && parent.layout;
-      let otherClasses = [];
-      if (layout === 'inline') {
-        otherClasses = [CLASS_NAMES.labelTop];
-      } else {
-        otherClasses = [`t-form__label--${labelAlign}`, labelAlign === 'top' ? CLASS_NAMES.col12 : CLASS_NAMES.col1];
-      }
+      const labelWidth = parent && parent.labelWidth;
+
       return [
-        CLASS_NAMES.col,
         CLASS_NAMES.label,
-        ...otherClasses,
         {
-          't-form__label--required': this.needRequiredMark,
-          't-form__label--colon': this.hasColon,
+          [`${prefix}-form__label--required`]: this.needRequiredMark,
+          [`${prefix}-form__label--colon`]: this.hasColon,
+          [`${prefix}-form__label--top`]: labelAlign === 'top' || !labelWidth,
+          [`${prefix}-form__label--left`]: labelAlign === 'left' && labelWidth,
+          [`${prefix}-form__label--right`]: labelAlign === 'right' && labelWidth,
         },
       ];
     },
@@ -88,16 +84,19 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     contentClasses(): ClassName {
       const getErrorClass: string = this.errorClasses;
-      return [CLASS_NAMES.controls, CLASS_NAMES.col, getErrorClass];
+      return [CLASS_NAMES.controls, getErrorClass];
     },
-    labelProps(): Record<string, any> {
+    contentStyle(): Styles {
       const parent = this.form;
-      const labelProps: Record<string, any> = {};
+      const layout = parent && parent.layout;
+      const labelAlign = parent && parent.labelAlign;
       const labelWidth = parent && parent.labelWidth;
-      if (labelWidth) {
-        labelProps.style = `min-width: ${labelWidth}px;`;
+      let contentStyle = {};
+      if (labelWidth && labelAlign !== 'top' && layout !== 'inline') {
+        contentStyle = { marginLeft: `${parseInt(String(labelWidth), 10)}px` };
       }
-      return labelProps;
+
+      return contentStyle;
     },
     value(): ValueType {
       const parent = this.form;
@@ -163,9 +162,16 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     getLabel(): TNodeReturnValue {
       const parent = this.form;
       const labelWidth = parent && parent.labelWidth;
+      const labelAlign = parent && parent.labelAlign;
       if (Number(labelWidth) === 0) return;
+
+      let labelStyles = {};
+      if (labelWidth && labelAlign !== 'top') {
+        labelStyles = { width: `${parseInt(String(labelWidth), 10)}px` };
+      }
+
       return (
-        <div class={this.labelClasses} {...this.labelProps}>
+        <div class={this.labelClasses} style={labelStyles}>
           <label for={this.for}>
             {this.getLabelContent()}
           </label>
@@ -288,7 +294,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     return (
       <div class={this.classes}>
         {this.getLabel()}
-        <div class={this.contentClasses}>
+        <div class={this.contentClasses} style={this.contentStyle}>
           <div class={CLASS_NAMES.controlsContent}>
             {this.$slots.default}
             {this.getSuffixIcon()}

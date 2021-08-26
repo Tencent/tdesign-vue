@@ -3,6 +3,7 @@
     <t-form
       :data="formData"
       :rules="rules"
+      :labelWidth="100"
       ref="form"
       @reset="onReset"
       @submit="onSubmit"
