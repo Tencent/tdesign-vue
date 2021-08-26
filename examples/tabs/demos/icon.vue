@@ -12,15 +12,21 @@
       @change="(newValue) => value = newValue"
     >
       <t-tab-panel value="first">
-        <div slot="label"><t-icon name="home"/> 首页</div>
+        <template #label>
+          <t-icon name="home" style="margin-right: 4px"/> 首页
+        </template>
         <p style="padding: 25px;">{{ `${theme}选项卡1内容` }}</p>
       </t-tab-panel>
       <t-tab-panel value="second" :label="() => `${theme}选项卡22`">
-        <div slot="label"><t-icon name="calendar"/> 日程</div>
+        <template #label>
+          <t-icon name="calendar" style="margin-right: 4px"/> 日程
+        </template>
         <p style="padding: 25px;">{{ `${theme}选项卡2内容` }}</p>
       </t-tab-panel>
       <t-tab-panel value="third" :label="`${theme}选项卡3`">
-        <div slot="label"><t-icon name="layers"/> 事项</div>
+        <template #label>
+          <t-icon name="layers" style="margin-right: 4px"/> 事项
+        </template>
         <p style="padding: 25px;">{{ `${theme}选项卡3内容` }}</p>
       </t-tab-panel>
     </t-tabs>

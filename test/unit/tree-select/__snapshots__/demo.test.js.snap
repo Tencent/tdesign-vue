@@ -49,7 +49,7 @@ exports[`TreeSelect base demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -126,7 +126,7 @@ exports[`TreeSelect base demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -371,7 +371,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -448,7 +448,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -644,7 +644,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -679,7 +679,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -826,7 +826,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -930,7 +930,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -1176,7 +1176,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >
@@ -1253,7 +1253,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                     style="--level: 0;"
                   >
                     <span
-                      class="t-tree__icon t-folder-icon"
+                      class="t-tree__icon t-folder-icon t-tree__icon--default"
                       ignore="active"
                       trigger="expand"
                     >

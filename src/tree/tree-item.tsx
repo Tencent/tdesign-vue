@@ -124,6 +124,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
     renderIcon(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
       const { icon, scopedSlots } = treeScope;
+      let isDefaultIcon = false;
 
       let iconNode = null;
       if (icon === true) {
@@ -132,6 +133,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
             node: node?.getModel(),
           });
         } else if (!node.vmIsLeaf) {
+          isDefaultIcon = true;
           iconNode = this.getFolderIcon();
           if (node.loading && node.expanded) {
             iconNode = (<TIconLoading/>);
@@ -147,7 +149,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       }
       iconNode = (
         <span
-          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon]}
+          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon, isDefaultIcon ? CLASS_NAMES.treeIconDefault : '']}
           trigger="expand"
           ignore="active"
         >{iconNode}</span>
@@ -198,12 +200,10 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
           >{labelNode}</TCheckBox>
         );
       } else {
-        labelNode = (
-          <span
-          v-ripple
-            class={labelClasses}
-          ><span style="position: relative">{labelNode}</span></span>
-        );
+        const inner = <span style="position: relative">{labelNode}</span>;
+        labelNode = node.isActivable() // 使用key是为了避免元素复用，从而顺利移除ripple指令
+          ? <span key="1" v-ripple class={labelClasses}>{inner}</span>
+          : <span key="2" class={labelClasses}>{inner}</span>;
       }
 
       return labelNode;
@@ -234,10 +234,10 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       return opNode;
     },
     renderItem(createElement: CreateElement): Array<VNode> {
+      const { node } = this;
+
       const itemNodes: Array<VNode> = [];
-
       const iconNode = this.renderIcon(createElement);
-
       // 渲染连线排在渲染图标之后，是为了确认图标是否存在
       const lineNode = this.renderLine(createElement);
 
