@@ -7,7 +7,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import CLASSNAMES from '../utils/classnames';
 import { prefix } from '../config';
 import TIconChevronDrown from '../icon/chevron-down';
-import IIconClose from '../icon/close';
+import IIconClose from '../icon/close-circle-filled';
 import Input from '../input/index';
 import Popup from '../popup/index';
 import Tag from '../tag/index';
@@ -69,6 +69,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
           [CLASSNAMES.STATUS.disabled]: this.disabled,
           [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
+          [`${name}-is-multiple`]: this.multiple,
         },
       ];
     },
@@ -79,6 +80,15 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
           [CLASSNAMES.STATUS.visible]: this.visible,
         },
       ];
+    },
+    arrowClass(): ClassName {
+      const { visible } = this;
+      return [
+        `${name}-icon`,
+        `${prefix}-fake-arrow`,
+        {
+          [`${prefix}-fake-arrow--active`]: visible,
+        }];
     },
     tipsClass(): ClassName {
       return [
@@ -376,7 +386,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
         selectedSingle,
       } = this;
       return !multiple && !showPlaceholder && !showFilter
-        ? <span title={selectedSingle} class={`${name}_content`}>
+        ? <span title={selectedSingle} class={`${name}-content`}>
           {selectedSingle}
         </span> : null;
     },
@@ -398,11 +408,19 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
       > {item.label}</tag>);
     },
     renderArrowIcon(): VNode {
-      return this.showArrow && <TIconChevronDrown class={this.iconClass} size={this.size} />;
+      return this.showArrow && !this.showLoading && (
+        <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
+        </svg>
+      );
     },
     renderCloseIcon(): VNode {
       return this.showClose && (
-        <IIconClose class={this.iconClass} size={this.size} nativeOnClick={this.handleClearSelect} />
+        <transition name={`${prefix}-cascader-close-icon-fade`} appear>
+          <div onClick={this.handleClearSelect}>
+            <IIconClose class={this.iconClass} size={this.size} />
+          </div>
+        </transition>
       );
     },
     renderPanel(): VNode {
@@ -413,7 +431,7 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
         handleChange,
         getEmpty,
       } = this;
-      const emptySlot = getEmpty();
+      const emptyContent = getEmpty();
       return (
         <div slot="content">
           <div class={[`${name}-panel`, `${name}--normal`]}>
@@ -422,21 +440,19 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
                 { [`${name}-menu__seperator`]: index !== panels.length - 1 }]
             } key={index}>
               {panel.map((node: TreeNode) => <item
-                key={node.value}
-                node={node}
-                onClick={(ctx: TypeContext) => {
-                  handleExpand(ctx, 'click');
-                }}
-                onMouseenter={(ctx: TypeContext) => {
-                  handleExpand(ctx, 'hover');
-                }}
-                onChange={handleChange}
-              ></item>)
-              }
-            </ul>)) : <ul class={[`${name}-menu`]}>
-              <li class={[`${name}-item`, `${name}-item__is-empty`]}>{emptySlot}</li>
-            </ul>}
-          </div ></div >
+                  key={node.value}
+                  node={node}
+                  onClick={(ctx: TypeContext) => {
+                    handleExpand(ctx, 'click');
+                  }}
+                  onMouseenter={(ctx: TypeContext) => {
+                    handleExpand(ctx, 'hover');
+                  }}
+                  onChange={handleChange}
+                ></item>)}
+            </ul>)) : emptyContent}
+          </div>
+        </div>
       );
     },
     getEmpty() {

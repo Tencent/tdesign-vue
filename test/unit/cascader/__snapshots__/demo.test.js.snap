@@ -106,22 +106,24 @@ exports[`Cascader base demo works fine 1`] = `
         class="t-cascader t-size-s"
       >
         <span
-          class="t-cascader_content"
+          class="t-cascader-content"
           title="1.1"
         >
           1.1
         </span>
         <svg
-          class="t-icon t-icon-chevron-down t-size-s t-cascader-icon"
-          version="1.1"
-          viewBox="0 0 1024 1024"
+          class="t-cascader-icon t-fake-arrow"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            clip-rule="evenodd"
-            d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-            fill-opacity=".9"
-            fill-rule="evenodd"
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
           />
         </svg>
       </div>
@@ -232,22 +234,24 @@ exports[`Cascader base demo works fine 1`] = `
         class="t-cascader t-size-m"
       >
         <span
-          class="t-cascader_content"
+          class="t-cascader-content"
           title="1.1"
         >
           1.1
         </span>
         <svg
-          class="t-icon t-icon-chevron-down t-size-m t-cascader-icon"
-          version="1.1"
-          viewBox="0 0 1024 1024"
+          class="t-cascader-icon t-fake-arrow"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            clip-rule="evenodd"
-            d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-            fill-opacity=".9"
-            fill-rule="evenodd"
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
           />
         </svg>
       </div>
@@ -358,22 +362,24 @@ exports[`Cascader base demo works fine 1`] = `
         class="t-cascader t-size-l"
       >
         <span
-          class="t-cascader_content"
+          class="t-cascader-content"
           title="1.1"
         >
           1.1
         </span>
         <svg
-          class="t-icon t-icon-chevron-down t-size-l t-cascader-icon"
-          version="1.1"
-          viewBox="0 0 1024 1024"
+          class="t-cascader-icon t-fake-arrow"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            clip-rule="evenodd"
-            d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-            fill-opacity=".9"
-            fill-rule="evenodd"
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
           />
         </svg>
       </div>
