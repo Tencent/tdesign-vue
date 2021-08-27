@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:13:24
+ * updated at 2021-08-27 15:41:48
  * */
 
 import { PopupProps } from '../popup';
@@ -116,8 +118,8 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据
    */
   onSearch?: (filterWords: string) => void;
-}
+};
 
-export type TreeSelectValue = string | number | Array<string | number>;
+export type TreeSelectValue = string | number | Object | Array<TreeSelectValue>;
 
-export interface RemoveOptions<T> { value: string | number; data: T; e: MouseEvent }
+export interface RemoveOptions<T> { value: string | number; data: T; e: MouseEvent };

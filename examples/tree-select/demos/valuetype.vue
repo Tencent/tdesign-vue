@@ -1,20 +1,32 @@
 <template>
-  <div class="tdesign-tree-select-multiple">
+  <div class="tdesign-tree-select-base">
     <t-tree-select
-      v-model="value"
       :data="options"
-      multiple
+      v-model="value"
       clearable
+      valueType="object"
       placeholder="请选择"
-    >
-    </t-tree-select>
+    />
+    <t-tree-select
+      class="tree-select-multiple"
+      :data="options"
+      v-model="mulValue"
+      clearable
+      multiple
+      valueType="object"
+      placeholder="请选择"
+    />
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      value: ['guangzhou', 'shenzhen'],
+      value: { label: '深圳市', value: 'shenzhen' },
+      mulValue: [
+        { label: '广州市', value: 'guangzhou' },
+        { label: '深圳市', value: 'shenzhen' },
+      ],
       options: [{
         label: '广东省',
         value: 'guangdong',
@@ -41,8 +53,11 @@ export default {
 };
 </script>
 <style scoped>
-.tdesign-tree-select-multiple {
+.tdesign-tree-select-base {
   width: 300px;
   margin: 0 20px;
+}
+.tree-select-multiple {
+  margin-top: 20px;
 }
 </style>

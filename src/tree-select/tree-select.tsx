@@ -5,6 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import isNumber from 'lodash/isNumber';
 import isString from 'lodash/isString';
 import isBoolean from 'lodash/isBoolean';
+import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
@@ -25,7 +26,7 @@ import { TreeSelectValue } from './type';
 import { ClassName, TreeOptionData } from '../common';
 import { prefix } from '../config';
 
-import { RemoveOptions } from './interface';
+import { RemoveOptions, NodeOptions } from './interface';
 
 const name = `${prefix}-tree-select`;
 
@@ -53,6 +54,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       filterByText: null,
       actived: [],
       expanded: [],
+      nodeInfo: null,
     };
   },
   computed: {
@@ -80,8 +82,14 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         },
       ];
     },
-    checked(): Array<string | number> {
+    isObjectValue(): boolean {
+      return this.valueType === 'object';
+    },
+    checked(): Array<TreeSelectValue> {
       if (this.multiple) {
+        if (this.isObjectValue) {
+          return isArray(this.value) ? this.value.map((item) => (item as NodeOptions).value) : [];
+        }
         return isArray(this.value) ? this.value : [];
       }
       return [];
@@ -103,7 +111,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         this.clearable
         && this.isHover
         && !this.disabled
-        && ((!this.multiple && (!!this.value || this.value === 0)) || (this.multiple && !isEmpty(this.value as Array<number | string>)))
+        && ((!this.multiple && (!!this.value || this.value === 0)) || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>)))
       );
     },
     showPlaceholder(): boolean {
@@ -134,12 +142,15 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       return propsObject;
     },
     selectedSingle(): TreeSelectValue {
-      if (!this.multiple && (isString(this.value) || isNumber(this.value))) {
-        return this.value;
+      if (!this.multiple && (isString(this.value) || isNumber(this.value) || isObject(this.value))) {
+        if (this.nodeInfo) {
+          return (this.nodeInfo as NodeOptions).label;
+        }
+        return `${this.value}`;
       }
       return '';
     },
-    selectedMultiple(): Array<number | string> {
+    selectedMultiple(): Array<TreeSelectValue> {
       if (this.multiple && isArray(this.value) && !isEmpty(this.value)) {
         return this.value;
       }
@@ -175,12 +186,37 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     prefixIconSlot(): ScopedSlotReturnValue {
       return renderTNodeJSX(this, 'prefixIcon');
     },
+    realLabel(): string {
+      const { treeProps } = this;
+      if (!isEmpty(treeProps) && !isEmpty(treeProps.keys)) {
+        return treeProps.keys.label || 'label';
+      }
+      return 'label';
+    },
+    realValue(): string {
+      const { treeProps } = this;
+      if (!isEmpty(treeProps) && !isEmpty(treeProps.keys)) {
+        return treeProps.keys.value || 'value';
+      }
+      return 'value';
+    },
+    tagList(): Array<TreeSelectValue> {
+      if (this.nodeInfo && isArray(this.nodeInfo)) {
+        return this.nodeInfo.map((node) => node.label);
+      }
+      return this.selectedMultiple;
+    },
   },
   async mounted() {
     if (!this.value && this.defaultValue) {
       await this.change(this.defaultValue, null);
     }
-    this.actived = isArray(this.value) ? this.value : [this.value];
+    if (this.isObjectValue) {
+      this.actived = isArray(this.value) ? this.value.map((item) => (item as NodeOptions).value) : [(this.value as NodeOptions).value];
+    } else {
+      this.actived = isArray(this.value) ? this.value : [this.value];
+    }
+    this.changeNodeInfo();
   },
   methods: {
     async popupVisibleChange(visible: boolean) {
@@ -206,6 +242,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     change(value: TreeSelectValue, node: TreeNodeModel<TreeOptionData>) {
       this.$emit('change', value, { node });
       isFunction(this.onChange) && this.onChange(value, { node });
+      this.changeNodeInfo();
     },
     clear(e: MouseEvent) {
       const defaultValue: TreeSelectValue = this.multiple ? [] : '';
@@ -235,19 +272,34 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       isFunction(this.onSearch) && this.onSearch(filterWords);
     },
     treeNodeChange(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<TreeOptionData>; e: MouseEvent }) {
-      this.change(value, context.node);
+      let current: TreeSelectValue = value;
+      if (this.isObjectValue) {
+        const { tree } = this.$refs;
+        current = value.map((nodeValue) => {
+          const node = (tree as any).getItem(nodeValue);
+          return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        });
+      }
+      this.change(current, context.node);
       this.actived = value;
     },
     treeNodeActive(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<TreeOptionData>; e: MouseEvent }) {
+      // 多选模式屏蔽 Active 事件
+      if (this.multiple) {
+        return;
+      }
       let current: TreeSelectValue = value;
-      if (!this.multiple) {
+      if (this.isObjectValue) {
+        const { tree } = this.$refs;
+        const nodeValue = isEmpty(value) ? '' : value[0];
+        const node = (tree as any).getItem(nodeValue);
+        current = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+      } else {
         current = isEmpty(value) ? '' : value[0];
       }
       this.change(current, context.node);
       this.actived = value;
-      if (!this.multiple) {
-        this.visible = false;
-      }
+      this.visible = false;
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
@@ -260,9 +312,27 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             return filter;
           }
         }
-        return node.data.label.indexOf(this.filterText) >= 0;
+        return node.data[this.realLabel].indexOf(this.filterText) >= 0;
       };
       this.search(this.filterText);
+    },
+    async changeNodeInfo() {
+      const { tree } = this.$refs;
+      await this.value;
+
+      if (tree && !this.multiple && this.value) {
+        const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
+        const node = (tree as any).getItem(nodeValue);
+        this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+      } else if (tree && this.multiple && isArray(this.value)) {
+        this.nodeInfo = this.value.map((value) => {
+          const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
+          const node = (tree as any).getItem(nodeValue);
+          return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        });
+      } else {
+        this.nodeInfo = null;
+      }
     },
   },
   render(): VNode {
@@ -276,6 +346,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         value={this.checked}
         hover
         expandAll
+        expandOnClickNode
         data={this.data}
         activable={!this.multiple}
         checkable={this.multiple}
@@ -311,7 +382,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       />
     );
     const tagItem = (
-      this.selectedMultiple.map((item, index) => (
+      this.tagList.map((label, index) => (
         <Tag
           key={index}
           size={this.size}
@@ -319,7 +390,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
           disabled={this.disabled}
           onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
         >
-          {item}
+          {label}
         </Tag>
       ))
     );

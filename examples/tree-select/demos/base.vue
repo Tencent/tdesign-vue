@@ -12,26 +12,26 @@
 export default {
   data() {
     return {
-      value: '1.1',
+      value: '',
       options: [{
-        label: '1',
-        value: '1',
+        label: '广东省',
+        value: 'guangdong',
         children: [{
-          label: '1.1',
-          value: '1.1',
+          label: '广州市',
+          value: 'guangzhou',
         }, {
-          label: '1.2',
-          value: '1.2',
+          label: '深圳市',
+          value: 'shenzhen',
         }],
       }, {
-        label: '2',
-        value: '2',
+        label: '江苏省',
+        value: 'jiangsu',
         children: [{
-          label: '2.1',
-          value: '2.1',
+          label: '南京市',
+          value: 'nanjing',
         }, {
-          label: '2.2',
-          value: '2.2',
+          label: '苏州市',
+          value: 'suzhou',
         }],
       }],
     };

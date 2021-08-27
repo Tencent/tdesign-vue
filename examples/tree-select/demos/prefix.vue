@@ -15,24 +15,24 @@ export default {
     return {
       value: '',
       options: [{
-        label: '1',
-        value: '1',
+        label: '开发一组',
+        value: 'group1',
         children: [{
-          label: '1.1',
-          value: '1.1',
+          label: '小赵',
+          value: 'zhao',
         }, {
-          label: '1.2',
-          value: '1.2',
+          label: '小钱',
+          value: 'qian',
         }],
       }, {
-        label: '2',
-        value: '2',
+        label: '开发二组',
+        value: 'group2',
         children: [{
-          label: '2.1',
-          value: '2.1',
+          label: '小孙',
+          value: 'sun',
         }, {
-          label: '2.2',
-          value: '2.2',
+          label: '小李',
+          value: 'li',
         }],
       }],
     };

@@ -34,7 +34,7 @@ exports[`TreeSelect base demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
                 size="medium"
               >
                 <transition-group-stub
@@ -45,7 +45,7 @@ exports[`TreeSelect base demo works fine 1`] = `
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="1"
+                    data-value="guangdong"
                     style="--level: 0;"
                   >
                     <span
@@ -73,14 +73,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1
+                        广东省
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.1"
+                    data-value="guangzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -94,14 +94,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.1
+                        广州市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.2"
+                    data-value="shenzhen"
                     style="--level: 1;"
                   >
                     <span
@@ -115,14 +115,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.2
+                        深圳市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="2"
+                    data-value="jiangsu"
                     style="--level: 0;"
                   >
                     <span
@@ -150,14 +150,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2
+                        江苏省
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.1"
+                    data-value="nanjing"
                     style="--level: 1;"
                   >
                     <span
@@ -171,14 +171,14 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.1
+                        南京市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.2"
+                    data-value="suzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -192,7 +192,7 @@ exports[`TreeSelect base demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.2
+                        苏州市
                       </span>
                     </span>
                   </div>
@@ -203,19 +203,12 @@ exports[`TreeSelect base demo works fine 1`] = `
         </div>
       </transition-stub>
       <div
-        class="t-select t-size-m t-select-selected"
+        class="t-select t-size-m"
       >
         <span
           class="t-select-placeholder"
-          style="display: none;"
         >
           请选择
-        </span>
-        <span
-          class="t-select-selectedSingle"
-          title="1.1"
-        >
-          1.1
         </span>
         <div
           class="t-input t-size-m t-select-input"
@@ -223,7 +216,7 @@ exports[`TreeSelect base demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
-            placeholder="1.1"
+            placeholder="请选择"
             type="text"
           />
         </div>
@@ -356,7 +349,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
                 size="medium"
               >
                 <transition-group-stub
@@ -367,7 +360,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="1"
+                    data-value="guangdong"
                     style="--level: 0;"
                   >
                     <span
@@ -395,14 +388,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1
+                        广东省
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.1"
+                    data-value="guangzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -416,14 +409,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.1
+                        广州市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.2"
+                    data-value="shenzhen"
                     style="--level: 1;"
                   >
                     <span
@@ -437,14 +430,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.2
+                        深圳市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="2"
+                    data-value="jiangsu"
                     style="--level: 0;"
                   >
                     <span
@@ -472,14 +465,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2
+                        江苏省
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.1"
+                    data-value="nanjing"
                     style="--level: 1;"
                   >
                     <span
@@ -493,14 +486,14 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.1
+                        南京市
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.2"
+                    data-value="suzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -514,7 +507,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.2
+                        苏州市
                       </span>
                     </span>
                   </div>
@@ -535,9 +528,9 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         </span>
         <span
           class="t-select-selectedSingle"
-          title="1.1"
+          title="shenzhen"
         >
-          1.1
+          shenzhen
         </span>
         <div
           class="t-input t-size-m t-select-input"
@@ -545,7 +538,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
-            placeholder="1.1"
+            placeholder="shenzhen"
             type="text"
           />
         </div>
@@ -629,7 +622,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
                 size="medium"
               >
                 <transition-group-stub
@@ -811,7 +804,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx t-tree--block-node"
                 size="medium"
               >
                 <transition-group-stub
@@ -822,7 +815,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="1"
+                    data-value="guangdong"
                     style="--level: 0;"
                   >
                     <span
@@ -849,7 +842,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="1"
+                        name="guangdong"
                         type="checkbox"
                         value=""
                       />
@@ -859,14 +852,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        1
+                        广东省
                       </span>
                     </label>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.1"
+                    data-value="guangzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -879,7 +872,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="1.1"
+                        name="guangzhou"
                         type="checkbox"
                         value=""
                       />
@@ -889,14 +882,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        1.1
+                        广州市
                       </span>
                     </label>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.2"
+                    data-value="shenzhen"
                     style="--level: 1;"
                   >
                     <span
@@ -909,7 +902,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="1.2"
+                        name="shenzhen"
                         type="checkbox"
                         value=""
                       />
@@ -919,14 +912,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        1.2
+                        深圳市
                       </span>
                     </label>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="2"
+                    data-value="jiangsu"
                     style="--level: 0;"
                   >
                     <span
@@ -953,7 +946,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="2"
+                        name="jiangsu"
                         type="checkbox"
                         value=""
                       />
@@ -963,14 +956,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        2
+                        江苏省
                       </span>
                     </label>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.1"
+                    data-value="nanjing"
                     style="--level: 1;"
                   >
                     <span
@@ -983,7 +976,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="2.1"
+                        name="nanjing"
                         type="checkbox"
                         value=""
                       />
@@ -993,14 +986,14 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        2.1
+                        南京市
                       </span>
                     </label>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.2"
+                    data-value="suzhou"
                     style="--level: 1;"
                   >
                     <span
@@ -1013,7 +1006,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                     >
                       <input
                         class="t-checkbox__former"
-                        name="2.2"
+                        name="suzhou"
                         type="checkbox"
                         value=""
                       />
@@ -1023,7 +1016,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
                       <span
                         class="t-checkbox__label"
                       >
-                        2.2
+                        苏州市
                       </span>
                     </label>
                   </div>
@@ -1045,7 +1038,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          1.1
+          guangzhou
           <svg
             class="t-icon t-icon-close"
             version="1.1"
@@ -1060,7 +1053,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          1.2
+          shenzhen
           <svg
             class="t-icon t-icon-close"
             version="1.1"
@@ -1161,7 +1154,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                 </div>
               </p>
               <div
-                class="t-tree t-tree--hoverable t-tree--fx"
+                class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
                 size="medium"
               >
                 <transition-group-stub
@@ -1172,7 +1165,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="1"
+                    data-value="group1"
                     style="--level: 0;"
                   >
                     <span
@@ -1200,14 +1193,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1
+                        开发一组
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.1"
+                    data-value="zhao"
                     style="--level: 1;"
                   >
                     <span
@@ -1221,14 +1214,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.1
+                        小赵
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="1.2"
+                    data-value="qian"
                     style="--level: 1;"
                   >
                     <span
@@ -1242,14 +1235,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        1.2
+                        小钱
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="0"
-                    data-value="2"
+                    data-value="group2"
                     style="--level: 0;"
                   >
                     <span
@@ -1277,14 +1270,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2
+                        开发二组
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.1"
+                    data-value="sun"
                     style="--level: 1;"
                   >
                     <span
@@ -1298,14 +1291,14 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.1
+                        小孙
                       </span>
                     </span>
                   </div>
                   <div
                     class="t-tree__item t-tree__item--open"
                     data-level="1"
-                    data-value="2.2"
+                    data-value="li"
                     style="--level: 1;"
                   >
                     <span
@@ -1319,7 +1312,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
                       <span
                         style="position: relative;"
                       >
-                        2.2
+                        小李
                       </span>
                     </span>
                   </div>
