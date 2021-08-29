@@ -22,6 +22,7 @@ import {
   ProgressContext,
   UploadRemoveOptions,
   FlowRemoveContext,
+  XhrOptions,
 } from './interface';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -58,6 +59,7 @@ export default Vue.extend({
       showImageViewUrl: '',
       // webkitURL is for chrome/webkot, while URL is for mozilla/firefox
       URL: window.webkitURL || window.URL,
+      xhrReq: null as XMLHttpRequest,
     };
   },
 
@@ -133,6 +135,8 @@ export default Vue.extend({
 
     handleSingleRemove(e: MouseEvent) {
       const changeCtx = { trigger: 'remove' };
+      if (this.loadingFile) this.loadingFile = null;
+      this.errorMsg = '';
       this.emitChangeEvent([], changeCtx);
       this.emitRemoveEvent({ e });
     },
@@ -209,7 +213,7 @@ export default Vue.extend({
       }, 10);
       this.loadingFile = file;
       const request = xhr;
-      request({
+      this.xhrReq = request({
         action: this.action,
         data: this.data,
         file,
@@ -299,9 +303,11 @@ export default Vue.extend({
     },
 
     cancelUpload() {
-      if (!this.files[0] && this.loadingFile) {
+      if (this.loadingFile) {
         // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
         this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
+        // abort `this.upload()` request
+        this.xhrReq && this.xhrReq.abort();
         this.loadingFile = null;
       }
       (this.$refs.input as HTMLInputElement).value = '';
