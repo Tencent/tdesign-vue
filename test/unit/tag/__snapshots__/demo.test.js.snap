@@ -1,25 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag base demo works fine 1`] = `
-<div
-  class="tag-demo"
->
-  <span
-    class="t-tag t-tag--default t-size-m t-tag--dark"
+<div>
+  <div
+    class="tag-demo"
   >
-    默认
-  </span>
-   
-  <a
-    href="https://www.tencent.com/zh-cn"
-    target="_blank"
-  >
+    <span>
+      默认：
+    </span>
+     
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark"
     >
-      超链接
+      标签一
     </span>
-  </a>
+     
+    <a
+      href="https://www.tencent.com/zh-cn"
+      target="_blank"
+    >
+      <span
+        class="t-tag t-tag--default t-size-m t-tag--dark"
+      >
+        超链接
+      </span>
+    </a>
+  </div>
+   
+  <div
+    class="tag-demo"
+  >
+    <span>
+      深色：
+    </span>
+     
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--dark"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--dark"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--dark"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--dark"
+    >
+      标签四
+    </span>
+  </div>
+   
+  <div
+    class="tag-demo light"
+  >
+    <span>
+      浅色：
+    </span>
+     
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--light"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--light"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--light"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--light"
+    >
+      标签四
+    </span>
+  </div>
+   
+  <div
+    class="tag-demo plain"
+  >
+    <span>
+      朴素：
+    </span>
+     
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--plain"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--plain"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--plain"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--plain"
+    >
+      标签四
+    </span>
+  </div>
 </div>
 `;
 
@@ -122,24 +224,6 @@ exports[`Tag delete demo works fine 1`] = `
     
     </span>
   </div>
-</div>
-`;
-
-exports[`Tag disabled demo works fine 1`] = `
-<div
-  class="tdesign-tag-disabled tag-demo"
->
-  <span
-    class="check-tag t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled"
-  >
-    失效标签
-  </span>
-   
-  <span
-    class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
-  >
-    失效标签
-  </span>
 </div>
 `;
 
@@ -253,7 +337,7 @@ exports[`Tag shape demo works fine 1`] = `
     class="tdesign-demo-block"
   >
     
-    正常
+    正常：
     
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -272,7 +356,7 @@ exports[`Tag shape demo works fine 1`] = `
     class="tdesign-demo-block"
   >
     
-    圆角
+    圆角：
     
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark t-tag--round"
@@ -291,7 +375,7 @@ exports[`Tag shape demo works fine 1`] = `
     class="tdesign-demo-block"
   >
     
-    标记
+    标记：
     
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark t-tag--mark"
@@ -329,104 +413,5 @@ exports[`Tag size demo works fine 1`] = `
   >
     大型标签
   </span>
-</div>
-`;
-
-exports[`Tag theme demo works fine 1`] = `
-<div
-  class="tdesign-tag-theme"
->
-  <div
-    class="tdesign-demo-block"
-  >
-    
-    深色
-    
-    <span
-      class="t-tag t-tag--primary t-size-m t-tag--dark"
-    >
-      标签一
-    </span>
-     
-    <span
-      class="t-tag t-tag--success t-size-m t-tag--dark"
-    >
-      标签二
-    </span>
-     
-    <span
-      class="t-tag t-tag--warning t-size-m t-tag--dark"
-    >
-      标签三
-    </span>
-     
-    <span
-      class="t-tag t-tag--danger t-size-m t-tag--dark"
-    >
-      标签四
-    </span>
-  </div>
-   
-  <div
-    class="tdesign-demo-block light"
-  >
-    
-    浅色
-    
-    <span
-      class="t-tag t-tag--primary t-size-m t-tag--light"
-    >
-      标签一
-    </span>
-     
-    <span
-      class="t-tag t-tag--success t-size-m t-tag--light"
-    >
-      标签二
-    </span>
-     
-    <span
-      class="t-tag t-tag--warning t-size-m t-tag--light"
-    >
-      标签三
-    </span>
-     
-    <span
-      class="t-tag t-tag--danger t-size-m t-tag--light"
-    >
-      标签四
-    </span>
-  </div>
-   
-  <div
-    class="tdesign-demo-block plain"
-  >
-    
-    朴素
-    
-    <span
-      class="t-tag t-tag--primary t-size-m t-tag--plain"
-    >
-      标签一
-    </span>
-     
-    <span
-      class="t-tag t-tag--success t-size-m t-tag--plain"
-    >
-      标签二
-    </span>
-     
-    <span
-      class="t-tag t-tag--warning t-size-m t-tag--plain"
-    >
-      标签三
-    </span>
-     
-    <span
-      class="t-tag t-tag--danger t-size-m t-tag--plain"
-    >
-      标签四
-    </span>
-  </div>
 </div>
 `;

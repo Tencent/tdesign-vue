@@ -6,8 +6,6 @@
         v-for="(tag, index) in tags"
         :key="index"
         :theme="tag.type"
-        :variant="tag.variant"
-        :maxWidth="tag.maxWidth"
         :closable="tag.showClose"
         :icon="tag.icon"
         :disabled="!!tag.disabled"

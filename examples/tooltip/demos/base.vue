@@ -110,3 +110,72 @@
     </t-tooltip>
   </div>
 </template>
+<style lange="less" scoped>
+.tdesign-tooltip-placement {
+  margin: 0 auto;
+  width: 500px;
+  height: 260px;
+  position: relative;
+}
+.placement-top {
+  position: absolute;
+  top: 0;
+  left: 42%;
+}
+.placement-top-left {
+  position: absolute;
+  top: 0;
+  left: 70px;
+}
+.placement-top-right {
+  position: absolute;
+  top: 0;
+  right: 70px;
+}
+.placement-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 42%;
+}
+.placement-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  width: 120px;
+}
+.placement-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+}
+.placement-left {
+  position: absolute;
+  left: 0;
+  top: 42%;
+}
+.placement-left-top {
+  position: absolute;
+  left: 0;
+  top: 50px;
+}
+.placement-left-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+}
+.placement-right {
+  position: absolute;
+  right: 0;
+  top: 42%;
+}
+.placement-right-top {
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+.placement-right-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+</style>
