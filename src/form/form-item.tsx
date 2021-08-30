@@ -93,7 +93,11 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const labelWidth = parent && parent.labelWidth;
       let contentStyle = {};
       if (labelWidth && labelAlign !== 'top' && layout !== 'inline') {
-        contentStyle = { marginLeft: `${parseInt(String(labelWidth), 10)}px` };
+        if (typeof labelWidth === 'number') {
+          contentStyle = { marginLeft: `${labelWidth}px` };
+        } else {
+          contentStyle = { marginLeft: labelWidth };
+        }
       }
 
       return contentStyle;
@@ -165,13 +169,17 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const labelAlign = parent && parent.labelAlign;
       if (Number(labelWidth) === 0) return;
 
-      let labelStyles = {};
+      let labelStyle = {};
       if (labelWidth && labelAlign !== 'top') {
-        labelStyles = { width: `${parseInt(String(labelWidth), 10)}px` };
+        if (typeof labelWidth === 'number') {
+          labelStyle = { width: `${labelWidth}px` };
+        } else {
+          labelStyle = { width: labelWidth };
+        }
       }
 
       return (
-        <div class={this.labelClasses} style={labelStyles}>
+        <div class={this.labelClasses} style={labelStyle}>
           <label for={this.for}>
             {this.getLabelContent()}
           </label>

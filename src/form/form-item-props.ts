@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-16 20:08:34
+ * updated at 2021-08-30 16:09:55
  * */
 
 import { TdFormItemProps } from '../form/type';

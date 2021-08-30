@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-16 20:08:34
+ * updated at 2021-08-30 16:09:55
  * */
 
 import { TdFormProps } from './type';
@@ -24,9 +24,10 @@ export default {
       return ['left', 'right', 'top'].includes(val);
     },
   },
-  /** 可以整体设置label标签宽度 */
+  /** 可以整体设置label标签宽度，默认遵循一份栅格占比： calc(1 / 12 * 100%) */
   labelWidth: {
     type: [String, Number] as PropType<TdFormProps['labelWidth']>,
+    default: 'calc(1 / 12 * 100%)',
   },
   /** 表单布局，有两种方式：纵向布局 和 行内布局 */
   layout: {
