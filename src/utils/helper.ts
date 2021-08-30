@@ -72,9 +72,9 @@ export function getPropsApiByEvent(eventName: string) {
  * @returns 当没有传入maxCharacter时返回字符串字符长度，当传入maxCharacter时返回截取之后的字符串和长度。
  */
 export function getCharacterLength(str: string, maxCharacter?: number) {
-  const haveMaxCharacter = typeof maxCharacter === 'number';
+  const hasMaxCharacter = typeof maxCharacter === 'number';
   if (!str || str.length === 0) {
-    if (haveMaxCharacter) {
+    if (hasMaxCharacter) {
       return {
         length: 0,
         characters: str,
@@ -90,7 +90,7 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
     } else {
       currentStringLength = 1;
     }
-    if (haveMaxCharacter && len + currentStringLength > maxCharacter) {
+    if (hasMaxCharacter && len + currentStringLength > maxCharacter) {
       return {
         length: len,
         characters: str.slice(0, i),
@@ -98,7 +98,7 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
     }
     len += currentStringLength;
   }
-  if (haveMaxCharacter) {
+  if (hasMaxCharacter) {
     return {
       length: len,
       characters: str,

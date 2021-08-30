@@ -130,7 +130,7 @@ function isWindow(obj: any) {
   return obj && obj === obj.window;
 }
 
-type ScrollTarget = HTMLElement | Window | Document
+type ScrollTarget = HTMLElement | Window | Document;
 
 /**
  * 获取滚动距离
@@ -209,8 +209,8 @@ function containerDom(parent: Vue | Element | Iterable<any> | ArrayLike<any>, ch
 export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb: Function): void => {
   on(document, 'click', (event: { target: Element }) => {
     if (Array.isArray(els)) {
-      const flag = Array.from(els).every((item) => containerDom(item, event.target) === false);
-      flag && cb && cb();
+      const isFlag = Array.from(els).every((item) => containerDom(item, event.target) === false);
+      isFlag && cb && cb();
     } else {
       if (containerDom(els, event.target)) {
         return false;

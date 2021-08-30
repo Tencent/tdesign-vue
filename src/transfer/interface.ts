@@ -16,6 +16,6 @@ export interface TransferItemOption {
 
 export type TransferListOptionBase<T> = {
   [type in TransferListType]: T;
-}
+};
 
 export type SearchEvent = SearchContext;

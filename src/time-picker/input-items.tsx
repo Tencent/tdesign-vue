@@ -3,7 +3,7 @@ import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
 import {
-  componentName, amFormat, KEYBOARD_DIRECTION, EMPTY_VALUE, meridiemList,
+  componentName, AM_FORMAT, KEYBOARD_DIRECTION, EMPTY_VALUE, MERIDIEM_LIST,
 } from './constant';
 
 import { prefix } from '../config';
@@ -244,9 +244,9 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
         // 判断上下午位置
         if (/[h]{1}/.test(format) && (format.includes('A') || format.includes('a'))) {
           const localeMeridiemList = [this.locale.anteMeridiem, this.locale.postMeridiem];
-          const text = localeMeridiemList[meridiemList.indexOf(inputTime.meridiem.toUpperCase())];
+          const text = localeMeridiemList[MERIDIEM_LIST.indexOf(inputTime.meridiem.toUpperCase())];
           // 放在前面or后面
-          render[amFormat.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
+          render[AM_FORMAT.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
               <input
                 readonly
                 class={[inputClass, `${inputClass}-meridiem`]}

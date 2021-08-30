@@ -64,6 +64,8 @@ export interface TdLoadingProps {
   zIndex?: number;
 }
 
-export interface LoadingInstance { hide: () => void }
+export interface LoadingInstance {
+  hide: () => void
+}
 
 export type LoadingMethod = (options: boolean | TdLoadingProps) => LoadingInstance;

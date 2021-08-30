@@ -14,18 +14,18 @@ export type CalendarProps = TdCalendarProps;
 * 日历组件的data定义
 */
 export interface CalendarData {
- // 当前高亮的日期\月份（目前写死为“今天”）
- curDate: dayjs.Dayjs;
- // 当前选中的年份
- curSelectedYear: number;
- // 当前选中的月份
- curSelectedMonth: number;
- // 当前选中的模式（年 or 月）
- curSelectedMode: string;
- // 是否显示周末
- isShowWeekend: boolean;
- // 统一控件尺寸
- controlSize: string;
+  // 当前高亮的日期\月份（目前写死为“今天”）
+  curDate: dayjs.Dayjs;
+  // 当前选中的年份
+  curSelectedYear: number;
+  // 当前选中的月份
+  curSelectedMonth: number;
+  // 当前选中的模式（年 or 月）
+  curSelectedMode: string;
+  // 是否显示周末
+  isShowWeekend: boolean;
+  // 统一控件尺寸
+  controlSize: string;
 }
 
 /**

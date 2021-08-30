@@ -85,6 +85,9 @@ export interface TdInputNumberProps {
   onKeyup?: (value: number, context: { e: KeyboardEvent }) => void;
 }
 
-export interface ChangeContext { type: ChangeSource; e: InputEvent | MouseEvent | FocusEvent }
+export interface ChangeContext {
+  type: ChangeSource;
+  e: InputEvent | MouseEvent | FocusEvent
+}
 
 export type ChangeSource = 'add' | 'reduce' | 'input' | '';

@@ -87,6 +87,16 @@ export interface TdColProps {
   xxl?: number | BaseColProps;
 }
 
-export interface GutterObject { xs: number; sm: number; md: number }
+export interface GutterObject {
+  xs: number;
+  sm: number;
+  md: number
+}
 
-export interface BaseColProps { offset: number; order: number; pull: number; push: number; span: number }
+export interface BaseColProps {
+  offset: number;
+  order: number;
+  pull: number;
+  push: number;
+  span: number
+}

@@ -65,7 +65,9 @@ export type MessageThemeList = 'info' | 'success' | 'warning' | 'error' | 'quest
 
 export type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
-export interface MessageInstance { close: () => void }
+export interface MessageInstance {
+  close: () => void
+}
 
 export type MessageMethod = (theme: MessageThemeList, message: string | MessageOptions, duration?: number) => Promise<MessageInstance>;
 

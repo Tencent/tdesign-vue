@@ -67,6 +67,12 @@ export interface TdBreadcrumbItemProps {
   to?: Route;
 }
 
-export interface Route { path?: string; name?: string; hash?: string; query?: RouteData; params?: RouteData }
+export interface Route {
+  path?: string;
+  name?: string;
+  hash?: string;
+  query?: RouteData;
+  params?: RouteData
+}
 
 export type RouteData = { [key: string]: string | string[] };

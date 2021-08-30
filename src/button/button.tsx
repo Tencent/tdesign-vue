@@ -15,7 +15,7 @@ export default Vue.extend({
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading/> : renderTNodeJSX(this, 'icon');
-    const iconOnly = icon && !buttonContent;
+    const isIconOnly = icon && !buttonContent;
     let { theme } = this;
 
     if (!this.theme) {
@@ -34,7 +34,7 @@ export default Vue.extend({
       {
         [CLASSNAMES.STATUS.disabled]: this.disabled,
         [CLASSNAMES.STATUS.loading]: this.loading,
-        [`${name}--icon-only`]: iconOnly,
+        [`${name}--icon-only`]: isIconOnly,
         [`${name}--shape-${this.shape}`]: this.shape !== 'square',
         [`${name}--ghost`]: this.ghost,
         [CLASSNAMES.SIZE.block]: this.block,
@@ -45,7 +45,7 @@ export default Vue.extend({
     if (icon) {
       buttonContent = [
         icon,
-        !iconOnly ? buttonContent : '',
+        !isIconOnly ? buttonContent : '',
       ];
     }
 

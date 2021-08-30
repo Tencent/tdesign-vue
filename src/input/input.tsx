@@ -156,8 +156,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     },
     handleInput(e: InputEvent): void {
       // 中文输入的时候inputType是insertCompositionText所以中文输入的时候禁止触发。
-      const checkInputType = e.inputType && e.inputType === 'insertCompositionText';
-      if (e.isComposing || checkInputType) return;
+      const isCheckInputType = e.inputType && e.inputType === 'insertCompositionText';
+      if (e.isComposing || isCheckInputType) return;
       this.inputValueChangeHandle(e);
     },
 

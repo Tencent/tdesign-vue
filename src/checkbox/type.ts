@@ -79,6 +79,12 @@ export interface TdCheckboxGroupProps {
 
 export type CheckboxOption = string | number | CheckboxOptionObj;
 
-export interface CheckboxOptionObj { label?: string | TNode; value?: string | number; disabled?: boolean; name?: string; checkAll?: true }
+export interface CheckboxOptionObj {
+  label?: string | TNode;
+  value?: string | number;
+  disabled?: boolean;
+  name?: string;
+  checkAll?: true
+}
 
 export type CheckboxGroupValue = Array<string | number> | string | number;

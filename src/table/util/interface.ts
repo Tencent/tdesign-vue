@@ -1,5 +1,5 @@
 import {
-  BaseTableCol, RenderType, PrimaryTableCol, SortType, TdPrimaryTableProps,
+  BaseTableCol, RenderType, TdPrimaryTableProps,
 } from '../type';
 import primaryTableProps from '../primary-table-props';
 
@@ -56,4 +56,4 @@ export type RenderExpandRow = {
   rows: any;
   rowIndex: number;
   columns: TdPrimaryTableProps['columns'];
-}
+};

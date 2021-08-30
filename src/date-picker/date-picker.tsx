@@ -2,6 +2,7 @@ import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import Vue from 'vue';
+import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';
 import CLASSNAMES from '../utils/classnames';
@@ -23,10 +24,7 @@ import TDateRange from './panel/date-range';
 import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/constant';
 import { dateIndexOf, firstUpperCase } from './utils';
-import EmbedTo from './embed-to';
 import { TimePickerPanelInstance } from '../time-picker';
-
-export const prefix = 't';
 
 dayjs.extend(isBetween);
 
@@ -48,7 +46,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     TDateRange,
     TTimePickerPanel,
   },
-  directives: { EmbedTo },
   props: {
     ...props,
   },
@@ -564,10 +561,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     formatDate(date: Date, format = ''): string {
       let dateFormat = format || this.dateFormat || this.locales.format;
       const arrTime = ['H', 'h', 'm', 's'];
-      const hasTime = arrTime.some((f) => {
-        const includesTime = String(dateFormat).includes(f);
-        return includesTime;
-      });
+      const hasTime = arrTime.some((f) => String(dateFormat).includes(f));
       if (this.enableTimePicker && !hasTime) {
         dateFormat = [dateFormat, 'HH:mm:ss'].join(' ');
       }

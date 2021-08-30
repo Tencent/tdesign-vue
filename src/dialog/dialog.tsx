@@ -18,12 +18,12 @@ type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-dialog`;
 
-function GetCSSValue(v: string | number) {
+function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
 }
 
 // 注册元素的拖拽事件
-function InitDragEvent(dragBox: HTMLElement) {
+function initDragEvent(dragBox: HTMLElement) {
   const target = dragBox;
   target.addEventListener('mousedown', (targetEvent: MouseEvent) => {
     // 算出鼠标相对元素的位置
@@ -90,7 +90,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
 
       // 设置了top属性
       if (top) {
-        const topValue = GetCSSValue(top);
+        const topValue = getCSSValue(top);
         topStyle = {
           top: topValue,
           transform: 'translate(-50%, 0)',
@@ -103,7 +103,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
           maxHeight: 'calc(100% - 20%)',
         };
       }
-      return { width: GetCSSValue(this.width), ...topStyle };
+      return { width: getCSSValue(this.width), ...topStyle };
     },
   },
 
@@ -124,7 +124,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
     draggable(el, binding) {
       // el 指令绑定的元素
       if (el && binding && binding.value) {
-        InitDragEvent(el);
+        initDragEvent(el);
       }
     },
     TransferDom,

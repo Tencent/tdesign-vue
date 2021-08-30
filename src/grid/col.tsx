@@ -92,6 +92,7 @@ export default Vue.extend({
   },
 
   render(): VNode {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { flex, tag, classes } = this;
 
     const styles: any = {};

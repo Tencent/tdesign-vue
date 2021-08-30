@@ -42,8 +42,8 @@ export default Vue.extend({
     renderExpandIconCell({ row = {} }: Record<string, any>): VNode {
       const { expandedRowKeys = [] } = this;
       const id = get(row, this.reRowKey);
-      const expanded = expandedRowKeys.indexOf(id) !== -1;
-      return <ExpandBox expanded={expanded} onClick={(): void => this.handleExpandChange(row)} />;
+      const isExpanded = expandedRowKeys.indexOf(id) !== -1;
+      return <ExpandBox expanded={isExpanded} onClick={(): void => this.handleExpandChange(row)} />;
     },
     // 渲染被展开的TableRow内容
     renderExpandedRow({

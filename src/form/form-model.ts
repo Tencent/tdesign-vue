@@ -46,7 +46,7 @@ export async function validateOneRule(
   value: ValueType,
   rule: FormRule,
 ): Promise<boolean | FormRule> {
-  let r = true;
+  let hasValidated = true;
   const keys = Object.keys(rule);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
@@ -59,12 +59,12 @@ export async function validateOneRule(
       // rule 值为 true 则表示没有校验参数，只是对值进行默认规则校验
       const options = rule[key] === true ? {} : rule[key];
       /* eslint-disable no-await-in-loop */
-      r = await validateRule(value, options);
-      const result = r || rule;
+      hasValidated = await validateRule(value, options);
+      const result = hasValidated || rule;
       return result;
     }
   }
-  return r;
+  return hasValidated;
 }
 
 // 全部数据校验

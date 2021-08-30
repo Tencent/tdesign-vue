@@ -31,7 +31,11 @@ export interface SuccessContext {
   response: any;
 }
 
-export interface UploadRemoveOptions { e: MouseEvent; file?: UploadFile; index: number }
+export interface UploadRemoveOptions {
+  e: MouseEvent;
+  file?: UploadFile;
+  index: number
+}
 
 export interface FlowRemoveContext {
   e: MouseEvent;

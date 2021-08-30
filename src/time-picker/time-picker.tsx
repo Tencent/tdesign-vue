@@ -19,7 +19,7 @@ import InputItems from './input-items';
 import props from './props';
 
 import {
-  EPickerCols, EMPTY_VALUE, componentName, amFormat, pmFormat, AM,
+  EPickerCols, EMPTY_VALUE, componentName, AM_FORMAT, pmFormat, AM,
 } from './constant';
 
 const name = `${prefix}-time-picker`;
@@ -168,7 +168,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       if (EPickerCols.hour === col) {
         setTime = value.set(
           col,
-          value.hour() >= 12 && (amFormat.test(format) || pmFormat.test(format)) ? Number(change) + 12 : change,
+          value.hour() >= 12 && (AM_FORMAT.test(format) || pmFormat.test(format)) ? Number(change) + 12 : change,
         );
       } else if ([EPickerCols.minute, EPickerCols.second].includes(col)) {
         setTime = value.set(col, change);

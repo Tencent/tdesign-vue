@@ -117,7 +117,10 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
 
 export type EmptyType = string | TNode;
 
-export interface KeysType { value?: string; label?: string }
+export interface KeysType {
+  value?: string;
+  label?: string
+}
 
 export type SearchOption = boolean | InputProps;
 
@@ -125,13 +128,30 @@ export type TitleType = string | TNode;
 
 export type TransferListType = 'source' | 'target';
 
-export interface TransferItem<T extends DataOption = DataOption> { data: T; index: number; type: TransferListType}
+export interface TransferItem<T extends DataOption = DataOption> {
+  data: T;
+  index: number;
+  type: TransferListType
+}
 
-export interface TargetParams { type: TransferListType; movedValue: Array<TransferValue> }
+export interface TargetParams {
+  type: TransferListType;
+  movedValue: Array<TransferValue>
+}
 
-export interface CheckedOptions { checked: Array<TransferValue>; sourceChecked: Array<TransferValue>; targetChecked: Array<TransferValue>; type: TransferListType }
+export interface CheckedOptions {
+  checked: Array<TransferValue>;
+  sourceChecked: Array<TransferValue>;
+  targetChecked: Array<TransferValue>;
+  type: TransferListType
+}
 
-export interface SearchContext { query: string; type: TransferListType; trigger: 'input' | 'enter'; e: InputEvent | KeyboardEvent }
+export interface SearchContext {
+  query: string;
+  type: TransferListType;
+  trigger: 'input' | 'enter';
+  e: InputEvent | KeyboardEvent
+}
 
 export type DataOption = { label?: string; value?: TransferValue; disabled?: boolean } & Record<string, any>;
 

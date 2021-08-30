@@ -4,7 +4,7 @@ import { PrimaryTableProps } from '@src/table';
 import SorterButton from '../sorter-button';
 import { prefix } from '../../../config';
 import {
-  SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType, DataType, SortNumber,
+  SortInfo, PrimaryTableCol, TdPrimaryTableProps, SortType, DataType,
 } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';

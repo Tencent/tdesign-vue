@@ -67,4 +67,6 @@ export interface TdSliderProps {
   onChange?: () => void;
 }
 
-export interface Marks { [mark: number]: string | TNode<{ value: number }> }
+export interface Marks {
+  [mark: number]: string | TNode<{ value: number }>
+}

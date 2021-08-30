@@ -23,10 +23,10 @@ import {
   TypeEventState,
 } from '../tree';
 
-type TypeContext = { e?: Event; node?: TreeNode }
+type TypeContext = { e?: Event; node?: TreeNode };
 const name = `${prefix}-cascader`;
 
-const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
+const Cascader = mixins(getLocalReceiverMixins('cascader')).extend({
   name,
   components: {
     TIconChevronDrown,
@@ -505,4 +505,4 @@ const cascader = mixins(getLocalReceiverMixins('cascader')).extend({
   },
 });
 
-export default cascader;
+export default Cascader;

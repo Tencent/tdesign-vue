@@ -76,7 +76,9 @@ export type NotificationThemeList = 'info' | 'success' | 'warning' | 'error';
 
 export type NotificationPlacementList = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
-export interface NotificationInstance { close: () => void }
+export interface NotificationInstance {
+  close: () => void
+}
 
 export type NotificationMethod = (theme: NotificationThemeList, options: NotificationOptions) => Promise<NotificationInstance>;
 

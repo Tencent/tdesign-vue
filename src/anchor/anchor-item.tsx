@@ -90,10 +90,10 @@ export default (Vue as VueConstructor<Anchor>).extend({
     const { default: children, title: titleSlot } = $scopedSlots;
     const title = this.renderTitle();
     const titleAttr = typeof title === 'string' ? title : null;
-    const active = tAnchor.active === href;
+    const isActive = tAnchor.active === href;
     const wrapperClass = {
       [name]: true,
-      [CLASSNAMES.STATUS.active]: active,
+      [CLASSNAMES.STATUS.active]: isActive,
     };
     const titleClass = {
       [`${name}_link`]: true,

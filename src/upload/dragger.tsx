@@ -68,9 +68,9 @@ export default Vue.extend({
     },
     // 上传失败或者上传成功会显示
     showResultOperate(): boolean {
-      const fail = (!!this.loadingFile && this.loadingFile.status === 'fail');
-      const success = (this.file && this.file.name && !this.loadingFile);
-      return fail || success;
+      const isFail = (!!this.loadingFile && this.loadingFile.status === 'fail');
+      const isSuccess = (this.file && this.file.name && !this.loadingFile);
+      return isFail || isSuccess;
     },
   },
 

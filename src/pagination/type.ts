@@ -85,4 +85,8 @@ export interface TdPaginationProps {
   onPageSizeChange?: (pageSize: number, pageInfo: PageInfo) => void;
 }
 
-export interface PageInfo { current: number; previous: number; pageSize: number }
+export interface PageInfo {
+  current: number;
+  previous: number;
+  pageSize: number
+}
