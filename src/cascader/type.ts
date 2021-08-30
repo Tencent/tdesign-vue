@@ -123,8 +123,15 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
 }
 
-export interface KeysType { value?: string; label?: string; children?: string }
+export interface KeysType {
+  value?: string;
+  label?: string;
+  children?: string;
+}
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
-export interface RemoveContext<T> { value: CascaderValue<T>; node: TreeNodeModel<T> }
+export interface RemoveContext<T> {
+  value: CascaderValue<T>;
+  node: TreeNodeModel<T>
+}

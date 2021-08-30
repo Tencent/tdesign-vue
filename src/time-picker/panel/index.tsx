@@ -52,7 +52,6 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
       };
     },
     cols() {
-      if (!this.formatField) [EPickerCols.hour, EPickerCols.minute, EPickerCols.second];
       const {
         startAChart, hour, minute, second, endAChart,
       } = this.formatField;

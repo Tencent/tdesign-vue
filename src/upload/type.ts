@@ -186,12 +186,34 @@ export interface UploadFile extends File {
 
 export type ResponseType = { error?: string; url?: string } & Record<string, any>;
 
-export interface TriggerContext { dragActive?: boolean; uploadingFile?: UploadFile | Array<UploadFile> }
+export interface TriggerContext {
+  dragActive?: boolean;
+  uploadingFile?: UploadFile | Array<UploadFile>
+}
 
-export interface UploadChangeContext { e?: MouseEvent | ProgressEvent; response?: any; trigger: string; index?: number; file?: UploadFile }
+export interface UploadChangeContext {
+  e?: MouseEvent | ProgressEvent;
+  response?: any;
+  trigger: string;
+  index?: number;
+  file?: UploadFile
+}
 
-export interface ProgressContext { e: ProgressEvent; file: UploadFile; percent: number }
+export interface ProgressContext {
+  e: ProgressEvent;
+  file: UploadFile;
+  percent: number
+}
 
-export interface UploadRemoveContext { index?: number; file?: UploadFile; e: MouseEvent }
+export interface UploadRemoveContext {
+  index?: number;
+  file?: UploadFile;
+  e: MouseEvent
+}
 
-export interface SuccessContext { e: ProgressEvent; file: UploadFile; fileList: UploadFile[]; response: any }
+export interface SuccessContext {
+  e: ProgressEvent;
+  file: UploadFile;
+  fileList: UploadFile[];
+  response: any
+}

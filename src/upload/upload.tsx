@@ -22,7 +22,6 @@ import {
   ProgressContext,
   UploadRemoveOptions,
   FlowRemoveContext,
-  XhrOptions,
 } from './interface';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -67,8 +66,8 @@ export default Vue.extend({
     // 默认文件上传风格：文件进行上传和上传成功后不显示 tips
     showTips(): boolean {
       if (this.theme === 'file') {
-        const noFile = (!this.files || !this.files.length) && (!this.loadingFile);
-        return this.tips && noFile;
+        const hasNoFile = (!this.files || !this.files.length) && (!this.loadingFile);
+        return this.tips && hasNoFile;
       }
       return Boolean(this.tips);
     },

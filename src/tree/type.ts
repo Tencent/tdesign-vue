@@ -363,6 +363,10 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
   isLeaf: () => boolean;
 }
 
-export interface TreeKeysType { value?: string; label?: string; children?: string }
+export interface TreeKeysType {
+  value?: string;
+  label?: string;
+  children?: string
+}
 
 export type TreeNodeValue = string | number;

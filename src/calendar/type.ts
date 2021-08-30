@@ -144,8 +144,15 @@ export interface CalendarCell extends ControllerOptions {
 
 export type CalendarValue = string | Date;
 
-export interface CalendarWeek { day: WeekDay }
+export interface CalendarWeek {
+  day: WeekDay
+}
 
 export type WeekDay = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
-export interface ControllerOptions { filterDate: Date; formattedFilterDate: string; mode: string; isShowWeekend: boolean }
+export interface ControllerOptions {
+  filterDate: Date;
+  formattedFilterDate: string;
+  mode: string;
+  isShowWeekend: boolean
+}

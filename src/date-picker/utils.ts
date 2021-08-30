@@ -8,9 +8,9 @@ import { TdCSSProperties, DateValue } from './interface';
  * @returns {Date}
  */
 export const nextMonth = (date: Date) => {
-  const passYear = date.getMonth() === 11;
-  const newMonth = passYear ? 0 : date.getMonth() + 1;
-  const year = passYear ? date.getFullYear() + 1 : date.getFullYear();
+  const isPassYear = date.getMonth() === 11;
+  const newMonth = isPassYear ? 0 : date.getMonth() + 1;
+  const year = isPassYear ? date.getFullYear() + 1 : date.getFullYear();
   return new Date(year, newMonth, 1);
 };
 
@@ -216,8 +216,8 @@ export function outOfRanges(d: Date, min: any, max: any) {
  * @returns {Date} 当天零点的日期对象
  */
 export function getToday(): Date {
-  const _date = new Date();
-  return new Date(_date.getFullYear(), _date.getMonth(), _date.getDate(), 0, 0, 0);
+  const now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
 }
 
 /**

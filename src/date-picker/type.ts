@@ -187,9 +187,16 @@ export interface TdDateRangePickerProps {
 
 export type DisableDate = Array<DateValue> | DisableDateObj | ((date: DateValue) => boolean);
 
-export interface DisableDateObj { from?: string; to?: string; before?: string; after?: string }
+export interface DisableDateObj {
+  from?: string;
+  to?: string;
+  before?: string;
+  after?: string
+}
 
-export interface PresetDate { [name: string]: DateValue | (() => DateValue) }
+export interface PresetDate {
+  [name: string]: DateValue | (() => DateValue)
+}
 
 export type DateValue = string | Date | Array<DateValue>;
 
@@ -197,7 +204,9 @@ export type DisableRangeDate = Array<DateValue> | DisableDateObj | ((context: { 
 
 export type DateRangePickerPartial = 'start' | 'end';
 
-export interface PresetRange { [range: string]: DateRange | (() => DateRange)}
+export interface PresetRange {
+  [range: string]: DateRange | (() => DateRange)
+}
 
 export type DateRange = [DateValue, DateValue];
 
