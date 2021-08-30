@@ -186,7 +186,10 @@ export interface DialogInstance {
 
 export type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay';
 
-export interface DialogCloseContext { trigger: DialogEventSource; e: MouseEvent | KeyboardEvent }
+export interface DialogCloseContext {
+  trigger: DialogEventSource;
+  e: MouseEvent | KeyboardEvent
+}
 
 export type DialogMethod = (options: DialogOptions) => DialogInstance;
 

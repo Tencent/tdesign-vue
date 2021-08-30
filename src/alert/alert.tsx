@@ -23,7 +23,7 @@ export default Vue.extend({
   },
   props: { ...props },
   render(): VNode {
-    const _class = [
+    const compClass = [
       `${name}`,
       `${name}--${this.theme}`,
       {
@@ -31,7 +31,7 @@ export default Vue.extend({
       },
     ];
     return (
-      <div class={_class}>
+      <div class={compClass}>
         { this.renderIcon()}
         { this.renderContent()}
         { this.renderClose()}
