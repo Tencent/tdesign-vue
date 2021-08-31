@@ -15,7 +15,7 @@ const Ripple = {
   inserted(el: HTMLElement, binding: DirectiveBinding) {
     const period = 200;
     const defaultBg = 'rgba(0, 0, 0, 0.35)';
-    let bg = typeof binding.value === 'boolean' ? defaultBg : binding.value;
+    let bg = typeof binding.value === 'boolean' || binding.value == null ? defaultBg : binding.value;
     const rippleContainer = document.createElement('div');
     let hasCreateContainer = false;
     let count = 0;
