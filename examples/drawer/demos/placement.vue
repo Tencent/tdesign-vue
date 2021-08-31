@@ -6,6 +6,7 @@
       :visible="visible"
       @cancel="visible = false"
       :onOverlayClick="() => visible = false"
+      :onConfirm="() => visible = false"
       :placement="placement"
     >
       <p>This is a drawer</p>

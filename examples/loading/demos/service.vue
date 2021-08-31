@@ -5,15 +5,15 @@
     <p>this.$loading(true)</p>
     <p>this.$loading({ attach: '#loading-service-demo', showOverlay: true })</p>
     <br>
-    <t-button @click="showFullScreen1" size="small">服务方式加载（全屏）</t-button>
-    <t-button @click="showAttach1" class="t-loading__btn" size="small" :disabled="attachLoading">服务方式加载（局部）</t-button>
+    <t-button @click="showFullScreen1" size="small">函数方式加载（全屏）</t-button>
+    <t-button @click="showAttach1" class="t-loading__btn" size="small" :disabled="attachLoading">函数方式加载（局部）</t-button>
 
     <br><br>
     <p>LoadingPlugin(true)</p>
     <p>LoadingPlugin({ attach: '#loading-service-demo', showOverlay: true })</p>
     <br>
-    <t-button @click="showFullScreen2" size="small">服务方式加载（全屏）</t-button>
-    <t-button @click="showAttach2" class="t-loading__btn" size="small" :disabled="attachLoading">服务方式加载（局部）</t-button>
+    <t-button @click="showFullScreen2" size="small">函数方式加载（全屏）</t-button>
+    <t-button @click="showAttach2" class="t-loading__btn" size="small" :disabled="attachLoading">函数方式加载（局部）</t-button>
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-drawer :visible="visible" @close="handleClose" header='标题名称'>
+    <t-drawer :visible="visible" @close="handleClose" :onConfirm="handleClose" header='标题名称'>
       <div class="t-drawer-demo-div">
         <span>Label A</span>
         <t-input />

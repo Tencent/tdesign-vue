@@ -220,7 +220,7 @@ exports[`Loading service demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      服务方式加载（全屏）
+      函数方式加载（全屏）
     </span>
   </button>
    
@@ -231,7 +231,7 @@ exports[`Loading service demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      服务方式加载（局部）
+      函数方式加载（局部）
     </span>
   </button>
    
@@ -255,7 +255,7 @@ exports[`Loading service demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      服务方式加载（全屏）
+      函数方式加载（全屏）
     </span>
   </button>
    
@@ -266,7 +266,7 @@ exports[`Loading service demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      服务方式加载（局部）
+      函数方式加载（局部）
     </span>
   </button>
 </div>

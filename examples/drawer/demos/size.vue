@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-drawer :visible.sync="visible" :placement="placement" :size="size" header="标题名称">
+    <t-drawer :visible.sync="visible" :placement="placement" :size="size" :onConfirm="() => visible = false" header="标题名称">
       <p>This is a drawer</p>
     </t-drawer>
     <div class="tdesign-radio-button">

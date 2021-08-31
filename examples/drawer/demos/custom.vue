@@ -7,7 +7,7 @@
         <div>自定义头部</div>
       </template>
       <template #footer>
-        <t-button>确定</t-button>
+        <t-button @click="visible = false">确定</t-button>
         <t-button variant="outline" @click="visible = false">取消</t-button>
       </template>
     </t-drawer>

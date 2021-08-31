@@ -755,7 +755,7 @@ exports[`Dialog custom body demo works fine 1`] = `
 exports[`Dialog custom demo works fine 1`] = `
 <div>
   <p>
-    主体自定义
+    弹窗内容自定义
   </p>
   <br />
    
@@ -768,17 +768,6 @@ exports[`Dialog custom demo works fine 1`] = `
         class="t-button__text"
       >
         隐藏标题
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        隐藏底部
       </span>
     </button>
      
@@ -869,54 +858,6 @@ exports[`Dialog custom demo works fine 1`] = `
               </button>
             </div>
           </div>
-        </div>
-      </div>
-    </transition-stub>
-     
-    <transition-stub
-      duration="300"
-      name="t-dialog-zoom__vue"
-      onclickconfirm="function () { [native code] }"
-    >
-      <div
-        class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
-        style="display: none;"
-      >
-        <div
-          class="t-dialog-mask"
-        />
-        <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
-          style="max-height: calc(100% - 20%);"
-        >
-          <div
-            class="t-dialog__header"
-          >
-            提示
-          </div>
-          <span
-            class="t-dialog__close"
-          >
-            <svg
-              class="t-icon t-icon-close"
-              name="close"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
-              />
-            </svg>
-          </span>
-          <div
-            class="t-dialog__body"
-          >
-            对话框内容
-          </div>
-          <div
-            class="t-dialog__footer"
-          />
         </div>
       </div>
     </transition-stub>
@@ -1096,12 +1037,12 @@ exports[`Dialog custom demo works fine 1`] = `
   <br />
    
   <p>
-    按钮自定义
+    操作按钮自定义
   </p>
   <br />
    
   <p>
-    底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。
+    底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer 来自定义控制
   </p>
   <br />
    
@@ -1135,6 +1076,17 @@ exports[`Dialog custom demo works fine 1`] = `
       class="t-button__text"
     >
       自定义组件
+    </span>
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      隐藏底部
     </span>
   </button>
    
@@ -1347,6 +1299,54 @@ exports[`Dialog custom demo works fine 1`] = `
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </transition-stub>
+   
+  <transition-stub
+    duration="300"
+    name="t-dialog-zoom__vue"
+    onclickconfirm="function () { [native code] }"
+  >
+    <div
+      class="t-dialog-ctx t-dialog-ctx--fixed v-transfer-dom"
+      style="display: none;"
+    >
+      <div
+        class="t-dialog-mask"
+      />
+      <div
+        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        style="max-height: calc(100% - 20%);"
+      >
+        <div
+          class="t-dialog__header"
+        >
+          提示
+        </div>
+        <span
+          class="t-dialog__close"
+        >
+          <svg
+            class="t-icon t-icon-close"
+            name="close"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+            />
+          </svg>
+        </span>
+        <div
+          class="t-dialog__body"
+        >
+          对话框内容
+        </div>
+        <div
+          class="t-dialog__footer"
+        />
       </div>
     </div>
   </transition-stub>
