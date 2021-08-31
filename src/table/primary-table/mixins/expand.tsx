@@ -72,6 +72,7 @@ export default Vue.extend({
       ];
 
       rows.push(<TableRow
+          key={`ExpandTableRowBox${rowIndex}`}
           rowKey={this.rowKey}
           style={{ ...(!isShowExpanded ? { display: 'none' } : {}) }}
           columns={columns}

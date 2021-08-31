@@ -1,4 +1,6 @@
 import Vue, { VNode } from 'vue';
+import get from 'lodash/get';
+import { emitEvent } from '../../utils/event';
 import { prefix } from '../../config';
 import baseTableProps from '../base-table-props';
 import { BaseTableCol } from '../type';
@@ -103,7 +105,7 @@ export default Vue.extend({
     },
     renderBody(): Array<VNode> {
       const {
-        data, rowClassName, provider, $scopedSlots: scopedSlots, rowspanAndColspan,
+        data, rowClassName, rowKey, provider, $scopedSlots: scopedSlots, rowspanAndColspan,
       } = this;
       const body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
@@ -113,7 +115,10 @@ export default Vue.extend({
       data.forEach((row: any, index: number) => {
         const rowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
         const rowspanAndColspanProps = allRowspanAndColspanProps ? allRowspanAndColspanProps[index] : undefined;
+        let rowVnode: VNode;
+        const key = rowKey ? get(row, rowKey) : index + this.current;
         const props = {
+          key,
           props: {
             ...this.$props,
             rowClass,
@@ -123,11 +128,23 @@ export default Vue.extend({
           },
           on: {
             ...this.$listeners,
+            'row-dragstart': () => {
+              emitEvent(this, 'row-dragstart', {
+                index, data: row,
+              });
+            },
+            'row-dragover': ({ e }: { e: MouseEvent }) => {
+              e.preventDefault();
+              emitEvent(this, 'row-dragover', {
+                index, data: row, vNode: rowVnode,
+              });
+            },
           },
           scopedSlots,
         };
+        rowVnode = <TableRow rowKey={this.rowKey} {...props}/>;
         // 按行渲染
-        body.push(<TableRow rowKey={this.rowKey} {...props} />);
+        body.push(rowVnode);
         provider.renderRows({
           rows: body, row, rowIndex: index, columns: this.columns,
         });
@@ -136,6 +153,12 @@ export default Vue.extend({
     },
   },
   render() {
+    if (this.provider.sortOnRowDraggable) {
+      const className = `table-body ${this.provider.dragging ? 'dragging' : ''}`;
+      return <transition-group class={className} tag='tbody'>
+        {this.renderBody()}
+      </transition-group>;
+    }
     return <tbody class="table-body">{this.renderBody()}</tbody>;
   },
 });

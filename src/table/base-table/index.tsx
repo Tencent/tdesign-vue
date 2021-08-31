@@ -108,6 +108,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       if (hover) {
         commonClass.push(`${prefix}-table--hoverable`);
       }
+      if (this.provider.sortOnRowDraggable) {
+        commonClass.push(`${prefix}-table__row--draggable`);
+      }
       // table size
       switch (size) {
         case 'small':

@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-15 12:05:55
+ * updated at 2021-08-26 14:57:55
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -248,6 +248,11 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
    */
   defaultSort?: TableSort;
   /**
+   * 允许表格行拖拽时排序
+   * @default false
+   */
+  sortOnRowDraggable?: boolean;
+  /**
    * 异步加载区域被点击时触发
    */
   onAsyncLoadingClick?: (context: { status: 'loading' | 'load-more' }) => void;
@@ -259,6 +264,10 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
    * 表格数据发生变化时触发，比如：本地排序方法 sorter
    */
   onDataChange?: (data: Array<T>) => void;
+  /**
+   * 拖拽排序时触发
+   */
+  onDragSort?: (context: DragSortContext<T>) => void;
   /**
    * 展开行发生变化时触发，泛型 T 指表格数据类型
    */
@@ -325,7 +334,7 @@ export interface RowspanAndColspanParams<T> { row: T; col: BaseTableCol; rowInde
 
 export interface RowEventContext<T> { row: T; index: number; e: MouseEvent };
 
-export type DataType = { [key: string]: unknown };
+export type DataType = { [key: string]: any };
 
 export interface CellData<T> { type: 'th' | 'td'; row: T; col: BaseTableCol; rowIndex: number; colIndex: number };
 
@@ -344,6 +353,8 @@ export interface TableChangeData { sorter?: TableSort; filter?: FilterValue; pag
 export interface TableChangeContext<T> { trigger: TableChangeTrigger; currentData?: T };
 
 export type TableChangeTrigger = 'filter' | 'sorter' | 'pagination';
+
+export interface DragSortContext<T> { currentIndex: number; current: T; targetIndex: number; target: T };
 
 export interface ExpandOptions<T> { expandedRowData: Array<T> };
 

@@ -19,6 +19,8 @@ const eventsName = {
   mouseup: 'row-mouseup',
   click: 'row-click',
   dblclick: 'row-db-click',
+  dragstart: 'row-dragstart',
+  dragover: 'row-dragover',
 };
 
 export default Vue.extend({
@@ -44,6 +46,14 @@ export default Vue.extend({
     current: {
       type: Number,
       default: 1,
+    },
+    provider: {
+      type: Object,
+      default() {
+        return {
+          sortOnRowDraggable: false,
+        };
+      },
     },
   },
   methods: {
@@ -137,6 +147,10 @@ export default Vue.extend({
       },
       on,
     };
+    if (this.provider.sortOnRowDraggable) {
+      (trProps.attrs as any).draggable = true;
+    }
+
     return <tr {...trProps}>{this.renderRow()}</tr>;
   },
 });

@@ -57,7 +57,8 @@ export default Vue.extend({
       const { data, sort } = this;
       if (!sort || !this.localDataSort) return;
       const formatedSort = sort instanceof Array ? sort : [sort];
-      const newData: TableData = data.sort((a: TableData[0], b: TableData[0]) => {
+      // data为受控的，data.slice()浅拷贝，防止sort导致原数据变异
+      const newData: TableData = data.slice().sort((a: TableData[0], b: TableData[0]) => {
         let sortResult = 0;
         for (let i = 0, len = formatedSort.length; i < len; i++) {
           const item = formatedSort[i];

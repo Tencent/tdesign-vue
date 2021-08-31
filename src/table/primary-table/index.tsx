@@ -10,6 +10,7 @@ import mixins from '../../utils/mixins';
 import expand from './mixins/expand';
 import select from './mixins/select';
 import sort from './mixins/sort';
+import rowDraggable from './mixins/row-draggable';
 import filter from './mixins/filter';
 import showColumns from './mixins/show-columns';
 import asyncLoadingMixin from './mixins/async-loading';
@@ -20,7 +21,7 @@ import { emitEvent } from '../../utils/event';
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
 
-export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMixin).extend({
+export default mixins(expand, select, sort, rowDraggable, filter, showColumns, asyncLoadingMixin).extend({
   name: `${prefix}-primary-table`,
   props: {
     ...baseTableProps,
@@ -70,6 +71,8 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
         columns: rehandleColumns,
         provider: {
           renderRows: this.renderRows,
+          sortOnRowDraggable: this.sortOnRowDraggable,
+          dragging: this.dragging,
         },
       },
       scopedSlots,
@@ -83,6 +86,8 @@ export default mixins(expand, select, sort, filter, showColumns, asyncLoadingMix
             { trigger: 'pagination', currentData: newDataSource },
           );
         },
+        'row-dragstart': this.onDragStart,
+        'row-dragover': this.onDragOver,
       },
     };
     return (
