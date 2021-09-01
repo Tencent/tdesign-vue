@@ -104,8 +104,13 @@ export default Vue.extend({
     },
   },
   mounted() {
+    if (typeof this.content === 'string') {
+      // set 480px max width when the content type is string
+      this.setOverlayStyle({ maxWidth: '480px' });
+    }
     this.currentPlacement = this.currentPlacement || this.placement;
     this.popperElm = this.popperElm || (this.$refs && this.$refs.popper);
+
     this.referenceElm = this.referenceElm || this.$el;
     if (!this.popperElm || !this.referenceElm) return;
 
