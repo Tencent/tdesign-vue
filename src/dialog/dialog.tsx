@@ -209,10 +209,10 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
     },
     getIcon() {
       const icon = {
-        info: <TIconInfoCircleFilled class="t-is-info" />,
-        warning: <TIconErrorCircleFilled class="t-is-warning" />,
-        danger: <TIconErrorCircleFilled class="t-is-error" />,
-        success: <TIconCheckCircleFilled class="t-is-success" />,
+        info: <TIconInfoCircleFilled class={`${prefix}-is-info`} />,
+        warning: <TIconErrorCircleFilled class={`${prefix}-is-warning`}/>,
+        danger: <TIconErrorCircleFilled class={`${prefix}-is-error`} />,
+        success: <TIconCheckCircleFilled class={`${prefix}-is-success`} />,
       };
       return icon[this.theme];
     },
@@ -240,13 +240,20 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
     // locale 全局配置，插槽，props，默认值，决定了按钮最终呈现
     getDefaultFooter() {
       let cancelBtn = null;
-      if (![undefined, null].includes(this.cancelBtn)) {
+
+      if (this.$slots.cancelBtn) {
+        cancelBtn = renderTNodeJSX(this, 'cancelBtn');
+      } else if (![undefined, null].includes(this.cancelBtn)) {
         cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
         const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
         cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
       }
+
       let confirmBtn = null;
-      if (![undefined, null].includes(this.confirmBtn)) {
+
+      if (this.$slots.confirmBtn) {
+        confirmBtn = renderTNodeJSX(this, 'confirmBtn');
+      } else if (![undefined, null].includes(this.confirmBtn)) {
         confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
         const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
         confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
