@@ -168,14 +168,14 @@ export interface CalendarMonthProps {
   currentMonth: Date;
 }
 
-export type timeOption = {
+export type TimeOption = {
   label: string;
   value: number;
   disabled: boolean;
 };
-export type timeColumn = {
+export type TimeColumn = {
   type: string;
-  items: timeOption[];
+  items: TimeOption[];
 };
 
 export interface CalendarTimeData {
@@ -191,7 +191,7 @@ export interface CalendarTimeMethods {
   setInitData(): void;
   emitValue(): void;
   onChange(): void;
-  mapTime(start: number, end: number, step: number, disabledData: any[]): timeOption[];
+  mapTime(start: number, end: number, step: number, disabledData: any[]): TimeOption[];
   _disabledHours(): string[];
   _disabledMinutes(): string[];
   _disabledSeconds(): string[];
@@ -211,10 +211,10 @@ export interface CalendarTimeMethods {
 }
 export interface CalendarTimeComputed {
   cssClasses: object;
-  hoursOptions: timeOption[];
-  minutesOptions: timeOption[];
-  secondsOptions: timeOption[];
-  columns: timeColumn[];
+  hoursOptions: TimeOption[];
+  minutesOptions: TimeOption[];
+  secondsOptions: TimeOption[];
+  columns: TimeColumn[];
   inputListeners: any;
 }
 export interface CalendarTimeProps {

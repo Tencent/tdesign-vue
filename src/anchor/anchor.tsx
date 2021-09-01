@@ -215,7 +215,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     } = this;
     const className = [name, CLASSNAMES.SIZE[size]];
 
-    const Content = (
+    const content = (
       <div class={className}>
         <div class={`${name}_line`}><div class="point" style={activeLineStyle}></div></div>
         {children && children(null)}
@@ -223,8 +223,8 @@ export default (Vue as VueConstructor<Anchor>).extend({
     );
 
     if (affixProps) {
-      return <Affix {...{ props: affixProps }}>{Content}</Affix>;
+      return <Affix {...{ props: affixProps }}>{content}</Affix>;
     }
-    return Content;
+    return content;
   },
 });

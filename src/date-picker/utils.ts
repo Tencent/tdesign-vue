@@ -226,18 +226,18 @@ export function getToday(): Date {
  * @returns {Object}
  */
 export function getDateObj(date: Date) {
-  let _date = date;
+  let tempDate = date;
   if (!(date instanceof Date)) {
-    _date = getToday();
+    tempDate = getToday();
   }
   return {
-    year: _date.getFullYear(),
-    month: _date.getMonth(),
-    date: _date.getDate(),
-    hours: _date.getHours(),
-    minutes: _date.getMinutes(),
-    seconds: _date.getSeconds(),
-    meridiem: _date.getHours() > 11 ? 'PM' : 'AM',
+    year: tempDate.getFullYear(),
+    month: tempDate.getMonth(),
+    date: tempDate.getDate(),
+    hours: tempDate.getHours(),
+    minutes: tempDate.getMinutes(),
+    seconds: tempDate.getSeconds(),
+    meridiem: tempDate.getHours() > 11 ? 'PM' : 'AM',
   };
 }
 

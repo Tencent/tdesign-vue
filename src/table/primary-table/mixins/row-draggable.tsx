@@ -5,9 +5,9 @@ import { prefix } from '../../../config';
 import { emitEvent } from '../../../utils/event';
 
 export interface RowDragEventArgs {
-  index:number,
-  data:any,
-  vNode?:VNode,
+  index: number,
+  data: any,
+  vNode?: VNode,
 }
 
 export default Vue.extend({
@@ -43,7 +43,7 @@ export default Vue.extend({
       };
       document.addEventListener('dragend', onDragEnd);
     },
-    emitChange(current:DataType, target:DataType, currentIndex:number, targetIndex:number) {
+    emitChange(current: DataType, target: DataType, currentIndex: number, targetIndex: number) {
       emitEvent<Parameters<TdPrimaryTableProps['onDragSort']>>(this, 'drag-sort', {
         current, target, currentIndex, targetIndex,
       });

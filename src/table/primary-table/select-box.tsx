@@ -7,7 +7,7 @@ const inputType = {
   multiple: Checkbox,
   single: Radio,
 };
-type selectionProps = RadioProps | CheckboxProps;
+type SelectionProps = RadioProps | CheckboxProps;
 
 export default Vue.extend({
   name: `${prefix}-select-box`,
@@ -27,7 +27,7 @@ export default Vue.extend({
     },
     checkProps: {
       type: Object,
-      default(): selectionProps {
+      default(): SelectionProps {
         return {};
       },
     },

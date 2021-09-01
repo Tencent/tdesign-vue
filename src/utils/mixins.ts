@@ -3,10 +3,10 @@ import Vue, { VueConstructor, ComponentOptions } from 'vue';
 type VueMixin = VueConstructor | ComponentOptions<never>;
 
 export type UnionToIntersection<U> = (U extends any
-? (k: U) => void
-: never) extends (k: infer I) => void
-  ? I
-  : never;
+  ? (k: U) => void
+  : never) extends (k: infer I) => void
+    ? I
+    : never;
 
 export type ExtractInstance<T> = T extends VueConstructor<infer V>
   ? V

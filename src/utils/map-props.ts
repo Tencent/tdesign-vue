@@ -27,8 +27,7 @@ type ParsedPropOption = {
   [propName: string]: any;
 };
 
-function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
-  { [name: string]: ParsedPropOption } {
+function getPropOptionMap(props: (string | PropOption)[], options: Option = {}): { [name: string]: ParsedPropOption } {
   const propOptionMap = {};
 
   const { model } = options;
