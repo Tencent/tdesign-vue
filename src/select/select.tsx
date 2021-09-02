@@ -115,7 +115,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     showPlaceholder(): boolean {
       if (
         !this.showFilter
-          && ((typeof this.value === 'string' && this.value === '' && !this.selectedSingle)
+          && ((!this.multiple && !this.selectedSingle)
           || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
           || (Array.isArray(this.value) && !this.value.length)
           || this.value === null
@@ -174,7 +174,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           }
           return get(target[0], this.realLabel);
         }
-        return this.value.toString();
       }
       const showText = get(this.value, this.realLabel);
       // label为空时显示value值
@@ -250,7 +249,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     options: {
       immediate: true,
       handler(options: Array<Options>) {
-        this.realOptions = [...options];
+        if (Array.isArray(options)) {
+          this.realOptions = [...options];
+        }
       },
     },
   },

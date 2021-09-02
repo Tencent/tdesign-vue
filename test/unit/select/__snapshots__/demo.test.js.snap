@@ -81,10 +81,9 @@ exports[`Select base demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select-selectedSingle"
-          title="1"
+          class="t-select-placeholder"
         >
-          1
+           -请选择-
         </span>
         <svg
           class="t-select-right-icon t-fake-arrow"

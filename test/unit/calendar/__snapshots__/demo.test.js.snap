@@ -271,10 +271,9 @@ exports[`Calendar base demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -467,10 +466,9 @@ exports[`Calendar base demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -1184,10 +1182,9 @@ exports[`Calendar card demo works fine 1`] = `
           class="t-select t-size-m"
         >
           <span
-            class="t-select-selectedSingle"
-            title="card"
+            class="t-select-placeholder"
           >
-            card
+             
           </span>
           <svg
             class="t-select-right-icon t-fake-arrow"
@@ -1490,10 +1487,9 @@ exports[`Calendar card demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -1686,10 +1682,9 @@ exports[`Calendar card demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -2445,10 +2440,9 @@ exports[`Calendar cardCell demo works fine 1`] = `
           class="t-select t-size-m"
         >
           <span
-            class="t-select-selectedSingle"
-            title="card"
+            class="t-select-placeholder"
           >
-            card
+             
           </span>
           <svg
             class="t-select-right-icon t-fake-arrow"
@@ -2740,10 +2734,9 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -2936,10 +2929,9 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -3893,10 +3885,9 @@ exports[`Calendar cell demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -4089,10 +4080,9 @@ exports[`Calendar cell demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -5284,10 +5274,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -5480,10 +5469,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -6988,10 +6976,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -7184,10 +7171,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -8123,10 +8109,9 @@ exports[`Calendar events demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -8319,10 +8304,9 @@ exports[`Calendar events demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -9289,10 +9273,9 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -9485,10 +9468,9 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -10436,10 +10418,9 @@ exports[`Calendar filter demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -10632,10 +10613,9 @@ exports[`Calendar filter demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -11262,10 +11242,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           class="t-select t-size-m"
         >
           <span
-            class="t-select-selectedSingle"
-            title="3"
+            class="t-select-placeholder"
           >
-            3
+             
           </span>
           <svg
             class="t-select-right-icon t-fake-arrow"
@@ -11557,10 +11536,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -11753,10 +11731,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -12764,10 +12741,9 @@ exports[`Calendar head demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -12960,10 +12936,9 @@ exports[`Calendar head demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -13683,10 +13658,9 @@ exports[`Calendar mode demo works fine 1`] = `
           class="t-select t-size-m"
         >
           <span
-            class="t-select-selectedSingle"
-            title="year"
+            class="t-select-placeholder"
           >
-            year
+             
           </span>
           <svg
             class="t-select-right-icon t-fake-arrow"
@@ -13978,10 +13952,9 @@ exports[`Calendar mode demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -14435,10 +14408,9 @@ exports[`Calendar range demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -14631,10 +14603,9 @@ exports[`Calendar range demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -15546,10 +15517,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="2020"
+                class="t-select-placeholder"
               >
-                2020
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -15742,10 +15712,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="12"
+                class="t-select-placeholder"
               >
-                12
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -16523,10 +16492,9 @@ exports[`Calendar value demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="1998"
+                class="t-select-placeholder"
               >
-                1998
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -16719,10 +16687,9 @@ exports[`Calendar value demo works fine 1`] = `
               class="t-select t-size-m"
             >
               <span
-                class="t-select-selectedSingle"
-                title="11"
+                class="t-select-placeholder"
               >
-                11
+                 
               </span>
               <svg
                 class="t-select-right-icon t-fake-arrow"
@@ -17734,10 +17701,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -17930,10 +17896,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -18863,10 +18828,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -19059,10 +19023,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -19978,10 +19941,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="2020"
+                  class="t-select-placeholder"
                 >
-                  2020
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
@@ -20174,10 +20136,9 @@ exports[`Calendar week demo works fine 1`] = `
                 class="t-select t-size-m"
               >
                 <span
-                  class="t-select-selectedSingle"
-                  title="12"
+                  class="t-select-placeholder"
                 >
-                  12
+                   
                 </span>
                 <svg
                   class="t-select-right-icon t-fake-arrow"
