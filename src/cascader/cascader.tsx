@@ -200,6 +200,17 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
       },
       immediate: true,
     },
+    // When the options change, rebuild the tree
+    options: {
+      handler(val) {
+        this.$nextTick(() => {
+          if (val.length) {
+            this.build();
+          }
+        });
+      },
+      deep: true,
+    },
   },
   created() {
     this.build();
@@ -483,6 +494,7 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
         trigger={popupProps?.trigger || 'click'}
         on={{ 'visible-change': onVisibleChange }}
         expandAnimation={true}
+        destroyOnClose
         {...popupProps}
       >
         <div class={cascaderInnerClasses}
