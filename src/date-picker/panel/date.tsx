@@ -36,7 +36,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
     minDate: Date,
     maxDate: Date,
     firstDayOfWeek: Number,
-    disabledDate: Function,
+    disableDate: Function,
     onChange: Function,
   },
   data() {
@@ -49,12 +49,12 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   computed: {
     tableData() {
       const {
-        year, month, type, value, mode, disabledDate, minDate, maxDate, firstDayOfWeek,
+        year, month, type, value, mode, disableDate, minDate, maxDate, firstDayOfWeek,
       } = this;
       let data;
 
       const options = {
-        disabledDate,
+        disableDate,
         minDate,
         maxDate,
         firstDayOfWeek,

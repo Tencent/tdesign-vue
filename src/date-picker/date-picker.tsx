@@ -23,7 +23,7 @@ import TDate from './panel/date';
 import TDateRange from './panel/date-range';
 import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/constant';
-import { dateIndexOf, firstUpperCase } from './utils';
+import { firstUpperCase } from './utils';
 import { TimePickerPanelInstance } from '../time-picker';
 
 dayjs.extend(isBetween);
@@ -381,6 +381,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       });
       // submit formate date
       this.submitInput(selectedDates, true);
+
       if (closePicker) {
         this.close();
       }
@@ -473,18 +474,27 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       return false;
     },
     isEnabled(value: Date): boolean {
-      const { min, max, disableDate } = this;
+      const {
+        min, max, disableDate, dateFormat,
+      } = this;
       if (!disableDate) {
         return true;
       }
       // 值类型为 Function 则表示返回值为 true 的日期会被禁用
       if (typeof disableDate === 'function') {
-        return !disableDate(value);
+        return disableDate(value);
       }
 
       // 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。
       if (Array.isArray(disableDate)) {
-        return dateIndexOf(value, disableDate) < 0;
+        let isIncludes = false;
+        const formatedDisabledDate = disableDate.map((item: string) => dayjs(item, dateFormat));
+        formatedDisabledDate.forEach((item) => {
+          if (item.isSame(dayjs(value))) {
+            isIncludes = true;
+          }
+        });
+        return isIncludes;
       }
 
       // { before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。
@@ -493,7 +503,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         const compareMax = dayjs(new Date(max)).startOf('day');
 
         // check min
-        return dayjs(value).isBetween(compareMin, compareMax, null, '[]');
+        return !dayjs(value).isBetween(compareMin, compareMax, null, '[]');
       }
 
       // { from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。
@@ -503,7 +513,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         const compareMax = dayjs(new Date(to)).startOf('day');
 
         // check min
-        return !dayjs(value).isBetween(compareMin, compareMax, null, '[]');
+        return dayjs(value).isBetween(compareMin, compareMax, null, '[]');
       }
 
       return true;
@@ -611,6 +621,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       value: range ? [start, end] : start,
       mode,
       firstDayOfWeek: 0,
+      disableDate: this.isEnabled,
       onChange: this.dateClick,
     };
     const panelComponent = range ? (

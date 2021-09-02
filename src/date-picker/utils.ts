@@ -3,7 +3,6 @@ import { TdCSSProperties, DateValue } from './interface';
 
 /**
  * next Month
- * @since version V1.0.0
  * @param { Date } date
  * @returns {Date}
  */
@@ -16,7 +15,6 @@ export const nextMonth = (date: Date) => {
 
 /**
  * prev Month
- * @since version V1.0.0
  * @param {Date} date
  * @returns {Date}
  */
@@ -28,29 +26,7 @@ export const prevMonth = (date: Date) => {
 };
 
 /**
- * dateIndexOf
- * @since version V1.0.0
- * @param {Date} date
- * @param {Date[]} arrDates
- * @returns {Number}
- */
-export function dateIndexOf(date: Date, arrDates: DateValue[]): number {
-  const curDate = new Date(date);
-  const curTime = curDate.setHours(0, 0, 0, 0);
-  const selectedDates = arrDates.map((d: Date) => {
-    const dt = new Date(d);
-    const dtime = dt.setHours(0, 0, 0, 0);
-    return dtime;
-  });
-
-  // console.log('curDate', selectedDates, curDate, selectedDates.indexOf(curTime));
-
-  return selectedDates.indexOf(curTime);
-}
-
-/**
  * Empty value
- * @since version V1.0.0
  * @param mixedVar
  * @returns {Boolean}
  * @example
@@ -83,7 +59,6 @@ export function empty(mixedVar: any): mixedVar is undefined | null | false | '' 
 
 /**
  * To Dashed from Camel Case
- * @since version V1.0.0
  * @param {String} strCamelCase
  * @returns {string}
  * @example
@@ -290,7 +265,7 @@ export function addMonth(date: Date, num: number): Date {
 
 interface OptionsType {
   firstDayOfWeek: number;
-  disabledDate: Function;
+  disableDate: Function;
   minDate: Date;
   maxDate: Date;
 }
@@ -299,7 +274,7 @@ export function getWeeks(
   { year, month }: { year: number; month: number },
   {
     firstDayOfWeek,
-    disabledDate = () => false,
+    disableDate = () => false,
     minDate,
     maxDate,
   }: OptionsType,
@@ -322,7 +297,7 @@ export function getWeeks(
       text: i,
       active: false,
       value: currentDay,
-      disabled: disabledDate(currentDay) || outOfRanges(currentDay, minDate, maxDate),
+      disabled: disableDate(currentDay) || outOfRanges(currentDay, minDate, maxDate),
       now: isSame(today, currentDay),
       firstDayOfMonth: i === 1,
       lastDayOfMonth: i === maxDays,
@@ -338,7 +313,7 @@ export function getWeeks(
         text: prependDay.getDate().toString(),
         active: false,
         value: new Date(prependDay),
-        disabled: disabledDate(prependDay) || outOfRanges(prependDay, minDate, maxDate),
+        disabled: disableDate(prependDay) || outOfRanges(prependDay, minDate, maxDate),
         additional: true, // 非当前月
         type: 'prev-month',
       });
@@ -355,7 +330,7 @@ export function getWeeks(
       text: appendDay.getDate(),
       active: false,
       value: new Date(appendDay),
-      disabled: disabledDate(appendDay) || outOfRanges(appendDay, minDate, maxDate),
+      disabled: disableDate(appendDay) || outOfRanges(appendDay, minDate, maxDate),
       additional: true, // 非当前月
       type: 'next-month',
     });
@@ -367,7 +342,7 @@ export function getWeeks(
 export function getYears(
   year: number,
   {
-    disabledDate = () => false,
+    disableDate = () => false,
     minDate,
     maxDate,
   }: OptionsType,
@@ -387,7 +362,7 @@ export function getYears(
 
     for (let j = 0; j < 12; j++) {
       const d = new Date(i, j);
-      if (disabledDate(d)) disabledMonth += 1;
+      if (disableDate(d)) disabledMonth += 1;
       if (outOfRanges(d, minDate, maxDate)) outOfRangeMonth += 1;
     }
 
@@ -403,7 +378,7 @@ export function getYears(
   return chunk(yearArr, 4);
 }
 
-export function getMonths(year: number, { disabledDate = () => false, minDate, maxDate }: OptionsType) {
+export function getMonths(year: number, { disableDate = () => false, minDate, maxDate }: OptionsType) {
   const MonthArr = [];
 
   const today = getToday();
@@ -418,7 +393,7 @@ export function getMonths(year: number, { disabledDate = () => false, minDate, m
 
     for (let j = 1; j <= daysInMonth; j++) {
       const d = new Date(year, i, j);
-      if (disabledDate(d)) disabledDay += 1;
+      if (disableDate(d)) disabledDay += 1;
       if (outOfRanges(d, minDate, maxDate)) outOfRangeDay += 1;
     }
 

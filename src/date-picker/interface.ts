@@ -88,6 +88,7 @@ export interface DatePickerMethods {
   createPopover: () => void;
   getPlaceholderText(): string;
   handleTimePick(col: EPickerCols, time: number): any;
+  getDisabledDate(): Function;
 }
 
 export interface DatePickerComputed {
@@ -255,7 +256,7 @@ export interface DateRangeProps {
   minDate: Date;
   maxDate: Date;
   firstDayOfWeek: number;
-  disabledDate: Function;
+  disableDate: Function;
   onChange: Function;
 }
 export interface DateProps {
@@ -264,7 +265,7 @@ export interface DateProps {
   minDate: Date;
   maxDate: Date;
   firstDayOfWeek: number;
-  disabledDate: Function;
+  disableDate: Function;
   onChange: Function;
 }
 

@@ -43,7 +43,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     minDate: Date,
     maxDate: Date,
     firstDayOfWeek: Number,
-    disabledDate: Function,
+    disableDate: Function,
     onChange: Function,
   },
   data() {
@@ -143,7 +143,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     },
     getData({ year, month, type }) {
       const {
-        disabledDate, minDate, maxDate, startValue, endValue,
+        disableDate, minDate, maxDate, startValue, endValue,
       } = this;
       const { firstDayOfWeek } = this.$props;
       let data;
@@ -152,7 +152,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       const end = endValue;
 
       const options = {
-        disabledDate,
+        disableDate,
         minDate,
         maxDate,
         firstDayOfWeek,
