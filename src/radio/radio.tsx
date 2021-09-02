@@ -2,6 +2,7 @@ import Vue, { VueConstructor, VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { omit } from '../utils/helper';
+import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { RadioGroupInstance, RadioButtonInstance } from './instance';
 
@@ -35,9 +36,8 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
 
   render(): VNode {
     const {
-      $attrs, $listeners, $scopedSlots, radioGroup, radioButton,
+      $attrs, $listeners, radioGroup, radioButton,
     } = this;
-    const children: VNode[] | VNode | string = $scopedSlots.default && $scopedSlots.default(null);
 
     const inputProps = {
       checked: this.checked,
@@ -79,15 +79,15 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
     };
 
     return (
-      <label { ...wrapperProps }>
+      <label {...wrapperProps}>
         <input
           type="radio"
           class={`${prefixCls}__former`}
-          { ...{ domProps: inputProps, on: inputEvents } }
+          {...{ domProps: inputProps, on: inputEvents }}
           onChange={this.handleChange}
         />
         <span class={`${prefixCls}__input`}></span>
-        <span class={`${prefixCls}__label`}>{children}</span>
+        <span class={`${prefixCls}__label`}>{renderContent(this, 'default', 'label')}</span>
       </label>
     );
   },
@@ -99,7 +99,7 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
       } else {
         const target = e.target as HTMLInputElement;
         this.$emit('change', target.checked, { e });
-        typeof this.onChange === 'function' && (this.onChange(target.checked, { e }));
+        typeof this.onChange === 'function' && this.onChange(target.checked, { e });
       }
     },
   },

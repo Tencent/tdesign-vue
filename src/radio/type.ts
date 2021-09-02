@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-02 14:17:18
  * */
 
 import { TNode, SizeEnum } from '../common';
@@ -15,9 +17,17 @@ export interface TdRadioProps {
    */
   defaultChecked?: boolean;
   /**
+   * 单选内容，同 label
+   */
+  default?: string | TNode;
+  /**
    * 是否为禁用态
    */
   disabled?: boolean;
+  /**
+   * 主文案
+   */
+  label?: string | TNode;
   /**
    * HTM 元素原生属性
    * @default ''
@@ -31,7 +41,7 @@ export interface TdRadioProps {
    * 选中状态变化时触发
    */
   onChange?: (checked: boolean, context: { e: Event }) => void;
-}
+};
 
 export interface TdRadioGroupProps {
   /**
@@ -69,12 +79,10 @@ export interface TdRadioGroupProps {
    * 选中值发生变化时触发
    */
   onChange?: (value: RadioValue, context: { e: Event }) => void;
-}
+};
 
 export type RadioValue = string | number;
 
 export type RadioOption = string | number | RadioOptionObj;
 
-export interface RadioOptionObj {
-  label: string | TNode; value: string | number; disabled?: boolean
-}
+export interface RadioOptionObj { label?: string | TNode; value?: string | number; disabled?: boolean };

@@ -1,4 +1,5 @@
 import Vue, { VueConstructor, VNode } from 'vue';
+import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import Radio, { radioBtnName as name } from './radio';
 import { RadioGroupInstance } from './instance';
@@ -27,10 +28,7 @@ export default (Vue as VueConstructor<RadioButtonInstance>).extend({
   },
 
   render(): VNode {
-    const {
-      $props, $listeners, $scopedSlots, radioGroup,
-    } = this;
-    const children: VNode[] | VNode | string = $scopedSlots.default && $scopedSlots.default(null);
+    const { $props, $listeners, radioGroup } = this;
 
     const radioProps = {
       props: {
@@ -45,6 +43,6 @@ export default (Vue as VueConstructor<RadioButtonInstance>).extend({
       radioProps.props.name = radioGroup.name;
     }
 
-    return <Radio {...radioProps}>{ children }</Radio>;
+    return <Radio {...radioProps}>{renderContent(this, 'default', 'label')}</Radio>;
   },
 });
