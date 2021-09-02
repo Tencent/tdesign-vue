@@ -1,14 +1,12 @@
 <template>
   <div>
-    <t-dropdown :options="options" placement="top-left" trigger="click" :hideAfterItemClick="false" >
+    <t-dropdown :options="options" placement="top-left" trigger="click" :hideAfterItemClick="false" :minColumnWidth="100">
       <t-button>click我试试</t-button>
     </t-dropdown>
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
+<script>
+export default {
   data() {
     return {
       options: [{
@@ -35,7 +33,7 @@ export default Vue.extend({
       }],
     };
   },
-});
+};
 </script>
 <style scoped>
 .t-button {

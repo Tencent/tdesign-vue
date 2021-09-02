@@ -1,37 +1,28 @@
 import Vue, { VNode } from 'vue';
 import { prefix } from '../config';
-import Popup from '../popup/index';
+import Popup from '../popup';
 import DropdownMenu from './dropdown-menu';
 import { emitEvent } from '../utils/event';
 import { DropdownOption } from './type';
 import props from './props';
-import bus from './bus';
 
 const name = `${prefix}-dropdown`;
-
-let instanceCount = 0; // 组件实例数目
 
 export default Vue.extend({
   name,
   props: {
     ...props,
   },
-  data() {
-    instanceCount += 1;
-    return {
-      busId: `${instanceCount}`,
-    };
-  },
-  mounted() {
-    bus.$on(`${this.busId}item-click`, (data: DropdownOption, e: MouseEvent) => {
+  methods: {
+    handleMenuClick(data: DropdownOption, context: { e: MouseEvent }) {
       if (this.hideAfterItemClick) {
         const {
           popupElem,
         }: any = this.$refs;
         popupElem.doClose();
       }
-      emitEvent(this, 'click', data, { e });
-    });
+      emitEvent(this, 'click', data, context);
+    },
   },
   render() {
     const trigger: VNode[] | VNode | string = this.$scopedSlots.default
@@ -54,11 +45,11 @@ export default Vue.extend({
       <Popup {...popupProps} ref="popupElem" expandAnimation={true}>
         <template slot='content' role='dropdown'>
           <DropdownMenu
-            busId={this.busId}
             options={this.options}
             maxHeight={this.maxHeight}
             maxColumnWidth={this.maxColumnWidth}
             minColumnWidth={this.minColumnWidth}
+            onClick={this.handleMenuClick}
           />
         </template>
         {trigger}

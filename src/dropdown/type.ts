@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-24 14:02:35
+ * updated at 2021-09-02 15:26:39
  * */
 
 import { PopupProps } from '../popup';
@@ -92,7 +92,7 @@ export interface TdDropdownItemProps {
   /**
    * 点击时触发
    */
-  onClick?: (context: { e: KeyboardEvent }) => void;
+  onClick?: (dropdownItem: DropdownOption, context: { e: MouseEvent }) => void;
 };
 
 export type DropdownOption = { children?: Array<TdDropdownItemProps> } & TdDropdownItemProps & Record<string, any>;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <t-dropdown :options="options" >
-      <t-button theme="primary" variant="outline"><t-icon-ellipsis slot="icon" size="12"/></t-button>
+      <t-button theme="default" variant="outline"><t-icon-ellipsis slot="icon" size="16"/></t-button>
     </t-dropdown>
   </div>
 </template>

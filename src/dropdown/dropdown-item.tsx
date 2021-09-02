@@ -4,7 +4,6 @@ import { prefix } from '../config';
 import { STATUS_CLASSNAMES } from '../utils/classnames';
 import ripple from '../utils/ripple';
 import itemProps from './dropdown-item-props';
-import bus from './bus';
 import { emitEvent } from '../utils/event';
 
 import { TNodeReturnValue } from '../common';
@@ -47,21 +46,22 @@ export default Vue.extend({
   },
   methods: {
     renderSuffix(): TNodeReturnValue {
-      return this.hasChildren ? <TIconChevronRight class="children-suffix" /> : '';
+      return this.hasChildren ? <TIconChevronRight class="children-suffix" /> : null;
     },
     handleItemClick(e: MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
-        bus.$emit(`${this.busId}item-click`, {
+        const data = {
           value: this.value,
           path: this.path,
           content: this.content,
-        }, e);
-        bus.$emit(`${this.busId}submenuShow`, this.path);
-        emitEvent(this, 'click', e); // dropdown item的点击回调
+        };
+
+        emitEvent(this, 'item-hover', this.path);
+        emitEvent(this, 'click', data, { e }); // dropdown item的点击回调
       }
     },
     handleMouseover(): void {
-      bus.$emit(`${this.busId}submenuShow`, this.path);
+      emitEvent(this, 'hover', this.path);
     },
   },
   render() {
@@ -76,7 +76,8 @@ export default Vue.extend({
     ];
 
     return (
-      <div class={classes}
+      <div
+        class={classes}
         onClick={this.handleItemClick}
         onMouseover={this.handleMouseover}
         style={{
@@ -86,11 +87,9 @@ export default Vue.extend({
         v-ripple
       >
         <div class={`${name}__content`} title={this.content}>
-          <span class={`${name}__content__text`}>
-            {this.content}
-          </span>
+          <span class={`${name}__content__text`}>{this.content}</span>
         </div>
-        { this.renderSuffix()}
+        {this.renderSuffix()}
       </div>
     );
   },

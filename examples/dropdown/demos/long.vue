@@ -5,10 +5,8 @@
     </t-dropdown>
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
+<script>
+export default {
   data() {
     const options = Array.from({ length: 20 }).map((v, k) => ({
       content: `选项${k + 1}`,
@@ -18,7 +16,7 @@ export default Vue.extend({
       options,
     };
   },
-});
+};
 </script>
 <style scoped>
 .t-button {

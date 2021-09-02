@@ -1,19 +1,15 @@
 import Vue from 'vue';
 import DropdownItem from './dropdown-item';
-import bus from './bus';
 import { prefix } from '../config';
 import { TNodeReturnValue } from '../common';
 import { DropdownOption } from './type';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-dropdown__menu`;
 
 export default Vue.extend({
   name,
   props: {
-    busId: {
-      type: String,
-      default: '',
-    },
     options: {
       type: Array,
       default: (): [] => [],
@@ -44,40 +40,41 @@ export default Vue.extend({
       }
       return this.path.indexOf(itemPath) === 0;
     },
+    handleHoverItem(path: string) {
+      this.path = path;
+    },
+    handleItemClick(data: DropdownOption, context: { e: MouseEvent }, idx: number) {
+      (this.options as DropdownOption[])[idx].onClick?.(data, context);
+      emitEvent(this, 'click', data, context);
+    },
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
       const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
       return (
-        <div class={menuClass} style={{
-          maxHeight: `${this.maxHeight}px`,
-        }}>
-          {
-            children.map(((item) => (
-              <DropdownItem
-                busId={this.busId}
-                disabled={item.disabled}
-                active={this.isActive(item, pathPrefix) || item.active}
-                value={item.value}
-                content={item.content}
-                divider={item.divider}
-                hasChildren={item.children && item.children.length > 0}
-                path={`${pathPrefix}/${item.value}`}
-                maxColumnWidth={this.maxColumnWidth}
-                minColumnWidth={this.minColumnWidth}
-                onClick={item.onClick}
-              />
-            )))
-          }
+        <div
+          class={menuClass}
+          style={{
+            maxHeight: `${this.maxHeight}px`,
+          }}
+        >
+          {children.map((item, idx) => (
+            <DropdownItem
+              key={idx}
+              disabled={item.disabled}
+              active={this.isActive(item, pathPrefix) || item.active}
+              value={item.value}
+              content={item.content}
+              divider={item.divider}
+              hasChildren={item.children && item.children.length > 0}
+              path={`${pathPrefix}/${item.value}`}
+              maxColumnWidth={this.maxColumnWidth}
+              minColumnWidth={this.minColumnWidth}
+              onClick={(data: DropdownOption, context: { e: MouseEvent }) => this.handleItemClick(data, context, idx)}
+              onHover={this.handleHoverItem}
+            />
+          ))}
         </div>
       );
     },
-  },
-  mounted() {
-    bus.$on(`${this.busId}submenuShow`, (path: string) => {
-      this.path = path;
-    });
-    bus.$on(`${this.busId}clearPath`, () => {
-      this.path = '';
-    });
   },
   render() {
     const columns: TNodeReturnValue[] = [];
@@ -86,7 +83,7 @@ export default Vue.extend({
     // 根据path渲染
     while (menuItems && menuItems.length) {
       // eslint-disable-next-line
-      const activeItem = menuItems.find(item => this.isActive(item, pathPrefix, false));
+      const activeItem = menuItems.find((item) => this.isActive(item, pathPrefix, false));
 
       columns.push(this.renderMenuColumn(menuItems, !!activeItem, pathPrefix));
 
@@ -97,10 +94,6 @@ export default Vue.extend({
         menuItems = [];
       }
     }
-    return (
-      <div class={name}>
-        { columns }
-      </div>
-    );
+    return <div class={name}>{columns}</div>;
   },
 });

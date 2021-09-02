@@ -1,10 +1,6 @@
 <template>
   <div>
     <p>组件实例方法调用</p>
-    <p>this.$message.success('用户表示普通操作信息提示')</p>
-    <p>this.$message.success({ content: '用户表示普通操作信息提示', duration: 1000 })</p>
-    <p>this.$message('success', '用户表示普通操作信息提示')</p>
-    <p>this.$message('success', { content: '用户表示普通操作信息提示', duration: 1000 })</p>
     <br>
     <div class='t-demo-message-duration'>
       <t-button @click="$message.info('用户表示普通操作信息提示', 1000)">info</t-button>
@@ -18,10 +14,6 @@
     <br><br>
 
     <p>插件方法调用</p>
-    <p>MessagePlugin.success('用户表示普通操作信息提示')</p>
-    <p>MessagePlugin.success({ content: '用户表示普通操作信息提示', duration: 1000 })</p>
-    <p>MessagePlugin('success', '用户表示普通操作信息提示')</p>
-    <p>MessagePlugin('success', { content: '用户表示普通操作信息提示', duration: 1000 })</p>
     <br>
     <div class='t-demo-message-theme'>
       <t-button @click="MessagePlugin.info('用户表示普通操作信息提示')">info</t-button>

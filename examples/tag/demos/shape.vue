@@ -1,17 +1,14 @@
 <template>
-  <div class="tag-demo">
-    <div class="tdesign-demo-block">
-      正常：
+  <div>
+    <div class="tag-demo">
       <t-tag>标签一</t-tag>
       <t-tag theme="primary">标签一</t-tag>
     </div>
-    <div class="tdesign-demo-block">
-      圆角：
+    <div class="tag-demo">
       <t-tag shape="round">标签一</t-tag>
       <t-tag shape="round" theme="primary">标签一</t-tag>
     </div>
-    <div class="tdesign-demo-block">
-      标记：
+    <div class="tag-demo">
       <t-tag shape="mark">标签一</t-tag>
       <t-tag shape="mark" theme="primary">标签一</t-tag>
     </div>
@@ -19,9 +16,12 @@
 </template>
 
 <style lang="less" scoped>
-.tag-demo .tdesign-demo-block {
-  width: 300px;
+.tag-demo {
+  width: 500px;
   display: flex;
-  justify-content: space-around;
+  margin-bottom: 15px;
+  > * {
+    margin-right: 30px;
+  }
 }
 </style>

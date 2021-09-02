@@ -203,22 +203,6 @@ exports[`Message plugin demo works fine 1`] = `
     组件实例方法调用
   </p>
    
-  <p>
-    this.$message.success('用户表示普通操作信息提示')
-  </p>
-   
-  <p>
-    this.$message.success({ content: '用户表示普通操作信息提示', duration: 1000 })
-  </p>
-   
-  <p>
-    this.$message('success', '用户表示普通操作信息提示')
-  </p>
-   
-  <p>
-    this.$message('success', { content: '用户表示普通操作信息提示', duration: 1000 })
-  </p>
-   
   <br />
    
   <div
@@ -296,22 +280,6 @@ exports[`Message plugin demo works fine 1`] = `
    
   <p>
     插件方法调用
-  </p>
-   
-  <p>
-    MessagePlugin.success('用户表示普通操作信息提示')
-  </p>
-   
-  <p>
-    MessagePlugin.success({ content: '用户表示普通操作信息提示', duration: 1000 })
-  </p>
-   
-  <p>
-    MessagePlugin('success', '用户表示普通操作信息提示')
-  </p>
-   
-  <p>
-    MessagePlugin('success', { content: '用户表示普通操作信息提示', duration: 1000 })
   </p>
    
   <br />

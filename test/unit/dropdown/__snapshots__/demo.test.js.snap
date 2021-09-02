@@ -27,7 +27,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
             >
               <div
                 class="t-dropdown__item"
-                style="max-width: 100px; min-width: 10px;"
+                style="max-width: 100px; min-width: 100px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -42,7 +42,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item has-suffix"
-                style="max-width: 100px; min-width: 10px;"
+                style="max-width: 100px; min-width: 100px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -70,7 +70,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item"
-                style="max-width: 100px; min-width: 10px;"
+                style="max-width: 100px; min-width: 100px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -85,7 +85,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item"
-                style="max-width: 100px; min-width: 10px;"
+                style="max-width: 100px; min-width: 100px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -118,7 +118,9 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
 `;
 
 exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
-<div>
+<div
+  class="tdesign-demo-dropdown"
+>
   <div
     class="t-popup-reference"
   >
@@ -214,14 +216,26 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
       <span
         class="t-button__text"
       >
-        更多 
-        <svg
-          class="t-icon t-icon-chevron-down"
+        <span
+          class="tdesign-demo-dropdown__text"
         >
-          <use
-            xlink:href="#t-icon-chevron-down"
-          />
-        </svg>
+          
+        更多
+        
+          <svg
+            class="t-icon t-icon-chevron-down"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
       </span>
     </button>
   </div>
@@ -677,7 +691,9 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
 `;
 
 exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
-<div>
+<div
+  class="tdesign-demo-dropdown"
+>
   <div
     class="t-popup-reference"
   >
@@ -703,7 +719,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
             >
               <div
                 class="t-dropdown__item has-suffix"
-                style="max-width: 100px; min-width: 100px;"
+                style="max-width: 100px; min-width: 10px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -731,7 +747,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item has-suffix"
-                style="max-width: 100px; min-width: 100px;"
+                style="max-width: 100px; min-width: 10px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -759,7 +775,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item has-suffix"
-                style="max-width: 100px; min-width: 100px;"
+                style="max-width: 100px; min-width: 10px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -787,7 +803,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               </div>
               <div
                 class="t-dropdown__item has-suffix"
-                style="max-width: 100px; min-width: 100px;"
+                style="max-width: 100px; min-width: 10px;"
               >
                 <div
                   class="t-dropdown__item__content"
@@ -825,14 +841,26 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
       <span
         class="t-button__text"
       >
-        更多 
-        <svg
-          class="t-icon t-icon-chevron-down"
+        <span
+          class="tdesign-demo-dropdown__text"
         >
-          <use
-            xlink:href="#t-icon-chevron-down"
-          />
-        </svg>
+          
+        更多
+        
+          <svg
+            class="t-icon t-icon-chevron-down"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
       </span>
     </button>
   </div>
@@ -930,7 +958,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-primary t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
       type="button"
     >
       <svg
@@ -1041,7 +1069,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-primary t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
       type="button"
     >
       <svg
@@ -1153,28 +1181,35 @@ exports[`Dropdown base demo works fine 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div
-      class="tdesign-demo-dropdown-trigger"
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
+      type="button"
     >
-      <button
-        class="t-button t-size-m t-button--variant-text t-button--theme-default"
-        type="button"
+      <span
+        class="t-button__text"
       >
         <span
-          class="t-button__text"
+          class="tdesign-demo-dropdown__text"
         >
           
-        更多 
+        更多
+        
           <svg
             class="t-icon t-icon-chevron-down"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <use
-              xlink:href="#t-icon-chevron-down"
+            <path
+              clip-rule="evenodd"
+              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
+              fill-opacity=".9"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
-      </button>
-    </div>
+      </span>
+    </button>
   </div>
 </div>
 `;

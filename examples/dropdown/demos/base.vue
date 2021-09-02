@@ -1,18 +1,22 @@
 <template>
   <div class="tdesign-demo-dropdown">
     <t-dropdown :options="options" @click="clickHandler">
-      <div class="tdesign-demo-dropdown-trigger" >
-        <t-button variant="text">
-          更多 <t-icon name="chevron-down" size="14" />
-        </t-button>
-      </div>
+      <t-button variant="text">
+        <span class="tdesign-demo-dropdown__text">
+          更多
+          <t-icon-chevron-down size="16" />
+        </span>
+      </t-button>
     </t-dropdown>
   </div>
 </template>
 <script>
-import Vue from 'vue';
+import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
 
-export default Vue.extend({
+export default {
+  components: {
+    TIconChevronDown,
+  },
   data() {
     return {
       options: [
@@ -40,12 +44,12 @@ export default Vue.extend({
       this.$message.success(`选中【${data.content}】`);
     },
   },
-});
+};
 </script>
 <style lang="less" scoped>
 .tdesign-demo-dropdown {
-  .t-button__text {
-    display: flex;
+  &__text {
+     display: inline-flex;
   }
 }
 </style>

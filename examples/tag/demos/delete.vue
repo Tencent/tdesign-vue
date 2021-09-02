@@ -1,7 +1,6 @@
 <template>
   <div class="tag-demo">
     <div class="tdesign-demo-block">
-      可删除
       <t-tag
         v-for="(tag, index) in tags"
         :key="index"
@@ -16,7 +15,6 @@
       </t-tag>
     </div>
     <div class="tdesign-demo-block editable">
-      可添加
       <t-tag v-if="!inputVisible" @click="handleClickAdd">
         <t-icon-add />
         添加标签
@@ -96,7 +94,7 @@ export default {
 .tag-demo .tdesign-demo-block {
   display: flex;
   > * {
-    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
