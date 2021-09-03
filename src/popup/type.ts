@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-21 15:51:57
+ * updated at 2021-08-11 15:47:10
  * */
 
 import { TNode, ClassName, Styles, AttachNode } from '../common';
@@ -53,7 +53,7 @@ export interface TdPopupProps {
    * 触发浮层出现的方式
    * @default hover
    */
-  trigger?: 'hover' | 'click' | 'focus' | 'context-menu' | 'manual';
+  trigger?: 'hover' | 'click' | 'focus' | 'context-menu';
   /**
    * 触发元素
    */
@@ -69,7 +69,7 @@ export interface TdPopupProps {
    */
   defaultVisible?: boolean;
   /**
-   * 组件层级（Web 测试默认为 5500，移动端和小程序默认为 1500）
+   * 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500
    */
   zIndex?: number;
   /**
@@ -78,4 +78,8 @@ export interface TdPopupProps {
   onVisibleChange?: (visible: boolean, context: PopupVisibleChangeContext) => void;
 };
 
-export interface PopupVisibleChangeContext { e?: MouseEvent; trigger?: 'document' | 'trigger-element-click' | 'trigger-element-hover' | 'trigger-element-blur' | 'trigger-element-focus' | 'context-menu' | 'keydown-esc' };
+export interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource };
+
+export type PopupTriggerEvent = MouseEvent | FocusEvent | KeyboardEvent;
+
+export type PopupTriggerSource = 'document' | 'trigger-element-click' | 'trigger-element-hover' | 'trigger-element-blur' | 'trigger-element-focus' | 'context-menu' | 'keydown-esc';

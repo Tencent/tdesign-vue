@@ -20,7 +20,6 @@ exports[`TreeSelect base demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px;"
           >
             <div>
               <p
@@ -339,7 +338,6 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px;"
           >
             <div>
               <p
@@ -616,7 +614,6 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px;"
           >
             <div>
               <p
@@ -802,7 +799,6 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px;"
           >
             <div>
               <p
@@ -1156,7 +1152,6 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         >
           <div
             class="t-popup-content  t-select-dropdown narrow-scrollbar"
-            style="width: 0px;"
           >
             <div>
               <p

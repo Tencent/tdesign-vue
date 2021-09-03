@@ -2,7 +2,6 @@
   <div>
     <t-popup
       content="这是popup内容"
-      trigger="manual"
       placement="right"
       :visible="true"
     >

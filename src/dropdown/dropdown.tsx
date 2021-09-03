@@ -19,7 +19,7 @@ export default Vue.extend({
         const {
           popupElem,
         }: any = this.$refs;
-        popupElem.doClose();
+        popupElem.handleClose();
       }
       emitEvent(this, 'click', data, context);
     },

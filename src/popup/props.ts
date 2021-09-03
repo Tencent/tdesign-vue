@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-21 15:51:57
+ * updated at 2021-08-11 15:47:10
  * */
 
 import { TdPopupProps } from './type';
@@ -49,7 +49,7 @@ export default {
     type: String as PropType<TdPopupProps['trigger']>,
     default: 'hover' as TdPopupProps['trigger'],
     validator(val: TdPopupProps['trigger']): boolean {
-      return ['hover', 'click', 'focus', 'context-menu', 'manual'].includes(val);
+      return ['hover', 'click', 'focus', 'context-menu'].includes(val);
     },
   },
   /** 触发元素 */
@@ -57,10 +57,13 @@ export default {
     type: [String, Function] as PropType<TdPopupProps['triggerElement']>,
   },
   /** 是否显示浮层 */
-  visible: Boolean,
+  visible: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 是否显示浮层，非受控属性 */
   defaultVisible: Boolean,
-  /** 组件层级（Web 测试默认为 5500，移动端和小程序默认为 1500） */
+  /** 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500 */
   zIndex: {
     type: Number,
   },

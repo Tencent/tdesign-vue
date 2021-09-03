@@ -4,7 +4,7 @@ import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import {
-  on, off, addClass, removeClass, getAttach,
+  on, off, once, addClass, removeClass, getAttach,
 } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -30,6 +30,7 @@ const placementMap = {
 };
 const showTimeout = 250;
 const hideTimeout = 150;
+const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 
 export default Vue.extend({
   name,
@@ -44,15 +45,15 @@ export default Vue.extend({
   data() {
     return {
       name,
-      currentPlacement: '',
-      popperElm: null,
       referenceElm: null,
       resizeSensor: null,
-      popperJS: null,
+      /** popperjs instance */
+      popper: null,
       timeout: null,
       refOverlayElm: null,
       hasDocumentEvent: false,
       presetMaxHeight: null, // 组件自身已设置的maxHeight
+      visible$: false,
     };
   },
   computed: {
@@ -66,29 +67,36 @@ export default Vue.extend({
       ] as ClassName;
       return base.concat(this.overlayClassName);
     },
-    manualTrigger(): boolean {
-      return this.trigger.indexOf('manual') > -1;
-    },
-    hoverTrigger(): boolean {
-      return this.trigger.indexOf('hover') > -1;
-    },
-    clickTrigger(): boolean {
-      return this.trigger.indexOf('click') > -1;
-    },
-    focusTrigger(): boolean {
-      return this.trigger.indexOf('focus') > -1;
-    },
-    contextMenuTrigger(): boolean {
-      return this.trigger.indexOf('context-menu') > -1;
+    hasTrigger(): Record<typeof triggers[number], boolean> {
+      return triggers.reduce((map, trigger) => ({
+        ...map,
+        [trigger]: this.trigger.includes(trigger),
+      }), {} as any);
     },
   },
   watch: {
-    visible(val) {
+    visible: {
+      immediate: true,
+      handler(val) {
+        if (val !== undefined) {
+          this.visible$ = val;
+        }
+      },
+    },
+    visible$(val) {
       if (val) {
         this.updatePopper();
-        if (!this.hasDocumentEvent && (this.manualTrigger || this.contextMenuTrigger || this.clickTrigger)) {
+        if (!this.hasDocumentEvent && (this.hasTrigger['context-menu'] || this.hasTrigger.click)) {
           on(document, 'click', this.handleDocumentClick);
           this.hasDocumentEvent = true;
+        }
+        // focus trigger esc 隐藏浮层
+        if (this.referenceElm && this.hasTrigger.focus) {
+          once(this.referenceElm, 'keydown', (ev: KeyboardEvent) => {
+            if (ev.code === 'Escape') {
+              this.handleClose({ trigger: 'keydown-esc' });
+            }
+          });
         }
       } else {
         // destruction is delayed until after animation ends
@@ -97,8 +105,8 @@ export default Vue.extend({
       }
     },
     overlayStyle() {
-      if (this.popperJS) {
-        this.popperJS.update();
+      if (this.popper) {
+        this.popper.update();
         this.updateOverlayStyle();
       }
     },
@@ -108,88 +116,91 @@ export default Vue.extend({
       // set 480px max width when the content type is string
       this.setOverlayStyle({ maxWidth: '480px' });
     }
-    this.currentPlacement = this.currentPlacement || this.placement;
-    this.popperElm = this.popperElm || (this.$refs && this.$refs.popper);
 
     this.referenceElm = this.referenceElm || this.$el;
-    if (!this.popperElm || !this.referenceElm) return;
+    if (!this.referenceElm || !this.$refs.popper) return;
 
-    if (this.visible) {
-      this.createPopperJS();
+    if (this.visible$) {
+      this.createPopper();
+      this.updateOverlayStyle();
     }
 
     const reference = this.referenceElm;
-    const popper = this.popperElm;
-    // 无论哪种触发方式都支持 esc 隐藏浮层
-    on(reference, 'keydown', this.handleKeydown);
-    if (this.clickTrigger) {
-      on(reference, 'click', (e: MouseEvent) => this.doToggle({ e, trigger: 'trigger-element-click' }));
+    const popperElm = this.$refs.popper as HTMLElement;
+    const offEvents: (() => void)[] = [];
+
+    this.$on('hook:beforeDestroy', () => {
+      offEvents.forEach((handler) => handler());
+    });
+
+    if (this.hasTrigger.click) {
+      offEvents.push(
+        on(reference, 'click', (e: MouseEvent) => this.handleToggle({ e, trigger: 'trigger-element-click' })),
+      );
     }
-    if (this.hoverTrigger) {
-      const show = () => this.doShow({ trigger: 'trigger-element-hover' });
-      const close = () => this.doClose({ trigger: 'trigger-element-hover' });
-      on(reference, 'mouseenter', show);
-      on(popper, 'mouseenter', show);
-      on(reference, 'mouseleave', close);
-      on(popper, 'mouseleave', close);
+    if (this.hasTrigger.hover) {
+      const open = () => this.handleOpen({ trigger: 'trigger-element-hover' });
+      const close = () => this.handleClose({ trigger: 'trigger-element-hover' });
+      offEvents.push(on(reference, 'mouseenter', open));
+      offEvents.push(on(reference, 'mouseleave', close));
+      offEvents.push(on(popperElm, 'mouseenter', open));
+      offEvents.push(on(popperElm, 'mouseleave', close));
     }
-    if (this.focusTrigger) {
-      if (reference.querySelector('input, textarea')) {
-        on(reference, 'focusin', () => this.doShow({ trigger: 'trigger-element-focus' }));
-        on(reference, 'focusout', () => this.doClose({ trigger: 'trigger-element-blur' }));
+    if (this.hasTrigger.focus) {
+      if (reference.querySelector('input,textarea')) {
+        offEvents.push(on(reference, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' })));
+        offEvents.push(on(reference, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' })));
       } else {
-        on(reference, 'mousedown', () => this.doShow({ trigger: 'trigger-element-click' }));
-        on(reference, 'mouseup', () => this.doClose({ trigger: 'trigger-element-click' }));
+        offEvents.push(on(reference, 'mousedown', () => this.handleOpen({ trigger: 'trigger-element-click' })));
+        offEvents.push(on(reference, 'mouseup', () => this.handleClose({ trigger: 'trigger-element-click' })));
       }
     }
-    if (this.contextMenuTrigger) {
-      reference.oncontextmenu = (): boolean => false;
-      on(reference, 'mousedown', this.handleRightClick);
+    if (this.hasTrigger['context-menu']) {
+      reference.oncontextmenu = () => false;
+      offEvents.push(
+        on(reference, 'mousedown', (e: MouseEvent) => {
+          // MouseEvent.button
+          // 2: Secondary button pressed, usually the right button
+          e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
+        }),
+      );
     }
-    if (this.manualTrigger) {
-      on(reference, 'click', () => this.doToggle({ trigger: 'trigger-element-click' }));
-    }
-    this.updateOverlayStyle();
   },
   beforeDestroy(): void {
-    this.doDestroy(true);
-    if (this.popperElm && this.popperElm.parentNode === document.body) {
-      this.popperElm.removeEventListener('click', stop);
-      document.body.removeChild(this.popperElm);
+    if (this.popper && !this.visible$) {
+      this.popper.destroy();
+      this.popper = null;
+    }
+
+    const popperElm = this.$refs.popper as HTMLElement;
+    if (popperElm && popperElm.parentNode === document.body) {
+      popperElm.removeEventListener('click', stop);
+      document.body.removeChild(popperElm);
     }
   },
-  destroyed(): void {
-    const reference = this.referenceElm;
-    off(reference, 'click', this.doToggle);
-    off(reference, 'mouseup', this.doClose);
-    off(reference, 'mousedown', this.doShow);
-    off(reference, 'focusin', this.doShow);
-    off(reference, 'focusout', this.doClose);
-    off(reference, 'mousedown', this.doShow);
-    off(reference, 'mouseup', this.doClose);
-    off(reference, 'mouseleave', this.doClose);
-    off(reference, 'mouseenter', this.doShow);
-  },
   methods: {
-    createPopperJS(): void {
+    createPopper(): void {
+      const currentPlacement = this.placement;
+      const popperElm = this.$refs.popper as HTMLElement;
+
       const overlayContainer = getAttach(this.attach);
-      overlayContainer.appendChild(this.popperElm);
-      if (this.popperJS && this.popperJS.destroy) {
-        this.popperJS.destroy();
+      overlayContainer.appendChild(popperElm);
+      if (this.popper && this.popper.destroy) {
+        this.popper.destroy();
       }
-      let placement = placementMap[this.currentPlacement];
+      let placement = placementMap[currentPlacement] as any;
       if (this.expandAnimation) {
         // 如果有展开收起动画 需要在beforeEnter阶段设置max-height为0 这导致popperjs无法知道overflow了 所以需要在这里手动判断设置placment
-        this.popperElm.style.display = '';
-        this.presetMaxHeight = parseInt(getComputedStyle(this.getContentElm(this.popperElm)).maxHeight, 10) || Infinity;
+        popperElm.style.display = '';
+        this.presetMaxHeight = parseInt(getComputedStyle(this.getContentElm(popperElm)).maxHeight, 10) || Infinity;
         const referenceElmBottom = innerHeight - this.referenceElm.getBoundingClientRect().bottom;
-        if (referenceElmBottom < this.popperElm.scrollHeight) {
+        if (referenceElmBottom < popperElm.scrollHeight) {
           placement = 'top-start';
         }
-        this.popperElm.style.display = 'none';
+        popperElm.style.display = 'none';
       }
 
-      this.popperJS = createPopper(this.referenceElm, this.popperElm, {
+      this.popper = createPopper(this.referenceElm, popperElm, {
         placement,
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
@@ -203,19 +214,19 @@ export default Vue.extend({
           },
         ],
       });
-      this.popperElm.addEventListener('click', stop);
+      popperElm.addEventListener('click', stop);
       // 监听trigger元素尺寸变化
       this.resizeSensor = new ResizeSensor(this.referenceElm, () => {
-        this.popperJS && this.popperJS.update();
+        this.popper && this.popper.update();
         this.updateOverlayStyle();
       });
     },
 
     updatePopper(): void {
-      if (this.popperJS) {
-        this.popperJS.update();
+      if (this.popper) {
+        this.popper.update();
       } else {
-        this.createPopperJS();
+        this.createPopper();
       }
     },
 
@@ -241,70 +252,43 @@ export default Vue.extend({
       }
     },
 
-    doDestroy(forceDestroy: boolean): void {
-      if (!this.popperJS || (this.visible && !forceDestroy)) return;
-      this.popperJS.destroy();
-      this.popperJS = null;
-    },
-
     destroyPopper(el: HTMLElement): void {
       this.resetExpandStyles(el);
-      if (this.popperJS) {
-        this.popperJS.destroy();
-        this.popperJS = null;
+      if (this.popper) {
+        this.popper.destroy();
+        this.popper = null;
         if (this.destroyOnClose) {
-          this.popperElm.parentNode.removeChild(this.popperElm);
+          const popperElm = this.$refs.popper as HTMLElement;
+          popperElm.parentNode.removeChild(popperElm);
         }
       }
     },
 
-    doToggle(context: PopupVisibleChangeContext): void {
-      this.emitPopVisible(!this.visible, context);
+    handleToggle(context: PopupVisibleChangeContext): void {
+      this.emitPopVisible(!this.visible$, context);
     },
-    doShow(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+    handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.emitPopVisible(true, context);
-      }, this.clickTrigger ? 0 : showTimeout);
+      this.timeout = setTimeout(
+        () => {
+          this.emitPopVisible(true, context);
+        },
+        this.hasTrigger.click ? 0 : showTimeout,
+      );
     },
-    doClose(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+    handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.emitPopVisible(false, context);
-      }, this.clickTrigger ? 0 : hideTimeout);
-    },
-    handleFocus(): void {
-      addClass(this.referenceElm, 'focusing');
-      if (this.clickTrigger || this.focusTrigger) {
-        this.emitPopVisible(true, { trigger: 'trigger-element-focus' });
-      }
-    },
-    handleClick(): void {
-      removeClass(this.referenceElm, 'focusing');
-    },
-    handleBlur(): void {
-      removeClass(this.referenceElm, 'focusing');
-      if (this.clickTrigger || this.focusTrigger) {
-        this.emitPopVisible(false, { trigger: 'trigger-element-blur' });
-      }
-    },
-    handleKeydown(ev: KeyboardEvent): void {
-      if (ev.code === 'Escape' && this.manualTrigger) { // esc
-        this.doClose({ trigger: 'keydown-esc' });
-      }
+      this.timeout = setTimeout(
+        () => {
+          this.emitPopVisible(false, context);
+        },
+        this.hasTrigger.click ? 0 : hideTimeout,
+      );
     },
     handleDocumentClick(e: Event): void {
-      const popper = this.popperElm;
-      if (!this.$el
-        || this.$el.contains(e.target as Element)
-        || !popper
-        || popper.contains(e.target as Node)) return;
+      const popperElm = this.$refs.popper as HTMLElement;
+      if (!this.$el || this.$el.contains(e.target as Element) || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
-    },
-    handleRightClick(e: MouseEvent): void {
-      if (e.button === 2) {
-        this.doToggle({ trigger: 'context-menu' });
-      }
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext): void {
       // 处理按钮设置了disabled，里面子元素点击还是冒泡上来的情况
@@ -312,6 +296,9 @@ export default Vue.extend({
         return;
       }
 
+      if (this.visible === undefined) {
+        this.visible$ = val;
+      }
       this.$emit('visible-change', val, context);
       if (typeof this.onVisibleChange === 'function') {
         this.onVisibleChange(val, context);
@@ -369,7 +356,9 @@ export default Vue.extend({
   render() {
     return (
       <div class={`${name}-reference`}>
-        <transition name={`${name}_animation`} appear
+        <transition
+          name={`${name}_animation`}
+          appear
           onBeforeEnter={this.beforeEnter}
           onEnter={this.enter}
           onAfterEnter={this.resetExpandStyles}
@@ -379,10 +368,10 @@ export default Vue.extend({
         >
           <div
             class={name}
-            ref='popper'
-            v-show={!this.disabled && this.visible}
-            role='tooltip'
-            aria-hidden={(this.disabled || !this.visible) ? 'true' : 'false'}
+            ref="popper"
+            v-show={!this.disabled && this.visible$}
+            role="tooltip"
+            aria-hidden={this.disabled || !this.visible$ ? 'true' : 'false'}
             style={{ zIndex: this.zIndex }}
           >
             <div class={this.overlayClasses} ref="overlay">

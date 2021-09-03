@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-02 15:26:39
+ * updated at 2021-09-02 21:18:44
  * */
 
 import { PopupProps } from '../popup';
@@ -57,7 +57,7 @@ export interface TdDropdownProps {
    * 触发下拉显示的方式
    * @default hover
    */
-  trigger?: 'hover' | 'click' | 'focus' | 'context-menu' | 'manual';
+  trigger?: 'hover' | 'click' | 'focus' | 'context-menu';
   /**
    * 下拉操作项点击时触发
    */

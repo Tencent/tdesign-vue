@@ -14,12 +14,14 @@ export const on = (((): any => {
     return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
       if (element && event && handler) {
         element.addEventListener(event, handler, false);
+        return () => off(element, event, handler);
       }
     };
   }
   return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
     if (element && event && handler) {
       (element as any).attachEvent(`on${event}`, handler);
+      return () => off(element, event, handler);
     }
   };
 })());
@@ -38,6 +40,16 @@ export const off = (((): any => {
     }
   };
 })());
+
+export function once(element: Node, event: string, handler: EventListenerOrEventListenerObject) {
+  const handlerFn = typeof handler === 'function' ? handler : handler.handleEvent;
+  const callback = (evt: any) => {
+    handlerFn(evt);
+    off(element, event, callback);
+  };
+
+  on(element, event, callback);
+}
 
 export function hasClass(el: Element, cls: string): any {
   if (!el || !cls) return false;
