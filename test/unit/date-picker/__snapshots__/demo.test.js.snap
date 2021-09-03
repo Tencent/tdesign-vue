@@ -151,7 +151,7 @@ exports[`DatePicker base demo works fine 1`] = `
                     <tbody>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -164,7 +164,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -177,7 +177,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                          class="t-date-picker-cell t-date-cell--first-day-of-month"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -190,7 +190,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -203,7 +203,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -216,7 +216,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -229,7 +229,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -244,7 +244,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -257,7 +257,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -270,7 +270,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -283,7 +283,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -296,7 +296,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -309,7 +309,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -322,7 +322,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -337,7 +337,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -350,7 +350,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -363,7 +363,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -376,7 +376,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -389,7 +389,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -402,7 +402,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -415,7 +415,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -430,7 +430,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -443,7 +443,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -456,7 +456,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -469,7 +469,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -482,7 +482,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -495,7 +495,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -508,7 +508,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -523,7 +523,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -536,7 +536,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled"
+                          class="t-date-picker-cell t-date-cell--now t-date-cell--active"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -549,7 +549,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -562,7 +562,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -575,7 +575,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                          class="t-date-picker-cell t-date-cell--last-day-of-month"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -588,7 +588,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -601,7 +601,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -616,7 +616,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -629,7 +629,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -642,7 +642,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -655,7 +655,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -668,7 +668,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -681,7 +681,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -694,7 +694,7 @@ exports[`DatePicker base demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                          class="t-date-picker-cell t-date-cell--additional"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -904,7 +904,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -917,7 +917,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -930,7 +930,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -943,7 +943,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -956,7 +956,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -969,7 +969,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -982,7 +982,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -997,7 +997,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1010,7 +1010,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1023,7 +1023,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1036,7 +1036,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1049,7 +1049,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1062,7 +1062,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1075,7 +1075,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1090,7 +1090,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1103,7 +1103,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1116,7 +1116,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1129,7 +1129,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1142,7 +1142,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1155,7 +1155,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1168,7 +1168,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1183,7 +1183,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1196,7 +1196,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1209,7 +1209,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1222,7 +1222,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1235,7 +1235,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1248,7 +1248,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1261,7 +1261,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1276,7 +1276,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1289,7 +1289,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
+                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1302,7 +1302,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1315,7 +1315,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1328,7 +1328,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1341,7 +1341,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1354,7 +1354,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1369,7 +1369,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1382,7 +1382,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1395,7 +1395,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1408,7 +1408,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1421,7 +1421,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1434,7 +1434,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1447,7 +1447,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1588,7 +1588,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1601,7 +1601,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1614,7 +1614,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1627,7 +1627,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1640,7 +1640,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1653,7 +1653,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1666,7 +1666,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1681,7 +1681,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1694,7 +1694,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1707,7 +1707,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1720,7 +1720,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1733,7 +1733,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1746,7 +1746,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1759,7 +1759,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1774,7 +1774,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1787,7 +1787,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1800,7 +1800,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1813,7 +1813,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1826,7 +1826,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1839,7 +1839,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1852,7 +1852,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1867,7 +1867,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1880,7 +1880,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1893,7 +1893,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1906,7 +1906,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1919,7 +1919,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1932,7 +1932,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1945,7 +1945,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1960,7 +1960,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1973,7 +1973,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1986,7 +1986,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -1999,7 +1999,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2012,7 +2012,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2025,7 +2025,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2038,7 +2038,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2053,7 +2053,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2066,7 +2066,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2079,7 +2079,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2092,7 +2092,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2105,7 +2105,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2118,7 +2118,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2131,7 +2131,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2353,7 +2353,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2366,7 +2366,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2379,7 +2379,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2392,7 +2392,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2405,7 +2405,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2418,7 +2418,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2431,7 +2431,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2446,7 +2446,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2459,7 +2459,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2472,7 +2472,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2485,7 +2485,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2498,7 +2498,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2511,7 +2511,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2524,7 +2524,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2539,7 +2539,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2552,7 +2552,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2565,7 +2565,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2578,7 +2578,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2591,7 +2591,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2604,7 +2604,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2617,7 +2617,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2632,7 +2632,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2645,7 +2645,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2658,7 +2658,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2671,7 +2671,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2684,7 +2684,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2697,7 +2697,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2710,7 +2710,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2725,7 +2725,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2738,7 +2738,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
+                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2751,7 +2751,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2764,7 +2764,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2777,7 +2777,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2790,7 +2790,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2803,7 +2803,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2818,7 +2818,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2831,7 +2831,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2844,7 +2844,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2857,7 +2857,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2870,7 +2870,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2883,7 +2883,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -2896,7 +2896,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3037,7 +3037,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3050,7 +3050,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3063,7 +3063,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3076,7 +3076,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3089,7 +3089,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3102,7 +3102,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3115,7 +3115,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3130,7 +3130,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3143,7 +3143,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3156,7 +3156,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3169,7 +3169,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3182,7 +3182,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3195,7 +3195,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3208,7 +3208,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3223,7 +3223,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3236,7 +3236,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3249,7 +3249,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3262,7 +3262,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3275,7 +3275,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3288,7 +3288,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3301,7 +3301,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3316,7 +3316,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3329,7 +3329,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3342,7 +3342,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3355,7 +3355,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3368,7 +3368,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3381,7 +3381,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3394,7 +3394,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3409,7 +3409,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3422,7 +3422,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3435,7 +3435,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3448,7 +3448,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3461,7 +3461,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3474,7 +3474,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3487,7 +3487,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3502,7 +3502,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3515,7 +3515,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3528,7 +3528,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3541,7 +3541,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3554,7 +3554,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3567,7 +3567,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3580,7 +3580,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3816,7 +3816,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3829,7 +3829,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3842,7 +3842,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3855,7 +3855,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3868,7 +3868,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3881,7 +3881,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3894,7 +3894,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3909,7 +3909,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3922,7 +3922,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3935,7 +3935,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3948,7 +3948,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3961,7 +3961,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3974,7 +3974,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -3987,7 +3987,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4002,7 +4002,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4015,7 +4015,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4028,7 +4028,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4041,7 +4041,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4054,7 +4054,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4067,7 +4067,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4080,7 +4080,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4095,7 +4095,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4108,7 +4108,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4121,7 +4121,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4134,7 +4134,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4147,7 +4147,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4160,7 +4160,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4173,7 +4173,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4188,7 +4188,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4201,7 +4201,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
+                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4214,7 +4214,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4227,7 +4227,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4240,7 +4240,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4253,7 +4253,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4266,7 +4266,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4281,7 +4281,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4294,7 +4294,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4307,7 +4307,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4320,7 +4320,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4333,7 +4333,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4346,7 +4346,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4359,7 +4359,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4500,7 +4500,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4513,7 +4513,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4526,7 +4526,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4539,7 +4539,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4552,7 +4552,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4565,7 +4565,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4578,7 +4578,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4593,7 +4593,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4606,7 +4606,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4619,7 +4619,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4632,7 +4632,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4645,7 +4645,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4658,7 +4658,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4671,7 +4671,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4686,7 +4686,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4699,7 +4699,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4712,7 +4712,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4725,7 +4725,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4738,7 +4738,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4751,7 +4751,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4764,7 +4764,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4779,7 +4779,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4792,7 +4792,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4805,7 +4805,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4818,7 +4818,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4831,7 +4831,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4844,7 +4844,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4857,7 +4857,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4872,7 +4872,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4885,7 +4885,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4898,7 +4898,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4911,7 +4911,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4924,7 +4924,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4937,7 +4937,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4950,7 +4950,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4965,7 +4965,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4978,7 +4978,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -4991,7 +4991,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5004,7 +5004,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5017,7 +5017,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5030,7 +5030,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5043,7 +5043,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5275,7 +5275,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5288,7 +5288,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5301,7 +5301,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5314,7 +5314,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5327,7 +5327,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5340,7 +5340,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5353,7 +5353,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5368,7 +5368,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5381,7 +5381,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5394,7 +5394,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5407,7 +5407,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5420,7 +5420,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5433,7 +5433,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5446,7 +5446,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5461,7 +5461,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5474,7 +5474,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5487,7 +5487,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5500,7 +5500,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5513,7 +5513,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5526,7 +5526,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5539,7 +5539,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5554,7 +5554,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5567,7 +5567,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5580,7 +5580,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5593,7 +5593,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5606,7 +5606,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5619,7 +5619,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5632,7 +5632,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5647,7 +5647,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5660,7 +5660,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
+                            class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--highlight t-date-cell--active-start t-date-cell--active-end"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5673,7 +5673,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5686,7 +5686,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5699,7 +5699,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5712,7 +5712,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5725,7 +5725,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5740,7 +5740,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5753,7 +5753,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5766,7 +5766,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5779,7 +5779,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5792,7 +5792,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5805,7 +5805,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5818,7 +5818,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5959,7 +5959,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       <tbody>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5972,7 +5972,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5985,7 +5985,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -5998,7 +5998,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6011,7 +6011,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6024,7 +6024,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6037,7 +6037,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--first-day-of-month"
+                            class="t-date-picker-cell t-date-cell--first-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6052,7 +6052,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6065,7 +6065,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6078,7 +6078,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6091,7 +6091,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6104,7 +6104,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6117,7 +6117,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6130,7 +6130,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6145,7 +6145,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6158,7 +6158,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6171,7 +6171,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6184,7 +6184,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6197,7 +6197,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6210,7 +6210,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6223,7 +6223,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6238,7 +6238,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6251,7 +6251,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6264,7 +6264,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6277,7 +6277,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6290,7 +6290,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6303,7 +6303,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6316,7 +6316,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6331,7 +6331,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6344,7 +6344,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6357,7 +6357,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6370,7 +6370,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6383,7 +6383,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6396,7 +6396,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6409,7 +6409,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6424,7 +6424,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </tr>
                         <tr>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled"
+                            class="t-date-picker-cell"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6437,7 +6437,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--last-day-of-month"
+                            class="t-date-picker-cell t-date-cell--last-day-of-month"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6450,7 +6450,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6463,7 +6463,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6476,7 +6476,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6489,7 +6489,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6502,7 +6502,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                             </div>
                           </td>
                           <td
-                            class="t-date-picker-cell t-date-cell--disabled t-date-cell--additional"
+                            class="t-date-picker-cell t-date-cell--additional"
                           >
                             <div
                               class="t-date-cell__wrapper"
@@ -6676,7 +6676,7 @@ exports[`DatePicker month demo works fine 1`] = `
                     <tbody>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6689,7 +6689,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6702,7 +6702,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6715,7 +6715,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6730,7 +6730,7 @@ exports[`DatePicker month demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6743,7 +6743,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6756,7 +6756,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6769,7 +6769,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6784,7 +6784,7 @@ exports[`DatePicker month demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6797,7 +6797,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6810,7 +6810,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6823,7 +6823,7 @@ exports[`DatePicker month demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled"
+                          class="t-date-picker-cell t-date-cell--now t-date-cell--active"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -6994,7 +6994,7 @@ exports[`DatePicker year demo works fine 1`] = `
                     <tbody>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled"
+                          class="t-date-picker-cell t-date-cell--now t-date-cell--active"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7007,7 +7007,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7020,7 +7020,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7033,7 +7033,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7048,7 +7048,7 @@ exports[`DatePicker year demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7061,7 +7061,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7074,7 +7074,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7087,7 +7087,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7102,7 +7102,7 @@ exports[`DatePicker year demo works fine 1`] = `
                       </tr>
                       <tr>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"
@@ -7115,7 +7115,7 @@ exports[`DatePicker year demo works fine 1`] = `
                           </div>
                         </td>
                         <td
-                          class="t-date-picker-cell t-date-cell--disabled"
+                          class="t-date-picker-cell"
                         >
                           <div
                             class="t-date-cell__wrapper"

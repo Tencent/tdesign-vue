@@ -13,38 +13,38 @@ exports[`DatePicker :mode 1`] = `
                 <table>
                   <tbody>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled">
+                      <td class="t-date-picker-cell t-date-cell--now t-date-cell--active">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2020</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2021</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2022</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2023</span></div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2024</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2025</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2026</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2027</span></div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2028</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2029</span></div>
                       </td>
                     </tr>
@@ -77,44 +77,44 @@ exports[`DatePicker :range 1`] = `
                   <table>
                     <tbody>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">1 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">3 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">4 月</span></div>
                         </td>
                       </tr>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">5 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">6 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">7 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">8 月</span></div>
                         </td>
                       </tr>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">9 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">10 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">11 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled t-date-cell--active-start t-date-cell--active-end">
+                        <td class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--active-start t-date-cell--active-end">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">12 月</span></div>
                         </td>
                       </tr>
@@ -128,44 +128,44 @@ exports[`DatePicker :range 1`] = `
                   <table>
                     <tbody>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">1 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">3 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">4 月</span></div>
                         </td>
                       </tr>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">5 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">6 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">7 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">8 月</span></div>
                         </td>
                       </tr>
                       <tr>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">9 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">10 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">11 月</span></div>
                         </td>
-                        <td class="t-date-picker-cell t-date-cell--disabled">
+                        <td class="t-date-picker-cell">
                           <div class="t-date-cell__wrapper"><span class="t-date-cell__text">12 月</span></div>
                         </td>
                       </tr>
@@ -199,44 +199,44 @@ exports[`DatePicker :value 1`] = `
                 <table>
                   <tbody>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">1 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">2 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">3 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">4 月</span></div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">5 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">6 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">7 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">8 月</span></div>
                       </td>
                     </tr>
                     <tr>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">9 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">10 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--disabled">
+                      <td class="t-date-picker-cell">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">11 月</span></div>
                       </td>
-                      <td class="t-date-picker-cell t-date-cell--now t-date-cell--active t-date-cell--disabled">
+                      <td class="t-date-picker-cell t-date-cell--now t-date-cell--active">
                         <div class="t-date-cell__wrapper"><span class="t-date-cell__text">12 月</span></div>
                       </td>
                     </tr>

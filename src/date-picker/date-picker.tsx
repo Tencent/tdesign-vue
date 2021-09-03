@@ -478,7 +478,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         min, max, disableDate, dateFormat,
       } = this;
       if (!disableDate) {
-        return true;
+        return false;
       }
       // 值类型为 Function 则表示返回值为 true 的日期会被禁用
       if (typeof disableDate === 'function') {
