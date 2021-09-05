@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-05 11:16:34
  * */
 
+import { TdDateRangePickerProps } from '../date-picker/type';
 import { PropType } from 'vue';
-import { TdDateRangePickerProps } from './type';
 
 export default {
   /** 是否允许输入日期 */
@@ -64,11 +66,11 @@ export default {
   },
   /** 选中值 */
   value: {
-    type: [String, Object] as PropType<TdDateRangePickerProps['value']>,
+    type: Array as PropType<TdDateRangePickerProps['value']>,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
-    type: [String, Object] as PropType<TdDateRangePickerProps['defaultValue']>,
+    type: Array as PropType<TdDateRangePickerProps['defaultValue']>,
   },
   /** 当输入框失去焦点时触发 */
   onBlur: Function as PropType<TdDateRangePickerProps['onBlur']>,

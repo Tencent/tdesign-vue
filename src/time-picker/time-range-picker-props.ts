@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-26 19:19:02
+ * updated at 2021-09-05 11:16:29
  * */
 
 import { TdTimeRangePickerProps } from '../time-picker/type';
