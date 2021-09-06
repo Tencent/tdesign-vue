@@ -62,9 +62,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     const inputEvents = getValidAttrs({
       focus: this.emitFocus,
       blur: this.emitBlur,
-      keydown: this.handleKeydonw,
+      keydown: this.handleKeydown,
       keyup: this.handleKeyUp,
-      keypresss: this.handleKeypress,
+      keypress: this.handleKeypress,
       // input的change事件是失去焦点或者keydown的时候执行。这与api定义的change不符，所以不做任何变化。
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       change: () => { },
@@ -161,7 +161,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       this.inputValueChangeHandle(e);
     },
 
-    handleKeydonw(e: KeyboardEvent) {
+    handleKeydown(e: KeyboardEvent) {
       if (this.disabled) return;
       const { code } = e;
       if (code === 'Enter') {
