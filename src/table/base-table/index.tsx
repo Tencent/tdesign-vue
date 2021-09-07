@@ -13,7 +13,7 @@ import TableHeader from './table-header';
 import TableColGroup from './col-group';
 import Pagination from '../../pagination';
 import Loading from '../../loading';
-import { getScrollDirection, SCROLL_DIRECTION } from '../util/common';
+import { debounce, getScrollDirection, SCROLL_DIRECTION } from '../util/common';
 import { PageInfo } from '../../pagination/type';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { emitEvent } from '../../utils/event';
@@ -42,6 +42,8 @@ export default mixins(getLocalReceiverMixins('table')).extend({
   },
   data() {
     return {
+      scrollableToLeft: false,
+      scrollableToRight: false,
       scrollBarWidth: 0,
       // 用于兼容处理 Pagination 的非受控属性（非受控属性仅有 change 事件变化，无 props 变化，因此只需监听事件）
       defaultCurrent: 0,
@@ -142,6 +144,19 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     },
   },
   methods: {
+    // 检查是否还可以向左或者向右滚动
+    checkScrollableToLeftOrRight() {
+      const scrollContainer = this.$refs[this.fixedHeader ? 'scrollBody' : 'tableContent'] as HTMLElement;
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+      this.scrollableToLeft = scrollLeft > 0;
+      this.scrollableToRight = scrollLeft + clientWidth < scrollWidth;
+    },
+    // 窗口大小变化时横向滚动条可能出现或消失，故检查滚动条状态;
+    addWindowResizeEventListener() {
+      const checkScrollableToLeftOrRight = debounce(this.checkScrollableToLeftOrRight);
+      window.addEventListener('resize', checkScrollableToLeftOrRight);
+      this.$once('hook:beforeDestroy', () => window.removeEventListener('resize', checkScrollableToLeftOrRight));
+    },
     renderHeader(): VNode {
       const {
         columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
@@ -290,6 +305,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
               </tfoot> : null;
     },
     handleScroll(e: WheelEvent) {
+      this.checkScrollableToLeftOrRight();
       const { scrollLeft, scrollTop } = e.target as HTMLElement;
       const direction = getScrollDirection(scrollLeft, scrollTop);
       if (direction !== SCROLL_DIRECTION.UNKNOWN) {
@@ -333,11 +349,14 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     }
     const handleScroll = throttle(this.handleScroll, 100);
     const maxHeight = isNaN(Number(this.maxHeight)) ? this.maxHeight : `${Number(this.maxHeight)}px`;
-
+    const tableContentClass = [`${prefix}-table-content`, {
+      [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
+      [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
+    }];
     return (
       <div class={commonClass}>
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
-          <div class={`${prefix}-table-content`} style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
+          <div ref='tableContent' class={tableContentClass} style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
             {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
           </div>
           {body}
@@ -346,6 +365,14 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     );
   },
   mounted() {
+    if (this.hasFixedColumns) {
+      // 首次检查滚动条状态；设置settimeout 是为了等待父组件渲染完
+      setTimeout(() => {
+        this.checkScrollableToLeftOrRight();
+      }, 0);
+      this.addWindowResizeEventListener();
+    }
+
     const scrollDiv = document.createElement('div');
     scrollDiv.style.cssText = `
       width: 99px;
