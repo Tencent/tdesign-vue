@@ -24,7 +24,7 @@ export default Vue.extend({
     };
   },
 
-  provide(): { checkboxGroup: any} {
+  provide(): { checkboxGroup: any } {
     return {
       checkboxGroup: this,
     };
@@ -82,6 +82,9 @@ export default Vue.extend({
     indeterminate(): boolean {
       return !this.isCheckAll && this.intersectionLen < this.optionList.length && this.intersectionLen !== 0;
     },
+    maxExceeded(): boolean {
+      return this.max !== undefined && Object.keys(this.checkedMap).length === this.max;
+    },
   },
 
   render(): VNode {
@@ -124,7 +127,7 @@ export default Vue.extend({
     },
     emitChange(val: CheckboxGroupValue, e?: Event) {
       this.$emit('change', val, { e });
-      (typeof this.onChange === 'function') && this.onChange(val, { e });
+      typeof this.onChange === 'function' && this.onChange(val, { e });
     },
     handleCheckboxChange(data: { checked: boolean; e: Event; option: TdCheckboxProps }) {
       const oValue = data.option.value;
@@ -150,7 +153,11 @@ export default Vue.extend({
           const item = this.optionList[i];
           if (item.checkAll) continue;
           val.push(item.value);
-          this.checkedMap[item.value] = true;
+          this.checkedMap = {
+            ...this.checkedMap,
+            [item.value]: true,
+          };
+          if (this.maxExceeded) break;
         }
         this.emitChange(val, context.e);
       } else {

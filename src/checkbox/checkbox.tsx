@@ -1,4 +1,5 @@
 import Vue, { VNode, VueConstructor } from 'vue';
+import { renderContent } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import checkboxProps from './props';
@@ -37,6 +38,9 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
       return this.$attrs['data-name'] === 'TDESIGN_CHECK_ALL';
     },
     disabled$(): boolean {
+      if (!this.isCheckAllOption && !this.checked$ && this.checkboxGroup && this.checkboxGroup.maxExceeded) {
+        return true;
+      }
       if (this.disabled !== undefined) return this.disabled;
       return !!(this.checkboxGroup && this.checkboxGroup.disabled);
     },
@@ -66,7 +70,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
           onChange={this.handleChange}
         ></input>
         <span class={`${name}__input`}></span><span class={`${name}__label`}>
-          {this.$scopedSlots.default && this.$scopedSlots.default(null)}
+          {renderContent(this, 'default', 'label')}
         </span>
       </label>
     );

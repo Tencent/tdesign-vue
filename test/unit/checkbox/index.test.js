@@ -105,6 +105,21 @@ describe('Checkbox CheckboxGroup', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
+    it(':max', () => {
+      const options = [
+        { value: 'bj', label: '北京' },
+        { value: 'gz', label: '广州' },
+        { value: 'sz', label: '深圳' },
+      ];
+      const wrapper = mount({
+        render() {
+          return (
+            <CheckboxGroup options={options} value={['sz', 'gz']} max={2} />
+          );
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
     it(':options', () => {
       const options = [
         { value: 'gz', label: '广州', disabled: true },

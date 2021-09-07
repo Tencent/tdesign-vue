@@ -1,11 +1,18 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-07 19:08:12
  * */
 
 import { TNode } from '../common';
 
 export interface TdCheckboxProps {
+  /**
+   * 用于标识是否为「全选选项」
+   * @default false
+   */
+  checkAll?: boolean;
   /**
    * 是否选中
    * @default false
@@ -17,6 +24,10 @@ export interface TdCheckboxProps {
    */
   defaultChecked?: boolean;
   /**
+   * 复选框内容，同 label
+   */
+  default?: string | TNode;
+  /**
    * 是否禁用组件
    */
   disabled?: boolean;
@@ -25,6 +36,10 @@ export interface TdCheckboxProps {
    * @default false
    */
   indeterminate?: boolean;
+  /**
+   * 主文案
+   */
+  label?: string | TNode;
   /**
    * HTM 元素原生属性
    * @default ''
@@ -43,7 +58,7 @@ export interface TdCheckboxProps {
    * 值变化时触发
    */
   onChange?: (checked: boolean, context: { e: Event }) => void;
-}
+};
 
 export interface TdCheckboxGroupProps {
   /**
@@ -51,6 +66,10 @@ export interface TdCheckboxGroupProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * 支持最多选中的数量
+   */
+  max?: number;
   /**
    * 统一设置内部复选框 HTML 属性
    * @default ''
@@ -75,16 +94,10 @@ export interface TdCheckboxGroupProps {
    * 值变化时触发
    */
   onChange?: (value: CheckboxGroupValue, context: { e: Event }) => void;
-}
+};
 
 export type CheckboxOption = string | number | CheckboxOptionObj;
 
-export interface CheckboxOptionObj {
-  label?: string | TNode;
-  value?: string | number;
-  disabled?: boolean;
-  name?: string;
-  checkAll?: true
-}
+export interface CheckboxOptionObj { label?: string | TNode; value?: string | number; disabled?: boolean; name?: string; checkAll?: true };
 
 export type CheckboxGroupValue = Array<string | number> | string | number;
