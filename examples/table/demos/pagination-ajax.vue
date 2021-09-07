@@ -43,6 +43,7 @@ export default {
           },
         },
         {
+          width: 260,
           colKey: 'email',
           title: '邮箱',
         },
