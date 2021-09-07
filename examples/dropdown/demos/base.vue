@@ -33,7 +33,7 @@ export default {
           value: 3,
         },
         {
-          content: '操作四',
+          content: this.getContent,
           value: 4,
         },
       ],
@@ -41,7 +41,10 @@ export default {
   },
   methods: {
     clickHandler(data) {
-      this.$message.success(`选中【${data.content}】`);
+      this.$message.success(`选中【${data.value}】`);
+    },
+    getContent() {
+      return <div>操作四</div>;
     },
   },
 };

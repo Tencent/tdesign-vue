@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import TIconChevronRight from '../icon/chevron-right';
+import TDivider from '../divider';
 import { prefix } from '../config';
-import { STATUS_CLASSNAMES } from '../utils/classnames';
-import ripple from '../utils/ripple';
 import itemProps from './dropdown-item-props';
+import { STATUS_CLASSNAMES } from '../utils/classnames';
+
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
+import ripple from '../utils/ripple';
 
 import { TNodeReturnValue } from '../common';
 
@@ -13,7 +16,7 @@ const name = `${prefix}-dropdown__item`;
 export default Vue.extend({
   name,
   components: {
-    TIconChevronRight,
+    TIconChevronRight, TDivider,
   },
   directives: { ripple },
   props: {
@@ -69,13 +72,13 @@ export default Vue.extend({
       name,
       {
         'has-suffix': this.hasChildren,
-        [`${name}_is_divided`]: this.divider,
         [STATUS_CLASSNAMES.disabled]: this.disabled,
         [STATUS_CLASSNAMES.active]: this.active,
       },
     ];
 
     return (
+      <div>
       <div
         class={classes}
         onClick={this.handleItemClick}
@@ -86,10 +89,12 @@ export default Vue.extend({
         }}
         v-ripple
       >
-        <div class={`${name}__content`} title={this.content}>
-          <span class={`${name}__content__text`}>{this.content}</span>
+        <div class={`${name}__content`} >
+          <span class={`${name}__content__text`}>{renderTNodeJSX(this, 'content')}</span>
         </div>
         {this.renderSuffix()}
+      </div>
+      {this.divider ? <TDivider/> : null}
       </div>
     );
   },
