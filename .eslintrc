@@ -37,8 +37,8 @@
       ".js",
       ".jsx",
       ".ts",
-      ".tsx",
-    ],
+      ".tsx"
+    ]
   },
   "rules": {
     "camelcase": 0,
