@@ -29,9 +29,7 @@ export default Vue.extend({
     };
   },
   render(h) {
-    const {
-      cellData, offsetLeft, isBoundary, isCutOff,
-    } = this;
+    const { cellData } = this;
     const {
       col, colIndex, row, rowIndex, customData, customRender, withBorder,
     } = cellData;
@@ -46,9 +44,9 @@ export default Vue.extend({
     const attrClass = attrs?.class || [];
     if (fixed) {
       style.position = 'sticky';
-      style[fixed] = `${offsetLeft}px`;
+      style[fixed] = `${this.offsetLeft}px`;
       fixedClass.push(`${prefix}-table__cell--fixed-${fixed}`);
-      if (isBoundary) {
+      if (this.isBoundary) {
         fixedClass.push(`${prefix}-table__cell--fixed-${fixed}-${fixed === 'left' ? 'last' : 'first'}`);
       }
     }
@@ -61,7 +59,7 @@ export default Vue.extend({
     if (withBorder) {
       style.borderLeft = '1px solid #E7E7E7';
     }
-    if (ellipsis === true) {
+    if (ellipsis === true || typeof ellipsis === 'function') {
       attrClass.push('text-ellipsis');
     }
     if (className) {
@@ -107,7 +105,13 @@ export default Vue.extend({
       },
     };
     // 如果被截断给加上 Tooltip 提示
-    if (ellipsis && isCutOff) {
+    if (ellipsis && this.isCutOff) {
+      let popupCellContent = cellContent;
+      if (typeof ellipsis === 'function') {
+        popupCellContent = ellipsis(h, {
+          row, col, rowIndex, colIndex,
+        });
+      }
       cellContent = (
         <Popup
           style="display: inline;"
@@ -117,7 +121,7 @@ export default Vue.extend({
         >
           {cellContent}
           <div slot="content">
-            {cellContent}
+            {popupCellContent}
           </div>
         </Popup>
       );

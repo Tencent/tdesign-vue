@@ -157,7 +157,7 @@ export interface BaseTableCol<T extends DataType = DataType> {
    * 内容超出时，是否显示省略号
    * @default false
    */
-  ellipsis?: boolean;
+  ellipsis?: boolean | TNode<{ row: T; col: BaseTableCol; rowIndex: number; colIndex: number }>;
   /**
    * 固定列显示位置
    * @default left
