@@ -81,6 +81,7 @@ export default Vue.extend({
         <TButton
           variant={rightDisabled ? 'outline' : 'base'}
           disabled={rightDisabled}
+          key={rightDisabled ? 'outline' : 'base'}
           onClick={this.moveToRight}
           icon={this.getIcon('right')}
         >
@@ -89,6 +90,7 @@ export default Vue.extend({
         <TButton
           variant={leftDisabled ? 'outline' : 'base'}
           disabled={leftDisabled}
+          key={leftDisabled ? 'outline' : 'base'}
           onClick={this.moveToLeft}
           icon={this.getIcon('left')}
         >
