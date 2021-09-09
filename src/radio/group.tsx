@@ -54,9 +54,17 @@ export default Vue.extend({
       });
     }
 
-    const groupClass = [`${name}`, `${name}-${this.buttonStyle}`, `${name}-${this.size}`];
+    // TODO 移除 buttonStyle api, 改用 variant
     if (this.buttonStyle === 'solid') {
-      children.push(<div style={this.barStyle} class={`${name}-${this.buttonStyle}-bg-block`}></div>);
+      console.error('TDesign Radio Warn: buttonStyle will be deprecated, please use `variant` instead.');
+    }
+    const groupClass = [`${name}`, `${name}-${this.size}`, {
+      [`${name}-outline`]: this.variant === 'outline',
+      [`${name}-filled`]: this.buttonStyle === 'solid' || this.variant.includes('filled'),
+      [`${name}-primary-filled`]: this.variant === 'primary-filled',
+    }];
+    if (this.buttonStyle === 'solid' || this.variant.includes('filled')) {
+      children.push(<div style={this.barStyle} class={`${name}-filled-bg-block`}></div>);
     }
 
     return <div class={groupClass}>{children}</div>;
@@ -80,7 +88,7 @@ export default Vue.extend({
       typeof this.onChange === 'function' && this.onChange(value, context);
     },
     calcBarStyle() {
-      if (this.buttonStyle !== 'solid') return;
+      if (this.buttonStyle !== 'solid' && this.variant === 'outline') return;
 
       const checkedRadio: HTMLElement = this.$el.querySelector(`.${radioBtnName}.${CLASSNAMES.STATUS.checked}`);
       if (!checkedRadio) return;

@@ -68,7 +68,7 @@ export default {
           visible: true, // 是否显示
           radioGroupProps: {
             disabled: false,
-            buttonStyle: 'solid',
+            variant: 'default-filled',
           },
         },
         // 年份选择框组件相关设置

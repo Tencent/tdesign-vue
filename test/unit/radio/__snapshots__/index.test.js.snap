@@ -79,7 +79,7 @@ exports[`Radio :props :name 1`] = `
 
 exports[`Radio RadioGroup :props :buttonStyle 1`] = `
 <div
-  class="t-radio-group t-radio-group-solid t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline t-radio-group-filled"
 >
   <label
     class="t-radio-button"
@@ -119,14 +119,14 @@ exports[`Radio RadioGroup :props :buttonStyle 1`] = `
     </span>
   </label>
   <div
-    class="t-radio-group-solid-bg-block"
+    class="t-radio-group-filled-bg-block"
   />
 </div>
 `;
 
 exports[`Radio RadioGroup :props :defaultValue 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline"
 >
   <label
     class="t-radio"
@@ -170,7 +170,7 @@ exports[`Radio RadioGroup :props :defaultValue 1`] = `
 
 exports[`Radio RadioGroup :props :disabled 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline"
 >
   <label
     class="t-radio t-is-disabled"
@@ -233,7 +233,7 @@ exports[`Radio RadioGroup :props :disabled 1`] = `
 
 exports[`Radio RadioGroup :props :name 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline"
 >
   <label
     class="t-radio"
@@ -277,7 +277,7 @@ exports[`Radio RadioGroup :props :name 1`] = `
 
 exports[`Radio RadioGroup :props :options 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline"
 >
   <label
     class="t-radio t-is-disabled"
@@ -321,7 +321,7 @@ exports[`Radio RadioGroup :props :options 1`] = `
 
 exports[`Radio RadioGroup :props :size 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-small"
+  class="t-radio-group t-radio-group-small t-radio-group-outline"
 >
   <label
     class="t-radio-button"
@@ -365,7 +365,7 @@ exports[`Radio RadioGroup :props :size 1`] = `
 
 exports[`Radio RadioGroup :props :value 1`] = `
 <div
-  class="t-radio-group t-radio-group-outline t-radio-group-medium"
+  class="t-radio-group t-radio-group-medium t-radio-group-outline"
 >
   <label
     class="t-radio"

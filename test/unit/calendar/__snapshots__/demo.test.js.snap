@@ -496,7 +496,7 @@ exports[`Calendar base demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -1712,7 +1712,7 @@ exports[`Calendar card demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -2959,7 +2959,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -4110,7 +4110,7 @@ exports[`Calendar cell demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -5499,7 +5499,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -7201,7 +7201,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-solid t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-filled"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -7240,7 +7240,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             </span>
           </label>
           <div
-            class="t-radio-group-solid-bg-block"
+            class="t-radio-group-filled-bg-block"
           />
         </div>
       </div>
@@ -8334,7 +8334,7 @@ exports[`Calendar events demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -9498,7 +9498,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -10643,7 +10643,7 @@ exports[`Calendar filter demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -11761,7 +11761,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -12966,7 +12966,7 @@ exports[`Calendar head demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -13984,7 +13984,7 @@ exports[`Calendar mode demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button"
@@ -14633,7 +14633,7 @@ exports[`Calendar range demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -15742,7 +15742,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -16717,7 +16717,7 @@ exports[`Calendar value demo works fine 1`] = `
       style="height: auto;"
     >
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -17926,7 +17926,7 @@ exports[`Calendar week demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -19053,7 +19053,7 @@ exports[`Calendar week demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"
@@ -20166,7 +20166,7 @@ exports[`Calendar week demo works fine 1`] = `
         style="height: auto;"
       >
         <div
-          class="t-radio-group t-radio-group-outline t-radio-group-medium"
+          class="t-radio-group t-radio-group-medium t-radio-group-outline"
         >
           <label
             class="t-radio-button t-is-checked"

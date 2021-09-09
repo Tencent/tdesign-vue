@@ -147,7 +147,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
       </div>
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <div class="t-calendar__control-section"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">
         隐藏周末</span></button></div>
@@ -503,7 +503,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
       </div>
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <div class="t-calendar__control-section"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">
         显示周末</span></button></div>
@@ -743,7 +743,7 @@ exports[`Calendar :props :mode 1`] = `
       <!---->
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <div class="t-calendar__control-section">
       <!---->
@@ -933,7 +933,7 @@ exports[`Calendar :props :range 1`] = `
       </div>
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <div class="t-calendar__control-section"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">
         隐藏周末</span></button></div>
@@ -1259,7 +1259,7 @@ exports[`Calendar :props :theme 1`] = `
       </div>
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <!---->
     <!---->
@@ -1652,7 +1652,7 @@ exports[`Calendar :props :value 1`] = `
       </div>
     </div>
     <div class="t-calendar__control-section" style="height: auto;">
-      <div class="t-radio-group t-radio-group-outline t-radio-group-medium"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" class="t-radio-button__former" value="month" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" class="t-radio-button__former" value="year" name=""><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label></div>
     </div>
     <div class="t-calendar__control-section"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">
         隐藏周末</span></button></div>
