@@ -35,4 +35,11 @@
 ::: demo demos/custom-render
 :::
 
+### 与Tree结合使用
+
+::: demo demos/tree
+:::
+
+
+
 :: BASE_PROPS ::

@@ -18,7 +18,7 @@ import {
   Checkbox as TCheckbox,
   CheckboxGroup as TCheckboxGroup, CheckboxProps,
 } from '../../checkbox';
-
+import { findTopNode, getLeefCount, getDataValues } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
@@ -76,6 +76,10 @@ export default Vue.extend({
     checkAll: Boolean,
     t: Function,
     locale: Object,
+    isTreeMode: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
   },
   data() {
     return {
@@ -138,6 +142,9 @@ export default Vue.extend({
     isAllChecked(): boolean {
       return this.checkedValue.length > 0 && this.dataSource.every((item) => this.checkedValue.includes(item.value));
     },
+    totalCount(): number {
+      return getLeefCount(this.dataSource);
+    },
   },
   methods: {
     handlePaginationChange(pageInfo: PageInfo): void {
@@ -150,7 +157,7 @@ export default Vue.extend({
     },
     handleCheckedAllChange(checked: boolean): void {
       if (checked) {
-        const allValue = this.dataSource.filter((item) => !item.disabled).map((item) => item.value);
+        const allValue = getDataValues(this.dataSource, [], { isTreeMode: this.isTreeMode, include: false });
         this.handleCheckedChange(allValue);
       } else {
         this.handleCheckedChange([]);
@@ -179,8 +186,8 @@ export default Vue.extend({
       return (<span>{titleNode}</span>);
     },
     renderContent() {
-      return (
-        <div class={`${name}__content narrow-scrollbar`} onScroll={this.scroll}>
+      const rootNode = findTopNode(this);
+      const defaultNode = (
         <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
           {
             this.curPageData.map((item, index) => (
@@ -200,6 +207,18 @@ export default Vue.extend({
             ))
           }
         </TCheckboxGroup>
+      );
+
+      return (
+        <div class={`${name}__content narrow-scrollbar`} onScroll={this.scroll}>
+          {renderTNodeJSXDefault(rootNode, 'tree', {
+            defaultNode,
+            params: {
+              data: this.curPageData,
+              value: this.checkedValue,
+              onChange: this.handleCheckedChange,
+            },
+          })}
       </div>
       );
     },
@@ -246,7 +265,7 @@ export default Vue.extend({
                 this.locale.title,
                 {
                   checked: this.checkedValue.length,
-                  total: this.dataSource.length,
+                  total: this.totalCount,
                 },
               )
             }</span>
