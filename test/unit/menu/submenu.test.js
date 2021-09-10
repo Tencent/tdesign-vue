@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
-import { Submenu } from '@/src/menu';
 import { ref } from '@vue/composition-api';
+import { Submenu } from '@/src/menu';
 
 const Menu = {
   theme: ref('light'),

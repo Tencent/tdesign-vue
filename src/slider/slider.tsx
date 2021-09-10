@@ -33,7 +33,7 @@ export default Vue.extend({
     return {
       firstValue: 0,
       secondValue: 0,
-      prevValue: 0 as SliderValue,
+      prevValue: 0,
       dragging: false,
       sliderSize: 1,
       inputDecimalPlaces: 0,
@@ -123,7 +123,7 @@ export default Vue.extend({
       return Math.max(this.firstValue, this.secondValue);
     },
     barSize(): string {
-      const cuttentDiff = this.range ? this.maxValue - this.minValue : this.firstValue - this.min;
+      const cuttentDiff = this.range ? this.maxValue - this.minValue : this.prevValue - this.min;
       return `${(100 * cuttentDiff) / this.rangeDiff}%`;
     },
     barStart(): string {
@@ -165,10 +165,15 @@ export default Vue.extend({
         this.emitChange(val);
       }
     },
+
     secondValue() {
       if (this.range) {
         this.emitChange([this.minValue, this.maxValue]);
       }
+    },
+
+    prevValue(val: number) {
+      this.emitChange(val);
     },
     dragging(newVal: boolean) {
       if (newVal === false) {
@@ -196,16 +201,14 @@ export default Vue.extend({
           this.firstValue = min || 0;
           this.secondValue = max || 100;
         }
-        this.prevValue = [this.firstValue, this.secondValue];
         valuetext = `${this.firstValue}-${this.secondValue}`;
       } else {
         if (typeof this.value !== 'number') {
-          this.firstValue = min;
+          this.prevValue = min;
         } else {
-          this.firstValue = Math.min(max, Math.max(min, value as number));
+          this.prevValue = Math.min(max, Math.max(min, value as number));
         }
-        this.prevValue = this.firstValue;
-        valuetext = String(this.firstValue);
+        valuetext = String(this.prevValue);
       }
       this.$el.setAttribute('aria-valuetext', valuetext);
       this.resetSize();
@@ -229,14 +232,18 @@ export default Vue.extend({
         let [firstValue, secondValue] = [value[0], value[1]];
         // 第一个值大于第二个值时替换
         firstValue > secondValue ? ([firstValue, secondValue] = [secondValue, firstValue]) : null;
+        firstValue > max ? firstValue = this.firstValue : null;
         firstValue < min ? (firstValue = min) : null;
+        secondValue < min ? secondValue = this.secondValue : null;
         secondValue > max ? (secondValue = max) : null;
+        [this.firstValue, this.secondValue] = [firstValue, secondValue];
         return [firstValue, secondValue];
       }
-      let preValue = value;
-      preValue < min ? (preValue = min) : null;
-      preValue > max ? (preValue = max) : null;
-      return preValue;
+      let prevValue = value as number;
+      prevValue < min ? (prevValue = min) : null;
+      prevValue > max ? (prevValue = max) : null;
+      this.prevValue = prevValue;
+      return prevValue;
     },
     setInputProps(): void {
       if (this.inputNumberProps instanceof Object) {
@@ -366,7 +373,6 @@ export default Vue.extend({
               ref="input"
               step={this.step}
               onChange={(v: number) => {
-                this.firstValue = v;
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
               disabled={this.disabled}
@@ -379,13 +385,10 @@ export default Vue.extend({
             ></t-input-number>
           )}
           {this.inputNumberProps && range && (
-            <t-input-number
+             <t-input-number
               class={this.sliderNumberClass}
-              value={this.secondValue}
+              v-model={this.secondValue}
               ref="input"
-              onChange={(v: number) => {
-                this.secondValue = v;
-              }}
               step={this.step}
               disabled={this.disabled}
               min={min}
@@ -402,7 +405,7 @@ export default Vue.extend({
   },
   render(): VNode {
     const {
-      min, max, layout, disabled, vertical,
+      min, max, layout, disabled, vertical, range,
     } = this;
     const ButtonGroup = this.renderInputButton();
     const Masks = this.renderMask();
@@ -421,24 +424,21 @@ export default Vue.extend({
             <div class={`${name}__track`} style={this.barStyle}></div>
             <t-slider-button
               vertical={vertical}
-              value={this.firstValue}
+              value={range ? this.firstValue : this.prevValue}
               ref="button1"
               disabled={this.disabled}
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
-                this.firstValue = v;
+                this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
             ></t-slider-button>
             {this.range && (
               <t-slider-button
                 vertical={vertical}
-                value={this.secondValue}
+                v-model={this.secondValue}
                 ref="button2"
                 disabled={this.disabled}
                 tooltip-props={this.tooltipProps}
-                onInput={(v: number) => {
-                  this.secondValue = v;
-                }}
               ></t-slider-button>
             )}
 

@@ -20,13 +20,13 @@ export default {
         0: '0°C',
         12: '12°C',
         37: '37°C',
-        60: <button style="#1989FA">60</button>,
+        60: <button style="#1989FA">60°C</button>,
       },
       marks2: {
         0: '0°C',
         8: '8°C',
         37: '37°C',
-        50: <strong style="color: #1989FA">50%</strong>,
+        50: <strong style="color: #1989FA">50°C</strong>,
         70: '70°C',
       },
     };

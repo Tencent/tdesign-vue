@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider :props  1`] = `
+<div class="t-slider-contianer" aria-valuetext="0">
+  <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
+    <div class="t-slider__rail show-input">
+      <div class="t-slider__track" style="width: 0%; left: 0%;"></div>
+      <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 0%;">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
+            <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">0<div data-popper-arrow="true" class="t-popup__arrow"></div>
+              </div>
+            </div>
+          </transition-stub>
+          <div class="t-slider__button"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-slider-input-container">
+    <div class="t-input-number t-size-m t-input-number--normal t-slider__-input t-slider-input">
+      <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider [marks] render right 1`] = `
+<div class="t-slider-contianer" aria-valuetext="2">
+  <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
+    <div class="t-slider__rail show-input">
+      <div class="t-slider__track" style="width: 2%; left: 0%;"></div>
+      <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 2%;">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
+            <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">2<div data-popper-arrow="true" class="t-popup__arrow"></div>
+              </div>
+            </div>
+          </transition-stub>
+          <div class="t-slider__button"></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="t-slider__stop t-slider__mark-stop" style="left: 0%;"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="left: 8%;"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="left: 12%;"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="left: 37%;"></div>
+        </div>
+        <div class="t-slider__mark">
+          <div class="t-slider__mark-text" style="left: 0%;">0°C</div>
+          <div class="t-slider__mark-text" style="left: 8%;">8°C</div>
+          <div class="t-slider__mark-text" style="left: 12%;">12°C</div>
+          <div class="t-slider__mark-text" style="left: 37%;">37°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-slider-input-container">
+    <div class="t-input-number t-size-m t-input-number--normal t-slider__-input t-slider-input">
+      <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slider [vertical-marks] render right 1`] = `
+<div class="t-slider-contianer is-vertical" aria-valuetext="30-70">
+  <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider-vertical">
+    <div class="t-slider__rail show-input" style="height: 100%;">
+      <div class="t-slider__track" style="height: 40%; bottom: 30%;"></div>
+      <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 30%;">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
+            <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">30<div data-popper-arrow="true" class="t-popup__arrow"></div>
+              </div>
+            </div>
+          </transition-stub>
+          <div class="t-slider__button"></div>
+        </div>
+      </div>
+      <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 70%;">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
+            <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">70<div data-popper-arrow="true" class="t-popup__arrow"></div>
+              </div>
+            </div>
+          </transition-stub>
+          <div class="t-slider__button"></div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="t-slider__stop t-slider__mark-stop" style="top: calc(100% - 1px);"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="top: calc(92% - 1px);"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="top: calc(88% - 1px);"></div>
+          <div class="t-slider__stop t-slider__mark-stop" style="top: calc(63% - 1px);"></div>
+        </div>
+        <div class="t-slider__mark">
+          <div class="t-slider__mark-text" style="top: calc(100% - 1px);">0°C</div>
+          <div class="t-slider__mark-text" style="top: calc(92% - 1px);">8°C</div>
+          <div class="t-slider__mark-text" style="top: calc(88% - 1px);">12°C</div>
+          <div class="t-slider__mark-text" style="top: calc(63% - 1px);">37°C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-slider-input-container">
+    <div class="t-input-number t-size-m t-input-number--normal t-slider__-input t-slider-input is-vertical">
+      <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+    </div>
+    <div class="t-input-number t-size-m t-input-number--normal t-slider__-input t-slider-input is-vertical">
+      <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+    </div>
+  </div>
+</div>
+`;
