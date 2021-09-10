@@ -12,8 +12,7 @@
       :onCloseBtnClick="onClickCloseBtn"
       :onOverlayClick="onClickOverlay"
       :onClose="close"
-    >
-    </t-dialog>
+    ></t-dialog>
   </div>
 </template>
 <script>

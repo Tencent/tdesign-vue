@@ -1,12 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-10 15:51:08
  * */
 
 import { ButtonProps } from '../button';
-import {
-  TNode, ClassName, Styles, AttachNode,
-} from '../common';
+import { TNode, AttachNode } from '../common';
 
 export interface TdDialogProps {
   /**
@@ -99,12 +99,12 @@ export interface TdDialogProps {
   top?: string | number;
   /**
    * 控制对话框是否显示
-   * @default true
+   * @default false
    */
   visible?: boolean;
   /**
    * 控制对话框是否显示，非受控属性
-   * @default true
+   * @default false
    */
   defaultVisible?: boolean;
   /**
@@ -112,7 +112,7 @@ export interface TdDialogProps {
    */
   width?: string | number;
   /**
-   * 对话框层级，样式默认为 2500
+   * 对话框层级，Web 侧样式默认为 2500，移动端和小程序样式默认为 1500
    */
   zIndex?: number;
   /**
@@ -147,7 +147,7 @@ export interface TdDialogProps {
    * 如果蒙层存在，点击蒙层时触发
    */
   onOverlayClick?: (context: { e: MouseEvent }) => void;
-}
+};
 
 export interface DialogOptions extends Omit<TdDialogProps, 'attach'> {
   /**
@@ -156,14 +156,16 @@ export interface DialogOptions extends Omit<TdDialogProps, 'attach'> {
    */
   attach?: AttachNode;
   /**
-   * 弹框类名。示例：'name1 name2' 或者 { name: true } 或者 ['className1', { className2: true }]
+   * 弹框类名，示例：'t-class-dialog-first t-class-dialog-second'
+   * @default ''
    */
-  className?: ClassName;
+  className?: string;
   /**
-   * 弹框 style 属性
+   * 弹框 style 属性，输入 [CSSStyleDeclaration.cssText](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
+   * @default ''
    */
-  style?: Styles;
-}
+  style?: string;
+};
 
 export interface DialogInstance {
   /**
@@ -182,17 +184,14 @@ export interface DialogInstance {
    * 更新弹框内容
    */
   update?: (props: DialogOptions) => void;
-}
+};
 
 export type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay';
 
-export interface DialogCloseContext {
-  trigger: DialogEventSource;
-  e: MouseEvent | KeyboardEvent
-}
+export interface DialogCloseContext { trigger: DialogEventSource; e: MouseEvent | KeyboardEvent };
 
-export type DialogMethod = (options: DialogOptions) => DialogInstance;
+export type DialogMethod = (options?: DialogOptions) => DialogInstance;
 
-export type DialogConfirmMethod = (options: DialogOptions) => DialogInstance;
+export type DialogConfirmMethod = (options?: DialogOptions) => DialogInstance;
 
-export type DialogAlertMethod = (options: Omit<DialogOptions, 'confirmBtn'>) => DialogInstance;
+export type DialogAlertMethod = (options?: Omit<DialogOptions, 'confirmBtn'>) => DialogInstance;
