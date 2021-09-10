@@ -23,9 +23,6 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           标题名称
         </div>
         <div
-          class="t-drawer__close-btn"
-        />
-        <div
           class="t-drawer__body"
         >
           <p>
@@ -231,16 +228,6 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       style="width: 300px;"
     >
       <div
-        class="t-drawer__header"
-      >
-        <div>
-          自定义头部
-        </div>
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -290,9 +277,6 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       >
         This is the title.
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
@@ -344,9 +328,6 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       >
         I am the title
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
@@ -440,9 +421,6 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
         标题名称
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -510,9 +488,6 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
       >
         标题名称
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
@@ -824,9 +799,6 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
         标题名称
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -1117,9 +1089,6 @@ exports[`Drawer Demo operation wroks fine 1`] = `
       >
         标题名称
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
