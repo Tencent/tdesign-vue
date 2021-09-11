@@ -1,16 +1,16 @@
 import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
-import { FormValidateResult, TdFormProps, FormValidateParams } from './type';
+import {
+  Data, FormValidateResult, TdFormProps, FormValidateParams,
+} from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
 import { emitEvent } from '../utils/event';
-import FormItem from './form-item';
+import FormItem, { FormItemValidateResult } from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
 
 type FormItemInstance = InstanceType<typeof FormItem>;
-
-type Result = FormValidateResult<TdFormProps['data']>;
 
 const name = `${prefix}-form`;
 
@@ -53,7 +53,7 @@ export default Vue.extend({
   },
 
   methods: {
-    getFirstError(r: Result) {
+    getFirstError<T>(r: boolean | FormItemValidateResult<T>) {
       if (r === true) return;
       const [firstKey] = Object.keys(r);
       if (this.scrollToFirstError) {
@@ -75,11 +75,11 @@ export default Vue.extend({
       return fields.indexOf(name) !== -1;
     },
     // 对外方法，该方法会触发表单组件错误信息显示
-    async validate(param?: FormValidateParams): Promise<Result> {
+    async validate<T = Record<string, any>>(param?: FormValidateParams): Promise<FormValidateResult<T>> {
       const { fields, trigger = 'all' } = (param || {});
       const list = this.children
         .filter((child) => this.isFunction(child.validate) && this.needValidate(child.name, fields))
-        .map((child) => child.validate(trigger));
+        .map((child) => child.validate<T>(trigger));
       const arr = await Promise.all(list);
       const r = arr.reduce((r, err) => Object.assign(r || {}, err));
       Object.keys(r).forEach((key) => {
@@ -90,19 +90,19 @@ export default Vue.extend({
       const result = isEmpty(r) ? true : r;
       emitEvent<Parameters<TdFormProps['onValidate']>>(this, 'validate', {
         validateResult: result,
-        firstError: this.getFirstError(result),
+        firstError: this.getFirstError<T>(result),
       });
       return result;
     },
-    submitHandler(e?: FormSubmitEvent) {
+    submitHandler<T>(e?: FormSubmitEvent) {
       if (this.preventSubmitDefault) {
         e && e.preventDefault();
         e && e.stopPropagation();
       }
-      this.validate().then((r) => {
+      this.validate<T>().then((r) => {
         emitEvent<Parameters<TdFormProps['onSubmit']>>(this, 'submit', {
           validateResult: r,
-          firstError: this.getFirstError(r),
+          firstError: this.getFirstError<T>(r),
           e,
         });
       });
@@ -113,13 +113,13 @@ export default Vue.extend({
         .map((child: any) => child.resetField());
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
-    // If there is no reset button in form, this function can be used
+    // exposure function, If there is no reset button in form, this function can be used
     reset() {
       this.resetHandler();
     },
-    // If there is no submit button in form, this function can be used
-    submit() {
-      this.submitHandler();
+    // exposure function, If there is no submit button in form, this function can be used
+    submit<T extends Data = Data>() {
+      this.submitHandler<T>();
     },
   },
 
