@@ -1,14 +1,25 @@
 <template>
-  <t-table
-    :data="data"
-    :columns="columns"
-    rowKey="index"
-    bordered
-  >
-    <template #operation="slotProps">
-      <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
-    </template>
-  </t-table>
+  <div>
+    <t-radio-group v-model="leftFixedColumn">
+      <t-radio-button :value="1">左侧固定一列</t-radio-button>
+      <t-radio-button :value="2">左侧固定两列</t-radio-button>
+    </t-radio-group>
+    <t-radio-group v-model="rightFixedColumn" style="margin-left: 28px">
+      <t-radio-button :value="1">右侧固定一列</t-radio-button>
+      <t-radio-button :value="2">右侧固定两列</t-radio-button>
+    </t-radio-group>
+    <br><br>
+    <t-table
+      :data="data"
+      :columns="columns"
+      rowKey="index"
+      bordered
+    >
+      <template #operation="slotProps">
+        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
+      </template>
+    </t-table>
+  </div>
 </template>
 <script>
 const data = [];
@@ -29,7 +40,13 @@ export default {
   data() {
     return {
       data,
-      columns: [
+      leftFixedColumn: 2,
+      rightFixedColumn: 1,
+    };
+  },
+  computed: {
+    columns() {
+      return [
         {
           align: 'center',
           width: 100,
@@ -41,7 +58,7 @@ export default {
           colKey: 'platform',
           title: '平台',
           width: 100,
-          fixed: 'left',
+          fixed: this.leftFixedColumn >= 2 ? 'left' : undefined,
         },
         {
           colKey: 'type',
@@ -67,7 +84,7 @@ export default {
           colKey: 'needed',
           title: '是否必传',
           width: 150,
-          fixed: 'right',
+          fixed: this.rightFixedColumn >= 2 ? 'right' : undefined,
         },
         {
           colKey: 'operation',
@@ -76,8 +93,8 @@ export default {
           fixed: 'right',
           cell: 'operation',
         },
-      ],
-    };
+      ];
+    },
   },
 };
 </script>

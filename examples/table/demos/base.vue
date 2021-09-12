@@ -69,14 +69,16 @@ export default {
           colKey: 'detail.postion',
           title: '详情信息',
           width: 200,
-          ellipsis: (h, {
-            row, col, rowIndex, colIndex,
-          }) => {
-            if (rowIndex % 2) {
-              return <div>is even row {rowIndex + 1}, with data {row.detail.postion}</div>;
-            }
-            return <div>is odd row {rowIndex + 1}, with data {row.detail.postion}</div>;
-          },
+          ellipsis: true,
+          // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
+          // ellipsis: (h, {
+          //   row, col, rowIndex, colIndex,
+          // }) => {
+          //   if (rowIndex % 2) {
+          //     return <div>is even row {rowIndex + 1}, with data {row.detail.postion}</div>;
+          //   }
+          //   return <div>is odd row {rowIndex + 1}, with data {row.detail.postion}</div>;
+          // },
         },
       ],
       /** 非受控用法：与分页组件对齐 */

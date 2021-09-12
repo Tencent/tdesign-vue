@@ -28,6 +28,28 @@ export default Vue.extend({
       isCutOff: false,
     };
   },
+  methods: {
+    init() {
+      const { fixed } = this.cellData?.col;
+      const { $children: children } = this.$parent;
+      // 计算当前固定列偏移的宽度
+      if (fixed) {
+        let offsetLeft = 0;
+        const fixedColumns = children.filter((el: TdInstance) => (el?.cellData?.col?.fixed === fixed));
+        const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => (el === this));
+        fixedColumns.forEach((el: any, cur) => {
+          if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
+            const { width } = el.cellData?.col;
+            const { clientWidth } = el.$el;
+            offsetLeft += width > 0 ? width : clientWidth;
+          }
+        });
+        this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
+        this.offsetLeft = offsetLeft;
+      }
+      this.isCutOff = isNodeOverflow(this.$el);
+    },
+  },
   render(h) {
     const { cellData } = this;
     const {
@@ -129,23 +151,9 @@ export default Vue.extend({
     return <td style={style} {...tdAttrs}>{cellContent}</td>;
   },
   mounted() {
-    const { fixed } = this.cellData?.col;
-    const { $children: children } = this.$parent;
-    // 计算当前固定列偏移的宽度
-    if (fixed) {
-      let offsetLeft = 0;
-      const fixedColumns = children.filter((el: TdInstance) => (el?.cellData?.col?.fixed === fixed));
-      const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => (el === this));
-      fixedColumns.forEach((el: any, cur) => {
-        if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
-          const { width } = el.cellData?.col;
-          const { clientWidth } = el.$el;
-          offsetLeft += width > 0 ? width : clientWidth;
-        }
-      });
-      this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
-      this.offsetLeft = offsetLeft;
-    }
-    this.isCutOff = isNodeOverflow(this.$el);
+    this.init();
+  },
+  updated() {
+    this.init();
   },
 });
