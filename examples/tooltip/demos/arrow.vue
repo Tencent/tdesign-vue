@@ -1,7 +1,16 @@
 <template>
   <div>
-    <t-tooltip content="文字提示仅展示文本内容">
+    <t-tooltip content="文字提示仅展示文本内容" :onVisibleChange="onVisibleChange">
       <t-button variant="outline">带箭头文字提示</t-button>
     </t-tooltip>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    onVisibleChange(val) {
+      console.log('visible change triggered: ', val);
+    },
+  },
+};
+</script>

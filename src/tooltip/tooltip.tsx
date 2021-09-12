@@ -63,6 +63,8 @@ export default Vue.extend({
   methods: {
     onTipVisibleChange(val: boolean) {
       this.tooltipVisible = val;
+      // 因 props={{ ...this.innerPopupProps }} 已经透传 onVisibleChange props，此处不再需要使用 emitEvent
+      this.$emit('visible-change', this.tooltipVisible);
     },
   },
   render() {
