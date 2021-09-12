@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { prefix } from '../config';
 import props from './props';
+import { renderContent } from '../utils/render-tnode';
 
 const name = `${prefix}-divider`;
 
@@ -12,7 +13,7 @@ export default Vue.extend({
   render() {
     const { theme, dashed, align } = this;
 
-    const children = this.$slots.default;
+    const children = renderContent(this, 'default', 'content');
 
     const dividerClassNames = [
       `${name}`,
