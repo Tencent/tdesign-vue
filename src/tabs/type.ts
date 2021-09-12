@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-12 13:24:02
  * */
 
 import { TNode } from '../common';
@@ -55,7 +57,7 @@ export interface TdTabsProps {
    * 删除选项卡时触发
    */
   onRemove?: (options: { value: TabValue; index: number; e: MouseEvent }) => void;
-}
+};
 
 export interface TdTabPanelProps {
   /**
@@ -63,7 +65,7 @@ export interface TdTabPanelProps {
    */
   default?: TNode;
   /**
-   * 选项卡内容隐藏时是否仍然渲染
+   * 选项卡内容隐藏时是否销毁
    * @default true
    */
   destroyOnHide?: boolean;
@@ -79,7 +81,7 @@ export interface TdTabPanelProps {
   /**
    * 用于自定义选项卡面板内容
    */
-  panel?: TNode;
+  panel?: string | TNode;
   /**
    * 当前选项卡是否允许移除
    * @default false
@@ -93,6 +95,6 @@ export interface TdTabPanelProps {
    * 点击删除按钮时触发
    */
   onRemove?: (options: { value: TabValue; e: MouseEvent }) => void;
-}
+};
 
 export type TabValue = string | number;
