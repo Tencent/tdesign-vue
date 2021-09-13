@@ -1,54 +1,16 @@
 <template>
   <div>
-    <t-list :split="true" async-loading="loading">
-      <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-      <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-      <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-    </t-list>
+    <t-radio-group v-model="asyncLoadingRadio">
+      <t-radio-button value="load-more">加载更多</t-radio-button>
+      <t-radio-button value="loading">加载中</t-radio-button>
+      <t-radio-button value="loading-custom">自定义加载更多</t-radio-button>
+      <t-radio-button value="">加载完成</t-radio-button>
+    </t-radio-group>
 
-    <div style="margin-bottom:16px"></div>
-
-    <t-list :split="true" async-loading="load-more" @load-more="loadMore" :onLoadMore="onLoadMore">
+    <t-list :async-loading="asyncLoading"  @load-more="loadMore" split>
       <t-list-item v-for="i in listCount" :key="i">
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
       </t-list-item>
-    </t-list>
-
-    <p style="margin:16px 0;">
-      loading 除了使用内置的 props 外，也可以通过 slot 自行定义内容。
-    </p>
-
-    <t-list :split="true">
-      <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-      <template #asyncLoading>DIY 的正在加载……</template>
-    </t-list>
-
-    <div style="margin-bottom:16px"></div>
-
-    <t-list :split="true" @load-more="loadMore">
-      <t-list-item v-for="i in listCount" :key="i">
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-      <template #asyncLoading>DIY 的加载更多</template>
-    </t-list>
-
-    <div style="margin:16px 0;">
-      loading 还可以传入自定义函数，优先级高于slot。
-    </div>
-
-    <t-list :async-loading="renderLoading" :split="true" @load-more="loadMore">
-      <t-list-item v-for="i in listCount" :key="i">
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
-      </t-list-item>
-      <template #asyncLoading>DIY 的加载更多</template>
     </t-list>
   </div>
 </template>
@@ -57,19 +19,26 @@
 export default {
   data() {
     return {
-      listCount: 1,
-      avatarUrl: 'https://tdesign.gtimg.com/list-icon.png',
+      asyncLoadingRadio: 'load-more',
+      asyncLoading: 'load-more',
+      listCount: 3,
+      imageUrl: 'https://tdesign.gtimg.com/list-icon.png',
     };
   },
+  watch: {
+    // 也可以使用插槽自定义加载内容
+    asyncLoadingRadio(val) {
+      if (val === 'loading-custom') {
+        this.asyncLoading = (h) => <div>😊 没有更多数据了 😊</div>;
+      } else {
+        this.asyncLoading = this.asyncLoadingRadio;
+      }
+    },
+  },
   methods: {
+    // 点击加载更多，状态切换为「加载中」
     loadMore() {
-      this.listCount += 1;
-    },
-    renderLoading() {
-      return <span>自定义loading（function）</span>;
-    },
-    onLoadMore(e) {
-      console.log('onLoadMore触发', e);
+      this.asyncLoadingRadio = 'loading';
     },
   },
 };

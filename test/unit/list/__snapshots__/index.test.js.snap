@@ -137,22 +137,6 @@ exports[`ListItem :props :default is a function, () => VNode. 1`] = `
 </li>
 `;
 
-exports[`ListItemMeta :props :avatar 1`] = `
-<div class="t-list-item__meta">
-  <div class="t-list-item__meta-avatar"><img src="avatar" alt=""></div>
-  <div class="t-list-item__meta-content"></div>
-</div>
-`;
-
-exports[`ListItemMeta :props :avatar is a function, () => VNode. 1`] = `
-<div class="t-list-item__meta">
-  <div class="t-list-item__meta-avatar">
-    <p>avatar</p>
-  </div>
-  <div class="t-list-item__meta-content"></div>
-</div>
-`;
-
 exports[`ListItemMeta :props :description 1`] = `
 <div class="t-list-item__meta">
   <div class="t-list-item__meta-content">
@@ -168,6 +152,22 @@ exports[`ListItemMeta :props :description is a function, () => VNode. 1`] = `
     <p>description</p>
     </p>
   </div>
+</div>
+`;
+
+exports[`ListItemMeta :props :image 1`] = `
+<div class="t-list-item__meta">
+  <div class="t-list-item__meta-avatar"><img src="image"></div>
+  <div class="t-list-item__meta-content"></div>
+</div>
+`;
+
+exports[`ListItemMeta :props :image is a function, () => VNode. 1`] = `
+<div class="t-list-item__meta">
+  <div class="t-list-item__meta-avatar">
+    <p>image</p>
+  </div>
+  <div class="t-list-item__meta-content"></div>
 </div>
 `;
 

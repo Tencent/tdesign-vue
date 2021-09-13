@@ -1,6 +1,4 @@
 import { mount } from '@vue/test-utils';
-import base from '@/examples/list/demos/base.vue';
-import extra from '@/examples/list/demos/extra.vue';
 import headerFooter from '@/examples/list/demos/header-footer.vue';
 import imageText from '@/examples/list/demos/image-text.vue';
 import multiline from '@/examples/list/demos/multiline.vue';
@@ -9,14 +7,6 @@ import scroll from '@/examples/list/demos/scroll.vue';
 import size from '@/examples/list/demos/size.vue';
 
 describe('Button', () => {
-  it('base demo works fine', () => {
-    const wrapper = mount(base);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('extra demo works fine', () => {
-    const wrapper = mount(extra);
-    expect(wrapper.element).toMatchSnapshot();
-  });
   it('headerFooter demo works fine', () => {
     const wrapper = mount(headerFooter);
     expect(wrapper.element).toMatchSnapshot();

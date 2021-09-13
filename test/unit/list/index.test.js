@@ -296,10 +296,10 @@ describe('ListItem', () => {
 
 describe('ListItemMeta', () => {
   describe(':props', () => {
-    it(':avatar', () => {
+    it(':image', () => {
       const wrapper = mount({
         render() {
-          return <ListItemMeta avatar={'avatar'}>text</ListItemMeta>;
+          return <ListItemMeta image={'image'}>text</ListItemMeta>;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -320,10 +320,10 @@ describe('ListItemMeta', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
-    it(':avatar is a function, () => VNode.', () => {
+    it(':image is a function, () => VNode.', () => {
       const wrapper = mount({
         render() {
-          return <ListItemMeta avatar={() => <p>avatar</p>}></ListItemMeta>;
+          return <ListItemMeta image={() => <p>image</p>}></ListItemMeta>;
         },
       });
       const listItemMeta = wrapper.findComponent(ListItemMeta);
@@ -355,14 +355,14 @@ describe('ListItemMeta', () => {
     });
   });
   describe('<slot>', () => {
-    it('<avatar>', () => {
+    it('<image>', () => {
       const wrapper = mount({
         render() {
           return (
             <ListItemMeta
               {...{
                 scopedSlots: {
-                  avatar: () => <p>avatar</p>,
+                  image: () => <p>image</p>,
                 },
               }}
             ></ListItemMeta>

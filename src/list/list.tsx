@@ -6,7 +6,6 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import TIconLoading from '../icon/loading';
 import CLASSNAMES from '../utils/classnames';
 import { LOAD_MORE, LOADING } from './const';
-import { TdListProps } from './type';
 import { ClassName } from '../common';
 
 const name = `${prefix}-list`;
@@ -15,16 +14,6 @@ export default Vue.extend({
   name,
   props: {
     ...props,
-    asyncLoading: {
-      type: [String, Number, Function] as PropType<TdListProps['asyncLoading']>,
-      default: undefined,
-      validator(val: string | Function | number): boolean {
-        if (typeof val === 'string') {
-          return [LOADING, LOAD_MORE].includes(val);
-        }
-        return true;
-      },
-    },
   },
   computed: {
     listClass(): ClassName {
@@ -39,7 +28,9 @@ export default Vue.extend({
       ];
     },
     loadingClass(): ClassName {
-      return typeof this.asyncLoading === 'string' ? `${name}__load ${name}__load--${this.asyncLoading}` : `${name}__load`;
+      return typeof this.asyncLoading === 'string' && ['loading', 'load-more'].includes(this.asyncLoading)
+        ? `${name}__load ${name}__load--${this.asyncLoading}`
+        : `${name}__load`;
     },
   },
   components: {
