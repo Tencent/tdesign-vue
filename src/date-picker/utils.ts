@@ -1,5 +1,5 @@
 import chunk from 'lodash/chunk';
-import { TdCSSProperties, DateValue } from './interface';
+import { TdCSSProperties } from './interface';
 
 /**
  * next Month

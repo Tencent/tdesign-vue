@@ -93,9 +93,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     },
   },
   watch: {
-    data(list) {
-      // this.store.removeAll();
-      // this.store.append(list);
+    data() {
       this.rebuild();
     },
     keys(nKeys) {

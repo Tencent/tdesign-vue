@@ -407,8 +407,8 @@ export default Vue.extend({
     const {
       min, max, layout, disabled, vertical, range,
     } = this;
-    const ButtonGroup = this.renderInputButton();
-    const Masks = this.renderMask();
+    const buttonGroup = this.renderInputButton();
+    const masks = this.renderMask();
     return (
       <div class={this.containerClass}>
         <div
@@ -449,10 +449,10 @@ export default Vue.extend({
                 ))}
               </div>
             )}
-            {Masks}
+            {masks}
           </div>
         </div>
-        {ButtonGroup}
+        {buttonGroup}
       </div>
     );
   },

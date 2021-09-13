@@ -7,7 +7,9 @@ import { TdInputNumberProps } from '../input-number/type';
 import { TdTooltipProps } from '../tooltip/type';
 import { TNode } from '../common';
 
-interface Marks { [mark: number]: string | TNode<{ value: number }>}
+interface Marks {
+  [mark: number]: string | TNode<{ value: number }>
+}
 export interface TdSliderProps {
   /**
    * 是否禁用组件

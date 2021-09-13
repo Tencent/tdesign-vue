@@ -64,8 +64,8 @@ const MessageFunction = (props: MessageOptions): Promise<MessageInstance> => {
   if (!instanceMap.get(attachDom)) {
     instanceMap.set(attachDom, {});
   }
-  const _p = instanceMap.get(attachDom)[placement];
-  if (!_p) {
+  const p = instanceMap.get(attachDom)[placement];
+  if (!p) {
     const instance = new MessageList({
       propsData: {
         zIndex: options.zIndex,
@@ -76,13 +76,13 @@ const MessageFunction = (props: MessageOptions): Promise<MessageInstance> => {
     instanceMap.get(attachDom)[placement] = instance;
     attachDom.appendChild(instance.$el);
   } else {
-    _p.add(options);
+    p.add(options);
   }
   // 返回最新消息的 Element
   return new Promise((resolve) => {
-    const _ins = instanceMap.get(attachDom)[placement];
-    _ins.$nextTick(() => {
-      const msg: Array<MessageInstance> = _ins.$children;
+    const ins = instanceMap.get(attachDom)[placement];
+    ins.$nextTick(() => {
+      const msg: Array<MessageInstance> = ins.$children;
       resolve(msg[msg.length - 1]);
     });
   });

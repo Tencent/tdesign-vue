@@ -3,7 +3,6 @@ import { prefix } from '../config';
 import TransferList from './components/transfer-list';
 import TransferOperations from './components/transfer-operations';
 import {
-  DataOption,
   TransferListType,
   TransferItemOption,
   CheckedOptions,
