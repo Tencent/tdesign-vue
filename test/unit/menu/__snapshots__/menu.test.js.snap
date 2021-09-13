@@ -81,7 +81,7 @@ exports[`Menu slot <options> 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
     <ul class="t-menu t-menu--scroll"></ul>
-    <div class="t-menu__options">
+    <div class="t-menu__operations">
       <div></div>
     </div>
   </div>

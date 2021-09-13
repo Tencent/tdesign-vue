@@ -128,7 +128,7 @@ export default defineComponent({
           <ul class={`${prefix}-menu`}>
             {renderContent(this, 'default', 'content')}
           </ul>
-          {operations && <div class={`${prefix}-menu__options`}>{operations}</div>}
+          {operations && <div class={`${prefix}-menu__operations`}>{operations}</div>}
         </div>
         {this.mode === 'normal' && this.renderNormalSubmenu()}
       </div>
