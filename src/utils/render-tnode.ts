@@ -75,7 +75,7 @@ interface JSXRenderContext {
 
 /**
  * 通过JSX的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
- * @param vm 组件示例
+ * @param vm 组件实例
  * @param name 插槽和属性名称
  * @param options 值可能为默认渲染节点，也可能是默认渲染节点和参数的集合
  * @example renderTNodeJSX(this, 'closeBtn')  优先级 props function 大于 插槽
@@ -98,7 +98,7 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
 
 /**
  * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与 renderTNodeJSX 区别在于 属性值为 undefined 时会渲染默认节点
- * @param vm 组件示例
+ * @param vm 组件实例
  * @param name 插槽和属性名称
  * @example renderTNodeJSX(this, 'closeBtn')
  * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。this.closeBtn 为空时，则兜底渲染 <t-icon-close />

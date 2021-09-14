@@ -21,6 +21,14 @@ const createDialog: DialogMethod = (props: DialogOptions) => {
       }),
     },
   }).$mount();
+  if (options.className) {
+    options.className.split(' ').forEach((name) => {
+      dialog.$el.classList.add(name.trim());
+    });
+  }
+  if (options.style) {
+    (dialog.$el as HTMLElement).style.cssText += options.style;
+  }
   const container = getAttach(options.attach);
   if (container) {
     container.appendChild(dialog.$el);

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
+import Vue from 'vue';
 import Tabs from '@/src/tabs/index.ts';
 import TabPanel from '@/src/tabs/tab-panel.tsx';
-import Vue from 'vue';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Tabs', () => {

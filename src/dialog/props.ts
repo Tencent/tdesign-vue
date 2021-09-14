@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-10 15:51:08
  * */
 
-import { PropType } from 'vue';
 import { TdDialogProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 对话框挂载的节点，默认挂在组件本身的位置。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */
@@ -99,20 +101,14 @@ export default {
     type: [String, Number] as PropType<TdDialogProps['top']>,
   },
   /** 控制对话框是否显示 */
-  visible: {
-    type: Boolean,
-    default: true,
-  },
+  visible: Boolean,
   /** 控制对话框是否显示，非受控属性 */
-  defaultVisible: {
-    type: Boolean,
-    default: true,
-  },
+  defaultVisible: Boolean,
   /** 对话框宽度，示例：320, '500px', '80%' */
   width: {
     type: [String, Number] as PropType<TdDialogProps['width']>,
   },
-  /** 对话框层级，样式默认为 2500 */
+  /** 对话框层级，Web 侧样式默认为 2500，移动端和小程序样式默认为 1500 */
   zIndex: {
     type: Number,
   },

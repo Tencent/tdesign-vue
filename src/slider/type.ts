@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-29 16:07:25
  * */
 
 import { InputNumberProps } from '../input-number';
@@ -19,7 +21,7 @@ export interface TdSliderProps {
    */
   inputNumberProps?: InputNumberProps;
   /**
-   * 滑块文案。值为 true 显示默认文案，值为 false 不显示滑块文案，值为 '${value}%' 则表示组件会根据占位符渲染文案
+   * 滑块当前值文本。值为 true 显示默认文案，值为 false 不显示滑块当前值文本，值为 `${value}%` 则表示组件会根据占位符渲染文案
    */
   label?: string | boolean | TNode;
   /**
@@ -28,15 +30,17 @@ export interface TdSliderProps {
    */
   layout?: 'vertical' | 'horizontal';
   /**
-   * 刻度标记，示例：[0, 10, 40, 200] 或者 { 10: (val) => val + '%', 50: (val) => <button>{val}</button> }
+   * 刻度标记，示例：[0, 10, 40, 200] 或者 { 10: (val) => val + '%', 50: (h, val) => <button>{val}</button> }
    */
   marks?: Array<number> | Marks;
   /**
    * 滑块范围最大值
+   * @default 100
    */
   max?: number;
   /**
    * 滑块范围最小值
+   * @default 0
    */
   min?: number;
   /**
@@ -56,17 +60,17 @@ export interface TdSliderProps {
   /**
    * 滑块值
    */
-  value?: number | Array<number>;
+  value?: SliderValue;
   /**
    * 滑块值，非受控属性
    */
-  defaultValue?: number | Array<number>;
+  defaultValue?: SliderValue;
   /**
    * 滑块值变化时触发
    */
-  onChange?: () => void;
-}
+  onChange?: (value: SliderValue) => void;
+};
 
-export interface Marks {
-  [mark: number]: string | TNode<{ value: number }>
-}
+export interface Marks { [mark: number]: string | TNode<{ value: number }> };
+
+export type SliderValue = number | Array<number>;

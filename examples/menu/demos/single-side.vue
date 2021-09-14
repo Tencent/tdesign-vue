@@ -75,7 +75,7 @@
       </t-menu-item>
     </t-menu>
 
-    <t-menu theme="dark" value="dashboard" height="550px" >
+    <t-menu theme="dark" defaultValue="dashboard" height="550px" >
       <img slot="logo" width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="dashboard">
         <template #icon>

@@ -520,6 +520,8 @@ describe('Transfer', () => {
         wrapper.findAll('.t-transfer-list-source .t-transfer-list__item.t-checkbox').at(3)
           .trigger('click');
 
+        await wrapper.vm.$nextTick();
+
         wrapper.findAll('.t-transfer-list-target .t-transfer-list__item.t-checkbox').at(0)
           .trigger('click');
 

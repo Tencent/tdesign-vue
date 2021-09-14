@@ -93,9 +93,8 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     },
   },
   watch: {
-    data(list) {
-      this.store.removeAll();
-      this.store.append(list);
+    data() {
+      this.rebuild();
     },
     keys(nKeys) {
       this.store.setConfig({
@@ -288,6 +287,16 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         }
       });
     },
+
+    // 树结构变化后，重新
+    rebuild() {
+      this.store = null;
+      this.nodesMap = null;
+      this.mouseEvent = null;
+      this.treeNodes = [];
+      this.build();
+    },
+
     // 初始化树结构
     build() {
       let list = this.data;

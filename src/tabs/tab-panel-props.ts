@@ -1,17 +1,19 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-12 13:24:02
  * */
 
+import { TdTabPanelProps } from '../tabs/type';
 import { PropType } from 'vue';
-import { TdTabPanelProps } from './type';
 
 export default {
   /** 用于自定义选项卡导航，同 panel */
   default: {
     type: Function as PropType<TdTabPanelProps['default']>,
   },
-  /** 选项卡内容隐藏时是否仍然渲染 */
+  /** 选项卡内容隐藏时是否销毁 */
   destroyOnHide: {
     type: Boolean,
     default: true,
@@ -24,7 +26,7 @@ export default {
   },
   /** 用于自定义选项卡面板内容 */
   panel: {
-    type: Function as PropType<TdTabPanelProps['panel']>,
+    type: [String, Function] as PropType<TdTabPanelProps['panel']>,
   },
   /** 当前选项卡是否允许移除 */
   removable: Boolean,

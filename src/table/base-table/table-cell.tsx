@@ -28,10 +28,30 @@ export default Vue.extend({
       isCutOff: false,
     };
   },
+  methods: {
+    init() {
+      const { fixed } = this.cellData?.col;
+      const { $children: children } = this.$parent;
+      // 计算当前固定列偏移的宽度
+      if (fixed) {
+        let offsetLeft = 0;
+        const fixedColumns = children.filter((el: TdInstance) => (el?.cellData?.col?.fixed === fixed));
+        const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => (el === this));
+        fixedColumns.forEach((el: any, cur) => {
+          if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
+            const { width } = el.cellData?.col;
+            const { clientWidth } = el.$el;
+            offsetLeft += width > 0 ? width : clientWidth;
+          }
+        });
+        this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
+        this.offsetLeft = offsetLeft;
+      }
+      this.isCutOff = isNodeOverflow(this.$el);
+    },
+  },
   render(h) {
-    const {
-      cellData, offsetLeft, isBoundary, isCutOff,
-    } = this;
+    const { cellData } = this;
     const {
       col, colIndex, row, rowIndex, customData, customRender, withBorder,
     } = cellData;
@@ -46,9 +66,9 @@ export default Vue.extend({
     const attrClass = attrs?.class || [];
     if (fixed) {
       style.position = 'sticky';
-      style[fixed] = `${offsetLeft}px`;
+      style[fixed] = `${this.offsetLeft}px`;
       fixedClass.push(`${prefix}-table__cell--fixed-${fixed}`);
-      if (isBoundary) {
+      if (this.isBoundary) {
         fixedClass.push(`${prefix}-table__cell--fixed-${fixed}-${fixed === 'left' ? 'last' : 'first'}`);
       }
     }
@@ -61,7 +81,7 @@ export default Vue.extend({
     if (withBorder) {
       style.borderLeft = '1px solid #E7E7E7';
     }
-    if (ellipsis === true) {
+    if (ellipsis === true || typeof ellipsis === 'function') {
       attrClass.push('text-ellipsis');
     }
     if (className) {
@@ -107,7 +127,13 @@ export default Vue.extend({
       },
     };
     // 如果被截断给加上 Tooltip 提示
-    if (ellipsis && isCutOff) {
+    if (ellipsis && this.isCutOff) {
+      let popupCellContent = cellContent;
+      if (typeof ellipsis === 'function') {
+        popupCellContent = ellipsis(h, {
+          row, col, rowIndex, colIndex,
+        });
+      }
       cellContent = (
         <Popup
           style="display: inline;"
@@ -117,7 +143,7 @@ export default Vue.extend({
         >
           {cellContent}
           <div slot="content">
-            {cellContent}
+            {popupCellContent}
           </div>
         </Popup>
       );
@@ -125,23 +151,9 @@ export default Vue.extend({
     return <td style={style} {...tdAttrs}>{cellContent}</td>;
   },
   mounted() {
-    const { fixed } = this.cellData?.col;
-    const { $children: children } = this.$parent;
-    // 计算当前固定列偏移的宽度
-    if (fixed) {
-      let offsetLeft = 0;
-      const fixedColumns = children.filter((el: TdInstance) => (el?.cellData?.col?.fixed === fixed));
-      const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => (el === this));
-      fixedColumns.forEach((el: any, cur) => {
-        if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
-          const { width } = el.cellData?.col;
-          const { clientWidth } = el.$el;
-          offsetLeft += width > 0 ? width : clientWidth;
-        }
-      });
-      this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
-      this.offsetLeft = offsetLeft;
-    }
-    this.isCutOff = isNodeOverflow(this.$el);
+    this.init();
+  },
+  updated() {
+    this.init();
   },
 });

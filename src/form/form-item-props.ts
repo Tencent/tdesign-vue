@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-30 16:09:55
+ * updated at 2021-09-11 21:51:53
  * */
 
 import { TdFormItemProps } from '../form/type';
@@ -23,6 +23,13 @@ export default {
   label: {
     type: [String, Function] as PropType<TdFormItemProps['label']>,
     default: '',
+  },
+  /** 表单字段标签对齐方式：左对齐、右对齐、顶部对齐。默认使用 Form 的对齐方式，优先级高于 Form.labelAlign */
+  labelAlign: {
+    type: String as PropType<TdFormItemProps['labelAlign']>,
+    validator(val: TdFormItemProps['labelAlign']): boolean {
+      return ['left', 'right', 'top'].includes(val);
+    },
   },
   /** 表单字段名称 */
   name: {

@@ -117,11 +117,16 @@ exports[`Tag delete demo works fine 1`] = `
     class="tdesign-demo-block"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
     >
-      
-      可删除标签
+      <span
+        class="t-tag--text"
+        style="max-width: 100px;"
+      >
+        
+      可删除标签可删除标签
     
+      </span>
       <svg
         class="t-icon t-icon-close"
         version="1.1"
@@ -134,7 +139,7 @@ exports[`Tag delete demo works fine 1`] = `
       </svg>
     </span>
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+      class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
     >
       <svg
         class="t-icon t-icon-discount"
@@ -148,9 +153,14 @@ exports[`Tag delete demo works fine 1`] = `
           fill-rule="evenodd"
         />
       </svg>
-      
-      可删除标签
+      <span
+        class="t-tag--text"
+        style="max-width: 100px;"
+      >
+        
+      可删除标签可删除标签
     
+      </span>
       <svg
         class="t-icon t-icon-close"
         version="1.1"
@@ -235,10 +245,14 @@ exports[`Tag long-text demo works fine 1`] = `
 >
   <span
     class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis"
-    style="max-width: 150px;"
     title="默认超八个字超长文本标签超长省略文本标签"
   >
-    默认超八个字超长文本标签超长省略文本标签
+    <span
+      class="t-tag--text"
+      style="max-width: 150px;"
+    >
+      默认超八个字超长文本标签超长省略文本标签
+    </span>
   </span>
 </div>
 `;

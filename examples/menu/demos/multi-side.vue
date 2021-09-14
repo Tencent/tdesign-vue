@@ -71,7 +71,7 @@
         资源编辑
       </t-menu-item>
       <template #operations>
-        <t-icon name="view-list" @click.native="changeCollapsed" />
+        <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
       </template>
     </t-menu>
 
@@ -146,7 +146,7 @@
         资源编辑
       </t-menu-item>
       <template #operations>
-        <t-icon name="view-list" @click.native="changeCollapsed2" />
+        <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed2" />
       </template>
     </t-menu>
   </div>

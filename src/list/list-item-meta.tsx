@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import props from './list-item-meta-props';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
 const name = `${prefix}-list-item__meta`;
 
@@ -11,18 +11,19 @@ export default Vue.extend({
   props,
   methods: {
     renderAvatar() {
-      if (!(this.avatar || this.$scopedSlots.avatar)) {
-        return;
+      if (this.avatar || this.$scopedSlots.avatar) {
+        console.warn('`avatar` is going to be deprecated, please use `image` instead');
       }
-
-      if (this.avatar && typeof this.avatar === 'string') {
+      const thumbnail = renderContent(this, 'avatar', 'image');
+      if (!thumbnail) return;
+      if (typeof thumbnail === 'string') {
         return (
           <div class={`${name}-avatar`}>
-            <img src={this.avatar} alt=""></img>
+            <img src={thumbnail}></img>
           </div>
         );
       }
-      return <div class={`${name}-avatar`}>{renderTNodeJSX(this, 'avatar')}</div>;
+      return <div class={`${name}-avatar`}>{thumbnail}</div>;
     },
   },
   render(): VNode {

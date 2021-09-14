@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
-import { AnchorItem } from '@/src/anchor/index.ts';
 import { omit } from 'lodash';
+import { AnchorItem } from '@/src/anchor/index.ts';
 
 const defaultProvide = {
   tAnchor: {

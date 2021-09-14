@@ -1,138 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button base demo works fine 1`] = `
-<div>
-  <div
-    class="t-list t-size-m"
-  >
-    <ul
-      class="t-list-items"
-    >
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          列表内容列表内容
-        </div>
-      </li>
-       
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          列表内容列表内容
-        </div>
-      </li>
-       
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          列表内容列表内容
-        </div>
-      </li>
-       
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          列表内容列表内容
-        </div>
-      </li>
-    </ul>
-    <div
-      class="t-list__load"
-    />
-  </div>
-</div>
-`;
-
-exports[`Button extra demo works fine 1`] = `
-<div>
-  <div
-    class="t-list t-size-m t-list--split"
-  >
-    <ul
-      class="t-list-items"
-    >
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__meta"
-          >
-            <div
-              class="t-list-item__meta-avatar"
-            >
-              <img
-                alt=""
-                src="https://tdesign.gtimg.com/list-icon.png"
-              />
-            </div>
-            <div
-              class="t-list-item__meta-content"
-            >
-              <h3
-                class="t-list-item__meta-title"
-              >
-                列表主内容
-              </h3>
-              <p
-                class="t-list-item__meta-description"
-              >
-                列表内容列表内容
-              </p>
-            </div>
-          </div>
-            
-          <li
-            class="t-list-item__action"
-          >
-            <li>
-              <a
-                href=""
-              >
-                操作1
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href=""
-              >
-                操作2
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href=""
-              >
-                操作3
-              </a>
-            </li>
-          </li>
-        </div>
-      </li>
-    </ul>
-    <div
-      class="t-list__load"
-    />
-  </div>
-</div>
-`;
-
 exports[`Button headerFooter demo works fine 1`] = `
 <div>
   <div
@@ -159,7 +26,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -194,7 +60,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -229,7 +94,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -290,7 +154,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -325,7 +188,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -360,7 +222,6 @@ exports[`Button headerFooter demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -415,7 +276,6 @@ exports[`Button imageText demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -450,7 +310,6 @@ exports[`Button imageText demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -485,7 +344,6 @@ exports[`Button imageText demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -535,7 +393,6 @@ exports[`Button imageText demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -699,7 +556,6 @@ exports[`Button operation demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -772,7 +628,6 @@ exports[`Button operation demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -860,7 +715,6 @@ exports[`Button operation demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>
@@ -927,7 +781,6 @@ exports[`Button operation demo works fine 1`] = `
               class="t-list-item__meta-avatar"
             >
               <img
-                alt=""
                 src="https://tdesign.gtimg.com/list-icon.png"
               />
             </div>

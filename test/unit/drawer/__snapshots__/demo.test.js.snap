@@ -70,7 +70,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
       抽屉弹出方向：
       
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button"
@@ -159,7 +159,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
       抽屉弹出模式：
       
       <div
-        class="t-radio-group t-radio-group-outline t-radio-group-medium"
+        class="t-radio-group t-radio-group-medium t-radio-group-outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -555,7 +555,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="t-radio-group t-radio-group-outline t-radio-group-medium"
+      class="t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
         class="t-radio-button"
@@ -659,7 +659,7 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
     抽屉弹出方向：
     
     <div
-      class="t-radio-group t-radio-group-outline t-radio-group-medium"
+      class="t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
         class="t-radio-button"
@@ -748,7 +748,7 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
     抽屉弹出模式：
     
     <div
-      class="t-radio-group t-radio-group-outline t-radio-group-medium"
+      class="t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
         class="t-radio-button"
@@ -868,7 +868,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="t-radio-group t-radio-group-outline t-radio-group-medium"
+      class="t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
         class="t-radio-button"
@@ -952,7 +952,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="btn-top-margin t-radio-group t-radio-group-outline t-radio-group-medium"
+      class="btn-top-margin t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
         class="t-radio-button t-is-checked"

@@ -528,7 +528,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             class="t-form__controls--content"
           >
             <div
-              class="t-radio-group t-radio-group-outline t-radio-group-medium"
+              class="t-radio-group t-radio-group-medium t-radio-group-outline"
             >
               <label
                 class="t-radio t-is-checked"

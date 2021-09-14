@@ -22,6 +22,7 @@ import {
   ProgressContext,
   UploadRemoveOptions,
   FlowRemoveContext,
+  URL,
 } from './interface';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -56,8 +57,7 @@ export default Vue.extend({
       errorMsg: '',
       showImageViewDialog: false,
       showImageViewUrl: '',
-      // webkitURL is for chrome/webkot, while URL is for mozilla/firefox
-      URL: window.webkitURL || window.URL,
+      URL: null as URL,
       xhrReq: null as XMLHttpRequest,
     };
   },
@@ -392,6 +392,10 @@ export default Vue.extend({
         ? this.renderDraggerTrigger()
         : <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>;
     },
+  },
+  mounted() {
+    // webkitURL is for chrome/webkit, while URL is for mozilla/firefox
+    window && (this.URL = window.webkitURL || window.URL);
   },
 
   render(): VNode {

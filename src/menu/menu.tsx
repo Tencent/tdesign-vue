@@ -127,7 +127,7 @@ export default defineComponent({
           <ul class={this.innerClasses}>
             {renderContent(this, 'default', 'content')}
           </ul>
-          {operations && (<div class={`${prefix}-menu__options`}>{operations}</div>)}
+          {operations && (<div class={`${prefix}-menu__operations`}>{operations}</div>)}
         </div>
       </div>
     );

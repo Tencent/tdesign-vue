@@ -6,7 +6,7 @@ import lodashSet from 'lodash/set';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
-  ErrorList, TdFormItemProps, TdFormProps, ValidateResult, ValueType, ValidateTriggerType,
+  Data, FormRule, TdFormItemProps, TdFormProps, ValueType, ValidateTriggerType, AllValidateResult,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -16,11 +16,13 @@ import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TIconCloseCircleFilled from '../icon/close-circle-filled';
 
-type Result = ValidateResult<TdFormProps['data']>;
+// type Result = ValidateResult<TdFormProps['data']>;
 
-type IconConstructor = typeof TIconErrorCircleFilled;
+export type IconConstructor = typeof TIconErrorCircleFilled;
 
-type FormInstance = InstanceType<typeof Form>;
+export type FormInstance = InstanceType<typeof Form>;
+
+export type FormItemValidateResult<T extends Data = Data> = { [key in keyof T]: boolean | AllValidateResult[] };
 
 export const enum VALIDATE_STATUS {
   TO_BE_VALIDATED = 'not',
@@ -45,9 +47,12 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
 
   data() {
     return {
-      errorList: [] as ErrorList,
+      // 校验不通过信息列表
+      errorList: [],
+      // 校验通过显示的内容
+      successList: [],
       // 当前校验状态 未校验、校验通过、校验不通过
-      verifyStatus: VALIDATE_STATUS.TO_BE_VALIDATED as VALIDATE_STATUS,
+      verifyStatus: VALIDATE_STATUS.TO_BE_VALIDATED,
       resetValidating: false as boolean,
       needResetField: false as boolean,
       initialValue: undefined as ValueType,
@@ -116,7 +121,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
       return Boolean(allowMark && isRequired);
     },
-    innerRules(): ErrorList {
+    innerRules(): FormRule[] {
       const parent = this.form;
       const rules = parent && parent.rules;
       return (rules && rules[this.name]) || (this.rules || []);
@@ -139,20 +144,33 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
   },
 
   methods: {
-    async validate(trigger: ValidateTriggerType): Promise<Result> {
+    // T 表示表单数据的类型
+    async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;
-      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      // 过滤不需要校验的规则
+      const rules = trigger === 'all'
+        ? this.innerRules
+        : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      // 校验结果，包含正确的校验信息
       const r = await validate(this.value, rules);
-      this.errorList = r;
-      this.verifyStatus = this.errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
-      if (!rules.length) this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
+      const errorList = r.filter((item) => item.result !== true);
+      this.errorList = errorList;
+      // 仅有自定义校验方法才会存在 successList
+      this.successList = r.filter((item) => item.result === true && item.message && item.type === 'success');
+      // 根据校验结果设置校验状态
+      if (rules.length) {
+        this.verifyStatus = errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
+      } else {
+        this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
+      }
+      // 重置处理
       if (this.needResetField) {
         this.resetHandler();
       }
       this.resetValidating = false;
       return ({
-        [this.name]: r.length === 0 ? true : r,
-      });
+        [this.name]: errorList.length === 0 ? true : r,
+      } as FormItemValidateResult<T>);
     },
     getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
@@ -194,11 +212,10 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       }
       const list = this.errorList;
       if (parent.showErrorMessage && list && list[0] && list[0].message) {
-        return (
-          <div>
-            <span class={CLASS_NAMES.extra}>{list[0].message}</span>
-          </div>
-        );
+        return (<p class={CLASS_NAMES.extra}>{list[0].message}</p>);
+      }
+      if (this.successList.length) {
+        return (<p class={CLASS_NAMES.extra}>{this.successList[0].message}</p>);
       }
       return helpVNode;
     },
@@ -294,6 +311,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     resetHandler(): void {
       this.needResetField = false;
       this.errorList = [];
+      this.successList = [];
       this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
     },
   },

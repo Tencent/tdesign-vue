@@ -52,13 +52,13 @@ exports[`Menu single demo works fine 1`] = `
         </li>
       </ul>
       <div
-        class="t-menu__options"
+        class="t-menu__operations"
       >
         <a
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-search"
+            class="t-menu__operations-icon t-icon t-icon-search"
           >
             <use
               xlink:href="#t-icon-search"
@@ -70,7 +70,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-mail"
+            class="t-menu__operations-icon t-icon t-icon-mail"
           >
             <use
               xlink:href="#t-icon-mail"
@@ -82,7 +82,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-user"
+            class="t-menu__operations-icon t-icon t-icon-user"
           >
             <use
               xlink:href="#t-icon-user"
@@ -94,7 +94,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-ellipsis"
+            class="t-menu__operations-icon t-icon t-icon-ellipsis"
           >
             <use
               xlink:href="#t-icon-ellipsis"
@@ -158,13 +158,13 @@ exports[`Menu single demo works fine 1`] = `
         </li>
       </ul>
       <div
-        class="t-menu__options"
+        class="t-menu__operations"
       >
         <a
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-search"
+            class="t-menu__operations-icon t-icon t-icon-search"
           >
             <use
               xlink:href="#t-icon-search"
@@ -176,7 +176,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-mail"
+            class="t-menu__operations-icon t-icon t-icon-mail"
           >
             <use
               xlink:href="#t-icon-mail"
@@ -188,7 +188,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-user"
+            class="t-menu__operations-icon t-icon t-icon-user"
           >
             <use
               xlink:href="#t-icon-user"
@@ -200,7 +200,7 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-icon t-icon-ellipsis"
+            class="t-menu__operations-icon t-icon t-icon-ellipsis"
           >
             <use
               xlink:href="#t-icon-ellipsis"

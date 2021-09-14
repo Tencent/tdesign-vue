@@ -35,15 +35,15 @@ const NotificationFunction = (options: NotificationOptions): Promise<Notificatio
   }
   let tmpInstance = instanceMap.get(attachEl)[hackOptions.placement];
   if (!tmpInstance) {
-    const List = new NotificationList({
+    const list = new NotificationList({
       propsData: {
         placement: hackOptions.placement,
       },
     });
-    List.add(hackOptions);
-    List.$mount();
-    instanceMap.get(attachEl)[hackOptions.placement] = List;
-    attachEl.appendChild(List.$el);
+    list.add(hackOptions);
+    list.$mount();
+    instanceMap.get(attachEl)[hackOptions.placement] = list;
+    attachEl.appendChild(list.$el);
     tmpInstance = instanceMap.get(attachEl)[hackOptions.placement];
   } else {
     tmpInstance.add(hackOptions);

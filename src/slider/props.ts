@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-08-29 16:07:25
  * */
 
 import { PropType } from 'vue';
@@ -14,7 +16,7 @@ export default {
     type: [Boolean, Object] as PropType<TdSliderProps['inputNumberProps']>,
     default: true,
   },
-  /** 滑块文案。值为 true 显示默认文案，值为 false 不显示滑块文案，值为 '${value}%' 则表示组件会根据占位符渲染文案 */
+  /** 滑块当前值文本。值为 true 显示默认文案，值为 false 不显示滑块当前值文本，值为 `${value}%` 则表示组件会根据占位符渲染文案 */
   label: {
     type: [String, Boolean, Function] as PropType<TdSliderProps['label']>,
   },
@@ -26,17 +28,19 @@ export default {
       return ['vertical', 'horizontal'].includes(val);
     },
   },
-  /** 刻度标记，示例：[0, 10, 40, 200] 或者 { 10: (val) => val + '%', 50: (val) => <button>{val}</button> } */
+  /** 刻度标记，示例：[0, 10, 40, 200] 或者 { 10: (val) => val + '%', 50: (h, val) => <button>{val}</button> } */
   marks: {
     type: [Object, Array] as PropType<TdSliderProps['marks']>,
   },
   /** 滑块范围最大值 */
   max: {
     type: Number,
+    default: 100,
   },
   /** 滑块范围最小值 */
   min: {
     type: Number,
+    default: 0,
   },
   /** 双游标滑块 */
   range: Boolean,

@@ -1,7 +1,6 @@
 import { mount } from '@vue/test-utils';
 import base from '@/examples/checkbox/demos/base.vue';
 import link from '@/examples/checkbox/demos/link.vue';
-import checkboxAll from '@/examples/checkbox/demos/checkbox-all.vue';
 import controlled from '@/examples/checkbox/demos/controlled.vue';
 import group from '@/examples/checkbox/demos/group.vue';
 
@@ -13,10 +12,6 @@ describe('Checkbox', () => {
   });
   it('link demo works fine', () => {
     const wrapper = mount(link);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('checkbox-all demo works fine', () => {
-    const wrapper = mount(checkboxAll);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('checkbox group demo works fine', () => {

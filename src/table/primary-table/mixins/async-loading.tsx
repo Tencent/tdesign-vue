@@ -38,7 +38,7 @@ export default Vue.extend({
   methods: {
     // 异步加载 pullDownLoading 新增一条数据
     asyncLoadingHandler(): Array<any> {
-      if (this.asyncLoading) {
+      if (this.asyncLoading || typeof this.$scopedSlots.asyncLoading === 'function') {
         return this.data.concat({ colKey: ASYNC_LOADING_ROW });
       }
       return this.data;
@@ -57,13 +57,19 @@ export default Vue.extend({
             if (typeof asyncLoading === 'function') {
               return asyncLoading(h);
             }
+            if (typeof this.$scopedSlots.asyncLoading === 'function') {
+              return this.$scopedSlots.asyncLoading(h);
+            }
             const loadingText = {
               'load-more': '点击加载更多',
               loading: '正在加载中，请稍后',
-            }[String(this.asyncLoading)];
+            }[String(asyncLoading)];
+            if (!loadingText) {
+              return '';
+            }
             return (
               <div class={this.classes} onClick={this.onLoadClick}>
-                {this.asyncLoading === 'loading' && <GradientIcon size='small' />}
+                {asyncLoading === 'loading' && <GradientIcon size='small' />}
                 {loadingText}
               </div>
             );

@@ -2,14 +2,14 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-02 14:17:18
+ * updated at 2021-09-09 10:09:08
  * */
 
 import { TdRadioGroupProps } from '../radio/type';
 import { PropType } from 'vue';
 
 export default {
-  /** 单选组件按钮形式 */
+  /** 已废弃。单选组件按钮形式（请使用 variant 代替） */
   buttonStyle: {
     type: String as PropType<TdRadioGroupProps['buttonStyle']>,
     default: 'outline' as TdRadioGroupProps['buttonStyle'],
@@ -46,6 +46,14 @@ export default {
   /** 选中的值，非受控属性 */
   defaultValue: {
     type: [String, Number] as PropType<TdRadioGroupProps['defaultValue']>,
+  },
+  /** 单选组件按钮形式 */
+  variant: {
+    type: String as PropType<TdRadioGroupProps['variant']>,
+    default: 'outline' as TdRadioGroupProps['variant'],
+    validator(val: TdRadioGroupProps['variant']): boolean {
+      return ['outline', 'primary-filled', 'default-filled'].includes(val);
+    },
   },
   /** 选中值发生变化时触发 */
   onChange: Function as PropType<TdRadioGroupProps['onChange']>,

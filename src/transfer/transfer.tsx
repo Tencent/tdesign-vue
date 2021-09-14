@@ -3,7 +3,6 @@ import { prefix } from '../config';
 import TransferList from './components/transfer-list';
 import TransferOperations from './components/transfer-operations';
 import {
-  DataOption,
   TransferListType,
   TransferItemOption,
   CheckedOptions,
@@ -19,7 +18,10 @@ import { PageInfo, TdPaginationProps } from '../pagination/type';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import props from './props';
-import { getTransferListOption, emitEvent } from './utils';
+import {
+  getTransferListOption, emitEvent, getDataValues, getTransferData,
+  filterTransferData,
+} from './utils';
 import { TNode } from '../common';
 
 const name = `${prefix}-transfer`;
@@ -48,6 +50,10 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     };
   },
   computed: {
+    isTreeMode(): boolean {
+      const treeSlot = this.$scopedSlots.tree;
+      return typeof treeSlot === 'function';
+    },
     leftButtonDisabled(): boolean {
       return this.direction === 'right';
     },
@@ -56,28 +62,19 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     },
     // props 传入的 data 格式化后的数据
     transferData(): Array<TransferItemOption> {
-      return this.getTransferData(this.data);
+      return getTransferData(this.data, this.keys, this.isTreeMode);
     },
     sourceList(): Array<TransferItemOption> {
-      return this.filterMethod(this.transferData, this.value, false);
+      return filterTransferData(this.transferData, this.value, false, this.isTreeMode);
     },
     targetList(): Array<TransferItemOption> {
-      const list: Array<TransferItemOption> = [];
-      // 按照 targetValue 顺序，找到原数据
-      this.value.forEach((value) => {
-        const item = this.transferData.find((item) => item.value === value);
-        if (item === null) {
-          throw `target value "${value}" was not found not from data ${JSON.stringify(this.data)}`;
-        }
-        list.push(item);
-      });
-      return list;
+      return filterTransferData(this.transferData, this.value, true, this.isTreeMode);
     },
     // 被选中的value
     checkedValue(): TransferListOptionBase<TransferValue[]> {
       return {
-        [SOURCE]: this.sourceList.filter((data) => this.checked.includes(data.value)).map((data) => data.value),
-        [TARGET]: this.targetList.filter((data) => this.checked.includes(data.value)).map((data) => data.value),
+        [SOURCE]: getDataValues(this.sourceList, this.checked, { isTreeMode: this.isTreeMode }),
+        [TARGET]: getDataValues(this.targetList, this.checked, { isTreeMode: this.isTreeMode }),
       };
     },
     hasFooter(): boolean {
@@ -115,26 +112,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     },
   },
   methods: {
-    getTransferData(data: Array<DataOption>): Array<TransferItemOption> {
-      const list: Array<TransferItemOption> = data.map((transferDataItem, index): TransferItemOption => {
-        const labelKey = this.keys?.label || 'label';
-        const valueKey = this.keys?.value || 'value';
-        if (transferDataItem[labelKey] === undefined) {
-          throw `${labelKey} is not in DataOption ${JSON.stringify(transferDataItem)}`;
-        }
-        if (transferDataItem[valueKey] === undefined) {
-          throw `${valueKey} is not in DataOption ${JSON.stringify(transferDataItem)}`;
-        }
-        return ({
-          label: transferDataItem[labelKey] as string,
-          value: transferDataItem[valueKey],
-          key: `key__value_${transferDataItem[valueKey]}_index_${index}`,
-          disabled: transferDataItem.disabled ?? false,
-          data: transferDataItem,
-        });
-      });
-      return list;
-    },
+
     transferTo(toDirection: TransferListType) {
       const oldTargetValue: Array<TransferValue> = JSON.parse(JSON.stringify(this.value));
       let newTargetValue: Array<TransferValue>;
@@ -144,8 +122,9 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
-        newTargetValue = this.transferData.filter((item) => oldTargetValue.includes(item.value) || checkedValue.includes(item.value))
-          .map((item) => item.value);
+        // newTargetValue = this.transferData.filter((item) => oldTargetValue.includes(item.value) || checkedValue.includes(item.value))
+        //   .map((item) => item.value);
+        newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), { isTreeMode: this.isTreeMode });
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
       } else {
@@ -180,7 +159,6 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       };
       // 支持checked.sync
       this.$emit('update:checked', checked);
-      this.checkedValue[listType] = val;
       emitEvent<Parameters<TdTransferProps['onCheckedChange']>>(this, 'checked-change', event);
     },
     filterMethod(transferList: Array<TransferItemOption>, targetValueList: Array<TransferValue>, needMatch: boolean): Array<TransferItemOption> {
@@ -206,7 +184,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       emitEvent<Parameters<TdTransferProps['onPageChange']>>(this, 'page-change', pageInfo, { type: listType });
     },
     renderTransferList(listType: TransferListType) {
-      const scopedSlots = pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem']);
+      const scopedSlots = pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem', 'default']);
       return (
         <transfer-list
           checkboxProps={this.checkboxProps}
@@ -228,6 +206,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
           scopedSlots={scopedSlots}
           t={this.t}
           locale={this.locale}
+          isTreeMode={this.isTreeMode}
         ></transfer-list>
       );
     },
@@ -241,6 +220,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
           this.showSearch ? 't-transfer-search' : '',
           this.hasFooter ? 't-transfer-footer' : '',
           this.showPagination ? 't-transfer-pagination' : '',
+          this.isTreeMode ? 't-transfer-with-tree' : '',
         ]}
       >
         {this.renderTransferList(SOURCE)}

@@ -8,6 +8,7 @@
         :closable="tag.showClose"
         :icon="tag.icon"
         :disabled="!!tag.disabled"
+        :maxWidth="tag.maxWidth"
         @click="handleClick"
         @close="handleClose(index)"
       >
@@ -48,15 +49,17 @@ export default {
       inputVisible: false,
       tags: [
         {
-          name: '可删除标签',
+          name: '可删除标签可删除标签',
           type: 'default',
           showClose: true,
+          maxWidth: 100,
         },
         {
-          name: '可删除标签',
+          name: '可删除标签可删除标签',
           type: 'default',
           icon: () => <t-icon-discount />,
           showClose: true,
+          maxWidth: 100,
         },
         {
           name: '可删除标签',

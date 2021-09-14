@@ -2,7 +2,7 @@
   <div>
     <t-list :split="true">
       <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
           <span>
             <t-button variant="text">操作1</t-button>
@@ -12,7 +12,7 @@
         </template>
       </t-list-item>
       <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
           <span>
             <t-button variant="text">操作1</t-button>
@@ -27,14 +27,14 @@
 
     <t-list :split="true">
       <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
           <li><t-icon-edit /></li>
           <li><t-icon-download /></li>
         </template>
       </t-list-item>
       <t-list-item>
-        <t-list-item-meta :avatar="avatarUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
           <li><t-icon-edit /></li>
           <li><t-icon-download /></li>
@@ -52,7 +52,7 @@ export default {
   components: { TIconEdit, TIconDownload },
   data() {
     return {
-      avatarUrl: 'https://tdesign.gtimg.com/list-icon.png',
+      imageUrl: 'https://tdesign.gtimg.com/list-icon.png',
     };
   },
 };

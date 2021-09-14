@@ -31,6 +31,7 @@ export default defineComponent({
     const handleClick = () => {
       if (props.disabled) return;
       menu.select(props.value);
+      ctx.emit('click');
 
       if (props.href) {
         window.open(props.href, props.target);

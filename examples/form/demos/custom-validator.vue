@@ -9,14 +9,22 @@
       @submit="onSubmit"
       @validate="onValidate"
     >
-      <t-form-item label="用户名"  name='account'>
+      <t-form-item label="用户名"  name="account">
         <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name='password'>
-        <t-input type="password" v-model="formData.password"></t-input>
+      <t-form-item label="密码" name="password">
+        <t-input
+          type="password"
+          v-model="formData.password"
+          placeholder="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化"
+        ></t-input>
       </t-form-item>
-      <t-form-item label="确认密码" name='rePassword'>
-        <t-input type="password" v-model="formData.rePassword"></t-input>
+      <t-form-item label="确认密码" name="rePassword">
+        <t-input
+          type="password"
+          v-model="formData.rePassword"
+          placeholder="在此处体验普通自定义校验方法"
+        ></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
@@ -45,6 +53,8 @@ export default {
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
+          // 不同的校验结果有不同的错误信息提醒，切错误信息类型不同
+          { validator: this.passwordValidator },
         ],
         rePassword: [
           // 自定义校验规则
@@ -79,6 +89,16 @@ export default {
         fields: ['account'],
         trigger: 'blur',
       });
+    },
+    // 自定义校验器，不同的值输出不同的校验结果。支持异步校验（文案选自某密码重置站点，如有侵权，请联系我们删除）
+    passwordValidator(val) {
+      if (val.length > 0 && val.length <= 2) {
+        return { result: false, message: '太简单了！再开动一下你的小脑筋吧！', type: 'error' };
+      }
+      if (val.length > 2 && val.length < 4) {
+        return { result: false, message: '还差一点点，就是一个完美的密码了！', type: 'warning' };
+      }
+      return { result: true, message: '太强了，你确定自己记得住吗！', type: 'success' };
     },
     // 自定义异步校验器
     rePassword(val) {

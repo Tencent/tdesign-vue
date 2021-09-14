@@ -2317,6 +2317,40 @@ exports[`Dialog plugin demo works fine 1`] = `
   </p>
   <br />
    
+  <p>
+    函数调用方式一：DialogPlugin(options)
+  </p>
+   
+  <p>
+    函数调用方式二：DialogPlugin.confirm(options)
+  </p>
+   
+  <p>
+    函数调用方式三：DialogPlugin.alert(options)
+  </p>
+  <br />
+   
+  <p>
+    组件实例：DialogInstance = this.$dialog(options) 或者 组件实例：DialogInstance = DialogPlugin(options)
+  </p>
+   
+  <p>
+    组件实例方法-销毁弹框：DialogInstance.destroy()
+  </p>
+   
+  <p>
+    组件实例方法-隐藏弹框：DialogInstance.hide()
+  </p>
+   
+  <p>
+    组件实例方法-显示弹窗：DialogInstance.show()
+  </p>
+   
+  <p>
+    组件实例方法-更新弹框：DialogInstance.update()
+  </p>
+  <br />
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
