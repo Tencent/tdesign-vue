@@ -9,7 +9,7 @@ import { SliderValue, TdSliderProps } from './type';
 import TSliderButton from './slider-button.vue';
 
 const name = `${prefix}-slider`;
-interface MarkItem {
+export interface MarkItem {
   point: number;
   position: number;
   mark: string | number | TNode;
