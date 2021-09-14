@@ -6,6 +6,7 @@ import { prefix } from '../config';
 import InputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
 import { SliderValue, TdSliderProps } from './type';
+import TSliderButton from './slider-button.vue';
 
 const name = `${prefix}-slider`;
 interface MarkItem {
@@ -422,7 +423,7 @@ export default Vue.extend({
         >
           <div class={this.sliderRailClass} style={this.runwayStyle} onClick={this.onSliderClick} ref="slider">
             <div class={`${name}__track`} style={this.barStyle}></div>
-            <t-slider-button
+            <TSliderButton
               vertical={vertical}
               value={range ? this.firstValue : this.prevValue}
               ref="button1"
@@ -431,15 +432,15 @@ export default Vue.extend({
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
-            ></t-slider-button>
+            ></TSliderButton>
             {this.range && (
-              <t-slider-button
+              <TSliderButton
                 vertical={vertical}
                 v-model={this.secondValue}
                 ref="button2"
                 disabled={this.disabled}
                 tooltip-props={this.tooltipProps}
-              ></t-slider-button>
+              ></TSliderButton>
             )}
 
             {this.showSteps && (
