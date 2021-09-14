@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-13 21:27:04
  * */
 
 export interface TdTextareaProps {
@@ -9,6 +11,11 @@ export interface TdTextareaProps {
    * @default false
    */
   autofocus?: boolean;
+  /**
+   * 高度自动撑开。 autosize = true 表示组件高度自动撑开，同时，依旧允许手动拖高度。如果设置了 autosize.maxRows 或者 autosize.minRows 则不允许手动调整高度
+   * @default false
+   */
+  autosize?: boolean | { minRows?: number; maxRows?: number };
   /**
    * 是否禁用文本框
    * @default false
@@ -65,6 +72,6 @@ export interface TdTextareaProps {
    * 释放键盘时触发
    */
   onKeyup?: (value: TextareaValue, context: { e: KeyboardEvent }) => void;
-}
+};
 
 export type TextareaValue = string | number;

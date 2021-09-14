@@ -4,6 +4,7 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { getPropsApiByEvent } from '../utils/helper';
+import calcTextareaHeight from './calcTextareaHeight';
 
 const name = `${prefix}-textarea`;
 function getValidAttrs(obj: object): object {
@@ -24,6 +25,7 @@ export default Vue.extend({
     return {
       focused: false,
       mouseHover: false,
+      textareaStyle: {},
     };
   },
 
@@ -40,7 +42,19 @@ export default Vue.extend({
     },
   },
 
+  mounted() {
+    this.adjustTextareaHeight();
+  },
+
   methods: {
+    adjustTextareaHeight() {
+      if (this.autosize === true) {
+        this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
+      } else if (typeof this.autosize === 'object') {
+        this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement, this.autosize?.minRows, this.autosize?.maxRows);
+      }
+    },
+
     emitEvent(name: string, value: string | number, context: object) {
       this.$emit(name, value, context);
       const handleName = getPropsApiByEvent(name);
@@ -55,13 +69,15 @@ export default Vue.extend({
       const input = this.$refs.refInputElem as HTMLInputElement;
       input?.blur();
     },
-
     handleInput(e: any): void {
       const { target } = e;
       const val = (target as HTMLInputElement).value;
       this.$emit('input', val);
       this.emitEvent('change', val, { e: InputEvent });
+
+      this.adjustTextareaHeight();
     },
+
     emitKeyDown(e: KeyboardEvent) {
       if (this.disabled) return;
       this.emitEvent('keydown', this.value, { e });
@@ -98,7 +114,7 @@ export default Vue.extend({
       {
         [CLASSNAMES.STATUS.disabled]: this.disabled,
         [CLASSNAMES.STATUS.focused]: this.focused,
-        [`${prefix}-resize-none`]: this.maxlength,
+        [`${prefix}-resize-none`]: typeof this.autosize === 'object',
       },
     ];
     return (
@@ -108,6 +124,8 @@ export default Vue.extend({
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           value={this.value}
           class={classes}
+          style={this.textareaStyle}
+          ref="refTextareaElem"
         ></textarea>
         {this.maxlength ? (
           <span class={`${name}__limit`}>{`${String(this.value)?.length || 0}/${this.maxlength}`}</span>
