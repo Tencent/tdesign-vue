@@ -114,7 +114,211 @@ exports[`Tag delete demo works fine 1`] = `
   class="tag-demo"
 >
   <div
-    class="tdesign-demo-block"
+    class="tag-block"
+  >
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+    >
+      标签一
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+    >
+      标签二
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+    >
+      标签三
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+    >
+      标签四
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+  </div>
+   
+  <div
+    class="tag-block light"
+  >
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--light t-tag--close"
+    >
+      标签一
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--light t-tag--close"
+    >
+      标签二
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--light t-tag--close"
+    >
+      标签三
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--light t-tag--close"
+    >
+      标签四
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+  </div>
+   
+  <div
+    class="tag-block plain"
+  >
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--plain t-tag--close"
+    >
+      标签一
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--plain t-tag--close"
+    >
+      标签二
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--plain t-tag--close"
+    >
+      标签三
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--plain t-tag--close"
+    >
+      标签四
+      <svg
+        class="t-icon t-icon-close"
+        version="1.1"
+        viewBox="0 0 1024 1024"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"
+        />
+      </svg>
+    </span>
+  </div>
+   
+  <div
+    class="tag-block"
   >
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -192,7 +396,7 @@ exports[`Tag delete demo works fine 1`] = `
   </div>
    
   <div
-    class="tdesign-demo-block editable"
+    class="tag-block editable"
   >
     <span
       class="t-tag t-tag--default t-size-m t-tag--dark"
