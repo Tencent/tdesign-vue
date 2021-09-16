@@ -1,7 +1,8 @@
 <template>
   <div>
-    <t-tooltip content="文字提示仅展示文本内容" :onVisibleChange="onVisibleChange">
+    <t-tooltip :onVisibleChange="onVisibleChange">
       <t-button variant="outline">带箭头文字提示</t-button>
+      <div slot="content">这是自定义的带箭头文字内容</div>
     </t-tooltip>
   </div>
 </template>

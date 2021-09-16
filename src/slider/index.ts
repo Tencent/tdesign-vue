@@ -1,11 +1,11 @@
 import _Slider from './slider';
 import withInstall from '../utils/withInstall';
-import { TdSliderProps, Marks } from './type';
+import { TdSliderProps, SliderMarks as _SliderMarks, SliderValue as _SliderValue } from './type';
 
 import './style';
 
 export const Slider = withInstall('Slider', _Slider);
 export type SliderProps = TdSliderProps;
-export type SliderMarks = Marks;
-export { SliderValue } from './type';
+export type SliderMarks = _SliderMarks;
+export type SliderValue = _SliderValue;
 export default Slider;

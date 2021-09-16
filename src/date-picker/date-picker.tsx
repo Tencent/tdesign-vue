@@ -88,8 +88,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         const vm: any = this;
         const {
-          tempValue, range, mode, isOpen, startText, endText, locales, selectedDates,
+          tempValue, range, mode, isOpen, startText, endText, locales, value: outValue,
         } = vm;
+        const selectedDates = vm.getDates(outValue);
         const selectedFmtDates: string[] = selectedDates.map((d: Date) => vm.formatDate(d));
 
         if (tempValue) {
@@ -121,6 +122,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         const vm: any = this;
         const { min, dateFormat } = vm;
+
         if (value) {
           if (String(value).length >= String(vm.formatDate(min || new Date())).length && dayjs(value, dateFormat)) {
             vm.tempValue = '';
@@ -291,7 +293,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     },
 
     dateClick(value: Date) {
-      // @todo add year range and month range
       let mode = this.range ? 'range' : this.mode;
 
       if (this.showTime) {
@@ -478,11 +479,11 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         min, max, disableDate, dateFormat,
       } = this;
       if (!disableDate) {
-        return false;
+        return true;
       }
       // 值类型为 Function 则表示返回值为 true 的日期会被禁用
       if (typeof disableDate === 'function') {
-        return disableDate(value);
+        return !disableDate(value);
       }
 
       // 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。
@@ -494,7 +495,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             isIncludes = true;
           }
         });
-        return isIncludes;
+        return !isIncludes;
       }
 
       // { before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。
@@ -503,7 +504,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         const compareMax = dayjs(new Date(max)).startOf('day');
 
         // check min
-        return !dayjs(value).isBetween(compareMin, compareMax, null, '[]');
+        return dayjs(value).isBetween(compareMin, compareMax, null, '[]');
       }
 
       // { from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。
@@ -513,7 +514,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         const compareMax = dayjs(new Date(to)).startOf('day');
 
         // check min
-        return dayjs(value).isBetween(compareMin, compareMax, null, '[]');
+        return !dayjs(value).isBetween(compareMin, compareMax, null, '[]');
       }
 
       return true;
@@ -521,6 +522,20 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     setDate(inputDate: any = '', triggerChange = false): void {
       if ((inputDate !== 0 && !inputDate) || (inputDate instanceof Array && inputDate.length === 0)) {
         return this.clear(triggerChange);
+      }
+
+      const selectedDates = this.getDates(inputDate);
+
+      this.selectedDates = selectedDates;
+      if (selectedDates.length > 0) {
+        const [start, end] = selectedDates;
+        this.start = start;
+        this.end = end || start;
+      }
+    },
+    getDates(inputDate: any = ''): Date[] {
+      if ((inputDate !== 0 && !inputDate) || (inputDate instanceof Array && inputDate.length === 0)) {
+        return [];
       }
 
       const format = this.dateFormat || '';
@@ -561,12 +576,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       });
       selectedDates.sort((a, b) => a.getTime() - b.getTime());
 
-      this.selectedDates = selectedDates;
-      if (selectedDates.length > 0) {
-        const [start, end] = selectedDates;
-        this.start = start;
-        this.end = end || start;
-      }
+      return selectedDates;
     },
     formatDate(date: Date, format = ''): string {
       let dateFormat = format || this.dateFormat || this.locales.format;
@@ -621,7 +631,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       value: range ? [start, end] : start,
       mode,
       firstDayOfWeek: 0,
-      disableDate: this.isEnabled,
+      disableDate: (d: Date) => !this.isEnabled(d),
       onChange: this.dateClick,
     };
     const panelComponent = range ? (

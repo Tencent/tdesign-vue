@@ -3657,7 +3657,9 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
   </div>
    
   <div>
-    日期: 2020-12-28T00:00:00.000Z
+    日期: [
+  "2020-12-28T00:00:00.000Z"
+]
   </div>
 </div>
 `;

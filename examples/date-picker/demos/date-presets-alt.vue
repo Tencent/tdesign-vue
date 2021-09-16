@@ -30,7 +30,7 @@ export default {
         今天: [dayjs()],
       },
       dateText: '日期',
-      selectedDates: dayjs().toISOString(),
+      selectedDates: [dayjs().toISOString()],
     };
   },
 };

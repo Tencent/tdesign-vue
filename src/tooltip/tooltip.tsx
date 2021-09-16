@@ -23,13 +23,11 @@ export default Vue.extend({
   },
   computed: {
     tooltipOverlayClassName(): ClassName {
-      const tmp = [
+      return [
         `${prefix}-tooltip`,
         { [`${prefix}-tooltip-${this.theme}`]: this.theme },
+        this.overlayClassName,
       ];
-      const oClassName = this.$attrs.overlayClassName as PopupProps['overlayClassName'];
-      if (oClassName instanceof Array) return oClassName.concat(tmp);
-      return oClassName ? tmp.concat(oClassName) : tmp;
     },
     innerPopupProps(): PopupProps {
       const r: PopupProps = {

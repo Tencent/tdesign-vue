@@ -1,6 +1,24 @@
 <template>
   <div class="tag-demo">
-    <div class="tdesign-demo-block">
+    <div class="tag-block">
+      <t-tag theme="primary" closable>标签一</t-tag>
+      <t-tag theme="success" closable>标签二</t-tag>
+      <t-tag theme="warning" closable>标签三</t-tag>
+      <t-tag theme="danger" closable>标签四</t-tag>
+    </div>
+    <div class="tag-block light">
+      <t-tag theme="primary" variant="light" closable>标签一</t-tag>
+      <t-tag theme="success" variant="light" closable>标签二</t-tag>
+      <t-tag theme="warning" variant="light" closable>标签三</t-tag>
+      <t-tag theme="danger" variant="light" closable>标签四</t-tag>
+    </div>
+    <div class="tag-block plain">
+      <t-tag variant="plain" theme="primary" closable>标签一</t-tag>
+      <t-tag variant="plain" theme="success" closable>标签二</t-tag>
+      <t-tag variant="plain" theme="warning" closable>标签三</t-tag>
+      <t-tag variant="plain" theme="danger" closable>标签四</t-tag>
+    </div>
+    <div class="tag-block">
       <t-tag
         v-for="(tag, index) in tags"
         :key="index"
@@ -15,7 +33,7 @@
         {{ tag.name }}
       </t-tag>
     </div>
-    <div class="tdesign-demo-block editable">
+    <div class="tag-block editable">
       <t-tag v-if="!inputVisible" @click="handleClickAdd">
         <t-icon-add />
         添加标签
@@ -33,6 +51,7 @@
 </template>
 
 <script>
+/* eslint-disable import/no-extraneous-dependencies */
 import TIconAdd from '@tencent/tdesign-vue/lib/icon/add';
 import TIconDiscount from '@tencent/tdesign-vue/lib/icon/discount';
 import Vue from 'vue';
@@ -78,7 +97,7 @@ export default {
       console.log(event);
     },
     handleInputEnter(val) {
-      if (val) {
+      if (val && !this.tags.some((item) => item.name === val)) {
         this.tags.push({ name: val, type: 'default', showClose: true });
       }
       this.inputVisible = false;
@@ -94,8 +113,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.tag-demo .tdesign-demo-block {
+.tag-block {
   display: flex;
+  margin-bottom: 30px;
   > * {
     margin-right: 30px;
   }
