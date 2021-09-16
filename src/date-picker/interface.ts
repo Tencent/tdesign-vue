@@ -88,7 +88,7 @@ export interface DatePickerMethods {
   createPopover: () => void;
   getPlaceholderText(): string;
   handleTimePick(col: EPickerCols, time: number): any;
-  getDisabledDate(): Function;
+  getDates(inputDate: any): Date[];
 }
 
 export interface DatePickerComputed {
