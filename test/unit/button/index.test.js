@@ -38,14 +38,11 @@ describe('Button', () => {
       expect(wrapper).toMatchSnapshot();
     });
     it(':loading', () => {
-      const fn = jest.fn();
       const wrapper = mount({
         render() {
           return <Button loading={true}>text</Button>;
         },
       });
-      wrapper.trigger('click');
-      expect(fn).not.toHaveBeenCalled();
       expect(wrapper).toMatchSnapshot();
     });
     it(':block', () => {
