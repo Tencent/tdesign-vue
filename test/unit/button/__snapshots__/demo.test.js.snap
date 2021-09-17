@@ -6,251 +6,752 @@ exports[`Button base demo works fine 1`] = `
     class="tdesign-demo-block"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        填充按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        描边按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        虚框按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-default"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        文字按钮
-      </span>
-    </button>
-  </div>
-   
-  <div
-    class="tdesign-demo-block"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        填充按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        描边按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        虚框按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        文字按钮
-      </span>
-    </button>
-  </div>
-   
-  <div
-    class="tdesign-demo-block"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-success"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        填充按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-success"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        描边按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-success"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        虚框按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-success"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        文字按钮
-      </span>
-    </button>
-  </div>
-   
-  <div
-    class="tdesign-demo-block"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-warning"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        填充按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-warning"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        描边按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-warning"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        虚框按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-warning"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        文字按钮
-      </span>
-    </button>
-  </div>
-   
-  <div
-    class="tdesign-demo-block"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-danger"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        填充按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-danger"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        描边按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-dashed t-button--theme-danger"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        虚框按钮
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-danger"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        文字按钮
-      </span>
-    </button>
-  </div>
-   
-  <div
-    class="tdesign-demo-block"
-  >
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
+      class="t-button t-size-m t-button--variant-base t-button--theme-default t-is-disabled t-is-loading"
+      disabled="disabled"
       type="button"
     >
       <div
-        class="t-loading t-size-m t-loading-lock v-transfer-dom"
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        填充按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        描边按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
+    </button>
+  </div>
+   
+  <div
+    class="tdesign-demo-block"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        填充按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        描边按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
+    </button>
+  </div>
+   
+  <div
+    class="tdesign-demo-block"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-success t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        填充按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-success t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        描边按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-success t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-success t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
+    </button>
+  </div>
+   
+  <div
+    class="tdesign-demo-block"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-warning t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        填充按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-warning t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        描边按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-warning t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-warning t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
+    </button>
+  </div>
+   
+  <div
+    class="tdesign-demo-block"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-danger t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        填充按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-danger t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        描边按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-danger t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        虚框按钮
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-danger t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        文字按钮
+      </span>
+    </button>
+  </div>
+   
+  <div
+    class="tdesign-demo-block"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
+    >
+      <div
+        class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
       >
         <svg
           class="t-loading__gradient t-icon-loading"
@@ -473,11 +974,12 @@ exports[`Button loading demo works fine 1`] = `
   class="button-base"
 >
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
+    disabled="disabled"
     type="button"
   >
     <div
-      class="t-loading t-size-m t-loading-lock v-transfer-dom"
+      class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
     >
       <svg
         class="t-loading__gradient t-icon-loading"
@@ -510,11 +1012,12 @@ exports[`Button loading demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-loading"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-is-loading"
+    disabled="disabled"
     type="button"
   >
     <div
-      class="t-loading t-size-m t-loading-lock v-transfer-dom"
+      class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
     >
       <svg
         class="t-loading__gradient t-icon-loading"

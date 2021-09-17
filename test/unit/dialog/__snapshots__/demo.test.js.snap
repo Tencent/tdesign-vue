@@ -68,12 +68,13 @@ exports[`Dialog async demo works fine 1`] = `
               </span>
             </button>
             <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading t-dialog-confirm"
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading t-dialog-confirm"
+              disabled="disabled"
               theme="primary"
               type="button"
             >
               <div
-                class="t-loading t-size-m t-loading-lock v-transfer-dom"
+                class="t-loading t-size-m t-loading-lock t-loading--inheritColor v-transfer-dom"
               >
                 <svg
                   class="t-loading__gradient t-icon-loading"
