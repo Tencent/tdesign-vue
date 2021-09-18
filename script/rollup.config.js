@@ -146,7 +146,7 @@ const cssConfig = {
 };
 /** @type {import('rollup').RollupOptions} */
 const esConfig = {
-  input: inputList,
+  input: inputList.concat('!src/index-lib.ts'),
   // 为了保留 style/css.js
   treeshake: false,
   external: externalDeps.concat(externalPeerDeps),
@@ -162,7 +162,7 @@ const esConfig = {
 
 /** @type {import('rollup').RollupOptions} */
 const esmConfig = {
-  input: inputList,
+  input: inputList.concat('!src/index-lib.ts'),
   // 为了保留 style/index.js
   treeshake: false,
   external: externalDeps.concat(externalPeerDeps),
