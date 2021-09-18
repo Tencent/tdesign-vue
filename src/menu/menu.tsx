@@ -1,11 +1,12 @@
 import {
-  defineComponent, ref, computed, provide, watchEffect, watch,
+  defineComponent, ref, computed, provide, watchEffect, watch, onMounted,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './props';
 import { MenuValue } from './type';
 import { TdMenuInterface } from './const';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import VMenu from './v-menu';
 
 const name = `${prefix}-menu`;
 
@@ -19,6 +20,7 @@ export default defineComponent({
   setup(props, ctx) {
     const mode = ref(props.expandType);
     const theme = computed(() => props.theme);
+    const isMutex = computed(() => props.expandMutex);
     const menuClass = computed(() => [
       `${prefix}-default-menu`,
       `${prefix}-menu-mode__${mode.value}`,
@@ -37,8 +39,9 @@ export default defineComponent({
       height: '100%',
       width: props.collapsed ? '64px' : expandWidth,
     }));
-    const activeIndexValue = ref(props.defaultValue || props.value);
-    const expandedArray = ref(props.expanded || []);
+    const activeValue = ref(props.defaultValue || props.value);
+    const activeValues = ref([]);
+    const expandValues = ref(props.expanded || []);
     const deliver = (evt: string) => {
       const func = `on${evt[0].toUpperCase() + evt.slice(1)}`;
       return (val: any) => {
@@ -57,36 +60,22 @@ export default defineComponent({
       emitCollapse(mode.value);
     });
 
+    const vMenu = new VMenu({ isMutex: isMutex.value, expandValues: expandValues.value });
     provide<TdMenuInterface>('TdMenu', {
-      activeIndexValue,
-      expandedArray,
+      activeValue,
+      activeValues,
+      expandValues,
       mode,
       theme,
       isHead: false,
-      select: (val: MenuValue) => {
-        emitChange(val);
+      vMenu,
+      select: (value: MenuValue) => {
+        activeValue.value = value;
+        emitChange(value);
       },
-      open: (val: MenuValue) => {
-        const index = expandedArray.value.indexOf(val);
-
-        if (props.expandMutex || mode.value === 'popup') {
-          expandedArray.value.splice(0, 1);
-          if (index === -1) {
-            expandedArray.value.push(val);
-            emitExpand(expandedArray.value);
-            return true;
-          }
-        } else {
-          if (index > -1) {
-            expandedArray.value.splice(index, 1);
-            emitExpand(expandedArray.value);
-            return true;
-          }
-          expandedArray.value.push(val);
-          emitExpand(expandedArray.value);
-          return false;
-        }
-        emitExpand(expandedArray.value);
+      open: (value: MenuValue) => {
+        expandValues.value = vMenu.expand(value);
+        emitExpand(expandValues.value);
       },
     });
 
@@ -94,24 +83,29 @@ export default defineComponent({
     watch(
       () => props.expanded,
       (value) => {
-        expandedArray.value = value;
+        expandValues.value = value;
       },
     );
     watch(
-      () => props.value,
+      activeValue,
       (value) => {
-        activeIndexValue.value = value;
+        activeValue.value = value;
+        activeValues.value = vMenu.select(value);
       },
     );
 
-    const openedNames = computed(() => props.expanded ? [...props.expanded] : []);
+    // timelifes
+    onMounted(() => {
+      activeValues.value = vMenu.select(activeValue.value);
+    });
 
     return {
       styles,
       menuClass,
       innerClasses,
-      openedNames,
-      expandedArray,
+      activeValue,
+      activeValues,
+      expandValues,
     };
   },
   render() {

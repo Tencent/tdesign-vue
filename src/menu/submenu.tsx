@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import {
-  defineComponent, computed, inject, ref, provide, onMounted,
+  defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import TIconChevronDown from '../icon/chevron-down';
+import TIconChevronRight from '../icon/chevron-right';
 import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
 
@@ -13,29 +13,30 @@ const name = `${prefix}-submenu`;
 export default defineComponent({
   name,
   components: {
-    TIconChevronDown,
+    TIconChevronRight,
   },
   directives: {
     ripple: Ripple,
   },
   props,
   setup(props, ctx) {
+    const menu = inject<TdMenuInterface>('TdMenu');
     const {
-      theme, activeIndexValue, expandedArray, mode, isHead, selectSubMenu, open,
-    } = inject<TdMenuInterface>('TdMenu');
+      theme, activeValues, expandValues, mode, isHead, selectSubMenu, open,
+    } = menu;
+    const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
+
     const menuItems = ref([]); // 因composition-api的缺陷，不用reactive， 详见：https://github.com/vuejs/composition-api/issues/637
-    const isActive = computed(() => {
-      const childIsActive = menuItems.value.some((i) => i.value === activeIndexValue.value);
-      return activeIndexValue.value === props.value || childIsActive;
-    });
+    const isActive = computed(() => activeValues.value.indexOf(props.value) > -1);
     const popupVisible = ref(false);
     const rippleColor = computed(() => theme.value === 'light' ? '#E7E7E7' : '#383838');
     const isOpen = computed(() => {
       if (mode.value === 'popup') {
         return popupVisible.value;
       }
-      return expandedArray ? expandedArray.value.includes(props.value) : false;
+      return expandValues ? expandValues.value.includes(props.value) : false;
     });
+    const isNested = ref(false); // 是否嵌套
     const classes = computed(() => [
       `${prefix}-submenu`,
       {
@@ -91,9 +92,13 @@ export default defineComponent({
 
     // provide
     provide<TdSubMenuInterface>('TdSubmenu', {
+      value: props.value,
       hasIcon: !!ctx.slots.icon,
       addMenuItem: (item: TdMenuItem) => {
         menuItems.value.push(item);
+        if (submenu) {
+          submenu.addMenuItem(item);
+        }
       },
     });
 
@@ -103,6 +108,10 @@ export default defineComponent({
           selectSubMenu(menuItems.value);
         }
       }
+
+      menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
+      const instance = getCurrentInstance();
+      isNested.value = instance.parent.vnode?.tag.indexOf('submenu') > -1;
 
       // adjust popup height
       if (ctx.refs.popup) {
@@ -118,6 +127,7 @@ export default defineComponent({
       menuItems,
       mode,
       isHead,
+      isNested,
       classes,
       subClass,
       arrowClass,
@@ -140,12 +150,14 @@ export default defineComponent({
         {renderContent(this as Vue, 'default', 'content')}
         </ul>,
       ];
+      const arrowIcon = <svg class={this.arrowClass} style={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
+      </svg>;
+
       const popupSubmenu = [
         <div class={this.submenuClass}>
           {renderTNodeJSX(this as Vue, 'title')}
-          <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-          </svg>
+          {arrowIcon}
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
@@ -158,8 +170,16 @@ export default defineComponent({
     renderSubmenu() {
       const hasContent = this.$slots.content || this.$slots.default;
       const icon = renderTNodeJSX(this, 'icon');
+      const child = renderContent(this, 'default', 'content');
+      let paddingLeft = 44;
+
+      if (this.$parent.$vnode?.tag.indexOf('submenu') > -1) {
+        paddingLeft += 16;
+      }
+
+      const needRotate = this.mode === 'popup' && this.isNested;
       const svgArrow = (
-        <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
         </svg>);
       const normalSubmenu = [
@@ -168,8 +188,8 @@ export default defineComponent({
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
           {hasContent && svgArrow}
         </div>,
-        <ul class={this.subClass} >
-          {renderContent(this, 'default', 'content')}
+        <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
+          {child}
         </ul>,
       ];
       const popupSubmenu = [
@@ -180,7 +200,7 @@ export default defineComponent({
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
-            {renderContent(this, 'default', 'content')}
+            {child}
           </ul>
         </div>,
       ];

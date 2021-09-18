@@ -16,7 +16,7 @@ export default defineComponent({
   setup(props, ctx) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
-    const active = computed(() => menu.activeIndexValue.value === props.value);
+    const active = computed(() => menu.activeValue.value === props.value);
     const classes = computed(() => [
       `${prefix}-menu__item`,
       {
@@ -53,6 +53,8 @@ export default defineComponent({
 
     // lifetimes
     onMounted(() => {
+      menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
+
       if (submenu) {
         submenu.addMenuItem({
           value: props.value,
