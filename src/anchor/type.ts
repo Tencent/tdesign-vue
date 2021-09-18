@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-08 19:33:01
  * */
 
 import { AffixProps } from '../affix';
@@ -22,6 +24,10 @@ export interface TdAnchorProps {
    */
   container?: ScrollContainer;
   /**
+   * 用于自定义选中项左侧游标
+   */
+  cursor?: TNode;
+  /**
    * 组件尺寸，small(120px)，medium(200px)，large(320px)
    * @default medium
    */
@@ -39,7 +45,7 @@ export interface TdAnchorProps {
    * 锚点被点击时触发
    */
   onClick?: (link: { href: string; title: string; e: MouseEvent }) => void;
-}
+};
 
 export interface TdAnchorTargetProps {
   /**
@@ -52,7 +58,7 @@ export interface TdAnchorTargetProps {
    * @default div
    */
   tag?: string;
-}
+};
 
 export interface TdAnchorItemProps {
   /**
@@ -70,4 +76,4 @@ export interface TdAnchorItemProps {
    * @default ''
    */
   title?: string | TNode;
-}
+};

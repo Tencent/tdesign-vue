@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-08 19:33:01
  * */
 
-import { PropType } from 'vue';
 import { TdAnchorProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 透传 Affix 组件属性，即让 Anchor 组件支持所有 Affix 组件特性 */
@@ -20,6 +22,10 @@ export default {
   container: {
     type: [String, Function] as PropType<TdAnchorProps['container']>,
     default: () => (() => window),
+  },
+  /** 用于自定义选中项左侧游标 */
+  cursor: {
+    type: Function as PropType<TdAnchorProps['cursor']>,
   },
   /** 组件尺寸，small(120px)，medium(200px)，large(320px) */
   size: {
