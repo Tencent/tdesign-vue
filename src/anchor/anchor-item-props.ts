@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-09-08 19:33:01
  * */
 
+import { TdAnchorItemProps } from '../anchor/type';
 import { PropType } from 'vue';
-import { TdAnchorItemProps } from './type';
 
 export default {
   /** 锚点链接, 如果是 hash 模式需要加上当前 path */

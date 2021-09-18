@@ -1,4 +1,5 @@
-import Vue, { VueConstructor } from 'vue';
+import Vue, { VueConstructor, VNode } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
@@ -6,6 +7,7 @@ import {
   on, off, getScroll, scrollTo, getScrollContainer,
 } from '../utils/dom';
 import props from './props';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 import Affix from '../affix';
 
@@ -19,7 +21,9 @@ export interface Anchor extends Vue {
 export default (Vue as VueConstructor<Anchor>).extend({
   name,
 
-  props: { ...props },
+  props: {
+    ...props,
+  },
   provide(): any {
     return {
       tAnchor: this,
@@ -29,7 +33,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     return {
       links: [] as string[],
       active: '',
-      activeLineStyle: false as boolean | { top: string; height: string },
+      activeLineStyle: false as boolean | { top: string; height: string; opacity: number; },
     };
   },
   watch: {
@@ -118,6 +122,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
       this.activeLineStyle = {
         top: `${top}px`,
         height: `${height}px`,
+        opacity: 1,
       };
     },
     /**
@@ -190,6 +195,10 @@ export default (Vue as VueConstructor<Anchor>).extend({
       }
       this.setCurrentActiveLink(active);
     },
+    renderCursor() {
+      const titleContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'cursor');
+      return titleContent || <div class="cursor"></div>;
+    },
   },
 
   async mounted() {
@@ -217,7 +226,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
 
     const content = (
       <div class={className}>
-        <div class={`${name}_line`}><div class="point" style={activeLineStyle}></div></div>
+        <div class={`${name}_line`}>
+          <div class="cursor-wrapper" style={activeLineStyle}>
+            {this.renderCursor()}
+          </div>
+        </div>
         {children && children(null)}
       </div>
     );
