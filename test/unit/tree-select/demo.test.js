@@ -2,6 +2,8 @@ import { mount } from '@vue/test-utils';
 import base from '@/examples/tree-select/demos/base.vue';
 import multiple from '@/examples/tree-select/demos/multiple.vue';
 import filterable from '@/examples/tree-select/demos/filterable.vue';
+import valuetype from '@/examples/tree-select/demos/valuetype.vue';
+import props from '@/examples/tree-select/demos/props.vue';
 import lazy from '@/examples/tree-select/demos/lazy.vue';
 import prefix from '@/examples/tree-select/demos/prefix.vue';
 
@@ -17,6 +19,14 @@ describe('TreeSelect', () => {
   });
   it('filterable demo works fine', () => {
     const wrapper = mount(filterable);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('valuetype demo works fine', () => {
+    const wrapper = mount(valuetype);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('props demo works fine', () => {
+    const wrapper = mount(props);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('lazy demo works fine', () => {
