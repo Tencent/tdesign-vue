@@ -78,7 +78,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         `${prefix}-select-right-icon`,
         `${prefix}-fake-arrow`,
         {
-          [`${prefix}-fake-arrow--active`]: this.visible,
+          [`${prefix}-fake-arrow--active`]: this.visible && !this.disabled,
         },
       ];
     },

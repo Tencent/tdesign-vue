@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import base from '@/examples/anchor/demos/base.vue';
-import nested from '@/examples/anchor/demos/nested.vue';
+import multiple from '@/examples/anchor/demos/multiple.vue';
 import target from '@/examples/anchor/demos/target.vue';
 
 // unit test for component in examples.
@@ -19,7 +19,7 @@ describe('Anchor', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('bounds demo works fine', () => {
-    const wrapper = mount(nested, props);
+    const wrapper = mount(multiple, props);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('target demo works fine', () => {

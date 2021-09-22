@@ -93,7 +93,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         `${name}-right-icon`,
         `${prefix}-fake-arrow`,
         {
-          [`${prefix}-fake-arrow--active`]: visible,
+          [`${prefix}-fake-arrow--active`]: visible && !this.disabled,
         }];
     },
     tipsClass(): ClassName {
@@ -285,7 +285,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     onOptionClick(value: string | number, e: MouseEvent) {
       if (this.value !== value) {
         if (this.multiple) {
-          const tempValue = this.value instanceof Array ? this.value : [];
+          const tempValue = this.value instanceof Array ? [].concat(this.value) : [];
           if (this.labelInValue) {
             const index = tempValue.map((item) => get(item, this.realValue)).indexOf(value);
             if (index > -1) {
@@ -506,9 +506,12 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                   size={size}
                   closable={!item.disabled && !disabled}
                   disabled={disabled}
+                  style="max-width: 100%;"
+                  maxWidth="100%"
+                  title={get(item, realLabel)}
                   onClose={this.removeTag.bind(null, index)}
                 >
-                  { get(item, realLabel) === '' ? get(item, realValue) : get(item, realLabel) }
+                  { get(item, realLabel) }
                 </tag>
               ))
             }

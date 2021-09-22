@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, provide, ref, reactive, watch,
+  defineComponent, computed, provide, ref, reactive, watch, onMounted,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './head-menu-props';
@@ -7,6 +7,7 @@ import { MenuValue } from './type';
 import { TdMenuInterface, TdMenuItem } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import VMenu from './v-menu';
 
 const name = `${prefix}-head-menu`;
 
@@ -19,8 +20,9 @@ export default defineComponent({
   },
   components: { Tabs, TabPanel },
   setup(props, ctx) {
-    const activeIndexValue = ref(props.defaultValue || props.value || '');
-    const expandedArray = ref(props.defaultExpanded || props.expanded || []);
+    const activeValue = ref(props.defaultValue || props.value);
+    const activeValues = ref([]);
+    const expandValues = ref(props.defaultExpanded || props.expanded || []);
     const theme = computed(() => props.theme);
     const menuClass = computed(() => [
       `${prefix}-menu`,
@@ -28,7 +30,6 @@ export default defineComponent({
       `${prefix}-menu-mode__${props.expandType}`,
       `${prefix}-menu--${props.theme}`,
     ]);
-    const openedNames = computed(() => props.expanded);
     const mode = ref(props.expandType);
     const submenu = reactive([]);
     const deliver = (evt: string) => {
@@ -42,59 +43,67 @@ export default defineComponent({
     };
     const emitChange = deliver('change');
     const emitExpand = deliver('expand');
+    const vMenu = new VMenu({ isMutex: true, expandValues: expandValues.value });
 
     provide<TdMenuInterface>('TdMenu', {
       mode,
       theme,
+      vMenu,
       isHead: true,
-      expandedArray,
-      activeIndexValue,
-      select: (val: MenuValue) => {
-        emitChange(val);
+      expandValues,
+      activeValue,
+      activeValues,
+      select: (value: MenuValue) => {
+        activeValue.value = value;
+        emitChange(value);
       },
       selectSubMenu: (menuItems: TdMenuItem[]) => {
         submenu.length = 0;
         submenu.push(...menuItems);
       },
-      open: (val: MenuValue) => {
-        const index = expandedArray.value.indexOf(val);
+      open: (value: MenuValue) => {
+        const index = expandValues.value.indexOf(value);
 
-        expandedArray.value.splice(0, 1);
+        expandValues.value.splice(0, 1);
         if (index === -1) {
-          expandedArray.value.push(val);
-          emitExpand(expandedArray.value);
+          expandValues.value.push(value);
+          emitExpand(expandValues.value);
           return true;
         }
-        emitExpand(expandedArray.value);
+        emitExpand(expandValues.value);
         return false;
       },
     });
 
     // methods
-    const handleTabChange = (val: MenuValue) => {
-      emitChange(val);
+    const handleTabChange = (value: MenuValue) => {
+      emitChange(value);
     };
 
     // watch
     watch(
       () => props.expanded,
       (value) => {
-        expandedArray.value = value;
+        expandValues.value = value;
       },
     );
     watch(
-      () => props.value,
-      (value) => {
-        activeIndexValue.value = value;
+      () => props.value, (value) => {
+        activeValue.value = value;
+        activeValues.value = vMenu.select(value);
       },
     );
+
+    onMounted(() => {
+      activeValues.value = vMenu.select(activeValue.value);
+    });
 
     return {
       mode,
       menuClass,
-      openedNames,
-      expandedArray,
-      activeIndexValue,
+      expandValues,
+      activeValue,
+      activeValues,
       submenu,
       handleTabChange,
     };
@@ -105,7 +114,7 @@ export default defineComponent({
       return (
         <ul class={[`${prefix}-head-menu__submenu`, `${prefix}-submenu`]}>
           {
-            <t-tabs value={this.activeIndexValue} onChange={this.handleTabChange}>
+            <t-tabs value={this.activeValue} onChange={this.handleTabChange}>
               { this.submenu.map((item) => (
                 <t-tab-panel value={item.value} label={item.label[0].text} />
               ))}

@@ -4,7 +4,8 @@ import { Submenu } from '@/src/menu';
 
 const Menu = {
   theme: ref('light'),
-  activeIndexValue: ref(''),
+  activeValue: ref(''),
+  activeValues: ref([]),
   mode: ref('normal'),
 };
 

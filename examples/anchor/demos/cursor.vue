@@ -1,6 +1,9 @@
 <template>
   <div class='anchor-demo'>
-    <t-anchor size="small">
+    <t-anchor :bounds="150">
+      <template #cursor>
+        <div class="test-cursor"></div>
+      </template>
       <t-anchor-item href="#基础锚点" title="基础锚点"></t-anchor-item>
       <t-anchor-item href="#多级锚点" title="多级锚点"></t-anchor-item>
       <t-anchor-item href="#指定容器锚点" title="指定容器锚点"></t-anchor-item>
@@ -17,8 +20,32 @@ export default {};
   border: 1px solid transparent;
   padding: 20px;
   margin: -20px;
+
+  .test-cursor {
+    width: 10px;
+    height: 10px;
+    background-color: #0052D9;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -5px;
+  }
 }
-.anchor-demo:target {
-  border-color: #1890ff;
-}
+</style>
+
+<style>
+/* 全局修改 */
+/* .t-anchor .cursor-wrapper .cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #0052D9;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -5px;
+  top: 50%;
+  margin-top: -5px;
+} */
 </style>

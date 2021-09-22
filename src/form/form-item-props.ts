@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-11 21:51:53
+ * updated at 2021-09-22 10:58:18
  * */
 
 import { TdFormItemProps } from '../form/type';
@@ -30,6 +30,10 @@ export default {
     validator(val: TdFormItemProps['labelAlign']): boolean {
       return ['left', 'right', 'top'].includes(val);
     },
+  },
+  /** 可以整体设置标签宽度，优先级高于 Form.labelWidth */
+  labelWidth: {
+    type: [String, Number] as PropType<TdFormItemProps['labelWidth']>,
   },
   /** 表单字段名称 */
   name: {

@@ -3,7 +3,6 @@
     <t-form
       :data="formData"
       ref="form"
-      :labelWidth="80"
       @reset="onReset"
       @submit="onSubmit"
       :colon="true"
