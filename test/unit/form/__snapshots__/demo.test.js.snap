@@ -10,7 +10,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -20,7 +20,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"
@@ -43,7 +43,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -53,7 +53,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"
@@ -76,7 +76,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -86,7 +86,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"
@@ -141,7 +141,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -151,7 +151,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"
@@ -223,7 +223,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -233,7 +233,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"
@@ -258,7 +258,7 @@ exports[`Form base demo works fine 1`] = `
     >
       <div
         class="t-form__label t-form__label--right"
-        style="width: 80px;"
+        style="width: 100px;"
       >
         <label
           for=""
@@ -266,7 +266,7 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 80px;"
+        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls--content"

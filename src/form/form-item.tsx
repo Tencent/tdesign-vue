@@ -3,6 +3,7 @@ import { NormalizedScopedSlot } from 'vue/types/vnode';
 import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
+import isNil from 'lodash/isNil';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
@@ -65,8 +66,8 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     labelClasses(): ClassName {
       const parent = this.form;
-      const labelAlign = parent && parent.labelAlign;
-      const labelWidth = parent && parent.labelWidth;
+      const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
+      const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
 
       return [
         CLASS_NAMES.label,
@@ -93,11 +94,10 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     contentStyle(): Styles {
       const parent = this.form;
-      const layout = parent && parent.layout;
-      const labelAlign = parent && parent.labelAlign;
-      const labelWidth = parent && parent.labelWidth;
+      const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
+      const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
       let contentStyle = {};
-      if (labelWidth && labelAlign !== 'top' && layout !== 'inline') {
+      if (labelWidth && labelAlign !== 'top') {
         if (typeof labelWidth === 'number') {
           contentStyle = { marginLeft: `${labelWidth}px` };
         } else {
@@ -183,8 +183,8 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     getLabel(): TNodeReturnValue {
       const parent = this.form;
-      const labelWidth = parent && parent.labelWidth;
-      const labelAlign = parent && parent.labelAlign;
+      const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
+      const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
       if (Number(labelWidth) === 0) return;
 
       let labelStyle = {};
