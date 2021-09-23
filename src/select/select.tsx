@@ -328,8 +328,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
       const val = this.value[index];
       const removeOption = this.realOptions.filter((item) => get(item, this.realValue) === val);
-      this.value instanceof Array && this.value.splice(index, 1);
-      this.emitChange(this.value);
+      const tempValue = this.value instanceof Array ? [].concat(this.value) : [];
+      tempValue.splice(index, 1);
+      this.emitChange(tempValue);
       emitEvent<Parameters<TdSelectProps['onRemove']>>(this, 'remove', { value: val, data: removeOption[0], e });
     },
     hideMenu() {
