@@ -16,7 +16,7 @@ import IconCloseCircleFilled from '../icon/close-circle-filled';
 import IconLoading from '../icon/loading';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
-import Input, { InputValue } from '../input';
+import Input from '../input';
 
 import CLASSNAMES from '../utils/classnames';
 import props from './props';

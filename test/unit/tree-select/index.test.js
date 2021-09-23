@@ -282,7 +282,6 @@ describe('TreeSelect', () => {
       expect(wrapper).toMatchSnapshot();
     });
     it('<loadingText>', () => {
-      const value = 'shenzhen';
       const wrapper = mount({
         render() {
           return (
@@ -313,6 +312,7 @@ describe('TreeSelect', () => {
   // test exposure function
   describe('function', () => {
     it(':empty', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const renderEmpty = (h) => (<div>no data</div>);
       const wrapper = mount({
         render() {
@@ -322,6 +322,7 @@ describe('TreeSelect', () => {
       expect(wrapper).toMatchSnapshot();
     });
     it(':loadingText', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const renderLoadingText = (h) => (<div>data loading</div>);
       const wrapper = mount({
         render() {
@@ -331,6 +332,7 @@ describe('TreeSelect', () => {
       expect(wrapper).toMatchSnapshot();
     });
     it(':prefixIcon', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const renderPrefixIcon = (h) => (<div><i>icon</i></div>);
       const wrapper = mount({
         render() {
