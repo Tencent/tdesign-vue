@@ -1,5 +1,3 @@
-import { VNode } from 'vue';
-
 type MenuValue = string | number;
 type MenuNode = MenuValue | VMenuData;
 
