@@ -234,8 +234,6 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       return opNode;
     },
     renderItem(createElement: CreateElement): Array<VNode> {
-      const { node } = this;
-
       const itemNodes: Array<VNode> = [];
       const iconNode = this.renderIcon(createElement);
       // 渲染连线排在渲染图标之后，是为了确认图标是否存在

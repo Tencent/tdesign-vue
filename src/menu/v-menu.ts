@@ -35,9 +35,9 @@ const getTreeSameParentNodes = (node: VMenuData, val: MenuValue): VMenuData[] =>
 };
 
 export default class VMenu {
-  data: VMenuData = null
+  data: VMenuData = null;
 
-  cache: Set<VMenuData> = new Set()
+  cache: Set<VMenuData> = new Set();
 
   isMutex = false;
 

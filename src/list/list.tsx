@@ -1,4 +1,4 @@
-import Vue, { VNode, PropType } from 'vue';
+import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import props from './props';

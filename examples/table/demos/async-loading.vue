@@ -85,7 +85,7 @@ export default {
     },
   },
   methods: {
-    customLoadingNode(h) {
+    customLoadingNode() {
       return <div class='t-table--loading-async'>这是自定义加载状态和内容</div>;
     },
     onAsyncLoadingClick({ status }) {

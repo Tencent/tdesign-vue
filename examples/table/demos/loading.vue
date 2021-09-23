@@ -105,7 +105,7 @@ export default {
     };
   },
   methods: {
-    renderLoading(h) {
+    renderLoading() {
       return <div class='t-table--loading-message'>这里使用渲染函数定义加载状态</div>;
     },
   },
