@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-22 10:58:18
+ * updated at 2021-09-23 19:46:09
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -88,6 +88,10 @@ export interface TdFormProps<FormData extends Data = Data> {
 
 /** 组件实例方法 */
 export interface FormInstanceFunctions<FormData extends Data = Data> {
+  /**
+   * 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果
+   */
+  clearValidate?: (fields?: Array<string>) => void;
   /**
    * 重置表单，表单里面没有重置按钮时可以使用该方法（`<button type="reset" />`）
    */

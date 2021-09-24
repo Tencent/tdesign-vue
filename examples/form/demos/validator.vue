@@ -44,7 +44,8 @@
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button  theme="default" variant="base" type="reset">重置</t-button>
+        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
+        <t-button theme="default" variant="base" @click="handleClear">清除校验结果</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -121,6 +122,9 @@ export default {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
       }
+    },
+    handleClear() {
+      this.$refs.form.clearValidate();
     },
   },
 };
