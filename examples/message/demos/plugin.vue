@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>组件实例方法调用</p>
+    <p>插件调用</p>
     <br>
     <div class='t-demo-message-duration'>
       <t-button @click="$message.info('用户表示普通操作信息提示', 1000)">info</t-button>
@@ -13,7 +13,7 @@
     </div>
     <br><br>
 
-    <p>插件方法调用</p>
+    <p>函数式调用</p>
     <br>
     <div class='t-demo-message-theme'>
       <t-button @click="MessagePlugin.info('用户表示普通操作信息提示')">info</t-button>

@@ -20,9 +20,11 @@
 
 {{ placement }}
 
-### 组件实例方法 与 插件调用
+### 插件调用 与 函数式调用
 
-除了常规的组件使用，还可以通过组件实例方法`$message.success`和插件方式`MessagePlugin.success`使用
+除了常规的组件使用，还可以通过插件调用，如`$message.info('信息提示',1000)`或`$message('warning', '用户表示操作引起一定后果')`等;
+
+也可通过函数式调用，如`MessagePlugin.info('信息提示')`或`MessagePlugin('warning', { content: '用户表示操作引起一定后果' })`等
 
 {{ plugin }}
 
