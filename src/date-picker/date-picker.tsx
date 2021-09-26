@@ -481,6 +481,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       if (!disableDate) {
         return true;
       }
+      let isEnabled = true;
       // 值类型为 Function 则表示返回值为 true 的日期会被禁用
       if (typeof disableDate === 'function') {
         return !disableDate(value);
@@ -498,26 +499,29 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         return !isIncludes;
       }
 
-      // { before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。
-      if (max && min) {
-        const compareMin = dayjs(new Date(min)).startOf('day');
-        const compareMax = dayjs(new Date(max)).startOf('day');
-
-        // check min
-        return dayjs(value).isBetween(compareMin, compareMax, null, '[]');
-      }
-
       // { from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。
       const { from, to } = disableDate;
       if (from && to) {
-        const compareMin = dayjs(new Date(from)).startOf('day');
-        const compareMax = dayjs(new Date(to)).startOf('day');
+        const compareMin = dayjs(new Date(from));
+        const compareMax = dayjs(new Date(to));
 
-        // check min
-        return !dayjs(value).isBetween(compareMin, compareMax, null, '[]');
+        return !dayjs(value).isBetween(compareMin, compareMax, this.mode, '[]');
       }
 
-      return true;
+      // { before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。
+      if (max && min) {
+        const compareMin = dayjs(new Date(min));
+        const compareMax = dayjs(new Date(max));
+
+        isEnabled = dayjs(value).isBetween(compareMin, compareMax, this.mode, '[]');
+      } else if (min) {
+        const compareMin = dayjs(new Date(min));
+        isEnabled = !dayjs(value).isBefore(compareMin, this.mode);
+      } else if (max) {
+        const compareMax = dayjs(new Date(max));
+        isEnabled = !dayjs(value).isAfter(compareMax, this.mode);
+      }
+      return isEnabled;
     },
     setDate(inputDate: any = '', triggerChange = false): void {
       if ((inputDate !== 0 && !inputDate) || (inputDate instanceof Array && inputDate.length === 0)) {
@@ -657,8 +661,8 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         )
         }
         {!showTime && panelComponent}
-        {presets !== false && range && (
-          <calendar-presets presets={presets} locales={locales} {...{ props: { onClickRange: this.clickRange } }} />
+        {!!presets && (
+          <calendar-presets presets={presets} locales={locales} {...{ props: { onClick: range ? this.clickRange : this.dateClick } }} />
         )}
         {
           enableTimePicker && (

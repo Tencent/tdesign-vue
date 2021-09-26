@@ -17,30 +17,27 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
     presets: {
       type: Object as PropType<CalendarPresetsProps['presets']>,
     },
-    onClickRange: Function,
+    onClick: Function,
   },
   methods: {
     clickPreset(value: DateValue) {
-      this.$props.onClickRange(value);
+      this.$props.onClick(value);
     },
   },
   render() {
     const { presets } = this.$props;
-    if (presets) {
-      return (
-        <div class="t-date-picker-presets">
-          <ul>
-          {
-            presets && Object.keys(presets).map((key: string) => (
-              <li key={key}>
-                <a onClick={() => this.clickPreset(presets[key])}>{ key }</a>
-              </li>
-            ))
-          }
-          </ul>
-        </div>
-      );
-    }
-    return null;
+    return (
+      <div class="t-date-picker-presets">
+        <ul>
+        {
+          presets && Object.keys(presets).map((key: string) => (
+            <li key={key}>
+              <a onClick={() => this.clickPreset(presets[key])}>{ key }</a>
+            </li>
+          ))
+        }
+        </ul>
+      </div>
+    );
   },
 });

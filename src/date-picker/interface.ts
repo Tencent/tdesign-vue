@@ -247,7 +247,7 @@ export interface CalendarPresetsMethods {
 export interface CalendarPresetsProps {
   presets: CalendarPreset;
   locales: CustomLocale;
-  onClickRange: Function;
+  onClick: Function;
 }
 
 export interface DateRangeProps {
