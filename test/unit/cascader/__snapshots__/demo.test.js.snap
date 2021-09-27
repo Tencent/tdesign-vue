@@ -112,7 +112,7 @@ exports[`Cascader base demo works fine 1`] = `
           1.1
         </span>
         <svg
-          class="t-cascader-icon t-fake-arrow"
+          class="t-fake-arrow t-cascader-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -240,7 +240,7 @@ exports[`Cascader base demo works fine 1`] = `
           1.1
         </span>
         <svg
-          class="t-cascader-icon t-fake-arrow"
+          class="t-fake-arrow t-cascader-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -368,7 +368,7 @@ exports[`Cascader base demo works fine 1`] = `
           1.1
         </span>
         <svg
-          class="t-cascader-icon t-fake-arrow"
+          class="t-fake-arrow t-cascader-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"

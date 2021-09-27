@@ -17,6 +17,7 @@ import IconLoading from '../icon/loading';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
 import Input from '../input';
+import FakeArrow from '../common-components/fake-arrow';
 
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
@@ -72,15 +73,6 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     popupClass(): ClassName {
       const { popupObject } = this;
       return `${popupObject.overlayClassName} ${prefix}-select-dropdown narrow-scrollbar`;
-    },
-    arrowClass(): ClassName {
-      return [
-        `${prefix}-select-right-icon`,
-        `${prefix}-fake-arrow`,
-        {
-          [`${prefix}-fake-arrow--active`]: this.visible && !this.disabled,
-        },
-      ];
     },
     isObjectValue(): boolean {
       return this.valueType === 'object';
@@ -337,7 +329,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
   },
   render(): VNode {
     const {
-      treeProps, popupObject, classes, popupClass, arrowClass,
+      treeProps, popupObject, classes, popupClass,
     } = this;
     const iconStyle = { 'font-size': this.size };
     const treeItem = (
@@ -427,9 +419,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             {searchInput}
             {
               this.showArrow && !this.showLoading && (
-                <svg class={arrowClass} style={iconStyle} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-                </svg>
+                <FakeArrow overlayClass={`${prefix}-select-right-icon`} style={iconStyle} isActive={this.visible && !this.disabled}/>
               )
             }
             <IconCloseCircleFilled v-show={this.showClose && !this.showLoading} name="close" class={`${prefix}-select-right-icon`} size={this.size} nativeOnClick={this.clear} />

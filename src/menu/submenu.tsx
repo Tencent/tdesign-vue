@@ -6,6 +6,7 @@ import { prefix } from '../config';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import TIconChevronRight from '../icon/chevron-right';
+import FakeArrow from '../common-components/fake-arrow';
 import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
 
@@ -14,6 +15,7 @@ export default defineComponent({
   name,
   components: {
     TIconChevronRight,
+    FakeArrow,
   },
   directives: {
     ripple: Ripple,
@@ -66,7 +68,6 @@ export default defineComponent({
       },
     ]);
     const arrowClass = computed(() => [
-      `${prefix}-fake-arrow`,
       {
         [`${prefix}-fake-arrow--active`]: isOpen.value,
       },
@@ -150,14 +151,11 @@ export default defineComponent({
         {renderContent(this as Vue, 'default', 'content')}
         </ul>,
       ];
-      const arrowIcon = <svg class={this.arrowClass} style={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-      </svg>;
 
       const popupSubmenu = [
         <div class={this.submenuClass}>
           {renderTNodeJSX(this as Vue, 'title')}
-          {arrowIcon}
+          <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }} />
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
@@ -178,15 +176,13 @@ export default defineComponent({
       }
 
       const needRotate = this.mode === 'popup' && this.isNested;
-      const svgArrow = (
-        <svg class={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-        </svg>);
+
       const normalSubmenu = [
         <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
-          {hasContent && svgArrow}
+          {hasContent && <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
+}
         </div>,
         <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
           {child}
@@ -196,7 +192,7 @@ export default defineComponent({
         <div class={this.submenuClass}>
           {icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
-          {svgArrow}
+          <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>

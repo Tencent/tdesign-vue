@@ -16,6 +16,7 @@ import TIconClose from '../icon/close-circle-filled';
 import TIconLoading from '../icon/loading';
 import TInput from '../input/index';
 import Tag from '../tag/index';
+import FakeArrow from '../common-components/fake-arrow';
 
 import Option from './option';
 import props from './props';
@@ -63,6 +64,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     Tag,
     Popup,
     TOption: Option,
+    FakeArrow,
   },
   provide(): any {
     return {
@@ -86,15 +88,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     popClass(): string {
       const { popupObject } = this;
       return `${popupObject.overlayClassName} ${name}-dropdown narrow-scrollbar`;
-    },
-    arrowClass(): ClassName {
-      const { visible } = this;
-      return [
-        `${name}-right-icon`,
-        `${prefix}-fake-arrow`,
-        {
-          [`${prefix}-fake-arrow--active`]: visible && !this.disabled,
-        }];
     },
     tipsClass(): ClassName {
       return [
@@ -535,9 +528,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               this.showArrow && !this.showLoading && (
-                <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-                </svg>
+                <fake-arrow overlayClass={`${name}-right-icon`} isActive={ this.visible && !this.disabled}/>
               )
             }
             {
