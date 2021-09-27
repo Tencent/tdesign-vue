@@ -86,13 +86,12 @@ export default defineComponent({
         expandValues.value = value;
       },
     );
-    watch(
-      activeValue,
-      (value) => {
-        activeValue.value = value;
-        activeValues.value = vMenu.select(value);
-      },
-    );
+    const updateActiveValues = (value: MenuValue) => {
+      activeValue.value = value;
+      activeValues.value = vMenu.select(value);
+    };
+    watch(() => props.value, updateActiveValues);
+    watch(() => props.defaultValue, updateActiveValues);
 
     // timelifes
     onMounted(() => {
