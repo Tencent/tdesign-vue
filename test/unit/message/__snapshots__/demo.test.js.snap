@@ -200,7 +200,7 @@ exports[`Message placement demo works fine 1`] = `
 exports[`Message plugin demo works fine 1`] = `
 <div>
   <p>
-    组件实例方法调用
+    插件调用
   </p>
    
   <br />
@@ -279,7 +279,7 @@ exports[`Message plugin demo works fine 1`] = `
   <br />
    
   <p>
-    插件方法调用
+    函数式调用
   </p>
    
   <br />

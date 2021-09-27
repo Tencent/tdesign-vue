@@ -1,4 +1,4 @@
-import { UploadFile, TdUploadProps } from './type';
+import { UploadFile, TdUploadProps, RequestMethodResponse } from './type';
 
 export type UploadProps = TdUploadProps;
 export * from './type';
@@ -10,7 +10,7 @@ export interface XhrOptions {
   data: { [key: string]: any } | Function;
   file: UploadFile;
   name: string;
-  onError: ({ event, file, response }: { event: ProgressEvent; file?: UploadFile; response?: any }) => void;
+  onError: ({ event, file, response }: { event?: ProgressEvent; file?: UploadFile; response?: any }) => void;
   onSuccess: (context: SuccessContext) => void;
   onProgress: (context: ProgressContext) => void;
 }
@@ -26,9 +26,9 @@ export interface ProgressContext {
 }
 
 export interface SuccessContext {
-  event: ProgressEvent;
+  event?: ProgressEvent;
   file: UploadFile;
-  response: any;
+  response: RequestMethodResponse['response'];
 }
 
 export interface UploadRemoveOptions {
