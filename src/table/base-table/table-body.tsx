@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import { emitEvent } from '../../utils/event';
 import { prefix } from '../../config';
 import baseTableProps from '../base-table-props';
+import primaryTableProps from '../primary-table-props';
 import { BaseTableCol } from '../type';
 import TableRow from './table-row';
 
@@ -19,6 +20,7 @@ export default Vue.extend({
     onRowMousedown: baseTableProps.onRowMousedown,
     onRowClick: baseTableProps.onRowClick,
     onRowDbClick: baseTableProps.onRowDbClick,
+    selectedRowKeys: primaryTableProps.selectedRowKeys,
     provider: {
       type: Object,
       default() {
@@ -32,6 +34,11 @@ export default Vue.extend({
     current: {
       type: Number,
       default: 1,
+    },
+  },
+  computed: {
+    selectColumn(): any {
+      return this.columns.find(({ type }: any) => ['multiple', 'single'].includes(type)) || {};
     },
   },
 
@@ -105,7 +112,7 @@ export default Vue.extend({
     },
     renderBody(): Array<VNode> {
       const {
-        data, rowClassName, rowKey, provider, $scopedSlots: scopedSlots, rowspanAndColspan,
+        data, rowClassName, rowKey, provider, $scopedSlots: scopedSlots, rowspanAndColspan, selectedRowKeys, selectColumn,
       } = this;
       const body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
@@ -113,15 +120,29 @@ export default Vue.extend({
         allRowspanAndColspanProps = this.getRowspanAndColspanProps();
       }
       data.forEach((row: any, index: number) => {
-        const rowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
+        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
+        const rowClass: Array<string> = [];
+        if (Array.isArray(defaultRowClass)) {
+          rowClass.push(...defaultRowClass);
+        }
         const rowspanAndColspanProps = allRowspanAndColspanProps ? allRowspanAndColspanProps[index] : undefined;
         let rowVnode: VNode;
         const key = rowKey ? get(row, rowKey) : index + this.current;
+        if (selectedRowKeys?.indexOf(key) > -1) {
+          const disabled = typeof selectColumn.disabled === 'function'
+            ? selectColumn.disabled({ row, rowIndex: index })
+            : selectColumn.disabled;
+
+          if (disabled) {
+            rowClass.push(`${prefix}-table-row--disabled`);
+          }
+          rowClass.push(`${prefix}-table-row--selected`);
+        }
         const props = {
           key,
           props: {
             ...this.$props,
-            rowClass,
+            rowClass: rowClass.join(' '),
             rowData: row,
             index,
             rowspanAndColspanProps,
@@ -145,6 +166,7 @@ export default Vue.extend({
         rowVnode = <TableRow rowKey={this.rowKey} {...props}/>;
         // 按行渲染
         body.push(rowVnode);
+
         provider.renderRows({
           rows: body, row, rowIndex: index, columns: this.columns,
         });

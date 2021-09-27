@@ -18,6 +18,7 @@ import { PageInfo } from '../../pagination/type';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { emitEvent } from '../../utils/event';
 import { EventNameWithKebab } from '../util/interface';
+import primaryTableProps from '../primary-table-props';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
@@ -29,6 +30,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
   },
   props: {
     ...baseTableProps,
+    selectedRowKeys: primaryTableProps.selectedRowKeys,
     provider: {
       type: Object,
       default() {
@@ -191,6 +193,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
           columns: this.flattedColumns,
           rowClassName: this.rowClassName,
           current: this.current,
+          selectedRowKeys: this.selectedRowKeys,
           rowspanAndColspan: this.rowspanAndColspan,
         },
         scopedSlots,
