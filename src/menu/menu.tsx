@@ -84,6 +84,7 @@ export default defineComponent({
       () => props.expanded,
       (value) => {
         expandValues.value = value;
+        vMenu.expandValues = new Set(value);
       },
     );
     const updateActiveValues = (value: MenuValue) => {
