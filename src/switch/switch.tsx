@@ -64,7 +64,7 @@ export default Vue.extend({
       if (typeof this.label === 'string') {
         return this.label;
       }
-      if (this.label instanceof Array && this.label.length) {
+      if (Array.isArray(this.label)) {
         const label = this.value === this.activeValue ? this.label[0] : this.label[1];
         if (!label) return;
         if (typeof label === 'string') {
