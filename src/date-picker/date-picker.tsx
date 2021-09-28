@@ -23,7 +23,7 @@ import TDate from './panel/date';
 import TDateRange from './panel/date-range';
 import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/interface';
-import { firstUpperCase } from './utils';
+import { firstUpperCase, extractTimeFormat } from './utils';
 import { TimePickerPanelInstance } from '../time-picker';
 
 dayjs.extend(isBetween);
@@ -662,7 +662,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
           <div>
             <t-time-picker-panel
               ref="timePickerPanel"
-              format="HH:mm:ss"
+              format={extractTimeFormat(this.dateFormat) || 'HH:mm:ss'}
               cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
               steps={[1, 1, 1]}
               value={!range ? [startTimeValue] : [startTimeValue, endTimeValue]}
