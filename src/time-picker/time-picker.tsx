@@ -5,7 +5,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import {
-  TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType,
+  TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType, EPickerCols,
 } from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
@@ -19,7 +19,7 @@ import InputItems from './input-items';
 import props from './props';
 
 import {
-  EPickerCols, EMPTY_VALUE, componentName, AM_FORMAT, PM_Format, AM,
+  EMPTY_VALUE, componentName, AM_FORMAT, PM_Format, AM,
 } from './constant';
 
 const name = `${prefix}-time-picker`;
@@ -66,8 +66,11 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       const {
         $data: { time },
       } = this;
-
-      return time ? [dayjs(time, this.format)] : [dayjs()];
+      if (time) {
+        return [dayjs(time, this.format)];
+      } if (this.steps.filter((step) => step !== 1).length < 1) {
+        return [dayjs()];
+      } return [dayjs().hour(Number(this.steps[0]) - 1).minute(Number(this.steps[1]) - 1).second(Number(this.steps[2]) - 1)];
     },
     textClassName(): string {
       const isDefault = (this.inputTime as any).some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);

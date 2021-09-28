@@ -3,9 +3,9 @@ import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimePickerPanelColInstance } from '../interface';
+import { TimePickerPanelColInstance, EPickerCols } from '../interface';
 import { panelColProps } from './props';
-import { componentName, EPickerCols } from '../constant';
+import { componentName } from '../constant';
 
 import { prefix } from '../../config';
 
@@ -74,16 +74,18 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       return res.reverse();
     },
     disableFilter(preIdx: number, col: EPickerCols) {
-    // 如果有hideDisableTime 需要进行filter计算它的time(index)
+      // 如果有hideDisableTime 需要进行filter计算它的time(index)
       let filteredIdx = preIdx;
       if (this.hideDisabledTime && this.disableTime) {
         const timeList = this.generateColTime(col);
         const index = this.timeArr.indexOf(col);
-        filteredIdx = timeList.filter((t) => {
-          const params = this.currentTimes;
-          params[index] = Number(t);
-          return this.disableTime && !this.disableTime?.apply(this, params);
-        }).indexOf(preIdx);
+        filteredIdx = timeList
+          .filter((t) => {
+            const params = this.currentTimes;
+            params[index] = Number(t);
+            return this.disableTime && !this.disableTime?.apply(this, params);
+          })
+          .indexOf(preIdx);
       }
       return filteredIdx;
     },
@@ -105,7 +107,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         timeIndex = this.localeMeridiems.indexOf((time as string).toUpperCase());
       }
       const timeItemTotalHeight = this.getTimeItemHeight(col) + this.timeItemMargin;
-      const distance = (timeIndex * timeItemTotalHeight) + (timeItemTotalHeight / 2);
+      const distance = timeIndex * timeItemTotalHeight + timeItemTotalHeight / 2;
       return distance;
     },
     // 处理直接点击时间时的滚动
@@ -121,8 +123,17 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       });
     },
     updateTimeScrollPos() {
+      // 如果不存在非1 steps的列或已存在初始值时 正常滚动初始化 否则 只顶到各列的首行
+      const { hour, minute, second } = EPickerCols;
+      const isNormalScroll = this.steps.filter((step) => step !== 1).length < 1
+        || (Number(this.splitValue[hour]) !== Number(this.steps[0]) - 1
+        || Number(this.splitValue[minute]) !== Number(this.steps[1]) - 1
+        || Number(this.splitValue[second]) !== Number(this.steps[2]) - 1);
+
       this.cols.forEach((col: EPickerCols) => {
-        this.scrollToTime(col, this.splitValue[col]);
+        isNormalScroll
+          ? this.scrollToTime(col, this.splitValue[col])
+          : this.scrollToTime(col, Number(this.steps[this.timeArr.indexOf(col)]) - 1);
       });
     },
     generateColRows(col: EPickerCols) {
@@ -213,7 +224,14 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         if (col === EPickerCols.hour) {
           max = /[h]{1}/.test(this.format) ? 11 : 23;
         }
-        scrollVal = Math.min(Math.abs(Math.round(((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin)) * Number(this.steps[colIdx]))), max);
+        scrollVal = Math.min(
+          Math.abs(
+            Math.round(
+              ((scrollTop - itemHeight / 2) / (itemHeight + this.timeItemMargin)) * Number(this.steps[colIdx]),
+            ),
+          ),
+          max,
+        );
         scrollVal = this.closestLookup(availableList, scrollVal, Number(this.steps[colIdx]));
 
         if (this.disableTime && this.hideDisabledTime) {
@@ -225,7 +243,10 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         }
       } else {
         // 处理非时间col的相关的滚动
-        scrollVal = Math.min(Math.abs(Math.round((scrollTop - (itemHeight / 2)) / (itemHeight + this.timeItemMargin))), 1);
+        scrollVal = Math.min(
+          Math.abs(Math.round((scrollTop - itemHeight / 2) / (itemHeight + this.timeItemMargin))),
+          1,
+        );
         scrollVal = this.localeMeridiems[scrollVal];
       }
       // 矫正滚动距离 吸附效果

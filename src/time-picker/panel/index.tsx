@@ -3,8 +3,8 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
-import { TimePickerPanelInstance, TimePickerPanelColInstance } from '../interface';
-import { componentName, EPickerCols } from '../constant';
+import { TimePickerPanelInstance, TimePickerPanelColInstance, EPickerCols } from '../interface';
+import { componentName } from '../constant';
 import { panelProps } from './props';
 import PanelCol from './panel-col';
 import TButton from '../../button/button';
@@ -66,6 +66,10 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
     localeMeridiems() {
       return [this.locale.anteMeridiem, this.locale.postMeridiem];
     },
+    showNowTime() {
+      // 是否展示此刻按钮
+      return !this.rangePicker && this.steps.filter((step) => step !== 1).length < 1;
+    },
   },
   watch: {
     isShowPanel(val: boolean) {
@@ -95,7 +99,7 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
           <t-button theme="primary" variant="base" onClick={confirmAction}>
             {this.t(this.locale.confirm)}
           </t-button>
-          {this.rangePicker || (
+          { this.showNowTime && (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
               {this.t(this.locale.nowtime)}
             </t-button>

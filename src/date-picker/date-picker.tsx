@@ -22,7 +22,7 @@ import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
 import TTimePickerPanel from '../time-picker/panel';
-import { EPickerCols } from '../time-picker/constant';
+import { EPickerCols } from '../time-picker/interface';
 import { firstUpperCase } from './utils';
 import { TimePickerPanelInstance } from '../time-picker';
 
@@ -32,8 +32,10 @@ const onOpenDebounce = debounce((vm?: any) => {
   vm.createPopover();
 }, 250);
 
+const name = `${prefix}-date-picker`;
+
 export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
-  name: `${prefix}-date-picker`,
+  name,
   components: {
     TIconTime,
     TIconCalendar,
@@ -65,7 +67,8 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       showTime: false,
       els: [],
       isOpen: false,
-      timeValue: dayjs(),
+      startTimeValue: dayjs(),
+      endTimeValue: dayjs(),
     };
   },
   computed: {
@@ -163,22 +166,22 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     },
     classes(): any {
       return [
-        't-date-picker',
-        't-input',
+        name,
+        `${prefix}-input`,
         CLASSNAMES.SIZE[this.size] || '',
         {
-          't-date-picker--month-picker': this.mode === 'year' || this.mode === 'month',
-          't-inline': this.inline || this.inlineView,
+          [`${name}--month-picker`]: this.mode === 'year' || this.mode === 'month',
+          [`${prefix}-inline`]: this.inline || this.inlineView,
         },
       ];
     },
     pickerStyles() {
       return {
-        't-date-picker--container': true,
-        't-date-picker-picker--open': this.isOpen || this.inlineView,
-        't-date-picker--calendar-inline-view': this.inlineView,
-        't-date-picker--ranges-show': !!this.presets && this.range,
-        't-date-picker--date': this.mode === 'date',
+        [`${name}--container`]: true,
+        [`${name}-picker--open`]: this.isOpen || this.inlineView,
+        [`${name}--calendar-inline-view`]: this.inlineView,
+        [`${name}--ranges-show`]: !!this.presets && this.range,
+        [`${name}--date`]: this.mode === 'date',
       };
     },
   },
@@ -186,12 +189,20 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     this.attachDatePicker();
   },
   methods: {
-    handleTimePick(col: EPickerCols, time: number) {
-      const start = new Date(this.start);
-      start[`set${firstUpperCase(col)}s`](time);
-      this.start = start;
-      this.timeValue = dayjs(start);
-      this.dateClick(new Date(start));
+    handleTimePick(col: EPickerCols, time: number, index: number) {
+      if (!this.range || index === 0) {
+        const start = new Date(this.start);
+        start[`set${firstUpperCase(col)}s`](time);
+        this.start = start;
+        this.startTimeValue = dayjs(start);
+        this.dateClick(new Date(start));
+      } else {
+        const end = new Date(this.end);
+        end[`set${firstUpperCase(col)}s`](time);
+        this.end = end;
+        this.endTimeValue = dayjs(end);
+        this.dateClick(new Date(end));
+      }
     },
     initClickAway(el: Element) {
       this.els.push(el);
@@ -388,7 +399,8 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       }
     },
     toggleTime() {
-      this.timeValue = dayjs(this.start);
+      this.startTimeValue = dayjs(this.start);
+      this.endTimeValue = dayjs(this.end);
 
       this.showTime = !this.showTime;
       this.$nextTick(() => {
@@ -629,7 +641,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     } = this.$props;
 
     const {
-      start, end, showTime, timeValue, locales, isOpen,
+      start, end, showTime, startTimeValue, locales, isOpen, endTimeValue,
     } = this.$data;
     const panelProps = {
       value: range ? [start, end] : start,
@@ -653,8 +665,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
               format="HH:mm:ss"
               cols={[EPickerCols.hour, EPickerCols.minute, EPickerCols.second]}
               steps={[1, 1, 1]}
-              value={[timeValue]}
+              value={!range ? [startTimeValue] : [startTimeValue, endTimeValue]}
               ontime-pick={this.handleTimePick}
+              range
               isFooterDisplay={false}
             />
           </div>
@@ -666,7 +679,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         )}
         {
           enableTimePicker && (
-            <div class="t-date-picker--apply">
+            <div class={`${name}--apply`}>
               {
                 enableTimePicker && (
                   <t-button theme="primary" variant="text" onClick={this.toggleTime}>
@@ -685,7 +698,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       </div>
     );
     const inputClassNames = [
-      't-form-controls',
+      `${prefix}-form-controls`,
       {
         [CLASSNAMES.STATUS.active]: this.isOpen,
       },
@@ -694,14 +707,14 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       <div class={this.classes}>
         <t-popup
           ref="popup"
-          class="t-date-picker-popup-reference"
+          class={`${prefix}-date-picker-popup-reference`}
           trigger="click"
           placement="bottom-left"
           disabled={disabled}
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}
-          overlayClassName="t-date-picker"
+          overlayClassName={`${prefix}-date-picker`}
           content={popupContent}
           expandAnimation={true}
         >

@@ -38,15 +38,15 @@ export default Vue.extend({
     const cellClass = [
       name,
       {
-        't-date-cell--now': now,
-        't-date-cell--active': active,
-        't-date-cell--disabled': disabled,
-        't-date-cell--highlight': highlight,
-        't-date-cell--active-start': startOfRange,
-        't-date-cell--active-end': endOfRange,
-        't-date-cell--additional': additional,
-        't-date-cell--first-day-of-month': firstDayOfMonth,
-        't-date-cell--last-day-of-month': lastDayOfMonth,
+        [`${prefix}-date-cell--now`]: now,
+        [`${prefix}-date-cell--active`]: active,
+        [`${prefix}-date-cell--disabled`]: disabled,
+        [`${prefix}-date-cell--highlight`]: highlight,
+        [`${prefix}-date-cell--active-start`]: startOfRange,
+        [`${prefix}-date-cell--active-end`]: endOfRange,
+        [`${prefix}-date-cell--additional`]: additional,
+        [`${prefix}-date-cell--first-day-of-month`]: firstDayOfMonth,
+        [`${prefix}-date-cell--last-day-of-month`]: lastDayOfMonth,
       },
     ];
 

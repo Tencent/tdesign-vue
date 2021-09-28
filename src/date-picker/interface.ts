@@ -1,7 +1,7 @@
 import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
 
-import { EPickerCols } from '../time-picker/constant';
+import { EPickerCols } from '../time-picker/interface';
 import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
 
 export * from './type';
@@ -58,7 +58,8 @@ export interface DatePickerData {
   inlineView: boolean;
   els: Element[];
   isOpen: boolean;
-  timeValue: dayjs.Dayjs;
+  startTimeValue: dayjs.Dayjs;
+  endTimeValue: dayjs.Dayjs;
 }
 
 export interface DatePickerMethods {
