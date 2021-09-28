@@ -3,9 +3,7 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
-
 import Popup, { PopupProps } from '../popup';
-
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -17,7 +15,6 @@ import TIconLoading from '../icon/loading';
 import TInput from '../input/index';
 import Tag from '../tag/index';
 import FakeArrow from '../common-components/fake-arrow';
-
 import Option from './option';
 import props from './props';
 import { Options, SelectValue, TdSelectProps } from './type';
@@ -314,8 +311,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         }
       }
     },
-    removeTag(index: number, { e }: { e: MouseEvent }) {
-      e.stopPropagation();
+    removeTag(index: number, context?: { e?: MouseEvent }) {
+      const { e } = context || {};
+      e && e.stopPropagation();
       if (this.disabled) {
         return;
       }
@@ -493,21 +491,26 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                 <span class={`${name}-placeholder`}> { placeholder }</span>
               )
             }
-            {
-              selectedMultiple.map((item: Options, index: number) => (
-                <tag
-                  key={index}
-                  size={size}
-                  closable={!item.disabled && !disabled}
-                  disabled={disabled}
-                  style="max-width: 100%;"
-                  maxWidth="100%"
-                  title={get(item, realLabel)}
-                  onClose={this.removeTag.bind(null, index)}
-                >
-                  { get(item, realLabel) }
-                </tag>
-              ))
+            {this.valueDisplay || this.$scopedSlots.valueDisplay
+              ? renderTNodeJSX(this, 'valueDisplay', {
+                params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
+              })
+              : (
+                selectedMultiple.map((item: Options, index: number) => (
+                  <tag
+                    key={index}
+                    size={size}
+                    closable={!item.disabled && !disabled}
+                    disabled={disabled}
+                    style="max-width: 100%;"
+                    maxWidth="100%"
+                    title={get(item, realLabel)}
+                    onClose={this.removeTag.bind(null, index)}
+                  >
+                    { get(item, realLabel) }
+                  </tag>
+                ))
+              )
             }
             {!multiple && !showPlaceholder && !showFilter && (
               <span title={selectedSingle} class={`${name}-selectedSingle`}>{ selectedSingle }</span>
