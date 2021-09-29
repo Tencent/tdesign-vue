@@ -29,7 +29,7 @@ export default {
     // 也可以使用插槽自定义加载内容
     asyncLoadingRadio(val) {
       if (val === 'loading-custom') {
-        this.asyncLoading = (h) => <div>😊 没有更多数据了 😊</div>;
+        this.asyncLoading = () => <div>😊 没有更多数据了 😊</div>;
       } else {
         this.asyncLoading = this.asyncLoadingRadio;
       }

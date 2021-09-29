@@ -1,4 +1,4 @@
-import Vue, { VueConstructor, VNode } from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';

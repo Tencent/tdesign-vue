@@ -23,7 +23,7 @@ exports[`Message close demo works fine 1`] = `
 exports[`Message closeAll demo works fine 1`] = `
 <div>
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -34,7 +34,7 @@ exports[`Message closeAll demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     id="t-demo-msg-close-all"
     type="button"
   >
@@ -42,29 +42,6 @@ exports[`Message closeAll demo works fine 1`] = `
       class="t-button__text"
     >
       点击关闭所有消息
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Message offset demo works fine 1`] = `
-<div>
-  <p>
-    
-    偏移量 offset 是相对于 placement 的偏移量，默认值：空，参数示例：{left, top, bottom, right}。
-  
-  </p>
-   
-  <br />
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      带 offset 信息位置
     </span>
   </button>
 </div>
@@ -97,7 +74,7 @@ exports[`Message placement demo works fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -108,7 +85,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -119,7 +96,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -130,7 +107,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -141,7 +118,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -152,7 +129,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -163,7 +140,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -174,7 +151,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -185,7 +162,7 @@ exports[`Message placement demo works fine 1`] = `
   </button>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
@@ -200,7 +177,7 @@ exports[`Message placement demo works fine 1`] = `
 exports[`Message plugin demo works fine 1`] = `
 <div>
   <p>
-    组件实例方法调用
+    插件调用
   </p>
    
   <br />
@@ -209,7 +186,7 @@ exports[`Message plugin demo works fine 1`] = `
     class="t-demo-message-duration"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
@@ -220,7 +197,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-success"
       type="button"
     >
       <span
@@ -231,7 +208,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-warning"
       type="button"
     >
       <span
@@ -242,7 +219,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-danger"
       type="button"
     >
       <span
@@ -253,7 +230,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
@@ -264,13 +241,24 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
         class="t-button__text"
       >
         loading
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        close all
       </span>
     </button>
   </div>
@@ -279,7 +267,7 @@ exports[`Message plugin demo works fine 1`] = `
   <br />
    
   <p>
-    插件方法调用
+    函数式调用
   </p>
    
   <br />
@@ -288,7 +276,7 @@ exports[`Message plugin demo works fine 1`] = `
     class="t-demo-message-theme"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
@@ -299,7 +287,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-success"
       type="button"
     >
       <span
@@ -310,7 +298,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-warning"
       type="button"
     >
       <span
@@ -321,7 +309,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-danger"
       type="button"
     >
       <span
@@ -332,7 +320,7 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
@@ -343,13 +331,24 @@ exports[`Message plugin demo works fine 1`] = `
     </button>
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-primary"
       type="button"
     >
       <span
         class="t-button__text"
       >
         loading
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        close all
       </span>
     </button>
   </div>
@@ -364,7 +363,7 @@ exports[`Message toggle demo works fine 1`] = `
   id="t-demo-message-toggle"
 >
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span

@@ -10,7 +10,7 @@
       <t-date-picker theme="primary" mode="date" :disableDate="disableDate3"></t-date-picker>
     </div>
     <div class="tdesign-demo-item--datepicker">
-      <t-date-picker theme="primary" mode="date" range :disableDate="disableDate4"></t-date-picker>
+      <t-date-picker theme="primary" mode="date" :disableDate="disableDate4"></t-date-picker>
     </div>
     <div class="tdesign-demo-item--datepicker">
       <t-date-picker theme="primary" mode="date" :disableDate="getDisableDate" ></t-date-picker>
@@ -38,7 +38,6 @@ export default {
       },
       disableDate4: {
         before: dayjs().subtract(2, 'day').format(),
-        after: dayjs().add(10, 'day').format(),
       },
     };
   },

@@ -69,11 +69,6 @@
         </template>
         根目录
       </t-menu-item>
-      <t-submenu value="2" title="会员中心">
-        <t-menu-item value="2-1">二级菜单内容</t-menu-item>
-        <t-menu-item value="2-2">二级菜单内容</t-menu-item>
-        <t-menu-item value="2-3">二级菜单内容</t-menu-item>
-      </t-submenu>
       <t-submenu value="2">
         <template #icon>
           <t-icon name="control-platform" />

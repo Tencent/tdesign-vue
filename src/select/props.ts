@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-26 15:17:03
+ * updated at 2021-09-28 14:52:52
  * */
 
 import { TdSelectProps } from './type';
@@ -16,6 +16,10 @@ export default {
   },
   /** 是否可以清空选项 */
   clearable: Boolean,
+  /** 用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义 */
+  collapsedItems: {
+    type: Function as PropType<TdSelectProps['collapsedItems']>,
+  },
   /** 是否允许用户创建新条目，需配合 filterable 使用 */
   creatable: Boolean,
   /** 是否禁用组件 */
@@ -44,6 +48,11 @@ export default {
   },
   /** 用于控制多选数量，值为 0 则不限制 */
   max: {
+    type: Number,
+    default: 0,
+  },
+  /** 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠 */
+  minCollapsedNum: {
     type: Number,
     default: 0,
   },
@@ -84,6 +93,10 @@ export default {
   /** 选中值，非受控属性 */
   defaultValue: {
     type: [String, Number, Object, Array] as PropType<TdSelectProps['defaultValue']>,
+  },
+  /** 自定义选中项呈现方式 */
+  valueDisplay: {
+    type: Function as PropType<TdSelectProps['valueDisplay']>,
   },
   /** 用于控制选中值的类型。假设数据选项为：[{ label: '姓名', value: 'name' }]，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。 */
   valueType: {

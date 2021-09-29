@@ -12,6 +12,8 @@ import Input from '../input/index';
 import Popup from '../popup/index';
 import Tag from '../tag/index';
 import item from './item';
+import FakeArrow from '../common-components/fake-arrow';
+
 import { ClassName, OptionData } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -34,6 +36,7 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
     Popup,
     item,
     Tag,
+    FakeArrow,
   },
   props: {
     ...props,
@@ -80,15 +83,6 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
           [CLASSNAMES.STATUS.visible]: this.visible,
         },
       ];
-    },
-    arrowClass(): ClassName {
-      const { visible } = this;
-      return [
-        `${name}-icon`,
-        `${prefix}-fake-arrow`,
-        {
-          [`${prefix}-fake-arrow--active`]: visible,
-        }];
     },
     tipsClass(): ClassName {
       return [
@@ -419,11 +413,7 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
       > {item.label}</tag>);
     },
     renderArrowIcon(): VNode {
-      return this.showArrow && !this.showLoading && (
-        <svg class={this.arrowClass} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"/>
-        </svg>
-      );
+      return this.showArrow && !this.showLoading && (<fake-arrow overlayClassName={`${name}-icon`} isActive={this.visible && !this.disabled}/>);
     },
     renderCloseIcon(): VNode {
       return this.showClose && (

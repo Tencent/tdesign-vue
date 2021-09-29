@@ -33,10 +33,9 @@ export default Vue.extend({
         ...this.$attrs,
         ...this.popupProps,
         disabled: this.disabled,
-        showArrow: false,
         placement: this.placement,
         trigger: this.trigger,
-        overlayClassName: name,
+        overlayClassName: this.popupProps && this.popupProps.overlayClassName ? [name, this.popupProps.overlayClassName] : name,
       },
       ref: 'popup',
     };

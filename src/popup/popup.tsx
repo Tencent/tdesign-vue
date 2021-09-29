@@ -194,7 +194,8 @@ export default Vue.extend({
         popperElm.style.display = '';
         this.presetMaxHeight = parseInt(getComputedStyle(this.getContentElm(popperElm)).maxHeight, 10) || Infinity;
         const referenceElmBottom = innerHeight - this.referenceElm.getBoundingClientRect().bottom;
-        if (referenceElmBottom < popperElm.scrollHeight) {
+        const referenceElmTop = this.referenceElm.getBoundingClientRect().top;
+        if (referenceElmBottom < popperElm.scrollHeight && referenceElmTop >= popperElm.scrollHeight) {
           placement = 'top-start';
         }
         popperElm.style.display = 'none';

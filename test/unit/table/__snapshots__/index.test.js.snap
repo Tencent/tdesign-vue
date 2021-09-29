@@ -29,17 +29,17 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
               <col>
             </colgroup>
             <tbody class="table-body">
-              <tr rowkey="id" key="1">
+              <tr rowkey="id" class="" key="1">
                 <td class="" key="id" length="3">1</td>
                 <td class="" key="type" length="3">Number</td>
                 <td class="" key="value" length="3">1</td>
               </tr>
-              <tr rowkey="id" key="2">
+              <tr rowkey="id" class="" key="2">
                 <td class="" key="id" length="3">2</td>
                 <td class="" key="type" length="3">Number</td>
                 <td class="" key="value" length="3">2</td>
               </tr>
-              <tr rowkey="id" key="3">
+              <tr rowkey="id" class="" key="3">
                 <td class="" key="id" length="3">3</td>
                 <td class="" key="type" length="3">Number</td>
                 <td class="" key="value" length="3">3</td>
@@ -122,17 +122,17 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
             </tr>
           </thead>
           <tbody class="table-body">
-            <tr rowkey="" key="1">
+            <tr rowkey="" class="" key="1">
               <td class="" key="id" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">1</td>
             </tr>
-            <tr rowkey="" key="2">
+            <tr rowkey="" class="" key="2">
               <td class="" key="id" length="3">2</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">2</td>
             </tr>
-            <tr rowkey="" key="3">
+            <tr rowkey="" class="" key="3">
               <td class="" key="id" length="3">3</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">3</td>
@@ -189,17 +189,17 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
             </tr>
           </thead>
           <tbody class="table-body">
-            <tr rowkey="id" key="1">
+            <tr rowkey="id" class="" key="1">
               <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">1</td>
             </tr>
-            <tr rowkey="id" key="2">
+            <tr rowkey="id" class="" key="2">
               <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">2</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">2</td>
             </tr>
-            <tr rowkey="id" key="3">
+            <tr rowkey="id" class="" key="3">
               <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">3</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">3</td>
@@ -240,7 +240,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
             </tr>
           </thead>
           <tbody class="table-body">
-            <tr rowkey="id">
+            <tr rowkey="id" class="">
               <td class="align-left text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
               <td class="align-left text-ellipsis row" key="type" style="overflow: hidden;" length="6">any[]</td>
               <td class="align-left text-ellipsis test4" key="default" style="overflow: hidden;" length="6">[]</td>
@@ -248,7 +248,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
               <td class="align-left text-ellipsis test2" key="property" style="overflow: hidden;" length="6">data</td>
               <td class="align-left text-ellipsis row" key="description" style="overflow: hidden;" length="6">数据源</td>
             </tr>
-            <tr rowkey="id">
+            <tr rowkey="id" class="">
               <td class="align-left text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
               <td class="align-left text-ellipsis row" key="type" style="overflow: hidden;" length="6">String</td>
               <td class="align-left text-ellipsis test4" key="default" style="overflow: hidden;" length="6">-1</td>
@@ -283,17 +283,17 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
             </tr>
           </thead>
           <tbody class="table-body">
-            <tr rowkey="id" key="1">
+            <tr rowkey="id" class="" key="1">
               <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">1</td>
             </tr>
-            <tr rowkey="id" key="2">
+            <tr rowkey="id" class="" key="2">
               <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">2</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">2</td>
             </tr>
-            <tr rowkey="id" key="3">
+            <tr rowkey="id" class="" key="3">
               <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">3</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">3</td>

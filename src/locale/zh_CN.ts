@@ -103,4 +103,7 @@ export default {
     now: '当前',
   },
   steps: {},
+  upload: {
+    sizeLimitMessage: '图片大小不能超过 {sizeLimit}',
+  },
 };

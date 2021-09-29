@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils';
 import type from '@/examples/message/demos/type.vue';
 import close from '@/examples/message/demos/close.vue';
 import closeAll from '@/examples/message/demos/close-all.vue';
-import offset from '@/examples/message/demos/offset.vue';
 import placement from '@/examples/message/demos/placement.vue';
 import plugin from '@/examples/message/demos/plugin.vue';
 import toggle from '@/examples/message/demos/toggle.vue';
@@ -19,10 +18,6 @@ describe('Message', () => {
   });
   it('closeAll demo works fine', () => {
     const wrapper = mount(closeAll);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('offset demo works fine', () => {
-    const wrapper = mount(offset);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('placement demo works fine', () => {

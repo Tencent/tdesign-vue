@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-26 15:17:03
+ * updated at 2021-09-28 14:52:52
  * */
 
 import { PopupProps } from '../popup';
@@ -19,6 +19,10 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    * @default false
    */
   clearable?: boolean;
+  /**
+   * 用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   */
+  collapsedItems?: TNode;
   /**
    * 是否允许用户创建新条目，需配合 filterable 使用
    * @default false
@@ -63,6 +67,11 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    */
   max?: number;
   /**
+   * 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠
+   * @default 0
+   */
+  minCollapsedNum?: number;
+  /**
    * 是否允许多选
    * @default false
    */
@@ -103,6 +112,10 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    * 选中值，非受控属性
    */
   defaultValue?: SelectValue;
+  /**
+   * 自定义选中项呈现方式
+   */
+  valueDisplay?: TNode;
   /**
    * 用于控制选中值的类型。假设数据选项为：[{ label: '姓名', value: 'name' }]，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。
    * @default value

@@ -14,8 +14,9 @@ export default Vue.extend({
   directives: { ripple },
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
-    const icon = this.loading ? <TLoading/> : renderTNodeJSX(this, 'icon');
+    const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
     const isIconOnly = icon && !buttonContent;
+    const disabled = this.disabled || this.loading;
     let { theme } = this;
 
     if (!this.theme) {
@@ -32,7 +33,7 @@ export default Vue.extend({
       `${name}--variant-${this.variant}`,
       `${name}--theme-${theme}`,
       {
-        [CLASSNAMES.STATUS.disabled]: this.disabled,
+        [CLASSNAMES.STATUS.disabled]: disabled,
         [CLASSNAMES.STATUS.loading]: this.loading,
         [`${name}--icon-only`]: isIconOnly,
         [`${name}--shape-${this.shape}`]: this.shape !== 'square',
@@ -50,7 +51,7 @@ export default Vue.extend({
     }
 
     return (
-      <button v-ripple class={buttonClass} type={this.type} disabled={this.disabled} {...{ on: this.$listeners }}>
+      <button v-ripple class={buttonClass} type={this.type} disabled={disabled} {...{ on: this.$listeners }}>
         {buttonContent}
       </button>
     );

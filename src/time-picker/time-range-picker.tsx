@@ -6,7 +6,7 @@ import isEqual from 'lodash/isEqual';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import {
-  TimePickerInstance, TimeInputEvent, InputTime, TimePickerPanelInstance,
+  TimePickerInstance, TimeInputEvent, InputTime, TimePickerPanelInstance, EPickerCols,
 } from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
@@ -18,7 +18,7 @@ import InputItems from './input-items';
 import props from './time-range-picker-props';
 
 import {
-  EPickerCols, TIME_PICKER_EMPTY, EMPTY_VALUE, componentName, AM_FORMAT, PM_Format, AM,
+  TIME_PICKER_EMPTY, EMPTY_VALUE, componentName, AM_FORMAT, PM_Format, AM,
 } from './constant';
 
 const name = `${prefix}-time-picker`;

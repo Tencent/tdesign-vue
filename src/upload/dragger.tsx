@@ -5,8 +5,11 @@ import TIconLoading from '../icon/loading';
 import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
-import { returnFileSize, getCurrentDate, abridgeName } from './util';
+import {
+  returnFileSize, getCurrentDate, abridgeName, UPLOAD_NAME,
+} from './util';
 import { ClassName } from '../common';
+import props from './props';
 
 const name = `${prefix}-upload-dragger`;
 
@@ -18,6 +21,7 @@ export default Vue.extend({
   },
 
   props: {
+    showUploadProgress: props.showUploadProgress,
     file: {
       type: Object as PropType<UploadFile>,
     },
@@ -58,9 +62,9 @@ export default Vue.extend({
     },
     classes(): ClassName {
       return [
-        't-upload__dragger',
-        { 't-upload__dragger-center': !this.loadingFile && !this.file },
-        { 't-upload__dragger-error': this.loadingFile && this.loadingFile.status === 'fail' },
+        `${UPLOAD_NAME}__dragger`,
+        { [`${UPLOAD_NAME}__dragger-center`]: !this.loadingFile && !this.file },
+        { [`${UPLOAD_NAME}__dragger-error`]: this.loadingFile && this.loadingFile.status === 'fail' },
       ];
     },
     size(): number {
@@ -113,7 +117,7 @@ export default Vue.extend({
 
     renderImage() {
       return (
-        <div class='t-upload__dragger-img-wrap'>
+        <div class={`${UPLOAD_NAME}__dragger-img-wrap`}>
           {this.imageUrl && <img src={this.imageUrl || 'default.png'}></img>}
         </div>
       );
@@ -122,11 +126,11 @@ export default Vue.extend({
     renderUploading() {
       if (this.loadingFile.status === 'fail') {
         return <TIconErrorCircleFilled />;
-      } if (this.loadingFile.status === 'progress') {
+      } if (this.loadingFile.status === 'progress' && this.showUploadProgress) {
         return (
-          <div class='t-upload__single-progress'>
+          <div class={`${UPLOAD_NAME}__single-progress`}>
             <TIconLoading></TIconLoading>
-            <span class='t-upload__single-percent'>{Math.min(this.loadingFile.percent, 99)}%</span>
+            <span class={`${UPLOAD_NAME}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );
       }
@@ -139,25 +143,31 @@ export default Vue.extend({
 
     renderProgress() {
       return (
-        <div class='t-upload__dragger-progress'>
+        <div class={`${UPLOAD_NAME}__dragger-progress`}>
           {this.isImage && this.renderImage()}
-          <div class='t-upload__dragger-progress-info'>
-            <div class='t-upload__dragger-text'>
-              <span class='t-upload__single-name'>{abridgeName(this.inputName)}</span>
+          <div class={`${UPLOAD_NAME}__dragger-progress-info`}>
+            <div class={`${UPLOAD_NAME}__dragger-text`}>
+              <span class={`${UPLOAD_NAME}__single-name`}>
+                {abridgeName(this.inputName)}
+              </span>
               {this.loadingFile && this.renderUploading()}
               {(!this.loadingFile && !!this.file) && <TIconCheckCircleFilled/>}
             </div>
-            <small class='t-upload__small'>文件大小：{returnFileSize(this.size)}</small>
-            <small class='t-upload__small'>上传日期：{getCurrentDate()}</small>
+            <small class={`${UPLOAD_NAME}__small`}>
+              文件大小：{returnFileSize(this.size)}
+            </small>
+            <small class={`${UPLOAD_NAME}__small`}>
+              上传日期：{getCurrentDate()}
+            </small>
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
-              <div class='t-upload__dragger-btns'>
-                <TButton theme="primary" variant='text' class='t-upload__dragger-progress-cancel' onClick={this.cancel}>取消上传</TButton>
+              <div class={`${UPLOAD_NAME}__dragger-btns`}>
+                <TButton theme="primary" variant='text' class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.cancel}>取消上传</TButton>
                 <TButton theme="primary" variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
               </div>
             )}
             {this.showResultOperate && (
-              <div class='t-upload__dragger-btns'>
-                <TButton theme="primary" variant="text" class='t-upload__dragger-progress-cancel' onClick={this.reupload}>重新上传</TButton>
+              <div class={`${UPLOAD_NAME}__dragger-btns`}>
+                <TButton theme="primary" variant="text" class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.reupload}>重新上传</TButton>
                 <TButton theme="primary" variant='text' onClick={this.remove}>删除</TButton>
               </div>
             )}
@@ -173,7 +183,7 @@ export default Vue.extend({
       content = this.renderProgress();
     } else {
       content = (
-        <div class='t-upload__trigger' onClick={this.trigger}>
+        <div class={`${UPLOAD_NAME}__trigger`} onClick={this.trigger}>
           {(this.$scopedSlots.default && this.$scopedSlots.default(null)) || this.renderDefaultDragElement()}
         </div>
       );

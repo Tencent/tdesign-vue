@@ -4,15 +4,15 @@
       <t-input placeholder='请输入横向偏移量' v-model="offsetX"></t-input>
       <t-input placeholder='请输入纵向偏移量' v-model="offsetY"></t-input>
     </div>
-    <t-button @click="$message.success(msgList[0])">center</t-button>
-    <t-button @click="$message.info(msgList[1])">top</t-button>
-    <t-button @click="$message.warning(msgList[2])">left</t-button>
-    <t-button @click="$message.loading(msgList[3])">right</t-button>
-    <t-button @click="$message.warning(msgList[4])">bottom</t-button>
-    <t-button @click="$message.error(msgList[5])">top-left</t-button>
-    <t-button @click="$message.question(msgList[6])">top-right</t-button>
-    <t-button @click="$message.warning(msgList[7])">bottom-left</t-button>
-    <t-button @click="$message.warning(msgList[8])">bottom-right</t-button>
+    <t-button variant="outline" @click="$message.success(msgList[0])">center</t-button>
+    <t-button variant="outline" @click="$message.info(msgList[1])">top</t-button>
+    <t-button variant="outline" @click="$message.warning(msgList[2])">left</t-button>
+    <t-button variant="outline" @click="$message.loading(msgList[3])">right</t-button>
+    <t-button variant="outline" @click="$message.warning(msgList[4])">bottom</t-button>
+    <t-button variant="outline" @click="$message.error(msgList[5])">top-left</t-button>
+    <t-button variant="outline" @click="$message.question(msgList[6])">top-right</t-button>
+    <t-button variant="outline" @click="$message.warning(msgList[7])">bottom-left</t-button>
+    <t-button variant="outline" @click="$message.warning(msgList[8])">bottom-right</t-button>
   </div>
 </template>
 

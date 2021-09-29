@@ -29,17 +29,6 @@ export default Vue.extend({
         this.overlayClassName,
       ];
     },
-    innerPopupProps(): PopupProps {
-      const r: PopupProps = {
-        showArrow: true,
-        ...this.$props,
-        content: () => renderTNodeJSX(this, 'content'),
-        default: () => renderContent(this, 'default', 'triggerElement'),
-        overlayClassName: this.tooltipOverlayClassName,
-      };
-      delete r.visible;
-      return r;
-    },
   },
   created() {
     if (this.duration) {
@@ -61,8 +50,20 @@ export default Vue.extend({
   methods: {
     onTipVisibleChange(val: boolean) {
       this.tooltipVisible = val;
-      // 因 props={{ ...this.innerPopupProps }} 已经透传 onVisibleChange props，此处不再需要使用 emitEvent
+      // 因 props={this.getPopupProps()} 已经透传 onVisibleChange props，此处不再需要使用 emitEvent
       this.$emit('visible-change', this.tooltipVisible);
+    },
+
+    getPopupProps(): PopupProps {
+      const r: PopupProps = {
+        showArrow: true,
+        ...this.$props,
+        content: () => renderTNodeJSX(this, 'content'),
+        default: () => renderContent(this, 'default', 'triggerElement'),
+        overlayClassName: this.tooltipOverlayClassName,
+      };
+      delete r.visible;
+      return r;
     },
   },
   render() {
@@ -70,7 +71,7 @@ export default Vue.extend({
       <Popup
         visible={this.tooltipVisible}
         showArrow={this.showArrow}
-        props={{ ...this.innerPopupProps }}
+        props={this.getPopupProps()}
         on={{
           'visible-change': this.onTipVisibleChange,
         }}

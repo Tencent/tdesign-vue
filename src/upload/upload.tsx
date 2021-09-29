@@ -1,21 +1,23 @@
 /* eslint-disable no-param-reassign */
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
+import isFunction from 'lodash/isFunction';
+import mixins from '../utils/mixins';
+import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from './xhr';
-import {
-  TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext,
-} from './type';
 import TIconUpload from '../icon/upload';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
 import { renderContent } from '../utils/render-tnode';
 import props from './props';
+import { ClassName } from '../common';
+import { emitEvent } from '../utils/event';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -24,12 +26,56 @@ import {
   FlowRemoveContext,
   URL,
 } from './interface';
-import { ClassName } from '../common';
-import { emitEvent } from '../utils/event';
+import {
+  TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext, RequestMethodResponse, SizeUnit, SizeLimitObj,
+} from './type';
 
 const name = `${prefix}-upload`;
+/**
+ * [*] 表示方法采用这种方式
+ * [x] 表示方法不采用这种方式
+ *
+ * [x] bit      位              b     0 or 1
+ * [*] byte     字节            B     8 bits
+ * [x] kilobit  千位            kb    1000 bites
+ * [*] kilobyte 千字节(二进制)   KB    1024 bytes
+ * [x] kilobyte 千字节(十进制)   KB    1000 bytes
+ * [x] Megabite 百万位          Mb    1000 kilobits
+ * [*] Megabyte 兆字节(二进制)   KB    1024 kilobytes
+ * [*] Megabyte 兆字节(十进制)   KB    1000 kilobytes
+ * [x] Gigabit  万亿位          Gb    1000 Megabite
+ * [*] Gigabyte 吉字节(二进制)   GB    1024 Megabytes
+ * [x] Gigabyte 吉字节(十进制)   GB    1000 Megabytes
+ */
 
-export default Vue.extend({
+// 各个单位和 KB 的关系
+const SIZE_MAP = {
+  B: 1024,
+  KB: 1,
+  MB: 1048576, // 1024 * 1024
+  GB: 1073741824, // 1024 * 1024 * 1024
+};
+
+/**
+ * 大小比较
+ * @param size 文件大小
+ * @param unit 计算机计量单位
+ */
+function isOverSizeLimit(fileSize: number, sizeLimit: number, unit: SizeUnit) {
+  // 以 KB 为单位进行比较
+  const units = ['B', 'KB', 'MB', 'GB'];
+  const KBIndex = 1;
+  let index = units.indexOf(unit);
+  if (index === -1) {
+    console.warn(`TDesign Upload Warn: \`sizeLimit.unit\` can only be one of ${units.join()}`);
+    index = KBIndex;
+  }
+  const num = SIZE_MAP[unit];
+  const limit = index < KBIndex ? (sizeLimit / num) : (sizeLimit * num);
+  return fileSize <= limit;
+}
+
+export default mixins(getLocalReceiverMixins('upload')).extend({
   name,
 
   components: {
@@ -97,10 +143,10 @@ export default Vue.extend({
       return !this.showUploadList && !!this.errorMsg;
     },
     tipsClasses(): ClassName {
-      return ['t-upload__tips t-upload__small'];
+      return [`${name}__tips ${name}__small`];
     },
     errorClasses(): ClassName {
-      return this.tipsClasses.concat('t-upload__tips-error');
+      return this.tipsClasses.concat(`${name}__tips-error`);
     },
   },
 
@@ -197,32 +243,72 @@ export default Vue.extend({
     },
 
     async upload(file: UploadFile): Promise<void> {
-      if (!this.action) {
-        console.error('TDesign Upload Error: action is required.');
+      if (!this.action && !this.requestMethod) {
+        console.error('TDesign Upload Error: one of action and requestMethod must be exist.');
         return;
       }
       this.errorMsg = '';
       file.status = 'progress';
-      // 模拟进度条
-      const timer = setInterval(() => {
-        file.percent += 1;
-        if (file.percent >= 99) {
-          clearInterval(timer);
-        }
-      }, 10);
       this.loadingFile = file;
-      const request = xhr;
-      this.xhrReq = request({
-        action: this.action,
-        data: this.data,
-        file,
-        name: this.name,
-        headers: this.headers,
-        withCredentials: this.withCredentials,
-        onError: this.onError,
-        onProgress: this.handleProgress,
-        onSuccess: this.handleSuccess,
+      // requestMethod 为父组件定义的自定义上传方法
+      if (this.requestMethod) {
+        this.handleRequestMethod(file);
+      } else {
+        // 模拟进度条
+        const timer = setInterval(() => {
+          file.percent += 1;
+          if (file.percent >= 99) {
+            clearInterval(timer);
+          }
+        }, 10);
+        const request = xhr;
+        this.xhrReq = request({
+          action: this.action,
+          data: this.data,
+          file,
+          name: this.name,
+          headers: this.headers,
+          withCredentials: this.withCredentials,
+          onError: this.onError,
+          onProgress: this.handleProgress,
+          onSuccess: this.handleSuccess,
+        });
+      }
+    },
+
+    handleRequestMethod(file: UploadFile) {
+      if (!isFunction(this.requestMethod)) {
+        console.warn('TDesign Upload Warn: `requestMethod` must be a function.');
+        return;
+      }
+      this.requestMethod(file).then((res: RequestMethodResponse) => {
+        if (!this.handleRequestMethodResponse(res)) return;
+        if (res.status === 'success') {
+          this.handleSuccess({ file, response: res.response });
+        } else if (res.status === 'fail') {
+          const r = res.response || {};
+          this.onError({ file, response: { ...r, error: res.error } });
+        }
       });
+    },
+
+    handleRequestMethodResponse(res: RequestMethodResponse) {
+      if (!res) {
+        console.error('TDesign Upoad Error: `requestMethodResponse` is required.');
+        return false;
+      }
+      if (!res.status) {
+        console.error('TDesign Upoad Error: `requestMethodResponse.status` is missing, which value is `success` or `fail`');
+        return false;
+      }
+      if (!['success', 'fail'].includes(res.status)) {
+        console.error('TDesign Upoad Error: `requestMethodResponse.status` must be `success` or `fail`');
+        return false;
+      }
+      if (res.status === 'success' && (!res.response || !res.response.url)) {
+        console.warn('TDesign Upoad Warn: `requestMethodResponse.response.url` is required, when `status` is `success`');
+      }
+      return true;
     },
 
     multipleUpload(files: Array<UploadFile>) {
@@ -231,7 +317,7 @@ export default Vue.extend({
       });
     },
 
-    onError(options: { event: ProgressEvent; file: UploadFile; response?: any }) {
+    onError(options: { event?: ProgressEvent; file: UploadFile; response?: any }) {
       const { event, file, response } = options;
       file.status = 'fail';
       this.loadingFile = file;
@@ -239,7 +325,7 @@ export default Vue.extend({
       if (typeof this.formatResponse === 'function') {
         res = this.formatResponse(response);
       }
-      this.errorMsg = (res && res.error) ?? '上传失败';
+      this.errorMsg = res?.error;
       const context = { e: event, file };
       emitEvent<Parameters<TdUploadProps['onFail']>>(this, 'fail', context);
     },
@@ -298,15 +384,38 @@ export default Vue.extend({
         if (r instanceof Promise) return r;
         return new Promise((resolve) => resolve(r));
       }
-      return new Promise((resolve) => resolve(true));
+      return new Promise((resolve) => {
+        if (this.sizeLimit) {
+          resolve(this.handleSizeLimit(file.size));
+        }
+        resolve(true);
+      });
+    },
+
+    handleSizeLimit(fileSize: number) {
+      const sizeLimit: SizeLimitObj = typeof this.sizeLimit === 'number'
+        ? { size: this.sizeLimit, unit: 'KB' }
+        : this.sizeLimit;
+      const rSize = isOverSizeLimit(fileSize, sizeLimit.size, sizeLimit.unit);
+      if (!rSize) {
+        // 有参数 message 则使用，没有就使用全局 locale 配置
+        this.errorMsg = sizeLimit.message
+          ? this.t(sizeLimit.message, { sizeLimit: sizeLimit.size })
+          : `${this.t(this.locale.sizeLimitMessage, { sizeLimit: sizeLimit.size })} ${sizeLimit.unit}`;
+      }
+      return rSize;
     },
 
     cancelUpload() {
       if (this.loadingFile) {
         // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
         this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
-        // abort `this.upload()` request
-        this.xhrReq && this.xhrReq.abort();
+        // 如果存在自定义上传方法，则只需要抛出事件，而后由父组件处理取消上传
+        if (this.requestMethod) {
+          emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
+        } else {
+          this.xhrReq && this.xhrReq.abort();
+        }
         this.loadingFile = null;
       }
       (this.$refs.input as HTMLInputElement).value = '';
@@ -354,9 +463,10 @@ export default Vue.extend({
           loadingFile={this.loadingFile}
           display={this.theme}
           remove={this.handleSingleRemove}
+          showUploadProgress={this.showUploadProgress}
           placeholder={this.placeholder}
         >
-          <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
+          <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>
         </SingleFile>
       );
     },
@@ -368,6 +478,7 @@ export default Vue.extend({
       const triggerElement = renderContent(this, 'default', 'trigger', { params });
       return (
         <Dragger
+          showUploadProgress={this.showUploadProgress}
           onChange={this.handleDragChange}
           onDragenter={this.handleDragenter}
           onDragleave={this.handleDragleave}
@@ -390,7 +501,7 @@ export default Vue.extend({
     renderCustom(triggerElement: VNode) {
       return this.draggable
         ? this.renderDraggerTrigger()
-        : <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>;
+        : <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>;
     },
   },
   mounted() {
@@ -401,7 +512,7 @@ export default Vue.extend({
   render(): VNode {
     const triggerElement = this.renderTrigger();
     return (
-      <div class='t-upload'>
+      <div class={`${name}`}>
         {this.renderInput()}
         {this.showCustomDisplay && this.renderCustom(triggerElement)}
         {this.showSingleDisplay && this.renderSingleDisplay(triggerElement)}
@@ -425,6 +536,7 @@ export default Vue.extend({
             autoUpload={this.autoUpload}
             toUploadFiles={this.toUploadFiles}
             remove={this.handleListRemove}
+            showUploadProgress={this.showUploadProgress}
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}
@@ -433,7 +545,7 @@ export default Vue.extend({
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
           >
-            <div class='t-upload__trigger' onclick={this.triggerUpload}>{triggerElement}</div>
+            <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>
           </FlowList>
         )}
         {this.showImgDialog && (
@@ -442,11 +554,11 @@ export default Vue.extend({
             showOverlay
             width='auto'
             top='10%'
-            class='t-upload-dialog'
+            class={`${name}-dialog`}
             footer={false}
             header={false}
             onClose={this.cancelPreviewImgDialog}>
-              <p class='t-dialog__body-img-box'>
+              <p class={`${prefix}-dialog__body-img-box`}>
                 <img class='' src={this.showImageViewUrl} alt='' />
               </p>
           </TDialog>

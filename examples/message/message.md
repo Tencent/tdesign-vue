@@ -20,9 +20,10 @@
 
 {{ placement }}
 
-### 组件实例方法 与 插件调用
+### 插件调用 与 函数式调用
 
-除了常规的组件使用，还可以通过组件实例方法`$message.success`和插件方式`MessagePlugin.success`使用
+支持插件式调用（this.$message）和函数式调用（MessagePlugin）两种方式，两种方式参数完全一样。示例：MessagePlugin.warning('请输入信息') 或 this.$message.warning('请输入信息')
+
 
 {{ plugin }}
 

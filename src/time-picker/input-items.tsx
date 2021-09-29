@@ -1,10 +1,11 @@
-import { TimeInputType, InputEvent, InputTime } from './interface';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-
 import {
-  componentName, AM_FORMAT, KEYBOARD_DIRECTION, EMPTY_VALUE, MERIDIEM_LIST,
+  componentName, AM_FORMAT, EMPTY_VALUE, MERIDIEM_LIST,
 } from './constant';
+import {
+  TimeInputType, InputEvent, InputTime, KeyboardDirection, EPickerCols,
+} from './interface';
 
 import { prefix } from '../config';
 
@@ -118,11 +119,11 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       } = this;
       const curDayJs = this.displayTimeList[index];
       // 增加减少
-      if ([KEYBOARD_DIRECTION.up, KEYBOARD_DIRECTION.down].includes(which)) {
-        if (type === 'meridiem') return;
+      if ([KeyboardDirection.up, KeyboardDirection.down].includes(which)) {
+        if (type === EPickerCols.meridiem) return;
         // 加减
         const current = curDayJs[type] ? Number(curDayJs[type]) : 0;
-        const operate = which === KEYBOARD_DIRECTION.up ? -1 : 1;
+        const operate = which === KeyboardDirection.up ? -1 : 1;
         let result = current + operate;
         // 边界检测
         if (type === 'hour') {
@@ -143,12 +144,12 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
           type,
           index,
         });
-      } else if ([KEYBOARD_DIRECTION.left, KEYBOARD_DIRECTION.right].includes(which)) {
+      } else if ([KeyboardDirection.left, KeyboardDirection.right].includes(which)) {
         // 移动方向
         const { target } = e;
         // 查找上下一个兄弟节点
         const { parentNode } = target;
-        const focus = which === KEYBOARD_DIRECTION.left ? parentNode.previousSibling : parentNode.nextSibling;
+        const focus = which === KeyboardDirection.left ? parentNode.previousSibling : parentNode.nextSibling;
         if (focus) {
           const input = focus.querySelector('input');
           if (!input.focus) return;
