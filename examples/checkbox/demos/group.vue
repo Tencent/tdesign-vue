@@ -1,13 +1,14 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <div>选中值: {{ city.join(',') }}</div>
+    <div>选中值: {{ city.join(',') }}（业务侧自定义全选功能）</div>
     <div>
       <t-checkbox :checked="checkAll" :indeterminate="indeterminate" :onChange="handleSelectAll">全选</t-checkbox>
       <t-checkbox v-model="disabled">禁用全部</t-checkbox>
     </div>
     <t-checkbox-group v-model="city" :options="options" :disabled="disabled" />
 
-    <div>选中值: {{ city2.join(',') }}</div>
+    <br><br>
+    <div>选中值: {{ city2.join(',') }}（组件内置全选功能）</div>
     <t-checkbox-group v-model="city2" :options="options2"/>
   </div>
 </template>

@@ -22,9 +22,8 @@
 
 ### 插件调用 与 函数式调用
 
-除了常规的组件使用，还可以通过插件调用，如`$message.info('信息提示',1000)`或`$message('warning', '用户表示操作引起一定后果')`等;
+支持插件式调用（this.$message）和函数式调用（MessagePlugin）两种方式，两种方式参数完全一样。示例：MessagePlugin.warning('请输入信息') 或 this.$message.warning('请输入信息')
 
-也可通过函数式调用，如`MessagePlugin.info('信息提示')`或`MessagePlugin('warning', { content: '用户表示操作引起一定后果' })`等
 
 {{ plugin }}
 
