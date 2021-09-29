@@ -11,11 +11,11 @@ export default Vue.extend({
     isActive: {
       type: Boolean,
     },
-    overlayClass: {
-      type: Object,
+    overlayClassName: {
+      type: [String, Object, Array],
     },
-    style: {
-      type: Object || String,
+    overlayStyle: {
+      type: Object,
     },
   },
 
@@ -24,9 +24,9 @@ export default Vue.extend({
       return [
         name,
         {
-          [`${name}--active`]: this?.isActive,
+          [`${name}--active`]: this.isActive,
         },
-        this?.overlayClass,
+        this.overlayClassName,
       ];
     },
   },
@@ -40,7 +40,7 @@ export default Vue.extend({
         viewBox="0 0 16 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={this.style}
+        style={this.overlayStyle}
       >
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3" />
       </svg>

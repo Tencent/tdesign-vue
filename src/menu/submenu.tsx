@@ -155,7 +155,7 @@ export default defineComponent({
       const popupSubmenu = [
         <div class={this.submenuClass}>
           {renderTNodeJSX(this as Vue, 'title')}
-          <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }} />
+          <fake-arrow overlayClassName={this.arrowClass} overlayStyle={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }} />
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
@@ -181,7 +181,7 @@ export default defineComponent({
         <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
-          {hasContent && <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
+          {hasContent && <fake-arrow overlayClassName={this.arrowClass} overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
 }
         </div>,
         <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
@@ -192,7 +192,7 @@ export default defineComponent({
         <div class={this.submenuClass}>
           {icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
-          <fake-arrow overlayClass={this.arrowClass} style={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
+          <fake-arrow overlayClassName={this.arrowClass} overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
