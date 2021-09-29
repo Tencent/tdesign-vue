@@ -53,7 +53,6 @@ export default Vue.extend({
       refOverlayElm: null,
       hasDocumentEvent: false,
       presetMaxHeight: null, // 组件自身已设置的maxHeight
-      visible$: false,
     };
   },
   computed: {
@@ -75,15 +74,7 @@ export default Vue.extend({
     },
   },
   watch: {
-    visible: {
-      immediate: true,
-      handler(val) {
-        if (val !== undefined) {
-          this.visible$ = val;
-        }
-      },
-    },
-    visible$(val) {
+    visible(val) {
       if (val) {
         this.updatePopper();
         if (!this.hasDocumentEvent && (this.hasTrigger['context-menu'] || this.hasTrigger.click)) {
@@ -120,7 +111,7 @@ export default Vue.extend({
     this.referenceElm = this.referenceElm || this.$el;
     if (!this.referenceElm || !this.$refs.popper) return;
 
-    if (this.visible$) {
+    if (this.visible) {
       this.createPopper();
       this.updateOverlayStyle();
     }
@@ -167,7 +158,7 @@ export default Vue.extend({
     }
   },
   beforeDestroy(): void {
-    if (this.popper && !this.visible$) {
+    if (this.popper && !this.visible) {
       this.popper.destroy();
       this.popper = null;
     }
@@ -266,7 +257,7 @@ export default Vue.extend({
     },
 
     handleToggle(context: PopupVisibleChangeContext): void {
-      this.emitPopVisible(!this.visible$, context);
+      this.emitPopVisible(!this.visible, context);
     },
     handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
       clearTimeout(this.timeout);
@@ -297,9 +288,6 @@ export default Vue.extend({
         return;
       }
 
-      if (this.visible === undefined) {
-        this.visible$ = val;
-      }
       this.$emit('visible-change', val, context);
       if (typeof this.onVisibleChange === 'function') {
         this.onVisibleChange(val, context);
@@ -370,9 +358,9 @@ export default Vue.extend({
           <div
             class={name}
             ref="popper"
-            v-show={!this.disabled && this.visible$}
+            v-show={!this.disabled && this.visible}
             role="tooltip"
-            aria-hidden={this.disabled || !this.visible$ ? 'true' : 'false'}
+            aria-hidden={this.disabled || !this.visible ? 'true' : 'false'}
             style={{ zIndex: this.zIndex }}
           >
             <div class={this.overlayClasses} ref="overlay">
