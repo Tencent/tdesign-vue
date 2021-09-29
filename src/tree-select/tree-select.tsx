@@ -419,7 +419,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             {searchInput}
             {
               this.showArrow && !this.showLoading && (
-                <FakeArrow overlayClass={`${prefix}-select-right-icon`} style={iconStyle} isActive={this.visible && !this.disabled}/>
+                <FakeArrow overlayClassName={`${prefix}-select-right-icon`} overlayStyle={iconStyle} isActive={this.visible && !this.disabled}/>
               )
             }
             <IconCloseCircleFilled v-show={this.showClose && !this.showLoading} name="close" class={`${prefix}-select-right-icon`} size={this.size} nativeOnClick={this.clear} />

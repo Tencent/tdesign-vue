@@ -531,7 +531,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               this.showArrow && !this.showLoading && (
-                <fake-arrow overlayClass={`${name}-right-icon`} isActive={ this.visible && !this.disabled}/>
+                <fake-arrow overlayClassName={`${name}-right-icon`} isActive={ this.visible && !this.disabled}/>
               )
             }
             {
