@@ -66,8 +66,8 @@ function getDataValues(data: Array<TransferItemOption>, filterValues: Array<Tran
   }
   return data.filter((item) => {
     const isInclude = filterValues.includes(item.value);
-    return (include && isInclude) || (!include && !isInclude);
-  }).filter((item) => !item.disabled).map((item) => item.value);
+    return ((include && isInclude) || (!include && !isInclude)) && !item.disabled;
+  }).map((item) => item.value);
 }
 
 function getTransferData(data: Array<DataOption>, keys: TdTransferProps['keys'], isTreeMode = false): Array<TransferItemOption> {
