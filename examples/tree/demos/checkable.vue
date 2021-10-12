@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-base">
+  <div class="tdesign-tree-demo">
     <div class="operations">
       <t-form>
         <t-form-item label="可选">
@@ -130,7 +130,5 @@ export default {
 };
 </script>
 <style scoped>
-  .tdesign-tree-base .t-button{
-    margin: 0 10px 10px 0;
-  }
+@import url('./common/demo.css');
 </style>

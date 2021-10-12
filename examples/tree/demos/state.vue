@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-state">
+  <div class="tdesign-tree-demo">
     <h3 class="title">state:</h3>
     <t-tree
       :data="items"
@@ -114,14 +114,5 @@ export default {
 };
 </script>
 <style scoped>
-  .tdesign-tree-state .title{
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  .tdesign-tree-state .operations .t-button{
-    margin: 0 10px 10px 0;
-  }
-  .tdesign-tree-state .t-tree__operations .t-button{
-    margin-left: 10px;
-  }
+@import url('./common/demo.css');
 </style>

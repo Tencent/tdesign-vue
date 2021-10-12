@@ -1,14 +1,16 @@
 <template>
-  <div class="tdesign-tree-base">
-    <t-addon prepend="checked:">
-      <t-input :value="allChecked"/>
-    </t-addon>
-    <t-addon prepend="expanded:">
-      <t-input :value="allExpanded"/>
-    </t-addon>
-    <t-addon prepend="actived:">
-      <t-input :value="allActived"/>
-    </t-addon>
+  <div class="tdesign-tree-demo">
+    <div class="operations">
+      <t-addon prepend="checked:">
+        <t-input :value="allChecked"/>
+      </t-addon>
+      <t-addon prepend="expanded:">
+        <t-input :value="allExpanded"/>
+      </t-addon>
+      <t-addon prepend="actived:">
+        <t-input :value="allActived"/>
+      </t-addon>
+    </div>
     <t-tree
       :data="items"
       checkable
@@ -152,7 +154,5 @@ export default {
 };
 </script>
 <style scoped>
-  .demo-tree-base {
-    display: block;
-  }
+@import url('./common/demo.css');
 </style>

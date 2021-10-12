@@ -252,9 +252,6 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
         itemNodes.push(labelNode);
       }
 
-      // const spaceNode = (<span class={CLASS_NAMES.treeSpace}></span>);
-      // itemNodes.push(spaceNode);
-
       const opNode = this.renderOperations(createElement);
       if (opNode) {
         itemNodes.push(opNode);
