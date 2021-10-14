@@ -9,7 +9,7 @@ import { ClassName, TNodeReturnValue } from '../common';
 const name = `${prefix}-switch`;
 
 export default Vue.extend({
-  name,
+  name: 'TSwitch',
   props: { ...props },
   model: {
     prop: 'value',

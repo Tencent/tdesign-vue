@@ -21,7 +21,6 @@ import {
   TypeTargetNode,
 } from './interface';
 import {
-  TREE_NAME,
   CLASS_NAMES,
   FX,
 } from './constants';
@@ -32,7 +31,7 @@ import {
 } from './util';
 
 export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
-  name: TREE_NAME,
+  name: 'TTree',
   model: {
     prop: 'value',
     event: 'change',

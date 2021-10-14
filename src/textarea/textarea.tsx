@@ -17,7 +17,7 @@ function getValidAttrs(obj: object): object {
   return newObj;
 }
 export default Vue.extend({
-  name,
+  name: 'TTextarea',
   props: {
     ...props,
   },

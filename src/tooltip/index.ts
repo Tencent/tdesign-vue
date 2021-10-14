@@ -8,9 +8,9 @@ import './style';
 export type TooltipProps = TdTooltipProps;
 export * from './type';
 
-// export const Tooltip = withInstall('Tooltip', _Tooltip);
-export const Tooltip = withInstall('Tooltip', mapProps(
+export const Tooltip = withInstall(mapProps(
   ['visible'],
   { model: { prop: 'visible', event: 'visible-change' } },
 )(_Tooltip));
+
 export default Tooltip;

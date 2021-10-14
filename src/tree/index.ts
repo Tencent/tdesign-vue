@@ -4,7 +4,7 @@ import withInstall from '../utils/withInstall';
 
 import './style';
 
-export const Tree = withInstall('Tree', mapProps([
+export const Tree = withInstall(mapProps([
   {
     name: 'value',
     event: ['change', 'update:value'],

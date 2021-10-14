@@ -9,7 +9,7 @@ import props from './props';
 const name = `${prefix}-dropdown`;
 
 export default Vue.extend({
-  name,
+  name: 'TDropdown',
   props: {
     ...props,
   },

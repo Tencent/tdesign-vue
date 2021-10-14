@@ -11,7 +11,7 @@ import CLASSNAMES from '../utils/classnames';
 const name = `${prefix}-radio-group`;
 
 export default Vue.extend({
-  name,
+  name: 'TRadioGroup',
   props: { ...props },
 
   components: {

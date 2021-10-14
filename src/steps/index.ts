@@ -10,9 +10,11 @@ export * from './type';
 export type StepsProps = TdStepsProps;
 export type StepItemProps = TdStepItemProps;
 
-export const StepItem = withInstall('StepItem', _StepItem);
-export const Steps = withInstall('Steps', mapProps(
+export const StepItem = withInstall(_StepItem);
+
+export const Steps = withInstall(mapProps(
   ['current'],
   { model: { prop: 'current', event: 'change' } },
 )(_Steps));
+
 export default Steps;

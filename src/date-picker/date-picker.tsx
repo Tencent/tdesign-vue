@@ -35,7 +35,7 @@ const onOpenDebounce = debounce((vm?: any) => {
 const name = `${prefix}-date-picker`;
 
 export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
-  name,
+  name: 'TDatePicker',
   components: {
     TIconTime,
     TIconCalendar,

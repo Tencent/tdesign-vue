@@ -5,5 +5,5 @@ import './style';
 
 export * from './interface';
 
-export const Calendar = withInstall('Calendar', _Calendar);
+export const Calendar = withInstall(_Calendar);
 export default Calendar;

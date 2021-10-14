@@ -5,7 +5,6 @@ import mapProps from '../utils/map-props';
 import './style';
 
 export const Cascader = withInstall(
-  'Cascader',
   mapProps(['value'], {
     model: { prop: 'value', event: 'change' },
   })(_Cascader),

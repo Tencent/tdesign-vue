@@ -28,7 +28,7 @@ const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
 export default mixins(getLocalReceiverMixins('transfer')).extend({
-  name,
+  name: 'TTransfer',
   components: {
     TransferList,
     TransferOperations,

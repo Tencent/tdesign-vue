@@ -6,6 +6,6 @@ import { TdSwiperProps } from './type';
 export * from './type';
 export type SwiperProps = TdSwiperProps;
 
-export const Swiper = withInstall('Swiper', _Swiper);
-export const SwiperItem = withInstall('SwiperItem', _SwiperItem);
+export const Swiper = withInstall(_Swiper);
+export const SwiperItem = withInstall(_SwiperItem);
 export default Swiper;

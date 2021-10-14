@@ -4,7 +4,7 @@ import withInstall from '../utils/withInstall';
 
 import './style';
 
-export const Dropdown = withInstall('Dropdown', _Dropdown);
-export const DropdownItem = withInstall('DropdownItem', _DropdownItem);
+export const Dropdown = withInstall(_Dropdown);
+export const DropdownItem = withInstall(_DropdownItem);
 
 export default Dropdown;

@@ -8,5 +8,5 @@ export * from './type';
 export * from './plugin';
 export type MessageProps = TdMessageProps;
 
-export const Message = withInstall('Message', _Message);
+export const Message = withInstall(_Message);
 export default Message;

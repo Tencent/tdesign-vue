@@ -5,7 +5,7 @@ import { JsxNode } from '../common';
 const name = `${prefix}-addon`;
 
 export default Vue.extend({
-  name,
+  name: 'TAddon',
   props: {
     prepend: [String, Function],
     append: [String, Function],

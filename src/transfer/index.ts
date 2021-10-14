@@ -4,10 +4,11 @@ import withInstall from '../utils/withInstall';
 
 import './style';
 
-export const Transfer = withInstall('Transfer', mapProps([
+export const Transfer = withInstall(mapProps([
   { name: 'value' },
   { name: 'checked', event: 'update:checked' },
 ], {
   model: { prop: 'value', event: 'change' },
 })(_Transfer));
+
 export default Transfer;

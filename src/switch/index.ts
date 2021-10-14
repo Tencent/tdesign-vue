@@ -8,7 +8,7 @@ import './style';
 export * from './type';
 export type SwitchProps = TdSwitchProps;
 
-export const Switch = withInstall('Switch', mapProps(['value'], {
+export const Switch = withInstall(mapProps(['value'], {
   model: { prop: 'value', event: 'change' },
 })(_Switch));
 

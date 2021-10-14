@@ -11,7 +11,7 @@ import { ClassName } from '../common';
 const name = `${prefix}-list`;
 
 export default Vue.extend({
-  name,
+  name: 'TList',
   props: {
     ...props,
   },

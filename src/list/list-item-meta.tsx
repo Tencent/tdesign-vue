@@ -7,7 +7,7 @@ import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 const name = `${prefix}-list-item__meta`;
 
 export default Vue.extend({
-  name,
+  name: 'TListItemMeta',
   props,
   methods: {
     renderAvatar() {

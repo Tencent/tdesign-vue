@@ -6,6 +6,5 @@ import './style';
 
 export * from './type';
 export type ButtonProps = TdButtonProps;
-
-export const Button = withInstall('Button', _Button);
+export const Button = withInstall(_Button);
 export default Button;

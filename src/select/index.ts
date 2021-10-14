@@ -12,8 +12,10 @@ export type OptionProps = TdOptionProps;
 export type OptionGroupProps = TdOptionGroupProps;
 export * from './type';
 
-export const Select = withInstall('Select', mapProps(['value'], {
+export const Select = withInstall(mapProps(['value'], {
   model: { prop: 'value', event: 'change' },
 })(_Select));
-export const Option = withInstall('Option', _Option);
-export const OptionGroup = withInstall('OptionGroup', _OptionGroup);
+
+export const Option = withInstall(_Option);
+
+export const OptionGroup = withInstall(_OptionGroup);

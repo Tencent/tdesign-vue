@@ -17,7 +17,7 @@ export interface Anchor extends Vue {
 }
 
 export default (Vue as VueConstructor<Anchor>).extend({
-  name,
+  name: 'TAnchorItem',
 
   props: {
     ...props,

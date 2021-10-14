@@ -80,7 +80,7 @@ export default Vue.extend({
       <div class={name}>
         <TButton
           variant={rightDisabled ? 'outline' : 'base'}
-          key={rightDisabled ? 'outline' : 'base'}
+          key={rightDisabled ? 'right-outline' : 'right-base'}
           disabled={rightDisabled}
           onClick={this.moveToRight}
           icon={this.getIcon('right')}
@@ -89,7 +89,7 @@ export default Vue.extend({
         </TButton>
         <TButton
           variant={leftDisabled ? 'outline' : 'base'}
-          key={leftDisabled ? 'outline' : 'base'}
+          key={leftDisabled ? 'left-outline' : 'left-base'}
           disabled={leftDisabled}
           onClick={this.moveToLeft}
           icon={this.getIcon('left')}

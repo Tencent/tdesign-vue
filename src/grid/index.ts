@@ -9,6 +9,6 @@ export type ColProps = TdColProps;
 export type RowProps = TdRowProps;
 export * from './type';
 
-export const Col = withInstall('Col', _Col);
-export const Row = withInstall('Row', _Row);
+export const Col = withInstall(_Col);
+export const Row = withInstall(_Row);
 export default { Row, Col };

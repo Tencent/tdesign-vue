@@ -37,7 +37,7 @@ type InputNumberAttr = {
 };
 
 export default Vue.extend({
-  name,
+  name: 'TInputNumber',
   props: { ...props },
   components: {
     Add,

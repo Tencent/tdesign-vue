@@ -8,7 +8,7 @@ import { emitEvent } from '../utils/event';
 const name = `${prefix}-dropdown__menu`;
 
 export default Vue.extend({
-  name,
+  name: 'TDropdownMenu',
   props: {
     options: {
       type: Array,

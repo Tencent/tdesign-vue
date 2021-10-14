@@ -7,5 +7,5 @@ import './style';
 export type ProgressProps = TdProgressProps;
 export * from './type';
 
-export const Progress = withInstall('Progress', _Progress);
+export const Progress = withInstall(_Progress);
 export default Progress;

@@ -28,10 +28,8 @@ import { prefix } from '../config';
 
 import { RemoveOptions, NodeOptions } from './interface';
 
-const name = `${prefix}-tree-select`;
-
 export default mixins(getLocalReceiverMixins('treeSelect')).extend({
-  name,
+  name: 'TTreeSelect',
   model: {
     prop: 'value',
     event: 'change',

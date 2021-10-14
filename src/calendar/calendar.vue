@@ -232,7 +232,7 @@ const CalendarLocalReceiver = getLocalReceiverMixins('calendar');
 
 // 组件逻辑
 export default mixins(CalendarLocalReceiver).extend({
-  name: COMPONENT_NAME,
+  name: 'TCalendar',
   components: {
     TSelect,
     TOption,

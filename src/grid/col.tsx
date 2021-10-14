@@ -8,7 +8,7 @@ import { TdColProps, TdRowProps } from './type';
 const name = `${prefix}-col`;
 
 export default Vue.extend({
-  name,
+  name: 'TCol',
 
   props: { ...props },
 

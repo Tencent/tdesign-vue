@@ -8,5 +8,5 @@ import './style';
 export type InputNumberProps = TdInputNumberProps;
 export * from './type';
 
-export const InputNumber = withInstall('InputNumber', mapProps(['value'])(_InputNumber));
+export const InputNumber = withInstall(mapProps(['value'])(_InputNumber));
 export default InputNumber;

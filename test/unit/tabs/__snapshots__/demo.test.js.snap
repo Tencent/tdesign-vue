@@ -210,7 +210,7 @@ exports[`Tabs base demo works fine 1`] = `
         <p
           style="padding: 25px;"
         >
-          选项卡1
+          选项卡一
         </p>
       </div>
        
@@ -221,7 +221,7 @@ exports[`Tabs base demo works fine 1`] = `
         <p
           style="padding: 25px;"
         >
-          选项卡2
+          选项卡二
         </p>
       </div>
        
@@ -232,7 +232,7 @@ exports[`Tabs base demo works fine 1`] = `
         <p
           style="padding: 25px;"
         >
-          选项卡3
+          选项卡三
         </p>
       </div>
     </div>

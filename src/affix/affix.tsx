@@ -13,7 +13,7 @@ export interface Affix extends Vue {
 }
 
 export default (Vue as VueConstructor<Affix>).extend({
-  name,
+  name: 'TAffix',
   props: {
     ...affixProps,
   },

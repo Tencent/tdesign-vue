@@ -7,5 +7,5 @@ import './style';
 export * from './type';
 export type BadgeProps = TdBadgeProps;
 
-export const Badge = withInstall('Badge', _Badge);
+export const Badge = withInstall(_Badge);
 export default Badge;

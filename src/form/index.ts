@@ -9,6 +9,6 @@ export * from './type';
 export type FormProps = TdFormProps;
 export type FormItemProps = TdFormItemProps;
 
-export const Form = withInstall('Form', _Form);
-export const FormItem = withInstall('FormItem', _FormItem);
+export const Form = withInstall(_Form);
+export const FormItem = withInstall(_FormItem);
 export default Form;

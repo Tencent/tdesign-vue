@@ -5,7 +5,6 @@ import {
 
 import primaryTableProps from '../primary-table-props';
 import SimpleTable from '../base-table';
-import { prefix } from '../../config';
 import mixins from '../../utils/mixins';
 import expand from './mixins/expand';
 import select from './mixins/select';
@@ -22,7 +21,7 @@ type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
 
 export default mixins(expand, select, sort, rowDraggable, filter, showColumns, asyncLoadingMixin).extend({
-  name: `${prefix}-primary-table`,
+  name: 'TTable',
   props: {
     ...baseTableProps,
     ...primaryTableProps,

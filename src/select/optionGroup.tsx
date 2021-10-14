@@ -15,7 +15,7 @@ export interface Select extends Vue {
 }
 
 export default (Vue as VueConstructor<Select>).extend({
-  name,
+  name: 'TOptionGroup',
   props: { ...props },
   inject: {
     tSelect: {

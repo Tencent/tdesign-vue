@@ -7,5 +7,5 @@ import './style';
 export * from './type';
 export type DrawerProps = TdDrawerProps;
 
-export const Drawer = withInstall('Drawer', _Drawer);
+export const Drawer = withInstall(_Drawer);
 export default Drawer;

@@ -29,7 +29,7 @@ type TypeContext = { e?: Event; node?: TreeNode };
 const name = `${prefix}-cascader`;
 
 export default mixins(getLocalReceiverMixins('cascader')).extend({
-  name,
+  name: 'TCascader',
   components: {
     TIconChevronDrown,
     TInput: Input,

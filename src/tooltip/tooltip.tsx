@@ -7,10 +7,8 @@ import { PopupProps, PopupVisibleChangeContext } from '../popup';
 import { ClassName } from '../common';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
-const name = `${prefix}-tooltip`;
-
 export default Vue.extend({
-  name,
+  name: 'TTooltip',
   components: { Popup },
   props: {
     ...popupProps,

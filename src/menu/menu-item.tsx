@@ -7,10 +7,8 @@ import { TdMenuInterface, TdSubMenuInterface } from './const';
 import ripple from '../utils/ripple';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 
-const name = `${prefix}-menu-item`;
-
 export default defineComponent({
-  name,
+  name: 'TMenuItem',
   props: { ...props },
   directives: { ripple },
   setup(props, ctx) {

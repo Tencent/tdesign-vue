@@ -9,12 +9,10 @@ import './style';
 export * from './interface';
 
 export const TimePicker = withInstall(
-  'TimePicker',
   mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_TimePicker),
 );
 
 export const TimeRangePicker = withInstall(
-  'TimeRangePicker',
   mapProps(['value'], { model: { prop: 'value', event: 'change' } })(_TimeRangePicker),
 );
 

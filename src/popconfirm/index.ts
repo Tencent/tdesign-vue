@@ -8,8 +8,9 @@ import './style';
 export type PopconfirmProps = TdPopconfirmProps;
 export * from './type';
 
-export const Popconfirm = withInstall('Popconfirm', mapProps(
+export const Popconfirm = withInstall(mapProps(
   ['visible'],
   { model: { prop: 'visible', event: 'visible-change' } },
 )(_Popconfirm));
+
 export default Popconfirm;

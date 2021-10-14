@@ -27,7 +27,7 @@ const name = `${prefix}-select`;
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
 
 export default mixins(getLocalReceiverMixins('select')).extend({
-  name,
+  name: 'TSelect',
   model: {
     prop: 'value',
     event: 'change',

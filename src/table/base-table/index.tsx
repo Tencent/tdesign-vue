@@ -23,7 +23,7 @@ import primaryTableProps from '../primary-table-props';
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
 export default mixins(getLocalReceiverMixins('table')).extend({
-  name: `${prefix}-base-table`,
+  name: 'TBaseTable',
   model: {
     prop: 'value',
     event: 'change',

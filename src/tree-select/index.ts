@@ -4,5 +4,5 @@ import withInstall from '../utils/withInstall';
 import './style';
 
 export * from './interface';
-export const TreeSelect = withInstall('TreeSelect', _TreeSelect);
+export const TreeSelect = withInstall(_TreeSelect);
 export default TreeSelect;

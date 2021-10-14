@@ -25,7 +25,7 @@ interface RadioInstance extends Vue {
 }
 
 export default (Vue as VueConstructor<RadioInstance>).extend({
-  name,
+  name: 'TRadio',
   inheritAttrs: false,
   props: { ...props },
 

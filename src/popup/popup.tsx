@@ -33,7 +33,7 @@ const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 
 export default Vue.extend({
-  name,
+  name: 'TPopup',
 
   props: {
     ...props,

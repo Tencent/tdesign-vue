@@ -2,10 +2,8 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import props from './header-props';
 
-const name = `${prefix}-header`;
-
 export default Vue.extend({
-  name,
+  name: 'THeader',
 
   props: { ...props },
 
@@ -28,7 +26,7 @@ export default Vue.extend({
       height: this.height,
     } : {};
     return (
-      <header class="t-layout--header" style={styles}>
+      <header class={`${prefix}-layout--header`} style={styles}>
         {this.renderContent()}
       </header>
     );

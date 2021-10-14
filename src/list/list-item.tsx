@@ -6,7 +6,7 @@ import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 const name = `${prefix}-list-item`;
 
 export default Vue.extend({
-  name,
+  name: 'TListItem',
   props,
   render(): VNode {
     const content = renderContent(this, 'default', 'content');

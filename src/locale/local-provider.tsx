@@ -1,10 +1,8 @@
 import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
 import { Locale } from './type';
 
-const name = `${prefix}-locale-provider`;
 const LocaleProvider = Vue.extend({
-  name,
+  name: 'TLocaleProvider',
   props: {
     globalLocale: Object,
   },

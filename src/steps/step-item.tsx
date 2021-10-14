@@ -17,7 +17,7 @@ export interface StepItemType extends Vue {
 }
 
 export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
-  name,
+  name: 'TStepItem',
   props: {
     ...props,
   },

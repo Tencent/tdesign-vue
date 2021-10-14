@@ -29,7 +29,7 @@ const localTBreadcrumbOrigin: LocalTBreadcrumb = {
   maxItemWidth: undefined,
 };
 export default Vue.extend({
-  name,
+  name: 'TBreadcrumbItem',
 
   props: {
     ...props,

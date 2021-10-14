@@ -5,10 +5,8 @@ import TTabPanel from './tab-panel';
 import { TabValue } from './type';
 import props from './props';
 
-const name = `${prefix}-tabs`;
-
 export default Vue.extend({
-  name,
+  name: 'TTabs',
   model: {
     prop: 'value',
     event: 'change',
@@ -36,7 +34,7 @@ export default Vue.extend({
           const {
             tag,
           } = vnode;
-          return tag?.endsWith(`${prefix}-tab-panel`);
+          return tag?.endsWith('TTabPanel');
         });
         const panels = panelSlots.map(({ componentInstance }) => componentInstance);
         const isChanged = !(panels.length === this.panels.length
@@ -112,7 +110,7 @@ export default Vue.extend({
         ref: 'nav',
       };
       return (
-        <t-tab-nav {...data} />
+        <TTabNav {...data} />
       );
     },
 
