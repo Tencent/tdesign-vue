@@ -76,7 +76,7 @@ function isOverSizeLimit(fileSize: number, sizeLimit: number, unit: SizeUnit) {
 }
 
 export default mixins(getLocalReceiverMixins('upload')).extend({
-  name,
+  name: 'TUpload',
 
   components: {
     Dragger,

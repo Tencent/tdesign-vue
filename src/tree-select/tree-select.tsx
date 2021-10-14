@@ -28,10 +28,8 @@ import { prefix } from '../config';
 
 import { RemoveOptions, NodeOptions } from './interface';
 
-const name = `${prefix}-tree-select`;
-
 export default mixins(getLocalReceiverMixins('treeSelect')).extend({
-  name,
+  name: 'TTreeSelect',
   model: {
     prop: 'value',
     event: 'change',
@@ -338,7 +336,6 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         v-show={this.showTree}
         value={this.checked}
         hover
-        expandAll
         expandOnClickNode
         data={this.data}
         activable={!this.multiple}
@@ -377,6 +374,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     const tagItem = (
       this.tagList.map((label, index) => (
         <Tag
+          v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
           key={index}
           size={this.size}
           closable={!this.disabled}
@@ -387,6 +385,14 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         </Tag>
       ))
     );
+    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems) && this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum
+      ? renderTNodeJSX(this, 'collapsedItems', { params: { count: this.tagList.length - this.minCollapsedNum, value: this.selectedMultiple, size: this.size } })
+      : (<Tag
+        v-show={this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum}
+        size={this.size}
+      >
+        { `+${this.tagList.length - this.minCollapsedNum}` }
+      </Tag>);
     return (
       <div ref='treeSelect'>
         <Popup
@@ -411,6 +417,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             }
             <span v-show={this.showPlaceholder} class={`${prefix}-select-placeholder`}>{this.placeholder}</span>
             {tagItem}
+            {collapsedItem}
             {
               !this.multiple && !this.showPlaceholder && !this.showFilter && (
                 <span title={this.selectedSingle} class={`${prefix}-select-selectedSingle`}>{this.selectedSingle}</span>

@@ -10,9 +10,11 @@ export * from './type';
 
 export type TagProps = TdTagProps;
 
-export const Tag = withInstall('Tag', _Tag);
-export const CheckTag = withInstall('CheckTag', mapProps(
+export const Tag = withInstall(_Tag);
+
+export const CheckTag = withInstall(mapProps(
   ['checked'],
   { model: { prop: 'checked', event: 'change' } },
 )(_CheckTag));
+
 export default Tag;

@@ -23,7 +23,7 @@ import primaryTableProps from '../primary-table-props';
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
 export default mixins(getLocalReceiverMixins('table')).extend({
-  name: `${prefix}-base-table`,
+  name: 'TBaseTable',
   model: {
     prop: 'value',
     event: 'change',
@@ -291,14 +291,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       const {
         flattedColumns: {
           length: colspan,
-        }, isEmpty,
+        },
       } = this;
-      let footerContent: VNode;
-      if (isEmpty) {
-        footerContent = this.renderEmptyTable();
-      } else {
-        footerContent = renderTNodeJSX(this, 'footer');
-      }
+      const footerContent: VNode = renderTNodeJSX(this, 'footer');
       return footerContent ? <tfoot>
                 <tr>
                   <td colspan={colspan}>
@@ -328,6 +323,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       columns,
       tableLayout,
       isLoading,
+      isEmpty,
     } = this;
     const body: Array<VNode> = [];
     // colgroup
@@ -345,6 +341,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       // table body
       tableContent.push(this.renderBody());
       tableContent.push(this.renderFooter());
+    }
+    if (isEmpty) {
+      body.push(this.renderEmptyTable());
     }
     // 渲染分页
     if (hasPagination) {

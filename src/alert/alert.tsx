@@ -12,7 +12,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 const name = `${prefix}-alert`;
 
 export default Vue.extend({
-  name,
+  name: 'TAlert',
   data() {
     return {
       // 是否可见，关闭后置为false

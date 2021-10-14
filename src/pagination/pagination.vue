@@ -101,7 +101,7 @@ const name = `${prefix}-pagination`;
 const PaginationLocalReceiver = getLocalReceiverMixins('pagination');
 
 export default mixins(PaginationLocalReceiver).extend({
-  name,
+  name: 'TPagination',
   components: {
     TIconChevronLeft,
     TIconChevronRight,

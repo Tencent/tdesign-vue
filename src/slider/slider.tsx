@@ -18,7 +18,7 @@ interface SliderButtonType extends Vue {
   setPosition: (param: number) => {};
 }
 export default Vue.extend({
-  name,
+  name: 'TSlider',
   model: {
     prop: 'value',
     event: 'change',

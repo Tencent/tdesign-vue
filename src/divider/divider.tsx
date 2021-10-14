@@ -6,7 +6,7 @@ import { renderContent } from '../utils/render-tnode';
 const name = `${prefix}-divider`;
 
 export default Vue.extend({
-  name,
+  name: 'TDivider',
 
   props: { ...props },
 

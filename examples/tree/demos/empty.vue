@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-base">
+  <div class="tdesign-tree-demo">
     <t-tree :data="[]"/><br>
     <t-tree :data="[]" empty="😊 空数据（string）"/><br>
     <t-tree :data="[]" :empty="empty"/><br>
@@ -22,7 +22,5 @@ export default {
 };
 </script>
 <style scoped>
-  .demo-tree-base {
-    display: block;
-  }
+@import url('./common/demo.css');
 </style>

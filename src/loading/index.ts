@@ -9,5 +9,5 @@ export * from './type';
 export * from './plugin';
 
 export { default as LoadingPlugin } from './plugin';
-export const Loading = withInstall('Loading', _Loading);
+export const Loading = withInstall(_Loading);
 export default Loading;

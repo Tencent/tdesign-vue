@@ -11,7 +11,7 @@ import { ClassName } from '../common';
 
 const name = `${prefix}-input-group`;
 export default Vue.extend({
-  name,
+  name: 'TInputGroup',
   props: {
     separate: {
       type: Boolean,

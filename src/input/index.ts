@@ -10,8 +10,8 @@ import './style';
 export * from './type';
 export type InputProps = TdInputProps;
 
-export const Addon = withInstall('Addon', _Addon);
-export const Input = withInstall('Input', mapProps(['value'])(_Input));
-export const InputGroup = withInstall('InputGroup', _InputGroup);
+export const Addon = withInstall(_Addon);
+export const Input = withInstall(mapProps(['value'])(_Input));
+export const InputGroup = withInstall(_InputGroup);
 
 export default Input;

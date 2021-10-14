@@ -53,7 +53,7 @@ function initDragEvent(dragBox: HTMLElement) {
 }
 
 export default mixins(getLocalReceiverMixins('dialog')).extend({
-  name,
+  name: 'TDialog',
 
   components: {
     TIconClose,

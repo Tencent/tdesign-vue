@@ -7,5 +7,5 @@ import './style';
 export * from './type';
 export type AlertProps = TdAlertProps;
 
-export const Alert = withInstall('Alert', _Alert);
+export const Alert = withInstall(_Alert);
 export default Alert;

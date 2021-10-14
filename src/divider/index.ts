@@ -7,5 +7,5 @@ import './style';
 export type DividerProps = TdDividerProps;
 export * from './type';
 
-export const Divider = withInstall('Divider', _Divider);
+export const Divider = withInstall(_Divider);
 export default Divider;

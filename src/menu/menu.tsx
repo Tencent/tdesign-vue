@@ -8,10 +8,8 @@ import { TdMenuInterface } from './const';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
 
-const name = `${prefix}-menu`;
-
 export default defineComponent({
-  name,
+  name: 'TMenu',
   props: { ...props },
   model: {
     prop: 'value',

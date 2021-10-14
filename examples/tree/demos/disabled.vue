@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-base">
+  <div class="tdesign-tree-demo">
     <div class="operations">
       <t-form>
         <t-form-item label="是否禁用">
@@ -52,7 +52,5 @@ export default {
 };
 </script>
 <style scoped>
-  .demo-tree-base {
-    display: block;
-  }
+@import url('./common/demo.css');
 </style>

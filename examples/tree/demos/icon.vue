@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-base">
+  <div class="tdesign-tree-demo">
     <h3>render:</h3>
     <t-tree
       :data="items"
@@ -80,7 +80,5 @@ export default {
 };
 </script>
 <style scoped>
-  .demo-tree-base {
-    display: block;
-  }
+@import url('./common/demo.css');
 </style>

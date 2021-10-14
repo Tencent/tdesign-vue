@@ -10,7 +10,7 @@ import { TdRowProps } from './type';
 const name = `${prefix}-row`;
 
 export default Vue.extend({
-  name,
+  name: 'TRow',
 
   props: { ...props },
 

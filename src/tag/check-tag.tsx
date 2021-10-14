@@ -7,7 +7,7 @@ import { TNodeReturnValue } from '../common';
 const name = `${prefix}-tag`;
 
 export default Vue.extend({
-  name: `${prefix}-check-tag`,
+  name: 'TCheckTag',
   props: { ...props },
   computed: {
     tagClass(): Array<any> {

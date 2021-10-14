@@ -27,7 +27,7 @@ const name = `${prefix}-time-picker`;
 dayjs.extend(customParseFormat);
 
 export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).extend({
-  name,
+  name: 'TTimePicker',
 
   components: {
     PickerPanel,

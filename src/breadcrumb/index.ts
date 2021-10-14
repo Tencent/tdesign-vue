@@ -9,6 +9,6 @@ export * from './type';
 export type BreadcrumbProps = TdBreadcrumbProps;
 export type BreadcrumbItemProps = TdBreadcrumbItemProps;
 
-export const BreadcrumbItem = withInstall('BreadcrumbItem', _BreadcrumbItem);
-export const Breadcrumb = withInstall('Breadcrumb', _Breadcrumb);
+export const BreadcrumbItem = withInstall(_BreadcrumbItem);
+export const Breadcrumb = withInstall(_Breadcrumb);
 export default Breadcrumb;

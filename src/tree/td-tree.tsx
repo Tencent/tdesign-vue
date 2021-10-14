@@ -9,6 +9,7 @@ import TreeItem from './tree-item';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName, TNodeReturnValue, TreeOptionData } from '../common';
+import { TdTreeProps } from './type';
 import {
   TypeTdTreeProps,
   TreeNodeValue,
@@ -20,7 +21,6 @@ import {
   TypeTargetNode,
 } from './interface';
 import {
-  TREE_NAME,
   CLASS_NAMES,
   FX,
 } from './constants';
@@ -31,7 +31,7 @@ import {
 } from './util';
 
 export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
-  name: TREE_NAME,
+  name: 'TTree',
   model: {
     prop: 'value',
     event: 'change',
@@ -93,8 +93,8 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     },
   },
   watch: {
-    data() {
-      this.rebuild();
+    data(list) {
+      this.rebuild(list);
     },
     keys(nKeys) {
       this.store.setConfig({
@@ -288,15 +288,6 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       });
     },
 
-    // 树结构变化后，重新
-    rebuild() {
-      this.store = null;
-      this.nodesMap = null;
-      this.mouseEvent = null;
-      this.treeNodes = [];
-      this.build();
-    },
-
     // 初始化树结构
     build() {
       let list = this.data;
@@ -383,6 +374,13 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       // 树的数据初始化之后，需要立即进行一次视图刷新
       this.refresh();
     },
+
+    rebuild(list: TdTreeProps['data']) {
+      this.getNodesMap().clear();
+      this.treeNodes.length = 0;
+      this.store.reload(list);
+    },
+
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);
       return this.setActived(node, !node.isActived());
@@ -431,6 +429,21 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       const ctx = {
         node: node.getModel(),
       };
+      const {
+        value,
+        expanded,
+        actived,
+        store,
+      } = this;
+      if (value && value.length > 0) {
+        store.replaceChecked(value);
+      }
+      if (expanded && expanded.length > 0) {
+        store.replaceExpanded(expanded);
+      }
+      if (actived && actived.length > 0) {
+        store.replaceActived(actived);
+      }
       emitEvent<Parameters<TypeTdTreeProps['onLoad']>>(this, 'load', ctx);
     },
     handleClick(state: TypeEventState): void {
@@ -597,12 +610,13 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         </div>
       );
     }
+
     treeNodeList = (
-        <transition-group
-          name={FX.treeNode}
-          tag="div"
-          class={CLASS_NAMES.treeList}
-        >{treeNodes}</transition-group>
+      <transition-group
+        name={FX.treeNode}
+        tag="div"
+        class={CLASS_NAMES.treeList}
+      >{treeNodes}</transition-group>
     );
 
     return (

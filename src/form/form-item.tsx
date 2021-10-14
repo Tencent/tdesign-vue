@@ -31,14 +31,12 @@ export const enum VALIDATE_STATUS {
   FAIL = 'fail',
 }
 
-const name = `${prefix}-form-item`;
-
 export interface FormItemContructor extends Vue {
   form: FormInstance;
 }
 
 export default (Vue as VueConstructor<FormItemContructor>).extend({
-  name,
+  name: 'TFormItem',
 
   props: { ...props },
 

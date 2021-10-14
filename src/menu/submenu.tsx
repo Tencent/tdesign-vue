@@ -10,9 +10,8 @@ import FakeArrow from '../common-components/fake-arrow';
 import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
 
-const name = `${prefix}-submenu`;
 export default defineComponent({
-  name,
+  name: 'TSubmenu',
   components: {
     TIconChevronRight,
     FakeArrow,

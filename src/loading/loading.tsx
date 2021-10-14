@@ -16,7 +16,7 @@ const wrapperClass = `${prefix}-loading__wrapper`;
 const inheritColorClass = `${prefix}-loading--inherit-color`;
 
 export default Vue.extend({
-  name,
+  name: 'TLoading',
 
   props: {
     ...props,

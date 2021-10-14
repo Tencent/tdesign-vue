@@ -1,8 +1,10 @@
 <template>
-  <div class="tdesign-tree-base">
-    <t-addon prepend="filter:">
-      <t-input v-model="filterText" @input="onInput"/>
-    </t-addon>
+  <div class="tdesign-tree-demo">
+    <div class="operations">
+      <t-addon prepend="filter:">
+        <t-input v-model="filterText" @input="onInput"/>
+      </t-addon>
+    </div>
     <t-tree
       :data="items"
       expand-on-click-node
@@ -98,7 +100,5 @@ export default {
 };
 </script>
 <style scoped>
-  .demo-tree-base {
-    display: block;
-  }
+@import url('./common/demo.css');
 </style>

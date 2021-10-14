@@ -7,6 +7,6 @@ import './style';
 export * from './type';
 export type DialogProps = TdDialogProps;
 
-export const Dialog = withInstall('Dialog', _Dialog);
+export const Dialog = withInstall(_Dialog);
 export { default as DialogPlugin } from './plugin';
 export default Dialog;

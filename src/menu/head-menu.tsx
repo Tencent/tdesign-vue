@@ -9,10 +9,8 @@ import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
 
-const name = `${prefix}-head-menu`;
-
 export default defineComponent({
-  name,
+  name: 'THeadMenu',
   props,
   model: {
     prop: 'value',

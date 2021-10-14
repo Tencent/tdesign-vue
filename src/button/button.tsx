@@ -9,7 +9,7 @@ import ripple from '../utils/ripple';
 const name = `${prefix}-button`;
 
 export default Vue.extend({
-  name,
+  name: 'TButton',
   props,
   directives: { ripple },
   render(): VNode {

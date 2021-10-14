@@ -10,7 +10,7 @@ import { TNodeReturnValue } from '../common';
 const name = `${prefix}-notification`;
 
 export default Vue.extend({
-  name,
+  name: 'TNotification',
   components: {
     TIconInfoCircleFilled,
     TIconCheckCircleFilled,

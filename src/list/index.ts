@@ -12,6 +12,6 @@ export type ListProps = TdListProps;
 export type ListItemProps = TdListItemProps;
 export type ListItemMetaProps = TdListItemMetaProps;
 
-export const List = withInstall('List', _List);
-export const ListItem = withInstall('ListItem', _ListItem);
-export const ListItemMeta = withInstall('ListItemMeta', _ListItemMeta);
+export const List = withInstall(_List);
+export const ListItem = withInstall(_ListItem);
+export const ListItemMeta = withInstall(_ListItemMeta);

@@ -15,7 +15,7 @@ type FooterButtonType = 'confirm' | 'cancel';
 const name = `${prefix}-drawer`;
 
 export default mixins(getLocalReceiverMixins('drawer')).extend({
-  name,
+  name: 'TDrawer',
 
   components: {
     TIconClose,

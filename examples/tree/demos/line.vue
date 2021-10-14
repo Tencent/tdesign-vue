@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-line">
+  <div class="tdesign-tree-demo tdesign-tree-line">
     <div class="operations">
       <t-form>
         <t-form-item label="显示连线">
@@ -177,9 +177,7 @@ export default {
 };
 </script>
 <style>
-.tdesign-tree-line .operations .t-button{
-  margin: 0 10px 10px 0;
-}
+@import url('./common/demo.css');
 .tdesign-tree-line .custom-line{
   display: flex;
   position: absolute;

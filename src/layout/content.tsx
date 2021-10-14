@@ -1,10 +1,7 @@
 import Vue from 'vue';
-import { prefix } from '../config';
-
-const name = `${prefix}-content`;
 
 export default Vue.extend({
-  name,
+  name: 'TContent',
 
   props: {},
 

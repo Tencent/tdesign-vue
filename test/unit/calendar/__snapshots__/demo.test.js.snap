@@ -275,6 +275,12 @@ exports[`Calendar base demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -469,6 +475,12 @@ exports[`Calendar base demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -1186,6 +1198,12 @@ exports[`Calendar card demo works fine 1`] = `
           >
              
           </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+            style="display: none;"
+          >
+            +0
+          </span>
           <svg
             class="t-fake-arrow t-select-right-icon"
             fill="none"
@@ -1491,6 +1509,12 @@ exports[`Calendar card demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -1685,6 +1709,12 @@ exports[`Calendar card demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -2444,6 +2474,12 @@ exports[`Calendar cardCell demo works fine 1`] = `
           >
              
           </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+            style="display: none;"
+          >
+            +0
+          </span>
           <svg
             class="t-fake-arrow t-select-right-icon"
             fill="none"
@@ -2738,6 +2774,12 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -2932,6 +2974,12 @@ exports[`Calendar cardCell demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -3889,6 +3937,12 @@ exports[`Calendar cell demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -4083,6 +4137,12 @@ exports[`Calendar cell demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -5278,6 +5338,12 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -5472,6 +5538,12 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -6980,6 +7052,12 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -7174,6 +7252,12 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -8113,6 +8197,12 @@ exports[`Calendar events demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -8307,6 +8397,12 @@ exports[`Calendar events demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -9277,6 +9373,12 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -9471,6 +9573,12 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -10422,6 +10530,12 @@ exports[`Calendar filter demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -10616,6 +10730,12 @@ exports[`Calendar filter demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -11246,6 +11366,12 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           >
              
           </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+            style="display: none;"
+          >
+            +0
+          </span>
           <svg
             class="t-fake-arrow t-select-right-icon"
             fill="none"
@@ -11540,6 +11666,12 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -11734,6 +11866,12 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -12745,6 +12883,12 @@ exports[`Calendar head demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -12939,6 +13083,12 @@ exports[`Calendar head demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -13662,6 +13812,12 @@ exports[`Calendar mode demo works fine 1`] = `
           >
              
           </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+            style="display: none;"
+          >
+            +0
+          </span>
           <svg
             class="t-fake-arrow t-select-right-icon"
             fill="none"
@@ -13955,6 +14111,12 @@ exports[`Calendar mode demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -14412,6 +14574,12 @@ exports[`Calendar range demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -14606,6 +14774,12 @@ exports[`Calendar range demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -15521,6 +15695,12 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -15715,6 +15895,12 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -16496,6 +16682,12 @@ exports[`Calendar value demo works fine 1`] = `
               >
                  
               </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
+              </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
                 fill="none"
@@ -16690,6 +16882,12 @@ exports[`Calendar value demo works fine 1`] = `
                 class="t-select-placeholder"
               >
                  
+              </span>
+              <span
+                class="t-tag t-tag--default t-size-m t-tag--dark"
+                style="display: none;"
+              >
+                +0
               </span>
               <svg
                 class="t-fake-arrow t-select-right-icon"
@@ -17705,6 +17903,12 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -17899,6 +18103,12 @@ exports[`Calendar week demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -18832,6 +19042,12 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -19026,6 +19242,12 @@ exports[`Calendar week demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
@@ -19945,6 +20167,12 @@ exports[`Calendar week demo works fine 1`] = `
                 >
                    
                 </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
+                </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"
                   fill="none"
@@ -20139,6 +20367,12 @@ exports[`Calendar week demo works fine 1`] = `
                   class="t-select-placeholder"
                 >
                    
+                </span>
+                <span
+                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  style="display: none;"
+                >
+                  +0
                 </span>
                 <svg
                   class="t-fake-arrow t-select-right-icon"

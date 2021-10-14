@@ -14,7 +14,7 @@ import { TNodeReturnValue } from '../common';
 const name = `${prefix}-dropdown__item`;
 
 export default Vue.extend({
-  name,
+  name: 'TDropdownItem',
   components: {
     TIconChevronRight, TDivider,
   },

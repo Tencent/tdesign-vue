@@ -6,5 +6,6 @@ import './style';
 
 export * from './interface';
 
-export const DatePicker = withInstall('DatePicker', mapProps(['value'])(_DatePicker));
+export const DatePicker = withInstall(mapProps(['value'])(_DatePicker));
+
 export default DatePicker;

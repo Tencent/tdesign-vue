@@ -8,7 +8,7 @@ import { TNodeReturnValue } from '../common';
 const name = `${prefix}-breadcrumb`;
 
 export default Vue.extend({
-  name,
+  name: 'TBreadcrumb',
   props: {
     ...props,
   },
@@ -39,7 +39,7 @@ export default Vue.extend({
           </BreadcrumbItem>
       ));
     }
-    return <div class="t-breadcrumb">{content}</div>;
+    return <div class={name}>{content}</div>;
   },
 
 });

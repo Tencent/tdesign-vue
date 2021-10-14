@@ -1,4 +1,4 @@
-import _Group from './group';
+import _CheckboxGroup from './group';
 import _Checkbox from './checkbox';
 import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
@@ -10,10 +10,12 @@ export type CheckboxProps = TdCheckboxProps;
 export type CheckboxGroupProps = TdCheckboxGroupProps;
 export * from './type';
 
-export const Checkbox = withInstall('Checkbox', mapProps(['checked'], {
+export const Checkbox = withInstall(mapProps(['checked'], {
   model: { prop: 'checked', event: 'change' },
 })(_Checkbox));
-export const CheckboxGroup = withInstall('CheckboxGroup', mapProps(['value'], {
+
+export const CheckboxGroup = withInstall(mapProps(['value'], {
   model: { prop: 'value', event: 'change' },
-})(_Group));
+})(_CheckboxGroup));
+
 export default Checkbox;

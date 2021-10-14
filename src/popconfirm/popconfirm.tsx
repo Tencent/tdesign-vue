@@ -14,7 +14,7 @@ const popupName = `${prefix}-popup`;
 type IconConstructor = typeof TIconInfoCircleFilled;
 
 export default mixins(getLocalReceiverMixins('popconfirm')).extend({
-  name,
+  name: 'TPopconfirm',
   props: { ...props },
   model: {
     prop: 'visible',

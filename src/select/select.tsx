@@ -27,7 +27,7 @@ const name = `${prefix}-select`;
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
 
 export default mixins(getLocalReceiverMixins('select')).extend({
-  name,
+  name: 'TSelect',
   model: {
     prop: 'value',
     event: 'change',
@@ -219,9 +219,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     showFilter(val) {
       if (val && this.selectedSingle) {
         this.$nextTick(() => {
-          const input = this.$refs.input as HTMLElement;
-          input?.focus();
-          this.focusing = true;
+          this.doFocus();
         });
       }
     },
@@ -271,6 +269,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         }
       }
       val && this.monitorWidth();
+      val && this.canFilter && this.doFocus();
     },
     onOptionClick(value: string | number, e: MouseEvent) {
       if (this.value !== value) {
@@ -304,11 +303,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         if (!this.reserveKeyword) {
           this.searchInput = '';
         }
-        if (this.canFilter) {
-          const input = this.$refs.input as HTMLElement;
-          input?.focus();
-          this.focusing = true;
-        }
+        this.canFilter && this.doFocus();
       }
     },
     removeTag(index: number, context?: { e?: MouseEvent }) {
@@ -387,6 +382,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       this.focusing = false;
       emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
     },
+    enter(e: KeyboardEvent) {
+      emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', { inputValue: this.searchInput, value: this.value, e });
+    },
     hoverEvent(v: boolean) {
       this.isHover = v;
     },
@@ -438,6 +436,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           nativeOnClick={this.clearSelect}
         />
       );
+    },
+    doFocus() {
+      const input = this.$refs.input as HTMLElement;
+      input?.focus();
+      this.focusing = true;
     },
   },
   render(): VNode {
@@ -498,6 +501,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
               : (
                 selectedMultiple.map((item: Options, index: number) => (
                   <tag
+                    v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
                     size={size}
                     closable={!item.disabled && !disabled}
@@ -511,6 +515,17 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                   </tag>
                 ))
               )
+            }
+            {this.collapsedItems || this.$scopedSlots.collapsedItems
+              ? renderTNodeJSX(this, 'collapsedItems', {
+                params: { count: selectedMultiple.length - this.minCollapsedNum, value: selectedMultiple, size },
+              })
+              : <tag
+                  v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum}
+                  size={size}
+                >
+                  { `+${selectedMultiple.length - this.minCollapsedNum}` }
+                </tag>
             }
             {!multiple && !showPlaceholder && !showFilter && (
               <span title={selectedSingle} class={`${name}-selectedSingle`}>{ selectedSingle }</span>
@@ -526,6 +541,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                   class={`${name}-input`}
                   onFocus={this.focus}
                   onBlur={this.blur}
+                  onEnter={this.enter}
                 />
               )
             }

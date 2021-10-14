@@ -19,7 +19,7 @@ export interface Anchor extends Vue {
   handleScrollLock: boolean;
 }
 export default (Vue as VueConstructor<Anchor>).extend({
-  name,
+  name: 'TAnchor',
 
   props: {
     ...props,

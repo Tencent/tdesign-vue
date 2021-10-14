@@ -20,7 +20,7 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    */
   clearable?: boolean;
   /**
-   * 用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
    */
   collapsedItems?: TNode;
   /**
@@ -137,6 +137,10 @@ export interface TdSelectProps<SelectOption extends Options = Options> {
    * 当选择新创建的条目时触发
    */
   onCreate?: (value: string | number) => void;
+  /**
+   * 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值
+   */
+  onEnter?: (context: { inputValue: string; e: KeyboardEvent; value: SelectValue }) => void;
   /**
    * 输入框获得焦点时触发
    */

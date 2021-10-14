@@ -3,5 +3,5 @@ import withInstall from '../utils/withInstall';
 
 import './style';
 
-export const Icon = withInstall('Icon', _Icon);
+export const Icon = withInstall(_Icon);
 export default Icon;

@@ -19,7 +19,7 @@ import { Styles } from '../common';
 const name = `${prefix}-progress`;
 
 export default Vue.extend({
-  name,
+  name: 'TProgress',
 
   props: { ...props },
 

@@ -3,13 +3,12 @@ import { prefix } from '../config';
 import props from './aside-props';
 import Layout from './layout';
 
-const name = `${prefix}-aside`;
 export interface AsideInstance extends Vue {
   layout: InstanceType<typeof Layout>;
 }
 
 export default (Vue as VueConstructor<AsideInstance>).extend({
-  name,
+  name: 'TAside',
   props: { ...props },
   data() {
     return {};
@@ -40,7 +39,7 @@ export default (Vue as VueConstructor<AsideInstance>).extend({
       width: this.width,
     } : {};
     return (
-      <aside class="t-layout--sider" style={styles}>
+      <aside class={`${prefix}-layout--sider`} style={styles}>
         {this.renderContent()}
       </aside>
     );

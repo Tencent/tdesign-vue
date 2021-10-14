@@ -14,7 +14,7 @@ import { ClassName } from '../common';
 const name = `${prefix}-message`;
 
 export default Vue.extend({
-  name,
+  name: 'TMessage',
 
   components: {
     TIconInfoCircleFilled,
@@ -37,13 +37,13 @@ export default Vue.extend({
     classes(): ClassName {
       const status = {};
       THEME_LIST.forEach((t) => {
-        status[`t-is-${t}`] = this.theme === t;
+        status[`${prefix}-is-${t}`] = this.theme === t;
       });
       return [
-        't-message',
+        name,
         status,
         {
-          't-is-closable': this.closeBtn || this.$scopedSlots.closeBtn,
+          [`${prefix}-is-closable`]: this.closeBtn || this.$scopedSlots.closeBtn,
         },
       ];
     },
@@ -78,7 +78,7 @@ export default Vue.extend({
     renderClose() {
       const defaultClose = <t-icon-close />;
       return (
-        <span class='t-message-close' onClick={this.close}>
+        <span class={`${name}-close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
         </span>
       );

@@ -16,7 +16,7 @@ export default {
   },
   /** 是否可以清空选项 */
   clearable: Boolean,
-  /** 用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义 */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义 */
   collapsedItems: {
     type: Function as PropType<TdSelectProps['collapsedItems']>,
   },
@@ -114,6 +114,8 @@ export default {
   onClear: Function as PropType<TdSelectProps['onClear']>,
   /** 当选择新创建的条目时触发 */
   onCreate: Function as PropType<TdSelectProps['onCreate']>,
+  /** 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值 */
+  onEnter: Function as PropType<TdSelectProps['onEnter']>,
   /** 输入框获得焦点时触发 */
   onFocus: Function as PropType<TdSelectProps['onFocus']>,
   /** 多选模式下，选中数据被移除时触发 */

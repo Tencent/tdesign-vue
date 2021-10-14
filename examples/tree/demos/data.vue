@@ -1,0 +1,115 @@
+<template>
+  <div class="tdesign-tree-demo">
+    <h3 class="title">数据切换</h3>
+    <div class="operations">
+      <t-form labelWidth="150">
+        <t-form-item label="切换数据">
+          <t-switch @change="toggleData" />
+        </t-form-item>
+        <t-form-item label="可选">
+          <t-switch v-model="checkable" />
+        </t-form-item>
+        <t-form-item label="展开动画">
+          <t-switch v-model="transition"/>
+        </t-form-item>
+      </t-form>
+    </div>
+    <t-tree
+      :data="items"
+      expand-all
+      hover
+      :transition="transition"
+      :checkable="checkable"
+    />
+  </div>
+</template>
+
+<script>
+
+const data1 = [{
+  label: '1',
+  value: '1',
+  children: [{
+    label: '1.1',
+    value: '1.1',
+    children: [{
+      label: '1.1.1',
+      value: '1.1.1',
+    }, {
+      label: '1.1.2',
+      value: '1.1.2',
+    }],
+  }, {
+    label: '1.2',
+    value: '1.2',
+    children: [{
+      label: '1.2.1',
+      value: '1.2.1',
+    }, {
+      label: '1.2.2',
+      value: '1.2.2',
+    }],
+  }],
+}, {
+  label: '2',
+  value: '2',
+  children: [{
+    label: '2.1',
+    value: '2.1',
+  }, {
+    label: '2.2',
+    value: '2.2',
+  }],
+}];
+
+const data2 = [{
+  label: '1',
+  value: '1',
+  children: [{
+    label: '1.1',
+    value: '1.1',
+    children: [{
+      label: '1.1.1',
+      value: '1.1.1',
+    }],
+  }, {
+    label: '1.2',
+    value: '1.2',
+    children: [{
+      label: '1.2.1',
+      value: '1.2.1',
+    }, {
+      label: '1.2.2',
+      value: '1.2.2',
+    }],
+  }],
+}, {
+  label: '2',
+  value: '2',
+  children: [{
+    label: '2.1',
+    value: '2.1',
+  }, {
+    label: '2.2',
+    value: '2.2',
+  }],
+}];
+
+export default {
+  data() {
+    return {
+      checkable: true,
+      transition: true,
+      items: data1,
+    };
+  },
+  methods: {
+    toggleData() {
+      this.items = this.items === data1 ? data2 : data1;
+    },
+  },
+};
+</script>
+<style scoped>
+@import url('./common/demo.css');
+</style>

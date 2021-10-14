@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import base from '@/examples/tree-select/demos/base.vue';
 import multiple from '@/examples/tree-select/demos/multiple.vue';
+import collapsed from '@/examples/tree-select/demos/collapsed.vue';
 import filterable from '@/examples/tree-select/demos/filterable.vue';
 import valuetype from '@/examples/tree-select/demos/valuetype.vue';
 import props from '@/examples/tree-select/demos/props.vue';
@@ -15,6 +16,10 @@ describe('TreeSelect', () => {
   });
   it('multiple demo works fine', () => {
     const wrapper = mount(multiple);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('collapsed demo works fine', () => {
+    const wrapper = mount(collapsed);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('filterable demo works fine', () => {

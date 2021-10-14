@@ -254,7 +254,7 @@ exports[`Tabs additional function panel default slot:function | panel slot:funct
   </div>
   <div class="t-tabs__content">
     <div class="t-tab-panel" style="display: none;">1</div>
-    <div class="t-tab-panel"><span></span></div>
+    <div class="t-tab-panel"><span>2</span></div>
   </div>
 </div>
 `;

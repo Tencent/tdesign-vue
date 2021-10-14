@@ -4,7 +4,7 @@ import { prefix } from '../config';
 const name = `${prefix}-layout`;
 
 export default Vue.extend({
-  name,
+  name: 'TLayout',
 
   data() {
     return {

@@ -8,7 +8,7 @@ import TPopup from '../popup';
 
 const name = `${prefix}-anchor-target`;
 export default Vue.extend({
-  name,
+  name: 'TAnchorTarget',
 
   components: {
     TPopup,

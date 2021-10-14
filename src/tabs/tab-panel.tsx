@@ -1,10 +1,9 @@
 import Vue from 'vue';
-import { CreateElement } from 'vue/types/umd';
-import { prefix } from '../config';
+import { renderContent } from '../utils/render-tnode';
 import props from './tab-panel-props';
 
 export default Vue.extend({
-  name: `${prefix}-tab-panel`,
+  name: 'TTabPanel',
 
   props: { ...props },
 
@@ -15,25 +14,7 @@ export default Vue.extend({
     },
   },
 
-  methods: {
-    getContent(h: CreateElement) {
-      if (typeof this.default === 'function') {
-        return this.default(h);
-      }
-      if (typeof this.$scopedSlots.default === 'function') {
-        return this.$scopedSlots.default(null);
-      }
-      if (typeof this.panel === 'function') {
-        return this.panel(h);
-      }
-      if (typeof this.$scopedSlots.panel === 'function') {
-        return this.$scopedSlots.panel(null);
-      }
-      return null;
-    },
-  },
-
-  render(h) {
+  render() {
     const { destroyOnHide, active } = this;
     if (!destroyOnHide && !active) return null;
     return (
@@ -41,7 +22,7 @@ export default Vue.extend({
         class="t-tab-panel"
         v-show={active}
       >
-        {this.getContent(h)}
+        {renderContent(this, 'default', 'panel')}
       </div>
     );
   },

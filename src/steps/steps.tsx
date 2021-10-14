@@ -7,7 +7,7 @@ import getLocalReceiverMixins from '../locale/local-receiver';
 
 const name = `${prefix}-steps`;
 export default mixins(getLocalReceiverMixins('steps')).extend({
-  name,
+  name: 'TSteps',
   components: {
     TStepItem,
   },

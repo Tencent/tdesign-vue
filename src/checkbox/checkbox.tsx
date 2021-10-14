@@ -13,7 +13,7 @@ interface CheckboxInstance extends Vue {
 }
 
 export default (Vue as VueConstructor<CheckboxInstance>).extend({
-  name,
+  name: 'TCheckbox',
   inheritAttrs: false,
   model: {
     prop: 'checked',

@@ -28,7 +28,7 @@ interface InputInstance extends Vue {
 }
 
 export default (Vue as VueConstructor<InputInstance>).extend({
-  name,
+  name: 'TInput',
   inheritAttrs: false,
   props: { ...props },
   data() {

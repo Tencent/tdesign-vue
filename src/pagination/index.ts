@@ -9,7 +9,7 @@ export type PaginationProps = TdPaginationProps;
 export * from './type';
 
 // 支持非受控属性 defaultCurrent 和 defaultSize
-export const Pagination = withInstall('Pagination', mapProps(
+export const Pagination = withInstall(mapProps(
   ['current', 'pageSize'],
   { model: { prop: 'current', event: 'current-change' } },
 )(PaginationBase));

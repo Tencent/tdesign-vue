@@ -8,5 +8,5 @@ export * from './type';
 export * from './plugin';
 export type NotificationProps = TdNotificationProps;
 
-export const Notification = withInstall('Notification', _Notification);
+export const Notification = withInstall(_Notification);
 export default Notification;

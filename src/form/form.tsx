@@ -15,7 +15,7 @@ type FormItemInstance = InstanceType<typeof FormItem>;
 const name = `${prefix}-form`;
 
 export default Vue.extend({
-  name,
+  name: 'TForm',
 
   props: { ...props },
 
@@ -36,7 +36,7 @@ export default Vue.extend({
       return [
         CLASS_NAMES.form,
         {
-          't-form-inline': this.layout === 'inline',
+          [`${name}-inline`]: this.layout === 'inline',
         },
       ];
     },

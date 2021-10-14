@@ -2,9 +2,8 @@ import Vue, { PropType } from 'vue';
 import { prefix } from '../config';
 import { TdSliderProps } from './type';
 
-const name = `${prefix}-slider-mark`;
 export default Vue.extend({
-  name,
+  name: 'TSliderMark',
   props: {
     mark: {
       type: [Object, Array, String] as PropType<TdSliderProps['marks']>,
@@ -22,7 +21,7 @@ export default Vue.extend({
   render() {
     const label = this.mark;
     return (
-      <div class="t-slider__mark-text" onClick={this.changeValue}>
+      <div class={`${prefix}-slider__mark-text`} onClick={this.changeValue}>
         {label}
       </div>
     );

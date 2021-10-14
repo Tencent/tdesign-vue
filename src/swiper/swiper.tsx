@@ -5,7 +5,7 @@ import props from './props';
 const name = `${prefix}-swiper`;
 
 export default Vue.extend({
-  name,
+  name: 'TSwiper',
   props: { ...props },
   data() {
     return {

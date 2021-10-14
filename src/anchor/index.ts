@@ -11,8 +11,8 @@ export type AnchorProps = TdAnchorProps;
 export type AnchorTargetProps = TdAnchorTargetProps;
 export type AnchorItemProps = TdAnchorItemProps;
 
-export const Anchor = withInstall('Anchor', _Anchor);
-export const AnchorItem = withInstall('AnchorItem', _AnchorItem);
-export const AnchorTarget = withInstall('AnchorTarget', _AnchorTarget);
+export const Anchor = withInstall(_Anchor);
+export const AnchorItem = withInstall(_AnchorItem);
+export const AnchorTarget = withInstall(_AnchorTarget);
 
 export default Anchor;

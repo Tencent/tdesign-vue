@@ -15,7 +15,7 @@ exports[`Select :props :bordered 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -37,7 +37,7 @@ exports[`Select :props :clearable 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -59,7 +59,7 @@ exports[`Select :props :creatable 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -81,7 +81,7 @@ exports[`Select :props :disabled 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-is-disabled t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-is-disabled t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -103,7 +103,7 @@ exports[`Select :props :labelInValue 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -125,7 +125,7 @@ exports[`Select :props :loading 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -147,7 +147,7 @@ exports[`Select :props :multiple 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -169,7 +169,7 @@ exports[`Select :props :placeholder 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> please select</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> please select</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -191,7 +191,7 @@ exports[`Select :props :remote 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -213,7 +213,7 @@ exports[`Select :props :reserveKeyword 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -235,7 +235,7 @@ exports[`Select :props :size 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-l"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-l"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-l t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -257,7 +257,7 @@ exports[`Select Option :props :disabled 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -279,7 +279,7 @@ exports[`Select Option :props :label 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -301,7 +301,7 @@ exports[`Select Option :props :value 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>
@@ -332,7 +332,7 @@ exports[`Select OptionGroup :props :value 1`] = `
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg></div>
   </div>

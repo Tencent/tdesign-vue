@@ -23,7 +23,7 @@ const initShapeList = {
 const defaultShape = 'square';
 
 export default Vue.extend({
-  name,
+  name: 'TTag',
   props: { ...props },
   computed: {
     tagClass(): ClassName {

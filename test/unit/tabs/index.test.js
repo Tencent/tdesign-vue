@@ -137,8 +137,8 @@ describe('Tabs', () => {
       const wrapper = mount({
         render() {
           return <Tabs value={2}>
-            <TabPanel value={1} label={'1'}>{() => 1}</TabPanel>
-            <TabPanel value={2} label={'2'}><span slot="panel">{() => 2}</span></TabPanel>
+            <TabPanel value={1} label={'1'}>{1}</TabPanel>
+            <TabPanel value={2} label={'2'}><span slot="panel">{2}</span></TabPanel>
           </Tabs>;
         },
       });

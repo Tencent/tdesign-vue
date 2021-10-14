@@ -2,10 +2,8 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import props from './footer-props';
 
-const name = `${prefix}-footer`;
-
 export default Vue.extend({
-  name,
+  name: 'TFooter',
 
   props: { ...props },
 
@@ -28,7 +26,7 @@ export default Vue.extend({
       height: this.height,
     } : {};
     return (
-      <footer class="t-layout--footer" style={styles}>
+      <footer class={`${prefix}-layout--footer`} style={styles}>
         {this.renderContent()}
       </footer>
     );

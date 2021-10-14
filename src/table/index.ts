@@ -29,8 +29,8 @@ export type BaseTableProps = TdBaseTableProps;
 export type PrimaryTableProps = TdPrimaryTableProps;
 export * from './type';
 
-export const BaseTable = withInstall('BaseTable', _BaseTable);
-export const PrimaryTable = withInstall('PrimaryTable', TPrimaryTable);
-export const Table = withInstall('Table', TPrimaryTable);
+export const BaseTable = withInstall(_BaseTable);
+export const PrimaryTable = withInstall(TPrimaryTable);
+export const Table = withInstall(TPrimaryTable);
 
 export default Table;
