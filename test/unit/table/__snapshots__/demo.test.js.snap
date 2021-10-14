@@ -1134,20 +1134,12 @@ exports[`Table empty demo works fine 1`] = `
             <tbody
               class="table-body"
             />
-            <tfoot>
-              <tr>
-                <td
-                  colspan="6"
-                >
-                  <div
-                    class="t-table--empty"
-                  >
-                    暂无数据
-                  </div>
-                </td>
-              </tr>
-            </tfoot>
           </table>
+        </div>
+        <div
+          class="t-table--empty"
+        >
+          暂无数据
         </div>
       </div>
     </div>
@@ -1235,24 +1227,16 @@ exports[`Table empty demo works fine 1`] = `
             <tbody
               class="table-body"
             />
-            <tfoot>
-              <tr>
-                <td
-                  colspan="6"
-                >
-                  <div
-                    class="t-table--empty"
-                  >
-                    <span
-                      style="display: flex; align-items: center; justify-content: center; height: 100px; color: rgba(0, 0, 0, 0.26);"
-                    >
-                      😊 我是自定义的空内容 😊
-                    </span>
-                  </div>
-                </td>
-              </tr>
-            </tfoot>
           </table>
+        </div>
+        <div
+          class="t-table--empty"
+        >
+          <span
+            style="display: flex; align-items: center; justify-content: center; height: 100px; color: rgba(0, 0, 0, 0.26);"
+          >
+            😊 我是自定义的空内容 😊
+          </span>
         </div>
       </div>
     </div>

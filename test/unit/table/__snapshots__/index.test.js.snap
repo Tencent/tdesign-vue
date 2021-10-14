@@ -64,15 +64,9 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
             <tr></tr>
           </thead>
           <tbody class="table-body"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="0">
-                <div class="t-table--empty">暂无数据</div>
-              </td>
-            </tr>
-          </tfoot>
         </table>
       </div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
@@ -89,15 +83,9 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
             <tr></tr>
           </thead>
           <tbody class="table-body"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="0">
-                <div class="t-table--empty">暂无数据</div>
-              </td>
-            </tr>
-          </tfoot>
         </table>
       </div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
@@ -156,15 +144,9 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
             <tr></tr>
           </thead>
           <tbody class="table-body"></tbody>
-          <tfoot>
-            <tr>
-              <td colspan="0">
-                <div class="t-table--empty">暂无数据</div>
-              </td>
-            </tr>
-          </tfoot>
         </table>
       </div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
