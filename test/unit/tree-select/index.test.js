@@ -107,6 +107,14 @@ describe('TreeSelect', () => {
       });
       expect(wrapper).toMatchSnapshot();
     });
+    it(':minCollapsedNum', () => {
+      const wrapper = mount({
+        render() {
+          return <TreeSelect minCollapsedNum={1} />;
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
     it(':multiple', () => {
       const wrapper = mount({
         render() {
@@ -269,6 +277,20 @@ describe('TreeSelect', () => {
 
   // test slots
   describe('<slot>', () => {
+    it('<collapsedItems>', () => {
+      const wrapper = mount({
+        render() {
+          return (
+            <TreeSelect>
+              <div slot="collapsedItems">
+                <span>更多...</span>
+              </div>
+            </TreeSelect>
+          );
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
     it('<empty>', () => {
       const wrapper = mount({
         render() {
@@ -311,6 +333,16 @@ describe('TreeSelect', () => {
 
   // test exposure function
   describe('function', () => {
+    it(':collapsedItems', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const renderCollapsedItems = (h) => (<div><span>更多...</span></div>);
+      const wrapper = mount({
+        render() {
+          return <TreeSelect collapsedItems={renderCollapsedItems} />;
+        },
+      });
+      expect(wrapper).toMatchSnapshot();
+    });
     it(':empty', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const renderEmpty = (h) => (<div>no data</div>);

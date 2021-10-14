@@ -193,7 +193,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
             checked={node.checked}
             indeterminate={node.indeterminate}
             disabled={node.isDisabled()}
-            name={node.value}
+            name={String(node.value)}
             onChange={() => this.handleChange()}
             ignore="expand,active"
             {...{ props: checkProps }}
