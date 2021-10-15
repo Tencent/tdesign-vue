@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-26 22:52:44
+ * updated at 2021-09-24 10:10:47
  * */
 
 import { PopupProps } from '../popup';
@@ -27,5 +27,5 @@ export interface TdTooltipProps extends PopupProps {
    * 文字提示风格
    * @default default
    */
-  theme?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
+  theme?: 'default' | 'primary' | 'success' | 'danger' | 'warning' | 'light';
 };
