@@ -2507,7 +2507,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
           style="padding-right: 0px;"
         >
           <table
-            style="table-layout: fixed;"
+            style="table-layout: fixed; padding-right: 0px;"
           >
             <colgroup>
               <col
