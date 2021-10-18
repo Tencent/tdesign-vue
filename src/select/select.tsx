@@ -357,7 +357,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           if (!val.length) {
             value = [];
           } else {
-            value = this.selectedMultiple;
+            value = val;
           }
         } else {
           const target = this.realOptions.filter((item) => get(item, this.realValue) === val);
