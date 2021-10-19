@@ -8,52 +8,6 @@
     />
     <br/><br/>
 
-    <!-- 选项过多时，可折叠 -->
-    <t-select
-      v-model="value"
-      placeholder="-请选择-"
-      multiple
-      :minCollapsedNum="1"
-      :options="options"
-    />
-    <br/><br/>
-
-    <!-- 自定义折叠项内容，collapsedItems 为 function -->
-    <t-select
-      v-model="value"
-      placeholder="-请选择-"
-      multiple
-      :minCollapsedNum="1"
-      :collapsedItems="collapsedItems"
-      :options="options"
-    />
-    <br/><br/>
-
-    <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) -->
-    <t-select
-      v-model="value"
-      placeholder="-请选择-"
-      multiple
-      :minCollapsedNum="1"
-      :options="options"
-    >
-      <template #collapsedItems="{ value, count, size }">
-        <t-popup>
-          <template #content>
-            <p
-              v-for="(item, index) in value"
-              :key="index"
-              style="padding: 10px;"
-            >
-              {{item.label}}
-            </p>
-          </template>
-          <span style="color: #00A870;">+{{count}}<t-icon :size="size" name="info-circle" /></span>
-        </t-popup>
-      </template>
-    </t-select>
-    <br/><br/>
-
     <!-- 自定义选中项内容，valueDisplay 为 function -->
     <t-select
       v-model="value"
@@ -118,23 +72,6 @@ export default {
           {item.label}（{item.value}）
         </t-tag>
       ));
-    },
-    collapsedItems(h, { value, count, size }) {
-      if (!(value instanceof Array) || !count) return;
-      return (
-        <t-popup>
-          <div slot="content">
-          {
-            value.map((item) => (
-              <p style="padding: 10px;">{item.label}</p>
-            ))
-          }
-          </div>
-          <span style="color: #ED7B2F;">
-            +{count}<t-icon size={size} name="info-circle" />
-          </span>
-        </t-popup>
-      );
     },
   },
 };
