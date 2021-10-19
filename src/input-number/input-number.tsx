@@ -175,11 +175,11 @@ export default Vue.extend({
       };
     },
     displayValue(): string | number {
-      if (this.value === undefined) return;
       // inputing
       if (this.inputing && this.userInput !== null) {
         return this.filterValue;
       }
+      if (this.value === undefined) return '';
       // end input
       return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
@@ -298,9 +298,8 @@ export default Vue.extend({
       this.$emit('keypress', this.value, { e });
     },
     handleStartInput() {
-      if (this.value === undefined) return;
       this.inputing = true;
-
+      if (this.value === undefined) return;
       this.filterValue = this.value.toFixed(this.digitsNum);
     },
     handleEndInput(e: FocusEvent) {
