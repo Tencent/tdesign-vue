@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
-
 import {
   TransferListOptionBase, TransferItemOption, TdTransferProps, TransferValue, DataOption,
 } from './interface';

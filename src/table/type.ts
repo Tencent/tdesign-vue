@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-26 14:57:55
+ * updated at 2021-10-19 19:41:02
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -113,6 +113,14 @@ export interface TdBaseTableProps<T extends DataType = DataType> {
    */
   onRowMousedown?: (context: RowEventContext<T>) => void;
   /**
+   * 鼠标在表格行进入时触发，泛型 T 指表格数据类型
+   */
+  onRowMouseenter?: (context: RowEventContext<T>) => void;
+  /**
+   * 鼠标在表格行离开时触发，泛型 T 指表格数据类型
+   */
+  onRowMouseleave?: (context: RowEventContext<T>) => void;
+  /**
    * 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型
    */
   onRowMouseup?: (context: RowEventContext<T>) => void;
@@ -154,7 +162,7 @@ export interface BaseTableCol<T extends DataType = DataType> {
    */
   colKey?: string;
   /**
-   * 内容超出时，是否显示省略号
+   * 内容超出时，是否显示省略号。值为 true ，则浮层默认显示单元格内容；值类型为 Function 则显示自定义内容
    * @default false
    */
   ellipsis?: boolean | TNode<{ row: T; col: BaseTableCol; rowIndex: number; colIndex: number }>;
@@ -206,6 +214,11 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
    */
   defaultExpandedRowKeys?: Array<string | number>;
   /**
+   * 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效
+   * @default true
+   */
+  expandIcon?: TNode<ExpandArrowRenderParams<T>>;
+  /**
    * 是否允许点击行展开
    */
   expandOnRowClick?: boolean;
@@ -234,11 +247,6 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
    * 选中的行，控制属性，非受控属性
    */
   defaultSelectedRowKeys?: Array<string | number>;
-  /**
-   * 用于控制是否显示展开图标，支持自定义图标
-   * @default true
-   */
-  showExpandArrow?: boolean | TNode;
   /**
    * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
    */
@@ -339,6 +347,8 @@ export type DataType = { [key: string]: any };
 export interface CellData<T> { type: 'th' | 'td'; row: T; col: BaseTableCol; rowIndex: number; colIndex: number };
 
 export type RenderType = 'cell' | 'title';
+
+export interface ExpandArrowRenderParams<T> { row: T; index: number };
 
 export type FilterValue = Record<string, FilterItemValue>;
 

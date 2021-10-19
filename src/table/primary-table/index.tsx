@@ -63,6 +63,24 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     const scopedSlots = {
       ...$scopedSlots,
     };
+    const on = {
+      ...this.$listeners,
+      'page-change': (pageInfo: PageInfo, newDataSource: Array<DataType>) => {
+        emitEvent<PageChangeContext>(this, 'page-change', pageInfo, newDataSource);
+        emitEvent<ChangeContext>(
+          this, 'change',
+          { pagination: pageInfo },
+          { trigger: 'pagination', currentData: newDataSource },
+        );
+      },
+      'row-dragstart': this.onDragStart,
+      'row-dragover': this.onDragOver,
+    };
+    if (this.expandOnRowClick) {
+      on['row-click'] = (params: { row: Record<string, any>, index: number }) => {
+        this.handleExpandChange(params.row);
+      };
+    }
     const baseTableProps = {
       props: {
         ...$props,
@@ -75,19 +93,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         },
       },
       scopedSlots,
-      on: {
-        ...this.$listeners,
-        'page-change': (pageInfo: PageInfo, newDataSource: Array<DataType>) => {
-          emitEvent<PageChangeContext>(this, 'page-change', pageInfo, newDataSource);
-          emitEvent<ChangeContext>(
-            this, 'change',
-            { pagination: pageInfo },
-            { trigger: 'pagination', currentData: newDataSource },
-          );
-        },
-        'row-dragstart': this.onDragStart,
-        'row-dragover': this.onDragOver,
-      },
+      on,
     };
     return (
       <div>

@@ -12,7 +12,7 @@ const name = `${prefix}-slider`;
 export interface MarkItem {
   point: number;
   position: number;
-  mark: string | number | TNode;
+  mark: string | number | TNode<{ value: number }>;
 }
 interface SliderButtonType extends Vue {
   setPosition: (param: number) => {};

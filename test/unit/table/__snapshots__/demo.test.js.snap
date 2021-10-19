@@ -1246,6 +1246,92 @@ exports[`Table empty demo works fine 1`] = `
 
 exports[`Table expandable demo works fine 1`] = `
 <div>
+  <div
+    class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  >
+    <label
+      class="t-radio-button t-is-checked"
+    >
+      <input
+        class="t-radio-button__former"
+        name=""
+        type="radio"
+        value="true"
+      />
+      <span
+        class="t-radio-button__input"
+      />
+      <span
+        class="t-radio-button__label"
+      >
+        显示展开图标
+      </span>
+    </label>
+     
+    <label
+      class="t-radio-button"
+    >
+      <input
+        class="t-radio-button__former"
+        name=""
+        type="radio"
+        value="false"
+      />
+      <span
+        class="t-radio-button__input"
+      />
+      <span
+        class="t-radio-button__label"
+      >
+        隐藏展开图标
+      </span>
+    </label>
+     
+    <label
+      class="t-radio-button"
+    >
+      <input
+        class="t-radio-button__former"
+        name=""
+        type="radio"
+        value="custom"
+      />
+      <span
+        class="t-radio-button__input"
+      />
+      <span
+        class="t-radio-button__label"
+      >
+        自由控制展开图标
+      </span>
+    </label>
+  </div>
+   
+  <div
+    style="margin-left: 32px; display: inline-block; vertical-align: -2px;"
+  >
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        允许点击行之后展开/收起
+      </span>
+    </label>
+  </div>
+   
+  <br />
+  <br />
+   
   <div>
     <div
       class="t-table"
@@ -1352,7 +1438,7 @@ exports[`Table expandable demo works fine 1`] = `
                     class="t-table-expand-box"
                   >
                     <span
-                      style="transition: all .2s; display: flex; align-items: center;"
+                      style="transition: all .2s; display: flex; align-items: center; transform: rotate(-180deg);"
                     >
                       <svg
                         class="t-icon t-icon-chevron-down-circle"
@@ -1374,7 +1460,7 @@ exports[`Table expandable demo works fine 1`] = `
                   length="6"
                   style="overflow: hidden;"
                 >
-                  JQTest1
+                  集群测试1
                 </td>
                 <td
                   class=""
@@ -1402,7 +1488,7 @@ exports[`Table expandable demo works fine 1`] = `
                   key="description"
                   length="6"
                 >
-                  test
+                  隐藏展开图标
                 </td>
                 <td
                   class=""
@@ -1423,7 +1509,9 @@ exports[`Table expandable demo works fine 1`] = `
                   </a>
                 </td>
               </tr>
-              <tr>
+              <tr
+                style="display: none;"
+              >
                 <td
                   class="t-table-expanded-cell"
                   colspan="6"
@@ -1443,7 +1531,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      JQTest1
+                      集群测试1
                     </p>
                     <br />
                     <p
@@ -1469,7 +1557,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      test
+                      隐藏展开图标
                     </p>
                   </div>
                 </td>
@@ -1489,7 +1577,7 @@ exports[`Table expandable demo works fine 1`] = `
                     class="t-table-expand-box"
                   >
                     <span
-                      style="transition: all .2s; display: flex; align-items: center; transform: rotate(-180deg);"
+                      style="transition: all .2s; display: flex; align-items: center;"
                     >
                       <svg
                         class="t-icon t-icon-chevron-down-circle"
@@ -1511,7 +1599,7 @@ exports[`Table expandable demo works fine 1`] = `
                   length="6"
                   style="overflow: hidden;"
                 >
-                  JQTest2
+                  集群测试2
                 </td>
                 <td
                   class=""
@@ -1560,9 +1648,7 @@ exports[`Table expandable demo works fine 1`] = `
                   </a>
                 </td>
               </tr>
-              <tr
-                style="display: none;"
-              >
+              <tr>
                 <td
                   class="t-table-expanded-cell"
                   colspan="6"
@@ -1582,7 +1668,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      JQTest2
+                      集群测试2
                     </p>
                     <br />
                     <p
@@ -1650,7 +1736,7 @@ exports[`Table expandable demo works fine 1`] = `
                   length="6"
                   style="overflow: hidden;"
                 >
-                  JQTest3
+                  集群测试3
                 </td>
                 <td
                   class=""
@@ -1678,7 +1764,7 @@ exports[`Table expandable demo works fine 1`] = `
                   key="description"
                   length="6"
                 >
-                  test
+                  自定义图标
                 </td>
                 <td
                   class=""
@@ -1721,7 +1807,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      JQTest3
+                      集群测试3
                     </p>
                     <br />
                     <p
@@ -1747,7 +1833,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      test
+                      自定义图标
                     </p>
                   </div>
                 </td>
@@ -1789,7 +1875,7 @@ exports[`Table expandable demo works fine 1`] = `
                   length="6"
                   style="overflow: hidden;"
                 >
-                  JQTest4
+                  集群测试4
                 </td>
                 <td
                   class=""
@@ -1860,7 +1946,7 @@ exports[`Table expandable demo works fine 1`] = `
                     <p
                       class="content"
                     >
-                      JQTest4
+                      集群测试4
                     </p>
                     <br />
                     <p

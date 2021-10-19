@@ -22,7 +22,6 @@ import {
   getTransferListOption, emitEvent, getDataValues, getTransferData,
   filterTransferData,
 } from './utils';
-import { TNode } from '../common';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
@@ -104,8 +103,10 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     disabledOption(): TransferListOptionBase<boolean> {
       return getTransferListOption<boolean>(this.disabled);
     },
-    titleOption(): TransferListOptionBase<string | TNode> {
-      return getTransferListOption<string | TNode>(this.title);
+    titleOption(): TransferListOptionBase<string> {
+      // TODO：此处需分别处理 Array 和 TNode 内容
+      // @ts-ignore
+      return getTransferListOption<string>(this.title);
     },
     paginationOption(): TransferListOptionBase<TdPaginationProps> {
       return getTransferListOption<TdPaginationProps>(this.pagination);

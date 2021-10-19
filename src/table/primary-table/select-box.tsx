@@ -58,7 +58,14 @@ export default Vue.extend({
         type: inputType[type],
         disabled,
       },
-      on: { ...$listeners },
+      on: {
+        ...$listeners,
+      },
+      nativeOn: {
+        click: (e: MouseEvent) => {
+          this.$emit('click', e);
+        },
+      },
     });
   },
 });

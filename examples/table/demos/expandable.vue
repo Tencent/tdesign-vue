@@ -1,10 +1,22 @@
 <template>
   <div>
     <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
+    <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
     <!-- <t-locale-provider :globalLocale="globalLocale"> -->
 
     <!-- expanded-row-keys 为受控属性 -->
     <!-- default-expanded-row-keys 为非受控属性 -->
+
+    <t-radio-group v-model="expandControl">
+      <t-radio-button value="true">显示展开图标</t-radio-button>
+      <t-radio-button value="false">隐藏展开图标</t-radio-button>
+      <t-radio-button value="custom">自由控制展开图标</t-radio-button>
+    </t-radio-group>
+    <div style="margin-left: 32px; display: inline-block; vertical-align: -2px">
+      <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
+    </div>
+    <br><br>
+
     <t-table
       row-key='id'
       :columns="columns"
@@ -12,6 +24,8 @@
       :expanded-row-keys="expandedRowKeys"
       :expanded-row="expandedRow"
       @expand-change="rehandleExpandChange"
+      :expandIcon="expandIcon"
+      :expandOnRowClick="expandOnRowClick"
     >
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
@@ -30,6 +44,7 @@
 
 <script>
 import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
+import TIconChevronDownCircle from '@tencent/tdesign-vue/lib/icon/chevron-down-circle';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
@@ -44,24 +59,28 @@ const columns = [
 ];
 const data = [
   {
-    id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', description: 'test',
+    id: 1, instance: '集群测试1', status: 0, owner: 'jenny;peter', description: '隐藏展开图标',
   },
   {
-    id: '2', instance: 'JQTest2', status: 1, owner: 'jenny', description: 'test',
+    id: '2', instance: '集群测试2', status: 1, owner: 'jenny', description: 'test',
   },
   {
-    id: 3, instance: 'JQTest3', status: 0, owner: 'jenny', description: 'test',
+    id: 3, instance: '集群测试3', status: 0, owner: 'jenny', description: '自定义图标',
   },
   {
-    id: 4, instance: 'JQTest4', status: 1, owner: 'peter', description: 'test',
+    id: 4, instance: '集群测试4', status: 1, owner: 'peter', description: 'test',
   },
 ];
 export default {
   data() {
     return {
+      expandControl: 'true',
+      expandIcon: true,
+      expandOnRowClick: true,
       columns,
       data,
-      expandedRowKeys: [1],
+      // 有哪些 data.id 在 expandedRowKeys 中，就显示这些 id 对应的行
+      expandedRowKeys: ['2'],
       // defaultExpandedRowKeys: ['2', 4],
       expandedRow: (h, { row }) => (
         <div class="more-detail">
@@ -76,6 +95,27 @@ export default {
         },
       },
     };
+  },
+  watch: {
+    expandControl(val) {
+      if (val === 'true') {
+        // expandIcon 默认为 true，表示显示默认展开图标
+        this.expandIcon = true;
+      } else if (val === 'false') {
+        // expandIcon 值为 false，则表示隐藏全部展开图标
+        this.expandIcon = false;
+      } else if (val === 'custom') {
+        // 完全自由控制表格的每一行是否显示展开图标，以及显示什么内容
+        this.expandIcon = (h, { row, index }) => {
+          // 第一行不显示展开图标
+          if (index === 0) return false;
+          // 第三行，使用自定义展开图标
+          if (row.id === 3) return <TIconChevronDown />;
+          // 其他行，使用表格同款展开图标
+          return <TIconChevronDownCircle />;
+        };
+      }
+    },
   },
   methods: {
     rehandleClickOp({ text, row }) {
