@@ -49,7 +49,10 @@ export default {
     .background {
       height: 1500px;
       padding-top: 700px;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUklEQVQ4T2NkoBJ4/vx5AwMDw39GKpnHMGog5SE5GoajYUhGCIwmGzICDU0L7cLw6dOnoJKWYsDExGTPwMBwgPH58+f1xJj2798/gqW7tLR0AwAIU1bxCouWBwAAAABJRU5ErkJggg==);
+      background:
+        -webkit-linear-gradient(top, transparent 19px, #E7E7E7 20px),
+        -webkit-linear-gradient(left, transparent 19px, #E7E7E7 20px);
+      background-size: 20px 20px;
     }
   }
 }

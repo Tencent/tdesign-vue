@@ -843,7 +843,10 @@ exports[`Table customCell demo works fine 1`] = `
       </li>
        
       <li>
-        3)【不推荐使用】使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，单元格的 type 值为 cell，标题的 type 值为 title
+        
+        3)【不推荐使用】使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，
+        单元格的 type 值为 cell，标题的 type 值为 title
+      
       </li>
     </ul>
     <br />

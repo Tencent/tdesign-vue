@@ -290,7 +290,8 @@ export default Vue.extend({
     },
     handleDocumentClick(e: Event): void {
       const popperElm = this.$refs.popper as HTMLElement;
-      if (!this.$el || this.$el.contains(e.target as Element) || !popperElm || popperElm.contains(e.target as Node)) return;
+      if (!this.$el || this.$el.contains(e.target as Element)
+        || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext): void {

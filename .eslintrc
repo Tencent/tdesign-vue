@@ -61,7 +61,7 @@
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/prefer-for-of": 0,
     "prefer-default-export": 0,
-    "max-len": 0,
+    "max-len": ["error", 120],
     "@typescript-eslint/ban-ts-ignore": 0,
     "no-useless-constructor": "off",
     "no-plusplus": [

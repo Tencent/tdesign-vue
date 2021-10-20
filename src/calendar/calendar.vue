@@ -74,7 +74,12 @@
       </div>
       <!-- 今天\本月 -->
       <div v-if="theme === 'full' && isCurrentBtnVisible" class="t-calendar__control-section">
-        <TButton theme="default" :size="controlSize" :disabled="isCurrentBtnDisabled" v-bind="currentBtnVBind" @click="toCurrent()">
+        <TButton
+          theme="default"
+          :size="controlSize"
+          :disabled="isCurrentBtnDisabled"
+          v-bind="currentBtnVBind" @click="toCurrent()"
+        >
           {{ currentBtnText }}
         </TButton>
       </div>
@@ -91,7 +96,11 @@
           <tr class="t-calendar__table-head-row">
             <template v-for="item in cellColHeaders">
               <th v-if="checkMonthCellColHeaderVisibled(item)" :key="item.num" class="t-calendar__table-head-cell">
-                <RenderTNodeTemplate v-if="isWeekRender" :render="week" :params="getCalendarWeekSlotData(item)"></RenderTNodeTemplate>
+                <RenderTNodeTemplate
+                  v-if="isWeekRender"
+                  :render="week"
+                  :params="getCalendarWeekSlotData(item)"
+                />
                 <slot v-else name="week" :data="getCalendarWeekSlotData(item)">{{ item.display }}</slot>
               </th>
             </template>
@@ -112,10 +121,15 @@
                 @contextmenu.native="rightClickCell($event, item)"
               >
                 <!-- cell slot for month mode -->
-                <RenderTNodeTemplate v-if="cell" slot="cell" :render="cell" :params="createCalendarCell(item)"></RenderTNodeTemplate>
+                <RenderTNodeTemplate v-if="cell" slot="cell" :render="cell" :params="createCalendarCell(item)" />
                 <slot v-else name="cell" slot="cell" :data="createCalendarCell(item)"></slot>
                 <!-- cellAppend slot for month mode -->
-                <RenderTNodeTemplate v-if="cellAppend" slot="cellAppend" :render="cellAppend" :params="createCalendarCell(item)"></RenderTNodeTemplate>
+                <RenderTNodeTemplate
+                  v-if="cellAppend"
+                  slot="cellAppend"
+                  :render="cellAppend"
+                  :params="createCalendarCell(item)"
+                />
                 <slot v-else name="cellAppend" slot="cellAppend" :data="createCalendarCell(item)"></slot>
               </CalendarCellItem>
             </template>
@@ -138,10 +152,15 @@
               @contextmenu.native="rightClickCell($event, item)"
             >
               <!-- cell slot for year mode -->
-              <RenderTNodeTemplate v-if="cell" slot="cell" :render="cell" :params="createCalendarCell(item)"></RenderTNodeTemplate>
+              <RenderTNodeTemplate v-if="cell" slot="cell" :render="cell" :params="createCalendarCell(item)" />
               <slot v-else name="cell" slot="cell" :data="createCalendarCell(item)"></slot>
               <!-- cellAppend slot for year mode -->
-              <RenderTNodeTemplate v-if="cellAppend" slot="cellAppend" :render="cellAppend" :params="createCalendarCell(item)"></RenderTNodeTemplate>
+              <RenderTNodeTemplate
+                v-if="cellAppend"
+                slot="cellAppend"
+                :render="cellAppend"
+                :params="createCalendarCell(item)"
+              />
               <slot v-else name="cellAppend" slot="cellAppend" :data="createCalendarCell(item)"></slot>
             </CalendarCellItem>
           </tr>

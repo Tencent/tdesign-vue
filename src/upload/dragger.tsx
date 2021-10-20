@@ -161,13 +161,32 @@ export default Vue.extend({
             </small>
             {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
               <div class={`${UPLOAD_NAME}__dragger-btns`}>
-                <TButton theme="primary" variant='text' class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.cancel}>取消上传</TButton>
-                <TButton theme="primary" variant='text' onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}>点击上传</TButton>
+                <TButton
+                  theme="primary"
+                  variant='text'
+                  class={`${UPLOAD_NAME}__dragger-progress-cancel`}
+                  onClick={this.cancel}
+                >
+                  取消上传
+                </TButton>
+                <TButton
+                  theme="primary"
+                  variant='text'
+                  onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
+                >
+                  点击上传
+                </TButton>
               </div>
             )}
             {this.showResultOperate && (
               <div class={`${UPLOAD_NAME}__dragger-btns`}>
-                <TButton theme="primary" variant="text" class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.reupload}>重新上传</TButton>
+                <TButton
+                  theme="primary"
+                  variant="text"
+                  class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.reupload}
+                >
+                  重新上传
+                </TButton>
                 <TButton theme="primary" variant='text' onClick={this.remove}>删除</TButton>
               </div>
             )}

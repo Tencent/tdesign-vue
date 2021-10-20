@@ -69,7 +69,11 @@ function getDataValues(data: Array<TransferItemOption>, filterValues: Array<Tran
   }).map((item) => item.value);
 }
 
-function getTransferData(data: Array<DataOption>, keys: TdTransferProps['keys'], isTreeMode = false): Array<TransferItemOption> {
+function getTransferData(
+  data: Array<DataOption>,
+  keys: TdTransferProps['keys'],
+  isTreeMode = false,
+): Array<TransferItemOption> {
   const list: Array<TransferItemOption> = data.map((transferDataItem, index): TransferItemOption => {
     const labelKey = keys?.label || 'label';
     const valueKey = keys?.value || 'value';
@@ -112,7 +116,12 @@ function isTreeNodeValid(data: TransferItemOption, filterValues: Array<TransferV
 }
 
 // 复制树并过滤节点
-function cloneTreeWithFilter(sourceTree: TransferItemOption[], targetTree: TransferItemOption[], filterValues: Array<TransferValue>, needMatch: boolean) {
+function cloneTreeWithFilter(
+  sourceTree: TransferItemOption[],
+  targetTree: TransferItemOption[],
+  filterValues: Array<TransferValue>,
+  needMatch: boolean,
+) {
   sourceTree.forEach((item) => {
     let newNode: TransferItemOption;
     if (isAllNodeValid(item, filterValues, needMatch)) {
@@ -138,7 +147,12 @@ function cloneTreeWithFilter(sourceTree: TransferItemOption[], targetTree: Trans
 }
 
 // 过滤列表，如果是树的话需要保持树的结构
-function filterTransferData(data: Array<TransferItemOption>, filterValues: Array<TransferValue>, needMatch = true, isTreeMode = false) {
+function filterTransferData(
+  data: Array<TransferItemOption>,
+  filterValues: Array<TransferValue>,
+  needMatch = true,
+  isTreeMode = false,
+) {
   if (!isTreeMode) {
     return data.filter((item) => {
       const isMatch = filterValues.includes(item.value);

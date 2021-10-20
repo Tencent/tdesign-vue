@@ -128,7 +128,10 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return Boolean(this.clearable
         && this.isHover
         && !this.disabled
-        && ((!this.multiple && (this.value || this.value === 0)) || (this.multiple && this.value instanceof Array && this.value.length)));
+        && (
+          (!this.multiple && (this.value || this.value === 0))
+          || (this.multiple && this.value instanceof Array && this.value.length)
+        ));
     },
     showArrow(): boolean {
       return (
@@ -383,7 +386,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
     },
     enter(e: KeyboardEvent) {
-      emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', { inputValue: this.searchInput, value: this.value, e });
+      emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', {
+        inputValue: this.searchInput,
+        value: this.value,
+        e,
+      });
     },
     hoverEvent(v: boolean) {
       this.isHover = v;
@@ -407,7 +414,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
           const popupWidth = this.getOverlayElm().getBoundingClientRect().width;
-          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH ? elWidth : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
+          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH
+            ? elWidth
+            : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
           Vue.set(this.defaultProps.overlayStyle, 'width', `${Math.ceil(width)}px`);
         }
       });
@@ -485,7 +494,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
         >
-          <div class={classes} onMouseenter={ this.hoverEvent.bind(null, true) } onMouseleave={ this.hoverEvent.bind(null, false) }>
+          <div
+            class={classes}
+            onMouseenter={ this.hoverEvent.bind(null, true) }
+            onMouseleave={ this.hoverEvent.bind(null, false) }
+          >
             {
               prefixIconSlot && (<span class="t-select-left-icon">{ prefixIconSlot[0] }</span>)
             }

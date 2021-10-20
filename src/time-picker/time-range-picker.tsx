@@ -58,7 +58,8 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       return time.map((val: dayjs.Dayjs) => (val ? dayjs(val) : dayjs()));
     },
     textClassName(): string {
-      const isDefault = (this.inputTime as any).some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
+      const isDefault = (this.inputTime as any)
+        .some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
       return isDefault ? '' : `${name}__group-text`;
     },
   },

@@ -21,7 +21,9 @@ const Ripple = {
     let count = 0;
 
     el.addEventListener('pointerdown', (e: PointerEvent) => {
-      if (el.classList.contains(`${prefix}-is-active`) || el.classList.contains(`${prefix}-is-disabled`) || el.classList.contains(`${prefix}-is-checked`)) return;
+      if (el.classList.contains(`${prefix}-is-active`)
+      || el.classList.contains(`${prefix}-is-disabled`)
+      || el.classList.contains(`${prefix}-is-checked`)) return;
 
       if (e.button !== 0) return; // 非鼠标左键点击；避免出现动画之后不消失的bug
 

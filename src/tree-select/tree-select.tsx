@@ -101,7 +101,10 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         this.clearable
         && this.isHover
         && !this.disabled
-        && ((!this.multiple && (!!this.value || this.value === 0)) || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>)))
+        && (
+          (!this.multiple && (!!this.value || this.value === 0))
+          || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>))
+        )
       );
     },
     showPlaceholder(): boolean {
@@ -202,7 +205,9 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       await this.change(this.defaultValue, null);
     }
     if (this.isObjectValue) {
-      this.actived = isArray(this.value) ? this.value.map((item) => (item as NodeOptions).value) : [(this.value as NodeOptions).value];
+      this.actived = isArray(this.value)
+        ? this.value.map((item) => (item as NodeOptions).value)
+        : [(this.value as NodeOptions).value];
     } else {
       this.actived = isArray(this.value) ? this.value : [this.value];
     }
@@ -385,8 +390,13 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         </Tag>
       ))
     );
-    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems) && this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum
-      ? renderTNodeJSX(this, 'collapsedItems', { params: { count: this.tagList.length - this.minCollapsedNum, value: this.selectedMultiple, size: this.size } })
+    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
+    && this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum
+      ? renderTNodeJSX(this, 'collapsedItems',
+        {
+          params:
+            { count: this.tagList.length - this.minCollapsedNum, value: this.selectedMultiple, size: this.size },
+        })
       : (<Tag
         v-show={this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum}
         size={this.size}
@@ -426,11 +436,26 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             {searchInput}
             {
               this.showArrow && !this.showLoading && (
-                <FakeArrow overlayClassName={`${prefix}-select-right-icon`} overlayStyle={iconStyle} isActive={this.visible && !this.disabled}/>
+                <FakeArrow
+                  overlayClassName={`${prefix}-select-right-icon`}
+                  overlayStyle={iconStyle}
+                  isActive={this.visible && !this.disabled}
+                />
               )
             }
-            <IconCloseCircleFilled v-show={this.showClose && !this.showLoading} name="close" class={`${prefix}-select-right-icon`} size={this.size} nativeOnClick={this.clear} />
-            <IconLoading v-show={this.showLoading} name="loading" class={`${prefix}-select-right-icon ${prefix}-select-active-icon`} size={this.size} />
+            <IconCloseCircleFilled
+              v-show={this.showClose && !this.showLoading}
+              name="close"
+              class={`${prefix}-select-right-icon`}
+              size={this.size}
+              nativeOnClick={this.clear}
+            />
+            <IconLoading
+              v-show={this.showLoading}
+              name="loading"
+              class={`${prefix}-select-right-icon ${prefix}-select-active-icon`}
+              size={this.size}
+            />
           </div>
           <div slot="content">
             <p v-show={this.showLoading} class={`${prefix}-select-loading-tips`}>

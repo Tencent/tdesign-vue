@@ -115,7 +115,11 @@ export default (Vue as VueConstructor<InputInstance>).extend({
           onInput={this.handleInput}
           onCompositionend={this.onCompositionend}
         />
-        {suffixIcon ? <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span> : null}
+        {
+          suffixIcon
+            ? <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span>
+            : null
+        }
       </div>
     );
   },

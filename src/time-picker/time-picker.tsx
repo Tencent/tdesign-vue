@@ -70,10 +70,12 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
         return [dayjs(time, this.format)];
       } if (this.steps.filter((step) => step !== 1).length < 1) {
         return [dayjs()];
-      } return [dayjs().hour(Number(this.steps[0]) - 1).minute(Number(this.steps[1]) - 1).second(Number(this.steps[2]) - 1)];
+      } return [dayjs().hour(Number(this.steps[0]) - 1)
+        .minute(Number(this.steps[1]) - 1).second(Number(this.steps[2]) - 1)];
     },
     textClassName(): string {
-      const isDefault = (this.inputTime as any).some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
+      const isDefault = (this.inputTime as any)
+        .some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
       return isDefault ? '' : `${name}__group-text`;
     },
   },

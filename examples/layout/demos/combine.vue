@@ -3,7 +3,13 @@
     <t-layout>
       <t-header>
         <t-head-menu  value="item1" height="120px">
-          <img slot="logo" width="136" class="logo" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+          <img
+            slot="logo"
+            width="136"
+            class="logo"
+            src="https://www.tencent.com/img/index/menu_logo_hover.png"
+            alt="logo"
+          >
           <t-menu-item value="item1">已选内容</t-menu-item>
           <t-menu-item value="item2">菜单内容一</t-menu-item>
           <t-menu-item value="item3">菜单内容二</t-menu-item>

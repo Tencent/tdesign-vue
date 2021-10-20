@@ -112,7 +112,11 @@ export default Vue.extend({
     },
     renderBody(): Array<VNode> {
       const {
-        data, rowClassName, rowKey, provider, $scopedSlots: scopedSlots, rowspanAndColspan, selectedRowKeys, selectColumn,
+        data,
+        rowClassName,
+        rowKey,
+        provider,
+        $scopedSlots: scopedSlots, rowspanAndColspan, selectedRowKeys, selectColumn,
       } = this;
       const body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
@@ -120,7 +124,9 @@ export default Vue.extend({
         allRowspanAndColspanProps = this.getRowspanAndColspanProps();
       }
       data.forEach((row: any, index: number) => {
-        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
+        const defaultRowClass = typeof rowClassName === 'function'
+          ? rowClassName({ row, rowIndex: index })
+          : rowClassName;
         const rowClass: Array<string> = [];
         if (Array.isArray(defaultRowClass)) {
           rowClass.push(...defaultRowClass);

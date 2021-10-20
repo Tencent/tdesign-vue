@@ -237,7 +237,9 @@ export default Vue.extend({
       );
     },
     renderFooter() {
-      const defaultNode = typeof this.footer === 'string' ? (<div class={`${prefix}-transfer-footer`}>{this.footer}</div>) : null;
+      const defaultNode = typeof this.footer === 'string'
+        ? (<div class={`${prefix}-transfer-footer`}>{this.footer}</div>)
+        : null;
       return renderTNodeJSXDefault(this, 'footer', {
         defaultNode,
         params: {
@@ -273,7 +275,16 @@ export default Vue.extend({
           {this.renderTitle()}
         </div>
         <div class={[`${this.name}__body`, this.search ? `${this.name}-with-search` : '']}>
-          {this.search && <search searchValue={this.filterValue} placeholder={this.t(this.locale.placeholder)} onChange={(e: string) => this.filterValue = e} disabled={this.disabled} search={this.search} onSearch={this.handleSearch} />}
+          {this.search && (
+            <search
+              searchValue={this.filterValue}
+              placeholder={this.t(this.locale.placeholder)}
+              onChange={(e: string) => this.filterValue = e}
+              disabled={this.disabled}
+              search={this.search}
+              onSearch={this.handleSearch}
+            />
+          )}
           {this.curPageData.length > 0 ? this.renderContent() : this.renderEmpty()}
         </div>
         {

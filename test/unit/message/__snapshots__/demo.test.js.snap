@@ -203,7 +203,9 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        success
+        
+      success
+    
       </span>
     </button>
      
@@ -225,7 +227,9 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        error
+        
+      error
+    
       </span>
     </button>
      
@@ -304,7 +308,9 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        warning
+        
+      warning
+    
       </span>
     </button>
      

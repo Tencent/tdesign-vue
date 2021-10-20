@@ -84,7 +84,9 @@ export default Vue.extend({
           checked: this.selectedRowKeys.includes(get(row, this.reRowKey)),
           ...column,
           type: column.type,
-          checkProps: typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
+          checkProps: typeof column.checkProps === 'function'
+            ? column.checkProps({ row, rowIndex })
+            : column.checkProps,
           disabled: typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled,
           rowIndex,
         },

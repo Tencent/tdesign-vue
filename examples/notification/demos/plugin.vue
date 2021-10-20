@@ -9,7 +9,11 @@
       <t-button @click="$notify.success({ title: '标题名称',content: '用户表示操作顺利的消息通知', duration: 2000 })">2000s</t-button>
       <t-button @click="$notify('warning', { title: '标题名称', content: '用户表示操作引起一定后果的消息通知' })">默认时长</t-button>
       <!-- 0 表示永远不自动消失 -->
-      <t-button @click="$notify.error({ title: '标题名称',content: '用户表示操作引起严重后果的消息通知', duration: 0, closeBtn: true })">永久显示</t-button>
+      <t-button
+        @click="$notify.error({ title: '标题名称',content: '用户表示操作引起严重后果的消息通知', duration: 0, closeBtn: true })"
+      >
+        永久显示
+      </t-button>
     </div>
     <br><br>
 

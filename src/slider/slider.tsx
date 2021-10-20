@@ -94,7 +94,10 @@ export default Vue.extend({
         result.push(i * stepWidth);
       }
       if (this.range) {
-        return result.filter((step) => step < (100 * (this.minValue - min)) / rangeDiff || step > (100 * (this.maxValue - min)) / rangeDiff);
+        return result.filter(
+          (step) => step < (100 * (this.minValue - min)) / rangeDiff
+            || step > (100 * (this.maxValue - min)) / rangeDiff,
+        );
       }
       return result.filter((step) => step > (100 * (this.firstValue - min)) / rangeDiff);
     },

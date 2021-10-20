@@ -101,9 +101,16 @@ export default mixins(getLocalReceiverMixins('drawer')).extend({
         {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick}/>}
         <div class={this.wraperClasses} style={this.wraperStyles}>
           {this.header !== false ? <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div> : null}
-          {this.closeBtn !== false ? <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</div> : null}
+          {this.closeBtn !== false
+            ? (
+              <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
+                {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+              </div>)
+            : null}
           <div class={`${name}__body`}>{body}</div>
-          {this.footer !== false ? <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div> : null }
+          {this.footer !== false
+            ? <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+            : null }
         </div>
       </div>
     );

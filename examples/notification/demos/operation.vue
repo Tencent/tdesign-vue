@@ -16,7 +16,9 @@
       <div slot='title'>自定义标题 <small>我是副标题</small></div>
       <div slot="footer" class="t-notification__detail">
         <t-button class="t-notification__detail--item" theme="default" variant="text">重启</t-button>
-        <t-button class="t-notification__detail--item" theme="primary" variant="text" @click="remind">稍后提醒我(10s)</t-button>
+        <t-button class="t-notification__detail--item" theme="primary" variant="text" @click="remind">
+          稍后提醒我(10s)
+        </t-button>
       </div>
     </t-notification>
     <t-notification theme="info" title="自定义内容">

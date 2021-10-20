@@ -359,7 +359,12 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     return (
       <div class={commonClass}>
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
-          <div ref='tableContent' class={tableContentClass} style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
+          <div
+            ref='tableContent'
+            class={tableContentClass}
+            style={{ overflow: 'auto', maxHeight }}
+            onScroll={handleScroll}
+          >
             {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
           </div>
           {body}

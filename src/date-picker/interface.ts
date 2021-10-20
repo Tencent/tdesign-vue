@@ -277,7 +277,9 @@ export interface DateHeaderProps {
 }
 export interface DateRangeMethods {
   initialPicker(): void;
-  getLeftAndRightDataFromValue(value: Array<Date>): { leftYear: number; leftMonth: number; rightYear: number; rightMonth: number };
+  getLeftAndRightDataFromValue(value: Array<Date>): {
+    leftYear: number; leftMonth: number; rightYear: number; rightMonth: number
+  };
   getData(value: { year: number; month: number; type: string }): object;
   getClickHandler(direction: string): object;
   clickHeader(flag: number, direction: string): void;

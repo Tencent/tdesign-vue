@@ -1,6 +1,12 @@
 <template>
   <div>
-    <t-dropdown :options="options" placement="top-left" trigger="click" :hideAfterItemClick="false" :minColumnWidth="100">
+    <t-dropdown
+      :options="options"
+      placement="top-left"
+      trigger="click"
+      :hideAfterItemClick="false"
+      :minColumnWidth="100"
+    >
       <t-button>click我试试</t-button>
     </t-dropdown>
   </div>

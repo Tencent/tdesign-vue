@@ -143,7 +143,10 @@ function isSameDate(date1: Date, date2: Date) {
  * @param {Object} { start, end } 范围
  * @returns {Boolean}
  */
-function isBetween(value: { getFullYear: () => number; getMonth: () => number; getDate: () => number }, { start, end }: { start: any; end: any }): boolean {
+function isBetween(
+  value: { getFullYear: () => number; getMonth: () => number; getDate: () => number },
+  { start, end }: { start: any; end: any },
+): boolean {
   const date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
 
   const startTime = new Date(start.getFullYear(), start.getMonth(), start.getDate());

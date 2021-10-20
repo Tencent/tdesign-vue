@@ -72,12 +72,32 @@ export default Vue.extend({
           paddingBottom: `${gutter / 2}px`,
         });
       } else if (Array.isArray(gutter) && gutter.length) {
-        if (gutter[0] as any > 0) Object.assign(paddingObj, { paddingLeft: `${gutter[0] as any / 2}px`, paddingRight: `${gutter[0] as any / 2}px` });
-        if (gutter[1] as any > 0) Object.assign(paddingObj, { paddingTop: `${gutter[1] as any / 2}px`, paddingBottom: `${gutter[1] as any / 2}px` });
+        if (gutter[0] as any > 0) {
+          Object.assign(paddingObj, {
+            paddingLeft: `${gutter[0] as any / 2}px`,
+            paddingRight: `${gutter[0] as any / 2}px`,
+          });
+        }
+        if (gutter[1] as any > 0) {
+          Object.assign(paddingObj, {
+            paddingTop: `${gutter[1] as any / 2}px`,
+            paddingBottom: `${gutter[1] as any / 2}px`,
+          });
+        }
       } else if (isObject(gutter) && gutter[currentSize]) {
         if (Array.isArray(gutter[currentSize])) {
-          if (gutter[currentSize][0] > 0) Object.assign(paddingObj, { paddingLeft: `${gutter[currentSize][0] / 2}px`, paddingRight: `${gutter[currentSize][0] / 2}px` });
-          if (gutter[currentSize][1] > 0) Object.assign(paddingObj, { paddingTop: `${gutter[currentSize][1] / 2}px`, paddingBottom: `${gutter[currentSize][1] / 2}px` });
+          if (gutter[currentSize][0] > 0) {
+            Object.assign(paddingObj, {
+              paddingLeft: `${gutter[currentSize][0] / 2}px`,
+              paddingRight: `${gutter[currentSize][0] / 2}px`,
+            });
+          }
+          if (gutter[currentSize][1] > 0) {
+            Object.assign(paddingObj, {
+              paddingTop: `${gutter[currentSize][1] / 2}px`,
+              paddingBottom: `${gutter[currentSize][1] / 2}px`,
+            });
+          }
         } else if (gutter[currentSize] > 0) {
           Object.assign(paddingObj, {
             paddingLeft: `${gutter[currentSize] / 2}px`,

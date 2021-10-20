@@ -41,7 +41,11 @@ const columns = [
     colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: (a, b) => a.status - b.status,
   },
   {
-    colKey: 'survivalTime', title: '存活时间(s)', width: 200, sortType: 'all', sorter: (a, b) => a.survivalTime - b.survivalTime,
+    colKey: 'survivalTime',
+    title: '存活时间(s)',
+    width: 200,
+    sortType: 'all',
+    sorter: (a, b) => a.survivalTime - b.survivalTime,
   },
   { colKey: 'owner', title: '管理员', width: 100 },
 ];
