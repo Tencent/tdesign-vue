@@ -61,7 +61,7 @@ exports[`DatePicker base demo works fine 1`] = `
                     class="t-date-picker-header-controller"
                   >
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="上个月"
                       type="button"
                     >
@@ -80,7 +80,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                       title="当前"
                       type="button"
                     >
@@ -99,7 +99,7 @@ exports[`DatePicker base demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="下个月"
                       type="button"
                     >
@@ -814,7 +814,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -833,7 +833,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -852,7 +852,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -1498,7 +1498,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -1517,7 +1517,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -1536,7 +1536,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -2264,7 +2264,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         class="t-date-picker-header-controller"
                       >
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                           title="上个月"
                           type="button"
                         >
@@ -2283,7 +2283,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                           </svg>
                         </button>
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                           title="当前"
                           type="button"
                         >
@@ -2302,7 +2302,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                           </svg>
                         </button>
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                           title="下个月"
                           type="button"
                         >
@@ -2948,7 +2948,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         class="t-date-picker-header-controller"
                       >
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                           title="上个月"
                           type="button"
                         >
@@ -2967,7 +2967,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                           </svg>
                         </button>
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                           title="当前"
                           type="button"
                         >
@@ -2986,7 +2986,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                           </svg>
                         </button>
                         <button
-                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                          class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                           title="下个月"
                           type="button"
                         >
@@ -3718,7 +3718,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -3737,7 +3737,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -3756,7 +3756,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -4488,7 +4488,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -4507,7 +4507,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -4526,7 +4526,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -5172,7 +5172,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -5191,7 +5191,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -5210,7 +5210,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -5947,7 +5947,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -5966,7 +5966,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -5985,7 +5985,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -6631,7 +6631,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -6650,7 +6650,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -6669,7 +6669,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -7383,7 +7383,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -7402,7 +7402,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -7421,7 +7421,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -8067,7 +8067,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                       class="t-date-picker-header-controller"
                     >
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="上个月"
                         type="button"
                       >
@@ -8086,7 +8086,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                         title="当前"
                         type="button"
                       >
@@ -8105,7 +8105,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                         </svg>
                       </button>
                       <button
-                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                        class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                         title="下个月"
                         type="button"
                       >
@@ -8724,19 +8724,11 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                 <button
                   class="t-button t-size-m t-button--variant-text t-button--theme-primary"
                   type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
+                />
                 <button
                   class="t-button t-size-m t-button--variant-base t-button--theme-primary"
                   type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  />
-                </button>
+                />
               </div>
             </div>
           </div>
@@ -8828,7 +8820,7 @@ exports[`DatePicker month demo works fine 1`] = `
                     class="t-date-picker-header-controller"
                   >
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="上一年"
                       type="button"
                     >
@@ -8847,7 +8839,7 @@ exports[`DatePicker month demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                       title="当前"
                       type="button"
                     >
@@ -8866,7 +8858,7 @@ exports[`DatePicker month demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="下一年"
                       type="button"
                     >
@@ -9146,7 +9138,7 @@ exports[`DatePicker year demo works fine 1`] = `
                     class="t-date-picker-header-controller"
                   >
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="上个十年"
                       type="button"
                     >
@@ -9165,7 +9157,7 @@ exports[`DatePicker year demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
                       title="当前"
                       type="button"
                     >
@@ -9184,7 +9176,7 @@ exports[`DatePicker year demo works fine 1`] = `
                       </svg>
                     </button>
                     <button
-                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--icon-only t-date-picker-header-controller__btn"
+                      class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker-header-controller__btn"
                       title="下个十年"
                       type="button"
                     >

@@ -15,7 +15,6 @@ export default Vue.extend({
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
-    const isIconOnly = icon && !buttonContent;
     const disabled = this.disabled || this.loading;
     let { theme } = this;
 
@@ -35,19 +34,15 @@ export default Vue.extend({
       {
         [CLASSNAMES.STATUS.disabled]: disabled,
         [CLASSNAMES.STATUS.loading]: this.loading,
-        [`${name}--icon-only`]: isIconOnly,
-        [`${name}--shape-${this.shape}`]: this.shape !== 'square',
+        [`${name}--shape-${this.shape}`]: this.shape !== 'rectangle',
         [`${name}--ghost`]: this.ghost,
         [CLASSNAMES.SIZE.block]: this.block,
       },
     ];
 
-    buttonContent = <span class={`${name}__text`}>{buttonContent}</span>;
+    buttonContent = buttonContent ? <span class={`${name}__text`}>{buttonContent}</span> : '';
     if (icon) {
-      buttonContent = [
-        icon,
-        !isIconOnly ? buttonContent : '',
-      ];
+      buttonContent = [icon, buttonContent];
     }
 
     return (

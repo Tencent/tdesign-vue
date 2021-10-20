@@ -1001,7 +1001,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
       <svg
@@ -1116,7 +1116,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
       <svg
