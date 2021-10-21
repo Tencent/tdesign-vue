@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-dropdown :options="options" :minColumnWidth="95">
+    <t-dropdown :options="options" :minColumnWidth="105">
       <t-button>hover我试试</t-button>
     </t-dropdown>
   </div>
