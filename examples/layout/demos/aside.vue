@@ -3,7 +3,13 @@
     <t-layout>
       <t-aside>
         <t-menu theme="light" value="dashboard" style="margin-right: 50px" height="550px" >
-          <img slot="logo" width="136" class="t-menu__logo--center" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
+          <img
+            slot="logo"
+            width="136"
+            class="t-menu__logo--center"
+            src="https://www.tencent.com/img/index/menu_logo_hover.png"
+            alt="logo"
+          >
           <t-menu-item value="dashboard">
             <t-icon slot="icon" name="dashboard"/>仪表盘
           </t-menu-item>

@@ -1,7 +1,10 @@
 /** Vue2 特有全局变量 */
 
 export type TNodeReturnValue = import('vue/types/vnode').ScopedSlotReturnValue;
-export type TNode<T = any> = (h: Vue.CreateElement, props?: T) => TNodeReturnValue;
+export type TNode<T = undefined> = T extends undefined
+  ? (h: Vue.CreateElement) => TNodeReturnValue
+  : (h: Vue.CreateElement, props: T) => TNodeReturnValue;
+
 export type JsxNode = TNodeReturnValue;
 
 export type AttachNodeReturnValue = HTMLElement | Element | Document;

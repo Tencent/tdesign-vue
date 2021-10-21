@@ -1,30 +1,25 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import DropdownItem from './dropdown-item';
 import { prefix } from '../config';
 import { TNodeReturnValue } from '../common';
 import { DropdownOption } from './type';
-import { emitEvent } from '../utils/event';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-dropdown__menu`;
+export interface DropdownMenuInstance extends Vue {
+  dropdown: {
+    options: DropdownOption[];
+    maxHeight: number;
+    minColumnWidth: number;
+    maxColumnWidth: number;
+  };
+}
 
-export default Vue.extend({
+export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
   name: 'TDropdownMenu',
-  props: {
-    options: {
-      type: Array,
-      default: (): [] => [],
-    },
-    maxHeight: {
-      type: Number,
-      default: 300,
-    },
-    maxColumnWidth: {
-      type: Number,
-      default: 100,
-    },
-    minColumnWidth: {
-      type: Number,
-      default: 10,
+  inject: {
+    dropdown: {
+      default: undefined,
     },
   },
   data() {
@@ -44,8 +39,7 @@ export default Vue.extend({
       this.path = path;
     },
     handleItemClick(data: DropdownOption, context: { e: MouseEvent }, idx: number) {
-      (this.options as DropdownOption[])[idx].onClick?.(data, context);
-      emitEvent(this, 'click', data, context);
+      this.dropdown.options[idx].onClick?.(data, context);
     },
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
       const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
@@ -53,7 +47,9 @@ export default Vue.extend({
         <div
           class={menuClass}
           style={{
-            maxHeight: `${this.maxHeight}px`,
+            maxHeight: `${this.dropdown.maxHeight}px`,
+            maxWidth: `${this.dropdown.maxColumnWidth}px`,
+            minWidth: `${this.dropdown.minColumnWidth}px`,
           }}
         >
           {children.map((item, idx) => (
@@ -66,8 +62,6 @@ export default Vue.extend({
               divider={item.divider}
               hasChildren={item.children && item.children.length > 0}
               path={`${pathPrefix}/${item.value}`}
-              maxColumnWidth={this.maxColumnWidth}
-              minColumnWidth={this.minColumnWidth}
               onClick={(data: DropdownOption, context: { e: MouseEvent }) => this.handleItemClick(data, context, idx)}
               onHover={this.handleHoverItem}
             />
@@ -76,10 +70,27 @@ export default Vue.extend({
       );
     },
   },
+
   render() {
     const columns: TNodeReturnValue[] = [];
-    let menuItems = this.options as DropdownOption[];
+    let menuItems = this.dropdown.options as DropdownOption[];
     let pathPrefix = '';
+    if (this.$scopedSlots.default) {
+      return (
+        <div class={name}>
+          <div
+            class={[`${name}__column`, 'narrow-scrollbar']}
+            style={{
+              maxHeight: `${this.dropdown.maxHeight}px`,
+              maxWidth: `${this.dropdown.maxColumnWidth}px`,
+              minWidth: `${this.dropdown.minColumnWidth}px`,
+            }}
+          >
+            {renderTNodeJSX(this, 'default')}
+          </div>
+        </div>
+      );
+    }
     // 根据path渲染
     while (menuItems && menuItems.length) {
       // eslint-disable-next-line

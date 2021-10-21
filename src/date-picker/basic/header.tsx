@@ -86,13 +86,26 @@ export default mixins(getLocalReceiverMixins('datePicker')).extend({
         </span>
 
         <span class="t-date-picker-header-controller">
-          <t-button class="t-date-picker-header-controller__btn" variant="text" onClick={() => onBtnClick(-1)} title={preLabel}>
+          <t-button
+            class="t-date-picker-header-controller__btn"
+            variant="text"
+            onClick={() => onBtnClick(-1)} title={preLabel}
+          >
             <t-icon-chevron-left slot="icon" />
           </t-button>
-          <t-button class="t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now" variant="text" onClick={() => onBtnClick(0)} title={now}>
+          <t-button
+            class="t-date-picker-header-controller__btn t-date-picker-header-controller__btn--now"
+            variant="text"
+            onClick={() => onBtnClick(0)} title={now}
+          >
             <t-icon-round slot="icon" />
           </t-button>
-          <t-button class="t-date-picker-header-controller__btn" variant="text" onClick={() => onBtnClick(1)} title={nextLabel}>
+          <t-button
+            class="t-date-picker-header-controller__btn"
+            variant="text"
+            onClick={() => onBtnClick(1)}
+            title={nextLabel}
+          >
             <t-icon-chevron-right slot="icon" />
           </t-button>
         </span>

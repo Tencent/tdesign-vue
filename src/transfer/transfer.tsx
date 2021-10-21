@@ -22,7 +22,6 @@ import {
   getTransferListOption, emitEvent, getDataValues, getTransferData,
   filterTransferData,
 } from './utils';
-import { TNode } from '../common';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
@@ -104,8 +103,10 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
     disabledOption(): TransferListOptionBase<boolean> {
       return getTransferListOption<boolean>(this.disabled);
     },
-    titleOption(): TransferListOptionBase<string | TNode> {
-      return getTransferListOption<string | TNode>(this.title);
+    titleOption(): TransferListOptionBase<string> {
+      // TODO：此处需分别处理 Array 和 TNode 内容
+      // @ts-ignore
+      return getTransferListOption<string>(this.title);
     },
     paginationOption(): TransferListOptionBase<TdPaginationProps> {
       return getTransferListOption<TdPaginationProps>(this.pagination);
@@ -122,9 +123,11 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
-        // newTargetValue = this.transferData.filter((item) => oldTargetValue.includes(item.value) || checkedValue.includes(item.value))
-        //   .map((item) => item.value);
-        newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), { isTreeMode: this.isTreeMode });
+        newTargetValue = getDataValues(
+          this.transferData,
+          oldTargetValue.concat(checkedValue),
+          { isTreeMode: this.isTreeMode },
+        );
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
       } else {
@@ -161,7 +164,11 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       this.$emit('update:checked', checked);
       emitEvent<Parameters<TdTransferProps['onCheckedChange']>>(this, 'checked-change', event);
     },
-    filterMethod(transferList: Array<TransferItemOption>, targetValueList: Array<TransferValue>, needMatch: boolean): Array<TransferItemOption> {
+    filterMethod(
+      transferList: Array<TransferItemOption>,
+      targetValueList: Array<TransferValue>,
+      needMatch: boolean,
+    ): Array<TransferItemOption> {
       return transferList.filter((item) => {
         const isMatch = targetValueList.indexOf(item.value) > -1;
         return needMatch ? isMatch : !isMatch;
@@ -225,8 +232,12 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
       >
         {this.renderTransferList(SOURCE)}
         <transfer-operations
-          left-disabled={this.disabledOption[TARGET] || this.leftButtonDisabled || this.checkedValue[TARGET].length === 0}
-          right-disabled={this.disabledOption[SOURCE] || this.rightButtonDisabled || this.checkedValue[SOURCE].length === 0}
+          left-disabled={
+            this.disabledOption[TARGET] || this.leftButtonDisabled || this.checkedValue[TARGET].length === 0
+          }
+          right-disabled={
+            this.disabledOption[SOURCE] || this.rightButtonDisabled || this.checkedValue[SOURCE].length === 0
+          }
           operation={this.operation}
           onMoveToRight={this.transferToRight}
           onMoveToLeft={this.transferToLeft}

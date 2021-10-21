@@ -7,7 +7,13 @@
     <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked" :search="true" />
     <br><br>
     <div style="width: 480px">
-      <t-dialog :visible="true" header="confirm" body="Would you like to be my friends？" mode="normal" theme="info"></t-dialog>
+      <t-dialog
+        :visible="true"
+        header="confirm"
+        body="Would you like to be my friends？"
+        mode="normal"
+        theme="info"
+      />
     </div>
     <br><br>
     <t-button theme="primary" @click="openDialog">Open Dialog</t-button>
@@ -96,7 +102,20 @@ import TIconCloseCircleFilled from '@tencent/tdesign-vue/lib/icon/close-circle-f
 import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
 import TIconCarretDownSmall from '@tencent/tdesign-vue/lib/icon/caret-down-small';
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 const GLOBAL_CONFIG = {
   pagination: {
     itemsPerPage: '{size} items per page',

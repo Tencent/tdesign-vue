@@ -413,7 +413,9 @@ export default mixins(getLocalReceiverMixins('cascader')).extend({
       > {item.label}</tag>);
     },
     renderArrowIcon(): VNode {
-      return this.showArrow && !this.showLoading && (<fake-arrow overlayClassName={`${name}-icon`} isActive={this.visible && !this.disabled}/>);
+      return this.showArrow && !this.showLoading && (
+        <fake-arrow overlayClassName={`${name}-icon`} isActive={this.visible && !this.disabled}/>
+      );
     },
     renderCloseIcon(): VNode {
       return this.showClose && (

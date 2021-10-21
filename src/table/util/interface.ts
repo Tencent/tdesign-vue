@@ -41,6 +41,8 @@ export interface CellData {
 
 export const EventNameWithKebab = [
   'row-hover',
+  'row-mouseenter',
+  'row-mouseleave',
   'row-mouseup',
   'row-mousedown',
   'row-click',
@@ -49,6 +51,8 @@ export const EventNameWithKebab = [
 export const ExpandProps = {
   expandedRowKeys: primaryTableProps.expandedRowKeys,
   expandedRow: primaryTableProps.expandedRow,
+  expandIcon: primaryTableProps.expandIcon,
+  expandOnRowClick: primaryTableProps.expandOnRowClick,
 };
 
 export type RenderExpandRow = {

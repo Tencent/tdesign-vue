@@ -5,7 +5,13 @@
       <t-button theme="primary" @click="bodyVisible1 = true">隐藏标题</t-button>
       <t-button theme="primary" @click="bodyVisible2 = true">渲染函数定义内容</t-button>
       <t-button theme="primary" @click="bodyVisible3 = true">插槽方式定义内容</t-button>
-      <t-dialog :header="false" body="对话框内容" :visible="bodyVisible1" :onClose="bodyClose1" :onClickConfirm="bodyClose1" >
+      <t-dialog
+        :header="false"
+        body="对话框内容"
+        :visible="bodyVisible1"
+        :onClose="bodyClose1"
+        :onClickConfirm="bodyClose1"
+      >
         <div slot="body">
           <div>不需要标题的内容</div>
           <div>我是内容</div>

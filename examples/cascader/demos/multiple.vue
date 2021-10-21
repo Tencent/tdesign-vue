@@ -1,6 +1,14 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" placeholder='请选择' multiple clearable size="small"></t-cascader>
+    <t-cascader
+      class="t-demo-cascader"
+      :options="options"
+      v-model="value"
+      placeholder='请选择'
+      multiple
+      clearable
+      size="small"
+    />
     <t-cascader
       class="t-demo-cascader"
       :options="options"
@@ -9,8 +17,16 @@
       clearable
       size="medium"
       placeholder='请选择'
-    ></t-cascader>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" placeholder='请选择' multiple clearable size="large"></t-cascader>
+    />
+    <t-cascader
+      class="t-demo-cascader"
+      :options="options"
+      v-model="value"
+      placeholder='请选择'
+      multiple
+      clearable
+      size="large"
+    />
   </div>
 </template>
 

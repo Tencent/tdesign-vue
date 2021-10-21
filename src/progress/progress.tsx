@@ -178,7 +178,10 @@ export default Vue.extend({
 
         {this.theme === PRO_THEME.PLUMP && (
           <div
-            class={[`${name}--bar ${name}--plump ${seperateClasses}`, { [`${name}--status--${this.statusStyle}`]: this.statusStyle }]}
+            class={[
+              `${name}--bar ${name}--plump ${seperateClasses}`,
+              { [`${name}--status--${this.statusStyle}`]: this.statusStyle },
+            ]}
             style={this.trackBgStyle}
           >
             <div class={`${name}--inner`} style={this.barStyle}>

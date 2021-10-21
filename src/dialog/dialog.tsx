@@ -281,7 +281,9 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
           v-draggable={this.isModeless && this.draggable}
         >
           <div class={`${name}__header`}>{this.getIcon()}{renderTNodeJSX(this, 'header', defaultHeader)}</div>
-          <span class={`${name}__close`} onClick={this.closeBtnAcion}>{renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}</span>
+          <span class={`${name}__close`} onClick={this.closeBtnAcion}>
+            {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+          </span>
           <div class={bodyClassName}>{body}</div>
           <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
         </div>

@@ -143,7 +143,10 @@ function isSameDate(date1: Date, date2: Date) {
  * @param {Object} { start, end } 范围
  * @returns {Boolean}
  */
-function isBetween(value: { getFullYear: () => number; getMonth: () => number; getDate: () => number }, { start, end }: { start: any; end: any }): boolean {
+function isBetween(
+  value: { getFullYear: () => number; getMonth: () => number; getDate: () => number },
+  { start, end }: { start: any; end: any },
+): boolean {
   const date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
 
   const startTime = new Date(start.getFullYear(), start.getMonth(), start.getDate());
@@ -442,7 +445,7 @@ export function flagActive(data: any[], { ...args }: any) {
 }
 
 // extract time format from a completed date format 'YYYY-MM-DD HH:mm' -> 'HH:mm'
-export function extractTimeFormat(dateFormat:string) {
+export function extractTimeFormat(dateFormat: string) {
   const res = dateFormat.match(/(a\s)?h{1,2}:m{1,2}(:s{1,2})?(\sa)?/i);
   if (!res) return null;
   return res[0];

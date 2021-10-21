@@ -298,7 +298,9 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
         return false;
       }
       if (!res.status) {
-        console.error('TDesign Upoad Error: `requestMethodResponse.status` is missing, which value is `success` or `fail`');
+        console.error(
+          'TDesign Upoad Error: `requestMethodResponse.status` is missing, which value is `success` or `fail`',
+        );
         return false;
       }
       if (!['success', 'fail'].includes(res.status)) {
@@ -306,7 +308,9 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
         return false;
       }
       if (res.status === 'success' && (!res.response || !res.response.url)) {
-        console.warn('TDesign Upoad Warn: `requestMethodResponse.response.url` is required, when `status` is `success`');
+        console.warn(
+          'TDesign Upoad Warn: `requestMethodResponse.response.url` is required, when `status` is `success`',
+        );
       }
       return true;
     },

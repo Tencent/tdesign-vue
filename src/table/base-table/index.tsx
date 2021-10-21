@@ -258,8 +258,9 @@ export default mixins(getLocalReceiverMixins('table')).extend({
         this.handleScroll(e as WheelEvent);
       }, 10);
       //  fixed table header
-      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight: `${scrollBarWidth}px` }} ref="scrollHeader">
-          <table style={{ tableLayout }}>
+      const paddingRight = `${scrollBarWidth}px`;
+      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight }} ref="scrollHeader">
+          <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
@@ -358,7 +359,12 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     return (
       <div class={commonClass}>
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
-          <div ref='tableContent' class={tableContentClass} style={{ overflow: 'auto', maxHeight }} onScroll={handleScroll}>
+          <div
+            ref='tableContent'
+            class={tableContentClass}
+            style={{ overflow: 'auto', maxHeight }}
+            onScroll={handleScroll}
+          >
             {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
           </div>
           {body}

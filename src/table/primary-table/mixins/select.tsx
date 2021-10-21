@@ -84,11 +84,17 @@ export default Vue.extend({
           checked: this.selectedRowKeys.includes(get(row, this.reRowKey)),
           ...column,
           type: column.type,
-          checkProps: typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
+          checkProps: typeof column.checkProps === 'function'
+            ? column.checkProps({ row, rowIndex })
+            : column.checkProps,
           disabled: typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled,
           rowIndex,
         },
         on: {
+          click: (e: MouseEvent) => {
+            // 选中行功能中，点击 checkbo/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
+            e.stopPropagation();
+          },
           // radio 单选框可再点击一次关闭选择，input / change 事件无法监听
           change: (): void => this.handleSelectChange(row),
         },

@@ -111,7 +111,11 @@ export default Vue.extend({
     }
 
     const clickEvent = to && !disabled ? { on: { click: this.bindEvent } } : {};
-    const textContent = <span ref="breadcrumbText" class={maxLengthClass} style={this.maxWithStyle}>{this.$slots.default}</span>;
+    const textContent = (
+      <span ref="breadcrumbText" class={maxLengthClass} style={this.maxWithStyle}>
+        {this.$slots.default}
+      </span>
+    );
     let itemContent = (
       <span class={textClass} {...{ on: this.$listeners }} {...clickEvent}>
         {textContent}

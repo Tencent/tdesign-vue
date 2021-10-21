@@ -62,7 +62,10 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     const {
       $listeners, allowSortTypes, sortOrder, nextSortOrder,
     } = this;
-    const buttonProps = { on: { ...$listeners }, class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '' };
+    const buttonProps = {
+      on: { ...$listeners },
+      class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '',
+    };
     const tips = tooltips[nextSortOrder];
     const sortButton = allowSortTypes
       .map((direction: string) => {

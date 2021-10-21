@@ -11,7 +11,8 @@ const { exit } = require('process');
 const pkg = require('../../package.json');
 
 const components = [
-  'addon', 'alert', 'breadcrumb', 'breadcrumbItem', 'button', 'checkbox', 'dialog', 'divider', 'dropdown', 'icon', 'input', 'input-group', 'list', 'menu', 'message', 'notification', 'pagination',
+  'addon', 'alert', 'breadcrumb', 'breadcrumbItem', 'button', 'checkbox', 'dialog', 'divider', 'dropdown',
+  'icon', 'input', 'input-group', 'list', 'menu', 'message', 'notification', 'pagination',
   'popconfirm', 'popup', 'radio', 'select', 'step', 'steps', 'switch', 'table', 'tabs', 'tag', 'upload',
 ];
 
@@ -117,7 +118,16 @@ validateBuildFiles({
 validateBuildFiles({
   folder: FOLDER_DIST,
   desc: 'TDesign dist files',
-  files: ['tdesign.css', 'tdesign.css.map', 'tdesign.js', 'tdesign.js.map', 'tdesign.min.css', 'tdesign.min.css.map', 'tdesign.min.js', 'tdesign.min.js.map'],
+  files: [
+    'tdesign.css',
+    'tdesign.css.map',
+    'tdesign.js',
+    'tdesign.js.map',
+    'tdesign.min.css',
+    'tdesign.min.css.map',
+    'tdesign.min.js',
+    'tdesign.min.js.map',
+  ],
 });
 
 // todo: types 文件还未生成

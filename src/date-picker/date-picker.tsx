@@ -675,7 +675,11 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         }
         {!showTime && panelComponent}
         {!!presets && (
-          <calendar-presets presets={presets} locales={locales} {...{ props: { onClick: range ? this.clickRange : this.dateClick } }} />
+          <calendar-presets
+            presets={presets}
+            locales={locales}
+            {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
+          />
         )}
         {
           enableTimePicker && (

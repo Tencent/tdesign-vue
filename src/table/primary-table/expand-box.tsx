@@ -2,6 +2,7 @@ import isFunction from 'lodash/isFunction';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import TIconChevronDown from '../../icon/chevron-down-circle';
+import primaryTableProps from '../primary-table-props';
 import { prefix } from '../../config';
 import { Styles } from '../../common';
 
@@ -12,12 +13,24 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       type: Boolean,
       default: false,
     },
+    row: {
+      type: Object,
+    },
+    rowIndex: {
+      type: Number,
+    },
+    expandIcon: primaryTableProps.expandIcon,
   },
   methods: {
-    getExpandIcon(expanded: boolean) {
-      const icon = isFunction(this.locale.expandIcon)
+    getDefaultIcon() {
+      return isFunction(this.locale.expandIcon)
         ? this.locale.expandIcon(this.$createElement)
         : <TIconChevronDown />;
+    },
+    getExpandIcon(expanded: boolean) {
+      const icon = isFunction(this.expandIcon)
+        ? this.expandIcon(this.$createElement, { row: this.row, index: this.rowIndex })
+        : this.getDefaultIcon();
       const style: Styles = {
         transition: 'all .2s',
         display: 'flex',

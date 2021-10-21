@@ -247,7 +247,8 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
           const localeMeridiemList = [this.locale.anteMeridiem, this.locale.postMeridiem];
           const text = localeMeridiemList[MERIDIEM_LIST.indexOf(inputTime.meridiem.toUpperCase())];
           // 放在前面or后面
-          render[AM_FORMAT.test(format) ? 'unshift' : 'push'](<span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
+          render[AM_FORMAT.test(format) ? 'unshift' : 'push'](
+            <span class={itemClasses} onClick={() => allowInput && this.onToggleMeridiem(index)}>
               <input
                 readonly
                 class={[inputClass, `${inputClass}-meridiem`]}
@@ -255,7 +256,8 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
                 onKeydown={(e: Event) => this.onKeydown(e, 'meridiem', index)}
                 disabled={!allowInput}
               />
-            </span>);
+            </span>,
+          );
         }
       });
       return render;

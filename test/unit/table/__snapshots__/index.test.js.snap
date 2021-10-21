@@ -6,7 +6,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
     <div class="t-loading-parent__relative">
       <div class="t-table-content" style="overflow: auto;">
         <div class="t-table__header" style="padding-right: 0px;">
-          <table style="table-layout: fixed;">
+          <table style="table-layout: fixed; padding-right: 0px;">
             <colgroup>
               <col>
               <col>

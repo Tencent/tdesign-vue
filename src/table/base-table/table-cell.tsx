@@ -44,7 +44,9 @@ export default Vue.extend({
             offsetLeft += width > 0 ? width : clientWidth;
           }
         });
-        this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
+        this.isBoundary = fixed === 'left'
+          ? indexInFixedColumns === fixedColumns.length - 1
+          : indexInFixedColumns === 0;
         this.offsetLeft = offsetLeft;
       }
       this.isCutOff = isNodeOverflow(this.$el);

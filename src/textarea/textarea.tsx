@@ -51,7 +51,11 @@ export default Vue.extend({
       if (this.autosize === true) {
         this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
       } else if (typeof this.autosize === 'object') {
-        this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement, this.autosize?.minRows, this.autosize?.maxRows);
+        this.textareaStyle = calcTextareaHeight(
+          this.$refs.refTextareaElem as HTMLTextAreaElement,
+          this.autosize?.minRows,
+          this.autosize?.maxRows,
+        );
       }
     },
 

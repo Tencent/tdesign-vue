@@ -15,6 +15,8 @@ type Attrs = Record<string, any>;
 
 const eventsName = {
   mouseover: 'row-hover',
+  mouseleave: 'row-mouseleave',
+  mouseenter: 'row-mouseenter',
   mousedown: 'row-mousedown',
   mouseup: 'row-mouseup',
   click: 'row-click',

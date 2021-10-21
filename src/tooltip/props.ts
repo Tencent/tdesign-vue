@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-26 22:52:44
+ * updated at 2021-09-24 10:10:47
  * */
 
 import { TdTooltipProps } from './type';
@@ -29,7 +29,7 @@ export default {
     type: String as PropType<TdTooltipProps['theme']>,
     default: 'default' as TdTooltipProps['theme'],
     validator(val: TdTooltipProps['theme']): boolean {
-      return ['default', 'primary', 'success', 'danger', 'warning'].includes(val);
+      return ['default', 'primary', 'success', 'danger', 'warning', 'light'].includes(val);
     },
   },
 };

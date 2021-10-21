@@ -65,12 +65,32 @@ export default Vue.extend({
           marginBottom: `${gutter / -2}px`,
         });
       } else if (Array.isArray(gutter) && gutter.length) {
-        if (gutter[0] as any > 0) Object.assign(marginObj, { marginLeft: `${gutter[0] as any / -2}px`, marginRight: `${gutter[0] as any / -2}px` });
-        if (gutter[1] as any > 0) Object.assign(marginObj, { marginTop: `${gutter[1] as any / -2}px`, marginBottom: `${gutter[1] as any / -2}px` });
+        if (gutter[0] as any > 0) {
+          Object.assign(marginObj, {
+            marginLeft: `${gutter[0] as any / -2}px`,
+            marginRight: `${gutter[0] as any / -2}px`,
+          });
+        }
+        if (gutter[1] as any > 0) {
+          Object.assign(marginObj, {
+            marginTop: `${gutter[1] as any / -2}px`,
+            marginBottom: `${gutter[1] as any / -2}px`,
+          });
+        }
       } else if (isObject(gutter) && gutter[currentSize]) {
         if (Array.isArray(gutter[currentSize])) {
-          if (gutter[currentSize][0] > 0) Object.assign(marginObj, { marginLeft: `${gutter[currentSize][0] / -2}px`, marginRight: `${gutter[currentSize][0] / -2}px` });
-          if (gutter[currentSize][1] > 0) Object.assign(marginObj, { marginTop: `${gutter[currentSize][1] / -2}px`, marginBottom: `${gutter[currentSize][1] / -2}px` });
+          if (gutter[currentSize][0] > 0) {
+            Object.assign(marginObj, {
+              marginLeft: `${gutter[currentSize][0] / -2}px`,
+              marginRight: `${gutter[currentSize][0] / -2}px`,
+            });
+          }
+          if (gutter[currentSize][1] > 0) {
+            Object.assign(marginObj, {
+              marginTop: `${gutter[currentSize][1] / -2}px`,
+              marginBottom: `${gutter[currentSize][1] / -2}px`,
+            });
+          }
         } else if (gutter[currentSize] > 0) {
           Object.assign(marginObj, {
             marginLeft: `${gutter[currentSize] / -2}px`,

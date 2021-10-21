@@ -1,9 +1,10 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import TIconChevronRight from '../icon/chevron-right';
 import TDivider from '../divider';
 import { prefix } from '../config';
 import itemProps from './dropdown-item-props';
 import { STATUS_CLASSNAMES } from '../utils/classnames';
+import { DropdownOption } from './type';
 
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
@@ -13,18 +14,26 @@ import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__item`;
 
-export default Vue.extend({
+export interface DropdownItemInstance extends Vue {
+  dropdown: {
+    handleMenuClick: (data: DropdownOption, context: { e: MouseEvent }) => void
+  };
+}
+
+export default (Vue as VueConstructor<DropdownItemInstance>).extend({
   name: 'TDropdownItem',
   components: {
-    TIconChevronRight, TDivider,
+    TIconChevronRight,
+    TDivider,
   },
   directives: { ripple },
+  inject: {
+    dropdown: {
+      default: undefined,
+    },
+  },
   props: {
     ...itemProps,
-    busId: {
-      type: String,
-      default: '',
-    },
     path: {
       type: String,
       default: '',
@@ -32,14 +41,6 @@ export default Vue.extend({
     hasChildren: {
       type: Boolean,
       default: false,
-    },
-    maxColumnWidth: {
-      type: Number,
-      default: 100,
-    },
-    minColumnWidth: {
-      type: Number,
-      default: 10,
     },
   },
   data() {
@@ -61,6 +62,7 @@ export default Vue.extend({
 
         emitEvent(this, 'item-hover', this.path);
         emitEvent(this, 'click', data, { e }); // dropdown item的点击回调
+        this.dropdown.handleMenuClick(data, { e });
       }
     },
     handleMouseover(): void {
@@ -76,25 +78,22 @@ export default Vue.extend({
         [STATUS_CLASSNAMES.active]: this.active,
       },
     ];
-
+    const children = renderTNodeJSX(this, 'default');
+    const content = renderTNodeJSX(this, 'content');
     return (
       <div>
-      <div
-        class={classes}
-        onClick={this.handleItemClick}
-        onMouseover={this.handleMouseover}
-        style={{
-          maxWidth: `${this.maxColumnWidth}px`,
-          minWidth: `${this.minColumnWidth}px`,
-        }}
-        v-ripple
-      >
-        <div class={`${name}__content`} >
-          <span class={`${name}__content__text`}>{renderTNodeJSX(this, 'content')}</span>
+        <div
+          v-ripple
+          class={classes}
+          onClick={this.handleItemClick}
+          onMouseover={this.handleMouseover}
+        >
+          <div class={`${name}__content`}>
+            <span class={`${name}__content__text`}>{children || content}</span>
+          </div>
+          {this.renderSuffix()}
         </div>
-        {this.renderSuffix()}
-      </div>
-      {this.divider ? <TDivider/> : null}
+        {this.divider ? <TDivider /> : null}
       </div>
     );
   },

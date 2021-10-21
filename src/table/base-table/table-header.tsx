@@ -48,7 +48,8 @@ export default Vue.extend({
         const { children } = column;
         if (!children || children?.length === 0) {
           // 上一行有跨行到当前行且单元格是当前行的第一列，要带上边框。
-          const withBorder = currentRow > 0 && this.bordered && thContent.length === 0 && trContentList[currentRow].length === 0;
+          const withBorder = currentRow > 0 && this.bordered && thContent.length === 0
+            && trContentList[currentRow].length === 0;
           thContent[index] = this.renderCell(column, rowspan, 1, index, withBorder);
           currentColSpan += 1;
         }

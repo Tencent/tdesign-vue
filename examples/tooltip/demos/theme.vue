@@ -15,5 +15,8 @@
     <t-tooltip content="文字提示仅展示文本内容" theme="warning">
       <t-button theme='warning'>warning</t-button>
     </t-tooltip>
+    <t-tooltip content="文字提示仅展示文本内容" theme="light">
+      <t-button variant="outline">light</t-button>
+    </t-tooltip>
   </div>
 </template>

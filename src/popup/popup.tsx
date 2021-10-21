@@ -187,7 +187,7 @@ export default Vue.extend({
         const referenceElmBottom = innerHeight - this.referenceElm.getBoundingClientRect().bottom;
         const referenceElmTop = this.referenceElm.getBoundingClientRect().top;
         if (referenceElmBottom < popperElm.scrollHeight && referenceElmTop >= popperElm.scrollHeight) {
-          placement = 'top-start';
+          placement = /left/.test(currentPlacement) ? 'top-start' : 'top-end';
         }
         popperElm.style.display = 'none';
       }
@@ -197,11 +197,22 @@ export default Vue.extend({
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
-        modifiers: [
+        modifiers: this.showArrow && [
           {
-            name: 'arrow',
+            name: 'offset',
             options: {
-              padding: 5, // 5px from the edges of the popper
+              offset: ({ placement, reference }: any) => {
+                const arrowOffset = 10;
+
+                // reference 宽度小于箭头宽度时设置偏移值，以保证箭头位置不会超出 popper
+                if (reference.width < arrowOffset) {
+                  const offset = arrowOffset - reference.width;
+                  if (/(top|bottom)-start/.test(placement)) return [-offset, 0];
+                  if (/(top|bottom)-end/.test(placement)) return [offset, 0];
+                }
+
+                return [];
+              },
             },
           },
         ],
@@ -279,7 +290,8 @@ export default Vue.extend({
     },
     handleDocumentClick(e: Event): void {
       const popperElm = this.$refs.popper as HTMLElement;
-      if (!this.$el || this.$el.contains(e.target as Element) || !popperElm || popperElm.contains(e.target as Node)) return;
+      if (!this.$el || this.$el.contains(e.target as Element)
+        || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext): void {

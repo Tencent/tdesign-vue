@@ -29,7 +29,10 @@ export default {
       selectedRowKeys: [],
       columns: [
         {
-          colKey: 'row-select', type: 'single', checkProps: ({ rowIndex }) => ({ disabled: rowIndex % 2 !== 0 }), width: 50,
+          colKey: 'row-select',
+          type: 'single',
+          checkProps: ({ rowIndex }) => ({ disabled: rowIndex % 2 !== 0 }),
+          width: 50,
         },
         { colKey: 'instance', title: '集群名称', width: 150 },
         {

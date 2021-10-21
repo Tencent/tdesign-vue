@@ -13,6 +13,11 @@ export default Vue.extend({
   props: {
     ...props,
   },
+  provide() {
+    return {
+      dropdown: this,
+    };
+  },
   methods: {
     handleMenuClick(data: DropdownOption, context: { e: MouseEvent }) {
       if (this.hideAfterItemClick) {
@@ -27,6 +32,7 @@ export default Vue.extend({
   render() {
     const trigger: VNode[] | VNode | string = this.$scopedSlots.default
       ? this.$scopedSlots.default(null) : '';
+    const contentSlot: VNode[] | VNode | string = this.$scopedSlots.dropdown ? this.$scopedSlots.dropdown(null) : '';
 
     const popupProps = {
       props: {
@@ -35,7 +41,9 @@ export default Vue.extend({
         disabled: this.disabled,
         placement: this.placement,
         trigger: this.trigger,
-        overlayClassName: this.popupProps && this.popupProps.overlayClassName ? [name, this.popupProps.overlayClassName] : name,
+        overlayClassName: this.popupProps && this.popupProps.overlayClassName
+          ? [name, this.popupProps.overlayClassName]
+          : name,
       },
       ref: 'popup',
     };
@@ -43,13 +51,7 @@ export default Vue.extend({
     return (
       <Popup {...popupProps} ref="popupElem" expandAnimation={true}>
         <template slot='content' role='dropdown'>
-          <DropdownMenu
-            options={this.options}
-            maxHeight={this.maxHeight}
-            maxColumnWidth={this.maxColumnWidth}
-            minColumnWidth={this.minColumnWidth}
-            onClick={this.handleMenuClick}
-          />
+          {contentSlot || <DropdownMenu />}
         </template>
         {trigger}
       </Popup>

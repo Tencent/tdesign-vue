@@ -50,7 +50,14 @@
       </template>
     </t-menu>
 
-    <t-menu theme="dark" defaultValue="2-1" style="margin-left: 50px" :expanded="expanded2" height="550px" :collapsed="collapsed2">
+    <t-menu
+      theme="dark"
+      defaultValue="2-1"
+      style="margin-left: 50px"
+      :expanded="expanded2"
+      height="550px"
+      :collapsed="collapsed2"
+    >
       <t-menu-item value="item1">
         <template #icon>
           <t-icon name="dashboard"/>

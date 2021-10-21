@@ -113,7 +113,8 @@ export default Vue.extend({
         messageContent = renderTNodeJSX(this, 'message');
       }
 
-      const contentLength = Object.prototype.toString.call(messageContent) === '[object Array]' ? (messageContent as Array<ScopedSlotReturnValue>).length : 1;
+      const contentLength = Object.prototype.toString
+        .call(messageContent) === '[object Array]' ? (messageContent as Array<ScopedSlotReturnValue>).length : 1;
       const hasCollapse = this.maxLine > 0 && this.maxLine < contentLength;
       if (hasCollapse && this.collapsed) {
         messageContent = (messageContent as Array<ScopedSlotReturnValue>).slice(0, this.maxLine);

@@ -1,11 +1,11 @@
 <template>
   <div class="demo-slider">
     <div class="vertical-marks-block">
-      <t-slider v-model="value1" @change="change" :layout="layout" vertical :show-tooltip="true" :marks="marks1"> </t-slider>
+      <t-slider v-model="value1" @change="change" :layout="layout" vertical :show-tooltip="true" :marks="marks1" />
     </div>
 
     <div class="vertical-marks-block">
-      <t-slider v-model="value2" :layout="layout" vertical range :show-tooltip="true" :marks="marks2"> </t-slider>
+      <t-slider v-model="value2" :layout="layout" vertical range :show-tooltip="true" :marks="marks2" />
     </div>
   </div>
 </template>

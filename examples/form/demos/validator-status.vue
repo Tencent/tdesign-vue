@@ -40,7 +40,12 @@
       </t-form-item>
       <t-form-item v-for="(item, index) in addlist" :key="item.id" label="新增" :name='item.name'>
         <t-input v-model="formData[item.name]"></t-input>
-        <t-button v-if="item.id === 0 || item.id === lastAddItem - 1" @click="addItem" slot="statusIcon" variant="dashed">
+        <t-button
+          v-if="item.id === 0 || item.id === lastAddItem - 1"
+          @click="addItem"
+          slot="statusIcon"
+          variant="dashed"
+        >
           <t-icon name='add' size="16px" style="color: #0004"/>
         </t-button>
         <t-button v-if="item.id > 0" @click="removeItem(item, index)" slot="statusIcon" variant="dashed">
