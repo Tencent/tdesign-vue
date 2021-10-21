@@ -20,5 +20,9 @@
 ::: demo demos/event
 :::
 
+### slot 方式使用
+
+::: demo demos/slot
+:::
 
 :: BASE_PROPS ::

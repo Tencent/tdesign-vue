@@ -541,7 +541,7 @@ exports[`Button icon demo works fine 1`] = `
       class="demo-button-col"
     >
       <button
-        class="t-button t-size-m t-button--variant-base t-button--theme-primary t-button--icon-only t-button--shape-circle"
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary t-button--shape-circle"
         type="button"
       >
         <svg
@@ -559,7 +559,7 @@ exports[`Button icon demo works fine 1`] = `
       </button>
        
       <button
-        class="t-button t-size-m t-button--variant-base t-button--theme-primary t-button--icon-only t-button--shape-circle"
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary t-button--shape-circle"
         type="button"
       >
         <svg

@@ -23,12 +23,11 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 100px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 100px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -44,7 +43,6 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item has-suffix"
-                  style="max-width: 100px; min-width: 100px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -73,7 +71,6 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 100px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -89,7 +86,6 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 100px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -146,12 +142,11 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 10px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -167,7 +162,6 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -183,7 +177,6 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item t-is-disabled"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -199,7 +192,6 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item t-is-disabled"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -273,12 +265,11 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 105px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 95px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -294,7 +285,6 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 95px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -310,7 +300,6 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 95px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -326,7 +315,6 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 95px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -381,12 +369,11 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 400px;"
+              style="max-height: 400px; max-width: 100px; min-width: 110px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -402,7 +389,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -418,7 +404,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -434,7 +419,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -450,7 +434,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -466,7 +449,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -482,7 +464,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -498,7 +479,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -514,7 +494,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -530,7 +509,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -546,7 +524,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -562,7 +539,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -578,7 +554,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -594,7 +569,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -610,7 +584,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -626,7 +599,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -642,7 +614,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -658,7 +629,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -674,7 +644,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -690,7 +659,6 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 90px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -747,12 +715,11 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 10px;"
             >
               <div>
                 <div
                   class="t-dropdown__item has-suffix"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -781,7 +748,6 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item has-suffix"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -810,7 +776,6 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item has-suffix"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -839,7 +804,6 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item has-suffix"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -926,12 +890,11 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 10px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -947,7 +910,6 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -963,7 +925,6 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -982,7 +943,6 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1001,7 +961,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
       <svg
@@ -1044,12 +1004,11 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 10px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1065,7 +1024,6 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1081,7 +1039,6 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1097,7 +1054,6 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1116,7 +1072,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--icon-only"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
       <svg
@@ -1161,12 +1117,11 @@ exports[`Dropdown base demo works fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px;"
+              style="max-height: 300px; max-width: 100px; min-width: 10px;"
             >
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1182,7 +1137,6 @@ exports[`Dropdown base demo works fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1198,7 +1152,6 @@ exports[`Dropdown base demo works fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
@@ -1214,7 +1167,6 @@ exports[`Dropdown base demo works fine 1`] = `
               <div>
                 <div
                   class="t-dropdown__item"
-                  style="max-width: 100px; min-width: 10px;"
                 >
                   <div
                     class="t-dropdown__item__content"
