@@ -30,7 +30,7 @@ export interface TdIconfontProps {
   /**
    * 点击时触发
    */
-  onClick?: (context: { e: MouseEvent }) => void;
+  onClick?: (context: { e: MouseEvent })=> void;
 }
 
 export interface TdIconSVGProps {
@@ -55,5 +55,5 @@ export interface TdIconSVGProps {
   /**
    * 点击时触发
    */
-  onClick?: (context: { e: MouseEvent }) => void;
+  onClick?: (context: { e: MouseEvent })=> void;
 }

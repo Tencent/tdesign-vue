@@ -32,7 +32,7 @@ export interface TdStepsProps {
   /**
    * 当前步骤发生变化时触发
    */
-  onChange?: (current: string | number, previous: string | number, context?: { e?: MouseEvent }) => void;
+  onChange?: (current: string | number, previous: string | number, context?: { e?: MouseEvent })=> void;
 }
 
 export interface TdStepItemProps {

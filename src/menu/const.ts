@@ -15,13 +15,13 @@ export interface TdMenuInterface {
   theme?: Ref<string>;
   isHead: boolean;
   vMenu?: VMenu;
-  select: (val: MenuValue) => void;
-  open?: (val: MenuValue) => boolean | void;
-  selectSubMenu?: (items: TdMenuItem[]) => void;
+  select: (val: MenuValue)=> void;
+  open?: (val: MenuValue)=> boolean | void;
+  selectSubMenu?: (items: TdMenuItem[])=> void;
 }
 
 export interface TdSubMenuInterface {
   value: MenuValue;
   hasIcon?: boolean;
-  addMenuItem?: (item: TdMenuItem) => void;
+  addMenuItem?: (item: TdMenuItem)=> void;
 }

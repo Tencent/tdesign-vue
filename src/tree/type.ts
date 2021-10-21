@@ -91,7 +91,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
   /**
    * 节点过滤方法，只呈现返回值为 true 的节点
    */
-  filter?: (node: TreeNodeModel<DataOption>) => boolean;
+  filter?: (node: TreeNodeModel<DataOption>)=> boolean;
   /**
    * 节点是否有悬浮状态
    */
@@ -123,7 +123,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
   /**
    * 加载子数据的方法，在展开节点时调用（仅当节点 children 为 true 时生效）
    */
-  load?: (node: TreeNodeModel<DataOption>) => Promise<Array<DataOption>>;
+  load?: (node: TreeNodeModel<DataOption>)=> Promise<Array<DataOption>>;
   /**
    * 自定义节点操作项
    */
@@ -151,23 +151,23 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
   /**
    * 节点激活时触发
    */
-  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption> }) => void;
+  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption> })=> void;
   /**
    * 节点选中状态变化时触发，context.node 表示当前变化的选项
    */
-  onChange?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption> }) => void;
+  onChange?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption> })=> void;
   /**
    * 节点点击时触发
    */
-  onClick?: (context: { node: TreeNodeModel<DataOption>; e: MouseEvent }) => void;
+  onClick?: (context: { node: TreeNodeModel<DataOption>; e: MouseEvent })=> void;
   /**
    * 节点展开或收起时触发
    */
-  onExpand?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption>; e: MouseEvent }) => void;
+  onExpand?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<DataOption>; e: MouseEvent })=> void;
   /**
    * 异步加载后触发
    */
-  onLoad?: (context: { node: TreeNodeModel<DataOption> }) => void;
+  onLoad?: (context: { node: TreeNodeModel<DataOption> })=> void;
 }
 
 /** 组件实例方法 */
@@ -175,47 +175,47 @@ export interface TreeInstanceFunctions<DataOption extends TreeOptionData = TreeO
   /**
    * 为指定节点添加子节点，默认添加到根节点
    */
-  appendTo?: (value: TreeNodeValue, newData: DataOption | Array<DataOption>) => void;
+  appendTo?: (value: TreeNodeValue, newData: DataOption | Array<DataOption>)=> void;
   /**
    * 获取指定节点下标
    */
-  getIndex?: (value: TreeNodeValue) => number;
+  getIndex?: (value: TreeNodeValue)=> number;
   /**
    * 获取指定节点所有信息
    */
-  getItem?: (value: TreeNodeValue) => TreeNodeModel<DataOption>;
+  getItem?: (value: TreeNodeValue)=> TreeNodeModel<DataOption>;
   /**
    * 获取某节点的全部子孙节点；参数为空，则表示获取整棵树的全部节点
    */
-  getItems?: (value?: TreeNodeValue) => Array<TreeNodeModel<DataOption>>;
+  getItems?: (value?: TreeNodeValue)=> Array<TreeNodeModel<DataOption>>;
   /**
    * 获取指定节点的直属父节点
    */
-  getParent?: (value: TreeNodeValue) => TreeNodeModel<DataOption>;
+  getParent?: (value: TreeNodeValue)=> TreeNodeModel<DataOption>;
   /**
    * 获取指定节点的全部父节点
    */
-  getParents?: (value: TreeNodeValue) => TreeNodeModel<DataOption>[];
+  getParents?: (value: TreeNodeValue)=> TreeNodeModel<DataOption>[];
   /**
    * 自下而上获取全路径数据
    */
-  getPath?: (value: TreeNodeValue) => TreeNodeModel<DataOption>[];
+  getPath?: (value: TreeNodeValue)=> TreeNodeModel<DataOption>[];
   /**
    * 插入新节点到指定节点后面
    */
-  insertAfter?: (value: TreeNodeValue, newData: DataOption) => void;
+  insertAfter?: (value: TreeNodeValue, newData: DataOption)=> void;
   /**
    * 插入新节点到指定节点前面
    */
-  insertBefore?: (value: TreeNodeValue, newData: DataOption) => void;
+  insertBefore?: (value: TreeNodeValue, newData: DataOption)=> void;
   /**
    * 移除指定节点
    */
-  remove?: (value: TreeNodeValue) => void;
+  remove?: (value: TreeNodeValue)=> void;
   /**
    * 设置节点状态
    */
-  setItem?: (value: TreeNodeValue, options: TreeNodeState) => void;
+  setItem?: (value: TreeNodeValue, options: TreeNodeState)=> void;
 }
 
 export interface TreeNodeState {
@@ -308,59 +308,59 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
   /**
    * 追加子节点数据
    */
-  appendData: (data: DataOption | Array<DataOption>) => void;
+  appendData: (data: DataOption | Array<DataOption>)=> void;
   /**
    * 默认获取当前节点的全部子节点，deep 值为 true 则表示获取全部子孙节点
    */
-  getChildren: (deep: boolean) => Array<TreeNodeModel> | boolean;
+  getChildren: (deep: boolean)=> Array<TreeNodeModel> | boolean;
   /**
    * 获取节点在父节点的子节点列表中的位置，如果没有父节点，则获取节点在根节点列表的位置
    */
-  getIndex: () => number;
+  getIndex: ()=> number;
   /**
    * 获取节点所在的层级
    */
-  getLevel: () => number;
+  getLevel: ()=> number;
   /**
    * 获取单个父节点
    */
-  getParent: () => TreeNodeModel;
+  getParent: ()=> TreeNodeModel;
   /**
    * 获取所有父节点
    */
-  getParents: () => Array<TreeNodeModel>;
+  getParents: ()=> Array<TreeNodeModel>;
   /**
    * 获取节点全路径
    */
-  getPath: () => Array<TreeNodeModel>;
+  getPath: ()=> Array<TreeNodeModel>;
   /**
    * 获取根节点
    */
-  getRoot: () => TreeNodeModel;
+  getRoot: ()=> TreeNodeModel;
   /**
    * 获取兄弟节点，包含自己在内
    */
-  getSiblings: () => Array<TreeNodeModel>;
+  getSiblings: ()=> Array<TreeNodeModel>;
   /**
    * 在当前节点前插入新节点
    */
-  insertAfter: (newData: DataOption) => void;
+  insertAfter: (newData: DataOption)=> void;
   /**
    * 在当前节点前插入新节点
    */
-  insertBefore: (newData: DataOption) => void;
+  insertBefore: (newData: DataOption)=> void;
   /**
    * 是否为兄弟节点中的第一个节点
    */
-  isFirst: () => boolean;
+  isFirst: ()=> boolean;
   /**
    * 是否为兄弟节点中的最后一个节点
    */
-  isLast: () => boolean;
+  isLast: ()=> boolean;
   /**
    * 是否为叶子节点
    */
-  isLeaf: () => boolean;
+  isLeaf: ()=> boolean;
 }
 
 export interface TreeKeysType {

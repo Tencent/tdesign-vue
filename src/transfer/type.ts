@@ -96,23 +96,23 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
   /**
    * 数据列表发生变化时触发
    */
-  onChange?: (targetValue: Array<TransferValue>, params: TargetParams) => void;
+  onChange?: (targetValue: Array<TransferValue>, params: TargetParams)=> void;
   /**
    * 源数据列表或目标数据列表的选中项发生变化时触发
    */
-  onCheckedChange?: (options: CheckedOptions) => void;
+  onCheckedChange?: (options: CheckedOptions)=> void;
   /**
    * 分页发生变化时触发
    */
-  onPageChange?: (page: PageInfo, context: { type: TransferListType }) => void;
+  onPageChange?: (page: PageInfo, context: { type: TransferListType })=> void;
   /**
    * 列表滚动时触发，bottomDistance 表示元素滚动到底部的距离
    */
-  onScroll?: (options: { e: Event; bottomDistance: number; type: TransferListType }) => void;
+  onScroll?: (options: { e: Event; bottomDistance: number; type: TransferListType })=> void;
   /**
    * 搜索时触发，options.query 表示用户输入的内容
    */
-  onSearch?: (options: SearchContext) => void;
+  onSearch?: (options: SearchContext)=> void;
 }
 
 export type EmptyType = string | TNode;

@@ -79,7 +79,7 @@ export interface CellEventOption {
 /**
  * 单元格点击回调
  */
-export type CellClickEventCallback = (options: CellEventOption) => void;
+export type CellClickEventCallback = (options: CellEventOption)=> void;
 export interface TextConfigType {
   showWeekend: string;
   hideWeekend: string;

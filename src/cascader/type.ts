@@ -50,7 +50,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   /**
    * 加载子树数据的方法（仅当节点 children 为 true 时生效）
    */
-  load?: (node: TreeNodeModel<CascaderOption>) => Promise<Array<CascaderOption>>;
+  load?: (node: TreeNodeModel<CascaderOption>)=> Promise<Array<CascaderOption>>;
   /**
    * 用于控制多选数量，值为 0 则不限制
    * @default 0
@@ -108,19 +108,19 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   /**
    * 当输入框失去焦点时触发
    */
-  onBlur?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent }) => void;
+  onBlur?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent })=> void;
   /**
    * 选中值发生变化时触发。TreeNodeModel 从树组件中导出
    */
-  onChange?: (value: CascaderValue<CascaderOption>, context: { node: TreeNodeModel<CascaderOption> }) => void;
+  onChange?: (value: CascaderValue<CascaderOption>, context: { node: TreeNodeModel<CascaderOption> })=> void;
   /**
    * 获得焦点时触发
    */
-  onFocus?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent }) => void;
+  onFocus?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent })=> void;
   /**
    * 多选模式下，选中数据被移除时触发
    */
-  onRemove?: (context: RemoveContext<CascaderOption>) => void;
+  onRemove?: (context: RemoveContext<CascaderOption>)=> void;
 }
 
 export interface KeysType {

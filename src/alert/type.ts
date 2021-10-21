@@ -44,9 +44,9 @@ export interface TdAlertProps {
   /**
    * 关闭按钮点击时触发
    */
-  onClose?: (context: { e: MouseEvent }) => void;
+  onClose?: (context: { e: MouseEvent })=> void;
   /**
    * 告警提示框关闭动画结束后触发
    */
-  onClosed?: (context: { e: TransitionEvent }) => void;
+  onClosed?: (context: { e: TransitionEvent })=> void;
 }

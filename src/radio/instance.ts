@@ -4,5 +4,5 @@ import { RadioValue } from './type';
 
 export type RadioButtonInstance = InstanceType<typeof RadioButton>;
 export type RadioGroupInstance = InstanceType<typeof RadioGroup> & {
-  handleRadioChange: (value: RadioValue, context: { e: Event }) => void;
+  handleRadioChange: (value: RadioValue, context: { e: Event })=> void;
 };

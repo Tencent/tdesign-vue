@@ -65,7 +65,7 @@ export interface TdLoadingProps {
 }
 
 export interface LoadingInstance {
-  hide: () => void
+  hide: ()=> void
 }
 
-export type LoadingMethod = (options: boolean | TdLoadingProps) => LoadingInstance;
+export type LoadingMethod = (options: boolean | TdLoadingProps)=> LoadingInstance;

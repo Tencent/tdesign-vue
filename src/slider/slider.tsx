@@ -15,7 +15,7 @@ export interface MarkItem {
   mark: string | number | TNode<{ value: number }>;
 }
 interface SliderButtonType extends Vue {
-  setPosition: (param: number) => {};
+  setPosition: (param: number)=> {};
 }
 export default Vue.extend({
   name: 'TSlider',

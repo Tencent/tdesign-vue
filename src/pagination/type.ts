@@ -74,15 +74,15 @@ export interface TdPaginationProps {
   /**
    * 当前页或分页大小发生变化时触发
    */
-  onChange?: (pageInfo: PageInfo) => void;
+  onChange?: (pageInfo: PageInfo)=> void;
   /**
    * 当前页发生变化时触发
    */
-  onCurrentChange?: (current: number, pageInfo: PageInfo) => void;
+  onCurrentChange?: (current: number, pageInfo: PageInfo)=> void;
   /**
    * 分页大小发生变化时触发
    */
-  onPageSizeChange?: (pageSize: number, pageInfo: PageInfo) => void;
+  onPageSizeChange?: (pageSize: number, pageInfo: PageInfo)=> void;
 }
 
 export interface PageInfo {

@@ -43,11 +43,11 @@ export interface TdNotificationProps {
   /**
    * 点击关闭按钮时触发
    */
-  onCloseBtnClick?: (context: { e: MouseEvent }) => void;
+  onCloseBtnClick?: (context: { e: MouseEvent })=> void;
   /**
    * 计时结束时触发
    */
-  onDurationEnd?: () => void;
+  onDurationEnd?: ()=> void;
 }
 
 export interface NotificationOptions extends TdNotificationProps {
@@ -77,21 +77,21 @@ export type NotificationThemeList = 'info' | 'success' | 'warning' | 'error';
 export type NotificationPlacementList = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 export interface NotificationInstance {
-  close: () => void
+  close: ()=> void
 }
 
-export type NotificationMethod = (theme: NotificationThemeList, options: NotificationOptions) => Promise<NotificationInstance>;
+export type NotificationMethod = (theme: NotificationThemeList, options: NotificationOptions)=> Promise<NotificationInstance>;
 
 export type NotificationInfoOptions = Omit<NotificationOptions, 'theme'>;
 
-export type NotificationInfoMethod = (options: NotificationInfoOptions) => Promise<NotificationInstance>;
+export type NotificationInfoMethod = (options: NotificationInfoOptions)=> Promise<NotificationInstance>;
 
-export type NotificationWarningMethod = (options: NotificationInfoOptions) => Promise<NotificationInstance>;
+export type NotificationWarningMethod = (options: NotificationInfoOptions)=> Promise<NotificationInstance>;
 
-export type NotificationErrorMethod = (options: NotificationInfoOptions) => Promise<NotificationInstance>;
+export type NotificationErrorMethod = (options: NotificationInfoOptions)=> Promise<NotificationInstance>;
 
-export type NotificationSuccessMethod = (options: NotificationInfoOptions) => Promise<NotificationInstance>;
+export type NotificationSuccessMethod = (options: NotificationInfoOptions)=> Promise<NotificationInstance>;
 
-export type NotificationCloseMethod = (options: Promise<NotificationInstance>) => void;
+export type NotificationCloseMethod = (options: Promise<NotificationInstance>)=> void;
 
-export type NotificationCloseAllMethod = () => void;
+export type NotificationCloseAllMethod = ()=> void;

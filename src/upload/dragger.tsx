@@ -34,10 +34,10 @@ export default Vue.extend({
         return ['file', 'file-input', 'image', 'custom'].includes(val);
       },
     },
-    cancel: Function as PropType<(e: MouseEvent) => void>,
-    trigger: Function as PropType<(e: MouseEvent) => void>,
-    remove: Function as PropType<(e: MouseEvent) => void>,
-    upload: Function as PropType<(file: UploadFile, e: MouseEvent) => void>,
+    cancel: Function as PropType<(e: MouseEvent)=> void>,
+    trigger: Function as PropType<(e: MouseEvent)=> void>,
+    remove: Function as PropType<(e: MouseEvent)=> void>,
+    upload: Function as PropType<(file: UploadFile, e: MouseEvent)=> void>,
   },
 
   data() {

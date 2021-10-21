@@ -15,10 +15,10 @@ export default Vue.extend({
       return reply ? <div class={`${preName}__reply`}>{reply}</div> : null;
     },
     renderActions() {
-      const actions:ScopedSlotReturnArray = renderTNodeJSX(this, 'actions');
+      const actions: ScopedSlotReturnArray = renderTNodeJSX(this, 'actions');
       return actions && actions.length ? (
         <ul class={`${preName}__actions`}>
-          {actions.map((action: ScopedSlotReturnValue, index:number) => (
+          {actions.map((action: ScopedSlotReturnValue, index: number) => (
             <li key={`action-${index}`}>{action}</li>
           ))}
         </ul>
@@ -66,7 +66,7 @@ export default Vue.extend({
     },
   },
 
-  render():VNode {
+  render(): VNode {
     return (
       <div class={preName}>
         <div class={`${preName}__inner`}>

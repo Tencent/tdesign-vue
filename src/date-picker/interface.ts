@@ -63,30 +63,30 @@ export interface DatePickerData {
 }
 
 export interface DatePickerMethods {
-  initClickAway: (el: Element) => void;
-  attachDatePicker: () => void;
-  getLocales: () => CustomLocale;
-  setLocales: () => void;
+  initClickAway: (el: Element)=> void;
+  attachDatePicker: ()=> void;
+  getLocales: ()=> CustomLocale;
+  setLocales: ()=> void;
   onNativeInput(event?: any): void;
   onNativeFocus(event?: any): void;
   onClick(event?: any): void;
-  normalizeDateTime: (value: Date, oldValue: Date) => Date;
-  dateClick: (value: Date) => void;
-  hoverDate: (value: Date) => void;
-  toggle: () => void;
-  open: () => void;
-  close: () => void;
-  clickedApply: (closePicker?: boolean) => void;
-  toggleTime: () => void;
-  clickAway: () => void;
-  clickRange: (value: Date[]) => void;
-  clear: (triggerChange: boolean) => void;
-  submitInput: (selectedDates: any[], triggerChange: boolean) => void;
+  normalizeDateTime: (value: Date, oldValue: Date)=> Date;
+  dateClick: (value: Date)=> void;
+  hoverDate: (value: Date)=> void;
+  toggle: ()=> void;
+  open: ()=> void;
+  close: ()=> void;
+  clickedApply: (closePicker?: boolean)=> void;
+  toggleTime: ()=> void;
+  clickAway: ()=> void;
+  clickRange: (value: Date[])=> void;
+  clear: (triggerChange: boolean)=> void;
+  submitInput: (selectedDates: any[], triggerChange: boolean)=> void;
   parseDate(value: any, format?: string): Date | boolean;
-  isEnabled: (value: Date) => boolean;
+  isEnabled: (value: Date)=> boolean;
   setDate(inputDate: any, triggerChange?: boolean): void;
-  formatDate: (date: Date, format?: string) => string;
-  createPopover: () => void;
+  formatDate: (date: Date, format?: string)=> string;
+  createPopover: ()=> void;
   getPlaceholderText(): string;
   handleTimePick(col: EPickerCols, time: number): any;
   getDates(inputDate: any): Date[];
@@ -104,7 +104,7 @@ export interface DatePickerComputed {
   pickerStyles: any;
 }
 
-export type DisableDate = Array<DateValue> | DisableDateObj | ((date: Date | string) => boolean);
+export type DisableDate = Array<DateValue> | DisableDateObj | ((date: Date | string)=> boolean);
 
 export interface DisableDateObj {
   from?: string;
@@ -114,7 +114,7 @@ export interface DisableDateObj {
 }
 
 export interface PresetDate {
-  [name: string]: DateValue | (() => DateValue);
+  [name: string]: DateValue | (()=> DateValue);
 }
 
 export interface CalendarComponentProps {
@@ -142,8 +142,8 @@ export interface CalendarComponentComputed {
 }
 
 export interface CalendarComponentMethods {
-  toggleSelect: () => void;
-  dayClass: (date: Date) => {};
+  toggleSelect: ()=> void;
+  dayClass: (date: Date)=> {};
 }
 
 export interface CalendarMonthData {
