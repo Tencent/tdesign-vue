@@ -157,13 +157,13 @@ export default Vue.extend({
             ...this.$listeners,
             'row-dragstart': () => {
               emitEvent(this, 'row-dragstart', {
-                index, data: row,
+                index, row,
               });
             },
             'row-dragover': ({ e }: { e: MouseEvent }) => {
               e.preventDefault();
               emitEvent(this, 'row-dragover', {
-                index, data: row, vNode: rowVnode,
+                index, row, targetElm: rowVnode.elm,
               });
             },
           },
