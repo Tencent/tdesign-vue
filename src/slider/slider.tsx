@@ -236,16 +236,16 @@ export default Vue.extend({
       // 双向滑块
       if (this.range && Array.isArray(value)) {
         let [firstValue, secondValue] = [Math.min(...value), Math.max(...value)];
-        firstValue > max ? (firstValue = this.firstValue) : null;
-        firstValue < min ? (firstValue = min) : null;
-        secondValue < min ? (secondValue = this.secondValue) : null;
-        secondValue > max ? (secondValue = max) : null;
+        if (firstValue > max) firstValue = this.firstValue;
+        if (firstValue < min) firstValue = min;
+        if (secondValue < min) secondValue = this.secondValue;
+        if (secondValue > max) secondValue = max;
         [this.firstValue, this.secondValue] = [firstValue, secondValue];
         return [firstValue, secondValue];
       }
       let prevValue = value as number;
-      prevValue < min ? (prevValue = min) : null;
-      prevValue > max ? (prevValue = max) : null;
+      if (prevValue < min) prevValue = min;
+      if (prevValue > max) prevValue = max;
       this.prevValue = prevValue;
       return prevValue;
     },
