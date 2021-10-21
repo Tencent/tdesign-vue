@@ -27,7 +27,7 @@ export default Vue.extend({
     showUploadProgress: props.showUploadProgress,
     file: Object as PropType<UploadFile>,
     loadingFile: Object as PropType<UploadFile>,
-    remove: Function as PropType<(e: MouseEvent)=> void>,
+    remove: Function as PropType<(e: MouseEvent) => void>,
     placeholder: String,
     display: {
       type: String as PropType<'file' | 'file-input'>,

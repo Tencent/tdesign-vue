@@ -118,7 +118,7 @@ export default Vue.extend({
 
     const reference = this.referenceElm;
     const popperElm = this.$refs.popper as HTMLElement;
-    const offEvents: (()=> void)[] = [];
+    const offEvents: (() => void)[] = [];
 
     this.$on('hook:beforeDestroy', () => {
       offEvents.forEach((handler) => handler());

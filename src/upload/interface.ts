@@ -10,9 +10,9 @@ export interface XhrOptions {
   data: { [key: string]: any } | Function;
   file: UploadFile;
   name: string;
-  onError: ({ event, file, response }: { event?: ProgressEvent; file?: UploadFile; response?: any })=> void;
-  onSuccess: (context: SuccessContext)=> void;
-  onProgress: (context: ProgressContext)=> void;
+  onError: ({ event, file, response }: { event?: ProgressEvent; file?: UploadFile; response?: any }) => void;
+  onSuccess: (context: SuccessContext) => void;
+  onProgress: (context: ProgressContext) => void;
 }
 
 export interface HTMLInputEvent extends Event {

@@ -16,7 +16,7 @@ export interface TdInputNumberProps {
   /**
    * 指定输入框展示值的格式
    */
-  format?: (value: number)=> number | string;
+  format?: (value: number) => number | string;
   /**
    * 最大值
    * @default Infinity
@@ -58,31 +58,31 @@ export interface TdInputNumberProps {
   /**
    * 失去焦点时触发
    */
-  onBlur?: (value: number, context: { e: FocusEvent })=> void;
+  onBlur?: (value: number, context: { e: FocusEvent }) => void;
   /**
    * 值变化时触发
    */
-  onChange?: (value: number, context: ChangeContext)=> void;
+  onChange?: (value: number, context: ChangeContext) => void;
   /**
    * 回车键按下时触发
    */
-  onEnter?: (value: number, context: { e: KeyboardEvent })=> void;
+  onEnter?: (value: number, context: { e: KeyboardEvent }) => void;
   /**
    * 获取焦点时触发
    */
-  onFocus?: (value: number, context: { e: FocusEvent })=> void;
+  onFocus?: (value: number, context: { e: FocusEvent }) => void;
   /**
    * 键盘按下时触发
    */
-  onKeydown?: (value: number, context: { e: KeyboardEvent })=> void;
+  onKeydown?: (value: number, context: { e: KeyboardEvent }) => void;
   /**
    * 按下字符键时触发（keydown -> keypress -> keyup）
    */
-  onKeypress?: (value: number, context: { e: KeyboardEvent })=> void;
+  onKeypress?: (value: number, context: { e: KeyboardEvent }) => void;
   /**
    * 释放键盘时触发
    */
-  onKeyup?: (value: number, context: { e: KeyboardEvent })=> void;
+  onKeyup?: (value: number, context: { e: KeyboardEvent }) => void;
 }
 
 export interface ChangeContext {

@@ -144,7 +144,7 @@ function isSameDate(date1: Date, date2: Date) {
  * @returns {Boolean}
  */
 function isBetween(
-  value: { getFullYear: ()=> number; getMonth: ()=> number; getDate: ()=> number },
+  value: { getFullYear: () => number; getMonth: () => number; getDate: () => number },
   { start, end }: { start: any; end: any },
 ): boolean {
   const date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
@@ -161,7 +161,7 @@ function isBetween(
  * @param {Date} date2 日期2
  * @returns {Number} 返回 date1.getTime() - date2.getTime() 的差值
  */
-function compareAsc(date1: { getTime: ()=> any }, date2: Date): number {
+function compareAsc(date1: { getTime: () => any }, date2: Date): number {
   const d1 = date1.getTime();
   const d2 = date2.getTime();
 

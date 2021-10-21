@@ -24,10 +24,10 @@ export default Vue.extend({
       type: Object as PropType<UploadFile>,
     },
     trigger: {
-      type: Function as PropType<(e: MouseEvent)=> void>,
+      type: Function as PropType<(e: MouseEvent) => void>,
     },
     remove: {
-      type: Function as PropType<(options: UploadRemoveOptions)=> void>,
+      type: Function as PropType<(options: UploadRemoveOptions) => void>,
     },
     multiple: Boolean,
     max: Number,

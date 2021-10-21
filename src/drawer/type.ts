@@ -100,27 +100,27 @@ export interface TdDrawerProps {
   /**
    * 如果“取消”按钮存在，点击“取消”按钮时触发，同时触发关闭事件
    */
-  onCancel?: (context: { e: MouseEvent })=> void;
+  onCancel?: (context: { e: MouseEvent }) => void;
   /**
    * 关闭事件，取消按钮点击时、关闭按钮点击时、ESC 按下时、点击蒙层时均会触发
    */
-  onClose?: (context: DrawerCloseContext)=> void;
+  onClose?: (context: DrawerCloseContext) => void;
   /**
    * 如果关闭按钮存在，点击关闭按钮时触发该事件，同时触发关闭事件
    */
-  onCloseBtnClick?: (context: { e: MouseEvent })=> void;
+  onCloseBtnClick?: (context: { e: MouseEvent }) => void;
   /**
    * 如果“确认”按钮存在，则点击“确认”按钮时触发
    */
-  onConfirm?: (context: { e: MouseEvent })=> void;
+  onConfirm?: (context: { e: MouseEvent }) => void;
   /**
    * 按下 ESC 键时触发
    */
-  onEscKeydown?: (context: { e: KeyboardEvent })=> void;
+  onEscKeydown?: (context: { e: KeyboardEvent }) => void;
   /**
    * 如果蒙层存在，点击蒙层时触发
    */
-  onOverlayClick?: (context: { e: MouseEvent })=> void;
+  onOverlayClick?: (context: { e: MouseEvent }) => void;
 }
 
 export type FooterButton = string | ButtonProps | TNode;

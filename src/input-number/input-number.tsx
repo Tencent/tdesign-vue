@@ -14,13 +14,13 @@ const name = `${prefix}-input-number`;
 
 type InputNumberEvent = {
   on: {
-    input?: (e: InputEvent)=> void;
-    click?: (e: MouseEvent)=> void;
-    blur?: (e: FocusEvent)=> void;
-    focus?: (e: FocusEvent)=> void;
-    keydown?: (e: KeyboardEvent)=> void;
-    keyup?: (e: KeyboardEvent)=> void;
-    keypress?: (e: KeyboardEvent)=> void;
+    input?: (e: InputEvent) => void;
+    click?: (e: MouseEvent) => void;
+    blur?: (e: FocusEvent) => void;
+    focus?: (e: FocusEvent) => void;
+    keydown?: (e: KeyboardEvent) => void;
+    keyup?: (e: KeyboardEvent) => void;
+    keypress?: (e: KeyboardEvent) => void;
   };
 };
 

@@ -159,7 +159,7 @@
       ],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": 0,
-        "@typescript-eslint/type-annotation-spacing": ["warn", { "before": false, "after": true }]
+        "@typescript-eslint/type-annotation-spacing": 1
       }
     }
   ]

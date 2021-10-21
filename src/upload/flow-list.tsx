@@ -26,9 +26,9 @@ export default Vue.extend({
     toUploadFiles: Array as PropType<Array<UploadFile>>,
     placeholder: String,
     autoUpload: Boolean,
-    remove: Function as PropType<(ctx: FlowRemoveContext)=> void>,
-    upload: Function as PropType<(files: Array<UploadFile>, e: MouseEvent)=> void>,
-    cancel: Function as PropType<(e: MouseEvent)=> void>,
+    remove: Function as PropType<(ctx: FlowRemoveContext) => void>,
+    upload: Function as PropType<(files: Array<UploadFile>, e: MouseEvent) => void>,
+    cancel: Function as PropType<(e: MouseEvent) => void>,
     display: {
       type: String as PropType<'file-flow' | 'image-flow'>,
       validator(val: string) {
