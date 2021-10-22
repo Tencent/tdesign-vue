@@ -9,6 +9,11 @@ function install(Vue: VueConstructor, config?: object) {
   });
 }
 
+/* istanbul ignore if */
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
 export * from './components';
 export default {
   install,
