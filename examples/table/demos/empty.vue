@@ -47,7 +47,7 @@ export default {
       ],
       rowKey: 'property',
       empty: () => (
-        <span style="display:flex;align-items:center;justify-content:center;height:100px;color: rgba(0, 0, 0, 0.26)">
+        <span style="display:flex;align-items:center;justify-content:center;height:100px;">
           😊 我是自定义的空内容 😊
         </span>
       ),

@@ -39,6 +39,5 @@
 .describe {
   margin-top: 10px;
   font-size: 12px;
-  color: rgba(0, 0, 0, .6);
 }
 </style>

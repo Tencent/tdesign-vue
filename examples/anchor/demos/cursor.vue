@@ -24,7 +24,7 @@ export default {};
   .test-cursor {
     width: 10px;
     height: 10px;
-    background-color: #0052D9;
+    background-color: var(--text-color-brand, #0052D9);
     position: absolute;
     border-radius: 50%;
     left: 50%;
@@ -33,19 +33,4 @@ export default {};
     margin-top: -5px;
   }
 }
-</style>
-
-<style>
-/* 全局修改 */
-/* .t-anchor .cursor-wrapper .cursor {
-  width: 10px;
-  height: 10px;
-  background-color: #0052D9;
-  position: absolute;
-  border-radius: 50%;
-  left: 50%;
-  margin-left: -5px;
-  top: 50%;
-  margin-top: -5px;
-} */
 </style>

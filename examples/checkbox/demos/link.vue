@@ -28,7 +28,6 @@ export default {
   margin-top: 16px;
 }
 .demo-checkbox-row-desc {
-  color:rgba(0, 0, 0, 0.6);
   margin-bottom: 24px;
 }
 .t-checkbox + .t-checkbox,

@@ -1236,7 +1236,7 @@ exports[`Table empty demo works fine 1`] = `
           class="t-table--empty"
         >
           <span
-            style="display: flex; align-items: center; justify-content: center; height: 100px; color: rgba(0, 0, 0, 0.26);"
+            style="display: flex; align-items: center; justify-content: center; height: 100px;"
           >
             😊 我是自定义的空内容 😊
           </span>
@@ -3954,7 +3954,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 colspan="1"
                 key="type"
                 rowspan="1"
-                style="overflow: hidden; border-left: 1px solid #E7E7E7;"
+                style="overflow: hidden; border-left-width: 1px;"
               >
                 类型
               </td>
