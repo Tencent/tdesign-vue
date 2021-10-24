@@ -39,15 +39,18 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       if (!expanded) {
         style.transform = 'rotate(-180deg)';
       }
+      if (!icon) return false;
       return <span style={style}>{icon}</span>;
     },
   },
   render() {
     const { expanded, $listeners } = this;
     const buttonProps = { on: { ...$listeners } };
+    const icon = this.getExpandIcon(expanded);
+    if (!icon) return null;
     return (
       <span {...buttonProps} class={`${prefix}-table-expand-box`}>
-        {this.getExpandIcon(expanded)}
+        {icon}
       </span>
     );
   },
