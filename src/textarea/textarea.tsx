@@ -56,6 +56,8 @@ export default Vue.extend({
           this.autosize?.minRows,
           this.autosize?.maxRows,
         );
+      } else if (this.$attrs.rows) {
+        this.textareaStyle = { height: 'auto', minHeight: 'auto' };
       }
     },
 
@@ -125,7 +127,7 @@ export default Vue.extend({
       <div class={`${name}`}>
         <textarea
           onInput={this.handleInput}
-          {...{ attrs: this.inputAttrs, on: inputEvents }}
+          {...{ attrs: { ...this.$attrs, ...this.inputAttrs }, on: inputEvents }}
           value={this.value}
           class={classes}
           style={this.textareaStyle}
