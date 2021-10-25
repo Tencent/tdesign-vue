@@ -29,7 +29,6 @@ export default {
   h1 {
     margin-bottom: 20px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.5);
   }
   h1:nth-child(3) {
     margin-top: 30px;

@@ -81,7 +81,7 @@ export default Vue.extend({
       style.overflow = 'hidden';
     }
     if (withBorder) {
-      style.borderLeft = '1px solid #E7E7E7';
+      style.borderLeftWidth = '1px';
     }
     if (ellipsis === true || typeof ellipsis === 'function') {
       attrClass.push('text-ellipsis');

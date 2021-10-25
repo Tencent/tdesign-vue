@@ -132,6 +132,5 @@ export default Vue.extend({
 }
 p {
   line-height: 25px;
-  color: rgba(0, 0, 0, 0.6);
 }
 </style>

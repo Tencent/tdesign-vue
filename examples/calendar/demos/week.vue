@@ -33,7 +33,7 @@ export default {
     renderWeek(h, params) {
       if (params.day === 3) return <span style="color:#dd4a68">无加班日</span>;
       if (params.day === 6 || params.day === 7) return <span style="color:#0052d9">放假啦</span>;
-      return <span style="color:#000000e6">{ `星期${params.day}` }</span>;
+      return <span>{ `星期${params.day}` }</span>;
     },
   },
 };

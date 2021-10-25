@@ -51,7 +51,6 @@ export default Vue.extend({
   position: relative;
   height: 400px;
   overflow: hidden;
-  background: #fafafa;
   border: 1px solid #ebedf0;
   border-radius: 2px;
 }

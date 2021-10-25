@@ -20494,18 +20494,14 @@ exports[`Calendar week demo works fine 1`] = `
             <th
               class="t-calendar__table-head-cell"
             >
-              <span
-                style="color: rgba(0, 0, 0, 0.902);"
-              >
+              <span>
                 星期1
               </span>
             </th>
             <th
               class="t-calendar__table-head-cell"
             >
-              <span
-                style="color: rgba(0, 0, 0, 0.902);"
-              >
+              <span>
                 星期2
               </span>
             </th>
@@ -20521,18 +20517,14 @@ exports[`Calendar week demo works fine 1`] = `
             <th
               class="t-calendar__table-head-cell"
             >
-              <span
-                style="color: rgba(0, 0, 0, 0.902);"
-              >
+              <span>
                 星期4
               </span>
             </th>
             <th
               class="t-calendar__table-head-cell"
             >
-              <span
-                style="color: rgba(0, 0, 0, 0.902);"
-              >
+              <span>
                 星期5
               </span>
             </th>
