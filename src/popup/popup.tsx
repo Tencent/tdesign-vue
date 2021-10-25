@@ -197,7 +197,7 @@ export default Vue.extend({
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
-        modifiers: this.showArrow && [
+        modifiers: this.showArrow ? [
           {
             name: 'offset',
             options: {
@@ -215,7 +215,7 @@ export default Vue.extend({
               },
             },
           },
-        ],
+        ] : [],
       });
       popperElm.addEventListener('click', stop);
       // 监听trigger元素尺寸变化
