@@ -379,7 +379,7 @@ export default Vue.extend({
       <div {...this.cmptWrapClasses}>
         {
           this.theme !== 'normal'
-          && <t-button {...this.reduceClasses} {...this.reduceEvents} variant="outline" icon={this.decreaseIcon} />
+          && <t-button {...this.reduceClasses} {...this.reduceEvents} variant="outline" shape="square" icon={this.decreaseIcon} />
         }
         <div {...this.inputWrapProps}>
           <input
@@ -391,7 +391,7 @@ export default Vue.extend({
         </div>
         {
           this.theme !== 'normal'
-          && <t-button {...this.addClasses} {...this.addEvents} variant="outline" icon={this.increaseIcon} />
+          && <t-button {...this.addClasses} {...this.addEvents} variant="outline" shape="square" icon={this.increaseIcon} />
         }
       </div>
     );

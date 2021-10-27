@@ -6,7 +6,7 @@ exports[`InputNumber center demo works fine 1`] = `
     class="t-input-number t-size-m"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -33,7 +33,7 @@ exports[`InputNumber center demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -57,7 +57,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
     class="t-input-number t-size-m"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -84,7 +84,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -108,7 +108,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
     class="t-input-number t-size-m t-is-disabled"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
       type="button"
     >
       <svg
@@ -136,7 +136,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
       type="button"
     >
       <svg
@@ -160,7 +160,7 @@ exports[`InputNumber format demo works fine 1`] = `
     class="t-input-number t-size-m"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -187,7 +187,7 @@ exports[`InputNumber format demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -211,7 +211,7 @@ exports[`InputNumber left demo works fine 1`] = `
     class="t-input-number t-size-m t-is-controls-right"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -239,7 +239,7 @@ exports[`InputNumber left demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -266,7 +266,7 @@ exports[`InputNumber size demo works fine 1`] = `
     class="t-input-number t-size-s"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -293,7 +293,7 @@ exports[`InputNumber size demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -314,7 +314,7 @@ exports[`InputNumber size demo works fine 1`] = `
     style="margin: 0px 50px;"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -341,7 +341,7 @@ exports[`InputNumber size demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -361,7 +361,7 @@ exports[`InputNumber size demo works fine 1`] = `
     class="t-input-number t-size-l"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -388,7 +388,7 @@ exports[`InputNumber size demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -412,7 +412,7 @@ exports[`InputNumber step demo works fine 1`] = `
     class="t-input-number t-size-m"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -439,7 +439,7 @@ exports[`InputNumber step demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
@@ -463,7 +463,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
     class="t-input-number t-size-m"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__decrease"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -490,7 +490,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
       />
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-input-number__increase"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
