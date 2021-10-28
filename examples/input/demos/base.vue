@@ -1,7 +1,7 @@
 <template>
-  <div class="tdesign-demo-item--input__input-box">
+  <div class="tdesign-demo-block-column" style="max-width: 500px">
     <t-input placeholder="请输入内容（无默认值）" />
-    <br/><br/>
+
     <t-input v-model="input" placeholder="请输入内容（有默认值）" @enter="onEnter"/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      input: 'Welcome to TDesign',
+      input: '有默认值',
     };
   },
   methods: {

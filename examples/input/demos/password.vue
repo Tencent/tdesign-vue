@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-item--input__input-box">
+  <div class="tdesign-demo-block-column" style="max-width: 500px">
     <t-input type="password" default-value="520 TDesign">
       <t-icon-lock-on slot="prefix-icon"></t-icon-lock-on>
     </t-input>
@@ -21,9 +21,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.t-input + .t-input{
-  margin-top: 16px;
-}
-</style>

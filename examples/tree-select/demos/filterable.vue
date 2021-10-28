@@ -1,11 +1,12 @@
 <template>
-  <div class="tdesign-tree-select-filterable">
-    <div class="operation">
+  <div class="tdesign-demo-block-column-large">
+    <div>
       <t-radio-group v-model="type" variant="default-filled">
         <t-radio-button value="default">默认</t-radio-button>
         <t-radio-button value="function">自定义方法</t-radio-button>
       </t-radio-group>
     </div>
+
     <t-tree-select
       v-if="type === 'default'"
       v-model="value"
@@ -13,7 +14,9 @@
       clearable
       filterable
       placeholder="请选择"
+      style="width: 300px"
     />
+
     <t-tree-select
       v-else
       v-model="value"
@@ -21,6 +24,7 @@
       clearable
       :filter="filterFunction"
       placeholder="请选择"
+      style="width: 300px"
     />
   </div>
 </template>
@@ -60,12 +64,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-filterable {
-  width: 300px;
-  margin: 0 20px;
-}
-.operation {
-  margin-bottom: 20px;
-}
-</style>

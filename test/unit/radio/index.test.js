@@ -121,11 +121,11 @@ describe('Radio RadioGroup', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
-    it(':buttonStyle', () => {
+    it(':variant', () => {
       const wrapper = mount({
         render() {
           return (
-            <RadioGroup buttonStyle={'solid'}>
+            <RadioGroup variant={'default-filled'}>
               <RadioButton value="gz">广州</RadioButton>
               <RadioButton value="sz" disabled>深圳</RadioButton>
             </RadioGroup>

@@ -1,9 +1,7 @@
 :: BASE_DOC ::
 
 ### 选项卡禁止点击
-::: demo demos/ban 
+::: demo demos/ban tabs
 :::
 
 :: BASE_PROPS ::
-
-`list` 待实现

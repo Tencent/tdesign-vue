@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div style="margin: 12px 0">
+  <div class="tdesign-demo-block-column-large">
+    <div>
       <label>禁用单元格右键菜单：</label>
       <t-switch v-model="preventCellContextmenu"></t-switch>
     </div>

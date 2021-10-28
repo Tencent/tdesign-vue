@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-dropdown">
-    <t-dropdown :options="options" @click="clickHandler">
+    <t-dropdown :options="options" @click="clickHandler" :maxColumnWidth="120">
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
           更多
@@ -77,6 +77,9 @@ export default {
 .tdesign-demo-dropdown {
   &__text {
      display: inline-flex;
+    .t-icon {
+        margin-left: 8px;
+     }
   }
 }
 </style>

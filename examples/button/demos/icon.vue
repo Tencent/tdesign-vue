@@ -1,35 +1,22 @@
 <template>
-  <div class="demo-button-icon">
-    <div class="demo-button-row">
-      <div class="demo-button-col">
-        <t-button theme="primary">
-          <t-icon-add slot="icon"/>
-          新建
-        </t-button>
-        <t-button variant="outline">
-          <t-icon-cloud-upload slot="icon"/>
-          上传文件
-        </t-button>
-      </div>
-      <div class="demo-button-col">
-        <t-button shape="circle" theme="primary">
-          <t-icon-discount slot="icon"/>
-        </t-button>
-        <t-button shape="circle" theme="primary">
-          <t-icon-cloud-download slot="icon"/>
-        </t-button>
-      </div>
-      <!-- 使用 function 的形式定义 icon -->
-      <div class="demo-button-col">
-        <t-button
-          variant="outline"
-          :icon="renderIcon"
-        >
-          Function Icon
-        </t-button>
-      </div>
-
-    </div>
+  <div class="tdesign-demo-block-row">
+    <t-button theme="primary">
+      <t-icon-add slot="icon"/>
+      新建
+    </t-button>
+    <t-button variant="outline">
+      <t-icon-cloud-upload slot="icon"/>
+      上传文件
+    </t-button>
+    <t-button shape="circle" theme="primary">
+      <t-icon-discount slot="icon"/>
+    </t-button>
+    <t-button shape="circle" theme="primary">
+      <t-icon-cloud-download slot="icon"/>
+    </t-button>
+    <t-button variant="outline" :icon="renderIcon">
+      搜索
+    </t-button>
   </div>
 </template>
 <script>
@@ -53,15 +40,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.demo-button-row {
-  display: flex;
-}
-.demo-button-col {
-  margin-right: 32px;
-}
-.t-button + .t-button {
-  margin-left: 16px;
-}
-</style>

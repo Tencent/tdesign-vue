@@ -1,21 +1,20 @@
 <template>
-  <div class="loading-delay-demo">
+  <div class="tdesign-demo-block-column">
     <div>
-      <!-- loading 作为独立元素 -->
       <t-loading v-if="loading" :delay="delay" size="small"></t-loading>
-      <div class="switch-demo">
-        <div v-if="data">独立元素：{{ data }}</div>
-      </div>
+      <div v-if="data">loading 作为独立元素：{{ data }}</div>
     </div>
-    <br />
+
     <div class="wrap">
-      <!-- loading 作为包裹元素 -->
       <t-loading :loading="loading" :delay="delay" size="small">
-        <div class="wrap">{{ data ? `包裹元素：${data}` : '' }}</div>
+        <div class="wrap">{{ data ? `loading 作为包裹元素：${data}` : '' }}</div>
       </t-loading>
     </div>
-    <t-button @click="loadingData" size="small">快速重新加载数据（无loading）</t-button>
-    <t-button @click="() => loadingData(1000)" size="small">慢速重新加载数据</t-button>
+
+    <div class="tdesign-demo-block-row">
+      <t-button @click="loadingData" size="small">快速重新加载数据（无loading）</t-button>
+      <t-button @click="() => loadingData(1000)" size="small">慢速重新加载数据</t-button>
+    </div>
   </div>
 </template>
 <script>
@@ -44,17 +43,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.loading-delay-demo .t-button + .t-button {
-  margin-left: 24px;
-}
-
-.switch-demo {
-  margin-top: 20px;
-}
-
-.wrap {
-  width: 200px;
-  height: 80px;
-}
-</style>

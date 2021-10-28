@@ -2,7 +2,8 @@
 
 exports[`Input addon demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-addon t-addon--prepend"
@@ -70,7 +71,8 @@ exports[`Input addon demo works fine 1`] = `
 
 exports[`Input base demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-input t-size-m"
@@ -81,9 +83,6 @@ exports[`Input base demo works fine 1`] = `
       type="text"
     />
   </div>
-   
-  <br />
-  <br />
    
   <div
     class="t-input t-size-m"
@@ -99,7 +98,8 @@ exports[`Input base demo works fine 1`] = `
 
 exports[`Input disabled demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-input t-size-m t-is-disabled"
@@ -115,7 +115,8 @@ exports[`Input disabled demo works fine 1`] = `
 
 exports[`Input group demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div>
     <div
@@ -246,7 +247,8 @@ exports[`Input group demo works fine 1`] = `
 
 exports[`Input password demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-input t-size-m t-input--prefix t-input--suffix"
@@ -334,7 +336,8 @@ exports[`Input password demo works fine 1`] = `
 
 exports[`Input size demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-input t-size-l"
@@ -370,7 +373,8 @@ exports[`Input size demo works fine 1`] = `
 
 exports[`Input status demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--input__input-box"
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
 >
   <div
     class="t-input t-size-m t-is-success"

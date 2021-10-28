@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-column">
     <t-loading :loading="loading" fullscreen> </t-loading>
-    <div class="switch-demo">
+    <div>
       全局加载开关（开启加载1秒后自动归位）：
       <t-switch v-model="loading"></t-switch>
     </div>
@@ -27,8 +27,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.switch-demo {
-  margin-top: 20px;
-}
-</style>

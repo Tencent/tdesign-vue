@@ -1,24 +1,22 @@
 <template>
-  <div class="t-demo-tabs">
-    <t-tabs
-      :value="value"
-      theme="card"
-      :addable="true"
-      @add="addTab"
-      @remove="removeTab"
-      @change="changeTab"
+  <t-tabs
+    :value="value"
+    theme="card"
+    :addable="true"
+    @add="addTab"
+    @remove="removeTab"
+    @change="changeTab"
+  >
+    <t-tab-panel
+      v-for="data in panelData"
+      :key="data.value"
+      :value="data.value"
+      :label="data.label"
+      :removable="data.removable"
     >
-      <t-tab-panel
-        v-for="data in panelData"
-        :key="data.value"
-        :value="data.value"
-        :label="data.label"
-        :removable="data.removable"
-      >
-        <p style="padding: 25px;">{{ data.content }}</p>
-      </t-tab-panel>
-    </t-tabs>
-  </div>
+      <p style="padding: 25px;">{{ data.content }}</p>
+    </t-tab-panel>
+  </t-tabs>
 </template>
 
 <script>
@@ -70,22 +68,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-  .t-demo-tabs {
-
-    &__desc {
-      margin-bottom: 20px;
-      color: #333;
-      font-size: 14px;
-
-      &:not(:first-of-type) {
-        margin-top: 20px;
-      }
-
-      p {
-        margin-bottom: 20px;
-      }
-    }
-  }
-</style>

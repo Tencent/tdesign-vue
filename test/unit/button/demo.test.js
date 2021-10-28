@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import base from '@/examples/button/demos/base.vue';
 import block from '@/examples/button/demos/block.vue';
 import icon from '@/examples/button/demos/icon.vue';
-import loading from '@/examples/button/demos/loading.vue';
+import status from '@/examples/button/demos/status.vue';
 import size from '@/examples/button/demos/size.vue';
 import theme from '@/examples/button/demos/theme.vue';
 
@@ -19,8 +19,8 @@ describe('Button', () => {
     const wrapper = mount(icon);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('loading demo works fine', () => {
-    const wrapper = mount(loading);
+  it('status demo works fine', () => {
+    const wrapper = mount(status);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('size demo works fine', () => {

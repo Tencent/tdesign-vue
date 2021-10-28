@@ -33,7 +33,7 @@
       <t-form-item label="加载中" name='loading'>
         <t-input v-model="formData.loading" placeholder="正在校验中，请稍等"></t-input>
         <template #statusIcon>
-          <div style="width:25px; display:flex; justify-content: center">
+          <div style="width:24px; display:flex; justify-content: center">
             <t-loading slot="statusIcon" size="small"></t-loading>
           </div>
         </template>
@@ -54,7 +54,7 @@
       </t-form-item>
       <t-form-item label="帮助" help="自定义帮助icon" :statusIcon="getStatusIcon" name='help'>
         <t-input v-model="formData.help"></t-input>
-        <!-- <t-icon slot="statusIcon" name='help-circle' size="25px" style="color: #0006"/> -->
+        <!-- <t-icon slot="statusIcon" name='help-circle' size="24px" style="color: #0006"/> -->
       </t-form-item>
       <t-form-item :statusIcon="false"  style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
@@ -130,7 +130,7 @@ export default {
     },
     getStatusIcon(h) {
       console.log(h);
-      return <t-icon name='help-circle' size="25px" style="color: #0006"/>;
+      return <t-icon name='help-circle' size="24px" style="color: #0006"/>;
     },
   },
 };

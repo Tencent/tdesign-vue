@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <t-radio-group v-model="uploadMethod">
-      <t-radio-button value="requestSuccessMethod">上传成功示例</t-radio-button>
-      <t-radio-button value="requestFailMethod">上传失败示例</t-radio-button>
-    </t-radio-group>
-    <br><br>
+  <div class="tdesign-demo-block-column-large">
+    <div>
+      <t-radio-group variant="default-filled" v-model="uploadMethod">
+        <t-radio-button value="requestSuccessMethod">上传成功示例</t-radio-button>
+        <t-radio-button value="requestFailMethod">上传失败示例</t-radio-button>
+      </t-radio-group>
+    </div>
+
     <t-upload
       v-model="files"
       :requestMethod="requestMethod"

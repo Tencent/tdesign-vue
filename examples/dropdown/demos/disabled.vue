@@ -43,6 +43,9 @@ export default Vue.extend({
 .tdesign-demo-dropdown {
   &__text {
     display: inline-flex;
+    .t-icon {
+        margin-left: 8px;
+    }
   }
 }
 </style>

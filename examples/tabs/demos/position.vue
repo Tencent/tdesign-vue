@@ -1,11 +1,11 @@
 <template>
-  <div class="t-demo-tabs">
-    <div class="t-demo-tabs__desc">
-      <t-radio-group v-model="placement">
-        <t-radio value="top">top</t-radio>
-        <t-radio value="right">right</t-radio>
-        <t-radio value="bottom">bottom</t-radio>
-        <t-radio value="left">left</t-radio>
+  <div class="tdesign-demo-block-column-large">
+    <div>
+      <t-radio-group variant="default-filled" v-model="placement">
+        <t-radio-button value="top">top</t-radio-button>
+        <t-radio-button value="right">right</t-radio-button>
+        <t-radio-button value="bottom">bottom</t-radio-button>
+        <t-radio-button value="left">left</t-radio-button>
       </t-radio-group>
     </div>
     <t-tabs
@@ -25,29 +25,6 @@
     </t-tabs>
   </div>
 </template>
-
-<style lang="less" scoped>
-  .t-demo-tabs {
-
-    &__desc {
-      margin-bottom: 20px;
-      color: #333;
-      font-size: 14px;
-
-      &:not(:first-of-type) {
-        margin-top: 20px;
-      }
-
-      p {
-        margin-bottom: 20px;
-      }
-    }
-
-    &__btn {
-      margin-right: 20px;
-    }
-  }
-</style>
 
 <script>
 export default {

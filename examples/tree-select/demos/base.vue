@@ -41,6 +41,5 @@ export default {
 <style scoped>
 .tdesign-tree-select-base {
   width: 300px;
-  margin: 0 20px;
 }
 </style>

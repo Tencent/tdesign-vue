@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-radio-group">
+  <div class="tdesign-demo-block-column">
     <div>
       <t-radio-group
         name="city"
@@ -11,7 +11,7 @@
 
     <div>
       <t-radio-group
-        default-value="sz"
+        default-value="3"
         :options="options"
         @change="onChange"
       ></t-radio-group>
@@ -20,18 +20,18 @@
     <div>
       <t-radio-group
         disabled
-        default-value="gz"
+        default-value="1"
         :options="optionsWithDisabled"
         @change="onChange"
       ></t-radio-group>
     </div>
 
     <div>
-      <t-radio-group default-value="gz" @change="onChange">
-        <t-radio value="bj">北京</t-radio>
-        <t-radio value="sh">上海</t-radio>
-        <t-radio value="gz">广州</t-radio>
-        <t-radio value="sz" disabled>深圳</t-radio>
+      <t-radio-group default-value="1" @change="onChange">
+        <t-radio value="1">选项一</t-radio>
+        <t-radio value="2">选项二</t-radio>
+        <t-radio value="3">选项三</t-radio>
+        <t-radio value="4" disabled>选项四</t-radio>
       </t-radio-group>
     </div>
   </div>
@@ -44,39 +44,39 @@ export default {
       value: '',
       options: [
         {
-          value: 'bj',
-          label: '北京',
+          value: '1',
+          label: '选项一',
         },
         {
-          value: 'sh',
-          label: '上海',
+          value: '2',
+          label: '选项二',
         },
         {
-          value: 'gz',
-          label: '广州',
+          value: '3',
+          label: '选项三',
         },
         {
-          value: 'sz',
-          label: () => '深圳',
+          value: '4',
+          label: () => '选项四',
         },
       ],
       optionsWithDisabled: [
         {
-          value: 'bj',
-          label: '北京',
+          value: '1',
+          label: '选项一',
         },
         {
-          value: 'sh',
-          label: '上海',
+          value: '2',
+          label: '选项二',
         },
         {
-          value: 'gz',
-          label: '广州',
+          value: '3',
+          label: '选项三',
           disabled: false,
         },
         {
-          value: 'sz',
-          label: () => '深圳',
+          value: '4',
+          label: () => '选项四',
           disabled: false,
         },
       ],
@@ -90,9 +90,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.t-radio-group {
-  margin-bottom: 16px;
-}
-</style>

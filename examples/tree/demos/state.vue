@@ -1,6 +1,9 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <h3 class="title">state:</h3>
+  <div class="tdesign-demo-block-column">
+    <div>
+      <t-button @click="append()">插入一个根节点</t-button>
+    </div>
+
     <t-tree
       :data="items"
       hover
@@ -13,16 +16,14 @@
       ref="tree"
     >
       <template #operations="{node}">
-        <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
-        <t-button size="small" variant="base" @click="changeIcon(node)">变更图标</t-button>
-        <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
-        <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+        <div class="tdesign-demo-block-row">
+          <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
+          <t-button size="small" variant="base" @click="changeIcon(node)">变更图标</t-button>
+          <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
+          <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+        </div>
       </template>
     </t-tree>
-    <h3 class="title">api:</h3>
-    <div class="operations">
-      <t-button theme="primary" @click="append()">插入一个根节点</t-button>
-    </div>
   </div>
 </template>
 
@@ -113,6 +114,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-@import url('./common/demo.css');
-</style>

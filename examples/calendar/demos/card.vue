@@ -1,20 +1,13 @@
 <template>
-  <div>
-    <div style="margin: 12px 0">
+  <div class="tdesign-demo-block-column-large">
+    <div>
       <label>请选择风格：</label>
-      <t-select v-model="theme"
-                class="demo-select-base">
-        <t-option v-for="item in options"
-                  :key="item.value"
-                  :value="item.value"
-                  :label="item.label" />
+      <t-select v-model="theme" class="demo-select-base">
+        <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
       </t-select>
-      <t-button theme="primary"
-                @click="toCurrent()">今天（当前高亮日期）</t-button>
+      <t-button theme="primary" @click="toCurrent()">今天（当前高亮日期）</t-button>
     </div>
-    <t-calendar ref="myCalendar"
-                :theme="theme"
-                :isShowWeekendDefault="isShowWeekendDefault"></t-calendar>
+    <t-calendar ref="myCalendar" :theme="theme" :isShowWeekendDefault="isShowWeekendDefault"></t-calendar>
   </div>
 </template>
 

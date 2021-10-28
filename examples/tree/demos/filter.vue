@@ -1,10 +1,9 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <div class="operations">
-      <t-addon prepend="filter:">
-        <t-input v-model="filterText" @input="onInput"/>
-      </t-addon>
-    </div>
+  <div class="tdesign-demo-block-column-large">
+    <t-addon prepend="filter:">
+      <t-input v-model="filterText" @input="onInput"/>
+    </t-addon>
+
     <t-tree
       :data="items"
       expand-on-click-node
@@ -99,6 +98,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-@import url('./common/demo.css');
-</style>

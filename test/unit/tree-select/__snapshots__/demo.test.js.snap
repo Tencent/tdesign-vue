@@ -667,11 +667,9 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
 
 exports[`TreeSelect filterable demo works fine 1`] = `
 <div
-  class="tdesign-tree-select-filterable"
+  class="tdesign-demo-block-column-large"
 >
-  <div
-    class="operation"
-  >
+  <div>
     <div
       class="t-radio-group t-radio-group-medium t-radio-group-filled"
     >
@@ -718,7 +716,9 @@ exports[`TreeSelect filterable demo works fine 1`] = `
     </div>
   </div>
    
-  <div>
+  <div
+    style="width: 300px;"
+  >
     <div
       class="t-popup-reference t-select-popup-reference"
     >

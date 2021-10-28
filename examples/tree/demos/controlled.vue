@@ -1,6 +1,6 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <div class="operations">
+  <div class="tdesign-demo-block-column-large">
+    <div class="tdesign-demo-block-column">
       <t-addon prepend="checked:">
         <t-input :value="allChecked"/>
       </t-addon>
@@ -11,6 +11,7 @@
         <t-input :value="allActived"/>
       </t-addon>
     </div>
+
     <t-tree
       :data="items"
       checkable
@@ -153,6 +154,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-@import url('./common/demo.css');
-</style>

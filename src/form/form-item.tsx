@@ -223,7 +223,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
-          <Icon size='25px'></Icon>
+          <Icon size='24px'></Icon>
         </span>
       );
       const list = this.errorList;

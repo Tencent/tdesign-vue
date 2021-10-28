@@ -1,64 +1,48 @@
 <template>
-  <div class="t-demo-tabs">
-    <div class="t-demo-tabs__desc">
-      <t-radio-group v-model="size">
-        <t-radio value="medium">medium</t-radio>
-        <t-radio value="large">large</t-radio>
+  <div class="tdesign-demo-block-column-large">
+    <div>
+      <t-radio-group variant="default-filled" v-model="size">
+        <t-radio-button value="medium">medium</t-radio-button>
+        <t-radio-button value="large">large</t-radio-button>
       </t-radio-group>
     </div>
-    <t-tabs
-      :value="value1"
-      :size="size"
-      @change="(newValue) => value1 = newValue"
-    >
-      <t-tab-panel value="first" label="选项卡1">
-        <p style="padding: 25px;">选项卡1</p>
-      </t-tab-panel>
-      <t-tab-panel value="second" label="选项卡2">
-        <p style="padding: 25px;">选项卡2</p>
-      </t-tab-panel>
-      <t-tab-panel value="third" label="选项卡3">
-        <p style="padding: 25px;">选项卡3</p>
-      </t-tab-panel>
-    </t-tabs>
-    <br />
-    <t-tabs
-      :value="value2"
-      theme="card"
-      :size="size"
-      @change="(newValue) => value2 = newValue"
-    >
-      <t-tab-panel value="first" label="选项卡1">
-        <p style="padding: 25px;">选项卡1</p>
-      </t-tab-panel>
-      <t-tab-panel value="second" label="选项卡2">
-        <p style="padding: 25px;">选项卡2</p>
-      </t-tab-panel>
-      <t-tab-panel value="third" label="选项卡3">
-        <p style="padding: 25px;">选项卡3</p>
-      </t-tab-panel>
-    </t-tabs>
+
+    <div class="tdesign-demo-block-column">
+      <t-tabs
+        :value="value1"
+        :size="size"
+        @change="(newValue) => value1 = newValue"
+      >
+        <t-tab-panel value="first" label="选项卡1">
+          <p style="padding: 25px;">选项卡1</p>
+        </t-tab-panel>
+        <t-tab-panel value="second" label="选项卡2">
+          <p style="padding: 25px;">选项卡2</p>
+        </t-tab-panel>
+        <t-tab-panel value="third" label="选项卡3">
+          <p style="padding: 25px;">选项卡3</p>
+        </t-tab-panel>
+      </t-tabs>
+
+      <t-tabs
+        :value="value2"
+        theme="card"
+        :size="size"
+        @change="(newValue) => value2 = newValue"
+      >
+        <t-tab-panel value="first" label="选项卡1">
+          <p style="padding: 25px;">选项卡1</p>
+        </t-tab-panel>
+        <t-tab-panel value="second" label="选项卡2">
+          <p style="padding: 25px;">选项卡2</p>
+        </t-tab-panel>
+        <t-tab-panel value="third" label="选项卡3">
+          <p style="padding: 25px;">选项卡3</p>
+        </t-tab-panel>
+      </t-tabs>
+    </div>
   </div>
 </template>
-
-<style lang="less" scoped>
-  .t-demo-tabs {
-
-    &__desc {
-      margin-bottom: 20px;
-      color: #333;
-      font-size: 14px;
-
-      &:not(:first-of-type) {
-        margin-top: 20px;
-      }
-
-      p {
-        margin-bottom: 20px;
-      }
-    }
-  }
-</style>
 
 <script>
 export default {
