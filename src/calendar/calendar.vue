@@ -3,6 +3,10 @@
   <div class="t-calendar" :class="calendarCls">
     <!-- 控件部分 -->
     <div class="t-calendar__control" v-if="isControllerVisible">
+      <div class="t-calendar__title">
+        <RenderTNodeTemplate v-if="head" :render="head" :params="controllerOptions" />
+        <slot v-else name="head" :data="controllerOptions" />
+      </div>
       <div class="t-calendar__control-section">
         <!-- 年份选择 -->
         <div class="t-calendar__control-section-cell" v-if="isYearVisible">
@@ -48,6 +52,7 @@
       <!-- 模式选择 -->
       <div v-if="isModeVisible" class="t-calendar__control-section" style="height: auto">
         <TRadioGroup
+          variant="default-filled"
           v-model="curSelectedMode"
           :size="controlSize"
           :disabled="isModeDisabled"
@@ -61,15 +66,16 @@
       </div>
       <!-- 显示\隐藏周末 -->
       <div v-if="theme === 'full' && isWeekendToggleVisible" class="t-calendar__control-section">
-        <TButton
-          :theme="isShowWeekend ? 'default' : 'primary'"
+        <TCheckTag
+          class="t-calendar__control-tag"
+          :checked="isShowWeekend"
           v-if="curSelectedMode === 'month'"
           :size="controlSize"
           :disabled="isWeekendToggleDisabled"
           v-bind="weekendBtnVBind"
           @click="onWeekendToggleClick()"
         >
-          {{ weekendBtnText }}</TButton
+          {{ weekendBtnText }}</TCheckTag
         >
       </div>
       <!-- 今天\本月 -->
@@ -86,10 +92,6 @@
     </div>
     <!-- 主体部分 -->
     <div class="t-calendar__panel" :class="calendarPanelCls">
-      <div class="t-calendar__panel-title">
-        <RenderTNodeTemplate v-if="head" :render="head" :params="controllerOptions"></RenderTNodeTemplate>
-        <slot v-else name="head" :data="controllerOptions"></slot>
-      </div>
       <!-- “月”模式：日历 -->
       <table class="t-calendar__table" v-if="curSelectedMode === 'month'">
         <thead class="t-calendar__table-head">
@@ -107,16 +109,16 @@
           </tr>
         </thead>
         <tbody class="t-calendar__table-body">
-          <tr v-for="week in monthCellsData" :key="week.num" class="t-calendar__table-body-row">
+          <tr v-for="(week, index) in monthCellsData" :key="index" class="t-calendar__table-body-row">
             <template v-for="item in week">
               <CalendarCellItem
                 v-if="checkMonthCellItemShowed(item)"
-                :key="`${item.weekNum}-${item.day}`"
+                :key="`${item.weekOrder}-${item.day}`"
                 :item="item"
                 :theme="theme"
                 :t="t"
                 :locale="locale"
-                @click.native="clickCell($event, item)"
+                @click="clickCell($event, item)"
                 @dblclick.native="doubleClickCell($event, item)"
                 @contextmenu.native="rightClickCell($event, item)"
               >
@@ -141,13 +143,13 @@
         <tbody class="t-calendar__table-body">
           <tr v-for="(row, rowIndex) in yearCellsData" :key="rowIndex" class="t-calendar__table-body-row">
             <CalendarCellItem
-              v-for="item in row"
-              :key="item.num"
+              v-for="(item, index) in row"
+              :key="index"
               :item="item"
               :theme="theme"
               :t="t"
               :locale="locale"
-              @click.native="clickCell($event, item)"
+              @click="clickCell($event, item)"
               @dblclick.native="doubleClickCell($event, item)"
               @contextmenu.native="rightClickCell($event, item)"
             >
@@ -193,6 +195,7 @@ import {
 import { Select as TSelect, Option as TOption } from '../select';
 import { RadioGroup as TRadioGroup, RadioButton as TRadioButton } from '../radio';
 import { Button as TButton } from '../button';
+import { CheckTag as TCheckTag } from '../tag';
 import CalendarCellItem from './calendar-cell.vue';
 import RenderComponent from '../utils/render-component';
 import { RenderTNodeTemplate } from '../utils/render-tnode';
@@ -253,6 +256,7 @@ const CalendarLocalReceiver = getLocalReceiverMixins('calendar');
 export default mixins(CalendarLocalReceiver).extend({
   name: 'TCalendar',
   components: {
+    TCheckTag,
     TSelect,
     TOption,
     TRadioGroup,
@@ -543,6 +547,7 @@ export default mixins(CalendarLocalReceiver).extend({
       };
     },
     clickCell(e: MouseEvent, cellData: CalendarCell) {
+      this.curDate = dayjs(cellData.date);
       this.execCellEvent(e, cellData, 'cell-click');
     },
     doubleClickCell(e: MouseEvent, cellData: CalendarCell) {
@@ -603,7 +608,7 @@ export default mixins(CalendarLocalReceiver).extend({
       return re;
     },
     // 显示当前月份\年份
-    toCurrent(value: TdCalendarProps['value']): void {
+    toCurrent(value?: TdCalendarProps['value']): void {
       this.curDate = value ? dayjs(value) : createDefaultCurDate();
       this.curSelectedYear = this.curDate.year();
       this.curSelectedMonth = parseInt(this.curDate.format('M'), 10);

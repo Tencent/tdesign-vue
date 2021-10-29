@@ -2,16 +2,8 @@
   <div class="tdesign-demo-block-column-large">
     <div>
       <label>日历的第一列为：</label>
-      <t-select
-        v-model="firstDayOfWeek"
-        class="demo-select-base"
-      >
-        <t-option
-          v-for="item in options"
-          :key="item.value"
-          :value="item.value"
-          :label="item.label"
-        />
+      <t-select v-model="firstDayOfWeek" class="demo-select-base">
+        <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
       </t-select>
     </div>
     <t-calendar :firstDayOfWeek="firstDayOfWeek"></t-calendar>

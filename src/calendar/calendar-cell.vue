@@ -1,6 +1,6 @@
 <template>
   <!-- 高亮：t-is-checked; 灰度：t-is-disabled-->
-  <td v-if="item" :class="cellCls">
+  <td v-if="item" :class="cellCls" @click="clickCell">
     <slot name="cell" :data="item">
       <div class="t-calendar__table-body-cell-value">{{ valueDisplay }}</div>
       <div class="t-calendar__table-body-cell-content">
@@ -12,6 +12,7 @@
 
 <script lang="ts">
 // 通用库
+import dayjs from 'dayjs';
 import Vue from 'vue';
 
 // 组件的一些常量
@@ -50,12 +51,22 @@ export default Vue.extend({
       return map[(this.item.date.getMonth()).toString()];
     },
     cellCls(): Record<string, any> {
+      const {
+        mode, date, formattedDate, isCurrent,
+      } = this.item;
+      const isNow = mode === 'year' ? new Date().getMonth() === date.getMonth() : formattedDate === dayjs().format('YYYY-MM-DD');
       return [
         't-calendar__table-body-cell',
         {
           't-is-disabled': this.disabled,
-          't-is-checked': this.item.isCurrent,
+          't-is-checked': isCurrent,
+          't-is-now': isNow,
         }];
+    },
+  },
+  methods: {
+    clickCell(e: MouseEvent) {
+      this.$emit('click', e);
     },
   },
 });

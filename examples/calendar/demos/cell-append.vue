@@ -1,54 +1,33 @@
 <template>
   <t-calendar>
-    <div slot="cellAppend"
-         slot-scope="scope">
-      <div class="cellAppend"
-           :class="getCellAppendCls(scope.data)"
-           @click="showCellData(scope.data)">
-        {{ getDateStr(scope.data) }}
-      </div>
+    <div slot="cellAppend" slot-scope="{ data }" v-if="getShow(data)" class="cell-append-demo-outer">
+      <t-tag theme="primary" size="small" class="activeTag">{{data.mode == "month" ? '今天' : '本月'}}</t-tag>
     </div>
   </t-calendar>
 </template>
 
 <script>
+import dayjs from 'dayjs';
+
 export default {
   methods: {
-    getDateStr(cellData) {
-      const y = cellData.date.getFullYear();
-      const m = cellData.date.getMonth() + 1;
-      if (cellData.mode === 'year') {
-        return `${y}-${m}`;
-      }
-      const d = cellData.date.getDate();
-      return `${y}-${m}-${d}`;
-    },
-    getCellAppendCls(cellData) {
-      return {
-        belongCurrent: cellData.mode === 'year' || cellData.belongTo === 0,
-        actived: cellData.isCurrent,
-      };
-    },
-    showCellData(cellData) {
-      console.info(cellData);
+    getShow(data) {
+      return data.mode === 'month' ? dayjs().format('YYYY-MM-DD') === data.formattedDate : data.date.getMonth() === new Date().getMonth();
     },
   },
 };
 </script>
 
-<style scoped>
-.cellAppend {
-  margin: 10px;
-  background-color: #ebf2ff;
-  color: #888;
-  border-radius: 3px;
-  padding: 2px 4px;
+<style lang="less" scoped>
+.cell-append-demo-outer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  padding: 0 16px;
 }
-.cellAppend.belongCurrent {
-  color: #0052d9;
-}
-.cellAppend.actived {
-  background-color: #0052d9;
-  color: #ebf2ff;
+.activeTag {
+  display: block;
+  text-align: center;
 }
 </style>
