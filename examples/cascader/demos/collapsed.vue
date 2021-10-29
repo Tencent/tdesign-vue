@@ -1,6 +1,12 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :onRemove="handleBlur" multiple :minCollapsedNum="1" />
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :onRemove="handleBlur" multiple :minCollapsedNum="2" />
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable :minCollapsedNum="1">
+      <template #collapsedItems>
+        自定义折叠内容
+      </template>
+    </t-cascader>
   </div>
 </template>
 
@@ -39,15 +45,17 @@ export default {
               label: '南山区',
               value: '2.2',
             },
-            {
-              label: '福田区',
-              value: '2.3',
-            },
           ],
         },
       ],
-      value: '',
+      value: ['1.1', '1.2', '1.3'],
+      open: true,
     };
+  },
+  methods: {
+    handleBlur(e) {
+      console.log(e);
+    },
   },
 };
 </script>

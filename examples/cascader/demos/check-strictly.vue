@@ -1,19 +1,13 @@
 <template>
   <div>
-    <t-cascader
-      class="t-demo-cascader"
-      :options="options"
-      v-model="value1"
-      placeholder='请选择'
-      check-strictly
-    />
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value1" placeholder='请选择' check-strictly></t-cascader>
     <t-cascader
       class="t-demo-cascader"
       :options="options"
       v-model="value2"
       check-strictly
       multiple
-    />
+    ></t-cascader>
   </div>
 </template>
 

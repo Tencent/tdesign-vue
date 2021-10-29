@@ -1,510 +1,261 @@
-import { VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import isEqual from 'lodash/isEqual';
-import cloneDeep from 'lodash/cloneDeep';
-import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import CLASSNAMES from '../utils/classnames';
-import { prefix } from '../config';
-import TIconChevronDrown from '../icon/chevron-down';
-import IIconClose from '../icon/close-circle-filled';
-import Input from '../input/index';
-import Popup from '../popup/index';
-import Tag from '../tag/index';
-import item from './item';
-import FakeArrow from '../common-components/fake-arrow';
+import isEmpty from 'lodash/isEmpty';
 
-import { ClassName, OptionData } from '../common';
+// utils
+import { prefix } from '../config';
 import TreeStore from '../_common/js/tree/tree-store';
+import { emitEvent } from '../utils/event';
+import { getPropsApiByEvent } from '../utils/helper';
+import { getTreeValue } from './utils/helper';
+
+// common logic
+import { treeNodesEffect, treeStoreExpendEffect } from './utils/cascader';
+
+// component
+import Panel from './components/Panel';
+import Popup, { PopupProps } from '../popup/index';
+import InputContent from './components/InputContent';
+
+// types
 import TreeNode from '../_common/js/tree/tree-node';
+import {
+  ListenersType, TreeNodeValue, EVENT_NAME_WITH_KEBAB,
+  CascaderContextType,
+  TdCascaderProps,
+} from './interface';
 import props from './props';
 
-import {
-  TreeNodeValue,
-  TypeValueMode,
-  TypeEventState,
-} from '../tree';
-
-type TypeContext = { e?: Event; node?: TreeNode };
 const name = `${prefix}-cascader`;
 
-export default mixins(getLocalReceiverMixins('cascader')).extend({
+export default Vue.extend({
   name: 'TCascader',
+
   components: {
-    TIconChevronDrown,
-    TInput: Input,
     Popup,
-    item,
-    Tag,
-    FakeArrow,
+    Panel,
+    InputContent,
   },
+
   props: {
     ...props,
   },
-  provide(): any {
-    return {
-      tCascader: this,
-    };
-  },
 
-  data(): {
-    model: TreeNodeValue | TreeNodeValue[];
-    [key: string]: any;
-    } {
+  data() {
     return {
-      isHover: false,
-      name,
-      model: '',
       visible: false,
-      initValue: false,
-      store: null,
-      nodesMap: null,
+      treeStore: null,
+      inputVal: '',
+      scopeVal: this.defaultValue as any,
       treeNodes: [],
-      path: [],
+      filterActive: false,
+      expend: [] as TreeNodeValue[],
     };
   },
 
   computed: {
-    cascaderInnerClasses(): Array<string | object> {
-      return [
-        `${name}`,
-        {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
-          [CLASSNAMES.STATUS.active]: this.visible,
-          [CLASSNAMES.SIZE[this.size]]: this.size,
-          [`${name}-is-multiple`]: this.multiple,
+    stateFns() {
+      return {
+        setTreeNodes: (nodes: TreeNode[]) => {
+          this.treeNodes = nodes;
         },
-      ];
-    },
-    iconClass(): ClassName {
-      return [
-        `${name}-icon`,
-        {
-          [CLASSNAMES.STATUS.visible]: this.visible,
+        setValue: (val: TreeNodeValue | TreeNodeValue[]) => {
+          this.$emit('change', val);
         },
-      ];
-    },
-    tipsClass(): ClassName {
-      return [
-        `${name}-loading-tips`,
-        {
-          [CLASSNAMES.SIZE[this.size]]: this.size,
+        setVisible: (val: boolean) => {
+          this.visible = val;
         },
-      ];
+        setFilterActive: (val: boolean) => {
+          this.filterActive = val;
+        },
+        setInputVal: (val: string) => {
+          this.inputVal = val;
+        },
+        setExpend: (val: TreeNodeValue[]) => {
+          this.expend = val;
+        },
+      };
     },
-    showPlaceholder(): boolean {
-      if (
-        !this.filterable
-        && ((typeof this.model === 'string' && this.model === '')
-          || (Array.isArray(this.model) && !this.model.length)
-          || this.model === null)
-      ) {
-        return true;
-      }
-      return false;
-    },
-    showClose(): boolean {
-      return !!(
-        this.clearable
-        && this.isHover
-        && !this.disabled
-        && ((!this.multiple && this.model) || (this.multiple && (this.model as TreeNodeValue[]).length))
-      );
-    },
-    showArrow(): boolean {
-      return (
-        !this.clearable
-        || !this.isHover
-        || this.disabled
-        || (!this.multiple && !this.model)
-        || (this.multiple && !(this.model as TreeNodeValue[]).length)
-      );
-    },
-    selectedSingle(): string {
+    cascaderContext(): CascaderContextType {
+      const value = this.scopeVal as TdCascaderProps['value'];
       const {
-        multiple, model, path, showAllLevels,
+        size = 'medium',
+        disabled = false,
+        checkStrictly = false,
+        lazy = true,
+        multiple = false,
+        filterable = false,
+        clearable = false,
+        checkProps = {},
+        max = 0,
+        showAllLevels = true,
+        minCollapsedNum = 0,
       } = this;
-      if (!multiple && model !== '') {
-        if (path.length) {
-          return (showAllLevels
-            ? path.map((node: TreeNode) => node.label).join(' / ')
-            : path[path.length - 1].label);
-        }
-        return model as string;
-      }
-      return '';
-    },
-    selectedMultiple(): TreeNode[] {
-      if (this.multiple && (this.model as TreeNodeValue[]).length) {
-        return this.path.length ? this.path : this.model;
-      }
-      return [];
-    },
-    panels(): TreeNode[][] {
-      const panels: TreeNode[][] = [];
-      this.treeNodes.forEach((node: TreeNode) => {
-        if (panels[node.level]) {
-          panels[node.level].push(node);
-        } else {
-          panels[node.level] = [node];
-        }
-      });
-      return panels;
+
+      const {
+        visible,
+        treeStore,
+        treeNodes,
+        filterActive,
+        inputVal,
+      } = this;
+
+      return {
+        size,
+        disabled,
+        checkStrictly,
+        lazy,
+        multiple,
+        filterable,
+        checkProps,
+        clearable,
+        showAllLevels,
+        max,
+        value,
+        visible,
+        treeStore,
+        treeNodes,
+        filterActive,
+        inputVal,
+        minCollapsedNum,
+        ...this.stateFns,
+      };
     },
   },
 
   watch: {
+    // 处理外部传进来的value
     value: {
       handler(val) {
-        // 处理外部传进来的value
-        if (isEqual(val, this.model)) return;
-        this.model = val;
-        // 在下拉菜单没打开时候，说明是非激活状态，更新路径
-        this.$nextTick(() => {
-          if (!this.visible && this.options.length) {
-            this.refresh();
-          }
-        });
+        if (isEqual(val, this.scopeVal)) return;
+        this.scopeVal = val;
+        this.updateExpend();
+        this.updatedTreeNodes();
       },
-      immediate: true,
     },
-    visible(val) {
-      this.$emit('visible-change', val);
+    inputVal() {
+      const { cascaderContext: { value, setExpend } } = this;
+      if (!getTreeValue(value).length) {
+        setExpend([]);
+      }
+      this.updatedTreeNodes();
     },
-    model: {
-      handler(val) {
-        this.$nextTick(() => {
-          if (!this.store) return;
-          if (!this.multiple) {
-            this.store.replaceChecked([val]);
-            const node = this.store.getNodes(val);
-            this.path = node[0].getPath();
-          } else {
-            this.store.replaceChecked(val);
-            this.path = (val as TreeNodeValue[]).map((item: TreeNodeValue) => {
-              const node = this.store.getNodes(item);
-              return node[0];
-            });
-          }
-          this.refresh(false);
-        });
-        if (!isEqual(val, this.value)) {
-          this.$emit('input', cloneDeep(this.model));
-        }
-      },
-      immediate: true,
-    },
-    // When the options change, rebuild the tree
-    options: {
-      handler(val) {
-        this.$nextTick(() => {
-          if (val.length) {
-            this.build();
-          }
-        });
-      },
-      deep: true,
+    filterActive() {
+      const { cascaderContext: { filterActive } } = this;
+      if (!filterActive) {
+        this.inputVal = '';
+      }
     },
   },
-  created() {
-    this.build();
+
+  mounted() {
+    const { value, multiple } = this;
+    if ((multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value))) {
+      this.$emit('change', multiple ? [] : '');
+      console.warn('TDesign Warn:', 'cascader props value invalid, automatic calibration');
+    }
+    if (!isEmpty(value)) {
+      this.scopeVal = value;
+    }
+    this.init();
+    ['checkStrictly', 'disabled', 'keys', 'lazy', 'load', 'options', 'valueMode'].forEach((key) => {
+      this.$watch(key, () => {
+        this.init();
+      });
+    });
   },
+
   methods: {
     // 创建单个 cascader 节点
-    build() {
-      const list = this.options;
+    init() {
       const {
-        activable,
-        activeMultiple,
-        checkable = true,
+        disabled,
+        keys,
         checkStrictly = false,
-        expandAll,
-        expandLevel,
-        expandMutex = true,
-        expandParent = true,
+        lazy = true,
+        load,
+        options,
+        valueMode = 'onlyLeaf',
+      } = this;
+      if (!options || (Array.isArray(options) && !options.length)) return;
+
+      this.treeStore = new TreeStore({
+        keys: keys || {},
+        checkable: true,
+        checkStrictly,
+        expandMutex: true,
+        expandParent: true,
         disabled,
         load,
         lazy,
         valueMode,
-        filter,
-      } = this;
-      if (list && list.length > 0) {
-        const store = new TreeStore({
-          activable,
-          activeMultiple,
-          checkable,
-          checkStrictly,
-          expandAll,
-          expandLevel,
-          expandMutex,
-          expandParent,
-          disabled,
-          load,
-          lazy,
-          valueMode: valueMode as TypeValueMode,
-          filter,
-          onLoad: (info: TypeEventState) => {
-            this.onStoreLoad(info);
-          },
-          onUpdate: (info: TypeEventState) => {
-            this.onStoreUpdate(info);
-          },
-        });
-        this.store = store;
-        store.append(list);
-        this.refresh();
-      }
-    },
-    refresh(init = true) {
-      const { value, store } = this;
-      if (init) {
-        // 根据当前value更新树形结构选中值
-        let treeValue: TreeNodeValue[] = [];
-        if (Array.isArray(value)) {
-          if (value.length > 0 && typeof value[0] === 'object') {
-            treeValue = (value as OptionData[]).map((val) => val.value);
-          }
-        } else if (value) {
-          if (typeof value === 'object') {
-            treeValue = [(value as OptionData).value];
-          } else {
-            treeValue = [value];
-          }
-        }
-        store.resetExpanded();
-        if (Array.isArray(treeValue)) {
-          store.setChecked(treeValue);
-        }
-        // 初始化展开状态
-        if (Array.isArray(treeValue)) {
-          const expandedMap = new Map();
-          // 完整展开第一个值
-          const [val] = treeValue;
-          if (val) {
-            expandedMap.set(val, true);
-            const node = store.getNode(val);
-            node.getParents().forEach((tn: TreeNode) => {
-              expandedMap.set(tn.value, true);
-            });
+        onLoad: () => {
+          setTimeout(() => {
+            this.treeStore.refreshNodes();
+            this.updatedTreeNodes();
+          }, 0);
+        },
+      });
+      this.treeStore.append(options);
 
-            const expandedArr = Array.from(expandedMap.keys());
-            store.setExpanded(expandedArr);
-          }
-        }
-      }
-      store.refreshNodes();
-      const allNodes = store.getNodes();
-      this.treeNodes = allNodes.filter((node: TreeNode) => node.visible);
+      // 初始化状态
+      this.$nextTick(() => {
+        this.updateExpend();
+        this.updatedTreeNodes();
+      });
     },
-    onStoreLoad(info: TypeEventState) {
-      const event = new Event('load');
-      const { node, data } = info;
-      const state = {
-        event,
-        node,
-        data,
-      };
-      this.$emit('load', state);
-    },
-    onStoreUpdate(info: TypeEventState) {
-      const event = new Event('update');
-      const { nodes } = info;
-      const state = {
-        event,
-        nodes,
-      };
-      this.$emit('update', state);
-      this.refresh(false);
-    },
-    onVisibleChange(val: boolean) {
-      if (this.disabled) {
-        return false;
-      }
-      this.visible = val;
-    },
-    // 点击cascader中的某一项，单选状态直接变更值
-    handleExpand(ctx: TypeContext, trigger: 'hover' | 'click') {
-      const { node } = ctx;
-      const expanded = node.setExpanded(true);
-      if (this.trigger === trigger) {
-        this.store.replaceExpanded(expanded);
-      }
-      // 单选并且点击叶子节点
-      if (!this.multiple && (node.isLeaf() || this.checkStrictly) && trigger === 'click') {
-        this.store.resetChecked();
-        const checked = node.setChecked(!node.isChecked());
-        [this.model] = checked;
-        this.$emit('change', this.model, ctx);
-        this.visible = false;
-      }
-      return expanded;
-    },
-    // 多选状态下变更值
-    handleChange(ctx: TypeContext) {
-      const { disabled } = this;
-      const { node } = ctx;
-      if (!node || disabled || node.disabled) {
-        return;
-      }
-      const checked = node.setChecked(!node.isChecked());
-      this.model = checked;
-      this.$emit('change', this.model, ctx);
-    },
-    // 多选状态下删除已选标签
-    handleRemoveTag(ctx: TypeContext) {
-      const { node } = ctx;
-      if (this.disabled) {
-        return false;
-      }
-      const checked = node.setChecked(!node.isChecked());
-      this.model = checked;
-      this.$emit('remove', ctx);
-      this.$emit('change', this.model, ctx);
-    },
-    handleClearSelect(e: Event) {
-      e.stopPropagation();
-      if (this.multiple) {
-        this.model = [];
-      } else {
-        this.model = '';
-      }
-      this.store.resetChecked();
-      this.store.resetExpanded();
-      this.$emit('change', this.model, { e });
-    },
-    renderPlaceholder(): VNode {
+    // 更新treeNodes
+    updatedTreeNodes() {
       const {
-        name,
-        showPlaceholder,
-        placeholder,
+        cascaderContext: { inputVal, treeStore, setTreeNodes },
       } = this;
-      return showPlaceholder
-        ? <span class={`${name}-placeholder`}>{placeholder}</span>
-        : null;
+      treeNodesEffect(inputVal, treeStore, setTreeNodes);
     },
-    renderSingleSelect(): VNode {
+    // 更新节点展开状态
+    updateExpend() {
       const {
-        name,
-        multiple,
-        showPlaceholder,
-        showFilter,
-        selectedSingle,
+        cascaderContext: { treeStore, value },
+        expend,
       } = this;
-      return !multiple && !showPlaceholder && !showFilter
-        ? <span title={selectedSingle} class={`${name}-content`}>
-          {selectedSingle}
-        </span> : null;
-    },
-    renderTag(): VNode[] {
-      const {
-        selectedMultiple,
-        size,
-        disabled,
-        handleRemoveTag,
-      } = this;
-      return selectedMultiple.map((item: TreeNode, index) => <tag
-        key={index}
-        size={size}
-        closable={!disabled && !item.disabled}
-        disabled={disabled}
-        onClose={(e: Event) => {
-          handleRemoveTag({ e, node: item });
-        }}
-      > {item.label}</tag>);
-    },
-    renderArrowIcon(): VNode {
-      return this.showArrow && !this.showLoading && (
-        <fake-arrow overlayClassName={`${name}-icon`} isActive={this.visible && !this.disabled}/>
-      );
-    },
-    renderCloseIcon(): VNode {
-      return this.showClose && (
-        <transition name={`${prefix}-cascader-close-icon-fade`} appear>
-          <div onClick={this.handleClearSelect}>
-            <IIconClose class={this.iconClass} size={this.size} />
-          </div>
-        </transition>
-      );
-    },
-    renderPanel(): VNode {
-      const {
-        name,
-        panels,
-        handleExpand,
-        handleChange,
-        getEmpty,
-      } = this;
-      const emptyContent = getEmpty();
-      return (
-        <div slot="content">
-          <div class={[`${name}-panel`, `${name}--normal`]}>
-            {panels && panels.length ? panels.map((panel: TreeNode[], index) => (<ul class={
-              [`${name}-menu`,
-                { [`${name}-menu__seperator`]: index !== panels.length - 1 }]
-            } key={index}>
-              {panel.map((node: TreeNode) => <item
-                  key={node.value}
-                  node={node}
-                  onClick={(ctx: TypeContext) => {
-                    handleExpand(ctx, 'click');
-                  }}
-                  onMouseenter={(ctx: TypeContext) => {
-                    handleExpand(ctx, 'hover');
-                  }}
-                  onChange={handleChange}
-                ></item>)}
-            </ul>)) : emptyContent}
-          </div>
-        </div>
-      );
-    },
-    getEmpty() {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
-      return useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty');
+      if (!treeStore) return;
+      treeStoreExpendEffect(treeStore, value, expend);
+      treeStore.replaceChecked(getTreeValue(value));
     },
   },
   render(): VNode {
     const {
-      name,
-      cascaderInnerClasses,
       visible,
-      popupProps,
-      renderPlaceholder,
-      renderSingleSelect,
-      renderTag,
-      renderPanel,
-      renderArrowIcon,
-      renderCloseIcon,
-      onVisibleChange,
+      trigger,
+      empty,
+      $attrs,
+      cascaderContext,
+      $scopedSlots,
+      placeholder,
     } = this;
+
+    const popupProps = this.popupProps as PopupProps;
+
+    const listeners: ListenersType = {};
+
+    EVENT_NAME_WITH_KEBAB.forEach((eventName) => {
+      listeners[getPropsApiByEvent(eventName)] = (params: any) => {
+        emitEvent(this, eventName, params);
+      };
+    });
+
     return (<div ref="cascader" >
-      <popup
+      <Popup
         ref="popup"
         overlayClassName={`${name}-dropdown`}
         placement="bottom-left"
         visible={visible}
         trigger={popupProps?.trigger || 'click'}
-        on={{ 'visible-change': onVisibleChange }}
         expandAnimation={true}
-        destroyOnClose
         {...popupProps}
+        content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} onChange={listeners.onChange}>{$scopedSlots}</panel>}
       >
-        <div class={cascaderInnerClasses}
-          onMouseenter={() => {
-            this.isHover = true;
-          }}
-          onMouseleave={() => {
-            this.isHover = false;
-          }}
-        >
-          {renderPlaceholder()}
-          {renderSingleSelect()}
-          {renderTag()}
-          {renderArrowIcon()}
-          {renderCloseIcon()}
-        </div >
-        {renderPanel()}
-      </popup >
+        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
+      </Popup>
     </div >);
   },
 });

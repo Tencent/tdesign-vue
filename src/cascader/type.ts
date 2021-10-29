@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-18 19:14:50
+ * updated at 2021-10-19 19:02:20
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -23,6 +25,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    * @default false
    */
   clearable?: boolean;
+  /**
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   */
+  collapsedItems?: TNode;
   /**
    * 是否禁用组件
    * @default false
@@ -56,6 +62,11 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    * @default 0
    */
   max?: number;
+  /**
+   * 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠
+   * @default 0
+   */
+  minCollapsedNum?: number;
   /**
    * 是否允许多选
    * @default false
@@ -121,17 +132,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    * 多选模式下，选中数据被移除时触发
    */
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
-}
+};
 
-export interface KeysType {
-  value?: string;
-  label?: string;
-  children?: string;
-}
+export interface KeysType { value?: string; label?: string; children?: string };
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
-export interface RemoveContext<T> {
-  value: CascaderValue<T>;
-  node: TreeNodeModel<T>
-}
+export interface RemoveContext<T> { value: CascaderValue<T>; node: TreeNodeModel<T> };

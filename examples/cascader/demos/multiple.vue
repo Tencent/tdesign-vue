@@ -1,32 +1,11 @@
 <template>
   <div>
-    <t-cascader
-      class="t-demo-cascader"
-      :options="options"
-      v-model="value"
-      placeholder='请选择'
-      multiple
-      clearable
-      size="small"
-    />
-    <t-cascader
-      class="t-demo-cascader"
-      :options="options"
-      v-model="value"
-      multiple
-      clearable
-      size="medium"
-      placeholder='请选择'
-    />
-    <t-cascader
-      class="t-demo-cascader"
-      :options="options"
-      v-model="value"
-      placeholder='请选择'
-      multiple
-      clearable
-      size="large"
-    />
+    <!-- 非受控用法 -->
+    <t-cascader class="t-demo-cascader" :options="options" :defaultValue="value" multiple clearable size="small" />
+    <!-- 受控+语法糖用法 -->
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable :minCollapsedNum="2"/>
+    <!-- 受控用法 -->
+    <t-cascader class="t-demo-cascader" :options="options" :value="value" @change="handleValueChange" multiple clearable size="large" :minCollapsedNum="2"/>
   </div>
 </template>
 
@@ -71,9 +50,17 @@ export default {
       value: ['1.1'],
     };
   },
+  methods: {
+    handleValueChange(e) {
+      this.value = e;
+    },
+  },
 };
 </script>
 <style scoped>
+.t-demo-cascader-title {
+  margin: 10px 0;
+}
 .t-demo-cascader + .t-demo-cascader {
   margin-top: 16px;
 }

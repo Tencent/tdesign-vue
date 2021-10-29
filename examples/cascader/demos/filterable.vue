@@ -1,6 +1,7 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" filterable clearable placeholder='请选择'></t-cascader>
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value2" filterable clearable multiple placeholder='请选择' :minCollapsedNum="2"></t-cascader>
   </div>
 </template>
 
@@ -36,17 +37,18 @@ export default {
               value: '2.1',
             },
             {
-              label: '南山区',
+              label: '南山',
               value: '2.2',
             },
             {
-              label: '福田区',
+              label: '福田',
               value: '2.3',
             },
           ],
         },
       ],
       value: '',
+      value2: ['1.1'],
     };
   },
 };

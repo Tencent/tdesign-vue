@@ -61,7 +61,9 @@ describe('Cascader', () => {
             size="medium"></Cascader>;
         },
       });
-      expect(wrapper.find('.t-tag').exists()).toBe(true);
+      setTimeout(() => {
+        expect(wrapper.find('.t-tag').exists()).toBe(true);
+      });
     });
 
     it(':disabled', () => {

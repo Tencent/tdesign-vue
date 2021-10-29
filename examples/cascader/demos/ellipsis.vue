@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" clearable placeholder='请选择'></t-cascader>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     return {
       options: [
         {
-          label: '上海',
+          label: '上海很远很远很远很远很远的地方',
           value: '1',
           children: [
             {
@@ -22,7 +22,7 @@ export default {
               value: '1.2',
             },
             {
-              label: '浦东新区',
+              label: '上海很远很远很远很远很远的地方',
               value: '1.3',
             },
           ],
@@ -36,17 +36,13 @@ export default {
               value: '2.1',
             },
             {
-              label: '南山区',
+              label: '南山很远很远很远很远很远的地方',
               value: '2.2',
-            },
-            {
-              label: '福田区',
-              value: '2.3',
             },
           ],
         },
       ],
-      value: '',
+      value: '1.1',
     };
   },
 };

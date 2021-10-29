@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable :max="3"/>
   </div>
 </template>
 
@@ -39,14 +39,10 @@ export default {
               label: '南山区',
               value: '2.2',
             },
-            {
-              label: '福田区',
-              value: '2.3',
-            },
           ],
         },
       ],
-      value: '',
+      value: [],
     };
   },
 };
