@@ -1,12 +1,12 @@
 import { PropType } from 'vue/types/umd';
 import isFunction from 'lodash/isFunction';
+import { ChevronDownIcon as TIconChevronDown } from '@tencent/tdesign-icons-vue';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 import { SortType } from '../type';
 import { prefix } from '../../config';
 import Tooltip from '../../tooltip';
 import { Styles } from '../../common';
-import TIconChevronDown from '../../icon/chevron-down';
 
 const tooltips = {
   asc: '点击升序',

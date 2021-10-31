@@ -35,7 +35,7 @@
     </div>
     <div class="tag-block editable">
       <t-tag v-if="!inputVisible" @click="handleClickAdd">
-        <t-icon-add />
+        <add-icon />
         添加标签
       </t-tag>
       <t-input
@@ -51,17 +51,14 @@
 </template>
 
 <script>
-/* eslint-disable import/no-extraneous-dependencies */
-import TIconAdd from '@tencent/tdesign-vue/lib/icon/add';
-import TIconDiscount from '@tencent/tdesign-vue/lib/icon/discount';
+import { AddIcon, DiscountIcon } from '@tencent/tdesign-icons-vue';
 import Vue from 'vue';
 
 export default {
   components: {
+    AddIcon,
     // eslint-disable-next-line vue/no-unused-components
-    TIconAdd,
-    // eslint-disable-next-line vue/no-unused-components
-    TIconDiscount,
+    DiscountIcon,
   },
   data() {
     return {
@@ -76,7 +73,7 @@ export default {
         {
           name: '可删除标签可删除标签',
           type: 'default',
-          icon: () => <t-icon-discount />,
+          icon: () => <discount-icon />,
           showClose: true,
           maxWidth: 100,
         },

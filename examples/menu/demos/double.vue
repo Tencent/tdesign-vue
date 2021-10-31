@@ -21,10 +21,10 @@
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
       <template #operations>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="mail"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="ellipsis"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis"/></a>
       </template>
     </t-head-menu>
     <t-head-menu defaultValue="1-1" theme="dark" :expanded="expanded2"  style="margin-top: 24px">
@@ -48,10 +48,10 @@
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
       <template #operations>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="mail"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="ellipsis"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis"/></a>
       </template>
     </t-head-menu>
   </div>
@@ -59,8 +59,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Icon } from '@tencent/tdesign-icons-vue';
 
 export default Vue.extend({
+  components: {
+    Icon,
+  },
   data() {
     return {
       expanded: ['1'],

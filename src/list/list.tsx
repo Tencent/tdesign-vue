@@ -1,9 +1,9 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { LoadingIcon as TIconLoading } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import TIconLoading from '../icon/loading';
 import CLASSNAMES from '../utils/classnames';
 import { LOAD_MORE, LOADING } from './const';
 import { ClassName } from '../common';

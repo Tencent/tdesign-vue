@@ -7,16 +7,21 @@
     <t-alert theme="warning" :icon="warningIcon" message="这是一条警示信息(以function形式自定义icon)" />
     <t-alert theme="error" message="高危操作/出错信息提示(以slot形式自定义icon)">
       <template #icon>
-        <t-icon name="error-circle-filled" />
+        <icon name="error-circle-filled" />
       </template>
     </t-alert>
   </div>
 </template>
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
-      warningIcon: () => <t-icon name="error-circle-filled" />,
+      warningIcon: () => <icon name="error-circle-filled" />,
     };
   },
 };

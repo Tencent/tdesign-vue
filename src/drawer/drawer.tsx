@@ -1,5 +1,5 @@
+import { CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import TIconClose from '../icon/close';
 import { Button as TButton } from '../button';
 import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';

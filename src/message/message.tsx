@@ -1,11 +1,13 @@
 import Vue from 'vue';
+import {
+  InfoCircleFilledIcon as TIconInfoCircleFilled,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+  HelpCircleFilledIcon as TIconHelpFill,
+  LoadingIcon as TIconLoadingFill,
+  CloseIcon as TIconClose,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import TIconInfoCircleFilled from '../icon/info-circle-filled';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import TIconHelpFill from '../icon/help-circle-filled';
-import TIconLoadingFill from '../icon/loading';
-import TIconClose from '../icon/close';
 import { THEME_LIST } from './const';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';

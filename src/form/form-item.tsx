@@ -4,6 +4,11 @@ import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import isNil from 'lodash/isNil';
+import {
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+  CloseCircleFilledIcon as TIconCloseCircleFilled,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
@@ -13,9 +18,6 @@ import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import TIconCloseCircleFilled from '../icon/close-circle-filled';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 

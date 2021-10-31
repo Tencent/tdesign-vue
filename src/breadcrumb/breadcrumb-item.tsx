@@ -1,6 +1,6 @@
 import Vue from 'vue';
+import { ChevronRightIcon as IconChevronRight } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import IconChevronRight from '../icon/chevron-right';
 import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';
 import { isNodeOverflow } from '../utils/dom';

@@ -1,14 +1,16 @@
 import Vue, { VNode, PropType } from 'vue';
+import {
+  LoadingIcon as TIconLoading,
+  TimeFilledIcon as TIconTimeFilled,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+  DeleteIcon as TIconDelete,
+  BrowseIcon as TIconBrowse,
+} from '@tencent/tdesign-icons-vue';
 import { UploadFile } from './type';
 import TButton from '../button';
 import { returnFileSize, abridgeName, UPLOAD_NAME } from './util';
 import { FlowRemoveContext } from './interface';
-import TIconLoading from '../icon/loading';
-import TIconTimeFilled from '../icon/time-filled';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import TIconDelete from '../icon/delete';
-import TIconBrowse from '../icon/browse';
 import props from './props';
 
 export default Vue.extend({

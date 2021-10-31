@@ -4,18 +4,18 @@
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
           更多
-          <t-icon-chevron-down size="16" />
+          <chevron-down-icon size="16" />
         </span>
       </t-button>
     </t-dropdown>
   </div>
 </template>
 <script>
-import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
+import { ChevronDownIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
   components: {
-    TIconChevronDown,
+    ChevronDownIcon,
   },
   data() {
     return {

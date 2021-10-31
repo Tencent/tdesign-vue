@@ -1,11 +1,10 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import {
+  InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
-import IconPromptFill from '../icon/info-circle-filled';
-import IconSuccessFill from '../icon/check-circle-filled';
-import IconWarningFill from '../icon/error-circle-filled';
-import IconClose from '../icon/close';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
@@ -53,10 +52,10 @@ export default Vue.extend({
         iconContent = this.$scopedSlots.icon && this.$scopedSlots.icon(null)[0];
       } else {
         const component = ({
-          info: IconPromptFill,
-          success: IconSuccessFill,
-          warning: IconWarningFill,
-          error: IconWarningFill,
+          info: InfoCircleFilledIcon,
+          success: CheckCircleFilledIcon,
+          warning: ErrorCircleFilledIcon,
+          error: ErrorCircleFilledIcon,
         })[this.theme];
         iconContent = <component></component>;
       }
@@ -70,7 +69,7 @@ export default Vue.extend({
       } else if (typeof this.close === 'function') {
         closeContent = this.close(this.$createElement);
       } else if (this.close === true) {
-        closeContent = <IconClose></IconClose>;
+        closeContent = <CloseIcon/>;
       } else {
         closeContent = this.$scopedSlots.close && this.$scopedSlots.close(null)[0];
       }

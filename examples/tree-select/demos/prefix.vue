@@ -5,12 +5,17 @@
       :data="options"
       placeholder="请输入"
     >
-      <t-icon slot="prefixIcon" name="user" />
+      <icon slot="prefixIcon" name="user" />
     </t-tree-select>
   </div>
 </template>
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       value: '',

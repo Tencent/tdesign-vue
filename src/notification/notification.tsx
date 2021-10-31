@@ -1,8 +1,10 @@
 import Vue, { CreateElement } from 'vue';
+import {
+  InfoCircleFilledIcon as TIconInfoCircleFilled,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  CloseIcon as TIconClose,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import TIconInfoCircleFilled from '../icon/info-circle-filled';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconClose from '../icon/close';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { TNodeReturnValue } from '../common';

@@ -56,7 +56,7 @@
       :onClose="close5"
     >
       <div slot="header">
-        <t-icon name="check-circle-filled" color="orange" />
+        <icon name="check-circle-filled" color="orange" />
         <span style="vertical-align: middle;">对话框标题</span>
       </div>
     </t-dialog>
@@ -65,8 +65,12 @@
 </template>
 <script>
 import Vue from 'vue';
+import { Icon } from '@tencent/tdesign-icons-vue';
 
 export default Vue.extend({
+  components: {
+    Icon,
+  },
   data() {
     return {
       visible1: false,

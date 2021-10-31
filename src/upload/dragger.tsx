@@ -1,9 +1,11 @@
 import Vue, { PropType, VNode } from 'vue';
+import {
+  LoadingIcon as TIconLoading,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
-import TIconLoading from '../icon/loading';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import TButton from '../button';
 import {
   returnFileSize, getCurrentDate, abridgeName, UPLOAD_NAME,

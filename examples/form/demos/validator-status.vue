@@ -46,10 +46,10 @@
           slot="statusIcon"
           variant="dashed"
         >
-          <t-icon name='add' size="16px" style="color: #0004"/>
+          <icon name='add' size="16px" style="color: #0004"/>
         </t-button>
         <t-button v-if="item.id > 0" @click="removeItem(item, index)" slot="statusIcon" variant="dashed">
-          <t-icon name='remove' size="16px" style="color: #0004"/>
+          <icon name='remove' size="16px" style="color: #0004"/>
         </t-button>
       </t-form-item>
       <t-form-item label="帮助" help="自定义帮助icon" :statusIcon="getStatusIcon" name='help'>
@@ -64,6 +64,7 @@
   </div>
 </template>
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
 
 const INITIAL_DATA = {
   fail: '',
@@ -77,6 +78,9 @@ const INITIAL_DATA = {
 };
 
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       formData: { ...INITIAL_DATA },
@@ -130,7 +134,7 @@ export default {
     },
     getStatusIcon(h) {
       console.log(h);
-      return <t-icon name='help-circle' size="24px" style="color: #0006"/>;
+      return <icon name='help-circle' size="24px" style="color: #0006"/>;
     },
   },
 };

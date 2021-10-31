@@ -54,6 +54,7 @@ const data = [
 ];
 
 export default {
+
   data() {
     return {
       data,

@@ -8,24 +8,23 @@
 </template>
 
 <script>
-import TIconLogin from '@tencent/tdesign-vue/lib/icon/login';
-import TIconCart from '@tencent/tdesign-vue/lib/icon/cart';
-import TIconWallet from '@tencent/tdesign-vue/lib/icon/wallet';
-import TIconSuccess from '@tencent/tdesign-vue/lib/icon/check-circle';
+import {
+  LoginIcon, CartIcon, WalletIcon, CheckCircleIcon,
+} from '@tencent/tdesign-icons-vue';
 
 export default {
   methods: {
     renderLoginIcon() {
-      return <TIconLogin />;
+      return <LoginIcon />;
     },
     renderCartIcon() {
-      return <TIconCart />;
+      return <CartIcon />;
     },
     renderWalletIcon() {
-      return <TIconWallet />;
+      return <WalletIcon />;
     },
     renderSuccessIcon() {
-      return <TIconSuccess />;
+      return <CheckCircleIcon />;
     },
   },
 };

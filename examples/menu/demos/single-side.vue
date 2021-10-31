@@ -21,55 +21,55 @@
       </template>
       <t-menu-item value="dashboard">
         <template #icon>
-          <t-icon name="dashboard"/>
+          <icon name="dashboard"/>
         </template>
         仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
         <template #icon>
-          <t-icon name="resources-list"/>
+          <icon name="resources-list"/>
         </template>
         资源列表
       </t-menu-item>
       <t-menu-item value="root">
         <template #icon>
-          <t-icon name="root-list"/>
+          <icon name="root-list"/>
         </template>
         根目录
       </t-menu-item>
       <t-menu-item value="control-platform">
         <template #icon>
-          <t-icon name="control-platform"/>
+          <icon name="control-platform"/>
         </template>
         调度平台
       </t-menu-item>
       <t-menu-item value="precise-monitor">
         <template #icon>
-          <t-icon name="precise-monitor"/>
+          <icon name="precise-monitor"/>
         </template>
         精准监控
       </t-menu-item>
       <t-menu-item value="mail">
         <template #icon>
-          <t-icon name="mail"/>
+          <icon name="mail"/>
         </template>
         消息区
       </t-menu-item>
       <t-menu-item value="user-circle">
         <template #icon>
-          <t-icon name="user-circle"/>
+          <icon name="user-circle"/>
         </template>
         个人中心
       </t-menu-item>
       <t-menu-item value="play-circle">
         <template #icon>
-          <t-icon name="play-circle"/>
+          <icon name="play-circle"/>
         </template>
         视频区
       </t-menu-item>
       <t-menu-item value="edit1">
         <template #icon>
-          <t-icon name="edit-1"/>
+          <icon name="edit-1"/>
         </template>
         资源编辑
       </t-menu-item>
@@ -79,55 +79,55 @@
       <img slot="logo" width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       <t-menu-item value="dashboard">
         <template #icon>
-          <t-icon name="dashboard"/>
+          <icon name="dashboard"/>
         </template>
         仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
         <template #icon>
-          <t-icon name="resources-list"/>
+          <icon name="resources-list"/>
         </template>
         资源列表
       </t-menu-item>
       <t-menu-item value="root">
         <template #icon>
-          <t-icon name="root-list"/>
+          <icon name="root-list"/>
         </template>
         根目录
       </t-menu-item>
       <t-menu-item value="control-platform">
         <template #icon>
-          <t-icon name="control-platform"/>
+          <icon name="control-platform"/>
         </template>
         调度平台
       </t-menu-item>
       <t-menu-item value="precise-monitor">
         <template #icon>
-          <t-icon name="precise-monitor"/>
+          <icon name="precise-monitor"/>
         </template>
         精准监控
       </t-menu-item>
       <t-menu-item value="mail">
         <template #icon>
-          <t-icon name="mail"/>
+          <icon name="mail"/>
         </template>
         消息区
       </t-menu-item>
       <t-menu-item value="user-circle">
         <template #icon>
-          <t-icon name="user-circle"/>
+          <icon name="user-circle"/>
         </template>
         个人中心
       </t-menu-item>
       <t-menu-item value="play-circle">
         <template #icon>
-          <t-icon name="play-circle"/>
+          <icon name="play-circle"/>
         </template>
         视频区
       </t-menu-item>
       <t-menu-item value="edit1">
         <template #icon>
-          <t-icon name="edit-1"/>
+          <icon name="edit-1"/>
         </template>
         资源编辑
       </t-menu-item>
@@ -137,7 +137,12 @@
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   methods: {
     changeHandler(active) {
       console.log('change', active);

@@ -1,16 +1,18 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import {
+  CloseCircleFilledIcon as IconClearCircleFilled,
+  CheckCircleFilledIcon as IconSuccessFill,
+  ErrorCircleFilledIcon as IconWarningFill,
+  ErrorIcon as IconWarningLine,
+  CloseIcon as IconsClearLine,
+  CheckIcon as IconSuccessLine,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
 import {
   PRO_THEME, CIRCLE_SIZE, CIRCLE_SIZE_PX, STATUS_ICON, CIRCLE_FONT_SIZE_RATIO,
 } from './constants';
-import IconsClearCircleFilled from '../icon/close-circle-filled';
-import IconSuccessFill from '../icon/check-circle-filled';
-import IconWarningFill from '../icon/error-circle-filled';
-import IconsClearLine from '../icon/close';
-import IconSuccessLine from '../icon/check';
-import IconWarningLine from '../icon/error';
 import props from './props';
 // import { RenderTNodeTemplate } from '../utils/render-tnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -140,7 +142,7 @@ export default Vue.extend({
       const NORMAL_ICONS = {
         success: IconSuccessFill,
         warning: IconWarningFill,
-        error: IconsClearCircleFilled,
+        error: IconClearCircleFilled,
       };
       return this.theme === PRO_THEME.CIRCLE ? CIRCLE_ICONS : NORMAL_ICONS;
     },

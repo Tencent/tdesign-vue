@@ -16,18 +16,22 @@
       :load="load"
     >
       <template #icon="{node}">
-        <t-icon v-if="node.getChildren() && !node.expanded" name="caret-right" />
-        <t-icon v-else-if="node.getChildren() && node.expanded && node.loading" name="loading" />
-        <t-icon v-else-if="node.getChildren() && node.expanded" name="caret-down" />
-        <t-icon v-else name="attach" />
+        <icon v-if="node.getChildren() && !node.expanded" name="caret-right" />
+        <icon v-else-if="node.getChildren() && node.expanded && node.loading" name="loading" />
+        <icon v-else-if="node.getChildren() && node.expanded" name="caret-down" />
+        <icon v-else name="attach" />
       </template>
     </t-tree>
   </div>
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
 
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       items: [{
@@ -52,7 +56,7 @@ export default {
           name = 'folder';
         }
       }
-      return createElement('t-icon', {
+      return createElement('icon', {
         props: {
           name,
         },

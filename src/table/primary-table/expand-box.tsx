@@ -1,7 +1,8 @@
 import isFunction from 'lodash/isFunction';
+import { ChevronDownCircleIcon as TIconChevronDown } from '@tencent/tdesign-icons-vue';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
-import TIconChevronDown from '../../icon/chevron-down-circle';
+
 import primaryTableProps from '../primary-table-props';
 import { prefix } from '../../config';
 import { Styles } from '../../common';

@@ -25,6 +25,7 @@ module.exports = {
     '^@Popup/(.*)$': '<rootDir>/src/popup/index.ts',
     '^@Tree/(.*)$': '<rootDir>/src/tree/index.ts',
     '^vue$': '<rootDir>/node_modules/vue/dist/vue.js',
+    '^@tencent/tdesign-icons-vue$': '<rootDir>/node_modules/@tencent/tdesign-icons-vue/dist/index.js',
   },
   modulePathIgnorePatterns: ['<rootDir>/test/unit/coverage/'],
   transform: {

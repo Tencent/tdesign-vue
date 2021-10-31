@@ -7,10 +7,10 @@
       <t-switch size="large">
         <template v-slot:label="slotProps">
           <template v-if="slotProps.value">
-            <t-icon-check />
+            <check-icon />
           </template>
           <template v-else>
-            <t-icon-close />
+            <close-icon />
           </template>
         </template>
       </t-switch>
@@ -34,11 +34,10 @@
 </template>
 <script>
 
-import TIconClose from '@tencent/tdesign-vue/lib/icon/close';
-import TIconCheck from '@tencent/tdesign-vue/lib/icon/check';
+import { CloseIcon, CheckIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
-  components: { TIconClose, TIconCheck },
+  components: { CloseIcon, CheckIcon },
   data() {
     return {
       checked: true,
@@ -52,13 +51,13 @@ export default {
       console.log(val);
     },
     renderActiveContent() {
-      return (<t-icon-check />);
+      return (<check-icon />);
     },
     renderInactiveContent() {
-      return (<t-icon-close />);
+      return (<close-icon />);
     },
     renderContent(h, data) {
-      return data.value ? (<TIconCheck />) : (<TIconClose />);
+      return data.value ? (<check-icon />) : (<close-icon />);
     },
   },
 };

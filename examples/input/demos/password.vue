@@ -1,22 +1,22 @@
 <template>
   <div class="tdesign-demo-block-column" style="max-width: 500px">
     <t-input type="password" default-value="520 TDesign">
-      <t-icon-lock-on slot="prefix-icon"></t-icon-lock-on>
+      <lock-on-icon slot="prefix-icon"></lock-on-icon>
     </t-input>
     <!-- 使用 function 的形式定义 icon -->
     <t-input type="password" default-value="520 TDesign" :prefix-icon="renderPrefixIcon" />
   </div>
 </template>
 <script>
-import TIconLockOn from '@tencent/tdesign-vue/lib/icon/lock-on';
+import { LockOnIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
   components: {
-    TIconLockOn,
+    LockOnIcon,
   },
   methods: {
     renderPrefixIcon() {
-      return <TIconLockOn></TIconLockOn>;
+      return <LockOnIcon></LockOnIcon>;
     },
   },
 };

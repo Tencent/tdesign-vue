@@ -3,15 +3,17 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
+import {
+  ChevronDownIcon as TIconChevronDown,
+  CloseCircleFilledIcon as TIconClose,
+  LoadingIcon as TIconLoading,
+} from '@tencent/tdesign-icons-vue';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import TIconChevronDown from '../icon/chevron-down';
-import TIconClose from '../icon/close-circle-filled';
-import TIconLoading from '../icon/loading';
 import TInput from '../input/index';
 import Tag from '../tag/index';
 import FakeArrow from '../common-components/fake-arrow';

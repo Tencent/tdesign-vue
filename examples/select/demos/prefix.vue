@@ -7,7 +7,7 @@
       clearable
       placeholder="-请选择-"
     >
-      <t-icon
+      <icon
         name="browse"
         slot="prefixIcon"
       />
@@ -16,7 +16,12 @@
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       options: [{

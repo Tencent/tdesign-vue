@@ -1,5 +1,4 @@
 import { mount } from '@vue/test-utils';
-import Icon from '../../../src/icon/file-copy';
 
 jest.resetModules();
 let text = '';
@@ -15,7 +14,8 @@ describe('AnchorTarget', () => {
         id: 'test-target',
       },
     });
-    const a = wrapper.findComponent(Icon);
+
+    const a = wrapper.find('.t-icon-file-copy');
     a.trigger('click');
     expect(text).toEqual(`${location.href}#test-target`);
   });

@@ -1,9 +1,9 @@
 <template>
   <div class="box">
-    <t-menu theme="light" defaultValue="3-2" expandMutex :expanded=expanded height="550px" :collapsed="collapsed">
+    <t-menu theme="light" defaultValue="3-2" expandMutex :expanded="expanded" height="550px" :collapsed="collapsed">
       <t-submenu value="3">
         <template #icon>
-          <t-icon name="mail" />
+          <icon name="mail" />
         </template>
         <template #title>
           <span>消息区</span>
@@ -24,13 +24,13 @@
       </t-submenu>
       <t-menu-item value="user-circle">
         <template #icon>
-          <t-icon name="user-circle"/>
+          <icon name="user-circle"/>
         </template>
         个人中心
       </t-menu-item>
       <t-submenu value="4">
         <template #icon>
-          <t-icon name="play-circle" />
+          <icon name="play-circle" />
         </template>
         <template #title>
           <span>视频区</span>
@@ -41,12 +41,12 @@
       </t-submenu>
       <t-menu-item value="edit1">
         <template #icon>
-          <t-icon name="edit-1"/>
+          <icon name="edit-1"/>
         </template>
         资源编辑
       </t-menu-item>
       <template #operations>
-        <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+        <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
       </template>
     </t-menu>
 
@@ -60,25 +60,25 @@
     >
       <t-menu-item value="item1">
         <template #icon>
-          <t-icon name="dashboard"/>
+          <icon name="dashboard"/>
         </template>
         仪表盘
       </t-menu-item>
       <t-menu-item value="resource">
         <template #icon>
-          <t-icon name="resources-list"/>
+          <icon name="resources-list"/>
         </template>
         资源列表
       </t-menu-item>
       <t-menu-item value="root">
         <template #icon>
-          <t-icon name="root-list"/>
+          <icon name="root-list"/>
         </template>
         根目录
       </t-menu-item>
       <t-submenu value="2">
         <template #icon>
-          <t-icon name="control-platform" />
+          <icon name="control-platform" />
         </template>
         <template #title>
           <span>调度平台</span>
@@ -89,13 +89,13 @@
       </t-submenu>
       <t-menu-item value="precise-monitor">
         <template #icon>
-          <t-icon name="precise-monitor"/>
+          <icon name="precise-monitor"/>
         </template>
         精准监控
       </t-menu-item>
       <t-submenu value="3">
         <template #icon>
-          <t-icon name="mail" />
+          <icon name="mail" />
         </template>
         <template #title>
           <span>消息区</span>
@@ -106,13 +106,13 @@
       </t-submenu>
       <t-menu-item value="user-circle">
         <template #icon>
-          <t-icon name="user-circle"/>
+          <icon name="user-circle"/>
         </template>
         个人中心
       </t-menu-item>
       <t-submenu value="4">
         <template #icon>
-          <t-icon name="play-circle" />
+          <icon name="play-circle" />
         </template>
         <template #title>
           <span>视频区</span>
@@ -123,19 +123,24 @@
       </t-submenu>
       <t-menu-item value="edit1">
         <template #icon>
-          <t-icon name="edit-1"/>
+          <icon name="edit-1"/>
         </template>
         资源编辑
       </t-menu-item>
       <template #operations>
-        <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed2" />
+        <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed2" />
       </template>
     </t-menu>
   </div>
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       expanded: ['2', '3'],

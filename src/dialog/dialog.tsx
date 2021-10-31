@@ -1,9 +1,11 @@
+import {
+  CloseIcon as TIconClose,
+  InfoCircleFilledIcon as TIconInfoCircleFilled,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import TIconClose from '../icon/close';
 import TButton, { ButtonProps } from '../button';
-import TIconInfoCircleFilled from '../icon/info-circle-filled';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';

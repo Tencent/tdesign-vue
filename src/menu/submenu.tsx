@@ -2,10 +2,10 @@ import Vue from 'vue';
 import {
   defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance,
 } from '@vue/composition-api';
+import { ChevronRightIcon as TIconChevronRight } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import TIconChevronRight from '../icon/chevron-right';
 import FakeArrow from '../common-components/fake-arrow';
 import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';

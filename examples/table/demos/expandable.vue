@@ -43,8 +43,7 @@
 </template>
 
 <script>
-import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
-import TIconChevronDownCircle from '@tencent/tdesign-vue/lib/icon/chevron-down-circle';
+import { ChevronDownIcon, ChevronDownCircleIcon } from '@tencent/tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
@@ -91,7 +90,7 @@ export default {
       ),
       globalLocale: {
         table: {
-          expandIcon: (h) => h && <TIconChevronDown />,
+          expandIcon: (h) => h && <ChevronDownIcon />,
         },
       },
     };
@@ -110,9 +109,9 @@ export default {
           // 第一行不显示展开图标
           if (index === 0) return false;
           // 第三行，使用自定义展开图标
-          if (row.id === 3) return <TIconChevronDown />;
+          if (row.id === 3) return <ChevronDownIcon />;
           // 其他行，使用表格同款展开图标
-          return <TIconChevronDownCircle />;
+          return <ChevronDownCircleIcon />;
         };
       }
     },

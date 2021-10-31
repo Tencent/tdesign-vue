@@ -1,9 +1,11 @@
 import Vue, { PropType } from 'vue';
+import {
+  CloseCircleFilledIcon as TIconClearCircleFilled,
+  LoadingIcon as TIconLoading,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+  CheckCircleFilledIcon as TIconCheckCircleFilled,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
-import TIconClearCircleFilled from '../icon/close-circle-filled';
-import TIconLoading from '../icon/loading';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
-import TIconCheckCircleFilled from '../icon/check-circle-filled';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
 import { abridgeName, UPLOAD_NAME } from './util';

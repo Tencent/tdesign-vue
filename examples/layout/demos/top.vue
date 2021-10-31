@@ -15,8 +15,8 @@
           <t-menu-item value="item3">菜单内容二</t-menu-item>
           <t-menu-item value="item4" :disabled="true">菜单内容三</t-menu-item>
           <template slot="options">
-            <span><t-icon name="search"/></span>
-            <span><t-icon name="home"/></span>
+            <span><icon name="search"/></span>
+            <span><icon name="home"/></span>
           </template>
         </t-head-menu>
       </t-header>
@@ -29,3 +29,13 @@
     </t-layout>
   </div>
 </template>
+
+<script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
+export default {
+  components: {
+    Icon,
+  },
+};
+</script>

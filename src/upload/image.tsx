@@ -1,11 +1,13 @@
 import Vue, { PropType } from 'vue';
+import {
+  AddIcon as TIconAdd,
+  DeleteIcon as IIconDelete,
+  UploadIcon as IIconUpload,
+  BrowseIcon as TIconBrowse,
+  LoadingIcon as TIconLoading,
+} from '@tencent/tdesign-icons-vue';
 import { UploadFile } from './type';
 import { UploadRemoveOptions } from './interface';
-import TIconAdd from '../icon/add';
-import IIconDelete from '../icon/delete';
-import IIconUpload from '../icon/upload';
-import TIconBrowse from '../icon/browse';
-import TIconLoading from '../icon/loading';
 import { UPLOAD_NAME } from './util';
 import props from './props';
 

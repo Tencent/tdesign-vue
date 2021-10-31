@@ -1,16 +1,16 @@
 <template>
   <div>
     <t-dropdown :options="options" @click="clickHandler">
-      <t-button theme="default" variant="outline"><t-icon-ellipsis slot="icon" size="16"/></t-button>
+      <t-button theme="default" variant="outline"><ellipsis-icon slot="icon" size="16"/></t-button>
     </t-dropdown>
   </div>
 </template>
 <script>
-import TIconEllipsis from '@tencent/tdesign-vue/lib/icon/ellipsis';
+import { EllipsisIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
   components: {
-    TIconEllipsis,
+    EllipsisIcon,
   },
   data() {
     return {

@@ -1,7 +1,7 @@
 import Vue, { PropType, VNode } from 'vue';
+import { SearchIcon as TIconSearch } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
-import TIconSearch from '../../icon/search';
 import TInput from '../../input';
 
 const name = `${prefix}-transfer-search`;

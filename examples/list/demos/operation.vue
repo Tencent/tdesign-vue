@@ -29,15 +29,15 @@
       <t-list-item>
         <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
-          <t-button variant="text" shape="square"><t-icon-edit /></t-button>
-          <t-button variant="text" shape="square"><t-icon-download /></t-button>
+          <t-button variant="text" shape="square"><edit-icon /></t-button>
+          <t-button variant="text" shape="square"><download-icon /></t-button>
         </template>
       </t-list-item>
       <t-list-item>
         <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
-          <t-button variant="text" shape="square"><t-icon-edit /></t-button>
-          <t-button variant="text" shape="square"><t-icon-download /></t-button>
+          <t-button variant="text" shape="square"><edit-icon /></t-button>
+          <t-button variant="text" shape="square"><download-icon /></t-button>
         </template>
       </t-list-item>
     </t-list>
@@ -45,11 +45,10 @@
 </template>
 
 <script>
-import TIconEdit from '@tencent/tdesign-vue/lib/icon/edit';
-import TIconDownload from '@tencent/tdesign-vue/lib/icon/download';
+import { EditIcon, DownloadIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
-  components: { TIconEdit, TIconDownload },
+  components: { EditIcon, DownloadIcon },
   data() {
     return {
       imageUrl: 'https://tdesign.gtimg.com/list-icon.png',

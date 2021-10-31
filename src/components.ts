@@ -1,5 +1,4 @@
 export * from './locale';
-export * from './icon';
 export * from './layout';
 export * from './grid';
 export * from './loading';

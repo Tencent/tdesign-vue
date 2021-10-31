@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import TIconDiscount from '@tencent/tdesign-vue/lib/icon/discount';
+import { DiscountIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
   methods: {
     renderDiscountIcon() {
-      return <TIconDiscount />;
+      return <DiscountIcon />;
     },
   },
 };

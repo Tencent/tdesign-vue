@@ -1,10 +1,12 @@
 import Vue, { VNode } from 'vue';
+import {
+  AddIcon as Add,
+  RemoveIcon as Remove,
+  ChevronDownIcon as ChevronDown,
+  ChevronUpIcon as ChevronUp,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import TButton from '../button';
-import Add from '../icon/add';
-import Remove from '../icon/remove';
-import ChevronDown from '../icon/chevron-down';
-import ChevronUp from '../icon/chevron-up';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource } from './type';

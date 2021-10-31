@@ -6,7 +6,7 @@
     <t-menu-group title="Classification A">
       <t-menu-item value="item1">
         <template #icon>
-          <t-icon name="dashboard"/>
+          <icon name="dashboard"/>
         </template>
         仪表盘
       </t-menu-item>
@@ -19,13 +19,18 @@
       <t-menu-item value="item4" :disabled="true">精准监控</t-menu-item>
     </t-menu-group>
     <template #operations>
-      <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+      <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
     </template>
   </t-menu>
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       collapsed: false,

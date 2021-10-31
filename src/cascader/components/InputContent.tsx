@@ -1,5 +1,6 @@
 import { PropType } from 'vue';
 import isFunction from 'lodash/isFunction';
+import { CloseCircleFilledIcon } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../../config';
 import CLASSNAMES from '../../utils/classnames';
 import getLocalRecevierMixins from '../../locale/local-receiver';
@@ -8,7 +9,6 @@ import mixins from '../../utils/mixins';
 // component
 import Tag from '../../tag';
 import Input, { InputValue } from '../../input';
-import CloseCircleFilledIcon from '../../icon/close-circle-filled';
 import FakeArrow from '../../common-components/fake-arrow';
 
 // common logic

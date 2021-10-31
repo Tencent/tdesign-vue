@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
+import { CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
 import CLASSNAMES from '../utils/classnames';
 import { prefix } from '../config';
-import TIconClose from '../icon/close';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TdTagProps } from './type';

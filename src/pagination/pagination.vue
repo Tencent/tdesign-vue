@@ -82,14 +82,16 @@
 </template>
 
 <script lang="ts">
+import {
+  ChevronLeftIcon as TIconChevronLeft,
+  ChevronRightIcon as TIconChevronRight,
+  ChevronRightDoubleIcon as TIconChevronRightDouble,
+  ChevronLeftDoubleIcon as TIconChevronLeftDouble,
+  EllipsisIcon as TIconEllipsis,
+} from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
-import TIconChevronLeft from '../icon/chevron-left';
-import TIconChevronRight from '../icon/chevron-right';
-import TIconChevronLeftDouble from '../icon/chevron-left-double';
-import TIconChevronRightDouble from '../icon/chevron-right-double';
-import TIconEllipsis from '../icon/ellipsis';
 import TInput from '../input';
 import { Select, Option } from '../select';
 import CLASSNAMES from '../utils/classnames';

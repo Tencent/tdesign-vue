@@ -1,18 +1,18 @@
 <template>
 
-  <t-menu theme="light" defaultValue="2-1" :expanded=expanded :collapsed="collapsed" expandMutex @expand="handleExpand">
+  <t-menu theme="light" defaultValue="2-1" :expanded="expanded" :collapsed="collapsed" expandMutex @expand="handleExpand">
     <template #logo>
       <img :width="collapsed ? 35 : 136"  :src="iconUrl" alt="logo">
     </template>
     <t-menu-item value="item1">
       <template #icon>
-        <t-icon name="dashboard"/>
+        <icon name="dashboard"/>
       </template>
       仪表盘
     </t-menu-item>
     <t-submenu value="2">
       <template #icon>
-        <t-icon name="user-circle" />
+        <icon name="user-circle" />
       </template>
       <template #title>
         <span>个人中心</span>
@@ -23,7 +23,7 @@
     </t-submenu>
     <t-submenu value="3">
       <template #icon>
-        <t-icon name="root-list" />
+        <icon name="root-list" />
       </template>
       <template #title>
         <span>根目录</span>
@@ -34,18 +34,23 @@
     </t-submenu>
     <t-menu-item value="item4" :disabled="disabled">
       <template #icon>
-        <t-icon name="resources-list" />
+        <icon name="resources-list" />
       </template>
       资源列表
     </t-menu-item>
     <template #operations>
-      <t-icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+      <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
     </template>
   </t-menu>
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       expanded: ['2'],

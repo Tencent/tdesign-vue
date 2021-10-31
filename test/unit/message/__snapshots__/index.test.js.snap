@@ -1,87 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Message :props :closeBtn is a function, () => VNode. 1`] = `
-<div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"><b class="t-message-close-content">x</b></span></div>
 `;
 
 exports[`Message :props :closeBtn is a tring, equal "关闭". 1`] = `
-<div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close">关闭</span></div>
 `;
 
 exports[`Message :props :closeBtn is true, render default close button. 1`] = `
-<div class="t-message t-is-info t-is-closable"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
-  </svg><span class="t-message-close"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close"><path d="M512.0032 570.83072L708.864 767.6864 767.6928 708.8576 570.83456 511.99936 767.6928 315.14176 708.864 256.3104 512.0032 453.168 315.14368 256.30848 256.31232 315.13984 453.17184 511.99936 256.31232 708.8576 315.14368 767.6928 512.0032 570.83072Z"></path></svg></span></div>
+<div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+  </svg><span class="t-message-close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
 `;
 
 exports[`Message :props :default is a funtion, () => <b>这是重要信息</b> 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg><b>这是重要信息</b><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :default is a string, 这是普通信息 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg>这是普通信息<span class="t-message-close"></span></div>
 `;
 
-exports[`Message :props :icon is a funtion, () => TIconMore 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-more">
-    <path fill-rule="evenodd" d="M576 192.00000000000003C576 227.34622400000003 547.346224 256.00000000000006 512 256.00000000000006 476.653776 256.00000000000006 448 227.34622400000003 448 192.00000000000003 448 156.65377600000002 476.653776 128.00000000000003 512 128.00000000000003 547.346224 128.00000000000003 576 156.65377600000002 576 192.00000000000003ZM576 512C576 547.346224 547.3462240000001 576 512 576 476.653776 576 448 547.346224 448 512 448 476.65377600000005 476.653776 448.00000000000006 512 448.00000000000006 547.346224 448.00000000000006 576 476.653776 576 512ZM576 832C576 867.3462208 547.3462240000001 896 512 896 476.653776 896 448 867.3462208 448 832 448 796.6537792 476.653776 768 512 768 547.3462240000001 768 576 796.6537792 576 832Z"></path>
+exports[`Message :props :icon is a funtion, () => MoreIcon 1`] = `
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-more">
+    <path fill="currentColor" d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :icon is false 1`] = `<div class="t-message t-is-info"><span class="t-message-close"></span></div>`;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 2`] = `
-<div class="t-message t-is-success"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-check-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM690.8655168 353.58818368L464.56401024 579.82818368 328.82684416 444.09785152 283.57201024 489.35268544 464.59134592 670.3720192 509.84617984 625.1171872 736.120352 398.8430176 690.8655168 353.58818368Z"></path>
+<div class="t-message t-is-success"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 3`] = `
-<div class="t-message t-is-warning"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-error-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 672L480 672 480 736 544 736 544 672ZM544 288L480 288 480 608 544 608 544 288Z"></path>
+<div class="t-message t-is-warning"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
+    <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 4`] = `
-<div class="t-message t-is-error"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-error-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 672L480 672 480 736 544 736 544 672ZM544 288L480 288 480 608 544 608 544 288Z"></path>
+<div class="t-message t-is-error"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
+    <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 5`] = `
-<div class="t-message t-is-question"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-help-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 672L480 672 480 736 544 736 544 672ZM511.94934848 316.79357824C455.376064 315.90376256 403.89780352 354.22768704 388.246704 407.6169056 385.3298528 417.56690432 384 431.38724224 384 442.58695936L384 442.58695936 448.25864064 442.58695936 448.4281024 436.88934272C448.7590048 430.9195872 449.55016384 424.503648 450.58499584 420.97361536 459.7961696 389.55235008 478.19034496 380.3909248 512 380.3909248 547.8533504 380.3909248 575.80742976 397.67644416 576.43752576 442.25242048 576.87187904 472.9806432 572.34315648 486.03252928 539.69683072 517.6924928L539.69683072 517.6924928 529.43594048 527.7943712C493.105152 564.48261312 479.84877568 594.00480064 479.84877568 640L479.84877568 640 544.14543296 639.97426496 544.33294784 632.61727168C545.85718848 604.2392832 550.12829504 587.77674496 581.23240896 557.61406016L581.23240896 557.61406016 591.32161984 547.68326784C626.86304896 511.80632384 640.6040192 486.41802816 639.97972736 442.25242048 638.94855808 369.30255552 580.86566208 317.87753152 511.94934848 316.79357824Z"></path>
+<div class="t-message t-is-question"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-help-circle-filled">
+    <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props :theme info,success,warning,error,question,loading 6`] = `
-<div class="t-message t-is-loading"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+<div class="t-message t-is-loading"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-loading">
+    <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message :props pure message contains two classes 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-info-circle-filled">
-    <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM544 416L416 416 416 480 480 480 480 736 608 736 608 672 544 672 544 416ZM544 288L480 288 480 352 544 352 544 288Z"></path>
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+    <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;
 
 exports[`Message <slot> <icon> 1`] = `
-<div class="t-message t-is-info"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-more">
-    <path fill-rule="evenodd" d="M576 192.00000000000003C576 227.34622400000003 547.346224 256.00000000000006 512 256.00000000000006 476.653776 256.00000000000006 448 227.34622400000003 448 192.00000000000003 448 156.65377600000002 476.653776 128.00000000000003 512 128.00000000000003 547.346224 128.00000000000003 576 156.65377600000002 576 192.00000000000003ZM576 512C576 547.346224 547.3462240000001 576 512 576 476.653776 576 448 547.346224 448 512 448 476.65377600000005 476.653776 448.00000000000006 512 448.00000000000006 547.346224 448.00000000000006 576 476.653776 576 512ZM576 832C576 867.3462208 547.3462240000001 896 512 896 476.653776 896 448 867.3462208 448 832 448 796.6537792 476.653776 768 512 768 547.3462240000001 768 576 796.6537792 576 832Z"></path>
+<div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-more">
+    <path fill="currentColor" d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z" fill-opacity="0.9"></path>
   </svg><span class="t-message-close"></span></div>
 `;

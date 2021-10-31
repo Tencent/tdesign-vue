@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import TIconChevronRight from '../icon/chevron-right';
+import { ChevronRightIcon as TIconChevronRight } from '@tencent/tdesign-icons-vue';
 import TDivider from '../divider';
 import { prefix } from '../config';
 import itemProps from './dropdown-item-props';

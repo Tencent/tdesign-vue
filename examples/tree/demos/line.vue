@@ -40,7 +40,7 @@
               ></span>
             </div>
             <i class="custom-line-icon" v-if="node.isLeaf()">
-              <t-icon name="heart-filled"/>
+              <icon name="heart-filled"/>
             </i>
           </div>
         </template>
@@ -51,7 +51,12 @@
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       showLine: true,

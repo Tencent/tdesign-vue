@@ -5,13 +5,13 @@
     </template>
     <t-menu-item value="item1">
       <template #icon>
-        <t-icon name="dashboard"/>
+        <icon name="dashboard"/>
       </template>
       仪表盘1
     </t-menu-item>
     <t-submenu value="2" mode="popup">
       <template #icon>
-        <t-icon name="mail" />
+        <icon name="mail" />
       </template>
       <span slot="title">信息区</span>
       <t-menu-item value="2-1">菜单内容一</t-menu-item>
@@ -20,24 +20,29 @@
     </t-submenu>
     <t-menu-item value="item3">
       <template #icon>
-        <t-icon name="play-circle" />
+        <icon name="play-circle" />
       </template>
       视频区
     </t-menu-item>
     <t-menu-item value="item4" :disabled="true">
       <template #icon>
-        <t-icon name="edit-1" />
+        <icon name="edit-1" />
       </template>
       资源编辑
     </t-menu-item>
     <template #operations>
-      <t-icon class="t-menu__operations-icon" :name="iconName" @click.native="changeCollapsed" />
+      <icon class="t-menu__operations-icon" :name="iconName" @click.native="changeCollapsed" />
     </template>
   </t-menu>
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       collapsed: true,

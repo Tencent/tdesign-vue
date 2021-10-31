@@ -1,11 +1,10 @@
 import { VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
+import { CheckIcon as TIconCheck, CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
 import props from './step-item-props';
-import TIconCheck from '../icon/check';
-import TIconClose from '../icon/close';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import Steps from './steps';
 import { ClassName } from '../common';
@@ -75,13 +74,13 @@ export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
         let icon: VNode | string = '';
         switch (this.status$) {
           case 'finish':
-            icon = <t-icon-check name="check" />;
+            icon = <t-icon-check />;
             break;
           case 'error':
             if (isFunction(this.locale.errorIcon)) {
               icon = this.locale.errorIcon(this.$createElement);
             } else {
-              icon = <t-icon-close name="close" />;
+              icon = <t-icon-close />;
             }
             break;
             // default 包含 case 'process' 的情况

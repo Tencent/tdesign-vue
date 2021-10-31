@@ -7,11 +7,11 @@
   >
     <template #actions>
       <span key="thumbUp">
-        <t-icon name="thumb-up" />
+        <icon name="thumb-up" />
         <span class="action-text">6</span>
       </span>
       <span key="chat">
-        <t-icon name="chat" />
+        <icon name="chat" />
         <span class="action-text">回复</span>
       </span>
     </template>
@@ -24,17 +24,17 @@
       >
         <template #author>
           <span>评论作者名B</span>
-          <t-icon name="caret-right-small" size="small" class="author-icon"/>
+          <icon name="caret-right-small" size="small" class="author-icon"/>
           <span>评论作者名A</span>
         </template>
 
         <template #actions>
           <span key="thumbUp">
-            <t-icon name="thumb-up" />
+            <icon name="thumb-up" />
             <span class="action-text">6</span>
           </span>
           <span key="chat">
-            <t-icon name="chat" />
+            <icon name="chat" />
             <span class="action-text">回复</span>
           </span>
         </template>
@@ -42,6 +42,16 @@
     </template>
   </t-comment>
 </template>
+
+<script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
+export default {
+  components: {
+    Icon,
+  },
+};
+</script>
 
 <style lang="less" scoped>
   .action-text {

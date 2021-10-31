@@ -58,10 +58,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+            class="t-icon t-icon-search t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-search"
+              href="#t-icon-search"
             />
           </svg>
         </a>
@@ -70,10 +70,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            class="t-icon t-icon-mail t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-mail"
+              href="#t-icon-mail"
             />
           </svg>
         </a>
@@ -82,10 +82,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            class="t-icon t-icon-user t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-user"
+              href="#t-icon-user"
             />
           </svg>
         </a>
@@ -94,10 +94,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-ellipsis"
+              href="#t-icon-ellipsis"
             />
           </svg>
         </a>
@@ -164,10 +164,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+            class="t-icon t-icon-search t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-search"
+              href="#t-icon-search"
             />
           </svg>
         </a>
@@ -176,10 +176,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            class="t-icon t-icon-mail t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-mail"
+              href="#t-icon-mail"
             />
           </svg>
         </a>
@@ -188,10 +188,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            class="t-icon t-icon-user t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-user"
+              href="#t-icon-user"
             />
           </svg>
         </a>
@@ -200,10 +200,10 @@ exports[`Menu single demo works fine 1`] = `
           href="javascript:;"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon"
           >
             <use
-              xlink:href="#t-icon-ellipsis"
+              href="#t-icon-ellipsis"
             />
           </svg>
         </a>

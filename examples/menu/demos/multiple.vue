@@ -28,10 +28,10 @@
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
       <template #operations>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="mail"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="ellipsis"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis"/></a>
       </template>
     </t-head-menu>
 
@@ -56,11 +56,21 @@
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
       <template #operations>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="search"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="mail"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="user"/></a>
-        <a href="javascript:;"><t-icon class="t-menu__operations-icon" name="ellipsis"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user"/></a>
+        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis"/></a>
       </template>
     </t-head-menu>
   </div>
 </template>
+
+<script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
+export default {
+  components: {
+    Icon,
+  },
+};
+</script>

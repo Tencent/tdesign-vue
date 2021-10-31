@@ -1,7 +1,5 @@
+import { RoundIcon as TIconRound, ChevronLeftIcon as TIconChevronLeft, ChevronRightIcon as TIconChevronRight } from '@tencent/tdesign-icons-vue';
 import TButton from '../../button/button';
-import TIconRound from '../../icon/round';
-import TIconChevronLeft from '../../icon/chevron-left';
-import TIconChevronRight from '../../icon/chevron-right';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 

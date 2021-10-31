@@ -20,7 +20,7 @@
           @data-change="dataChange"
           :multipleSort="allowMultipleSort"
         >
-          <t-icon slot='op-column' name="descending-order"/>
+          <icon slot='op-column' name="descending-order"/>
           <template #status="{ row }">
             <p class="status" :class="['', 'warning', 'unhealth'][row.status]">
               {{ ['健康', '警告', '异常'][row.status] }}
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import TIconCarretDownSmall from '@tencent/tdesign-vue/lib/icon/caret-down-small';
+import { CaretDownSmallIcon, Icon } from '@tencent/tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
@@ -67,6 +67,9 @@ const data = [
 ];
 
 export default {
+  components: {
+    Icon,
+  },
   data() {
     return {
       data,
@@ -83,7 +86,7 @@ export default {
       allowMultipleSort: false,
       globalLocale: {
         table: {
-          sortIcon: (h) => h && <TIconCarretDownSmall size='16px' />,
+          sortIcon: (h) => h && <CaretDownSmallIcon size='16px' />,
         },
       },
     };

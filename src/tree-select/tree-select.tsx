@@ -7,13 +7,12 @@ import isString from 'lodash/isString';
 import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
+import { CloseCircleFilledIcon as IconCloseCircleFilled, LoadingIcon as IconLoading } from '@tencent/tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 import Popup, { PopupProps } from '../popup';
-import IconCloseCircleFilled from '../icon/close-circle-filled';
-import IconLoading from '../icon/loading';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
 import Input from '../input';

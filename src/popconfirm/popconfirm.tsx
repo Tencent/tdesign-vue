@@ -1,3 +1,7 @@
+import {
+  InfoCircleFilledIcon as TIconInfoCircleFilled,
+  ErrorCircleFilledIcon as TIconErrorCircleFilled,
+} from '@tencent/tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';
@@ -5,8 +9,6 @@ import Popup, { PopupProps } from '../popup/index';
 import props from './props';
 import { renderTNodeJSX, renderContent, renderTNodeJSXDefault } from '../utils/render-tnode';
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
-import TIconInfoCircleFilled from '../icon/info-circle-filled';
-import TIconErrorCircleFilled from '../icon/error-circle-filled';
 
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;

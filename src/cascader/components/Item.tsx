@@ -1,4 +1,5 @@
 import Vue, { PropType } from 'vue';
+import { ChevronRightIcon, LoadingIcon } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../../config';
 
 // utils
@@ -12,8 +13,6 @@ import { getCascaderItemClass, getCascaderItemIconClass, getLabelIsEllipsis } fr
 // component
 import Checkbox, { CheckboxProps } from '../../checkbox/index';
 import Tooltip from '../../tooltip/index';
-import ChevronRightCircleIcon from '../../icon/chevron-right';
-import LoadingIcon from '../../icon/loading';
 
 // type
 import TreeNode from '../../_common/js/tree/tree-node';
@@ -133,7 +132,7 @@ export default Vue.extend({
     return (<li v-ripple class={itemClass} onClick={handleClick} onMouseenter={handleMouseenter}>
       {cascaderContext.multiple ? RenderCheckBox(node, cascaderContext, handleChange) : RenderLabelContent(node, cascaderContext)}
       {node.children
-        && (node.loading ? <LoadingIcon class={iconClass} /> : <ChevronRightCircleIcon class={iconClass} />)}
+        && (node.loading ? <LoadingIcon class={iconClass} /> : <ChevronRightIcon class={iconClass} />)}
     </li >);
   },
 });

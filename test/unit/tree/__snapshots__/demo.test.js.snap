@@ -129,15 +129,15 @@ exports[`Tree:demo activable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -206,15 +206,15 @@ exports[`Tree:demo activable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -300,15 +300,15 @@ exports[`Tree:demo base demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -335,15 +335,15 @@ exports[`Tree:demo base demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -370,15 +370,15 @@ exports[`Tree:demo base demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -405,15 +405,15 @@ exports[`Tree:demo base demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -617,15 +617,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -661,15 +661,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -705,15 +705,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -809,15 +809,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -913,15 +913,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -957,15 +957,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1061,15 +1061,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1165,15 +1165,15 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1344,15 +1344,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1389,15 +1389,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1434,15 +1434,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1538,15 +1538,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1582,15 +1582,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1626,15 +1626,15 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1789,15 +1789,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1834,15 +1834,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -1941,15 +1941,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2048,15 +2048,15 @@ exports[`Tree:demo disabled demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2317,15 +2317,15 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2352,15 +2352,15 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2429,15 +2429,15 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2506,15 +2506,15 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2600,15 +2600,15 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2635,15 +2635,15 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2670,15 +2670,15 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2705,15 +2705,15 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2871,15 +2871,15 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2906,15 +2906,15 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -2976,15 +2976,15 @@ exports[`Tree:demo filter demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3011,15 +3011,15 @@ exports[`Tree:demo filter demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3065,13 +3065,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         >
-          <svg
-            class="t-icon t-icon-folder"
-          >
-            <use
-              xlink:href="#t-icon-folder"
-            />
-          </svg>
+          <icon />
         </span>
         <span
           class="t-tree__label t-tree__label--strictly"
@@ -3094,13 +3088,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           ignore="active"
           trigger="expand"
         >
-          <svg
-            class="t-icon t-icon-folder"
-          >
-            <use
-              xlink:href="#t-icon-folder"
-            />
-          </svg>
+          <icon />
         </span>
         <span
           class="t-tree__label t-tree__label--strictly"
@@ -3140,15 +3128,15 @@ exports[`Tree:demo icon demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3175,15 +3163,15 @@ exports[`Tree:demo icon demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3231,15 +3219,15 @@ exports[`Tree:demo label demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3314,15 +3302,15 @@ exports[`Tree:demo label demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3412,15 +3400,15 @@ exports[`Tree:demo label demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3516,15 +3504,15 @@ exports[`Tree:demo label demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3701,15 +3689,15 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3745,15 +3733,15 @@ exports[`Tree:demo lazy demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -3883,15 +3871,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -3968,15 +3956,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4007,15 +3995,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4046,15 +4034,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4085,15 +4073,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4220,15 +4208,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4348,15 +4336,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4389,13 +4377,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4432,13 +4414,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4476,15 +4452,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4522,15 +4498,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4571,15 +4547,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4623,15 +4599,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4673,13 +4649,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4725,13 +4695,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4771,13 +4735,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4814,13 +4772,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4858,15 +4810,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -4899,13 +4851,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4942,13 +4888,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -4981,13 +4921,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             <i
               class="custom-line-icon"
             >
-              <svg
-                class="t-icon t-icon-heart-filled"
-              >
-                <use
-                  xlink:href="#t-icon-heart-filled"
-                />
-              </svg>
+              <t-icon />
             </i>
           </div>
           <span
@@ -5033,15 +4967,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5118,15 +5052,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5157,15 +5091,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5196,15 +5130,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5235,15 +5169,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5370,15 +5304,15 @@ exports[`Tree:demo line demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-caret-right-small"
-              version="1.1"
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
               <path
-                clip-rule="evenodd"
-                d="M384 320L384 704 672 512 384 320Z"
-                fill-opacity=".9"
-                fill-rule="evenodd"
+                d="M6 5v6l4.5-3L6 5z"
+                fill="currentColor"
+                fill-opacity="0.9"
               />
             </svg>
           </span>
@@ -5534,14 +5468,15 @@ exports[`Tree:demo load demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-loading"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -5577,14 +5512,15 @@ exports[`Tree:demo load demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-loading"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6475,15 +6411,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6520,15 +6456,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6565,15 +6501,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6669,15 +6605,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6713,15 +6649,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -6757,15 +6693,15 @@ exports[`Tree:demo sync demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-caret-right-small"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M384 320L384 704 672 512 384 320Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>

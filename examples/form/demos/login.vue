@@ -10,12 +10,12 @@
     >
       <t-form-item name='account'>
         <t-input clearable v-model="formData.account" placeholder="请输入账户名">
-          <t-icon-desktop slot="prefix-icon"></t-icon-desktop>
+          <desktop-icon slot="prefix-icon"></desktop-icon>
         </t-input>
       </t-form-item>
       <t-form-item name='password'>
         <t-input type="password" clearablec v-model="formData.password" placeholder="请输入密码">
-          <t-icon-lock-on slot="prefix-icon"></t-icon-lock-on>
+          <lock-on-icon slot="prefix-icon"></lock-on-icon>
         </t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
@@ -25,8 +25,7 @@
   </div>
 </template>
 <script>
-import TIconDesktop from '@tencent/tdesign-vue/lib/icon/desktop';
-import TIconLockOn from '@tencent/tdesign-vue/lib/icon/lock-on';
+import { DesktopIcon, LockOnIcon } from '@tencent/tdesign-icons-vue';
 
 const INITIAL_DATA = {
   account: '',
@@ -35,8 +34,7 @@ const INITIAL_DATA = {
 
 export default {
   components: {
-    TIconDesktop,
-    TIconLockOn,
+    DesktopIcon, LockOnIcon,
   },
   data() {
     return {

@@ -23,10 +23,10 @@ exports[`TreeSelect :props :clearable 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -45,8 +45,8 @@ exports[`TreeSelect :props :defaultValue 1`] = `
             </p>
             <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
-                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
+                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
+                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
               </transition-group-stub>
             </div>
           </div>
@@ -56,10 +56,10 @@ exports[`TreeSelect :props :defaultValue 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -89,10 +89,10 @@ exports[`TreeSelect :props :disabled 1`] = `
     <div class="t-select t-is-disabled t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-is-disabled t-select-input" style="display: none;"><input disabled="disabled" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -120,10 +120,10 @@ exports[`TreeSelect :props :empty string 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -153,10 +153,10 @@ exports[`TreeSelect :props :filterable 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
       <div class="t-input t-size-m t-select-input"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -184,10 +184,10 @@ exports[`TreeSelect :props :loading 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
-      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -215,10 +215,10 @@ exports[`TreeSelect :props :loadingText 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -248,10 +248,10 @@ exports[`TreeSelect :props :max 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -281,10 +281,10 @@ exports[`TreeSelect :props :minCollapsedNum 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+-1</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -314,10 +314,10 @@ exports[`TreeSelect :props :multiple 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -347,10 +347,10 @@ exports[`TreeSelect :props :placeholder 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;">please select address</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input placeholder="please select address" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -380,10 +380,10 @@ exports[`TreeSelect :props :popupProps 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -413,10 +413,10 @@ exports[`TreeSelect :props :size 1`] = `
     <div class="t-select t-size-l"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-l t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-l t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: large;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-l t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-l t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-size-l t-select-right-icon" style="display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-size-l t-select-right-icon t-select-active-icon" style="display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -435,8 +435,8 @@ exports[`TreeSelect :props :treeProps 1`] = `
             </p>
             <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
-                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
+                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
+                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
               </transition-group-stub>
             </div>
           </div>
@@ -446,10 +446,10 @@ exports[`TreeSelect :props :treeProps 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -468,8 +468,8 @@ exports[`TreeSelect :props :value 1`] = `
             </p>
             <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
-                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
+                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
+                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
               </transition-group-stub>
             </div>
           </div>
@@ -479,10 +479,10 @@ exports[`TreeSelect :props :value 1`] = `
     <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="shenzhen" class="t-select-selectedSingle">shenzhen</span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input placeholder="shenzhen" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -501,8 +501,8 @@ exports[`TreeSelect :props :valueType 1`] = `
             </p>
             <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
-                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-caret-right-small"><path fill-opacity=".9" fill-rule="evenodd" d="M384 320L384 704 672 512 384 320Z" clip-rule="evenodd"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
+                <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
+                <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
               </transition-group-stub>
             </div>
           </div>
@@ -512,10 +512,10 @@ exports[`TreeSelect :props :valueType 1`] = `
     <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="[object Object]" class="t-select-selectedSingle">[object Object]</span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input placeholder="[object Object]" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -545,10 +545,10 @@ exports[`TreeSelect <slot> <collapsedItems> 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -578,10 +578,10 @@ exports[`TreeSelect <slot> <empty> 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -609,10 +609,10 @@ exports[`TreeSelect <slot> <loadingText> 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
-      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -642,10 +642,10 @@ exports[`TreeSelect <slot> <prefixIcon> 1`] = `
     <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><div><i>icon</i></div></span><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -675,10 +675,10 @@ exports[`TreeSelect function :collapsedItems 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -708,10 +708,10 @@ exports[`TreeSelect function :empty 1`] = `
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -739,10 +739,10 @@ exports[`TreeSelect function :loadingText 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
-      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>
@@ -772,10 +772,10 @@ exports[`TreeSelect function :prefixIcon 1`] = `
     <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"></span><span class="t-select-placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="" class="t-select-selectedSingle"></span>
       <div class="t-input t-size-m t-select-input" style="display: none;"><input type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-close-circle-filled t-size-m t-select-right-icon" name="close" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M512 96C741.7504576 96 928 282.24954432 928 512 928 741.7504576 741.7504576 928 512 928 282.24954432 928 96 741.7504576 96 512 96 282.24954432 282.24954432 96 512 96ZM647.7644992 330.98066432L511.97266432 466.72466432 376.23549824 330.98066432 330.98066432 376.23549824 466.72466432 511.97266432 330.98066432 647.7644992 376.23549824 693.0193344 511.97266432 557.22066432 647.7644992 693.0193344 693.0193344 647.7644992 557.22066432 511.97266432 693.0193344 376.23549824 647.7644992 330.98066432Z"></path>
-      </svg><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="t-icon t-icon-loading t-size-m t-select-right-icon t-select-active-icon" name="loading" style="display: none;">
-        <path fill-opacity=".9" fill-rule="evenodd" d="M96 512C96 282.264 282.264 96 512 96 741.736 96 928 282.264 928 512L824 512 824 512C824 339.68715776 684.3128448 200 512 200 339.68715776 200 200 339.68715776 200 512 200 684.3128448 339.68715776 824 512 824L512 928C282.264 928 96 741.736 96 512Z"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="close" class="t-icon t-icon-close-circle-filled t-select-right-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+      </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="loading" class="t-icon t-icon-loading t-select-right-icon t-select-active-icon" style="font-size: medium; display: none;">
+        <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
       </svg>
     </div>
   </div>

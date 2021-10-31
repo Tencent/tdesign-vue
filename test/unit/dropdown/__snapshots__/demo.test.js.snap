@@ -55,15 +55,15 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
                   </div>
                   <svg
                     class="t-icon t-icon-chevron-right children-suffix"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
+                      d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
                     />
                   </svg>
                 </div>
@@ -224,15 +224,15 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
         
           <svg
             class="t-icon t-icon-chevron-down"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -732,15 +732,15 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                   </div>
                   <svg
                     class="t-icon t-icon-chevron-right children-suffix"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
+                      d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
                     />
                   </svg>
                 </div>
@@ -760,15 +760,15 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                   </div>
                   <svg
                     class="t-icon t-icon-chevron-right children-suffix"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
+                      d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
                     />
                   </svg>
                 </div>
@@ -788,15 +788,15 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                   </div>
                   <svg
                     class="t-icon t-icon-chevron-right children-suffix"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
+                      d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
                     />
                   </svg>
                 </div>
@@ -816,15 +816,15 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                   </div>
                   <svg
                     class="t-icon t-icon-chevron-right children-suffix"
-                    version="1.1"
-                    viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
                     <path
-                      clip-rule="evenodd"
-                      d="M413.4592 797.3888L354.62784 738.56 581.21216 511.97568 354.62784 285.39136 413.4592 226.56 698.8736 511.97568 413.4592 797.3888Z"
-                      fill-opacity=".9"
-                      fill-rule="evenodd"
+                      d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
                     />
                   </svg>
                 </div>
@@ -849,15 +849,15 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
         
           <svg
             class="t-icon t-icon-chevron-down"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>
@@ -966,14 +966,15 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
     >
       <svg
         class="t-icon t-icon-ellipsis"
-        version="1.1"
-        viewBox="0 0 1024 1024"
-        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
         <path
-          d="M192 448C227.346224 448 256 476.653776 256 512 256 547.346224 227.346224 576 192 576 156.653776 576 128 547.346224 128 512 128 476.653776 156.653776 448 192 448ZM512 448C547.346224 448 576 476.653776 576 512 576 547.346224 547.346224 576 512 576 476.653776 576 448 547.346224 448 512 448 476.653776 476.653776 448 512 448ZM832 448C867.3462208 448 896 476.653776 896 512 896 547.346224 867.3462208 576 832 576 796.6537792 576 768 547.346224 768 512 768 476.653776 796.6537792 448 832 448Z"
-          fill-opacity=".9"
-          fill-rule="evenodd"
+          d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+          fill="currentColor"
+          fill-opacity="0.9"
         />
       </svg>
     </button>
@@ -1077,14 +1078,15 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
     >
       <svg
         class="t-icon t-icon-ellipsis"
-        version="1.1"
-        viewBox="0 0 1024 1024"
-        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
         <path
-          d="M192 448C227.346224 448 256 476.653776 256 512 256 547.346224 227.346224 576 192 576 156.653776 576 128 547.346224 128 512 128 476.653776 156.653776 448 192 448ZM512 448C547.346224 448 576 476.653776 576 512 576 547.346224 547.346224 576 512 576 476.653776 576 448 547.346224 448 512 448 476.653776 476.653776 448 512 448ZM832 448C867.3462208 448 896 476.653776 896 512 896 547.346224 867.3462208 576 832 576 796.6537792 576 768 547.346224 768 512 768 476.653776 796.6537792 448 832 448Z"
-          fill-opacity=".9"
-          fill-rule="evenodd"
+          d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+          fill="currentColor"
+          fill-opacity="0.9"
         />
       </svg>
     </button>
@@ -1201,15 +1203,15 @@ exports[`Dropdown base demo works fine 1`] = `
         
           <svg
             class="t-icon t-icon-chevron-down"
-            version="1.1"
-            viewBox="0 0 1024 1024"
-            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
             <path
-              clip-rule="evenodd"
-              d="M226.57792 413.41696L285.40928 354.58624 511.9936 581.17056 738.5792 354.58624 797.408 413.41696 511.9936 698.8352 226.57792 413.41696Z"
-              fill-opacity=".9"
-              fill-rule="evenodd"
+              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
         </span>

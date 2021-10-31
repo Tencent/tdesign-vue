@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
+import { FilterIcon as TIconFilter } from '@tencent/tdesign-icons-vue';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
@@ -9,7 +10,6 @@ import { RadioGroup } from '../../../radio';
 import Input from '../../../input';
 import Popup from '../../../popup';
 import { getTitle } from '../../util/common';
-import TIconFilter from '../../../icon/filter';
 import { emitEvent } from '../../../utils/event';
 
 type FilterChangeContext = Parameters<TdPrimaryTableProps['onFilterChange']>;

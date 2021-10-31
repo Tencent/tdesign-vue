@@ -10,11 +10,11 @@
         >
           <template #actions>
             <span key="thumbUp">
-              <t-icon name="thumb-up" />
+              <icon name="thumb-up" />
               <span class="action-text">6</span>
             </span>
             <span key="chat">
-              <t-icon name="chat" />
+              <icon name="chat" />
               <span class="action-text">回复</span>
             </span>
           </template>
@@ -25,8 +25,13 @@
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
   name: 'list',
+  components: {
+    Icon,
+  },
   data() {
     return {
       commentsData: [

@@ -96,11 +96,9 @@
 </template>
 
 <script>
-import TIconError from '@tencent/tdesign-vue/lib/icon/error';
-import TIconCaretRightSmall from '@tencent/tdesign-vue/lib/icon/caret-right-small';
-import TIconCloseCircleFilled from '@tencent/tdesign-vue/lib/icon/close-circle-filled';
-import TIconChevronDown from '@tencent/tdesign-vue/lib/icon/chevron-down';
-import TIconCarretDownSmall from '@tencent/tdesign-vue/lib/icon/caret-down-small';
+import {
+  ErrorIcon, CaretRightSmallIcon, CloseCircleFilledIcon, ChevronDownIcon, CaretDownSmallIcon,
+} from '@tencent/tdesign-icons-vue';
 
 const MONTHS = [
   'January',
@@ -155,17 +153,17 @@ const GLOBAL_CONFIG = {
   },
   table: {
     empty: 'Table Data is empty.',
-    expandIcon: (h) => h && <TIconChevronDown />,
-    sortIcon: (h) => h && <TIconCarretDownSmall size='18px' />,
+    expandIcon: (h) => h && <ChevronDownIcon />,
+    sortIcon: (h) => h && <CaretDownSmallIcon size='18px' />,
   },
   tree: {
     empty: 'Tree Empty Data',
-    folderIcon: (h) => h && <TIconCaretRightSmall size='20px' />,
+    folderIcon: (h) => h && <CaretRightSmallIcon size='20px' />,
   },
   select: {
     empty: 'Empty Data',
     loadingText: 'loading...',
-    clearIcon: (h) => h && <TIconCloseCircleFilled />,
+    clearIcon: (h) => h && <CloseCircleFilledIcon />,
   },
   treeSelect: {
     empty: 'Empty Data',
@@ -208,7 +206,7 @@ const GLOBAL_CONFIG = {
     postMeridiem: 'PM',
   },
   steps: {
-    errorIcon: (h) => h && <TIconError />,
+    errorIcon: (h) => h && <ErrorIcon />,
   },
 };
 

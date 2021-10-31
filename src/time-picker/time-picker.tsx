@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
+import { TimeIcon as TIconTime } from '@tencent/tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import {
@@ -12,7 +13,6 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import PickerPanel from './panel';
 import TInput from '../input';
-import TIconTime from '../icon/time';
 
 import InputItems from './input-items';
 
