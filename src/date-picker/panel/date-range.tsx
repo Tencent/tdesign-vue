@@ -5,6 +5,7 @@ import TDateTable from '../basic/table';
 import {
   DateRangeData, DateRangeMethods, DateRangeComputed, DateRangeProps,
 } from '../interface';
+import { DateValue } from '../type';
 
 import {
   getWeeks,
@@ -45,6 +46,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     firstDayOfWeek: Number,
     disableDate: Function,
     onChange: Function,
+    onPick: Function,
   },
   data() {
     return {
@@ -174,10 +176,9 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
 
       return flagActive(data, { start, end, type });
     },
-    getClickHandler(direction: string) {
+    getClickHandler(direction: string, date: DateValue, e: MouseEvent) {
       const type = this[`${direction}Type`];
-
-      return (date: any) => this[`click${firstUpperCase(type)}`](date, direction);
+      return this[`click${firstUpperCase(type)}`](date, e);
     },
     clickHeader(flag: number, direction: string) {
       const year = this[`${direction}Year`];
@@ -210,7 +211,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       this[`${direction}Year`] = next.getFullYear();
       this[`${direction}Month`] = next.getMonth();
     },
-    clickDate(date: Date) {
+    clickDate(date: Date, e: MouseEvent) {
+      let partial = 'start';
       if (this.isFirstClick) {
         this.startValue = date;
         this.endValue = date;
@@ -223,9 +225,11 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
           this.endValue = this.firstClickValue;
           this.startValue = date;
         }
-        this.$props.onChange([setDateTime(this.startValue, 23, 59, 59), setDateTime(this.endValue, 23, 59, 59)]);
+        this.$props.onChange([setDateTime(this.startValue, 0, 0, 0), setDateTime(this.endValue, 23, 59, 59)]);
         this.isFirstClick = true;
+        partial = 'end';
       }
+      this.$props.onPick && this.$props.onPick(date, { e, partial });
     },
     clickYear(date: Date, type: string) {
       if (this.mode === 'year') {
@@ -304,14 +308,13 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
               },
             }}
           />
-
           <t-date-table
             type={leftType}
             first-day-of-week={firstDayOfWeek}
             data={this.leftData}
             {...{
               props: {
-                onCellClick: this.getClickHandler(LEFT),
+                onCellClick: (date: DateValue, e: MouseEvent) => this.getClickHandler(LEFT, date, e),
                 onCellMouseEnter: this.onMouseEnter,
               },
             }}
@@ -329,7 +332,6 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
               },
             }}
           />
-
           <t-date-table
             type={rightType}
             first-day-of-week={firstDayOfWeek}
@@ -337,7 +339,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             {...{
               on: { 'update:type': this.onTypeChange },
               props: {
-                onCellClick: this.getClickHandler(RIGHT),
+                onCellClick: (date: DateValue, e: MouseEvent) => this.getClickHandler(RIGHT, date, e),
                 onCellMouseEnter: this.onMouseEnter,
               },
             }}

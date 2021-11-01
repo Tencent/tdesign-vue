@@ -2,7 +2,9 @@ import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
 
 import { EPickerCols } from '../time-picker/interface';
-import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
+import {
+  DateValue, TdDatePickerProps, TdDateRangePickerProps,
+} from './type';
 
 export * from './type';
 export type DatePickerProps = TdDatePickerProps;
@@ -259,6 +261,7 @@ export interface DateRangeProps {
   firstDayOfWeek: number;
   disableDate: Function;
   onChange: Function;
+  onPick: Function;
 }
 export interface DateProps {
   mode: string;
@@ -281,9 +284,9 @@ export interface DateRangeMethods {
     leftYear: number; leftMonth: number; rightYear: number; rightMonth: number
   };
   getData(value: { year: number; month: number; type: string }): object;
-  getClickHandler(direction: string): object;
+  getClickHandler(direction: string, date: DateValue, e: MouseEvent): object;
   clickHeader(flag: number, direction: string): void;
-  clickDate(date: Date): void;
+  clickDate(date: Date, e: MouseEvent): void;
   clickYear(date: Date, type: string): void;
   clickMonth(date: Date, type: string): void;
   onMouseEnter(date: Date): void;

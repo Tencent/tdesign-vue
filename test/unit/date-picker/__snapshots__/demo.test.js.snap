@@ -7295,6 +7295,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
+            placeholder="开始时间,结束时间"
             readonly="readonly"
             type="text"
           />

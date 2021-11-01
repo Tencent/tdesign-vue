@@ -54,9 +54,9 @@ export default Vue.extend({
             <td class={cellClass}>
                 <div
                     class="t-date-cell__wrapper"
-                    onClick={() => {
+                    onClick={(e: MouseEvent) => {
                       if (!disabled) {
-                        onClick(value);
+                        onClick(value, { e });
                       }
                     }}
                     onMouseenter={() => onMouseEnter && onMouseEnter(value)}

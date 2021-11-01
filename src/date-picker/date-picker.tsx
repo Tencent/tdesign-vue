@@ -17,7 +17,9 @@ import TPopup from '../popup';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 
-import { CustomLocale, DatePickerInstance, DateValue } from './interface';
+import {
+  CustomLocale, DatePickerInstance, DateValue, PickContext,
+} from './interface';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
@@ -338,15 +340,10 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             this.end = this.normalizeDateTime(value[1], this.end);
             this.inSelection = true;
           }
+
           // 有时间选择时，点击日期不关闭弹窗
           this.clickedApply(!this.enableTimePicker);
           break;
-      }
-    },
-    hoverDate(value: Date) {
-      const dt = this.normalizeDateTime(value, this.end);
-      if (this.inSelection && dt > this.start) {
-        this.end = dt;
       }
     },
     toggle() {
@@ -622,8 +619,11 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     },
     getPlaceholderText() {
       const { placeholder, mode } = this.$props;
-
-      return placeholder || (this.locales.placeholder && this.locales.placeholder[mode]);
+      let placeholderStr = placeholder;
+      if (placeholder && Array.isArray(placeholder)) {
+        placeholderStr = placeholder.join(this.locales.rangeSeparator);
+      }
+      return placeholderStr || (this.locales.placeholder && this.locales.placeholder[mode]);
     },
   },
   render() {
@@ -650,8 +650,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       disableDate: (d: Date) => !this.isEnabled(d),
       onChange: this.dateClick,
     };
+
     const panelComponent = range ? (
-      <TDateRange {...{ props: { ...panelProps } }} />
+      <TDateRange {...{ props: { ...panelProps, onPick: (date: DateValue, context: PickContext) => this.$emit('pick', date, context) } }} />
     ) : (
       <TDate {...{ props: { ...panelProps } }} />
     );
