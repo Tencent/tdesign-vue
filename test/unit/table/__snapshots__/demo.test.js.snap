@@ -69,7 +69,6 @@ exports[`Table base demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -481,7 +480,6 @@ exports[`Table base demo works fine 2`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -861,7 +859,6 @@ exports[`Table customCell demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -1067,7 +1064,6 @@ exports[`Table empty demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -1160,7 +1156,6 @@ exports[`Table empty demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -1344,14 +1339,13 @@ exports[`Table expandable demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
           >
             <colgroup>
               <col
-                style="width: 25px;"
+                style="width: 48px;"
               />
               <col
                 style="width: 150px;"
@@ -2096,7 +2090,6 @@ exports[`Table fixedColumn demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -2597,7 +2590,6 @@ exports[`Table fixedHeader demo works fine 1`] = `
     >
       <div
         class="t-table-content"
-        style="overflow: auto;"
       >
         <div
           class="t-table__header"
@@ -3892,7 +3884,6 @@ exports[`Table multiHeader demo works fine 1`] = `
     >
       <div
         class="t-table-content"
-        style="overflow: auto;"
       >
         <table
           style="table-layout: fixed;"
@@ -4116,7 +4107,6 @@ exports[`Table selectMultiple demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"
@@ -4565,7 +4555,6 @@ exports[`Table selectSingle demo works fine 1`] = `
       >
         <div
           class="t-table-content"
-          style="overflow: auto;"
         >
           <table
             style="table-layout: fixed;"

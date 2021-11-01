@@ -147,31 +147,35 @@ export default Vue.extend({
     getSorterColumns(columns: Columns): Columns {
       const r = columns.map((item, index: number) => {
         const column: PrimaryTableCol = { ...item };
-        if (isFunction(column.sorter)) {
-          this.sorterFuncMap[column.colKey] = column.sorter;
-        }
-        const needSort = this.needSort(column);
-        if (needSort) {
-          const { sortType = 'all', colKey } = column;
-          const nextSort = this.getSingleNextSort(column);
-          const sorterButtonsProps = {
-            on: { click: () => this.handleSortHeaderClick(column) },
-            props: {
-              sortType,
-              sortOrder: this.getSortOrder(this.sortMap[colKey]?.descending),
-              nextSortOrder: this.getSortOrder(nextSort?.descending),
-            },
-            // class: `${prefix}-table-sort-icon`,
-          };
-          const title = getTitle(this, column, index);
-          column.title = () => (
-            <div class={`${prefix}-table__cell--sortable`}>
-              <div class={`${prefix}-table__cell--title`}>
-                <div>{title}</div>
-                {<SorterButton {...sorterButtonsProps} />}
+        if (column.children?.length) {
+          column.children = [...this.getSorterColumns(column.children)];
+        } else {
+          if (isFunction(column.sorter)) {
+            this.sorterFuncMap[column.colKey] = column.sorter;
+          }
+          const needSort = this.needSort(column);
+          if (needSort) {
+            const { sortType = 'all', colKey } = column;
+            const nextSort = this.getSingleNextSort(column);
+            const sorterButtonsProps = {
+              on: { click: () => this.handleSortHeaderClick(column) },
+              props: {
+                sortType,
+                sortOrder: this.getSortOrder(this.sortMap[colKey]?.descending),
+                nextSortOrder: this.getSortOrder(nextSort?.descending),
+              },
+              // class: `${prefix}-table-sort-icon`,
+            };
+            const title = getTitle(this, column, index);
+            column.title = () => (
+              <div class={`${prefix}-table__cell--sortable`}>
+                <div class={`${prefix}-table__cell--title`}>
+                  <div>{title}</div>
+                  {<SorterButton {...sorterButtonsProps} />}
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
         }
         return column;
       });

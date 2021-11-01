@@ -62,7 +62,9 @@ export default Vue.extend({
     } = col;
 
     // 固定列 单元格属性
-    const style: Record<string, any> = {};
+    const style: Record<string, any> = {
+      ...col.attrs?.style,
+    };
     const fixedClass = [];
     // 普通样式
     const attrClass = attrs?.class || [];

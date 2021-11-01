@@ -30,8 +30,13 @@ export default Vue.extend({
       return [
         {
           colKey: expandedColKey,
-          width: 25,
-          attrs: { class: [`${prefix}-table-expandable-icon-cell`] },
+          width: 48,
+          attrs: {
+            class: [`${prefix}-table-expandable-icon-cell`],
+            style: {
+              overflow: 'auto',
+            },
+          },
           cell: (h, { row, rowIndex }) => this.renderExpandIconCell({ row, rowIndex }),
         },
         ...columns,

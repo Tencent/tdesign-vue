@@ -4,7 +4,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div>
   <div class="t-table t-table__header--fixed">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <div class="t-table__header" style="padding-right: 0px;">
           <table style="table-layout: fixed; padding-right: 0px;">
             <colgroup>
@@ -57,7 +57,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div>
   <div class="t-table t-size-l t-table-valign__top">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
@@ -76,7 +76,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div>
   <div class="t-table t-table-valign__bottom">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
@@ -95,7 +95,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div>
   <div class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
@@ -137,7 +137,7 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
 <div>
   <div class="t-table">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
@@ -156,7 +156,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
 <div>
   <div class="t-table">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col style="width: 100px; min-width: 200px;">
@@ -198,7 +198,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
 <div>
   <div class="t-table">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
@@ -250,7 +250,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
 <div>
   <div class="t-table t-table__cell--fixed t-table--has-fixed">
     <div class="t-loading-parent__relative">
-      <div class="t-table-content" style="overflow: auto;">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
