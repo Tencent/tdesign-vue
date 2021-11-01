@@ -1,30 +1,28 @@
 <template>
-  <div class="demo-container">
-    <div class="item">
-      <div style="margin: 16px">
-        排序方式：{{ JSON.stringify(sort) }}
-      </div>
-      <!-- 非受控用法：不需要传 sort，或者只需要传 defaultSort: { sortBy: 'status', descending: true }），defaultSort 仅第一次有效 -->
-      <!-- 非受控用法，示例代码有效，勿删 -->
-      <!-- <t-table rowKey="id" :columns="columns" :data="data" @sort-change="defaultSortChange">
-        <t-icon slot='op-column' name="descending-order"/>
-        <template #status="{ row }">
-          <p v-if="row.status === 0" class="status">健康</p>
-          <p v-if="row.status === 1" class="status warning">警告</p>
-          <p v-if="row.status === 2" class="status unhealth">异常</p>
-        </template>
-      </t-table> -->
-
-      <!-- 受控用法，示例代码有效，勿删 -->
-      <t-table rowKey="id" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" bordered>
-        <t-icon slot='op-column' name="descending-order"/>
-        <template #status="{ row }">
-          <p v-if="row.status === 0" class="status">健康</p>
-          <p v-if="row.status === 1" class="status warning">警告</p>
-          <p v-if="row.status === 2" class="status unhealth">异常</p>
-        </template>
-      </t-table>
+  <div class="tdesign-demo-block-column-large demo-container">
+    <div>
+      排序方式：{{ JSON.stringify(sort) }}
     </div>
+    <!-- 非受控用法：不需要传 sort，或者只需要传 defaultSort: { sortBy: 'status', descending: true }），defaultSort 仅第一次有效 -->
+    <!-- 非受控用法，示例代码有效，勿删 -->
+    <!-- <t-table rowKey="id" :columns="columns" :data="data" @sort-change="defaultSortChange">
+      <t-icon slot='op-column' name="descending-order"/>
+      <template #status="{ row }">
+        <p v-if="row.status === 0" class="status">健康</p>
+        <p v-if="row.status === 1" class="status warning">警告</p>
+        <p v-if="row.status === 2" class="status unhealth">异常</p>
+      </template>
+    </t-table> -->
+
+    <!-- 受控用法，示例代码有效，勿删 -->
+    <t-table rowKey="id" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" bordered>
+      <t-icon slot='op-column' name="descending-order"/>
+      <template #status="{ row }">
+        <p v-if="row.status === 0" class="status">健康</p>
+        <p v-if="row.status === 1" class="status warning">警告</p>
+        <p v-if="row.status === 2" class="status unhealth">异常</p>
+      </template>
+    </t-table>
   </div>
 </template>
 

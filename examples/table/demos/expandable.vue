@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-column">
     <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
     <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
     <!-- <t-locale-provider :globalLocale="globalLocale"> -->
@@ -7,15 +7,15 @@
     <!-- expanded-row-keys 为受控属性 -->
     <!-- default-expanded-row-keys 为非受控属性 -->
 
-    <t-radio-group v-model="expandControl">
-      <t-radio-button value="true">显示展开图标</t-radio-button>
-      <t-radio-button value="false">隐藏展开图标</t-radio-button>
-      <t-radio-button value="custom">自由控制展开图标</t-radio-button>
-    </t-radio-group>
-    <div style="margin-left: 32px; display: inline-block; vertical-align: -2px">
-      <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
+    <div>
+      <t-radio-group v-model="expandControl" variant="default-filled">
+        <t-radio-button value="true">显示展开图标</t-radio-button>
+        <t-radio-button value="false">隐藏展开图标</t-radio-button>
+        <t-radio-button value="custom">自由控制展开图标</t-radio-button>
+      </t-radio-group>
     </div>
-    <br><br>
+
+    <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
 
     <t-table
       row-key='id'

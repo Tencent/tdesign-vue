@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table base demo works fine 1`] = `
-<div>
-  <div
-    style="margin: 16px;"
-  >
+<div
+  class="tdesign-demo-block-column-large"
+>
+  <div>
     <label
       class="t-checkbox t-is-checked"
     >
@@ -413,10 +413,10 @@ exports[`Table base demo works fine 1`] = `
 `;
 
 exports[`Table base demo works fine 2`] = `
-<div>
-  <div
-    style="margin: 16px;"
-  >
+<div
+  class="tdesign-demo-block-column-large"
+>
+  <div>
     <label
       class="t-checkbox t-is-checked"
     >
@@ -825,31 +825,31 @@ exports[`Table base demo works fine 2`] = `
 `;
 
 exports[`Table customCell demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-demo-block-column-large"
+>
   <div
-    style="margin: 16px;"
+    class="tdesign-demo-block-column"
   >
-    <ul>
-      <li>
-        单元格默认使用 row[colKey] 渲染数据内容，自定义单元格有以下 3 种方式
-      </li>
-       
-      <li>
-        1) 使用 cell 作为渲染函数，函数参数为：cell(h, {col, colIndex, row, rowIndex})
-      </li>
-       
-      <li>
-        2) 插槽，使用 cell 的值作为插槽名称；如果 cell 值为空，则默认取 colKey 作为插槽名称
-      </li>
-       
-      <li>
-        
-        3)【不推荐使用】使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，
-        单元格的 type 值为 cell，标题的 type 值为 title
-      
-      </li>
-    </ul>
-    <br />
+    <p>
+      单元格默认使用 row[colKey] 渲染数据内容，自定义单元格有以下 3 种方式
+    </p>
+     
+    <p>
+      1. 使用 cell 作为渲染函数，函数参数为：cell(h, {col, colIndex, row, rowIndex})
+    </p>
+     
+    <p>
+      2. 插槽，使用 cell 的值作为插槽名称；如果 cell 值为空，则默认取 colKey 作为插槽名称
+    </p>
+     
+    <p>
+      3. 使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，
+      单元格的 type 值为 cell，标题的 type 值为 title
+      <b>
+        【不推荐使用】
+      </b>
+    </p>
   </div>
    
   <div>
@@ -1248,92 +1248,92 @@ exports[`Table empty demo works fine 1`] = `
 `;
 
 exports[`Table expandable demo works fine 1`] = `
-<div>
-  <div
-    class="t-radio-group t-radio-group-medium t-radio-group-outline"
-  >
-    <label
-      class="t-radio-button t-is-checked"
+<div
+  class="tdesign-demo-block-column"
+>
+  <div>
+    <div
+      class="t-radio-group t-radio-group-medium t-radio-group-filled"
     >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="true"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+      <label
+        class="t-radio-button t-is-checked"
       >
-        显示展开图标
-      </span>
-    </label>
-     
-    <label
-      class="t-radio-button"
-    >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="false"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="true"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          显示展开图标
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
       >
-        隐藏展开图标
-      </span>
-    </label>
-     
-    <label
-      class="t-radio-button"
-    >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="custom"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="false"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          隐藏展开图标
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
       >
-        自由控制展开图标
-      </span>
-    </label>
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="custom"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          自由控制展开图标
+        </span>
+      </label>
+      <div
+        class="t-radio-group-filled-bg-block"
+      />
+    </div>
   </div>
    
-  <div
-    style="margin-left: 32px; display: inline-block; vertical-align: -2px;"
+  <label
+    class="t-checkbox t-is-checked"
   >
-    <label
-      class="t-checkbox t-is-checked"
+    <input
+      class="t-checkbox__former"
+      type="checkbox"
+      value=""
+    />
+    <span
+      class="t-checkbox__input"
+    />
+    <span
+      class="t-checkbox__label"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        允许点击行之后展开/收起
-      </span>
-    </label>
-  </div>
-   
-  <br />
-  <br />
+      允许点击行之后展开/收起
+    </span>
+  </label>
    
   <div>
     <div
@@ -1990,94 +1990,102 @@ exports[`Table expandable demo works fine 1`] = `
 `;
 
 exports[`Table fixedColumn demo works fine 1`] = `
-<div>
-  <div
-    class="t-radio-group t-radio-group-medium t-radio-group-outline"
-  >
-    <label
-      class="t-radio-button"
+<div
+  class="tdesign-demo-block-column"
+>
+  <div>
+    <div
+      class="t-radio-group t-radio-group-medium t-radio-group-filled"
     >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="1"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+      <label
+        class="t-radio-button"
       >
-        左侧固定一列
-      </span>
-    </label>
-     
-    <label
-      class="t-radio-button t-is-checked"
-    >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="2"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="1"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          左侧固定一列
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button t-is-checked"
       >
-        左侧固定两列
-      </span>
-    </label>
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          左侧固定两列
+        </span>
+      </label>
+      <div
+        class="t-radio-group-filled-bg-block"
+      />
+    </div>
   </div>
    
-  <div
-    class="t-radio-group t-radio-group-medium t-radio-group-outline"
-    style="margin-left: 28px;"
-  >
-    <label
-      class="t-radio-button t-is-checked"
+  <div>
+    <div
+      class="t-radio-group t-radio-group-medium t-radio-group-filled"
     >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="1"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+      <label
+        class="t-radio-button t-is-checked"
       >
-        右侧固定一列
-      </span>
-    </label>
-     
-    <label
-      class="t-radio-button"
-    >
-      <input
-        class="t-radio-button__former"
-        name=""
-        type="radio"
-        value="2"
-      />
-      <span
-        class="t-radio-button__input"
-      />
-      <span
-        class="t-radio-button__label"
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="1"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          右侧固定一列
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
       >
-        右侧固定两列
-      </span>
-    </label>
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          右侧固定两列
+        </span>
+      </label>
+      <div
+        class="t-radio-group-filled-bg-block"
+      />
+    </div>
   </div>
-   
-  <br />
-  <br />
    
   <div>
     <div

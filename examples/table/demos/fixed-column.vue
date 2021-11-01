@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <t-radio-group v-model="leftFixedColumn">
-      <t-radio-button :value="1">左侧固定一列</t-radio-button>
-      <t-radio-button :value="2">左侧固定两列</t-radio-button>
-    </t-radio-group>
-    <t-radio-group v-model="rightFixedColumn" style="margin-left: 28px">
-      <t-radio-button :value="1">右侧固定一列</t-radio-button>
-      <t-radio-button :value="2">右侧固定两列</t-radio-button>
-    </t-radio-group>
-    <br><br>
+  <div class="tdesign-demo-block-column">
+    <div>
+      <t-radio-group v-model="leftFixedColumn" variant="default-filled">
+        <t-radio-button :value="1">左侧固定一列</t-radio-button>
+        <t-radio-button :value="2">左侧固定两列</t-radio-button>
+      </t-radio-group>
+    </div>
+
+    <div>
+      <t-radio-group v-model="rightFixedColumn" variant="default-filled">
+        <t-radio-button :value="1">右侧固定一列</t-radio-button>
+        <t-radio-button :value="2">右侧固定两列</t-radio-button>
+      </t-radio-group>
+    </div>
+
     <t-table
       :data="data"
       :columns="columns"

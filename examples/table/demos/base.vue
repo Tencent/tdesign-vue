@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-column-large">
     <!-- 按钮操作区域 -->
-    <div style="margin: 16px;">
+    <div>
       <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>

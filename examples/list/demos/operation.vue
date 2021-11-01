@@ -29,15 +29,15 @@
       <t-list-item>
         <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
-          <li><t-icon-edit /></li>
-          <li><t-icon-download /></li>
+          <t-button variant="text" shape="square"><t-icon-edit /></t-button>
+          <t-button variant="text" shape="square"><t-icon-download /></t-button>
         </template>
       </t-list-item>
       <t-list-item>
         <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
         <template #action>
-          <li><t-icon-edit /></li>
-          <li><t-icon-download /></li>
+          <t-button variant="text" shape="square"><t-icon-edit /></t-button>
+          <t-button variant="text" shape="square"><t-icon-download /></t-button>
         </template>
       </t-list-item>
     </t-list>

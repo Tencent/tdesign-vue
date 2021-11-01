@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <t-table
-      :bordered="true"
-      :data="data"
-      :columns="columns"
-      :rowKey="rowKey"
-      :size="size"
-      :rowspanAndColspan="rowspanAndColspan">
-    </t-table>
-  </div>
+  <t-table
+    :bordered="true"
+    :data="data"
+    :columns="columns"
+    :rowKey="rowKey"
+    :size="size"
+    :rowspanAndColspan="rowspanAndColspan">
+  </t-table>
 </template>
 <script>
 export default {

@@ -16,8 +16,4 @@
 ::: demo demos/scroll list
 :::
 
-### 尺寸
-::: demo demos/size list
-:::
-
 :: BASE_PROPS ::

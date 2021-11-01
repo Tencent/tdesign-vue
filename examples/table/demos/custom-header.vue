@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <div style="margin: 16px;">
-      <ul>
-        <li>标题默认使用 title 渲染，自定义标题则有以下几种方式</li>
-        <li>1) 使用 title 作为渲染函数，函数参数为：title({ col, colIndex })</li>
-        <li>2) 插槽，使用 title 的值作为插槽名称</li>
-        <li>
-          3)【不推荐使用】使用 render 作为渲染函数，函数参数为：render({col, colIndex, row, rowIndex, type})，
-          单元格的 type 值为 cell，标题的 type 值为 title。使用排序、过滤等功能时不能使用该方法
-        </li>
-      </ul>
-      <br>
+  <div class="tdesign-demo-block-column-large">
+    <div class="tdesign-demo-block-column">
+      <p>1. 标题默认使用 title 渲染，自定义标题则有以下几种方式</p>
+      <p>2. 使用 title 作为渲染函数，函数参数为：title({ col, colIndex })</p>
+      <p>3. 插槽，使用 title 的值作为插槽名称</p>
+      <p>4. 使用 render 作为渲染函数，函数参数为：render({col, colIndex, row, rowIndex, type})，
+        单元格的 type 值为 cell，标题的 type 值为 title。使用排序、过滤等功能时不能使用该方法<b>【不推荐使用】</b>
+      </p>
     </div>
+
     <t-table :data="data" :columns="columns" rowKey="property">
       <!-- 自定义表头，title值为插槽名称  -->
       <template #title-slot-name>
@@ -76,9 +73,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.link {
-  color: #0052d9;
-  text-decoration: none;
-}
-</style>

@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <t-radio-group v-model="asyncLoadingRadio">
-      <t-radio-button value="load-more">加载更多</t-radio-button>
-      <t-radio-button value="loading">加载中</t-radio-button>
-      <t-radio-button value="loading-custom">自定义加载更多</t-radio-button>
-      <t-radio-button value="">加载完成</t-radio-button>
-    </t-radio-group>
+  <div class="tdesign-demo-block-column">
+    <div>
+      <t-radio-group v-model="asyncLoadingRadio" variant="default-filled">
+        <t-radio-button value="load-more">加载更多</t-radio-button>
+        <t-radio-button value="loading">加载中</t-radio-button>
+        <t-radio-button value="loading-custom">自定义加载更多</t-radio-button>
+        <t-radio-button value="">加载完成</t-radio-button>
+      </t-radio-group>
+    </div>
 
     <t-list :async-loading="asyncLoading"  @load-more="loadMore" split>
       <t-list-item v-for="i in listCount" :key="i">

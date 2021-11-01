@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div style="margin-bottom: 10px;">默认加载状态</div>
+  <div class="tdesign-demo-block-column">
+    <div>默认加载状态</div>
     <t-table
       :data="data"
       :columns="columns"
@@ -9,7 +9,8 @@
       :loading="true"
       height="150"
     ></t-table>
-    <div style="margin-bottom: 10px;">插槽定义加载状态</div>
+
+    <div>插槽定义加载状态</div>
     <t-table
       :data="[]"
       :columns="columns"
@@ -22,7 +23,8 @@
         这里使用插槽自定义加载状态
       </div>
     </t-table>
-    <div style="margin-bottom: 10px;">渲染函数定义加载状态</div>
+
+    <div>渲染函数定义加载状态</div>
     <t-table
       :data="[]"
       :columns="columns"
