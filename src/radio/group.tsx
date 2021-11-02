@@ -27,6 +27,7 @@ export default Vue.extend({
   data() {
     return {
       barStyle: {},
+      observer: null,
     };
   },
 
@@ -72,14 +73,20 @@ export default Vue.extend({
 
   watch: {
     value() {
-      this.$nextTick(() => {
-        this.calcBarStyle();
-      });
+      this.$nextTick(() => this.calcBarStyle());
     },
   },
 
   mounted() {
     this.calcBarStyle();
+
+    const observer = new MutationObserver(this.calcBarStyle);
+    observer.observe(this.$el, { childList: true, attributes: true, subtree: true });
+    this.observer = observer;
+  },
+
+  beforeDestroy() {
+    this.observer.disconnect();
   },
 
   methods: {
