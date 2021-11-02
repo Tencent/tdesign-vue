@@ -83,7 +83,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -140,7 +140,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -441,7 +441,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -498,7 +498,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -739,7 +739,7 @@ exports[`Calendar :props :mode 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -875,7 +875,7 @@ exports[`Calendar :props :range 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -932,7 +932,7 @@ exports[`Calendar :props :range 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -1203,7 +1203,7 @@ exports[`Calendar :props :theme 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -1260,7 +1260,7 @@ exports[`Calendar :props :theme 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -1598,7 +1598,7 @@ exports[`Calendar :props :value 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -1655,7 +1655,7 @@ exports[`Calendar :props :value 1`] = `
                 </div>
               </div>
             </transition-stub>
-            <div class="t-select t-size-m"><span class="t-select-placeholder"> </span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+            <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>

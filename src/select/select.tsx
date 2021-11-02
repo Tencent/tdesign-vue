@@ -431,6 +431,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
       return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
+    getPlaceholderText() {
+      return this.placeholder || this.t(this.locale.placeholderText);
+    },
     getCloseIcon() {
       const closeIconClass = [`${name}-right-icon`, `${name}-right-icon__clear`];
       if (isFunction(this.locale.clearIcon)) {
@@ -462,7 +465,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       popClass,
       size,
       showPlaceholder,
-      placeholder,
       selectedMultiple,
       multiple,
       showFilter,
@@ -482,6 +484,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     const prefixIconSlot = renderTNodeJSX(this, 'prefixIcon');
     const emptySlot = this.getEmpty();
     const loadingTextSlot = this.getLoadingText();
+    const placeholderText = this.getPlaceholderText();
     return (
       <div ref='select' class={`${name}-wrap`}>
         <Popup
@@ -506,7 +509,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               showPlaceholder && (
-                <span class={`${name}-placeholder`}> { placeholder }</span>
+                <span class={`${name}-placeholder`}> { placeholderText }</span>
               )
             }
             {this.valueDisplay || this.$scopedSlots.valueDisplay

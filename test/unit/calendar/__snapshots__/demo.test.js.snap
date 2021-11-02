@@ -277,7 +277,7 @@ exports[`Calendar base demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -478,7 +478,7 @@ exports[`Calendar base demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1195,7 +1195,7 @@ exports[`Calendar card demo works fine 1`] = `
           <span
             class="t-select-placeholder"
           >
-             
+             请选择
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1510,7 +1510,7 @@ exports[`Calendar card demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1711,7 +1711,7 @@ exports[`Calendar card demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -2474,7 +2474,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
           <span
             class="t-select-placeholder"
           >
-             
+             请选择
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -2778,7 +2778,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -2979,7 +2979,7 @@ exports[`Calendar cardCell demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -3944,7 +3944,7 @@ exports[`Calendar cell demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -4145,7 +4145,7 @@ exports[`Calendar cell demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -5134,7 +5134,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -5335,7 +5335,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -6507,7 +6507,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -6708,7 +6708,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -7650,7 +7650,7 @@ exports[`Calendar events demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -7851,7 +7851,7 @@ exports[`Calendar events demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -8826,7 +8826,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -9027,7 +9027,7 @@ exports[`Calendar eventsPropsApi demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -9983,7 +9983,7 @@ exports[`Calendar filter demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -10184,7 +10184,7 @@ exports[`Calendar filter demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -10814,7 +10814,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           <span
             class="t-select-placeholder"
           >
-             
+             请选择
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -11118,7 +11118,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -11319,7 +11319,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -12340,7 +12340,7 @@ exports[`Calendar head demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -12541,7 +12541,7 @@ exports[`Calendar head demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -13258,7 +13258,7 @@ exports[`Calendar mode demo works fine 1`] = `
           <span
             class="t-select-placeholder"
           >
-             
+             请选择
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -13562,7 +13562,7 @@ exports[`Calendar mode demo works fine 1`] = `
                 <span
                   class="t-select-placeholder"
                 >
-                   
+                   请选择
                 </span>
                 <span
                   class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -14027,7 +14027,7 @@ exports[`Calendar range demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -14228,7 +14228,7 @@ exports[`Calendar range demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -15151,7 +15151,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -15352,7 +15352,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -16271,7 +16271,7 @@ exports[`Calendar value demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -16472,7 +16472,7 @@ exports[`Calendar value demo works fine 1`] = `
               <span
                 class="t-select-placeholder"
               >
-                 
+                 请选择
               </span>
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -17496,7 +17496,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -17697,7 +17697,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -18636,7 +18636,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -18837,7 +18837,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -19762,7 +19762,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -19963,7 +19963,7 @@ exports[`Calendar week demo works fine 1`] = `
                   <span
                     class="t-select-placeholder"
                   >
-                     
+                     请选择
                   </span>
                   <span
                     class="t-tag t-tag--default t-size-m t-tag--dark"
