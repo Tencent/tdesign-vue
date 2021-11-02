@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-02 11:06:24
  * */
 
+import { TdRowProps } from '../grid/type';
 import { PropType } from 'vue';
-import { TdRowProps } from './type';
 
 export default {
   /** 纵向对齐方式 */

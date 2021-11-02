@@ -1,5 +1,4 @@
 import Vue, { VNode } from 'vue';
-import debounce from 'lodash/debounce';
 import isObject from 'lodash/isObject';
 import { prefix } from '../config';
 import props from './row-props';
@@ -24,7 +23,6 @@ export default Vue.extend({
     return {
       rowContext: {
         gutter: this.gutter,
-        size: this.size,
       },
     };
   },
@@ -51,63 +49,53 @@ export default Vue.extend({
   },
 
   methods: {
-    updateSize: debounce(function (this: any) {
+    updateSize() {
       this.size = calcSize(window.innerWidth);
-    }, 50),
+    },
 
-    calcRowMargin(gutter: TdRowProps['gutter'], currentSize: string): object {
-      const marginObj = {};
-      if (typeof gutter === 'number' && gutter > 0) {
-        Object.assign(marginObj, {
+    calcRowStyle(gutter: TdRowProps['gutter'], currentSize: string): object {
+      const rowStyle = {};
+      if (typeof gutter === 'number') {
+        Object.assign(rowStyle, {
+          rowGap: `${gutter}px`,
           marginLeft: `${gutter / -2}px`,
           marginRight: `${gutter / -2}px`,
-          marginTop: `${gutter / -2}px`,
-          marginBottom: `${gutter / -2}px`,
         });
       } else if (Array.isArray(gutter) && gutter.length) {
-        if (gutter[0] as any > 0) {
-          Object.assign(marginObj, {
-            marginLeft: `${gutter[0] as any / -2}px`,
-            marginRight: `${gutter[0] as any / -2}px`,
+        if (typeof gutter[0] === 'number') {
+          Object.assign(rowStyle, {
+            marginLeft: `${gutter[0] / -2}px`,
+            marginRight: `${gutter[0] / -2}px`,
           });
         }
-        if (gutter[1] as any > 0) {
-          Object.assign(marginObj, {
-            marginTop: `${gutter[1] as any / -2}px`,
-            marginBottom: `${gutter[1] as any / -2}px`,
+        if (typeof gutter[1] === 'number') {
+          Object.assign(rowStyle, { rowGap: `${gutter[1]}px` });
+        }
+
+        if (isObject(gutter[0]) && gutter[0][currentSize] !== undefined) {
+          Object.assign(rowStyle, {
+            marginLeft: `${gutter[0][currentSize] / -2}px`,
+            marginRight: `${gutter[0][currentSize] / -2}px`,
           });
+        }
+        if (isObject(gutter[1]) && gutter[1][currentSize] !== undefined) {
+          Object.assign(rowStyle, { rowGap: `${gutter[1][currentSize]}px` });
         }
       } else if (isObject(gutter) && gutter[currentSize]) {
-        if (Array.isArray(gutter[currentSize])) {
-          if (gutter[currentSize][0] > 0) {
-            Object.assign(marginObj, {
-              marginLeft: `${gutter[currentSize][0] / -2}px`,
-              marginRight: `${gutter[currentSize][0] / -2}px`,
-            });
-          }
-          if (gutter[currentSize][1] > 0) {
-            Object.assign(marginObj, {
-              marginTop: `${gutter[currentSize][1] / -2}px`,
-              marginBottom: `${gutter[currentSize][1] / -2}px`,
-            });
-          }
-        } else if (gutter[currentSize] > 0) {
-          Object.assign(marginObj, {
-            marginLeft: `${gutter[currentSize] / -2}px`,
-            marginRight: `${gutter[currentSize] / -2}px`,
-            marginTop: `${gutter[currentSize] / -2}px`,
-            marginBottom: `${gutter[currentSize] / -2}px`,
-          });
-        }
+        Object.assign(rowStyle, {
+          rowGap: `${gutter[currentSize]}px`,
+          marginLeft: `${gutter[currentSize] / -2}px`,
+          marginRight: `${gutter[currentSize] / -2}px`,
+        });
       }
-      return marginObj;
+      return rowStyle;
     },
   },
 
   render(): VNode {
     const { tag, classes } = this;
 
-    const rowStyle = this.calcRowMargin(this.gutter, this.size);
+    const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
     return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
   },

@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-02 11:06:24
  * */
 
 export interface TdRowProps {
@@ -13,7 +15,7 @@ export interface TdRowProps {
    * 栅格间隔，示例：`{ xs: 8, sm: 16, md: 24}`。当数据类型为 Number 和 Object 时，用于指定横向间隔。当数据类型为数组时，第一个参数为横向间隔，第二个参数为纵向间隔， [水平间隔, 垂直间隔]
    * @default 0
    */
-  gutter?: number | GutterObject | Array<GutterObject>;
+  gutter?: number |  GutterObject | Array<GutterObject | number>;
   /**
    * flex 布局下的水平排列方式
    * @default start
@@ -24,7 +26,7 @@ export interface TdRowProps {
    * @default div
    */
   tag?: string;
-}
+};
 
 export interface TdColProps {
   /**
@@ -85,18 +87,8 @@ export interface TdColProps {
    * ≥1880px 响应式栅格，可为栅格数或一个包含其他属性的对象（大尺寸电脑）
    */
   xxl?: number | BaseColProps;
-}
+};
 
-export interface GutterObject {
-  xs: number;
-  sm: number;
-  md: number
-}
+export interface GutterObject { xs: number; sm: number; md: number } ;
 
-export interface BaseColProps {
-  offset: number;
-  order: number;
-  pull: number;
-  push: number;
-  span: number
-}
+export interface BaseColProps { offset: number; order: number; pull: number; push: number; span: number };
