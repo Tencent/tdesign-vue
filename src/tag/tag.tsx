@@ -62,10 +62,7 @@ export default Vue.extend({
     // 标签内容
     const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');
     // 图标
-    let icon: VNode;
-    if (typeof this.icon === 'function') {
-      icon = this.icon(this.$createElement);
-    }
+    const icon = renderTNodeJSX(this, 'icon');
 
     return (
       <span class={this.tagClass} onClick={this.handleClick}>

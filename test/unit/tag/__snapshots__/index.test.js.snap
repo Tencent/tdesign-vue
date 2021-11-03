@@ -76,4 +76,4 @@ exports[`Tag or CheckTag CheckTag:props :checked 1`] = `<span class="t-tag t-tag
 
 exports[`Tag or CheckTag CheckTag:props :disabled 1`] = `<span class="t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled"></span>`;
 
-exports[`Tag or CheckTag Tag:slot <icon> 1`] = `<span class="t-tag t-tag--default t-size-m t-tag--dark"></span>`;
+exports[`Tag or CheckTag Tag:slot <icon> 1`] = `<span class="t-tag t-tag--default t-size-m t-tag--dark"><div></div></span>`;

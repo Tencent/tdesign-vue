@@ -1,6 +1,16 @@
 <template>
-  <div class="tdesign-tag-icon">
-    <t-tag :icon="renderDiscountIcon">默认标签</t-tag>
+  <div class="tdesign-demo-block-column">
+    <div class="tdesign-demo-block-row">
+      <t-tag :icon="renderDiscountIcon">默认标签</t-tag>
+    </div>
+    <div class="tdesign-demo-block-row">
+      <t-tag>
+        <template #icon>
+          <discount-icon />
+        </template>
+        Icon插槽
+      </t-tag>
+    </div>
   </div>
 </template>
 
@@ -8,6 +18,7 @@
 import { DiscountIcon } from '@tencent/tdesign-icons-vue';
 
 export default {
+  components: { DiscountIcon },
   methods: {
     renderDiscountIcon() {
       return <DiscountIcon />;
