@@ -2,8 +2,9 @@
   <div>
     <t-pagination
       v-model="current"
-      :total="685"
+      :total="total"
       :page-size.sync="pageSize"
+      :totalContent="renderTotalContent"
     />
   </div>
 </template>
@@ -14,7 +15,13 @@ export default {
     return {
       current: 12,
       pageSize: 10,
+      total: 685,
     };
+  },
+  methods: {
+    renderTotalContent() {
+      return <div class="t-pagination__total">{`共 ${this.total} 项数据`}</div>;
+    },
   },
 };
 </script>

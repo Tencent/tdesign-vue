@@ -1,4 +1,4 @@
-import PaginationBase from './pagination.vue';
+import PaginationBase from './pagination';
 import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 import { TdPaginationProps } from './type';
