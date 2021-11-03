@@ -25,7 +25,7 @@ exports[`Dialog async demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -168,7 +168,7 @@ exports[`Dialog attach demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -263,7 +263,7 @@ exports[`Dialog attach demo works fine 1`] = `
       class="t-dialog-mask"
     />
     <div
-      class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+      class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
       style="max-height: calc(100% - 20%);"
     >
       <div
@@ -370,7 +370,7 @@ exports[`Dialog base demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -491,7 +491,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -562,7 +562,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -612,7 +612,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -690,7 +690,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -831,7 +831,7 @@ exports[`Dialog custom demo works fine 1`] = `
           class="t-dialog-mask"
         />
         <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+          class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
           style="max-height: calc(100% - 20%);"
         >
           <div
@@ -903,7 +903,7 @@ exports[`Dialog custom demo works fine 1`] = `
           class="t-dialog-mask"
         />
         <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+          class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
           style="max-height: calc(100% - 20%);"
         >
           <div
@@ -982,7 +982,7 @@ exports[`Dialog custom demo works fine 1`] = `
           class="t-dialog-mask"
         />
         <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+          class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
           style="max-height: calc(100% - 20%);"
         >
           <div
@@ -1136,7 +1136,7 @@ exports[`Dialog custom demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1209,7 +1209,7 @@ exports[`Dialog custom demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1284,7 +1284,7 @@ exports[`Dialog custom demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1359,7 +1359,7 @@ exports[`Dialog custom demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1448,7 +1448,7 @@ exports[`Dialog drag demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1530,7 +1530,7 @@ exports[`Dialog drag demo works fine 1`] = `
       style="display: none;"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1608,7 +1608,7 @@ exports[`Dialog drag demo works fine 1`] = `
       style="display: none;"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1689,7 +1689,7 @@ exports[`Dialog icon demo works fine 1`] = `
       class="t-dialog-ctx v-transfer-dom"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-info"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1773,7 +1773,7 @@ exports[`Dialog icon demo works fine 1`] = `
       class="t-dialog-ctx v-transfer-dom"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-warning"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1857,7 +1857,7 @@ exports[`Dialog icon demo works fine 1`] = `
       class="t-dialog-ctx v-transfer-dom"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-danger"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -1941,7 +1941,7 @@ exports[`Dialog icon demo works fine 1`] = `
       class="t-dialog-ctx v-transfer-dom"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-success"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2074,7 +2074,7 @@ exports[`Dialog modal demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2156,7 +2156,7 @@ exports[`Dialog modal demo works fine 1`] = `
       style="display: none;"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2235,7 +2235,7 @@ exports[`Dialog modal demo works fine 1`] = `
       style="display: none;"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2314,7 +2314,7 @@ exports[`Dialog modal demo works fine 1`] = `
       style="display: none;"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2539,7 +2539,7 @@ exports[`Dialog position demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2612,7 +2612,7 @@ exports[`Dialog position demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--center t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--center t-dialog__modal-default t-dialog--fixed"
       >
         <div
           class="t-dialog__header"
@@ -2684,7 +2684,7 @@ exports[`Dialog position demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="top: 50px; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 50px);"
       >
         <div
@@ -2772,7 +2772,7 @@ exports[`Dialog warning demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-info t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2869,7 +2869,7 @@ exports[`Dialog warning demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-success t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -2966,7 +2966,7 @@ exports[`Dialog warning demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-warning t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -3053,7 +3053,7 @@ exports[`Dialog warning demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-danger t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div
@@ -3140,7 +3140,7 @@ exports[`Dialog warning demo works fine 1`] = `
         class="t-dialog-mask"
       />
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog--fixed"
+        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
         style="max-height: calc(100% - 20%);"
       >
         <div

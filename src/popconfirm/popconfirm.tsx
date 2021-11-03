@@ -44,7 +44,7 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
     innerPopupProps(): PopupProps {
       return {
         showArrow: this.showArrow,
-        overlayClassName: name,
+        overlayClassName: [name, `${name}__popup--${this.theme || 'default'}`],
         trigger: 'click',
         destroyOnClose: this.destroyOnClose,
         placement: this.placement,

@@ -80,7 +80,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
       return [`${name}-mask`, !this.showOverlay && `${name}-mask--hidden`];
     },
     dialogClass(): ClassName {
-      const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`];
+      const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`, `${name}__modal-${this.theme}`];
       if (['modeless', 'modal'].includes(this.mode)) {
         dialogClass.push(`${name}--fixed`);
       }
