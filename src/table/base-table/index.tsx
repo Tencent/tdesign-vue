@@ -227,18 +227,18 @@ export default mixins(getLocalReceiverMixins('table')).extend({
             props={{ ...paginationProps }}
             {...{
               on: {
-                change: (pageInfo: PageInfo) => {
-                  paginationProps.onChange && paginationProps.onChange(pageInfo);
-                },
+                // change: (pageInfo: PageInfo) => {
+                //   paginationProps.onChange && paginationProps.onChange(pageInfo);
+                // },
                 'current-change': (current: number, pageInfo: PageInfo) => {
                   emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
                   this.defaultCurrent = current;
-                  paginationProps.onCurrentChange && paginationProps.onCurrentChange(current, pageInfo);
+                  // paginationProps.onCurrentChange && paginationProps.onCurrentChange(current, pageInfo);
                 },
                 'page-size-change': (pageSize: number, pageInfo: PageInfo) => {
                   emitEvent<PageChangeContext>(this, 'page-change', pageInfo, this.dataSource);
                   this.defaultPageSize = pageSize;
-                  paginationProps.onPageSizeChange && paginationProps.onPageSizeChange(pageSize, pageInfo);
+                  // paginationProps.onPageSizeChange && paginationProps.onPageSizeChange(pageSize, pageInfo);
                 },
               },
             }}

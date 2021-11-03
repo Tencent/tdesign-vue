@@ -14,6 +14,7 @@ import CLASSNAMES from '../utils/classnames';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-pagination`;
 const min = 1;
@@ -226,16 +227,10 @@ export default mixins(PaginationLocalReceiver).extend({
           pageSize: this.pageSize,
         };
         if (isTriggerChange !== false) {
-          this.$emit('change', pageInfo);
-          if (typeof this.onChange === 'function') {
-            this.onChange(pageInfo);
-          }
+          emitEvent(this, 'change', pageInfo);
         }
         this.$emit('update:current', current);
-        this.$emit('current-change', current, pageInfo);
-        if (typeof this.onCurrentChange === 'function') {
-          this.onCurrentChange(current, pageInfo);
-        }
+        emitEvent(this, 'current-change', current, pageInfo);
       }
     },
     prevPage(): void {
@@ -291,11 +286,8 @@ export default mixins(PaginationLocalReceiver).extend({
         pageSize,
       };
       this.$emit('update:pageSize', pageSize);
-      this.$emit('page-size-change', pageSize, pageInfo);
-      if (typeof this.onPageSizeChange === 'function') {
-        this.onPageSizeChange(pageSize, pageInfo);
-      }
-      this.$emit('change', pageInfo);
+      emitEvent(this, 'page-size-change', pageSize, pageInfo);
+      emitEvent(this, 'change', pageInfo);
       if (isIndexChange) {
         this.toPage(pageCount, false);
       }
