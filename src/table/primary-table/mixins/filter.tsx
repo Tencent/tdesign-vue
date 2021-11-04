@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { FilterIcon as TIconFilter } from '@tencent/tdesign-icons-vue';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
@@ -15,6 +15,10 @@ import { emitEvent } from '../../../utils/event';
 type FilterChangeContext = Parameters<TdPrimaryTableProps['onFilterChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
 
+type Params = Parameters<CreateElement>;
+type FirstParams = Params[0];
+type SecondParams = Params[1] | Params[2];
+
 export default Vue.extend({
   name: `${prefix}-primary-table-filter`,
   props: {
@@ -24,7 +28,7 @@ export default Vue.extend({
     data: baseTableProps.data,
   },
   methods: {
-    onInnerFilterChange(val: string | number, column: PrimaryTableCol) {
+    onInnerFilterChange(val: any, column: PrimaryTableCol) {
       const filterValue = {
         ...this.filterValue,
         [column.colKey]: val,
@@ -36,7 +40,11 @@ export default Vue.extend({
     getFilterContent(column: PrimaryTableCol) {
       const types = ['single', 'multiple', 'input'];
       if (column.type && !types.includes(column.filter.type)) {
-        console.error(`column.type must be the following: ${JSON.stringify(types)}`);
+        console.error(`TDesign Table Error: column.filter.type must be the following: ${JSON.stringify(types)}`);
+        return;
+      }
+      if (column?.filter?.component && typeof column?.filter?.component !== 'function') {
+        console.error('TDesign Table Error: column.filter.component must be a function');
         return;
       }
       const component = {
@@ -44,20 +52,35 @@ export default Vue.extend({
         multiple: CheckboxGroup,
         input: Input,
       }[column.filter.type];
-      if (!component) return;
+      if (!component && !column?.filter?.component) return;
       const props = {
         options: ['single', 'multiple'].includes(column.filter.type)
-          ? column.filter.list
+          ? column.filter?.list
           : undefined,
-        ...(column.filter.props || {}),
+        ...(column.filter?.props || {}),
+        value: this.filterValue[column.colKey],
+      };
+      const on = {
+        change: (val: any) => this.onInnerFilterChange(val, column),
       };
       return (
         <div class={`${prefix}-table-filter-pop-content__inner`}>
-          <component
-            value={this.filterValue[column.colKey]}
-            props={{ ...props }}
-            on={{ change: (val: string | number) => this.onInnerFilterChange(val, column) }}
-          ></component>
+          {column?.filter?.component
+            ? column?.filter?.component((v: FirstParams, b: SecondParams) => {
+              const tProps = (typeof b === 'object' && ('attrs' in b)) ? b.attrs : {};
+              return this.$createElement(v, {
+                props: { ...props, ...tProps },
+                on,
+              });
+            })
+            : (
+              <component
+                value={this.filterValue[column.colKey]}
+                props={{ ...props }}
+                on={{ ...on }}
+              ></component>
+            )
+          }
         </div>
       );
     },

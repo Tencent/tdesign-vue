@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-10-19 19:41:02
+ * updated at 2021-11-03 23:10:26
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -308,7 +308,7 @@ export interface PrimaryTableCol<T extends DataType = DataType> extends BaseTabl
    */
   disabled?: (options: {row: T; rowIndex: number }) => boolean;
   /**
-   * 过滤规则，支持多选(multiple)、单选(single)、输入框(input)三种形式。
+   * 过滤规则，支持多选(multiple)、单选(single)、输入框(input) 等三种形式。想要自定义过滤组件，可通过 `filter.component` 实现，示例：`(h) => <div>过滤组件</div>`
    */
   filter?: Filter;
   /**
@@ -321,7 +321,7 @@ export interface PrimaryTableCol<T extends DataType = DataType> extends BaseTabl
    */
   sorter?: boolean | SorterFun<T>;
   /**
-   * 当前列支持排序的方式
+   * 当前列支持排序的方式，desc 表示当前列只能进行降序排列；asc 表示当前列只能进行升序排列；all 表示当前列既可升序排列，又可以降序排列
    * @default all
    */
   sortType?: SortType;
@@ -374,7 +374,7 @@ export interface SortOptions<T> { currentDataSource?: Array<T>; col: PrimaryTabl
 
 export type CheckProps<T> = CheckboxProps | RadioProps | ((options: { row: T; rowIndex: number }) => CheckboxProps | RadioProps);
 
-export interface Filter { type: FilterType; list?: Array<OptionData>; props: FilterProps };
+export interface Filter { type: FilterType; list?: Array<OptionData>; props?: FilterProps; component?: TNode };
 
 export type FilterType = 'input' | 'single' | 'multiple';
 
