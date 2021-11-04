@@ -134,7 +134,7 @@ export default {
     },
     getStatusIcon(h) {
       console.log(h);
-      return <icon name='help-circle' size="24px" style="color: #0006"/>;
+      return <Icon name='help-circle' size="24px" style="color: #0006"/>;
     },
   },
 };
