@@ -119,10 +119,11 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       return !!(parent && parent.colon && this.getLabelContent());
     },
     needRequiredMark(): boolean {
+      const { requiredMark } = this.$props;
+      if (typeof requiredMark === 'boolean') return requiredMark;
       const parent = this.form;
-      const allowMark = parent && parent.requiredMark;
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
-      return Boolean(allowMark && isRequired);
+      return Boolean(parent?.requiredMark && isRequired);
     },
     innerRules(): FormRule[] {
       const parent = this.form;

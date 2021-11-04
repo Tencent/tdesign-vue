@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-23 19:46:09
+ * updated at 2021-11-04 20:25:52
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -103,7 +103,7 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
   /**
    * 校验函数。fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验
    */
-  validate?: (param?: FormValidateParams) => void;
+  validate?: (param?: FormValidateParams) => FormValidateResult<FormData>;
 }
 
 export interface TdFormItemProps {
@@ -135,6 +135,10 @@ export interface TdFormItemProps {
    * @default ''
    */
   name?: string;
+  /**
+   * 是否显示必填符号，优先级高于 Form.requiredMark
+   */
+  requiredMark?: boolean;
   /**
    * 表单字段校验规则
    * @default []

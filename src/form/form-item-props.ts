@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-22 10:58:18
+ * updated at 2021-11-04 20:25:52
  * */
 
 import { TdFormItemProps } from '../form/type';
@@ -39,6 +39,11 @@ export default {
   name: {
     type: String,
     default: '',
+  },
+  /** 是否显示必填符号，优先级高于 Form.requiredMark */
+  requiredMark: {
+    type: Boolean,
+    default: undefined,
   },
   /** 表单字段校验规则 */
   rules: {
