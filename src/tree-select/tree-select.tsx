@@ -54,6 +54,14 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       nodeInfo: null,
     };
   },
+  watch: {
+    async value() {
+      await this.changeNodeInfo();
+      if (!this.multiple) {
+        this.actived = this.nodeInfo ? [this.nodeInfo.value] : [];
+      }
+    },
+  },
   computed: {
     classes(): ClassName {
       return [
