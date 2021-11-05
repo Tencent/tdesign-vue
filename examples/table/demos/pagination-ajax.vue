@@ -12,9 +12,8 @@
   >
   </t-table>
 </template>
-<script>
-import axios from 'axios';
 
+<script>
 export default {
   data() {
     return {
@@ -67,19 +66,17 @@ export default {
         this.isLoading = true;
         const { current, pageSize } = pagination;
         // 请求可能存在跨域问题
-        const response = await axios.get('https://randomuser.me/api', {
-          params: {
-            page: current,
-            results: pageSize,
-          },
-          responseType: 'json',
-        });
-        this.data = response.data.results;
+        const url = new URL('https://randomuser.me/api');
+        const params = { page: current, results: pageSize };
+        Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
+        const response = await fetch(url).then((x) => x.json());
+        console.log('response', response);
+        this.data = response.results;
         this.pagination = {
           ...pagination,
           total: 120,
         };
-        console.log('分页数据', response.data.results);
+        console.log('分页数据', response.results);
       } catch (err) {
         this.data = [];
       }

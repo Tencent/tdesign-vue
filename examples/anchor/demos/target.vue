@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import get from 'lodash/get';
-
 export default {
   computed: {
     path() {
-      return get(this, '$route.path', '');
+      return this?.$route?.path || '';
     },
   },
 };
