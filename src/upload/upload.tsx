@@ -255,12 +255,7 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
         this.handleRequestMethod(file);
       } else {
         // 模拟进度条
-        const timer = setInterval(() => {
-          file.percent += 1;
-          if (file.percent >= 99) {
-            clearInterval(timer);
-          }
-        }, 10);
+        this.handleMockProgress(file);
         const request = xhr;
         this.xhrReq = request({
           action: this.action,
@@ -274,6 +269,28 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
           onSuccess: this.handleSuccess,
         });
       }
+    },
+    /** 模拟进度条 Mock Progress */
+    handleMockProgress(file: UploadFile) {
+      const timer = setInterval(() => {
+        file.percent += 1;
+        if (file.percent >= 99) {
+          clearInterval(timer);
+        }
+        this.handleProgress({
+          event: {
+            ...new Event('progress'),
+            ...{
+              lengthComputable: false,
+              loaded: file.percent,
+              target: null,
+              total: 1,
+            },
+          },
+          file,
+          percent: file.percent,
+        });
+      }, 10);
     },
 
     handleRequestMethod(file: UploadFile) {
