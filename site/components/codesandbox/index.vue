@@ -22,7 +22,7 @@
 <script>
 const packageJSON = require('./package.json');
 packageJSON.dependencies['tdesign-vue'] = __VERSION__; // eslint-disable-line
-packageJSON.dependencies['tdesign-icons-vue'] = '0.0.2';
+packageJSON.dependencies['tdesign-icons-vue'] = '0.0.4';
 
 const packageJSONContent = JSON.stringify(packageJSON, null, 2);
 const mainJsContent = require('!!raw-loader!./main.js').default; // eslint-disable-line
