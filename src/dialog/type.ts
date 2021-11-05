@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-10 15:51:08
+ * updated at 2021-11-05 09:20:13
  * */
 
 import { ButtonProps } from '../button';
@@ -132,7 +132,7 @@ export interface TdDialogProps {
    */
   onClosed?: () => void;
   /**
-   * 如果“确认”按钮存在，则点击“确认”按钮时触发，同时触发关闭事件
+   * 如果“确认”按钮存在，则点击“确认”按钮时触发
    */
   onConfirm?: (context: { e: MouseEvent }) => void;
   /**

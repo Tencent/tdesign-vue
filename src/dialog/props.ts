@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-10 15:51:08
+ * updated at 2021-11-05 09:20:13
  * */
 
 import { TdDialogProps } from './type';
@@ -120,7 +120,7 @@ export default {
   onCloseBtnClick: Function as PropType<TdDialogProps['onCloseBtnClick']>,
   /** 对话框消失动画效果结束后触发 */
   onClosed: Function as PropType<TdDialogProps['onClosed']>,
-  /** 如果“确认”按钮存在，则点击“确认”按钮时触发，同时触发关闭事件 */
+  /** 如果“确认”按钮存在，则点击“确认”按钮时触发 */
   onConfirm: Function as PropType<TdDialogProps['onConfirm']>,
   /** 按下 ESC 时触发事件 */
   onEscKeydown: Function as PropType<TdDialogProps['onEscKeydown']>,
