@@ -1,10 +1,10 @@
 <template>
   <div>
-    <t-drawer :visible="visible" @close="handleClose" :showOverlay="false" :onConfirm="handleClose" header="标题名称">
-      <p>This is a drawer</p>
+    <t-drawer :visible="visible" @close="handleClose" :showOverlay="false" :onConfirm="handleClose" header="抽屉标题">
+      <p>抽屉的内容</p>
     </t-drawer>
 
-    <t-button theme="primary" @click="handleClick">Open</t-button>
+    <t-button variant="outline" @click="handleClick">打开抽屉</t-button>
   </div>
 </template>
 

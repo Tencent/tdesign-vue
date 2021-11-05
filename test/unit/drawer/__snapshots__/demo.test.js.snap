@@ -20,7 +20,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
         <div
           class="t-drawer__header"
         >
-          标题名称
+          抽屉标题
         </div>
         <div
           class="t-drawer__close-btn"
@@ -29,7 +29,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           class="t-drawer__body"
         >
           <p>
-            This is a drawer
+            抽屉的内容
           </p>
         </div>
         <div
@@ -87,7 +87,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           <span
             class="t-radio-button__label"
           >
-            left
+            左侧
           </span>
         </label>
          
@@ -106,7 +106,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           <span
             class="t-radio-button__label"
           >
-            right
+            右侧
           </span>
         </label>
          
@@ -125,7 +125,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           <span
             class="t-radio-button__label"
           >
-            top
+            上方
           </span>
         </label>
          
@@ -144,7 +144,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
           <span
             class="t-radio-button__label"
           >
-            bottom
+            下方
           </span>
         </label>
       </div>
@@ -205,13 +205,13 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
     <br />
      
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
       <span
         class="t-button__text"
       >
-        Open
+        打开抽屉
       </span>
     </button>
   </div>
@@ -244,7 +244,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is the body of drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -288,7 +288,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        This is the title.
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -297,7 +297,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is the body of drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -342,7 +342,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        I am the title
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -351,7 +351,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is the body of drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -368,7 +368,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              OK
+              确认
             </span>
           </button>
           <button
@@ -378,7 +378,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              cancel
+              取消
             </span>
           </button>
         </div>
@@ -387,39 +387,39 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open(插槽定义)
+      打开(插槽定义)
     </span>
   </button>
   
     
   
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open(属性定义)
+      打开(属性定义)
     </span>
   </button>
   
     
   
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open(单独设置确认/取消按钮)
+      打开(单独设置确认/取消按钮)
     </span>
   </button>
 </div>
@@ -437,7 +437,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        标题名称
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -446,7 +446,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is a drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -481,13 +481,13 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open
+      打开抽屉
     </span>
   </button>
 </div>
@@ -508,7 +508,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        标题名称
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -517,7 +517,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is a drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -572,7 +572,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          left
+          左侧
         </span>
       </label>
        
@@ -591,7 +591,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          right
+          右侧
         </span>
       </label>
        
@@ -610,7 +610,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          top
+          上方
         </span>
       </label>
        
@@ -629,117 +629,28 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          bottom
+          下方
         </span>
       </label>
     </div>
-     
-    <button
-      class="t-button t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
-      >
-        Open
-      </span>
-    </button>
   </div>
+   
+  <button
+    class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
 </div>
 `;
 
 exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
 <div>
   <!---->
-   
-  <div
-    class="tdesign-radio-button"
-  >
-    
-    抽屉弹出方向：
-    
-    <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
-    >
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="left"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          left
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="right"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          right
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="top"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          top
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="bottom"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          bottom
-        </span>
-      </label>
-    </div>
-  </div>
-   
-  <br />
    
   <div
     class="tdesign-radio-button"
@@ -794,13 +705,13 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
   <br />
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open
+      打开抽屉
     </span>
   </button>
 </div>
@@ -821,7 +732,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        标题名称
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -830,7 +741,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is a drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -868,90 +779,6 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
-    >
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="left"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          left
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="right"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          right
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="top"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          top
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="bottom"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          bottom
-        </span>
-      </label>
-    </div>
-  </div>
-   
-  <div
-    class="tdesign-radio-button"
-  >
-    <div
       class="btn-top-margin t-radio-group t-radio-group-medium t-radio-group-outline"
     >
       <label
@@ -969,7 +796,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          small(300px)
+          小
         </span>
       </label>
        
@@ -988,7 +815,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          medium(500px)
+          中
         </span>
       </label>
        
@@ -1007,7 +834,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          large(760px)
+          大
         </span>
       </label>
        
@@ -1071,13 +898,13 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
   </div>
    
   <button
-    class="btn-top-margin t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open
+      打开抽屉
     </span>
   </button>
 </div>
@@ -1088,13 +915,13 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
   <!---->
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open
+      打开抽屉
     </span>
   </button>
 </div>
@@ -1115,7 +942,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        标题名称
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -1127,7 +954,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           class="t-drawer-demo-div"
         >
           <span>
-            Label A
+            标签 A
           </span>
            
           <div
@@ -1144,7 +971,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           class="t-drawer-demo-div"
         >
           <span>
-            Label B
+            标签 B
           </span>
            
           <div
@@ -1161,7 +988,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           class="t-drawer-demo-div"
         >
           <span>
-            Label C
+            标签 C
           </span>
            
           <div
@@ -1206,13 +1033,13 @@ exports[`Drawer Demo operation wroks fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open
+      打开抽屉
     </span>
   </button>
 </div>
@@ -1233,7 +1060,7 @@ exports[`Drawer base demo works fine 1`] = `
       <div
         class="t-drawer__header"
       >
-        Drawer
+        抽屉标题
       </div>
       <div
         class="t-drawer__close-btn"
@@ -1256,7 +1083,7 @@ exports[`Drawer base demo works fine 1`] = `
         class="t-drawer__body"
       >
         <p>
-          This is a controlled drawer
+          抽屉的内容
         </p>
       </div>
       <div
@@ -1291,13 +1118,13 @@ exports[`Drawer base demo works fine 1`] = `
   </div>
    
   <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      Open a Drawer
+      打开抽屉
     </span>
   </button>
 </div>

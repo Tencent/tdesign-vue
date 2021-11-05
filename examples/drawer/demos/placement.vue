@@ -2,24 +2,24 @@
   <div>
     <!-- @click-cancel 和 :onClickCancel 两种写法都支持； :onClickOverlay 和 @click-overlay 两种写法都支持-->
     <t-drawer
-      header="标题名称"
+      header="抽屉标题"
       :visible="visible"
       @cancel="visible = false"
       :onOverlayClick="() => visible = false"
       :onConfirm="() => visible = false"
       :placement="placement"
     >
-      <p>This is a drawer</p>
+      <p>抽屉的内容</p>
     </t-drawer>
     <div class="tdesign-radio-button">
       <t-radio-group :defaultValue="placement" v-model="placement">
-        <t-radio-button value="left">left</t-radio-button>
-        <t-radio-button value="right">right</t-radio-button>
-        <t-radio-button value="top">top</t-radio-button>
-        <t-radio-button value="bottom">bottom</t-radio-button>
+        <t-radio-button value="left">左侧</t-radio-button>
+        <t-radio-button value="right">右侧</t-radio-button>
+        <t-radio-button value="top">上方</t-radio-button>
+        <t-radio-button value="bottom">下方</t-radio-button>
       </t-radio-group>
-      <t-button theme="primary" @click="visible = true" class="t-button">Open</t-button>
     </div>
+    <t-button variant="outline" @click="visible = true" class="btn-top-margin">打开抽屉</t-button>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.t-button {
-  margin-left: 20px;
+.btn-top-margin {
+  margin-top: 16px;
 }
 </style>

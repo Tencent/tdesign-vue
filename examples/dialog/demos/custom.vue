@@ -14,16 +14,13 @@
       >
         <div slot="body">
           <div>不需要标题的内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
+          <div>对话框内容</div>
         </div>
       </t-dialog>
 
       <t-dialog
         :visible="bodyVisible2"
-        header="标题"
+        header="对话框标题"
         :body="renderDialog2Body"
         :onClose="bodyClose2" :onClickConfirm="bodyClose2"
       >
@@ -32,12 +29,7 @@
 
       <t-dialog header="对话框标题" :visible="bodyVisible3" :onClose="bodyClose3" :onClickConfirm="bodyClose3" >
         <div slot="body">
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
-          <div>我是内容</div>
+          <div>对话框内容</div>
         </div>
       </t-dialog>
     </div>
@@ -78,7 +70,7 @@
 
     <t-dialog
       :visible="visible3"
-      header="提示"
+      header="对话框标题"
       body="自定义底部按钮，传入自定义组件"
       :confirmBtn="getConfirmBtn"
       cancelBtn="取消"
@@ -87,17 +79,13 @@
     </t-dialog>
     <t-dialog
       :visible="visible4"
-      header="提示"
+      header="对话框标题"
       body="对话框内容"
       :footer="false"
       :onClose="close4" :onClickConfirm="close4"
     >
       <div slot="body">
         <div>不需要底部按钮的内容</div>
-        <div>我是内容</div>
-        <div>我是内容</div>
-        <div>我是内容</div>
-        <div>我是内容</div>
       </div>
     </t-dialog>
   </div>
@@ -138,7 +126,7 @@ export default {
     },
 
     renderDialog2Body() {
-      return this.$createElement('div', [this.$createElement('h1', '参数传递优先于插槽内容'), '这是渲染函数输出结果']);
+      return this.$createElement('div', [this.$createElement('h2', '参数传递优先于插槽内容'), '这是渲染函数输出结果']);
     },
 
     bodyClose1() {

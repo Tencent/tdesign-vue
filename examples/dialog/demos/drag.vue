@@ -14,8 +14,7 @@
     >
       <div slot="body">
         <div>默认点击蒙层或按ESC可关闭</div>
-        <div>我是内容</div>
-        <div>我是内容</div>
+        <div>对话框内容</div>
       </div>
     </t-dialog>
 
@@ -27,8 +26,7 @@
       :onConfirm="()=>this.visibleModelessDrag = false"
     >
       <div slot="body">
-        <div>我是内容</div>
-        <div>我是内容</div>
+        <div>对话框内容</div>
       </div>
     </t-dialog>
 
@@ -39,8 +37,7 @@
       :onConfirm="()=>this.visibleModeless = false"
     >
       <div slot="body">
-        <div>我是内容</div>
-        <div>我是内容</div>
+        <div>对话框内容</div>
       </div>
     </t-dialog>
 

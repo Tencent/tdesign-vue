@@ -5,29 +5,21 @@
       :placement="placement"
       :size="size"
       :onConfirm="() => visible = false"
-      header="标题名称"
+      header="抽屉标题"
     >
-      <p>This is a drawer</p>
+      <p>抽屉的内容</p>
     </t-drawer>
     <div class="tdesign-radio-button">
-      <t-radio-group :defaultValue="placement" v-model="placement">
-        <t-radio-button value="left">left</t-radio-button>
-        <t-radio-button value="right">right</t-radio-button>
-        <t-radio-button value="top">top</t-radio-button>
-        <t-radio-button value="bottom">bottom</t-radio-button>
-      </t-radio-group>
-    </div>
-    <div class="tdesign-radio-button">
       <t-radio-group :defaultValue="size" v-model="size" class="btn-top-margin">
-        <t-radio-button value="small">small(300px)</t-radio-button>
-        <t-radio-button value="medium">medium(500px)</t-radio-button>
-        <t-radio-button value="large">large(760px)</t-radio-button>
+        <t-radio-button value="small">小</t-radio-button>
+        <t-radio-button value="medium">中</t-radio-button>
+        <t-radio-button value="large">大</t-radio-button>
         <t-radio-button value="200">200</t-radio-button>
         <t-radio-button value="400px">400px</t-radio-button>
         <t-radio-button value="50%">50%</t-radio-button>
       </t-radio-group>
     </div>
-    <t-button theme="primary" @click="visible = true" class="btn-top-margin">Open</t-button>
+    <t-button variant="outline" @click="visible = true" class="btn-top-margin">打开抽屉</t-button>
   </div>
 </template>
 

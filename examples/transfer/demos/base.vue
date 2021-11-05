@@ -23,7 +23,7 @@ export default {
     return {
       list,
       targetValue: [],
-      checked: [],
+      checked: ['2'],
     };
   },
   methods: {

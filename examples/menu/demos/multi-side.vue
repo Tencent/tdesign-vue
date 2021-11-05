@@ -8,12 +8,12 @@
         <template #title>
           <span>消息区</span>
         </template>
-        <t-submenu value="3-1" title="通知">
+        <t-submenu value="3-1" title="二级菜单">
           <t-menu-item value="3-1-1">三级菜单内容</t-menu-item>
           <t-menu-item value="3-1-2">三级菜单内容</t-menu-item>
           <t-menu-item value="3-1-3">三级菜单内容</t-menu-item>
         </t-submenu>
-        <t-submenu value="3-5" title="私信">
+        <t-submenu value="3-5" title="二级菜单">
           <t-menu-item value="3-5-1">三级菜单内容</t-menu-item>
           <t-menu-item value="3-5-2">三级菜单内容</t-menu-item>
           <t-menu-item value="3-5-3">三级菜单内容</t-menu-item>

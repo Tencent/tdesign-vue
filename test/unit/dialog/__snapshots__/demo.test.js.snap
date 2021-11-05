@@ -31,7 +31,7 @@ exports[`Dialog async demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          保存订单
+          保存
         </div>
         <span
           class="t-dialog__close"
@@ -54,7 +54,7 @@ exports[`Dialog async demo works fine 1`] = `
         <div
           class="t-dialog__body"
         >
-          订单保存中，请稍后
+          保存中，请稍后
         </div>
         <div
           class="t-dialog__footer"
@@ -209,14 +209,6 @@ exports[`Dialog attach demo works fine 1`] = `
             <div>
               querySelect获取到的第一个元素为挂载点
             </div>
-             
-            <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
-            </div>
           </div>
         </div>
         <div
@@ -299,18 +291,6 @@ exports[`Dialog attach demo works fine 1`] = `
            
           <div>
             函数返回为DOM节点对象
-          </div>
-           
-          <div>
-            我是内容
-          </div>
-           
-          <div>
-            我是内容
-          </div>
-           
-          <div>
-            我是内容
           </div>
         </div>
       </div>
@@ -618,7 +598,7 @@ exports[`Dialog custom body demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          标题
+          对话框标题
         </div>
         <span
           class="t-dialog__close"
@@ -909,7 +889,7 @@ exports[`Dialog custom demo works fine 1`] = `
           <div
             class="t-dialog__header"
           >
-            标题
+            对话框标题
           </div>
           <span
             class="t-dialog__close"
@@ -933,9 +913,9 @@ exports[`Dialog custom demo works fine 1`] = `
             class="t-dialog__body"
           >
             <div>
-              <h1>
+              <h2>
                 参数传递优先于插槽内容
-              </h1>
+              </h2>
               这是渲染函数输出结果
             </div>
           </div>
@@ -1013,27 +993,7 @@ exports[`Dialog custom demo works fine 1`] = `
           >
             <div>
               <div>
-                我是内容
-              </div>
-               
-              <div>
-                我是内容
-              </div>
-               
-              <div>
-                我是内容
-              </div>
-               
-              <div>
-                我是内容
-              </div>
-               
-              <div>
-                我是内容
-              </div>
-               
-              <div>
-                我是内容
+                对话框内容
               </div>
             </div>
           </div>
@@ -1290,7 +1250,7 @@ exports[`Dialog custom demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          提示
+          对话框标题
         </div>
         <span
           class="t-dialog__close"
@@ -1365,7 +1325,7 @@ exports[`Dialog custom demo works fine 1`] = `
         <div
           class="t-dialog__header"
         >
-          提示
+          对话框标题
         </div>
         <span
           class="t-dialog__close"
@@ -1483,11 +1443,7 @@ exports[`Dialog drag demo works fine 1`] = `
             </div>
              
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -1561,11 +1517,7 @@ exports[`Dialog drag demo works fine 1`] = `
         >
           <div>
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -1639,11 +1591,7 @@ exports[`Dialog drag demo works fine 1`] = `
         >
           <div>
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -2109,11 +2057,7 @@ exports[`Dialog modal demo works fine 1`] = `
             </div>
              
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -2187,11 +2131,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -2266,11 +2206,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -2345,11 +2281,7 @@ exports[`Dialog modal demo works fine 1`] = `
         >
           <div>
             <div>
-              我是内容
-            </div>
-             
-            <div>
-              我是内容
+              对话框内容
             </div>
           </div>
         </div>
@@ -2387,53 +2319,6 @@ exports[`Dialog modal demo works fine 1`] = `
 
 exports[`Dialog plugin demo works fine 1`] = `
 <div>
-  <p>
-    插件调用方式一：this.$dialog(options)
-  </p>
-   
-  <p>
-    插件调用方式二：this.$dialog.confirm(options)
-  </p>
-   
-  <p>
-    插件调用方式三：this.$dialog.alert(options)
-  </p>
-  <br />
-   
-  <p>
-    函数调用方式一：DialogPlugin(options)
-  </p>
-   
-  <p>
-    函数调用方式二：DialogPlugin.confirm(options)
-  </p>
-   
-  <p>
-    函数调用方式三：DialogPlugin.alert(options)
-  </p>
-  <br />
-   
-  <p>
-    组件实例：DialogInstance = this.$dialog(options) 或者 组件实例：DialogInstance = DialogPlugin(options)
-  </p>
-   
-  <p>
-    组件实例方法-销毁弹框：DialogInstance.destroy()
-  </p>
-   
-  <p>
-    组件实例方法-隐藏弹框：DialogInstance.hide()
-  </p>
-   
-  <p>
-    组件实例方法-显示弹窗：DialogInstance.show()
-  </p>
-   
-  <p>
-    组件实例方法-更新弹框：DialogInstance.update()
-  </p>
-  <br />
-   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2888,7 +2773,7 @@ exports[`Dialog warning demo works fine 1`] = `
               fill-opacity="0.9"
             />
           </svg>
-          恭喜
+          成功
         </div>
         <span
           class="t-dialog__close"

@@ -11,7 +11,7 @@
         <t-button variant="outline">按钮样式（属性-字符串）</t-button>
       </t-popconfirm>
 
-      <!-- 使用 props 定义按钮内容 -->
+      <!-- 通过透传按钮属性自定义按钮，cancelBtn 和 confirmBtn 值为 null 或 undefined 时表示不显示该按钮 -->
       <t-popconfirm
         theme="default"
         content="您确定要提交吗"

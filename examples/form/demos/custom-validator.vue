@@ -11,18 +11,16 @@
       <t-form-item label="用户名"  name="account">
         <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name="password">
+      <t-form-item label="密码" name="password" help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化">
         <t-input
           type="password"
           v-model="formData.password"
-          placeholder="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化"
         ></t-input>
       </t-form-item>
-      <t-form-item label="确认密码" name="rePassword">
+      <t-form-item label="确认密码" name="rePassword" help="在此处体验普通自定义校验方法">
         <t-input
           type="password"
           v-model="formData.rePassword"
-          placeholder="在此处体验普通自定义校验方法"
         ></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">

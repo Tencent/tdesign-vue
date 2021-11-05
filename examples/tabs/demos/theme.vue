@@ -3,7 +3,6 @@
     <div class="tdesign-demo-block-column">
       <t-tabs
         :value="value1"
-        size="medium"
         @change="(newValue) => value1 = newValue"
       >
         <t-tab-panel value="first" label="选项卡1">
@@ -19,7 +18,7 @@
 
       <t-tabs
         :value="value2"
-        size="large"
+        theme="card"
         @change="(newValue) => value2 = newValue"
       >
         <t-tab-panel value="first" label="选项卡1">

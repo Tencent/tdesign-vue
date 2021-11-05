@@ -14,7 +14,7 @@
     <t-button theme="primary" @click="visible2 = true">成功反馈</t-button>
     <t-dialog
       theme="success"
-      header="恭喜"
+      header="成功"
       body="对话框内容"
       :visible.sync="visible2"
       @confirm="onClickConfirm"

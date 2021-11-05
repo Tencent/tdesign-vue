@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-button @click="toggle">自由控制关闭时机（{{ notification ? '关闭' : '打开' }}）</t-button>
+    <t-button variant="outline" @click="toggle">自由控制关闭时机（{{ notification ? '关闭' : '打开' }}）</t-button>
   </div>
 </template>
 

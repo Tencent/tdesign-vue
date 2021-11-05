@@ -8,9 +8,6 @@
         </div>
 
         <!-- 本地数据排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
-        <div style="margin: 16px">
-          <span> 排序方式：{{ JSON.stringify(sort) }} </span>
-        </div>
         <t-table
           rowKey="id"
           :columns="columns"

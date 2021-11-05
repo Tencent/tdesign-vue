@@ -34,7 +34,7 @@ export default {
           value: '2',
         },
         {
-          label: '很长很长很很长很长很长的选项三',
+          label: '选项内容过长的选择器选项',
           value: '3',
         },
       ],

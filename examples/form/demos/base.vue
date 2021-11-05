@@ -10,8 +10,11 @@
       <t-form-item label="姓名" name='name'>
         <t-input v-model="formData.name" placeholder="请输入内容"></t-input>
       </t-form-item>
-      <t-form-item label="手机号" name='tel'>
+      <t-form-item label="手机号码" name='tel'>
         <t-input v-model="formData.tel" placeholder="请输入内容"></t-input>
+      </t-form-item>
+      <t-form-item label="接收短信" name='status'>
+        <t-switch v-model="formData.status"></t-switch>
       </t-form-item>
       <t-form-item label="性别" name='gender'>
         <t-radio-group v-model="formData.gender" >
@@ -24,9 +27,6 @@
           v-model="formData.course"
           :options="courseOptions"
         ></t-checkbox-group>
-      </t-form-item>
-      <t-form-item label="状态" name='status'>
-        <t-switch v-model="formData.status"></t-switch>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>

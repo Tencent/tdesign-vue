@@ -1,8 +1,8 @@
 <template>
   <div class="tdesign-demo-block">
-    <h1>具备清空按钮</h1>
+    <h3>具备清空按钮</h3>
     <t-time-picker v-model="time1" />
-    <h1>禁止清空按钮</h1>
+    <h3>禁止清空按钮</h3>
     <t-time-picker v-model="time2" :clearable="disabledClear" />
   </div>
 </template>
@@ -26,11 +26,11 @@ export default {
 </script>
 <style lang="less" scoped>
 .tdesign-demo-block {
-  h1 {
+  h3 {
     margin-bottom: 20px;
     font-weight: bold;
   }
-  h1:nth-child(3) {
+  h3:nth-child(3) {
     margin-top: 30px;
   }
 }

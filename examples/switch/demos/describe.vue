@@ -51,13 +51,13 @@ export default {
       console.log(val);
     },
     renderActiveContent() {
-      return (<check-icon />);
+      return (<CheckIcon />);
     },
     renderInactiveContent() {
-      return (<close-icon />);
+      return (<CloseIcon />);
     },
     renderContent(h, data) {
-      return data.value ? (<check-icon />) : (<close-icon />);
+      return data.value ? (<CheckIcon />) : (<CloseIcon />);
     },
   },
 };

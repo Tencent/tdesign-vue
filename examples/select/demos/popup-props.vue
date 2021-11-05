@@ -30,10 +30,6 @@ export default {
           label: '短的选项二',
           value: '2',
         },
-        {
-          label: '很长很长很很长很长很长的选项三',
-          value: '3',
-        },
       ],
       // 自定义下拉选项宽度为300px
       popupProps: {

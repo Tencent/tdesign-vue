@@ -1,9 +1,9 @@
 <template>
   <div>
-    <t-drawer :visible.sync="visible" header="Drawer" :onConfirm="onClickConfirm" :closeBtn="true">
-      <p>This is a controlled drawer</p>
+    <t-drawer :visible.sync="visible" header="抽屉标题" :onConfirm="onClickConfirm" :closeBtn="true">
+      <p>抽屉的内容</p>
     </t-drawer>
-    <t-button theme="primary" @click="handleClick">Open a Drawer</t-button>
+    <t-button variant="outline" @click="handleClick">打开抽屉</t-button>
   </div>
 </template>
 

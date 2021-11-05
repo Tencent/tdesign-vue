@@ -25,7 +25,7 @@
         <t-input v-model="formData.success"></t-input>
       </t-form-item>
       <t-form-item label="失败" name='failB' :statusIcon="false">
-        <t-input v-model="formData.failB" placeholder="隐藏状态icon"></t-input>
+        <t-input v-model="formData.failB" placeholder="隐藏状态图标"></t-input>
       </t-form-item>
       <t-form-item label="警告" name='warningB'>
         <t-input v-model="formData.warningB"></t-input>
@@ -52,7 +52,7 @@
           <icon name='remove' size="16px" style="color: #0004"/>
         </t-button>
       </t-form-item>
-      <t-form-item label="帮助" help="自定义帮助icon" :statusIcon="getStatusIcon" name='help'>
+      <t-form-item label="帮助" help="自定义帮助图标" :statusIcon="getStatusIcon" name='help'>
         <t-input v-model="formData.help"></t-input>
         <!-- <t-icon slot="statusIcon" name='help-circle' size="24px" style="color: #0006"/> -->
       </t-form-item>

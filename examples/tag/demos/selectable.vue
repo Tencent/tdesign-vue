@@ -26,7 +26,7 @@ export default {
           name: '未选',
         },
         {
-          name: 'Disabled',
+          name: '禁用',
           disabled: true,
         },
       ],

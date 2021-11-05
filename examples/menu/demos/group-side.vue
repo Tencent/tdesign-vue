@@ -3,20 +3,17 @@
     <template #logo>
       <img :width="collapsed ? 35 : 136"  :src="iconUrl" alt="logo">
     </template>
-    <t-menu-group title="Classification A">
+    <t-menu-group title="分组类型1">
       <t-menu-item value="item1">
-        <template #icon>
-          <icon name="dashboard"/>
-        </template>
-        仪表盘
+        菜单内容
       </t-menu-item>
     </t-menu-group>
-    <t-menu-group title="Classification B">
-      <t-menu-item value="item2">调度平台</t-menu-item>
-      <t-menu-item value="item3">菜单内容二很长很长很长很长很长很长很长很长</t-menu-item>
+    <t-menu-group title="分组类型2">
+      <t-menu-item value="item2">菜单内容</t-menu-item>
+      <t-menu-item value="item3">菜单内容</t-menu-item>
     </t-menu-group>
-    <t-menu-group title="Classification C">
-      <t-menu-item value="item4" :disabled="true">精准监控</t-menu-item>
+    <t-menu-group title="分组类型3">
+      <t-menu-item value="item4">菜单内容</t-menu-item>
     </t-menu-group>
     <template #operations>
       <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />

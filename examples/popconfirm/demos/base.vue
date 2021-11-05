@@ -8,20 +8,6 @@
         </t-popconfirm>
       </div>
 
-      <!-- 通过透传按钮属性自定义按钮，cancelBtn 和 confirmBtn 值为 null 或 undefined 时表示不显示该按钮 -->
-      <!-- 可以使用 popupProps.placement 控制弹出方向 -->
-      <div class='demo-item'>
-        <t-popconfirm
-          theme="default"
-          content="你看到了吗？"
-          :popupProps="{ placement: 'bottom' }"
-          :cancelBtn="null"
-          :confirmBtn="{ content: '看到了', theme: 'primary', variant: 'outline' }"
-        >
-          <t-button>点我看按钮</t-button>
-        </t-popconfirm>
-      </div>
-
       <!-- 受控用法：自由控制浮层显示与否 -->
       <div class='demo-item'>
         <t-popconfirm
@@ -33,12 +19,6 @@
           @visible-change="onVisibleChange"
         >
           <t-button >提交审核</t-button>
-        </t-popconfirm>
-      </div>
-
-      <div class='demo-item'>
-        <t-popconfirm theme="default" content="确认删除订单吗">
-          <t-button disabled>禁用按钮</t-button>
         </t-popconfirm>
       </div>
     </div>

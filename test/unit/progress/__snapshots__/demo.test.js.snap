@@ -372,7 +372,6 @@ exports[`Progress circle demo works fine 1`] = `
        
       <div
         class="t-progress"
-        style="margin-top: 20px;"
       >
         <div
           class="t-progress--circle t-progress--status--undefined"
@@ -463,13 +462,10 @@ exports[`Progress circle demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </div>
-   
-  <div
-    class="t-progress-demo-box"
-  >
+     
     <div
       class="t-progress-demo-inner"
+      style="margin-left: 60px;"
     >
       <div
         class="t-progress-demo-margin"
@@ -479,7 +475,6 @@ exports[`Progress circle demo works fine 1`] = `
        
       <div
         class="t-progress"
-        style="margin-top: 40px;"
       >
         <div
           class="t-progress--circle t-progress--status--undefined"
@@ -813,6 +808,12 @@ exports[`Progress custom demo works fine 1`] = `
 
 exports[`Progress line demo works fine 1`] = `
 <div>
+  <h3>
+    
+    默认在线形外展示进度和状态
+  
+  </h3>
+   
   <div>
     <div
       class="t-progress-domo-margin"
@@ -1020,6 +1021,65 @@ exports[`Progress line demo works fine 1`] = `
           class="t-progress--info"
         >
           60%
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <h3>
+    
+    可以在线形内展示进度信息
+  
+  </h3>
+   
+  <div>
+    <div
+      class="t-progress-domo-margin"
+    >
+      默认样式
+    </div>
+     
+    <div
+      class="t-progress"
+    >
+      <div
+        class="t-progress--bar t-progress--plump t-progress--over-ten"
+        style="border-radius: undefinedpx;"
+      >
+        <div
+          class="t-progress--inner"
+          style="width: 30%;"
+        >
+          <div
+            class="t-progress--info"
+          >
+            30%
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="t-progress-domo-margin"
+    >
+      进度0-10%时数字数字位置出现在目前进度的右边区域
+    </div>
+     
+    <div
+      class="t-progress"
+    >
+      <div
+        class="t-progress--bar t-progress--plump t-progress--under-ten"
+        style="border-radius: undefinedpx;"
+      >
+        <div
+          class="t-progress--inner"
+          style="width: 5%;"
+        />
+        <div
+          class="t-progress--info"
+        >
+          5%
         </div>
       </div>
     </div>

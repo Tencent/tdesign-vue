@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { Icon } from '@tencent/tdesign-icons-vue';
+
 export default {
   data() {
     return {
@@ -71,11 +73,7 @@ export default {
       if (data.icon) {
         name = data.icon;
       }
-      return createElement('t-icon', {
-        props: {
-          name,
-        },
-      });
+      return <Icon name={name}/>;
     },
     getInsertItem() {
       let item = null;

@@ -4,7 +4,7 @@
       v-model="value"
       creatable
       filterable
-      placeholder="请选择，支持自定义创建"
+      placeholder="支持自定义创建"
       :options="options"
       style="width: 200px;"
       @create="createOptions"

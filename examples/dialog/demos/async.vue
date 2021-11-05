@@ -3,8 +3,8 @@
     <t-button @click="visible = true">异步加载类按钮</t-button>
     <t-dialog
       :visible.sync="visible"
-      header="保存订单"
-      body="订单保存中，请稍后"
+      header="保存"
+      body="保存中，请稍后"
       :confirmBtn="{
         content: '保存中...',
         theme: 'primary',

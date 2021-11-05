@@ -73,104 +73,108 @@ exports[`Message placement demo works fine 1`] = `
     </div>
   </div>
    
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
+  <div
+    class="tdesign-tooltip-placement"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="placement-center t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      center
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        center
+      </span>
+    </button>
+     
+    <button
+      class="placement-top t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      top
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        top
+      </span>
+    </button>
+     
+    <button
+      class="placement-left t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      left
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        left
+      </span>
+    </button>
+     
+    <button
+      class="placement-right t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      right
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        right
+      </span>
+    </button>
+     
+    <button
+      class="placement-bottom t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      bottom
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        bottom
+      </span>
+    </button>
+     
+    <button
+      class="placement-top-left t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      top-left
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        top-left
+      </span>
+    </button>
+     
+    <button
+      class="placement-top-right t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      top-right
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        top-right
+      </span>
+    </button>
+     
+    <button
+      class="placement-bottom-left t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      bottom-left
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <span
+        class="t-button__text"
+      >
+        bottom-left
+      </span>
+    </button>
+     
+    <button
+      class="placement-bottom-right t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      bottom-right
-    </span>
-  </button>
+      <span
+        class="t-button__text"
+      >
+        bottom-right
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
@@ -192,7 +196,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        info
+        消息
       </span>
     </button>
      
@@ -204,7 +208,7 @@ exports[`Message plugin demo works fine 1`] = `
         class="t-button__text"
       >
         
-      success
+      成功
     
       </span>
     </button>
@@ -216,7 +220,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        warning
+        警示
       </span>
     </button>
      
@@ -228,7 +232,7 @@ exports[`Message plugin demo works fine 1`] = `
         class="t-button__text"
       >
         
-      error
+      失败
     
       </span>
     </button>
@@ -240,7 +244,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        question
+        询问
       </span>
     </button>
      
@@ -251,7 +255,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        loading
+        加载中
       </span>
     </button>
      
@@ -262,7 +266,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        close all
+        关闭所有
       </span>
     </button>
   </div>
@@ -286,7 +290,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        info
+        消息
       </span>
     </button>
      
@@ -297,7 +301,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        success
+        成功
       </span>
     </button>
      
@@ -309,7 +313,7 @@ exports[`Message plugin demo works fine 1`] = `
         class="t-button__text"
       >
         
-      warning
+      警示
     
       </span>
     </button>
@@ -321,7 +325,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        error
+        失败
       </span>
     </button>
      
@@ -332,7 +336,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        question
+        询问
       </span>
     </button>
      
@@ -343,7 +347,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        loading
+        加载中
       </span>
     </button>
      
@@ -354,7 +358,7 @@ exports[`Message plugin demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        close all
+        关闭所有
       </span>
     </button>
   </div>

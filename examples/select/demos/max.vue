@@ -6,7 +6,7 @@
       multiple
       :max="2"
       :options="options"
-      style="width: 400px;"
+      style="width: 200px;"
     />
   </div>
 </template>

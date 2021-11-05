@@ -4,11 +4,11 @@
       <t-input placeholder='请输入横向偏移量' v-model="offsetX"></t-input>
       <t-input placeholder='请输入纵向偏移量' v-model="offsetY"></t-input>
     </div>
-    <t-button @click="$notify.info(infoList[0])">左上角</t-button>
-    <t-button @click="$notify.info(infoList[1])">右上角</t-button>
+    <t-button variant="outline" @click="$notify.info(infoList[0])">左上角</t-button>
+    <t-button variant="outline" @click="$notify.info(infoList[1])">右上角</t-button>
     <br /><br />
-    <t-button @click="$notify.info(infoList[2])">左下角</t-button>
-    <t-button @click="$notify.info(infoList[3])">右下角</t-button>
+    <t-button variant="outline" @click="$notify.info(infoList[2])">左下角</t-button>
+    <t-button variant="outline" @click="$notify.info(infoList[3])">右下角</t-button>
   </div>
 </template>
 

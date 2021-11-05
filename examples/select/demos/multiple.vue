@@ -10,7 +10,7 @@
 
     <!-- 自定义选中项内容，valueDisplay 为 function -->
     <t-select
-      v-model="value"
+      v-model="value2"
       placeholder="-请选择-"
       multiple
       :valueDisplay="valueDisplay"
@@ -20,7 +20,7 @@
 
     <!-- 自定义选中项内容，valueDisplay 为 插槽(slot) -->
     <t-select
-      v-model="value"
+      v-model="value3"
       placeholder="-请选择-"
       multiple
       :options="options"
@@ -31,8 +31,6 @@
           :key="index"
           :closable="true"
           :onClose="() => onClose(index)"
-          theme="success"
-          variant="light"
         >
           {{item.label}}（{{item.value}}）
         </t-tag>
@@ -56,6 +54,8 @@ export default {
         value: '3',
       }],
       value: ['1', '3'],
+      value2: ['1', '3'],
+      value3: ['1', '3'],
     };
   },
   methods: {
@@ -64,8 +64,6 @@ export default {
       return value.map((item, index) => (
         <t-tag
           key={index}
-          theme="warning"
-          variant="light"
           closable={true}
           onClose={() => onClose(index)}
         >

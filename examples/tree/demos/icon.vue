@@ -56,11 +56,7 @@ export default {
           name = 'folder';
         }
       }
-      return createElement('icon', {
-        props: {
-          name,
-        },
-      });
+      return <Icon name={name} />;
     },
     load(node) {
       const maxLevel = 2;

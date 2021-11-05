@@ -49,12 +49,6 @@ export default {
       }, {
         label: '深圳',
         value: 'shenzhen',
-      }, {
-        label: '这是一个名字很长的城市名称',
-        value: 'long',
-      }, {
-        label: '这是一个名字很长很长很长的城市名称',
-        value: 'longest',
       }],
       value: '',
       value1: '',

@@ -1,14 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div class="tdesign-demo-block-column">
-      <p>单元格默认使用 row[colKey] 渲染数据内容，自定义单元格有以下 3 种方式</p>
-      <p>1. 使用 cell 作为渲染函数，函数参数为：cell(h, {col, colIndex, row, rowIndex})</p>
-      <p>2. 插槽，使用 cell 的值作为插槽名称；如果 cell 值为空，则默认取 colKey 作为插槽名称</p>
-      <p>3. 使用 render 渲染函数，函数参数为：render(h, {col, colIndex, row, rowIndex, type})，
-        单元格的 type 值为 cell，标题的 type 值为 title<b>【不推荐使用】</b>
-      </p>
-    </div>
-
+  <div>
     <t-table :data="data" :columns="columns" rowKey="property">
 
       <!-- 插槽方式 自定义单元格：cell 的值为插槽名称，参数有：{col, colIndex, row, rowIndex}  -->

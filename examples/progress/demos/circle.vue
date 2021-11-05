@@ -34,17 +34,15 @@
     <div class="t-progress-demo-box">
       <div class="t-progress-demo-inner">
         <div class="t-progress-demo-margin">小尺寸</div>
-        <t-progress theme="circle" :percentage="30" :size="'small'" style="margin-top: 20px;"></t-progress>
+        <t-progress theme="circle" :percentage="30" :size="'small'"></t-progress>
       </div>
       <div class="t-progress-demo-inner">
         <div class="t-progress-demo-margin">默认尺寸</div>
         <t-progress theme="circle" :percentage="30" :size="'medium'"></t-progress>
       </div>
-    </div>
-    <div class="t-progress-demo-box">
-      <div class="t-progress-demo-inner">
+      <div class="t-progress-demo-inner" style="margin-left: 60px;">
         <div class="t-progress-demo-margin">大尺寸</div>
-        <t-progress theme="circle" :percentage="75" :size="'large'" style="margin-top: 40px;"></t-progress>
+        <t-progress theme="circle" :percentage="75" :size="'large'"></t-progress>
       </div>
     </div>
   </div>

@@ -5,18 +5,18 @@
         :visible.sync="visible"
         :placement="placement"
         :mode="mode"
-        header="标题名称"
+        header="抽屉标题"
         showInAttachedElement
       >
-        <p>This is a drawer</p>
+        <p>抽屉的内容</p>
       </t-drawer>
       <div class="tdesign-radio-button">
         抽屉弹出方向：
         <t-radio-group v-model="placement">
-          <t-radio-button value="left">left</t-radio-button>
-          <t-radio-button value="right">right</t-radio-button>
-          <t-radio-button value="top">top</t-radio-button>
-          <t-radio-button value="bottom">bottom</t-radio-button>
+          <t-radio-button value="left">左侧</t-radio-button>
+          <t-radio-button value="right">右侧</t-radio-button>
+          <t-radio-button value="top">上方</t-radio-button>
+          <t-radio-button value="bottom">下方</t-radio-button>
         </t-radio-group>
       </div>
       <br>
@@ -28,7 +28,7 @@
         </t-radio-group>
       </div>
       <br><br>
-      <t-button @click="visible = true">Open</t-button>
+      <t-button variant="outline" @click="visible = true">打开抽屉</t-button>
     </div>
   </div>
 </template>

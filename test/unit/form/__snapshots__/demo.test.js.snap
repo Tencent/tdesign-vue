@@ -48,7 +48,7 @@ exports[`Form base demo works fine 1`] = `
         <label
           for=""
         >
-          手机号
+          手机号码
         </label>
       </div>
       <div
@@ -65,6 +65,40 @@ exports[`Form base demo works fine 1`] = `
               class="t-input__inner"
               placeholder="请输入内容"
               type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="t-form__item t-form-item__status"
+    >
+      <div
+        class="t-form__label t-form__label--colon t-form__label--right"
+        style="width: 100px;"
+      >
+        <label
+          for=""
+        >
+          接收短信
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+        style="margin-left: 100px;"
+      >
+        <div
+          class="t-form__controls--content"
+        >
+          <div
+            class="t-switch t-size-m"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
             />
           </div>
         </div>
@@ -213,40 +247,6 @@ exports[`Form base demo works fine 1`] = `
                 英语
               </span>
             </label>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="t-form__item t-form-item__status"
-    >
-      <div
-        class="t-form__label t-form__label--colon t-form__label--right"
-        style="width: 100px;"
-      >
-        <label
-          for=""
-        >
-          状态
-        </label>
-      </div>
-      <div
-        class="t-form__controls"
-        style="margin-left: 100px;"
-      >
-        <div
-          class="t-form__controls--content"
-        >
-          <div
-            class="t-switch t-size-m"
-          >
-            <span
-              class="t-switch__handle"
-            />
-            <div
-              class="t-switch__content t-size-m"
-            />
           </div>
         </div>
       </div>

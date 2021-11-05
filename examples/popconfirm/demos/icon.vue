@@ -25,13 +25,13 @@
       <div class="demo-item">
         <t-popconfirm content="基础气泡确认框文案示意文字按钮" :popupProps="{ placement: 'bottom' }">
           <icon name="browse" style="color: #0052d9" slot='icon'/>
-          <t-button>图标（插槽）</t-button>
+          <t-button variant="outline">自定义图标（插槽）</t-button>
         </t-popconfirm>
       </div>
 
       <div class="demo-item">
         <t-popconfirm content="基础气泡确认框文案示意文字按钮" :icon='customIcon' :popupProps="{ placement: 'bottom' }">
-          <t-button>图标（属性）</t-button>
+          <t-button variant="outline">自定义图标（属性）</t-button>
         </t-popconfirm>
       </div>
     </div>
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     customIcon() {
-      return (<icon name='browse' style="margin-right: 8px"/>);
+      return (<Icon name='browse' style="margin-right: 8px"/>);
     },
   },
 };

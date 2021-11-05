@@ -2,7 +2,7 @@
   <div>
     <!-- 使用插槽自定义 -->
     <t-drawer :visible.sync="visible" closeBtn>
-      <p>This is the body of drawer</p>
+      <p>抽屉的内容</p>
       <template #header>
         <div>自定义头部</div>
       </template>
@@ -15,32 +15,32 @@
     <!-- 使用 props 自定义 -->
     <t-drawer
       :visible.sync="visible2"
-      :header="() => 'This is the title.'"
+      :header="() => '抽屉标题'"
       :footer="renderFooter"
       closeBtn
     >
-      <p>This is the body of drawer</p>
+      <p>抽屉的内容</p>
     </t-drawer>
 
     <!-- 单独定义确认/取消按钮 -->
     <t-drawer
       :visible.sync="visible3"
-      header="I am the title"
-      cancelBtn='cancel'
+      header="抽屉标题"
+      cancelBtn='取消'
       :confirmBtn="{
-        content: 'OK',
+        content: '确认',
         disabled: true,
       }"
       closeBtn
     >
-      <p>This is the body of drawer</p>
+      <p>抽屉的内容</p>
     </t-drawer>
 
-    <t-button @click="visible = true">Open(插槽定义)</t-button>
+    <t-button variant="outline"  @click="visible = true">打开(插槽定义)</t-button>
     &nbsp;&nbsp;
-    <t-button @click="visible2 = true">Open(属性定义)</t-button>
+    <t-button variant="outline"  @click="visible2 = true">打开(属性定义)</t-button>
     &nbsp;&nbsp;
-    <t-button @click="visible3 = true">Open(单独设置确认/取消按钮)</t-button>
+    <t-button variant="outline"  @click="visible3 = true">打开(单独设置确认/取消按钮)</t-button>
   </div>
 </template>
 

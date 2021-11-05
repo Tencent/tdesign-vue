@@ -35,12 +35,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -69,12 +69,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -103,12 +103,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -163,12 +163,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -197,12 +197,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -231,12 +231,12 @@ exports[`Button headerFooter demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -285,12 +285,12 @@ exports[`Button imageText demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -319,12 +319,12 @@ exports[`Button imageText demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -353,12 +353,12 @@ exports[`Button imageText demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -402,29 +402,13 @@ exports[`Button imageText demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
                 <p>
-                  列表内容列表内容列表内容
-                </p>
-                 
-                <p>
-                  列表内容列表内容列表内容
-                </p>
-                 
-                <p>
-                  列表内容列表内容列表内容
-                </p>
-                 
-                <p>
-                  列表内容列表内容列表内容
-                </p>
-                 
-                <p>
-                  列表内容列表内容列表内容
+                  列表内容的描述性文字
                 </p>
               </p>
             </div>
@@ -462,12 +446,12 @@ exports[`Button multiline demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -489,12 +473,12 @@ exports[`Button multiline demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -516,12 +500,12 @@ exports[`Button multiline demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
               >
-                列表内容列表内容
+                列表内容的描述性文字
               </p>
             </div>
           </div>
@@ -565,7 +549,7 @@ exports[`Button operation demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
@@ -637,7 +621,7 @@ exports[`Button operation demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
@@ -724,7 +708,7 @@ exports[`Button operation demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
@@ -812,7 +796,7 @@ exports[`Button operation demo works fine 1`] = `
               <h3
                 class="t-list-item__meta-title"
               >
-                列表主内容
+                列表标题
               </h3>
               <p
                 class="t-list-item__meta-description"
@@ -899,7 +883,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -909,7 +893,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -919,7 +903,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -929,7 +913,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -939,7 +923,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -949,7 +933,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -959,7 +943,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -969,7 +953,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -979,7 +963,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -989,7 +973,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -999,7 +983,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -1009,7 +993,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -1019,7 +1003,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -1029,7 +1013,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -1039,7 +1023,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
      
@@ -1049,7 +1033,7 @@ exports[`Button scroll demo works fine 1`] = `
       <div
         class="t-list-item-main"
       >
-        列表内容列表内容
+        列表内容的描述性文字
       </div>
     </li>
   </ul>
@@ -1075,7 +1059,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1085,7 +1069,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1095,7 +1079,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
     </ul>
@@ -1116,7 +1100,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1126,7 +1110,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1136,7 +1120,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
     </ul>
@@ -1157,7 +1141,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1167,7 +1151,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
        
@@ -1177,7 +1161,7 @@ exports[`Button size demo works fine 1`] = `
         <div
           class="t-list-item-main"
         >
-          列表内容列表内容
+          列表内容的描述性文字
         </div>
       </li>
     </ul>

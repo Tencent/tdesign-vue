@@ -165,11 +165,7 @@ export default {
       }, lines));
 
       if (node.isLeaf()) {
-        const tIcon = createElement('t-icon', {
-          props: {
-            name: 'heart-filled',
-          },
-        });
+        const tIcon = <Icon name='heart-filled' />;
         const iconNode = createElement('i', {
           class: 'custom-line-icon',
         }, [tIcon]);

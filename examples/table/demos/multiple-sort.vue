@@ -1,14 +1,15 @@
 <template>
-  <div class="tdesign-demo-block-column-large demo-container">
-    <div>排序方式：{{ JSON.stringify(sort) }}</div>
-    <!-- 支持受控用法 ，也支持非受控用法 -->
-    <t-table rowKey="id" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" multipleSort>
-      <template #status="{ row }">
-        <p v-if="row.status === 0" class="status">健康</p>
-        <p v-if="row.status === 1" class="status warning">警告</p>
-        <p v-if="row.status === 2" class="status unhealth">异常</p>
-      </template>
-    </t-table>
+  <div class="demo-container">
+    <div class="item">
+      <!-- 支持受控用法 ，也支持非受控用法 -->
+      <t-table rowKey="id" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" multipleSort>
+        <template #status="{ row }">
+          <p v-if="row.status === 0" class="status">健康</p>
+          <p v-if="row.status === 1" class="status warning">警告</p>
+          <p v-if="row.status === 2" class="status unhealth">异常</p>
+        </template>
+      </t-table>
+    </div>
   </div>
 </template>
 

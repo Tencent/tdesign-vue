@@ -73,15 +73,6 @@ exports[`Loading base demo works fine 1`] = `
       </foreignobject>
     </svg>
   </div>
-   
-  <div
-    class="t-loading t-size-m t-loading-lock v-transfer-dom"
-  >
-    <img
-      class="t-icon-loading"
-      src="https://tdesign.gtimg.com/icon/loading.png"
-    />
-  </div>
 </div>
 `;
 

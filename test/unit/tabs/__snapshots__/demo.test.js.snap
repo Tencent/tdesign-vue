@@ -114,7 +114,7 @@ exports[`Tabs ban demo works fine 1`] = `
         <p
           style="padding: 25px;"
         >
-          normal选项卡1内容
+          选项卡1的内容
         </p>
       </div>
        
@@ -190,7 +190,7 @@ exports[`Tabs base demo works fine 1`] = `
       <p
         style="padding: 25px;"
       >
-        选项卡一
+        选项卡1的内容
       </p>
     </div>
      
@@ -540,7 +540,7 @@ exports[`Tabs icon demo works fine 1`] = `
         <p
           style="padding: 25px;"
         >
-          normal选项卡1内容
+          首页的内容
         </p>
       </div>
        
@@ -803,53 +803,6 @@ exports[`Tabs size demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
-  <div>
-    <div
-      class="t-radio-group t-radio-group-medium t-radio-group-filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="medium"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          medium
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="large"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          large
-        </span>
-      </label>
-      <div
-        class="t-radio-group-filled-bg-block"
-      />
-    </div>
-  </div>
-   
   <div
     class="tdesign-demo-block-column"
   >
@@ -962,7 +915,7 @@ exports[`Tabs size demo works fine 1`] = `
           </div>
            
           <div
-            class="t-tabs__nav-container t-tabs__nav--card t-is-top"
+            class="t-tabs__nav-container t-is-top"
           >
             <div
               class="t-tabs__nav-scroll"
@@ -970,7 +923,12 @@ exports[`Tabs size demo works fine 1`] = `
               <div
                 class="t-tabs__nav-wrap"
                 style="transform: translateX(-0px);"
-              />
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+                 
+              </div>
             </div>
           </div>
         </div>

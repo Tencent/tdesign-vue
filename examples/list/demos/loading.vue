@@ -11,7 +11,7 @@
 
     <t-list :async-loading="asyncLoading"  @load-more="loadMore" split>
       <t-list-item v-for="i in listCount" :key="i">
-        <t-list-item-meta :image="imageUrl" title="列表主内容" description="列表内容列表内容"></t-list-item-meta>
+        <t-list-item-meta :image="imageUrl" title="列表标题" description="列表内容的描述性文字"></t-list-item-meta>
       </t-list-item>
     </t-list>
   </div>
@@ -31,7 +31,7 @@ export default {
     // 也可以使用插槽自定义加载内容
     asyncLoadingRadio(val) {
       if (val === 'loading-custom') {
-        this.asyncLoading = () => <div>😊 没有更多数据了 😊</div>;
+        this.asyncLoading = () => <div> 没有更多数据了 </div>;
       } else {
         this.asyncLoading = this.asyncLoadingRadio;
       }

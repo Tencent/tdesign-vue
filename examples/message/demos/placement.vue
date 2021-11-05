@@ -4,15 +4,17 @@
       <t-input placeholder='请输入横向偏移量' v-model="offsetX"></t-input>
       <t-input placeholder='请输入纵向偏移量' v-model="offsetY"></t-input>
     </div>
-    <t-button variant="outline" @click="$message.success(msgList[0])">center</t-button>
-    <t-button variant="outline" @click="$message.info(msgList[1])">top</t-button>
-    <t-button variant="outline" @click="$message.warning(msgList[2])">left</t-button>
-    <t-button variant="outline" @click="$message.loading(msgList[3])">right</t-button>
-    <t-button variant="outline" @click="$message.warning(msgList[4])">bottom</t-button>
-    <t-button variant="outline" @click="$message.error(msgList[5])">top-left</t-button>
-    <t-button variant="outline" @click="$message.question(msgList[6])">top-right</t-button>
-    <t-button variant="outline" @click="$message.warning(msgList[7])">bottom-left</t-button>
-    <t-button variant="outline" @click="$message.warning(msgList[8])">bottom-right</t-button>
+    <div class="tdesign-tooltip-placement">
+      <t-button variant="outline" @click="$message.success(msgList[0])" class="placement-center">center</t-button>
+      <t-button variant="outline" @click="$message.info(msgList[1])" class="placement-top">top</t-button>
+      <t-button variant="outline" @click="$message.warning(msgList[2])" class="placement-left">left</t-button>
+      <t-button variant="outline" @click="$message.loading(msgList[3])" class="placement-right">right</t-button>
+      <t-button variant="outline" @click="$message.warning(msgList[4])" class="placement-bottom">bottom</t-button>
+      <t-button variant="outline" @click="$message.error(msgList[5])" class="placement-top-left">top-left</t-button>
+      <t-button variant="outline" @click="$message.question(msgList[6])" class="placement-top-right">top-right</t-button>
+      <t-button variant="outline" @click="$message.warning(msgList[7])" class="placement-bottom-left">bottom-left</t-button>
+      <t-button variant="outline" @click="$message.warning(msgList[8])" class="placement-bottom-right">bottom-right</t-button>
+    </div>
   </div>
 </template>
 
@@ -55,5 +57,79 @@ export default {
     display: inline-block;
     margin-right: 20px;
     margin-bottom: 36px;
+  }
+
+  .t-message-placement {
+  margin: 0 auto;
+  width: 500px;
+  height: 260px;
+  position: relative;
+  }
+  .placement-top {
+    position: absolute;
+    top: 0;
+    left: 42%;
+  }
+  .placement-top-left {
+    position: absolute;
+    top: 0;
+    left: 70px;
+  }
+  .placement-top-right {
+    position: absolute;
+    top: 0;
+    right: 70px;
+  }
+  .placement-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 42%;
+  }
+  .placement-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    width: 120px;
+  }
+  .placement-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 70px;
+  }
+  .placement-left {
+    position: absolute;
+    left: 0;
+    top: 42%;
+  }
+  .placement-left-top {
+    position: absolute;
+    left: 0;
+    top: 50px;
+  }
+  .placement-left-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+  }
+  .placement-right {
+    position: absolute;
+    right: 0;
+    top: 42%;
+  }
+  .placement-right-top {
+    position: absolute;
+    right: 0;
+    top: 50px;
+  }
+  .placement-right-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+  }
+
+  .placement-center {
+    position: absolute;
+    right: 42%;
+    bottom: 42%;
   }
 </style>

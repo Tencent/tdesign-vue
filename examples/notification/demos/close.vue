@@ -6,8 +6,8 @@
     <t-notification title="自定义关闭按钮(插槽)" content="这是一条消息通知">
       <template slot="closeBtn">x</template>
     </t-notification>
-    <t-button @click="visible = !visible">处理开关事件</t-button>
-    <t-button @click="visible2 = !visible2">处理定时关闭事件（3s）</t-button>
+    <t-button variant="outline" @click="visible = !visible">处理开关事件</t-button>
+    <t-button variant="outline" @click="visible2 = !visible2">处理定时关闭事件（3s）</t-button>
     <t-notification
       v-if="visible"
       @close-btn-click="visible = false"

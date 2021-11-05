@@ -619,7 +619,7 @@ exports[`Tag selectable demo works fine 1`] = `
     class="t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled"
   >
     
-    Disabled
+    禁用
   
   </span>
 </div>

@@ -1,6 +1,5 @@
 <template>
   <div class="tdesign-demo-block">
-    <t-alert theme="success" message="这是一条成功的消息提示" />
     <t-alert theme="info" message="这是一条普通的消息提示" />
     <t-alert theme="warning" message="这是一条警示消息提示" />
     <t-alert theme="error" message="高危操作/出错信息提示" />
@@ -21,7 +20,7 @@ export default {
   },
   data() {
     return {
-      warningIcon: () => <icon name="error-circle-filled" />,
+      warningIcon: () => <Icon name="error-circle-filled" />,
     };
   },
 };

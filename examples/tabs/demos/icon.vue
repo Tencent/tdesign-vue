@@ -15,19 +15,19 @@
         <template #label>
           <icon name="home" style="margin-right: 4px"/> 首页
         </template>
-        <p style="padding: 25px;">{{ `${theme}选项卡1内容` }}</p>
+        <p style="padding: 25px;">首页的内容</p>
       </t-tab-panel>
-      <t-tab-panel value="second" :label="() => `${theme}选项卡22`">
+      <t-tab-panel value="second">
         <template #label>
           <icon name="calendar" style="margin-right: 4px"/> 日程
         </template>
-        <p style="padding: 25px;">{{ `${theme}选项卡2内容` }}</p>
+        <p style="padding: 25px;">日程的内容</p>
       </t-tab-panel>
-      <t-tab-panel value="third" :label="`${theme}选项卡3`">
+      <t-tab-panel value="third">
         <template #label>
           <icon name="layers" style="margin-right: 4px"/> 事项
         </template>
-        <p style="padding: 25px;">{{ `${theme}选项卡3内容` }}</p>
+        <p style="padding: 25px;">事项的内容</p>
       </t-tab-panel>
     </t-tabs>
   </div>

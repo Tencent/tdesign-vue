@@ -1,7 +1,7 @@
 <template>
   <div>
-    <t-dropdown :options="options" :minColumnWidth="105">
-      <t-button>hover我试试</t-button>
+    <t-dropdown :options="options" :minColumnWidth="88">
+      <t-button variant="text">下拉菜单</t-button>
     </t-dropdown>
   </div>
 </template>
@@ -10,21 +10,21 @@ export default {
   data() {
     return {
       options: [{
-        content: '选项一',
+        content: '操作一',
         value: 1,
-        onClick: () => this.$message.success('选项一'),
+        onClick: () => this.$message.success('操作一'),
       }, {
-        content: '选项二',
+        content: '操作二',
         value: 2,
-        onClick: () => this.$message.success('选项二'),
+        onClick: () => this.$message.success('操作二'),
       }, {
-        content: '选项三',
+        content: '操作三',
         value: 3,
-        onClick: () => this.$message.success('选项三'),
+        onClick: () => this.$message.success('操作三'),
       }, {
-        content: '选项四',
+        content: '操作四',
         value: 4,
-        onClick: () => this.$message.success('选项四'),
+        onClick: () => this.$message.success('操作四'),
       }],
     };
   },

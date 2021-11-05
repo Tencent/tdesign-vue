@@ -35,7 +35,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项一
+                      操作一
                     </span>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项二
+                      操作二
                     </span>
                   </div>
                   <svg
@@ -78,7 +78,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项三
+                      操作三
                     </span>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项四
+                      操作四
                     </span>
                   </div>
                 </div>
@@ -104,13 +104,13 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
       type="button"
     >
       <span
         class="t-button__text"
       >
-        click我试试
+        下拉菜单
       </span>
     </button>
   </div>
@@ -142,7 +142,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px; max-width: 100px; min-width: 10px;"
+              style="max-height: 300px; max-width: 100px; min-width: 112px;"
             >
               <div>
                 <div
@@ -154,7 +154,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项一
+                      操作一
                     </span>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项二
+                      操作二
                     </span>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项三
+                      操作三
                     </span>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项四
+                      操作四
                     </span>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
           class="tdesign-demo-dropdown__text"
         >
           
-        更多
+        下拉菜单
         
           <svg
             class="t-icon t-icon-chevron-down"
@@ -265,7 +265,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px; max-width: 100px; min-width: 105px;"
+              style="max-height: 300px; max-width: 100px; min-width: 88px;"
             >
               <div>
                 <div
@@ -277,7 +277,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项一
+                      操作一
                     </span>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项二
+                      操作二
                     </span>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项三
+                      操作三
                     </span>
                   </div>
                 </div>
@@ -322,7 +322,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项四
+                      操作四
                     </span>
                   </div>
                 </div>
@@ -333,13 +333,13 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
       type="button"
     >
       <span
         class="t-button__text"
       >
-        hover我试试
+        下拉菜单
       </span>
     </button>
   </div>
@@ -369,7 +369,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 400px; max-width: 100px; min-width: 110px;"
+              style="max-height: 400px; max-width: 100px; min-width: 88px;"
             >
               <div>
                 <div
@@ -381,7 +381,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项1
+                      操作1
                     </span>
                   </div>
                 </div>
@@ -396,7 +396,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项2
+                      操作2
                     </span>
                   </div>
                 </div>
@@ -411,7 +411,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项3
+                      操作3
                     </span>
                   </div>
                 </div>
@@ -426,7 +426,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项4
+                      操作4
                     </span>
                   </div>
                 </div>
@@ -441,7 +441,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项5
+                      操作5
                     </span>
                   </div>
                 </div>
@@ -456,7 +456,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项6
+                      操作6
                     </span>
                   </div>
                 </div>
@@ -471,7 +471,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项7
+                      操作7
                     </span>
                   </div>
                 </div>
@@ -486,7 +486,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项8
+                      操作8
                     </span>
                   </div>
                 </div>
@@ -501,7 +501,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项9
+                      操作9
                     </span>
                   </div>
                 </div>
@@ -516,7 +516,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项10
+                      操作10
                     </span>
                   </div>
                 </div>
@@ -531,7 +531,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项11
+                      操作11
                     </span>
                   </div>
                 </div>
@@ -546,7 +546,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项12
+                      操作12
                     </span>
                   </div>
                 </div>
@@ -561,7 +561,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项13
+                      操作13
                     </span>
                   </div>
                 </div>
@@ -576,7 +576,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项14
+                      操作14
                     </span>
                   </div>
                 </div>
@@ -591,7 +591,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项15
+                      操作15
                     </span>
                   </div>
                 </div>
@@ -606,7 +606,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项16
+                      操作16
                     </span>
                   </div>
                 </div>
@@ -621,7 +621,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项17
+                      操作17
                     </span>
                   </div>
                 </div>
@@ -636,7 +636,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项18
+                      操作18
                     </span>
                   </div>
                 </div>
@@ -651,7 +651,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项19
+                      操作19
                     </span>
                   </div>
                 </div>
@@ -666,7 +666,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项20
+                      操作20
                     </span>
                   </div>
                 </div>
@@ -677,13 +677,13 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
       </div>
     </transition-stub>
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
       type="button"
     >
       <span
         class="t-button__text"
       >
-        hover我试试
+        下拉菜单
       </span>
     </button>
   </div>
@@ -727,7 +727,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项一
+                      操作二
                     </span>
                   </div>
                   <svg
@@ -755,7 +755,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项二选项二选项二选项二
+                      操作二操作二操作二操作二
                     </span>
                   </div>
                   <svg
@@ -783,7 +783,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项三
+                      操作三
                     </span>
                   </div>
                   <svg
@@ -811,7 +811,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项四
+                      操作四
                     </span>
                   </div>
                   <svg
@@ -845,7 +845,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
           class="tdesign-demo-dropdown__text"
         >
           
-        更多
+        下拉菜单
         
           <svg
             class="t-icon t-icon-chevron-down"
@@ -890,7 +890,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px; max-width: 100px; min-width: 10px;"
+              style="max-height: 300px; max-width: 100px; min-width: 88px;"
             >
               <div>
                 <div
@@ -964,19 +964,11 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      <svg
-        class="t-icon t-icon-ellipsis"
-        fill="none"
-        height="1em"
-        viewBox="0 0 16 16"
-        width="1em"
+      <span
+        class="t-button__text"
       >
-        <path
-          d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
+        下拉菜单
+      </span>
     </button>
   </div>
 </div>
@@ -1005,7 +997,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px; max-width: 100px; min-width: 10px;"
+              style="max-height: 300px; max-width: 100px; min-width: 88px;"
             >
               <div>
                 <div
@@ -1017,7 +1009,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项一
+                      操作一
                     </span>
                   </div>
                 </div>
@@ -1032,7 +1024,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项二
+                      操作二
                     </span>
                   </div>
                 </div>
@@ -1047,7 +1039,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项三
+                      操作三
                     </span>
                   </div>
                 </div>
@@ -1062,7 +1054,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
                     <span
                       class="t-dropdown__item__content__text"
                     >
-                      选项四
+                      操作四
                     </span>
                   </div>
                 </div>
@@ -1076,19 +1068,11 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
       type="button"
     >
-      <svg
-        class="t-icon t-icon-ellipsis"
-        fill="none"
-        height="1em"
-        viewBox="0 0 16 16"
-        width="1em"
+      <span
+        class="t-button__text"
       >
-        <path
-          d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
+        下拉菜单
+      </span>
     </button>
   </div>
 </div>
@@ -1119,7 +1103,7 @@ exports[`Dropdown base demo works fine 1`] = `
           >
             <div
               class="t-dropdown__menu__column narrow-scrollbar"
-              style="max-height: 300px; max-width: 100px; min-width: 10px;"
+              style="max-height: 300px; max-width: 100px; min-width: 112px;"
             >
               <div>
                 <div
@@ -1199,7 +1183,7 @@ exports[`Dropdown base demo works fine 1`] = `
           class="tdesign-demo-dropdown__text"
         >
           
-        更多
+        下拉菜单
         
           <svg
             class="t-icon t-icon-chevron-down"

@@ -1,11 +1,12 @@
 <template>
   <div>
     <!-- 动画效果待开发 -->
-    <t-drawer :visible.sync="visible" header='标题名称' destroyOnClose>
-      <p>This is the body of drawer</p>
+    <t-drawer :visible.sync="visible" header='抽屉标题' destroyOnClose>
+      <p>抽屉的内容</p>
     </t-drawer>
 
-    <t-button @click="visible = true">Open</t-button>
+    <t-button variant="outline" @click="visible = true">打开抽屉</t-button>
+
   </div>
 </template>
 

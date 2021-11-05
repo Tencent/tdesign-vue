@@ -9,11 +9,11 @@
     </div>
 
     <t-form :data="formData" :labelAlign="formData.labelAlign" :labelWidth="60">
-      <t-form-item label="名字" name='name'>
+      <t-form-item label="姓名" name='name'>
         <t-input v-model="formData.name"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name='password'>
-        <t-input v-model="formData.password" type="password"></t-input>
+      <t-form-item label="手机号" name='telphone'>
+        <t-input v-model="formData.telphone"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit">登录</t-button>
@@ -25,7 +25,7 @@
 const INITIAL_DATA = {
   labelAlign: 'right',
   name: '',
-  password: '',
+  telphone: '',
 };
 export default {
   data() {

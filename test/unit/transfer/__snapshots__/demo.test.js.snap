@@ -13,10 +13,11 @@ exports[`Transfer base demo works fine 1`] = `
       >
         <div>
           <label
-            class="t-checkbox"
+            class="t-checkbox t-is-indeterminate"
           >
             <input
               class="t-checkbox__former"
+              indeterminate="indeterminate"
               type="checkbox"
               value=""
             />
@@ -28,7 +29,7 @@ exports[`Transfer base demo works fine 1`] = `
             />
           </label>
           <span>
-            0 / 20 项
+            1 / 20 项
           </span>
         </div>
         <span />
@@ -84,7 +85,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer-list__item"
+              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
             >
               <input
                 class="t-checkbox__former"
@@ -458,8 +459,7 @@ exports[`Transfer base demo works fine 1`] = `
       class="t-transfer-operations"
     >
       <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
-        disabled="disabled"
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
         type="button"
       >
         <svg

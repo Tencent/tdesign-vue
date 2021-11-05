@@ -15,6 +15,7 @@
     </template>
   </t-head-menu>
 </template>
+
 <script>
 import { Icon } from '@tencent/tdesign-icons-vue';
 
@@ -23,3 +24,4 @@ export default {
     Icon,
   },
 };
+</script>

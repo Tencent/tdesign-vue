@@ -1,20 +1,20 @@
 <template>
   <div>
-    <t-drawer :visible="visible" @close="handleClose" :onConfirm="handleClose" header='标题名称'>
+    <t-drawer :visible="visible" @close="handleClose" :onConfirm="handleClose" header='抽屉标题'>
       <div class="t-drawer-demo-div">
-        <span>Label A</span>
+        <span>标签 A</span>
         <t-input />
       </div>
       <div class="t-drawer-demo-div">
-        <span>Label B</span>
+        <span>标签 B</span>
         <t-input />
       </div>
       <div class="t-drawer-demo-div">
-        <span>Label C</span>
+        <span>标签 C</span>
         <t-input />
       </div>
     </t-drawer>
-    <t-button theme="primary" @click="handleClick">Open</t-button>
+    <t-button variant="outline" @click="handleClick">打开抽屉</t-button>
   </div>
 </template>
 
