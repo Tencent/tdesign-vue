@@ -36,7 +36,7 @@ exports[`Comment base demo works fine 1`] = `
       <div
         class="t-comment__detail"
       >
-        评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容。
+        这里是评论者写的评论内容。
       </div>
     </div>
   </div>

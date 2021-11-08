@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils';
 import MockDate from 'mockdate';
 import base from '@/examples/calendar/demos/base.vue';
 import card from '@/examples/calendar/demos/card.vue';
-import cardCell from '@/examples/calendar/demos/card-cell.vue';
 import cell from '@/examples/calendar/demos/cell.vue';
 import cellAppend from '@/examples/calendar/demos/cell-append.vue';
 import controllerConfig from '@/examples/calendar/demos/controller-config.vue';
@@ -10,10 +9,8 @@ import value from '@/examples/calendar/demos/value.vue';
 import events from '@/examples/calendar/demos/events.vue';
 import firstDayOfWeek from '@/examples/calendar/demos/first-day-of-week.vue';
 import head from '@/examples/calendar/demos/head.vue';
-import filter from '@/examples/calendar/demos/filter.vue';
 import mode from '@/examples/calendar/demos/mode.vue';
 import range from '@/examples/calendar/demos/range.vue';
-import eventsPropsApi from '@/examples/calendar/demos/events-props-api.vue';
 import slotPropsApi from '@/examples/calendar/demos/slot-props-api.vue';
 import week from '@/examples/calendar/demos/week.vue';
 
@@ -29,10 +26,6 @@ describe('Calendar', () => {
   });
   it('card demo works fine', () => {
     const wrapper = mount(card);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('filter demo works fine', () => {
-    const wrapper = mount(filter);
     expect(wrapper.element).toMatchSnapshot();
   });
   // 组件类型(end)
@@ -65,10 +58,6 @@ describe('Calendar', () => {
     const wrapper = mount(events);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('eventsPropsApi demo works fine', () => {
-    const wrapper = mount(eventsPropsApi);
-    expect(wrapper.element).toMatchSnapshot();
-  });
   // 事件示例(end)
 
   // 插槽示例(begin)
@@ -82,10 +71,6 @@ describe('Calendar', () => {
   });
   it('cell demo works fine', () => {
     const wrapper = mount(cell);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('cardCell demo works fine', () => {
-    const wrapper = mount(cardCell);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('slotPropsApi demo works fine', () => {

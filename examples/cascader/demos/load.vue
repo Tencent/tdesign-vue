@@ -10,12 +10,12 @@ export default {
     return {
       options: [
         {
-          label: '上海',
+          label: '选项1',
           value: '1',
           children: true,
         },
         {
-          label: '深圳',
+          label: '选项2',
           value: '2',
           children: true,
         },

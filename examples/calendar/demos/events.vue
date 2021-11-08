@@ -12,19 +12,6 @@
       @cell-right-click="cellRightClick"
       @controller-change="controllerChange"
     ></t-calendar>
-
-    <t-alert
-      v-if="!histories || histories.length === 0"
-      theme="warning"
-      message="暂无数据，您可以点击一下日历的单元格看看（双击会改变当前选中日期）😀"
-    />
-    <div  v-else class="demo-list">
-      <t-list>
-        <t-list-item v-for="(item, index) in histories" :key="index">
-          【{{ histories.length - index }}】{{ item }}，并得到组件传出的参数（您看控制台）...
-        </t-list-item>
-      </t-list>
-    </div>
   </div>
 </template>
 
@@ -33,7 +20,6 @@ export default {
   data() {
     return {
       preventCellContextmenu: false,
-      histories: [],
       value: null,
       options: [
         { value: true, label: '禁用' },
@@ -43,20 +29,16 @@ export default {
   },
   methods: {
     cellClick(options) {
-      this.appendHistories(`鼠标左键单击单元格 ${options.cell.formattedDate}`, options);
+      console.log(`鼠标左键单击单元格 ${options.cell.formattedDate}`);
     },
     cellDoubleClick(options) {
-      this.appendHistories(`鼠标双击单元格 ${options.cell.formattedDate}`, options);
+      console.log(`鼠标双击单元格 ${options.cell.formattedDate}`);
     },
     cellRightClick(options) {
-      this.appendHistories(`鼠标右键点击元格 ${options.cell.formattedDate}`, options);
+      console.log(`鼠标右键点击元格 ${options.cell.formattedDate}`);
     },
     controllerChange(data) {
-      this.appendHistories('控件值变化', data);
-    },
-    appendHistories(content, options) {
-      this.histories.unshift(content);
-      console.info(options);
+      console.log('控件值变化', data);
     },
   },
 };
