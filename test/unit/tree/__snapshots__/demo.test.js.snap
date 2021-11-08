@@ -3677,6 +3677,38 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           </div>
         </div>
       </div>
+       
+      <div
+        class="t-form__item t-form-item__"
+      >
+        <div
+          class="t-form__label t-form__label--right"
+        >
+          <label
+            for=""
+          >
+            严格模式
+          </label>
+        </div>
+        <div
+          class="t-form__controls"
+        >
+          <div
+            class="t-form__controls--content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
    

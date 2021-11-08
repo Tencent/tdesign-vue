@@ -223,6 +223,12 @@ describe('Tree:checkable', () => {
         }],
       }];
       const wrapper = mount({
+        mounted() {
+          const { tree } = this.$refs;
+          tree.setItem('t1.2', {
+            checked: true,
+          });
+        },
         render() {
           return (
             <Tree
@@ -235,10 +241,7 @@ describe('Tree:checkable', () => {
           );
         },
       });
-      const { tree } = wrapper.vm.$refs;
-      tree.setItem('t1.2', {
-        checked: true,
-      });
+
       await delay(10);
       expect(
         wrapper

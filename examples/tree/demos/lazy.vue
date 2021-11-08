@@ -9,16 +9,20 @@
         <t-form-item label="可选">
           <t-switch v-model="checkable" />
         </t-form-item>
+        <t-form-item label="严格模式">
+          <t-switch v-model="checkStrictly" />
+        </t-form-item>
       </t-form>
     </div>
     <t-tree
+      ref="tree"
       :data="items"
       hover
       expand-all
       :checkable="checkable"
+      :checkStrictly="checkStrictly"
       :load="load"
       valueMode="all"
-      v-model="value"
       @load="onLoad"
     />
   </div>
@@ -29,6 +33,7 @@ export default {
   data() {
     return {
       checkable: true,
+      checkStrictly: false,
       value: [
         '1.1',
         '1.1.1',
