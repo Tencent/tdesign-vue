@@ -60,7 +60,9 @@ exports[`Table base demo works fine 1`] = `
     </label>
   </div>
    
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table t-table--bordered t-table--striped"
     >
@@ -471,7 +473,9 @@ exports[`Table base demo works fine 2`] = `
     </label>
   </div>
    
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table t-table--bordered t-table--striped"
     >
@@ -824,7 +828,9 @@ exports[`Table base demo works fine 2`] = `
 
 exports[`Table customCell demo works fine 1`] = `
 <div>
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >
@@ -1031,7 +1037,9 @@ exports[`Table customCell demo works fine 1`] = `
 
 exports[`Table empty demo works fine 1`] = `
 <div>
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >
@@ -1123,7 +1131,9 @@ exports[`Table empty demo works fine 1`] = `
   <br />
   <br />
    
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >
@@ -1306,7 +1316,9 @@ exports[`Table expandable demo works fine 1`] = `
     </span>
   </label>
    
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >
@@ -2085,7 +2097,9 @@ exports[`Table fixedColumn demo works fine 1`] = `
     </div>
   </div>
    
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed"
     >
@@ -2585,7 +2599,9 @@ exports[`Table fixedColumn demo works fine 1`] = `
 `;
 
 exports[`Table fixedHeader demo works fine 1`] = `
-<div>
+<div
+  style="width: 100%;"
+>
   <div
     class="t-table t-table__header--fixed"
   >
@@ -3879,7 +3895,9 @@ exports[`Table fixedHeader demo works fine 1`] = `
 `;
 
 exports[`Table multiHeader demo works fine 1`] = `
-<div>
+<div
+  style="width: 100%;"
+>
   <div
     class="t-table t-table--bordered"
   >
@@ -4102,7 +4120,9 @@ exports[`Table multiHeader demo works fine 1`] = `
 
 exports[`Table selectMultiple demo works fine 1`] = `
 <div>
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >
@@ -4550,7 +4570,9 @@ exports[`Table selectMultiple demo works fine 1`] = `
 
 exports[`Table selectSingle demo works fine 1`] = `
 <div>
-  <div>
+  <div
+    style="width: 100%;"
+  >
     <div
       class="t-table"
     >

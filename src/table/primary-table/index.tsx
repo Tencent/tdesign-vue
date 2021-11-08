@@ -96,7 +96,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
       on,
     };
     return (
-      <div>
+      <div style="width: 100%">
         {showColumns && this.renderShowColumns()}
         <SimpleTable {...baseTableProps} />
       </div>

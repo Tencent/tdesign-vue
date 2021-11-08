@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height height = 100 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table t-table__header--fixed">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -54,7 +54,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "large", verticalAlign="top" 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table t-size-l t-table-valign__top">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -73,7 +73,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "medium", verticalAlign="bottom" 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table t-table-valign__bottom">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -92,7 +92,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "small", verticalAlign="middle" 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -134,7 +134,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -153,7 +153,7 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
 `;
 
 exports[`Table :props :props.columns \`columns\` with align, width, minWidth and ellipsis 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -195,7 +195,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
 `;
 
 exports[`Table :props :props.columns \`columns\` with children 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
@@ -247,7 +247,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
 `;
 
 exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
-<div>
+<div style="width: 100%;">
   <div class="t-table t-table__cell--fixed t-table--has-fixed">
     <div class="t-loading-parent__relative">
       <div class="t-table-content">
