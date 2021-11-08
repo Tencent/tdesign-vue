@@ -37,9 +37,6 @@ export default {
         {
           colKey: 'type',
           title: 'title-slot-name',
-          // scopedSlots: {
-          //   title: 'title-slot-name',
-          // },
         },
         {
           colKey: 'platform',

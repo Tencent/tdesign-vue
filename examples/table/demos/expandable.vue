@@ -11,7 +11,7 @@
       <t-radio-group v-model="expandControl" variant="default-filled">
         <t-radio-button value="true">显示展开图标</t-radio-button>
         <t-radio-button value="false">隐藏展开图标</t-radio-button>
-        <t-radio-button value="custom">自由控制展开图标</t-radio-button>
+        <t-radio-button value="custom">自定义展开图标</t-radio-button>
       </t-radio-group>
     </div>
 

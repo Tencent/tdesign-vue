@@ -65,11 +65,11 @@ export default Vue.extend({
         rowData, columns, index: rowIndex, rowspanAndColspanProps,
       } = this;
       const rowBody: Array<VNode> = [];
-      const customData: CustomData = {
-        type: 'cell',
-        func: 'cell',
-      };
       columns.forEach((column, index) => {
+        const customData: CustomData = {
+          type: 'cell',
+          func: 'cell',
+        };
         const { render, cell, scopedSlots } = column as Column;
         const scopedSlotsCol = scopedSlots?.col;
         const { colKey } = column;

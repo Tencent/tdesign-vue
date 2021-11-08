@@ -1289,7 +1289,7 @@ exports[`Table expandable demo works fine 1`] = `
         <span
           class="t-radio-button__label"
         >
-          自由控制展开图标
+          自定义展开图标
         </span>
       </label>
       <div
@@ -4230,7 +4230,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               class="table-body"
             >
               <tr
-                class="t-table-row--selected"
+                class="t-table__row--selected"
                 key="1"
                 rowkey="tid"
               >
@@ -4312,7 +4312,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
                 </td>
               </tr>
               <tr
-                class="t-table-row--disabled t-table-row--selected"
+                class=""
                 key="2"
                 rowkey="tid"
               >
@@ -4323,7 +4323,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
                   style="overflow: hidden;"
                 >
                   <label
-                    class="t-checkbox t-is-checked t-is-disabled"
+                    class="t-checkbox t-is-disabled"
                   >
                     <input
                       class="t-checkbox__former"
@@ -4750,7 +4750,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 </td>
               </tr>
               <tr
-                class=""
+                class="t-table__row--disabled"
                 key="2"
                 rowkey="id"
               >
@@ -4925,7 +4925,7 @@ exports[`Table selectSingle demo works fine 1`] = `
                 </td>
               </tr>
               <tr
-                class=""
+                class="t-table__row--disabled"
                 key="4"
                 rowkey="id"
               >

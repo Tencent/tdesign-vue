@@ -134,15 +134,17 @@ export default Vue.extend({
         const rowspanAndColspanProps = allRowspanAndColspanProps ? allRowspanAndColspanProps[index] : undefined;
         let rowVnode: VNode;
         const key = rowKey ? get(row, rowKey) : index + this.current;
+        const disabled = typeof selectColumn.disabled === 'function'
+          ? selectColumn.disabled({ row, rowIndex: index })
+          : selectColumn.disabled;
+        if (disabled) {
+          rowClass.push(`${prefix}-table__row--disabled`);
+        }
         if (selectedRowKeys?.indexOf(key) > -1) {
-          const disabled = typeof selectColumn.disabled === 'function'
-            ? selectColumn.disabled({ row, rowIndex: index })
-            : selectColumn.disabled;
-
-          if (disabled) {
-            rowClass.push(`${prefix}-table-row--disabled`);
-          }
-          rowClass.push(`${prefix}-table-row--selected`);
+          rowClass.push(`${prefix}-table__row--selected`);
+        }
+        if (row.__t_table_inner_data__?.level) {
+          rowClass.push(`${prefix}-table__row--level-${row.__t_table_inner_data__?.level || 0}`);
         }
         const props = {
           key,

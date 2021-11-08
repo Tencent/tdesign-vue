@@ -26,13 +26,18 @@
 export default {
   data() {
     return {
-      selectedRowKeys: [1, '2'],
+      selectedRowKeys: [1],
       columns: [
         {
           colKey: 'row-select',
           type: 'multiple',
-          // disabled 参数：{row: RowData; rowIndex: number })
-          disabled: ({ rowIndex }) => rowIndex === 1 || rowIndex === 3,
+          // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删）。disabled 参数：{row: RowData; rowIndex: number })
+          // 这种方式禁用行选中，当前行会添加行类名 t-table__row--disabled，禁用行文字变灰
+          // disabled: ({ rowIndex }) => rowIndex === 1 || rowIndex === 3,
+
+          // 禁用行选中方式二：使用 checkProps 禁用行（示例代码有效，勿删）
+          // 这种方式禁用行选中，行文本不会变灰
+          checkProps: ({ rowIndex }) => ({ disabled: rowIndex % 2 !== 0 }),
           width: 50,
         },
         { colKey: 'instance', title: '集群名称', width: 150 },

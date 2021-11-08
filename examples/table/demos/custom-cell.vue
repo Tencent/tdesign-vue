@@ -48,9 +48,6 @@ export default {
           title: '类型',
           // type-slot-name 会被用于自定义单元格的插槽名称
           cell: 'type-slot-name',
-          // scopedSlots: {
-          //   col: 'type-slot-name',
-          // },
           width: 80,
         },
         {
