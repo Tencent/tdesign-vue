@@ -243,7 +243,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
     getDefaultFooter() {
       let cancelBtn = null;
 
-      if (this.$slots.cancelBtn) {
+      if (this.$scopedSlots.cancelBtn) {
         cancelBtn = renderTNodeJSX(this, 'cancelBtn');
       } else if (![undefined, null].includes(this.cancelBtn)) {
         cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
@@ -253,7 +253,7 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
 
       let confirmBtn = null;
 
-      if (this.$slots.confirmBtn) {
+      if (this.$scopedSlots.confirmBtn) {
         confirmBtn = renderTNodeJSX(this, 'confirmBtn');
       } else if (![undefined, null].includes(this.confirmBtn)) {
         confirmBtn = this.confirmBtn || this.t(this.locale.confirm);

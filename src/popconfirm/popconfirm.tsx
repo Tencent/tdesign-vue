@@ -100,14 +100,18 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
     const triggerElement = renderContent(this, 'default', 'triggerElement');
     const baseTypes = ['string', 'object'];
     let confirmBtn = null;
-    if (![undefined, null].includes(this.confirmBtn)) {
+    if (this.$scopedSlots.confirmBtn) {
+      confirmBtn = renderTNodeJSX(this, 'confirmBtn');
+    } else if (![undefined, null].includes(this.confirmBtn)) {
       const mBtn = this.confirmBtn || this.t(this.locale.confirm);
       confirmBtn = baseTypes.includes(typeof mBtn)
         ? this.renderConfirm(mBtn)
         : renderTNodeJSX(this, 'confirmBtn');
     }
     let cancelBtn = null;
-    if (![undefined, null].includes(this.cancelBtn)) {
+    if (this.$scopedSlots.cancelBtn) {
+      cancelBtn = renderTNodeJSX(this, 'cancelBtn');
+    } else if (![undefined, null].includes(this.cancelBtn)) {
       const cBtn = this.cancelBtn || this.t(this.locale.cancel);
       cancelBtn = baseTypes.includes(typeof cBtn)
         ? this.renderCancel(cBtn)
