@@ -673,27 +673,31 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         )
         }
         {!showTime && panelComponent}
-        {!!presets && (
-          <calendar-presets
-            presets={presets}
-            locales={locales}
-            {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
-          />
-        )}
         {
-          enableTimePicker && (
-            <div class={`${name}--apply`}>
+          (!!presets || enableTimePicker) && (
+            <div class={`${prefix}-date-picker__footer`}>
+              <calendar-presets
+                presets={presets}
+                locales={locales}
+                {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
+              />
               {
                 enableTimePicker && (
-                  <t-button theme="primary" variant="text" onClick={this.toggleTime}>
-                    {showTime ? locales.selectDate : locales.selectTime}
-                  </t-button>
+                  <div class={`${name}--apply`}>
+                    {
+                      enableTimePicker && (
+                        <t-button theme="primary" variant="text" onClick={this.toggleTime}>
+                          {showTime ? locales.selectDate : locales.selectTime}
+                        </t-button>
+                      )
+                    }
+                    {
+                      <t-button theme="primary" onClick={this.clickedApply}>
+                        {locales.confirm}
+                      </t-button>
+                    }
+                  </div>
                 )
-              }
-              {
-                <t-button theme="primary" onClick={this.clickedApply}>
-                  {locales.confirm}
-                </t-button>
               }
             </div>
           )

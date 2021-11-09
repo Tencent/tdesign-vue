@@ -2151,15 +2151,19 @@ exports[`DatePicker datePresets demo works fine 1`] = `
                 </div>
               </div>
               <div
-                class="t-date-picker-presets"
+                class="t-date-picker__footer"
               >
-                <ul>
-                  <li>
-                    <a>
-                      今天
-                    </a>
-                  </li>
-                </ul>
+                <div
+                  class="t-date-picker-presets"
+                >
+                  <ul>
+                    <li>
+                      <a>
+                        今天
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -3602,25 +3606,29 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                   </div>
                 </div>
                 <div
-                  class="t-date-picker-presets"
+                  class="t-date-picker__footer"
                 >
-                  <ul>
-                    <li>
-                      <a>
-                        最近7天
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        最近3天
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        今天
-                      </a>
-                    </li>
-                  </ul>
+                  <div
+                    class="t-date-picker-presets"
+                  >
+                    <ul>
+                      <li>
+                        <a>
+                          最近7天
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          最近3天
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          今天
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -4372,20 +4380,24 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
                   </div>
                 </div>
                 <div
-                  class="t-date-picker-presets"
+                  class="t-date-picker__footer"
                 >
-                  <ul>
-                    <li>
-                      <a>
-                        7天前
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        今天
-                      </a>
-                    </li>
-                  </ul>
+                  <div
+                    class="t-date-picker-presets"
+                  >
+                    <ul>
+                      <li>
+                        <a>
+                          7天前
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          今天
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -5828,25 +5840,29 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
                 </div>
               </div>
               <div
-                class="t-date-picker-presets"
+                class="t-date-picker__footer"
               >
-                <ul>
-                  <li>
-                    <a>
-                      今天
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      快捷标签3
-                    </a>
-                  </li>
-                  <li>
-                    <a>
-                      快捷标签7
-                    </a>
-                  </li>
-                </ul>
+                <div
+                  class="t-date-picker-presets"
+                >
+                  <ul>
+                    <li>
+                      <a>
+                        今天
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        快捷标签3
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        快捷标签7
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -8726,16 +8742,25 @@ exports[`DatePicker dateRange demo works fine 1`] = `
                 </div>
               </div>
               <div
-                class="t-date-picker--apply"
+                class="t-date-picker__footer"
               >
-                <button
-                  class="t-button t-size-m t-button--variant-text t-button--theme-primary"
-                  type="button"
-                />
-                <button
-                  class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-                  type="button"
-                />
+                <div
+                  class="t-date-picker-presets"
+                >
+                  <ul />
+                </div>
+                <div
+                  class="t-date-picker--apply"
+                >
+                  <button
+                    class="t-button t-size-m t-button--variant-text t-button--theme-primary"
+                    type="button"
+                  />
+                  <button
+                    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+                    type="button"
+                  />
+                </div>
               </div>
             </div>
           </div>
