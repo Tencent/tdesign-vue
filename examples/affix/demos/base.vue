@@ -5,9 +5,7 @@
       :offset-bottom="20"
       ref="affix"
     >
-      <t-button
-        :style="{height: top + 'px'}"
-      >Base</t-button>
+      <t-button :style="{ height: top + 'px' }">固钉</t-button>
     </t-affix>
   </div>
 </template>

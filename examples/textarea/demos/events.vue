@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-column">
     <t-textarea
       v-model="value"
       placeholder="请输入"
       @keypress="onKeypress"
       @keydown="onKeydown"
       @keyup="onKeyup"
-    ></t-textarea>
+      @focus="onFocus"
+      @blur="onBlur"
+    />
   </div>
 </template>
 <script>
@@ -26,7 +28,13 @@ export default {
     onKeyup(value, e) {
       console.log('onKeyup: ', value, e);
     },
+
+    onFocus(value, e) {
+      console.log('onFocus: ', value, e);
+    },
+    onBlur(value, e) {
+      console.log('onBlur: ', value, e);
+    },
   },
 };
 </script>
-<style></style>
