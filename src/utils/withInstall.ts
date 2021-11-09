@@ -1,4 +1,5 @@
 import { VueConstructor, PluginObject } from 'vue';
+import capitalize from 'lodash/capitalize';
 
 export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
   const c = comp as any;
@@ -8,10 +9,11 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
   c.install = (Vue: VueConstructor, config?: object) => {
     const defaults = { prefix: 't' };
     const installConfig = { ...defaults, ...config };
-    const defaultPrefix = defaults.prefix.toLocaleUpperCase();
+    /// 为保证组件名称简洁，前缀保持为一个单词，首字母大写
+    const defaultPrefix = capitalize(defaults.prefix);
     // mapprops component is original component
     let componentName = name.replace(defaultPrefix, '').replace('-mapprops', '');
-    componentName = installConfig.prefix.toLocaleUpperCase() + componentName;
+    componentName = capitalize(installConfig.prefix) + componentName;
 
     Vue.component(componentName, comp);
 
