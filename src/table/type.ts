@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-06 23:18:51
+ * updated at 2021-11-09 12:00:18
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -294,7 +294,7 @@ export interface TdPrimaryTableProps<T extends DataType =  DataType> extends Omi
   onSortChange?: (sort: TableSort, options: SortOptions<T>) => void;
 };
 
-export interface PrimaryTableCol<T extends DataType = DataType> extends BaseTableCol {
+export interface PrimaryTableCol<T extends DataType = DataType> extends Omit<BaseTableCol, 'cell' | 'title' | 'render'> {
   /**
    * 自定义单元格渲染。值类型为 Function 表示以函数形式渲染单元格。值类型为 string 表示使用插槽渲染，插槽名称为 cell 的值。默认使用 colKey 作为插槽名称。优先级高于 render。泛型 T 指表格数据类型
    */
