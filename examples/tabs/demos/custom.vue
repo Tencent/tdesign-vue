@@ -6,6 +6,7 @@
     @add="addTab"
     @remove="removeTab"
     @change="changeTab"
+    style="width: 100%"
   >
     <t-tab-panel
       v-for="data in panelData"
