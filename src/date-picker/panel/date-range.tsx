@@ -178,7 +178,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     },
     getClickHandler(direction: string, date: DateValue, e: MouseEvent) {
       const type = this[`${direction}Type`];
-      return this[`click${firstUpperCase(type)}`](date, e);
+      return this[`click${firstUpperCase(type)}`](date, e, direction);
     },
     clickHeader(flag: number, direction: string) {
       const year = this[`${direction}Year`];
@@ -231,7 +231,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       }
       this.$props.onPick && this.$props.onPick(date, { e, partial });
     },
-    clickYear(date: Date, type: string) {
+    clickYear(date: Date, e: MouseEvent, type: string) {
       if (this.mode === 'year') {
         if (this.isFirstClick) {
           this.startValue = date;
@@ -246,7 +246,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
         this[`${type}Year`] = date.getFullYear();
       }
     },
-    clickMonth(date: Date, type: string) {
+    clickMonth(date: Date, e: MouseEvent, type: string) {
       if (this.mode === 'month') {
         if (this.isFirstClick) {
           this.startValue = date;

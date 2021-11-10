@@ -9,6 +9,7 @@
       range
       format="YYYY-MM-DD HH:mm:ss"
       enableTimePicker
+      style="width: 350px"
       @pick="onPick"
     />
   </div>

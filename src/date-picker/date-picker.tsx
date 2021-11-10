@@ -180,7 +180,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
         [`${name}--container`]: true,
         [`${name}-picker--open`]: this.isOpen || this.inlineView,
         [`${name}--calendar-inline-view`]: this.inlineView,
-        [`${name}--ranges-show`]: !!this.presets && this.range,
+        [`${name}--ranges-show`]: this.range,
         [`${name}--date`]: this.mode === 'date',
       };
     },

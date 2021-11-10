@@ -287,8 +287,8 @@ export interface DateRangeMethods {
   getClickHandler(direction: string, date: DateValue, e: MouseEvent): object;
   clickHeader(flag: number, direction: string): void;
   clickDate(date: Date, e: MouseEvent): void;
-  clickYear(date: Date, type: string): void;
-  clickMonth(date: Date, type: string): void;
+  clickYear(date: Date, e: MouseEvent, type: string): void;
+  clickMonth(date: Date, e: MouseEvent, type: string): void;
   onMouseEnter(date: Date): void;
   onTypeChange(): void;
   handleTypeChange(direction: string, type: string): void;
