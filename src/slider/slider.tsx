@@ -40,7 +40,7 @@ export default Vue.extend({
       inputDecimalPlaces: 0,
       inputFormat: null,
       inputPlaceholder: '',
-      inputTheme: 'normal',
+      inputTheme: 'column',
       showSteps: false,
     };
   },
@@ -64,7 +64,6 @@ export default Vue.extend({
     },
     sliderNumberClass(): ClassName {
       return [
-        `${name}__-input`,
         `${name}-input`,
         {
           'is-vertical': this.vertical,
@@ -369,7 +368,9 @@ export default Vue.extend({
         max, min, sliderNumberClass, range,
       } = this;
       return (
-        <div class={`${name}-input-container`}>
+        <div class={[`${name}-input-container`, {
+          'is-vertical': this.vertical,
+        }]}>
           {this.inputNumberProps && (
             <t-input-number
               class={sliderNumberClass}
@@ -388,8 +389,9 @@ export default Vue.extend({
               theme={this.inputTheme}
             ></t-input-number>
           )}
+          {this.inputNumberProps && range && <div class="center-line" />}
           {this.inputNumberProps && range && (
-             <t-input-number
+            <t-input-number
               class={this.sliderNumberClass}
               v-model={this.secondValue}
               ref="input"

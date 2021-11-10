@@ -25,6 +25,6 @@ export default {
 .number-vertical-block {
   display: inline-block;
   padding: 30px 24px;
-  height: 500px;
+  height: 300px;
 }
 </style>

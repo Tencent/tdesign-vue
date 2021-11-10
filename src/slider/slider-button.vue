@@ -77,7 +77,6 @@ export default {
       prevValue: this.value,
       showTooltip: true,
 
-      placement: 'top',
       trigger: 'hover',
       showArrow: true,
       overlayStyle: undefined,
@@ -87,6 +86,16 @@ export default {
   },
 
   computed: {
+    placement() {
+      if (this.tooltipProps instanceof Object) {
+        const {
+          placement,
+        } = this.tooltipProps;
+        if (placement) return placement;
+      }
+
+      return this.vertical ? 'right' : 'top';
+    },
     rangeDiff() {
       return this.max - this.min;
     },
