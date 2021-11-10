@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large" style="width: 100%">
     <div>
       <t-radio-group variant="default-filled" v-model="theme">
         <t-radio-button value="normal">常规型</t-radio-button>

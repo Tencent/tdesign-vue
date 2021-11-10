@@ -1,6 +1,7 @@
 import Vue from 'vue';
-import { renderContent } from '../utils/render-tnode';
 import props from './tab-panel-props';
+import { renderContent } from '../utils/render-tnode';
+import { prefix } from '../config';
 
 export default Vue.extend({
   name: 'TTabPanel',
@@ -19,7 +20,7 @@ export default Vue.extend({
     if (destroyOnHide && !active) return null;
     return (
       <div
-        class="t-tab-panel"
+        class={`${prefix}-tab-panel`}
         v-show={active}
       >
         {renderContent(this, 'default', 'panel')}

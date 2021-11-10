@@ -67,11 +67,8 @@ exports[`Tabs ban demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
+          />
         </div>
-         
         <div
           class="t-tabs__operations t-tabs__operations--right"
         >
@@ -79,13 +76,8 @@ exports[`Tabs ban demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
-           
-          <!---->
+          />
         </div>
-         
         <div
           class="t-tabs__nav-container t-is-top"
         >
@@ -93,13 +85,12 @@ exports[`Tabs ban demo works fine 1`] = `
             class="t-tabs__nav-scroll"
           >
             <div
-              class="t-tabs__nav-wrap"
-              style="transform: translateX(-0px);"
+              class="t-tabs__nav-wrap t-is-smooth"
+              style="transform: translate3d(0px, 0, 0);"
             >
               <div
                 class="t-tabs__bar t-is-top"
               />
-               
             </div>
           </div>
         </div>
@@ -128,75 +119,145 @@ exports[`Tabs ban demo works fine 1`] = `
 
 exports[`Tabs base demo works fine 1`] = `
 <div
-  class="t-tabs"
+  class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-tabs__header t-is-top"
+    class="tdesign-demo-block-column"
   >
     <div
-      class="t-tabs__nav"
+      class="t-tabs"
     >
       <div
-        class="t-tabs__operations t-tabs__operations--left"
-      >
-        <transition-stub
-          appear="true"
-          mode="out-in"
-          name="fade"
-        >
-          <!---->
-        </transition-stub>
-      </div>
-       
-      <div
-        class="t-tabs__operations t-tabs__operations--right"
-      >
-        <transition-stub
-          appear="true"
-          mode="out-in"
-          name="fade"
-        >
-          <!---->
-        </transition-stub>
-         
-        <!---->
-      </div>
-       
-      <div
-        class="t-tabs__nav-container t-is-top"
+        class="t-tabs__header t-is-top"
       >
         <div
-          class="t-tabs__nav-scroll"
+          class="t-tabs__nav"
         >
           <div
-            class="t-tabs__nav-wrap"
-            style="transform: translateX(-0px);"
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
           >
             <div
-              class="t-tabs__bar t-is-top"
-            />
-             
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate3d(0px, 0, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div
-    class="t-tabs__content"
-  >
-    <div
-      class="t-tab-panel"
-    >
-      <p
-        style="padding: 25px;"
+      <div
+        class="t-tabs__content"
       >
-        选项卡1的内容
-      </p>
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            选项卡1的内容，使用 t-tab-pannel 渲染
+          </p>
+        </div>
+         
+        <div
+          class="t-tab-panel"
+          style="display: none;"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            选项卡2的内容，使用 t-tab-pannel 渲染
+          </p>
+        </div>
+         
+        <!---->
+      </div>
     </div>
      
-    <!---->
-     
-    <!---->
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
+        <div
+          class="t-tabs__nav"
+        >
+          <div
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
+          >
+            <div
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate3d(0px, 0, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-tabs__content"
+      >
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            这是选项卡一的内容，使用 t-tabs 渲染
+          </p>
+        </div>
+        <!---->
+        <!---->
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -204,6 +265,7 @@ exports[`Tabs base demo works fine 1`] = `
 exports[`Tabs combination demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
+  style="width: 100%;"
 >
   <div>
     <div
@@ -268,11 +330,8 @@ exports[`Tabs combination demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
+          />
         </div>
-         
         <div
           class="t-tabs__operations t-tabs__operations--right"
         >
@@ -280,13 +339,8 @@ exports[`Tabs combination demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
-           
-          <!---->
+          />
         </div>
-         
         <div
           class="t-tabs__nav-container t-is-top"
         >
@@ -294,13 +348,12 @@ exports[`Tabs combination demo works fine 1`] = `
             class="t-tabs__nav-scroll"
           >
             <div
-              class="t-tabs__nav-wrap"
-              style="transform: translateX(-0px);"
+              class="t-tabs__nav-wrap t-is-smooth"
+              style="transform: translate3d(0px, 0, 0);"
             >
               <div
                 class="t-tabs__bar t-is-top"
               />
-               
             </div>
           </div>
         </div>
@@ -359,11 +412,8 @@ exports[`Tabs custom demo works fine 1`] = `
           appear="true"
           mode="out-in"
           name="fade"
-        >
-          <!---->
-        </transition-stub>
+        />
       </div>
-       
       <div
         class="t-tabs__operations t-tabs__operations--right"
       >
@@ -371,12 +421,9 @@ exports[`Tabs custom demo works fine 1`] = `
           appear="true"
           mode="out-in"
           name="fade"
-        >
-          <!---->
-        </transition-stub>
-         
+        />
         <div
-          class="t-tabs__btn t-tabs__add-btn t-size-m"
+          class="t-tabs__add-btn t-tabs__btn t-size-m"
         >
           <svg
             class="t-icon t-icon-add"
@@ -393,7 +440,6 @@ exports[`Tabs custom demo works fine 1`] = `
           </svg>
         </div>
       </div>
-       
       <div
         class="t-tabs__nav-container t-tabs__nav--card t-is-top t-is-addable"
       >
@@ -401,8 +447,8 @@ exports[`Tabs custom demo works fine 1`] = `
           class="t-tabs__nav-scroll"
         >
           <div
-            class="t-tabs__nav-wrap"
-            style="transform: translateX(-0px);"
+            class="t-tabs__nav-wrap t-is-smooth"
+            style="transform: translate3d(0px, 0, 0);"
           />
         </div>
       </div>
@@ -492,11 +538,8 @@ exports[`Tabs icon demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
+          />
         </div>
-         
         <div
           class="t-tabs__operations t-tabs__operations--right"
         >
@@ -504,13 +547,8 @@ exports[`Tabs icon demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
-           
-          <!---->
+          />
         </div>
-         
         <div
           class="t-tabs__nav-container t-is-top"
         >
@@ -518,13 +556,12 @@ exports[`Tabs icon demo works fine 1`] = `
             class="t-tabs__nav-scroll"
           >
             <div
-              class="t-tabs__nav-wrap"
-              style="transform: translateX(-0px);"
+              class="t-tabs__nav-wrap t-is-smooth"
+              style="transform: translate3d(0px, 0, 0);"
             >
               <div
                 class="t-tabs__bar t-is-top"
               />
-               
             </div>
           </div>
         </div>
@@ -569,11 +606,8 @@ exports[`Tabs operation demo works fine 1`] = `
           appear="true"
           mode="out-in"
           name="fade"
-        >
-          <!---->
-        </transition-stub>
+        />
       </div>
-       
       <div
         class="t-tabs__operations t-tabs__operations--right"
       >
@@ -581,12 +615,9 @@ exports[`Tabs operation demo works fine 1`] = `
           appear="true"
           mode="out-in"
           name="fade"
-        >
-          <!---->
-        </transition-stub>
-         
+        />
         <div
-          class="t-tabs__btn t-tabs__add-btn t-size-m"
+          class="t-tabs__add-btn t-tabs__btn t-size-m"
         >
           <svg
             class="t-icon t-icon-add"
@@ -603,7 +634,6 @@ exports[`Tabs operation demo works fine 1`] = `
           </svg>
         </div>
       </div>
-       
       <div
         class="t-tabs__nav-container t-tabs__nav--card t-is-top t-is-addable"
       >
@@ -611,8 +641,8 @@ exports[`Tabs operation demo works fine 1`] = `
           class="t-tabs__nav-scroll"
         >
           <div
-            class="t-tabs__nav-wrap"
-            style="transform: translateX(-0px);"
+            class="t-tabs__nav-wrap t-is-smooth"
+            style="transform: translate3d(0px, 0, 0);"
           />
         </div>
       </div>
@@ -740,11 +770,8 @@ exports[`Tabs position demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
+          />
         </div>
-         
         <div
           class="t-tabs__operations t-tabs__operations--right"
         >
@@ -752,13 +779,8 @@ exports[`Tabs position demo works fine 1`] = `
             appear="true"
             mode="out-in"
             name="fade"
-          >
-            <!---->
-          </transition-stub>
-           
-          <!---->
+          />
         </div>
-         
         <div
           class="t-tabs__nav-container t-is-top"
         >
@@ -766,13 +788,12 @@ exports[`Tabs position demo works fine 1`] = `
             class="t-tabs__nav-scroll"
           >
             <div
-              class="t-tabs__nav-wrap"
-              style="transform: translateX(-0px);"
+              class="t-tabs__nav-wrap t-is-smooth"
+              style="transform: translate3d(0px, 0, 0);"
             >
               <div
                 class="t-tabs__bar t-is-top"
               />
-               
             </div>
           </div>
         </div>
@@ -822,11 +843,8 @@ exports[`Tabs size demo works fine 1`] = `
               appear="true"
               mode="out-in"
               name="fade"
-            >
-              <!---->
-            </transition-stub>
+            />
           </div>
-           
           <div
             class="t-tabs__operations t-tabs__operations--right"
           >
@@ -834,13 +852,8 @@ exports[`Tabs size demo works fine 1`] = `
               appear="true"
               mode="out-in"
               name="fade"
-            >
-              <!---->
-            </transition-stub>
-             
-            <!---->
+            />
           </div>
-           
           <div
             class="t-tabs__nav-container t-is-top"
           >
@@ -848,13 +861,12 @@ exports[`Tabs size demo works fine 1`] = `
               class="t-tabs__nav-scroll"
             >
               <div
-                class="t-tabs__nav-wrap"
-                style="transform: translateX(-0px);"
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate3d(0px, 0, 0);"
               >
                 <div
                   class="t-tabs__bar t-is-top"
                 />
-                 
               </div>
             </div>
           </div>
@@ -895,11 +907,8 @@ exports[`Tabs size demo works fine 1`] = `
               appear="true"
               mode="out-in"
               name="fade"
-            >
-              <!---->
-            </transition-stub>
+            />
           </div>
-           
           <div
             class="t-tabs__operations t-tabs__operations--right"
           >
@@ -907,13 +916,8 @@ exports[`Tabs size demo works fine 1`] = `
               appear="true"
               mode="out-in"
               name="fade"
-            >
-              <!---->
-            </transition-stub>
-             
-            <!---->
+            />
           </div>
-           
           <div
             class="t-tabs__nav-container t-is-top"
           >
@@ -921,13 +925,12 @@ exports[`Tabs size demo works fine 1`] = `
               class="t-tabs__nav-scroll"
             >
               <div
-                class="t-tabs__nav-wrap"
-                style="transform: translateX(-0px);"
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate3d(0px, 0, 0);"
               >
                 <div
                   class="t-tabs__bar t-is-top"
                 />
-                 
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
-import TTabNav from './tab-nav.vue';
-import TTabPanel from './tab-panel';
-import { TabValue } from './type';
+import kebabCase from 'lodash/kebabCase';
 import props from './props';
+import { prefix } from '../config';
+import TTabPanel from './tab-panel';
+import TTabNav from './tab-nav';
+import { TabValue, TdTabsProps } from './type';
+import { emitEvent } from '../utils/event';
 
 export default Vue.extend({
   name: 'TTabs',
@@ -21,100 +23,61 @@ export default Vue.extend({
 
   data() {
     return {
-      // tab内的panel实例组
-      panels: [],
+      panels: [] as Array<InstanceType<typeof TTabPanel>>,
+      listPanels: null as Array<VNode>,
     };
   },
 
+  watch: {
+    list() {
+      this.updateListPanels();
+    },
+  },
+
+  mounted() {
+    this.updatePanels();
+  },
+
+  updated() {
+    this.$nextTick(() => {
+      this.updatePanels();
+    });
+  },
+
   methods: {
-    connectPanels() {
-      const scopedSlots = this.$scopedSlots.default?.({}) || [];
-      if (scopedSlots.length) {
-        const panelSlots = scopedSlots.filter((vnode) => {
-          const {
-            tag,
-          } = vnode;
-          return tag?.endsWith('TTabPanel');
-        });
-        const panels = panelSlots.map(({ componentInstance }) => componentInstance);
-        const isChanged = !(panels.length === this.panels.length
-          && panels.every((p, i) => p === this.panels[i]));
-        if (isChanged) {
-          this.panels = panels;
-        }
-      } else if (this.panels.length !== 0) {
-        this.panels = [];
-      }
+    updatePanels() {
+      const newPanels = (this.$children as Array<InstanceType<typeof TTabPanel>>).filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
+      const isUnchange = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
+      if (isUnchange()) return;
+      this.panels = newPanels;
     },
-
-    tabChange(event: Event, panel: VNode, value: TabValue) {
-      this.$emit('change', value);
-      if (typeof this.onChange === 'function') {
-        this.onChange(value);
-      }
+    onAddTab(e: MouseEvent) {
+      emitEvent<Parameters<TdTabsProps['onAdd']>>(this, 'add', { e });
     },
-
-    tabAdd(e: MouseEvent) {
-      this.$emit('add', { e });
-      if (typeof this.onAdd === 'function') {
-        this.onAdd({ e });
-      }
+    onChangeTab(value: TabValue) {
+      emitEvent<Parameters<TdTabsProps['onChange']>>(this, 'change', value);
     },
-
-    tabRemove(event: MouseEvent, value: TabValue, index: number) {
-      event.stopPropagation();
+    onRemoveTab({ e, value, index }: Parameters<TdTabsProps['onRemove']>[0]) {
       const panel = this.panels[index];
       const eventData = {
         value,
         index,
-        e: event,
+        e,
       };
-      this.$emit('remove', eventData);
-      panel.$emit('remove');
-      if (typeof this.onRemove === 'function') {
-        this.onRemove(eventData);
-      }
-      if ((panel instanceof TTabPanel)) {
-        if (typeof panel.onRemove === 'function') {
-          panel.onRemove();
-        }
-      }
+      emitEvent<Parameters<TdTabsProps['onRemove']>>(this, 'remove', eventData);
+      if (!panel) return;
+      emitEvent<Parameters<TdTabsProps['onRemove']>>(panel, 'remove', eventData);
     },
-
-    genTabNav() {
-      const {
-        theme,
-        panels,
-        value: currValue,
-        size,
-        disabled,
-        placement,
-        addable,
-        tabChange,
-        tabAdd,
-        tabRemove,
-      } = this;
-      const data = {
-        props: {
-          theme,
-          panels: [...panels], // immutable，为子组件watch
-          currValue,
-          size,
-          disabled,
-          placement,
-          addable,
-          tabChange,
-          tabAdd,
-          tabRemove,
-        },
-        ref: 'nav',
+    renderHeader() {
+      const tabNavProps = {
+        theme: this.theme,
+        value: this.value,
+        size: this.size,
+        disabled: this.disabled,
+        placement: this.placement,
+        addable: this.addable,
+        panels: this.panels,
       };
-      return (
-        <TTabNav {...data} />
-      );
-    },
-
-    genTabHeader() {
       return (
         <div
           class={{
@@ -122,36 +85,35 @@ export default Vue.extend({
             [`${prefix}-is-${this.placement}`]: true,
           }}
         >
-          { this.genTabNav() }
+          <TTabNav props={tabNavProps} onChange={this.onChangeTab} onAdd={this.onAddTab} onRemove={this.onRemoveTab}></TTabNav>
         </div>
       );
     },
-
-    genTabContent() {
+    updateListPanels() {
+      this.listPanels = this.list.map((item) => (
+        <TTabPanel props={{ ...item }} onRemove={this.onRemoveTab}></TTabPanel>
+      ));
+    },
+    renderList(): VNode[] {
+      if (!this.listPanels) {
+        this.updateListPanels();
+      }
+      return this.listPanels;
+    },
+    renderContent() {
       return (
-        <div class={{ [`${prefix}-tabs__content`]: true }}>
-          { this.$scopedSlots.default?.({}) }
+        <div class={[`${prefix}-tabs__content`]}>
+          { this.list ? this.renderList() : this.$scopedSlots.default?.({}) }
         </div>
       );
     },
-  },
-
-  mounted() {
-    this.connectPanels();
-  },
-
-  updated() {
-    this.connectPanels();
   },
 
   render() {
-    const header = this.genTabHeader();
-    const content = this.genTabContent();
     return (
-      <div class="t-tabs">
-        { this.placement !== 'bottom' ? [header, content] : [content, header] }
+      <div class={[`${prefix}-tabs`]}>
+        { this.placement !== 'bottom' ? [this.renderHeader(), this.renderContent()] : [this.renderContent(), this.renderHeader()] }
       </div>
     );
   },
-
 });
