@@ -181,7 +181,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
         this.canToRight = false;
       }
       const containerWidth = getDomWidth(container);
-      this.canToRight = this.scrollLeft + containerWidth < wrap.scrollWidth;
+      this.canToRight = this.scrollLeft + containerWidth - wrap.scrollWidth < -1; // 小数像素不精确，所以这里判断小于-1
     },
     caculateNavBarStyle() {
       const getNavBarStyle = () => {
@@ -284,7 +284,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
       const rightIconWidth = getDomWidth(this.$refs.rightIcon as Element);
       const containerWidth = getDomWidth(container);
-      if (minLeft + currentItemWidth === wrap.scrollWidth) {
+      if (Math.abs(minLeft + currentItemWidth - wrap.scrollWidth) < 1) { // 防止小数像素导致值不相等的情况
         // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
         if (this.scrollLeft + containerWidth - (rightOperationsZoneWidth - rightIconWidth) < minLeft + currentItemWidth) {
           this.scrollLeft = minLeft + currentItemWidth - containerWidth + (rightOperationsZoneWidth - rightIconWidth);
