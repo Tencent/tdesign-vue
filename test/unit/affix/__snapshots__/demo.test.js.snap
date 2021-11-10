@@ -13,7 +13,7 @@ exports[`Affix base demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        Base
+        固钉
       </span>
     </button>
   </div>
