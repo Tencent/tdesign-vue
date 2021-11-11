@@ -79,7 +79,7 @@ npm run test:node
 
 # E2E 测试
 
-调研后发现cypress可以覆盖Puppeteer的E2E测试场景，优先选择了cypress 作为测试框架，它能实现以下功能：
+cypress 可以覆盖 Puppeteer 的E2E测试场景，优先选择了cypress 作为测试框架，它能实现以下功能：
 
 - 开箱即用
 - 官方 doc 很多，利于开发与维护
