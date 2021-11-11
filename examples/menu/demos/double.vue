@@ -57,7 +57,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import { Icon } from '@tencent/tdesign-icons-vue';
 
