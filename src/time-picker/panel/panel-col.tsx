@@ -62,16 +62,16 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     },
     generateTimeList(num: number, step: number) {
       const res = [];
-      let count = num;
-      while (count >= 0) {
+      let count = 0;
+      while (count <= num) {
         if (!/[h]{1}/.test(this.format) && count < 10) {
           res.push(`0${count}`);
         } else {
           res.push(count);
         }
-        count -= step;
+        count += step;
       }
-      return res.reverse();
+      return res;
     },
     disableFilter(preIdx: number, col: EPickerCols) {
       // 如果有hideDisableTime 需要进行filter计算它的time(index)
@@ -133,7 +133,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       this.cols.forEach((col: EPickerCols) => {
         isNormalScroll
           ? this.scrollToTime(col, this.splitValue[col])
-          : this.scrollToTime(col, Number(this.steps[this.timeArr.indexOf(col)]) - 1);
+          : this.scrollToTime(col, 0);
       });
     },
     generateColRows(col: EPickerCols) {
@@ -207,6 +207,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     // 当存在大于1的step时 需要手动处理获取最近的step
     closestLookup(availableArr: Array<any>, calcVal: number, step: number) {
       if (step <= 1) return calcVal;
+      if (calcVal < step) return 0;
       return availableArr.sort((a, b) => Math.abs(calcVal + 1 - a) - Math.abs(calcVal + 1 - b))[0];
     },
     // 处理滚动选择时间
@@ -232,6 +233,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           ),
           max,
         );
+
         scrollVal = this.closestLookup(availableList, scrollVal, Number(this.steps[colIdx]));
 
         if (this.disableTime && this.hideDisabledTime) {

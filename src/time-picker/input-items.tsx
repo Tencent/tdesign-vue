@@ -13,7 +13,11 @@ const name = `${prefix}-time-picker-input-items`; // t-time-picker-input-items
 
 export default mixins(getLocalReceiverMixins('timePicker')).extend({
   name,
-
+  data() {
+    return {
+      timeArr: [EPickerCols.hour, EPickerCols.minute, EPickerCols.second],
+    };
+  },
   props: {
     // 格式化标准
     format: {
@@ -38,6 +42,9 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
     disabled: {
       type: Boolean,
     },
+    steps: {
+      type: Array,
+    },
   },
 
   computed: {
@@ -53,10 +60,17 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       const { target, data } = e as InputEvent;
       const { value } = target;
       const {
-        $props: { format },
+        $props: { format, steps },
       } = this;
       const curDayJs = this.displayTimeList[index];
       let number = Number(value);
+
+      const colIdx = this.timeArr.indexOf(type as EPickerCols);
+
+      if (number % steps[colIdx]) {
+        number = 0;
+      }
+
       if ((curDayJs[type] === '00' && number === 0) || value === '') {
         // 输入之前是00 输入之后是0
         // 清空
@@ -115,17 +129,21 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
       if (!this.allowInput) return;
       const { which } = e;
       const {
-        $props: { format },
+        $props: { format, steps },
       } = this;
+
       const curDayJs = this.displayTimeList[index];
+      const colIdx = this.timeArr.indexOf(type as EPickerCols);
+
       // 增加减少
       if ([KeyboardDirection.up, KeyboardDirection.down].includes(which)) {
         if (type === EPickerCols.meridiem) return;
         // 加减
         const current = curDayJs[type] ? Number(curDayJs[type]) : 0;
-        const operate = which === KeyboardDirection.up ? -1 : 1;
+        const operateStep = Number(steps[colIdx]);
+        const operate = which === KeyboardDirection.up ? 0 - operateStep : operateStep;
         let result = current + operate;
-        // 边界检测
+
         if (type === 'hour') {
           if (result > (/[h]{1}/.test(format) ? 11 : 23)) {
             // 上限
@@ -133,12 +151,10 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
           } else if (result < 0) {
             result = /[h]{1}/.test(format) ? 11 : 23;
           }
-        } else if (result > 59) {
-          result = 1;
-        } else if (result < 0) {
-          result = 59;
+        } else if (result > 59 || result < 0) {
+          result = 0;
         }
-        // 发送变动
+
         this.$emit('change', {
           value: result,
           type,

@@ -70,8 +70,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
         return [dayjs(time, this.format)];
       } if (this.steps.filter((step) => step !== 1).length < 1) {
         return [dayjs()];
-      } return [dayjs().hour(Number(this.steps[0]) - 1)
-        .minute(Number(this.steps[1]) - 1).second(Number(this.steps[2]) - 1)];
+      } return [dayjs().hour(0).minute(0).second(0)];
     },
     textClassName(): string {
       const isDefault = (this.inputTime as any)
@@ -220,9 +219,10 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       if (this.needClear) {
         this.inputTime = this.setInputValue(undefined);
         this.needClear = false;
-      } else if (this.time) this.inputTime = this.setInputValue(this.time);
-      else this.inputTime = this.setInputValue(dayjs());
-      return this.time;
+      } else {
+        this.time = this.time ?? dayjs();
+        this.inputTime = this.setInputValue(this.time);
+      }
     },
     // 设置输入框展示
     setInputValue(val: dayjs.Dayjs | undefined): InputTime | undefined {
@@ -275,11 +275,13 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
       };
     },
     // 清除选中
-    clear() {
+    clear(context: {e: MouseEvent}) {
+      const { e } = context;
       this.time = undefined;
       this.needClear = true;
       this.inputTime = this.setInputValue(undefined);
       this.$emit('change', undefined);
+      e.stopPropagation();
     },
     renderInput() {
       const classes = [
@@ -306,6 +308,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
             dayjs={this.inputTime}
             disabled={this.disabled}
             format={this.format}
+            steps={this.steps}
             allowInput={this.allowInput}
             placeholder={this.placeholder || this.locale.placeholder}
             onToggleMeridiem={() => this.toggleInputMeridiem()}
