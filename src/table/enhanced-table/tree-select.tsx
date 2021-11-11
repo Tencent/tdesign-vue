@@ -24,8 +24,9 @@ export function getChildrenData(
   const result = r || { allChildren: [], allChildrenKeys: [] };
   const children = get(data, childrenKey);
   if (!children || !children.length) return result;
-  result.allChildren = result.allChildren.concat(children);
-  const childrenKeys = children.map((item: Record<string, any>) => get(item, rowKey));
+  const selectableChildren = children.filter((item: Record<string, any>) => !item.__disabled__);
+  result.allChildren = result.allChildren.concat(selectableChildren);
+  const childrenKeys = selectableChildren.map((item: Record<string, any>) => get(item, rowKey));
   result.allChildrenKeys = result.allChildrenKeys.concat(childrenKeys);
   for (let i = 0, len = children.length; i < len; i++) {
     const tItem = children[i];
@@ -116,19 +117,26 @@ export default Vue.extend({
   data() {
     return {
       dataSource: this.data,
+      keyDataMap: {} as Record<string, any>,
     };
   },
   computed: {
     childrenKey(): string {
       return this.tree?.childrenKey || 'children';
     },
-    keyDataMap(): Record<string, any> {
-      return getKeyDataMap({
-        column: this.columns[0],
-        data: this.dataSource,
-        rowKey: this.rowKey,
-        childrenKey: this.childrenKey,
-      });
+    keys(): string {
+      return [this.rowKey, this.childrenKey].join();
+    },
+  },
+  watch: {
+    dataSource: {
+      immediate: true,
+      handler() {
+        this.setKeyDataMap();
+      },
+    },
+    keys() {
+      this.setKeyDataMap();
     },
   },
   methods: {
@@ -138,6 +146,14 @@ export default Vue.extend({
       } else {
         this.handleSelect(rowKeys, extraData);
       }
+    },
+    setKeyDataMap() {
+      this.keyDataMap = getKeyDataMap({
+        column: this.columns[0],
+        data: this.dataSource,
+        rowKey: this.rowKey,
+        childrenKey: this.childrenKey,
+      });
     },
     handleSelectAll(extraData: SelectChangeParams[1]) {
       let newRowKeys: Array<string | number> = [];
