@@ -402,7 +402,11 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       ? renderTNodeJSX(this, 'collapsedItems',
         {
           params:
-            { count: this.tagList.length - this.minCollapsedNum, value: this.selectedMultiple, size: this.size },
+            {
+              count: this.tagList.length - this.minCollapsedNum,
+              value: this.selectedMultiple,
+              collapsedSelectedItems: this.selectedMultiple.slice(this.minCollapsedNum),
+            },
         })
       : (<Tag
         v-show={this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum}

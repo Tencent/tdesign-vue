@@ -536,7 +536,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {this.collapsedItems || this.$scopedSlots.collapsedItems
               ? renderTNodeJSX(this, 'collapsedItems', {
-                params: { count: selectedMultiple.length - this.minCollapsedNum, value: selectedMultiple, size },
+                params: {
+                  value: selectedMultiple,
+                  collapsedSelectedItems: selectedMultiple.slice(this.minCollapsedNum),
+                  count: selectedMultiple.length - this.minCollapsedNum,
+                },
               })
               : <tag
                   v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum}

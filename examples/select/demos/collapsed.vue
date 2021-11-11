@@ -5,35 +5,36 @@
       v-model="value"
       placeholder="-请选择-"
       multiple
-      :minCollapsedNum="1"
+      :minCollapsedNum="minCollapsedNum"
       :options="options"
     />
     <br/><br/>
 
-    <!-- 自定义折叠项内容，collapsedItems 为 function (value, count, size) -->
+    <!-- 自定义折叠项内容，collapsedItems 为 function (value, count, collapsedSelectedItems) -->
     <t-select
       v-model="value"
       placeholder="-请选择-"
       multiple
-      :minCollapsedNum="1"
+      :minCollapsedNum="minCollapsedNum"
       :collapsedItems="collapsedItems"
       :options="options"
     />
     <br/><br/>
 
-    <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) { value, count, size }-->
+    <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) { value, count, collapsedSelectedItems }-->
     <t-select
       v-model="value"
       placeholder="-请选择-"
       multiple
-      :minCollapsedNum="1"
+      :minCollapsedNum="minCollapsedNum"
       :options="options"
     >
-      <template #collapsedItems="{ value, count }">
+      <!-- hover展示折叠部分的已选项 -->
+      <template #collapsedItems="{ collapsedSelectedItems, count }">
         <t-popup>
           <template #content>
             <p
-              v-for="(item, index) in value"
+              v-for="(item, index) in collapsedSelectedItems"
               :key="index"
               style="padding: 10px;"
             >
@@ -62,11 +63,14 @@ export default {
         value: '3',
       }],
       value: ['1', '3'],
+      minCollapsedNum: 1,
     };
   },
   methods: {
-    collapsedItems(h, { value, count }) {
+    collapsedItems(h, { value, count, collapsedSelectedItems }) {
+      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
       if (!(value instanceof Array) || !count) return;
+      // hover展示全部已选项
       return (
         <t-popup>
           <div slot="content">
