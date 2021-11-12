@@ -398,6 +398,7 @@ exports[`Tabs combination demo works fine 1`] = `
 exports[`Tabs custom demo works fine 1`] = `
 <div
   class="t-tabs"
+  style="width: 100%;"
 >
   <div
     class="t-tabs__header t-is-top"
