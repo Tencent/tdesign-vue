@@ -242,7 +242,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     },
     moveActiveTabIntoView({ needCheckUpdate } = { needCheckUpdate: true }) {
       if (['left', 'right'].includes(this.placement)) {
-        return;
+        return false;
       }
       const getActiveTabEl = (): HTMLElement => {
         for (let i = 0; i < this.navs.length; i++) {
@@ -260,7 +260,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
             this.moveActiveTabIntoView({ needCheckUpdate: false });
           });
         }
-        return;
+        return false;
       }
       const totalWidthBeforeActiveTab = activeTabEl.offsetLeft;
       const activeTabWidth = activeTabEl.offsetWidth;
@@ -321,6 +321,21 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
 
       return shouldMoveToLeftSide() || shouldMoveToRightSide();
     },
+    fixIfLastItemNotTouchRightSide(containerWidth: number, wrapWidth: number) {
+      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
+      if (this.scrollLeft + containerWidth - rightOperationsZoneWidth > wrapWidth) {
+        this.scrollLeft = wrapWidth + rightOperationsZoneWidth - containerWidth;
+        return true;
+      }
+      return false;
+    },
+    fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth: number, wrapWidth: number) {
+      if (wrapWidth <= containerWidth) {
+        this.scrollLeft = 0;
+        return true;
+      }
+      return false;
+    },
     fixScrollLeft() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return;
       const container = this.$refs.navsContainer as HTMLElement;
@@ -329,24 +344,8 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
 
       const containerWidth = getDomWidth(container);
       const wrapWidth = getDomWidth(wrap);
-      const fixIfItemTotalWidthIsLessThenContainerWidth = () => {
-        if (wrapWidth <= getDomWidth(container)) {
-          this.scrollLeft = 0;
-          return true;
-        }
-      };
 
-      const fixIfLastItemNotTouchRightSide = () => {
-        const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
-        if (this.scrollLeft + containerWidth - rightOperationsZoneWidth > wrapWidth) {
-          this.scrollLeft = wrapWidth + rightOperationsZoneWidth - containerWidth;
-          return true;
-        }
-        return false;
-      };
-
-      fixIfItemTotalWidthIsLessThenContainerWidth()
-      || fixIfLastItemNotTouchRightSide();
+      return this.fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth, wrapWidth) || this.fixIfLastItemNotTouchRightSide(containerWidth, wrapWidth);
     },
     handleAddTab(e: MouseEvent) {
       emitEvent<Parameters<TdTabsProps['onAdd']>>(this, 'add', { e });
