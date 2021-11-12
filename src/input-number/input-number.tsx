@@ -251,6 +251,7 @@ export default Vue.extend({
     },
     async handleBlur(e: FocusEvent) {
       await this.handleEndInput(e);
+      this.clearFilterValue();
       if (this.onBlur) {
         this.onBlur(this.value, { e });
       }
@@ -347,6 +348,9 @@ export default Vue.extend({
     },
     clearInput() {
       this.userInput = null;
+    },
+    clearFilterValue() {
+      this.filterValue = '';
     },
     multiE(s: string) {
       const m = s.match(/[e]/gi);
