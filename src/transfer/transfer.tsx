@@ -21,13 +21,14 @@ import props from './props';
 import {
   getTransferListOption, emitEvent, getDataValues, getTransferData,
   filterTransferData,
+  TRANSFER_NAME,
 } from './utils';
 
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
 export default mixins(getLocalReceiverMixins('transfer')).extend({
-  name: 'TTransfer',
+  name: TRANSFER_NAME,
   components: {
     TransferList,
     TransferOperations,

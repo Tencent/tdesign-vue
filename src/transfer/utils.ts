@@ -6,13 +6,15 @@ import {
 
 export { emitEvent } from '../utils/event';
 
+export const TRANSFER_NAME = 'TTransfer';
+
 interface TreeNode {
   children?: Array<TreeNode>
 }
 
 function findTopNode(vm: Vue): Vue {
   // 找到t-transfer这层父节点
-  if (vm.$options.name === 't-transfer') {
+  if (vm.$options.name === TRANSFER_NAME) {
     return vm;
   }
   if (vm.$parent) {
