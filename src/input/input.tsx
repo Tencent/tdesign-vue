@@ -166,7 +166,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     handleKeydown(e: KeyboardEvent) {
       if (this.disabled) return;
       const { code } = e;
-      if (code === 'Enter') {
+      if (code === 'Enter' || code === 'NumpadEnter') {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
       } else {
         emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', this.value, { e });
