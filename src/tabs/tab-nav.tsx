@@ -13,7 +13,7 @@ import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
 import { firstUpperCase } from '../utils/helper';
-import { TdTabsProps } from './type';
+import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
@@ -21,7 +21,7 @@ interface TabNavVue extends Vue {
   resizeObserver: any;
 }
 
-const getDomWidth = (dom: Element): number => dom?.getBoundingClientRect()?.width || 0;
+const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
 
 export default (Vue as VueConstructor<TabNavVue>).extend({
   name: 'TTabNav',
@@ -162,26 +162,25 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       if (['left', 'right'].includes(this.placement.toLowerCase())) {
         this.canToLeft = false;
       }
-      const container = this.$refs.navsContainer as Element;
-      const wrap = this.$refs.navsWrap as Element;
+      const container = this.$refs.navsContainer as HTMLElement;
+      const wrap = this.$refs.navsWrap as HTMLElement;
       if (!wrap || !container) {
         this.canToLeft = false;
       }
-      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as Element);
-      const leftIconWidth = getDomWidth(this.$refs.leftIcon as Element);
+      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
+      const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
       this.canToLeft = this.scrollLeft > -(leftOperationsZoneWidth - leftIconWidth);
     },
     caculateCanToRight() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) {
         this.canToRight = false;
       }
-      const container = this.$refs.navsContainer as Element;
-      const wrap = this.$refs.navsWrap as Element;
+      const container = this.$refs.navsContainer as HTMLElement;
+      const wrap = this.$refs.navsWrap as HTMLElement;
       if (!wrap || !container) {
         this.canToRight = false;
       }
-      const containerWidth = getDomWidth(container);
-      this.canToRight = this.scrollLeft + containerWidth - wrap.scrollWidth < -1; // 小数像素不精确，所以这里判断小于-1
+      this.canToRight = this.scrollLeft + getDomWidth(container) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
     },
     caculateNavBarStyle() {
       const getNavBarStyle = () => {
@@ -225,42 +224,37 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       this.caculateCanShowArrow();
     }, 300),
     handleScrollToLeft() {
-      const container = this.$refs.navsContainer as Element;
+      const container = this.$refs.navsContainer as HTMLElement;
       if (!container) return;
-      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as Element);
-      const leftIconWidth = getDomWidth(this.$refs.leftIcon as Element);
+      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
+      const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
       const containerWidth = getDomWidth(container);
       this.scrollLeft = Math.max(-(leftOperationsZoneWidth - leftIconWidth), this.scrollLeft - containerWidth);
     },
     handleScrollToRight() {
-      const container = this.$refs.navsContainer as Element;
-      const wrap = this.$refs.navsWrap as Element;
-      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
-      const rightIconWidth = getDomWidth(this.$refs.rightIcon as Element);
+      const container = this.$refs.navsContainer as HTMLElement;
+      const wrap = this.$refs.navsWrap as HTMLElement;
+      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
+      const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
       const containerWidth = getDomWidth(container);
-      this.scrollLeft = Math.min(this.scrollLeft + containerWidth, wrap.scrollWidth - containerWidth + rightOperationsZoneWidth - rightIconWidth);
+      const wrapWidth = getDomWidth(wrap);
+      this.scrollLeft = Math.min(this.scrollLeft + containerWidth, wrapWidth - containerWidth + rightOperationsZoneWidth - rightIconWidth);
     },
     moveActiveTabIntoView({ needCheckUpdate } = { needCheckUpdate: true }) {
       if (['left', 'right'].includes(this.placement)) {
         return;
       }
-      const getTotalWidthOfTabsBeforeActiveTab = () => {
-        let minLeft = 0;
-        let currentItemWidth = 0;
+      const getActiveTabEl = (): HTMLElement => {
         for (let i = 0; i < this.navs.length; i++) {
-          const tabItem = this.$refs[`tabItem${i}`] as InstanceType<typeof TTabNavItem>;
-          if (tabItem?.value === this.value) {
-            currentItemWidth = getDomWidth(tabItem?.$el);
-            return [minLeft, currentItemWidth];
+          if ((this.navs[i].componentOptions.propsData as TdTabPanelProps).value === this.value) {
+            return this.navs[i].componentInstance?.$el as HTMLElement;
           }
-          minLeft += getDomWidth(tabItem?.$el);
         }
-        return [minLeft, 0];
+        return null;
       };
-      const [totalWidthBeforeActiveTab, activeTabWidth] = getTotalWidthOfTabsBeforeActiveTab();
-
-      // 如果没有当前 value 对应的tab，一种情况是真没有；一种情况是在修改value的同时，新增了一个值为该value的tab。后者因为navs的更新在$nextTick之后，所以得等下一个updated才能拿到新的tab
-      if (!activeTabWidth) {
+      const activeTabEl: HTMLElement = getActiveTabEl();
+      if (!activeTabEl) {
+        // 如果没有当前 value 对应的tab，一种情况是真没有；一种情况是在修改value的同时，新增了一个值为该value的tab。后者因为navs的更新在$nextTick之后，所以得等下一个updated才能拿到新的tab
         if (needCheckUpdate) {
           this.$once('hook:updated', () => {
             this.moveActiveTabIntoView({ needCheckUpdate: false });
@@ -268,12 +262,14 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
         }
         return;
       }
+      const totalWidthBeforeActiveTab = activeTabEl.offsetLeft;
+      const activeTabWidth = activeTabEl.offsetWidth;
 
       const shouldMoveToLeftSide = () => {
         // 如果要当前tab左边对齐左操作栏的右边以展示完整的tab，需要获取左边操作栏的宽度
         const getLeftCoverWidth = () => {
-          const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as Element);
-          const leftIconWidth = getDomWidth(this.$refs.leftIcon as Element);
+          const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
+          const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
           if (totalWidthBeforeActiveTab === 0) { // 判断当前tab是不是第一个tab
             // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
             return leftOperationsZoneWidth - leftIconWidth;
@@ -293,16 +289,17 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       };
 
       const shouldMoveToRightSide = () => {
-        const container = this.$refs.navsContainer as Element;
-        const wrap = this.$refs.navsWrap as Element;
+        const container = this.$refs.navsContainer as HTMLElement;
+        const wrap = this.$refs.navsWrap as HTMLElement;
         if (!container || !wrap) return;
         const containerWidth = getDomWidth(container);
 
         // 如果要当前tab右边对齐右操作栏的左边以展示完整的tab，需要获取右边操作栏的宽度
         const getRightCoverWidth = () => {
-          const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
-          const rightIconWidth = getDomWidth(this.$refs.rightIcon as Element);
-          if (Math.abs(totalWidthBeforeActiveTab + activeTabWidth - wrap.scrollWidth) < 1) { // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
+          const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
+          const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
+          const wrapWidth = getDomWidth(wrap);
+          if (Math.abs(totalWidthBeforeActiveTab + activeTabWidth - wrapWidth) < 1) { // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
             // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
             return rightOperationsZoneWidth - rightIconWidth;
           }
@@ -324,24 +321,23 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     },
     fixScrollLeft() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return;
+      const container = this.$refs.navsContainer as HTMLElement;
+      const wrap = this.$refs.navsWrap as HTMLElement;
+      if (!wrap || !container) return false;
+
+      const containerWidth = getDomWidth(container);
+      const wrapWidth = getDomWidth(wrap);
       const fixIfItemTotalWidthIsLessThenContainerWidth = () => {
-        const container = this.$refs.navsContainer as Element;
-        const wrap = this.$refs.navsWrap as Element;
-        if (!wrap || !container) return false;
-        if (wrap.scrollWidth <= getDomWidth(container)) {
+        if (wrapWidth <= getDomWidth(container)) {
           this.scrollLeft = 0;
           return true;
         }
       };
 
       const fixIfLastItemNotTouchRightSide = () => {
-        const container = this.$refs.navsContainer as Element;
-        const wrap = this.$refs.navsWrap as Element;
-        if (!wrap || !container) return false;
-        const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
-        const containerWidth = getDomWidth(container);
-        if (this.scrollLeft + containerWidth - rightOperationsZoneWidth > wrap.scrollWidth) {
-          this.scrollLeft = wrap.scrollWidth + rightOperationsZoneWidth - containerWidth;
+        const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
+        if (this.scrollLeft + containerWidth - rightOperationsZoneWidth > wrapWidth) {
+          this.scrollLeft = wrapWidth + rightOperationsZoneWidth - containerWidth;
           return true;
         }
         return false;
