@@ -19,7 +19,7 @@ export default Vue.extend({
         const { width, minWidth, colKey } = column;
         const style: any = {};
         if (width) {
-          style.width = `${width}px`;
+          style.width = isNaN(width) ? width : `${width}px`;
         }
         if (minWidth) {
           if (!width) {
