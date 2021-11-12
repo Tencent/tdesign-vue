@@ -270,7 +270,8 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
         const getLeftCoverWidth = () => {
           const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
           const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
-          if (totalWidthBeforeActiveTab === 0) { // 判断当前tab是不是第一个tab
+          // 判断当前tab是不是第一个tab
+          if (totalWidthBeforeActiveTab === 0) {
             // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
             return leftOperationsZoneWidth - leftIconWidth;
           }
@@ -299,7 +300,8 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
           const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
           const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
           const wrapWidth = getDomWidth(wrap);
-          if (Math.abs(totalWidthBeforeActiveTab + activeTabWidth - wrapWidth) < 1) { // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
+          // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
+          if (Math.abs(totalWidthBeforeActiveTab + activeTabWidth - wrapWidth) < 1) {
             // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
             return rightOperationsZoneWidth - rightIconWidth;
           }
