@@ -66,7 +66,7 @@
       </t-menu-item>
       <t-menu-item value="resource">
         <template #icon>
-          <icon name="resources-list"/>
+          <icon name="server"/>
         </template>
         资源列表
       </t-menu-item>

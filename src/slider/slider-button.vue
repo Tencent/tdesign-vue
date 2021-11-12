@@ -140,7 +140,6 @@ export default {
     setTooltipProps() {
       if (this.tooltipProps instanceof Object) {
         const {
-          placement,
           trigger,
           destroyOnHide,
           showArrow,
@@ -148,7 +147,6 @@ export default {
           overlayClassName,
           attach,
         } = this.tooltipProps;
-        this.placement = placement;
         if (!this.empty(trigger)) {
           this.trigger = trigger;
         }
