@@ -244,18 +244,23 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       if (['left', 'right'].includes(this.placement)) {
         return;
       }
-      let minLeft = 0;
-      let currentItemWidth = 0;
-      for (let i = 0; i < this.navs.length; i++) {
-        const tabItem = this.$refs[`tabItem${i}`] as InstanceType<typeof TTabNavItem>;
-        if (tabItem?.value === this.value) {
-          currentItemWidth = getDomWidth(tabItem?.$el);
-          break;
+      const getTotalWidthOfTabsBeforeActiveTab = () => {
+        let minLeft = 0;
+        let currentItemWidth = 0;
+        for (let i = 0; i < this.navs.length; i++) {
+          const tabItem = this.$refs[`tabItem${i}`] as InstanceType<typeof TTabNavItem>;
+          if (tabItem?.value === this.value) {
+            currentItemWidth = getDomWidth(tabItem?.$el);
+            return [minLeft, currentItemWidth];
+          }
+          minLeft += getDomWidth(tabItem?.$el);
         }
-        minLeft += getDomWidth(tabItem?.$el);
-      }
+        return [minLeft, 0];
+      };
+      const [totalWidthBeforeActiveTab, activeTabWidth] = getTotalWidthOfTabsBeforeActiveTab();
+
       // 如果没有当前 value 对应的tab，一种情况是真没有；一种情况是在修改value的同时，新增了一个值为该value的tab。后者因为navs的更新在$nextTick之后，所以得等下一个updated才能拿到新的tab
-      if (!currentItemWidth) {
+      if (!activeTabWidth) {
         if (needCheckUpdate) {
           this.$once('hook:updated', () => {
             this.moveActiveTabIntoView({ needCheckUpdate: false });
@@ -264,36 +269,58 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
         return;
       }
 
-      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as Element);
-      const leftIconWidth = getDomWidth(this.$refs.leftIcon as Element);
-      if (minLeft === 0) {
-        if (this.scrollLeft + (leftOperationsZoneWidth - leftIconWidth) > minLeft) {
-          // 如果要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
-          this.scrollLeft = minLeft - (leftOperationsZoneWidth - leftIconWidth);
-        }
-        return;
-      }
-      if (this.scrollLeft + leftOperationsZoneWidth > minLeft) {
-        this.scrollLeft = minLeft - leftOperationsZoneWidth;
-        return;
-      }
+      const shouldMoveToLeftSide = () => {
+        // 如果要当前tab左边对齐左操作栏的右边以展示完整的tab，需要获取左边操作栏的宽度
+        const getLeftCoverWidth = () => {
+          const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as Element);
+          const leftIconWidth = getDomWidth(this.$refs.leftIcon as Element);
+          if (totalWidthBeforeActiveTab === 0) { // 判断当前tab是不是第一个tab
+            // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
+            return leftOperationsZoneWidth - leftIconWidth;
+          }
+          return leftOperationsZoneWidth;
+        };
+        const leftCoverWidth = getLeftCoverWidth();
 
-      const container = this.$refs.navsContainer as Element;
-      const wrap = this.$refs.navsWrap as Element;
-      if (!container || !wrap) return;
-      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
-      const rightIconWidth = getDomWidth(this.$refs.rightIcon as Element);
-      const containerWidth = getDomWidth(container);
-      if (Math.abs(minLeft + currentItemWidth - wrap.scrollWidth) < 1) { // 防止小数像素导致值不相等的情况
-        // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
-        if (this.scrollLeft + containerWidth - (rightOperationsZoneWidth - rightIconWidth) < minLeft + currentItemWidth) {
-          this.scrollLeft = minLeft + currentItemWidth - containerWidth + (rightOperationsZoneWidth - rightIconWidth);
+        // 判断当前tab是不是在左边被隐藏
+        const isCurrentTabHiddenInLeftZone = () => this.scrollLeft + leftCoverWidth > totalWidthBeforeActiveTab;
+
+        if (isCurrentTabHiddenInLeftZone()) {
+          this.scrollLeft = totalWidthBeforeActiveTab - leftCoverWidth;
+          return true;
         }
-        return;
-      }
-      if (this.scrollLeft + containerWidth - rightOperationsZoneWidth < minLeft + currentItemWidth) {
-        this.scrollLeft = minLeft + currentItemWidth - containerWidth + rightOperationsZoneWidth;
-      }
+        return false;
+      };
+
+      const shouldMoveToRightSide = () => {
+        const container = this.$refs.navsContainer as Element;
+        const wrap = this.$refs.navsWrap as Element;
+        if (!container || !wrap) return;
+        const containerWidth = getDomWidth(container);
+
+        // 如果要当前tab右边对齐右操作栏的左边以展示完整的tab，需要获取右边操作栏的宽度
+        const getRightCoverWidth = () => {
+          const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as Element);
+          const rightIconWidth = getDomWidth(this.$refs.rightIcon as Element);
+          if (Math.abs(totalWidthBeforeActiveTab + activeTabWidth - wrap.scrollWidth) < 1) { // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
+            // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
+            return rightOperationsZoneWidth - rightIconWidth;
+          }
+          return rightOperationsZoneWidth;
+        };
+        const rightCoverWidth = getRightCoverWidth();
+
+        // 判断当前tab是不是在右边被隐藏
+        const isCurrentTabHiddenInRightZone = () => this.scrollLeft + containerWidth - rightCoverWidth < totalWidthBeforeActiveTab + activeTabWidth;
+
+        if (isCurrentTabHiddenInRightZone()) {
+          this.scrollLeft = totalWidthBeforeActiveTab + activeTabWidth - containerWidth + rightCoverWidth;
+          return true;
+        }
+        return false;
+      };
+
+      return shouldMoveToLeftSide() || shouldMoveToRightSide();
     },
     fixScrollLeft() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return;
