@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-04 20:25:52
+ * updated at 2021-11-09 21:58:54
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -148,6 +148,11 @@ export interface TdFormItemProps {
    * 校验状态图标。优先级高级 Form 的 statusIcon
    */
   statusIcon?: boolean | TNode;
+  /**
+   * 是否显示校验成功的边框，默认不显示
+   * @default false
+   */
+  successBorder?: boolean;
 };
 
 export interface FormRule {

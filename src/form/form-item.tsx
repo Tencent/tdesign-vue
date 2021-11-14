@@ -85,8 +85,9 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     errorClasses(): string {
       const parent = this.form;
+      const { successBorder } = this.$props;
       if (!parent.showErrorMessage) return '';
-      if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) return CLASS_NAMES.success;
+      if (this.verifyStatus === VALIDATE_STATUS.SUCCESS && successBorder) return CLASS_NAMES.success;
       if (!this.errorList.length) return;
       const type = this.errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
@@ -127,8 +128,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     innerRules(): FormRule[] {
       const parent = this.form;
-      const rules = parent && parent.rules;
-      return (rules && rules[this.name]) || (this.rules || []);
+      return lodashGet(parent?.rules, this.name) || (this.rules || []);
     },
   },
 

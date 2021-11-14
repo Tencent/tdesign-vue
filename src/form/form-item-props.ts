@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-04 20:25:52
+ * updated at 2021-11-09 21:58:54
  * */
 
 import { TdFormItemProps } from '../form/type';
@@ -55,4 +55,6 @@ export default {
     type: [Boolean, Function] as PropType<TdFormItemProps['statusIcon']>,
     default: undefined,
   },
+  /** 是否显示校验成功的边框，默认不显示 */
+  successBorder: Boolean,
 };
