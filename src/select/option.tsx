@@ -33,6 +33,14 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       default: undefined,
     },
   },
+  watch: {
+    value() {
+      this.tSelect && this.tSelect.getOptions(this);
+    },
+    label() {
+      this.tSelect && this.tSelect.getOptions(this);
+    },
+  },
   computed: {
     multiLimitDisabled(): boolean {
       if (this.tSelect && this.tSelect.multiple && this.tSelect.max) {

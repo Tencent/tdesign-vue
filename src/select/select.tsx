@@ -111,7 +111,8 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
           || (Array.isArray(this.value) && !this.value.length)
           || this.value === null
-          || this.value === undefined)
+          || this.value === undefined
+          || this.value === '')
       ) {
         return true;
       }
