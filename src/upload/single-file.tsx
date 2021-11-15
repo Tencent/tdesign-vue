@@ -1,10 +1,10 @@
 import Vue, { PropType } from 'vue';
 import {
   CloseCircleFilledIcon as TIconClearCircleFilled,
-  LoadingIcon as TIconLoading,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
 } from '@tencent/tdesign-icons-vue';
+import Loading from '../loading';
 import { prefix } from '../config';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
@@ -18,7 +18,7 @@ export default Vue.extend({
     TIconClearCircleFilled,
     TIconCheckCircleFilled,
     TIconErrorCircleFilled,
-    TIconLoading,
+    Loading,
   },
 
   data() {
@@ -88,7 +88,7 @@ export default Vue.extend({
       if (this.showUploadProgress) {
         return (
           <div class={`${UPLOAD_NAME}__single-progress`}>
-            <TIconLoading></TIconLoading>
+            <Loading />
             <span class={`${UPLOAD_NAME}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );

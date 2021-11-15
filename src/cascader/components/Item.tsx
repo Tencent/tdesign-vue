@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import { ChevronRightIcon, LoadingIcon } from '@tencent/tdesign-icons-vue';
+import { ChevronRightIcon } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../../config';
 
 // utils
@@ -11,6 +11,7 @@ import { getFullPathLabel } from '../utils/helper';
 import { getCascaderItemClass, getCascaderItemIconClass, getLabelIsEllipsis } from '../utils/item';
 
 // component
+import Loading from '../../loading';
 import Checkbox, { CheckboxProps } from '../../checkbox/index';
 import Tooltip from '../../tooltip/index';
 
@@ -132,7 +133,7 @@ export default Vue.extend({
     return (<li v-ripple class={itemClass} onClick={handleClick} onMouseenter={handleMouseenter}>
       {cascaderContext.multiple ? RenderCheckBox(node, cascaderContext, handleChange) : RenderLabelContent(node, cascaderContext)}
       {node.children
-        && (node.loading ? <LoadingIcon class={iconClass} /> : <ChevronRightIcon class={iconClass} />)}
+        && (node.loading ? <Loading class={iconClass} size="small"/> : <ChevronRightIcon class={iconClass} />)}
     </li >);
   },
 });

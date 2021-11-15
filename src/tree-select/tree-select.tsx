@@ -7,7 +7,8 @@ import isString from 'lodash/isString';
 import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import { CloseCircleFilledIcon as IconCloseCircleFilled, LoadingIcon as IconLoading } from '@tencent/tdesign-icons-vue';
+import { CloseCircleFilledIcon as IconCloseCircleFilled } from '@tencent/tdesign-icons-vue';
+import Loading from '../loading';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -456,16 +457,14 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
             }
             <IconCloseCircleFilled
               v-show={this.showClose && !this.showLoading}
-              name="close"
-              class={`${prefix}-select-right-icon`}
+              class={[`${prefix}-select-right-icon`, `${prefix}-select-right-icon__clear`]}
               size={this.size}
               nativeOnClick={this.clear}
             />
-            <IconLoading
+            <Loading
               v-show={this.showLoading}
-              name="loading"
               class={`${prefix}-select-right-icon ${prefix}-select-active-icon`}
-              size={this.size}
+              size="small"
             />
           </div>
           <div slot="content">

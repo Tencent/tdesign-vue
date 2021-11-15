@@ -1,6 +1,6 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { LoadingIcon as TIconLoading } from '@tencent/tdesign-icons-vue';
+import Loading from '../loading';
 import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -34,7 +34,7 @@ export default Vue.extend({
     },
   },
   components: {
-    TIconLoading,
+    Loading,
   },
   methods: {
     renderLoading() {
@@ -42,7 +42,7 @@ export default Vue.extend({
         if (this.asyncLoading === LOADING) {
           return (
             <div>
-              <TIconLoading />
+              <Loading />
               <span>正在加载中，请稍等</span>
             </div>
           );

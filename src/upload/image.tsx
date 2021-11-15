@@ -4,9 +4,9 @@ import {
   DeleteIcon as IIconDelete,
   UploadIcon as IIconUpload,
   BrowseIcon as TIconBrowse,
-  LoadingIcon as TIconLoading,
 } from '@tencent/tdesign-icons-vue';
 import { UploadFile } from './type';
+import TLoading from '../loading';
 import { UploadRemoveOptions } from './interface';
 import { UPLOAD_NAME } from './util';
 import props from './props';
@@ -17,7 +17,7 @@ export default Vue.extend({
   name: 'TImageUpload',
 
   components: {
-    TIconAdd, IIconDelete, IIconUpload, TIconBrowse, TIconLoading,
+    TIconAdd, IIconDelete, IIconUpload, TIconBrowse, TLoading,
   },
   props: {
     showUploadProgress: props.showUploadProgress,
@@ -82,7 +82,7 @@ export default Vue.extend({
           }]} onClick={this.trigger}>
             {this.showUploadProgress && this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class={`${UPLOAD_NAME}-card-container ${UPLOAD_NAME}-card__box`}>
-                <TIconLoading></TIconLoading>
+                <TLoading />
                 <p>上传中 {Math.min(this.loadingFile.percent, 99)}%</p>
               </div>
             ) : (

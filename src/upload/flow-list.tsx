@@ -1,6 +1,5 @@
 import Vue, { VNode, PropType } from 'vue';
 import {
-  LoadingIcon as TIconLoading,
   TimeFilledIcon as TIconTimeFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
@@ -9,6 +8,7 @@ import {
 } from '@tencent/tdesign-icons-vue';
 import { UploadFile } from './type';
 import TButton from '../button';
+import TLoading from '../loading';
 import { returnFileSize, abridgeName, UPLOAD_NAME } from './util';
 import { FlowRemoveContext } from './interface';
 import props from './props';
@@ -17,7 +17,7 @@ export default Vue.extend({
   name: 'TUploadFlowList',
 
   components: {
-    TButton, TIconLoading, TIconCheckCircleFilled, TIconTimeFilled, TIconErrorCircleFilled, TIconBrowse, TIconDelete,
+    TButton, TLoading, TIconCheckCircleFilled, TIconTimeFilled, TIconErrorCircleFilled, TIconBrowse, TIconDelete,
   },
 
   props: {
@@ -97,7 +97,7 @@ export default Vue.extend({
           this.showUploadProgress && (
             status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
-              <TIconLoading /><span>上传中 {Math.min(file.percent, 99)}%</span>
+              <TLoading /><span>上传中 {Math.min(file.percent, 99)}%</span>
             </div>)
           );
           break;
@@ -190,12 +190,12 @@ export default Vue.extend({
                   >
                     {file.status === 'fail' && (
                       <div class={`${UPLOAD_NAME}-card__status-wrap`}>
-                        <TIconErrorCircleFilled size='20px'/><p>上传失败</p>
+                        <TIconErrorCircleFilled /><p>上传失败</p>
                       </div>
                     )}
                     {file.status === 'progress' && (
                       <div class={`${UPLOAD_NAME}-card__status-wrap`}>
-                        <TIconLoading size='20px'/><p>上传中 {Math.min(file.percent, 99)}</p>
+                        <TLoading /><p>上传中 {Math.min(file.percent, 99)}</p>
                       </div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (

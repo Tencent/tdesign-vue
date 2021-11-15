@@ -4,9 +4,9 @@ import {
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   HelpCircleFilledIcon as TIconHelpFill,
-  LoadingIcon as TIconLoadingFill,
   CloseIcon as TIconClose,
 } from '@tencent/tdesign-icons-vue';
+import Loading from '../loading';
 import { prefix } from '../config';
 import { THEME_LIST } from './const';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -23,8 +23,8 @@ export default Vue.extend({
     TIconCheckCircleFilled,
     TIconErrorCircleFilled,
     TIconHelpFill,
-    TIconLoadingFill,
     TIconClose,
+    Loading,
   },
 
   props: { ...props },
@@ -97,7 +97,7 @@ export default Vue.extend({
         warning: TIconErrorCircleFilled,
         error: TIconErrorCircleFilled,
         question: TIconHelpFill,
-        loading: TIconLoadingFill,
+        loading: Loading,
       }[this.theme];
       return <component></component>;
     },
