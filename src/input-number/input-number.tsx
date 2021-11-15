@@ -5,11 +5,12 @@ import {
   ChevronDownIcon as ChevronDown,
   ChevronUpIcon as ChevronUp,
 } from '@tencent/tdesign-icons-vue';
+import { emitEvent } from '@src/utils/event';
 import { prefix } from '../config';
 import TButton from '../button';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-import { ChangeSource } from './type';
+import { ChangeSource, TdInputNumberProps } from './type';
 import { ClassName, TNodeReturnValue } from '../common';
 
 const name = `${prefix}-input-number`;
@@ -241,41 +242,25 @@ export default Vue.extend({
       if (val < this.min) return this.min;
       return parseFloat(s);
     },
-    handleChange(value: number, ctx: { type: ChangeSource;
-      e: ChangeContextEvent; }) {
-      if (this.onChange) {
-        this.onChange(value, ctx);
-      }
+    handleChange(value: number, ctx: { type: ChangeSource; e: ChangeContextEvent; }) {
       this.updateValue(value);
-      this.$emit('change', value, { type: ctx.type, e: ctx.e });
+      emitEvent<Parameters<TdInputNumberProps['onChange']>>(this, 'change', value, ctx);
     },
     async handleBlur(e: FocusEvent) {
       await this.handleEndInput(e);
       this.clearFilterValue();
-      if (this.onBlur) {
-        this.onBlur(this.value, { e });
-      }
-      this.$emit('blur', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onBlur']>>(this, 'blur', this.value, { e });
     },
     handleFocus(e: FocusEvent) {
       this.handleStartInput();
-      if (this.onFocus) {
-        this.onFocus(this.value, { e });
-      }
-      this.$emit('focus', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, { e });
     },
     handleKeydownEnter(e: KeyboardEvent) {
       if (e.key !== 'Enter') return;
-      if (this.onEnter) {
-        this.onEnter(this.value, { e });
-      }
-      this.$emit('enter', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, { e });
     },
     handleKeydown(e: KeyboardEvent) {
-      if (this.onKeydown) {
-        this.onKeydown(this.value, { e });
-      }
-      this.$emit('keydown', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onKeydown']>>(this, 'keydown', this.value, { e });
       this.handleKey(e);
     },
     handleKey(e: KeyboardEvent) {
@@ -289,16 +274,10 @@ export default Vue.extend({
       }
     },
     handleKeyup(e: KeyboardEvent) {
-      if (this.onKeyup) {
-        this.onKeyup(this.value, { e });
-      }
-      this.$emit('keyup', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyip', this.value, { e });
     },
     handleKeypress(e: KeyboardEvent) {
-      if (this.onKeypress) {
-        this.onKeypress(this.value, { e });
-      }
-      this.$emit('keypress', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, { e });
     },
     handleStartInput() {
       this.inputing = true;
