@@ -10,6 +10,8 @@ import { UploadFile } from './type';
 import { UploadRemoveOptions } from './interface';
 import { UPLOAD_NAME } from './util';
 import props from './props';
+import { prefix } from '../config';
+import CLASSNAMES from '../utils/classnames';
 
 export default Vue.extend({
   name: 'TImageUpload',
@@ -33,6 +35,7 @@ export default Vue.extend({
     },
     multiple: Boolean,
     max: Number,
+    disabled: Boolean,
   },
 
   computed: {
@@ -57,7 +60,7 @@ export default Vue.extend({
     return (
       <ul class={`${UPLOAD_NAME}-card`}>
         {this.files && this.files.map((file, index) => (
-            <li class={`${UPLOAD_NAME}-card__item t-is--background`}>
+            <li class={`${UPLOAD_NAME}-card__item ${prefix}-is--background`}>
               <div class={`${UPLOAD_NAME}-card__content ${UPLOAD_NAME}-card__box`}>
                 <img class={`${UPLOAD_NAME}-card__image`} src={file.url} />
                 <div class={`${UPLOAD_NAME}-card__mask`} onClick={this.onMaskClick}>
@@ -74,7 +77,9 @@ export default Vue.extend({
             </li>
         ))}
         {this.showTrigger && (
-          <li class={`${UPLOAD_NAME}-card__item t-is--background`} onClick={this.trigger}>
+          <li class={[`${UPLOAD_NAME}-card__item ${prefix}-is--background`, {
+            [CLASSNAMES.STATUS.disabled]: this.disabled,
+          }]} onClick={this.trigger}>
             {this.showUploadProgress && this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class={`${UPLOAD_NAME}-card-container ${UPLOAD_NAME}-card__box`}>
                 <TIconLoading></TIconLoading>

@@ -548,6 +548,7 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
             toUploadFiles={this.toUploadFiles}
             max={this.max}
             onImgPreview={this.handlePreviewImg}
+            disabled={this.disabled}
           ></ImageCard>
         )}
         {this.showUploadList && (
