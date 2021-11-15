@@ -207,7 +207,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -259,7 +258,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -311,7 +309,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -363,7 +360,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -415,7 +411,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -467,7 +462,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
@@ -519,7 +513,6 @@ exports[`Anchor target demo works fine 1`] = `
             复制链接
             <div
               class="t-popup__arrow"
-              data-popper-arrow="true"
             />
           </div>
         </div>
