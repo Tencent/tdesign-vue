@@ -4,7 +4,7 @@ import {
 import { prefix } from '../config';
 import props from './head-menu-props';
 import { MenuValue } from './type';
-import { TdMenuInterface, TdMenuItem } from './const';
+import { TdMenuInterface, TdMenuItem, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
@@ -59,7 +59,19 @@ export default defineComponent({
         submenu.length = 0;
         submenu.push(...menuItems);
       },
-      open: (value: MenuValue) => {
+      open: (value: MenuValue, type: TdOpenType) => {
+        if (mode.value === 'popup') {
+          if (type === 'add') {
+            if (expandValues.value.indexOf(value) === -1) { // 可能初始expanded里包含了该value
+              expandValues.value.push(value);
+            }
+          } else if (type === 'remove') {
+            const index = expandValues.value.indexOf(value);
+            expandValues.value.splice(index, 1);
+          }
+          return;
+        }
+
         const index = expandValues.value.indexOf(value);
 
         expandValues.value.splice(0, 1);

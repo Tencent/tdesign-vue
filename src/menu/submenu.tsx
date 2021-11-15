@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {
-  defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance,
+  defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance, watch,
 } from '@vue/composition-api';
 import { ChevronRightIcon as TIconChevronRight } from '@tencent/tdesign-icons-vue';
 import { prefix } from '../config';
@@ -74,9 +74,6 @@ export default defineComponent({
 
     // methods
     const handleMouseEnter = () => {
-      if (!popupVisible.value) {
-        open(props.value);
-      }
       popupVisible.value = true;
     };
     const handleMouseLeave = () => {
@@ -89,6 +86,10 @@ export default defineComponent({
     const handleSubmenuItemClick = () => {
       open(props.value);
     };
+
+    watch(popupVisible, (visible) => {
+      menu.open(props.value, visible ? 'add' : 'remove');
+    });
 
     // provide
     provide<TdSubMenuInterface>('TdSubmenu', {
