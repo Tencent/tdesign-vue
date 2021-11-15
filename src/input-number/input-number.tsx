@@ -5,7 +5,7 @@ import {
   ChevronDownIcon as ChevronDown,
   ChevronUpIcon as ChevronUp,
 } from '@tencent/tdesign-icons-vue';
-import { emitEvent } from '@src/utils/event';
+import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import TButton from '../button';
 import CLASSNAMES from '../utils/classnames';
