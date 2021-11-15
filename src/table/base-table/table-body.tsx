@@ -127,9 +127,9 @@ export default Vue.extend({
         const defaultRowClass = typeof rowClassName === 'function'
           ? rowClassName({ row, rowIndex: index })
           : rowClassName;
-        const rowClass: Array<string> = [];
-        if (Array.isArray(defaultRowClass)) {
-          rowClass.push(...defaultRowClass);
+        let rowClass: Array<string> = [];
+        if (defaultRowClass) {
+          rowClass = rowClass.concat(defaultRowClass);
         }
         const rowspanAndColspanProps = allRowspanAndColspanProps ? allRowspanAndColspanProps[index] : undefined;
         let rowVnode: VNode;
