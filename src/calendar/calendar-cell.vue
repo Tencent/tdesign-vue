@@ -32,6 +32,10 @@ export default Vue.extend({
       type: String,
       default: (): string => null,
     },
+    fillWithZero: {
+      type: Boolean,
+      default: undefined,
+    },
     t: Function,
     locale: Object,
   },
@@ -45,7 +49,8 @@ export default Vue.extend({
     valueDisplay(): string {
       if (this.item.mode === 'month') {
         const dateNum = this.item.date.getDate();
-        return (dateNum > 9 ? `${dateNum}` : `0${dateNum}`);
+        const fillZero = dateNum < 10 && (this.fillWithZero ?? this.locale.fillWithZero ?? true);
+        return (fillZero ? `0${dateNum}` : dateNum);
       }
       const map = this.t(this.locale.cellMonth).split(',');
       return map[(this.item.date.getMonth()).toString()];

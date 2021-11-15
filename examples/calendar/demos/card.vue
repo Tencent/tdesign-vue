@@ -7,7 +7,15 @@
       </t-select>
       <t-button theme="primary" @click="toCurrent()">今天（当前高亮日期）</t-button>
     </div>
-    <t-calendar ref="myCalendar" :theme="theme" :isShowWeekendDefault="isShowWeekendDefault"></t-calendar>
+    <div>
+      <label>日期补零：</label>
+      <t-switch size="large" v-model="fillWithZero"></t-switch>
+    </div>
+    <t-calendar
+      ref="myCalendar"
+      :theme="theme"
+      :isShowWeekendDefault="isShowWeekendDefault"
+      :fillWithZero="fillWithZero"></t-calendar>
   </div>
 </template>
 
@@ -17,6 +25,7 @@ export default {
     return {
       theme: 'card',
       isShowWeekendDefault: true,
+      fillWithZero: true,
       options: [
         { value: 'full', label: '全屏风格' },
         { value: 'card', label: '卡片风格' },

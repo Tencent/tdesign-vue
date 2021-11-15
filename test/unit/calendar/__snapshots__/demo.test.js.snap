@@ -1234,6 +1234,23 @@ exports[`Calendar card demo works fine 1`] = `
     </button>
   </div>
    
+  <div>
+    <label>
+      日期补零：
+    </label>
+     
+    <div
+      class="t-switch t-size-l t-is-checked"
+    >
+      <span
+        class="t-switch__handle"
+      />
+      <div
+        class="t-switch__content t-size-l"
+      />
+    </div>
+  </div>
+   
   <div
     class="t-calendar t-calendar--card"
   >
