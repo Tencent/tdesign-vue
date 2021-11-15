@@ -9,18 +9,18 @@ export * from './type';
 export interface CascaderContextType
   extends Pick<
   TdCascaderProps,
-    | 'size'
-    | 'disabled'
-    | 'checkStrictly'
-    | 'lazy'
-    | 'multiple'
-    | 'filterable'
-    | 'clearable'
-    | 'checkProps'
-    | 'showAllLevels'
-    | 'max'
-    | 'value'
-    | 'minCollapsedNum'
+  | 'size'
+  | 'disabled'
+  | 'checkStrictly'
+  | 'lazy'
+  | 'multiple'
+  | 'filterable'
+  | 'clearable'
+  | 'checkProps'
+  | 'showAllLevels'
+  | 'max'
+  | 'value'
+  | 'minCollapsedNum'
   > {
   treeStore: TreeStore;
   setValue: (val: CascaderValue) => void;

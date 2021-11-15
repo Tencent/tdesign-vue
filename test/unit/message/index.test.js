@@ -2,7 +2,13 @@ import { mount } from '@vue/test-utils';
 import { Message } from '@/src/message/index.ts';
 import Button from '@/src/button/index.ts';
 import {
-  CloseIcon, MoreIcon, InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, HelpCircleFilledIcon, LoadingIcon,
+  CloseIcon,
+  MoreIcon,
+  InfoCircleFilledIcon,
+  CheckCircleFilledIcon,
+  ErrorCircleFilledIcon,
+  HelpCircleFilledIcon,
+  LoadingIcon,
 } from '@tencent/tdesign-icons-vue';
 
 // every component needs four parts: props/events/slots/functions.
