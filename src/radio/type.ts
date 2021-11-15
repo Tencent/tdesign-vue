@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-09 10:09:08
+ * updated at 2021-10-22 13:38:32
  * */
 
 import { TNode, SizeEnum } from '../common';
@@ -87,7 +87,7 @@ export interface TdRadioGroupProps {
   onChange?: (value: RadioValue, context: { e: Event }) => void;
 };
 
-export type RadioValue = string | number;
+export type RadioValue = string | number | boolean;
 
 export type RadioOption = string | number | RadioOptionObj;
 

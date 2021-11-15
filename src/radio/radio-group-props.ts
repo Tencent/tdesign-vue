@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-09 10:09:08
+ * updated at 2021-11-15 18:03:27
  * */
 
 import { TdRadioGroupProps } from '../radio/type';
@@ -41,11 +41,13 @@ export default {
   },
   /** 选中的值 */
   value: {
-    type: [String, Number] as PropType<TdRadioGroupProps['value']>,
+    type: [String, Number, Boolean] as PropType<TdRadioGroupProps['value']>,
+    default: undefined,
   },
   /** 选中的值，非受控属性 */
   defaultValue: {
-    type: [String, Number] as PropType<TdRadioGroupProps['defaultValue']>,
+    type: [String, Number, Boolean] as PropType<TdRadioGroupProps['defaultValue']>,
+    default: undefined,
   },
   /** 单选组件按钮形式 */
   variant: {

@@ -712,7 +712,7 @@ exports[`Radio radio group demo works fine 1`] = `
           class="t-radio__former"
           name=""
           type="radio"
-          value="2"
+          value="true"
         />
         <span
           class="t-radio__input"
