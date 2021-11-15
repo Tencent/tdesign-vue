@@ -87,7 +87,9 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const parent = this.form;
       const { successBorder } = this.$props;
       if (!parent.showErrorMessage) return '';
-      if (this.verifyStatus === VALIDATE_STATUS.SUCCESS && successBorder) return CLASS_NAMES.success;
+      if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
+        return successBorder ? CLASS_NAMES.success : CLASS_NAMES.successNoBorder;
+      }
       if (!this.errorList.length) return;
       const type = this.errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
