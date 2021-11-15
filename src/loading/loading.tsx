@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 import GradientIcon from './icon/gradient';
 import { prefix } from '../config';
 import { SIZE_CLASSNAMES } from '../utils/classnames';
@@ -116,7 +117,7 @@ export default Vue.extend({
     const content = renderContent(this, 'default', 'content');
     const defaultIndicator = <GradientIcon size={this.size} />;
     const indicator = renderTNodeJSX(this, 'indicator', defaultIndicator);
-    const text = this.showText && <div class="t-loading-text">{renderTNodeJSX(this, 'text')}</div>;
+    const text = this.showText && <div class={`${prefix}-loading-text`}>{renderTNodeJSX(this, 'text')}</div>;
     const baseNode = (
       <div
         class={this.classes}
