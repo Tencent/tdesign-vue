@@ -15,10 +15,10 @@
       @submit="onSubmit"
       :statusIcon="true"
     >
-      <t-form-item label="失败" help="校验不通过，请输入正确内容" name='fail'>
+      <t-form-item label="失败" help="这是校验通过后的提示信息" name='fail'>
         <t-input v-model="formData.fail"></t-input>
       </t-form-item>
-      <t-form-item label="警告" name='warning'>
+      <t-form-item label="警告" name='warning' successBorder>
         <t-input v-model="formData.warning"></t-input>
       </t-form-item>
       <t-form-item label="成功" name='success'>

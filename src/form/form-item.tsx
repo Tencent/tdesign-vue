@@ -85,15 +85,17 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     },
     errorClasses(): string {
       const parent = this.form;
-      const { successBorder } = this.$props;
       if (!parent.showErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
-        return successBorder ? CLASS_NAMES.success : CLASS_NAMES.successNoBorder;
+        return this.successBorder
+          ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ')
+          : CLASS_NAMES.success;
       }
       if (!this.errorList.length) return;
       const type = this.errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
+
     contentClasses(): ClassName {
       const getErrorClass: string = this.errorClasses;
       return [CLASS_NAMES.controls, getErrorClass];
@@ -228,7 +230,7 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
-          <Icon size='24px'></Icon>
+          <Icon size='20px'></Icon>
         </span>
       );
       const list = this.errorList;
