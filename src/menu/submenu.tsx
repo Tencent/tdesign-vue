@@ -112,7 +112,7 @@ export default defineComponent({
 
       menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
       const instance = getCurrentInstance();
-      isNested.value = instance.parent.vnode?.tag.indexOf('submenu') > -1;
+      isNested.value = /submenu/i.test(instance.parent.vnode?.tag);
 
       // adjust popup height
       if (ctx.refs.popup) {
@@ -174,7 +174,7 @@ export default defineComponent({
       const child = renderContent(this, 'default', 'content');
       let paddingLeft = 44;
 
-      if (this.$parent.$vnode?.tag.indexOf('submenu') > -1) {
+      if (/submenu/i.test(this.$parent.$vnode?.tag)) {
         paddingLeft += 16;
       }
 
