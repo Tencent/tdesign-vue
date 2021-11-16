@@ -12,7 +12,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { ChevronDownIcon } from '@tencent/tdesign-icons-vue';
+import { ChevronDownIcon } from 'tdesign-icons-vue';
 
 export default Vue.extend({
   components: {

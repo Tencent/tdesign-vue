@@ -4,7 +4,7 @@ const _template = require('lodash/template');
 const glob = require('glob');
 const utils = require('../utils');
 
-const SRC_ICONS_DIR = path.resolve(__dirname, '../../node_modules/@tencent/tdesign-icons-vue/lib/components');
+const SRC_ICONS_DIR = path.resolve(__dirname, '../../node_modules/tdesign-icons-vue/lib/components');
 
 /**
  * icon scripts

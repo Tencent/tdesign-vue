@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronDownCircleIcon } from '@tencent/tdesign-icons-vue';
+import { ChevronDownIcon, ChevronDownCircleIcon } from 'tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },

@@ -4,7 +4,7 @@ import {
   RemoveIcon as Remove,
   ChevronDownIcon as ChevronDown,
   ChevronUpIcon as ChevronUp,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import TButton from '../button';

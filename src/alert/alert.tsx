@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';

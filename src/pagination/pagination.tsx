@@ -4,7 +4,7 @@ import {
   ChevronRightDoubleIcon,
   ChevronLeftDoubleIcon,
   EllipsisIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';

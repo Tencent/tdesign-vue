@@ -5,7 +5,7 @@ import {
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   HelpCircleFilledIcon as TIconHelpFill,
   CloseIcon as TIconClose,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
 import { THEME_LIST } from './const';

@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CheckIcon as TIconCheck, CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
+import { CheckIcon as TIconCheck, CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';

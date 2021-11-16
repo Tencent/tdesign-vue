@@ -3,7 +3,7 @@ import {
   InfoCircleFilledIcon as TIconInfoCircleFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   CloseIcon as TIconClose,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';

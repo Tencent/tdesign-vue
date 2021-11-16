@@ -7,7 +7,7 @@ import isString from 'lodash/isString';
 import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
-import { CloseCircleFilledIcon as IconCloseCircleFilled } from '@tencent/tdesign-icons-vue';
+import { CloseCircleFilledIcon as IconCloseCircleFilled } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';

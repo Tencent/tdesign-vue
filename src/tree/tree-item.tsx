@@ -1,6 +1,6 @@
 import { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CaretRightSmallIcon as TIconCaretRightSmall } from '@tencent/tdesign-icons-vue';
+import { CaretRightSmallIcon as TIconCaretRightSmall } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import TCheckBox from '../checkbox';

@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import { ChevronRightIcon } from '@tencent/tdesign-icons-vue';
+import { ChevronRightIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 
 // utils

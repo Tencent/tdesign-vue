@@ -1,5 +1,5 @@
 import Vue, { PropType, VNode } from 'vue';
-import { SearchIcon as TIconSearch } from '@tencent/tdesign-icons-vue';
+import { SearchIcon as TIconSearch } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
 import TInput from '../../input';

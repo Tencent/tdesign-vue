@@ -1,6 +1,6 @@
 import { PropType } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CloseCircleFilledIcon } from '@tencent/tdesign-icons-vue';
+import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import CLASSNAMES from '../../utils/classnames';
 import getLocalRecevierMixins from '../../locale/local-receiver';

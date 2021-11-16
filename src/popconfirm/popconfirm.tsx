@@ -1,7 +1,7 @@
 import {
   InfoCircleFilledIcon as TIconInfoCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';

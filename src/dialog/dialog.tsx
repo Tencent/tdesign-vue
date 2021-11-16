@@ -3,7 +3,7 @@ import {
   InfoCircleFilledIcon as TIconInfoCircleFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import TButton, { ButtonProps } from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';

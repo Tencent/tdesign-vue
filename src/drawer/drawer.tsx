@@ -1,4 +1,4 @@
-import { CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
+import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';

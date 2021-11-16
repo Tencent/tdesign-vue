@@ -22,7 +22,7 @@
 <script>
 import {
   AddIcon, CloudUploadIcon, SearchIcon, DiscountIcon, CloudDownloadIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 
 export default {
   components: {

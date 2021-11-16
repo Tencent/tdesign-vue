@@ -3,7 +3,7 @@ import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
-import { UploadIcon as TIconUpload } from '@tencent/tdesign-icons-vue';
+import { UploadIcon as TIconUpload } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { prefix } from '../config';

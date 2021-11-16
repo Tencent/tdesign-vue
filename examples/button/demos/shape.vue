@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { CalendarIcon } from '@tencent/tdesign-icons-vue';
+import { CalendarIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import { UserIcon } from '@tencent/tdesign-icons-vue';
+import { UserIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

@@ -1,5 +1,5 @@
 import Vue, { VNode } from 'vue';
-import { BulletpointIcon } from '@tencent/tdesign-icons-vue';
+import { BulletpointIcon } from 'tdesign-icons-vue';
 import Button from '../../../button';
 import Dialog from '../../../dialog';
 import Checkbox from '../../../checkbox';

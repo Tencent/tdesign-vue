@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimeIcon as TIconTime } from '@tencent/tdesign-icons-vue';
+import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import {

@@ -9,7 +9,7 @@ import {
   CheckCircleFilledIcon,
   ErrorCircleFilledIcon,
   HelpCircleFilledIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Message', () => {

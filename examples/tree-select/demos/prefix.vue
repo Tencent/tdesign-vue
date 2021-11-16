@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import { Icon } from '@tencent/tdesign-icons-vue';
+import { Icon } from 'tdesign-icons-vue';
 
 export default {
   components: {

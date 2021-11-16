@@ -3,7 +3,7 @@ import {
   CloseCircleFilledIcon as TIconClearCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
 import { UploadFile } from './type';

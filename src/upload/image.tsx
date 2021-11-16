@@ -4,7 +4,7 @@ import {
   DeleteIcon as IIconDelete,
   UploadIcon as IIconUpload,
   BrowseIcon as TIconBrowse,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { UploadFile } from './type';
 import TLoading from '../loading';
 import { UploadRemoveOptions } from './interface';

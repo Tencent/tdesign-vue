@@ -1,5 +1,5 @@
 import Vue, { PropType, CreateElement } from 'vue';
-import { ChevronRightIcon as TIconChevronRight, ChevronLeftIcon as TIconChevronLeft } from '@tencent/tdesign-icons-vue';
+import { ChevronRightIcon as TIconChevronRight, ChevronLeftIcon as TIconChevronLeft } from 'tdesign-icons-vue';
 import TButton from '../../button';
 import { prefix } from '../../config';
 import { TNode } from '../../common';

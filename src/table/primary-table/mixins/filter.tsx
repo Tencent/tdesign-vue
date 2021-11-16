@@ -1,6 +1,6 @@
 import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { FilterIcon as TIconFilter } from '@tencent/tdesign-icons-vue';
+import { FilterIcon as TIconFilter } from 'tdesign-icons-vue';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';

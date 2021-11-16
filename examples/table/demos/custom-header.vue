@@ -7,7 +7,7 @@
   </t-table>
 </template>
 <script>
-import { AppIcon } from '@tencent/tdesign-icons-vue';
+import { AppIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

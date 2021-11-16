@@ -98,7 +98,7 @@
 <script>
 import {
   ErrorIcon, CaretRightSmallIcon, CloseCircleFilledIcon, ChevronDownIcon, CaretDownSmallIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 
 const MONTHS = [
   'January',

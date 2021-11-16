@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { LockOnIcon } from '@tencent/tdesign-icons-vue';
+import { LockOnIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

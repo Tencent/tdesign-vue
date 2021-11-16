@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { AddRectangleIcon, MinusRectangleIcon } from '@tencent/tdesign-icons-vue';
+import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
 import baseTableProps from '../base-table-props';
 import primaryTableProps from '../primary-table-props';

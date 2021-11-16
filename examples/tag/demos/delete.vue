@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { AddIcon, DiscountIcon } from '@tencent/tdesign-icons-vue';
+import { AddIcon, DiscountIcon } from 'tdesign-icons-vue';
 import Vue from 'vue';
 
 export default {

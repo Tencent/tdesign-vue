@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue';
 import {
   CloseIcon as TIconClose,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';

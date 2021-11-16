@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { CaretDownSmallIcon, Icon } from '@tencent/tdesign-icons-vue';
+import { CaretDownSmallIcon, Icon } from 'tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },

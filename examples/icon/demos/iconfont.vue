@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { IconFont } from '@tencent/tdesign-icons-vue';
+import { IconFont } from 'tdesign-icons-vue';
 
 export default {
   components: { IconFont },

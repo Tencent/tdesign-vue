@@ -7,7 +7,7 @@ import {
   ChevronRightIcon as TIconChevronRight,
   CloseIcon as TIconClose,
   AddIcon as TIconAdd,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';

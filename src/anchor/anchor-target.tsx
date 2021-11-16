@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { FileCopyIcon } from '@tencent/tdesign-icons-vue';
+import { FileCopyIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import copyText from '../utils/clipboard';
 import Message from '../message/plugin';

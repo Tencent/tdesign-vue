@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import { EditIcon, DownloadIcon } from '@tencent/tdesign-icons-vue';
+import { EditIcon, DownloadIcon } from 'tdesign-icons-vue';
 
 export default {
   components: { EditIcon, DownloadIcon },

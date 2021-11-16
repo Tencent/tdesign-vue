@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import { UserIcon, EllipsisIcon } from '@tencent/tdesign-icons-vue';
+import { UserIcon, EllipsisIcon } from 'tdesign-icons-vue';
 
 export default {
   data() {

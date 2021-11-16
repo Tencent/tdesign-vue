@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { ChevronRightIcon as IconChevronRight } from '@tencent/tdesign-icons-vue';
+import { ChevronRightIcon as IconChevronRight } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';

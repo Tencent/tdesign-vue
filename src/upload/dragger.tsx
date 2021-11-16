@@ -2,7 +2,7 @@ import Vue, { PropType, VNode } from 'vue';
 import {
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
 import TLoading from '../loading';

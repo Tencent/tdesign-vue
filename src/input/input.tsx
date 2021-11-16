@@ -1,6 +1,6 @@
 import Vue, { CreateElement, VNode, VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon as ClearIcon } from '@tencent/tdesign-icons-vue';
+import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon as ClearIcon } from 'tdesign-icons-vue';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 

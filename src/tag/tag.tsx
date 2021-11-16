@@ -1,5 +1,5 @@
 import Vue, { VNode } from 'vue';
-import { CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
+import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import CLASSNAMES from '../utils/classnames';
 import { prefix } from '../config';
 import props from './props';

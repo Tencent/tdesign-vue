@@ -8,7 +8,7 @@ import {
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   CloseCircleFilledIcon as TIconCloseCircleFilled,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {

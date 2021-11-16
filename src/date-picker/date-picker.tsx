@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import Vue from 'vue';
-import { CalendarIcon as TIconCalendar, TimeIcon as TIconTime, CloseIcon as TIconClose } from '@tencent/tdesign-icons-vue';
+import { CalendarIcon as TIconCalendar, TimeIcon as TIconTime, CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';

@@ -65,7 +65,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { Icon } from '@tencent/tdesign-icons-vue';
+import { Icon } from 'tdesign-icons-vue';
 
 export default Vue.extend({
   components: {

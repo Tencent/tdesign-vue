@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import { ChevronDownIcon } from '@tencent/tdesign-icons-vue';
+import { ChevronDownIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

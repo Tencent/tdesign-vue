@@ -34,7 +34,7 @@
 </template>
 <script>
 
-import { CloseIcon, CheckIcon } from '@tencent/tdesign-icons-vue';
+import { CloseIcon, CheckIcon } from 'tdesign-icons-vue';
 
 export default {
   components: { CloseIcon, CheckIcon },

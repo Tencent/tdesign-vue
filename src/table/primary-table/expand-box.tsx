@@ -1,5 +1,5 @@
 import isFunction from 'lodash/isFunction';
-import { ChevronDownCircleIcon as TIconChevronDown } from '@tencent/tdesign-icons-vue';
+import { ChevronDownCircleIcon as TIconChevronDown } from 'tdesign-icons-vue';
 import mixins from '../../utils/mixins';
 import getLocalReceiverMixins from '../../locale/local-receiver';
 

@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import { AttachIcon } from '@tencent/tdesign-icons-vue';
+import { AttachIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

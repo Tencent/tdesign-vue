@@ -6,7 +6,7 @@ import set from 'lodash/set';
 import {
   ChevronDownIcon as TIconChevronDown,
   CloseCircleFilledIcon as TIconClose,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';

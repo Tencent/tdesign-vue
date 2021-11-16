@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import { DesktopIcon, LockOnIcon } from '@tencent/tdesign-icons-vue';
+import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue';
 
 const INITIAL_DATA = {
   account: '',

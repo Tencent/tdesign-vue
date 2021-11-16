@@ -25,7 +25,7 @@
 
 <script>
 
-import { OrderDescendingIcon } from '@tencent/tdesign-icons-vue';
+import { OrderDescendingIcon } from 'tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },

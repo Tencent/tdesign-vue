@@ -10,7 +10,7 @@
 <script>
 import {
   LoginIcon, CartIcon, WalletIcon, CheckCircleIcon,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 
 export default {
   methods: {

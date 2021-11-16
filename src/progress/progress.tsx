@@ -7,7 +7,7 @@ import {
   ErrorIcon as IconWarningLine,
   CloseIcon as IconsClearLine,
   CheckIcon as IconSuccessLine,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
 import {

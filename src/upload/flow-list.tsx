@@ -5,7 +5,7 @@ import {
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
   DeleteIcon as TIconDelete,
   BrowseIcon as TIconBrowse,
-} from '@tencent/tdesign-icons-vue';
+} from 'tdesign-icons-vue';
 import { UploadFile } from './type';
 import TButton from '../button';
 import TLoading from '../loading';
