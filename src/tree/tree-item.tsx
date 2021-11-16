@@ -1,9 +1,10 @@
 import { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CaretRightSmallIcon as TIconCaretRightSmall, LoadingIcon as TIconLoading } from '@tencent/tdesign-icons-vue';
+import { CaretRightSmallIcon as TIconCaretRightSmall } from '@tencent/tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import TCheckBox from '../checkbox';
+import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
 import { getTNode } from './util';
 import { TypeEventState } from './interface';
@@ -135,7 +136,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
           isDefaultIcon = true;
           iconNode = this.getFolderIcon();
           if (node.loading && node.expanded) {
-            iconNode = (<TIconLoading/>);
+            iconNode = (<TLoading/>);
           }
         } else {
           iconNode = '';

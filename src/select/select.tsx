@@ -6,8 +6,8 @@ import set from 'lodash/set';
 import {
   ChevronDownIcon as TIconChevronDown,
   CloseCircleFilledIcon as TIconClose,
-  LoadingIcon as TIconLoading,
 } from '@tencent/tdesign-icons-vue';
+import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
@@ -58,8 +58,8 @@ export default mixins(getLocalReceiverMixins('select')).extend({
   components: {
     TIconChevronDown,
     TIconClose,
-    TIconLoading,
     TInput,
+    TLoading,
     Tag,
     Popup,
     TOption: Option,
@@ -111,7 +111,8 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
           || (Array.isArray(this.value) && !this.value.length)
           || this.value === null
-          || this.value === undefined)
+          || this.value === undefined
+          || this.value === '')
       ) {
         return true;
       }
@@ -577,7 +578,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
             }
             {
               this.showLoading && (
-                <t-icon-loading class={`${name}-right-icon ${name}-active-icon`} size={size} />
+                <t-loading class={`${name}-right-icon ${name}-active-icon`} size="small"/>
               )
             }
           </div>
