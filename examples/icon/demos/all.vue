@@ -4,7 +4,6 @@
     若需要编辑，请编辑源文件：tdesign/tdesign-web-vue/script/icon-generate/demo.tpl 。
   -->
   <div class="t-demo-iconfont">
-    <p>目前设计师给到的全部图标</p><br>
     <div class="t-demo-icon">
       <icon name="add-circle"/>
       <div class="t-demo-icon-name">add-circle</div>
