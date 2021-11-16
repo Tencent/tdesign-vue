@@ -140,11 +140,7 @@ export default Vue.extend({
           val.splice(i, 1);
         }
         this.emitChange(val, data.e);
-        this.setCheckedMap(data.option.value, data.checked);
       }
-    },
-    setCheckedMap(value: string | number, checked: boolean) {
-      this.checkedMap[value] = checked;
     },
     onCheckAllChange(checked: boolean, context: { e: Event }) {
       if (checked) {
@@ -153,16 +149,11 @@ export default Vue.extend({
           const item = this.optionList[i];
           if (item.checkAll) continue;
           val.push(item.value);
-          this.checkedMap = {
-            ...this.checkedMap,
-            [item.value]: true,
-          };
           if (this.maxExceeded) break;
         }
         this.emitChange(val, context.e);
       } else {
         this.emitChange([], context.e);
-        this.checkedMap = {};
       }
     },
   },
