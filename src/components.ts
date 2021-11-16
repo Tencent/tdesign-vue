@@ -2,6 +2,7 @@ export * from './locale';
 export * from './layout';
 export * from './grid';
 export * from './loading';
+export * from './avatar';
 export * from './popup';
 export * from './button';
 export * from './cascader';
