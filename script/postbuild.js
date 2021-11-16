@@ -29,18 +29,4 @@ function checkTypeFileExist() {
   }
 }
 
-/* TODO:
-  目前 Readme 和 Changelog 还未替换为外网版本，发包时需要删除，替换后移除下面方法
-*/
-function remove() {
-  const readmePath = path.resolve(__dirname, '../README.md');
-  const changlogPath = path.resolve(__dirname, '../CHANGELOG.md');
-
-  fs.unlinkSync(readmePath);
-  fs.unlinkSync(changlogPath);
-  console.log('\x1B[32m', '已移除 Readme 和 Changelog 文件!');
-}
-
-remove();
-
 checkTypeFileExist();
