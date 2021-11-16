@@ -8,7 +8,7 @@ import { Styles } from '../common';
 
 const name = `${prefix}-avatar`;
 
-interface AvatarInstance extends Vue {
+export interface AvatarInstance extends Vue {
   avatarGroup: AvatarGroupInstance;
 }
 
