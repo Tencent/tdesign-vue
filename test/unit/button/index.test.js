@@ -80,7 +80,7 @@ describe('Button', () => {
               <Button default="foo">bar</Button>
               <Button default={renderContent}>bar</Button>
 
-              <Button content={0}>bar</Button>
+              <Button content={'0'}>bar</Button>
             </div>
           );
         },

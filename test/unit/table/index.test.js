@@ -71,7 +71,7 @@ describe('Table', () => {
       it('`columns` is undefined', () => {
         const wrapper = mount({
           render() {
-            return <Table></Table>;
+            return <Table rowKey="id"></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -300,6 +300,7 @@ describe('Table', () => {
                 size={'small'}
                 hover={true}
                 verticalAlign={'middle'}
+                rowKey='id'
               ></Table>
             );
           },

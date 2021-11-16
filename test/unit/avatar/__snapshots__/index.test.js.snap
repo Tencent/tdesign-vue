@@ -7,7 +7,7 @@ exports[`Avatar :props :image 1`] = `<div class="t-avatar t-avatar--circle"><img
 exports[`Avatar :props :shape 1`] = `
 <div>
   <div class="t-avatar t-avatar--round"><span>W</span></div>
-  <div class="t-avatar"><span>W</span></div>
+  <div class="t-avatar t-avatar--circle"><span>W</span></div>
 </div>
 `;
 

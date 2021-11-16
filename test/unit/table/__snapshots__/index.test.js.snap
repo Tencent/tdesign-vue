@@ -110,17 +110,17 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
             </tr>
           </thead>
           <tbody class="table-body">
-            <tr rowkey="" class="" key="1">
+            <tr rowkey="id" class="" key="1">
               <td class="" key="id" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">1</td>
             </tr>
-            <tr rowkey="" class="" key="2">
+            <tr rowkey="id" class="" key="2">
               <td class="" key="id" length="3">2</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">2</td>
             </tr>
-            <tr rowkey="" class="" key="3">
+            <tr rowkey="id" class="" key="3">
               <td class="" key="id" length="3">3</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">3</td>

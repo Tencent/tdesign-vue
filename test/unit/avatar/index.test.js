@@ -29,8 +29,8 @@ describe('Avatar', () => {
         render() {
           return (
             <div>
-              <Avatar shape='round'>W</Avatar>
-              <Avatar shape='cicle'>W</Avatar>
+              <Avatar shape="round">W</Avatar>
+              <Avatar shape="circle">W</Avatar>
             </div>
           );
         },

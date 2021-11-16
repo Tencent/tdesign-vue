@@ -1,44 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slider base demo works fine 1`] = `
-<!--function (el) {
-      var obj;
-
-      var args = [], len = arguments.length - 1;
-      while ( len-- &gt; 0 ) args[ len ] = arguments[ len + 1 ];
-      if (shouldNotBeStubbed(el, stubs, modifiedComponents)) {
-        return originalCreateElement.apply(void 0, [ el ].concat( args ))
-      }
-
-      if (isConstructor(el) || isComponentOptions(el)) {
-        if (stubAllComponents) {
-          var stub = createStubFromComponent(el, el.name || 'anonymous', _Vue);
-          return originalCreateElement.apply(void 0, [ stub ].concat( args ))
-        }
-        var Constructor = shouldExtend(el) ? extend(el, _Vue) : el;
-
-        return originalCreateElement.apply(void 0, [ Constructor ].concat( args ))
-      }
-
-      if (typeof el === 'string') {
-        var original = resolveComponent(el, originalComponents);
-
-        if (!original) {
-          return originalCreateElement.apply(void 0, [ el ].concat( args ))
-        }
-
-        if (isDynamicComponent(original)) {
-          return originalCreateElement.apply(void 0, [ el ].concat( args ))
-        }
-
-        var stub$1 = createStubIfNeeded(stubAllComponents, original, _Vue, el);
-
-        if (stub$1) {
-          Object.assign(vm.$options.components, ( obj = {}, obj[el] = stub$1, obj ));
-          modifiedComponents.add(el);
-        }
-      }
-
-      return originalCreateElement.apply(void 0, [ el ].concat( args ))
-    }-->
+<div
+  class="demo-slider"
+>
+  <div
+    class="block"
+  >
+    <div
+      aria-valuetext="12"
+      class="t-slider-contianer"
+    >
+      <div
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        class="t-slider"
+        role="slider"
+      >
+        <div
+          class="t-slider__rail"
+        >
+          <div
+            class="t-slider__track"
+            style="width: 0%; left: 0%;"
+          />
+          <div
+            class="t-slider__button-wrapper"
+            show-tooltip="true"
+            style="left: 0%;"
+            tabindex="0"
+          >
+            <div
+              class="t-popup-reference"
+              popper-class=""
+            >
+              <transition-stub
+                appear="true"
+                name="t-popup_animation"
+              >
+                <div
+                  aria-hidden="true"
+                  class="t-popup"
+                  role="tooltip"
+                  style="display: none;"
+                >
+                  <div
+                    class="t-popup-content t-popup-content--arrow"
+                    style="max-width: 480px;"
+                  >
+                    0
+                    <div
+                      class="t-popup__arrow"
+                    />
+                  </div>
+                </div>
+              </transition-stub>
+               
+              <div
+                class="t-slider__button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-slider-input-container"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="block"
+  >
+    <div
+      aria-valuetext="30-70"
+      class="t-slider-contianer"
+    >
+      <div
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        class="t-slider"
+        role="slider"
+        tooltip-props="[object Object]"
+      >
+        <div
+          class="t-slider__rail"
+        >
+          <div
+            class="t-slider__track"
+            style="width: 0%; left: 0%;"
+          />
+          <div
+            class="t-slider__button-wrapper"
+            show-tooltip="true"
+            style="left: 0%;"
+            tabindex="0"
+          >
+            <div
+              class="t-popup-reference"
+              popper-class=""
+            >
+              <transition-stub
+                appear="true"
+                name="t-popup_animation"
+              >
+                <div
+                  aria-hidden="true"
+                  class="t-popup"
+                  role="tooltip"
+                  style="display: none;"
+                >
+                  <div
+                    class="t-popup-content t-popup-content--arrow"
+                    style="max-width: 480px;"
+                  >
+                    0
+                    <div
+                      class="t-popup__arrow"
+                    />
+                  </div>
+                </div>
+              </transition-stub>
+               
+              <div
+                class="t-slider__button"
+              />
+            </div>
+          </div>
+          <div
+            class="t-slider__button-wrapper"
+            show-tooltip="true"
+            style="left: 0%;"
+            tabindex="0"
+          >
+            <div
+              class="t-popup-reference"
+              popper-class=""
+            >
+              <transition-stub
+                appear="true"
+                name="t-popup_animation"
+              >
+                <div
+                  aria-hidden="true"
+                  class="t-popup"
+                  role="tooltip"
+                  style="display: none;"
+                >
+                  <div
+                    class="t-popup-content t-popup-content--arrow"
+                    style="max-width: 480px;"
+                  >
+                    0
+                    <div
+                      class="t-popup__arrow"
+                    />
+                  </div>
+                </div>
+              </transition-stub>
+               
+              <div
+                class="t-slider__button"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-slider-input-container"
+      />
+    </div>
+  </div>
+</div>
 `;
