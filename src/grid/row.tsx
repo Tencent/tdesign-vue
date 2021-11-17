@@ -57,7 +57,6 @@ export default Vue.extend({
       const rowStyle = {};
       if (typeof gutter === 'number') {
         Object.assign(rowStyle, {
-          rowGap: `${gutter}px`,
           marginLeft: `${gutter / -2}px`,
           marginRight: `${gutter / -2}px`,
         });
@@ -82,11 +81,18 @@ export default Vue.extend({
           Object.assign(rowStyle, { rowGap: `${gutter[1][currentSize]}px` });
         }
       } else if (isObject(gutter) && gutter[currentSize]) {
-        Object.assign(rowStyle, {
-          rowGap: `${gutter[currentSize]}px`,
-          marginLeft: `${gutter[currentSize] / -2}px`,
-          marginRight: `${gutter[currentSize] / -2}px`,
-        });
+        if (Array.isArray(gutter[currentSize]) && gutter[currentSize].length) {
+          Object.assign(rowStyle, {
+            marginLeft: `${gutter[currentSize][0] / -2}px`,
+            marginRight: `${gutter[currentSize][0] / -2}px`,
+          });
+          Object.assign(rowStyle, { rowGap: `${gutter[currentSize][1]}px` });
+        } else {
+          Object.assign(rowStyle, {
+            marginLeft: `${gutter[currentSize] / -2}px`,
+            marginRight: `${gutter[currentSize] / -2}px`,
+          });
+        }
       }
       return rowStyle;
     },
