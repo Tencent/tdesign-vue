@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { NotifyPlugin } from '@tencent/tdesign-vue';
+import { NotifyPlugin } from 'tdesign-vue';
 
 export default {
   data() {

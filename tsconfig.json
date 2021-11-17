@@ -25,7 +25,7 @@
       "@src/*": [
         "src/*"
       ],
-      "@tencent/tdesign-vue": [
+      "tdesign-vue": [
         "src/*"
       ],
       "@common/*": [

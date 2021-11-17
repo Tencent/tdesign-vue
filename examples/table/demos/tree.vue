@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import { EnhancedTable } from '@tencent/tdesign-vue';
+import { EnhancedTable } from 'tdesign-vue';
 
 const data = [];
 for (let i = 0; i < 5; i++) {

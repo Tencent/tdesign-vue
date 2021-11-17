@@ -9,7 +9,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { DialogPlugin } from '@tencent/tdesign-vue';
+import { DialogPlugin } from 'tdesign-vue';
 
 export default Vue.extend({
   data() {

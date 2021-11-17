@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import { LoadingPlugin } from '@tencent/tdesign-vue';
+import { LoadingPlugin } from 'tdesign-vue';
 
 export default {
   name: 'LoadingPlugin',

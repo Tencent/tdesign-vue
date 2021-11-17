@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { MessagePlugin } from '@tencent/tdesign-vue';
+import { MessagePlugin } from 'tdesign-vue';
 
 export default {
   data() {

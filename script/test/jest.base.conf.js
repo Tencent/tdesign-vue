@@ -11,8 +11,8 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'vue', 'json'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
-    '^@tencent/tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
-    '^@tencent/tdesign-vue$': '<rootDir>/src/index.ts',
+    '^tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
+    '^tdesign-vue$': '<rootDir>/src/index.ts',
     '^@TdTypes/(.*)$': '<rootDir>/types/$1',
     '^@Button/(.*)$': '<rootDir>/src/button/index.ts',
     '^@Pagination/(.*)$': '<rootDir>/src/pagination/index.ts',
