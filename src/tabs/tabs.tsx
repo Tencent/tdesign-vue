@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue';
+import Vue, { VNode, VueConstructor } from 'vue';
 import kebabCase from 'lodash/kebabCase';
 import props from './props';
 import { prefix } from '../config';
@@ -7,7 +7,11 @@ import TTabNav from './tab-nav';
 import { TabValue, TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
 
-export default Vue.extend({
+interface TabVue extends Vue {
+  listPanels?: Array<VNode>;
+}
+
+export default (Vue as VueConstructor<TabVue>).extend({
   name: 'TTabs',
   model: {
     prop: 'value',
@@ -19,18 +23,22 @@ export default Vue.extend({
     TTabNav,
   },
 
+  ...({ listPanels: null as Array<VNode> }),
+
   props: { ...props },
 
   data() {
     return {
       panels: [] as Array<InstanceType<typeof TTabPanel>>,
-      listPanels: null as Array<VNode>,
     };
   },
 
   watch: {
-    list() {
-      this.updateListPanels();
+    list: {
+      handler() {
+        this.listPanels = this.createListPanels();
+      },
+      deep: true,
     },
   },
 
@@ -46,7 +54,14 @@ export default Vue.extend({
 
   methods: {
     updatePanels() {
-      const newPanels = (this.$children as Array<InstanceType<typeof TTabPanel>>).filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
+      if (!this.listPanels) {
+        this.panels = this.panels || [];
+        return;
+      }
+      const newPanels = this.listPanels
+        .map((panel: VNode) => panel.componentInstance as InstanceType<typeof TTabPanel>)
+        .filter(Boolean)
+        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
       const isUnchange = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
       if (isUnchange()) return;
       this.panels = newPanels;
@@ -89,21 +104,22 @@ export default Vue.extend({
         </div>
       );
     },
-    updateListPanels() {
-      this.listPanels = this.list.map((item) => (
+    createListPanels() {
+      return this.list.map((item) => (
         <TTabPanel props={{ ...item }} onRemove={this.onRemoveTab}></TTabPanel>
       ));
     },
     renderList(): VNode[] {
       if (!this.listPanels) {
-        this.updateListPanels();
+        return this.createListPanels();
       }
       return this.listPanels;
     },
     renderContent() {
+      this.listPanels = this.list ? this.renderList() : this.$scopedSlots.default?.({});
       return (
         <div class={[`${prefix}-tabs__content`]}>
-          { this.list ? this.renderList() : this.$scopedSlots.default?.({}) }
+          { this.listPanels }
         </div>
       );
     },
