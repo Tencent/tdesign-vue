@@ -2,7 +2,7 @@
   <div class="container">
     <t-popup
       class="placement-top"
-      content="这是popup内容"
+      content="top"
       placement="top"
       showArrow
       destroyOnClose
@@ -11,7 +11,7 @@
     </t-popup>
     <t-popup
       class="placement-top-left"
-      content="这是popup内容"
+      content="top-left"
       placement="top-left"
       showArrow
       destroyOnClose
@@ -20,7 +20,7 @@
     </t-popup>
     <t-popup
       class="placement-top-right"
-      content="这是popup内容"
+      content="top-right"
       placement="top-right"
       showArrow
       destroyOnClose
@@ -29,7 +29,7 @@
     </t-popup>
     <t-popup
       class="placement-bottom"
-      content="这是popup内容"
+      content="bottom"
       placement="bottom"
       showArrow
       destroyOnClose
@@ -38,7 +38,7 @@
     </t-popup>
     <t-popup
       class="placement-bottom-left"
-      content="这是popup内容"
+      content="bottom-left"
       placement="bottom-left"
       showArrow
       destroyOnClose
@@ -47,7 +47,7 @@
     </t-popup>
     <t-popup
       class="placement-bottom-right"
-      content="这是popup内容"
+      content="bottom-right"
       placement="bottom-right"
       showArrow
       destroyOnClose
@@ -56,7 +56,7 @@
     </t-popup>
     <t-popup
       class="placement-left"
-      content="这是popup内容"
+      content="left"
       placement="left"
       showArrow
       destroyOnClose
@@ -65,7 +65,7 @@
     </t-popup>
     <t-popup
       class="placement-left-top"
-      content="这是popup内容"
+      content="left-top"
       placement="left-top"
       showArrow
       destroyOnClose
@@ -74,7 +74,7 @@
     </t-popup>
     <t-popup
       class="placement-left-bottom"
-      content="这是popup内容"
+      content="left-bottom"
       placement="left-bottom"
       showArrow
       destroyOnClose
@@ -83,7 +83,7 @@
     </t-popup>
     <t-popup
       class="placement-right"
-      content="这是popup内容"
+      content="right"
       placement="right"
       showArrow
       destroyOnClose
@@ -92,7 +92,7 @@
     </t-popup>
     <t-popup
       class="placement-right-top"
-      content="这是popup内容"
+      content="right-top"
       placement="right-top"
       showArrow
       destroyOnClose
@@ -101,7 +101,7 @@
     </t-popup>
     <t-popup
       class="placement-right-bottom"
-      content="这是popup内容"
+      content="right-bottom"
       placement="right-bottom"
       showArrow
       destroyOnClose
