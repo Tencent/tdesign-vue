@@ -43,7 +43,8 @@ export default function xhr({
 
   xhr.onload = function (event: ProgressEvent) {
     let response;
-    if (xhr.status < 200 || xhr.status >= 300) {
+    const isFail = xhr.status < 200 || xhr.status >= 300;
+    if (isFail) {
       return onError({ event, file, response });
     }
     const text = xhr.responseText || xhr.response;
