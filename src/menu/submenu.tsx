@@ -42,7 +42,6 @@ export default defineComponent({
       `${prefix}-submenu`,
       {
         [`${prefix}-is-disabled`]: props.disabled,
-        // [`${prefix}-is-active`]: isOpen.value,
         [`${prefix}-is-opened`]: isOpen.value,
       },
     ]);
@@ -56,6 +55,7 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${prefix}-menu__item`,
       {
+        [`${prefix}-is-disabled`]: props.disabled,
         [`${prefix}-is-opened`]: isOpen.value,
         [`${prefix}-is-active`]: isActive.value,
       },
@@ -74,6 +74,7 @@ export default defineComponent({
 
     // methods
     const handleMouseEnter = () => {
+      if (props.disabled) return;
       popupVisible.value = true;
     };
     const handleMouseLeave = () => {
@@ -84,6 +85,7 @@ export default defineComponent({
       selectSubMenu(isOpen ? menuItems.value : []);
     };
     const handleSubmenuItemClick = () => {
+      if (props.disabled) return;
       open(props.value);
     };
 

@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <t-menu theme="light" defaultValue="item1" @change="changeHandler" style="margin-right: 50px" height="550px">
+    <t-menu theme="light" defaultValue="item1" @change="changeHandler" style="margin-right: 40px" height="550px">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
@@ -15,7 +15,7 @@
       <t-menu-item value="item9">资源编辑</t-menu-item>
     </t-menu>
 
-    <t-menu theme="light" defaultValue="dashboard" style="margin-right: 50px" height="550px" >
+    <t-menu theme="light" defaultValue="dashboard" style="margin-right: 40px" height="550px" >
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>

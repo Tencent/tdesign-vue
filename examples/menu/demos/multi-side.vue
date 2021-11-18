@@ -1,19 +1,16 @@
 <template>
   <div class="box">
-    <t-menu theme="light" defaultValue="3-2" expandMutex :expanded="expanded" height="550px" :collapsed="collapsed">
-      <t-submenu value="3">
+    <t-menu theme="light" defaultValue="3-2" expandMutex :defaultExpanded="expanded" height="550px" :collapsed="collapsed">
+      <t-submenu title="消息区" value="3">
         <template #icon>
           <icon name="mail" />
         </template>
-        <template #title>
-          <span>消息区</span>
-        </template>
-        <t-submenu value="3-1" title="二级菜单">
+        <t-submenu title="二级菜单" value="3-1">
           <t-menu-item value="3-1-1">三级菜单内容</t-menu-item>
           <t-menu-item value="3-1-2">三级菜单内容</t-menu-item>
           <t-menu-item value="3-1-3">三级菜单内容</t-menu-item>
         </t-submenu>
-        <t-submenu value="3-5" title="二级菜单">
+        <t-submenu title="二级菜单" value="3-5">
           <t-menu-item value="3-5-1">三级菜单内容</t-menu-item>
           <t-menu-item value="3-5-2">三级菜单内容</t-menu-item>
           <t-menu-item value="3-5-3">三级菜单内容</t-menu-item>
@@ -28,12 +25,9 @@
         </template>
         个人中心
       </t-menu-item>
-      <t-submenu value="4">
+      <t-submenu disabled title="视频区" value="4">
         <template #icon>
           <icon name="play-circle" />
-        </template>
-        <template #title>
-          <span>视频区</span>
         </template>
         <t-menu-item value="4-1">二级菜单内容</t-menu-item>
         <t-menu-item value="4-2">二级菜单内容</t-menu-item>
@@ -53,7 +47,7 @@
     <t-menu
       theme="dark"
       defaultValue="2-1"
-      style="margin-left: 50px"
+      style="margin-left: 40px"
       :expanded="expanded2"
       height="550px"
       :collapsed="collapsed2"
@@ -76,12 +70,9 @@
         </template>
         根目录
       </t-menu-item>
-      <t-submenu value="2">
+      <t-submenu title="调度平台" value="2">
         <template #icon>
           <icon name="control-platform" />
-        </template>
-        <template #title>
-          <span>调度平台</span>
         </template>
         <t-menu-item value="2-1">二级菜单内容</t-menu-item>
         <t-menu-item value="2-2">二级菜单内容</t-menu-item>
@@ -93,12 +84,9 @@
         </template>
         精准监控
       </t-menu-item>
-      <t-submenu value="3">
+      <t-submenu disabled title="消息区" value="3">
         <template #icon>
           <icon name="mail" />
-        </template>
-        <template #title>
-          <span>消息区</span>
         </template>
         <t-menu-item value="3-1">二级菜单内容</t-menu-item>
         <t-menu-item value="3-2">二级菜单内容</t-menu-item>
@@ -110,12 +98,9 @@
         </template>
         个人中心
       </t-menu-item>
-      <t-submenu value="4">
+      <t-submenu title="视频区" value="4">
         <template #icon>
           <icon name="play-circle" />
-        </template>
-        <template #title>
-          <span>视频区</span>
         </template>
         <t-menu-item value="4-1">二级菜单内容</t-menu-item>
         <t-menu-item value="4-2">二级菜单内容</t-menu-item>
@@ -144,7 +129,7 @@ export default {
   data() {
     return {
       expanded: ['2', '3'],
-      expanded2: ['2', '3'],
+      expanded2: ['2'],
       disabled: true,
       collapsed: false,
       collapsed2: false,
