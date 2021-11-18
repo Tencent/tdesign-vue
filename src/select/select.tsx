@@ -492,13 +492,10 @@ export default mixins(getLocalReceiverMixins('select')).extend({
           ref='popup'
           visible={this.visible}
           class={`${name}-popup-reference`}
-          placement={popupObject.placement}
-          trigger={popupObject.trigger}
           disabled={disabled}
-          overlayClassName={popClass}
-          overlayStyle={popupObject.overlayStyle}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
+          { ...{ props: { ...popupObject, overlayClassName: popClass } } }
         >
           <div
             class={classes}
