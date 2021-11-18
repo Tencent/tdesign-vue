@@ -1,3 +1,5 @@
+import { VNodeChildren } from 'vue';
+
 type MenuValue = string | number;
 type MenuNode = MenuValue | VMenuData;
 
@@ -5,11 +7,13 @@ interface VMenuData {
   value: MenuValue;
   parent?: MenuNode;
   children: VMenuData[];
+  vnode?: VNodeChildren;
 }
 
 interface VMenuItem {
   value?: MenuValue;
   parent: MenuValue;
+  vnode?: VNodeChildren;
 }
 
 const getTreePaths = (node: VMenuData, val: MenuValue, ans: MenuValue[]): MenuValue[] => {
@@ -61,10 +65,11 @@ export default class VMenu {
   }
 
   add(item: VMenuItem) {
-    const { value, parent } = item;
+    const { value, parent, vnode } = item;
     const node: VMenuData = {
       value,
       parent,
+      vnode,
       children: [],
     };
 
@@ -120,5 +125,11 @@ export default class VMenu {
       }
     });
     return [...this.expandValues];
+  }
+
+  getChild(value: MenuValue) {
+    const target = DFS(this.data, value);
+
+    return target ? target.children : [];
   }
 }

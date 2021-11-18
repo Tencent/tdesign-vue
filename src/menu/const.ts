@@ -1,12 +1,6 @@
 import { Ref } from '@vue/composition-api';
-import { VNodeChildren } from 'vue';
 import { MenuValue } from './type';
 import VMenu from './v-menu';
-
-export interface TdMenuItem {
-  value: MenuValue;
-  label: VNodeChildren;
-}
 
 export type TdOpenType = 'add' | 'remove';
 export interface TdMenuInterface {
@@ -19,11 +13,9 @@ export interface TdMenuInterface {
   vMenu?: VMenu;
   select: (val: MenuValue) => void;
   open?: (val: MenuValue, type?: TdOpenType) => boolean | void;
-  selectSubMenu?: (items: TdMenuItem[]) => void;
 }
 
 export interface TdSubMenuInterface {
   value: MenuValue;
   hasIcon?: boolean;
-  addMenuItem?: (item: TdMenuItem) => void;
 }

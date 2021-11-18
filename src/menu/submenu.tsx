@@ -8,7 +8,7 @@ import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
 import Ripple from '../utils/ripple';
-import { TdMenuInterface, TdSubMenuInterface, TdMenuItem } from './const';
+import { TdMenuInterface, TdSubMenuInterface } from './const';
 
 export default defineComponent({
   name: 'TSubmenu',
@@ -23,11 +23,10 @@ export default defineComponent({
   setup(props, ctx) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const {
-      theme, activeValues, expandValues, mode, isHead, selectSubMenu, open,
+      theme, activeValues, expandValues, mode, isHead, open,
     } = menu;
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
 
-    const menuItems = ref([]); // 因composition-api的缺陷，不用reactive， 详见：https://github.com/vuejs/composition-api/issues/637
     const isActive = computed(() => activeValues.value.indexOf(props.value) > -1);
     const popupVisible = ref(false);
     const rippleColor = computed(() => theme.value === 'light' ? '#E7E7E7' : '#383838');
@@ -79,10 +78,6 @@ export default defineComponent({
     const handleMouseLeave = () => {
       popupVisible.value = false;
     };
-    const handleHeadmenuItemClick = () => {
-      const isOpen = open(props.value);
-      selectSubMenu(isOpen ? menuItems.value : []);
-    };
     const handleSubmenuItemClick = () => {
       open(props.value);
     };
@@ -95,21 +90,9 @@ export default defineComponent({
     provide<TdSubMenuInterface>('TdSubmenu', {
       value: props.value,
       hasIcon: !!ctx.slots.icon,
-      addMenuItem: (item: TdMenuItem) => {
-        menuItems.value.push(item);
-        if (submenu) {
-          submenu.addMenuItem(item);
-        }
-      },
     });
 
     onMounted(() => {
-      if (isOpen.value) {
-        if (selectSubMenu) {
-          selectSubMenu(menuItems.value);
-        }
-      }
-
       menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
       const instance = getCurrentInstance();
       isNested.value = /submenu/i.test(instance.parent.vnode?.tag);
@@ -125,7 +108,6 @@ export default defineComponent({
     });
 
     return {
-      menuItems,
       mode,
       isHead,
       isNested,
@@ -138,13 +120,12 @@ export default defineComponent({
       handleMouseEnter,
       handleMouseLeave,
       handleSubmenuItemClick,
-      handleHeadmenuItemClick,
     };
   },
   methods: {
     renderHeadSubmenu() {
       const normalSubmenu = [
-        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleHeadmenuItemClick}>
+        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {renderTNodeJSX(this as Vue, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">

@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <t-menu theme="light" defaultValue="3-2" expandMutex :expanded="expanded" height="550px" :collapsed="collapsed">
+    <t-menu theme="light" defaultValue="3-2" expandMutex :defaultExpanded="expanded" height="550px" :collapsed="collapsed">
       <t-submenu value="3">
         <template #icon>
           <icon name="mail" />
@@ -55,6 +55,7 @@
       defaultValue="2-1"
       style="margin-left: 50px"
       :expanded="expanded2"
+      @expand="expanded2 = $event"
       height="550px"
       :collapsed="collapsed2"
     >
