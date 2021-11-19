@@ -27,7 +27,7 @@
               <icon slot="icon" name="dashboard"/>仪表盘
             </t-menu-item>
             <t-menu-item value="resource">
-              <icon slot="icon" name="resources-list"/>资源列表
+              <icon slot="icon" name="server"/>资源列表
             </t-menu-item>
             <t-menu-item value="root">
               <icon slot="icon" name="root-list"/>根目录
