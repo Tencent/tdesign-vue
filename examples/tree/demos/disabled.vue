@@ -2,8 +2,11 @@
   <div class="tdesign-tree-demo">
     <div class="operations">
       <t-form>
-        <t-form-item label="是否禁用">
+        <t-form-item label="是否禁用整个 tree" labelWidth="150">
           <t-switch v-model="disabled" />
+        </t-form-item>
+        <t-form-item label="是否只禁用 checkbox" labelWidth="200">
+          <t-switch v-model="disableCheck" />
         </t-form-item>
       </t-form>
     </div>
@@ -13,6 +16,21 @@
       checkable
       expand-all
       :disabled="disabled"
+      :disableCheck="disableCheck"
+    />
+    <div class="operations">
+      <t-form>
+        <t-form-item label="禁用指定节点 checkbox" labelWidth="200">
+          <t-switch v-model="disableTarget" />
+        </t-form-item>
+      </t-form>
+    </div>
+    <t-tree
+      :data="items"
+      hover
+      checkable
+      expand-all
+      :disableCheck="fnDisableCheck"
     />
   </div>
 </template>
@@ -22,6 +40,8 @@ export default {
   data() {
     return {
       disabled: true,
+      disableCheck: false,
+      disableTarget: true,
       items: [{
         label: '1',
         children: [{
@@ -48,6 +68,19 @@ export default {
         }],
       }],
     };
+  },
+  methods: {
+    fnDisableCheck(node) {
+      const list = [
+        '1.1',
+        '1.2',
+        '2.1',
+      ];
+      if (list.indexOf(node.label) >= 0) {
+        return this.disableTarget;
+      }
+      return false;
+    },
   },
 };
 </script>

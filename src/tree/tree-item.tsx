@@ -147,9 +147,14 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
           node,
         });
       }
+
       iconNode = (
         <span
-          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon, isDefaultIcon ? CLASS_NAMES.treeIconDefault : '']}
+          class={[
+            CLASS_NAMES.treeIcon,
+            CLASS_NAMES.folderIcon,
+            isDefaultIcon ? CLASS_NAMES.treeIconDefault : '',
+          ]}
           trigger="expand"
           ignore="active"
         >{iconNode}</span>
@@ -158,7 +163,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
     },
     renderLabel(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
-      const { label, scopedSlots } = treeScope;
+      const { label, scopedSlots, disableCheck } = treeScope;
       const checkProps = treeScope.checkProps || {};
 
       let labelNode = null;
@@ -186,6 +191,20 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       ];
 
       if (node.vmCheckable) {
+        let checkboxDisabled = false;
+        if (typeof disableCheck === 'function') {
+          checkboxDisabled = disableCheck(node);
+        } else {
+          checkboxDisabled = !!disableCheck;
+        }
+        if (node.isDisabled()) {
+          checkboxDisabled = true;
+        }
+        const itemCheckProps = {
+          ...checkProps,
+          disabled: checkboxDisabled,
+        };
+
         labelNode = (
           <TCheckBox
             v-ripple
@@ -196,7 +215,7 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
             name={String(node.value)}
             onChange={() => this.handleChange()}
             ignore="expand,active"
-            {...{ props: checkProps }}
+            {...{ props: itemCheckProps }}
           >{labelNode}</TCheckBox>
         );
       } else {
