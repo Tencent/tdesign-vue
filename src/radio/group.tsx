@@ -98,7 +98,10 @@ export default Vue.extend({
       if (this.buttonStyle !== 'solid' && this.variant === 'outline') return;
 
       const checkedRadio: HTMLElement = this.$el.querySelector(`.${radioBtnName}.${CLASSNAMES.STATUS.checked}`);
-      if (!checkedRadio) return;
+      if (!checkedRadio) {
+        this.barStyle = { width: 0, left: 0 };
+        return;
+      }
       const { offsetWidth, offsetLeft } = checkedRadio;
       this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
     },
