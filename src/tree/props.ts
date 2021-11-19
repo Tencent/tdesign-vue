@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:12
+ * updated at 2021-11-18 10:43:23
  * */
 
 import { PropType } from 'vue';
@@ -19,7 +19,7 @@ export default {
   },
   /** 是否允许多个节点同时高亮 */
   activeMultiple: Boolean,
-  /** 树节点是否可选 */
+  /** 隐藏节点复选框 */
   checkable: Boolean,
   /** 透传属性到 checkbox 组件。参考 checkbox 组件 API */
   checkProps: {
@@ -31,6 +31,11 @@ export default {
   data: {
     type: Array as PropType<TdTreeProps['data']>,
     default: (): TdTreeProps['data'] => [],
+  },
+  /** 禁用复选框，可支持禁用不同的行 */
+  disableCheck: {
+    type: [Boolean, Function] as PropType<TdTreeProps['disableCheck']>,
+    default: false,
   },
   /** 是否禁用树操作 */
   disabled: Boolean,

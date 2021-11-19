@@ -31,12 +31,14 @@ export default defineComponent({
       `${prefix}-menu`,
       { [`${prefix}-menu--scroll`]: mode.value !== 'popup' },
     ]);
-    const { width } = props;
-    const expandWidth = typeof width === 'number' ? `${width}px` : width;
-    const styles = computed(() => ({
-      height: '100%',
-      width: props.collapsed ? '64px' : expandWidth,
-    }));
+    const styles = computed(() => {
+      const { width } = props;
+      const expandWidth = typeof width === 'number' ? `${width}px` : width;
+      return {
+        height: '100%',
+        width: props.collapsed ? '64px' : expandWidth,
+      };
+    });
     const activeValue = ref(props.defaultValue || props.value);
     const activeValues = ref([]);
     const expandValues = ref(props.expanded || []);
@@ -68,21 +70,25 @@ export default defineComponent({
       isHead: false,
       vMenu,
       select: (value: MenuValue) => {
-        activeValue.value = value;
         emitChange(value);
       },
       open: (value: MenuValue, type: TdOpenType) => {
+        let expanded = [...expandValues.value];
+
         if (mode.value === 'normal') {
-          expandValues.value = vMenu.expand(value);
-        } else if (type === 'add') {
-          if (expandValues.value.indexOf(value) === -1) { // 可能初始expanded里包含了该value
-            expandValues.value.push(value);
+          expanded = vMenu.expand(value);
+        } else {
+          const index = expanded.indexOf(value);
+
+          if (type === 'add') {
+            if (index === -1) { // 可能初始expanded里包含了该value
+              expanded.push(value);
+            }
+          } else if (type === 'remove') {
+            expanded.splice(index, 1);
           }
-        } else if (type === 'remove') {
-          const index = expandValues.value.indexOf(value);
-          expandValues.value.splice(index, 1);
         }
-        emitExpand(expandValues.value);
+        emitExpand(expanded);
       },
     });
 

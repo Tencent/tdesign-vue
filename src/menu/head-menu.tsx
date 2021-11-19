@@ -4,7 +4,7 @@ import {
 import { prefix } from '../config';
 import props from './head-menu-props';
 import { MenuValue } from './type';
-import { TdMenuInterface, TdMenuItem, TdOpenType } from './const';
+import { TdMenuInterface, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
@@ -52,36 +52,27 @@ export default defineComponent({
       activeValue,
       activeValues,
       select: (value: MenuValue) => {
-        activeValue.value = value;
         emitChange(value);
       },
-      selectSubMenu: (menuItems: TdMenuItem[]) => {
-        submenu.length = 0;
-        submenu.push(...menuItems);
-      },
       open: (value: MenuValue, type: TdOpenType) => {
+        const expanded = [...expandValues.value];
+        const index = expanded.indexOf(value);
+
         if (mode.value === 'popup') {
           if (type === 'add') {
-            if (expandValues.value.indexOf(value) === -1) { // 可能初始expanded里包含了该value
-              expandValues.value.push(value);
+            if (index === -1) { // 可能初始expanded里包含了该value
+              expanded.push(value);
             }
           } else if (type === 'remove') {
-            const index = expandValues.value.indexOf(value);
-            expandValues.value.splice(index, 1);
+            expanded.splice(index, 1);
           }
-          return;
+        } else {
+          expanded.splice(0, 1);
+          if (index === -1) {
+            expanded.push(value);
+          }
         }
-
-        const index = expandValues.value.indexOf(value);
-
-        expandValues.value.splice(0, 1);
-        if (index === -1) {
-          expandValues.value.push(value);
-          emitExpand(expandValues.value);
-          return true;
-        }
-        emitExpand(expandValues.value);
-        return false;
+        emitExpand(expanded);
       },
     });
 
@@ -91,10 +82,18 @@ export default defineComponent({
     };
 
     // watch
+    const handleSubmenuExpand = (value: MenuValue) => {
+      const ans = vMenu.getChild(value);
+      submenu.length = 0;
+      submenu.push(...ans);
+    };
     watch(
       () => props.expanded,
       (value) => {
         expandValues.value = value;
+        if (mode.value === 'normal') {
+          handleSubmenuExpand(value[0]);
+        }
       },
     );
     const updateActiveValues = (value: MenuValue) => {
@@ -103,9 +102,15 @@ export default defineComponent({
     };
     watch(() => props.value, updateActiveValues);
     watch(() => props.defaultValue, updateActiveValues);
+    watch(() => props.expandType, (value) => {
+      mode.value = value;
+    });
 
     onMounted(() => {
       activeValues.value = vMenu.select(activeValue.value);
+      if (expandValues.value?.length > 0) {
+        handleSubmenuExpand(expandValues.value[0]); // 顶部导航只能同时展开一个子菜单
+      }
     });
 
     return {
@@ -126,7 +131,7 @@ export default defineComponent({
           {
             <t-tabs value={this.activeValue} onChange={this.handleTabChange}>
               { this.submenu.map((item) => (
-                <t-tab-panel value={item.value} label={item.label[0].text} />
+                <t-tab-panel value={item.value} label={item.vnode[0].text} />
               ))}
             </t-tabs>
           }

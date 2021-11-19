@@ -19,11 +19,29 @@ export type HeadMenuProps = TdHeadMenuProps;
 export type SubmenuProps = TdSubmenuProps;
 export type MenuItemProps = TdMenuItemProps;
 
-export const Menu = withInstall(mapProps(['value'], {
+export const Menu = withInstall(mapProps([
+  {
+    name: 'value',
+    event: ['change', 'update:value'],
+  },
+  {
+    name: 'expanded',
+    event: ['expand', 'update:expanded'],
+  },
+], {
   model: { prop: 'value', event: 'change' },
 })(_Menu), VueCompositionAPI);
 
-export const HeadMenu = withInstall(mapProps(['value'], {
+export const HeadMenu = withInstall(mapProps([
+  {
+    name: 'value',
+    event: ['change', 'update:value'],
+  },
+  {
+    name: 'expanded',
+    event: ['expand', 'update:expanded'],
+  },
+], {
   model: { prop: 'value', event: 'change' },
 })(_HeadMenu), VueCompositionAPI);
 

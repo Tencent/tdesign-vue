@@ -21,7 +21,7 @@ import { emitEvent } from '../utils/event';
 import {
   HTMLInputEvent,
   SuccessContext,
-  ProgressContext,
+  InnerProgressContext,
   UploadRemoveOptions,
   FlowRemoveContext,
   URL,
@@ -228,7 +228,12 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
           status: 'waiting',
           ...file,
         };
-        uploadFile.url = this.getLocalFileURL(fileRaw);
+        // uploadFile.url = this.getLocalFileURL(fileRaw);
+        const reader = new FileReader();
+        reader.readAsDataURL(fileRaw);
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+          uploadFile.url = event.target.result as string;
+        };
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
@@ -278,17 +283,9 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
           clearInterval(timer);
         }
         this.handleProgress({
-          event: {
-            ...new Event('progress'),
-            ...{
-              lengthComputable: false,
-              loaded: file.percent,
-              target: null,
-              total: 1,
-            },
-          },
           file,
           percent: file.percent,
+          type: 'mock',
         });
       }, 10);
     },
@@ -338,39 +335,56 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
       });
     },
 
-    onError(options: { event?: ProgressEvent; file: UploadFile; response?: any }) {
-      const { event, file, response } = options;
+    onError(options: { event?: ProgressEvent; file: UploadFile; response?: any; resFormatted?: boolean }) {
+      const {
+        event, file, response, resFormatted,
+      } = options;
       file.status = 'fail';
       this.loadingFile = file;
       let res = response;
-      if (typeof this.formatResponse === 'function') {
-        res = this.formatResponse(response);
+      if (!resFormatted && typeof this.formatResponse === 'function') {
+        res = this.formatResponse(response, { file });
       }
       this.errorMsg = res?.error;
       const context = { e: event, file };
       emitEvent<Parameters<TdUploadProps['onFail']>>(this, 'fail', context);
     },
 
-    handleProgress({ event, file, percent }: ProgressContext) {
-      file.percent = percent;
+    handleProgress({
+      event, file, percent, type = 'real',
+    }: InnerProgressContext) {
+      file.percent = Math.min(percent, 100);
       this.loadingFile = file;
-      const progressCtx = { percent, e: event, file };
+      const progressCtx = {
+        percent, e: event, file, type,
+      };
       emitEvent<Parameters<TdUploadProps['onProgress']>>(this, 'progress', progressCtx);
     },
 
     handleSuccess({ event, file, response }: SuccessContext) {
       file.status = 'success';
-      file.url = response.url || file.url;
+      let res = response;
+      if (typeof this.formatResponse === 'function') {
+        res = this.formatResponse(response, { file });
+      }
+      // 如果返回值存在 error，则认为当前接口上传失败
+      if (res?.error) {
+        this.onError({
+          event, file, response: res, resFormatted: true,
+        });
+        return;
+      }
+      file.url = res.url || file.url;
       // 从待上传文件队列中移除上传成功的文件
       const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
       this.toUploadFiles.splice(index, 1);
       // 上传成功的文件发送到 files
-      const newFile: UploadFile = { ...file, response };
+      const newFile: UploadFile = { ...file, response: res };
       const files = this.multiple ? this.files.concat(newFile) : [newFile];
-      const context = { e: event, response, trigger: 'upload-success' };
+      const context = { e: event, response: res, trigger: 'upload-success' };
       this.emitChangeEvent(files, context);
       const sContext = {
-        file, fileList: files, e: event, response,
+        file, fileList: files, e: event, response: res,
       };
       emitEvent<Parameters<TdUploadProps['onSuccess']>>(this, 'success', sContext);
       // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL

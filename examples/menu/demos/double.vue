@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <t-head-menu defaultValue="1-1" :expanded="expanded">
+    <t-head-menu defaultValue="1-1" :defaultExpanded="expanded">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo">
       </template>
@@ -27,7 +27,7 @@
         <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis"/></a>
       </template>
     </t-head-menu>
-    <t-head-menu defaultValue="1-1" theme="dark" :expanded="expanded2"  style="margin-top: 24px">
+    <t-head-menu defaultValue="1-1" theme="dark" :expanded="expanded2" @expand="expanded2 = $event"  style="margin-top: 24px">
       <template #logo>
         <img width="136"  src="https://www.tencent.com/img/index/menu_logo.png" alt="logo">
       </template>

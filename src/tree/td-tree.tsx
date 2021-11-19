@@ -1,6 +1,7 @@
 // import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
 import { VNode } from 'vue';
 import upperFirst from 'lodash/upperFirst';
+import pick from 'lodash/pick';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import TreeStore from '../_common/js/tree/tree-store';
@@ -96,104 +97,14 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     data(list) {
       this.rebuild(list);
     },
-    keys(nKeys) {
-      this.store.setConfig({
-        keys: nKeys,
-      });
-    },
     value(nVal) {
       this.store.replaceChecked(nVal);
     },
     expanded(nVal) {
       this.store.replaceExpanded(nVal);
     },
-    expandAll(isExpandAll) {
-      this.store.setConfig({
-        expandAll: isExpandAll,
-      });
-    },
-    expandLevel(nExpandLevel) {
-      this.store.setConfig({
-        expandLevel: nExpandLevel,
-      });
-    },
-    expandMutex(nExpandMutex) {
-      this.store.setConfig({
-        expandMutex: nExpandMutex,
-      });
-    },
-    expandParent(isExpandParent) {
-      this.store.setConfig({
-        expandParent: isExpandParent,
-      });
-    },
-    activable(isActivable) {
-      this.store.setConfig({
-        activable: isActivable,
-      });
-    },
-    activeMultiple(isActiveMultiple) {
-      this.store.setConfig({
-        activeMultiple: isActiveMultiple,
-      });
-    },
     actived(nVal) {
       this.store.replaceActived(nVal);
-    },
-    disabled(isDisabled) {
-      this.store.setConfig({
-        disabled: isDisabled,
-      });
-    },
-    checkable(isCheckAble) {
-      this.store.setConfig({
-        checkable: isCheckAble,
-      });
-    },
-    checkStrictly(isCheckStrictly) {
-      this.store.setConfig({
-        checkStrictly: isCheckStrictly,
-      });
-    },
-    load(fn) {
-      this.store.setConfig({
-        load: fn,
-      });
-    },
-    lazy(isLazy) {
-      this.store.setConfig({
-        lazy: isLazy,
-      });
-    },
-    valueMode(nMode) {
-      this.store.setConfig({
-        valueMode: nMode,
-      });
-    },
-    filter(fn) {
-      const { store } = this;
-      store.setConfig({
-        filter: fn,
-      });
-      store.updateAll();
-    },
-    checkProps(props) {
-      this.treeScope.checkProps = props;
-    },
-    empty(tnode) {
-      this.treeScope.empty = tnode;
-    },
-    icon(tnode) {
-      this.treeScope.icon = tnode;
-    },
-    label(tnode) {
-      this.treeScope.label = tnode;
-    },
-    line(tnode) {
-      this.treeScope.line = tnode;
-    },
-    operations(tnode) {
-      this.treeScope.operations = tnode;
     },
   },
   methods: {
@@ -249,11 +160,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       const {
         store,
         treeNodes,
-        treeScope,
-        $scopedSlots: scopedSlots,
       } = this;
-
-      treeScope.scopedSlots = scopedSlots;
 
       const nodesMap = this.getNodesMap();
       this.updateNodesMap();
@@ -287,46 +194,42 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         }
       });
     },
-
+    // 同步 Store 选项
+    updateStoreConfig() {
+      const { store } = this;
+      if (!store) return;
+      // 统一更新选项，然后在 store 统一识别属性更新
+      const storeProps = pick(this, [
+        'keys',
+        'expandAll',
+        'expandLevel',
+        'expandMutex',
+        'expandParent',
+        'activable',
+        'activeMultiple',
+        'disabled',
+        'checkable',
+        'checkStrictly',
+        'load',
+        'lazy',
+        'valueMode',
+        'filter',
+      ]);
+      store.setConfig(storeProps);
+    },
     // 初始化树结构
     build() {
       let list = this.data;
       const {
-        activable,
-        activeMultiple,
-        checkable,
-        checkStrictly,
         expanded,
-        expandAll,
-        expandLevel,
-        expandMutex,
         expandParent,
         actived,
-        disabled,
-        load,
-        lazy,
         value,
         valueMode,
         filter,
       } = this;
 
-      if (!Array.isArray(list)) {
-        list = [];
-      }
-
       const store = new TreeStore({
-        keys: this.keys,
-        activable,
-        activeMultiple,
-        checkable,
-        checkStrictly,
-        expandAll,
-        expandLevel,
-        expandMutex,
-        expandParent,
-        disabled,
-        load,
-        lazy,
         valueMode: valueMode as TypeValueMode,
         filter,
         onLoad: (info: TypeEventState) => {
@@ -339,6 +242,11 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
 
       // 初始化数据
       this.store = store;
+      this.updateStoreConfig();
+
+      if (!Array.isArray(list)) {
+        list = [];
+      }
       store.append(list);
 
       // 刷新节点，必须在配置选中之前执行
@@ -374,13 +282,11 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       // 树的数据初始化之后，需要立即进行一次视图刷新
       this.refresh();
     },
-
     rebuild(list: TdTreeProps['data']) {
       this.getNodesMap().clear();
       this.treeNodes.length = 0;
       this.store.reload(list);
     },
-
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);
       return this.setActived(node, !node.isActived());
@@ -597,7 +503,24 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     const {
       classList,
       treeNodes,
+      // 用于同步 slot 属性
+      treeScope,
+      $scopedSlots: scopedSlots,
     } = this;
+
+    const scopeProps = pick(this, [
+      'checkProps',
+      'disableCheck',
+      'empty',
+      'icon',
+      'label',
+      'line',
+      'operations',
+    ]);
+
+    this.updateStoreConfig();
+    Object.assign(treeScope, scopeProps);
+    treeScope.scopedSlots = scopedSlots;
 
     let emptyNode: TNodeReturnValue = null;
     let treeNodeList = null;

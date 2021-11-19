@@ -49,6 +49,7 @@
       defaultValue="2-1"
       style="margin-left: 40px"
       :expanded="expanded2"
+      @expand="expanded2 = $event"
       height="550px"
       :collapsed="collapsed2"
     >

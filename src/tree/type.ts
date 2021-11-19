@@ -1,6 +1,6 @@
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-18 15:53:16
+ * updated at 2021-11-18 10:43:23
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -26,7 +26,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
    */
   activeMultiple?: boolean;
   /**
-   * 树节点是否可选
+   * 隐藏节点复选框
    * @default false
    */
   checkable?: boolean;
@@ -44,6 +44,11 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
    * @default []
    */
   data?: Array<DataOption>;
+  /**
+   * 禁用复选框，可支持禁用不同的行
+   * @default false
+   */
+  disableCheck?: boolean | ((node: TreeNodeModel) => boolean);
   /**
    * 是否禁用树操作
    */
@@ -363,10 +368,6 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
   isLeaf: () => boolean;
 }
 
-export interface TreeKeysType {
-  value?: string;
-  label?: string;
-  children?: string
-}
+export interface TreeKeysType { value?: string; label?: string; children?: string }
 
 export type TreeNodeValue = string | number;
