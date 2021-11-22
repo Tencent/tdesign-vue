@@ -142,7 +142,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         && !this.disabled
         && (
           (!this.multiple && (this.value || this.value === 0))
-          || (this.multiple && this.value instanceof Array && this.value.length)
+          || (this.multiple && Array.isArray(this.value) && this.value.length)
         ));
     },
     showArrow(): boolean {
@@ -151,7 +151,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         || !this.isHover
         || this.disabled
         || (!this.multiple && !this.value && this.value !== 0)
-        || (this.multiple && this.value instanceof Array && !this.value.length)
+        || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
       );
     },
     canFilter(): boolean {
@@ -283,7 +283,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     multiLimitDisabled(value: string | number) {
       if (this.multiple && this.max) {
         if (
-          this.value instanceof Array
+          Array.isArray(this.value)
           && this.value.indexOf(value) === -1
           && this.max <= this.value.length
         ) {
@@ -310,7 +310,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     onOptionClick(value: string | number, e: MouseEvent) {
       if (this.value !== value) {
         if (this.multiple) {
-          const tempValue = this.value instanceof Array ? [].concat(this.value) : [];
+          const tempValue = Array.isArray(this.value) ? [].concat(this.value) : [];
           if (this.labelInValue) {
             const index = tempValue.map((item) => get(item, this.realValue)).indexOf(value);
             if (index > -1) {
@@ -350,7 +350,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
       const val = this.value[index];
       const removeOption = this.realOptions.filter((item) => get(item, this.realValue) === val);
-      const tempValue = this.value instanceof Array ? [].concat(this.value) : [];
+      const tempValue = Array.isArray(this.value) ? [].concat(this.value) : [];
       tempValue.splice(index, 1);
       this.emitChange(tempValue);
       emitEvent<Parameters<TdSelectProps['onRemove']>>(this, 'remove', { value: val, data: removeOption[0], e });
@@ -373,18 +373,22 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     getOptions(option: OptionInstance) {
       // create option值不push到options里
       if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
-      const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value);
+      const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label);
       if (!tmp.length) {
         this.hasOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
         const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        this.realOptions.push(valueLabelAble);
+        this.realOptions = [valueLabelAble].concat(this.realOptions);
       }
     },
-    destroyOptions(index: number) {
-      this.realOptions.splice(index, 1);
+    destroyOptions(option: OptionInstance) {
+      this.realOptions.forEach((item, index) => {
+        if (item[this.realValue] === option.value && item[this.realLabel] === option.label) {
+          this.realOptions.splice(index, 1);
+        }
+      });
     },
     emitChange(val: SelectValue | Array<SelectValue>) {
       let value: SelectValue | Array<SelectValue> | Array<TdOptionProps> | TdOptionProps;
