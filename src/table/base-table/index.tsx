@@ -263,7 +263,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       }, 10);
       //  fixed table header
       const paddingRight = `${scrollBarWidth}px`;
-      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight }} ref="scrollHeader">
+      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight: columns.length > 1 ? paddingRight : '' }} ref="scrollHeader">
           <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
@@ -281,7 +281,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
           ref="scrollBody"
           onScroll={handleScroll}
         >
-          <table style={{ tableLayout }}>
+          <table ref="table" style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderBody()}
             {this.renderFooter()}
@@ -330,6 +330,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       isLoading,
       isEmpty,
       useFixedHeader,
+      hasFixedColumns,
     } = this;
     const body: Array<VNode> = [];
     // colgroup
@@ -360,15 +361,20 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
       [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
     }];
+    let width;
+    const { tableContent: tableContentEl, table: tableEl } = this.$refs as Record<string, HTMLElement>;
+    if (!hasFixedColumns && tableContentEl && tableContentEl.clientWidth < tableEl.clientWidth) {
+      width = `${tableEl.clientWidth}px`;
+    }
     return (
-      <div class={commonClass}>
+      <div class={commonClass} style={{ width }}>
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
           <div
             ref='tableContent'
             class={tableContentClass}
             onScroll={handleScroll}
           >
-            {fixedTableContent || <table style={{ tableLayout }}>{tableContent}</table>}
+            {fixedTableContent || <table ref="table" style={{ tableLayout }}>{tableContent}</table>}
           </div>
           {body}
         </Loading>
