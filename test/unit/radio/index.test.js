@@ -40,15 +40,23 @@ describe('Radio', () => {
   });
   // test events
   describe('@event', () => {
-    it('Event passthrough ', () => {
+    it('Event passthrough ', async () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
           return <Radio onChange={fn}>Radio</Radio>;
         },
       });
-      wrapper.findComponent(Radio).trigger('click');
+      wrapper.find('input[type="radio"]').setChecked();
       expect(fn).toHaveBeenCalled();
+
+      // vue-test-utils, `radioInput.setChecked();` is a bug, https://github.com/vuejs/vue-test-utils/issues/1930
+      // const wrapper = mount(Radio);
+      // const radioInput = wrapper.find('input[type="radio"]');
+      // await radioInput.setChecked();
+      // expect(radioInput.element.checked).toBeTruthy();
+      // expect(wrapper.emitted().change?.length).toBe(1);
+      // expect(wrapper.emitted().change[0][0]).toBeTruthy();
     });
   });
 });
@@ -151,7 +159,7 @@ describe('Radio RadioGroup', () => {
 
   // test events
   describe('@event', () => {
-    it('Event passthrough ', () => {
+    it('Event passthrough ', async () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
@@ -163,7 +171,7 @@ describe('Radio RadioGroup', () => {
           );
         },
       });
-      wrapper.findComponent(Radio).trigger('click');
+      await wrapper.find('input[type="radio"]').setChecked();
       expect(fn).toHaveBeenCalled();
     });
   });

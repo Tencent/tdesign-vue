@@ -3,11 +3,10 @@
     <t-select
       size="small"
       v-model="value1"
-      placeholder="-请选择-"
-      :clearable="true"
       :popupProps="popupProps"
+      placeholder="-请选择-"
       style="width: 200px;display: inline-block;margin-right: 20px;"
-
+      clearable
     >
       <t-option
         v-for="(item, index) in options"
@@ -39,17 +38,11 @@
 export default {
   data() {
     return {
-      options: [{
-        label: '上海',
-        value: 'shanghai',
-      }, {
-        label: '北京',
-        value: 'beijing',
-        disabled: true,
-      }, {
-        label: '深圳',
-        value: 'shenzhen',
-      }],
+      options: [
+        { label: '上海', value: 'shanghai' },
+        { label: '北京', value: 'beijing' },
+        { label: '深圳', value: 'shenzhen' },
+      ],
       value: '',
       value1: '',
       value2: '',

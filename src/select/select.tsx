@@ -19,9 +19,13 @@ import Tag from '../tag/index';
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import props from './props';
-import { Options, SelectValue, TdSelectProps } from './type';
+import {
+  SelectOption, TdOptionProps, SelectValue, TdSelectProps, SelectOptionGroup,
+} from './type';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
+
+export type OptionInstance = InstanceType<typeof Option>;
 
 const name = `${prefix}-select`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
@@ -52,7 +56,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       labelInValue: this.valueType === 'object',
       realValue: this.keys && this.keys.value ? this.keys.value : 'value',
       realLabel: this.keys && this.keys.label ? this.keys.label : 'label',
-      realOptions: [] as Array<Options>,
+      realOptions: [] as Array<TdOptionProps>,
     };
   },
   components: {
@@ -118,6 +122,11 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
       return false;
     },
+    // 是否为分组选择器
+    isGroupOption(): boolean {
+      const firstOption = this.options?.[0];
+      return !!(firstOption && ('group' in firstOption) && ('children' in firstOption));
+    },
     filterPlaceholder(): string {
       if (this.multiple && Array.isArray(this.value) && this.value.length) {
         return '';
@@ -149,7 +158,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       return this.filterable || isFunction(this.filter);
     },
     showLoading(): boolean {
-      return this.canFilter && this.loading && !this.disabled;
+      return this.loading && !this.disabled;
     },
     showFilter(): boolean {
       if (this.disabled) return false;
@@ -160,7 +169,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     },
     selectedSingle(): string {
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
-        let target: Array<Options> = [];
+        let target: Array<TdOptionProps> = [];
         if (this.realOptions && this.realOptions.length) {
           target = this.realOptions.filter((item) => get(item, this.realValue) === this.value);
         }
@@ -178,9 +187,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
       return '';
     },
-    selectedMultiple(): Array<Options> {
+    selectedMultiple(): Array<TdOptionProps> {
       if (this.multiple && Array.isArray(this.value) && this.value.length) {
-        return this.value.map((item: string|number|Options) => {
+        return this.value.map((item: string | number | TdOptionProps) => {
           if (typeof item === 'object') {
             return item;
           }
@@ -197,7 +206,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
       return propsObject;
     },
-    filterOptions(): Array<Options> {
+    filterOptions(): Array<TdOptionProps> {
       // filter优先级 filter方法>仅filterable
       if (isFunction(this.filter)) {
         return this.realOptions.filter((option) => this.filter(this.searchInput, option));
@@ -208,7 +217,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       }
       return [];
     },
-    displayOptions(): Array<Options> {
+    displayOptions(): Array<TdOptionProps> {
       // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
       if (isFunction(this.onSearch) || this.$listeners.search) {
         return this.realOptions;
@@ -219,6 +228,13 @@ export default mixins(getLocalReceiverMixins('select')).extend({
         return this.filterOptions;
       }
       return this.realOptions;
+    },
+    displayOptionsMap(): Map<TdOptionProps, boolean> {
+      const map = new Map();
+      this.displayOptions.forEach((item) => {
+        map.set(item, true);
+      });
+      return map;
     },
   },
   watch: {
@@ -242,14 +258,28 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     },
     options: {
       immediate: true,
-      handler(options: Array<Options>) {
+      handler(options: SelectOption[]) {
         if (Array.isArray(options)) {
-          this.realOptions = [...options];
+          this.realOptions = this.getRealOptions(options);
+        } else {
+          console.error('TDesign Select: options must be an array.');
         }
       },
     },
   },
   methods: {
+    getRealOptions(options: SelectOption[]): Array<TdOptionProps> {
+      if (this.isGroupOption) {
+        let arr: TdOptionProps[] = [];
+        options.forEach((item) => {
+          if ('children' in item) {
+            arr = arr.concat(item.children);
+          }
+        });
+        return arr;
+      }
+      return [...options];
+    },
     multiLimitDisabled(value: string | number) {
       if (this.multiple && this.max) {
         if (
@@ -340,7 +370,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       this.visible = false;
       emitEvent<Parameters<TdSelectProps['onClear']>>(this, 'clear', { e });
     },
-    getOptions(option: Options) {
+    getOptions(option: OptionInstance) {
       // create option值不push到options里
       if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
       const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value);
@@ -357,7 +387,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       this.realOptions.splice(index, 1);
     },
     emitChange(val: SelectValue | Array<SelectValue>) {
-      let value: SelectValue | Array<SelectValue> | Array<Options> | Options;
+      let value: SelectValue | Array<SelectValue> | Array<TdOptionProps> | TdOptionProps;
       if (this.labelInValue) {
         if (Array.isArray(val)) {
           if (!val.length) {
@@ -457,6 +487,42 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       input?.focus();
       this.focusing = true;
     },
+    renderGroupOptions(options: SelectOptionGroup[]) {
+      return (
+        <ul>
+          {options.map((groupList: SelectOptionGroup) => {
+            const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
+            return (
+              <t-option-group label={groupList.group} divider={groupList.divider}>
+                {this.renderOptions(children)}
+              </t-option-group>
+            );
+          })}
+        </ul>
+      );
+    },
+    // options 直传时
+    renderOptions(options: SelectOption[]) {
+      return (
+        <ul>
+          {options.map((item: TdOptionProps, index: number) => (
+            <t-option
+              value={get(item, this.realValue)}
+              label={get(item, this.realLabel)}
+              content={item.content}
+              disabled={item.disabled || this.multiLimitDisabled(get(item, this.realValue))}
+              key={index}
+            ></t-option>
+          ))}
+        </ul>
+      );
+    },
+    // 两类：普通选择器和分组选择器
+    renderDataWithOptions() {
+      return this.isGroupOption
+        ? this.renderGroupOptions(this.options as SelectOptionGroup[])
+        : this.renderOptions(this.displayOptions);
+    },
   },
   render(): VNode {
     const {
@@ -476,7 +542,6 @@ export default mixins(getLocalReceiverMixins('select')).extend({
       loadingText,
       emptyClass,
       hasOptions,
-      realValue,
       realLabel,
       showCreateOption,
       displayOptions,
@@ -515,7 +580,7 @@ export default mixins(getLocalReceiverMixins('select')).extend({
                 params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
               })
               : (
-                selectedMultiple.map((item: Options, index: number) => (
+                selectedMultiple.map((item: TdOptionProps, index: number) => (
                   <tag
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
@@ -594,23 +659,9 @@ export default mixins(getLocalReceiverMixins('select')).extend({
               )
             }
             {
-              // options直传时
               !hasOptions && displayOptions.length && !loading
-                ? <ul>
-                {
-                  displayOptions.map((item: Options, index: number) => (
-                      <t-option
-                        value={get(item, realValue)}
-                        label={get(item, realLabel)}
-                        disabled={item.disabled || this.multiLimitDisabled(get(item, realValue))}
-                        key={index}
-                      >
-                        { get(item, realLabel) }
-                      </t-option>
-                  ))
-                }
-              </ul>
-                : <span v-show={!loading && displayOptions.length}>{children}</span>
+                ? this.renderDataWithOptions()
+                : <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>{children}</ul>
             }
           </div>
         </Popup>

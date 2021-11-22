@@ -49,15 +49,15 @@ describe('Checkbox', () => {
 
   // test events
   describe('@event', () => {
-    it('Event passthrough ', () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return <Checkbox onChange={fn}>Checkbox</Checkbox>;
-        },
-      });
-      wrapper.findComponent(Checkbox).trigger('click');
-      expect(fn).toHaveBeenCalled();
+    it('Event passthrough ', async () => {
+      const wrapper = mount(Checkbox);
+      const checkboxInput = wrapper.find('input[type="checkbox"]');
+      await checkboxInput.setChecked();
+      expect(checkboxInput.element.checked).toBeTruthy();
+      // assert event count
+      expect(wrapper.emitted().change.length).toBe(1);
+      // assert event payload
+      expect(wrapper.emitted().change[0][0]).toBeTruthy();
     });
   });
 });
@@ -149,20 +149,27 @@ describe('Checkbox CheckboxGroup', () => {
 
   // test events
   describe('@event', () => {
-    it('Event passthrough ', () => {
-      const fn = jest.fn();
+    it('Event passthrough', async () => {
       const wrapper = mount({
         render() {
           return (
-            <CheckboxGroup onChange={fn}>
+            <CheckboxGroup>
               <Checkbox value="gz">广州</Checkbox>
               <Checkbox value="sz" disabled>深圳</Checkbox>
             </CheckboxGroup>
           );
         },
       });
-      wrapper.findComponent(Checkbox).trigger('click');
-      expect(fn).toHaveBeenCalled();
+      const checkboxInput = wrapper.find('input[type="checkbox"]');
+      await checkboxInput.setChecked();
+      const checkoxGroup = wrapper.findComponent(CheckboxGroup);
+      const checkbox = wrapper.findComponent(Checkbox);
+      expect(checkbox.emitted().change.length).toBe(1);
+      expect(checkoxGroup.emitted().change.length).toBe(1);
+      // 选中单项时间参数为 true
+      expect(checkbox.emitted().change[0][0]).toBeTruthy();
+      // checkboxGroup 事件参数为 ['gz']
+      expect(checkoxGroup.emitted().change[0][0]).toEqual(['gz']);
     });
   });
 });

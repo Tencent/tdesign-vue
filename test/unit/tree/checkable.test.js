@@ -267,7 +267,7 @@ describe('Tree:checkable', () => {
   });
 
   describe('props.valueMode', () => {
-    it('valueMode="onlyLeaf"', (done) => {
+    it('valueMode="onlyLeaf"', async () => {
       const data = [{
         value: 't1',
         children: [{
@@ -277,12 +277,6 @@ describe('Tree:checkable', () => {
           }],
         }],
       }];
-      const onChange = (checked, context) => {
-        expect(checked.length).toBe(1);
-        expect(checked[0]).toBe('t1.1.1');
-        expect(context.node.value).toBe('t1');
-        done();
-      };
       const wrapper = mount({
         render() {
           return (
@@ -290,18 +284,21 @@ describe('Tree:checkable', () => {
               ref="tree"
               data={data}
               checkable
-              onChange={onChange}
               valueMode="onlyLeaf"
             ></Tree>
           );
         },
       });
-      wrapper
-        .find('[data-value="t1"] .t-checkbox')
-        .trigger('click');
-    }, 10);
 
-    it('valueMode="all"', (done) => {
+      await wrapper.find('[data-value="t1"] input[type="checkbox"]')
+        .setChecked();
+      const treeWrapper = wrapper.findComponent(Tree);
+      const changeParams = treeWrapper.emitted().change[0];
+      expect(changeParams[0]).toEqual(['t1.1.1']);
+      expect(changeParams[1].node.value).toEqual('t1');
+    });
+
+    it('valueMode="all"', async () => {
       const data = [{
         value: 't1',
         children: [{
@@ -311,14 +308,6 @@ describe('Tree:checkable', () => {
           }],
         }],
       }];
-      const onChange = (checked, context) => {
-        expect(checked.length).toBe(3);
-        expect(checked[0]).toBe('t1');
-        expect(checked[1]).toBe('t1.1');
-        expect(checked[2]).toBe('t1.1.1');
-        expect(context.node.value).toBe('t1');
-        done();
-      };
       const wrapper = mount({
         render() {
           return (
@@ -326,18 +315,20 @@ describe('Tree:checkable', () => {
               ref="tree"
               data={data}
               checkable
-              onChange={onChange}
               valueMode="all"
             ></Tree>
           );
         },
       });
-      wrapper
-        .find('[data-value="t1"] .t-checkbox')
-        .trigger('click');
-    }, 10);
+      const treeWrapper = wrapper.findComponent(Tree);
+      await wrapper.find('[data-value="t1"] input[type="checkbox"]')
+        .setChecked();
+      const changeParams = treeWrapper.emitted().change[0];
+      expect(changeParams[0]).toEqual(['t1', 't1.1', 't1.1.1']);
+      expect(changeParams[1].node.value).toEqual('t1');
+    });
 
-    it('valueMode="parentFirst"', (done) => {
+    it('valueMode="parentFirst"', async () => {
       const data = [{
         value: 't1',
         children: [{
@@ -347,12 +338,6 @@ describe('Tree:checkable', () => {
           }],
         }],
       }];
-      const onChange = (checked, context) => {
-        expect(checked.length).toBe(1);
-        expect(checked[0]).toBe('t1');
-        expect(context.node.value).toBe('t1');
-        done();
-      };
       const wrapper = mount({
         render() {
           return (
@@ -360,15 +345,17 @@ describe('Tree:checkable', () => {
               ref="tree"
               data={data}
               checkable
-              onChange={onChange}
               valueMode="parentFirst"
             ></Tree>
           );
         },
       });
-      wrapper
-        .find('[data-value="t1"] .t-checkbox')
-        .trigger('click');
-    }, 10);
+      const treeWrapper = wrapper.findComponent(Tree);
+      await wrapper.find('[data-value="t1"] input[type="checkbox"]')
+        .setChecked();
+      const changeParams = treeWrapper.emitted().change[0];
+      expect(changeParams[0]).toEqual(['t1']);
+      expect(changeParams[1].node.value).toEqual('t1');
+    });
   });
 });

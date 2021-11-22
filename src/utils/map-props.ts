@@ -76,7 +76,7 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
 }
 
 export default function (props: (string | PropOption)[], options: Option = {}) {
-  function mapProps(componentConstructor: VueConstructor) {
+  function mapProps(componentConstructor: VueConstructor | any) {
     const component: ComponentOptions<Vue> = componentConstructor.prototype
       ? componentConstructor.prototype.constructor.options
       : componentConstructor;

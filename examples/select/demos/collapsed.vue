@@ -3,17 +3,17 @@
     <!-- 选项过多时，可折叠 -->
     <t-select
       v-model="value"
-      placeholder="-请选择-"
+      placeholder="请选择"
       multiple
       :minCollapsedNum="minCollapsedNum"
       :options="options"
     />
     <br/><br/>
 
-    <!-- 自定义折叠项内容，collapsedItems 为 function (value, count, collapsedSelectedItems) -->
+    <!-- 自定义折叠项内容，collapsedItems 为渲染函数 (value, count, collapsedSelectedItems) -->
     <t-select
       v-model="value"
-      placeholder="-请选择-"
+      placeholder="请选择"
       multiple
       :minCollapsedNum="minCollapsedNum"
       :collapsedItems="collapsedItems"
@@ -24,7 +24,7 @@
     <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) { value, count, collapsedSelectedItems }-->
     <t-select
       v-model="value"
-      placeholder="-请选择-"
+      placeholder="请选择"
       multiple
       :minCollapsedNum="minCollapsedNum"
       :options="options"
@@ -52,16 +52,11 @@
 export default {
   data() {
     return {
-      options: [{
-        label: '选项一',
-        value: '1',
-      }, {
-        label: '选项二',
-        value: '2',
-      }, {
-        label: '选项三',
-        value: '3',
-      }],
+      options: [
+        { label: '选项一', value: '1' },
+        { label: '选项二', value: '2' },
+        { label: '选项三', value: '3' },
+      ],
       value: ['1', '3'],
       minCollapsedNum: 1,
     };

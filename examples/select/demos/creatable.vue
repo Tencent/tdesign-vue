@@ -16,18 +16,12 @@
 export default {
   data() {
     return {
-      options: [{
-        label: '上海',
-        value: 'shanghai',
-      }, {
-        label: '北京',
-        value: 'beijing',
-      }, {
-        label: '深圳',
-        value: 'shenzhen',
-      }],
+      options: [
+        { label: '上海', value: 'shanghai' },
+        { label: '北京', value: 'beijing' },
+        { label: '深圳', value: 'shenzhen' },
+      ],
       value: '',
-      value2: [],
     };
   },
   methods: {

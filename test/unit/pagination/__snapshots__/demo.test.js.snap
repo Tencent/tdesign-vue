@@ -46,7 +46,8 @@ exports[`Pagination base demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -81,7 +82,7 @@ exports[`Pagination base demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -242,12 +243,14 @@ exports[`Pagination customizable demo works fine 1`] = `
                 <ul class="t-select-create-option" style="display: none;">
                   <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
                 </ul>
-                <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"><li title="10 条/页" class="t-select-option t-size-m"><span>10 条/页</span></li>
-                <li title="20 条/页" class="t-select-option t-is-selected t-size-m"><span>20 条/页</span></li>
-                <li title="30 条/页" class="t-select-option t-size-m"><span>30 条/页</span></li>
-                <li title="100 条/页" class="t-select-option t-size-m"><span>100 条/页</span></li>
-                <li title="200 条/页" class="t-select-option t-size-m"><span>200 条/页</span></li>
-                </span>
+                <li class="t-select-empty t-size-m">暂无数据</li>
+                <ul class="t-select__groups" style="display: none;">
+                  <li title="10 条/页" class="t-select-option t-size-m"><span>10 条/页</span></li>
+                  <li title="20 条/页" class="t-select-option t-is-selected t-size-m"><span>20 条/页</span></li>
+                  <li title="30 条/页" class="t-select-option t-size-m"><span>30 条/页</span></li>
+                  <li title="100 条/页" class="t-select-option t-size-m"><span>100 条/页</span></li>
+                  <li title="200 条/页" class="t-select-option t-size-m"><span>200 条/页</span></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -327,7 +330,8 @@ exports[`Pagination disabled demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -362,7 +366,7 @@ exports[`Pagination disabled demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -550,7 +554,8 @@ exports[`Pagination few demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -585,7 +590,7 @@ exports[`Pagination few demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -735,7 +740,8 @@ exports[`Pagination jump demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -770,7 +776,7 @@ exports[`Pagination jump demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -957,7 +963,8 @@ exports[`Pagination mini works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -992,7 +999,7 @@ exports[`Pagination mini works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -1165,7 +1172,8 @@ exports[`Pagination more works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -1200,7 +1208,7 @@ exports[`Pagination more works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -1395,7 +1403,8 @@ exports[`Pagination page-num demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -1430,7 +1439,7 @@ exports[`Pagination page-num demo works fine 1`] = `
                       每页 100 条
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -1603,7 +1612,8 @@ exports[`Pagination simple demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -1638,7 +1648,7 @@ exports[`Pagination simple demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>
@@ -1989,7 +1999,8 @@ exports[`Pagination simple-mini demo works fine 1`] = `
               >
                 暂无数据
               </li>
-              <span
+              <ul
+                class="t-select__groups"
                 style="display: none;"
               >
                 <li
@@ -2024,7 +2035,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
                     50 条/页
                   </span>
                 </li>
-              </span>
+              </ul>
             </div>
           </div>
         </div>
@@ -2375,7 +2386,8 @@ exports[`Pagination total demo works fine 1`] = `
                 >
                   暂无数据
                 </li>
-                <span
+                <ul
+                  class="t-select__groups"
                   style="display: none;"
                 >
                   <li
@@ -2410,7 +2422,7 @@ exports[`Pagination total demo works fine 1`] = `
                       50 条/页
                     </span>
                   </li>
-                </span>
+                </ul>
               </div>
             </div>
           </div>

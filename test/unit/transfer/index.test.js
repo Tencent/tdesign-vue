@@ -40,12 +40,12 @@ describe('Transfer', () => {
       });
 
       it(':checked.sync', async () => {
-        const wrapper = await mount({
+        const wrapper = mount({
           components: {
             Transfer,
           },
           template: `
-          <Transfer :data="data" :checked.sync="checkedValue" />
+            <Transfer :data="data" :checked.sync="checkedValue" />
           `,
           data() {
             return {
@@ -54,8 +54,7 @@ describe('Transfer', () => {
             };
           },
         });
-
-        wrapper.vm.$el.querySelectorAll('.t-transfer-list__item.t-checkbox')[2].click();
+        await wrapper.findAll('.t-checkbox-group input[type="checkbox"]').at(2).setChecked(false);
         expect(wrapper.vm.$data.checkedValue).toEqual(['1', '5']);
       });
     });
@@ -519,23 +518,17 @@ describe('Transfer', () => {
     describe('checked-change', () => {
       it('onCheckedChange', async () => {
         const fn = jest.fn();
-        const wrapper = await mount({
+        const wrapper = mount({
           render() {
             return <Transfer data={data} value={targetValue} pagination={pagination} on-checked-change={fn} />;
           },
         });
-
-        wrapper.findAll('.t-transfer-list-source .t-transfer-list__item.t-checkbox').at(3)
-          .trigger('click');
-
-        await wrapper.vm.$nextTick();
-
-        wrapper.findAll('.t-transfer-list-target .t-transfer-list__item.t-checkbox').at(0)
-          .trigger('click');
-
-        await wrapper.vm.$nextTick();
-
+        const sourceCheckboxes = wrapper.findAll('.t-transfer-list-source .t-checkbox-group input[type="checkbox"]');
+        await sourceCheckboxes.at(3).setChecked();
+        const targetSourceCheckboxes = wrapper.findAll('.t-transfer-list-target .t-checkbox-group input[type="checkbox"]');
+        await targetSourceCheckboxes.at(0).setChecked();
         expect(fn).toHaveBeenCalledTimes(2);
+
         expect(fn.mock.calls[0][0]).toEqual({
           checked: ['4'],
           sourceChecked: ['4'],

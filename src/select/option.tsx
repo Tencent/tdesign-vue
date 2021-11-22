@@ -1,12 +1,12 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import get from 'lodash/get';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderContent } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import ripple from '../utils/ripple';
 import props from './option-props';
-import { Options } from './type';
+import { TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
 import { ClassName } from '../common';
@@ -77,7 +77,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       if (!this.tSelect) return false;
       if (this.isCreatedOption) return true;
       if (this.tSelect.canFilter && this.tSelect.searchInput !== '') {
-        return this.tSelect.filterOptions.some((option: Options) => get(option, this.tSelect.realValue) === this.value);
+        return this.tSelect.filterOptions.some((option: TdOptionProps) => get(option, this.tSelect.realValue) === this.value);
       }
       return true;
     },
@@ -124,7 +124,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
     const {
       classes, labelText, selected, disabled, multiLimitDisabled, show,
     } = this;
-    const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
+    const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
     return (
       <li

@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import {
   defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance, watch,
 } from '@vue/composition-api';
@@ -128,16 +127,16 @@ export default defineComponent({
     renderHeadSubmenu() {
       const normalSubmenu = [
         <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
-          {renderTNodeJSX(this as Vue, 'title')}
+          {renderTNodeJSX(this, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">
-        {renderContent(this as Vue, 'default', 'content')}
+        {renderContent(this, 'default', 'content')}
         </ul>,
       ];
 
       const popupSubmenu = [
         <div class={this.submenuClass}>
-          {renderTNodeJSX(this as Vue, 'title')}
+          {renderTNodeJSX(this, 'title')}
           <fake-arrow
             overlayClassName={this.arrowClass}
             overlayStyle={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }}
@@ -145,7 +144,7 @@ export default defineComponent({
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${prefix}-menu__popup-wrapper`}>
-            {renderContent(this as Vue, 'default', 'content')}
+            {renderContent(this, 'default', 'content')}
           </ul>
         </div>,
       ];

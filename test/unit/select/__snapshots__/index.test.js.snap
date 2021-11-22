@@ -10,7 +10,8 @@ exports[`Select :props :bordered 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -32,7 +33,8 @@ exports[`Select :props :clearable 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -54,7 +56,8 @@ exports[`Select :props :creatable 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -76,7 +79,8 @@ exports[`Select :props :disabled 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -98,7 +102,8 @@ exports[`Select :props :labelInValue 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -120,14 +125,19 @@ exports[`Select :props :loading 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-loading-tips t-size-m">加载中</li><span style="display: none;"></span>
+            <li class="t-select-loading-tips t-size-m">加载中</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
     </transition-stub>
-    <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
-        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-      </svg></div>
+    <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
+      <div class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg></div>
+    </div>
   </div>
 </div>
 `;
@@ -142,7 +152,8 @@ exports[`Select :props :multiple 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former" value=""><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -164,7 +175,8 @@ exports[`Select :props :placeholder 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -186,7 +198,8 @@ exports[`Select :props :remote 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -208,7 +221,8 @@ exports[`Select :props :reserveKeyword 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -230,7 +244,8 @@ exports[`Select :props :size 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-l t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-l">暂无数据</li><span style="display: none;"></span>
+            <li class="t-select-empty t-size-l">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -252,7 +267,10 @@ exports[`Select Option :props :disabled 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"><li title="1" class="t-select-option t-is-disabled t-is-selected t-size-m"><span>1</span></li></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;">
+              <li title="1" class="t-select-option t-is-disabled t-is-selected t-size-m"><span>1</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -274,7 +292,10 @@ exports[`Select Option :props :label 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"><li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;">
+              <li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -296,7 +317,10 @@ exports[`Select Option :props :value 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"><li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li></span>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;">
+              <li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -318,16 +342,21 @@ exports[`Select OptionGroup :props :value 1`] = `
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
             </ul>
-            <li class="t-select-empty t-size-m">暂无数据</li><span style="display: none;"><li class="t-option-group t-size-m"><ul class="t-option-group-header">num</ul><ul><li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
+            <li class="t-select-empty t-size-m">暂无数据</li>
+            <ul class="t-select__groups" style="display: none;">
+              <li class="t-option-group t-size-m t-option-group__divider">
+                <div class="t-option-group-header">num</div>
+                <ul>
+                  <li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
+                </ul>
+              </li>
+              <li class="t-option-group t-size-m t-option-group__divider">
+                <div class="t-option-group-header">abc</div>
+                <ul>
+                  <li title="a" class="t-select-option t-size-m"><span>a</span></li>
+                </ul>
+              </li>
             </ul>
-            </li>
-            <li class="t-option-group t-size-m">
-              <ul class="t-option-group-header">abc</ul>
-              <ul>
-                <li title="a" class="t-select-option t-size-m"><span>a</span></li>
-              </ul>
-            </li>
-            </span>
           </div>
         </div>
       </div>

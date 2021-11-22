@@ -8,10 +8,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .t-checkbox + .t-checkbox {
   margin-left: 16px;
