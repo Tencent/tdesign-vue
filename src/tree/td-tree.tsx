@@ -217,12 +217,33 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       ]);
       store.setConfig(storeProps);
     },
+    updateExpanded() {
+      const {
+        store,
+        expanded,
+        expandParent,
+      } = this;
+      // 初始化展开状态
+      // 校验是否自动展开父节点
+      if (Array.isArray(expanded)) {
+        const expandedMap = new Map();
+        expanded.forEach((val) => {
+          expandedMap.set(val, true);
+          if (expandParent) {
+            const node = store.getNode(val);
+            node.getParents().forEach((tn: TypeTreeNodeModel) => {
+              expandedMap.set(tn.value, true);
+            });
+          }
+        });
+        const expandedArr = Array.from(expandedMap.keys());
+        store.setExpanded(expandedArr);
+      }
+    },
     // 初始化树结构
     build() {
       let list = this.data;
       const {
-        expanded,
-        expandParent,
         actived,
         value,
         valueMode,
@@ -258,21 +279,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
         store.setChecked(value);
       }
 
-      // 初始化展开状态
-      if (Array.isArray(expanded)) {
-        const expandedMap = new Map();
-        expanded.forEach((val) => {
-          expandedMap.set(val, true);
-          if (expandParent) {
-            const node = store.getNode(val);
-            node.getParents().forEach((tn) => {
-              expandedMap.set(tn.value, true);
-            });
-          }
-        });
-        const expandedArr = Array.from(expandedMap.keys());
-        store.setExpanded(expandedArr);
-      }
+      this.updateExpanded();
 
       // 初始化激活状态
       if (Array.isArray(actived)) {
@@ -285,7 +292,22 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
     rebuild(list: TdTreeProps['data']) {
       this.getNodesMap().clear();
       this.treeNodes.length = 0;
-      this.store.reload(list);
+      const {
+        store,
+        value,
+        actived,
+      } = this;
+      store.reload(list);
+      // 初始化选中状态
+      if (Array.isArray(value)) {
+        store.setChecked(value);
+      }
+      this.updateExpanded();
+      // 初始化激活状态
+      if (Array.isArray(actived)) {
+        store.setActived(actived);
+      }
+      store.refreshState();
     },
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);

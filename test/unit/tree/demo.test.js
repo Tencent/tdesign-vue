@@ -16,6 +16,7 @@ import label from '@/examples/tree/demos/label.vue';
 import icon from '@/examples/tree/demos/icon.vue';
 import line from '@/examples/tree/demos/line.vue';
 import operations from '@/examples/tree/demos/operations.vue';
+import data from '@/examples/tree/demos/data.vue';
 
 // unit test for component in examples.
 describe('Tree:demo', () => {
@@ -89,6 +90,10 @@ describe('Tree:demo', () => {
   });
   it('state demo works fine', () => {
     const wrapper = mount(operations);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('data demo works fine', () => {
+    const wrapper = mount(data);
     expect(wrapper.element).toMatchSnapshot();
   });
 });

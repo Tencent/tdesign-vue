@@ -11,5 +11,9 @@ module.exports = {
     'src/**/*.{ts,tsx,js,vue}',
     '!**/node_modules/**',
   ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/src/_common',
+  ],
   coverageReporters: ['html', 'text-summary'],
 };

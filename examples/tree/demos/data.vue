@@ -6,8 +6,14 @@
         <t-form-item label="切换数据">
           <t-switch @change="toggleData" />
         </t-form-item>
+        <t-form-item label="默认展开全部">
+          <t-switch v-model="expandAll" />
+        </t-form-item>
         <t-form-item label="可选">
           <t-switch v-model="checkable" />
+        </t-form-item>
+        <t-form-item label="节点可高亮">
+          <t-switch v-model="activable"/>
         </t-form-item>
         <t-form-item label="展开动画">
           <t-switch v-model="transition"/>
@@ -16,10 +22,12 @@
     </div>
     <t-tree
       :data="items"
-      expand-all
       hover
+      :expand-all="expandAll"
       :transition="transition"
+      :activable="activable"
       :checkable="checkable"
+      :label="label"
     />
   </div>
 </template>
@@ -27,70 +35,51 @@
 <script>
 
 const data1 = [{
-  label: '1',
   value: '1',
   children: [{
-    label: '1.1',
     value: '1.1',
     children: [{
-      label: '1.1.1',
       value: '1.1.1',
     }, {
-      label: '1.1.2',
       value: '1.1.2',
     }],
   }, {
-    label: '1.2',
     value: '1.2',
     children: [{
-      label: '1.2.1',
       value: '1.2.1',
     }, {
-      label: '1.2.2',
       value: '1.2.2',
     }],
   }],
 }, {
-  label: '2',
   value: '2',
   children: [{
-    label: '2.1',
     value: '2.1',
   }, {
-    label: '2.2',
     value: '2.2',
   }],
 }];
 
 const data2 = [{
-  label: '1',
   value: '1',
   children: [{
-    label: '1.1',
     value: '1.1',
     children: [{
-      label: '1.1.1',
       value: '1.1.1',
     }],
   }, {
-    label: '1.2',
     value: '1.2',
     children: [{
-      label: '1.2.1',
       value: '1.2.1',
     }, {
-      label: '1.2.2',
       value: '1.2.2',
     }],
   }],
 }, {
-  label: '2',
   value: '2',
   children: [{
-    label: '2.1',
     value: '2.1',
   }, {
-    label: '2.2',
     value: '2.2',
   }],
 }];
@@ -98,6 +87,8 @@ const data2 = [{
 export default {
   data() {
     return {
+      expandAll: true,
+      activable: true,
       checkable: true,
       transition: true,
       items: data1,
@@ -106,6 +97,9 @@ export default {
   methods: {
     toggleData() {
       this.items = this.items === data1 ? data2 : data1;
+    },
+    label(createElement, node) {
+      return node.value;
     },
   },
 };
