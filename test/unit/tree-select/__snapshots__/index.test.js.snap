@@ -10,7 +10,7 @@ exports[`TreeSelect :props :clearable 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -46,7 +46,7 @@ exports[`TreeSelect :props :defaultValue 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
                 <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
                 <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
@@ -82,7 +82,7 @@ exports[`TreeSelect :props :disabled 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-is-disabled t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-is-disabled t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -118,7 +118,7 @@ exports[`TreeSelect :props :empty string 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">no data</div>
             </div>
@@ -152,7 +152,7 @@ exports[`TreeSelect :props :filterable 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -188,7 +188,7 @@ exports[`TreeSelect :props :loading 1`] = `
             <p class="t-select-loading-tips">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium" style="display: none;">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium" style="display: none;">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -220,7 +220,7 @@ exports[`TreeSelect :props :loadingText 1`] = `
         <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">data loading</p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -256,7 +256,7 @@ exports[`TreeSelect :props :max 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -292,7 +292,7 @@ exports[`TreeSelect :props :minCollapsedNum 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -328,7 +328,7 @@ exports[`TreeSelect :props :multiple 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -364,7 +364,7 @@ exports[`TreeSelect :props :placeholder 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -400,7 +400,7 @@ exports[`TreeSelect :props :popupProps 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -436,7 +436,7 @@ exports[`TreeSelect :props :size 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="large">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="large">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -472,7 +472,7 @@ exports[`TreeSelect :props :treeProps 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
                 <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
                 <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
@@ -508,7 +508,7 @@ exports[`TreeSelect :props :value 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
                 <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
                 <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
@@ -544,7 +544,7 @@ exports[`TreeSelect :props :valueType 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
                 <div data-value="guangdong" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">广东省</span></span></div>
                 <div data-value="jiangsu" data-level="0" class="t-tree__item" style="--level: 0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position: relative;">江苏省</span></span></div>
@@ -580,7 +580,7 @@ exports[`TreeSelect <slot> <collapsedItems> 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -616,7 +616,7 @@ exports[`TreeSelect <slot> <empty> 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div>no data</div>
@@ -652,7 +652,7 @@ exports[`TreeSelect <slot> <loadingText> 1`] = `
             <p class="t-select-loading-tips">
             <div>data loading</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium" style="display: none;">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium" style="display: none;">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -686,7 +686,7 @@ exports[`TreeSelect <slot> <prefixIcon> 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -722,7 +722,7 @@ exports[`TreeSelect function :collapsedItems 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -758,7 +758,7 @@ exports[`TreeSelect function :empty 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div>no data</div>
@@ -794,7 +794,7 @@ exports[`TreeSelect function :loadingText 1`] = `
             <p class="t-select-loading-tips">
             <div>data loading</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium" style="display: none;">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium" style="display: none;">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>
@@ -828,7 +828,7 @@ exports[`TreeSelect function :prefixIcon 1`] = `
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
             </p>
-            <div class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node" size="medium">
+            <div class="t-tree t-tree--hoverable t-tree--fx" size="medium">
               <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list"></transition-group-stub>
               <div class="t-tree__empty">
                 <div class="t-select-empty">暂无数据</div>

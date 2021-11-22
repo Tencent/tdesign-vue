@@ -349,7 +349,6 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         v-show={this.showTree}
         value={this.checked}
         hover
-        expandOnClickNode
         data={this.data}
         activable={!this.multiple}
         checkable={this.multiple}
