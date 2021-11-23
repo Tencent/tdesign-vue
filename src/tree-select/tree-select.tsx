@@ -7,11 +7,13 @@ import isString from 'lodash/isString';
 import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
+import isNil from 'lodash/isNil';
 import { CloseCircleFilledIcon as IconCloseCircleFilled } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { emitEvent } from '../utils/event';
 
 import Popup, { PopupProps } from '../popup';
 import Tag from '../tag';
@@ -22,7 +24,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 
-import { TreeSelectValue } from './type';
+import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { ClassName, TreeOptionData } from '../common';
 import { prefix } from '../config';
 
@@ -120,7 +122,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
         !this.showFilter
         && ((isString(this.value) && this.value === '' && !this.selectedSingle)
         || (isArray(this.value) && isEmpty(this.value))
-        || this.value === null)
+        || isNil(this.value))
       ) {
         return true;
       }
@@ -243,8 +245,7 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       this.change(this.value, null);
     },
     change(value: TreeSelectValue, node: TreeNodeModel<TreeOptionData>) {
-      this.$emit('change', value, { node });
-      isFunction(this.onChange) && this.onChange(value, { node });
+      emitEvent<Parameters<TdTreeSelectProps['onChange']>>(this, 'change', value, { node });
       this.changeNodeInfo();
     },
     clear(e: MouseEvent) {
@@ -252,27 +253,22 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
       this.change(defaultValue, null);
       this.actived = [];
       this.filterText = '';
-      this.$emit('clear', { e });
-      isFunction(this.onClear) && this.onClear({ e });
+      emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
     focus(e: FocusEvent) {
       this.focusing = true;
-      this.$emit('focus', { value: this.value, e });
-      isFunction(this.onFocus) && this.onFocus({ e });
+      emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, e });
     },
     blur(e: FocusEvent) {
       this.focusing = false;
       this.filterText = '';
-      this.$emit('blur', { value: this.value, e });
-      isFunction(this.onBlur) && this.onBlur({ value: this.value, e });
+      emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
-      this.$emit('remove', options);
-      isFunction(this.onRemove) && this.onRemove(options);
+      emitEvent<Parameters<TdTreeSelectProps['onRemove']>>(this, 'remove', options);
     },
     search(filterWords: string) {
-      this.$emit('search', filterWords);
-      isFunction(this.onSearch) && this.onSearch(filterWords);
+      emitEvent<Parameters<TdTreeSelectProps['onSearch']>>(this, 'search', filterWords);
     },
     treeNodeChange(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<TreeOptionData>; e: MouseEvent }) {
       let current: TreeSelectValue = value;
