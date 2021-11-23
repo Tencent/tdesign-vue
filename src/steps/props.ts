@@ -1,17 +1,23 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-23 16:35:35
  * */
 
-import { PropType } from 'vue';
 import { TdStepsProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 当前步骤 */
   current: {
     type: [String, Number] as PropType<TdStepsProps['current']>,
   },
-  /** 步骤条方向，有两种：横向和纵向 */
+  /** 当前步骤，非受控属性 */
+  defaultCurrent: {
+    type: [String, Number] as PropType<TdStepsProps['defaultCurrent']>,
+  },
+  /** 已废弃。步骤条方向，有两种：横向和纵向 */
   direction: {
     type: String as PropType<TdStepsProps['direction']>,
     default: 'horizontal' as TdStepsProps['direction'],
@@ -19,11 +25,19 @@ export default {
       return ['horizontal', 'vertical'].includes(val);
     },
   },
+  /** 步骤条方向，有两种：横向和纵向 */
+  layout: {
+    type: String as PropType<TdStepsProps['layout']>,
+    default: 'horizontal' as TdStepsProps['layout'],
+    validator(val: TdStepsProps['layout']): boolean {
+      return ['horizontal', 'vertical'].includes(val);
+    },
+  },
   /** 步骤条数据列表（作用和 StepItem 效果一样） */
   options: {
     type: Array as PropType<TdStepsProps['options']>,
   },
-  /** 步骤条顺序 */
+  /** 步骤条顺序，纵向步骤有效（direction = horizontal） */
   sequence: {
     type: String as PropType<TdStepsProps['sequence']>,
     default: 'positive' as TdStepsProps['sequence'],

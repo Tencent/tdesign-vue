@@ -4,6 +4,8 @@ import TStepItem from './step-item';
 import { ClassName } from '../common';
 import mixins from '../utils/mixins';
 import getLocalReceiverMixins from '../locale/local-receiver';
+import { TdStepsProps } from './type';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-steps`;
 export default mixins(getLocalReceiverMixins('steps')).extend({
@@ -25,12 +27,15 @@ export default mixins(getLocalReceiverMixins('steps')).extend({
   },
   computed: {
     baseClass(): ClassName {
+      if (this.direction) {
+        console.warn('TDesign Steps Warn: `direction` is going to be deprecated. please use `layout` instead. ');
+      }
       return [
         name,
-        `${name}--${this.direction}`,
+        `${name}--${this.direction || this.layout}`,
         `${name}--${this.theme}-anchor`,
         {
-          [`${name}--${this.sequence}`]: this.direction === 'vertical',
+          [`${name}--${this.sequence}`]: this.layout === 'vertical',
         },
       ];
     },
@@ -62,6 +67,9 @@ export default mixins(getLocalReceiverMixins('steps')).extend({
     },
     removeItem(item: InstanceType<typeof TStepItem>) {
       this.stepChildren = this.stepChildren.filter((t) => t !== item);
+    },
+    handleChange(cur: TdStepsProps['current'], prev: TdStepsProps['current'], e: MouseEvent) {
+      emitEvent<Parameters<TdStepsProps['onChange']>>(this, 'change', cur, prev, { e });
     },
   },
 });

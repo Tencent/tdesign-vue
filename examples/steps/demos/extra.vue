@@ -1,5 +1,5 @@
 <template>
-  <t-steps direction="vertical" :current="current" :onChange="onCurChanged">
+  <t-steps layout="vertical" :current="current" :onChange="onCurChanged">
     <t-step-item :title="renderTitle" content="这里是提示文字">
       <template slot="extra" v-if="current === 0">
         <t-button size="small" variant="base" @click.stop="current++">Next</t-button>

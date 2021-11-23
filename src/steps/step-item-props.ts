@@ -1,15 +1,18 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-23 16:35:35
  * */
 
+import { TdStepItemProps } from '../steps/type';
 import { PropType } from 'vue';
-import { TdStepItemProps } from './type';
 
 export default {
   /** 步骤描述 */
   content: {
     type: [String, Function] as PropType<TdStepItemProps['content']>,
+    default: '',
   },
   /** 步骤描述，同 content */
   default: {
@@ -35,6 +38,7 @@ export default {
   /** 标题 */
   title: {
     type: [String, Function] as PropType<TdStepItemProps['title']>,
+    default: '',
   },
   /** 当前步骤标识 */
   value: {

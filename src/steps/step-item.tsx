@@ -94,7 +94,7 @@ export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
     },
     onStepClick(e: MouseEvent) {
       const val = this.value === undefined ? this.index : this.value;
-      this.steps.$emit('change', val, this.current, { e });
+      this.steps.handleChange(val, this.current, e);
     },
   },
   render() {
