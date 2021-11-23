@@ -1,7 +1,4 @@
 import { mount } from '@vue/test-utils';
-import { Message } from '@/src/message/index.ts';
-import Button from '@/src/button/index.ts';
-import Loading from '@/src/loading/index.ts';
 import {
   CloseIcon,
   MoreIcon,
@@ -10,6 +7,9 @@ import {
   ErrorCircleFilledIcon,
   HelpCircleFilledIcon,
 } from 'tdesign-icons-vue';
+import { Message } from '@/src/message/index.ts';
+import Button from '@/src/button/index.ts';
+import Loading from '@/src/loading/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Message', () => {
