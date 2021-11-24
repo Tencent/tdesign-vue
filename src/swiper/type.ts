@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-20 22:17:08
+ * updated at 2021-11-24 14:49:33
  * */
 
 export interface TdSwiperProps {
@@ -16,10 +18,12 @@ export interface TdSwiperProps {
   autoplay?: boolean;
   /**
    * 当前轮播在哪一项（下标）
+   * @default 0
    */
   current?: number;
   /**
    * 当前轮播在哪一项（下标），非受控属性
+   * @default 0
    */
   defaultCurrent?: number;
   /**
@@ -40,5 +44,7 @@ export interface TdSwiperProps {
   /**
    * 轮播切换时触发
    */
-  onChange?: (currentIndex: number) => void;
-}
+  onChange?: (current: number, context: { source: SwiperChangeSource }) => void;
+};
+
+export type SwiperChangeSource = 'autoplay' | 'touch' | '';

@@ -1,10 +1,21 @@
 <template>
   <div>
     <t-cascader class="t-demo-cascader" :options="options" v-model="value" :onRemove="handleBlur" multiple :minCollapsedNum="1" />
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :onRemove="handleBlur" multiple :minCollapsedNum="2" />
+    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :collapsedItems="collapsedItems" multiple :minCollapsedNum="1" />
     <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable :minCollapsedNum="1">
-      <template #collapsedItems>
-        自定义折叠内容
+      <template #collapsedItems="{ collapsedSelectedItems, count }">
+        <t-popup>
+          <template #content>
+            <p
+              v-for="(item, index) in collapsedSelectedItems"
+              :key="index"
+              style="padding: 10px;"
+            >
+              {{item.label}}
+            </p>
+          </template>
+          <span v-show="count > 0" style="color: #00A870;">+{{count}}</span>
+        </t-popup>
       </template>
     </t-cascader>
   </div>
@@ -53,6 +64,25 @@ export default {
     };
   },
   methods: {
+    collapsedItems(h, { value, count, collapsedSelectedItems }) {
+      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
+      if (!(value instanceof Array) || !count) return;
+      // hover展示全部已选项
+      return (
+        <t-popup>
+          <div slot="content">
+          {
+            value.map((item) => (
+              <p style="padding: 10px;">{item.label}</p>
+            ))
+          }
+          </div>
+          <span v-show={count > 0} style="color: #ED7B2F;">
+            +{count}
+          </span>
+        </t-popup>
+      );
+    },
     handleBlur(e) {
       console.log(e);
     },

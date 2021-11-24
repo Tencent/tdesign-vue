@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TNode } from '../common';
@@ -23,7 +25,7 @@ export interface TdBreadcrumbProps {
    * @default light
    */
   theme?: 'light';
-}
+};
 
 export interface TdBreadcrumbItemProps {
   /**
@@ -65,14 +67,8 @@ export interface TdBreadcrumbItemProps {
    * 路由跳转目标，当且仅当 Router 存在时，该 API 有效
    */
   to?: Route;
-}
+};
 
-export interface Route {
-  path?: string;
-  name?: string;
-  hash?: string;
-  query?: RouteData;
-  params?: RouteData
-}
+export interface Route { path?: string; name?: string; hash?: string; query?: RouteData; params?: RouteData };
 
 export type RouteData = { [key: string]: string | string[] };

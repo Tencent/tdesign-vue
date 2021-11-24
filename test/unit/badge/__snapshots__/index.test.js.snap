@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge :props :color 1`] = `<div class="t-badge">Tdesign<sup class="t-badge--circle" style="background: green;"></sup></div>`;
+exports[`Badge :props :color 1`] = `<div class="t-badge">Tdesign</div>`;
 
 exports[`Badge :props :count 1`] = `<div class="t-badge">Tdesign<sup class="t-badge--circle">2</sup></div>`;
 

@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-18 10:43:23
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -173,7 +175,7 @@ export interface TdTreeProps<DataOption extends TreeOptionData = TreeOptionData>
    * 异步加载后触发
    */
   onLoad?: (context: { node: TreeNodeModel<DataOption> }) => void;
-}
+};
 
 /** 组件实例方法 */
 export interface TreeInstanceFunctions<DataOption extends TreeOptionData = TreeOptionData> {
@@ -283,7 +285,7 @@ export interface TreeNodeState {
    * @default false
    */
   visible?: boolean;
-}
+};
 
 export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionData> extends TreeNodeState {
   /**
@@ -366,8 +368,8 @@ export interface TreeNodeModel<DataOption extends TreeOptionData = TreeOptionDat
    * 是否为叶子节点
    */
   isLeaf: () => boolean;
-}
+};
 
-export interface TreeKeysType { value?: string; label?: string; children?: string }
+export interface TreeKeysType { value?: string; label?: string; children?: string };
 
 export type TreeNodeValue = string | number;

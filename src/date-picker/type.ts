@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-05 11:16:34
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { InputProps } from '../input';
@@ -52,7 +52,7 @@ export interface TdDatePickerProps {
    * 占位符
    * @default ''
    */
-   placeholder?: string | Array<string>;
+  placeholder?: string;
   /**
    * 透传给 popup 组件的参数
    */
@@ -103,10 +103,6 @@ export interface TdDatePickerProps {
    * 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值
    */
   onInput?: (context: { input: string; value: DateValue; e: InputEvent }) => void;
-  /**
-   * 选中日期时触发，可能是开始日期，也可能是结束日期，第二个参数可以区分是开始日期或是结束日期
-   */
-  onPick?: (value: DateValue, context: PickContext) => void;
 };
 
 export interface TdDateRangePickerProps {

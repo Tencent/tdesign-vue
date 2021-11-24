@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-12 13:32:26
+ * updated at 2021-11-23 10:35:44
  * */
 
 import { TdDividerProps } from './type';
@@ -28,6 +28,14 @@ export default {
     type: [String, Function] as PropType<TdDividerProps['default']>,
   },
   /** 分隔线类型有两种：水平和垂直 */
+  layout: {
+    type: String as PropType<TdDividerProps['layout']>,
+    default: 'horizontal' as TdDividerProps['layout'],
+    validator(val: TdDividerProps['layout']): boolean {
+      return ['horizontal', 'vertical'].includes(val);
+    },
+  },
+  /** 已废弃。请更为使用 `layout`。分隔线类型有两种：水平和垂直 */
   theme: {
     type: String as PropType<TdDividerProps['theme']>,
     default: 'horizontal' as TdDividerProps['theme'],

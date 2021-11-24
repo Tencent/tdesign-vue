@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-19 10:44:26
  * */
 
 export interface TdHeaderProps {
@@ -9,15 +11,7 @@ export interface TdHeaderProps {
    * @default ''
    */
   height?: string;
-}
-
-export interface TdFooterProps {
-  /**
-   * 底栏高度。样式表（class）中定义的默认高度为：24px
-   * @default ''
-   */
-  height?: string;
-}
+};
 
 export interface TdAsideProps {
   /**
@@ -25,4 +19,12 @@ export interface TdAsideProps {
    * @default ''
    */
   width?: string;
-}
+};
+
+export interface TdFooterProps {
+  /**
+   * 底栏高度。样式表（class）中定义的默认高度为：24px
+   * @default ''
+   */
+  height?: string;
+};

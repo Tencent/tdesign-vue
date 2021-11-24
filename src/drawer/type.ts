@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { ButtonProps } from '../button';
@@ -55,7 +57,7 @@ export interface TdDrawerProps {
    */
   footer?: boolean | TNode;
   /**
-   * 头部内容。值为 true 显示空白头部，值为 false 不显示任何内容，值类型为 string 则直接显示值，值类型为 TNode 表示自定义头部内容
+   * 头部内容。值为 true 显示空白头部，值为 false 不显示头部，值类型为 string 则直接显示值，值类型为 TNode 表示自定义头部内容
    */
   header?: string | boolean | TNode;
   /**
@@ -83,6 +85,11 @@ export interface TdDrawerProps {
    * @default small
    */
   size?: string;
+  /**
+   * 抽屉大小可拖拽调整，横向抽屉调整宽度，纵向抽屉调整高度
+   * @default false
+   */
+  sizeDraggable?: boolean;
   /**
    * 组件是否可见
    * @default false
@@ -121,13 +128,10 @@ export interface TdDrawerProps {
    * 如果蒙层存在，点击蒙层时触发
    */
   onOverlayClick?: (context: { e: MouseEvent }) => void;
-}
+};
 
 export type FooterButton = string | ButtonProps | TNode;
 
 export type DrawerEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay';
 
-export interface DrawerCloseContext {
-  trigger: DrawerEventSource;
-  e: MouseEvent | KeyboardEvent
-}
+export interface DrawerCloseContext { trigger: DrawerEventSource; e: MouseEvent | KeyboardEvent };

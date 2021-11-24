@@ -5,6 +5,7 @@ import { prefix } from '../../config';
 import CLASSNAMES from '../../utils/classnames';
 import getLocalRecevierMixins from '../../locale/local-receiver';
 import mixins from '../../utils/mixins';
+import { renderTNodeJSX } from '../../utils/render-tnode';
 
 // component
 import Tag from '../../tag';
@@ -32,8 +33,13 @@ import {
   TreeNode, CascaderContextType, InputContentProps,
 } from '../interface';
 import CascaderProps from '../props';
+import { CascaderInstance } from '../instance';
 
 const name = `${prefix}-cascader`;
+
+export interface InputContentInstance extends Vue {
+  tCascader: CascaderInstance;
+}
 
 interface ComponentComputed {
   closeIconClass: ClassName,
@@ -57,7 +63,7 @@ interface ComponentMethods {
 
 interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods{}
 
-export default mixins(getLocalRecevierMixins<InputContentProps & Vue & ComponentInstanceType>('cascader')).extend({
+export default mixins(getLocalRecevierMixins<InputContentProps & Vue & ComponentInstanceType & InputContentInstance>('cascader')).extend({
   name: `${name}-input-content`,
   props: {
     cascaderContext: {
@@ -67,6 +73,7 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
     listeners: {
       type: Object as PropType<InputContentProps['listeners']>,
     },
+    collapsedItems: CascaderProps.collapsedItems,
   },
   components: {
     Tag,
@@ -113,6 +120,11 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
       this.outerClickListenerFn(event);
     });
   },
+  inject: {
+    tCascader: {
+      default: undefined,
+    },
+  },
   methods: {
     outerClickListenerFn(event: MouseEvent | TouchEvent) {
       return outerClickListenerEffect(this.$refs.inputContent as HTMLElement, this.cascaderContext, event);
@@ -135,9 +147,6 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
         singleContent,
         multipleContent,
         listeners,
-        $slots: {
-          collapsedItems,
-        },
       } = this;
 
       const {
@@ -166,6 +175,13 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
         >
           {node.label}
         </Tag>;
+      const renderCollItems = () => {
+        const tempList: object[] = [];
+        multipleContent.forEach((node: TreeNode) => {
+          tempList.push(node.data);
+        });
+        return tempList;
+      };
 
       const generalContent = !multiple ? (
         <span class={`${prefix}-cascader-content`}>{singleContent}</span>
@@ -176,9 +192,17 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
               {multipleContent.slice(0, minCollapsedNum).map((node: TreeNode, index: number) => (
                 renderSelfTag(node, index)
               ))}
-              {!collapsedItems ? <Tag size={size} disabled={disabled}>
+              {this.collapsedItems || this.tCascader.$scopedSlots.collapsedItems
+                ? renderTNodeJSX(this.tCascader, 'collapsedItems', {
+                  params: {
+                    value: renderCollItems(),
+                    collapsedSelectedItems: renderCollItems().slice(minCollapsedNum),
+                    count: renderCollItems().length - minCollapsedNum,
+                  },
+                }) : <Tag size={size} disabled={disabled}>
                 +{multipleContent.length - minCollapsedNum}
-              </Tag> : collapsedItems}
+              </Tag>
+              }
             </span>
           ) : (
             multipleContent.map((node: TreeNode, index: number) => (

@@ -302,7 +302,7 @@ describe('Tree:expand', () => {
         },
       });
 
-      wrapper
+      await wrapper
         .find('[data-value="t2"] .t-tree__icon')
         .trigger('click');
 
@@ -319,7 +319,7 @@ describe('Tree:expand', () => {
           .exists(),
       ).toBe(true);
 
-      wrapper
+      await wrapper
         .find('[data-value="t1"] .t-tree__icon')
         .trigger('click');
 
@@ -336,7 +336,7 @@ describe('Tree:expand', () => {
           .exists(),
       ).toBe(false);
 
-      wrapper
+      await wrapper
         .find('[data-value="t1.2"] .t-tree__icon')
         .trigger('click');
 
@@ -353,7 +353,7 @@ describe('Tree:expand', () => {
           .exists(),
       ).toBe(true);
 
-      wrapper
+      await wrapper
         .find('[data-value="t1.1"] .t-tree__icon')
         .trigger('click');
 

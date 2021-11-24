@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-09 21:58:54
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -240,6 +240,10 @@ export type ValidateResultList = Array<AllValidateResult>;
 export type AllValidateResult = CustomValidateObj | ValidateResultType;
 
 export interface ValidateResultType extends FormRule { result: boolean };
+
+export type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList };
+
+export type ErrorList = Array<FormRule>;
 
 export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
 

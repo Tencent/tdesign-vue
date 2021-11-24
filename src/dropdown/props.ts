@@ -2,14 +2,14 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-02 21:18:44
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TdDropdownProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 多层级操作时，子层级展开方向（待设计师规划） */
+  /** 多层级操作时，子层级展开方向 */
   direction: {
     type: String as PropType<TdDropdownProps['direction']>,
     default: 'right' as TdDropdownProps['direction'],
@@ -44,7 +44,7 @@ export default {
     type: Array as PropType<TdDropdownProps['options']>,
     default: (): TdDropdownProps['options'] => [],
   },
-  /** 弹窗定位方式，可选值参考popup */
+  /** 弹窗定位方式，可选值同 Popup 组件 */
   placement: {
     type: String as PropType<TdDropdownProps['placement']>,
     default: 'bottom-left' as TdDropdownProps['placement'],
@@ -52,7 +52,7 @@ export default {
       return ['top', 'left', 'right', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left-top', 'left-bottom', 'right-top', 'right-bottom'].includes(val);
     },
   },
-  /** 透传 popup 组件属性，方便更加自由地控制 */
+  /** 透传  Popup 组件属性，方便更加自由地控制。比如使用 popupProps.overlayStyle 设置浮层样式 */
   popupProps: {
     type: Object as PropType<TdDropdownProps['popupProps']>,
   },

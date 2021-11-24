@@ -1,13 +1,15 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-18 17:26:17
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TNode, AttachNode } from '../common';
 
 export interface TdMessageProps {
   /**
-   * 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例
+   * 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。也可以完全自定义按钮
    */
   closeBtn?: string | boolean | TNode;
   /**
@@ -37,7 +39,7 @@ export interface TdMessageProps {
    * 计时结束后触发
    */
   onDurationEnd?: () => void;
-}
+};
 
 export interface MessageOptions extends TdMessageProps {
   /**
@@ -59,15 +61,13 @@ export interface MessageOptions extends TdMessageProps {
    * @default 5000
    */
   zIndex?: number;
-}
+};
 
 export type MessageThemeList = 'info' | 'success' | 'warning' | 'error' | 'question' | 'loading';
 
 export type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
-export interface MessageInstance {
-  close: () => void
-}
+export interface MessageInstance { close: () => void };
 
 export type MessageMethod = (theme: MessageThemeList, message: string | MessageOptions, duration?: number) => Promise<MessageInstance>;
 

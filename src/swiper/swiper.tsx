@@ -1,6 +1,8 @@
 import Vue, { VNode } from 'vue';
+import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import props from './props';
+import { SwiperChangeSource, TdSwiperProps } from '.';
 
 const name = `${prefix}-swiper`;
 
@@ -28,7 +30,7 @@ export default Vue.extend({
   watch: {
     interval: {
       handler() {
-        this.swiperTo(this.index); // 重置定时器
+        this.swiperTo(this.index, ''); // 重置定时器
       },
       immediate: true,
     },
@@ -41,7 +43,11 @@ export default Vue.extend({
       },
     ];
     return (
-      <div class={ swiperClass } onMouseenter={ this.clearTimer } onMouseleave={ this.setTimer }>
+      <div
+        class={ swiperClass }
+        onMouseenter={ this.clearTimer }
+        onMouseleave={ this.setTimer }
+      >
         { this.renderContent() }
         { this.renderTrigger() }
       </div>
@@ -80,7 +86,7 @@ export default Vue.extend({
             this.items.map((_: VNode, i: number) => (
               <li
                 class={i === index ? 't-swiper__trigger--active' : ''}
-                onclick={() => this.swiperTo(i)}
+                onclick={() => this.swiperTo(i, 'touch')}
               ></li>
             ))
           }
@@ -88,11 +94,15 @@ export default Vue.extend({
       );
     },
 
-    swiperToNext() {
-      this.swiperTo(this.index + 1);
+    swiperToNext(source: SwiperChangeSource) {
+      const number = this.index + 1;
+      this.swiperTo(number, source);
+      if (source) {
+        emitEvent<Parameters<TdSwiperProps['onChange']>>(this, 'change', number, { source });
+      }
     },
 
-    swiperTo(index: number) {
+    swiperTo(index: number, source: SwiperChangeSource) {
       const findIndex = this.items.length === 0 ? 0 : index % this.items.length;
       if (this.timeoutHandler) {
         this.clearTimer();
@@ -100,7 +110,7 @@ export default Vue.extend({
       this.index = findIndex;
       if (this.interval > 0) {
         this.timeoutHandler = setTimeout(() => {
-          this.swiperToNext();
+          this.swiperToNext(source);
         }, this.interval);
       }
     },
@@ -109,7 +119,7 @@ export default Vue.extend({
       if (this.interval > 0) {
         this.timeoutHandler = Number(setTimeout(() => {
           this.clearTimer();
-          this.swiperToNext();
+          this.swiperToNext('autoplay');
         }, this.interval));
       }
     },

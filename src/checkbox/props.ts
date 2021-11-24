@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-09-07 19:08:12
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TdCheckboxProps } from './type';
@@ -30,7 +30,7 @@ export default {
   label: {
     type: [String, Function] as PropType<TdCheckboxProps['label']>,
   },
-  /** HTM 元素原生属性 */
+  /** HTML 元素原生属性 */
   name: {
     type: String,
     default: '',

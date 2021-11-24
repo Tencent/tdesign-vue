@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-19 10:44:26
  * */
 
-import { PropType } from 'vue';
 import { TdAlertProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 关闭按钮。值为 true 则显示默认关闭按钮；值为 false 则不显示按钮；值类型为 string 则直接显示；值类型为 Function 则可以自定关闭按钮 */
@@ -33,7 +35,7 @@ export default {
   operation: {
     type: Function as PropType<TdAlertProps['operation']>,
   },
-  /** 类型 */
+  /** 组件风格 */
   theme: {
     type: String as PropType<TdAlertProps['theme']>,
     default: 'info' as TdAlertProps['theme'],

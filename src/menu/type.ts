@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-21 15:45:27
+ * updated at 2021-11-23 10:43:39
  * */
 
 import { TNode } from '../common';
@@ -186,6 +186,10 @@ export interface TdMenuItemProps {
    * 菜单项唯一标识
    */
   value?: MenuValue;
+  /**
+   * 点击时触发
+   */
+  onClick?: (context: { e: MouseEvent }) => void;
 };
 
 export interface TdMenuGroupProps {

@@ -11,17 +11,17 @@ export default Vue.extend({
   props: { ...props },
 
   render() {
-    const { theme, dashed, align } = this;
-
     const children = renderContent(this, 'default', 'content');
-
+    if (this.theme) {
+      console.warn('TDesign Divider Warn: `theme` is going to be deprecated, please use `layout` instead.');
+    }
     const dividerClassNames = [
       `${name}`,
-      [`${name}--${theme}`],
+      [`${name}--${this.layout || this.theme}`],
       {
-        [`${name}--dashed`]: !!dashed,
+        [`${name}--dashed`]: !!this.dashed,
         [`${name}--with-text`]: !!children,
-        [`${name}--with-text-${align}`]: !!children,
+        [`${name}--with-text-${this.align}`]: !!children,
       },
     ];
 

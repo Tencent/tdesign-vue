@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-20 13:14:53
+ * updated at 2021-11-23 10:46:16
  * */
 
 import { PopupProps } from '../popup';
@@ -52,7 +52,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   keys?: SelectKeysType;
   /**
-   * 是否正在加载数据
+   * 是否为加载状态
    * @default false
    */
   loading?: boolean;

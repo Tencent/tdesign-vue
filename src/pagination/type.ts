@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-17 18:09:07
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TNode } from '../common';
@@ -83,10 +85,6 @@ export interface TdPaginationProps {
    * 分页大小发生变化时触发
    */
   onPageSizeChange?: (pageSize: number, pageInfo: PageInfo) => void;
-}
+};
 
-export interface PageInfo {
-  current: number;
-  previous: number;
-  pageSize: number
-}
+export interface PageInfo { current: number; previous: number; pageSize: number };

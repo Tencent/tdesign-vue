@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-07-20 22:17:08
+ * updated at 2021-11-24 14:49:33
  * */
 
-import { PropType } from 'vue';
 import { TdSwiperProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 轮播切换动画效果类型 */
@@ -23,10 +25,12 @@ export default {
   /** 当前轮播在哪一项（下标） */
   current: {
     type: Number,
+    default: 0,
   },
   /** 当前轮播在哪一项（下标），非受控属性 */
   defaultCurrent: {
     type: Number,
+    default: 0,
   },
   /** 轮播滑动方向，包括横向滑动和纵向滑动两个方向 */
   direction: {

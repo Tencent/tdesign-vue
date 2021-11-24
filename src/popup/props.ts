@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-11 15:47:10
+ * updated at 2021-11-19 10:44:26
  * */
 
 import { TdPopupProps } from './type';
@@ -57,10 +57,7 @@ export default {
     type: [String, Function] as PropType<TdPopupProps['triggerElement']>,
   },
   /** 是否显示浮层 */
-  visible: {
-    type: Boolean,
-    default: undefined,
-  },
+  visible: Boolean,
   /** 是否显示浮层，非受控属性 */
   defaultVisible: Boolean,
   /** 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500 */

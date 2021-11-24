@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-10-19 19:02:20
+ * updated at 2021-11-22 17:36:56
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -28,7 +28,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   /**
    * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
    */
-  collapsedItems?: TNode;
+  collapsedItems?: TNode<{ value: CascaderOption[]; collapsedSelectedItems: CascaderOption[]; count: number }>;
   /**
    * 是否禁用组件
    * @default false

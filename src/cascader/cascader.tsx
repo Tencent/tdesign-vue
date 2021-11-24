@@ -164,7 +164,11 @@ export default Vue.extend({
       });
     });
   },
-
+  provide(): any {
+    return {
+      tCascader: this,
+    };
+  },
   methods: {
     // 创建单个 cascader 节点
     init() {
@@ -254,7 +258,7 @@ export default Vue.extend({
         {...popupProps}
         content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} onChange={listeners.onChange}>{$scopedSlots}</panel>}
       >
-        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
+        <InputContent {...$attrs} collapsedItems={this.collapsedItems} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
       </Popup>
     </div >);
   },

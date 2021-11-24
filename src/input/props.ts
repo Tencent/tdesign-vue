@@ -2,11 +2,11 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-08-06 14:44:03
+ * updated at 2021-11-19 10:44:26
  * */
 
-import { PropType } from 'vue';
 import { TdInputProps } from './type';
+import { PropType } from 'vue';
 
 export default {
   /** 是否开启自动填充功能 */
@@ -21,7 +21,7 @@ export default {
   maxcharacter: {
     type: Number,
   },
-  /** 用户最多可以输入的文本长度 */
+  /** 用户最多可以输入的文本长度。值小于等于 0 的时候，则不限制输入长度 */
   maxlength: {
     type: Number,
   },
@@ -59,7 +59,7 @@ export default {
   },
   /** 组件后置图标 */
   suffixIcon: {
-    type: Function as PropType<TdInputProps['suffixIcon']>,
+    type: [String, Function] as PropType<TdInputProps['suffixIcon']>,
   },
   /** 输入框类型 */
   type: {
