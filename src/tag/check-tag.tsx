@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import { prefix } from '../config';
 import props from './check-tag-props';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderContent } from '../utils/render-tnode';
 import { TNodeReturnValue } from '../common';
+import { TdCheckTagProps } from './type';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-tag`;
 
@@ -26,16 +28,14 @@ export default Vue.extend({
   methods: {
     handleClick(e: MouseEvent): void {
       if (!this.disabled) {
-        this.$emit('click', { e });
-        this.$emit('change', !this.checked);
-        if (typeof this.onClick === 'function') this.onClick({ e });
-        if (typeof this.onChange === 'function') this.onChange(!this.checked);
+        emitEvent<Parameters<TdCheckTagProps['onClick']>>(this, 'click', { e });
+        emitEvent<Parameters<TdCheckTagProps['onChange']>>(this, 'change', !this.checked);
       }
     },
   },
   render() {
     // 标签内容
-    const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');
+    const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
 
     return (
       <span class={this.tagClass} onClick={this.handleClick}>

@@ -6,26 +6,12 @@ import { prefix } from '../config';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig } from '../config-provider/config-receiver';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { TdTagProps } from './type';
 import { emitEvent } from '../utils/event';
 import { TNodeReturnValue, ClassName, Styles } from '../common';
 
 const name = `${prefix}-tag`;
-
-const initVariantList = {
-  dark: `${name}--dark`,
-  light: `${name}--light`,
-  plain: `${name}--plain`,
-};
-
-const initShapeList = {
-  square: `${name}--square`,
-  round: `${name}--round`,
-  mark: `${name}--mark`,
-};
-
-const defaultShape = 'square';
 
 export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
   name: 'TTag',
@@ -38,8 +24,8 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
         `${name}`,
         `${name}--${this.theme}`,
         CLASSNAMES.SIZE[this.size],
-        initVariantList[this.variant],
-        this.shape !== defaultShape && initShapeList[this.shape],
+        `${name}--${this.variant}`,
+        this.shape !== 'square' && `${name}--${this.shape}`,
         {
           [`${name}--ellipsis`]: this.maxWidth,
           [`${name}--close`]: this.closable,
@@ -83,7 +69,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
     // 关闭按钮 自定义组件使用 nativeOnClick 绑定事件
     const closeIcon = this.getCloseIcon();
     // 标签内容
-    const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');
+    const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
 
