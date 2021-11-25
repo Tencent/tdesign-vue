@@ -1,4 +1,5 @@
 export * from './locale';
+export * from './config-provider';
 export * from './layout';
 export * from './grid';
 export * from './loading';

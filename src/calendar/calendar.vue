@@ -117,7 +117,7 @@
                 :item="item"
                 :theme="theme"
                 :t="t"
-                :locale="locale"
+                :global="global"
                 :fillWithZero="fillWithZero"
                 @click="clickCell($event, item)"
                 @dblclick.native="doubleClickCell($event, item)"
@@ -149,7 +149,7 @@
               :item="item"
               :theme="theme"
               :t="t"
-              :locale="locale"
+              :global="global"
               :fillWithZero="fillWithZero"
               @click="clickCell($event, item)"
               @dblclick.native="doubleClickCell($event, item)"
@@ -175,12 +175,13 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 // 通用库
 import dayjs from 'dayjs';
 import calendar from 'dayjs/plugin/calendar';
 import props from './props';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { CalendarConfig } from '../config-provider/config-receiver';
 import * as utils from './utils';
 import { getPropsApiByEvent } from '../utils/helper';
 
@@ -252,10 +253,8 @@ const getDefaultControllerConfigData = (visible = true): Record<string, any> => 
   },
 });
 
-const CalendarLocalReceiver = getLocalReceiverMixins('calendar');
-
 // 组件逻辑
-export default mixins(CalendarLocalReceiver).extend({
+export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).extend({
   name: 'TCalendar',
   components: {
     TCheckTag,
@@ -280,22 +279,25 @@ export default mixins(CalendarLocalReceiver).extend({
     };
   },
   computed: {
+    realFirstDayOfWeek(): number {
+      return this.firstDayOfWeek ?? this.global.firstDayOfWeek ?? 1;
+    },
     TEXT_MAP(): TextConfigType {
-      const { t, locale } = this;
+      const { t, global } = this;
       const r: TextConfigType = {
         // showWeekend: '显示周末',
-        showWeekend: t(locale.showWeekend),
+        showWeekend: t(global.showWeekend),
         // hideWeekend: '隐藏周末',
-        hideWeekend: t(locale.hideWeekend),
+        hideWeekend: t(global.hideWeekend),
         // today: '今天',
-        today: t(locale.today),
+        today: t(global.today),
         // thisMonth: '本月',
-        thisMonth: t(locale.thisMonth),
+        thisMonth: t(global.thisMonth),
       };
       return r;
     },
     weekDipalyText(): TdCalendarProps['week'] {
-      return this.week || this.t(this.locale.week).split(',');
+      return this.week || this.t(this.global.week).split(',');
     },
     // 组件最外层的class名（除去前缀，class名和theme参数一致）
     calendarCls(): Record<string, any> {
@@ -344,14 +346,14 @@ export default mixins(CalendarLocalReceiver).extend({
       const min: WeekDay = 1;
       const max: WeekDay = 7;
 
-      for (let i = this.firstDayOfWeek; i <= max; i++) {
+      for (let i = this.realFirstDayOfWeek; i <= max; i++) {
         re.push({
           num: i as WeekDay,
           display: this.getWeekDisplay(i),
         });
       }
-      if (this.firstDayOfWeek > min) {
-        for (let i = min; i < this.firstDayOfWeek; i++) {
+      if (this.realFirstDayOfWeek > min) {
+        for (let i = min; i < this.realFirstDayOfWeek; i++) {
           re.push({
             num: i as WeekDay,
             display: this.getWeekDisplay(i),
@@ -382,7 +384,7 @@ export default mixins(CalendarLocalReceiver).extend({
         const disabled = this.checkMonthAndYearSelecterDisabled(i, this.curSelectedMonth);
         re.push({
           value: i,
-          label: this.t(this.locale.yearSelection, { year: i }),
+          label: this.t(this.global.yearSelection, { year: i }),
           disabled,
         });
       }
@@ -395,7 +397,7 @@ export default mixins(CalendarLocalReceiver).extend({
         const disabled = this.checkMonthAndYearSelecterDisabled(this.curSelectedYear, i);
         re.push({
           value: i,
-          label: this.t(this.locale.monthSelection, { month: i }),
+          label: this.t(this.global.monthSelection, { month: i }),
           disabled,
         });
       }
@@ -405,17 +407,17 @@ export default mixins(CalendarLocalReceiver).extend({
     // 模式选项数据源
     modeSelectOptionList(): ModeOption[] {
       return [
-        { value: 'month', label: this.t(this.locale.monthRadio) },
-        { value: 'year', label: this.t(this.locale.yearRadio) },
+        { value: 'month', label: this.t(this.global.monthRadio) },
+        { value: 'year', label: this.t(this.global.yearRadio) },
       ];
     },
     // month模式下日历单元格的数据
     monthCellsData(): CalendarCell[][] {
-      const { firstDayOfWeek } = this;
+      const { realFirstDayOfWeek } = this;
       const daysArr: CalendarCell[][] = utils.createMonthCellsData(
         this.curSelectedYear,
         this.curSelectedMonth,
-        firstDayOfWeek,
+        realFirstDayOfWeek,
         this.curDate,
         this.format,
       );

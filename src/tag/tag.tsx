@@ -1,8 +1,11 @@
-import Vue, { VNode } from 'vue';
-import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
+import Vue from 'vue';
+import { CloseIcon } from 'tdesign-icons-vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import CLASSNAMES from '../utils/classnames';
 import { prefix } from '../config';
 import props from './props';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { TagConfig } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TdTagProps } from './type';
 import { emitEvent } from '../utils/event';
@@ -15,16 +18,20 @@ const initVariantList = {
   light: `${name}--light`,
   plain: `${name}--plain`,
 };
+
 const initShapeList = {
   square: `${name}--square`,
   round: `${name}--round`,
   mark: `${name}--mark`,
 };
+
 const defaultShape = 'square';
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
   name: 'TTag',
+
   props: { ...props },
+
   computed: {
     tagClass(): ClassName {
       return [
@@ -46,6 +53,7 @@ export default Vue.extend({
       return {};
     },
   },
+
   methods: {
     handleClose(e: MouseEvent): void {
       if (this.disabled) return;
@@ -55,10 +63,25 @@ export default Vue.extend({
       if (this.disabled) return;
       emitEvent<Parameters<TdTagProps['onClick']>>(this, 'click', { e });
     },
+    getCloseIcon(): ScopedSlotReturnValue {
+      if (!this.closable) return null;
+      const iconClassName = `${prefix}-tag__icon-close`;
+      if (this.global.closeIcon) {
+        return this.global.closeIcon((component, b) => {
+          const tProps = (typeof b === 'object' && ('attrs' in b)) ? b.attrs : {};
+          return this.$createElement(component, {
+            props: { ...tProps },
+            class: iconClassName,
+          });
+        });
+      }
+      return <CloseIcon nativeOnClick={this.handleClose} class={iconClassName} />;
+    },
   },
+
   render() {
     // 关闭按钮 自定义组件使用 nativeOnClick 绑定事件
-    const closeIcon: VNode | string = this.closable ? <TIconClose nativeOnClick={this.handleClose} /> : '';
+    const closeIcon = this.getCloseIcon();
     // 标签内容
     const tagContent: TNodeReturnValue = renderTNodeJSX(this, 'default') || renderTNodeJSX(this, 'content');
     // 图标

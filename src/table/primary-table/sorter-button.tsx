@@ -1,8 +1,9 @@
+import Vue from 'vue';
 import { PropType } from 'vue/types/umd';
 import isFunction from 'lodash/isFunction';
 import { ChevronDownIcon as TIconChevronDown } from 'tdesign-icons-vue';
 import mixins from '../../utils/mixins';
-import getLocalReceiverMixins from '../../locale/local-receiver';
+import getConfigReceiverMixins, { TableConfig } from '../../config-provider/config-receiver';
 import { SortType } from '../type';
 import { prefix } from '../../config';
 import Tooltip from '../../tooltip';
@@ -16,7 +17,7 @@ const tooltips = {
 
 type SortTypeEnums = Array<'desc' | 'asc'>;
 
-export default mixins(getLocalReceiverMixins('table')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend({
   name: `${prefix}-sorter-button`,
   props: {
     sortType: {
@@ -41,8 +42,8 @@ export default mixins(getLocalReceiverMixins('table')).extend({
   },
   methods: {
     getSortIcon(direction: string, className: string) {
-      const icon = isFunction(this.locale.sortIcon)
-        ? this.locale.sortIcon(this.$createElement)
+      const icon = isFunction(this.global.sortIcon)
+        ? this.global.sortIcon(this.$createElement)
         : <TIconChevronDown size='16px' />;
       let style: Styles = {
         left: '0px',

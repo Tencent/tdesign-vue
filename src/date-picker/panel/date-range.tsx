@@ -1,7 +1,8 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import dayjs from 'dayjs';
 import TDateHeader from '../basic/header';
 import TDateTable from '../basic/table';
+import { DatePickerConfig } from '../../config-provider/config-receiver';
 import {
   DateRangeData, DateRangeMethods, DateRangeComputed, DateRangeProps,
 } from '../interface';
@@ -19,6 +20,7 @@ import {
   firstUpperCase,
   setDateTime,
 } from '../utils';
+import props from '../props';
 
 const TODAY = getToday();
 const LEFT = 'left';
@@ -32,6 +34,9 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
   },
   inheritAttrs: false,
   props: {
+    global: {
+      type: Object as PropType<DatePickerConfig>,
+    },
     mode: {
       type: String,
       default: 'date',
@@ -43,9 +48,9 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     },
     minDate: Date,
     maxDate: Date,
-    firstDayOfWeek: Number,
-    disableDate: Function,
-    onChange: Function,
+    firstDayOfWeek: props.firstDayOfWeek,
+    disableDate: props.disableDate,
+    onChange: props.onChange,
     onPick: Function,
   },
   data() {
@@ -145,9 +150,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     },
     getData({ year, month, type }) {
       const {
-        disableDate, minDate, maxDate, startValue, endValue,
+        disableDate, minDate, maxDate, startValue, endValue, firstDayOfWeek,
       } = this;
-      const { firstDayOfWeek } = this.$props;
       let data;
 
       const start = startValue;
@@ -158,6 +162,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
         minDate,
         maxDate,
         firstDayOfWeek,
+        monthLocal: this.global?.months?.shorthand,
       };
 
       switch (type) {
@@ -199,7 +204,6 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       }
 
       const current = new Date(year, month);
-
       if (flag === 1) {
         next = addMonth(current, monthCount);
       } else if (flag === -1) {
@@ -207,7 +211,6 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       } else {
         next = new Date();
       }
-
       this[`${direction}Year`] = next.getFullYear();
       this[`${direction}Month`] = next.getMonth();
     },
@@ -290,10 +293,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     const {
       leftType,
       rightType,
-    } = this.$data;
-    const {
       firstDayOfWeek,
-    } = this.$props;
+    } = this;
     return (
       <div class="t-date-range">
         <div class="t-date">

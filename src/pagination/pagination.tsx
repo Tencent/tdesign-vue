@@ -5,9 +5,10 @@ import {
   ChevronLeftDoubleIcon,
   EllipsisIcon,
 } from 'tdesign-icons-vue';
+import Vue from 'vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
 import TInput, { InputValue } from '../input';
 import { Select, Option } from '../select';
 import CLASSNAMES from '../utils/classnames';
@@ -19,13 +20,11 @@ import { emitEvent } from '../utils/event';
 const name = `${prefix}-pagination`;
 const min = 1;
 
-const PaginationLocalReceiver = getLocalReceiverMixins('pagination');
-
 enum KeyCode {
   ENTER = 'Enter',
 }
 
-export default mixins(PaginationLocalReceiver).extend({
+export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination')).extend({
   name: 'TPagination',
   components: {
     ChevronLeftIcon,
@@ -157,7 +156,7 @@ export default mixins(PaginationLocalReceiver).extend({
       const options = this.pageSizeOptions.map((option) => typeof option === 'object'
         ? option
         : {
-          label: this.t(this.locale.itemsPerPage, { size: option }),
+          label: this.t(this.global.itemsPerPage, { size: option }),
           value: Number(option),
         });
       return options.sort((a, b) => a.value - b.value);
@@ -305,7 +304,7 @@ export default mixins(PaginationLocalReceiver).extend({
         {renderTNodeJSX(
           this,
           'totalContent',
-          <div class={this.totalClass}>{this.t(this.locale.total, { total: this.total })}</div>,
+          <div class={this.totalClass}>{this.t(this.global.total, { total: this.total })}</div>,
         )}
         {/* select */}
         {this.pageSizeOptions.length ? (
@@ -385,14 +384,14 @@ export default mixins(PaginationLocalReceiver).extend({
         {/* 跳转 */}
         {this.showJumper ? (
           <div class={this.jumperClass}>
-            {this.t(this.locale.jumpTo)}
+            {this.t(this.global.jumpTo)}
             <t-input
               class={this.jumperInputClass}
               v-model={this.jumpIndex}
               onBlur={this.jumpToPage}
               onKeyup={this.onKeydownJumpInput}
             />
-            {this.t(this.locale.page)}
+            {this.t(this.global.page)}
           </div>
         ) : null}
       </div>

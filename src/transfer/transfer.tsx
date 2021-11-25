@@ -16,7 +16,7 @@ import {
 } from './interface';
 import { PageInfo, TdPaginationProps } from '../pagination/type';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins from '../config-provider/config-receiver';
 import props from './props';
 import {
   getTransferListOption, emitEvent, getDataValues, getTransferData,
@@ -27,7 +27,7 @@ import {
 const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
-export default mixins(getLocalReceiverMixins('transfer')).extend({
+export default mixins(getConfigReceiverMixins('transfer')).extend({
   name: TRANSFER_NAME,
   components: {
     TransferList,
@@ -213,7 +213,7 @@ export default mixins(getLocalReceiverMixins('transfer')).extend({
           onPageChange={($event: any) => this.handlePageChange($event, listType)}
           scopedSlots={scopedSlots}
           t={this.t}
-          locale={this.locale}
+          global={this.global}
           isTreeMode={this.isTreeMode}
         ></transfer-list>
       );

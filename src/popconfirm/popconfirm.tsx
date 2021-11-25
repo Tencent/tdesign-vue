@@ -1,9 +1,10 @@
+import Vue from 'vue';
 import {
   InfoCircleFilledIcon as TIconInfoCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
 } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { PopconfirmConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
 import Popup, { PopupProps } from '../popup/index';
 import props from './props';
@@ -15,7 +16,7 @@ const popupName = `${prefix}-popup`;
 
 type IconConstructor = typeof TIconInfoCircleFilled;
 
-export default mixins(getLocalReceiverMixins('popconfirm')).extend({
+export default mixins(getConfigReceiverMixins<Vue, PopconfirmConfig>('popconfirm')).extend({
   name: 'TPopconfirm',
   props: { ...props },
   model: {
@@ -71,8 +72,8 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
       const Icon = this.themeIcon;
       return renderTNodeJSXDefault(this, 'icon', <Icon class={this.iconCls} />);
     },
-    getBtnText(api: TdPopconfirmProps['cancelBtn']) {
-      return typeof api === 'object' ? api.content : api;
+    getBtnText(api: TdPopconfirmProps['cancelBtn'], text: '取消' | '确定') {
+      return (typeof api === 'object' ? api.content : api) || text;
     },
     getBtnProps(api: TdPopconfirmProps['confirmBtn']) {
       return typeof api === 'object' ? api : {};
@@ -80,14 +81,15 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
     renderCancel(cancelBtn: TdPopconfirmProps['cancelBtn']) {
       return (
         <t-button theme="default" size='small' props={this.getBtnProps(cancelBtn)}>
-          {this.getBtnText(cancelBtn)}
+          {this.getBtnText(cancelBtn, '取消')}
         </t-button>
       );
     },
     renderConfirm(confirmBtn: TdPopconfirmProps['confirmBtn']) {
+      const defaultTheme = this.global.confirmBtnTheme[this.theme] || 'primary';
       return (
-        <t-button theme="primary" size='small' props={this.getBtnProps(confirmBtn)}>
-          {this.getBtnText(confirmBtn)}
+        <t-button theme={defaultTheme} size='small' props={this.getBtnProps(confirmBtn)}>
+          {this.getBtnText(confirmBtn, '确定')}
         </t-button>
       );
     },
@@ -95,28 +97,38 @@ export default mixins(getLocalReceiverMixins('popconfirm')).extend({
       this.$emit('visible-change', val, context);
       this.onVisibleChange && this.onVisibleChange(val, context);
     },
+    getCancelBtn() {
+      let cancelBtn = null;
+      if (this.$scopedSlots.cancelBtn && this.cancelBtn) {
+        console.warn('插槽 `cancelBtn` 和 属性 `cancelBtn` 同时存在，优先使用插槽渲染');
+      }
+      if (this.$scopedSlots.cancelBtn) {
+        cancelBtn = this.$scopedSlots.cancelBtn(null);
+      } else {
+        const tCancelBtn = this.cancelBtn || this.global.cancel;
+        cancelBtn = typeof tCancelBtn === 'function'
+          ? tCancelBtn(this.$createElement)
+          : this.renderCancel(tCancelBtn);
+      }
+      return cancelBtn;
+    },
+    getConfirmBtn() {
+      let confirmBtn = null;
+      if (this.$scopedSlots.confirmBtn) {
+        confirmBtn = this.$scopedSlots.confirmBtn(null);
+      } else {
+        const tConfirmBtn = this.confirmBtn || this.global.confirm;
+        confirmBtn = typeof tConfirmBtn === 'function'
+          ? tConfirmBtn(this.$createElement)
+          : this.renderConfirm(tConfirmBtn);
+      }
+      return confirmBtn;
+    },
   },
   render() {
     const triggerElement = renderContent(this, 'default', 'triggerElement');
-    const baseTypes = ['string', 'object'];
-    let confirmBtn = null;
-    if (this.$scopedSlots.confirmBtn) {
-      confirmBtn = renderTNodeJSX(this, 'confirmBtn');
-    } else if (![undefined, null].includes(this.confirmBtn)) {
-      const mBtn = this.confirmBtn || this.t(this.locale.confirm);
-      confirmBtn = baseTypes.includes(typeof mBtn)
-        ? this.renderConfirm(mBtn)
-        : renderTNodeJSX(this, 'confirmBtn');
-    }
-    let cancelBtn = null;
-    if (this.$scopedSlots.cancelBtn) {
-      cancelBtn = renderTNodeJSX(this, 'cancelBtn');
-    } else if (![undefined, null].includes(this.cancelBtn)) {
-      const cBtn = this.cancelBtn || this.t(this.locale.cancel);
-      cancelBtn = baseTypes.includes(typeof cBtn)
-        ? this.renderCancel(cBtn)
-        : renderTNodeJSX(this, 'cancelBtn');
-    }
+    const cancelBtn = this.getCancelBtn();
+    const confirmBtn = this.getConfirmBtn();
     return (
       <div>
         <Popup

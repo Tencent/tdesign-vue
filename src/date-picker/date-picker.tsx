@@ -7,17 +7,12 @@ import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';
 import CLASSNAMES from '../utils/classnames';
-
 import { clickOut } from '../utils/dom';
 import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
 import TPopup from '../popup';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
-
-import {
-  CustomLocale, DatePickerInstance, DateValue, PickContext,
-} from './interface';
+import getConfigReceiverMixins, { DatePickerConfig } from '../config-provider/config-receiver';
 import CalendarPresets from './calendar-presets';
 import TDate from './panel/date';
 import TDateRange from './panel/date-range';
@@ -25,6 +20,9 @@ import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/interface';
 import { firstUpperCase, extractTimeFormat } from './utils';
 import { TimePickerPanelInstance } from '../time-picker';
+import {
+  DatePickerInstance, DateValue, PickContext,
+} from './interface';
 
 dayjs.extend(isBetween);
 
@@ -34,7 +32,7 @@ const onOpenDebounce = debounce((vm?: any) => {
 
 const name = `${prefix}-date-picker`;
 
-export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInstance>('datePicker')).extend({
+export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInstance, DatePickerConfig>('datePicker')).extend({
   name: 'TDatePicker',
   components: {
     TIconTime,
@@ -54,7 +52,6 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
   data() {
     return {
       tempValue: '',
-      locales: {},
       monthDate: new Date(),
       start: new Date(),
       end: new Date(),
@@ -87,11 +84,11 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       return this.formatDate(this.end);
     },
     formattedValue: {
-      get() {
+      get(): DateValue {
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         const vm: any = this;
         const {
-          tempValue, range, mode, isOpen, startText, endText, locales, value: outValue,
+          tempValue, range, mode, isOpen, startText, endText, global, value: outValue,
         } = vm;
         const selectedDates = vm.getDates(outValue);
         const selectedFmtDates: string[] = selectedDates.map((d: Date) => vm.formatDate(d));
@@ -112,9 +109,9 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             break;
           case 'range':
             if (isOpen) {
-              value = [startText, endText].join(locales.rangeSeparator);
+              value = [startText, endText].join(global.rangeSeparator);
             } else if (selectedFmtDates.length > 1) {
-              value = [selectedFmtDates[0], selectedFmtDates[1]].join(locales.rangeSeparator);
+              value = [selectedFmtDates[0], selectedFmtDates[1]].join(global.rangeSeparator);
             }
             break;
         }
@@ -139,10 +136,10 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
     rangeText: {
       get() {
         // eslint-disable-next-line @typescript-eslint/no-this-alias
-        const vm: any = this;
+        const vm = this;
         let range = vm.startText;
         if (vm.range) {
-          range += ` ${vm.locales.rangeSeparator} ${vm.endText}`;
+          range += ` ${vm.global.rangeSeparator} ${vm.endText}`;
         }
         return range;
       },
@@ -213,54 +210,23 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       }
     },
     attachDatePicker(): any {
-      // language init
-      this.setLocales();
-
       this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
-
       this.dateFormat = this.format;
-
       const start = new Date(startDate);
       let end = new Date(endDate);
-
       if (!this.range) {
         // ignore endDate for not range DatePicker
         end = new Date(startDate);
       }
-
       this.start = start;
       this.end = end;
-
       const val = this.value || this.defaultValue || '';
       this.setDate(val, false);
       if (this.inlineView) {
         this.open();
       }
-    },
-    getLocales(): CustomLocale {
-      const locales = this.locale as Record<string, any>;
-      locales.daysOfWeek = locales.weekdays.shorthand;
-      locales.monthNames = locales.months.shorthand;
-
-      if (this.mode === 'month') {
-        locales.monthNames = locales.months.longhand;
-      }
-
-      // update day names order to firstDay
-      if (locales.firstDayOfWeek !== 0) {
-        let iterator = locales.firstDayOfWeek;
-        while (iterator > 0) {
-          locales.daysOfWeek.push(locales.daysOfWeek.shift());
-          iterator -= 1;
-        }
-      }
-      return locales;
-    },
-    setLocales() {
-      const locales = this.getLocales();
-      this.locales = locales;
     },
     /**
      * Watch for value changed by date-picker itself and notify parent component
@@ -570,7 +536,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             break;
 
           case 'range':
-            dates = inputDate.split(this.locales.rangeSeparator || '-').map((d) => {
+            dates = inputDate.split(this.global.rangeSeparator || '-').map((d) => {
               const d1 = this.parseDate(d, format);
               return d1;
             });
@@ -590,7 +556,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       return selectedDates;
     },
     formatDate(date: Date, format = ''): string {
-      let dateFormat = format || this.dateFormat || this.locales.format;
+      let dateFormat = format || this.dateFormat || this.global.format;
       const arrTime = ['H', 'h', 'm', 's'];
       const hasTime = arrTime.some((f) => String(dateFormat).includes(f));
       if (this.enableTimePicker && !hasTime) {
@@ -616,12 +582,12 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       this.initClickAway(tip);
     },
     getPlaceholderText() {
-      const { placeholder, mode } = this.$props;
-      let placeholderStr = placeholder;
+      const { placeholder, mode } = this;
+      let placeholderStr = placeholder || this.global?.placeholder?.[mode];
       if (placeholder && Array.isArray(placeholder)) {
-        placeholderStr = placeholder.join(this.locales.rangeSeparator);
+        placeholderStr = placeholder.join(this.global.rangeSeparator);
       }
-      return placeholderStr || (this.locales.placeholder && this.locales.placeholder[mode]);
+      return placeholderStr;
     },
   },
   render() {
@@ -633,24 +599,28 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
       size,
       inputProps,
       enableTimePicker,
-      presets,
       mode,
       range,
-    } = this.$props;
-
+      presets,
+    } = this;
     const {
-      start, end, showTime, startTimeValue, locales, isOpen, endTimeValue,
-    } = this.$data;
+      start, end, showTime, startTimeValue, global, isOpen, endTimeValue,
+    } = this;
     const panelProps = {
       value: range ? [start, end] : start,
       mode,
       firstDayOfWeek: 0,
       disableDate: (d: Date) => !this.isEnabled(d),
       onChange: this.dateClick,
+      global: this.global,
+    };
+
+    const onPick = (date: DateValue, context: PickContext) => {
+      this.$emit('pick', date, context);
     };
 
     const panelComponent = range ? (
-      <TDateRange {...{ props: { ...panelProps, onPick: (date: DateValue, context: PickContext) => this.$emit('pick', date, context) } }} />
+      <TDateRange {...{ props: { ...panelProps, onPick } }}/>
     ) : (
       <TDate {...{ props: { ...panelProps } }} />
     );
@@ -678,7 +648,7 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
             <div class={`${prefix}-date-picker__footer`}>
               <calendar-presets
                 presets={presets}
-                locales={locales}
+                global={global}
                 {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
               />
               {
@@ -687,13 +657,13 @@ export default mixins(getLocalReceiverMixins<TdDatePickerProps & DatePickerInsta
                     {
                       enableTimePicker && (
                         <t-button theme="primary" variant="text" onClick={this.toggleTime}>
-                          {showTime ? locales.selectDate : locales.selectTime}
+                          {showTime ? global.selectDate : global.selectTime}
                         </t-button>
                       )
                     }
                     {
                       <t-button theme="primary" onClick={this.clickedApply}>
-                        {locales.confirm}
+                        {global.confirm}
                       </t-button>
                     }
                   </div>

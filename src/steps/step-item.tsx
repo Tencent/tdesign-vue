@@ -1,8 +1,9 @@
-import { VNode } from 'vue';
+import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { CheckIcon as TIconCheck, CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { StepsConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
 import props from './step-item-props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -15,7 +16,7 @@ export interface StepItemType extends Vue {
   steps: InstanceType<typeof Steps>;
 }
 
-export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
+export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps')).extend({
   name: 'TStepItem',
   props: {
     ...props,
@@ -71,14 +72,14 @@ export default mixins(getLocalReceiverMixins<StepItemType>('steps')).extend({
     renderIcon() {
       let defaultIcon;
       if (this.steps.theme === 'default') {
-        let icon: VNode | string = '';
+        let icon: ScopedSlotReturnValue = '';
         switch (this.status$) {
           case 'finish':
             icon = <t-icon-check />;
             break;
           case 'error':
-            if (isFunction(this.locale.errorIcon)) {
-              icon = this.locale.errorIcon(this.$createElement);
+            if (isFunction(this.global.errorIcon)) {
+              icon = this.global.errorIcon(this.$createElement);
             } else {
               icon = <t-icon-close />;
             }

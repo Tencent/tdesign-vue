@@ -11,7 +11,7 @@ import isNil from 'lodash/isNil';
 import { CloseCircleFilledIcon as IconCloseCircleFilled } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { TreeSelectConfig } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 
@@ -30,7 +30,7 @@ import { prefix } from '../config';
 
 import { RemoveOptions, NodeOptions } from './interface';
 
-export default mixins(getLocalReceiverMixins('treeSelect')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect')).extend({
   name: 'TTreeSelect',
   model: {
     prop: 'value',
@@ -177,13 +177,13 @@ export default mixins(getLocalReceiverMixins('treeSelect')).extend({
     loadingTextSlot(): ScopedSlotReturnValue {
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
       return useLocale
-        ? <div class={`${prefix}-select-empty`}>{ this.t(this.locale.loadingText) }</div>
+        ? <div class={`${prefix}-select-empty`}>{ this.t(this.global.loadingText) }</div>
         : renderTNodeJSX(this, 'loadingText');
     },
     emptySlot(): ScopedSlotReturnValue {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return useLocale
-        ? <div class={`${prefix}-select-empty`}>{ this.t(this.locale.empty) }</div>
+        ? <div class={`${prefix}-select-empty`}>{ this.t(this.global.empty) }</div>
         : renderTNodeJSX(this, 'empty');
     },
     prefixIconSlot(): ScopedSlotReturnValue {

@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-11-25 00:02:09
  * */
 
 import { IsEmailOptions } from 'validator/es/lib/isEmail';
@@ -41,8 +41,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   preventSubmitDefault?: boolean;
   /**
-   * 是否显示必填符号
-   * @default true
+   * 是否显示必填符号，默认显示
    */
   requiredMark?: boolean;
   /**

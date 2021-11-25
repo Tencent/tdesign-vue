@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import CLASSNAMES from '../../utils/classnames';
-import getLocalRecevierMixins from '../../locale/local-receiver';
+import getConnfigRecevierMixins, { CascaderConfig } from '../../config-provider/config-receiver';
 import mixins from '../../utils/mixins';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 
@@ -63,7 +63,9 @@ interface ComponentMethods {
 
 interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods{}
 
-export default mixins(getLocalRecevierMixins<InputContentProps & Vue & ComponentInstanceType & InputContentInstance>('cascader')).extend({
+const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType & InputContentInstance, CascaderConfig>('cascader');
+
+export default mixins(cascaderGglobalConfig).extend({
   name: `${name}-input-content`,
   props: {
     cascaderContext: {
@@ -136,7 +138,7 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
       const content = !showPlaceholder ? (
         this.InnerContent()
       ) : (
-        <span class={`${prefix}-cascader-placeholder`}>{placeholder || this.t(this.locale.placeholderText)}</span>
+        <span class={`${prefix}-cascader-placeholder`}>{placeholder || this.t(this.global.placeholder)}</span>
       );
       return content;
     },
@@ -217,7 +219,7 @@ export default mixins(getLocalRecevierMixins<InputContentProps & Vue & Component
       const filterContent = () => (
         <Input
           size={size}
-          placeholder={ inputPlaceholder || placeholder || this.t(this.locale.placeholderText)}
+          placeholder={ inputPlaceholder || placeholder || this.t(this.global.placeholder)}
           value={inputVal}
           onChange={(value: string) => {
             setInputVal(value);

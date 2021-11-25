@@ -2900,6 +2900,16 @@ exports[`Dialog warning demo works fine 1`] = `
         >
           <div>
             <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+            <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"
             >
@@ -2986,6 +2996,16 @@ exports[`Dialog warning demo works fine 1`] = `
           class="t-dialog__footer"
         >
           <div>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog-cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog-confirm"
               type="button"

@@ -1,6 +1,6 @@
 import Vue, { PropType } from 'vue';
 import { CalendarPresetsMethods, CalendarPresetsProps, DateValue } from './interface';
-
+import { DatePickerConfig } from '../config-provider/config-receiver';
 import { Button as TButton } from '../button';
 
 export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>({
@@ -8,11 +8,8 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
     TButton,
   },
   props: {
-    locales: {
-      type: Object as PropType<CalendarPresetsProps['locales']>,
-      default() {
-        return {};
-      },
+    global: {
+      type: Object as PropType<DatePickerConfig>,
     },
     presets: {
       type: Object as PropType<CalendarPresetsProps['presets']>,
@@ -21,11 +18,11 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
   },
   methods: {
     clickPreset(value: DateValue) {
-      this.$props.onClick(value);
+      this.onClick(value);
     },
   },
   render() {
-    const { presets } = this.$props;
+    const { presets } = this;
     return (
       <div class="t-date-picker-presets">
         <ul>

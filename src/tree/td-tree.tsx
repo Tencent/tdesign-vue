@@ -3,7 +3,7 @@ import { VNode } from 'vue';
 import upperFirst from 'lodash/upperFirst';
 import pick from 'lodash/pick';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { TreeConfig } from '../config-provider/config-receiver';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import TreeItem from './tree-item';
@@ -31,7 +31,7 @@ import {
   emitEvent,
 } from './util';
 
-export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
+export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
   name: 'TTree',
   model: {
     prop: 'value',
@@ -551,7 +551,7 @@ export default mixins(getLocalReceiverMixins<TypeTreeInstance>('tree')).extend({
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       emptyNode = (
         <div class={CLASS_NAMES.treeEmpty}>
-          {useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty')}
+          {useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty')}
         </div>
       );
     }

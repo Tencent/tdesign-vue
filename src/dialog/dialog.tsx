@@ -4,13 +4,14 @@ import {
   CheckCircleFilledIcon as TIconCheckCircleFilled,
   ErrorCircleFilledIcon as TIconErrorCircleFilled,
 } from 'tdesign-icons-vue';
+import Vue from 'vue';
 import { prefix } from '../config';
 import TButton, { ButtonProps } from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { DialogConfig } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles, TNode } from '../common';
@@ -54,7 +55,7 @@ function initDragEvent(dragBox: HTMLElement) {
   });
 }
 
-export default mixins(getLocalReceiverMixins('dialog')).extend({
+export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
   name: 'TDialog',
 
   components: {
@@ -221,7 +222,9 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
     getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
       const isCancel = btnType === 'cancel';
       const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
-      const theme = isCancel ? 'default' : 'primary';
+      const primaryDefault = this.global.confirmBtnTheme[this.theme] || 'primary';
+      const theme = isCancel ? 'default' : primaryDefault;
+      const text = isCancel ? '取消' : '确定';
       const isApiObject = typeof btnApi === 'object';
       return (
         <t-button
@@ -231,48 +234,56 @@ export default mixins(getLocalReceiverMixins('dialog')).extend({
           props={isApiObject ? btnApi : {}}
           class={`${name}-${btnType}`}
         >
-          { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
+          { ((btnApi && isApiObject) ? btnApi.content : btnApi) || text }
         </t-button>
       );
     },
-    isUseDefault(btnApi: FooterButton) {
-      const baseTypes = ['string', 'object'];
-      return Boolean(btnApi && baseTypes.includes(typeof btnApi));
-    },
-    // locale 全局配置，插槽，props，默认值，决定了按钮最终呈现
-    getDefaultFooter() {
+
+    // global 全局配置，插槽，props，默认值，决定了按钮最终呈现
+    getCancelBtn() {
       let cancelBtn = null;
-
+      if (this.$scopedSlots.cancelBtn && this.cancelBtn) {
+        console.warn('插槽 `cancelBtn` 和 属性 `cancelBtn` 同时存在，优先使用插槽渲染');
+      }
       if (this.$scopedSlots.cancelBtn) {
-        cancelBtn = renderTNodeJSX(this, 'cancelBtn');
-      } else if (![undefined, null].includes(this.cancelBtn)) {
-        cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
-        const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
-        cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
+        cancelBtn = this.$scopedSlots.cancelBtn(null);
+      } else {
+        const tCancelBtn = this.cancelBtn || this.global.cancel;
+        cancelBtn = typeof tCancelBtn === 'function'
+          ? tCancelBtn(this.$createElement)
+          : this.getDefaultBtn('cancel', tCancelBtn);
       }
+      return cancelBtn;
+    },
 
+    // global 全局配置，插槽，props，默认值，决定了按钮最终呈现
+    getConfirmBtn() {
       let confirmBtn = null;
-
-      if (this.$scopedSlots.confirmBtn) {
-        confirmBtn = renderTNodeJSX(this, 'confirmBtn');
-      } else if (![undefined, null].includes(this.confirmBtn)) {
-        confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
-        const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
-        confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
+      if (this.$scopedSlots.confirmBtn && this.confirmBtn) {
+        console.warn('插槽 `confirmBtn` 和 属性 `confirmBtn` 同时存在，优先使用插槽渲染');
       }
-      return (
-        <div>
-          {cancelBtn}
-          {confirmBtn}
-        </div>
-      );
+      if (this.$scopedSlots.confirmBtn) {
+        confirmBtn = this.$scopedSlots.confirmBtn(null);
+      } else {
+        const tConfirmBtn = this.confirmBtn || this.global.confirm;
+        confirmBtn = typeof tConfirmBtn === 'function'
+          ? tConfirmBtn(this.$createElement)
+          : this.getDefaultBtn('confirm', tConfirmBtn);
+      }
+      return confirmBtn;
     },
     renderDialog() {
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
       const defaultCloseBtn = <t-icon-close name="close"></t-icon-close>;
       const body = renderContent(this, 'default', 'body');
-      const defaultFooter = this.getDefaultFooter();
+      const defaultFooter = (
+        <div>
+          {this.getCancelBtn()}
+          {this.getConfirmBtn()}
+          {}
+        </div>
+      );
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */

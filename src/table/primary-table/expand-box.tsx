@@ -1,14 +1,15 @@
+import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
-import { ChevronDownCircleIcon as TIconChevronDown } from 'tdesign-icons-vue';
+import { ChevronRightCircleIcon } from 'tdesign-icons-vue';
 import mixins from '../../utils/mixins';
-import getLocalReceiverMixins from '../../locale/local-receiver';
-
+import getConfigReceiverMixins, { TableConfig } from '../../config-provider/config-receiver';
 import primaryTableProps from '../primary-table-props';
 import { prefix } from '../../config';
 import { Styles } from '../../common';
 
-export default mixins(getLocalReceiverMixins('table')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend({
   name: `${prefix}-expand-box`,
+
   props: {
     expanded: {
       type: Boolean,
@@ -22,11 +23,13 @@ export default mixins(getLocalReceiverMixins('table')).extend({
     },
     expandIcon: primaryTableProps.expandIcon,
   },
+
   methods: {
     getDefaultIcon() {
-      return isFunction(this.locale.expandIcon)
-        ? this.locale.expandIcon(this.$createElement)
-        : <TIconChevronDown />;
+      // if ChevronRightCircleIcon and rotate(90deg) have to be changed, contact me please.
+      return isFunction(this.global.expandIcon)
+        ? this.global.expandIcon(this.$createElement)
+        : <ChevronRightCircleIcon />;
     },
     getExpandIcon(expanded: boolean) {
       const icon = isFunction(this.expandIcon)
@@ -37,8 +40,8 @@ export default mixins(getLocalReceiverMixins('table')).extend({
         display: 'flex',
         'align-items': 'center',
       };
-      if (!expanded) {
-        style.transform = 'rotate(-180deg)';
+      if (expanded) {
+        style.transform = 'rotate(90deg)';
       }
       if (!icon) return false;
       return <span style={style}>{icon}</span>;

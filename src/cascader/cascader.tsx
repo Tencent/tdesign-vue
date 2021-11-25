@@ -1,23 +1,15 @@
 import Vue, { VNode } from 'vue';
 import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
-
-// utils
 import { prefix } from '../config';
 import TreeStore from '../_common/js/tree/tree-store';
 import { emitEvent } from '../utils/event';
 import { getPropsApiByEvent } from '../utils/helper';
 import { getTreeValue } from './utils/helper';
-
-// common logic
 import { treeNodesEffect, treeStoreExpendEffect } from './utils/cascader';
-
-// component
 import Panel from './components/Panel';
 import Popup, { PopupProps } from '../popup/index';
 import InputContent from './components/InputContent';
-
-// types
 import TreeNode from '../_common/js/tree/tree-node';
 import {
   ListenersType, TreeNodeValue, EVENT_NAME_WITH_KEBAB,
@@ -258,7 +250,7 @@ export default Vue.extend({
         {...popupProps}
         content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} onChange={listeners.onChange}>{$scopedSlots}</panel>}
       >
-        <InputContent {...$attrs} collapsedItems={this.collapsedItems} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
+        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
       </Popup>
     </div >);
   },

@@ -1,4 +1,4 @@
-import Vue, { VNode, VueConstructor } from 'vue';
+import Vue, { VNode } from 'vue';
 import { NormalizedScopedSlot } from 'vue/types/vnode';
 import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
@@ -18,6 +18,8 @@ import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-receiver';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
@@ -37,7 +39,7 @@ export interface FormItemContructor extends Vue {
   form: FormInstance;
 }
 
-export default (Vue as VueConstructor<FormItemContructor>).extend({
+export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('form')).extend({
   name: 'TFormItem',
 
   props: { ...props },
@@ -127,8 +129,11 @@ export default (Vue as VueConstructor<FormItemContructor>).extend({
       const { requiredMark } = this.$props;
       if (typeof requiredMark === 'boolean') return requiredMark;
       const parent = this.form;
+      const parentRequiredMark = parent?.requiredMark === undefined
+        ? this.global.requiredMark
+        : parent.requiredMark;
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
-      return Boolean(parent?.requiredMark && isRequired);
+      return Boolean(parentRequiredMark && isRequired);
     },
     innerRules(): FormRule[] {
       const parent = this.form;

@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-11-24 22:08:34
  * */
 
 import { TdDateRangePickerProps } from '../date-picker/type';
@@ -21,6 +21,13 @@ export default {
   /** 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。{ from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。{ before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用 */
   disableDate: {
     type: [Object, Array, Function] as PropType<TdDateRangePickerProps['disableDate']>,
+  },
+  /** 第一天从星期几开始，0 表示周日，1 表示周一 */
+  firstDayOfWeek: {
+    type: Number,
+    validator(val: TdDateRangePickerProps['firstDayOfWeek']): boolean {
+      return [0, 1, 2, 3, 4, 5, 6, 7].includes(val);
+    },
   },
   /** 用于格式化日期，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {

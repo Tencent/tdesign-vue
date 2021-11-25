@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-11-24 22:08:34
  * */
 
 import { TdDatePickerProps } from './type';
@@ -21,6 +21,13 @@ export default {
   },
   /** 是否显示时间选择 */
   enableTimePicker: Boolean,
+  /** 第一天从星期几开始，0 表示周日，1 表示周一 */
+  firstDayOfWeek: {
+    type: Number,
+    validator(val: TdDatePickerProps['firstDayOfWeek']): boolean {
+      return [0, 1, 2, 3, 4, 5, 6, 7].includes(val);
+    },
+  },
   /** 用于格式化日期，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,

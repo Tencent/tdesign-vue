@@ -1,4 +1,5 @@
 import chunk from 'lodash/chunk';
+import { TdDatePickerProps } from '.';
 import { TdCSSProperties } from './interface';
 
 /**
@@ -266,11 +267,12 @@ export function addMonth(date: Date, num: number): Date {
   return newDate;
 }
 
-interface OptionsType {
+export interface OptionsType {
   firstDayOfWeek: number;
-  disableDate: Function;
+  disableDate: TdDatePickerProps['disableDate'];
   minDate: Date;
   maxDate: Date;
+  monthLocal?: string[];
 }
 
 export function getWeeks(
@@ -283,24 +285,18 @@ export function getWeeks(
   }: OptionsType,
 ) {
   const prependDay = getFirstDayOfMonth({ year, month });
-
   const appendDay = getLastDayOfMonth({ year, month });
-
   const maxDays = getDaysInMonth({ year, month });
-
   const daysArr = [];
   let i = 1;
-
   const today = getToday();
-
   for (i; i <= maxDays; i++) {
     const currentDay = new Date(year, month, i);
-
     daysArr.push({
       text: i,
       active: false,
       value: currentDay,
-      disabled: disableDate(currentDay) || outOfRanges(currentDay, minDate, maxDate),
+      disabled: (typeof disableDate === 'function' && disableDate(currentDay)) || outOfRanges(currentDay, minDate, maxDate),
       now: isSame(today, currentDay),
       firstDayOfMonth: i === 1,
       lastDayOfMonth: i === maxDays,
@@ -310,13 +306,12 @@ export function getWeeks(
 
   if (prependDay.getDay() !== firstDayOfWeek) {
     prependDay.setDate(0); // 上一月
-
     while (true) {
       daysArr.unshift({
         text: prependDay.getDate().toString(),
         active: false,
         value: new Date(prependDay),
-        disabled: disableDate(prependDay) || outOfRanges(prependDay, minDate, maxDate),
+        disabled: (typeof disableDate === 'function' && disableDate(prependDay)) || outOfRanges(prependDay, minDate, maxDate),
         additional: true, // 非当前月
         type: 'prev-month',
       });
@@ -326,14 +321,13 @@ export function getWeeks(
   }
 
   const LEN = 42; // 显示6周
-
   while (daysArr.length < LEN) {
     appendDay.setDate(appendDay.getDate() + 1);
     daysArr.push({
       text: appendDay.getDate(),
       active: false,
       value: new Date(appendDay),
-      disabled: disableDate(appendDay) || outOfRanges(appendDay, minDate, maxDate),
+      disabled: (typeof disableDate === 'function' && disableDate(appendDay)) || outOfRanges(appendDay, minDate, maxDate),
       additional: true, // 非当前月
       type: 'next-month',
     });
@@ -365,7 +359,7 @@ export function getYears(
 
     for (let j = 0; j < 12; j++) {
       const d = new Date(i, j);
-      if (disableDate(d)) disabledMonth += 1;
+      if (typeof disableDate === 'function' && disableDate(d)) disabledMonth += 1;
       if (outOfRanges(d, minDate, maxDate)) outOfRangeMonth += 1;
     }
 
@@ -381,22 +375,21 @@ export function getYears(
   return chunk(yearArr, 4);
 }
 
-export function getMonths(year: number, { disableDate = () => false, minDate, maxDate }: OptionsType) {
+export function getMonths(year: number, params: OptionsType) {
+  const {
+    disableDate = () => false, minDate, maxDate, monthLocal,
+  } = params;
   const MonthArr = [];
-
   const today = getToday();
-
   for (let i = 0; i <= 11; i++) {
     const date = new Date(year, i);
-
     let disabledDay = 0;
     let outOfRangeDay = 0;
-
     const daysInMonth = getDaysInMonth({ year, month: i });
 
     for (let j = 1; j <= daysInMonth; j++) {
       const d = new Date(year, i, j);
-      if (disableDate(d)) disabledDay += 1;
+      if (typeof disableDate === 'function' && disableDate(d)) disabledDay += 1;
       if (outOfRanges(d, minDate, maxDate)) outOfRangeDay += 1;
     }
 
@@ -405,7 +398,7 @@ export function getMonths(year: number, { disableDate = () => false, minDate, ma
       now: isSame(date, today, 'month'),
       disabled: disabledDay === daysInMonth || outOfRangeDay === daysInMonth,
       active: false,
-      text: `${date.getMonth() + 1} 月`,
+      text: monthLocal[date.getMonth()], // `${date.getMonth() + 1} ${monthText || '月'}`,
     });
   }
 

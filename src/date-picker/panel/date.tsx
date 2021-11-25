@@ -1,6 +1,8 @@
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 import TDateHeader from '../basic/header';
 import TDateTable from '../basic/table';
+import props from '../props';
+import { DatePickerConfig } from '../../config-provider/config-receiver';
 import {
   DateData, DateMethods, DateComputed, DateProps,
 } from '../interface';
@@ -14,6 +16,7 @@ import {
   addMonth,
   getToday,
   firstUpperCase,
+  OptionsType,
 } from '../utils';
 
 export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
@@ -24,26 +27,25 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   },
   inheritAttrs: false,
   props: {
+    global: {
+      type: Object as PropType<DatePickerConfig>,
+    },
     value: {
       type: Date,
       default: () => getToday(),
     },
-    mode: {
-      type: String,
-      default: 'date',
-      validator: (v: string) => ['year', 'month', 'date'].indexOf(v) > -1,
-    },
+    mode: props.mode,
     minDate: Date,
     maxDate: Date,
-    firstDayOfWeek: Number,
-    disableDate: Function,
-    onChange: Function,
+    firstDayOfWeek: props.firstDayOfWeek,
+    disableDate: props.disableDate,
+    onChange: props.onChange,
   },
   data() {
     return {
-      year: this.$props.value.getFullYear(),
-      month: this.$props.value.getMonth(),
-      type: this.$props.mode,
+      year: this.value.getFullYear(),
+      month: this.value.getMonth(),
+      type: this.mode,
     };
   },
   computed: {
@@ -53,11 +55,12 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
       } = this;
       let data;
 
-      const options = {
+      const options: OptionsType = {
         disableDate,
         minDate,
         maxDate,
         firstDayOfWeek,
+        monthLocal: this.global?.months?.shorthand,
       };
 
       switch (type) {
@@ -159,7 +162,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
 
         <t-date-table
           type={this.$data.type}
-          first-day-of-week={this.$props.firstDayOfWeek}
+          first-day-of-week={this.firstDayOfWeek}
           data={this.tableData}
           {...{
             props: {

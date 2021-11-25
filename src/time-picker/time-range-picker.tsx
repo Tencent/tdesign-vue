@@ -5,7 +5,7 @@ import isEqual from 'lodash/isEqual';
 
 import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
   TimePickerInstance, TimeInputEvent, InputTime, TimePickerPanelInstance, EPickerCols,
 } from './interface';
@@ -26,7 +26,7 @@ const name = `${prefix}-time-picker`;
 
 dayjs.extend(customParseFormat);
 
-export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).extend({
+export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConfig>('timePicker')).extend({
   name: 'TTimeRangePicker',
 
   components: {
@@ -166,10 +166,10 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
         // 当前上下午
         let currentHour = value.hour();
         // 上下午
-        if (change === this.locale.anteMeridiem) {
+        if (change === this.global.anteMeridiem) {
           // 上午
           currentHour -= 12;
-        } else if (change === this.locale.postMeridiem) {
+        } else if (change === this.global.postMeridiem) {
           // 下午
           currentHour += 12;
         }
@@ -279,7 +279,7 @@ export default mixins(getLocalReceiverMixins<TimePickerInstance>('timePicker')).
             disabled={this.disabled}
             format={this.format}
             allowInput={this.allowInput}
-            placeholder={this.placeholder || this.locale.placeholder}
+            placeholder={this.placeholder || this.global.placeholder}
             isRangePicker
             onToggleMeridiem={(index: number) => this.toggleInputMeridiem(index)}
             onBlurDefault={this.onBlurDefault}

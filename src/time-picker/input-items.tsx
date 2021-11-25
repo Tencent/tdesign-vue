@@ -1,5 +1,6 @@
+import Vue from 'vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
   componentName, AM_FORMAT, EMPTY_VALUE, MERIDIEM_LIST,
 } from './constant';
@@ -11,7 +12,7 @@ import { prefix } from '../config';
 
 const name = `${prefix}-time-picker-input-items`; // t-time-picker-input-items
 
-export default mixins(getLocalReceiverMixins('timePicker')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TimePickerConfig>('timePicker')).extend({
   name,
   data() {
     return {
@@ -260,7 +261,7 @@ export default mixins(getLocalReceiverMixins('timePicker')).extend({
         }
         // 判断上下午位置
         if (/[h]{1}/.test(format) && (format.includes('A') || format.includes('a'))) {
-          const localeMeridiemList = [this.locale.anteMeridiem, this.locale.postMeridiem];
+          const localeMeridiemList = [this.global.anteMeridiem, this.global.postMeridiem];
           const text = localeMeridiemList[MERIDIEM_LIST.indexOf(inputTime.meridiem.toUpperCase())];
           // 放在前面or后面
           render[AM_FORMAT.test(format) ? 'unshift' : 'push'](

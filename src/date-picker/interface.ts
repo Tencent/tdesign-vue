@@ -1,6 +1,6 @@
 import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
-
+import { DatePickerConfig } from '../config-provider/config-receiver';
 import { EPickerCols } from '../time-picker/interface';
 import {
   DateValue, TdDatePickerProps, TdDateRangePickerProps,
@@ -10,43 +10,11 @@ export * from './type';
 export type DatePickerProps = TdDatePickerProps;
 export type DateRangePickerProps = TdDateRangePickerProps;
 
-export type DatePickerLocale = {
-  placeholder: object;
-  daysOfWeek: string[];
-  monthNames: string[];
-  weekdays: {
-    shorthand: [string, string, string, string, string, string, string];
-    longhand: [string, string, string, string, string, string, string];
-  };
-  months: {
-    shorthand: [string, string, string, string, string, string, string, string, string, string, string, string];
-    longhand: [string, string, string, string, string, string, string, string, string, string, string, string];
-  };
-  firstDayOfWeek: number;
-  rangeSeparator: string;
-  dayAriaLabel: string;
-  weekAbbreviation: string;
-  scrollTitle: string;
-  direction: string;
-  format: string;
-  yearAriaLabel: string;
-  applyLabel: string;
-  cancelLabel: string;
-  weekLabel: string;
-  clearLabel: string;
-  selectTime: string;
-  selectDate: string;
-  presets: { [key: string]: string };
-};
-
-export type CustomLocale = Partial<DatePickerLocale>;
-
 export type TdCSSProperties = Partial<CSSStyleDeclaration>;
 
 export interface DatePickerData {
   tempValue: string | Date;
-  locale: CustomLocale | string;
-  locales: CustomLocale;
+  global: DatePickerConfig;
   monthDate: Date;
   start: Date;
   end: Date;
@@ -67,7 +35,6 @@ export interface DatePickerData {
 export interface DatePickerMethods {
   initClickAway: (el: Element) => void;
   attachDatePicker: () => void;
-  getLocales: () => CustomLocale;
   setLocales: () => void;
   onNativeInput(event?: any): void;
   onNativeFocus(event?: any): void;
@@ -121,7 +88,7 @@ export interface PresetDate {
 
 export interface CalendarComponentProps {
   monthDate: Date;
-  locales: CustomLocale;
+  global: DatePickerConfig;
   selectedDates: Date[];
   start: Date;
   end: Date;
@@ -168,7 +135,7 @@ export interface CalendarMonthComputed {
 export interface CalendarMonthProps {
   mode: string;
   monthDate: Date;
-  locales: CustomLocale;
+  global: DatePickerConfig;
   currentMonth: Date;
 }
 
@@ -243,13 +210,14 @@ export interface CalendarPreset {
   label: string;
   value: DateValue[];
 }
+
 export interface CalendarPresetsMethods {
   clickPreset(value: DateValue): void;
 }
 
 export interface CalendarPresetsProps {
   presets: CalendarPreset;
-  locales: CustomLocale;
+  global: DatePickerConfig;
   onClick: Function;
 }
 
@@ -259,18 +227,21 @@ export interface DateRangeProps {
   minDate: Date;
   maxDate: Date;
   firstDayOfWeek: number;
-  disableDate: Function;
-  onChange: Function;
-  onPick: Function;
+  disableDate: TdDatePickerProps['disableDate'];
+  global: DatePickerConfig;
+  onChange: TdDatePickerProps['onChange'];
+  onPick: TdDateRangePickerProps['onPick'];
 }
+
 export interface DateProps {
   mode: string;
   value: Date;
   minDate: Date;
   maxDate: Date;
   firstDayOfWeek: number;
-  disableDate: Function;
-  onChange: Function;
+  disableDate: TdDatePickerProps['disableDate'];
+  global: DatePickerConfig;
+  onChange: TdDatePickerProps['onChange'];
 }
 
 export interface DateHeaderProps {

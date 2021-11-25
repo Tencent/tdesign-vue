@@ -1,9 +1,10 @@
+import Vue from 'vue';
 import { RoundIcon as TIconRound, ChevronLeftIcon as TIconChevronLeft, ChevronRightIcon as TIconChevronRight } from 'tdesign-icons-vue';
 import TButton from '../../button/button';
 import mixins from '../../utils/mixins';
-import getLocalReceiverMixins from '../../locale/local-receiver';
+import getConfigReceiverMixins, { DatePickerConfig } from '../../config-provider/config-receiver';
 
-export default mixins(getLocalReceiverMixins('datePicker')).extend({
+export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker')).extend({
   components: {
     TButton,
     TIconChevronLeft,
@@ -27,8 +28,8 @@ export default mixins(getLocalReceiverMixins('datePicker')).extend({
     } = this.$props;
     const startYear = parseInt((this.year / 10).toString(), 10) * 10;
     const {
-      rangeSeparator, yearAriaLabel, monthAriaLabel, now, preMonth, preYear, nextMonth, nextYear, preDecade, nextDecade,
-    } = this.locale;
+      rangeSeparator, yearAriaLabel, now, preMonth, preYear, nextMonth, nextYear, preDecade, nextDecade,
+    } = this.global;
     let preLabel;
     let nextLabel;
     if (type === 'year') {
@@ -77,7 +78,7 @@ export default mixins(getLocalReceiverMixins('datePicker')).extend({
                 size="small"
                 onClick={() => onTypeChange('month')}
               >
-                { `${month === 12 ? 1 : month + 1} ${monthAriaLabel}`}
+                {this.global.months.shorthand[month]}
               </t-button>
             )
           }

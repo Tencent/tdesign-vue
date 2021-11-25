@@ -3,12 +3,12 @@ import props from './props';
 import TStepItem from './step-item';
 import { ClassName } from '../common';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { TdStepsProps } from './type';
 import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-steps`;
-export default mixins(getLocalReceiverMixins('steps')).extend({
+export default mixins(getConfigReceiverMixins('steps')).extend({
   name: 'TSteps',
   components: {
     TStepItem,

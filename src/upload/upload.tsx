@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
-import { VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
 import { UploadIcon as TIconUpload } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
@@ -75,7 +75,7 @@ function isOverSizeLimit(fileSize: number, sizeLimit: number, unit: SizeUnit) {
   return fileSize <= limit;
 }
 
-export default mixins(getLocalReceiverMixins('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
   name: 'TUpload',
 
   components: {
@@ -433,10 +433,10 @@ export default mixins(getLocalReceiverMixins('upload')).extend({
         : this.sizeLimit;
       const rSize = isOverSizeLimit(fileSize, sizeLimit.size, sizeLimit.unit);
       if (!rSize) {
-        // 有参数 message 则使用，没有就使用全局 locale 配置
+        // 有参数 message 则使用，没有就使用全局 global 配置
         this.errorMsg = sizeLimit.message
           ? this.t(sizeLimit.message, { sizeLimit: sizeLimit.size })
-          : `${this.t(this.locale.sizeLimitMessage, { sizeLimit: sizeLimit.size })} ${sizeLimit.unit}`;
+          : `${this.t(this.global.sizeLimitMessage, { sizeLimit: sizeLimit.size })} ${sizeLimit.unit}`;
       }
       return rSize;
     },

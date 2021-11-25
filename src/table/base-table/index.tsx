@@ -1,7 +1,7 @@
-import { VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import throttle from 'lodash/throttle';
 import mixins from '../../utils/mixins';
-import getLocalReceiverMixins from '../../locale/local-receiver';
+import getConfigReceiverMixins, { TableConfig } from '../../config-provider/config-receiver';
 import { prefix } from '../../config';
 import flatColumns from '../util/props-util';
 import baseTableProps from '../base-table-props';
@@ -22,7 +22,7 @@ import primaryTableProps from '../primary-table-props';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 
-export default mixins(getLocalReceiverMixins('table')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend({
   name: 'TBaseTable',
   model: {
     prop: 'value',
@@ -220,7 +220,7 @@ export default mixins(getLocalReceiverMixins('table')).extend({
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
         <div class={`${prefix}-table--empty`}>
-          {useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty')}
+          {useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}
         </div>
       );
     },

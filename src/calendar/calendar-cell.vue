@@ -37,7 +37,7 @@ export default Vue.extend({
       default: undefined,
     },
     t: Function,
-    locale: Object,
+    global: Object,
   },
   computed: {
     allowSlot(): boolean {
@@ -49,10 +49,10 @@ export default Vue.extend({
     valueDisplay(): string {
       if (this.item.mode === 'month') {
         const dateNum = this.item.date.getDate();
-        const fillZero = dateNum < 10 && (this.fillWithZero ?? this.locale.fillWithZero ?? true);
+        const fillZero = dateNum < 10 && (this.fillWithZero ?? this.global.fillWithZero ?? true);
         return (fillZero ? `0${dateNum}` : dateNum);
       }
-      const map = this.t(this.locale.cellMonth).split(',');
+      const map = this.t(this.global.cellMonth).split(',');
       return map[(this.item.date.getMonth()).toString()];
     },
     cellCls(): Record<string, any> {

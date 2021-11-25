@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-22 17:36:56
+ * updated at 2021-11-24 22:45:30
  * */
 
 import { TdCascaderProps } from './type';
@@ -23,10 +23,9 @@ export default {
   },
   /** 是否禁用组件 */
   disabled: Boolean,
-  /** 无匹配选项时的内容 */
+  /** 无匹配选项时的内容，默认为 '暂无数据' */
   empty: {
     type: [String, Function] as PropType<TdCascaderProps['empty']>,
-    default: '暂无数据',
   },
   /** 是否可搜索 */
   filterable: Boolean,
@@ -42,6 +41,13 @@ export default {
   /** 加载子树数据的方法（仅当节点 children 为 true 时生效） */
   load: {
     type: Function as PropType<TdCascaderProps['load']>,
+  },
+  /** 是否为加载状态 */
+  loading: Boolean,
+  /** 远程加载时显示的文字，支持自定义。如加上超链接 */
+  loadingText: {
+    type: [String, Function] as PropType<TdCascaderProps['loadingText']>,
+    default: '',
   },
   /** 用于控制多选数量，值为 0 则不限制 */
   max: {

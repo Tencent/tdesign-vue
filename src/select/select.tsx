@@ -10,7 +10,7 @@ import {
 import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { SelectConfig } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -32,7 +32,7 @@ const name = `${prefix}-select`;
 // 用户设置overStyle width时，以设置的为准
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
 
-export default mixins(getLocalReceiverMixins('select')).extend({
+export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).extend({
   name: 'TSelect',
   model: {
     prop: 'value',
@@ -460,21 +460,21 @@ export default mixins(getLocalReceiverMixins('select')).extend({
     },
     getEmpty() {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
-      return useLocale ? this.t(this.locale.empty) : renderTNodeJSX(this, 'empty');
+      return useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
     },
     getLoadingText() {
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
-      return useLocale ? this.t(this.locale.loadingText) : renderTNodeJSX(this, 'loadingText');
+      return useLocale ? this.t(this.global.loadingText) : renderTNodeJSX(this, 'loadingText');
     },
     getPlaceholderText() {
-      return this.placeholder || this.t(this.locale.placeholderText);
+      return this.placeholder || this.t(this.global.placeholder);
     },
     getCloseIcon() {
       const closeIconClass = [`${name}-right-icon`, `${name}-right-icon__clear`];
-      if (isFunction(this.locale.clearIcon)) {
+      if (isFunction(this.global.clearIcon)) {
         return (
           <span class={closeIconClass} onClick={this.clearSelect}>
-            {this.locale.clearIcon(this.$createElement)}
+            {this.global.clearIcon(this.$createElement)}
           </span>
         );
       }

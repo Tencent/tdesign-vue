@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
@@ -5,7 +6,7 @@ import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { DrawerConfig } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
@@ -14,7 +15,7 @@ type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
 
-export default mixins(getLocalReceiverMixins('drawer')).extend({
+export default mixins(getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
 
   components: {
@@ -164,13 +165,13 @@ export default mixins(getLocalReceiverMixins('drawer')).extend({
     getDefaultFooter() {
       let cancelBtn = null;
       if (![undefined, null].includes(this.cancelBtn)) {
-        cancelBtn = this.cancelBtn || this.t(this.locale.cancel);
+        cancelBtn = this.cancelBtn || this.t(this.global.cancel);
         const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
         cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
       }
       let confirmBtn = null;
       if (![undefined, null].includes(this.confirmBtn)) {
-        confirmBtn = this.confirmBtn || this.t(this.locale.confirm);
+        confirmBtn = this.confirmBtn || this.t(this.global.confirm);
         const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
         confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
       }

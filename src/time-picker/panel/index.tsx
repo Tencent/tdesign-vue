@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import mixins from '../../utils/mixins';
-import getLocalReceiverMixins from '../../locale/local-receiver';
+import getConfigReceiverMixins, { TimePickerConfig } from '../../config-provider/config-receiver';
 import { TimePickerPanelInstance, TimePickerPanelColInstance, EPickerCols } from '../interface';
 import { componentName } from '../constant';
 import { panelProps } from './props';
@@ -13,7 +13,7 @@ const name = `${componentName}-panel`;
 
 dayjs.extend(customParseFormat);
 
-export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicker')).extend({
+export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePickerConfig>('timePicker')).extend({
   name,
   data() {
     return {
@@ -64,7 +64,7 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
       return res;
     },
     localeMeridiems() {
-      return [this.locale.anteMeridiem, this.locale.postMeridiem];
+      return [this.global.anteMeridiem, this.global.postMeridiem];
     },
     showNowTime() {
       // 是否展示此刻按钮
@@ -97,11 +97,11 @@ export default mixins(getLocalReceiverMixins<TimePickerPanelInstance>('timePicke
         <div class={`${this.sectionComponentName}__footer`}>
           {/* 样式设置为row-reverse 这样不用特地为确定写个绝对布局 */}
           <t-button theme="primary" variant="base" onClick={confirmAction}>
-            {this.t(this.locale.confirm)}
+            {this.t(this.global.confirm)}
           </t-button>
           { this.showNowTime && (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
-              {this.t(this.locale.nowtime)}
+              {this.t(this.global.now)}
             </t-button>
           )}
         </div>

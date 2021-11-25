@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-22 17:36:56
+ * updated at 2021-11-24 22:45:30
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -35,8 +35,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   disabled?: boolean;
   /**
-   * 无匹配选项时的内容
-   * @default '暂无数据'
+   * 无匹配选项时的内容，默认为 '暂无数据'
    */
   empty?: string | TNode;
   /**
@@ -57,6 +56,16 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    * 加载子树数据的方法（仅当节点 children 为 true 时生效）
    */
   load?: (node: TreeNodeModel<CascaderOption>) => Promise<Array<CascaderOption>>;
+  /**
+   * 是否为加载状态
+   * @default false
+   */
+  loading?: boolean;
+  /**
+   * 远程加载时显示的文字，支持自定义。如加上超链接
+   * @default ''
+   */
+  loadingText?: string | TNode;
   /**
    * 用于控制多选数量，值为 0 则不限制
    * @default 0

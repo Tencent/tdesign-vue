@@ -1,8 +1,8 @@
-import { VNode, CreateElement } from 'vue';
+import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { CaretRightSmallIcon as TIconCaretRightSmall } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getLocalReceiverMixins from '../locale/local-receiver';
+import getConfigReceiverMixins, { TreeConfig } from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
 import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -21,7 +21,7 @@ export const TreeItemProps = {
   },
 };
 
-export default mixins(getLocalReceiverMixins('tree')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
@@ -116,8 +116,8 @@ export default mixins(getLocalReceiverMixins('tree')).extend({
       return lineNode;
     },
     getFolderIcon() {
-      if (isFunction(this.locale.folderIcon)) {
-        return this.locale.folderIcon(this.$createElement);
+      if (isFunction(this.global.folderIcon)) {
+        return this.global.folderIcon(this.$createElement);
       }
       return <TIconCaretRightSmall/>;
     },
