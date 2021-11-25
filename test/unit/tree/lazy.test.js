@@ -10,41 +10,54 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
-      const wrapper = mount({
-        data() {
-          return {
-            data,
-          };
-        },
-        methods: {
-          async load(node) {
-            await delay(10);
-            let nodes = [];
-            if (node.level < 2) {
-              nodes = [{
-                value: `${node.value}.1`,
-                children: true,
-              }, {
-                value: `${node.value}.2`,
-                children: true,
-              }];
-            }
-            return nodes;
+
+      let wrapper = null;
+      const pm = new Promise((resolve) => {
+        let loadIndex = 0;
+        wrapper = mount({
+          data() {
+            return {
+              data,
+            };
           },
-        },
-        render() {
-          return (
-            <Tree
-              data={this.data}
-              expandAll
-              load={this.load}
-              lazy={false}
-              transition={false}
-            ></Tree>
-          );
-        },
+          methods: {
+            async load(node) {
+              await delay(10);
+              let nodes = [];
+              if (node.level < 2) {
+                nodes = [{
+                  value: `${node.value}.1`,
+                  children: true,
+                }, {
+                  value: `${node.value}.2`,
+                  children: true,
+                }];
+              }
+              return nodes;
+            },
+            onLoad() {
+              loadIndex += 1;
+              if (loadIndex >= 7) {
+                resolve();
+              }
+            },
+          },
+          render() {
+            return (
+              <Tree
+                data={this.data}
+                expandAll
+                load={this.load}
+                onLoad={this.onLoad}
+                lazy={false}
+                transition={false}
+              ></Tree>
+            );
+          },
+        });
       });
-      await delay(200);
+      await pm;
+
       expect(
         wrapper
           .find('[data-value="t1.1"]')
@@ -72,44 +85,58 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
-      const wrapper = mount({
-        data() {
-          return {
-            data,
-            value: ['t1.1.1'],
-          };
-        },
-        methods: {
-          async load(node) {
-            await delay(10);
-            let nodes = [];
-            if (node.level < 2) {
-              nodes = [{
-                value: `${node.value}.1`,
-                children: true,
-              }, {
-                value: `${node.value}.2`,
-                children: true,
-              }];
-            }
-            return nodes;
+
+      let wrapper = null;
+      let loadIndex = 0;
+      const pm = new Promise((resolve) => {
+        wrapper = mount({
+          data() {
+            return {
+              data,
+              value: ['t1.1.1'],
+            };
           },
-        },
-        render() {
-          return (
-            <Tree
-              data={this.data}
-              value={this.value}
-              load={this.load}
-              expandAll
-              checkable
-              lazy={false}
-              transition={false}
-            ></Tree>
-          );
-        },
+          methods: {
+            async load(node) {
+              await delay(10);
+              let nodes = [];
+              if (node.level < 2) {
+                nodes = [{
+                  value: `${node.value}.1`,
+                  children: true,
+                }, {
+                  value: `${node.value}.2`,
+                  children: true,
+                }];
+              }
+              return nodes;
+            },
+            onLoad() {
+              loadIndex += 1;
+              if (loadIndex >= 7) {
+                resolve();
+              }
+            },
+          },
+          render() {
+            return (
+              <Tree
+                data={this.data}
+                value={this.value}
+                load={this.load}
+                onLoad={this.onLoad}
+                expandAll
+                checkable
+                lazy={false}
+                transition={false}
+              ></Tree>
+            );
+          },
+        });
       });
-      await delay(200);
+
+      await pm;
+
       expect(
         wrapper
           .find('[data-value="t1"] .t-checkbox')
@@ -142,45 +169,59 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
-      const wrapper = mount({
-        data() {
-          return {
-            data,
-            value: ['t1.1.1'],
-          };
-        },
-        methods: {
-          async load(node) {
-            await delay(10);
-            let nodes = [];
-            if (node.level < 2) {
-              nodes = [{
-                value: `${node.value}.1`,
-                children: true,
-              }, {
-                value: `${node.value}.2`,
-                children: true,
-              }];
-            }
-            return nodes;
+
+      let wrapper = null;
+      let loadIndex = 0;
+      const pm = new Promise((resolve) => {
+        wrapper = mount({
+          data() {
+            return {
+              data,
+              value: ['t1.1.1'],
+            };
           },
-        },
-        render() {
-          return (
-            <Tree
-              data={this.data}
-              value={this.value}
-              load={this.load}
-              expandAll
-              checkable
-              checkStrictly
-              lazy={false}
-              transition={false}
-            ></Tree>
-          );
-        },
+          methods: {
+            async load(node) {
+              await delay(10);
+              let nodes = [];
+              if (node.level < 2) {
+                nodes = [{
+                  value: `${node.value}.1`,
+                  children: true,
+                }, {
+                  value: `${node.value}.2`,
+                  children: true,
+                }];
+              }
+              return nodes;
+            },
+            onLoad() {
+              loadIndex += 1;
+              if (loadIndex >= 7) {
+                resolve();
+              }
+            },
+          },
+          render() {
+            return (
+              <Tree
+                data={this.data}
+                value={this.value}
+                load={this.load}
+                onLoad={this.onLoad}
+                expandAll
+                checkable
+                checkStrictly
+                lazy={false}
+                transition={false}
+              ></Tree>
+            );
+          },
+        });
       });
-      await delay(200);
+
+      await pm;
+
       expect(
         wrapper
           .find('[data-value="t1"] .t-checkbox')
@@ -215,6 +256,8 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
+
+      let loadIndex = 0;
       const wrapper = mount({
         data() {
           return {
@@ -236,6 +279,10 @@ describe('Tree:lazy-load', () => {
             }
             return nodes;
           },
+          onLoad() {
+            loadIndex += 1;
+            this.$emit('load', loadIndex);
+          },
         },
         render() {
           return (
@@ -243,6 +290,7 @@ describe('Tree:lazy-load', () => {
               data={this.data}
               expandAll
               load={this.load}
+              onLoad={this.onLoad}
               lazy={true}
               transition={false}
             ></Tree>
@@ -250,7 +298,17 @@ describe('Tree:lazy-load', () => {
         },
       });
 
-      await delay(50);
+      await delay(10);
+
+      const step1 = new Promise((resolve) => {
+        wrapper.vm.$off('load');
+        wrapper.vm.$on('load', (index) => {
+          if (index >= 1) {
+            resolve();
+          }
+        });
+      });
+
       expect(
         wrapper
           .find('[data-value="t1.1"]')
@@ -260,7 +318,20 @@ describe('Tree:lazy-load', () => {
         .find('[data-value="t1"] .t-tree__icon')
         .trigger('click');
 
-      await delay(50);
+      // 数据被加载
+      await step1;
+      // 留给 dom 渲染时间
+      await delay(10);
+
+      const step2 = new Promise((resolve) => {
+        wrapper.vm.$off('load');
+        wrapper.vm.$on('load', (index) => {
+          if (index >= 2) {
+            resolve();
+          }
+        });
+      });
+
       expect(
         wrapper
           .find('[data-value="t1.1"]')
@@ -275,7 +346,10 @@ describe('Tree:lazy-load', () => {
         .find('[data-value="t1.1"] .t-tree__icon')
         .trigger('click');
 
-      await delay(50);
+      await step2;
+      // 留给 dom 渲染时间
+      await delay(10);
+
       expect(
         wrapper
           .find('[data-value="t1.1.1"]')
@@ -298,6 +372,8 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
+
+      let loadIndex = 0;
       const wrapper = mount({
         data() {
           return {
@@ -316,6 +392,10 @@ describe('Tree:lazy-load', () => {
             }
             return nodes;
           },
+          onLoad() {
+            loadIndex += 1;
+            this.$emit('load', loadIndex);
+          },
         },
         mounted() {
           const { tree } = this.$refs;
@@ -329,6 +409,7 @@ describe('Tree:lazy-load', () => {
               ref="tree"
               data={this.data}
               load={this.load}
+              onLoad={this.onLoad}
               lazy={true}
               checkable={true}
               transition={false}
@@ -338,7 +419,17 @@ describe('Tree:lazy-load', () => {
         },
       });
 
-      await delay(50);
+      await delay(10);
+
+      const step1 = new Promise((resolve) => {
+        wrapper.vm.$off('load');
+        wrapper.vm.$on('load', (index) => {
+          if (index >= 1) {
+            resolve();
+          }
+        });
+      });
+
       expect(
         wrapper
           .find('[data-value="t1"] .t-checkbox')
@@ -348,7 +439,9 @@ describe('Tree:lazy-load', () => {
         .find('[data-value="t1"] .t-tree__icon')
         .trigger('click');
 
-      await delay(50);
+      await step1;
+      await delay(10);
+
       expect(
         wrapper
           .find('[data-value="t1.1"]')
@@ -366,6 +459,8 @@ describe('Tree:lazy-load', () => {
         value: 't1',
         children: true,
       }];
+
+      let loadIndex = 0;
       const wrapper = mount({
         data() {
           return {
@@ -384,6 +479,10 @@ describe('Tree:lazy-load', () => {
             }
             return nodes;
           },
+          onLoad() {
+            loadIndex += 1;
+            this.$emit('load', loadIndex);
+          },
         },
         mounted() {
           const { tree } = this.$refs;
@@ -397,6 +496,7 @@ describe('Tree:lazy-load', () => {
               ref="tree"
               data={this.data}
               load={this.load}
+              onLoad={this.onLoad}
               lazy={true}
               checkable={true}
               checkStrictly={true}
@@ -407,7 +507,17 @@ describe('Tree:lazy-load', () => {
         },
       });
 
-      await delay(50);
+      await delay(10);
+
+      const step1 = new Promise((resolve) => {
+        wrapper.vm.$off('load');
+        wrapper.vm.$on('load', (index) => {
+          if (index >= 1) {
+            resolve();
+          }
+        });
+      });
+
       expect(
         wrapper
           .find('[data-value="t1"] .t-checkbox')
@@ -417,7 +527,9 @@ describe('Tree:lazy-load', () => {
         .find('[data-value="t1"] .t-tree__icon')
         .trigger('click');
 
-      await delay(50);
+      await step1;
+      await delay(10);
+
       expect(
         wrapper
           .find('[data-value="t1.1"]')
