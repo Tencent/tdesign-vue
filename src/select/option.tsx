@@ -120,9 +120,9 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   mounted() {
     this.tSelect && this.tSelect.getOptions(this);
   },
-  destroyed() {
-    this.tSelect && this.tSelect.destroyOptions(this);
-  },
+  // destroyed() {
+  //   this.tSelect && this.tSelect.destroyOptions(this);
+  // },
   render(): VNode {
     const {
       classes, labelText, selected, disabled, multiLimitDisabled, show,
