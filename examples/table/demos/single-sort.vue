@@ -82,8 +82,12 @@ export default {
     request(sort) {
       // 模拟异步请求，进行数据排序
       const timer = setTimeout(() => {
-        this.data = data.concat()
-          .sort((a, b) => (sort.descending ? b[sort.sortBy] - a[sort.sortBy] : a[sort.sortBy] - b[sort.sortBy]));
+        if (sort) {
+          this.data = data.concat()
+            .sort((a, b) => (sort.descending ? b[sort.sortBy] - a[sort.sortBy] : a[sort.sortBy] - b[sort.sortBy]));
+        } else {
+          this.data = data.concat();
+        }
         clearTimeout(timer);
       }, 100);
     },
