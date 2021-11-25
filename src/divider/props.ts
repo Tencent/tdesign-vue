@@ -30,7 +30,6 @@ export default {
   /** 分隔线类型有两种：水平和垂直 */
   layout: {
     type: String as PropType<TdDividerProps['layout']>,
-    default: 'horizontal' as TdDividerProps['layout'],
     validator(val: TdDividerProps['layout']): boolean {
       return ['horizontal', 'vertical'].includes(val);
     },

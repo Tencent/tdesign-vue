@@ -30,12 +30,13 @@ export default mixins(getLocalReceiverMixins('steps')).extend({
       if (this.direction) {
         console.warn('TDesign Steps Warn: `direction` is going to be deprecated. please use `layout` instead. ');
       }
+      const layout = this.layout || this.direction;
       return [
         name,
-        `${name}--${this.direction || this.layout}`,
+        `${name}--${layout}`,
         `${name}--${this.theme}-anchor`,
         {
-          [`${name}--${this.sequence}`]: this.layout === 'vertical',
+          [`${name}--${this.sequence}`]: layout === 'vertical',
         },
       ];
     },

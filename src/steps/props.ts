@@ -28,7 +28,6 @@ export default {
   /** 步骤条方向，有两种：横向和纵向 */
   layout: {
     type: String as PropType<TdStepsProps['layout']>,
-    default: 'horizontal' as TdStepsProps['layout'],
     validator(val: TdStepsProps['layout']): boolean {
       return ['horizontal', 'vertical'].includes(val);
     },
