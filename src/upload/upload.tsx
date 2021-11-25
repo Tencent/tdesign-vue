@@ -459,7 +459,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     // close image view dialog
     cancelPreviewImgDialog() {
       this.showImageViewDialog = false;
-      this.showImageViewUrl = '';
+      // Dialog 动画结束后，再清理图片
+      let timer = setTimeout(() => {
+        this.showImageViewUrl = '';
+        clearTimeout(timer);
+        timer = null;
+      }, 500);
     },
 
     getDefaultTrigger() {
@@ -593,10 +598,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             class={`${name}-dialog`}
             footer={false}
             header={false}
-            onClose={this.cancelPreviewImgDialog}>
-              <p class={`${prefix}-dialog__body-img-box`}>
-                <img class='' src={this.showImageViewUrl} alt='' />
-              </p>
+            onClose={this.cancelPreviewImgDialog}
+          >
+              <div class={`${prefix}-dialog__body-img-box`}>
+                <img src={this.showImageViewUrl} alt='' />
+              </div>
           </TDialog>
         )}
         {!this.errorMsg && this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}

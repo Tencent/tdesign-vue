@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronDownCircleIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
@@ -90,7 +90,7 @@ export default {
       ),
       globalLocale: {
         table: {
-          expandIcon: (h) => h && <ChevronDownIcon />,
+          expandIcon: (h) => h && <ChevronRightIcon />,
         },
       },
     };
@@ -109,9 +109,9 @@ export default {
           // 第一行不显示展开图标
           if (index === 0) return false;
           // 第三行，使用自定义展开图标
-          if (row.id === 3) return <ChevronDownIcon />;
+          if (row.id === 3) return <ChevronRightIcon />;
           // 其他行，使用表格同款展开图标
-          return <ChevronDownCircleIcon />;
+          return <ChevronRightCircleIcon />;
         };
       }
     },
