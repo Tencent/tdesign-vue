@@ -27,9 +27,8 @@ function getDocsRoutes(docs, type) {
       docsRoutes = docsRoutes.concat(getDocsRoutes(children, docType));
     } else {
       docRoute = {
-        path: item.name,
+        ...item,
         meta: item.meta || {},
-        component: item.component,
       };
       docsRoutes.push(docRoute);
     }
