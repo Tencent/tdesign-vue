@@ -12,7 +12,7 @@ import { PopupVisibleChangeContext } from './type';
 import { Styles, ClassName } from '../common';
 import setStyle from '../utils/set-style';
 
-const stop = (e: MouseEvent): void => e.stopPropagation();
+const stop = (e: MouseEvent) => e.stopPropagation();
 const name = `${prefix}-popup`;
 const placementMap = {
   top: 'top',
@@ -35,6 +35,18 @@ const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 
 export default Vue.extend({
   name: 'TPopup',
+
+  provide(this: any) {
+    return {
+      popup: this,
+    };
+  },
+
+  inject: {
+    popup: {
+      default: undefined,
+    },
+  },
 
   props: {
     ...props,
@@ -131,12 +143,19 @@ export default Vue.extend({
       );
     }
     if (this.hasTrigger.hover) {
-      const open = () => this.handleOpen({ trigger: 'trigger-element-hover' });
-      const close = () => this.handleClose({ trigger: 'trigger-element-hover' });
-      offEvents.push(on(reference, 'mouseenter', open));
-      offEvents.push(on(reference, 'mouseleave', close));
-      offEvents.push(on(popperElm, 'mouseenter', open));
-      offEvents.push(on(popperElm, 'mouseleave', close));
+      offEvents.push(on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' })));
+      offEvents.push(on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' })));
+      offEvents.push(on(popperElm, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }, true)));
+      offEvents.push(on(popperElm, 'mouseleave', (ev: MouseEvent) => {
+        const parent = (this as any).popup;
+        let closeParent: boolean;
+        if (parent?.visible) {
+          const parentRect = parent.$refs.popper.getBoundingClientRect();
+          // close parent if mouse isn't inside
+          closeParent = !(ev.x > parentRect.left && ev.x < parentRect.right && ev.y > parentRect.top && ev.y < parentRect.bottom);
+        }
+        this.handleClose({ trigger: 'trigger-element-hover' }, closeParent);
+      }));
     }
     if (this.hasTrigger.focus) {
       if (reference.querySelector('input,textarea')) {
@@ -158,7 +177,7 @@ export default Vue.extend({
       );
     }
   },
-  beforeDestroy(): void {
+  beforeDestroy() {
     if (this.popper && !this.visible) {
       this.popper.destroy();
       this.popper = null;
@@ -171,7 +190,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    createPopper(): void {
+    createPopper() {
       const currentPlacement = this.placement;
       const popperElm = this.$refs.popper as HTMLElement;
 
@@ -207,7 +226,7 @@ export default Vue.extend({
       });
     },
 
-    updatePopper(): void {
+    updatePopper() {
       if (this.popper) {
         this.popper.update();
       } else {
@@ -237,7 +256,7 @@ export default Vue.extend({
       }
     },
 
-    destroyPopper(el: HTMLElement): void {
+    destroyPopper(el: HTMLElement) {
       this.resetExpandStyles(el);
       if (this.popper) {
         this.popper.destroy();
@@ -249,10 +268,10 @@ export default Vue.extend({
       }
     },
 
-    handleToggle(context: PopupVisibleChangeContext): void {
+    handleToggle(context: PopupVisibleChangeContext) {
       this.emitPopVisible(!this.visible, context);
     },
-    handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+    handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>, openParent?: boolean) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(
         () => {
@@ -260,8 +279,12 @@ export default Vue.extend({
         },
         this.hasTrigger.click ? 0 : showTimeout,
       );
+      // keep parent open (recursively)
+      if (openParent) {
+        (this as any).popup?.handleOpen(context, true);
+      }
     },
-    handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>): void {
+    handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>, closeParent?: boolean) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(
         () => {
@@ -269,14 +292,18 @@ export default Vue.extend({
         },
         this.hasTrigger.click ? 0 : hideTimeout,
       );
+      // close parent (recursively)
+      if (closeParent) {
+        (this as any).popup?.handleClose({ trigger: 'trigger-element-hover' }, true);
+      }
     },
-    handleDocumentClick(e: Event): void {
+    handleDocumentClick(e: Event) {
       const popperElm = this.$refs.popper as HTMLElement;
       if (!this.$el || this.$el.contains(e.target as Element)
         || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
     },
-    emitPopVisible(val: boolean, context: PopupVisibleChangeContext): void {
+    emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
       this.$emit('visible-change', val, context);
       if (typeof this.onVisibleChange === 'function') {
         this.onVisibleChange(val, context);
@@ -292,7 +319,7 @@ export default Vue.extend({
       return null;
     },
     // 动画结束后 清除展开收起动画相关属性 避免造成不必要的影响
-    resetExpandStyles(el: HTMLElement): void {
+    resetExpandStyles(el: HTMLElement) {
       const content = this.getContentElm(el);
       if (content) {
         content.style.overflow = '';
@@ -302,7 +329,7 @@ export default Vue.extend({
       }
     },
     // 设置展开动画初始条件
-    beforeEnter(el: HTMLElement): void {
+    beforeEnter(el: HTMLElement) {
       const content = this.getContentElm(el);
       if (content) {
         content.style.overflow = 'hidden';
@@ -310,7 +337,7 @@ export default Vue.extend({
       }
     },
     // 设置max-height,触发展开动画
-    enter(el: HTMLElement): void {
+    enter(el: HTMLElement) {
       const content = this.getContentElm(el);
       if (content) {
         // 对比scrollHeight和组件自身设置的maxHeight 选择小的做展开动画
@@ -319,12 +346,12 @@ export default Vue.extend({
       }
     },
     // 设置max-height为0,触发收起动画
-    leave(el: HTMLElement): void {
+    leave(el: HTMLElement) {
       const content = this.getContentElm(el);
       if (content) content.style.maxHeight = '0';
     },
     // 设置收起动画初始条件
-    beforeLeave(el: HTMLElement): void {
+    beforeLeave(el: HTMLElement) {
       const content = this.getContentElm(el);
       if (content) {
         content.style.overflow = 'hidden';
