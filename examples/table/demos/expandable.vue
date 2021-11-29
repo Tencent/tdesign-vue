@@ -38,6 +38,35 @@
       </template>
     </t-table>
 
+    <div style="margin: 10px 0px;">支持名为 expandedRow 的插槽写法</div>
+
+    <t-table
+      row-key='id'
+      :columns="columns"
+      :data="data"
+      :expanded-row-keys="expandedRowKeys"
+      @expand-change="rehandleExpandChange"
+      :expandIcon="expandIcon"
+      :expandOnRowClick="expandOnRowClick"
+    >
+      <template #expandedRow="{ row }">
+        <div class="more-detail">
+          <p class="title"><b>集群名称:</b></p><p class="content">{{row.instance}}</p><br/>
+          <p class="title"><b>管理员:</b></p><p class="content">{{row.owner}}</p><br/>
+          <p class="title"><b>描述:</b></p><p class="content">{{row.description}}</p>
+        </div>
+      </template>
+      <template #status="{ row }">
+        <p v-if="row.status === 0" class="status">健康</p>
+        <p v-if="row.status === 1" class="status unhealth">异常</p>
+      </template>
+      <template #op-column><p>操作</p></template>
+      <template #op="slotProps">
+        <a class="link" @click="rehandleClickOp(slotProps)">管理</a>
+        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
+      </template>
+    </t-table>
+
     <!-- </t-locale-provider> -->
   </div>
 </template>
