@@ -6,23 +6,23 @@
  * Before you run this script, you'd better save your code.
  *
  * @example npm run init table
- *   /tdesign/tdesign-web-vue/test/unit/table/demo.test.js will be created.
- *   /tdesign/tdesign-web-vue/test/e2e/table/table.spec.js will be created.
- *   /tdesign/tdesign-web-vue/test/unit/table/index.test.js will be created.
- *   /tdesign/tdesign-web-vue/examples/table/demos/base.vue will be created.
- *   /tdesign/tdesign-web-vue/src/table/index.ts will be created.
- *   /tdesign/tdesign-web-vue/examples/table/table.md will be created.
- *   /tdesign/tdesign-web-vue/src/table/table.tsx will be created.
+ *   /TDesignOteam/tdesign-vue/test/unit/table/demo.test.js will be created.
+ *   /TDesignOteam/tdesign-vue/test/e2e/table/table.spec.js will be created.
+ *   /TDesignOteam/tdesign-vue/test/unit/table/index.test.js will be created.
+ *   /TDesignOteam/tdesign-vue/examples/table/demos/base.vue will be created.
+ *   /TDesignOteam/tdesign-vue/src/table/index.ts will be created.
+ *   /TDesignOteam/tdesign-vue/examples/table/table.md will be created.
+ *   /TDesignOteam/tdesign-vue/src/table/table.tsx will be created.
  *
  * @example npm run init table del
- *   /tdesign/tdesign-web-vue/examples/table/demos/base.vue will be removed.
- *   /tdesign/tdesign-web-vue/examples/table/demos will be removed.
- *   /tdesign/tdesign-web-vue/examples/table/table.md will be removed.
- *   /tdesign/tdesign-web-vue/test/unit/table/demo.test.js will be removed.
- *   /tdesign/tdesign-web-vue/test/unit/table/index.test.js will be removed.
- *   /tdesign/tdesign-web-vue/src/table/index.ts will be removed.
- *   /tdesign/tdesign-web-vue/src/table/table.tsx will be removed.
- *   /tdesign/tdesign-web-vue/test/e2e/table/table.spec.js will be removed.
+ *   /TDesignOteam/tdesign-vue/examples/table/demos/base.vue will be removed.
+ *   /TDesignOteam/tdesign-vue/examples/table/demos will be removed.
+ *   /TDesignOteam/tdesign-vue/examples/table/table.md will be removed.
+ *   /TDesignOteam/tdesign-vue/test/unit/table/demo.test.js will be removed.
+ *   /TDesignOteam/tdesign-vue/test/unit/table/index.test.js will be removed.
+ *   /TDesignOteam/tdesign-vue/src/table/index.ts will be removed.
+ *   /TDesignOteam/tdesign-vue/src/table/table.tsx will be removed.
+ *   /TDesignOteam/tdesign-vue/test/e2e/table/table.spec.js will be removed.
  */
 
 const fs = require('fs');
