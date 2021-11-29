@@ -260,7 +260,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleRequestMethod(file);
       } else {
         // 模拟进度条
-        this.handleMockProgress(file);
+        if (this.useMockProgress) {
+          this.handleMockProgress(file);
+        }
         const request = xhr;
         this.xhrReq = request({
           action: this.action,
