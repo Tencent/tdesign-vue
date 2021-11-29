@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
-    <t-date-picker theme="primary" mode="date" range :placeholder="['开始时间', '结束时间']" />
+    <t-date-picker mode="date" range :placeholder="['开始时间', '结束时间']" />
     <br>
     <br>
     <t-date-picker

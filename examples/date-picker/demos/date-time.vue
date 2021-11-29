@@ -1,7 +1,6 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
     <t-date-picker
-      theme="primary"
       mode="date"
       format="YYYY-MM-DD HH:mm:ss"
       enableTimePicker

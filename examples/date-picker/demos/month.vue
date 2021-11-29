@@ -1,5 +1,5 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
-    <t-date-picker theme="primary" mode="month" format="YYYY-MM月"></t-date-picker>
+    <t-date-picker mode="month" format="YYYY-MM"></t-date-picker>
   </div>
 </template>

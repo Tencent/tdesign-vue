@@ -78,7 +78,7 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
                 size="small"
                 onClick={() => onTypeChange('month')}
               >
-                {this.global.months.shorthand[month]}
+                {this.global.months[month]}
               </t-button>
             )
           }

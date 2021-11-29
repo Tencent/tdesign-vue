@@ -602,6 +602,7 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
       mode,
       range,
       presets,
+      firstDayOfWeek,
     } = this;
     const {
       start, end, showTime, startTimeValue, global, isOpen, endTimeValue,
@@ -609,7 +610,7 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
     const panelProps = {
       value: range ? [start, end] : start,
       mode,
-      firstDayOfWeek: 0,
+      firstDayOfWeek: firstDayOfWeek === undefined ? 1 : firstDayOfWeek,
       disableDate: (d: Date) => !this.isEnabled(d),
       onChange: this.dateClick,
       global: this.global,

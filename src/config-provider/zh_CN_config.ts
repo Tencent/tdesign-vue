@@ -91,15 +91,9 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
       month: '请选择月份',
       year: '请选择年份',
     },
-    weekdays: {
-      shorthand: ['一', '二', '三', '四', '五', '六', '日'],
-      longhand: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
-    },
-    months: {
-      shorthand: ['1 月', '2 月', '3 月', '4 月', '5 月', '6 月', '7 月', '8 月', '9 月', '10 月', '11 月', '12 月'],
-      // longhand: ['1 月', '2 月', '3 月', '4 月', '5 月', '6 月', '7 月', '8 月', '9 月', '10 月', '11 月', '12 月'],
-    },
-    firstDayOfWeek: 0,
+    weekdays: ['一', '二', '三', '四', '五', '六', '日'],
+    months: ['1 月', '2 月', '3 月', '4 月', '5 月', '6 月', '7 月', '8 月', '9 月', '10 月', '11 月', '12 月'],
+    firstDayOfWeek: 1,
     rangeSeparator: ' 至 ',
     format: 'YYYY-MM-DD',
     yearAriaLabel: '年',

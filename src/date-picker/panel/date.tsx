@@ -60,7 +60,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
         minDate,
         maxDate,
         firstDayOfWeek,
-        monthLocal: this.global?.months?.shorthand,
+        monthLocal: this.global?.months,
       };
 
       switch (type) {

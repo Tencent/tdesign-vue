@@ -1,5 +1,5 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
-    <t-date-picker mode="year" format="YYYY" clearable></t-date-picker>
+    <t-date-picker mode="date" :firstDayOfWeek="7"></t-date-picker>
   </div>
 </template>

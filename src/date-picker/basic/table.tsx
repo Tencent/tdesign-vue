@@ -37,16 +37,14 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
       firstDayOfWeek,
     } = this;
     const {
-      weekdays: {
-        shorthand,
-      },
+      weekdays,
     } = this.global;
 
     const weekArr = [];
-    let wi = firstDayOfWeek;
-    const len = shorthand.length;
+    let wi = firstDayOfWeek - 1;
+    const len = weekdays.length;
     while (weekArr.length < len) {
-      weekArr.push(shorthand[wi]);
+      weekArr.push(weekdays[wi]);
       wi = (wi + len + 1) % len;
     }
 

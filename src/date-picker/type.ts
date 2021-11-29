@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-24 22:08:34
+ * updated at 2021-11-29 09:38:40
  * */
 
 import { InputProps } from '../input';
@@ -35,7 +35,7 @@ export interface TdDatePickerProps {
    */
   enableTimePicker?: boolean;
   /**
-   * 第一天从星期几开始，0 表示周日，1 表示周一
+   * 第一天从星期几开始
    */
   firstDayOfWeek?: number;
   /**
@@ -54,9 +54,8 @@ export interface TdDatePickerProps {
   mode?: 'year' | 'month' | 'date';
   /**
    * 占位符
-   * @default ''
    */
-  placeholder?: string;
+  placeholder?: string | Array<string>;
   /**
    * 透传给 popup 组件的参数
    */
@@ -130,7 +129,7 @@ export interface TdDateRangePickerProps {
    */
   disableDate?: DisableRangeDate;
   /**
-   * 第一天从星期几开始，0 表示周日，1 表示周一
+   * 第一天从星期几开始
    */
   firstDayOfWeek?: number;
   /**

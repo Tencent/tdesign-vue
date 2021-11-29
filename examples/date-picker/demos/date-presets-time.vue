@@ -2,7 +2,6 @@
   <div class="tdesign-demo-item--datepicker">
     <t-date-picker
       v-bind:presets="presets"
-      theme="primary"
       mode="date"
       range
       format="YYYY-MM-DD HH:mm:ss"

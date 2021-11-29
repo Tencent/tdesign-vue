@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-24 22:08:34
+ * updated at 2021-11-29 09:38:40
  * */
 
 import { TdDateRangePickerProps } from '../date-picker/type';
@@ -22,11 +22,11 @@ export default {
   disableDate: {
     type: [Object, Array, Function] as PropType<TdDateRangePickerProps['disableDate']>,
   },
-  /** 第一天从星期几开始，0 表示周日，1 表示周一 */
+  /** 第一天从星期几开始 */
   firstDayOfWeek: {
     type: Number,
     validator(val: TdDateRangePickerProps['firstDayOfWeek']): boolean {
-      return [0, 1, 2, 3, 4, 5, 6, 7].includes(val);
+      return [1, 2, 3, 4, 5, 6, 7].includes(val);
     },
   },
   /** 用于格式化日期，[详细文档](https://day.js.org/docs/en/display/format) */

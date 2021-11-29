@@ -1,6 +1,6 @@
 <template>
   <t-config-provider :globalConfig="globalConfig" class="tdesign-demo-item__locale-provider-date-picker">
-    <t-date-picker mode="date"/>
+    <t-date-picker mode="date" :firstDayOfWeek="7"/>
     <br><br>
     <t-date-picker mode="date" range/>
     <br><br>
@@ -24,13 +24,8 @@ const DATE_PICK_CONFIGS = {
     month: 'select month',
     year: 'select year',
   },
-  weekdays: {
-    shorthand: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    longhand: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-  },
-  months: {
-    shorthand: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  },
+  weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   rangeSeparator: ' ~ ',
   format: 'YYYYMMDD',
   yearAriaLabel: '',

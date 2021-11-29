@@ -162,7 +162,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
         minDate,
         maxDate,
         firstDayOfWeek,
-        monthLocal: this.global?.months?.shorthand,
+        monthLocal: this.global?.months,
       };
 
       switch (type) {
