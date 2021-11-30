@@ -1,6 +1,14 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" clearable size="medium" placeholder='请选择'></t-cascader>
+    <t-cascader
+      v-model="value"
+      :options="options"
+      clearable
+      size="medium"
+      placeholder='请选择'
+      class="t-demo-cascader"
+      @change="onChange"
+    ></t-cascader>
   </div>
 </template>
 
@@ -46,8 +54,9 @@ export default {
     };
   },
   methods: {
-    handleValueChange(e) {
-      this.value = e;
+    onChange(val, context) {
+      console.log(this.value, val, context);
+      console.log('path: ', context.node.getPath());
     },
   },
 };

@@ -1,5 +1,4 @@
 import Vue, { CreateElement, VNode, VueConstructor } from 'vue';
-import isFunction from 'lodash/isFunction';
 import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon as ClearIcon } from 'tdesign-icons-vue';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
@@ -140,10 +139,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     },
     setInputValue(v: InputValue = ''): void {
       const input = this.$refs.refInputElem as HTMLInputElement;
+      if (!input) return;
       const sV = String(v);
-      if (!input) {
-        return;
-      }
       if (input.value !== sV) {
         input.value = sV;
       }
@@ -187,10 +184,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     },
     emitClear(e: MouseEvent) {
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
-      isFunction(this.onClear) && this.onClear({ e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'input', '', { e });
-      isFunction(this.onChange) && this.onChange('', { e });
     },
     emitFocus(e: FocusEvent) {
       if (this.disabled) return;
@@ -212,9 +206,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
         val = typeof stringInfo === 'object' && stringInfo.characters;
       }
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'input', val, { e });
-      isFunction(this.onChange) && this.onChange(val, { e });
-      // 受控
+      // 受控，重要，勿删
       this.$nextTick(() => this.setInputValue(this.value));
     },
   },

@@ -2,14 +2,14 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-11-27 22:33:39
  * */
 
 import { TdCheckboxProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 用于标识是否为「全选选项」 */
+  /** 用于标识是否为「全选选项」。单独使用无效，需在 CheckboxGroup 中使用 */
   checkAll: Boolean,
   /** 是否选中 */
   checked: Boolean,

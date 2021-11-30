@@ -37,7 +37,6 @@ export default {
   /** 已废弃。请更为使用 `layout`。分隔线类型有两种：水平和垂直 */
   theme: {
     type: String as PropType<TdDividerProps['theme']>,
-    default: 'horizontal' as TdDividerProps['theme'],
     validator(val: TdDividerProps['theme']): boolean {
       return ['horizontal', 'vertical'].includes(val);
     },

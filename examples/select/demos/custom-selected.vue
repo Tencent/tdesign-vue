@@ -6,7 +6,7 @@
       v-model="value1"
       :options="options"
       :valueDisplay="valueDisplay"
-      placeholder="请选择古代名人"
+      placeholder="请选择"
       multiple
       clearable
     />
@@ -16,7 +16,7 @@
     <t-select
       v-model="value2"
       :options="options"
-      placeholder="请选择古代名人"
+      placeholder="请选择"
       multiple
       clearable
     >
@@ -38,18 +38,18 @@
 export default {
   data() {
     return {
-      value1: ['zhouyu', 'xiaoqiao', 'liubei'],
-      value2: ['machao', 'guanyu', 'zhugeliang', 'simayi'],
+      value1: ['1', '2', '3'],
+      value2: ['4', '5', '6', '7'],
       options: [
-        { label: '周瑜', value: 'zhouyu' },
-        { label: '小乔', value: 'xiaoqiao' },
-        { label: '刘备', value: 'liubei' },
-        { label: '马超', value: 'machao' },
-        { label: '关羽', value: 'guanyu' },
-        { label: '张飞', value: 'zhangfei' },
-        { label: '诸葛亮', value: 'zhugeliang' },
-        { label: '司马懿', value: 'simayi' },
-        { label: '司马昭', value: 'simazhao' },
+        { label: '选项一', value: '1' },
+        { label: '选项二', value: '2' },
+        { label: '选项三', value: '3' },
+        { label: '选项四', value: '4' },
+        { label: '选项五', value: '5' },
+        { label: '选项六', value: '10' },
+        { label: '选项七', value: '6' },
+        { label: '选项八', value: '7' },
+        { label: '选项九', value: '8' },
       ],
     };
   },

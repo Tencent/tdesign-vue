@@ -2,12 +2,12 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-24 22:45:30
+ * updated at 2021-11-28 12:23:52
  * */
 
 import { CheckboxProps } from '../checkbox';
 import { PopupProps } from '../popup';
-import { TreeNodeModel } from '../tree/type';
+import { TreeNodeModel } from '../tree';
 import { TNode, TreeOptionData, SizeEnum } from '../common';
 
 export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOptionData> {
@@ -35,7 +35,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   disabled?: boolean;
   /**
-   * 无匹配选项时的内容，默认为 '暂无数据'
+   * 无匹配选项时的内容，默认全局配置为 '暂无数据'
    */
   empty?: string | TNode;
   /**
@@ -130,9 +130,9 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   onBlur?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent }) => void;
   /**
-   * 选中值发生变化时触发。TreeNodeModel 从树组件中导出
+   * 选中值发生变化时触发。TreeNodeModel 从树组件中导出。`context.node` 表示触发事件的节点，`context.source` 表示触发事件的来源
    */
-  onChange?: (value: CascaderValue<CascaderOption>, context: { node: TreeNodeModel<CascaderOption> }) => void;
+  onChange?: (value: CascaderValue<CascaderOption>, context: CascaderChangeEventContext<CascaderOption>) => void;
   /**
    * 获得焦点时触发
    */
@@ -146,5 +146,9 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
 export interface KeysType { value?: string; label?: string; children?: string };
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
+
+export interface CascaderChangeEventContext<CascaderOption> { node?: TreeNodeModel<CascaderOption>; source: CascaderChangeEventSource };
+
+export type CascaderChangeEventSource = 'invalid-value' | 'checked' | 'clear' | 'unchecked';
 
 export interface RemoveContext<T> { value: CascaderValue<T>; node: TreeNodeModel<T> };

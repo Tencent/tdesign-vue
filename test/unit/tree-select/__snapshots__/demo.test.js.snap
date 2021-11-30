@@ -122,6 +122,7 @@ exports[`TreeSelect base demo works fine 1`] = `
       >
         <span
           class="t-select-placeholder"
+          style="display: none;"
         >
           请选择
         </span>
@@ -133,7 +134,6 @@ exports[`TreeSelect base demo works fine 1`] = `
         </span>
         <div
           class="t-input t-size-m t-select-input"
-          style="display: none;"
         >
           <input
             class="t-input__inner"

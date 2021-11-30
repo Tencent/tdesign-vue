@@ -17,8 +17,12 @@ import {
   TdCascaderProps,
 } from './interface';
 import props from './props';
+import { CascaderChangeEventSource, CascaderValue } from './type';
+import { TreeNodeModel } from '../tree';
 
 const name = `${prefix}-cascader`;
+
+export type ChangeEventParams = Parameters<TdCascaderProps['onChange']>;
 
 export default Vue.extend({
   name: 'TCascader',
@@ -51,8 +55,9 @@ export default Vue.extend({
         setTreeNodes: (nodes: TreeNode[]) => {
           this.treeNodes = nodes;
         },
-        setValue: (val: TreeNodeValue | TreeNodeValue[]) => {
-          this.$emit('change', val);
+        // 内部节点时 TreeNode，对外暴露的节点对象是 TreeNodeModel
+        setValue: (val: CascaderValue, source: CascaderChangeEventSource, node: TreeNodeModel) => {
+          emitEvent<ChangeEventParams>(this, 'change', val, { source, node });
         },
         setVisible: (val: boolean) => {
           this.visible = val;
@@ -143,8 +148,9 @@ export default Vue.extend({
   mounted() {
     const { value, multiple } = this;
     if ((multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value))) {
-      this.$emit('change', multiple ? [] : '');
-      console.warn('TDesign Warn:', 'cascader props value invalid, automatic calibration');
+      const val: CascaderValue = multiple ? [] : '';
+      emitEvent<ChangeEventParams>(this, 'change', val, { source: 'invalid-value' });
+      console.warn('TDesign Cascader Warn:', 'cascader props value invalid, automatic calibration');
     }
     if (!isEmpty(value)) {
       this.scopeVal = value;

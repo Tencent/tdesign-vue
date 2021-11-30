@@ -2,7 +2,12 @@
   <div class="tdesign-demo-block-column" style="max-width: 500px">
     <t-input placeholder="请输入内容（无默认值）" />
 
-    <t-input v-model="input" placeholder="请输入内容（有默认值）" @enter="onEnter"/>
+    <t-input
+      v-model="input"
+      placeholder="请输入内容（有默认值）"
+      @enter="onEnter"
+      @change="onChange"
+    />
   </div>
 </template>
 <script>
@@ -15,6 +20,9 @@ export default {
   methods: {
     onEnter() {
       console.log('trigger enter');
+    },
+    onChange(val) {
+      console.log(this.input, val);
     },
   },
 };

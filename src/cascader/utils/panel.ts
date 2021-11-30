@@ -86,7 +86,7 @@ export function expendClickEffect(
       setVisible(false);
     }
     // 非受控状态下更新状态
-    setValue(value);
+    setValue(value, 'checked', node.getModel());
   }
 }
 
@@ -140,7 +140,7 @@ export function valueChangeEffect(
     setFilterActive(false);
   }
 
-  setValue(checked);
+  setValue(checked, 'checked', node.getModel());
 
   if (onChange && isFunction(onChange)) {
     onChange(checked, ctx);

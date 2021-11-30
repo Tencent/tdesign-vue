@@ -16,6 +16,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
+import { TdPaginationProps } from './type';
 
 const name = `${prefix}-pagination`;
 const min = 1;
@@ -23,6 +24,10 @@ const min = 1;
 enum KeyCode {
   ENTER = 'Enter',
 }
+
+export type PageSizeChangeParams = Parameters<TdPaginationProps['onPageSizeChange']>;
+export type CurrentChangeParams = Parameters<TdPaginationProps['onCurrentChange']>;
+export type ChangeEventParams = Parameters<TdPaginationProps['onChange']>;
 
 export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination')).extend({
   name: 'TPagination',
@@ -35,10 +40,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     TInput,
     TSelect: Select,
     TOption: Option,
-  },
-  model: {
-    prop: 'current',
-    event: 'current-change',
   },
   props: {
     ...props,
@@ -225,11 +226,10 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           previous: prev,
           pageSize: this.pageSize,
         };
+        emitEvent<CurrentChangeParams>(this, 'current-change', current, pageInfo);
         if (isTriggerChange !== false) {
-          emitEvent(this, 'change', pageInfo);
+          emitEvent<ChangeEventParams>(this, 'change', pageInfo);
         }
-        this.$emit('update:current', current);
-        emitEvent(this, 'current-change', current, pageInfo);
       }
     },
     prevPage(): void {
@@ -284,9 +284,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         previous: this.current,
         pageSize,
       };
-      this.$emit('update:pageSize', pageSize);
-      emitEvent(this, 'page-size-change', pageSize, pageInfo);
-      emitEvent(this, 'change', pageInfo);
+      this.$emit('update:pageSize', pageSize, pageInfo);
+      emitEvent<PageSizeChangeParams>(this, 'page-size-change', pageSize, pageInfo);
+      emitEvent<ChangeEventParams>(this, 'change', pageInfo);
       if (isIndexChange) {
         this.toPage(pageCount, false);
       }

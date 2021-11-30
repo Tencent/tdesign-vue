@@ -49,7 +49,7 @@ describe('Checkbox', () => {
 
   // test events
   describe('@event', () => {
-    it('Event passthrough ', async () => {
+    it('Event passthrough', async () => {
       const wrapper = mount(Checkbox);
       const checkboxInput = wrapper.find('input[type="checkbox"]');
       await checkboxInput.setChecked();

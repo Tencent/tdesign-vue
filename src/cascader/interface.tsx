@@ -1,7 +1,7 @@
-import { TdCascaderProps, CascaderValue } from './type';
+import { TdCascaderProps, CascaderValue, CascaderChangeEventSource } from './type';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
-import { TreeNodeValue } from '../_common/js/tree/types';
+import { TreeNodeModel, TreeNodeValue } from '../_common/js/tree/types';
 
 export type CascaderProps = TdCascaderProps;
 
@@ -23,7 +23,7 @@ export interface CascaderContextType
   | 'minCollapsedNum'
   > {
   treeStore: TreeStore;
-  setValue: (val: CascaderValue) => void;
+  setValue: (val: CascaderValue, source: CascaderChangeEventSource, node?: TreeNodeModel) => void;
   visible: boolean;
   setVisible: (val: boolean) => void;
   treeNodes: TreeNode[];

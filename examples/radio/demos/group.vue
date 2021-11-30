@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     onChange(checkedValues) {
-      console.log('checkedValues:', checkedValues);
+      console.log('checkedValues:', this.value, checkedValues);
     },
   },
 };
