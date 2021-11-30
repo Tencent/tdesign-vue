@@ -40,6 +40,7 @@ export default Vue.extend({
     trigger: Function as PropType<(e: MouseEvent) => void>,
     remove: Function as PropType<(e: MouseEvent) => void>,
     upload: Function as PropType<(file: UploadFile, e: MouseEvent) => void>,
+    autoUpload: Boolean,
   },
 
   data() {
@@ -74,9 +75,7 @@ export default Vue.extend({
     },
     // 上传失败或者上传成功会显示
     showResultOperate(): boolean {
-      const isFail = (!!this.loadingFile && this.loadingFile.status === 'fail');
-      const isSuccess = (this.file && this.file.name && !this.loadingFile);
-      return isFail || isSuccess;
+      return ['success', 'fail'].includes(this.loadingFile?.status);
     },
   },
 
@@ -161,8 +160,8 @@ export default Vue.extend({
             <small class={`${UPLOAD_NAME}__small`}>
               上传日期：{getCurrentDate()}
             </small>
-            {!!this.loadingFile && this.loadingFile.status !== 'fail' && (
-              <div class={`${UPLOAD_NAME}__dragger-btns`}>
+            <div class={`${UPLOAD_NAME}__dragger-btns`}>
+              {['progress', 'waiting'].includes(this.loadingFile?.status) && (
                 <TButton
                   theme="primary"
                   variant='text'
@@ -171,15 +170,17 @@ export default Vue.extend({
                 >
                   取消上传
                 </TButton>
+              )}
+              {!this.autoUpload && this.loadingFile?.status === 'waiting' && (
                 <TButton
                   theme="primary"
                   variant='text'
                   onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
                 >
-                  点击上传
+                  开始上传
                 </TButton>
-              </div>
-            )}
+              )}
+            </div>
             {this.showResultOperate && (
               <div class={`${UPLOAD_NAME}__dragger-btns`}>
                 <TButton
