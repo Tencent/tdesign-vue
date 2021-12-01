@@ -13,9 +13,7 @@
         <t-popconfirm
           :visible="visible"
           theme="default"
-          content="是否提交审核？（自定义按钮内容）"
-          :confirmBtn="confirmBtn"
-          :cancelBtn="cancelBtn"
+          content="是否提交审核？（自由控制浮层显示或隐藏）"
           @visible-change="onVisibleChange"
         >
           <t-button >提交审核</t-button>
@@ -33,16 +31,6 @@ export default {
     };
   },
   methods: {
-    confirmBtn() {
-      return (
-        <t-button theme="primary" size="small">
-          删除
-        </t-button>
-      );
-    },
-    cancelBtn() {
-      return <t-button size="small" theme="default">取消</t-button>;
-    },
     onVisibleChange(val, context = {}) {
       // trigger 表示触发来源，可以根据触发来源自由控制 visible
       if (context && context.trigger === 'confirm') {

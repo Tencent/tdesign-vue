@@ -29,7 +29,8 @@ export default {
       this.visible = false;
     },
     onConfirm() {
-      console.log('click确定');
+      console.log('处理中...');
+      this.visible = false;
     },
   },
 

@@ -47,7 +47,7 @@
     >
     </t-dialog>
 
-    <t-button theme="primary" @click="visible5 = true">自定义icon</t-button>
+    <t-button theme="primary" @click="visible5 = true">自定义图标</t-button>
     <t-dialog
       body="对话框内容"
       :closeBtn="false"

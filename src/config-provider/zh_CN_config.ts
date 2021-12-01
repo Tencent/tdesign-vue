@@ -54,8 +54,14 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
     cancel: '取消',
   },
   popconfirm: {
-    confirm: '确定',
-    cancel: '取消',
+    confirm: {
+      content: '确定',
+      size: 'small',
+    },
+    cancel: {
+      content: '取消',
+      size: 'small',
+    },
     confirmBtnTheme: {
       default: 'primary',
       warning: 'primary',

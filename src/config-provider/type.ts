@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-25 00:44:46
+ * updated at 2021-12-01 12:23:58
  * */
 
 import { CalendarController } from '../calendar';
@@ -358,12 +358,12 @@ export interface DrawerConfig {
    * “取消”描述文本
    * @default '取消'
    */
-  cancel?: string;
+  cancel?: string | ButtonProps;
   /**
    * “确认”描述文本
    * @default '确认'
    */
-  confirm?: string;
+  confirm?: string | ButtonProps;
 };
 
 export interface PopconfirmConfig {

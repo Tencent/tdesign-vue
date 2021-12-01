@@ -83,8 +83,8 @@ interface JSXRenderContext {
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })。 params 为渲染节点时所需的参数
  */
 export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
-  if (vm.$scopedSlots[name] && vm[name]) {
-    console.warn(`插槽 $scopedSlots.${name} 和 属性 ${name} 同时存在，优先使用属性渲染，插槽失效`);
+  if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true) {
+    console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
   }
   const params = typeof options === 'object' && ('params' in options) ? options.params : null;
   const defaultNode = typeof options === 'object' && ('defaultNode' in options) ? options.defaultNode : options;

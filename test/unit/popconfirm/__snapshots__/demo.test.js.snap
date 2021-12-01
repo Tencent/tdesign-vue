@@ -55,34 +55,26 @@ exports[`Popconfirm base demo works fine 1`] = `
                   <div
                     class="t-popconfirm__buttons"
                   >
-                    <span
-                      class="t-popconfirm__cancel"
+                    <button
+                      class="t-button t-size-s t-button--variant-base t-button--theme-default t-popconfirm__cancel"
+                      type="button"
                     >
-                      <button
-                        class="t-button t-size-s t-button--variant-base t-button--theme-default"
-                        type="button"
+                      <span
+                        class="t-button__text"
                       >
-                        <span
-                          class="t-button__text"
-                        >
-                          取消
-                        </span>
-                      </button>
-                    </span>
-                    <span
-                      class="t-popconfirm__confirm"
+                        取消
+                      </span>
+                    </button>
+                    <button
+                      class="t-button t-size-s t-button--variant-base t-button--theme-primary t-popconfirm__confirm"
+                      type="button"
                     >
-                      <button
-                        class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-                        type="button"
+                      <span
+                        class="t-button__text"
                       >
-                        <span
-                          class="t-button__text"
-                        >
-                          确定
-                        </span>
-                      </button>
-                    </span>
+                        确定
+                      </span>
+                    </button>
                   </div>
                 </div>
                 <div
