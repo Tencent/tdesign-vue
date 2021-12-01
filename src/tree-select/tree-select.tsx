@@ -14,20 +14,16 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TreeSelectConfig } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
-
 import Popup, { PopupProps } from '../popup';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
-import Input from '../input';
+import Input, { InputValue, InputBlurEventParams, InputFocustEventParams } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
-
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { ClassName, TreeOptionData } from '../common';
 import { prefix } from '../config';
-
 import { RemoveOptions, NodeOptions } from './interface';
 
 export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect')).extend({
@@ -255,14 +251,14 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.filterText = '';
       emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
-    focus(e: FocusEvent) {
+    focus(ctx: InputFocustEventParams[1]) {
       this.focusing = true;
-      emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, e });
+      emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, ...ctx });
     },
-    blur(e: FocusEvent) {
+    blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
       this.filterText = '';
-      emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
+      emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
       emitEvent<Parameters<TdTreeSelectProps['onRemove']>>(this, 'remove', options);
@@ -303,7 +299,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
     },
-    onInput() {
+    onInputChange() {
       this.filterByText = (node: TreeNodeModel<TreeOptionData>) => {
         if (isFunction(this.filter)) {
           const filter: boolean | Promise<boolean> = this.filter(this.filterText, node);
@@ -374,9 +370,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         size={this.size}
         disabled={this.disabled}
         placeholder={this.filterPlaceholder}
-        onInput={this.onInput}
-        onBlur={(value: TreeSelectValue, e: FocusEvent) => this.blur(e)}
-        onFocus={(value: TreeSelectValue, e: FocusEvent) => this.focus(e)}
+        onChange={this.onInputChange}
+        onBlur={(value: InputValue, context: InputBlurEventParams[1]) => this.blur(context)}
+        onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
       />
     );
     const tagItem = (

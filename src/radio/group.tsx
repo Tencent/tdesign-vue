@@ -2,11 +2,14 @@ import Vue, { VNode, CreateElement } from 'vue';
 import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
 import props from './radio-group-props';
-import { RadioOptionObj, RadioOption, RadioValue } from './type';
+import {
+  TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
+} from './type';
 import { prefix } from '../config';
 import Radio, { radioBtnName } from './radio';
 import { TNodeReturnValue } from '../common';
 import CLASSNAMES from '../utils/classnames';
+import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-radio-group`;
 
@@ -91,8 +94,7 @@ export default Vue.extend({
 
   methods: {
     handleRadioChange(value: RadioValue, context: { e: Event }) {
-      this.$emit('change', value, context);
-      typeof this.onChange === 'function' && this.onChange(value, context);
+      emitEvent<Parameters<TdRadioGroupProps['onChange']>>(this, 'change', value, context);
     },
     calcBarStyle() {
       if (this.buttonStyle !== 'solid' && this.variant === 'outline') return;

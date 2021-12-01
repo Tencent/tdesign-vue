@@ -186,6 +186,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       this.emitRemoveEvent({ e });
     },
 
+    handleFileInputRemove(e: MouseEvent) {
+      // prevent trigger upload
+      e?.stopPropagation();
+      this.handleSingleRemove(e);
+    },
+
     handleMultipleRemove(options: UploadRemoveOptions) {
       const changeCtx = { trigger: 'remove', ...options };
       const files = this.files.concat();
@@ -260,7 +266,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleRequestMethod(file);
       } else {
         // 模拟进度条
-        this.handleMockProgress(file);
+        if (this.useMockProgress) {
+          this.handleMockProgress(file);
+        }
         const request = xhr;
         this.xhrReq = request({
           action: this.action,
@@ -469,11 +477,16 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     getDefaultTrigger() {
       if (this.theme === 'file-input' || this.showUploadList) {
-        return <TButton variant='outline'>选择文件</TButton>;
+        return (
+          <TButton variant='outline'>
+            {this.files?.length ? '重新上传' : '选择文件'}
+          </TButton>
+        );
       }
       return (
         <TButton variant='outline'>
-          <TIconUpload slot='icon'/>点击上传
+          <TIconUpload slot='icon'/>
+          {this.files?.length ? '重新上传' : '点击上传'}
         </TButton>
       );
     },
@@ -495,7 +508,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         />
       );
     },
-    // 渲染单文件预览：设计稿有两种单文件预览方式，文本型和输入框型
+    // 渲染单文件预览：设计稿有两种单文件预览方式，文本型和输入框型。输入框型的需要在右侧显示「删除」按钮
     renderSingleDisplay(triggerElement: ScopedSlotReturnValue) {
       return (
         <SingleFile
@@ -506,7 +519,16 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           showUploadProgress={this.showUploadProgress}
           placeholder={this.placeholder}
         >
-          <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>
+          <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+            {triggerElement}
+            {!!(this.theme === 'file-input' && this.files?.length) && (
+              <TButton
+                theme="primary"
+                variant="text"
+                onClick={this.handleFileInputRemove}
+              >删除</TButton>
+            )}
+          </div>
         </SingleFile>
       );
     },
@@ -529,6 +551,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           trigger={this.triggerUpload}
           remove={this.handleSingleRemove}
           upload={this.upload}
+          autoUpload={this.autoUpload}
         >
           {triggerElement}
         </Dragger>

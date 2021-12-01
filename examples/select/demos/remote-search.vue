@@ -3,7 +3,7 @@
     <t-select
       v-model="value"
       filterable
-      placeholder="-请选择-"
+      placeholder="请选择"
       :onSearch="remoteMethod"
       :loading="loading"
       :options="options"
@@ -13,7 +13,7 @@
       v-model="value2"
       multiple
       filterable
-      placeholder="-请输入搜索-"
+      placeholder="请输入搜索"
       :options="options2"
       @search="remoteMethod2"
       :loading="loading2"
@@ -27,17 +27,11 @@
 export default {
   data() {
     return {
-      options: [{
-        label: '上海',
-        value: 'shanghai',
-      }, {
-        label: '北京',
-        value: 'beijing',
-        disabled: true,
-      }, {
-        label: '深圳',
-        value: 'shenzhen',
-      }],
+      options: [
+        { label: '选项一', value: '1' },
+        { label: '选项二', value: '2' },
+        { label: '选项三', value: '3' },
+      ],
       options2: [],
       value: '',
       value2: [],

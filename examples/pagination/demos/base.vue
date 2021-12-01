@@ -2,11 +2,22 @@
   <div>
     <t-pagination
       v-model="current"
-      :total="100"
-      @change="onChange"
+      :total="36"
       :page-size.sync="pageSize"
-      @page-size-change="onPageSizeChange"
       @current-change="onCurrentChange"
+      @page-size-change="onPageSizeChange"
+      @change="onChange"
+    />
+    <br/><br/>
+    <!-- :pageSizeOptions="[]" 表示隐藏分页器选项 -->
+    <!-- 非受控用法，代码有效，勿删。 -->
+    <t-pagination
+      :total="36"
+      :default-current="2"
+      :default-page-size="10"
+      @current-change="onCurrentChange"
+      @page-size-change="onPageSizeChange"
+      @change="onChange"
     />
   </div>
 </template>
@@ -20,15 +31,14 @@ export default {
     };
   },
   methods: {
-    onPageSizeChange(size) {
-      console.log('page-size:', size);
+    onPageSizeChange(size, pageInfo) {
+      console.log('Page Size:', this.pageSize, size, pageInfo);
     },
-    onCurrentChange(index, pageInfo) {
-      console.log(`转到第${index}页`);
-      console.log(pageInfo);
+    onCurrentChange(current, pageInfo) {
+      console.log('Current Page', this.current, current, pageInfo);
     },
     onChange(pageInfo) {
-      console.log(pageInfo);
+      console.log('Page Info: ', pageInfo);
     },
   },
 };

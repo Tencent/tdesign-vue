@@ -1,6 +1,9 @@
 import isFunction from 'lodash/isFunction';
 import {
-  TreeNode, CascaderContextType, TreeNodeValue, CascaderProps,
+  TreeNode,
+  CascaderContextType,
+  TreeNodeValue,
+  CascaderProps,
 } from '../interface';
 
 /**
@@ -184,7 +187,7 @@ export function closeIconClickEffect(cascaderContext: CascaderContextType, onCha
     setExpend([]);
   }
 
-  setValue(multiple ? [] : '');
+  setValue(multiple ? [] : '', 'clear');
 
   if (onChange && isFunction(onChange)) {
     onChange(multiple ? [] : '', { e: MouseEvent });
@@ -204,7 +207,7 @@ export function handleRemoveTagEffect(
 
   if (disabled) return;
   const checked = node.setChecked(!node.isChecked());
-  setValue(checked);
+  setValue(checked, 'unchecked', node.getModel());
   if (isFunction(onRemove)) {
     onRemove({ value: checked, node });
   }

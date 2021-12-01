@@ -30,7 +30,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       if (this.direction) {
         console.warn('TDesign Steps Warn: `direction` is going to be deprecated. please use `layout` instead. ');
       }
-      const layout = this.layout || this.direction;
+      const layout = this.layout || this.direction || 'horizontal';
       return [
         name,
         `${name}--${layout}`,

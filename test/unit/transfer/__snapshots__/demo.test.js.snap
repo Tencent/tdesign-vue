@@ -85,7 +85,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -629,7 +629,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -710,7 +710,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -791,7 +791,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -872,7 +872,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -953,7 +953,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer-list__item t-is-checked"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"

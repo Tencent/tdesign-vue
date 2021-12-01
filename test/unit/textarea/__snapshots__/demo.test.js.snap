@@ -59,7 +59,21 @@ exports[`Textarea maxlength demo works fine 1`] = `
     <textarea
       class="t-textarea__inner"
       maxlength="20"
-      placeholder="请输入描述文案，最多20字符"
+      placeholder="请输入描述文案，文本长度最多20，maxlength=20"
+    />
+    <span
+      class="t-textarea__limit"
+    >
+      0/20
+    </span>
+  </div>
+   
+  <div
+    class="t-textarea"
+  >
+    <textarea
+      class="t-textarea__inner"
+      placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20"
     />
     <span
       class="t-textarea__limit"

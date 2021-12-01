@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-24 22:45:30
+ * updated at 2021-11-28 12:23:52
  * */
 
 import { TdCascaderProps } from './type';
@@ -23,7 +23,7 @@ export default {
   },
   /** 是否禁用组件 */
   disabled: Boolean,
-  /** 无匹配选项时的内容，默认为 '暂无数据' */
+  /** 无匹配选项时的内容，默认全局配置为 '暂无数据' */
   empty: {
     type: [String, Function] as PropType<TdCascaderProps['empty']>,
   },
@@ -116,7 +116,7 @@ export default {
   },
   /** 当输入框失去焦点时触发 */
   onBlur: Function as PropType<TdCascaderProps['onBlur']>,
-  /** 选中值发生变化时触发。TreeNodeModel 从树组件中导出 */
+  /** 选中值发生变化时触发。TreeNodeModel 从树组件中导出。`context.node` 表示触发事件的节点，`context.source` 表示触发事件的来源 */
   onChange: Function as PropType<TdCascaderProps['onChange']>,
   /** 获得焦点时触发 */
   onFocus: Function as PropType<TdCascaderProps['onFocus']>,

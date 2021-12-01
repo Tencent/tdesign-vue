@@ -5,6 +5,8 @@ import { omit } from '../utils/helper';
 import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { RadioGroupInstance, RadioButtonInstance } from './instance';
+import { emitEvent } from '../utils/event';
+import { TdRadioProps } from './type';
 
 const name = `${prefix}-radio`;
 export const radioBtnName = `${prefix}-radio-button`;
@@ -98,8 +100,7 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
         this.radioGroup.handleRadioChange(this.value, { e });
       } else {
         const target = e.target as HTMLInputElement;
-        this.$emit('change', target.checked, { e });
-        typeof this.onChange === 'function' && this.onChange(target.checked, { e });
+        emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', target.checked, { e });
       }
     },
   },

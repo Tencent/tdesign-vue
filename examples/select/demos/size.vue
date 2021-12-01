@@ -4,7 +4,7 @@
       size="small"
       v-model="value1"
       :popupProps="popupProps"
-      placeholder="-请选择-"
+      placeholder="请选择"
       style="width: 200px;display: inline-block;margin-right: 20px;"
       clearable
     >
@@ -19,14 +19,14 @@
     </t-select>
     <t-select
       v-model="value"
-      placeholder="-请选择-"
+      placeholder="请选择"
       :options="options"
       size="medium"
       style="width: 200px;display: inline-block;margin-right: 20px;"
     />
     <t-select
       v-model="value2"
-      placeholder="-请选择-"
+      placeholder="请选择"
       :options="options"
       size="large"
       style="width: 200px;display: inline-block;"
@@ -39,9 +39,9 @@ export default {
   data() {
     return {
       options: [
-        { label: '上海', value: 'shanghai' },
-        { label: '北京', value: 'beijing' },
-        { label: '深圳', value: 'shenzhen' },
+        { label: '选项一', value: '1' },
+        { label: '选项二', value: '2' },
+        { label: '选项三', value: '3' },
       ],
       value: '',
       value1: '',

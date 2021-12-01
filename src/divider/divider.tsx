@@ -17,7 +17,7 @@ export default Vue.extend({
     }
     const dividerClassNames = [
       `${name}`,
-      [`${name}--${this.layout || this.theme}`],
+      [`${name}--${this.layout || this.theme || 'horizontal'}`],
       {
         [`${name}--dashed`]: !!this.dashed,
         [`${name}--with-text`]: !!children,

@@ -3,6 +3,8 @@
     <t-tree-select
       :data="options"
       v-model="value"
+      @blur="onBlurTrigger"
+      filterable
       clearable
       placeholder="请选择"
     />
@@ -35,6 +37,11 @@ export default {
         }],
       }],
     };
+  },
+  methods: {
+    onBlurTrigger(context) {
+      console.log(context);
+    },
   },
 };
 </script>

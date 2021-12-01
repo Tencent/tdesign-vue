@@ -1,9 +1,9 @@
 <template>
   <div>
     <t-pagination
-      :total="645"
-      :page-size.sync="pageSize"
       v-model="current"
+      :total="101"
+      :page-size.sync="pageSize"
       show-jumper
     />
   </div>

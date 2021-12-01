@@ -18,7 +18,9 @@ import {
   Checkbox as TCheckbox,
   CheckboxGroup as TCheckboxGroup, CheckboxProps,
 } from '../../checkbox';
-import { findTopNode, getLeefCount, getDataValues } from '../utils';
+import {
+  findTopNode, getLeefCount, getDataValues,
+} from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
@@ -48,7 +50,7 @@ export default Vue.extend({
     },
     listType: {
       type: String as PropType<TransferListType>,
-      default: 'target',
+      default: 'target' as TransferListType,
     },
     title: {
       type: [String, Function],
@@ -140,7 +142,7 @@ export default Vue.extend({
       return !this.isAllChecked && this.checkedValue.length > 0;
     },
     isAllChecked(): boolean {
-      return this.checkedValue.length > 0 && this.dataSource.every((item) => this.checkedValue.includes(item.value));
+      return this.checkedValue.length > 0 && this.dataSource.every((item) => item.disabled || this.checkedValue.includes(item.value));
     },
     totalCount(): number {
       return getLeefCount(this.dataSource);
@@ -191,19 +193,19 @@ export default Vue.extend({
         <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
           {
             this.curPageData.map((item, index) => (
-                <TCheckbox
-                  disabled={this.disabled || item.disabled}
-                  value={item.value}
-                  class={[`${name}__item`, this.checkedValue.includes(item.value) ? `${prefix}-is-checked` : '']}
-                  key={item.key}
-                  v-ripple
-                  {...{ props: this.checkboxProps }}
-                  >
-                    {renderTNodeJSXDefault(this, 'transferItem', {
-                      defaultNode: (<span>{item.label}</span>),
-                      params: { data: item.data, index, type: this.listType },
-                    })}
-                </TCheckbox>
+              <TCheckbox
+                disabled={this.disabled || item.disabled}
+                value={item.value}
+                class={[`${name}__item`]}
+                key={item.key}
+                v-ripple
+                {...{ props: this.checkboxProps }}
+                >
+                  {renderTNodeJSXDefault(this, 'transferItem', {
+                    defaultNode: (<span>{item.label}</span>),
+                    params: { data: item.data, index, type: this.listType },
+                  })}
+              </TCheckbox>
             ))
           }
         </TCheckboxGroup>

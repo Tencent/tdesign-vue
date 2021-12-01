@@ -8,6 +8,7 @@ import { ExpandProps, RenderExpandRow } from '../../util/interface';
 import { filterDataByIds, getRecord } from '../../util/common';
 import { prefix } from '../../../config';
 import { emitEvent } from '../../../utils/event';
+import { renderTNodeJSX } from '../../../utils/render-tnode';
 
 type Columns = TdPrimaryTableProps['columns'];
 
@@ -25,8 +26,13 @@ export default Vue.extend({
     },
   },
   methods: {
+    getExpandRowHandler(): TdPrimaryTableProps['expandedRow'] {
+      if (!this.expandedRow && !this.$scopedSlots.expandedRow) return;
+      return (h: CreateElement, params) => renderTNodeJSX(this, 'expandedRow', { params });
+    },
     getExpandColumns(columns: Columns): Columns {
-      if (!this.expandedRow || !this.expandIcon) return columns;
+      const expandRowHandler = this.getExpandRowHandler();
+      if (!expandRowHandler || !this.expandIcon) return columns;
       return [
         {
           colKey: expandedColKey,
@@ -65,9 +71,10 @@ export default Vue.extend({
       rows, row, columns: defaultColumns, rowIndex,
     }: RenderExpandRow): VNode {
       const columnCounts = defaultColumns.length;
-      if (!this.expandedRow) return; // 若无展开渲染函数，则无需处理行数据
+      const expandRowHandler = this.getExpandRowHandler();
+      if (!expandRowHandler) return; // 若无展开渲染函数，则无需处理行数据
 
-      const { expandedRowKeys, expandedRow } = this;
+      const { expandedRowKeys } = this;
       const id = get(row, this.reRowKey);
       const isShowExpanded = expandedRowKeys.includes(id);
       const params = {
@@ -82,7 +89,7 @@ export default Vue.extend({
             colspan: columnCounts,
             class: [`${prefix}-table-expanded-cell`],
           },
-          render: (h: CreateElement): VNode => expandedRow(h, params) as VNode,
+          render: (h: CreateElement): VNode => expandRowHandler(h, params) as VNode,
         },
       ];
       rows.push(<TableRow

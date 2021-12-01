@@ -207,10 +207,10 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
           check-all={this.checkAllOption[listType]}
           footer={this.footerOption[listType]}
           empty={this.emptyOption[listType]}
-          onCheckedChange={($event: any) => this.handleCheckedChange($event, listType)}
-          onScroll={($event: any) => this.handleScroll($event, listType)}
+          onCheckedChange={(val: TransferValue[]) => this.handleCheckedChange(val, listType)}
+          onScroll={($event: Event) => this.handleScroll($event, listType)}
           onSearch={this.handleSearch}
-          onPageChange={($event: any) => this.handlePageChange($event, listType)}
+          onPageChange={(pageInfo: PageInfo) => this.handlePageChange(pageInfo, listType)}
           scopedSlots={scopedSlots}
           t={this.t}
           global={this.global}
