@@ -142,7 +142,7 @@ export default Vue.extend({
       return !this.isAllChecked && this.checkedValue.length > 0;
     },
     isAllChecked(): boolean {
-      return this.checkedValue.length > 0 && this.dataSource.every((item) => this.checkedValue.includes(item.value));
+      return this.checkedValue.length > 0 && this.dataSource.every((item) => item.disabled || this.checkedValue.includes(item.value));
     },
     totalCount(): number {
       return getLeefCount(this.dataSource);
