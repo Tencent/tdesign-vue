@@ -10,12 +10,13 @@ import getConfigReceiverMixins, { DrawerConfig } from '../config-provider/config
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
+import ActionMixin from '../dialog/actions';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
 
-export default mixins(getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
+export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
 
   components: {
@@ -163,18 +164,18 @@ export default mixins(getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).exte
     },
     // locale 全局配置，插槽，props，默认值，决定了按钮最终呈现
     getDefaultFooter() {
-      let cancelBtn = null;
-      if (![undefined, null].includes(this.cancelBtn)) {
-        cancelBtn = this.cancelBtn || this.t(this.global.cancel);
-        const defaultCancel = this.getDefaultBtn('cancel', cancelBtn);
-        cancelBtn = this.isUseDefault(cancelBtn) ? defaultCancel : renderTNodeJSX(this, 'cancelBtn');
-      }
-      let confirmBtn = null;
-      if (![undefined, null].includes(this.confirmBtn)) {
-        confirmBtn = this.confirmBtn || this.t(this.global.confirm);
-        const defaultConfirm = this.getDefaultBtn('confirm', confirmBtn);
-        confirmBtn = this.isUseDefault(confirmBtn) ? defaultConfirm : renderTNodeJSX(this, 'confirmBtn');
-      }
+      // this.getConfirmBtn is a function of ActionMixin
+      const confirmBtn = this.getConfirmBtn({
+        confirmBtn: this.confirmBtn,
+        globalConfirm: this.global.confirm,
+        className: `${prefix}-drawer__confirm`,
+      });
+      // this.getCancelBtn is a function of ActionMixin
+      const cancelBtn = this.getCancelBtn({
+        cancelBtn: this.cancelBtn,
+        globalCancel: this.global.cancel,
+        className: `${prefix}-drawer__cancel`,
+      });
       return (
         <div style={this.footerStyle}>
           {this.placement === 'right' ? confirmBtn : null}

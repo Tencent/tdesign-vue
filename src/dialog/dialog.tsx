@@ -6,7 +6,8 @@ import {
 } from 'tdesign-icons-vue';
 import Vue from 'vue';
 import { prefix } from '../config';
-import TButton, { ButtonProps } from '../button';
+import TButton from '../button';
+import ActionMixin from './actions';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -14,10 +15,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DialogConfig } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles, TNode } from '../common';
-
-type FooterButton = string | ButtonProps | TNode;
-type FooterButtonType = 'confirm' | 'cancel';
+import { ClassName, Styles } from '../common';
 
 const name = `${prefix}-dialog`;
 
@@ -55,7 +53,7 @@ function initDragEvent(dragBox: HTMLElement) {
   });
 }
 
-export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
+export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
   name: 'TDialog',
 
   components: {
@@ -176,6 +174,7 @@ export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).exte
         e,
       });
     },
+    // used in mixins of ActionMixin
     cancelBtnAction(e: MouseEvent) {
       emitEvent<Parameters<TdDialogProps['onCancel']>>(this, 'cancel', { e });
       this.emitCloseEvent({
@@ -183,6 +182,7 @@ export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).exte
         e,
       });
     },
+    // used in mixins of ActionMixin
     confirmBtnAction(e: MouseEvent) {
       emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
     },
@@ -210,6 +210,7 @@ export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).exte
       const eventFuncs = this['_events']?.[name];
       return !!eventFuncs?.length;
     },
+
     getIcon() {
       const icon = {
         info: <TIconInfoCircleFilled class={`${prefix}-is-info`} />,
@@ -219,69 +220,28 @@ export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog')).exte
       };
       return icon[this.theme];
     },
-    getDefaultBtn(btnType: FooterButtonType, btnApi: FooterButton) {
-      const isCancel = btnType === 'cancel';
-      const clickAction = isCancel ? this.cancelBtnAction : this.confirmBtnAction;
-      const primaryDefault = this.global.confirmBtnTheme[this.theme] || 'primary';
-      const theme = isCancel ? 'default' : primaryDefault;
-      const text = isCancel ? '取消' : '确定';
-      const isApiObject = typeof btnApi === 'object';
-      return (
-        <t-button
-          variant="base"
-          theme={theme}
-          onClick={clickAction}
-          props={isApiObject ? btnApi : {}}
-          class={`${name}-${btnType}`}
-        >
-          { ((btnApi && isApiObject) ? btnApi.content : btnApi) || text }
-        </t-button>
-      );
-    },
 
-    // global 全局配置，插槽，props，默认值，决定了按钮最终呈现
-    getCancelBtn() {
-      let cancelBtn = null;
-      if (this.$scopedSlots.cancelBtn && this.cancelBtn) {
-        console.warn('插槽 `cancelBtn` 和 属性 `cancelBtn` 同时存在，优先使用插槽渲染');
-      }
-      if (this.$scopedSlots.cancelBtn) {
-        cancelBtn = this.$scopedSlots.cancelBtn(null);
-      } else {
-        const tCancelBtn = this.cancelBtn || this.global.cancel;
-        cancelBtn = typeof tCancelBtn === 'function'
-          ? tCancelBtn(this.$createElement)
-          : this.getDefaultBtn('cancel', tCancelBtn);
-      }
-      return cancelBtn;
-    },
-
-    // global 全局配置，插槽，props，默认值，决定了按钮最终呈现
-    getConfirmBtn() {
-      let confirmBtn = null;
-      if (this.$scopedSlots.confirmBtn && this.confirmBtn) {
-        console.warn('插槽 `confirmBtn` 和 属性 `confirmBtn` 同时存在，优先使用插槽渲染');
-      }
-      if (this.$scopedSlots.confirmBtn) {
-        confirmBtn = this.$scopedSlots.confirmBtn(null);
-      } else {
-        const tConfirmBtn = this.confirmBtn || this.global.confirm;
-        confirmBtn = typeof tConfirmBtn === 'function'
-          ? tConfirmBtn(this.$createElement)
-          : this.getDefaultBtn('confirm', tConfirmBtn);
-      }
-      return confirmBtn;
-    },
     renderDialog() {
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <t-icon-close name="close"></t-icon-close>;
+      const defaultCloseBtn = <t-icon-close />;
       const body = renderContent(this, 'default', 'body');
+      // this.getConfirmBtn is a function of ActionMixin
+      // this.getCancelBtn is a function of ActionMixin
       const defaultFooter = (
         <div>
-          {this.getCancelBtn()}
-          {this.getConfirmBtn()}
-          {}
+          {this.getCancelBtn({
+            cancelBtn: this.cancelBtn,
+            globalCancel: this.global.cancel,
+            className: `${prefix}-dialog__cancel`,
+          })}
+          {this.getConfirmBtn({
+            theme: this.theme,
+            confirmBtn: this.confirmBtn,
+            globalConfirm: this.global.confirm,
+            globalConfirmBtnTheme: this.global.confirmBtnTheme,
+            className: `${prefix}-dialog__confirm`,
+          })}
         </div>
       );
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;

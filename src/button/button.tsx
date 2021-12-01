@@ -10,8 +10,11 @@ const name = `${prefix}-button`;
 
 export default Vue.extend({
   name: 'TButton',
+
   props,
+
   directives: { ripple },
+
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
@@ -45,8 +48,19 @@ export default Vue.extend({
       buttonContent = [icon, buttonContent];
     }
 
+    const on = { ...this.$listeners };
+    if (typeof this.onClick === 'function') {
+      on.click = this.onClick;
+    }
+
     return (
-      <button v-ripple class={buttonClass} type={this.type} disabled={disabled} {...{ on: this.$listeners }}>
+      <button
+        v-ripple
+        class={buttonClass}
+        type={this.type}
+        disabled={disabled}
+        {...{ on }}
+      >
         {buttonContent}
       </button>
     );
