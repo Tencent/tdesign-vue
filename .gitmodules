@@ -1,3 +1,0 @@
-[submodule "common"]
-	path = src/_common
-	url = https://github.com/TDesignOteam/tdesign-common
