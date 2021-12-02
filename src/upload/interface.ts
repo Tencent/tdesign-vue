@@ -45,13 +45,3 @@ export interface FlowRemoveContext {
   index: number;
   file: UploadFile;
 }
-
-export interface URL {
-  createObjectURL(object: any, options?: any): string;
-  revokeObjectURL(url: string): void;
-}
-
-export declare const URL: {
-  prototype: URL;
-  new(): URL;
-};
