@@ -24,7 +24,6 @@ import {
   InnerProgressContext,
   UploadRemoveOptions,
   FlowRemoveContext,
-  URL,
 } from './interface';
 import {
   TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext, RequestMethodResponse, SizeUnit, SizeLimitObj,
@@ -103,7 +102,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       errorMsg: '',
       showImageViewDialog: false,
       showImageViewUrl: '',
-      URL: null as URL,
       xhrReq: null as XMLHttpRequest,
     };
   },
@@ -234,7 +232,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           status: 'waiting',
           ...file,
         };
-        // uploadFile.url = this.getLocalFileURL(fileRaw);
         const reader = new FileReader();
         reader.readAsDataURL(fileRaw);
         reader.onload = (event: ProgressEvent<FileReader>) => {
@@ -286,10 +283,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     /** 模拟进度条 Mock Progress */
     handleMockProgress(file: UploadFile) {
       const timer = setInterval(() => {
-        file.percent += 1;
-        if (file.percent >= 99) {
+        if (file.status === 'success' || file.percent >= 99) {
           clearInterval(timer);
+          return;
         }
+        file.percent += 1;
         this.handleProgress({
           file,
           percent: file.percent,
@@ -395,8 +393,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         file, fileList: files, e: event, response: res,
       };
       emitEvent<Parameters<TdUploadProps['onSuccess']>>(this, 'success', sContext);
-      // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
-      this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
       this.loadingFile = null;
     },
 
@@ -451,8 +447,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     cancelUpload() {
       if (this.loadingFile) {
-        // https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
-        this.URL && this.URL.revokeObjectURL(this.loadingFile.url);
         // 如果存在自定义上传方法，则只需要抛出事件，而后由父组件处理取消上传
         if (this.requestMethod) {
           emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
@@ -489,10 +483,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           {this.files?.length ? '重新上传' : '点击上传'}
         </TButton>
       );
-    },
-
-    getLocalFileURL(file: File) {
-      return this.URL && this.URL.createObjectURL(file);
     },
 
     renderInput() {
@@ -566,10 +556,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         ? this.renderDraggerTrigger()
         : <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>;
     },
-  },
-  mounted() {
-    // webkitURL is for chrome/webkit, while URL is for mozilla/firefox
-    window && (this.URL = window.webkitURL || window.URL);
   },
 
   render(): VNode {

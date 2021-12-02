@@ -59,10 +59,10 @@ TDesign Starter 基于 TDesign UI 组件，旨在提供项目开箱即用的、�
 
 ### 快速开始
 
-通过 `tdesign-pro-cli` 初始化项目仓库
+通过 `tdesign-starter-cli` 初始化项目仓库
 
 ```
-// 1、安装 tdesign-pro-cli
+// 1、安装 tdesign-starter-cli
 npm i tdesign-starter-cli@latest -g
 
 // 2、创建项目
