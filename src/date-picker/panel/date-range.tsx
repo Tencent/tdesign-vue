@@ -129,7 +129,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
 
       if (this.mode === 'date' && isSame(startValue, endValue, 'month')) {
         const next = addMonth(endValue, 1);
-        rightMonth = new Date(endValue).getMonth() + 1;
+        rightMonth = addMonth(endValue, 1).getMonth();
         rightYear = next.getFullYear();
       }
 
