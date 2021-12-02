@@ -4,7 +4,7 @@
       <h3>使用插槽</h3>
       <t-calendar>
         <template slot="week" slot-scope="scope">
-          {{ scope.data.day === 7 ? '星期天' : `星期${scope.data.day}` }}
+          {{ scope.day === 7 ? '星期天' : `星期${scope.day}` }}
         </template>
       </t-calendar>
     </div>
