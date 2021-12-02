@@ -685,14 +685,14 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
       <div class={this.classes}>
         <t-popup
           ref="popup"
-          class={`${prefix}-date-picker-popup-reference`}
+          class={`${name}-popup-reference`}
           trigger="click"
           placement="bottom-left"
           disabled={disabled}
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}
-          overlayClassName={`${prefix}-date-picker`}
+          overlayClassName={name}
           content={popupContent}
           expandAnimation={true}
         >

@@ -4652,7 +4652,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
 
 exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-item--datepicker">
-  <div class="t-date-picker t-input t-size-m">
+  <div theme="primary" class="t-date-picker t-input t-size-m">
     <div class="t-popup-reference t-date-picker-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
       <div class="t-form-controls">
