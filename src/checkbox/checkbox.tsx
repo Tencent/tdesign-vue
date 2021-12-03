@@ -4,6 +4,7 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import checkboxProps from './props';
 import Group from './group';
+import { omit } from '../utils/helper';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
 import { TdCheckboxProps } from './type';
@@ -16,8 +17,11 @@ interface CheckboxInstance extends Vue {
 
 export default (Vue as VueConstructor<CheckboxInstance>).extend({
   name: 'TCheckbox',
+
   inheritAttrs: false,
+
   props: { ...checkboxProps },
+
   inject: {
     checkboxGroup: { default: undefined },
   },
@@ -76,6 +80,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
       <label class={this.labelClasses}>
         <input
           type='checkbox'
+          on={{ ...omit(this.$listeners, ['checked', 'change']) }}
           class={`${name}__former`}
           disabled={this.disabled$}
           readonly={this.readonly}
