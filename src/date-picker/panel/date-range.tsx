@@ -7,6 +7,7 @@ import {
   DateRangeData, DateRangeMethods, DateRangeComputed, DateRangeProps,
 } from '../interface';
 import { DateValue } from '../type';
+import { prefix } from '../../config';
 
 import {
   getWeeks,
@@ -296,8 +297,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       firstDayOfWeek,
     } = this;
     return (
-      <div class="t-date-range">
-        <div class="t-date">
+      <div class={`${prefix}-date-range`}>
+        <div class={`${prefix}-date`}>
           <t-date-header
             year={this.leftYear}
             month={this.leftMonth}
@@ -321,7 +322,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             }}
           />
         </div>
-        <div class="t-date">
+        <div class={`${prefix}-date`}>
           <t-date-header
             year={this.rightYear}
             month={this.rightMonth}

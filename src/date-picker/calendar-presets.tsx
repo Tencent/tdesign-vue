@@ -2,6 +2,7 @@ import Vue, { PropType } from 'vue';
 import { CalendarPresetsMethods, CalendarPresetsProps, DateValue } from './interface';
 import { DatePickerConfig } from '../config-provider/config-receiver';
 import { Button as TButton } from '../button';
+import { prefix } from '../config';
 
 export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>({
   components: {
@@ -24,15 +25,13 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
   render() {
     const { presets } = this;
     return (
-      <div class="t-date-picker-presets">
+      <div class={`${prefix}-date-picker-presets`}>
         <ul>
-        {
-          presets && Object.keys(presets).map((key: string) => (
+        {presets && Object.keys(presets).map((key: string) => (
             <li key={key}>
               <a onClick={() => this.clickPreset(presets[key])}>{ key }</a>
             </li>
-          ))
-        }
+        ))}
         </ul>
       </div>
     );

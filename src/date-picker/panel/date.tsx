@@ -6,6 +6,7 @@ import { DatePickerConfig } from '../../config-provider/config-receiver';
 import {
   DateData, DateMethods, DateComputed, DateProps,
 } from '../interface';
+import { prefix } from '../../config';
 
 import {
   getWeeks,
@@ -150,14 +151,14 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   },
   render() {
     return (
-      <div class="t-date">
+      <div class={`${prefix}-date`}>
         <t-date-header
-           year={this.year}
-           month={this.month}
-           type={this.$data.type}
-           {...{
-             props: { onBtnClick: this.clickHeader, onTypeChange: this.onTypeChange },
-           }}
+          year={this.year}
+          month={this.month}
+          type={this.$data.type}
+          {...{
+            props: { onBtnClick: this.clickHeader, onTypeChange: this.onTypeChange },
+          }}
         />
 
         <t-date-table

@@ -80,6 +80,10 @@ export default Vue.extend({
     },
   },
 
+  created() {
+    this.$on('checked-change', this.handleRadioChange);
+  },
+
   mounted() {
     this.calcBarStyle();
 
