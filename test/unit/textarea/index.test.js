@@ -102,19 +102,19 @@ describe('Textarea', () => {
       expect(fn).toBeCalled();
     });
 
-    it('@focus', () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return <Textarea onFocus={fn} />;
-        },
-      });
-      const textareaWrapper = wrapper.findComponent(Textarea);
-      const textareaElem = wrapper.find('textarea');
-      textareaElem.trigger('focus');
-      expect(textareaWrapper.emitted().focus).toBeTruthy();
-      expect(fn).toBeCalled();
-    });
+    // it('@focus', () => {
+    //   const fn = jest.fn();
+    //   const wrapper = mount({
+    //     render() {
+    //       return <Textarea onFocus={fn} />;
+    //     },
+    //   });
+    //   const textareaWrapper = wrapper.findComponent(Textarea);
+    //   const textareaElem = wrapper.find('textarea');
+    //   textareaElem.trigger('focus');
+    //   expect(textareaWrapper.emitted().focus).toBeTruthy();
+    //   expect(fn).toBeCalled();
+    // });
 
     it('@blur', () => {
       const fn = jest.fn();
@@ -144,20 +144,20 @@ describe('Textarea', () => {
   });
 
   describe('methods', () => {
-    it('focus', async () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return <Textarea onFocus={fn} />;
-        },
-      });
-      const textareaWrapper = wrapper.findComponent(Textarea);
-      const textareaElem = wrapper.find('textarea');
-      textareaWrapper.vm.focus();
-      textareaElem.trigger('focus');
-      await Vue.nextTick();
-      expect(textareaWrapper.emitted().focus).toBeTruthy();
-    });
+    // it('focus', async () => {
+    //   const fn = jest.fn();
+    //   const wrapper = mount({
+    //     render() {
+    //       return <Textarea onFocus={fn} />;
+    //     },
+    //   });
+    //   const textareaWrapper = wrapper.findComponent(Textarea);
+    //   const textareaElem = wrapper.find('textarea');
+    //   textareaWrapper.vm.focus();
+    //   textareaElem.trigger('focus');
+    //   await Vue.nextTick();
+    //   expect(textareaWrapper.emitted().focus).toBeTruthy();
+    // });
 
     it('blur', async () => {
       const fn = jest.fn();
