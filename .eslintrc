@@ -47,6 +47,8 @@
     "no-underscore-dangle": 0,
     "no-confusing-arrow": 0,
     "func-style": 0,
+    "vue/multi-word-component-names": 0,
+    "vue/no-useless-template-attributes": 0,
     "no-console": [
       "error",
       {

@@ -37,6 +37,7 @@ function getDemoContent(demoContent) {
 }
 
 export default {
+  name: "code-sandbox",
   props: {
     code: String,
     demoName: String,
