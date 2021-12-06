@@ -1,6 +1,5 @@
 import Vue, { VNode, PropType } from 'vue';
 import { Styles } from '@src/common';
-import cloneDeep from 'lodash/cloneDeep';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
