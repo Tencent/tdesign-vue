@@ -46,6 +46,7 @@ export default Vue.extend({
     getRowspanAndColspanProps() {
       const props: Array<any> = [];
       const { data, columns, rowspanAndColspan } = this;
+      const cacheFirstColumnLeftedRowspan: Array<number> = [];
       data.forEach((rowData, rowIndex) => {
         if (props[rowIndex] === undefined) {
           props[rowIndex] = {};
@@ -60,6 +61,10 @@ export default Vue.extend({
           }) || {};
           rowspan = rowspan || 1;
           colspan = colspan || 1;
+          if (colIndex === 0 && rowspan > 1) {
+            // 第一列跨行的话，先提前设置一下第 rowspan + rowindex - 1 行的剩余跨行数
+            cacheFirstColumnLeftedRowspan[rowspan + rowIndex - 1] = 1;
+          }
           // 剩余要跨的行
           let leftedRowspan = 0;
           if (rowIndex === 0 || rowspan > 1) {
@@ -78,6 +83,10 @@ export default Vue.extend({
           let leftedColspan = 0;
           if (colIndex === 0 || colspan > 1) {
             leftedColspan = colspan - 1;
+            // 第一列有跨行，行数不减1，防止后后面的单元格判断失误
+            if (colIndex === 0 && (leftedRowspan > 0 || cacheFirstColumnLeftedRowspan[rowIndex] > 0)) {
+              leftedColspan = 1;
+            }
           } else {
             // 一种特殊情况，如果当前行的上一行有跨列，应该继承一下他的跨列数
             if (rowIndex > 0) {
