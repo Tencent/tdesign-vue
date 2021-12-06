@@ -67,7 +67,7 @@ exports[`Table base demo works fine 1`] = `
       class="t-table t-table--bordered t-table--striped"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -480,7 +480,7 @@ exports[`Table base demo works fine 2`] = `
       class="t-table t-table--bordered t-table--striped"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -835,7 +835,7 @@ exports[`Table customCell demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -1044,7 +1044,7 @@ exports[`Table empty demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -1138,7 +1138,7 @@ exports[`Table empty demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -1323,7 +1323,7 @@ exports[`Table expandable demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -1975,701 +1975,6 @@ exports[`Table expandable demo works fine 1`] = `
                       peter
                     </p>
                     <br />
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        描述:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      test
-                    </p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div
-    style="margin: 10px 0px;"
-  >
-    支持名为 expandedRow 的插槽写法
-  </div>
-   
-  <div
-    style="width: 100%;"
-  >
-    <div
-      class="t-table"
-    >
-      <div
-        class="t-loading-parent__relative"
-      >
-        <div
-          class="t-table-content"
-        >
-          <table
-            style="table-layout: fixed;"
-          >
-            <colgroup>
-              <col
-                style="width: 48px;"
-              />
-              <col
-                style="width: 150px;"
-              />
-              <col
-                style="width: 100px;"
-              />
-              <col />
-              <col />
-              <col
-                style="width: 200px;"
-              />
-            </colgroup>
-            <thead
-              columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-            >
-              <tr>
-                <td
-                  class="t-table-expandable-icon-cell"
-                  colspan="1"
-                  key="expanded-icon-cell"
-                  rowspan="1"
-                  style="overflow: hidden;"
-                />
-                <td
-                  class=""
-                  colspan="1"
-                  key="instance"
-                  rowspan="1"
-                  style="overflow: hidden;"
-                >
-                  集群名称
-                </td>
-                <td
-                  class=""
-                  colspan="1"
-                  key="status"
-                  rowspan="1"
-                  style="overflow: hidden;"
-                >
-                  状态
-                </td>
-                <td
-                  class=""
-                  colspan="1"
-                  key="owner"
-                  rowspan="1"
-                >
-                  管理员
-                </td>
-                <td
-                  class=""
-                  colspan="1"
-                  key="description"
-                  rowspan="1"
-                >
-                  描述
-                </td>
-                <td
-                  class=""
-                  colspan="1"
-                  key="op"
-                  rowspan="1"
-                  style="overflow: hidden;"
-                >
-                  <p>
-                    操作
-                  </p>
-                </td>
-              </tr>
-            </thead>
-            <tbody
-              class="table-body"
-            >
-              <tr
-                class=""
-                key="1"
-                rowkey="id"
-              >
-                <td
-                  class="t-table-expandable-icon-cell"
-                  key="expanded-icon-cell"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <span
-                    class="t-table-expand-box"
-                  >
-                    <span
-                      style="transition: all .2s; display: flex; align-items: center;"
-                    >
-                      <svg
-                        class="t-icon t-icon-chevron-right-circle"
-                        fill="none"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        width="1em"
-                      >
-                        <path
-                          d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                        <path
-                          d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </td>
-                <td
-                  class=""
-                  key="instance"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  集群测试1
-                </td>
-                <td
-                  class=""
-                  key="status"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <p
-                    class="status"
-                  >
-                    健康
-                  </p>
-                   
-                  <!---->
-                </td>
-                <td
-                  class=""
-                  key="owner"
-                  length="6"
-                >
-                  jenny;peter
-                </td>
-                <td
-                  class=""
-                  key="description"
-                  length="6"
-                >
-                  隐藏展开图标
-                </td>
-                <td
-                  class=""
-                  key="op"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <a
-                    class="link"
-                  >
-                    管理
-                  </a>
-                   
-                  <a
-                    class="link"
-                  >
-                    删除
-                  </a>
-                </td>
-              </tr>
-              <tr
-                style="display: none;"
-              >
-                <td
-                  class="t-table-expanded-cell"
-                  colspan="6"
-                  key="expanded-row"
-                  length="1"
-                >
-                  <div
-                    class="more-detail"
-                  >
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        集群名称:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      集群测试1
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        管理员:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      jenny;peter
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        描述:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      隐藏展开图标
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class=""
-                key="2"
-                rowkey="id"
-              >
-                <td
-                  class="t-table-expandable-icon-cell"
-                  key="expanded-icon-cell"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <span
-                    class="t-table-expand-box"
-                  >
-                    <span
-                      style="transition: all .2s; display: flex; align-items: center; transform: rotate(90deg);"
-                    >
-                      <svg
-                        class="t-icon t-icon-chevron-right-circle"
-                        fill="none"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        width="1em"
-                      >
-                        <path
-                          d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                        <path
-                          d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </td>
-                <td
-                  class=""
-                  key="instance"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  集群测试2
-                </td>
-                <td
-                  class=""
-                  key="status"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <!---->
-                   
-                  <p
-                    class="status unhealth"
-                  >
-                    异常
-                  </p>
-                </td>
-                <td
-                  class=""
-                  key="owner"
-                  length="6"
-                >
-                  jenny
-                </td>
-                <td
-                  class=""
-                  key="description"
-                  length="6"
-                >
-                  test
-                </td>
-                <td
-                  class=""
-                  key="op"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <a
-                    class="link"
-                  >
-                    管理
-                  </a>
-                   
-                  <a
-                    class="link"
-                  >
-                    删除
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  class="t-table-expanded-cell"
-                  colspan="6"
-                  key="expanded-row"
-                  length="1"
-                >
-                  <div
-                    class="more-detail"
-                  >
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        集群名称:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      集群测试2
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        管理员:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      jenny
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        描述:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      test
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class=""
-                key="3"
-                rowkey="id"
-              >
-                <td
-                  class="t-table-expandable-icon-cell"
-                  key="expanded-icon-cell"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <span
-                    class="t-table-expand-box"
-                  >
-                    <span
-                      style="transition: all .2s; display: flex; align-items: center;"
-                    >
-                      <svg
-                        class="t-icon t-icon-chevron-right-circle"
-                        fill="none"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        width="1em"
-                      >
-                        <path
-                          d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                        <path
-                          d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </td>
-                <td
-                  class=""
-                  key="instance"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  集群测试3
-                </td>
-                <td
-                  class=""
-                  key="status"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <p
-                    class="status"
-                  >
-                    健康
-                  </p>
-                   
-                  <!---->
-                </td>
-                <td
-                  class=""
-                  key="owner"
-                  length="6"
-                >
-                  jenny
-                </td>
-                <td
-                  class=""
-                  key="description"
-                  length="6"
-                >
-                  自定义图标
-                </td>
-                <td
-                  class=""
-                  key="op"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <a
-                    class="link"
-                  >
-                    管理
-                  </a>
-                   
-                  <a
-                    class="link"
-                  >
-                    删除
-                  </a>
-                </td>
-              </tr>
-              <tr
-                style="display: none;"
-              >
-                <td
-                  class="t-table-expanded-cell"
-                  colspan="6"
-                  key="expanded-row"
-                  length="1"
-                >
-                  <div
-                    class="more-detail"
-                  >
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        集群名称:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      集群测试3
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        管理员:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      jenny
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        描述:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      自定义图标
-                    </p>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class=""
-                key="4"
-                rowkey="id"
-              >
-                <td
-                  class="t-table-expandable-icon-cell"
-                  key="expanded-icon-cell"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <span
-                    class="t-table-expand-box"
-                  >
-                    <span
-                      style="transition: all .2s; display: flex; align-items: center;"
-                    >
-                      <svg
-                        class="t-icon t-icon-chevron-right-circle"
-                        fill="none"
-                        height="1em"
-                        viewBox="0 0 16 16"
-                        width="1em"
-                      >
-                        <path
-                          d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                        <path
-                          d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z"
-                          fill="currentColor"
-                          fill-opacity="0.9"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </td>
-                <td
-                  class=""
-                  key="instance"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  集群测试4
-                </td>
-                <td
-                  class=""
-                  key="status"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <!---->
-                   
-                  <p
-                    class="status unhealth"
-                  >
-                    异常
-                  </p>
-                </td>
-                <td
-                  class=""
-                  key="owner"
-                  length="6"
-                >
-                  peter
-                </td>
-                <td
-                  class=""
-                  key="description"
-                  length="6"
-                >
-                  test
-                </td>
-                <td
-                  class=""
-                  key="op"
-                  length="6"
-                  style="overflow: hidden;"
-                >
-                  <a
-                    class="link"
-                  >
-                    管理
-                  </a>
-                   
-                  <a
-                    class="link"
-                  >
-                    删除
-                  </a>
-                </td>
-              </tr>
-              <tr
-                style="display: none;"
-              >
-                <td
-                  class="t-table-expanded-cell"
-                  colspan="6"
-                  key="expanded-row"
-                  length="1"
-                >
-                  <div
-                    class="more-detail"
-                  >
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        集群名称:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      集群测试4
-                    </p>
-                    <br />
-                     
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        管理员:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      peter
-                    </p>
-                    <br />
-                     
                     <p
                       class="title"
                     >
@@ -2799,7 +2104,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
       class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -3301,7 +2606,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
     class="t-table t-table__header--fixed"
   >
     <div
-      class="t-loading-parent__relative"
+      class="t-loading__parent"
     >
       <div
         class="t-table-content"
@@ -4597,7 +3902,7 @@ exports[`Table multiHeader demo works fine 1`] = `
     class="t-table t-table--bordered"
   >
     <div
-      class="t-loading-parent__relative"
+      class="t-loading__parent"
     >
       <div
         class="t-table-content"
@@ -4822,7 +4127,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"
@@ -5272,7 +4577,7 @@ exports[`Table selectSingle demo works fine 1`] = `
       class="t-table"
     >
       <div
-        class="t-loading-parent__relative"
+        class="t-loading__parent"
       >
         <div
           class="t-table-content"

@@ -3,8 +3,9 @@ import { CreateElement } from 'vue/types/umd';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
+import Loading from '../../../loading';
 import { prefix } from '../../../config';
-import GradientIcon from '../../../loading/icon/gradient';
+// import GradientIcon from '../../../loading/icon/gradient';
 import { emitEvent } from '../../../utils/event';
 import { TdPrimaryTableProps } from '../../type';
 import { ClassName } from '../../../common';
@@ -69,8 +70,11 @@ export default Vue.extend({
             }
             return (
               <div class={this.classes} onClick={this.onLoadClick}>
-                {asyncLoading === 'loading' && <GradientIcon size='small' />}
-                {loadingText}
+                {<Loading
+                  loading={asyncLoading === 'loading'}
+                  text={loadingText}
+                  size="small"
+                />}
               </div>
             );
           },

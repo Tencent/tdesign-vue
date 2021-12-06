@@ -39,17 +39,12 @@ export default Vue.extend({
   methods: {
     renderLoading() {
       if (this.asyncLoading && typeof this.asyncLoading === 'string') {
-        if (this.asyncLoading === LOADING) {
-          return (
-            <div>
-              <Loading />
-              <span>正在加载中，请稍等</span>
-            </div>
-          );
-        }
-        if (this.asyncLoading === LOAD_MORE) {
-          return <span>点击加载更多</span>;
-        }
+        const text = {
+          [LOADING]: '正在加载中，请稍后',
+          [LOAD_MORE]: '点击加载更多',
+        }[this.asyncLoading];
+        const loading = this.asyncLoading === LOADING;
+        return <Loading loading={loading} text={text} size="small" />;
       }
       return renderTNodeJSX(this, 'asyncLoading');
     },

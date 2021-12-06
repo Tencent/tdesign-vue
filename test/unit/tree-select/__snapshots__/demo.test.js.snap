@@ -172,29 +172,33 @@ exports[`TreeSelect base demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -430,29 +434,33 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -680,29 +688,33 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -938,29 +950,33 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -1140,29 +1156,33 @@ exports[`TreeSelect lazy demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -1396,29 +1416,33 @@ exports[`TreeSelect multiple demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -1609,29 +1633,33 @@ exports[`TreeSelect prefix demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -1818,29 +1846,33 @@ exports[`TreeSelect props demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -2027,29 +2059,33 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
@@ -2279,29 +2315,33 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           />
         </svg>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
           style="display: none;"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>

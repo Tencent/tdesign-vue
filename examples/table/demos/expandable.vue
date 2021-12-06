@@ -1,8 +1,8 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
+    <!-- t-config-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
     <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
-    <!-- <t-locale-provider :globalLocale="globalLocale"> -->
+    <!-- <t-config-provider :globalLocale="globalLocale"> -->
 
     <!-- expanded-row-keys 为受控属性 -->
     <!-- default-expanded-row-keys 为非受控属性 -->
@@ -38,36 +38,7 @@
       </template>
     </t-table>
 
-    <div style="margin: 10px 0px;">支持名为 expandedRow 的插槽写法</div>
-
-    <t-table
-      row-key='id'
-      :columns="columns"
-      :data="data"
-      :expanded-row-keys="expandedRowKeys"
-      @expand-change="rehandleExpandChange"
-      :expandIcon="expandIcon"
-      :expandOnRowClick="expandOnRowClick"
-    >
-      <template #expandedRow="{ row }">
-        <div class="more-detail">
-          <p class="title"><b>集群名称:</b></p><p class="content">{{row.instance}}</p><br/>
-          <p class="title"><b>管理员:</b></p><p class="content">{{row.owner}}</p><br/>
-          <p class="title"><b>描述:</b></p><p class="content">{{row.description}}</p>
-        </div>
-      </template>
-      <template #status="{ row }">
-        <p v-if="row.status === 0" class="status">健康</p>
-        <p v-if="row.status === 1" class="status unhealth">异常</p>
-      </template>
-      <template #op-column><p>操作</p></template>
-      <template #op="slotProps">
-        <a class="link" @click="rehandleClickOp(slotProps)">管理</a>
-        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
-      </template>
-    </t-table>
-
-    <!-- </t-locale-provider> -->
+    <!-- </t-config-provider> -->
   </div>
 </template>
 
