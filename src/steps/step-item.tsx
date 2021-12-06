@@ -41,7 +41,9 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       if (this.status !== 'default') return this.status;
       // value 不存在时，使用 index 进行区分每一个步骤
       if (this.value === undefined && this.index < this.current) return 'finish';
-      if (this.value !== undefined && this.index < this.steps.indexMap[this.current]) return 'finish';
+      // value 存在且是整数时，当前 index 小于 steps 最后一项的 value 对应的 index 时则代表完成
+      const NaNFlag = isNaN(+this.value);
+      if (this.value !== undefined && NaNFlag && this.index < this.steps.indexMap[this.current]) return 'finish';
       const key = this.value === undefined ? this.index : this.value;
       if (key === this.current) return 'process';
       return 'wait';
