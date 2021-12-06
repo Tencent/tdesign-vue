@@ -64,8 +64,7 @@ export default {
     };
   },
   methods: {
-    collapsedItems(h, { value, count, collapsedSelectedItems }) {
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
+    collapsedItems(h, { value, count }) {
       if (!(value instanceof Array) || !count) return;
       // hover展示全部已选项
       return (
