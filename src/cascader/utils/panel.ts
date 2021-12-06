@@ -1,7 +1,6 @@
-import isFunction from 'lodash/isFunction';
 import isNumber from 'lodash/isNumber';
 import {
-  TreeNode, CascaderContextType, CascaderProps, ContextType, TreeNodeValue,
+  TreeNode, CascaderContextType, CascaderProps, TreeNodeValue,
 } from '../interface';
 
 /**
