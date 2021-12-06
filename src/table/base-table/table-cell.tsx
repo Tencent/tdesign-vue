@@ -55,7 +55,7 @@ export default Vue.extend({
   render(h) {
     const { cellData } = this;
     const {
-      col, colIndex, row, rowIndex, customData, customRender, withBorder,
+      col, colIndex, row, rowIndex, customData, customRender, withoutBorder, withBorder,
     } = cellData;
     const {
       colKey, attrs, align, ellipsis, width, className, title, fixed,
@@ -82,9 +82,13 @@ export default Vue.extend({
     if (width && !fixed) {
       style.overflow = 'hidden';
     }
-    if (withBorder) {
+    if (withoutBorder === true) {
+      style.borderLeftWidth = '0px';
+    }
+    if (withBorder === true) {
       style.borderLeftWidth = '1px';
     }
+
     if (ellipsis === true || typeof ellipsis === 'function') {
       attrClass.push('text-ellipsis');
     }

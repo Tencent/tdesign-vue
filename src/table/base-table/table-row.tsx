@@ -65,6 +65,7 @@ export default Vue.extend({
         rowData, columns, index: rowIndex, rowspanAndColspanProps,
       } = this;
       const rowBody: Array<VNode> = [];
+      let flag = true;
       columns.forEach((column, index) => {
         const customData: CustomData = {
           type: 'cell',
@@ -106,11 +107,25 @@ export default Vue.extend({
             return;
           }
         }
+        let withBorder;
+        let withoutBorder;
+        // 存在跨列或者跨行的情况
+        if (index > rowBody.length && rowIndex > 0) {
+          // 如果当前显示行的第一列，但不是 column 的第一列而且有固定列存在的情况下，要隐藏一下 border
+          if (columns[index - 1]?.fixed && rowBody.length === 0) {
+            withoutBorder = true;
+          } else if (flag) {
+            withBorder = true;
+            flag = false;
+          }
+        }
         const cellData: CellData = {
           col: {
             ...column,
             attrs,
           },
+          withBorder,
+          withoutBorder,
           colIndex: index,
           row: rowData,
           rowIndex,

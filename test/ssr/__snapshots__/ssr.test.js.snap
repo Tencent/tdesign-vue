@@ -13062,12 +13062,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
             <tr rowKey="default" class="" key="&quot;&quot;">
               <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
               <td colspan="2" rowspan="2" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">String/&quot;&quot;</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">Y</td>
+              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
               <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">描述</td>
             </tr>
             <tr rowKey="default" class="" key="{}">
               <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">Y</td>
+              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
               <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">复杂类型</td>
             </tr>
             <tr rowKey="default" class="" key="false">
@@ -13081,12 +13081,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
               <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
               <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
               <td colspan="2" rowspan="2" class="align-left text-ellipsis test4" key="default" length="5" style="overflow:hidden;">-1 / N</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">位置</td>
+              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">位置</td>
             </tr>
             <tr rowKey="default" class="" key="-1">
               <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
               <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">Number 类型</td>
+              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">Number 类型</td>
             </tr>
           </tbody>
         </table>
