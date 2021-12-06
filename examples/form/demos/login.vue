@@ -14,7 +14,7 @@
         </t-input>
       </t-form-item>
       <t-form-item name='password'>
-        <t-input type="password" clearablec v-model="formData.password" placeholder="请输入密码">
+        <t-input type="password" clearable v-model="formData.password" placeholder="请输入密码">
           <lock-on-icon slot="prefix-icon"></lock-on-icon>
         </t-input>
       </t-form-item>

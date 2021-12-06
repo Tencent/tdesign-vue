@@ -12,7 +12,7 @@
     <div>
       <t-radio-group default-value="1" @change="onChange">
         <t-radio value="1">选项一</t-radio>
-        <t-radio :value="true">选项二</t-radio>
+        <t-radio value="2">选项二</t-radio>
         <t-radio value="3">选项三</t-radio>
         <t-radio value="4" disabled>选项四</t-radio>
       </t-radio-group>

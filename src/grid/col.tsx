@@ -5,6 +5,7 @@ import { prefix } from '../config';
 import props from './col-props';
 import { ClassName } from '../common';
 import { TdColProps, TdRowProps } from './type';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-col`;
 
@@ -125,6 +126,6 @@ export default Vue.extend({
       Object.assign(colStyle, this.calcColPadding(rowGutter, this.size));
     }
 
-    return <tag class={classes} style={colStyle}>{this.$slots.default}</tag>;
+    return <tag class={classes} style={colStyle}>{renderTNodeJSX(this, 'default')}</tag>;
   },
 });
