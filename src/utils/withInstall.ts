@@ -6,7 +6,7 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
 
   const name = c?.options?.name || c.name;
 
-  c.install = (Vue: VueConstructor, config?: object) => {
+  c.install = function (Vue: VueConstructor, config?: object) {
     const defaults = { prefix: 't' };
     const installConfig = { ...defaults, ...config };
     /// 为保证组件名称简洁，前缀保持为一个单词，首字母大写
@@ -18,7 +18,9 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
     Vue.component(componentName, comp);
 
     if (dep) {
-      Vue.use(dep);
+      if (Vue?._installedPlugins.indexOf(dep) > -1) {
+        Vue.use(dep);
+      }
     }
   };
 

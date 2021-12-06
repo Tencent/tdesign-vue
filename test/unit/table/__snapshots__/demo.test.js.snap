@@ -5370,10 +5370,6 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <label
                     class="t-radio"
-                    style="display: inline-block"
-                    type="function VueComponent (options) {
-        this._init(options);
-      }"
                   >
                     <input
                       class="t-radio__former"
@@ -5457,10 +5453,6 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <label
                     class="t-radio t-is-disabled"
-                    style="display: inline-block"
-                    type="function VueComponent (options) {
-        this._init(options);
-      }"
                   >
                     <input
                       class="t-radio__former"
@@ -5545,10 +5537,6 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <label
                     class="t-radio"
-                    style="display: inline-block"
-                    type="function VueComponent (options) {
-        this._init(options);
-      }"
                   >
                     <input
                       class="t-radio__former"
@@ -5632,10 +5620,6 @@ exports[`Table selectSingle demo works fine 1`] = `
                 >
                   <label
                     class="t-radio t-is-disabled"
-                    style="display: inline-block"
-                    type="function VueComponent (options) {
-        this._init(options);
-      }"
                   >
                     <input
                       class="t-radio__former"

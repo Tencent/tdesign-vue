@@ -4652,7 +4652,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
 
 exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-item--datepicker">
-  <div class="t-date-picker t-input t-size-m">
+  <div theme="primary" class="t-date-picker t-input t-size-m">
     <div class="t-popup-reference t-date-picker-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
       <div class="t-form-controls">
@@ -13516,9 +13516,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             </thead>
             <tbody class="table-body">
               <tr rowKey="id" class="" key="1">
-                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label type="function VueComponent (options) {
-        this._init(options);
-      }" class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest1</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -13529,9 +13527,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr rowKey="id" class="t-table__row--disabled" key="2">
-                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label type="function VueComponent (options) {
-        this._init(options);
-      }" class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest2</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->
@@ -13542,9 +13538,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr rowKey="id" class="" key="3">
-                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label type="function VueComponent (options) {
-        this._init(options);
-      }" class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest3</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -13555,9 +13549,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr rowKey="id" class="t-table__row--disabled" key="4">
-                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label type="function VueComponent (options) {
-        this._init(options);
-      }" class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+                <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest4</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->

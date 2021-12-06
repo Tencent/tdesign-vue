@@ -6,6 +6,7 @@ exports[`DatePicker base demo works fine 1`] = `
 >
   <div
     class="t-date-picker t-input t-size-m"
+    theme="primary"
   >
     <div
       class="t-popup-reference t-date-picker-popup-reference"
