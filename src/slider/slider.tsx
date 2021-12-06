@@ -371,7 +371,7 @@ export default Vue.extend({
         <div class={[`${name}-input-container`, {
           'is-vertical': this.vertical,
         }]}>
-          {this.inputNumberProps && (
+          {(
             <t-input-number
               class={sliderNumberClass}
               value={range ? this.firstValue : this.prevValue}
@@ -389,8 +389,8 @@ export default Vue.extend({
               theme={this.inputTheme}
             ></t-input-number>
           )}
-          {this.inputNumberProps && range && <div class="center-line" />}
-          {this.inputNumberProps && range && (
+          {range && <div class="center-line" />}
+          {range && (
             <t-input-number
               class={this.sliderNumberClass}
               v-model={this.secondValue}
@@ -413,7 +413,7 @@ export default Vue.extend({
     const {
       min, max, layout, disabled, vertical, range,
     } = this;
-    const buttonGroup = this.renderInputButton();
+    const buttonGroup = this.inputNumberProps && this.renderInputButton();
     const masks = this.renderMask();
     return (
       <div class={this.containerClass}>
