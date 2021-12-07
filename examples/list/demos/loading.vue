@@ -24,7 +24,7 @@ export default {
       asyncLoadingRadio: 'load-more',
       asyncLoading: 'load-more',
       listCount: 3,
-      imageUrl: 'https://tdesign.gtimg.com/list-icon.png',
+      imageUrl: 'https://tdesign.gtimg.com/site/avatar.jpg',
     };
   },
   watch: {

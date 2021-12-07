@@ -51,7 +51,7 @@ export default {
   components: { EditIcon, DownloadIcon },
   data() {
     return {
-      imageUrl: 'https://tdesign.gtimg.com/list-icon.png',
+      imageUrl: 'https://tdesign.gtimg.com/site/avatar.jpg',
     };
   },
 };

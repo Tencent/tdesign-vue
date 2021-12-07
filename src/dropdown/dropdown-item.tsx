@@ -6,7 +6,7 @@ import itemProps from './dropdown-item-props';
 import { STATUS_CLASSNAMES } from '../utils/classnames';
 import { DropdownOption } from './type';
 
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderContent } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
 
@@ -78,8 +78,6 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
         [STATUS_CLASSNAMES.active]: this.active,
       },
     ];
-    const children = renderTNodeJSX(this, 'default');
-    const content = renderTNodeJSX(this, 'content');
     return (
       <div>
         <div
@@ -89,7 +87,7 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
           onMouseover={this.handleMouseover}
         >
           <div class={`${name}__content`}>
-            <span class={`${name}__content__text`}>{children || content}</span>
+            <span class={`${name}__content__text`}>{renderContent(this, 'content', 'default')}</span>
           </div>
           {this.renderSuffix()}
         </div>

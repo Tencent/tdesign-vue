@@ -2714,7 +2714,7 @@ exports[`ssr snapshot test renders ./examples/checkbox/demos/link.vue correctly 
 exports[`ssr snapshot test renders ./examples/comment/demos/base.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
-    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
     <div class="t-comment__content">
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
@@ -2730,7 +2730,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
       <div class="t-list-item-main">
         <div class="t-comment">
           <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
             <div class="t-comment__content">
               <div class="t-comment__author"><span class="t-comment__name">评论作者名A</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名A写的评论内容。</div>
@@ -2748,7 +2748,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
       <div class="t-list-item-main">
         <div class="t-comment">
           <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
             <div class="t-comment__content">
               <div class="t-comment__author"><span class="t-comment__name">评论作者名B</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名B写的评论内容。</div>
@@ -2766,7 +2766,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
       <div class="t-list-item-main">
         <div class="t-comment">
           <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
             <div class="t-comment__content">
               <div class="t-comment__author"><span class="t-comment__name">评论作者名C</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名C写的评论内容。</div>
@@ -2788,7 +2788,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
 exports[`ssr snapshot test renders ./examples/comment/demos/operation.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
-    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
     <div class="t-comment__content">
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
@@ -2805,7 +2805,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/operation.vue correc
 exports[`ssr snapshot test renders ./examples/comment/demos/quote.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
-    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
     <div class="t-comment__content">
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
@@ -2832,7 +2832,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/quote.vue correctly 
 exports[`ssr snapshot test renders ./examples/comment/demos/reply.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
-    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
     <div class="t-comment__content">
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
@@ -2846,7 +2846,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/reply.vue correctly 
   <div class="t-comment__reply">
     <div class="t-comment">
       <div class="t-comment__inner">
-        <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+        <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
         <div class="t-comment__content">
           <div class="t-comment__author"><span class="t-comment__name"><span>评论作者名B</span> <svg class="t-icon t-icon-caret-right-small t-size-s author-icon">
               <use href="#t-icon-caret-right-small"></use>
@@ -2867,7 +2867,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/reply.vue correctly 
 exports[`ssr snapshot test renders ./examples/comment/demos/reply-form.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
-    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/list-icon.png" alt="" class="t-comment__avatar-image"></div>
+    <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
     <div class="t-comment__content">
       <div class="t-comment__detail">
         <div class="form-container">
@@ -4201,7 +4201,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/login.vue correctly 1`]
     <div class="t-form__item t-form-item__password">
       <div class="t-form__controls">
         <div class="t-form__controls--content">
-          <div clearablec="" class="t-input t-size-m t-input--prefix t-input--suffix"><span class="t-input__prefix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-lock-on"><path fill="currentColor" d="M6 10v1h4v-1H6z" fill-opacity="0.9"></path><path fill="currentColor" d="M4.5 5v1H3a.5.5 0 00-.5.5v7c0 .28.22.5.5.5h10a.5.5 0 00.5-.5v-7A.5.5 0 0013 6h-1.5V5a3.5 3.5 0 00-7 0zm6 1h-5V5a2.5 2.5 0 015 0v1zm-7 1h9v6h-9V7z" fill-opacity="0.9"></path></svg></span><input placeholder="请输入密码" type="password" value="" class="t-input__inner"><span class="t-input__suffix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-input t-size-m t-input--prefix t-input--suffix"><span class="t-input__prefix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-lock-on"><path fill="currentColor" d="M6 10v1h4v-1H6z" fill-opacity="0.9"></path><path fill="currentColor" d="M4.5 5v1H3a.5.5 0 00-.5.5v7c0 .28.22.5.5.5h10a.5.5 0 00.5-.5v-7A.5.5 0 0013 6h-1.5V5a3.5 3.5 0 00-7 0zm6 1h-5V5a2.5 2.5 0 015 0v1zm-7 1h9v6h-9V7z" fill-opacity="0.9"></path></svg></span><input placeholder="请输入密码" type="password" value="" class="t-input__inner"><span class="t-input__suffix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -5265,7 +5265,13 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
             <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
             <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
           </ul>
-          <div class="t-menu__operations"><span><svg class="t-icon t-icon-search t-size-m"><use href="#t-icon-search"></use></svg></span> <span><svg class="t-icon t-icon-home t-size-m"><use href="#t-icon-home"></use></svg></span></div>
+          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+                <use href="#t-icon-search"></use>
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-size-m t-menu__operations-icon">
+                <use href="#t-icon-notification-filled"></use>
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-size-m t-menu__operations-icon">
+                <use href="#t-icon-home"></use>
+              </svg></a></div>
         </div>
       </div>
     </header>
@@ -5338,7 +5344,13 @@ exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`]
             <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
             <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
           </ul>
-          <div class="t-menu__operations"><span><svg class="t-icon t-icon-search t-size-m"><use href="#t-icon-search"></use></svg></span> <span><svg class="t-icon t-icon-home t-size-m"><use href="#t-icon-home"></use></svg></span></div>
+          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+                <use href="#t-icon-search"></use>
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-size-m t-menu__operations-icon">
+                <use href="#t-icon-notification-filled"></use>
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-size-m t-menu__operations-icon">
+                <use href="#t-icon-home"></use>
+              </svg></a></div>
         </div>
       </div>
     </header>
@@ -5380,7 +5392,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5391,7 +5403,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5402,7 +5414,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5421,7 +5433,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5432,7 +5444,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5443,7 +5455,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5465,7 +5477,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5476,7 +5488,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5487,7 +5499,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5504,7 +5516,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">
@@ -5532,7 +5544,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5543,7 +5555,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5554,7 +5566,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容的描述性文字</p>
@@ -5615,7 +5627,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
             <div class="t-list-item__meta-content">
               <h3 class="t-list-item__meta-title">列表标题</h3>
               <p class="t-list-item__meta-description">列表内容列表内容</p>
@@ -5627,7 +5639,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
   <li class="t-list-item">
     <div class="t-list-item-main">
       <div class="t-list-item__meta">
-        <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+        <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
         <div class="t-list-item__meta-content">
           <h3 class="t-list-item__meta-title">列表标题</h3>
           <p class="t-list-item__meta-description">列表内容列表内容</p>
@@ -5645,7 +5657,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
     <li class="t-list-item">
       <div class="t-list-item-main">
         <div class="t-list-item__meta">
-          <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+          <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
           <div class="t-list-item__meta-content">
             <h3 class="t-list-item__meta-title">列表标题</h3>
             <p class="t-list-item__meta-description">列表内容列表内容</p>
@@ -5657,7 +5669,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
 <li class="t-list-item">
   <div class="t-list-item-main">
     <div class="t-list-item__meta">
-      <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/list-icon.png"></div>
+      <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
       <div class="t-list-item__meta-content">
         <h3 class="t-list-item__meta-title">列表标题</h3>
         <p class="t-list-item__meta-description">列表内容列表内容</p>
@@ -8382,7 +8394,7 @@ exports[`ssr snapshot test renders ./examples/radio/demos/group.vue correctly 1`
     <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio"><input type="radio" value="1" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label><label class="t-radio"><input type="radio" value="2" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label><label class="t-radio"><input type="radio" value="3" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label><label class="t-radio"><input type="radio" value="4" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
   </div>
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="true" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
   </div>
 </div>
 `;

@@ -13,7 +13,7 @@ exports[`Comment base demo works fine 1`] = `
       <img
         alt=""
         class="t-comment__avatar-image"
-        src="https://tdesign.gtimg.com/list-icon.png"
+        src="https://tdesign.gtimg.com/site/avatar.jpg"
       />
     </div>
     <div
