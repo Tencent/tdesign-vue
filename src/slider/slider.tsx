@@ -31,6 +31,11 @@ export default Vue.extend({
     TSliderMark,
     TInputNumber: InputNumber,
   },
+  provide(): { slider: any } {
+    return {
+      slider: this,
+    };
+  },
   data() {
     return {
       firstValue: 0,

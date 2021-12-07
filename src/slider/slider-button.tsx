@@ -1,4 +1,4 @@
-import Vue, { VNode, PropType } from 'vue';
+import Vue, { VNode, PropType, VueConstructor } from 'vue';
 import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
@@ -6,10 +6,13 @@ import Popup from '../popup/popup';
 import { TdSliderProps } from './type';
 
 const name = `${prefix}-slider-button`;
-type SliderInstanceType = InstanceType<typeof Slider>;
+interface SliderInstanceType extends Vue {
+  slider: InstanceType<typeof Slider>;
+}
+
 type PopupInstanceType = InstanceType<typeof Popup>;
 
-export default Vue.extend({
+export default (Vue as VueConstructor<SliderInstanceType>).extend({
   name,
   props: {
     value: {
@@ -29,6 +32,9 @@ export default Vue.extend({
       default: true,
     },
   },
+  inject: {
+    slider: { default: undefined },
+  },
   computed: {
     placement(): string {
       if (this.tooltipProps instanceof Object) {
@@ -47,19 +53,19 @@ export default Vue.extend({
       return this.value;
     },
     disabled(): boolean {
-      return (this.$parent as SliderInstanceType).disabled;
+      return this.slider.disabled;
     },
     max(): number {
-      return (this.$parent as SliderInstanceType).max;
+      return this.slider.max;
     },
     min(): number {
-      return (this.$parent as SliderInstanceType).min;
+      return this.slider.min;
     },
     step(): number {
-      return (this.$parent as SliderInstanceType).step;
+      return this.slider.step;
     },
     precision(): number {
-      return (this.$parent as SliderInstanceType).precision;
+      return this.slider.precision;
     },
     currentPos(): string {
       return `${(((this.value as number) - this.min) / this.rangeDiff) * 100}%`;
@@ -203,10 +209,10 @@ export default Vue.extend({
 
       this.isClick = false;
       this.showPopup();
-      (this.$parent as SliderInstanceType).resetSize();
+      this.slider.resetSize();
       let diff = 0;
 
-      const parentSliderSize = (this.$parent as SliderInstanceType).sliderSize;
+      const parentSliderSize = this.slider.sliderSize;
       if (this.vertical) {
         this.currentY = (event as MouseEvent).clientY;
         diff = this.startY - this.currentY;

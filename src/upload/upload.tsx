@@ -10,7 +10,7 @@ import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
-import xhr from './xhr';
+import xhr from '../_common/js/upload/xhr';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
