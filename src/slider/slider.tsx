@@ -6,7 +6,7 @@ import { prefix } from '../config';
 import InputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
 import { SliderValue, TdSliderProps } from './type';
-import TSliderButton from './slider-button.vue';
+import TSliderButton from './slider-button';
 
 const name = `${prefix}-slider`;
 export interface MarkItem {
@@ -17,6 +17,7 @@ export interface MarkItem {
 interface SliderButtonType extends Vue {
   setPosition: (param: number) => {};
 }
+
 export default Vue.extend({
   name: 'TSlider',
   model: {
@@ -29,6 +30,11 @@ export default Vue.extend({
   components: {
     TSliderMark,
     TInputNumber: InputNumber,
+  },
+  provide(): { slider: any } {
+    return {
+      slider: this,
+    };
   },
   data() {
     return {

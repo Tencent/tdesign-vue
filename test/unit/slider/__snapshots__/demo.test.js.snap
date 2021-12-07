@@ -56,7 +56,6 @@ exports[`Slider base demo works fine 1`] = `
                   </div>
                 </div>
               </transition-stub>
-               
               <div
                 class="t-slider__button"
               />
@@ -123,7 +122,6 @@ exports[`Slider base demo works fine 1`] = `
                   </div>
                 </div>
               </transition-stub>
-               
               <div
                 class="t-slider__button"
               />
@@ -160,7 +158,6 @@ exports[`Slider base demo works fine 1`] = `
                   </div>
                 </div>
               </transition-stub>
-               
               <div
                 class="t-slider__button"
               />

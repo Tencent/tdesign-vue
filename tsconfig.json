@@ -31,36 +31,6 @@
       "@common/*": [
         "src/_common/*"
       ],
-      "@TdTypes/*": [
-        "types/*"
-      ],
-      "@Button": [
-        "src/button/index.ts"
-      ],
-      "@Select": [
-        "src/select/index.ts"
-      ],
-      "@Pagination": [
-        "src/pagination/index.ts"
-      ],
-      "@Input": [
-        "src/input/index.ts"
-      ],
-      "@Radio": [
-        "src/radio/index.ts"
-      ],
-      "@Checkbox": [
-        "src/checkbox/index.ts"
-      ],
-      "@Table": [
-        "src/table/index.ts"
-      ],
-      "@Popup": [
-        "src/popup/index.ts"
-      ],
-      "@Tree": [
-        "src/tree/index.ts"
-      ]
     }
   },
   "include": [
