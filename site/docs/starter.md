@@ -1,6 +1,6 @@
 # 最佳实践
 
-欢迎使用 TDesign Starter for vue2, 快速搭建你的项目!
+欢迎使用 TDesign Starter for Vue, 快速搭建你的项目!
 
 ######
 
