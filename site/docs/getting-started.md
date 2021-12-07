@@ -1,4 +1,5 @@
 # Vue for Web
+
 TDesign 适配桌面端的组件库，适合在 vue 2 技术栈项目中使用。
 
 ## 安装
@@ -19,7 +20,8 @@ import 'tdesign-vue/es/style/index.css';
 
 Vue.use(TDesign);
 ```
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/TDesignOteam/tdesign-common/develop-install.md) 了解不同目录下产物的差别。
+
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/TDesignOteam/tdesign-common/blob/develop/develop-install.md) 了解不同目录下产物的差别。
 
 ## 快速体验
 

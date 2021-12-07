@@ -31,15 +31,21 @@ export default {
         label: '正常事件',
       }];
       return <div class="calendar-slot-props-api-demo">
-        {(params.mode === 'month' ? params.day === 15 : dayjs(params.formattedDate).month() === 7) && <span>
-            <div class="calendar-slot-props-api-demo-slot-warrper">
-            {dataList.map((item) => <div class="item">
-              <span class={item.value}></span>
-              {item.label}
-            </div>)}
-          </div>
-          <div class="shadow"/>
-        </span>}
+        {(params.mode === 'month'
+          ? dayjs(params.formattedDate).date() === 15
+          : dayjs(params.formattedDate).month() === 7) && (
+            <span>
+              <div class="calendar-slot-props-api-demo-slot-warrper">
+                {dataList.map((item) => (
+                  <div class="item">
+                    <span class={item.value}></span>
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+              <div class="shadow" />
+            </span>
+        )}
         <div class="number">
           {params.mode === 'year' ? dayjs(params.formattedDate).month() : dayjs(params.formattedDate).date()}
         </div>
@@ -48,7 +54,7 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .calendar-slot-props-api-demo {
   width: 100%;
   height: 100%;
@@ -59,7 +65,7 @@ export default {
     width: 100%;
     height: 12px;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   }
   .number {
     font-weight: bold;
@@ -82,14 +88,14 @@ export default {
       margin-right: 4px;
     }
   }
-  .error  {
-    background: #E34D59;
+  .error {
+    background: #e34d59;
   }
   .waring {
-    background: #ED7B2F;
+    background: #ed7b2f;
   }
   .success {
-    background: #00A870;
+    background: #00a870;
   }
 }
 .calendar-slot-props-api-demo-slot-warrper {

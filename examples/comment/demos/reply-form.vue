@@ -1,6 +1,6 @@
 <template>
   <t-comment
-    avatar="https://tdesign.gtimg.com/list-icon.png"
+    avatar="https://tdesign.gtimg.com/site/avatar.jpg"
   >
     <template #content>
       <div class="form-container">
