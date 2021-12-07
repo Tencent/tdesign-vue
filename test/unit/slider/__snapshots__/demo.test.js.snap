@@ -63,9 +63,6 @@ exports[`Slider base demo works fine 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="t-slider-input-container"
-      />
     </div>
   </div>
    
@@ -165,9 +162,6 @@ exports[`Slider base demo works fine 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="t-slider-input-container"
-      />
     </div>
   </div>
 </div>
