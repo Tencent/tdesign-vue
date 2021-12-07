@@ -10,34 +10,34 @@ export default {
     return {
       options: [
         {
-          label: '选项一',
-          value: '1',
-          children: [
+          name: '选项一',
+          code: '1',
+          items: [
             {
-              label: '子选项一',
-              value: '1.1',
+              name: '子选项一',
+              code: '1.1',
             },
             {
-              label: '子选项二',
-              value: '1.2',
+              name: '子选项二',
+              code: '1.2',
             },
             {
-              label: '子选项三',
-              value: '1.3',
+              name: '子选项三',
+              code: '1.3',
             },
           ],
         },
         {
-          label: '选项二',
-          value: '2',
-          children: [
+          name: '选项二',
+          code: '2',
+          items: [
             {
-              label: '子选项一',
-              value: '2.1',
+              name: '子选项一',
+              code: '2.1',
             },
             {
-              label: '子选项二',
-              value: '2.2',
+              name: '子选项二',
+              code: '2.2',
             },
           ],
         },
