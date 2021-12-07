@@ -1,7 +1,7 @@
 <template>
   <t-calendar>
-    <div slot="cell" slot-scope="{ data }" class="outerWarrper">
-      <div class="number">{{ diaplayNum(data) }}</div>
+    <div slot="cell" slot-scope="data" class="outerWarrper">
+      <div class="number">{{ displayNum(data) }}</div>
       <template v-if="isShow(data)">
         <div class="slotWarrper">
           <div v-for="(item, index) in dataList" :key="index" class="item">
@@ -35,9 +35,9 @@ export default {
   },
   methods: {
     isShow(data) {
-      return data.mode === 'month' ? data.day === 15 : dayjs(data.formattedDate).month() === 7;
+      return data.mode === 'month' ? dayjs(data.formattedDate).date() === 15 : dayjs(data.formattedDate).month() === 7;
     },
-    diaplayNum(cellData) {
+    displayNum(cellData) {
       if (cellData.mode === 'month') {
         return cellData.date.getDate();
       }

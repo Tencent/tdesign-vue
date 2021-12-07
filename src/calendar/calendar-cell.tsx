@@ -1,35 +1,23 @@
-<template>
-  <!-- 高亮：t-is-checked; 灰度：t-is-disabled-->
-  <td v-if="item" :class="cellCls" @click="clickCell">
-    <slot name="cell" :data="item">
-      <div class="t-calendar__table-body-cell-value">{{ valueDisplay }}</div>
-      <div class="t-calendar__table-body-cell-content">
-        <slot v-if="allowSlot" name="cellAppend" :data="item"></slot>
-      </div>
-    </slot>
-  </td>
-</template>
-
-<script lang="ts">
 // 通用库
 import dayjs from 'dayjs';
-import Vue from 'vue';
+import Vue, { VNode, PropType } from 'vue';
 
 // 组件的一些常量
 import { COMPONENT_NAME } from './const';
 
 // 组件相关的自定义类型
-import { CalendarCell } from './interface';
+import { CalendarCell, TdCalendarProps } from './type';
+import { renderTNodeJSXDefault, renderTNodeJSX } from '../utils/render-tnode';
 
 export default Vue.extend({
   name: `${COMPONENT_NAME}-cell`,
   props: {
     item: {
-      type: Object,
+      type: Object as PropType<CalendarCell>,
       default: (): CalendarCell => null,
     },
     theme: {
-      type: String,
+      type: String as PropType<TdCalendarProps['theme']>,
       default: (): string => null,
     },
     fillWithZero: {
@@ -38,6 +26,7 @@ export default Vue.extend({
     },
     t: Function,
     global: Object,
+    cell: Function as PropType<TdCalendarProps['cell']>,
   },
   computed: {
     allowSlot(): boolean {
@@ -46,11 +35,11 @@ export default Vue.extend({
     disabled(): boolean {
       return this.item.mode === 'month' && this.item.belongTo !== 0;
     },
-    valueDisplay(): string {
+    valueDisplay(): string | number {
       if (this.item.mode === 'month') {
         const dateNum = this.item.date.getDate();
         const fillZero = dateNum < 10 && (this.fillWithZero ?? this.global.fillWithZero ?? true);
-        return (fillZero ? `0${dateNum}` : dateNum);
+        return fillZero ? `0${dateNum}` : dateNum;
       }
       const map = this.t(this.global.cellMonth).split(',');
       return map[(this.item.date.getMonth()).toString()];
@@ -71,8 +60,36 @@ export default Vue.extend({
   },
   methods: {
     clickCell(e: MouseEvent) {
+      if (this.disabled) return;
       this.$emit('click', e);
     },
   },
+  render(): VNode {
+    const {
+      item, cellCls, clickCell, valueDisplay, allowSlot,
+    } = this;
+
+    const defaultNode = () => <span>
+      <div class="t-calendar__table-body-cell-value">{valueDisplay}</div>
+      <div class="t-calendar__table-body-cell-content">
+        {allowSlot
+          && renderTNodeJSX(this, 'cellAppend', {
+            params: item,
+          })}
+      </div>
+    </span>;
+
+    return (
+      item && (
+        <div class={cellCls} onClick={clickCell}>
+          {typeof this.cell === 'function'
+            ? this.cell(this.$createElement, item)
+            : renderTNodeJSXDefault(this, 'cell', {
+              defaultNode: defaultNode(),
+              params: item,
+            })}
+        </div>
+      )
+    );
+  },
 });
-</script>
