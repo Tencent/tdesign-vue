@@ -97,7 +97,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
         const matchIndex = this.indexMap[this.current];
         if (matchIndex === undefined) {
           console.warn('TDesign Steps Warn: The current `value` is not exist.');
-          return 'wait';
+          return 'default';
         }
         if (index < matchIndex) return 'finish';
       }
