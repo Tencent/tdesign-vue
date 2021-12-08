@@ -115,11 +115,7 @@ export default Vue.extend({
 
   render() {
     const defaultIndicator = <GradientIcon size={this.size} />;
-    const indicator = this.loading && (
-      <span class={`${prefix}-loading__indicator`}>
-        {renderTNodeJSX(this, 'indicator', defaultIndicator)}
-      </span>
-    );
+    const indicator = this.loading && renderTNodeJSX(this, 'indicator', defaultIndicator);
     const text = this.showText && <div class={`${prefix}-loading__text`}>{renderTNodeJSX(this, 'text')}</div>;
 
     // full screen loading
@@ -138,7 +134,7 @@ export default Vue.extend({
       );
     }
 
-    // Loading is wrapping HTMLElement.
+    // Loading is wrapping a HTMLElement.
     if (this.hasContent) {
       return (
         <div class={relativeClass}>

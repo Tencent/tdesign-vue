@@ -28,9 +28,9 @@ export default Vue.extend({
       ];
     },
     loadingClass(): ClassName {
-      return typeof this.asyncLoading === 'string' && ['loading', 'load-more'].includes(this.asyncLoading)
-        ? `${name}__load ${name}__load--${this.asyncLoading}`
-        : `${name}__load`;
+      if (this.asyncLoading === 'loading') return CLASSNAMES.STATUS.loading;
+      if (this.asyncLoading === 'load-more') return CLASSNAMES.STATUS.loadMore;
+      return '';
     },
   },
   components: {
@@ -44,7 +44,7 @@ export default Vue.extend({
           [LOAD_MORE]: '点击加载更多',
         }[this.asyncLoading];
         const loading = this.asyncLoading === LOADING;
-        return <Loading loading={loading} text={text} size="small" />;
+        return <Loading class={this.loadingClass} loading={loading} text={text} />;
       }
       return renderTNodeJSX(this, 'asyncLoading');
     },
@@ -89,7 +89,7 @@ export default Vue.extend({
 
     listContent = [
       listContent,
-      <div class={this.loadingClass} onClick={this.handleLoadMore}>
+      <div class={`${name}__load`} onClick={this.handleLoadMore}>
         {this.renderLoading()}
       </div>,
     ];
