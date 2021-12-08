@@ -1,7 +1,6 @@
-import isFunction from 'lodash/isFunction';
 import isNumber from 'lodash/isNumber';
 import {
-  TreeNode, CascaderContextType, CascaderProps, ContextType, TreeNodeValue,
+  TreeNode, CascaderContextType, CascaderProps, TreeNodeValue,
 } from '../interface';
 
 /**
@@ -27,16 +26,12 @@ export function getPanels(treeNodes: CascaderContextType['treeNodes']) {
  * @param trigger
  * @param node
  * @param cascaderContext
- * @param onChange
- * @param ctx
  */
 export function expendClickEffect(
   propsTrigger: CascaderProps['trigger'],
   trigger: CascaderProps['trigger'],
   node: TreeNode,
   cascaderContext: CascaderContextType,
-  onChange: CascaderProps['onChange'],
-  ctx: any,
 ) {
   const {
     checkStrictly,
@@ -73,9 +68,6 @@ export function expendClickEffect(
     const checked = node.setChecked(!node.isChecked());
     const [value] = checked;
 
-    if (onChange && isFunction(onChange)) {
-      onChange(value, ctx);
-    }
     // 过滤状态下，点击后清除过滤状态
     if (filterActive) {
       setFilterActive(false);
@@ -94,15 +86,11 @@ export function expendClickEffect(
  * 多选状态下选中状态数据变化的副作用
  * @param node
  * @param cascaderContext
- * @param onChange
- * @param ctx
  * @returns
  */
 export function valueChangeEffect(
   node: TreeNode,
   cascaderContext: CascaderContextType,
-  onChange: CascaderProps['onChange'],
-  ctx: ContextType,
 ) {
   const {
     disabled, max, multiple, setVisible, setValue, filterActive, setFilterActive, treeNodes, treeStore,
@@ -141,8 +129,4 @@ export function valueChangeEffect(
   }
 
   setValue(checked, 'checked', node.getModel());
-
-  if (onChange && isFunction(onChange)) {
-    onChange(checked, ctx);
-  }
 }
