@@ -1,6 +1,6 @@
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
-import { PrimaryTableCol } from '../type';
+import { PrimaryTableCol, TableRowData } from '../type';
 
 export function toString(obj: any): string {
   return Object.prototype.toString
@@ -96,8 +96,8 @@ export function getTitle(vm: Vue, column: PrimaryTableCol, colIndex: number) {
   return result;
 }
 
-export interface GetCellParams {
-  row: Record<string, any>;
+export interface GetCellParams<T extends TableRowData = TableRowData> {
+  row: T;
   rowIndex: number;
   col: PrimaryTableCol;
   colIndex: number;

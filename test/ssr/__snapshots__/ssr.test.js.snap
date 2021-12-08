@@ -12521,86 +12521,122 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:200px;">
-              <col style="width:200px;">
               <col>
               <col>
-              <col>
+              <col style="width:350px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object]">
+            <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
               <tr>
                 <td class="row" key="key" colspan="1" rowspan="1" style="overflow:hidden;">编号</td>
-                <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+                <td class="" key="platform" colspan="1" rowspan="1">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1">类型</td>
-                <td class="" key="default" colspan="1" rowspan="1">默认值</td>
-                <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
+                <td class="align-center" key="operate" colspan="1" rowspan="1" style="overflow:hidden;">操作</td>
               </tr>
             </thead>
             <tbody class="table-body">
               <tr rowKey="key" class="" key="我是 0 号">
-                <td class="row" key="key" length="5" style="overflow:hidden;">
+                <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
                       <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                       <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
                     </svg>我是 0 号</div>
                 </td>
-                <td class="" key="platform" length="5" style="overflow:hidden;">共有</td>
-                <td class="" key="type" length="5">String</td>
-                <td class="" key="default" length="5">-</td>
-                <td class="" key="needed" length="5">是</td>
+                <td class="" key="platform" length="4">共有</td>
+                <td class="" key="type" length="4">String</td>
+                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                  <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
+                    <div>
+                      <div class="t-popup-reference">
+                        <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr rowKey="key" class="" key="我是 1 号">
-                <td class="row" key="key" length="5" style="overflow:hidden;">
+                <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
                       <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                       <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
                     </svg>我是 1 号</div>
                 </td>
-                <td class="" key="platform" length="5" style="overflow:hidden;">私有</td>
-                <td class="" key="type" length="5">Number</td>
-                <td class="" key="default" length="5">0</td>
-                <td class="" key="needed" length="5">否</td>
+                <td class="" key="platform" length="4">私有</td>
+                <td class="" key="type" length="4">Number</td>
+                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                  <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
+                    <div>
+                      <div class="t-popup-reference">
+                        <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr rowKey="key" class="" key="我是 2 号">
-                <td class="row" key="key" length="5" style="overflow:hidden;">
+                <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
                       <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                       <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
                     </svg>我是 2 号</div>
                 </td>
-                <td class="" key="platform" length="5" style="overflow:hidden;">共有</td>
-                <td class="" key="type" length="5">Array</td>
-                <td class="" key="default" length="5">[]</td>
-                <td class="" key="needed" length="5">否</td>
+                <td class="" key="platform" length="4">共有</td>
+                <td class="" key="type" length="4">Array</td>
+                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                  <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
+                    <div>
+                      <div class="t-popup-reference">
+                        <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr rowKey="key" class="" key="我是 3 号">
-                <td class="row" key="key" length="5" style="overflow:hidden;">
+                <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
                       <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                       <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
                     </svg>我是 3 号</div>
                 </td>
-                <td class="" key="platform" length="5" style="overflow:hidden;">私有</td>
-                <td class="" key="type" length="5">Object</td>
-                <td class="" key="default" length="5">{}</td>
-                <td class="" key="needed" length="5">否</td>
+                <td class="" key="platform" length="4">私有</td>
+                <td class="" key="type" length="4">Object</td>
+                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                  <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
+                    <div>
+                      <div class="t-popup-reference">
+                        <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr rowKey="key" class="" key="我是 4 号">
-                <td class="row" key="key" length="5" style="overflow:hidden;">
+                <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
                       <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                       <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
                     </svg>我是 4 号</div>
                 </td>
-                <td class="" key="platform" length="5" style="overflow:hidden;">共有</td>
-                <td class="" key="type" length="5">String</td>
-                <td class="" key="default" length="5">-</td>
-                <td class="" key="needed" length="5">是</td>
+                <td class="" key="platform" length="4">共有</td>
+                <td class="" key="type" length="4">String</td>
+                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                  <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
+                    <div>
+                      <div class="t-popup-reference">
+                        <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+  </div> <br>
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">设置为全新的数据</span></button>  
+    <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">单独设置某行数据</span></button>
   </div>
 </div>
 `;
@@ -12638,7 +12674,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               </tr>
             </thead>
             <tbody class="table-body">
-              <tr rowKey="key" class="" key="我是 0 号">
+              <tr rowKey="key" class="" key="0">
                 <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
@@ -12658,7 +12694,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                   <div>这是展开项数据，我是 0 号</div>
                 </td>
               </tr>
-              <tr rowKey="key" class="" key="我是 1 号">
+              <tr rowKey="key" class="" key="1">
                 <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
@@ -12678,7 +12714,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                   <div>这是展开项数据，我是 1 号</div>
                 </td>
               </tr>
-              <tr rowKey="key" class="" key="我是 2 号">
+              <tr rowKey="key" class="" key="2">
                 <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
@@ -12698,7 +12734,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                   <div>这是展开项数据，我是 2 号</div>
                 </td>
               </tr>
-              <tr rowKey="key" class="" key="我是 3 号">
+              <tr rowKey="key" class="" key="3">
                 <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
@@ -12718,7 +12754,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                   <div>这是展开项数据，我是 3 号</div>
                 </td>
               </tr>
-              <tr rowKey="key" class="" key="我是 4 号">
+              <tr rowKey="key" class="" key="4">
                 <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
