@@ -64,6 +64,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     TButton,
   },
 
+  data() {
+    return {
+      scrollWidth: 0,
+    };
+  },
+
   props: { ...props },
 
   computed: {
@@ -110,9 +116,22 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   watch: {
     visible(value) {
+      const { scrollWidth } = this;
+      let bodyCssText = 'overflow: hidden;';
+      if (value) {
+        if (scrollWidth > 0) {
+          bodyCssText += `position: relative;width: calc(100% - ${scrollWidth}px);`;
+        }
+      } else {
+        document.body.style.cssText = '';
+      }
+      document.body.style.cssText = bodyCssText;
       this.disPreventScrollThrough(value);
       this.addKeyboardEvent(value);
     },
+  },
+  mounted() {
+    this.scrollWidth = window.innerWidth - document.body.offsetWidth;
   },
 
   beforeDestroy() {
