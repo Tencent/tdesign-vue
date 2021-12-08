@@ -14,8 +14,68 @@ exports[`Loading attach demo works fine 1`] = `
   <div
     class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"
   >
-    <span
-      class="t-loading__indicator"
+    <svg
+      class="t-loading__gradient t-icon-loading"
+      height="1em"
+      size="small"
+      version="1.1"
+      viewBox="0 0 14 14"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <foreignobject
+        height="12"
+        width="12"
+        x="1"
+        y="1"
+      >
+        <div
+          class="t-loading__gradient-conic"
+        />
+      </foreignobject>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Loading base demo works fine 1`] = `
+<div
+  class="t-loading-demo"
+>
+  <div
+    class="t-loading--center t-size-m t-loading"
+  >
+    <svg
+      class="t-loading__gradient t-icon-loading"
+      height="1em"
+      size="medium"
+      version="1.1"
+      viewBox="0 0 14 14"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <foreignobject
+        height="12"
+        width="12"
+        x="1"
+        y="1"
+      >
+        <div
+          class="t-loading__gradient-conic"
+        />
+      </foreignobject>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Loading delay demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+>
+  <div>
+    <div
+      class="t-loading--center t-size-s t-loading"
     >
       <svg
         class="t-loading__gradient t-icon-loading"
@@ -37,78 +97,6 @@ exports[`Loading attach demo works fine 1`] = `
           />
         </foreignobject>
       </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Loading base demo works fine 1`] = `
-<div
-  class="t-loading-demo"
->
-  <div
-    class="t-loading--center t-size-m t-loading"
-  >
-    <span
-      class="t-loading__indicator"
-    >
-      <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="medium"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Loading delay demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
->
-  <div>
-    <div
-      class="t-loading--center t-size-s t-loading"
-    >
-      <span
-        class="t-loading__indicator"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
     </div>
      
     <!---->
@@ -185,30 +173,26 @@ exports[`Loading iconText demo works fine 1`] = `
   <div
     class="t-loading--center t-size-s t-loading"
   >
-    <span
-      class="t-loading__indicator"
+    <svg
+      class="t-loading__gradient t-icon-loading"
+      height="1em"
+      size="small"
+      version="1.1"
+      viewBox="0 0 14 14"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <foreignobject
+        height="12"
+        width="12"
+        x="1"
+        y="1"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
-      </svg>
-    </span>
+        <div
+          class="t-loading__gradient-conic"
+        />
+      </foreignobject>
+    </svg>
     <div
       class="t-loading__text"
     >
@@ -329,30 +313,26 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading--center t-size-s t-loading"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="small"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
       <div
         class="t-loading__text"
       >
@@ -366,30 +346,26 @@ exports[`Loading size demo works fine 1`] = `
       class="t-loading--center t-loading"
       style="font-size: 26px;"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="26px"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="26px"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
       <div
         class="t-loading__text"
       >
@@ -402,30 +378,26 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading--center t-size-m t-loading"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
       <div
         class="t-loading__text"
       >
@@ -439,30 +411,26 @@ exports[`Loading size demo works fine 1`] = `
       class="t-loading--center t-size-m t-loading"
       style="font-size: 46px;"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
       <div
         class="t-loading__text"
       >
@@ -475,30 +443,26 @@ exports[`Loading size demo works fine 1`] = `
     <div
       class="t-loading--center t-size-l t-loading"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="large"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="large"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
       <div
         class="t-loading__text"
       >
@@ -516,9 +480,6 @@ exports[`Loading text demo works fine 1`] = `
   <div
     class="t-loading--center t-size-m t-loading"
   >
-    <span
-      class="t-loading__indicator"
-    />
     <div
       class="t-loading__text"
     >
@@ -529,9 +490,6 @@ exports[`Loading text demo works fine 1`] = `
   <div
     class="t-loading--center t-size-m t-loading"
   >
-    <span
-      class="t-loading__indicator"
-    />
     <div
       class="t-loading__text"
     >
@@ -544,9 +502,6 @@ exports[`Loading text demo works fine 1`] = `
   <div
     class="t-loading--center t-size-m t-loading"
   >
-    <span
-      class="t-loading__indicator"
-    />
     <div
       class="t-loading__text"
     >
@@ -585,30 +540,26 @@ exports[`Loading wrap demo works fine 1`] = `
     <div
       class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"
     >
-      <span
-        class="t-loading__indicator"
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="small"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </span>
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
     </div>
   </div>
    

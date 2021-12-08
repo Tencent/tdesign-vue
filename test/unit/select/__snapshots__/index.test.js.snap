@@ -132,7 +132,11 @@ exports[`Select :props :loading 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+      <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg></div>
     </div>
   </div>
 </div>

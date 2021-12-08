@@ -792,7 +792,11 @@ exports[`ssr snapshot test renders ./examples/button/demos/size.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/button/demos/status.vue correctly 1`] = `
 <div class="tdesign-demo-block-row"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">填充按钮</span></button> <button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading">
-    <div class="t-loading--center t-size-m t-loading--inherit-color t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div><span class="t-button__text">加载中</span>
+    <div class="t-loading--center t-size-m t-loading--inherit-color t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div><span class="t-button__text">加载中</span>
   </button></div>
 `;
 
@@ -4338,7 +4342,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
     <div class="t-popup-reference t-select-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
       <div class="t-select t-size-m"><span class="t-select-placeholder"> see loading text in Select</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div> <br><br>
@@ -4367,7 +4375,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div> <br><br>
@@ -4378,7 +4390,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
         <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="see loading text in TreeSelect" type="text" value="" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div> <br><br>
@@ -4391,7 +4407,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div> <br><br>
@@ -5556,37 +5576,35 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
       <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">加载中</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls--content">
-          <div class="t-input t-size-m"><input placeholder="正在校验中，请稍等" type="text" value="" class="t-input__inner"></div><span class="t-form__status"><div style="width:24px;display:flex;justify-content:center;"><div slot="statusIcon" class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+          <div class="t-input t-size-m"><input placeholder="正在校验中，请稍等" type="text" value="" class="t-input__inner"></div><span class="t-form__status"><div style="width:24px;display:flex;justify-content:center;"><div slot="statusIcon" class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></div></span>
         </div>
-      </div></span>
+      </div>
     </div>
-</div>
-</div>
-<div class="t-form__item t-form-item__add0">
-  <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">新增</label></div>
-  <div class="t-form__controls" style="margin-left:80px;">
-    <div class="t-form__controls--content">
-      <div class="t-input t-size-m"><input type="text" class="t-input__inner"></div>
-      <!----><span class="t-form__status"><button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default"><span class="t-button__text"><svg class="t-icon t-icon-add" style="font-size:16px;color:#0004;"><use href="#t-icon-add"></use></svg></span></button></span>
+    <div class="t-form__item t-form-item__add0">
+      <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">新增</label></div>
+      <div class="t-form__controls" style="margin-left:80px;">
+        <div class="t-form__controls--content">
+          <div class="t-input t-size-m"><input type="text" class="t-input__inner"></div>
+          <!----><span class="t-form__status"><button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default"><span class="t-button__text"><svg class="t-icon t-icon-add" style="font-size:16px;color:#0004;"><use href="#t-icon-add"></use></svg></span></button></span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="t-form__item t-form-item__help t-form__item-with-help t-form__item-with-extra">
-  <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
-  <div class="t-form__controls" style="margin-left:80px;">
-    <div class="t-form__controls--content">
-      <div class="t-input t-size-m"><input type="text" value="" class="t-input__inner"></div><span class="t-form__status"><svg class="t-icon t-icon-help-circle" style="0:c;1:o;2:l;3:o;4:r;5::;6: ;7:#;8:0;9:0;10:0;11:6;font-size:24px;"><use href="#t-icon-help-circle"></use></svg></span>
+    <div class="t-form__item t-form-item__help t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
+      <div class="t-form__controls" style="margin-left:80px;">
+        <div class="t-form__controls--content">
+          <div class="t-input t-size-m"><input type="text" value="" class="t-input__inner"></div><span class="t-form__status"><svg class="t-icon t-icon-help-circle" style="0:c;1:o;2:l;3:o;4:r;5::;6: ;7:#;8:0;9:0;10:0;11:6;font-size:24px;"><use href="#t-icon-help-circle"></use></svg></span>
+        </div>
+        <div class="t-form__help">自定义帮助图标</div>
+      </div>
     </div>
-    <div class="t-form__help">自定义帮助图标</div>
-  </div>
-</div>
-<div class="t-form__item t-form-item__" style="padding-top:8px;">
-  <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
-  <div class="t-form__controls" style="margin-left:80px;">
-    <div class="t-form__controls--content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button><span class="t-form__status t-form__status-without-icon"></span></div>
-  </div>
-</div>
-</form>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:80px;">
+        <div class="t-form__controls--content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button><span class="t-form__status t-form__status-without-icon"></span></div>
+      </div>
+    </div>
+  </form>
 </div>
 `;
 
@@ -6773,8 +6791,8 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
         </div>
       </li>
     </ul>
-    <div class="t-list__load t-list__load--load-more">
-      <div class="t-loading--center t-size-s t-loading">
+    <div class="t-list__load">
+      <div class="t-loading--center t-size-m t-loading t-is-load-more">
         <div class="t-loading__text">点击加载更多</div>
       </div>
     </div>
@@ -7014,20 +7032,32 @@ exports[`ssr snapshot test renders ./examples/list/demos/stripe.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/loading/demos/attach.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div id="alice" class="loading-attach-demo__title">Hello, I'm Alice.</div>
-  <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+  <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+      <foreignObject x="1" y="1" width="12" height="12">
+        <div class="t-loading__gradient-conic"></div>
+      </foreignObject>
+    </svg></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/loading/demos/base.vue correctly 1`] = `
 <div class="t-loading-demo">
-  <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+  <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+      <foreignObject x="1" y="1" width="12" height="12">
+        <div class="t-loading__gradient-conic"></div>
+      </foreignObject>
+    </svg></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/loading/demos/delay.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div>
-    <div class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
     <!---->
   </div>
   <div class="wrap">
@@ -7053,7 +7083,11 @@ exports[`ssr snapshot test renders ./examples/loading/demos/fullscreen.vue corre
 
 exports[`ssr snapshot test renders ./examples/loading/demos/icon-text.vue correctly 1`] = `
 <div>
-  <div class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+  <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+      <foreignObject x="1" y="1" width="12" height="12">
+        <div class="t-loading__gradient-conic"></div>
+      </foreignObject>
+    </svg>
     <div class="t-loading__text">加载中...</div>
   </div>
 </div>
@@ -7074,27 +7108,47 @@ exports[`ssr snapshot test renders ./examples/loading/demos/service.vue correctl
 exports[`ssr snapshot test renders ./examples/loading/demos/size.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
       <div class="t-loading__text">加载中(小)...</div>
     </div>
   </div>
   <div>
-    <div class="t-loading--center t-loading" style="font-size:26px;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="26px" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+    <div class="t-loading--center t-loading" style="font-size:26px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="26px" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
       <div class="t-loading__text">加载中(size=26px)...</div>
     </div>
   </div>
   <div>
-    <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
       <div class="t-loading__text">加载中(中)...</div>
     </div>
   </div>
   <div>
-    <div class="t-loading--center t-size-m t-loading" style="font-size:46px;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+    <div class="t-loading--center t-size-m t-loading" style="font-size:46px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
       <div class="t-loading__text">加载中(样式定义)...</div>
     </div>
   </div>
   <div>
-    <div class="t-loading--center t-size-l t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="large" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+    <div class="t-loading--center t-size-l t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="large" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
       <div class="t-loading__text">加载中(大)...</div>
     </div>
   </div>
@@ -7103,13 +7157,13 @@ exports[`ssr snapshot test renders ./examples/loading/demos/size.vue correctly 1
 
 exports[`ssr snapshot test renders ./examples/loading/demos/text.vue correctly 1`] = `
 <div class="t-loading-demo">
-  <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"></span>
+  <div class="t-loading--center t-size-m t-loading">
     <div class="t-loading__text">静态文字加载中...</div>
   </div>
-  <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"></span>
+  <div class="t-loading--center t-size-m t-loading">
     <div class="t-loading__text"><span>变量文字加载中...</span></div>
   </div>
-  <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"></span>
+  <div class="t-loading--center t-size-m t-loading">
     <div class="t-loading__text">插槽文字加载中...</div>
   </div>
 </div>
@@ -7123,7 +7177,11 @@ exports[`ssr snapshot test renders ./examples/loading/demos/wrap.vue correctly 1
     <div>this is loading component</div>
     <div>this is loading component</div>
     <div>this is loading component</div>
-    <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+    <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
   </div> <br>
   <div><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载完成</span></button></div>
 </div>
@@ -7955,13 +8013,25 @@ exports[`ssr snapshot test renders ./examples/message/demos/help.vue correctly 1
 exports[`ssr snapshot test renders ./examples/message/demos/loading.vue correctly 1`] = `
 <div class="t-demo-message">
   <div class="t-message t-is-loading">
-    <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
   </div>
   <div class="t-message t-is-loading">
-    <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>用于表示操作顺利达成(10s)<span class="t-message-close"></span>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>用于表示操作顺利达成(10s)<span class="t-message-close"></span>
   </div>
   <div class="t-message t-is-loading">
-    <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>用于表示普通操作失败中断(10s)<span class="t-message-close"></span>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>用于表示普通操作失败中断(10s)<span class="t-message-close"></span>
   </div> <button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">重置</span></button>
 </div>
 `;
@@ -8026,7 +8096,11 @@ exports[`ssr snapshot test renders ./examples/message/demos/type.vue correctly 1
       <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
     </svg>用于帮助用户操作的信息提示<span class="t-message-close"></span></div>
   <div class="t-message t-is-loading">
-    <div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
   </div>
 </div>
 `;
@@ -10019,7 +10093,11 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
     <div class="t-popup-reference t-select-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
       <div class="t-select t-size-m"><span class="t-select-placeholder"> 请选择云解决方案</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -11372,12 +11450,12 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
   <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
     <div class="t-switch__content t-size-l"></div>
   </div>
-  <div class="t-switch t-size-l t-is-loading t-is-checked"><span class="t-switch__handle t-is-loading"><div class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div></span>
-  <div class="t-switch__content t-size-l"></div>
-</div>
-<div disabled="disabled" class="t-switch t-size-l t-is-disabled"><span class="t-switch__handle t-is-disabled"></span>
-  <div class="t-switch__content t-size-l t-is-disabled"></div>
-</div>
+  <div class="t-switch t-size-l t-is-loading t-is-checked"><span class="t-switch__handle t-is-loading"><div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span>
+    <div class="t-switch__content t-size-l"></div>
+  </div>
+  <div disabled="disabled" class="t-switch t-size-l t-is-disabled"><span class="t-switch__handle t-is-disabled"></span>
+    <div class="t-switch__content t-size-l t-is-disabled"></div>
+  </div>
 </div>
 `;
 
@@ -11433,8 +11511,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
               </tr>
               <tr>
                 <td colSpan="3" class="" key="async-loading-row" length="1">
-                  <div class="t-table--loading-async t-table--loading-status-loading">
-                    <div class="t-loading--center t-size-s t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+                  <div class="t-table__async-loading t-is-loading">
+                    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+                        <foreignObject x="1" y="1" width="12" height="12">
+                          <div class="t-loading__gradient-conic"></div>
+                        </foreignObject>
+                      </svg>
                       <div class="t-loading__text">正在加载中，请稍后</div>
                     </div>
                   </div>
@@ -12846,7 +12928,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </table>
           </div>
         </div>
-        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg>
           <div class="t-loading__text">
             <div></div>
           </div>
@@ -12895,7 +12981,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </table>
           </div>
         </div>
-        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg>
           <div class="t-loading__text">
             <div class="t-table--loading-message">
               这里使用插槽自定义加载状态
@@ -12946,7 +13036,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </table>
           </div>
         </div>
-        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span>
+        <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg>
           <div class="t-loading__text">
             <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
           </div>
@@ -15871,12 +15965,10 @@ exports[`ssr snapshot test renders ./examples/tree/demos/load.vue correctly 1`] 
   </div>
   <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx">
     <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-      <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label>
+      <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
+      <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
+    </transition-group-stub>
   </div>
-  <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label>
-</div>
-</transition-group-stub>
-</div>
 </div>
 `;
 
@@ -15986,7 +16078,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/base.vue correct
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16004,7 +16100,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16017,7 +16117,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16040,7 +16144,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/filterable.vue c
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16058,7 +16166,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/lazy.vue correct
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16076,7 +16188,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/multiple.vue cor
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16094,7 +16210,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/prefix.vue corre
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16112,7 +16232,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/props.vue correc
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16130,7 +16254,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue co
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
@@ -16143,7 +16271,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue co
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><span class="t-loading__indicator"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></span></div>
+        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
       </div>
     </div>
   </div>
