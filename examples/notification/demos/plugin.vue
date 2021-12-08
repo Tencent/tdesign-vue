@@ -4,12 +4,12 @@
     <!-- this.$notify 和 this.$notification 都支持，两者等价 -->
     <br>
     <div>
-      <t-button variant="outline" @click="$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
+      <t-button variant="outline" @click="$notify.info({ title: '标题名称', icon: false, content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
 
       <!-- 自定义 Icon 示例 -->
       <t-button
         variant="outline"
-        @click="$notify.info({ title: '标题名称', icon: false,  content: '用户表示操作错误的消息通知', duration: 2000 })"
+        @click="$notify.info({ title: '标题名称', icon: iconRender,  content: '用户表示操作错误的消息通知', duration: 2000 })"
       >2000s</t-button>
 
       <t-button variant="outline" @click="$notify('info', { title: '标题名称', content: '用户表示操作引起一定后果的消息通知' })">默认时长</t-button>
