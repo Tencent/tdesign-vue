@@ -111,12 +111,12 @@ export default Vue.extend({
       const div = document.createElement('div');
       div.setAttribute('style', 'position: absolute; visibility: hidden;');
       div.appendChild(defaultNode);
-      document.body.append(div);
+      document.body.appendChild(div);
 
       const defaultCheckedRadio: HTMLElement = div.querySelector(this.checkedClassName);
       const { offsetWidth, offsetLeft } = defaultCheckedRadio;
       this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
-      document.body.append(div);
+      document.body.removeChild(div);
     },
     calcBarStyle() {
       if (this.buttonStyle !== 'solid' && this.variant === 'outline') return;
