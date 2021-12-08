@@ -1,33 +1,92 @@
 <template>
   <div class="container">
-    <t-popup class="placement top center" content="这是popup内容" placement="top" showArrow destroyOnClose>
+    <t-popup
+      class="placement top center"
+      content="这是popup内容"
+      placement="top" showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> top </t-button>
     </t-popup>
-    <t-popup class="placement top left" content="这是popup内容" placement="top-left" showArrow destroyOnClose>
+    <t-popup
+      class="placement top left"
+      content="这是popup内容"
+      placement="top-left"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> top-left </t-button>
     </t-popup>
-    <t-popup class="placement top right" content="这是popup内容" placement="top-right" showArrow destroyOnClose>
+    <t-popup
+      class="placement top right"
+      content="这是popup内容"
+      placement="top-right"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> top-right </t-button>
     </t-popup>
-    <t-popup class="placement bottom center" content="这是popup内容" placement="bottom" showArrow destroyOnClose>
+    <t-popup
+      class="placement bottom center"
+      content="这是popup内容"
+      placement="bottom"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> bottom </t-button>
     </t-popup>
-    <t-popup class="placement bottom left" content="这是popup内容" placement="bottom-left" showArrow destroyOnClose>
+    <t-popup
+      class="placement bottom left"
+      content="这是popup内容"
+      placement="bottom-left"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> bottom-left </t-button>
     </t-popup>
-    <t-popup class="placement bottom right" content="这是popup内容" placement="bottom-right" showArrow destroyOnClose>
+    <t-popup
+      class="placement bottom right"
+      content="这是popup内容"
+      placement="bottom-right"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> bottom-right </t-button>
     </t-popup>
-    <t-popup class="placement align" content="这是popup内容" placement="left" showArrow destroyOnClose>
+    <t-popup
+      class="placement align"
+      content="这是popup内容"
+      placement="left"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> left </t-button>
     </t-popup>
-    <t-popup class="placement top-align" content="这是popup内容" placement="left-top" showArrow destroyOnClose>
+    <t-popup
+      class="placement top-align"
+      content="这是popup内容"
+      placement="left-top"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> left-top </t-button>
     </t-popup>
-    <t-popup class="placement bottom-align" content="这是popup内容" placement="left-bottom" showArrow destroyOnClose>
+    <t-popup
+      class="placement bottom-align"
+      content="这是popup内容"
+      placement="left-bottom"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> left-bottom </t-button>
     </t-popup>
-    <t-popup class="placement right-full align" content="这是popup内容" placement="right" showArrow destroyOnClose>
+    <t-popup
+      class="placement right-full align"
+      content="这是popup内容"
+      placement="right"
+      showArrow
+      destroyOnClose
+    >
       <t-button variant="outline"> right </t-button>
     </t-popup>
     <t-popup
