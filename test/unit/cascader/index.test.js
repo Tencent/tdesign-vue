@@ -46,7 +46,7 @@ describe('Cascader', () => {
           return <Cascader options={options} v-model={value}></Cascader>;
         },
       });
-      expect(wrapper.find('.t-cascader-item').exists()).toBe(true);
+      expect(wrapper.find('.t-cascader').exists()).toBe(true);
     });
 
     it(':multiple', () => {

@@ -175,7 +175,7 @@ export function outerClickListenerEffect(
  * closeIcon点击副作用
  * @param cascaderContext
  */
-export function closeIconClickEffect(cascaderContext: CascaderContextType, onChange: CascaderProps['onChange']) {
+export function closeIconClickEffect(cascaderContext: CascaderContextType) {
   const {
     setVisible, multiple, setExpend, setValue,
   } = cascaderContext;
@@ -188,10 +188,6 @@ export function closeIconClickEffect(cascaderContext: CascaderContextType, onCha
   }
 
   setValue(multiple ? [] : '', 'clear');
-
-  if (onChange && isFunction(onChange)) {
-    onChange(multiple ? [] : '', { e: MouseEvent });
-  }
 }
 
 /**
