@@ -88,6 +88,12 @@ export default Vue.extend({
     fullScreenClasses(): ClassName {
       return [name, fullscreenClass, centerClass, overlayClass];
     },
+    attachClasses(): ClassName {
+      return this.baseClasses.concat([name, fullClass, { [overlayClass]: this.showOverlay }]);
+    },
+    normalClasses(): ClassName {
+      return this.baseClasses.concat([name]);
+    },
     lockFullscreen(): boolean {
       return this.preventScrollThrough && this.fullscreen;
     },
@@ -155,7 +161,7 @@ export default Vue.extend({
     if (this.attach) {
       return (
         <div
-          class={this.baseClasses.concat([name, fullClass, { [overlayClass]: this.showOverlay }])}
+          class={this.attachClasses}
           style={this.styles}
           v-transfer-dom={this.attach}
         >
@@ -166,10 +172,7 @@ export default Vue.extend({
 
     // Normal Loading without overlay or content
     return (
-      <div
-        class={this.baseClasses.concat([name])}
-        style={this.styles}
-      >
+      <div class={this.normalClasses} style={this.styles}>
         {indicator}{text}
       </div>
     );
