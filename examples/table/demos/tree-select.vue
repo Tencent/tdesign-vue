@@ -32,11 +32,12 @@
 
 <script>
 import { EnhancedTable } from 'tdesign-vue';
+import cloneDeep from 'lodash/cloneDeep';
 
 const data = [];
 for (let i = 0; i < 5; i++) {
   const obj = {
-    key: `我是 ${i} 号`,
+    key: i,
     instance: `JQTest${i}`,
     status: i % 2,
     owner: i % 2 === 0 ? 'jenny' : 'peter',
@@ -47,7 +48,7 @@ for (let i = 0; i < 5; i++) {
     const secondObj = ({
       ...obj,
       status: secondIndex % 3,
-      key: `我是 ${secondIndex} 号`,
+      key: secondIndex,
       instance: `JQTest${secondIndex}`,
     });
     secondObj.childrenList = new Array(5).fill(null).map((m, n) => {
@@ -55,7 +56,7 @@ for (let i = 0; i < 5; i++) {
       return ({
         ...obj,
         status: thirdIndex % 3,
-        key: `我是 ${thirdIndex} 号`,
+        key: thirdIndex,
         instance: `JQTest${thirdIndex}`,
       });
     });
@@ -66,6 +67,7 @@ for (let i = 0; i < 5; i++) {
 
 export default {
   components: { TEnhancedTable: EnhancedTable },
+
   data() {
     return {
       checkStrictly: 'true',
@@ -103,24 +105,31 @@ export default {
       data,
     };
   },
+
   watch: {
+    // 切换模式，重置数据，避免互相影响
     checkStrictly() {
       this.selectedRowKeys = [];
+      this.data = cloneDeep(data);
     },
   },
+
   methods: {
     rehandleClickOp({ text, row }) {
       console.log(text, row);
     },
+
     rehandleSelectChange(value, { selectedRowData }) {
       this.selectedRowKeys = value;
       console.log(value, selectedRowData);
     },
+
     expandedRowRender(h, { row }) {
       return (
-        <div>这是展开项数据，{row.key}</div>
+        <div>这是展开项数据，我是 {row.key} 号</div>
       );
     },
+
     onExpandChange(val) {
       this.expandedRowKeys = val;
     },

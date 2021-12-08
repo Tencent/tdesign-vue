@@ -1,12 +1,7 @@
 <template>
   <div class="tdesign-demo-block-column-large">
-    <div>
-      <label>禁用单元格右键菜单：</label>
-      <t-switch v-model="preventCellContextmenu"></t-switch>
-    </div>
     <t-calendar
       :value="value"
-      :preventCellContextmenu="preventCellContextmenu"
       @cell-click="cellClick"
       @cell-double-click="cellDoubleClick"
       @cell-right-click="cellRightClick"
@@ -19,12 +14,7 @@
 export default {
   data() {
     return {
-      preventCellContextmenu: false,
       value: null,
-      options: [
-        { value: true, label: '禁用' },
-        { value: false, label: '不禁用' },
-      ],
     };
   },
   methods: {

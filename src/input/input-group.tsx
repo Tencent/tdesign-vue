@@ -1,20 +1,14 @@
-<template>
-  <div :class="classes">
-    <slot></slot>
-  </div>
-</template>
-
-<script lang="ts">
-import Vue from 'vue';
+import Vue, { PropType, VNode } from 'vue';
 import { prefix } from '../config';
 import { ClassName } from '../common';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-input-group`;
 export default Vue.extend({
   name: 'TInputGroup',
   props: {
     separate: {
-      type: Boolean,
+      type: Boolean as PropType<boolean>,
       default: false,
     },
   },
@@ -28,5 +22,11 @@ export default Vue.extend({
       ];
     },
   },
+  render(): VNode {
+    return (
+      <div class={this.classes}>
+        {renderTNodeJSX(this, 'default')}
+      </div>
+    );
+  },
 });
-</script>

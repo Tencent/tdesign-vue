@@ -6,7 +6,7 @@ import { prefix } from '../config';
 import InputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
 import { SliderValue, TdSliderProps } from './type';
-import TSliderButton from './slider-button.vue';
+import TSliderButton from './slider-button';
 
 const name = `${prefix}-slider`;
 export interface MarkItem {
@@ -17,6 +17,7 @@ export interface MarkItem {
 interface SliderButtonType extends Vue {
   setPosition: (param: number) => {};
 }
+
 export default Vue.extend({
   name: 'TSlider',
   model: {
@@ -29,6 +30,11 @@ export default Vue.extend({
   components: {
     TSliderMark,
     TInputNumber: InputNumber,
+  },
+  provide(): { slider: any } {
+    return {
+      slider: this,
+    };
   },
   data() {
     return {
@@ -371,7 +377,7 @@ export default Vue.extend({
         <div class={[`${name}-input-container`, {
           'is-vertical': this.vertical,
         }]}>
-          {this.inputNumberProps && (
+          {(
             <t-input-number
               class={sliderNumberClass}
               value={range ? this.firstValue : this.prevValue}
@@ -389,8 +395,8 @@ export default Vue.extend({
               theme={this.inputTheme}
             ></t-input-number>
           )}
-          {this.inputNumberProps && range && <div class="center-line" />}
-          {this.inputNumberProps && range && (
+          {range && <div class="center-line" />}
+          {range && (
             <t-input-number
               class={this.sliderNumberClass}
               v-model={this.secondValue}
@@ -413,7 +419,7 @@ export default Vue.extend({
     const {
       min, max, layout, disabled, vertical, range,
     } = this;
-    const buttonGroup = this.renderInputButton();
+    const buttonGroup = this.inputNumberProps && this.renderInputButton();
     const masks = this.renderMask();
     return (
       <div class={this.containerClass}>
