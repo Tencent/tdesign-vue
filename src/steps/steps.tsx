@@ -1,3 +1,4 @@
+import { VNode } from 'vue';
 import { prefix } from '../config';
 import props from './props';
 import TStepItem from './step-item';
@@ -59,8 +60,8 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     if (this.options && this.options.length) {
       options = this.options;
     } else {
-      const children = this.$scopedSlots.default && this.$scopedSlots.default(null);
-      options = (children || []).map((item) => item.componentOptions?.propsData);
+      const nodes = this.$scopedSlots.default && this.$scopedSlots.default(null);
+      options = this.getOptionListBySlots(nodes);
     }
     options.forEach((item, index) => {
       if (item?.value !== undefined) {
@@ -78,6 +79,14 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     return <div class={this.baseClass}>{content}</div>;
   },
   methods: {
+    getOptionListBySlots(nodes: VNode[]) {
+      const arr: Array<TdStepItemProps> = [];
+      nodes?.forEach((node) => {
+        const option = node?.componentOptions?.propsData;
+        option && arr.push(option);
+      });
+      return arr;
+    },
     handleStatus(item: TdStepItemProps, index: number) {
       if (item.status && item.status !== 'default') return item.status;
       if (this.current === 'FINISH') return 'finish';
@@ -88,7 +97,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
         const matchIndex = this.indexMap[this.current];
         if (matchIndex === undefined) {
           console.warn('TDesign Steps Warn: The current `value` is not exist.');
-          return 'default';
+          return 'wait';
         }
         if (index < matchIndex) return 'finish';
       }

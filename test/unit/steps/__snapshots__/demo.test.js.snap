@@ -6,6 +6,7 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
 >
   <div
     class="t-steps-item t-steps-item--finish"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
@@ -32,15 +33,15 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--process"
+    current="1"
   >
     <div
-      class="t-steps-item__inner t-steps-item-canclick"
+      class="t-steps-item__inner "
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--process"
       />
       <div
         class="t-steps-item-content"
@@ -61,15 +62,15 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       />
       <div
         class="t-steps-item-content"
@@ -90,15 +91,15 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       />
       <div
         class="t-steps-item-content"
@@ -134,6 +135,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
@@ -160,15 +162,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--process"
+        current="1"
       >
         <div
-          class="t-steps-item__inner t-steps-item-canclick"
+          class="t-steps-item__inner "
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--process"
           />
           <div
             class="t-steps-item-content"
@@ -189,15 +191,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           />
           <div
             class="t-steps-item-content"
@@ -218,15 +220,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           />
           <div
             class="t-steps-item-content"
@@ -254,6 +256,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
@@ -280,15 +283,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--process"
+        current="1"
       >
         <div
-          class="t-steps-item__inner t-steps-item-canclick"
+          class="t-steps-item__inner "
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--process"
           />
           <div
             class="t-steps-item-content"
@@ -309,15 +312,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           />
           <div
             class="t-steps-item-content"
@@ -338,15 +341,15 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           />
           <div
             class="t-steps-item-content"
@@ -384,6 +387,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
@@ -428,32 +432,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--process"
+        current="1"
       >
         <div
-          class="t-steps-item__inner t-steps-item-canclick"
+          class="t-steps-item__inner "
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--process"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -475,32 +467,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -522,32 +502,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -580,6 +548,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
@@ -624,32 +593,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--process"
+        current="1"
       >
         <div
-          class="t-steps-item__inner t-steps-item-canclick"
+          class="t-steps-item__inner "
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--process"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -671,32 +628,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -718,32 +663,20 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
-        class="t-steps-item t-steps-item--finish"
+        class="t-steps-item t-steps-item--default"
+        current="1"
       >
         <div
           class="t-steps-item__inner t-steps-item-canclick"
         >
           <div
-            class="t-steps-item-icon t-steps-item--finish"
+            class="t-steps-item-icon t-steps-item--default"
           >
             <span
               class="t-steps-item-icon__number"
             >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
+              0
             </span>
           </div>
           <div
@@ -776,6 +709,7 @@ exports[`Steps Steps extra demo works fine 1`] = `
 >
   <div
     class="t-steps-item t-steps-item--finish"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
@@ -824,32 +758,20 @@ exports[`Steps Steps extra demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--process"
+    current="1"
   >
     <div
-      class="t-steps-item__inner t-steps-item-canclick"
+      class="t-steps-item__inner "
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--process"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -867,58 +789,24 @@ exports[`Steps Steps extra demo works fine 1`] = `
         </div>
         <div
           class="t-steps-item-extra"
-        >
-          <button
-            class="t-button t-size-s t-button--variant-text t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              上一步
-            </span>
-          </button>
-           
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              下一步
-            </span>
-          </button>
-        </div>
+        />
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -940,32 +828,20 @@ exports[`Steps Steps extra demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -996,6 +872,7 @@ exports[`Steps Steps icon demo works fine 1`] = `
 >
   <div
     class="t-steps-item t-steps-item--finish"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
@@ -1041,15 +918,15 @@ exports[`Steps Steps icon demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--process"
+    current="1"
   >
     <div
-      class="t-steps-item__inner t-steps-item-canclick"
+      class="t-steps-item__inner "
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--process"
       >
         <svg
           class="t-icon t-icon-cart"
@@ -1084,15 +961,15 @@ exports[`Steps Steps icon demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <svg
           class="t-icon t-icon-wallet"
@@ -1127,15 +1004,15 @@ exports[`Steps Steps icon demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
+    current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <svg
           class="t-icon t-icon-check-circle"
@@ -1230,31 +1107,19 @@ exports[`Steps Steps options demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--process"
     current="1"
   >
     <div
-      class="t-steps-item__inner t-steps-item-canclick"
+      class="t-steps-item__inner "
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--process"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -1277,31 +1142,19 @@ exports[`Steps Steps options demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
     current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -1324,31 +1177,19 @@ exports[`Steps Steps options demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-steps-item t-steps-item--finish"
+    class="t-steps-item t-steps-item--default"
     current="1"
   >
     <div
       class="t-steps-item__inner t-steps-item-canclick"
     >
       <div
-        class="t-steps-item-icon t-steps-item--finish"
+        class="t-steps-item-icon t-steps-item--default"
       >
         <span
           class="t-steps-item-icon__number"
         >
-          <svg
-            class="t-icon t-icon-check"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+          0
         </span>
       </div>
       <div
@@ -1380,6 +1221,7 @@ exports[`Steps Steps sequence demo works fine 1`] = `
   >
     <div
       class="t-steps-item t-steps-item--finish"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
@@ -1422,32 +1264,20 @@ exports[`Steps Steps sequence demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--process"
+      current="1"
     >
       <div
-        class="t-steps-item__inner t-steps-item-canclick"
+        class="t-steps-item__inner "
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--process"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1467,32 +1297,20 @@ exports[`Steps Steps sequence demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--default"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1512,32 +1330,20 @@ exports[`Steps Steps sequence demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--default"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1565,19 +1371,31 @@ exports[`Steps Steps sequence demo works fine 1`] = `
     class="t-steps t-steps--horizontal t-steps--default-anchor"
   >
     <div
-      class="t-steps-item t-steps-item--wait"
+      class="t-steps-item t-steps-item--finish"
       current="third"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--wait"
+          class="t-steps-item-icon t-steps-item--finish"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            0
+            <svg
+              class="t-icon t-icon-check"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <div
@@ -1600,19 +1418,31 @@ exports[`Steps Steps sequence demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-steps-item t-steps-item--wait"
+      class="t-steps-item t-steps-item--finish"
       current="third"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--wait"
+          class="t-steps-item-icon t-steps-item--finish"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            0
+            <svg
+              class="t-icon t-icon-check"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <div
@@ -1670,14 +1500,14 @@ exports[`Steps Steps sequence demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-steps-item t-steps-item--wait"
+      class="t-steps-item t-steps-item--default"
       current="third"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--wait"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
@@ -1715,6 +1545,7 @@ exports[`Steps Steps status demo works fine 1`] = `
   >
     <div
       class="t-steps-item t-steps-item--finish"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
@@ -1759,32 +1590,20 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--process"
+      current="1"
     >
       <div
-        class="t-steps-item__inner t-steps-item-canclick"
+        class="t-steps-item__inner "
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--process"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1806,32 +1625,20 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--default"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1853,32 +1660,20 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--default"
+      current="1"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
@@ -1911,6 +1706,7 @@ exports[`Steps Steps status demo works fine 1`] = `
   >
     <div
       class="t-steps-item t-steps-item--finish"
+      current="2"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
@@ -1955,9 +1751,9 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-steps-item t-steps-item--finish"
+      current="2"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
@@ -2002,9 +1798,10 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-steps-item t-steps-item--error"
+      current="2"
+      status="error"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
@@ -2049,32 +1846,20 @@ exports[`Steps Steps status demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
-      class="t-steps-item t-steps-item--finish"
+      class="t-steps-item t-steps-item--default"
+      current="2"
     >
       <div
         class="t-steps-item__inner t-steps-item-canclick"
       >
         <div
-          class="t-steps-item-icon t-steps-item--finish"
+          class="t-steps-item-icon t-steps-item--default"
         >
           <span
             class="t-steps-item-icon__number"
           >
-            <svg
-              class="t-icon t-icon-check"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            0
           </span>
         </div>
         <div
