@@ -1,10 +1,17 @@
 <template>
   <div>
     <p>插件调用</p>
+    <!-- this.$notify 和 this.$notification 都支持，两者等价 -->
     <br>
     <div>
-      <t-button variant="outline" @click="$notify.info({ title: '标题名称',content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
-      <t-button variant="outline" @click="$notify.info({ title: '标题名称',content: '用户表示操作顺利的消息通知', duration: 2000 })">2000s</t-button>
+      <t-button variant="outline" @click="$notify.info({ title: '标题名称', content: '用户表示普通操作的消息通知', duration: 1000 })">1000s</t-button>
+
+      <!-- 自定义 Icon 示例 -->
+      <t-button
+        variant="outline"
+        @click="$notify.info({ title: '标题名称', icon: false,  content: '用户表示操作错误的消息通知', duration: 2000 })"
+      >2000s</t-button>
+
       <t-button variant="outline" @click="$notify('info', { title: '标题名称', content: '用户表示操作引起一定后果的消息通知' })">默认时长</t-button>
       <!-- 0 表示永远不自动消失 -->
       <t-button
@@ -15,6 +22,7 @@
     </div>
     <br><br>
 
+    <!-- NotifyPlugin 和 NotificationPlugin 都支持，两者等价 -->
     <p>函数调用</p>
     <br>
     <div class='t-demo-message-theme'>
@@ -30,6 +38,7 @@
 
 <script>
 import { NotifyPlugin } from 'tdesign-vue';
+import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 export default {
   data() {
@@ -45,9 +54,14 @@ export default {
       return <div>操作有误，<a href='#'>前往查看</a></div>;
     },
     footer() {
-      return (<div class="t-notification__detail">
-        <span class="t-notification__detail--item t-is-active">查看详情</span>
-      </div>);
+      return (
+        <div class="t-notification__detail">
+          <span class="t-notification__detail--item t-is-active">查看详情</span>
+        </div>
+      );
+    },
+    iconRender() {
+      return <CloseCircleFilledIcon size="24px" style={{ color: 'rgb(227, 77, 89)', marginRight: '8px' }}/>;
     },
   },
 };
