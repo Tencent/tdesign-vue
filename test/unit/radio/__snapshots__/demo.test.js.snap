@@ -820,6 +820,7 @@ exports[`Radio radio type demo works fine 1`] = `
         </label>
         <div
           class="t-radio-group-filled-bg-block"
+          style="width: 0px; left: 0px;"
         />
       </div>
     </div>
@@ -924,6 +925,7 @@ exports[`Radio radio type demo works fine 1`] = `
         </label>
         <div
           class="t-radio-group-filled-bg-block"
+          style="width: 0px; left: 0px;"
         />
       </div>
     </div>
@@ -1033,6 +1035,7 @@ exports[`Radio radio type demo works fine 1`] = `
         </label>
         <div
           class="t-radio-group-filled-bg-block"
+          style="width: 0px; left: 0px;"
         />
       </div>
     </div>
@@ -1142,6 +1145,7 @@ exports[`Radio radio type demo works fine 1`] = `
         </label>
         <div
           class="t-radio-group-filled-bg-block"
+          style="width: 0px; left: 0px;"
         />
       </div>
     </div>
