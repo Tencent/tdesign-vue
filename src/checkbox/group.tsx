@@ -23,8 +23,6 @@ export default Vue.extend({
     return {
       checkedMap: {},
       optionList: [] as Array<CheckboxOptionObj>,
-      // used for controlled component
-      oldValue: this.value,
     };
   },
 
@@ -44,7 +42,6 @@ export default Vue.extend({
             map[item] = true;
           });
           this.checkedMap = map;
-          this.oldValue = this.value;
         }
       },
     },
@@ -159,7 +156,6 @@ export default Vue.extend({
     handleCheckboxChange(data: { checked: boolean; e: Event; option: TdCheckboxProps }) {
       const currentValue = data.option.value;
       if (this.value instanceof Array) {
-        if (this.oldValue.join() !== this.value.join()) return;
         const val = [...this.value];
         if (data.checked) {
           val.push(currentValue);
@@ -167,7 +163,6 @@ export default Vue.extend({
           const i = val.indexOf(currentValue);
           val.splice(i, 1);
         }
-        this.oldValue = val;
         this.emitChange(val, data.e);
       } else {
         console.warn(`TDesign CheckboxGroup Warn: \`value\` must be an array, instead of ${typeof this.value}`);
@@ -187,8 +182,6 @@ export default Vue.extend({
       const value: CheckboxGroupValue = checked
         ? this.getAllCheckboxValue()
         : [];
-      if (this.oldValue.join() !== this.value.join()) return;
-      this.oldValue = value;
       this.emitChange(value, context.e);
     },
   },
