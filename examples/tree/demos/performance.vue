@@ -1,17 +1,21 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <div style="max-width: 500px">
+    <t-form labelWidth="150" style="max-width: 500px">
       <t-addon prepend="插入节点数量:">
         <t-input v-model="insertCount"/>
       </t-addon>
       <t-button @click="append()">插入根节点</t-button>
-    </div>
+      <t-form-item label="展开动画">
+        <t-switch v-model="transition"/>
+      </t-form-item>
+    </t-form>
 
     <t-tree
       :data="items"
       hover
       activable
       checkable
+      :transition="transition"
       :expand-on-click-node="false"
       line
       :label="label"
@@ -64,6 +68,7 @@ export default {
     const items = createTreeData();
     return {
       index: 0,
+      transition: true,
       insertCount: 1,
       useActived: false,
       expandParent: true,
