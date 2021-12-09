@@ -12061,9 +12061,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <col>
               <col>
               <col style="width:200px;">
-              <col>
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
                 <td class="align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
                 <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -12071,54 +12070,48 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
                 <td class="" key="default" colspan="1" rowspan="1">默认值</td>
                 <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
                 <td class="text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
-                <td class="" key="description" colspan="1" rowspan="1">说明</td>
               </tr>
             </thead>
             <tbody class="table-body">
-              <tr rowKey="index" class="" key="5">
-                <td class="align-center row" key="index" length="7" style="overflow:hidden;">5</td>
-                <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
-                <td class="" key="type" length="7">Number</td>
-                <td class="" key="default" length="7">0</td>
-                <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
-                <td class="" key="description" length="7">数据源</td>
+              <tr rowKey="index" class="" key="0">
+                <td class="align-center row" key="index" length="6" style="overflow:hidden;">0</td>
+                <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+                <td class="" key="type" length="6">String</td>
+                <td class="" key="default" length="6">-</td>
+                <td class="" key="needed" length="6">是</td>
+                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               </tr>
-              <tr rowKey="index" class="" key="6">
-                <td class="align-center row" key="index" length="7" style="overflow:hidden;">6</td>
-                <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
-                <td class="" key="type" length="7">Array</td>
-                <td class="" key="default" length="7">[]</td>
-                <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
-                <td class="" key="description" length="7">数据源</td>
+              <tr rowKey="index" class="" key="1">
+                <td class="align-center row" key="index" length="6" style="overflow:hidden;">1</td>
+                <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+                <td class="" key="type" length="6">Number</td>
+                <td class="" key="default" length="6">0</td>
+                <td class="" key="needed" length="6">否</td>
+                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               </tr>
-              <tr rowKey="index" class="" key="7">
-                <td class="align-center row" key="index" length="7" style="overflow:hidden;">7</td>
-                <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
-                <td class="" key="type" length="7">Object</td>
-                <td class="" key="default" length="7">{}</td>
-                <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
-                <td class="" key="description" length="7">数据源</td>
+              <tr rowKey="index" class="" key="2">
+                <td class="align-center row" key="index" length="6" style="overflow:hidden;">2</td>
+                <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+                <td class="" key="type" length="6">Array</td>
+                <td class="" key="default" length="6">[]</td>
+                <td class="" key="needed" length="6">否</td>
+                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               </tr>
-              <tr rowKey="index" class="" key="8">
-                <td class="align-center row" key="index" length="7" style="overflow:hidden;">8</td>
-                <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
-                <td class="" key="type" length="7">String</td>
-                <td class="" key="default" length="7">-</td>
-                <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
-                <td class="" key="description" length="7">数据源</td>
+              <tr rowKey="index" class="" key="3">
+                <td class="align-center row" key="index" length="6" style="overflow:hidden;">3</td>
+                <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+                <td class="" key="type" length="6">Object</td>
+                <td class="" key="default" length="6">{}</td>
+                <td class="" key="needed" length="6">否</td>
+                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               </tr>
-              <tr rowKey="index" class="" key="9">
-                <td class="align-center row" key="index" length="7" style="overflow:hidden;">9</td>
-                <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
-                <td class="" key="type" length="7">Number</td>
-                <td class="" key="default" length="7">0</td>
-                <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
-                <td class="" key="description" length="7">数据源</td>
+              <tr rowKey="index" class="" key="4">
+                <td class="align-center row" key="index" length="6" style="overflow:hidden;">4</td>
+                <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+                <td class="" key="type" length="6">String</td>
+                <td class="" key="default" length="6">-</td>
+                <td class="" key="needed" length="6">是</td>
+                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               </tr>
             </tbody>
           </table>
@@ -12134,12 +12127,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
                   </svg></div>
               </div>
             </div>
-            <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+            <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
                 <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
               </svg></div>
             <ul class="t-pagination__pager">
-              <li class="t-pagination__number">1</li>
-              <li class="t-pagination__number t-is-current">2</li>
+              <li class="t-pagination__number t-is-current">1</li>
+              <li class="t-pagination__number">2</li>
               <li class="t-pagination__number">3</li>
               <li class="t-pagination__number">4</li>
               <li class="t-pagination__number">5</li>
@@ -12151,6 +12144,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
                 <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
               </svg></div>
+            <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" value="1" class="t-input__inner"></div>页</div>
           </div>
         </div>
       </div>
