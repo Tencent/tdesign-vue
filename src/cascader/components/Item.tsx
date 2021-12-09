@@ -86,14 +86,14 @@ export default Vue.extend({
       const { filterActive, inputVal } = cascaderContext;
       const labelText = filterActive ? getFullPathLabel(node) : node.label;
       if (filterActive) {
-        const ctx = labelText.split(inputVal);
-        return (() => (
-          <span>
-            {ctx[0]}
-            <span class={`${name}__label--filter`}>{inputVal}</span>
-            {ctx[1]}
-          </span>
-        ))();
+        const texts = labelText.split(inputVal);
+        const doms = [];
+        for (let index = 0; index < texts.length; index++) {
+          doms.push(<span>{texts[index]}</span>);
+          if (index === texts.length - 1) break;
+          doms.push(<span class={`${name}__label--filter`}>{inputVal}</span>);
+        }
+        return doms;
       }
       return labelText;
     }

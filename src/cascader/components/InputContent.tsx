@@ -9,6 +9,7 @@ import { renderTNodeJSX } from '../../utils/render-tnode';
 
 // component
 import Tag from '../../tag';
+import TLoading from '../../loading';
 import Input, { InputValue } from '../../input';
 import FakeArrow from '../../common-components/fake-arrow';
 
@@ -33,13 +34,8 @@ import {
   TreeNode, CascaderContextType, InputContentProps,
 } from '../interface';
 import CascaderProps from '../props';
-import { CascaderInstance } from '../instance';
 
 const name = `${prefix}-cascader`;
-
-export interface InputContentInstance extends Vue {
-  tCascader: CascaderInstance;
-}
 
 interface ComponentComputed {
   closeIconClass: ClassName,
@@ -55,6 +51,7 @@ interface ComponentData {
 }
 
 interface ComponentMethods {
+  getInputWidth: () => void
   outerClickListenerFn: (event: MouseEvent | TouchEvent) => void,
   InnerContent: () => JSX.Element
   renderContent: () => JSX.Element
@@ -63,7 +60,7 @@ interface ComponentMethods {
 
 interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods{}
 
-const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType & InputContentInstance, CascaderConfig>('cascader');
+const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType, CascaderConfig>('cascader');
 
 export default mixins(cascaderGglobalConfig).extend({
   name: `${name}-input-content`,
@@ -116,6 +113,7 @@ export default mixins(cascaderGglobalConfig).extend({
     document.addEventListener('click', (event) => {
       this.outerClickListenerFn(event);
     });
+    this.getInputWidth();
   },
   beforeDestroy() {
     document.removeEventListener('click', (event) => {
@@ -128,6 +126,13 @@ export default mixins(cascaderGglobalConfig).extend({
     },
   },
   methods: {
+    getInputWidth() {
+      const { width } = (this.$refs.inputContent as HTMLElement).getBoundingClientRect();
+      const {
+        cascaderContext: { setInputWidth },
+      } = this;
+      setInputWidth(width);
+    },
     outerClickListenerFn(event: MouseEvent | TouchEvent) {
       return outerClickListenerEffect(this.$refs.inputContent as HTMLElement, this.cascaderContext, event);
     },
@@ -149,6 +154,7 @@ export default mixins(cascaderGglobalConfig).extend({
         singleContent,
         multipleContent,
         listeners,
+        collapsedItems,
       } = this;
 
       const {
@@ -194,8 +200,8 @@ export default mixins(cascaderGglobalConfig).extend({
               {multipleContent.slice(0, minCollapsedNum).map((node: TreeNode, index: number) => (
                 renderSelfTag(node, index)
               ))}
-              {this.collapsedItems || this.tCascader.$scopedSlots.collapsedItems
-                ? renderTNodeJSX(this.tCascader, 'collapsedItems', {
+              {collapsedItems || this.$scopedSlots.collapsedItems
+                ? renderTNodeJSX(this, 'collapsedItems', {
                   params: {
                     value: renderCollItems(),
                     collapsedSelectedItems: renderCollItems().slice(minCollapsedNum),
@@ -239,18 +245,23 @@ export default mixins(cascaderGglobalConfig).extend({
         closeIconClass,
         fakeArrowIconClass,
         cascaderContext: {
-          size, visible, disabled,
+          size, visible, disabled, loading,
         },
-        listeners,
       } = this;
-      const { onChange } = listeners as InputContentProps['listeners'];
 
       const closeIconClick = (context: { e: MouseEvent }) => {
         context.e.stopPropagation();
 
-        closeIconClickEffect(this.cascaderContext, onChange);
+        closeIconClickEffect(this.cascaderContext);
       };
 
+      if (loading) {
+        return (
+          <span class={`${prefix}-cascader-icon`}>
+            <TLoading size="small" />
+          </span>
+        );
+      }
       if (closeShow) {
         return <transition name={`${prefix}-cascader-close-icon-fade`} appear>
           <CloseCircleFilledIcon class={closeIconClass} size={size} onClick={closeIconClick}/>

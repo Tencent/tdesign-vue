@@ -21,6 +21,7 @@ describe('Slider', () => {
 describe('Slider [marks]', () => {
   const wrapper = mount(Slider, {
     propsData: {
+      inputNumberProps: { theme: 'column' },
       value: 2,
       marks: {
         0: '0°C',

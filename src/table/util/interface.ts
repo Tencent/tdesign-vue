@@ -37,6 +37,8 @@ export interface CellData {
   rowIndex?: number;
   customData: CustomData;
   customRender: Function;
+  withBorder?: boolean;
+  withoutBorder?: boolean;
 }
 
 export const EventNameWithKebab = [

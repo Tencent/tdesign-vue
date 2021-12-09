@@ -45,7 +45,7 @@ import 'tdesign-vue/es/style/index.css';
 Vue.use(TDesign);
 ```
 
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/TDesignOteam/tdesign-common/develop-install.md) 了解不同目录下产物的差别。
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/TDesignOteam/tdesign-common/blob/develop/develop-install.md) 了解不同目录下产物的差别。
 
 # 快速体验
 
@@ -58,6 +58,7 @@ npm package 中提供了多种构建产物，可以阅读 [这里](https://githu
 | IE11, Edge                                                                                                                                                                                                      | last 3 versions                                                                                                                                                                                                   | last 3 versions                                                                                                                                                                                               | last 2 versions                                                                                                                                                                                               |
 
 # 其他技术栈实现
+
 - 桌面端 Vue 3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
 - 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
 - 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)

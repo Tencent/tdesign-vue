@@ -52,6 +52,18 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       });
     },
   },
+  watch: {
+    autofocus: {
+      handler(val) {
+        if (val === true) {
+          this.$nextTick(() => {
+            (this.$refs.refInputElem as HTMLInputElement).focus();
+          });
+        }
+      },
+      immediate: true,
+    },
+  },
   created() {
     this.composing = false;
   },

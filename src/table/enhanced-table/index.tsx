@@ -8,26 +8,25 @@ import TreeSelect from './tree-select';
 
 export default mixins(TreeData, TreeSelect).extend({
   name: 'TEnhancedTable',
+
   props: {
     ...baseTableProps,
     ...primaryTableProps,
     ...enhancedTableProps,
   },
+
   data() {
     return {
-      dataSource: this.data,
+      dataSource: [],
     };
   },
+
   computed: {
     childrenKey(): string {
       return this.tree?.childrenKey || 'children';
     },
   },
-  watch: {
-    data(val) {
-      this.dataSource = val;
-    },
-  },
+
   render() {
     const options = {
       props: {

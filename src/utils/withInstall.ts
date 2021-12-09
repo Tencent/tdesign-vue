@@ -17,10 +17,8 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
 
     Vue.component(componentName, comp);
 
-    if (dep) {
-      if (Vue?._installedPlugins.indexOf(dep) > -1) {
-        Vue.use(dep);
-      }
+    if (dep && Vue?._installedPlugins.indexOf(dep) === -1) {
+      Vue.use(dep);
     }
   };
 
