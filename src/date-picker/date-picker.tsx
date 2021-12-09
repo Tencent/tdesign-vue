@@ -23,6 +23,7 @@ import { TimePickerPanelInstance } from '../time-picker';
 import {
   DatePickerInstance, DateValue, PickContext,
 } from './interface';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 dayjs.extend(isBetween);
 
@@ -603,6 +604,8 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
       range,
       presets,
       firstDayOfWeek,
+      prefixIcon,
+      suffixIcon,
     } = this;
     const {
       start, end, showTime, startTimeValue, global, isOpen, endTimeValue,
@@ -681,6 +684,17 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
         [CLASSNAMES.STATUS.active]: this.isOpen,
       },
     ];
+    const prefixIconSlot = () => renderTNodeJSX(this, 'prefixIcon');
+    const suffixIconSlot = () => {
+      if (this.$scopedSlots.suffixIcon) {
+        return renderTNodeJSX(this, 'suffixIcon');
+      }
+      if (enableTimePicker) {
+        return <t-icon-time />;
+      }
+      return <t-icon-calendar />;
+    };
+
     return (
       <div class={this.classes}>
         <t-popup
@@ -709,9 +723,9 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
               inputProps={inputProps}
               onClear={() => this.clear(true)}
               {...{ props: { ...this.inputListeners } }}
-              suffixIcon={() => enableTimePicker ? <t-icon-time /> : <t-icon-calendar />}
-            >
-            </t-input>
+              prefixIcon={prefixIconSlot}
+              suffixIcon={suffixIconSlot}
+            />
           </div>
         </t-popup>
       </div>
