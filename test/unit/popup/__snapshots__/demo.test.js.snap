@@ -278,7 +278,7 @@ exports[`Progress placement demo works fine 1`] = `
   class="container"
 >
   <div
-    class="placement-top t-popup-reference"
+    class="placement top center t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -294,7 +294,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          top
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -308,13 +308,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        top
+         top 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-top-left t-popup-reference"
+    class="placement top left t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -330,7 +330,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          top-left
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -344,13 +344,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        top-left
+         top-left 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-top-right t-popup-reference"
+    class="placement top right t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -366,7 +366,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          top-right
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -380,13 +380,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        top-right
+         top-right 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-bottom t-popup-reference"
+    class="placement bottom center t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -402,7 +402,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          bottom
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -416,13 +416,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        bottom
+         bottom 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-bottom-left t-popup-reference"
+    class="placement bottom left t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -438,7 +438,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          bottom-left
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -452,13 +452,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        bottom-left
+         bottom-left 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-bottom-right t-popup-reference"
+    class="placement bottom right t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -474,7 +474,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          bottom-right
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -488,13 +488,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        bottom-right
+         bottom-right 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-left t-popup-reference"
+    class="placement align t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -510,7 +510,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          left
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -524,13 +524,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        left
+         left 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-left-top t-popup-reference"
+    class="placement top-align t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -546,7 +546,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          left-top
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -560,13 +560,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        left-top
+         left-top 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-left-bottom t-popup-reference"
+    class="placement bottom-align t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -582,7 +582,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          left-bottom
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -596,13 +596,13 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        left-bottom
+         left-bottom 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-right t-popup-reference"
+    class="placement right-full align t-popup-reference"
   >
     <transition-stub
       appear="true"
@@ -618,7 +618,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          right
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -632,13 +632,14 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        right
+         right 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-right-top t-popup-reference"
+    class="placement right-full top-align t-popup-reference"
+    destroy-on-hide=""
   >
     <transition-stub
       appear="true"
@@ -654,7 +655,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          right-top
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -668,13 +669,14 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        right-top
+         right-top 
       </span>
     </button>
   </div>
    
   <div
-    class="placement-right-bottom t-popup-reference"
+    class="placement right-full bottom-align t-popup-reference"
+    destroy-on-hide=""
   >
     <transition-stub
       appear="true"
@@ -690,7 +692,7 @@ exports[`Progress placement demo works fine 1`] = `
           class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
-          right-bottom
+          这是popup内容
           <div
             class="t-popup__arrow"
           />
@@ -704,7 +706,7 @@ exports[`Progress placement demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        right-bottom
+         right-bottom 
       </span>
     </button>
   </div>

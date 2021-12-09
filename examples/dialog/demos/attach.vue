@@ -9,6 +9,7 @@
       :visible.sync="visibleBody"
       attach="body"
       header="挂载在body"
+      destroyOnClose
       :onConfirm="()=>this.visibleBody = false"
     >
       <div slot="body">
@@ -20,6 +21,7 @@
       :visible.sync="visibleIdAttach"
       attach="#app"
       header="挂载到id为app的元素"
+      destroyOnClose
       :onConfirm="()=>this.visibleIdAttach = false"
     >
       <div slot="body">
@@ -33,6 +35,7 @@
       :visible.sync="visibleFunctionAttach"
       :attach="getAttach"
       header="函数返回挂载节点"
+      destroyOnClose
       :onConfirm="()=>this.visibleFunctionAttach = false"
     >
       <div slot="body">

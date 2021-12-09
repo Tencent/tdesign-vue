@@ -1,11 +1,11 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP } from './utils';
 import props from './anchor-item-props';
+import { COMPONENT_NAME } from './constant';
 
-const name = `${prefix}-anchor-item`;
+const CLASSNAME_PREFIX = `${COMPONENT_NAME}__item`;
 export interface Anchor extends Vue {
   tAnchor: {
     active: string;
@@ -92,11 +92,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
     const titleAttr = typeof title === 'string' ? title : null;
     const isActive = tAnchor.active === href;
     const wrapperClass = {
-      [name]: true,
+      [CLASSNAME_PREFIX]: true,
       [CLASSNAMES.STATUS.active]: isActive,
     };
     const titleClass = {
-      [`${name}_link`]: true,
+      [`${CLASSNAME_PREFIX}-link`]: true,
     };
     return (
       <div class={wrapperClass}>

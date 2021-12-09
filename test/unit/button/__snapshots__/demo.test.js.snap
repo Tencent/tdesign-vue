@@ -465,7 +465,7 @@ exports[`Button status demo works fine 1`] = `
     type="button"
   >
     <div
-      class="t-loading t-size-m t-loading-lock t-loading--inherit-color v-transfer-dom"
+      class="t-loading--center t-size-m t-loading--inherit-color t-loading"
     >
       <svg
         class="t-loading__gradient t-icon-loading"

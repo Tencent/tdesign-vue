@@ -5,8 +5,8 @@ import copyText from '../utils/clipboard';
 import Message from '../message/plugin';
 import props from './anchor-target-props';
 import TPopup from '../popup';
+import { COMPONENT_NAME } from './constant';
 
-const name = `${prefix}-anchor-target`;
 export default Vue.extend({
   name: 'TAnchorTarget',
 
@@ -36,7 +36,7 @@ export default Vue.extend({
       $scopedSlots: { default: children },
       id,
     } = this;
-    const className = [name];
+    const className = [`${COMPONENT_NAME}__target`];
     const iconClassName = `${prefix}-copy`;
     return (
       <Tag id={id} class={className}>
