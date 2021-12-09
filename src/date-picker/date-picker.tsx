@@ -604,8 +604,6 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
       range,
       presets,
       firstDayOfWeek,
-      prefixIcon,
-      suffixIcon,
     } = this;
     const {
       start, end, showTime, startTimeValue, global, isOpen, endTimeValue,
