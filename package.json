@@ -95,6 +95,7 @@
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-url": "^5.0.1",
     "@types/clipboard": "^2.0.1",
+    "@types/estree": "0.0.50",
     "@types/lodash": "^4.14.165",
     "@types/raf": "^3.4.0",
     "@types/validator": "^13.1.3",
