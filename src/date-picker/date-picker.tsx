@@ -682,10 +682,11 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
         [CLASSNAMES.STATUS.active]: this.isOpen,
       },
     ];
-    const prefixIconSlot = () => renderTNodeJSX(this, 'prefixIcon');
-    const suffixIconSlot = () => {
-      if (this.$scopedSlots.suffixIcon) {
-        return renderTNodeJSX(this, 'suffixIcon');
+    const prefixIcon = renderTNodeJSX(this, 'prefixIcon');
+    const suffixIconSlot = renderTNodeJSX(this, 'suffixIcon');
+    const suffixIcon = () => {
+      if (suffixIconSlot) {
+        return suffixIconSlot;
       }
       if (enableTimePicker) {
         return <t-icon-time />;
@@ -724,8 +725,8 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
                 this.clear(true);
               }}
               {...{ props: { ...this.inputListeners } }}
-              prefixIcon={prefixIconSlot}
-              suffixIcon={suffixIconSlot}
+              prefixIcon={prefixIcon}
+              suffixIcon={suffixIcon}
             />
           </div>
         </t-popup>
