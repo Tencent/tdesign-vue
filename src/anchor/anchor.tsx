@@ -1,6 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
@@ -10,8 +9,10 @@ import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 import Affix from '../affix';
+import { COMPONENT_NAME } from './constant';
 
-const name = `${prefix}-anchor`;
+const ANCHOR_LINE_CLASSNAME = `${COMPONENT_NAME}__line` as const;
+const ANCHOR_LINE_CURSOR_CLASSNAME = `${COMPONENT_NAME}__line-cursor` as const;
 
 export interface Anchor extends Vue {
   scrollContainer: ANCHOR_CONTAINER;
@@ -197,7 +198,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     },
     renderCursor() {
       const titleContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'cursor');
-      return titleContent || <div class="cursor"></div>;
+      return titleContent || <div class={ANCHOR_LINE_CURSOR_CLASSNAME}></div>;
     },
   },
 
@@ -222,12 +223,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
       affixProps,
       activeLineStyle,
     } = this;
-    const className = [name, CLASSNAMES.SIZE[size]];
-
+    const className = [COMPONENT_NAME, CLASSNAMES.SIZE[size]];
     const content = (
       <div class={className}>
-        <div class={`${name}_line`}>
-          <div class="cursor-wrapper" style={activeLineStyle}>
+        <div class={ANCHOR_LINE_CLASSNAME}>
+          <div class={`${ANCHOR_LINE_CURSOR_CLASSNAME}-wrapper`} style={activeLineStyle}>
             {this.renderCursor()}
           </div>
         </div>
