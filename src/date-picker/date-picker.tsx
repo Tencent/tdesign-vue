@@ -721,7 +721,10 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
               allowInput={allowInput ? 1 : 0}
               size={size}
               inputProps={inputProps}
-              onClear={() => this.clear(true)}
+              onClear={(context: { e: MouseEvent }) => {
+                context.e.stopPropagation();
+                this.clear(true);
+              }}
               {...{ props: { ...this.inputListeners } }}
               prefixIcon={prefixIconSlot}
               suffixIcon={suffixIconSlot}
