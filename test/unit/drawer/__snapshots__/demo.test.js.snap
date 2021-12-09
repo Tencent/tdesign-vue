@@ -8,7 +8,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
     class="t-suf-container"
   >
     <div
-      class="t-drawer t-drawer-right t-drawer-attach v-transfer-dom"
+      class="t-drawer t-drawer-right t-drawer-attach"
     >
       <div
         class="t-drawer__mask"
@@ -221,7 +221,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
 exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -276,7 +276,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
   </div>
    
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -330,7 +330,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
   </div>
    
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -428,7 +428,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right t-drawer-no-mask v-transfer-dom"
+    class="t-drawer t-drawer-right t-drawer-no-mask"
   >
     <div
       class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
@@ -496,7 +496,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -650,7 +650,6 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 
 exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
 <div>
-  <!---->
    
   <div
     class="tdesign-radio-button"
@@ -720,7 +719,7 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
 exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -930,7 +929,7 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
 exports[`Drawer Demo operation wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"
@@ -1048,7 +1047,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
 exports[`Drawer base demo works fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right v-transfer-dom"
+    class="t-drawer t-drawer-right"
   >
     <div
       class="t-drawer__mask"

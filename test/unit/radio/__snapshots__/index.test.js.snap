@@ -403,6 +403,7 @@ exports[`Radio RadioGroup :props :variant 1`] = `
   </label>
   <div
     class="t-radio-group-filled-bg-block"
+    style="width: 0px; left: 0px;"
   />
 </div>
 `;

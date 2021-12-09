@@ -5801,28 +5801,32 @@ exports[`Steps Steps status demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-loading t-size-s t-loading-lock t-select-right-icon t-select-active-icon v-transfer-dom"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
         >
-          <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="t-loading__indicator"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="small"
+              version="1.1"
+              viewBox="0 0 14 14"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
-          </svg>
+              <foreignobject
+                height="12"
+                width="12"
+                x="1"
+                y="1"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </span>
         </div>
       </div>
     </div>

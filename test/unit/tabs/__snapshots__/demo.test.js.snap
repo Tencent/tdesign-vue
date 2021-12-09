@@ -47,6 +47,7 @@ exports[`Tabs ban demo works fine 1`] = `
       </label>
       <div
         class="t-radio-group-filled-bg-block"
+        style="width: 0px; left: 0px;"
       />
     </div>
   </div>
@@ -310,6 +311,7 @@ exports[`Tabs combination demo works fine 1`] = `
       </label>
       <div
         class="t-radio-group-filled-bg-block"
+        style="width: 0px; left: 0px;"
       />
     </div>
   </div>
@@ -519,6 +521,7 @@ exports[`Tabs icon demo works fine 1`] = `
       </label>
       <div
         class="t-radio-group-filled-bg-block"
+        style="width: 0px; left: 0px;"
       />
     </div>
   </div>
@@ -751,6 +754,7 @@ exports[`Tabs position demo works fine 1`] = `
       </label>
       <div
         class="t-radio-group-filled-bg-block"
+        style="width: 0px; left: 0px;"
       />
     </div>
   </div>

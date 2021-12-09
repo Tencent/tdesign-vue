@@ -3,8 +3,10 @@ import { CreateElement } from 'vue/types/umd';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
+import Loading from '../../../loading';
 import { prefix } from '../../../config';
-import GradientIcon from '../../../loading/icon/gradient';
+import { STATUS_CLASSNAMES } from '../../../utils/classnames';
+// import GradientIcon from '../../../loading/icon/gradient';
 import { emitEvent } from '../../../utils/event';
 import { TdPrimaryTableProps } from '../../type';
 import { ClassName } from '../../../common';
@@ -28,9 +30,10 @@ export default Vue.extend({
   computed: {
     classes(): ClassName {
       return [
-        `${prefix}-table--loading-async`,
+        `${prefix}-table__async-loading`,
         {
-          [`${prefix}-table--loading-status-${this.asyncLoading}`]: typeof this.asyncLoading === 'string',
+          [STATUS_CLASSNAMES.loading]: this.asyncLoading === 'loading',
+          [STATUS_CLASSNAMES.loadMore]: this.asyncLoading === 'load-more',
         },
       ];
     },
@@ -69,8 +72,10 @@ export default Vue.extend({
             }
             return (
               <div class={this.classes} onClick={this.onLoadClick}>
-                {asyncLoading === 'loading' && <GradientIcon size='small' />}
-                {loadingText}
+                {<Loading
+                  loading={asyncLoading === 'loading'}
+                  text={loadingText}
+                />}
               </div>
             );
           },

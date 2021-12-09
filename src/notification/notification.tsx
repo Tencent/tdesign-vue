@@ -1,4 +1,5 @@
 import Vue, { CreateElement } from 'vue';
+import isFunction from 'lodash/isFunction';
 import {
   InfoCircleFilledIcon as TIconInfoCircleFilled,
   CheckCircleFilledIcon as TIconCheckCircleFilled,
@@ -39,17 +40,18 @@ export default Vue.extend({
     },
     renderIcon(h: CreateElement) {
       let icon: TNodeReturnValue;
-      if (this.theme) {
+      if (this.icon === false) return null;
+      if (isFunction(this.icon)) {
+        icon = this.icon(h);
+      } else if (this.$scopedSlots.icon) {
+        icon = this.$scopedSlots.icon(null);
+      } else if (this.theme) {
         const iconType = this.theme === 'success'
           ? (<t-icon-check-circle-filled class={`t-is-${this.theme}`} />)
           : (<t-icon-info-circle-filled class={`t-is-${this.theme}`} />);
         icon = (<div class='t-notification__icon'>
           {iconType}
         </div>);
-      } else if (this.icon) {
-        icon = this.icon(h);
-      } else if (this.$scopedSlots.icon) {
-        icon = this.$scopedSlots.icon(null);
       }
       return icon;
     },
