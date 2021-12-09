@@ -1,5 +1,3 @@
-# tag_push
-# todo: before npm publish , delete oa woa , edit packagename
 name: TAG_PUSH
 
 on: create
