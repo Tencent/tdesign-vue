@@ -39,8 +39,6 @@ export default {
       index: 2,
       useActived: false,
       expandParent: true,
-      filterText: '',
-      filterByText: null,
       // icon 要先预置到节点中，才能触发视图更新
       items: [{
         icon: '',
@@ -52,15 +50,6 @@ export default {
         timeStamp,
       }],
     };
-  },
-  computed: {
-    btnSetActivedVariant() {
-      let variant = 'outline';
-      if (this.useActived) {
-        variant = 'base';
-      }
-      return variant;
-    },
   },
   methods: {
     icon(createElement, node) {
