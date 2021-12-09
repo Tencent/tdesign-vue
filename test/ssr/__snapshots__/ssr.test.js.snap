@@ -6917,7 +6917,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/base.vue correc
       </svg></div>
     <div class="t-notification__main">
       <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message-close"></span></div>
-      <div class="t-notification__content">这是一条消息通知（展示5秒后消失）</div>
+      <div class="t-notification__content">这是一条消息通知（展示 5 秒后消失）</div>
     </div>
   </div>
   <!---->
