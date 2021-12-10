@@ -141,11 +141,14 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         const nodeView = treeNodes[index];
         if (nodeView && nodeView.componentInstance) {
           const { node } = nodeView.componentInstance;
-          if (node && !store.getNode(node)) {
+          if (node && !store.getNode(node.value)) {
             // 视图列表中的节点，在树中不存在
             const nodeViewIndex = treeNodes.indexOf(nodeView);
+            // 则从视图中删除对应节点
             treeNodes.splice(nodeViewIndex, 1);
+            // 注意 $destroy 是一个耗时操作
             nodeView.componentInstance.$destroy();
+            nodesMap.set(node.value, null);
             nodesMap.delete(node.value);
           } else {
             index += 1;
@@ -162,36 +165,35 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         treeNodes,
       } = this;
 
+      // 性能改进说明
+      // $destroy 方法极耗性能，因此不能频繁调用
+      // 但没有 $destroy 方法的调用，重复创建节点，会导致内存泄露
+      // 即使用缓存存储节点，如果反复插入节点，也会发现占用内存持续走高，而释放速度不足
+      // 因此不再对显示隐藏行为进行节点增删操作，仅改变样式
+
       const nodesMap = this.getNodesMap();
       this.updateNodesMap();
 
+      // 遍历模型中的所有节点
       let index = 0;
       const allNodes = store.getNodes();
       allNodes.forEach((node: TreeNode) => {
-        if (node.visible) {
-          if (nodesMap.has(node.value)) {
-            const nodeView = nodesMap.get(node.value);
-            const nodeViewIndex = treeNodes.indexOf(nodeView);
-            if (nodeViewIndex !== index) {
-              // 节点存在，但位置与可视节点位置冲突，需要更新节点位置
-              treeNodes.splice(nodeViewIndex, 1);
-              treeNodes.splice(index, 0, nodeView);
-            }
-          } else {
-            // 节点可视，且不存在视图，创建该节点视图并插入到当前位置
-            const nodeView = this.renderItem(node);
-            treeNodes.splice(index, 0, nodeView);
-            nodesMap.set(node.value, nodeView);
-          }
-          index += 1;
-        } else if (nodesMap.has(node.value)) {
-          // 节点不可视，存在该视图，需要删除该节点视图
+        if (nodesMap.has(node.value)) {
           const nodeView = nodesMap.get(node.value);
           const nodeViewIndex = treeNodes.indexOf(nodeView);
-          treeNodes.splice(nodeViewIndex, 1);
-          nodesMap.delete(node.value);
-          nodeView.componentInstance.$destroy();
+          if (nodeViewIndex !== index) {
+            // 节点存在，但位置与可视节点位置冲突，需要更新节点位置
+            treeNodes.splice(nodeViewIndex, 1);
+            treeNodes.splice(index, 0, nodeView);
+          }
+        } else if (node.visible) {
+          // 初次仅渲染可显示的节点
+          // 不存在节点视图，则创建该节点视图并插入到当前位置
+          const nodeView = this.renderItem(node);
+          treeNodes.splice(index, 0, nodeView);
+          nodesMap.set(node.value, nodeView);
         }
+        index += 1;
       });
     },
     // 同步 Store 选项

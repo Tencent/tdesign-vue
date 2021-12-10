@@ -31,6 +31,8 @@ export const CLASS_NAMES = {
   treeIconDefault: `${tree}__icon--default`,
   treeSpace: `${tree}__space`,
   treeOperations: `${tree}__operations`,
+  treeNodeVisible: `${tree}__item--visible`,
+  treeNodeHidden: `${tree}__item--hidden`,
   line: `${tree}__line`,
   lineIsLeaf: `${tree}__line--leaf`,
   lineIsFirst: `${tree}__line--first`,
