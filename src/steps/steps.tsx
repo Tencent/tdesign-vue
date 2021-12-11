@@ -19,6 +19,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     return {
       stepChildren: [],
       indexMap: {},
+      childrenOptions: [],
     };
   },
   provide(): { steps: any } {
@@ -48,30 +49,26 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       return [
         name,
         `${name}--${layout}`,
-        `${name}--${this.theme}-anchor`,
+        `${name}--${this.handleTheme()}-anchor`,
         {
           [`${name}--${this.sequence}`]: layout === 'vertical',
         },
       ];
     },
   },
-  render() {
-    let options: Array<TdStepItemProps>;
-    if (this.options && this.options.length) {
-      options = this.options;
-    } else {
-      const nodes = this.$scopedSlots.default && this.$scopedSlots.default(null);
-      options = this.getOptionListBySlots(nodes);
-    }
-    options.forEach((item, index) => {
+  mounted() {
+    const childrenOptions = this.getOptions();
+    childrenOptions.forEach((item, index) => {
       if (item?.value !== undefined) {
         this.indexMap[item.value] = index;
       }
     });
-    const content = options.map((item, index) => (
+    this.childrenOptions = childrenOptions;
+  },
+  render() {
+    const content = this.childrenOptions.map((item, index) => (
         <t-step-item
           props={{ ...item }}
-          current={this.current}
           key={item.value || index}
           status={this.handleStatus(item, index)}
         ></t-step-item>
@@ -79,6 +76,16 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     return <div class={this.baseClass}>{content}</div>;
   },
   methods: {
+    getOptions() {
+      let options: Array<TdStepItemProps>;
+      if (this.options && this.options.length) {
+        options = this.options;
+      } else {
+        const nodes = this.$scopedSlots.default && this.$scopedSlots.default(null);
+        options = this.getOptionListBySlots(nodes);
+      }
+      return options;
+    },
     getOptionListBySlots(nodes: VNode[]) {
       const arr: Array<TdStepItemProps> = [];
       nodes?.forEach((node) => {
@@ -86,6 +93,15 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
         option && arr.push(option);
       });
       return arr;
+    },
+    handleTheme() {
+      let { theme } = this;
+      this.childrenOptions.forEach((item) => {
+        if (item?.icon !== undefined) { // icon > theme
+          theme = 'default';
+        }
+      });
+      return theme;
     },
     handleStatus(item: TdStepItemProps, index: number) {
       if (item.status && item.status !== 'default') return item.status;
