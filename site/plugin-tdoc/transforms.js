@@ -10,12 +10,12 @@ let demoCodesImports = {};
 export default {
   before({ source, file }) {
     const resouceDir = path.dirname(file);
-    const reg = file.match(/examples\/(\w+-?\w+)\/\w+\.md/);
+    const reg = file.match(/examples\/(\w+-?\w+)\/(\w+-?\w+)\.md/);
     const name = reg && reg[1];
     demoImports = {};
     demoCodesImports = {};
 
-    // 统一换成 iwiki 文档内容
+    // 统一换成 common 公共文档内容
     if (name && source.includes(':: BASE_DOC ::')) {
       const docPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${name}.md`);
       if (fs.existsSync(docPath)) {
@@ -38,7 +38,9 @@ export default {
     });
 
     if (source.includes(':: BASE_PROPS ::')) {
-      const apiDoc = fs.readFileSync(path.resolve(resouceDir, './api.md'), 'utf-8');
+      let apiDoc = fs.readFileSync(path.resolve(resouceDir, './api.md'), 'utf-8');
+      // fix table | render error
+      apiDoc = apiDoc.replace(/`[^`]+`/g, (str) => str.replace(/\|/g, '\\|'));
       source = source.replace(':: BASE_PROPS ::', apiDoc);
     }
 

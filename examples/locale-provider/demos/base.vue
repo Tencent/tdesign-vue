@@ -1,98 +1,105 @@
 <template>
-  <t-locale-provider :globalLocale="globalLocale" style="padding: 16px">
-    <t-pagination v-model="current" :total="100" show-jumper :maxPageBtn="5"/>
-    <br>
-    <t-calendar></t-calendar>
-    <br>
-    <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked" :search="true" />
-    <br><br>
-    <div style="width: 480px">
-      <t-dialog
-        :visible="true"
-        header="confirm"
-        body="Would you like to be my friends？"
-        mode="normal"
-        theme="info"
-      />
-    </div>
-    <br><br>
-    <t-button theme="primary" @click="openDialog">Open Dialog</t-button>
-    <br><br>
-    <t-button theme="primary" @click="drawerVisible = true">Open Drawer</t-button>
-    <t-drawer :visible.sync="drawerVisible" header="Drawer" :onConfirm="() => drawerVisible = false" :closeBtn="true">
-      <p>This is a controlled drawer</p>
-    </t-drawer>
-    <br><br>
-    <t-popconfirm theme="default" content="Do you want to delete">
-      <t-button>Popconfirm</t-button>
-    </t-popconfirm>
-    <br><br>
-    <t-table
-      :data="[]"
-      :columns="columns"
-      rowKey="id"
-    ></t-table>
-    <!-- 数组件空数据 -->
-    <t-tree :data="[]"/>
-    <!-- 数组件自定义层级图标 -->
-    <t-tree :data="treeData" transition/>
-    <br><br>
-    <t-select
-      v-model="selectValue1"
-      :options="options1"
-      placeholder="single select, see close icon, it is configurable"
-      clearable
-      style="width: 400px;"
-    />
-    <br><br>
-    <t-select
-      v-model="selectValue1"
-      :options="options1"
-      placeholder="multiple select"
-      filterable
-      multiple
-      style="width: 400px;"
-    />
-    <br><br>
-    <t-select
-      v-model="selectValue2"
-      placeholder="multiple remote select"
-      :options="options2"
-      :onSearch="remoteFilterMethod"
-      :loading="selectLoading"
-      multiple
-      filterable
-      reserveKeyword
-      style="width: 400px;"
-    />
-    <br><br>
-    <t-tree-select
-      v-model="treeValue"
-      :data="treeOptions"
-      filterable
-      placeholder="tree select"
-      style="width: 400px;"
-    />
-    <br><br>
-    <t-date-picker
-      placeholder="please select the date"
-      mode="date"
-      style="width: 400px;"
-    />
-    <br><br>
-    <t-time-picker
-      placeholder="please select the time"
-      format="hh:mm:ss a"
-    />
-    <br><br><br>
-    <t-steps :current="2">
-      <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
-      <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
-      <t-step-item title="错误的步骤" status="error" content="自定错误图标"></t-step-item>
-      <t-step-item title="未进行的步骤" content="这里是提示文字"></t-step-item>
-    </t-steps>
-    <br><br>
-  </t-locale-provider>
+  <div class="tdesign-demo-block-column">
+    <t-locale-provider :globalLocale="globalLocale" style="padding: 16px">
+      <div class="tdesign-demo-block-column">
+
+        <t-pagination v-model="current" :total="100" show-jumper :maxPageBtn="5"/>
+
+        <t-calendar></t-calendar>
+
+        <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked" :search="true" />
+
+        <div style="width: 480px">
+          <t-dialog
+            :visible="true"
+            header="confirm"
+            body="Would you like to be my friends？"
+            mode="normal"
+            theme="info"
+          />
+        </div>
+
+        <div class="tdesign-demo-block-row">
+          <t-button theme="primary" @click="openDialog">Open Dialog</t-button>
+
+          <t-button theme="primary" @click="drawerVisible = true">Open Drawer</t-button>
+
+          <t-popconfirm theme="default" content="Do you want to delete">
+            <t-button>Popconfirm</t-button>
+          </t-popconfirm>
+        </div>
+
+        <t-drawer :visible.sync="drawerVisible" header="Drawer" :onConfirm="() => drawerVisible = false" :closeBtn="true">
+          <p>This is a controlled drawer</p>
+        </t-drawer>
+
+        <t-table
+          :data="[]"
+          :columns="columns"
+          rowKey="id"
+        ></t-table>
+        <!-- 数组件空数据 -->
+        <t-tree :data="[]"/>
+        <!-- 数组件自定义层级图标 -->
+        <t-tree :data="treeData" transition/>
+
+        <t-select
+          v-model="selectValue1"
+          :options="options1"
+          placeholder="single select, see close icon, it is configurable"
+          clearable
+          style="width: 400px;"
+        />
+
+        <t-select
+          v-model="selectValue1"
+          :options="options1"
+          placeholder="multiple select"
+          filterable
+          multiple
+          style="width: 400px;"
+        />
+
+        <t-select
+          v-model="selectValue2"
+          placeholder="multiple remote select"
+          :options="options2"
+          :onSearch="remoteFilterMethod"
+          :loading="selectLoading"
+          multiple
+          filterable
+          reserveKeyword
+          style="width: 400px;"
+        />
+
+        <t-tree-select
+          v-model="treeValue"
+          :data="treeOptions"
+          filterable
+          placeholder="tree select"
+          style="width: 400px;"
+        />
+
+        <t-date-picker
+          placeholder="please select the date"
+          mode="date"
+          style="width: 400px;"
+        />
+
+        <t-time-picker
+          placeholder="please select the time"
+          format="hh:mm:ss a"
+        />
+
+        <t-steps :current="2">
+          <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
+          <t-step-item title="已完成的步骤" content="这里是提示文字"></t-step-item>
+          <t-step-item title="错误的步骤" status="error" content="自定错误图标"></t-step-item>
+          <t-step-item title="未进行的步骤" content="这里是提示文字"></t-step-item>
+        </t-steps>
+      </div>
+    </t-locale-provider>
+  </div>
 </template>
 
 <script lang="jsx">

@@ -1,6 +1,10 @@
+/* eslint-disable */
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import camelCase from 'camelcase';
+
+import testCoverage from '../test-coverage';
 
 const DEAULT_TABS = [
   { tab: 'demo', name: '示例' },
@@ -10,26 +14,30 @@ const DEAULT_TABS = [
 
 export default function mdToVue(options) {
   const mdSegment = customRender(options);
-  const {
-    demoDefsStr,
-    demoCodesDefsStr,
-    demoInstallStr,
-    demoCodeInstallStr,
-  } = options;
+  const { demoDefsStr, demoCodesDefsStr, demoInstallStr, demoCodeInstallStr } = options;
+
+  let coverage = '';
+  if (mdSegment.isComponent) {
+    coverage = testCoverage[camelCase(mdSegment.componentName)] || '0%';
+  }
 
   const sfc = `
     <template>
       <td-doc-content ref="tdDocContent" page-status="hidden">
-        ${mdSegment.tdDocHeader
-          && `<td-doc-header
+        ${
+          mdSegment.tdDocHeader &&
+          `
+          <td-doc-header
             slot="doc-header"
             ref="tdDocHeader"
             spline="${mdSegment.spline}"
           >
+          ${mdSegment.isComponent && `<td-doc-badge slot="badge" label="coverage" message="${coverage}" />`}
           </td-doc-header>`
-}
-        ${mdSegment.isComponent
-    ? `
+        }
+        ${
+          mdSegment.isComponent
+            ? `
           <td-doc-tabs ref="tdDocTabs" :tab="tab"></td-doc-tabs>
 
           <div v-show="tab === 'demo'">
@@ -42,8 +50,9 @@ export default function mdToVue(options) {
           </div>
           <div v-show="tab === 'api'" name="API">${mdSegment.apiMd}</div>
           <div v-show="tab === 'design'" name="DESIGN">${mdSegment.designMd}</div>
-        ` : `<div name="DOC">${mdSegment.docMd}</div>`
-}
+        `
+            : `<div name="DOC">${mdSegment.docMd}</div>`
+        }
         <td-doc-footer slot="doc-footer"></td-doc-footer>
       </td-doc-content>
     </template>
@@ -92,7 +101,6 @@ export default function mdToVue(options) {
           }
 
           if (tdDocTabs) {
-            console.log(${JSON.stringify(mdSegment.tdDocTabs)})
             tdDocTabs.tabs = ${JSON.stringify(mdSegment.tdDocTabs)};
             tdDocTabs.onchange = ({ detail: currentTab }) => this.tab = currentTab;
           }
@@ -119,7 +127,7 @@ export default function mdToVue(options) {
 // 解析 markdown 内容
 function customRender({ source, file, md }) {
   const { content, data } = matter(source);
-  console.log('data', data);
+  // console.log('data', data);
 
   // md top data
   const pageData = {
@@ -130,7 +138,7 @@ function customRender({ source, file, md }) {
     isComponent: false,
     tdDocHeader: true,
     tdDocTabs: DEAULT_TABS,
-    apiFlag: /#+\s*属性配置\n|(#+\s*\S*\s*props\n)/i,
+    apiFlag: /#+\s*API\n/i,
     ...data,
   };
 
@@ -139,11 +147,7 @@ function customRender({ source, file, md }) {
   const componentName = reg && reg[1];
 
   // split md
-  const propsLocation = content.search(pageData.apiFlag);
-  const demoMd = content.slice(0, propsLocation);
-  const apiMd = propsLocation > -1 ? content.slice(propsLocation) : '';
-
-  console.log('apiMd', md.render.call(md, apiMd).html);
+  const [demoMd = '', apiMd = ''] = content.split(pageData.apiFlag);
 
   const mdSegment = {
     ...pageData,

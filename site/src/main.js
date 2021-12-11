@@ -8,6 +8,7 @@ import App from './App.vue';
 import Codesandbox from './components/codesandbox/index.vue';
 
 // import tdesign style;
+import 'tdesign-vue/style/index.js';
 import '@common/style/web/docs.less';
 
 // import site webcomponents
