@@ -14,6 +14,8 @@ import '@common/style/web/docs.less';
 // import site webcomponents
 import 'tdesign-site-components';
 import 'tdesign-site-components/lib/styles/style.css';
+import 'tdesign-site-components/lib/styles/prism-theme.less';
+import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 
 Vue.use(TDesign);
 Vue.use(VueRouter);

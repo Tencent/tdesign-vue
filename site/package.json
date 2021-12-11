@@ -1,6 +1,5 @@
 {
   "name": "tdesign-vue-site",
-  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

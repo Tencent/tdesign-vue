@@ -17,15 +17,13 @@
       </t-select>
     </td-doc-aside>
 
-    <router-view :style="contentStyle" @loaded="contentLoaded" :docType="docType" />
+    <router-view :style="contentStyle" @loaded="contentLoaded" />
   </td-doc-layout>
 </template>
 
-<script lang="jsx">
+<script>
 import siteConfig from '../../site.config.js';
 import packageJson from '@/package.json';
-import 'tdesign-site-components/lib/styles/prism-theme.less';
-import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 
 const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
 
@@ -34,7 +32,6 @@ const historyVersion = ['0.28.2', '0.27.2', '0.26.0', '0.22.8'];
 export default {
   data() {
     return {
-      docType: '',
       loaded: false,
       version: packageJson.version,
       options: [
@@ -51,16 +48,7 @@ export default {
     },
   },
 
-  watch: {
-    $route(route) {
-      if (!route.meta.docType) return;
-      this.docType = route.meta.docType;
-    },
-  },
-
   mounted() {
-    document.querySelector('td-doc-header').docType = this.$route.meta.docType;
-
     this.$refs.tdHeader.framework = 'vue';
     this.$refs.tdDocAside.routerList = routerList;
     this.$refs.tdDocAside.onchange = ({ detail }) => {
