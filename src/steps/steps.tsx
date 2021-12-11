@@ -19,7 +19,6 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     return {
       stepChildren: [],
       indexMap: {},
-      childrenOptions: [],
     };
   },
   provide(): { steps: any } {
@@ -56,17 +55,9 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       ];
     },
   },
-  mounted() {
-    const childrenOptions = this.getOptions();
-    childrenOptions.forEach((item, index) => {
-      if (item?.value !== undefined) {
-        this.indexMap[item.value] = index;
-      }
-    });
-    this.childrenOptions = childrenOptions;
-  },
   render() {
-    const content = this.childrenOptions.map((item, index) => (
+    const options = this.getOptions();
+    const content = options.map((item, index) => (
         <t-step-item
           props={{ ...item }}
           key={item.value || index}
@@ -96,7 +87,8 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     },
     handleTheme() {
       let { theme } = this;
-      this.childrenOptions.forEach((item) => {
+      const options = this.getOptions();
+      options.forEach((item) => {
         if (item?.icon !== undefined) { // icon > theme
           theme = 'default';
         }
