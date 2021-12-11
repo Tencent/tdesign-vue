@@ -95,7 +95,7 @@
   </t-locale-provider>
 </template>
 
-<script>
+<script lang="jsx">
 import {
   ErrorIcon, CaretRightSmallIcon, CloseCircleFilledIcon, ChevronDownIcon, CaretDownSmallIcon,
 } from 'tdesign-icons-vue';

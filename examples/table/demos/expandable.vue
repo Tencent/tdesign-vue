@@ -71,7 +71,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
 const columns = [

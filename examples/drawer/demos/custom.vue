@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import Vue from 'vue';
 
 export default Vue.extend({

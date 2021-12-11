@@ -7,7 +7,7 @@
   </t-steps>
 </template>
 
-<script>
+<script lang="jsx">
 import {
   LoginIcon, CartIcon, WalletIcon, CheckCircleIcon,
 } from 'tdesign-icons-vue';

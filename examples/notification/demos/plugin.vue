@@ -36,7 +36,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { NotifyPlugin } from 'tdesign-vue';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 

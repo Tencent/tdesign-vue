@@ -6,7 +6,7 @@
     </template>
   </t-table>
 </template>
-<script>
+<script lang="jsx">
 import { AppIcon } from 'tdesign-icons-vue';
 
 export default {

@@ -94,7 +94,7 @@
   </t-config-provider>
 </template>
 
-<script>
+<script lang="jsx">
 import {
   ErrorIcon, ChevronRightIcon, CloseIcon, CloseCircleIcon,
 } from 'tdesign-icons-vue';
