@@ -59,9 +59,11 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     const options = this.getOptions();
     const content = options.map((item, index) => (
         <t-step-item
-          props={{ ...item }}
+          props={{
+            ...item,
+            status: this.handleStatus(item, index),
+          }}
           key={item.value || index}
-          status={this.handleStatus(item, index)}
         ></t-step-item>
     ));
     return <div class={this.baseClass}>{content}</div>;
