@@ -7,19 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.ref_type == 'tag'
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: Init submodule
-        run: |
-          git submodule init
-          git submodule update
       - name: Install dependencies
         run: npm install
         shell: bash
       - run: echo '${{ github.ref }} ...  ${{ github.ref_name }}'
       - name: Build site
-        run: npm run site:staging
+        run: npm run site:preview
       - name: upload surge service
         id: deploy
         run: |
