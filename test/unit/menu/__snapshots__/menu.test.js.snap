@@ -3,7 +3,7 @@
 exports[`Menu props :active 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Menu props :active 1`] = `
 exports[`Menu props :collapsed 1`] = `
 <div class="t-default-menu t-menu-mode__popup t-menu--light t-is-collapsed" style="height: 100%; width: 64px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu"></ul>
+    <ul class="t-menu narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`Menu props :collapsed 1`] = `
 exports[`Menu props :collapsedWidth 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;" collapsedwidth="100px">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -27,7 +27,7 @@ exports[`Menu props :collapsedWidth 1`] = `
 exports[`Menu props :height 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;" height="750px">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -35,7 +35,7 @@ exports[`Menu props :height 1`] = `
 exports[`Menu props :theme 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -43,7 +43,7 @@ exports[`Menu props :theme 1`] = `
 exports[`Menu props :theme 2`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -51,7 +51,7 @@ exports[`Menu props :theme 2`] = `
 exports[`Menu props :width 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 256px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -59,7 +59,7 @@ exports[`Menu props :width 1`] = `
 exports[`Menu slot <default> 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll">
+    <ul class="t-menu t-menu--scroll narrow-scrollbar">
       <div></div>
     </ul>
   </div>
@@ -72,7 +72,7 @@ exports[`Menu slot <logo> 1`] = `
     <div class="t-menu__logo">
       <div></div>
     </div>
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
   </div>
 </div>
 `;
@@ -80,7 +80,7 @@ exports[`Menu slot <logo> 1`] = `
 exports[`Menu slot <options> 1`] = `
 <div class="t-default-menu t-menu-mode__normal t-menu--light" style="height: 100%; width: 232px;">
   <div class="t-default-menu__inner">
-    <ul class="t-menu t-menu--scroll"></ul>
+    <ul class="t-menu t-menu--scroll narrow-scrollbar"></ul>
     <div class="t-menu__operations">
       <div></div>
     </div>

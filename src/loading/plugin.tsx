@@ -6,14 +6,17 @@ import { TdLoadingProps, LoadingInstance, LoadingMethod } from './type';
 
 const lockClass = `${prefix}-loading-lock`;
 
-function createLoading(props: TdLoadingProps): LoadingInstance {
+let fullScreenLoadingInstance: LoadingInstance = null;
+
+function createLoading(options: TdLoadingProps): LoadingInstance {
+  const props = { ...options };
   const loading = new LoadingComponent({
-    propsData: { ...props, isService: true },
+    propsData: { ...props },
   }).$mount();
 
-  const container = getAttach(props.attach);
-  if (container) {
-    container.appendChild(loading.$el);
+  const attach = getAttach(props.attach);
+  if (attach) {
+    attach.appendChild(loading.$el);
   } else {
     console.error('attach is not exist');
   }
@@ -21,13 +24,7 @@ function createLoading(props: TdLoadingProps): LoadingInstance {
   const loadingInstance: LoadingInstance = {
     hide: () => {
       loading.loading = false;
-      container.contains(loading.$el) && container.removeChild(loading.$el);
-      // 清除attach逃逸的loading
-      if (loading.attach) {
-        while (container.getElementsByClassName('t-loading').length) {
-          container.removeChild(container.getElementsByClassName('t-loading')[0]);
-        }
-      }
+      loading.$el.parentNode.removeChild(loading.$el);
     },
   };
 
@@ -36,23 +33,22 @@ function createLoading(props: TdLoadingProps): LoadingInstance {
 
 function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   // 全屏加载
-  if (typeof props === 'boolean' && props) {
-    return createLoading({
+  if (props === true) {
+    fullScreenLoadingInstance = createLoading({
       fullscreen: true,
       loading: true,
+      attach: 'body',
     });
+    return fullScreenLoadingInstance;
   }
-
-  // 销毁全屏实例
-  if (typeof props === 'boolean' && !props) {
+  if (props === false) {
+    // 销毁全屏实例
     removeClass(document.body, lockClass);
-    document.body.removeChild(getAttach('body > .t-loading-fullscreen'));
+    fullScreenLoadingInstance.hide();
+    fullScreenLoadingInstance = null;
     return;
   }
-
-  // 自定义配置
-  const options = { ...(props as TdLoadingProps) };
-  return createLoading(options);
+  return createLoading(props);
 }
 
 export type LoadingPluginType = Vue.PluginObject<undefined> & LoadingMethod;

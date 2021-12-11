@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AnchorTarget <slot> should render default slot 1`] = `
-<h1 id="test-target" class="t-anchor-target">this is default slots<div class="t-popup-reference t-copy">
+<h1 id="test-target" class="t-anchor__target">this is default slots<div class="t-popup-reference t-copy">
     <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">复制链接<div class="t-popup__arrow"></div>

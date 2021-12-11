@@ -30,6 +30,7 @@ export default defineComponent({
     const innerClasses = computed(() => [
       `${prefix}-menu`,
       { [`${prefix}-menu--scroll`]: mode.value !== 'popup' },
+      'narrow-scrollbar',
     ]);
     const styles = computed(() => {
       const { width } = props;

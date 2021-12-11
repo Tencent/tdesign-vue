@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-12-09 14:09:08
  * */
 
 import { TdDropdownItemProps } from '../dropdown/type';
@@ -22,7 +22,7 @@ export default {
   divider: Boolean,
   /** 下拉操作项唯一标识 */
   value: {
-    type: [String, Number] as PropType<TdDropdownItemProps['value']>,
+    type: [String, Number, Object] as PropType<TdDropdownItemProps['value']>,
   },
   /** 点击时触发 */
   onClick: Function as PropType<TdDropdownItemProps['onClick']>,

@@ -58,13 +58,13 @@ const demoRoutes = getDemoRoutes();
 const routes = [
   {
     path: '/vue/components',
-    redirect: '/vue/components/button',
+    redirect: '/vue/components/overview',
     component: TdesignComponents,
     children: getDocsRoutes(docs),
   },
   {
     path: '*',
-    redirect: '/vue/components/button',
+    redirect: '/vue/components/overview',
   },
   ...demoRoutes,
   {

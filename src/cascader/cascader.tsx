@@ -1,4 +1,6 @@
 import Vue, { VNode } from 'vue';
+
+// utils
 import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
@@ -6,10 +8,16 @@ import TreeStore from '../_common/js/tree/tree-store';
 import { emitEvent } from '../utils/event';
 import { getPropsApiByEvent } from '../utils/helper';
 import { getTreeValue } from './utils/helper';
+
+// common logic
 import { treeNodesEffect, treeStoreExpendEffect } from './utils/cascader';
+
+// component
 import Panel from './components/Panel';
 import Popup, { PopupProps } from '../popup/index';
 import InputContent from './components/InputContent';
+
+// types
 import TreeNode from '../_common/js/tree/tree-node';
 import {
   ListenersType, TreeNodeValue, EVENT_NAME_WITH_KEBAB,
@@ -17,12 +25,10 @@ import {
   TdCascaderProps,
 } from './interface';
 import props from './props';
-import { CascaderChangeEventSource, CascaderValue } from './type';
+import { CascaderChangeSource, CascaderValue } from './type';
 import { TreeNodeModel } from '../tree';
 
 const name = `${prefix}-cascader`;
-
-export type ChangeEventParams = Parameters<TdCascaderProps['onChange']>;
 
 export default Vue.extend({
   name: 'TCascader',
@@ -39,6 +45,7 @@ export default Vue.extend({
 
   data() {
     return {
+      inputWidth: 0,
       visible: false,
       treeStore: null,
       inputVal: '',
@@ -56,8 +63,9 @@ export default Vue.extend({
           this.treeNodes = nodes;
         },
         // 内部节点时 TreeNode，对外暴露的节点对象是 TreeNodeModel
-        setValue: (val: CascaderValue, source: CascaderChangeEventSource, node: TreeNodeModel) => {
-          emitEvent<ChangeEventParams>(this, 'change', val, { source, node });
+        setValue: (val: CascaderValue, source: CascaderChangeSource, node: TreeNodeModel) => {
+          if (isEqual(val, this.scopeVal)) return;
+          emitEvent<Parameters<TdCascaderProps['onChange']>>(this, 'change', val, { source, node });
         },
         setVisible: (val: boolean) => {
           this.visible = val;
@@ -71,13 +79,15 @@ export default Vue.extend({
         setExpend: (val: TreeNodeValue[]) => {
           this.expend = val;
         },
+        setInputWidth: (val: number) => {
+          this.inputWidth = val;
+        },
       };
     },
     cascaderContext(): CascaderContextType {
       const value = this.scopeVal as TdCascaderProps['value'];
       const {
         size = 'medium',
-        disabled = false,
         checkStrictly = false,
         lazy = true,
         multiple = false,
@@ -85,19 +95,18 @@ export default Vue.extend({
         clearable = false,
         checkProps = {},
         max = 0,
+        disabled,
         showAllLevels = true,
         minCollapsedNum = 0,
+        loading,
       } = this;
 
       const {
-        visible,
-        treeStore,
-        treeNodes,
-        filterActive,
-        inputVal,
+        visible, treeStore, treeNodes, filterActive, inputVal, inputWidth,
       } = this;
 
       return {
+        loading,
         size,
         disabled,
         checkStrictly,
@@ -114,6 +123,7 @@ export default Vue.extend({
         treeNodes,
         filterActive,
         inputVal,
+        inputWidth,
         minCollapsedNum,
         ...this.stateFns,
       };
@@ -146,15 +156,20 @@ export default Vue.extend({
   },
 
   mounted() {
-    const { value, multiple } = this;
+    const {
+      value,
+      multiple,
+      cascaderContext: { setValue },
+    } = this;
     if ((multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value))) {
       const val: CascaderValue = multiple ? [] : '';
-      emitEvent<ChangeEventParams>(this, 'change', val, { source: 'invalid-value' });
-      console.warn('TDesign Cascader Warn:', 'cascader props value invalid, automatic calibration');
+      setValue(val, 'invalid-value');
+      console.warn('TDesign Cascader Warn:', 'cascader props value invalid, v-model automatic calibration');
     }
     if (!isEmpty(value)) {
       this.scopeVal = value;
     }
+
     this.init();
     ['checkStrictly', 'disabled', 'keys', 'lazy', 'load', 'options', 'valueMode'].forEach((key) => {
       this.$watch(key, () => {
@@ -233,6 +248,7 @@ export default Vue.extend({
       cascaderContext,
       $scopedSlots,
       placeholder,
+      collapsedItems,
     } = this;
 
     const popupProps = this.popupProps as PopupProps;
@@ -240,8 +256,8 @@ export default Vue.extend({
     const listeners: ListenersType = {};
 
     EVENT_NAME_WITH_KEBAB.forEach((eventName) => {
-      listeners[getPropsApiByEvent(eventName)] = (params: any) => {
-        emitEvent(this, eventName, params);
+      listeners[getPropsApiByEvent(eventName)] = (...args: any[]) => {
+        emitEvent(this, eventName, ...args);
       };
     });
 
@@ -254,9 +270,9 @@ export default Vue.extend({
         trigger={popupProps?.trigger || 'click'}
         expandAnimation={true}
         {...popupProps}
-        content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} onChange={listeners.onChange}>{$scopedSlots}</panel>}
+        content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} scopedSlots={{ empty: $scopedSlots.empty }}></panel>}
       >
-        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners}>{$scopedSlots}</InputContent>
+        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners} collapsedItems={collapsedItems} scopedSlots={{ collapsedItems: $scopedSlots.collapsedItems }}></InputContent>
       </Popup>
     </div >);
   },
