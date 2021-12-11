@@ -4532,7 +4532,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid"><span>水平gutter为固定值</span>
+<div class="tdesign-demo-item--grid"><span>水平 gutter 为固定值</span>
   <div class="t-row t-row-start t-row-top" style="margin-left:-8px;margin-right:-8px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
@@ -4546,7 +4546,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
-  </div> <span>水平gutter为响应式</span>
+  </div> <span>水平 gutter 为响应式</span>
   <div class="t-row t-row-start t-row-top" style="margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
@@ -4560,7 +4560,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-  </div> <span>水平和垂直gutter均为固定值</span>
+  </div> <span>水平和垂直 gutter 均为固定值</span>
   <div class="t-row t-row-start t-row-top" style="margin-left:-8px;margin-right:-8px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
@@ -4586,7 +4586,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
-  </div> <span>水平gutter响应式，垂直gutter固定值</span>
+  </div> <span>水平 gutter 响应式，垂直 gutter固定值 </span>
   <div class="t-row t-row-start t-row-top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
@@ -4612,7 +4612,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-  </div> <span>水平和垂直gutter均为响应式</span>
+  </div> <span>水平和垂直 gutter 均为响应式</span>
   <div class="t-row t-row-start t-row-top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
