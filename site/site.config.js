@@ -39,15 +39,6 @@ export default {
       name: 'configs',
       children: [
         {
-          title: '文本语言配置',
-          name: 'local',
-          meta: {
-            docType: 'explain',
-          },
-          path: '/vue/components/local',
-          component: () => import('@/examples/locale-provider/locale-provider.md'),
-        },
-        {
           title: '全局特性配置',
           name: 'config',
           meta: {
