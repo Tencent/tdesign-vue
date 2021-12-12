@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-12-12 16:59:59
  * */
 
 import { TNode } from '../common';
@@ -57,7 +57,7 @@ export interface TdBreadcrumbItemProps {
   /**
    * 路由对象。如果项目存在 Router，则默认使用 Router。
    */
-  router?: Record<string, any>;
+  router?: any;
   /**
    * 链接或路由跳转方式
    * @default _self
