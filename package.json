@@ -153,7 +153,9 @@
     "typescript": "^4.4.4",
     "vue-class-component": "^7.2.3",
     "vue-jest": "^3.0.5",
-    "vue-server-renderer": "^2.6.11"
+    "vue-server-renderer": "^2.6.14",
+    "vue": "^2.6.14",
+    "vue-template-compiler": "^2.6.14"
   },
   "config": {
     "commitizen": {
