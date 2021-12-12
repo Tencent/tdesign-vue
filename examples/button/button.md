@@ -17,10 +17,10 @@ size | String | medium | 组件尺寸。可选项：small/medium/large。TS 类�
 theme | String | undefined | 组件风格，依次为默认色、品牌色、危险色、警告色、成功色。可选项：default/primary/danger/warning/success | N
 type | String | button | 按钮类型。可选项：submit/reset/button | N
 variant | String | base | 按钮形式，基础、线框、虚线、文字。可选项：base/outline/dashed/text | N
-onClick | Function |  | 点击时触发。`(e: MouseEvent<HTMLButtonElement>) => {}` | N
+onClick | Function |  | 点击时触发。`(e: MouseEvent) => {}` | N
 
 ### Button Events
 
 名称 | 参数 | 描述
 -- | -- | --
-click | `(e: MouseEvent<HTMLButtonElement>)` | 点击时触发
+click | `(e: MouseEvent)` | 点击时触发
