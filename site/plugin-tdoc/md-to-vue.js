@@ -61,10 +61,6 @@ export default function mdToVue(options) {
       ${demoDefsStr}
       ${demoCodesDefsStr}
       import Prismjs from 'prismjs';
-      import 'prismjs/components/prism-bash.js';
-      import 'prismjs/components/prism-javascript.js';
-      import 'tdesign-site-components/lib/styles/prism-theme.less';
-      import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 
       export default {
 
