@@ -25,15 +25,15 @@ export default function mdToVue(options) {
     <template>
       <td-doc-content ref="tdDocContent" page-status="hidden">
         ${
-          mdSegment.tdDocHeader &&
+          mdSegment.tdDocHeader ?
           `
           <td-doc-header
             slot="doc-header"
             ref="tdDocHeader"
             spline="${mdSegment.spline}"
           >
-          ${mdSegment.isComponent && `<td-doc-badge slot="badge" label="coverage" message="${coverage}" />`}
-          </td-doc-header>`
+          ${mdSegment.isComponent ? `<td-doc-badge slot="badge" label="coverage" message="${coverage}" />` : ''}
+          </td-doc-header>` : ''
         }
         ${
           mdSegment.isComponent
