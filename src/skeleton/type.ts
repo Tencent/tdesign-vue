@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-12-12 16:59:59
  * */
 
 import { TNode } from '../common';
@@ -17,7 +17,7 @@ export interface TdSkeletonProps {
    */
   loading?: boolean;
   /**
-   * 用于自定义行列数量、宽度高度、间距等。【示例一】，`[1, 1, 2]` 表示输出三行骨架图，第一行一列，第二行一列，第三行两列。【示例二】，`[1, 1, { width: '100px' }]` 表示自定义第三行的宽度为 `100px`。【示例三】，`[1, 2, [{ width, height }, { width, height, marginLeft }]]` 表示第三行有两列，且自定义宽度、高度、间距、内容等
+   * 高级设置，用于自定义行列数量、宽度高度、间距等。【示例一】，`[1, 1, 2]` 表示输出三行骨架图，第一行一列，第二行一列，第三行两列。【示例二】，`[1, 1, { width: '100px' }]` 表示自定义第三行的宽度为 `100px`。【示例三】，`[1, 2, [{ width, height }, { width, height, marginLeft }]]` 表示第三行有两列，且自定义宽度、高度、尺寸（圆形或方形使用）、间距、内容等
    * @default [1, 1, 1, { width: '70%' }]
    */
   rowCol?: SkeletonRowCol;
@@ -25,9 +25,9 @@ export interface TdSkeletonProps {
    * 快捷定义骨架图风格，有基础、头像组合等，具体参看代码示例
    * @default text
    */
-  theme?: 'text' | 'avatar-text' | 'avatar-text-complicate' | 'image-paragraph-horizontal' | 'image-paragraph-vertical' | 'image-paragraph-horizontal-button' | 'article';
+  theme?: 'text' | 'avatar' | 'paragraph' | 'avatar-text' | 'tab' | 'article';
 };
 
 export type SkeletonRowCol = Array<Number | SkeletonRowColObj | Array<SkeletonRowColObj>>;
 
-export interface SkeletonRowColObj { width?: string; height?: string; marginRight?: string; marginLeft?: string; margin?: string; content?: string | TNode; type?: 'rect' | 'circle' };
+export interface SkeletonRowColObj { width?: string; height?: string; size?: string; marginRight?: string; marginLeft?: string; margin?: string; content?: string | TNode; type?: 'rect' | 'circle' | 'text' };

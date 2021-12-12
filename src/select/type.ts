@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-23 10:46:16
+ * updated at 2021-12-12 16:59:59
  * */
 
 import { PopupProps } from '../popup';
@@ -100,6 +100,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   reserveKeyword?: boolean;
   /**
+   * 【讨论中】是否显示全选
+   * @default false
+   */
+  showCheckAlll?: boolean;
+  /**
    * 组件尺寸
    * @default medium
    */
@@ -117,14 +122,14 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   valueDisplay?: TNode<{ value: T[]; onClose: () => void }>;
   /**
-   * 用于控制选中值的类型。假设数据选项为：[{ label: '姓名', value: 'name' }]，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。
+   * 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。
    * @default value
    */
   valueType?: 'value' | 'object';
   /**
    * 输入框失去焦点时触发
    */
-  onBlur?: (context: { value: SelectValue; e: FocusEvent }) => void;
+  onBlur?: (context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => void;
   /**
    * 选中值变化时触发
    */
@@ -144,7 +149,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
    * 输入框获得焦点时触发
    */
-  onFocus?: (context: { value: SelectValue; e: FocusEvent }) => void;
+  onFocus?: (context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => void;
   /**
    * 多选模式下，选中数据被移除时触发
    */
@@ -201,7 +206,7 @@ export interface SelectKeysType { value?: string; label?: string };
 
 export type SelectValue<T extends SelectOption = SelectOption> = string | number | T | Array<SelectValue<T>>;
 
-export interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent };
+export interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent | KeyboardEvent };
 
 export type SelectOption = TdOptionProps | SelectOptionGroup;
 
