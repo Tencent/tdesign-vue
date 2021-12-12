@@ -1,9 +1,9 @@
-import config from './config';
-import TdesignComponents from './pages/components';
-import TdesignDemoList from './pages/demo-list';
-import TdesignDemoPage from './pages/demo-page';
+import config from '../site.config.js';
+import TdesignComponents from './components/page.vue';
+import TdesignDemoList from './components/demo-list.vue';
+import TdesignDemoPage from './components/demo-page.vue';
 
-const demoReq = require.context('../examples', true, /demos[/\\][\w-]+\.vue$/im);
+const demoReq = import.meta.globEager('../../examples/**/demos/*.vue');
 
 const { docs } = config;
 
@@ -26,10 +26,7 @@ function getDocsRoutes(docs, type) {
     if (children) {
       docsRoutes = docsRoutes.concat(getDocsRoutes(children, docType));
     } else {
-      docRoute = {
-        ...item,
-        meta: item.meta || {},
-      };
+      docRoute = { ...item };
       docsRoutes.push(docRoute);
     }
   });
@@ -42,12 +39,12 @@ function getDocsRoutes(docs, type) {
  */
 function getDemoRoutes() {
   if (process.env.NODE_ENV === 'development') {
-    return demoReq.keys().map((key) => {
+    return Object.keys(demoReq).map((key) => {
       const match = key.match(/([\w-]+).demos.([\w-]+).vue/);
       const [, componentName, demoName] = match;
       return {
         path: `/vue/demos/${componentName}/${demoName}`,
-        props: { componentName, demo: demoReq(key).default },
+        props: { componentName, demo: demoReq[key].default },
         component: TdesignDemoPage,
       };
     });
@@ -58,13 +55,13 @@ const demoRoutes = getDemoRoutes();
 const routes = [
   {
     path: '/vue/components',
-    redirect: '/vue/components/overview',
+    redirect: '/vue/components/button',
     component: TdesignComponents,
     children: getDocsRoutes(docs),
   },
   {
     path: '*',
-    redirect: '/vue/components/overview',
+    redirect: '/vue/components/button',
   },
   ...demoRoutes,
   {

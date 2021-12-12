@@ -18,7 +18,7 @@
 
   </div>
 </template>
-<script>
+<script lang="jsx">
 const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({

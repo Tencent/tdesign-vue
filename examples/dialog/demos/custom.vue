@@ -92,7 +92,7 @@
     ></t-dialog>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { CartIcon } from 'tdesign-icons-vue';
 
 export default {

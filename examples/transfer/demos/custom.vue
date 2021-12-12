@@ -27,7 +27,7 @@
     </t-transfer>
   </div>
 </template>
-<script>
+<script lang="jsx">
 const list = [];
 for (let i = 0; i < 20; i++) {
   list.push({

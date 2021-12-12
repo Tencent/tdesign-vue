@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { MessagePlugin } from 'tdesign-vue';
 
 export default {

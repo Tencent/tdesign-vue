@@ -32,7 +32,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="jsx">
 
 import { CloseIcon, CheckIcon } from 'tdesign-icons-vue';
 

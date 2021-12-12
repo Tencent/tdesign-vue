@@ -20,13 +20,14 @@
 </template>
 
 <script>
-const packageJSON = require('./package.json');
+import packageJSON from './package.json';
+import mainJsContent from './main.js?raw';
+import styleContent from './index.css?raw';
+
 packageJSON.dependencies['tdesign-vue'] = __VERSION__; // eslint-disable-line
 packageJSON.dependencies['tdesign-icons-vue'] = '0.0.4';
 
 const packageJSONContent = JSON.stringify(packageJSON, null, 2);
-const mainJsContent = require('!!raw-loader!./main.js').default; // eslint-disable-line
-const styleContent = require('!!raw-loader!./index.css').default; // eslint-disable-line
 
 /**
  * 处理 demo 内容，目前是只处理某些外部依赖

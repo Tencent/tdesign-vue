@@ -10,7 +10,7 @@
     </t-date-picker>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { BrowseIcon, LockOnIcon } from 'tdesign-icons-vue';
 
 export default {

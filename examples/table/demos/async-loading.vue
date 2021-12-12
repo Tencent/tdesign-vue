@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 const data = [
   {
     key: '1',

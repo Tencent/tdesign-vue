@@ -28,10 +28,7 @@
   },
   "settings": {
     "import/resolver": {
-      "node": {},
-      "webpack": {
-        "config": "./script/webpack.base.js"
-      }
+      "node": {}
     },
     "import/extensions": [
       ".js",

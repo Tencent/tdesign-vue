@@ -23,7 +23,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { UserIcon, EllipsisIcon } from 'tdesign-icons-vue';
 
 export default {

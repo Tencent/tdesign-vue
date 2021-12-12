@@ -11,7 +11,7 @@
     </t-alert>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { Icon } from 'tdesign-icons-vue';
 
 export default {

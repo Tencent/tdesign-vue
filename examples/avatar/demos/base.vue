@@ -10,7 +10,7 @@
     </t-avatar>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { UserIcon } from 'tdesign-icons-vue';
 
 export default {
