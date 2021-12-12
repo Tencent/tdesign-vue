@@ -171,5 +171,7 @@
       "eslint --fix"
     ]
   },
-  "workspaces": ["site"]
+  "workspaces": [
+    "site"
+  ]
 }

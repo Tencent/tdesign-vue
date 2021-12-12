@@ -18,6 +18,8 @@
 
 ## 开发
 
+⚠️ `npm` 版本要求至少为 `npm7`
+
 ```bash
 git clone https://github.com/TDesignOteam/tdesign-vue.git
 cd tdesign-vue
