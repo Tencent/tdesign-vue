@@ -535,7 +535,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     const scopeProps = pick(this, [
       'checkProps',
       'disableCheck',
-      'empty',
       'icon',
       'label',
       'line',
