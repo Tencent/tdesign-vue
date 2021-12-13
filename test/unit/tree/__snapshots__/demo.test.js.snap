@@ -109,10 +109,12 @@ exports[`Tree:demo activable demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -280,10 +282,12 @@ exports[`Tree:demo base demo works fine 1`] = `
   class="tdesign-tree-demo"
 >
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -598,10 +602,12 @@ exports[`Tree:demo checkable demo works fine 1`] = `
   </form>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -1325,10 +1331,12 @@ exports[`Tree:demo controlled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -1902,10 +1910,12 @@ exports[`Tree:demo data demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -2347,10 +2357,12 @@ exports[`Tree:demo disabled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -2764,10 +2776,12 @@ exports[`Tree:demo disabled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -3140,10 +3154,12 @@ exports[`Tree:demo empty demo works fine 1`] = `
   class="tdesign-tree-demo"
 >
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     />
@@ -3156,10 +3172,12 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <br />
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     />
@@ -3172,10 +3190,12 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <br />
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     />
@@ -3190,10 +3210,12 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <br />
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     />
@@ -3285,10 +3307,12 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -3568,10 +3592,12 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
   class="tdesign-tree-demo"
 >
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -3839,10 +3865,12 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
+    class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -3944,10 +3972,12 @@ exports[`Tree:demo filter demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx t-tree--block-node"
+    class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4035,10 +4065,12 @@ exports[`Tree:demo icon demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4108,10 +4140,12 @@ exports[`Tree:demo icon demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4187,10 +4221,12 @@ exports[`Tree:demo label demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-tree t-tree--fx"
+    class="t-tree t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4368,10 +4404,12 @@ exports[`Tree:demo label demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-tree t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4713,10 +4751,12 @@ exports[`Tree:demo lazy demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -4895,10 +4935,12 @@ exports[`Tree:demo line demo works fine 1`] = `
     class="tdesign-demo-block-column"
   >
     <div
-      class="t-tree t-tree--fx"
+      class="t-tree t-tree--transition"
     >
       <transition-group-stub
         class="t-tree__list"
+        enteractiveclass="t-tree__item--enter-active"
+        leaveactiveclass="t-tree__item--leave-active"
         name="t-tree-toggle"
         tag="div"
       >
@@ -5353,10 +5395,12 @@ exports[`Tree:demo line demo works fine 1`] = `
     </h3>
      
     <div
-      class="t-tree t-tree--fx"
+      class="t-tree t-tree--transition"
     >
       <transition-group-stub
         class="t-tree__list"
+        enteractiveclass="t-tree__item--enter-active"
+        leaveactiveclass="t-tree__item--leave-active"
         name="t-tree-toggle"
         tag="div"
       >
@@ -6045,10 +6089,12 @@ exports[`Tree:demo line demo works fine 1`] = `
     </h3>
      
     <div
-      class="t-tree t-tree--fx"
+      class="t-tree t-tree--transition"
     >
       <transition-group-stub
         class="t-tree__list"
+        enteractiveclass="t-tree__item--enter-active"
+        leaveactiveclass="t-tree__item--leave-active"
         name="t-tree-toggle"
         tag="div"
       >
@@ -6801,10 +6847,12 @@ exports[`Tree:demo load demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -6934,10 +6982,12 @@ exports[`Tree:demo operations demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -7099,10 +7149,12 @@ exports[`Tree:demo operations demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
@@ -7478,10 +7530,12 @@ exports[`Tree:demo sync demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--checkable t-tree--fx"
+    class="t-tree t-tree--checkable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
       name="t-tree-toggle"
       tag="div"
     >
