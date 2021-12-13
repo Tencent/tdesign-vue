@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "prismjs": "^1.25.0",
-    "tdesign-site-components": "~0.2.2",
+    "tdesign-site-components": "~0.3.7",
     "vue-router": "^3.5.3"
   },
   "devDependencies": {
