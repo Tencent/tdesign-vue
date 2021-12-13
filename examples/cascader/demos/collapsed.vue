@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 export default {
   data() {
     return {
@@ -65,8 +65,8 @@ export default {
   },
   methods: {
     collapsedItems(h, { value, count, collapsedSelectedItems }) {
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
       if (!(value instanceof Array) || !count) return;
+      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
       // hover展示全部已选项
       return (
         <t-popup>

@@ -9,7 +9,7 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
-import TInput, { InputValue } from '../input';
+import TInput from '../input';
 import { Select, Option } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -21,16 +21,13 @@ import { TdPaginationProps } from './type';
 const name = `${prefix}-pagination`;
 const min = 1;
 
-enum KeyCode {
-  ENTER = 'Enter',
-}
-
 export type PageSizeChangeParams = Parameters<TdPaginationProps['onPageSizeChange']>;
 export type CurrentChangeParams = Parameters<TdPaginationProps['onCurrentChange']>;
 export type ChangeEventParams = Parameters<TdPaginationProps['onChange']>;
 
 export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination')).extend({
   name: 'TPagination',
+
   components: {
     ChevronLeftIcon,
     ChevronRightIcon,
@@ -41,6 +38,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     TSelect: Select,
     TOption: Option,
   },
+
   props: {
     ...props,
     /**
@@ -64,13 +62,21 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       },
     },
   },
+
   data() {
     return {
-      jumpIndex: this.current,
       prevMore: false,
       nextMore: false,
+      jumpIndex: this.current,
     };
   },
+
+  watch: {
+    current(val) {
+      this.jumpIndex = val;
+    },
+  },
+
   computed: {
     /**
      * 样式计算
@@ -90,9 +96,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     sizerClass(): ClassName {
       return [
         `${name}__select`,
-        // {
-        //   [CLASSNAMES.STATUS.disabled]: this.disabled,
-        // },
       ];
     },
     preBtnClass(): ClassName {
@@ -131,9 +134,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     jumperInputClass(): ClassName {
       return [
         `${name}__input`,
-        // {
-        //   [CLASSNAMES.STATUS.disabled]: this.disabled,
-        // },
       ];
     },
     simpleClass(): ClassName {
@@ -207,6 +207,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       return this.pageCount > this.maxPageBtn;
     },
   },
+
   methods: {
     toPage(pageIndex: number, isTriggerChange?: boolean): void {
       if (this.disabled) {
@@ -220,7 +221,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       }
       if (this.current !== current) {
         const prev = this.current;
-        this.jumpIndex = current;
         const pageInfo = {
           current,
           previous: prev,
@@ -232,23 +232,23 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         }
       }
     },
+
     prevPage(): void {
       this.toPage(this.current - 1);
     },
+
     nextPage(): void {
       this.toPage(this.current + 1);
     },
+
     prevMorePage(): void {
       this.toPage(this.current - this.foldedMaxPageBtn);
     },
+
     nextMorePage(): void {
       this.toPage(this.current + this.foldedMaxPageBtn);
     },
-    jumpToPage(): void {
-      const jumpIndex = Number(this.jumpIndex);
-      if (isNaN(jumpIndex)) return;
-      this.toPage(jumpIndex);
-    },
+
     getButtonClass(index: number): ClassName {
       return [
         `${name}__number`,
@@ -258,6 +258,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         },
       ];
     },
+
     onSelectorChange(e: string): void {
       if (this.disabled) {
         return;
@@ -291,12 +292,15 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         this.toPage(pageCount, false);
       }
     },
-    onKeydownJumpInput(_: InputValue, { e }: { e: KeyboardEvent }): void {
-      if (e.key === KeyCode.ENTER) {
-        this.jumpToPage();
-      }
+
+    // 自定义页码时，相当于 current 发生变化
+    onJumperChange(val: String) {
+      const currentIndex = Number(val);
+      if (isNaN(currentIndex)) return;
+      this.toPage(currentIndex);
     },
   },
+
   render() {
     return (
       <div class={this.paginationClass}>
@@ -388,8 +392,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             <t-input
               class={this.jumperInputClass}
               v-model={this.jumpIndex}
-              onBlur={this.jumpToPage}
-              onKeyup={this.onKeydownJumpInput}
+              onBlur={this.onJumperChange}
+              onEnter={this.onJumperChange}
             />
             {this.t(this.global.page)}
           </div>

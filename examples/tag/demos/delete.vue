@@ -50,7 +50,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { AddIcon, DiscountIcon } from 'tdesign-icons-vue';
 import Vue from 'vue';
 

@@ -26,22 +26,6 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
     checkboxGroup: { default: undefined },
   },
 
-  data() {
-    return {
-      // used for controlled component
-      oldValue: undefined,
-    };
-  },
-
-  watch: {
-    checked$: {
-      immediate: true,
-      handler(val) {
-        this.oldValue = val;
-      },
-    },
-  },
-
   computed: {
     labelClasses(): ClassName {
       return [
@@ -101,9 +85,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
   methods: {
     handleChange(e: Event) {
       const value = !this.checked$;
-      if (this.oldValue === value) return;
       emitEvent<Parameters<TdCheckboxProps['onChange']>>(this, 'change', value, { e });
-      this.oldValue = value;
       e.stopPropagation();
       this?.checkboxGroup?.$emit('checked-change', {
         checked: value,

@@ -25,7 +25,7 @@
   </t-steps>
 </template>
 
-<script>
+<script lang="jsx">
 export default {
   data() {
     return {

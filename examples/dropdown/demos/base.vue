@@ -10,7 +10,7 @@
     </t-dropdown>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { ChevronDownIcon } from 'tdesign-icons-vue';
 
 export default {

@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 export default {
   methods: {
     renderTrigerElement1() {

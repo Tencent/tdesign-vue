@@ -30,7 +30,7 @@
 
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { EnhancedTable } from 'tdesign-vue';
 
 const data = [];

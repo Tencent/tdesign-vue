@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { CaretDownSmallIcon, Icon } from 'tdesign-icons-vue';
 
 const columns = [

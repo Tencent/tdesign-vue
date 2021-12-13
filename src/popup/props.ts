@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
+ * updated at 2021-12-12 16:59:59
  * */
 
 import { TdPopupProps } from './type';
@@ -26,7 +26,7 @@ export default {
   destroyOnClose: Boolean,
   /** 是否禁用组件 */
   disabled: Boolean,
-  /** 浮层类名，示例：'name1 name2 name3' 或 ['name1', 'name2'] 或 [{ 'name1': true }] */
+  /** 浮层类名，示例：'name1 name2 name3' 或 `['name1', 'name2']` 或 `[{ 'name1': true }]` */
   overlayClassName: {
     type: [String, Object, Array] as PropType<TdPopupProps['overlayClassName']>,
   },

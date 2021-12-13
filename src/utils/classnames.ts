@@ -12,6 +12,7 @@ export const SIZE_CLASSNAMES = {
 
 export const STATUS_CLASSNAMES = {
   loading: `${prefix}-is-loading`,
+  loadMore: `${prefix}-is-load-more`,
   disabled: `${prefix}-is-disabled`,
   focused: `${prefix}-is-focused`,
   success: `${prefix}-is-success`,

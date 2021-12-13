@@ -1,8 +1,8 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
+    <!-- t-config-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
     <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
-    <!-- <t-locale-provider :globalLocale="globalLocale"> -->
+    <!-- <t-config-provider :globalLocale="globalLocale"> -->
 
     <!-- expanded-row-keys 为受控属性 -->
     <!-- default-expanded-row-keys 为非受控属性 -->
@@ -38,7 +38,9 @@
       </template>
     </t-table>
 
-    <div style="margin: 10px 0px;">支持名为 expandedRow 的插槽写法</div>
+    <!-- </t-config-provider> -->
+
+    <div style="margin: 16px 0px;">支持名为 expandedRow 的插槽写法</div>
 
     <t-table
       row-key='id'
@@ -66,12 +68,10 @@
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
       </template>
     </t-table>
-
-    <!-- </t-locale-provider> -->
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
 const columns = [

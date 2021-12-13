@@ -6,7 +6,7 @@
   </t-calendar>
 </template>
 
-<script>
+<script lang="jsx">
 import dayjs from 'dayjs';
 
 export default {

@@ -28,9 +28,9 @@ export default Vue.extend({
       ];
     },
     loadingClass(): ClassName {
-      return typeof this.asyncLoading === 'string' && ['loading', 'load-more'].includes(this.asyncLoading)
-        ? `${name}__load ${name}__load--${this.asyncLoading}`
-        : `${name}__load`;
+      if (this.asyncLoading === 'loading') return CLASSNAMES.STATUS.loading;
+      if (this.asyncLoading === 'load-more') return CLASSNAMES.STATUS.loadMore;
+      return '';
     },
   },
   components: {
@@ -39,17 +39,12 @@ export default Vue.extend({
   methods: {
     renderLoading() {
       if (this.asyncLoading && typeof this.asyncLoading === 'string') {
-        if (this.asyncLoading === LOADING) {
-          return (
-            <div>
-              <Loading />
-              <span>正在加载中，请稍等</span>
-            </div>
-          );
-        }
-        if (this.asyncLoading === LOAD_MORE) {
-          return <span>点击加载更多</span>;
-        }
+        const text = {
+          [LOADING]: '正在加载中，请稍后',
+          [LOAD_MORE]: '点击加载更多',
+        }[this.asyncLoading];
+        const loading = this.asyncLoading === LOADING;
+        return <Loading class={this.loadingClass} loading={loading} text={text} />;
       }
       return renderTNodeJSX(this, 'asyncLoading');
     },
@@ -94,7 +89,7 @@ export default Vue.extend({
 
     listContent = [
       listContent,
-      <div class={this.loadingClass} onClick={this.handleLoadMore}>
+      <div class={`${name}__load`} onClick={this.handleLoadMore}>
         {this.renderLoading()}
       </div>,
     ];

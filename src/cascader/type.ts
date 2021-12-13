@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-28 12:23:52
+ * updated at 2021-12-12 16:59:59
  * */
 
 import { CheckboxProps } from '../checkbox';
@@ -46,7 +46,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   /**
    * 用来定义 value / label / children 在 `options` 中对应的字段别名
    */
-  keys?: KeysType;
+  keys?: CascaderKeysType;
   /**
    * 延迟加载 children 为 true 的子节点，即使 expandAll 被设置为 true，也同样延迟加载
    * @default true
@@ -132,7 +132,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   /**
    * 选中值发生变化时触发。TreeNodeModel 从树组件中导出。`context.node` 表示触发事件的节点，`context.source` 表示触发事件的来源
    */
-  onChange?: (value: CascaderValue<CascaderOption>, context: CascaderChangeEventContext<CascaderOption>) => void;
+  onChange?: (value: CascaderValue<CascaderOption>, context: CascaderChangeContext<CascaderOption>) => void;
   /**
    * 获得焦点时触发
    */
@@ -143,12 +143,12 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
 };
 
-export interface KeysType { value?: string; label?: string; children?: string };
+export interface CascaderKeysType { value?: string; label?: string; children?: string };
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
-export interface CascaderChangeEventContext<CascaderOption> { node?: TreeNodeModel<CascaderOption>; source: CascaderChangeEventSource };
+export interface CascaderChangeContext<CascaderOption> { node?: TreeNodeModel<CascaderOption>; source: CascaderChangeSource };
 
-export type CascaderChangeEventSource = 'invalid-value' | 'checked' | 'clear' | 'unchecked';
+export type CascaderChangeSource = 'invalid-value' | 'checked' | 'clear' | 'unchecked';
 
 export interface RemoveContext<T> { value: CascaderValue<T>; node: TreeNodeModel<T> };

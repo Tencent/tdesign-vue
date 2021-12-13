@@ -1,8 +1,8 @@
-# 最佳实践
-
-欢迎使用 TDesign Starter for Vue, 快速搭建你的项目!
-
-######
+---
+title: 最佳实践
+description: 欢迎使用 TDesign Starter for Vue, 快速搭建你的项目!
+spline: explain
+---
 
 <p>
 <a href="https://tdesign.tencent.com/starter/vue/" target="_blank">
