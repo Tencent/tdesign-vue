@@ -85,7 +85,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         list.push(CLASS_NAMES.treeCheckable);
       }
       if (transition) {
-        list.push(CLASS_NAMES.treeFx);
+        list.push(CLASS_NAMES.treeTransition);
       }
       if (expandOnClickNode) {
         list.push(CLASS_NAMES.treeBlockNode);
@@ -563,6 +563,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         name={FX.treeNode}
         tag="div"
         class={CLASS_NAMES.treeList}
+        enter-active-class={CLASS_NAMES.treeNodeEnter}
+        leave-active-class={CLASS_NAMES.treeNodeLeave}
       >{treeNodes}</transition-group>
     );
 
