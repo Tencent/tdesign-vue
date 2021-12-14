@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
 import { DiscountIcon } from 'tdesign-icons-vue';
 
 export default {

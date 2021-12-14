@@ -37,29 +37,20 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
     current(): string | number {
       return this.steps && this.steps.current;
     },
-    status$(): string {
-      if (this.status !== 'default') return this.status;
-      // value 不存在时，使用 index 进行区分每一个步骤
-      if (this.value === undefined && this.index < this.current) return 'finish';
-      if (this.value !== undefined && this.index < this.steps.indexMap[this.current]) return 'finish';
-      const key = this.value === undefined ? this.index : this.value;
-      if (key === this.current) return 'process';
-      return 'wait';
-    },
     baseClass(): ClassName {
       return [
         name,
-        { [`${name}--${this.status$}`]: this.status$ },
+        { [`${name}--${this.status}`]: this.status },
       ];
     },
     iconClass(): ClassName {
       return [
         `${name}-icon`,
-        { [`${name}--${this.status$}`]: this.status$ },
+        { [`${name}--${this.status}`]: this.status },
       ];
     },
     canClick(): boolean {
-      return this.status$ !== 'process';
+      return this.status !== 'process';
     },
   },
   mounted() {
@@ -73,7 +64,7 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       let defaultIcon;
       if (this.steps.theme === 'default') {
         let icon: ScopedSlotReturnValue = '';
-        switch (this.status$) {
+        switch (this.status) {
           case 'finish':
             icon = <t-icon-check />;
             break;

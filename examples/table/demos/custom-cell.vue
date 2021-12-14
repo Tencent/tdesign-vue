@@ -15,7 +15,7 @@
     </t-table>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { AttachIcon } from 'tdesign-icons-vue';
 
 export default {

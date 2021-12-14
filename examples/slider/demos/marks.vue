@@ -1,15 +1,15 @@
 <template>
   <div class="demo-slider">
     <div class="block">
-      <t-slider v-model="value1" :show-tooltip="true" :marks="marks1" :inputNumberProps="false" />
+      <t-slider v-model="value1" :show-tooltip="true" :marks="marks1" />
     </div>
 
     <div class="block">
-      <t-slider v-model="value2" range :show-tooltip="true" :marks="marks2" :inputNumberProps="false" />
+      <t-slider v-model="value2" range :show-tooltip="true" :marks="marks2" />
     </div>
   </div>
 </template>
-<script>
+<script lang="jsx">
 export default {
   data() {
     return {

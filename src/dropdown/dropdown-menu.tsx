@@ -4,6 +4,7 @@ import { prefix } from '../config';
 import { TNodeReturnValue } from '../common';
 import { DropdownOption } from './type';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { pxCompat } from '../utils/helper';
 
 const name = `${prefix}-dropdown__menu`;
 export interface DropdownMenuInstance extends Vue {
@@ -43,13 +44,14 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
     },
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
       const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
+      const { maxHeight, maxColumnWidth, minColumnWidth } = this.dropdown;
       return (
         <div
           class={menuClass}
           style={{
-            maxHeight: `${this.dropdown.maxHeight}px`,
-            maxWidth: `${this.dropdown.maxColumnWidth}px`,
-            minWidth: `${this.dropdown.minColumnWidth}px`,
+            maxHeight: `${maxHeight}px`,
+            maxWidth: pxCompat(maxColumnWidth),
+            minWidth: pxCompat(minColumnWidth),
           }}
         >
           {children.map((item, idx) => (

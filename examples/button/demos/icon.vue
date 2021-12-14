@@ -19,7 +19,8 @@
     </t-button>
   </div>
 </template>
-<script>
+
+<script lang="jsx">
 import {
   AddIcon, CloudUploadIcon, SearchIcon, DiscountIcon, CloudDownloadIcon,
 } from 'tdesign-icons-vue';

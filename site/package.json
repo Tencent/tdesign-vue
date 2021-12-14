@@ -1,0 +1,20 @@
+{
+  "name": "tdesign-vue-site",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:preview": "vite build --mode preview"
+  },
+  "dependencies": {
+    "prismjs": "^1.25.0",
+    "tdesign-site-components": "~0.3.7",
+    "vue-router": "^3.5.3"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "vite": "^2.7.0",
+    "vite-plugin-tdoc": "^2.0.1",
+    "vite-plugin-vue2": "^1.9.0"
+  }
+}

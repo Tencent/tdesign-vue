@@ -63,7 +63,7 @@
     </t-form>
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { Icon } from 'tdesign-icons-vue';
 
 const INITIAL_DATA = {

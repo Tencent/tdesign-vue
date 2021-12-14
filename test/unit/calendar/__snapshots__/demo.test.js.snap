@@ -484,6 +484,7 @@ exports[`Calendar base demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -1711,6 +1712,7 @@ exports[`Calendar card demo works fine 1`] = `
             </label>
             <div
               class="t-radio-group-filled-bg-block"
+              style="width: 0px; left: 0px;"
             />
           </div>
         </div>
@@ -2783,6 +2785,7 @@ exports[`Calendar cell demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -3951,6 +3954,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -5300,6 +5304,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             </label>
             <div
               class="t-radio-group-filled-bg-block"
+              style="width: 0px; left: 0px;"
             />
           </div>
         </div>
@@ -6400,6 +6405,7 @@ exports[`Calendar events demo works fine 1`] = `
             </label>
             <div
               class="t-radio-group-filled-bg-block"
+              style="width: 0px; left: 0px;"
             />
           </div>
         </div>
@@ -7640,6 +7646,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             </label>
             <div
               class="t-radio-group-filled-bg-block"
+              style="width: 0px; left: 0px;"
             />
           </div>
         </div>
@@ -8845,6 +8852,7 @@ exports[`Calendar head demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -9867,6 +9875,7 @@ exports[`Calendar mode demo works fine 1`] = `
             </label>
             <div
               class="t-radio-group-filled-bg-block"
+              style="width: 0px; left: 0px;"
             />
           </div>
         </div>
@@ -10497,6 +10506,7 @@ exports[`Calendar range demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -11597,6 +11607,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -12691,6 +12702,7 @@ exports[`Calendar value demo works fine 1`] = `
           </label>
           <div
             class="t-radio-group-filled-bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
       </div>
@@ -13899,6 +13911,7 @@ exports[`Calendar week demo works fine 1`] = `
               </label>
               <div
                 class="t-radio-group-filled-bg-block"
+                style="width: 0px; left: 0px;"
               />
             </div>
           </div>
@@ -15001,6 +15014,7 @@ exports[`Calendar week demo works fine 1`] = `
               </label>
               <div
                 class="t-radio-group-filled-bg-block"
+                style="width: 0px; left: 0px;"
               />
             </div>
           </div>
@@ -16089,6 +16103,7 @@ exports[`Calendar week demo works fine 1`] = `
               </label>
               <div
                 class="t-radio-group-filled-bg-block"
+                style="width: 0px; left: 0px;"
               />
             </div>
           </div>

@@ -29,9 +29,15 @@ export default Vue.extend({
 
   data() {
     return {
-      barStyle: {},
+      barStyle: { width: '0px', left: '0px' },
       observer: null,
     };
+  },
+
+  computed: {
+    checkedClassName() {
+      return `.${radioBtnName}.${CLASSNAMES.STATUS.checked}`;
+    },
   },
 
   render(h: CreateElement): VNode {
@@ -100,16 +106,31 @@ export default Vue.extend({
     handleRadioChange(value: RadioValue, context: { e: Event }) {
       emitEvent<Parameters<TdRadioGroupProps['onChange']>>(this, 'change', value, context);
     },
+    calcDefaultBarStyle() {
+      const defaultNode = this.$el.cloneNode(true);
+      const div = document.createElement('div');
+      div.setAttribute('style', 'position: absolute; visibility: hidden;');
+      div.appendChild(defaultNode);
+      document.body.appendChild(div);
+
+      const defaultCheckedRadio: HTMLElement = div.querySelector(this.checkedClassName);
+      const { offsetWidth, offsetLeft } = defaultCheckedRadio;
+      this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
+      document.body.removeChild(div);
+    },
     calcBarStyle() {
       if (this.buttonStyle !== 'solid' && this.variant === 'outline') return;
 
-      const checkedRadio: HTMLElement = this.$el.querySelector(`.${radioBtnName}.${CLASSNAMES.STATUS.checked}`);
-      if (!checkedRadio) {
-        this.barStyle = { width: 0, left: 0 };
-        return;
-      }
+      const checkedRadio: HTMLElement = this.$el.querySelector(this.checkedClassName);
+      if (!checkedRadio) return;
+
       const { offsetWidth, offsetLeft } = checkedRadio;
-      this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
+      // current node is not rendered，fallback to default render
+      if (!offsetWidth) {
+        this.calcDefaultBarStyle();
+      } else {
+        this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
+      }
     },
   },
 });

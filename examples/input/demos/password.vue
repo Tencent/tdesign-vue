@@ -7,7 +7,7 @@
     <t-input type="password" default-value="520 TDesign" :prefix-icon="renderPrefixIcon" />
   </div>
 </template>
-<script>
+<script lang="jsx">
 import { LockOnIcon } from 'tdesign-icons-vue';
 
 export default {

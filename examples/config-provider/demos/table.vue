@@ -21,7 +21,7 @@
   </t-config-provider>
 </template>
 
-<script>
+<script lang="jsx">
 import { ChevronRightIcon, CaretDownSmallIcon } from 'tdesign-icons-vue';
 
 const columns = [
