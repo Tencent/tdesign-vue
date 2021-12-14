@@ -4977,7 +4977,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
           class="t-select-left-icon"
         >
           <svg
-            class="t-icon t-icon-browse t-size-m"
+            class="t-icon t-icon-browse"
           >
             <use
               href="#t-icon-browse"

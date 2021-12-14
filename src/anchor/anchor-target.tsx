@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import { FileCopyIcon } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import copyText from '../utils/clipboard';
 import Message from '../message/plugin';
 import props from './anchor-target-props';
@@ -37,12 +36,12 @@ export default Vue.extend({
       id,
     } = this;
     const className = [`${COMPONENT_NAME}__target`];
-    const iconClassName = `${prefix}-copy`;
+    const iconClassName = `${COMPONENT_NAME}__copy`;
     return (
       <Tag id={id} class={className}>
         {children && children(null)}
         <t-popup content="复制链接" placement="top" showArrow class={iconClassName}>
-          <file-copy-icon name="file-copy" nativeOnClick={this.copyText} />
+          <file-copy-icon nativeOnClick={this.copyText} />
         </t-popup>
       </Tag>
     );
