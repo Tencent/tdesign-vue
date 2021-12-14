@@ -288,7 +288,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
-    const ctxClass = [`${name}__ctx`, { 't-dialog__ctx--fixed': this.mode === 'modal' }];
+    const ctxClass = [`${name}__ctx`, { [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal' }];
     return (
       <transition
         duration={300}
