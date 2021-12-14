@@ -123,7 +123,7 @@ exports[`Breadcrumb custom demo works fine 1`] = `
       class="t-breadcrumb__separator"
     >
       <svg
-        class="t-icon t-icon-chevron-right t-size-m"
+        class="t-icon t-icon-chevron-right"
       >
         <use
           href="#t-icon-chevron-right"
@@ -149,7 +149,7 @@ exports[`Breadcrumb custom demo works fine 1`] = `
       class="t-breadcrumb__separator"
     >
       <svg
-        class="t-icon t-icon-chevron-right t-size-m"
+        class="t-icon t-icon-chevron-right"
       >
         <use
           href="#t-icon-chevron-right"
@@ -175,7 +175,7 @@ exports[`Breadcrumb custom demo works fine 1`] = `
       class="t-breadcrumb__separator"
     >
       <svg
-        class="t-icon t-icon-chevron-right t-size-m"
+        class="t-icon t-icon-chevron-right"
       >
         <use
           href="#t-icon-chevron-right"
