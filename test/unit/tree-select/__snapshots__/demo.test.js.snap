@@ -1565,7 +1565,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
           class="t-select-left-icon"
         >
           <svg
-            class="t-icon t-icon-user t-size-m"
+            class="t-icon t-icon-user"
           >
             <use
               href="#t-icon-user"
