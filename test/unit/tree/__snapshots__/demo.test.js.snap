@@ -4054,7 +4054,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-folder t-size-m"
+            class="t-icon t-icon-folder"
           >
             <use
               href="#t-icon-folder"
@@ -4083,7 +4083,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-folder t-size-m"
+            class="t-icon t-icon-folder"
           >
             <use
               href="#t-icon-folder"
@@ -4127,7 +4127,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-caret-right t-size-m"
+            class="t-icon t-icon-caret-right"
           >
             <use
               href="#t-icon-caret-right"
@@ -4156,7 +4156,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-caret-right t-size-m"
+            class="t-icon t-icon-caret-right"
           >
             <use
               href="#t-icon-caret-right"
@@ -5422,7 +5422,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5465,7 +5465,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5706,7 +5706,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5758,7 +5758,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5804,7 +5804,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5847,7 +5847,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5932,7 +5932,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -5975,7 +5975,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6014,7 +6014,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6117,7 +6117,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6161,7 +6161,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6411,7 +6411,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6464,7 +6464,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6511,7 +6511,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6555,7 +6555,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6643,7 +6643,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6687,7 +6687,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"
@@ -6727,7 +6727,7 @@ exports[`Tree:demo line demo works fine 1`] = `
               class="custom-line-icon"
             >
               <svg
-                class="t-icon t-icon-heart-filled t-size-m"
+                class="t-icon t-icon-heart-filled"
               >
                 <use
                   href="#t-icon-heart-filled"

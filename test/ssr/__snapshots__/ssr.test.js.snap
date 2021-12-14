@@ -169,7 +169,7 @@ exports[`ssr snapshot test renders ./examples/alert/demos/icon.vue correctly 1`]
     </div>
   </div>
   <div class="t-alert t-alert--warning">
-    <div class="t-alert__icon"><svg class="t-icon t-icon-error-circle-filled t-size-m">
+    <div class="t-alert__icon"><svg class="t-icon t-icon-error-circle-filled">
         <use href="#t-icon-error-circle-filled"></use>
       </svg></div>
     <div class="t-alert__content">
@@ -179,7 +179,7 @@ exports[`ssr snapshot test renders ./examples/alert/demos/icon.vue correctly 1`]
     </div>
   </div>
   <div class="t-alert t-alert--error">
-    <div class="t-alert__icon"><svg class="t-icon t-icon-error-circle-filled t-size-m">
+    <div class="t-alert__icon"><svg class="t-icon t-icon-error-circle-filled">
         <use href="#t-icon-error-circle-filled"></use>
       </svg></div>
     <div class="t-alert__content">
@@ -617,16 +617,16 @@ exports[`ssr snapshot test renders ./examples/breadcrumb/demos/base.vue correctl
 
 exports[`ssr snapshot test renders ./examples/breadcrumb/demos/custom.vue correctly 1`] = `
 <div class="t-breadcrumb">
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right t-size-m"><use href="#t-icon-chevron-right"></use></svg></span></div>
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right t-size-m"><use href="#t-icon-chevron-right"></use></svg></span></div>
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right t-size-m"><use href="#t-icon-chevron-right"></use></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right"><use href="#t-icon-chevron-right"></use></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right"><use href="#t-icon-chevron-right"></use></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3</span></span><span class="t-breadcrumb__separator"><svg class="t-icon t-icon-chevron-right"><use href="#t-icon-chevron-right"></use></svg></span></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/breadcrumb/demos/dropdown.vue correctly 1`] = `
 <div class="t-breadcrumb">
   <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1</span></span><span class="t-breadcrumb__separator">/</span></div>
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2 <svg class="t-icon t-icon-chevron-down t-size-m"><use href="#t-icon-chevron-down"></use></svg></span></span><span class="t-breadcrumb__separator">/</span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2 <svg class="t-icon t-icon-chevron-down"><use href="#t-icon-chevron-down"></use></svg></span></span><span class="t-breadcrumb__separator">/</span></div>
   <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3</span></span><span class="t-breadcrumb__separator">/</span></div>
 </div>
 `;
@@ -646,9 +646,9 @@ exports[`ssr snapshot test renders ./examples/breadcrumb/demos/href.vue correctl
 
 exports[`ssr snapshot test renders ./examples/breadcrumb/demos/icon.vue correctly 1`] = `
 <div class="t-breadcrumb">
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books t-size-m"><use href="#t-icon-books"></use></svg>页面1</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books t-size-m"><use href="#t-icon-books"></use></svg>页面2</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books t-size-m"><use href="#t-icon-books"></use></svg>页面3</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books"><use href="#t-icon-books"></use></svg>页面1</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books"><use href="#t-icon-books"></use></svg>页面2</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+  <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;"><svg class="t-icon t-icon-books"><use href="#t-icon-books"></use></svg>页面3</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
 </div>
 `;
 
@@ -2735,9 +2735,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
               <div class="t-comment__author"><span class="t-comment__name">评论作者名A</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名A写的评论内容。</div>
               <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
                 <li> </li>
-                <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
               </ul>
             </div>
           </div>
@@ -2753,9 +2753,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
               <div class="t-comment__author"><span class="t-comment__name">评论作者名B</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名B写的评论内容。</div>
               <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
                 <li> </li>
-                <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
               </ul>
             </div>
           </div>
@@ -2771,9 +2771,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
               <div class="t-comment__author"><span class="t-comment__name">评论作者名C</span><span class="t-comment__time">今天16:38</span></div>
               <div class="t-comment__detail">评论作者名C写的评论内容。</div>
               <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
                 <li> </li>
-                <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
               </ul>
             </div>
           </div>
@@ -2793,9 +2793,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/operation.vue correc
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
       <ul class="t-comment__actions">
-        <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+        <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
         <li> </li>
-        <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+        <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
       </ul>
     </div>
   </div>
@@ -2820,9 +2820,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/quote.vue correctly 
         </div>
       </div>
       <ul class="t-comment__actions">
-        <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+        <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
         <li> </li>
-        <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+        <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
       </ul>
     </div>
   </div>
@@ -2837,9 +2837,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/reply.vue correctly 
       <div class="t-comment__author"><span class="t-comment__name">评论作者名</span><span class="t-comment__time">今天16:38</span></div>
       <div class="t-comment__detail">这里是评论者写的评论内容。</div>
       <ul class="t-comment__actions">
-        <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+        <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
         <li> </li>
-        <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+        <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
       </ul>
     </div>
   </div>
@@ -2853,9 +2853,9 @@ exports[`ssr snapshot test renders ./examples/comment/demos/reply.vue correctly 
             </svg> <span>评论作者名A</span></span><span class="t-comment__time">今天16:38</span></div>
           <div class="t-comment__detail">这里是评论者写的评论内容。</div>
           <ul class="t-comment__actions">
-            <li><span><svg class="t-icon t-icon-thumb-up t-size-m"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+            <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
             <li> </li>
-            <li><span><svg class="t-icon t-icon-chat t-size-m"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+            <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
           </ul>
         </div>
       </div>
@@ -4845,16 +4845,16 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/icon/demos/base.vue correctly 1`] = `
 <div class="t-demo-iconfont">
-  <div class="t-demo-row"><svg class="t-icon t-icon-loading t-size-m" style="color:#999999;">
+  <div class="t-demo-row"><svg class="t-icon t-icon-loading" style="color:#999999;">
       <use href="#t-icon-loading"></use>
-    </svg> <svg class="t-icon t-icon-close t-size-m">
+    </svg> <svg class="t-icon t-icon-close">
       <use href="#t-icon-close"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-m">
+    </svg> <svg class="t-icon t-icon-check-circle-filled">
       <use href="#t-icon-check-circle-filled"></use>
     </svg></div> <br>
   <div class="t-demo-row"><svg class="t-icon t-icon-check-circle-filled t-size-s">
       <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-m">
+    </svg> <svg class="t-icon t-icon-check-circle-filled">
       <use href="#t-icon-check-circle-filled"></use>
     </svg> <svg class="t-icon t-icon-check-circle-filled" style="font-size:medium;">
       <use href="#t-icon-check-circle-filled"></use>
@@ -4865,11 +4865,11 @@ exports[`ssr snapshot test renders ./examples/icon/demos/base.vue correctly 1`] 
     </svg> <svg class="t-icon t-icon-check-circle-filled" style="font-size:2em;">
       <use href="#t-icon-check-circle-filled"></use>
     </svg></div> <br>
-  <div class="t-demo-row"><svg class="t-icon t-icon-check-circle-filled t-size-m" style="color:red;">
+  <div class="t-demo-row"><svg class="t-icon t-icon-check-circle-filled" style="color:red;">
       <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-m" style="color:green;">
+    </svg> <svg class="t-icon t-icon-check-circle-filled" style="color:green;">
       <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-m" style="color:orange;">
+    </svg> <svg class="t-icon t-icon-check-circle-filled" style="color:orange;">
       <use href="#t-icon-check-circle-filled"></use>
     </svg></div>
 </div>
@@ -4877,7 +4877,7 @@ exports[`ssr snapshot test renders ./examples/icon/demos/base.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./examples/icon/demos/enhanced.vue correctly 1`] = `
 <div class="t-demo-iconfont">
-  <div><svg class="t-icon t-icon-cps-icon-home-sheep t-size-m">
+  <div><svg class="t-icon t-icon-cps-icon-home-sheep">
       <use href="#cps-icon-home-sheep"></use>
     </svg> <svg class="t-icon t-icon-cps-icon-home-sheep" style="font-size:medium;">
       <use href="#cps-icon-home-sheep"></use>
@@ -4888,13 +4888,13 @@ exports[`ssr snapshot test renders ./examples/icon/demos/enhanced.vue correctly 
     </svg> <svg class="t-icon t-icon-cps-icon-home-sheep" style="font-size:2em;">
       <use href="#cps-icon-home-sheep"></use>
     </svg></div><br>
-  <div><svg class="t-icon t-icon-cps-icon-home-sheep t-size-m" style="color:red;">
+  <div><svg class="t-icon t-icon-cps-icon-home-sheep" style="color:red;">
       <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon t-icon-cps-icon-home-sheep t-size-m" style="color:green;">
+    </svg> <svg class="t-icon t-icon-cps-icon-home-sheep" style="color:green;">
       <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon t-icon-cps-icon-home-sheep t-size-m" style="color:orange;">
+    </svg> <svg class="t-icon t-icon-cps-icon-home-sheep" style="color:orange;">
       <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon t-icon-t-icon-home t-size-m">
+    </svg> <svg class="t-icon t-icon-t-icon-home">
       <use href="#t-icon-home"></use>
     </svg></div>
 </div>
@@ -4902,16 +4902,16 @@ exports[`ssr snapshot test renders ./examples/icon/demos/enhanced.vue correctly 
 
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont.vue correctly 1`] = `
 <div class="t-demo-iconfont">
-  <div class="t-demo-row"><i class="t-icon t-icon-loading t-size-m"></i> <i class="t-icon t-icon-close t-size-m"></i> <i class="t-icon t-icon-check-circle-filled t-size-m"></i></div> <br>
-  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled t-size-s"></i> <i class="t-icon t-icon-check-circle-filled t-size-m"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:medium;"></i> <i class="t-icon t-icon-check-circle-filled t-size-l"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:25px;"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:2em;"></i></div> <br>
-  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled t-size-m" style="color:red;"></i> <i class="t-icon t-icon-check-circle-filled t-size-m" style="color:green;"></i> <i class="t-icon t-icon-check-circle-filled t-size-m" style="color:orange;"></i></div>
+  <div class="t-demo-row"><i class="t-icon t-icon-loading"></i> <i class="t-icon t-icon-close"></i> <i class="t-icon t-icon-check-circle-filled"></i></div> <br>
+  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled t-size-s"></i> <i class="t-icon t-icon-check-circle-filled"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:medium;"></i> <i class="t-icon t-icon-check-circle-filled t-size-l"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:25px;"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:2em;"></i></div> <br>
+  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled" style="color:red;"></i> <i class="t-icon t-icon-check-circle-filled" style="color:green;"></i> <i class="t-icon t-icon-check-circle-filled" style="color:orange;"></i></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont-enhanced.vue correctly 1`] = `
 <div class="t-demo-iconfont">
-  <div><i class="t-icon cps-icon cps-icon-home-sheep t-size-m"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:medium;"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-l"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:25px;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div><br>
-  <div><i class="t-icon cps-icon cps-icon-home-sheep t-size-m" style="color:red;"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-m" style="color:green;"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-m" style="color:orange;"></i> <i class="t-icon t-icon-home t-size-m"></i></div> <br>
+  <div><i class="t-icon cps-icon cps-icon-home-sheep"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:medium;"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-l"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:25px;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div><br>
+  <div><i class="t-icon cps-icon cps-icon-home-sheep" style="color:red;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="color:green;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="color:orange;"></i> <i class="t-icon t-icon-home"></i></div> <br>
 </div>
 `;
 
@@ -5173,39 +5173,39 @@ exports[`ssr snapshot test renders ./examples/layout/demos/aside.vue correctly 1
         <div class="t-default-menu__inner">
           <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" class="t-menu__logo--center"></div>
           <ul class="t-menu t-menu--scroll narrow-scrollbar">
-            <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard t-size-m">
+            <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
                 <use href="#t-icon-dashboard"></use>
               </svg><span class="t-menu__content">仪表盘
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-server t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-server">
                 <use href="#t-icon-server"></use>
               </svg><span class="t-menu__content">资源列表
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
                 <use href="#t-icon-root-list"></use>
               </svg><span class="t-menu__content">根目录
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-control-platform t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
                 <use href="#t-icon-control-platform"></use>
               </svg><span class="t-menu__content">调度平台
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
                 <use href="#t-icon-precise-monitor"></use>
               </svg><span class="t-menu__content">精准监控
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-mail t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-mail">
                 <use href="#t-icon-mail"></use>
               </svg><span class="t-menu__content">消息区
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
                 <use href="#t-icon-user-circle"></use>
               </svg><span class="t-menu__content">个人中心
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
                 <use href="#t-icon-play-circle"></use>
               </svg><span class="t-menu__content">视频区
         </span></li>
-            <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+            <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
                 <use href="#t-icon-edit-1"></use>
               </svg><span class="t-menu__content">资源编辑
         </span></li>
@@ -5278,11 +5278,11 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
             <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
             <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
           </ul>
-          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
                 <use href="#t-icon-search"></use>
-              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-size-m t-menu__operations-icon">
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-menu__operations-icon">
                 <use href="#t-icon-notification-filled"></use>
-              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-size-m t-menu__operations-icon">
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-menu__operations-icon">
                 <use href="#t-icon-home"></use>
               </svg></a></div>
         </div>
@@ -5293,39 +5293,39 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
         <div height="550px" class="t-default-menu t-menu-mode__normal t-menu--light" style="height:100%;width:232px;margin-right:50px;">
           <div class="t-default-menu__inner">
             <ul class="t-menu t-menu--scroll narrow-scrollbar">
-              <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard t-size-m">
+              <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
                   <use href="#t-icon-dashboard"></use>
                 </svg><span class="t-menu__content">仪表盘
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-server t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-server">
                   <use href="#t-icon-server"></use>
                 </svg><span class="t-menu__content">资源列表
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
                   <use href="#t-icon-root-list"></use>
                 </svg><span class="t-menu__content">根目录
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-control-platform t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
                   <use href="#t-icon-control-platform"></use>
                 </svg><span class="t-menu__content">调度平台
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
                   <use href="#t-icon-precise-monitor"></use>
                 </svg><span class="t-menu__content">精准监控
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-mail t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-mail">
                   <use href="#t-icon-mail"></use>
                 </svg><span class="t-menu__content">消息区
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
                   <use href="#t-icon-user-circle"></use>
                 </svg><span class="t-menu__content">个人中心
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
                   <use href="#t-icon-play-circle"></use>
                 </svg><span class="t-menu__content">视频区
           </span></li>
-              <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+              <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
                   <use href="#t-icon-edit-1"></use>
                 </svg><span class="t-menu__content">资源编辑
           </span></li>
@@ -5357,11 +5357,11 @@ exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`]
             <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
             <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
           </ul>
-          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+          <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
                 <use href="#t-icon-search"></use>
-              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-size-m t-menu__operations-icon">
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-notification-filled t-menu__operations-icon">
                 <use href="#t-icon-notification-filled"></use>
-              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-size-m t-menu__operations-icon">
+              </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-home t-menu__operations-icon">
                 <use href="#t-icon-home"></use>
               </svg></a></div>
         </div>
@@ -5989,13 +5989,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/closable-side.vue corre
   <div class="t-default-menu__inner">
     <div class="t-menu__logo"><span>LOGO</span></div>
     <ul class="t-menu narrow-scrollbar">
-      <li class="t-menu__item"><svg class="t-icon t-icon-dashboard t-size-m">
+      <li class="t-menu__item"><svg class="t-icon t-icon-dashboard">
           <use href="#t-icon-dashboard"></use>
         </svg><span class="t-menu__content">
     仪表盘1
   </span></li>
       <li mode="popup" class="t-submenu">
-        <div class="t-menu__item"><svg class="t-icon t-icon-mail t-size-m">
+        <div class="t-menu__item"><svg class="t-icon t-icon-mail">
             <use href="#t-icon-mail"></use>
           </svg><span class="t-menu__content"><span>信息区</span></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow" style="transform:rotate(0deg);">
             <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6008,18 +6008,18 @@ exports[`ssr snapshot test renders ./examples/menu/demos/closable-side.vue corre
           </ul>
         </div>
       </li>
-      <li class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+      <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
           <use href="#t-icon-play-circle"></use>
         </svg><span class="t-menu__content">
     视频区
   </span></li>
-      <li class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-edit-1 t-size-m">
+      <li class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-edit-1">
           <use href="#t-icon-edit-1"></use>
         </svg><span class="t-menu__content">
     资源编辑
   </span></li>
     </ul>
-    <div class="t-menu__operations"><svg class="t-icon t-icon-chevron-right t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><svg class="t-icon t-icon-chevron-right t-menu__operations-icon">
         <use href="#t-icon-chevron-right"></use>
       </svg></div>
   </div>
@@ -6079,13 +6079,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/double.vue correctly 1`
           </ul>
         </li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6111,13 +6111,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/double.vue correctly 1`
           </ul>
         </li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6146,7 +6146,7 @@ exports[`ssr snapshot test renders ./examples/menu/demos/group-side.vue correctl
         <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容</span></li>
       </div>
     </ul>
-    <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-menu__operations-icon">
         <use href="#t-icon-view-list"></use>
       </svg></div>
   </div>
@@ -6163,13 +6163,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/head-menu-dark.vue corr
       <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
       <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
     </ul>
-    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
           <use href="#t-icon-search"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
           <use href="#t-icon-mail"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
           <use href="#t-icon-user"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
           <use href="#t-icon-ellipsis"></use>
         </svg></a></div>
   </div>
@@ -6199,13 +6199,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/head-menu-mode-tile.vue
       <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单内容二</span></li>
       <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单内容三</span></li>
     </ul>
-    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
           <use href="#t-icon-search"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
           <use href="#t-icon-mail"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
           <use href="#t-icon-user"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
           <use href="#t-icon-ellipsis"></use>
         </svg></a></div>
   </div>
@@ -6258,13 +6258,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/head-menu-tile.vue corr
     </li></span></li>
     <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">菜单4</span></li>
     </ul>
-    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
           <use href="#t-icon-search"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
           <use href="#t-icon-mail"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
           <use href="#t-icon-user"></use>
-        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+        </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
           <use href="#t-icon-ellipsis"></use>
         </svg></a></div>
   </div>
@@ -6277,7 +6277,7 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
     <div class="t-default-menu__inner">
       <ul class="t-menu t-menu--scroll narrow-scrollbar">
         <li class="t-submenu t-is-opened">
-          <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-mail t-size-m">
+          <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-mail">
               <use href="#t-icon-mail"></use>
             </svg><span class="t-menu__content">消息区</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-fake-arrow--active" style="transform:rotate(0deg);">
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6308,13 +6308,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
             <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">二级菜单内容</span></li>
           </ul>
         </li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
             <use href="#t-icon-user-circle"></use>
           </svg><span class="t-menu__content">
       个人中心
     </span></li>
         <li class="t-submenu t-is-disabled">
-          <div class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-play-circle t-size-m">
+          <div class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-play-circle">
               <use href="#t-icon-play-circle"></use>
             </svg><span class="t-menu__content">视频区</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow" style="transform:rotate(0deg);">
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6325,13 +6325,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
             <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">二级菜单内容</span></li>
           </ul>
         </li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
             <use href="#t-icon-edit-1"></use>
           </svg><span class="t-menu__content">
       资源编辑
     </span></li>
       </ul>
-      <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-menu__operations-icon">
           <use href="#t-icon-view-list"></use>
         </svg></div>
     </div>
@@ -6339,23 +6339,23 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
   <div height="550px" class="t-default-menu t-menu-mode__normal t-menu--dark" style="height:100%;width:232px;margin-left:40px;">
     <div class="t-default-menu__inner">
       <ul class="t-menu t-menu--scroll narrow-scrollbar">
-        <li class="t-menu__item"><svg class="t-icon t-icon-dashboard t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-dashboard">
             <use href="#t-icon-dashboard"></use>
           </svg><span class="t-menu__content">
       仪表盘
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-server t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-server">
             <use href="#t-icon-server"></use>
           </svg><span class="t-menu__content">
       资源列表
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
             <use href="#t-icon-root-list"></use>
           </svg><span class="t-menu__content">
       根目录
     </span></li>
         <li class="t-submenu t-is-opened">
-          <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-control-platform t-size-m">
+          <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-control-platform">
               <use href="#t-icon-control-platform"></use>
             </svg><span class="t-menu__content">调度平台</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-fake-arrow--active" style="transform:rotate(0deg);">
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6366,13 +6366,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
             <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">二级菜单内容</span></li>
           </ul>
         </li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
             <use href="#t-icon-precise-monitor"></use>
           </svg><span class="t-menu__content">
       精准监控
     </span></li>
         <li class="t-submenu t-is-disabled">
-          <div class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-mail t-size-m">
+          <div class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-mail">
               <use href="#t-icon-mail"></use>
             </svg><span class="t-menu__content">消息区</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow" style="transform:rotate(0deg);">
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6383,13 +6383,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
             <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">二级菜单内容</span></li>
           </ul>
         </li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
             <use href="#t-icon-user-circle"></use>
           </svg><span class="t-menu__content">
       个人中心
     </span></li>
         <li class="t-submenu">
-          <div class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+          <div class="t-menu__item"><svg class="t-icon t-icon-play-circle">
               <use href="#t-icon-play-circle"></use>
             </svg><span class="t-menu__content">视频区</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow" style="transform:rotate(0deg);">
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6400,13 +6400,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multi-side.vue correctl
             <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">二级菜单内容</span></li>
           </ul>
         </li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
             <use href="#t-icon-edit-1"></use>
           </svg><span class="t-menu__content">
       资源编辑
     </span></li>
       </ul>
-      <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-menu__operations-icon">
           <use href="#t-icon-view-list"></use>
         </svg></div>
     </div>
@@ -6469,13 +6469,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multiple.vue correctly 
           </div>
         </li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6509,13 +6509,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/multiple.vue correctly 
           </div>
         </li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6528,13 +6528,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/popup-side.vue correctl
   <div class="t-default-menu__inner">
     <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"></div>
     <ul class="t-menu t-menu--scroll narrow-scrollbar">
-      <li class="t-menu__item"><svg class="t-icon t-icon-dashboard t-size-m">
+      <li class="t-menu__item"><svg class="t-icon t-icon-dashboard">
           <use href="#t-icon-dashboard"></use>
         </svg><span class="t-menu__content">
     仪表盘
   </span></li>
       <li class="t-submenu t-is-opened">
-        <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-user-circle t-size-m">
+        <div class="t-menu__item t-is-opened"><svg class="t-icon t-icon-user-circle">
             <use href="#t-icon-user-circle"></use>
           </svg><span class="t-menu__content"><span>个人中心</span></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-fake-arrow--active" style="transform:rotate(0deg);">
             <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6546,7 +6546,7 @@ exports[`ssr snapshot test renders ./examples/menu/demos/popup-side.vue correctl
         </ul>
       </li>
       <li class="t-submenu">
-        <div class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+        <div class="t-menu__item"><svg class="t-icon t-icon-root-list">
             <use href="#t-icon-root-list"></use>
           </svg><span class="t-menu__content"><span>根目录</span></span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow" style="transform:rotate(0deg);">
             <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
@@ -6557,13 +6557,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/popup-side.vue correctl
           <li class="t-menu__item t-menu__item--plain t-submenu__item t-submenu__item--icon"><span class="t-menu__content">子菜单内容三</span></li>
         </ul>
       </li>
-      <li class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-server t-size-m">
+      <li class="t-menu__item t-is-disabled"><svg class="t-icon t-icon-server">
           <use href="#t-icon-server"></use>
         </svg><span class="t-menu__content">
     资源列表
   </span></li>
     </ul>
-    <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-size-m t-menu__operations-icon">
+    <div class="t-menu__operations"><svg class="t-icon t-icon-view-list t-menu__operations-icon">
         <use href="#t-icon-view-list"></use>
       </svg></div>
   </div>
@@ -6594,13 +6594,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/single.vue correctly 1`
         <li class="t-menu__item t-is-active t-menu__item--plain"><span class="t-menu__content">菜单2</span></li>
         <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">禁用菜单</span></li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6613,13 +6613,13 @@ exports[`ssr snapshot test renders ./examples/menu/demos/single.vue correctly 1`
         <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">菜单2</span></li>
         <li class="t-menu__item t-is-disabled t-menu__item--plain"><span class="t-menu__content">禁用菜单</span></li>
       </ul>
-      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-size-m t-menu__operations-icon">
+      <div class="t-menu__operations"><a href="javascript:;"><svg class="t-icon t-icon-search t-menu__operations-icon">
             <use href="#t-icon-search"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-mail t-menu__operations-icon">
             <use href="#t-icon-mail"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-user t-menu__operations-icon">
             <use href="#t-icon-user"></use>
-          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-size-m t-menu__operations-icon">
+          </svg></a> <a href="javascript:;"><svg class="t-icon t-icon-ellipsis t-menu__operations-icon">
             <use href="#t-icon-ellipsis"></use>
           </svg></a></div>
     </div>
@@ -6649,47 +6649,47 @@ exports[`ssr snapshot test renders ./examples/menu/demos/single-side.vue correct
     <div class="t-default-menu__inner">
       <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo"></div>
       <ul class="t-menu t-menu--scroll narrow-scrollbar">
-        <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard t-size-m">
+        <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
             <use href="#t-icon-dashboard"></use>
           </svg><span class="t-menu__content">
       仪表盘
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-server t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-server">
             <use href="#t-icon-server"></use>
           </svg><span class="t-menu__content">
       资源列表
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
             <use href="#t-icon-root-list"></use>
           </svg><span class="t-menu__content">
       根目录
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-control-platform t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
             <use href="#t-icon-control-platform"></use>
           </svg><span class="t-menu__content">
       调度平台
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
             <use href="#t-icon-precise-monitor"></use>
           </svg><span class="t-menu__content">
       精准监控
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-mail t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-mail">
             <use href="#t-icon-mail"></use>
           </svg><span class="t-menu__content">
       消息区
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
             <use href="#t-icon-user-circle"></use>
           </svg><span class="t-menu__content">
       个人中心
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
             <use href="#t-icon-play-circle"></use>
           </svg><span class="t-menu__content">
       视频区
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
             <use href="#t-icon-edit-1"></use>
           </svg><span class="t-menu__content">
       资源编辑
@@ -6701,47 +6701,47 @@ exports[`ssr snapshot test renders ./examples/menu/demos/single-side.vue correct
     <div class="t-default-menu__inner">
       <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo"></div>
       <ul class="t-menu t-menu--scroll narrow-scrollbar">
-        <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard t-size-m">
+        <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
             <use href="#t-icon-dashboard"></use>
           </svg><span class="t-menu__content">
       仪表盘
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-server t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-server">
             <use href="#t-icon-server"></use>
           </svg><span class="t-menu__content">
       资源列表
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-root-list t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
             <use href="#t-icon-root-list"></use>
           </svg><span class="t-menu__content">
       根目录
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-control-platform t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
             <use href="#t-icon-control-platform"></use>
           </svg><span class="t-menu__content">
       调度平台
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
             <use href="#t-icon-precise-monitor"></use>
           </svg><span class="t-menu__content">
       精准监控
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-mail t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-mail">
             <use href="#t-icon-mail"></use>
           </svg><span class="t-menu__content">
       消息区
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
             <use href="#t-icon-user-circle"></use>
           </svg><span class="t-menu__content">
       个人中心
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-play-circle t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
             <use href="#t-icon-play-circle"></use>
           </svg><span class="t-menu__content">
       视频区
     </span></li>
-        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1 t-size-m">
+        <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
             <use href="#t-icon-edit-1"></use>
           </svg><span class="t-menu__content">
       资源编辑
@@ -8806,7 +8806,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/prefix.vue correctly 
   <div class="t-select-wrap" style="width:200px;">
     <div class="t-popup-reference t-select-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><svg class="t-icon t-icon-browse t-size-m"><use href="#t-icon-browse"></use></svg></span><span class="t-select-placeholder"> -请选择-</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
+      <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><svg class="t-icon t-icon-browse"><use href="#t-icon-browse"></use></svg></span><span class="t-select-placeholder"> -请选择-</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -14430,15 +14430,15 @@ exports[`ssr snapshot test renders ./examples/tree/demos/icon.vue correctly 1`] 
   <h3>render:</h3>
   <div class="t-tree t-tree--hoverable t-tree--fx">
     <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-      <div data-value="t157" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder t-size-m"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t158" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder t-size-m"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t157" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t158" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
     </transition-group-stub>
   </div>
   <h3>scope slot:</h3>
   <div class="t-tree t-tree--hoverable t-tree--fx">
     <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-      <div data-value="t159" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right t-size-m"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t160" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right t-size-m"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t159" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t160" data-level="0" class="t-tree__item" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -14564,14 +14564,14 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span>
         </div>
         <div data-value="1.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span>
@@ -14598,28 +14598,28 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="2.1.1.1.1" data-level="4" class="t-tree__item t-tree__item--open" style="--level:4;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.1.1.1</span></span>
         </div>
         <div data-value="2.1.1.1.2" data-level="4" class="t-tree__item t-tree__item--open" style="--level:4;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.1.1.2</span></span>
         </div>
         <div data-value="2.1.2" data-level="2" class="t-tree__item t-tree__item--open" style="--level:2;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.2</span></span>
         </div>
         <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span>
@@ -14631,21 +14631,21 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="3.1" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">3.1</span></span>
         </div>
         <div data-value="3.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">3.2</span></span>
         </div>
         <div data-value="4" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"></div><i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">4</span></span>
@@ -14663,14 +14663,14 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span>
         </div>
         <div data-value="1.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span>
@@ -14701,28 +14701,28 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="2.1.1.1.1" data-level="4" class="t-tree__item t-tree__item--open" style="--level:4;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.1.1.1</span></span>
         </div>
         <div data-value="2.1.1.1.2" data-level="4" class="t-tree__item t-tree__item--open" style="--level:4;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.1.1.2</span></span>
         </div>
         <div data-value="2.1.2" data-level="2" class="t-tree__item t-tree__item--open" style="--level:2;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1.2</span></span>
         </div>
         <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span>
@@ -14735,21 +14735,21 @@ exports[`ssr snapshot test renders ./examples/tree/demos/line.vue correctly 1`] 
         </div>
         <div data-value="3.1" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-first custom-line-leaf">
-            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">3.1</span></span>
         </div>
         <div data-value="3.2" data-level="1" class="t-tree__item t-tree__item--open" style="--level:1;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"><span></span></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">3.2</span></span>
         </div>
         <div data-value="4" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;">
           <div class="custom-line custom-line-leaf custom-line-last">
-            <div class="custom-line-box"></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled t-size-m">
+            <div class="custom-line-box"></div> <i class="custom-line-icon"><svg class="t-icon t-icon-heart-filled">
                 <use href="#t-icon-heart-filled"></use>
               </svg></i>
           </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">4</span></span>
@@ -14841,9 +14841,9 @@ exports[`ssr snapshot test renders ./examples/tree/demos/state.vue correctly 1`]
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">插入一个根节点</span></button></div>
   <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx">
     <transition-group-stub tag="div" name="t-tree-toggle" class="t-tree__list">
-      <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file t-size-m"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="node1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node1</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
+      <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="node1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node1</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
   </div>
-  <div data-value="node2" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file t-size-m"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="node2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node2</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
+  <div data-value="node2" data-level="0" class="t-tree__item t-tree__item--open" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="node2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node2</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
 </div>
 </transition-group-stub>
 </div>
@@ -15017,7 +15017,7 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/prefix.vue corre
   <div>
     <div class="t-popup-reference t-select-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><svg class="t-icon t-icon-user t-size-m"><use href="#t-icon-user"></use></svg></span><span class="t-select-placeholder">请输入</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+      <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><svg class="t-icon t-icon-user"><use href="#t-icon-user"></use></svg></span><span class="t-select-placeholder">请输入</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
         <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
