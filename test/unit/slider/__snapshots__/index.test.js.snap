@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slider :props  1`] = `
-<div class="t-slider-contianer" aria-valuetext="0">
+<div class="t-slider-container" aria-valuetext="0">
   <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
     <div class="t-slider__rail">
       <div class="t-slider__track" style="width: 0%; left: 0%;"></div>
@@ -22,7 +22,7 @@ exports[`Slider :props  1`] = `
 `;
 
 exports[`Slider [marks] render right 1`] = `
-<div class="t-slider-contianer" aria-valuetext="2">
+<div class="t-slider-container" aria-valuetext="2">
   <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
     <div class="t-slider__rail show-input">
       <div class="t-slider__track" style="width: 2%; left: 0%;"></div>
@@ -53,7 +53,7 @@ exports[`Slider [marks] render right 1`] = `
       </div>
     </div>
   </div>
-  <div class="t-slider-input-container">
+  <div class="t-slider__input-container">
     <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size: medium;">
           <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
         </svg></button>
@@ -66,8 +66,8 @@ exports[`Slider [marks] render right 1`] = `
 `;
 
 exports[`Slider [vertical-marks] render right 1`] = `
-<div class="t-slider-contianer is-vertical" aria-valuetext="30-70">
-  <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider-vertical">
+<div class="t-slider-container is-vertical" aria-valuetext="30-70">
+  <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
     <div class="t-slider__rail" style="height: 100%;">
       <div class="t-slider__track" style="height: 40%; bottom: 30%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 30%;">
