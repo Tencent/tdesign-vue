@@ -12,12 +12,14 @@
       checkable
       :expand-on-click-node="false"
       line
+      :label="label"
       :icon="icon"
       ref="tree"
     >
       <template #operations="{node}">
         <div class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
+          <t-button size="small" variant="base" @click="changeTime(node)">变更时间</t-button>
           <t-button size="small" variant="base" @click="changeIcon(node)">变更图标</t-button>
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
@@ -32,32 +34,22 @@ import { Icon } from 'tdesign-icons-vue';
 
 export default {
   data() {
+    const timeStamp = Date.now();
     return {
       index: 2,
       useActived: false,
       expandParent: true,
-      filterText: '',
-      filterByText: null,
       // icon 要先预置到节点中，才能触发视图更新
       items: [{
         icon: '',
-        label: 'node1',
         value: 'node1',
+        timeStamp,
       }, {
         icon: '',
-        label: 'node2',
         value: 'node2',
+        timeStamp,
       }],
     };
-  },
-  computed: {
-    btnSetActivedVariant() {
-      let variant = 'outline';
-      if (this.useActived) {
-        variant = 'base';
-      }
-      return variant;
-    },
   },
   methods: {
     icon(createElement, node) {
@@ -75,14 +67,18 @@ export default {
       }
       return <Icon name={name}/>;
     },
+    label(createElement, node) {
+      return `${node.value}: ${node.data.timeStamp}`;
+    },
     getInsertItem() {
       let item = null;
       this.index += 1;
       const value = `t${this.index}`;
+      const timeStamp = Date.now();
       item = {
         icon: '',
-        label: value,
         value,
+        timeStamp,
       };
       return item;
     },
@@ -105,9 +101,14 @@ export default {
       // 需要自定义视图的数据，如果较多，可以存放到 data 里面
       data.icon = data.icon === 'folder' ? 'folder-open' : 'folder';
     },
+    changeTime(node) {
+      const timeStamp = Date.now();
+      node.setData({
+        timeStamp,
+      });
+    },
     remove(node) {
-      const { tree } = this.$refs;
-      tree.remove(node.value);
+      node.remove();
     },
   },
 };

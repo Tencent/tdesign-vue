@@ -47,6 +47,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
         [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
         [CLASS_NAMES.disabled]: node.isDisabled(),
       });
+      if (node.visible) {
+        list.push(CLASS_NAMES.treeNodeVisible);
+      } else {
+        list.push(CLASS_NAMES.treeNodeHidden);
+      }
       return list;
     },
     renderLine(createElement: CreateElement): VNode {

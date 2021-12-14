@@ -184,16 +184,14 @@ describe('Tree:expand', () => {
       });
       await delay(10);
 
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(true);
-      expect(
-        wrapper
-          .find('[data-value="t2.1"]')
-          .exists(),
-      ).toBe(false);
+      const t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(true);
+
+      const t2d1 = wrapper.find('[data-value="t2.1"]');
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(false);
+      expect(t2d1.classes('t-tree__item--hidden')).toBe(true);
     });
   });
 
@@ -308,16 +306,12 @@ describe('Tree:expand', () => {
 
       await delay(10);
 
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(false);
-      expect(
-        wrapper
-          .find('[data-value="t2.1"]')
-          .exists(),
-      ).toBe(true);
+      let t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(false);
+
+      const t2d1 = wrapper.find('[data-value="t2.1"]');
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(true);
 
       await wrapper
         .find('[data-value="t1"] .t-tree__icon')
@@ -325,16 +319,20 @@ describe('Tree:expand', () => {
 
       await delay(10);
 
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(true);
-      expect(
-        wrapper
-          .find('[data-value="t2.1"]')
-          .exists(),
-      ).toBe(false);
+      t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(true);
+      expect(t1d1.classes('t-tree__item--hidden')).toBe(false);
+
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(false);
+      expect(t2d1.classes('t-tree__item--hidden')).toBe(true);
+
+      let t1d1d1 = wrapper.find('[data-value="t1.1.1"]');
+      expect(t1d1d1.exists()).toBe(false);
+
+      let t1d2d1 = wrapper.find('[data-value="t1.2.1"]');
+      expect(t1d1d1.exists()).toBe(false);
 
       await wrapper
         .find('[data-value="t1.2"] .t-tree__icon')
@@ -342,16 +340,12 @@ describe('Tree:expand', () => {
 
       await delay(10);
 
-      expect(
-        wrapper
-          .find('[data-value="t1.1.1"]')
-          .exists(),
-      ).toBe(false);
-      expect(
-        wrapper
-          .find('[data-value="t1.2.1"]')
-          .exists(),
-      ).toBe(true);
+      t1d1d1 = wrapper.find('[data-value="t1.1.1"]');
+      expect(t1d1d1.exists()).toBe(false);
+
+      t1d2d1 = wrapper.find('[data-value="t1.2.1"]');
+      expect(t1d2d1.exists()).toBe(true);
+      expect(t1d2d1.classes('t-tree__item--visible')).toBe(true);
 
       await wrapper
         .find('[data-value="t1.1"] .t-tree__icon')
@@ -359,16 +353,10 @@ describe('Tree:expand', () => {
 
       await delay(10);
 
-      expect(
-        wrapper
-          .find('[data-value="t1.1.1"]')
-          .exists(),
-      ).toBe(true);
-      expect(
-        wrapper
-          .find('[data-value="t1.2.1"]')
-          .exists(),
-      ).toBe(false);
+      t1d1d1 = wrapper.find('[data-value="t1.1.1"]');
+      expect(t1d1d1.exists()).toBe(true);
+      expect(t1d1d1.classes('t-tree__item--visible')).toBe(true);
+      expect(t1d2d1.classes('t-tree__item--visible')).toBe(false);
     });
   });
 
@@ -426,11 +414,10 @@ describe('Tree:expand', () => {
         .find('[data-value="t1"] .t-tree__icon')
         .trigger('click');
       await delay(10);
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(false);
+      const t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(false);
+      expect(t1d1.classes('t-tree__item--hidden')).toBe(true);
     });
 
     it('默认点击父节点本身不会触发展开子节点', async () => {
