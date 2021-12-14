@@ -143,7 +143,7 @@ export default mixins(cascaderGglobalConfig).extend({
       const content = !showPlaceholder ? (
         this.InnerContent()
       ) : (
-        <span class={`${prefix}-cascader-placeholder`}>{placeholder || this.t(this.global.placeholder)}</span>
+        <span class={`${prefix}-cascader__placeholder`}>{placeholder || this.t(this.global.placeholder)}</span>
       );
       return content;
     },
@@ -172,7 +172,7 @@ export default mixins(cascaderGglobalConfig).extend({
       const { onFocus, onBlur, onRemove } = listeners as InputContentProps['listeners'];
 
       const renderSelfTag = (node: TreeNode, index: number) => <Tag
-          closable
+          closable={!disabled}
           key={index}
           disabled={disabled}
           onClose={(ctx: any) => {
@@ -192,7 +192,7 @@ export default mixins(cascaderGglobalConfig).extend({
       };
 
       const generalContent = !multiple ? (
-        <span class={`${prefix}-cascader-content`}>{singleContent}</span>
+        <span class={`${prefix}-cascader__content`}>{singleContent}</span>
       ) : (
         <span>
           {minCollapsedNum > 0 && multipleContent.length > minCollapsedNum ? (
