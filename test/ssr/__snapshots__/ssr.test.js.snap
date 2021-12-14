@@ -8904,7 +8904,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div class="t-slider-container">
+    <div class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8919,7 +8919,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
     </div>
   </div>
   <div class="block">
-    <div class="t-slider-container">
+    <div class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" tooltip-props="[object Object]" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8945,7 +8945,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8960,7 +8960,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8987,7 +8987,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
 <div>
   <div class="demo-slider">
     <div class="block">
-      <div show-tooltip="true" class="t-slider-container">
+      <div show-tooltip="true" class="t-slider__container">
         <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9000,7 +9000,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           </div>
         </div>
         <div class="t-slider__input-container">
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9011,7 +9011,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
       </div>
     </div>
     <div class="block">
-      <div show-tooltip="true" class="t-slider-container">
+      <div show-tooltip="true" class="t-slider__container">
         <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9030,15 +9030,15 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           </div>
         </div>
         <div class="t-slider__input-container">
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
                 <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
               </svg></button>
           </div>
-          <div class="t-slider__center-liner"></div>
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+          <div class="t-slider__center-line"></div>
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9055,7 +9055,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
 exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="number-vertical-block">
-    <div show-tooltip="true" class="t-slider-container is-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider--vertical">
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -9068,7 +9068,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         </div>
       </div>
       <div class="t-slider__input-container is-vertical">
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9079,7 +9079,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
     </div>
   </div>
   <div class="number-vertical-block">
-    <div show-tooltip="true" class="t-slider-container is-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider--vertical">
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -9098,15 +9098,15 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         </div>
       </div>
       <div class="t-slider__input-container is-vertical">
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
               <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
             </svg></button>
         </div>
-        <div class="t-slider__center-liner"></div>
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-slider__center-line"></div>
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9122,7 +9122,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
 exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9155,7 +9155,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9199,7 +9199,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
 exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="10" aria-valuemax="30" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:-50%;left:0%;"></div>
@@ -9224,7 +9224,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="10" aria-valuemax="30" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:-50%;"></div>
@@ -9260,7 +9260,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
 exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9275,7 +9275,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-container">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9301,7 +9301,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="vertical-block">
-    <div show-tooltip="true" class="t-slider-container is-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -9316,7 +9316,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
     </div>
   </div>
   <div class="vertical-block">
-    <div show-tooltip="true" class="t-slider-container is-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -9342,7 +9342,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
 exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="vertical-marks-block">
-    <div vertical="" show-tooltip="true" class="t-slider-container is-vertical">
+    <div vertical="" show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -9375,7 +9375,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
     </div>
   </div>
   <div class="vertical-marks-block">
-    <div vertical="" show-tooltip="true" class="t-slider-container is-vertical">
+    <div vertical="" show-tooltip="true" class="t-slider__container is-vertical">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
@@ -10398,7 +10398,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         <div class="t-table-content">
           <table style="table-layout:fixed;">
             <colgroup>
-              <col style="width:80px;">
+              <col style="width:100px;">
               <col style="width:236px;">
               <col style="width:290px;">
               <col style="width:235px;">

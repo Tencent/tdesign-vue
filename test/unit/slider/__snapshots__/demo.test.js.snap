@@ -9,7 +9,7 @@ exports[`Slider base demo works fine 1`] = `
   >
     <div
       aria-valuetext="12"
-      class="t-slider-container"
+      class="t-slider__container"
     >
       <div
         aria-orientation="horizontal"
@@ -71,7 +71,7 @@ exports[`Slider base demo works fine 1`] = `
   >
     <div
       aria-valuetext="30-70"
-      class="t-slider-container"
+      class="t-slider__container"
     >
       <div
         aria-orientation="horizontal"
