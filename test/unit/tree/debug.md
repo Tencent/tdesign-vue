@@ -15,4 +15,4 @@ npx jest --config script/test/jest.unit.conf.js --updateSnapshot ./test/unit/tre
 
 单独组件调试地址示例
 
-`http://localhost:16000/#/vue/demos/tree/base`
+`http://localhost:16000/vue/demos/tree/base`
