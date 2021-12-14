@@ -22,6 +22,7 @@
       @click="onClick"
       @active="onActive"
       :onActive="propOnActive"
+      hover
     />
   </div>
 </template>
