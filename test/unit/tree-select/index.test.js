@@ -180,7 +180,7 @@ describe('TreeSelect', () => {
       const defaultValue = ['shenzhen', 'guangzhou'];
       const wrapper = mount({
         render() {
-          return <TreeSelect defaultValue={defaultValue} data={options} />;
+          return <TreeSelect defaultValue={defaultValue} data={options} multiple={true} />;
         },
       });
       expect(wrapper).toMatchSnapshot();
