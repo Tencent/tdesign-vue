@@ -1,7 +1,7 @@
 // 通用库
 import dayjs from 'dayjs';
 import Vue, { VNode, PropType } from 'vue';
-
+import { prefix } from '../config';
 // 组件的一些常量
 import { COMPONENT_NAME } from './const';
 
@@ -50,11 +50,11 @@ export default Vue.extend({
       } = this.item;
       const isNow = mode === 'year' ? new Date().getMonth() === date.getMonth() : formattedDate === dayjs().format('YYYY-MM-DD');
       return [
-        't-calendar__table-body-cell',
+        `${prefix}-calendar__table-body-cell`,
         {
-          't-is-disabled': this.disabled,
-          't-is-checked': isCurrent,
-          't-is-now': isNow,
+          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-is-checked`]: isCurrent,
+          [`${prefix}-calendar__table-body-cell--now`]: isNow,
         }];
     },
   },
@@ -70,8 +70,8 @@ export default Vue.extend({
     } = this;
 
     const defaultNode = () => <span>
-      <div class="t-calendar__table-body-cell-value">{valueDisplay}</div>
-      <div class="t-calendar__table-body-cell-content">
+      <div class={`${prefix}-calendar__table-body-cell-display`}>{valueDisplay}</div>
+      <div class={`${prefix}-calendar__table-body-cell-content`}>
         {allowSlot
           && renderTNodeJSX(this, 'cellAppend', {
             params: item,
