@@ -79,7 +79,7 @@ export default Vue.extend({
 
       return [
         propsHeaderContent && <div class={`${name}__header`}>{propsHeaderContent}</div>,
-        <ul class={`${name}-items`}>{renderTNodeJSX(this, 'default')}</ul>,
+        <ul class={`${name}__inner`}>{renderTNodeJSX(this, 'default')}</ul>,
         propsFooterContent && <div class={`${name}__footer`}>{propsFooterContent}</div>,
       ];
     },

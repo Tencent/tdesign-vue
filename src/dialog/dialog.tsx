@@ -82,7 +82,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return this.mode === 'modeless';
     },
     maskClass(): ClassName {
-      return [`${name}-mask`, !this.showOverlay && `${name}-mask--hidden`];
+      return [`${name}__mask`, !this.showOverlay && `${prefix}-is-hidden`];
     },
     dialogClass(): ClassName {
       const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`, `${name}__modal-${this.theme}`];
@@ -288,7 +288,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
-    const ctxClass = [`${name}-ctx`, { 't-dialog-ctx--fixed': this.mode === 'modal' }];
+    const ctxClass = [`${name}__ctx`, { 't-dialog__ctx--fixed': this.mode === 'modal' }];
     return (
       <transition
         duration={300}

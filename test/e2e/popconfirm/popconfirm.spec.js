@@ -95,7 +95,7 @@ describe('Test Popconfirm', () => {
       .find('.t-button')
       .eq(0)
       .click();
-    cy.get('.t-message-list')
+    cy.get('.t-message__list')
       .should('contain', 'Click on No');
 
     cy.get('.t-button').eq(index)
@@ -104,7 +104,7 @@ describe('Test Popconfirm', () => {
       .find('.t-button')
       .eq(1)
       .click();
-    cy.get('.t-message-list')
+    cy.get('.t-message__list')
       .should('contain', 'Click on Yes');
     index += 1;
   });
