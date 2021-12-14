@@ -69,7 +69,7 @@ export function getCascaderInnerClasses(prefix: string, CLASSNAMES: any, cascade
  */
 export function getCloseShow(isHover: boolean, cascaderContext: CascaderContextType) {
   const {
-    multiple, value, disabled, clearable, visible,
+    value, disabled, clearable, visible,
   } = cascaderContext;
   return !!(!visible && clearable && isHover && !disabled && !isEmpty(value));
 }
@@ -197,7 +197,7 @@ export function handleRemoveTagEffect(
   const checked = node.setChecked(!node.isChecked());
   setValue(checked, 'unchecked', node.getModel());
   if (isFunction(onRemove)) {
-    onRemove({ value: checked, node });
+    onRemove({ value: checked, node: node as any });
   }
 }
 

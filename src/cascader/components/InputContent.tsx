@@ -6,7 +6,9 @@ import CLASSNAMES from '../../utils/classnames';
 import getConnfigRecevierMixins, { CascaderConfig } from '../../config-provider/config-receiver';
 import mixins from '../../utils/mixins';
 import { renderTNodeJSX } from '../../utils/render-tnode';
-
+import {
+  TreeNode, CascaderContextType, InputContentProps,
+} from '../interface';
 // component
 import Tag from '../../tag';
 import TLoading from '../../loading';
@@ -30,9 +32,6 @@ import {
 
 // type
 import { ClassName } from '../../common';
-import {
-  TreeNode, CascaderContextType, InputContentProps,
-} from '../interface';
 import CascaderProps from '../props';
 
 const name = `${prefix}-cascader`;
@@ -167,6 +166,7 @@ export default mixins(cascaderGglobalConfig).extend({
         inputVal,
         setInputVal,
         minCollapsedNum,
+        value,
       } = cascaderContext;
 
       const { onFocus, onBlur, onRemove } = listeners as InputContentProps['listeners'];
@@ -231,8 +231,8 @@ export default mixins(cascaderGglobalConfig).extend({
             setInputVal(value);
             setFilterActive(!!value);
           }}
-          onFocus={(v: InputValue, context: { e: FocusEvent }) => isFunction(onFocus) && onFocus({ inputVal, e: context?.e })}
-          onBlur={(v: InputValue, context: { e: FocusEvent }) => isFunction(onBlur) && onBlur({ inputVal, e: context?.e })}
+          onFocus={(v: InputValue, context: { e: FocusEvent }) => isFunction(onFocus) && onFocus({ value, e: context?.e })}
+          onBlur={(v: InputValue, context: { e: FocusEvent }) => isFunction(onBlur) && onBlur({ value, e: context?.e })}
           autofocus={visible}
         />
       );

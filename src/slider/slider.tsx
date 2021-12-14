@@ -52,7 +52,7 @@ export default Vue.extend({
   },
   computed: {
     containerClass(): ClassName {
-      return [`${name}-container`, { 'is-vertical': this.vertical }];
+      return [`${name}__container`, { 'is-vertical': this.vertical }];
     },
     sliderClass(): ClassName {
       return [
@@ -70,7 +70,7 @@ export default Vue.extend({
     },
     sliderNumberClass(): ClassName {
       return [
-        `${name}-input`,
+        `${name}__input`,
         {
           'is-vertical': this.vertical,
         },
@@ -395,7 +395,7 @@ export default Vue.extend({
               theme={this.inputTheme}
             ></t-input-number>
           )}
-          {range && <div class={`${name}__center-liner`} />}
+          {range && <div class={`${name}__center-line`} />}
           {range && (
             <t-input-number
               class={this.sliderNumberClass}
