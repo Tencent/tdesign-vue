@@ -188,7 +188,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     定义
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -215,7 +215,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -239,7 +238,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     服务功能
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -266,7 +265,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -290,7 +288,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     使用指南
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -317,7 +315,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -341,7 +338,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     创建签名
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -368,7 +365,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -392,7 +388,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     创建内容
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -419,7 +415,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -443,7 +438,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     保密协议
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -470,7 +465,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -494,7 +488,7 @@ exports[`Anchor target demo works fine 1`] = `
   >
     其他
     <div
-      class="t-popup-reference t-copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
@@ -521,7 +515,6 @@ exports[`Anchor target demo works fine 1`] = `
         class="t-icon t-icon-file-copy"
         fill="none"
         height="1em"
-        name="file-copy"
         viewBox="0 0 16 16"
         width="1em"
       >
