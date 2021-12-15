@@ -186,7 +186,7 @@ export default Vue.extend({
                   <div
                     class={[
                       `${UPLOAD_NAME}__card-content`,
-                      { [`${UPLOAD_NAME}__card-content-border`]: file.status !== 'waiting' },
+                      { [`${prefix}-is-bordered`]: file.status !== 'waiting' },
                     ]}
                   >
                     {file.status === 'fail' && (
