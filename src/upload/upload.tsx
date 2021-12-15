@@ -141,7 +141,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return !this.showUploadList && !!this.errorMsg;
     },
     tipsClasses(): ClassName {
-      return [`${name}__tips ${name}__small`];
+      return [`${name}__tips ${prefix}-size-s`];
     },
     errorClasses(): ClassName {
       return this.tipsClasses.concat(`${name}__tips-error`);
@@ -511,13 +511,6 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         >
           <div class={`${name}__trigger`} onclick={this.triggerUpload}>
             {triggerElement}
-            {!!(this.theme === 'file-input' && this.files?.length) && (
-              <TButton
-                theme="primary"
-                variant="text"
-                onClick={this.handleFileInputRemove}
-              >删除</TButton>
-            )}
           </div>
         </SingleFile>
       );
@@ -604,12 +597,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             showOverlay
             width='auto'
             top='10%'
-            class={`${name}-dialog`}
+            class={`${name}__dialog`}
             footer={false}
             header={false}
             onClose={this.cancelPreviewImgDialog}
           >
-              <div class={`${prefix}-dialog__body-img-box`}>
+              <div class={`${prefix}__dialog__body-img-box`}>
                 <img src={this.showImageViewUrl} alt='' />
               </div>
           </TDialog>

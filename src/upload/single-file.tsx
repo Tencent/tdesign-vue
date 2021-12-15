@@ -108,13 +108,13 @@ export default Vue.extend({
     renderFilePreviewAsText() {
       if (!this.inputName) return;
       return (
-        <div class={`${UPLOAD_NAME}__single-display-text t-display-text--margin`}>
+        <div class={`${UPLOAD_NAME}__single-display-text t-upload__display-text--margin`}>
           <span class={`${UPLOAD_NAME}__single-name`}>{this.inputName}</span>
           {this.showProgress
             ? this.renderProgress()
             : (
               <TIconClearCircleFilled
-                class={`${UPLOAD_NAME}-icon-delete`}
+                class={`${UPLOAD_NAME}__icon-delete`}
                 nativeOnClick={(e: MouseEvent) => this.remove(e)}
               />
             )}

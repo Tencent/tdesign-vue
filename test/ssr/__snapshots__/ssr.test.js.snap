@@ -15102,7 +15102,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/base.vue correctly 1`
           <path fill="currentColor" d="M3.74 6.68L7.5 2.9v8.59h1V2.91l3.76 3.77.71-.7-4.62-4.63a.5.5 0 00-.7 0L3.03 5.97l.7.7z" fill-opacity="0.9"></path>
           <path fill="currentColor" d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2h-1v2H3v-2H2z" fill-opacity="0.9"></path>
         </svg><span class="t-button__text">点击上传</span></button></div>
-  </div><small class="t-upload__tips t-upload__small">上传文件大小在 5M 以内</small>
+  </div><small class="t-upload__tips t-size-s">上传文件大小在 5M 以内</small>
 </div>
 `;
 
@@ -15118,7 +15118,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/custom-drag.vue corre
         <!----> <br><br>
       </div>
     </div>
-    <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div>
+    <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div>
   </div>
 </div>
 `;
@@ -15139,7 +15139,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/draggable.vue correct
   <div class="t-upload"><input type="file" accept="" hidden="hidden">
     <div class="t-upload__dragger t-upload__dragger-center">
       <div class="t-upload__trigger">
-        <div><span class="t-upload__highlight">点击上传</span><span>  /  拖拽到此区域</span></div>
+        <div><span class="t-upload--highlight">点击上传</span><span>  /  拖拽到此区域</span></div>
       </div>
     </div>
   </div>
@@ -15151,7 +15151,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list.vue co
   <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
     <div class="t-upload__flow t-upload__flow-file-flow">
       <div class="t-upload__flow-op">
-        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-upload__small t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 10 份文件</small>
+        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 10 份文件</small>
       </div>
       <table class="t-upload__flow-table">
         <tr>
@@ -15176,58 +15176,58 @@ exports[`ssr snapshot test renders ./examples/upload/demos/image.vue correctly 1
 <div class="tdesign-demo-upload">
   <div class="tdesign-demo-upload-item">
     <div class="t-upload"><input type="file" accept="image/*" hidden="hidden">
-      <ul toUploadFiles="" class="t-upload-card">
-        <li class="t-upload-card__item t-is--background">
-          <div class="t-upload-card-container t-upload-card__box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
+      <ul toUploadFiles="" class="t-upload__card">
+        <li class="t-upload__card-item t-is--background">
+          <div class="t-upload__card-container t-upload__card-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
               <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
             </svg>
-            <p class="t-upload__small">点击上传图片</p>
+            <p class="t-size-s">点击上传图片</p>
           </div>
         </li>
       </ul>
-      <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div><small class="t-upload__tips t-upload__small">请选择单张图片文件上传（上传成功状态演示）</small>
+      <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div><small class="t-upload__tips t-size-s">请选择单张图片文件上传（上传成功状态演示）</small>
     </div>
   </div>
   <div class="tdesign-demo-upload-item">
     <div class="t-upload"><input type="file" accept="image/*" hidden="hidden">
-      <ul toUploadFiles="" class="t-upload-card">
-        <li class="t-upload-card__item t-is--background">
-          <div class="t-upload-card-container t-upload-card__box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
+      <ul toUploadFiles="" class="t-upload__card">
+        <li class="t-upload__card-item t-is--background">
+          <div class="t-upload__card-container t-upload__card-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
               <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
             </svg>
-            <p class="t-upload__small">点击上传图片</p>
+            <p class="t-size-s">点击上传图片</p>
           </div>
         </li>
       </ul>
-      <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div><small class="t-upload__tips t-upload__small">请选择单张图片文件上传（上传失败状态演示）</small>
+      <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div><small class="t-upload__tips t-size-s">请选择单张图片文件上传（上传失败状态演示）</small>
     </div>
   </div>
   <div class="tdesign-demo-upload-item">
     <div class="t-upload"><input type="file" accept="image/*" hidden="hidden">
-      <ul toUploadFiles="" class="t-upload-card">
-        <li class="t-upload-card__item t-is--background">
-          <div class="t-upload-card-container t-upload-card__box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
+      <ul toUploadFiles="" class="t-upload__card">
+        <li class="t-upload__card-item t-is--background">
+          <div class="t-upload__card-container t-upload__card-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
               <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
             </svg>
-            <p class="t-upload__small">点击上传图片</p>
+            <p class="t-size-s">点击上传图片</p>
           </div>
         </li>
       </ul>
-      <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div><small class="t-upload__tips t-upload__small">请选择单张图片文件上传（自定义预览图片地址）</small>
+      <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div><small class="t-upload__tips t-size-s">请选择单张图片文件上传（自定义预览图片地址）</small>
     </div>
   </div>
   <div class="tdesign-demo-upload-item">
     <div class="t-upload"><input type="file" multiple="multiple" accept="image/*" hidden="hidden">
-      <ul toUploadFiles="" class="t-upload-card">
-        <li class="t-upload-card__item t-is--background">
-          <div class="t-upload-card-container t-upload-card__box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
+      <ul toUploadFiles="" class="t-upload__card">
+        <li class="t-upload__card-item t-is--background">
+          <div class="t-upload__card-container t-upload__card-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
               <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
             </svg>
-            <p class="t-upload__small">点击上传图片</p>
+            <p class="t-size-s">点击上传图片</p>
           </div>
         </li>
       </ul>
-      <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div><small class="t-upload__tips t-upload__small">允许选择多张图片文件上传，最多只能上传 3 张图片</small>
+      <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div><small class="t-upload__tips t-size-s">允许选择多张图片文件上传，最多只能上传 3 张图片</small>
     </div>
   </div>
 </div>
@@ -15238,14 +15238,14 @@ exports[`ssr snapshot test renders ./examples/upload/demos/img-flow-list.vue cor
   <div class="t-upload"><input type="file" multiple="multiple" accept="image/*" hidden="hidden">
     <div class="t-upload__flow t-upload__flow-image-flow">
       <div class="t-upload__flow-op">
-        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-upload__small t-upload__flow-placeholder">支持批量上传图片文件</small>
+        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传图片文件</small>
       </div>
       <div class="t-upload__flow-card-area">
         <div class="t-upload__flow-empty">点击上方“选择文件”或将文件拖拽到此区域</div>
       </div>
       <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
     </div>
-    <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div>
+    <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div>
   </div>
 </div>
 `;
@@ -15282,7 +15282,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/request-method.vue co
             <path fill="currentColor" d="M3.74 6.68L7.5 2.9v8.59h1V2.91l3.76 3.77.71-.7-4.62-4.63a.5.5 0 00-.7 0L3.03 5.97l.7.7z" fill-opacity="0.9"></path>
             <path fill="currentColor" d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2h-1v2H3v-2H2z" fill-opacity="0.9"></path>
           </svg><span class="t-button__text">点击上传</span></button></div>
-    </div><small class="t-upload__tips t-upload__small">自定义上传方法需要返回成功或失败信息</small>
+    </div><small class="t-upload__tips t-size-s">自定义上传方法需要返回成功或失败信息</small>
   </div>
 </div>
 `;
@@ -15292,7 +15292,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/single-custom.vue cor
   <div>
     <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
       <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义上传</span></button></div>
-      <div duration="300" name="t-dialog-zoom__vue" class="t-upload-dialog"></div><small class="t-upload__tips t-upload__small">上传文件大小在 5M 以内</small>
+      <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div><small class="t-upload__tips t-size-s">上传文件大小在 5M 以内</small>
     </div>
     <!---->
   </div>
@@ -15308,7 +15308,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/single-input.vue corr
           <div class="t-input__inner t-upload__placeholder"><span class="t-upload__single-input-text">未选择文件</span></div>
         </div>
         <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div>
-      </div><small class="t-upload__tips t-upload__small">上传文件大小在 5M 以内</small>
+      </div><small class="t-upload__tips t-size-s">上传文件大小在 5M 以内</small>
     </div>
   </div>
 </div>
