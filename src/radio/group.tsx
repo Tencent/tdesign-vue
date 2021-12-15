@@ -8,7 +8,7 @@ import {
 import { prefix } from '../config';
 import Radio, { radioBtnName } from './radio';
 import { TNodeReturnValue } from '../common';
-import CLASSNAMES from '../utils/classnames';
+import CLASSNAMES, { SIZE_CLASSNAMES } from '../utils/classnames';
 import { emitEvent } from '../utils/event';
 
 const name = `${prefix}-radio-group`;
@@ -68,7 +68,7 @@ export default Vue.extend({
     if (this.buttonStyle === 'solid') {
       console.error('TDesign Radio Warn: buttonStyle will be deprecated, please use `variant` instead.');
     }
-    const groupClass = [`${name}`, `${name}-${this.size}`, {
+    const groupClass = [`${name}`, SIZE_CLASSNAMES[this.size], {
       [`${name}__outline`]: this.variant === 'outline',
       [`${name}--filled`]: this.buttonStyle === 'solid' || this.variant.includes('filled'),
       [`${name}--primary-filled`]: this.variant === 'primary-filled',
