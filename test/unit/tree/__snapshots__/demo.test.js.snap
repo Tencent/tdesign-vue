@@ -26,7 +26,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -58,7 +58,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -90,7 +90,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -462,7 +462,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-switch t-size-m t-is-checked"
@@ -497,7 +497,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-switch t-size-m"
@@ -532,7 +532,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-radio-group t-radio-group-medium t-radio-group-filled"
@@ -1763,7 +1763,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -1795,7 +1795,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -1827,7 +1827,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -1859,7 +1859,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -1891,7 +1891,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -2306,7 +2306,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -2338,7 +2338,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -2757,7 +2757,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -3256,7 +3256,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -3288,7 +3288,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -3814,7 +3814,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -3846,7 +3846,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -4700,7 +4700,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -4732,7 +4732,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -4879,7 +4879,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-switch t-size-m t-is-checked"
@@ -4914,7 +4914,7 @@ exports[`Tree:demo line demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-switch t-size-m t-is-checked"
@@ -6828,7 +6828,7 @@ exports[`Tree:demo load demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
@@ -7076,7 +7076,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m"
@@ -7108,7 +7108,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           class="t-form__controls"
         >
           <div
-            class="t-form__controls--content"
+            class="t-form__controls-content"
           >
             <div
               class="t-switch t-size-m t-is-checked"
