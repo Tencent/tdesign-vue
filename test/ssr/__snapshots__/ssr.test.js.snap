@@ -2725,7 +2725,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/base.vue correctly 1
 
 exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1`] = `
 <div class="t-list t-size-m t-list--split">
-  <ul class="t-list-items">
+  <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
         <div class="t-comment">
@@ -3735,15 +3735,15 @@ exports[`ssr snapshot test renders ./examples/divider/demos/text.vue correctly 1
   <p>
     这是第一种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
   </p>
-  <div class="t-divider t-divider--horizontal t-divider--with-text t-divider--with-text-left"><span class="t-divider-inner-text">TDesign</span></div>
+  <div class="t-divider t-divider--horizontal t-divider--with-text t-divider--with-text-left"><span class="t-divider__inner-text">TDesign</span></div>
   <p>
     这是第二种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
   </p>
-  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-center"><span class="t-divider-inner-text">TDesign</span></div>
+  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-center"><span class="t-divider__inner-text">TDesign</span></div>
   <p>
     这是第三种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
   </p>
-  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-right"><span class="t-divider-inner-text">TDesign</span></div>
+  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-right"><span class="t-divider__inner-text">TDesign</span></div>
   <p>
     这是第四种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
   </p>
@@ -5379,7 +5379,7 @@ exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/list/demos/base.vue correctly 1`] = `
 <div class="t-list t-size-m">
-  <ul class="t-list-items">
+  <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
         列表内容的描述性文字
@@ -5401,7 +5401,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
 <div>
   <div class="t-list t-size-m t-list--split">
     <div class="t-list__header">这里是 Header</div>
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5442,7 +5442,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
   <div style="margin-bottom:16px;"></div>
   <div class="t-list t-size-m t-list--split">
     <div class="t-list__header">通过 Slot 插入的 Header</div>
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5486,7 +5486,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
 exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctly 1`] = `
 <div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5525,7 +5525,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
   </div>
   <div style="margin-bottom:16px;"></div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5553,7 +5553,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
     </div>
   </div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5600,7 +5600,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
 exports[`ssr snapshot test renders ./examples/list/demos/multiline.vue correctly 1`] = `
 <div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5640,7 +5640,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/multiline.vue correctly
 exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly 1`] = `
 <div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
           <div class="t-list-item__meta">
@@ -5670,7 +5670,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
 </div>
 <div style="margin-bottom:16px;"></div>
 <div class="t-list t-size-m t-list--split">
-  <ul class="t-list-items">
+  <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
         <div class="t-list-item__meta">
@@ -5703,7 +5703,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
 
 exports[`ssr snapshot test renders ./examples/list/demos/scroll.vue correctly 1`] = `
 <div class="t-list t-size-m" style="max-height:200px;">
-  <ul class="t-list-items">
+  <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">列表内容的描述性文字</div>
     </li>
@@ -5760,7 +5760,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/scroll.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div class="t-list t-size-s t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">列表内容的描述性文字</div>
       </li>
@@ -5774,7 +5774,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
     <div class="t-list__load"></div>
   </div>
   <div class="t-list t-size-m t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">列表内容的描述性文字</div>
       </li>
@@ -5788,7 +5788,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
     <div class="t-list__load"></div>
   </div>
   <div class="t-list t-size-l t-list--split">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">列表内容的描述性文字</div>
       </li>
@@ -5807,7 +5807,7 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
 exports[`ssr snapshot test renders ./examples/list/demos/stripe.vue correctly 1`] = `
 <div>
   <div class="t-list t-size-m t-list--stripe">
-    <ul class="t-list-items">
+    <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">列表内容的描述性文字</div>
       </li>
@@ -6756,10 +6756,19 @@ exports[`ssr snapshot test renders ./examples/message/demos/base.vue correctly 1
 <div class="t-demo-message">
   <div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>用于表示普通操作信息提示<span class="t-message-close"></span></div>
-  <div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>用于表示普通操作信息提示, 可关闭, 通常信息较长<span class="t-message-close"></span></div>
+    </svg>用于表示普通操作信息提示<span class="t-message__close"></span></div>
+  <div class="t-message t-is-success"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
+      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+    </svg>用于表示操作顺利达成<span class="t-message__close"></span></div>
+  <div class="t-message t-is-warning"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
+      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
+    </svg>用于表示操作引起一定后果<span class="t-message__close"></span></div>
+  <div class="t-message t-is-error"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
+      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
+    </svg>用于表示操作引起严重的后果<span class="t-message__close"></span></div>
+  <div class="t-message t-is-question"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-help-circle-filled">
+      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
+    </svg>用于帮助用户操作的信息提示<span class="t-message__close"></span></div>
 </div>
 `;
 
@@ -6767,45 +6776,23 @@ exports[`ssr snapshot test renders ./examples/message/demos/close.vue correctly 
 <div class="t-demo-message">
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>点击关闭按钮触发事件 close-btn-click <span class="t-message-close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+    </svg>点击关闭按钮触发事件 close-btn-click <span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>自定义关闭按钮（文字）<span class="t-message-close">关闭</span></div>
+    </svg>自定义关闭按钮（文字）<span class="t-message__close">关闭</span></div>
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>自定义关闭按钮（函数）<span class="t-message-close"><div class="t-message-close"><b>x</b></div></span></div>
+    </svg>自定义关闭按钮（函数）<span class="t-message__close"><div class="t-message__close"><b>x</b></div></span></div>
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
     </svg>
     自定义关闭按钮（插槽）
-    <span class="t-message-close"><div class="t-message-close"><b>x</b></div></span>
+    <span class="t-message__close"><div class="t-message__close"><b>x</b></div></span>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/message/demos/close-all.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击打开多个消息</span></button> <button type="button" id="t-demo-msg-close-all" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击关闭所有消息</span></button></div>`;
-
-exports[`ssr snapshot test renders ./examples/message/demos/error.vue correctly 1`] = `
-<div class="t-demo-message">
-  <div class="t-message t-is-error"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用于表示操作引起严重的后果<span class="t-message-close"></span></div>
-  <div class="t-message t-is-error"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用于表示操作引起严重的后果, 可关闭, 通常信息较长<span class="t-message-close"></span></div>
-</div>
-`;
-
-exports[`ssr snapshot test renders ./examples/message/demos/help.vue correctly 1`] = `
-<div class="t-demo-message">
-  <div class="t-message t-is-question"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-help-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
-    </svg>用于帮助用户操作的信息提示<span class="t-message-close"></span></div>
-  <div class="t-message t-is-question"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-help-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
-    </svg>用于帮助用户操作的信息提示, 可关闭, 通常信息较长<span class="t-message-close"></span></div>
-</div>
-`;
 
 exports[`ssr snapshot test renders ./examples/message/demos/loading.vue correctly 1`] = `
 <div class="t-demo-message">
@@ -6814,21 +6801,21 @@ exports[`ssr snapshot test renders ./examples/message/demos/loading.vue correctl
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
-      </svg></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
+      </svg></div>用于表示操作正在生效的过程中<span class="t-message__close"></span>
   </div>
   <div class="t-message t-is-loading">
     <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
-      </svg></div>用于表示操作顺利达成(10s)<span class="t-message-close"></span>
+      </svg></div>用于表示操作顺利达成(10s)<span class="t-message__close"></span>
   </div>
   <div class="t-message t-is-loading">
     <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
-      </svg></div>用于表示普通操作失败中断(10s)<span class="t-message-close"></span>
+      </svg></div>用于表示普通操作失败中断(10s)<span class="t-message__close"></span>
   </div> <button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">重置</span></button>
 </div>
 `;
@@ -6858,17 +6845,6 @@ exports[`ssr snapshot test renders ./examples/message/demos/plugin.vue correctly
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/message/demos/success.vue correctly 1`] = `
-<div class="t-demo-message">
-  <div class="t-message t-is-success"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg>用于表示操作顺利达成<span class="t-message-close"></span></div>
-  <div class="t-message t-is-success"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg>用于表示操作顺利达成, 可关闭, 通常信息较长<span class="t-message-close"></span></div>
-</div>
-`;
-
 exports[`ssr snapshot test renders ./examples/message/demos/toggle.vue correctly 1`] = `
 <div id="t-demo-message-toggle"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
     自由控制关闭时机（打开）
@@ -6879,37 +6855,26 @@ exports[`ssr snapshot test renders ./examples/message/demos/type.vue correctly 1
 <div class="t-demo-message">
   <div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>用户表示普通操作信息提示<span class="t-message-close"></span></div>
+    </svg>用户表示普通操作信息提示<span class="t-message__close"></span></div>
   <div class="t-message t-is-success"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg>用户表示操作顺利达成<span class="t-message-close"></span></div>
+    </svg>用户表示操作顺利达成<span class="t-message__close"></span></div>
   <div class="t-message t-is-warning"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
       <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用户表示操作引起一定后果<span class="t-message-close"></span></div>
+    </svg>用户表示操作引起一定后果<span class="t-message__close"></span></div>
   <div class="t-message t-is-error"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
       <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用户表示操作引起严重的后果<span class="t-message-close"></span></div>
+    </svg>用户表示操作引起严重的后果<span class="t-message__close"></span></div>
   <div class="t-message t-is-question"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-help-circle-filled">
       <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z" fill-opacity="0.9"></path>
-    </svg>用于帮助用户操作的信息提示<span class="t-message-close"></span></div>
+    </svg>用于帮助用户操作的信息提示<span class="t-message__close"></span></div>
   <div class="t-message t-is-loading">
     <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
-      </svg></div>用于表示操作正在生效的过程中<span class="t-message-close"></span>
+      </svg></div>用于表示操作正在生效的过程中<span class="t-message__close"></span>
   </div>
-</div>
-`;
-
-exports[`ssr snapshot test renders ./examples/message/demos/warning.vue correctly 1`] = `
-<div class="t-demo-message">
-  <div class="t-message t-is-warning"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用于表示操作引起一定后果<span class="t-message-close"></span></div>
-  <div class="t-message t-is-warning"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled">
-      <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-    </svg>用于表示操作引起一定后果, 可关闭, 通常信息较长<span class="t-message-close"></span></div>
 </div>
 `;
 
@@ -6920,7 +6885,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/base.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -6929,7 +6894,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/base.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知（展示 5 秒后消失）</div>
     </div>
   </div>
@@ -6944,7 +6909,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/close.vue corre
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(false)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(false)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -6953,7 +6918,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/close.vue corre
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(文字)</span><span class="t-message-close">关闭</span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(文字)</span><span class="t-message__close">关闭</span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -6962,7 +6927,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/close.vue corre
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(函数)</span><span class="t-message-close"><span>close</span></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(函数)</span><span class="t-message__close"><span>close</span></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -6971,7 +6936,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/close.vue corre
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(插槽)</span><span class="t-message-close">x</span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(插槽)</span><span class="t-message__close">x</span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理开关事件</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理定时关闭事件（3s）</span></button>
@@ -6989,7 +6954,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/content.vue cor
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(字符串)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(字符串)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -6998,7 +6963,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/content.vue cor
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(函数)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(函数)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">
         <div>这是一条消息通知</div>
       </div>
@@ -7009,7 +6974,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/content.vue cor
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(插槽)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(插槽)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content"><span>这是一条消息通知</span></div>
     </div>
   </div>
@@ -7023,9 +6988,9 @@ exports[`ssr snapshot test renders ./examples/notification/demos/footer.vue corr
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义底部详情(函数)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义底部详情(函数)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
-      <div class="t-notification__detail"><span class="t-notification__detail--item t-is-active">查看详情</span></div>
+      <div class="t-notification__detail"><span class="t-notification__detail-item t-is-active">查看详情</span></div>
     </div>
   </div>
   <div class="t-notification">
@@ -7033,9 +6998,9 @@ exports[`ssr snapshot test renders ./examples/notification/demos/footer.vue corr
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义底部详情(插槽)</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义底部详情(插槽)</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
-      <div class="t-notification__detail"><span class="t-notification__detail--item">重启</span> <span class="t-notification__detail--item t-is-active">查看详情</span></div>
+      <div class="t-notification__detail"><span class="t-notification__detail-item">重启</span> <span class="t-notification__detail-item t-is-active">查看详情</span></div>
     </div>
   </div>
 </div>
@@ -7048,7 +7013,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/icon.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">普通通知</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">普通通知</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条普通的消息通知</div>
     </div>
   </div>
@@ -7057,7 +7022,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/icon.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">危险通知</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">危险通知</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条危险的消息通知</div>
     </div>
   </div>
@@ -7066,7 +7031,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/icon.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">告警通知</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">告警通知</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条告警的消息通知</div>
     </div>
   </div>
@@ -7075,7 +7040,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/icon.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">成功通知</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">成功通知</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条成功的消息通知</div>
     </div>
   </div>
@@ -7091,9 +7056,9 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">超出的文本省略号显示</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">超出的文本省略号显示</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">文案不限长度，但在实际使用时建议文案显示内容不易过多，建议最大展示行数数量以三行为宜，最后一行折行末尾处超出文本建议会变为省略号显示。</div>
-      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail--item"><span class="t-button__text">查看详情</span></button></div>
+      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
     </div>
   </div>
   <div class="t-notification">
@@ -7101,9 +7066,9 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">使用 function 自定义底部内容</div>
-      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail--item"><span class="t-button__text">查看详情</span></button></div>
+      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
     </div>
   </div>
   <div class="t-notification">
@@ -7111,9 +7076,9 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message__close"></span></div>
       <div class="t-notification__content">1. 使用插槽自定义标题 2. 使用插槽自定义底部内容</div>
-      <div class="t-notification__detail"><button type="button" class="t-notification__detail--item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail--item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
+      <div class="t-notification__detail"><button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
         稍后提醒我(10s)
       </span></button></div>
     </div>
@@ -7148,7 +7113,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/size.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">宽度固定400px</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">宽度固定400px</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -7157,7 +7122,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/size.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">文本内容最多支持三行</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">文本内容最多支持三行</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条内容为******************************
         ****************************************************
         ****************************************************
@@ -7176,7 +7141,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/type.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">信息</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">信息</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -7185,7 +7150,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/type.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">成功</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">成功</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -7194,7 +7159,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/type.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">警告</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">警告</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -7203,7 +7168,7 @@ exports[`ssr snapshot test renders ./examples/notification/demos/type.vue correc
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">错误</span><span class="t-message-close"></span></div>
+      <div class="t-notification__title__wrap"><span class="t-notification__title">错误</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
   </div>
@@ -14033,7 +13998,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/activable.vue correctly
       </div>
     </form>
   </div>
-  <div class="t-tree t-tree--transition">
+  <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="t15" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
       <div data-value="t16" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>

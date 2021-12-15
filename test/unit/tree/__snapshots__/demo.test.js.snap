@@ -109,7 +109,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
   </div>
    
   <div
-    class="t-tree t-tree--transition"
+    class="t-tree t-tree--hoverable t-tree--transition"
   >
     <transition-group-stub
       class="t-tree__list"
