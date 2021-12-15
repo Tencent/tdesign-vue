@@ -25,7 +25,7 @@ import packageJSON from './package.json';
 import mainJsContent from './main.js?raw';
 import styleContent from './index.css?raw';
 
-packageJSON.dependencies['tdesign-vue'] = __VERSION__; // eslint-disable-line
+packageJSON.dependencies['tdesign-vue'] = pkg.version;
 packageJSON.dependencies['tdesign-icons-vue'] = pkg.dependencies['tdesign-icons-vue'];
 
 const packageJSONContent = JSON.stringify(packageJSON, null, 2);
