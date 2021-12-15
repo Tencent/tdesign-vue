@@ -5,7 +5,7 @@
       :offset-bottom="20"
       ref="affix"
     >
-      <t-button :style="{ height: top + 'px' }">固钉</t-button>
+      <t-button>固钉</t-button>
     </t-affix>
   </div>
 </template>
@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      top: 40,
+      top: 140,
     };
   },
 };
