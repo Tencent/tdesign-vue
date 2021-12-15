@@ -484,7 +484,7 @@ exports[`Alert icon demo works fine 1`] = `
       class="t-alert__icon"
     >
       <svg
-        class="t-icon t-icon-error-circle-filled t-size-m"
+        class="t-icon t-icon-error-circle-filled"
       >
         <use
           href="#t-icon-error-circle-filled"
@@ -513,7 +513,7 @@ exports[`Alert icon demo works fine 1`] = `
       class="t-alert__icon"
     >
       <svg
-        class="t-icon t-icon-error-circle-filled t-size-m"
+        class="t-icon t-icon-error-circle-filled"
       >
         <use
           href="#t-icon-error-circle-filled"
