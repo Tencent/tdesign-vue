@@ -6,6 +6,7 @@
     >
       <div class="background">
         <t-affix
+          :z-index="5"
           :offset-top="50"
           :offset-bottom="50"
           :container="getContainer"
