@@ -18,11 +18,11 @@ exports[`Dialog async demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -182,11 +182,11 @@ exports[`Dialog base demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -302,11 +302,11 @@ exports[`Dialog custom body demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -372,11 +372,11 @@ exports[`Dialog custom body demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -421,11 +421,11 @@ exports[`Dialog custom body demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -498,11 +498,11 @@ exports[`Dialog custom body demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -638,11 +638,11 @@ exports[`Dialog custom demo works fine 1`] = `
       onclickconfirm="function () { [native code] }"
     >
       <div
-        class="t-dialog-ctx t-dialog-ctx--fixed"
+        class="t-dialog__ctx t-dialog__ctx--fixed"
         style="display: none;"
       >
         <div
-          class="t-dialog-mask"
+          class="t-dialog__mask"
         />
         <div
           class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -709,11 +709,11 @@ exports[`Dialog custom demo works fine 1`] = `
       onclickconfirm="function () { [native code] }"
     >
       <div
-        class="t-dialog-ctx t-dialog-ctx--fixed"
+        class="t-dialog__ctx t-dialog__ctx--fixed"
         style="display: none;"
       >
         <div
-          class="t-dialog-mask"
+          class="t-dialog__mask"
         />
         <div
           class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -784,11 +784,11 @@ exports[`Dialog custom demo works fine 1`] = `
       onclickconfirm="function () { [native code] }"
     >
       <div
-        class="t-dialog-ctx t-dialog-ctx--fixed"
+        class="t-dialog__ctx t-dialog__ctx--fixed"
         style="display: none;"
       >
         <div
-          class="t-dialog-mask"
+          class="t-dialog__mask"
         />
         <div
           class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -919,11 +919,11 @@ exports[`Dialog custom demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -991,11 +991,11 @@ exports[`Dialog custom demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -1078,11 +1078,11 @@ exports[`Dialog custom demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -1142,11 +1142,11 @@ exports[`Dialog custom demo works fine 1`] = `
     onclickconfirm="function () { [native code] }"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -1230,11 +1230,11 @@ exports[`Dialog drag demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -1310,7 +1310,7 @@ exports[`Dialog drag demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
       style="display: none;"
     >
       <div
@@ -1383,7 +1383,7 @@ exports[`Dialog drag demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
       style="display: none;"
     >
       <div
@@ -1460,7 +1460,7 @@ exports[`Dialog icon demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-info"
@@ -1543,7 +1543,7 @@ exports[`Dialog icon demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-warning"
@@ -1626,7 +1626,7 @@ exports[`Dialog icon demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-danger"
@@ -1709,7 +1709,7 @@ exports[`Dialog icon demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
     >
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-success"
@@ -1837,11 +1837,11 @@ exports[`Dialog modal demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -1917,7 +1917,7 @@ exports[`Dialog modal demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
       style="display: none;"
     >
       <div
@@ -1991,7 +1991,7 @@ exports[`Dialog modal demo works fine 1`] = `
     onclickconfirm="function (){ return this$1.visibleModeless = false; }"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
       style="display: none;"
     >
       <div
@@ -2065,7 +2065,7 @@ exports[`Dialog modal demo works fine 1`] = `
     onclickconfirm="function (){ return this$1.visibleModeless = false; }"
   >
     <div
-      class="t-dialog-ctx"
+      class="t-dialog__ctx"
       style="display: none;"
     >
       <div
@@ -2235,11 +2235,11 @@ exports[`Dialog position demo works fine 1`] = `
     onclickconfirm="function () { [native code] }"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -2307,11 +2307,11 @@ exports[`Dialog position demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--center t-dialog__modal-default t-dialog--fixed"
@@ -2378,11 +2378,11 @@ exports[`Dialog position demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -2465,11 +2465,11 @@ exports[`Dialog warning demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-info t-dialog--fixed"
@@ -2561,11 +2561,11 @@ exports[`Dialog warning demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-success t-dialog--fixed"
@@ -2657,11 +2657,11 @@ exports[`Dialog warning demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-warning t-dialog--fixed"
@@ -2743,11 +2743,11 @@ exports[`Dialog warning demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-danger t-dialog--fixed"
@@ -2829,11 +2829,11 @@ exports[`Dialog warning demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog-ctx t-dialog-ctx--fixed"
+      class="t-dialog__ctx t-dialog__ctx--fixed"
       style="display: none;"
     >
       <div
-        class="t-dialog-mask"
+        class="t-dialog__mask"
       />
       <div
         class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
@@ -2844,7 +2844,7 @@ exports[`Dialog warning demo works fine 1`] = `
         >
           <div>
             <svg
-              class="t-icon t-icon-check-circle-filled t-size-m"
+              class="t-icon t-icon-check-circle-filled"
               color="orange"
             >
               <use

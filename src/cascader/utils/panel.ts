@@ -26,6 +26,8 @@ export function getPanels(treeNodes: CascaderContextType['treeNodes']) {
  * @param trigger
  * @param node
  * @param cascaderContext
+ * @param onChange
+ * @param ctx
  */
 export function expendClickEffect(
   propsTrigger: CascaderProps['trigger'],
@@ -48,6 +50,7 @@ export function expendClickEffect(
   } = cascaderContext;
 
   const isDisabled = node.disabled || (multiple && (value as TreeNodeValue[]).length >= max && max !== 0);
+
   if (isDisabled) return;
   // 点击展开节点，设置展开状态
   if (propsTrigger === trigger && !node.isLeaf()) {
@@ -73,10 +76,11 @@ export function expendClickEffect(
       setFilterActive(false);
     }
 
-    // 非过滤状态下和非checkStrictly状态下，关闭
+    // 非过滤状态下，关闭
     if (!filterActive && !checkStrictly) {
       setVisible(false);
     }
+
     // 非受控状态下更新状态
     setValue(value, 'checked', node.getModel());
   }
@@ -88,10 +92,7 @@ export function expendClickEffect(
  * @param cascaderContext
  * @returns
  */
-export function valueChangeEffect(
-  node: TreeNode,
-  cascaderContext: CascaderContextType,
-) {
+export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderContextType) {
   const {
     disabled, max, multiple, setVisible, setValue, filterActive, setFilterActive, treeNodes, treeStore,
   } = cascaderContext;

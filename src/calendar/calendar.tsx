@@ -128,7 +128,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
 
     calendarPanelCls(): Record<string, any> {
-      return ['t-calendar__panel', `${COMPONENT_NAME}__panel--${this.curSelectedMode}`];
+      return [`${COMPONENT_NAME}__panel`, `${COMPONENT_NAME}__panel--${this.curSelectedMode}`];
     },
 
     isWeekRender(): boolean {
@@ -458,15 +458,15 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     renderControl() {
       const { controllerOptions } = this;
       return (
-        <div class="t-calendar__control">
-          <div class="t-calendar__title">
+        <div class={`${COMPONENT_NAME}__control`}>
+          <div class={`${COMPONENT_NAME}__title`}>
             {renderTNodeJSX(this, 'head', {
               params: controllerOptions,
             })}
           </div>
-          <div class="t-calendar__control-section">
+          <div class={`${COMPONENT_NAME}__control-section`}>
             {this.isYearVisible && (
-              <div class="t-calendar__control-section-cell">
+              <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-select
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
@@ -483,7 +483,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.curSelectedMode === 'month' && this.isMonthVisible && (
-              <div class="t-calendar__control-section-cell">
+              <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-select
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
@@ -500,7 +500,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.isModeVisible && (
-              <div class="t-calendar__control-section-cell" style="height: auto">
+              <div class={`${COMPONENT_NAME}__control-section-cell`} style="height: auto">
                 <t-radio-group
                   v-model={this.curSelectedMode}
                   variant="default-filled"
@@ -518,9 +518,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.theme === 'full' && this.curSelectedMode && this.isWeekendToggleVisible && (
-              <div class="t-calendar__control-section-cell">
+              <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-check-tag
-                  class="t-calendar__control-tag"
+                  class={`${COMPONENT_NAME}__control-tag`}
                   theme={this.isShowWeekend ? 'default' : 'primary'}
                   size={this.controlSize}
                   disabled={this.isWeekendToggleDisabled}
@@ -532,7 +532,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.theme === 'full' && this.isCurrentBtnVisible && (
-              <div class="t-calendar__control-section-cell">
+              <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-button
                   size={this.controlSize}
                   disabled={this.isCurrentBtnDisabled}
@@ -556,12 +556,12 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     } = this;
 
     const monthBody = () => (
-      <table class="t-calendar__table">
-        <thead class="t-calendar__table-head">
-          <tr class="t-calendar__table-head-row">
+      <table class={`${COMPONENT_NAME}__table`}>
+        <thead class={`${COMPONENT_NAME}__table-head`}>
+          <tr class={`${COMPONENT_NAME}__table-head-row`}>
             {cellColHeaders.map(
               (item, index) => checkMonthCellColHeaderVisibled(item) && (
-                  <th class="t-calendar__table-head-cell">
+                  <th class={`${COMPONENT_NAME}__table-head-cell`}>
                     {Array.isArray(this.week)
                       ? this.week[index]
                       : renderTNodeJSXDefault(this, 'week', {
@@ -574,9 +574,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
           </tr>
         </thead>
 
-        <tbody class="t-calendar__table-body">
+        <tbody class={`${COMPONENT_NAME}__table-body`}>
           {this.monthCellsData.map((week, weekIndex) => (
-            <tr class="t-calendar__table-body-row">
+            <tr class={`${COMPONENT_NAME}__table-body-row`}>
               {week.map(
                 (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
                     <calendar-cell-item
@@ -602,10 +602,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     );
 
     const yearBody = () => (
-      <table class="t-calendar__table">
-        <tbody class="t-calendar__table-body">
+      <table class={`${COMPONENT_NAME}__table`}>
+        <tbody class={`${COMPONENT_NAME}__table-body`}>
           {this.yearCellsData.map((cell, cellIndex) => (
-            <tr class="t-calendar__table-body-row">
+            <tr class={`${COMPONENT_NAME}__table-body-row`}>
               {cell.map(
                 (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
                     <calendar-cell-item

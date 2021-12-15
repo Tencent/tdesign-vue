@@ -11,7 +11,7 @@ exports[`Button headerFooter demo works fine 1`] = `
       这里是 Header
     </div>
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -138,7 +138,7 @@ exports[`Button headerFooter demo works fine 1`] = `
       通过 Slot 插入的 Header
     </div>
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
        
       <li
@@ -261,7 +261,7 @@ exports[`Button imageText demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -378,7 +378,7 @@ exports[`Button imageText demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -429,7 +429,7 @@ exports[`Button multiline demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -525,7 +525,7 @@ exports[`Button operation demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -684,7 +684,7 @@ exports[`Button operation demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -875,7 +875,7 @@ exports[`Button scroll demo works fine 1`] = `
   style="max-height: 200px;"
 >
   <ul
-    class="t-list-items"
+    class="t-list__inner"
   >
     <li
       class="t-list-item"
@@ -1051,7 +1051,7 @@ exports[`Button size demo works fine 1`] = `
     class="t-list t-size-s t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -1092,7 +1092,7 @@ exports[`Button size demo works fine 1`] = `
     class="t-list t-size-m t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"
@@ -1133,7 +1133,7 @@ exports[`Button size demo works fine 1`] = `
     class="t-list t-size-l t-list--split"
   >
     <ul
-      class="t-list-items"
+      class="t-list__inner"
     >
       <li
         class="t-list-item"

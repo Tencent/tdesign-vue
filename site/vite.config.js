@@ -6,9 +6,6 @@ import tdocPlugin from './plugin-tdoc';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/vue/' : './',
-  define: {
-    __VERSION__: JSON.stringify(process.env.npm_package_version),
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../'),

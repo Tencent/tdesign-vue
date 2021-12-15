@@ -8,12 +8,11 @@
   },
   "dependencies": {
     "prismjs": "^1.25.0",
-    "tdesign-site-components": "~0.2.2",
+    "tdesign-site-components": "~0.4.1",
     "vue-router": "^3.5.3"
   },
   "devDependencies": {
     "gray-matter": "^4.0.3",
-    "less": "^4.1.2",
     "vite": "^2.7.0",
     "vite-plugin-tdoc": "^2.0.1",
     "vite-plugin-vue2": "^1.9.0"

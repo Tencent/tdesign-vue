@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     closeBtn(close) {
-      return <b class='t-message-close' onClick={close}>x</b>;
+      return <b class='t-message__close' onClick={close}>x</b>;
     },
     content() {
       return <div>操作有误，<a href='#'>前往查看</a></div>;

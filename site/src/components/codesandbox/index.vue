@@ -20,12 +20,13 @@
 </template>
 
 <script>
+import pkg from '@/package.json';
 import packageJSON from './package.json';
 import mainJsContent from './main.js?raw';
 import styleContent from './index.css?raw';
 
-packageJSON.dependencies['tdesign-vue'] = __VERSION__; // eslint-disable-line
-packageJSON.dependencies['tdesign-icons-vue'] = '0.0.4';
+packageJSON.dependencies['tdesign-vue'] = pkg.version;
+packageJSON.dependencies['tdesign-icons-vue'] = pkg.dependencies['tdesign-icons-vue'];
 
 const packageJSONContent = JSON.stringify(packageJSON, null, 2);
 
@@ -110,11 +111,6 @@ export default {
   &:hover {
     color: var(--text-primary);
     background-color: var(--bg-color-demo-hover, rgb(243, 243, 243));
-  }
-}
-.action-online + .t-loading {
-  svg {
-    margin-top: 4px;
   }
 }
 </style>

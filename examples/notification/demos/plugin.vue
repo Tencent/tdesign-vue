@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     closeBtn(close) {
-      return <b class='t-message-close' onClick={close}>x</b>;
+      return <b class='t-message__close' onClick={close}>x</b>;
     },
     content() {
       return <div>操作有误，<a href='#'>前往查看</a></div>;
@@ -56,7 +56,7 @@ export default {
     footer() {
       return (
         <div class="t-notification__detail">
-          <span class="t-notification__detail--item t-is-active">查看详情</span>
+          <span class="t-notification__detail-item t-is-active">查看详情</span>
         </div>
       );
     },
