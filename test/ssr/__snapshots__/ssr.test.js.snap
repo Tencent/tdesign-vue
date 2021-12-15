@@ -2,7 +2,7 @@
 
 exports[`ssr snapshot test renders ./examples/affix/demos/base.vue correctly 1`] = `
 <div class="affix-base">
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="height:40px;"><span class="t-button__text">固钉</span></button></div>
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">固钉</span></button></div>
 </div>
 `;
 
@@ -4532,7 +4532,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid"><span>水平 gutter 为固定值</span>
+<div class="tdesign-demo-block-column"><span>水平 gutter 为固定值</span>
   <div class="t-row t-row--start t-row--top" style="margin-left:-8px;margin-right:-8px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
@@ -4643,7 +4643,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid"><span>align left</span>
+<div class="tdesign-demo-block-column"><span>align left</span>
   <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
@@ -4718,7 +4718,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid">
+<div class="tdesign-demo-block-column">
   <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-4" style="padding-left:0px;padding-right:0px;">
       <div>col-4</div>
@@ -4744,7 +4744,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid">
+<div class="tdesign-demo-block-column">
   <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3 t-col-order-4" style="padding-left:0px;padding-right:0px;">
       <div>1 col-3-order-4</div>
@@ -4763,7 +4763,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`]
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid"><span>宽度响应式</span>
+<div class="tdesign-demo-block-column"><span>宽度响应式</span>
   <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12 t-col-xs-2 t-col-sm-4 t-col-md-6 t-col-lg-8 t-col-xl-10" style="padding-left:0px;padding-right:0px;">
       <div>Col</div>
@@ -4781,7 +4781,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid">
+<div class="tdesign-demo-block-column">
   <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-9 t-col-push-3" style="padding-left:0px;padding-right:0px;">
       <div>col-9 col-pull-3</div>
@@ -4794,7 +4794,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`] = `
-<div class="tdesign-demo-item--grid">
+<div class="tdesign-demo-block-column">
   <p>align top</p>
   <div class="t-row t-row--center t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
@@ -5289,7 +5289,7 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
       </div>
     </header>
     <section class="t-layout">
-      <aside class="t-layout__sider">
+      <aside class="t-layout__sider" style="border-top:1px solid var(--component-border);">
         <div height="550px" class="t-default-menu t-menu-mode__normal t-menu--light" style="height:100%;width:232px;margin-right:50px;">
           <div class="t-default-menu__inner">
             <ul class="t-menu t-menu--scroll narrow-scrollbar">

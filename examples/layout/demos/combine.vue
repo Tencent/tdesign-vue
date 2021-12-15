@@ -22,7 +22,7 @@
         </t-head-menu>
       </t-header>
       <t-layout>
-        <t-aside>
+        <t-aside style="border-top: 1px solid var(--component-border);">
           <t-menu theme="light" value="dashboard" style="margin-right: 50px" height="550px" >
             <t-menu-item value="dashboard">
               <icon slot="icon" name="dashboard"/>仪表盘
