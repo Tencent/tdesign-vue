@@ -27,6 +27,7 @@ export default {
   },
   mounted() {
     const { componentName, demoName } = this.$route.params;
+    console.log('%c 所有 demo 路径参考: \n', 'color: #0052d9;', demoObject);
     this.demo = `${componentName}-${demoName}`;
   },
 };
