@@ -22,7 +22,7 @@ describe('Test Message', () => {
       .click({ multiple: true })
       .then(() => {
         THEME_LIST.forEach((theme) => {
-          cy.get(`body>.t-message-list>.t-is-${theme}`)
+          cy.get(`body>.t-message__list>.t-is-${theme}`)
             .should('exist');
         });
       });
@@ -36,7 +36,7 @@ describe('Test Message', () => {
       .first()
       .click()
       .then(() => {
-        cy.get('body>.t-message-list>.t-is-info')
+        cy.get('body>.t-message__list>.t-is-info')
           .should('exist')
           .wait(1000)
           .then(($el) => {
@@ -52,7 +52,7 @@ describe('Test Message', () => {
       .first()
       .click()
       .then(() => {
-        cy.get('body>.t-message-list>.t-is-info')
+        cy.get('body>.t-message__list>.t-is-info')
           .should('exist')
           .wait(3000)
           .then(($el) => {
@@ -68,7 +68,7 @@ describe('Test Message', () => {
       .last()
       .click()
       .then(() => {
-        cy.get('body>.t-message-list>.t-is-loading')
+        cy.get('body>.t-message__list>.t-is-loading')
           .should('exist')
           .wait(1000)
           .then(($el) => {

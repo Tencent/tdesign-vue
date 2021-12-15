@@ -27,7 +27,7 @@ export default Vue.extend({
 
     return (
       <div class={dividerClassNames}>
-          {children && <span class={`${name}-inner-text`}>{children}</span>}
+          {children && <span class={`${name}__inner-text`}>{children}</span>}
       </div>
     );
   },
