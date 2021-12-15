@@ -3308,7 +3308,7 @@ exports[`Transfer pagination demo works fine 1`] = `
           class="t-pagination t-size-s"
         >
           <div
-            class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+            class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
             disabled="disabled"
           >
             <svg
@@ -3412,7 +3412,7 @@ exports[`Transfer pagination demo works fine 1`] = `
             </div>
           </div>
           <div
-            class="t-pagination__btn t-pagination__btn--next"
+            class="t-pagination__btn t-pagination__btn-next"
           >
             <svg
               class="t-icon t-icon-chevron-right"

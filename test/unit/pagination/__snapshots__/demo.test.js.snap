@@ -120,7 +120,7 @@ exports[`Pagination base demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev"
+      class="t-pagination__btn t-pagination__btn-prev"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -181,7 +181,7 @@ exports[`Pagination base demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -320,7 +320,7 @@ exports[`Pagination base demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev"
+      class="t-pagination__btn t-pagination__btn-prev"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -361,7 +361,7 @@ exports[`Pagination base demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -411,7 +411,7 @@ exports[`Pagination customizable demo works fine 1`] = `
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -426,7 +426,7 @@ exports[`Pagination customizable demo works fine 1`] = `
       <li class="t-pagination__number">9</li>
       <li class="t-pagination__number">10</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" class="t-input__inner"></div>页</div>
@@ -555,7 +555,7 @@ exports[`Pagination disabled demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -624,7 +624,7 @@ exports[`Pagination disabled demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-next t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -779,7 +779,7 @@ exports[`Pagination few demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev"
+      class="t-pagination__btn t-pagination__btn-prev"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -825,7 +825,7 @@ exports[`Pagination few demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -965,7 +965,7 @@ exports[`Pagination jump demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -1017,7 +1017,7 @@ exports[`Pagination jump demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -1171,7 +1171,7 @@ exports[`Pagination mini works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -1240,7 +1240,7 @@ exports[`Pagination mini works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -1380,7 +1380,7 @@ exports[`Pagination more works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev"
+      class="t-pagination__btn t-pagination__btn-prev"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -1470,7 +1470,7 @@ exports[`Pagination more works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -1611,7 +1611,7 @@ exports[`Pagination page-num demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -1680,7 +1680,7 @@ exports[`Pagination page-num demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -1820,7 +1820,7 @@ exports[`Pagination simple demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+      class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
       disabled="disabled"
     >
       <svg
@@ -2068,7 +2068,7 @@ exports[`Pagination simple demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -2207,7 +2207,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-pagination__btn t-pagination__btn--prev t-is-disabled"
+    class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
     disabled="disabled"
   >
     <svg
@@ -2455,7 +2455,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-pagination__btn t-pagination__btn--next"
+    class="t-pagination__btn t-pagination__btn-next"
   >
     <svg
       class="t-icon t-icon-chevron-right"
@@ -2594,7 +2594,7 @@ exports[`Pagination total demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-pagination__btn t-pagination__btn--prev"
+      class="t-pagination__btn t-pagination__btn-prev"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -2684,7 +2684,7 @@ exports[`Pagination total demo works fine 1`] = `
       </li>
     </ul>
     <div
-      class="t-pagination__btn t-pagination__btn--next"
+      class="t-pagination__btn t-pagination__btn-next"
     >
       <svg
         class="t-icon t-icon-chevron-right"

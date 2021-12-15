@@ -836,8 +836,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/base.vue correctly 
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -951,8 +951,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/card.vue correctly 
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
       </div>
@@ -1049,8 +1049,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1334,8 +1334,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell-append.vue cor
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1500,8 +1500,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1601,8 +1601,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/events.vue correctl
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1712,8 +1712,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/first-day-of-week.v
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1825,8 +1825,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/head.vue correctly 
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1925,8 +1925,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/mode.vue correctly 
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button"><input type="radio" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -1987,8 +1987,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/range.vue correctly
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -2088,8 +2088,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -2331,8 +2331,8 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
@@ -2905,8 +2905,8 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Month</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Year</span></label>
-          <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Month</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Year</span></label>
+          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">Hide Weekend</span></div>
@@ -3260,7 +3260,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
         </svg></div>
     </div>
   </div>
-  <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+  <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
       <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
     </svg></div>
   <ul class="t-pagination__pager">
@@ -3269,7 +3269,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
     <li class="t-pagination__number">3</li>
     <li class="t-pagination__number">4</li>
   </ul>
-  <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+  <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
       <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
     </svg></div>
   <div class="t-pagination__jump">jump to<div class="t-input t-size-m t-pagination__input"><input type="text" value="12" class="t-input__inner"></div>
@@ -3294,9 +3294,9 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.v
       <div name="t-popup_animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">Danger</span></button>
     </div>
   </div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Open Drawer</span></button>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">Drawer</div>
       <div class="t-drawer__close-btn"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-submenu-icon">
           <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
@@ -3761,9 +3761,9 @@ exports[`ssr snapshot test renders ./examples/divider/demos/vertical.vue correct
 exports[`ssr snapshot test renders ./examples/drawer/demos/attach-parent.vue correctly 1`] = `
 <div class="t-container">
   <div class="t-suf-container">
-    <div class="t-drawer t-drawer-right t-drawer-attach">
+    <div class="t-drawer t-drawer--right t-drawer--attach">
       <div class="t-drawer__mask"></div>
-      <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+      <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
         <div class="t-drawer__header">抽屉标题</div>
         <div class="t-drawer__close-btn"></div>
         <div class="t-drawer__body">
@@ -3776,11 +3776,11 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/attach-parent.vue cor
     </div>
     <div class="tdesign-radio-button">
       抽屉弹出方向：
-      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上方</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">下方</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上方</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">下方</span></label></div>
     </div> <br>
     <div class="tdesign-radio-button">
       抽屉弹出模式：
-      <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="overlay" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">overlay</span></label> <label class="t-radio-button"><input type="radio" value="push" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">push</span></label></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="overlay" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">overlay</span></label> <label class="t-radio-button"><input type="radio" value="push" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">push</span></label></div>
     </div> <br><br> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
   </div>
 </div>
@@ -3788,9 +3788,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/attach-parent.vue cor
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/base.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-submenu-icon">
           <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
@@ -3808,9 +3808,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/base.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">
         <div>自定义头部</div>
       </div>
@@ -3821,9 +3821,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
       <div class="t-drawer__footer"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">确定</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">取消</span></button></div>
     </div>
   </div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3834,9 +3834,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3862,8 +3862,8 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/destroy.vue correctly
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/no-mask.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right t-drawer-no-mask">
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+  <div class="t-drawer t-drawer--right t-drawer--without-mask">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3879,9 +3879,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/no-mask.vue correctly
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/operation.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3905,9 +3905,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/operation.vue correct
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3919,16 +3919,16 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correct
     </div>
   </div>
   <div class="tdesign-radio-button">
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上方</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">下方</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上方</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">下方</span></label></div>
   </div> <button type="button" class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/popup.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3941,16 +3941,16 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/popup.vue correctly 1
   </div>
   <div class="tdesign-radio-button">
     抽屉弹出模式：
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button"><input type="radio" value="overlay" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">overlay</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="push" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">push</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="overlay" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">overlay</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="push" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">push</span></label></div>
   </div> <br><br> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/size.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer-right">
+  <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
-    <div class="t-drawer__content-wrapper t-drawer__content-wrapper-right" style="width:300px;height:;">
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
       <div class="t-drawer__body">
@@ -3962,7 +3962,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/size.vue correctly 1`
     </div>
   </div>
   <div class="tdesign-radio-button">
-    <div class="btn-top-margin t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="small" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">小</span></label> <label class="t-radio-button"><input type="radio" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大</span></label> <label class="t-radio-button"><input type="radio" value="200" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">200</span></label> <label class="t-radio-button"><input type="radio" value="400px" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">400px</span></label> <label class="t-radio-button"><input type="radio" value="50%" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">50%</span></label></div>
+    <div class="btn-top-margin t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="small" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">小</span></label> <label class="t-radio-button"><input type="radio" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大</span></label> <label class="t-radio-button"><input type="radio" value="200" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">200</span></label> <label class="t-radio-button"><input type="radio" value="400px" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">400px</span></label> <label class="t-radio-button"><input type="radio" value="50%" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">50%</span></label></div>
   </div> <button type="button" class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
 </div>
 `;
@@ -4048,8 +4048,8 @@ exports[`ssr snapshot test renders ./examples/dropdown/demos/split.vue correctly
 exports[`ssr snapshot test renders ./examples/form/demos/align.vue correctly 1`] = `
 <div>
   <div class="controls">
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左对齐</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右对齐</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">顶部对齐</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左对齐</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右对齐</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">顶部对齐</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <form class="t-form">
@@ -4112,7 +4112,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/base.vue correctly 1`] 
       <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
       </div>
     </div>
@@ -4176,8 +4176,8 @@ exports[`ssr snapshot test renders ./examples/form/demos/custom-validator.vue co
 exports[`ssr snapshot test renders ./examples/form/demos/layout.vue correctly 1`] = `
 <div>
   <div class="controls">
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button"><input type="radio" value="vertical" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">纵向布局</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="inline" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">行内布局</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="vertical" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">纵向布局</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="inline" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">行内布局</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <form class="t-form t-form-inline">
@@ -4260,7 +4260,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
       </div>
     </div>
@@ -4395,7 +4395,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
 
 exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-1" style="padding-left:0px;padding-right:0px;">
       <div>1</div>
     </div>
@@ -4433,7 +4433,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>1</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>2</div>
     </div>
@@ -4453,7 +4453,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>2</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div>3</div>
     </div>
@@ -4467,7 +4467,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>3</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-4" style="padding-left:0px;padding-right:0px;">
       <div>4</div>
     </div>
@@ -4478,7 +4478,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>4</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-6" style="padding-left:0px;padding-right:0px;">
       <div>6</div>
     </div>
@@ -4486,7 +4486,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>6</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
       <div>12</div>
     </div>
@@ -4496,7 +4496,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:2 2 0;padding-left:0px;padding-right:0px;">
       <div>2 / 5</div>
     </div>
@@ -4504,7 +4504,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>3 / 5</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:0 0 100px;padding-left:0px;padding-right:0px;">
       <div>100px</div>
     </div>
@@ -4512,7 +4512,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>auto</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:1 1 200px;padding-left:0px;padding-right:0px;">
       <div>1 1 200px</div>
     </div>
@@ -4520,7 +4520,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>0 1 300px</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
       <div style="padding:0 16px;">none</div>
     </div>
@@ -4533,7 +4533,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid"><span>水平 gutter 为固定值</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:-8px;margin-right:-8px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-8px;margin-right:-8px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
@@ -4547,7 +4547,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 为响应式</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:-12px;margin-right:-12px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -4561,7 +4561,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为固定值</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:-8px;margin-right:-8px;row-gap:24px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-8px;margin-right:-8px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
@@ -4587,7 +4587,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 响应式，垂直 gutter固定值 </span>
-  <div class="t-row t-row-start t-row-top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
+  <div class="t-row t-row--start t-row--top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -4613,7 +4613,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为响应式</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -4644,7 +4644,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid"><span>align left</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -4658,7 +4658,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>align center</span>
-  <div class="t-row t-row-center t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--center t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -4672,7 +4672,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>align right</span>
-  <div class="t-row t-row-end t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--end t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -4686,7 +4686,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>space-between</span>
-  <div class="t-row t-row-space-between t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-between t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -4700,7 +4700,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>space-around</span>
-  <div class="t-row t-row-space-around t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-around t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -4719,7 +4719,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-4" style="padding-left:0px;padding-right:0px;">
       <div>col-4</div>
     </div>
@@ -4727,7 +4727,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
       <div>col-4 col-offset-4</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3 t-col-offset-3" style="padding-left:0px;padding-right:0px;">
       <div>col-3 col-offset-3</div>
     </div>
@@ -4735,7 +4735,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
       <div>col-3 col-offset-3</div>
     </div>
   </div>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-6 t-col-offset-3" style="padding-left:0px;padding-right:0px;">
       <div>col-6 col-offset-3</div>
     </div>
@@ -4745,7 +4745,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3 t-col-order-4" style="padding-left:0px;padding-right:0px;">
       <div>1 col-3-order-4</div>
     </div>
@@ -4764,7 +4764,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid"><span>宽度响应式</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12 t-col-xs-2 t-col-sm-4 t-col-md-6 t-col-lg-8 t-col-xl-10" style="padding-left:0px;padding-right:0px;">
       <div>Col</div>
     </div>
@@ -4772,7 +4772,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctl
       <div>Col</div>
     </div>
   </div> <span>其他属性响应式（支持span，offset，order，pull，push）</span>
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12 t-col-xs-3 t-col-xs-offset-0 t-col-sm-3 t-col-sm-offset-2 t-col-md-3 t-col-md-offset-4 t-col-lg-3 t-col-lg-offset-6 t-col-xl-3 t-col-xl-offset-8" style="padding-left:0px;padding-right:0px;">
       <div>Col</div>
     </div>
@@ -4782,7 +4782,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctl
 
 exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row-start t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-9 t-col-push-3" style="padding-left:0px;padding-right:0px;">
       <div>col-9 col-pull-3</div>
     </div>
@@ -4796,7 +4796,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] 
 exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
   <p>align top</p>
-  <div class="t-row t-row-center t-row-top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--center t-row--top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -4811,7 +4811,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
     </div>
   </div>
   <p>align middle</p>
-  <div class="t-row t-row-space-around t-row-middle" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-around t-row--middle" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -4826,7 +4826,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
     </div>
   </div>
   <p>align bottom</p>
-  <div class="t-row t-row-space-between t-row-bottom" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-between t-row--bottom" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -5168,7 +5168,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/step.vue correc
 exports[`ssr snapshot test renders ./examples/layout/demos/aside.vue correctly 1`] = `
 <div class="tdesign-demo-item--layout">
   <section class="t-layout">
-    <aside class="t-layout--sider">
+    <aside class="t-layout__sider">
       <div height="550px" class="t-default-menu t-menu-mode__normal t-menu--light" style="height:100%;width:232px;margin-right:50px;">
         <div class="t-default-menu__inner">
           <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" class="t-menu__logo--center"></div>
@@ -5214,10 +5214,10 @@ exports[`ssr snapshot test renders ./examples/layout/demos/aside.vue correctly 1
       </div>
     </aside>
     <section class="t-layout">
-      <main class="t-layout--content">
+      <main class="t-layout__content">
         <div>Content</div>
       </main>
-      <footer class="t-layout--footer">Copyright @ 2019-2020 Tencent. All Rights Reserved</footer>
+      <footer class="t-layout__footer">Copyright @ 2019-2020 Tencent. All Rights Reserved</footer>
     </section>
   </section>
 </div>
@@ -5227,38 +5227,38 @@ exports[`ssr snapshot test renders ./examples/layout/demos/base.vue correctly 1`
 <div class="tdesign-demo-item--base">
   <div>
     <section class="t-layout">
-      <header class="t-layout--header">Header</header>
-      <main class="t-layout--content">Content</main>
-      <footer class="t-layout--footer">Footer</footer>
+      <header class="t-layout__header">Header</header>
+      <main class="t-layout__content">Content</main>
+      <footer class="t-layout__footer">Footer</footer>
     </section>
   </div>
   <div>
     <section class="t-layout">
-      <header class="t-layout--header">Header</header>
+      <header class="t-layout__header">Header</header>
       <section class="t-layout">
-        <aside class="t-layout--sider">Aside</aside>
-        <main class="t-layout--content">Content</main>
+        <aside class="t-layout__sider">Aside</aside>
+        <main class="t-layout__content">Content</main>
       </section>
-      <footer class="t-layout--footer">Footer</footer>
+      <footer class="t-layout__footer">Footer</footer>
     </section>
   </div>
   <div>
     <section class="t-layout">
-      <header class="t-layout--header">Header</header>
+      <header class="t-layout__header">Header</header>
       <section class="t-layout">
-        <main class="t-layout--content">Content</main>
-        <aside class="t-layout--sider">Aside</aside>
+        <main class="t-layout__content">Content</main>
+        <aside class="t-layout__sider">Aside</aside>
       </section>
-      <footer class="t-layout--footer">Footer</footer>
+      <footer class="t-layout__footer">Footer</footer>
     </section>
   </div>
   <div>
     <section class="t-layout">
-      <aside class="t-layout--sider">Aside</aside>
+      <aside class="t-layout__sider">Aside</aside>
       <section class="t-layout">
-        <header class="t-layout--header">Header</header>
-        <main class="t-layout--content">Content</main>
-        <footer class="t-layout--footer">Footer</footer>
+        <header class="t-layout__header">Header</header>
+        <main class="t-layout__content">Content</main>
+        <footer class="t-layout__footer">Footer</footer>
       </section>
     </section>
   </div>
@@ -5268,7 +5268,7 @@ exports[`ssr snapshot test renders ./examples/layout/demos/base.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly 1`] = `
 <div class="tdesign-demo-item--layout">
   <section class="t-layout">
-    <header class="t-layout--header">
+    <header class="t-layout__header">
       <div height="120px" class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
         <div class="t-head-menu__inner">
           <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" class="logo"></div>
@@ -5289,7 +5289,7 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
       </div>
     </header>
     <section class="t-layout">
-      <aside class="t-layout--sider">
+      <aside class="t-layout__sider">
         <div height="550px" class="t-default-menu t-menu-mode__normal t-menu--light" style="height:100%;width:232px;margin-right:50px;">
           <div class="t-default-menu__inner">
             <ul class="t-menu t-menu--scroll narrow-scrollbar">
@@ -5334,10 +5334,10 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
         </div>
       </aside>
       <section class="t-layout">
-        <main class="t-layout--content">
+        <main class="t-layout__content">
           <div>Content</div>
         </main>
-        <footer class="t-layout--footer">Copyright @ 2019-2020 Tencent. All Rights Reserved</footer>
+        <footer class="t-layout__footer">Copyright @ 2019-2020 Tencent. All Rights Reserved</footer>
       </section>
     </section>
   </section>
@@ -5347,7 +5347,7 @@ exports[`ssr snapshot test renders ./examples/layout/demos/combine.vue correctly
 exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`] = `
 <div class="tdesign-demo-item--layout">
   <section class="t-layout">
-    <header class="t-layout--header">
+    <header class="t-layout__header">
       <div height="120px" class="t-menu t-head-menu t-menu-mode__normal t-menu--light">
         <div class="t-head-menu__inner">
           <div class="t-menu__logo"><img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" class="logo"></div>
@@ -5367,10 +5367,10 @@ exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`]
         </div>
       </div>
     </header>
-    <main class="t-layout--content">
+    <main class="t-layout__content">
       <div>Content</div>
     </main>
-    <footer class="t-layout--footer">
+    <footer class="t-layout__footer">
       Copyright @ 2019-2020 Tencent. All Rights Reserved
     </footer>
   </section>
@@ -5548,8 +5548,8 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
 exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="load-more" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载更多</span></label> <label class="t-radio-button"><input type="radio" value="loading" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载中</span></label> <label class="t-radio-button"><input type="radio" value="loading-custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义加载更多</span></label> <label class="t-radio-button"><input type="radio" value="" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载完成</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="load-more" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载更多</span></label> <label class="t-radio-button"><input type="radio" value="loading" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载中</span></label> <label class="t-radio-button"><input type="radio" value="loading-custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义加载更多</span></label> <label class="t-radio-button"><input type="radio" value="" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载完成</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-list t-size-m t-list--split">
@@ -7189,7 +7189,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7202,7 +7202,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
       <li class="t-pagination__number">7</li>
       <li class="t-pagination__number">8</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div> <br><br>
@@ -7216,7 +7216,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7225,7 +7225,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
       <li class="t-pagination__number">3</li>
       <li class="t-pagination__number">4</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7244,7 +7244,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7259,7 +7259,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
       <li class="t-pagination__number">9</li>
       <li class="t-pagination__number">10</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" value="1" class="t-input__inner"></div>页</div>
@@ -7279,7 +7279,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7293,7 +7293,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
         </svg></li>
       <li class="t-pagination__number t-is-disabled">20</li>
     </ul>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--next t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-next t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" value="1" class="t-input__inner"></div>页</div>
@@ -7313,7 +7313,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/few.vue correctly
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7323,7 +7323,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/few.vue correctly
       <li class="t-pagination__number">4</li>
       <li class="t-pagination__number">5</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7342,7 +7342,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7353,7 +7353,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
       <li class="t-pagination__number">5</li>
       <li class="t-pagination__number">6</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" value="1" class="t-input__inner"></div>页</div>
@@ -7373,7 +7373,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/mini.vue correctl
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7387,7 +7387,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/mini.vue correctl
         </svg></li>
       <li class="t-pagination__number">20</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7406,7 +7406,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/more.vue correctl
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7424,7 +7424,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/more.vue correctl
         </svg></li>
       <li class="t-pagination__number">20</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7443,7 +7443,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/page-num.vue corr
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7457,7 +7457,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/page-num.vue corr
         </svg></li>
       <li class="t-pagination__number">22</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7476,7 +7476,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/simple.vue correc
           </svg></div>
       </div>
     </div>
-    <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-select-wrap t-pagination__select">
@@ -7487,7 +7487,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/simple.vue correc
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7505,7 +7505,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/simple-mini.vue c
         </svg></div>
     </div>
   </div>
-  <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+  <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
       <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
     </svg></div>
   <div class="t-select-wrap t-pagination__select">
@@ -7516,7 +7516,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/simple-mini.vue c
         </svg></div>
     </div>
   </div>
-  <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+  <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
       <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
     </svg></div>
 </div>
@@ -7534,7 +7534,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/total.vue correct
           </svg></div>
       </div>
     </div>
-    <div class="t-pagination__btn t-pagination__btn--prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <ul class="t-pagination__pager">
@@ -7552,7 +7552,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/total.vue correct
         </svg></li>
       <li class="t-pagination__number">69</li>
     </ul>
-    <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
@@ -7864,9 +7864,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">默认样式</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7875,9 +7875,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">不显示数字</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7886,9 +7886,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">自定义内容</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7899,11 +7899,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">进度完成</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress__icon">
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7912,11 +7912,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">进度状态发生重大错误</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--error" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress__icon">
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7925,11 +7925,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">进度被中断</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7941,9 +7941,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">小尺寸</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
-          <div class="t-progress--info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
-            <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
+            <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7952,9 +7952,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">默认尺寸</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7963,9 +7963,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
       <div class="t-progress-demo-margin">大尺寸</div>
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
-          <div class="t-progress--info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7980,18 +7980,18 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
     <div>不显示标签</div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info"></div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  50.265482457436704" class="t-circle--inner" style="stroke:;"></circle>
+        <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  50.265482457436704" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:84%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:84%;background:;"></div>
         </div>
-        <div class="t-progress--info"></div>
+        <div class="t-progress__info"></div>
       </div>
     </div>
   </div>
@@ -7999,18 +7999,18 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
     <div>自定义高度</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress--bar" style="height:30px;background-color:;border-radius:30px;">
-          <div class="t-progress--inner" style="width:30%;background:linear-gradient( 90deg,#FFC86E,#E66A72 );"></div>
+        <div class="t-progress__bar" style="height:30px;background-color:;border-radius:30px;">
+          <div class="t-progress__inner" style="width:30%;background:linear-gradient( 90deg,#FFC86E,#E66A72 );"></div>
         </div>
-        <div class="t-progress--info">30%</div>
+        <div class="t-progress__info">30%</div>
       </div>
     </div>
     <div>自定义尺寸</div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
-        <div class="t-progress--info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="150.79644737231007  351.85837720205683" class="t-circle--inner" style="stroke:;"></circle>
+        <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="150.79644737231007  351.85837720205683" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8018,17 +8018,17 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
   <div class="t-progress-domo-margin">
     <div>自定义颜色</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-circle--inner" style="stroke:#52CC8D;"></circle>
+        <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
         </svg>
       </div>
     </div>
@@ -8037,17 +8037,17 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
     <div>自定义内容</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:30%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:30%;background:;"></div>
         </div>
-        <div class="t-progress--info">&lt;div&gt;45days&lt;/div&gt;</div>
+        <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div>
       </div>
     </div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-circle--inner" style="stroke:;"></circle>
+        <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8064,28 +8064,28 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:30%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:30%;background:;"></div>
         </div>
-        <div class="t-progress--info">30%</div>
+        <div class="t-progress__info">30%</div>
       </div>
     </div>
     <div class="t-progress-domo-margin">100%</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--success">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:100%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:100%;background:;"></div>
         </div>
-        <div class="t-progress--info">100%</div>
+        <div class="t-progress__info">100%</div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度完成</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--success">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:60%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:60%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress__icon">
             <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
@@ -8093,10 +8093,10 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     <div class="t-progress-domo-margin">进度状态发生重大错误</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--error">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:60%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:60%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress__icon">
             <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
@@ -8104,10 +8104,10 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     <div class="t-progress-domo-margin">进度被中断</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--warning">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:60%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:60%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress__icon">
             <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
@@ -8115,10 +8115,10 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     <div class="t-progress-domo-margin">渐变色</div>
     <div class="t-progress">
       <div class="t-progress--thin t-progress--status--active">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:60%;background:linear-gradient(to right, #0052D9, #00A870);"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:60%;background:linear-gradient(to right, #0052D9, #00A870);"></div>
         </div>
-        <div class="t-progress--info">60%</div>
+        <div class="t-progress__info">60%</div>
       </div>
     </div>
   </div>
@@ -8128,17 +8128,17 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:;">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:;">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:5%;background:;"></div>
-        <div class="t-progress--info">5%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:5%;background:;"></div>
+        <div class="t-progress__info">5%</div>
       </div>
     </div>
   </div>
@@ -8150,56 +8150,56 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:;">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:;">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:5%;background:;"></div>
-        <div class="t-progress--info">5%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:5%;background:;"></div>
+        <div class="t-progress__info">5%</div>
       </div>
     </div>
     <div class="t-progress-domo-margin">100%</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:100%;background:;">
-          <div class="t-progress--info">100%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:100%;background:;">
+          <div class="t-progress__info">100%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度完成</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:;">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:;">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度状态发生重大错误</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:;">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:;">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">进度被中断</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:;">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:;">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin">渐变色</div>
     <div class="t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:30%;background:linear-gradient(to right, #0052D9, #00A870);">
-          <div class="t-progress--info">30%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #0052D9, #00A870);">
+          <div class="t-progress__info">30%</div>
         </div>
       </div>
     </div>
@@ -8214,9 +8214,9 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
     <div class="t-progress-domo-inner">
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-circle--inner" style="stroke:;"></circle>
+          <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8224,11 +8224,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
     <div class="t-progress-domo-inner">
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--error" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress__icon">
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8236,11 +8236,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
     <div class="t-progress-domo-inner">
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8248,11 +8248,11 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
     <div class="t-progress-domo-inner">
       <div class="t-progress">
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress--icon">
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress__icon">
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-circle--inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8263,18 +8263,18 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
     <div>小尺寸</div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
-        <div class="t-progress--info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
-          <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-circle--inner" style="stroke:;"></circle>
+        <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
+          <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
     <div>大尺寸</div>
     <div class="t-progress">
       <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
-        <div class="t-progress--info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
-          <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-circle--inner" style="stroke:;"></circle>
+        <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8288,28 +8288,28 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
     <div>进度完成：</div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--thin t-progress--status--success">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:80%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:80%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress__icon">
             <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:80%;background:;">
-          <div class="t-progress--info">80%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:80%;background:;">
+          <div class="t-progress__info">80%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-circle--inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8318,28 +8318,28 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
     <div>进度状态出现重大错误（如下载的文件有损）：</div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--thin t-progress--status--error">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:80%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:80%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress__icon">
             <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:80%;background:;">
-          <div class="t-progress--info">80%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:80%;background:;">
+          <div class="t-progress__info">80%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--circle t-progress--status--error" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress__icon">
             <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-circle--inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8348,38 +8348,38 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
     <div>进度被中断（如失去网络连接）</div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--thin t-progress--status--warning">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:80%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:80%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress__icon">
             <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress--bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-        <div class="t-progress--inner" style="width:80%;background:;">
-          <div class="t-progress--info">80%</div>
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+        <div class="t-progress__inner" style="width:80%;background:;">
+          <div class="t-progress__info">80%</div>
         </div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--thin t-progress--status--warning">
-        <div class="t-progress--bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress--inner" style="width:80%;background:;"></div>
+        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+          <div class="t-progress__inner" style="width:80%;background:;"></div>
         </div>
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress__icon">
             <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
           </svg></div>
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
       <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress--info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress--icon">
+        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-circle--outer"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-circle--inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8392,19 +8392,19 @@ exports[`ssr snapshot test renders ./examples/radio/demos/base.vue correctly 1`]
 exports[`ssr snapshot test renders ./examples/radio/demos/group.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio"><input type="radio" value="1" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label><label class="t-radio"><input type="radio" value="2" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label><label class="t-radio"><input type="radio" value="3" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label><label class="t-radio"><input type="radio" value="4" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label><label class="t-radio"><input type="radio" value="2" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label><label class="t-radio"><input type="radio" value="3" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label><label class="t-radio"><input type="radio" value="4" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
   </div>
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/radio/demos/size.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-radio-group t-radio-group-small t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
-  <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
-  <div class="t-radio-group t-radio-group-large t-radio-group-outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  <div class="t-radio-group t-radio-group-small t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  <div class="t-radio-group t-radio-group-large t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
 </div>
 `;
 
@@ -8412,29 +8412,29 @@ exports[`ssr snapshot test renders ./examples/radio/demos/type.vue correctly 1`]
 <div class="tdesign-demo-block-column-large">
   <div class="tdesign-demo-block-column">
     <h5>边框型单选按钮</h5>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label></div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-outline"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group__outline"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label></div>
   </div>
   <div class="tdesign-demo-block-column">
     <h5>填充型单选按钮</h5>
     <div>
-      <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
-        <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
       </div>
     </div>
     <div>
-      <div class="t-radio-group t-radio-group-medium t-radio-group-filled t-radio-group-primary-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
-        <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
       </div>
     </div>
     <div>
-      <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
-        <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
       </div>
     </div>
     <div>
-      <div class="t-radio-group t-radio-group-medium t-radio-group-filled t-radio-group-primary-filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
-        <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
       </div>
     </div>
   </div>
@@ -10210,8 +10210,8 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button"><input type="radio" value="load-more" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载更多</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="loading" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载中</span></label> <label class="t-radio-button"><input type="radio" value="loading-custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义加载更多</span></label> <label class="t-radio-button"><input type="radio" value="" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载完成</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="load-more" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载更多</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="loading" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载中</span></label> <label class="t-radio-button"><input type="radio" value="loading-custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义加载更多</span></label> <label class="t-radio-button"><input type="radio" value="" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载完成</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div style="width:100%;">
@@ -10689,8 +10689,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">显示展开图标</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">隐藏展开图标</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义展开图标</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">显示展开图标</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">隐藏展开图标</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义展开图标</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label>
   <div style="width:100%;">
@@ -11054,13 +11054,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
 exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定一列</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定两列</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定一列</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定两列</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧固定一列</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧固定两列</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧固定一列</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右侧固定两列</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div style="width:100%;">
@@ -12092,7 +12092,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
                   </svg></div>
               </div>
             </div>
-            <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+            <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
                 <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
               </svg></div>
             <ul class="t-pagination__pager">
@@ -12106,7 +12106,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
                 </svg></li>
               <li class="t-pagination__number">12</li>
             </ul>
-            <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+            <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
                 <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
               </svg></div>
             <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input type="text" value="1" class="t-input__inner"></div>页</div>
@@ -12153,13 +12153,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
                 </svg></div>
             </div>
           </div>
-          <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+          <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
               <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
             </svg></div>
           <ul class="t-pagination__pager">
             <li class="t-pagination__number t-is-current">1</li>
           </ul>
-          <div disabled="disabled" class="t-pagination__btn t-pagination__btn--next t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+          <div disabled="disabled" class="t-pagination__btn t-pagination__btn-next t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
         </div>
@@ -12637,10 +12637,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
 exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correctly 1`] = `
 <div class="t-table-tree-select-demo">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">父子行选中独立</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><div class="t-popup-reference"><div name="t-popup_animation" appear="true"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">父子行选中独立</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><div class="t-popup-reference"><div name="t-popup_animation" appear="true"></div>
           父子行选中关联
         </div></span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div><br>
   <div style="width:100%;">
@@ -12779,8 +12779,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
 exports[`ssr snapshot test renders ./examples/tabs/demos/ban.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-tabs">
@@ -12876,8 +12876,8 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
 exports[`ssr snapshot test renders ./examples/tabs/demos/combination.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large" style="width:100%;">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-tabs">
@@ -12958,8 +12958,8 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/custom.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/tabs/demos/icon.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">常规型</span></label> <label class="t-radio-button"><input type="radio" value="card" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">卡片型</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-tabs">
@@ -13023,8 +13023,8 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/operation.vue correctly
 exports[`ssr snapshot test renders ./examples/tabs/demos/position.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">top</span></label> <label class="t-radio-button"><input type="radio" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">right</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">bottom</span></label> <label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">left</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">top</span></label> <label class="t-radio-button"><input type="radio" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">right</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">bottom</span></label> <label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">left</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-tabs">
@@ -13810,7 +13810,7 @@ exports[`ssr snapshot test renders ./examples/transfer/demos/pagination.vue corr
       </div>
       <div class="t-transfer-list__pagination">
         <div class="t-pagination t-size-s">
-          <div disabled="disabled" class="t-pagination__btn t-pagination__btn--prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+          <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
               <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
             </svg></div>
           <div class="t-select-wrap t-pagination__select">
@@ -13821,7 +13821,7 @@ exports[`ssr snapshot test renders ./examples/transfer/demos/pagination.vue corr
                 </svg></div>
             </div>
           </div>
-          <div class="t-pagination__btn t-pagination__btn--next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+          <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
         </div>
@@ -14051,8 +14051,8 @@ exports[`ssr snapshot test renders ./examples/tree/demos/checkable.vue correctly
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">选中值模式</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="onlyLeaf" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">onlyLeaf</span></label><label class="t-radio-button"><input type="radio" value="parentFirst" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">parentFirst</span></label><label class="t-radio-button"><input type="radio" value="all" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">all</span></label>
-            <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+          <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="onlyLeaf" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">onlyLeaf</span></label><label class="t-radio-button"><input type="radio" value="parentFirst" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">parentFirst</span></label><label class="t-radio-button"><input type="radio" value="all" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">all</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
       </div>
@@ -14960,8 +14960,8 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/dvalue.vue corre
 exports[`ssr snapshot test renders ./examples/tree-select/demos/filterable.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="default" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">默认</span></label> <label class="t-radio-button"><input type="radio" value="function" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义方法</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="default" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">默认</span></label> <label class="t-radio-button"><input type="radio" value="function" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义方法</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div style="width:300px;">
@@ -15147,8 +15147,8 @@ exports[`ssr snapshot test renders ./examples/upload/demos/draggable.vue correct
       </div>
     </div>
     <div>
-      <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="file" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">文件拖拽上传</span></label> <label class="t-radio-button"><input type="radio" value="image" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">图片拖拽上传</span></label>
-        <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="file" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">文件拖拽上传</span></label> <label class="t-radio-button"><input type="radio" value="image" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">图片拖拽上传</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
       </div>
     </div>
   </div>
@@ -15288,8 +15288,8 @@ exports[`ssr snapshot test renders ./examples/upload/demos/listType.vue correctl
 exports[`ssr snapshot test renders ./examples/upload/demos/request-method.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
-    <div class="t-radio-group t-radio-group-medium t-radio-group-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="requestSuccessMethod" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上传成功示例</span></label> <label class="t-radio-button"><input type="radio" value="requestFailMethod" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上传失败示例</span></label>
-      <div class="t-radio-group-filled-bg-block" style="width:0px;left:0px;"></div>
+    <div class="t-radio-group t-radio-group-medium t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="requestSuccessMethod" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上传成功示例</span></label> <label class="t-radio-button"><input type="radio" value="requestFailMethod" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">上传失败示例</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
   <div class="t-upload"><input type="file" accept="" hidden="hidden">

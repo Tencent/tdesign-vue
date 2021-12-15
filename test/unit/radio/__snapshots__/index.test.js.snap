@@ -79,7 +79,7 @@ exports[`Radio :props :name 1`] = `
 
 exports[`Radio RadioGroup :props :defaultValue 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  class="t-radio-group t-radio-group-medium t-radio-group__outline"
 >
   <label
     class="t-radio"
@@ -123,7 +123,7 @@ exports[`Radio RadioGroup :props :defaultValue 1`] = `
 
 exports[`Radio RadioGroup :props :disabled 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  class="t-radio-group t-radio-group-medium t-radio-group__outline"
 >
   <label
     class="t-radio t-is-disabled"
@@ -186,7 +186,7 @@ exports[`Radio RadioGroup :props :disabled 1`] = `
 
 exports[`Radio RadioGroup :props :name 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  class="t-radio-group t-radio-group-medium t-radio-group__outline"
 >
   <label
     class="t-radio"
@@ -230,7 +230,7 @@ exports[`Radio RadioGroup :props :name 1`] = `
 
 exports[`Radio RadioGroup :props :options 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  class="t-radio-group t-radio-group-medium t-radio-group__outline"
 >
   <label
     class="t-radio t-is-disabled"
@@ -274,7 +274,7 @@ exports[`Radio RadioGroup :props :options 1`] = `
 
 exports[`Radio RadioGroup :props :size 1`] = `
 <div
-  class="t-radio-group t-radio-group-small t-radio-group-outline"
+  class="t-radio-group t-radio-group-small t-radio-group__outline"
 >
   <label
     class="t-radio-button"
@@ -318,7 +318,7 @@ exports[`Radio RadioGroup :props :size 1`] = `
 
 exports[`Radio RadioGroup :props :value 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-outline"
+  class="t-radio-group t-radio-group-medium t-radio-group__outline"
 >
   <label
     class="t-radio"
@@ -362,7 +362,7 @@ exports[`Radio RadioGroup :props :value 1`] = `
 
 exports[`Radio RadioGroup :props :variant 1`] = `
 <div
-  class="t-radio-group t-radio-group-medium t-radio-group-filled"
+  class="t-radio-group t-radio-group-medium t-radio-group--filled"
 >
   <label
     class="t-radio-button"
@@ -402,7 +402,7 @@ exports[`Radio RadioGroup :props :variant 1`] = `
     </span>
   </label>
   <div
-    class="t-radio-group-filled-bg-block"
+    class="t-radio-group__bg-block"
     style="width: 0px; left: 0px;"
   />
 </div>
