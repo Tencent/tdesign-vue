@@ -602,7 +602,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             header={false}
             onClose={this.cancelPreviewImgDialog}
           >
-              <div class={`${prefix}__dialog__body-img-box`}>
+              <div class={`${prefix}__dialog-body-img-box`}>
                 <img src={this.showImageViewUrl} alt='' />
               </div>
           </TDialog>
