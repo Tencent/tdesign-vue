@@ -18,7 +18,7 @@
     <t-message v-if="closableMsg2">
       自定义关闭按钮（插槽）
       <template #closeBtn>
-        <div class='t-message-close' @click="closableMsg2 = false">
+        <div class='t-message__close' @click="closableMsg2 = false">
           <b>x</b>
         </div>
       </template>
@@ -40,7 +40,7 @@ export default {
     closeBtn() {
       return (
         <div
-          class='t-message-close'
+          class='t-message__close'
           onClick={() => {
             this.closableMsg1 = false;
           }}

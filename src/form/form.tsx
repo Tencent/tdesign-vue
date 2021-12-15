@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
 import {
-  Data, FormValidateResult, TdFormProps, FormValidateParams,
+  Data, FormValidateResult, TdFormProps, FormValidateParams, AllValidateResult,
 } from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
@@ -85,6 +85,8 @@ export default Vue.extend({
       Object.keys(r).forEach((key) => {
         if (r[key] === true) {
           delete r[key];
+        } else {
+          r[key] = r[key].filter((fr: AllValidateResult) => fr.result === false);
         }
       });
       const result = isEmpty(r) ? true : r;

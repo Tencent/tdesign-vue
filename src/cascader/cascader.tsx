@@ -25,8 +25,9 @@ import {
   TdCascaderProps,
 } from './interface';
 import props from './props';
-import { CascaderChangeSource, CascaderValue } from './type';
-import { TreeNodeModel } from '../tree';
+import { CascaderChangeSource, CascaderValue, CascaderChangeContext } from './type';
+import { TreeNodeModel } from '../_common/js/tree/types';
+import { TreeOptionData } from '../common';
 
 const name = `${prefix}-cascader`;
 
@@ -63,9 +64,9 @@ export default Vue.extend({
           this.treeNodes = nodes;
         },
         // 内部节点时 TreeNode，对外暴露的节点对象是 TreeNodeModel
-        setValue: (val: CascaderValue, source: CascaderChangeSource, node: TreeNodeModel) => {
+        setValue: (val: CascaderValue, source: CascaderChangeSource, node?: TreeNodeModel) => {
           if (isEqual(val, this.scopeVal)) return;
-          emitEvent<Parameters<TdCascaderProps['onChange']>>(this, 'change', val, { source, node });
+          emitEvent<Parameters<TdCascaderProps['onChange']>>(this, 'change', val, { source, node } as CascaderChangeContext<TreeOptionData>);
         },
         setVisible: (val: boolean) => {
           this.visible = val;
@@ -264,7 +265,7 @@ export default Vue.extend({
     return (<div ref="cascader" >
       <Popup
         ref="popup"
-        overlayClassName={`${name}-dropdown`}
+        overlayClassName={`${name}__dropdown`}
         placement="bottom-left"
         visible={visible}
         trigger={popupProps?.trigger || 'click'}

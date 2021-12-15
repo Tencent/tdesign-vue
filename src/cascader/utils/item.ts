@@ -15,11 +15,7 @@ export function getLabelIsEllipsis(node: TreeNode, size: CascaderContextType['si
   return sizeMap[size] < node.label.length;
 }
 
-export function getNodeStatusClass(
-  node: TreeNode,
-  CLASSNAMES: any,
-  cascaderContext: CascaderContextType,
-) {
+export function getNodeStatusClass(node: TreeNode, CLASSNAMES: any, cascaderContext: CascaderContextType) {
   const {
     checkStrictly, multiple, value, max,
   } = cascaderContext;
@@ -29,7 +25,7 @@ export function getNodeStatusClass(
 
   const isDisabled = node.disabled || (multiple && (value as TreeNodeValue[]).length >= max && max !== 0);
 
-  const isSelected = node.checked || (multiple && !checkStrictly && ((node.expanded && !isLeaf)));
+  const isSelected = node.checked || (multiple && !checkStrictly && node.expanded && !isLeaf);
 
   return [
     {
@@ -48,11 +44,11 @@ export function getCascaderItemClass(
 ) {
   const { size } = cascaderContext;
   return [
-    `${prefix}-cascader-item`,
+    `${prefix}-cascader__item`,
     ...getNodeStatusClass(node, CLASSNAMES, cascaderContext),
     {
-      [`${prefix}-cascader-item-have-icon`]: node.children,
-      [`${prefix}-cascader-item-is-leaf`]: node.isLeaf(),
+      [`${prefix}-cascader__item--with-icon`]: node.children,
+      [`${prefix}-cascader__item--leaf`]: node.isLeaf(),
       [CLASSNAMES.SIZE[size]]: size,
     },
   ];
@@ -64,8 +60,5 @@ export function getCascaderItemIconClass(
   CLASSNAMES: any,
   cascaderContext: CascaderContextType,
 ) {
-  return [
-    `${prefix}-cascader-item-icon`,
-    ...getNodeStatusClass(node, CLASSNAMES, cascaderContext),
-  ];
+  return [`${prefix}-cascader__item-icon`, ...getNodeStatusClass(node, CLASSNAMES, cascaderContext)];
 }

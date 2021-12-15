@@ -6,6 +6,7 @@ import {
   DeleteIcon as TIconDelete,
   BrowseIcon as TIconBrowse,
 } from 'tdesign-icons-vue';
+import { prefix } from '../config';
 import { UploadFile } from './type';
 import TButton from '../button';
 import TLoading from '../loading';
@@ -179,45 +180,45 @@ export default Vue.extend({
         <div class={`${UPLOAD_NAME}__flow-card-area`}>
           {this.showInitial && this.renderDrager()}
           {!!this.listFiles.length && (
-            <ul class={`${UPLOAD_NAME}-card clearfix`}>
+            <ul class={`${UPLOAD_NAME}__card clearfix`}>
               {this.listFiles.map((file, index) => (
-                <li class={`${UPLOAD_NAME}-card__item`}>
+                <li class={`${UPLOAD_NAME}__card-item`}>
                   <div
                     class={[
-                      `${UPLOAD_NAME}-card__content`,
-                      { [`${UPLOAD_NAME}-card__content-border`]: file.status !== 'waiting' },
+                      `${UPLOAD_NAME}__card-content`,
+                      { [`${prefix}-is-bordered`]: file.status !== 'waiting' },
                     ]}
                   >
                     {file.status === 'fail' && (
-                      <div class={`${UPLOAD_NAME}-card__status-wrap`}>
+                      <div class={`${UPLOAD_NAME}__card-status-wrap`}>
                         <TIconErrorCircleFilled /><p>上传失败</p>
                       </div>
                     )}
                     {file.status === 'progress' && (
-                      <div class={`${UPLOAD_NAME}-card__status-wrap`}>
+                      <div class={`${UPLOAD_NAME}__card-status-wrap`}>
                         <TLoading /><p>上传中 {Math.min(file.percent, 99)}</p>
                       </div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
                       <img
-                        class={`${UPLOAD_NAME}-card__image`}
+                        class={`${UPLOAD_NAME}__card-image`}
                         src={file.url || '//tdesign.gtimg.com/tdesign-default-img.png'}
                       />
                     )}
-                    <div class={`${UPLOAD_NAME}-card__mask`}>
-                      {file.url && <span class={`${UPLOAD_NAME}-card__mask__item`}>
+                    <div class={`${UPLOAD_NAME}__card-mask`}>
+                      {file.url && <span class={`${UPLOAD_NAME}__card-mask-item`}>
                         <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
-                        <span class={`${UPLOAD_NAME}-card__mask__item-divider`}></span>
+                        <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
                       </span>}
                       <span
-                        class={`${UPLOAD_NAME}-card__mask__item`}
+                        class={`${UPLOAD_NAME}__card-mask-item`}
                         onClick={(e: MouseEvent) => this.remove({ e, index, file })}
                       >
                         <TIconDelete/>
                       </span>
                     </div>
                   </div>
-                  <p class={`${UPLOAD_NAME}-card__name`}>{abridgeName(file.name)}</p>
+                  <p class={`${UPLOAD_NAME}__card-name`}>{abridgeName(file.name)}</p>
                 </li>
               ))}
             </ul>
@@ -232,7 +233,7 @@ export default Vue.extend({
       <div class={[`${UPLOAD_NAME}__flow`, `${UPLOAD_NAME}__flow-${this.display}`]}>
         <div class={`${UPLOAD_NAME}__flow-op`}>
           {this.$scopedSlots.default && this.$scopedSlots.default(null)}
-          <small class={`${UPLOAD_NAME}__small ${UPLOAD_NAME}__flow-placeholder`}>{this.placeholder}</small>
+          <small class={`${prefix}-size-s ${UPLOAD_NAME}__flow-placeholder`}>{this.placeholder}</small>
         </div>
         {this.display === 'file-flow' && this.renderFileList()}
         {this.display === 'image-flow' && this.renderImgList()}

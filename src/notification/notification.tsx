@@ -58,7 +58,7 @@ export default Vue.extend({
     renderClose() {
       const defaultClose = <t-icon-close />;
       return (
-        <span class='t-message-close' onClick={this.close}>
+        <span class='t-message__close' onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
         </span>
       );

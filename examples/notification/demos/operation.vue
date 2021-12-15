@@ -10,8 +10,8 @@
     <t-notification theme="info" content="1. 使用插槽自定义标题 2. 使用插槽自定义底部内容" v-if="visible">
       <div slot='title'>消息通知标题 <small>消息通知副标题</small></div>
       <div slot="footer" class="t-notification__detail">
-        <t-button class="t-notification__detail--item" theme="default" variant="text">取消</t-button>
-        <t-button class="t-notification__detail--item" theme="primary" variant="text" @click="remind">
+        <t-button class="t-notification__detail-item" theme="default" variant="text">取消</t-button>
+        <t-button class="t-notification__detail-item" theme="primary" variant="text" @click="remind">
           稍后提醒我(10s)
         </t-button>
       </div>
@@ -48,14 +48,14 @@ export default {
     footer() {
       return (
         <div slot="footer" class="t-notification__detail">
-          <t-button class="t-notification__detail--item" theme="primary" variant="text">查看详情</t-button>
+          <t-button class="t-notification__detail-item" theme="primary" variant="text">查看详情</t-button>
         </div>
       );
     },
     footer2() {
       return (
         <div slot="footer" class="t-notification__detail">
-          <t-button class="t-notification__detail--item" theme="primary" variant="text">查看详情</t-button>
+          <t-button class="t-notification__detail-item" theme="primary" variant="text">查看详情</t-button>
         </div>
       );
     },

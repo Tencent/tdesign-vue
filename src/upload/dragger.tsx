@@ -108,7 +108,7 @@ export default Vue.extend({
     renderDefaultDragElement(): VNode {
       const unActiveElement = (
         <div>
-          <span class={`${prefix}-upload__highlight`}>点击上传</span>
+          <span class={`${prefix}-upload--highlight`}>点击上传</span>
           <span>&nbsp;&nbsp;/&nbsp;&nbsp;拖拽到此区域</span>
         </div>
       );
@@ -154,10 +154,10 @@ export default Vue.extend({
               {this.loadingFile && this.renderUploading()}
               {(!this.loadingFile && !!this.file) && <TIconCheckCircleFilled/>}
             </div>
-            <small class={`${UPLOAD_NAME}__small`}>
+            <small class={`${prefix}-size-s`}>
               文件大小：{returnFileSize(this.size)}
             </small>
-            <small class={`${UPLOAD_NAME}__small`}>
+            <small class={`${prefix}-size-s`}>
               上传日期：{getCurrentDate()}
             </small>
             <div class={`${UPLOAD_NAME}__dragger-btns`}>

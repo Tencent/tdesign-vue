@@ -4704,15 +4704,17 @@ exports[`Transfer tree demo works fine 1`] = `
           class="t-transfer-list__content narrow-scrollbar"
         >
           <div
-            class="t-tree t-tree--hoverable t-tree--checkable t-tree--fx"
+            class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
           >
             <transition-group-stub
               class="t-tree__list"
+              enteractiveclass="t-tree__item--enter-active"
+              leaveactiveclass="t-tree__item--leave-active"
               name="t-tree-toggle"
               tag="div"
             >
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="0"
                 data-value="1"
                 style="--level: 0;"
@@ -4756,7 +4758,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="1"
                 data-value="1.1"
                 style="--level: 1;"
@@ -4786,7 +4788,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="1"
                 data-value="1.2"
                 style="--level: 1;"
@@ -4830,7 +4832,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="2"
                 data-value="1.2.1"
                 style="--level: 2;"
@@ -4874,7 +4876,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="3"
                 data-value="1.2.1.1"
                 style="--level: 3;"
@@ -4904,7 +4906,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="3"
                 data-value="1.2.1.2"
                 style="--level: 3;"
@@ -4934,7 +4936,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="0"
                 data-value="2"
                 style="--level: 0;"
@@ -4978,7 +4980,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="1"
                 data-value="2.1"
                 style="--level: 1;"
@@ -5008,7 +5010,7 @@ exports[`Transfer tree demo works fine 1`] = `
                 </label>
               </div>
               <div
-                class="t-tree__item t-tree__item--open"
+                class="t-tree__item t-tree__item--open t-tree__item--visible"
                 data-level="1"
                 data-value="2.2"
                 style="--level: 1;"

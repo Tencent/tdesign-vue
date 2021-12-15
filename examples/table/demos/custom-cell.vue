@@ -48,7 +48,7 @@ export default {
           title: '类型',
           // type-slot-name 会被用于自定义单元格的插槽名称
           cell: 'type-slot-name',
-          width: 80,
+          width: 100,
         },
         {
           // 没有 cell 的情况下， platform 会被用作自定义单元格的插槽名称
