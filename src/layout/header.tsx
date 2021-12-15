@@ -26,7 +26,7 @@ export default Vue.extend({
       height: this.height,
     } : {};
     return (
-      <header class={`${prefix}-layout--header`} style={styles}>
+      <header class={`${prefix}-layout__header`} style={styles}>
         {this.renderContent()}
       </header>
     );

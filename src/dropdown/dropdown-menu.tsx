@@ -43,7 +43,7 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
       this.dropdown.options[idx].onClick?.(data, context);
     },
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
-      const menuClass = [`${name}__column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
+      const menuClass = [`${name}-column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
       const { maxHeight, maxColumnWidth, minColumnWidth } = this.dropdown;
       return (
         <div

@@ -33,8 +33,8 @@ export default Vue.extend({
       return [
         name,
         {
-          [`${name}-${justify}`]: justify,
-          [`${name}-${align}`]: align,
+          [`${name}--${justify}`]: justify,
+          [`${name}--${align}`]: align,
         },
       ];
     },

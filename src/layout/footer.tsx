@@ -26,7 +26,7 @@ export default Vue.extend({
       height: this.height,
     } : {};
     return (
-      <footer class={`${prefix}-layout--footer`} style={styles}>
+      <footer class={`${prefix}-layout__footer`} style={styles}>
         {this.renderContent()}
       </footer>
     );

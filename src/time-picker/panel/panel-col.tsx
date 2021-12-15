@@ -35,7 +35,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       return [Number(this.value.get('hour')), Number(this.value.get('minute')), Number(this.value.get('second'))];
     },
     timeItemMargin() {
-      const maskDom = this.$el?.querySelector?.(`.${componentName}-panel__body-active-mask > div`);
+      const maskDom = this.$el?.querySelector?.(`.${componentName}__panel-body-active-mask > div`);
       return maskDom && parseInt(getComputedStyle(maskDom).margin, 10);
     },
   },
@@ -145,7 +145,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
           this.splitValue[col] = el;
         }
         const classNames = [
-          `${componentName}-panel__body-scroll-item`,
+          `${componentName}__panel-body-scroll-item`,
           {
             [`${prefix}-is-disabled`]: !this.timeItemCanUsed(col, el),
             [`${prefix}-is-current`]: isCurrent,
@@ -196,7 +196,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     renderScroller(col: EPickerCols) {
       return (
         <ul
-          class={`${componentName}-panel__body-scroll`}
+          class={`${componentName}__panel-body-scroll`}
           ref={`${col}_scroller`}
           onMousewheel={debounce(() => this.handleScroll(col), 50)}
         >
@@ -264,7 +264,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
     },
     renderActiveMask() {
       return (
-        <div class={`${componentName}-panel__body-active-mask`}>
+        <div class={`${componentName}__panel-body-active-mask`}>
           {this.cols.map((_col, idx) => (
             <div key={idx} />
           ))}
@@ -274,7 +274,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
   },
   render() {
     return (
-      <div class={`${componentName}-panel__body`}>
+      <div class={`${componentName}__panel-body`}>
         {this.renderActiveMask()}
         {this.renderScrollers()}
       </div>

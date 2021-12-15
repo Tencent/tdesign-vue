@@ -34,11 +34,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     drawerClasses(): ClassName {
       return [
         name,
-        `${name}-${this.placement}`,
+        `${name}--${this.placement}`,
         {
-          [`${name}-open`]: this.visible,
-          [`${name}-attach`]: this.showInAttachedElement,
-          [`${name}-no-mask`]: !this.showOverlay,
+          [`${name}--open`]: this.visible,
+          [`${name}--attach`]: this.showInAttachedElement,
+          [`${name}--without-mask`]: !this.showOverlay,
         },
       ];
     },
@@ -50,7 +50,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         large: '760px',
       }[this.size] || defaultSize;
     },
-    wraperStyles(): Styles {
+    wrapperStyles(): Styles {
       return {
         // 用于抵消动画效果：transform: translateX(100%); 等
         transform: this.visible ? 'translateX(0)' : undefined,
@@ -58,8 +58,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         height: ['top', 'bottom'].includes(this.placement) ? this.sizeValue : '',
       };
     },
-    wraperClasses(): ClassName {
-      return [`${name}__content-wrapper`, `${name}__content-wrapper-${this.placement}`];
+    wrapperClasses(): ClassName {
+      return [`${name}__content-wrapper`, `${name}__content-wrapper--${this.placement}`];
     },
     parentNode(): HTMLElement {
       return this.$el && this.$el.parentNode as HTMLElement;
@@ -101,7 +101,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         v-transfer-dom={this.attach}
       >
         {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick}/>}
-        <div class={this.wraperClasses} style={this.wraperStyles}>
+        <div class={this.wrapperClasses} style={this.wrapperStyles}>
           {this.header !== false ? <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div> : null}
           {this.closeBtn !== false
             ? (
