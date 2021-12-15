@@ -23,7 +23,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-input t-size-m"
@@ -56,7 +56,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-input t-size-m"
@@ -89,7 +89,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-switch t-size-m"
@@ -123,7 +123,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-radio-group t-radio-group-medium t-radio-group-outline"
@@ -188,7 +188,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <div
             class="t-checkbox-group"
@@ -269,7 +269,7 @@ exports[`Form base demo works fine 1`] = `
         style="margin-left: 100px;"
       >
         <div
-          class="t-form__controls--content"
+          class="t-form__controls-content"
         >
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
