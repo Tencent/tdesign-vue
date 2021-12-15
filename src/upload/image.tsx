@@ -58,18 +58,18 @@ export default Vue.extend({
 
   render() {
     return (
-      <ul class={`${UPLOAD_NAME}-card`}>
+      <ul class={`${UPLOAD_NAME}__card`}>
         {this.files && this.files.map((file, index) => (
-            <li class={`${UPLOAD_NAME}-card__item ${prefix}-is--background`}>
-              <div class={`${UPLOAD_NAME}-card__content ${UPLOAD_NAME}-card__box`}>
-                <img class={`${UPLOAD_NAME}-card__image`} src={file.url} />
-                <div class={`${UPLOAD_NAME}-card__mask`} onClick={this.onMaskClick}>
-                  <span class={`${UPLOAD_NAME}-card__mask__item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
+            <li class={`${UPLOAD_NAME}__card-item ${prefix}-is--background`}>
+              <div class={`${UPLOAD_NAME}__card-content ${UPLOAD_NAME}__card-box`}>
+                <img class={`${UPLOAD_NAME}__card-image`} src={file.url} />
+                <div class={`${UPLOAD_NAME}__card-mask`} onClick={this.onMaskClick}>
+                  <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
                     <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
                   </span>
-                  <span class={`${UPLOAD_NAME}-card__mask__item-divider`}></span>
+                  <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
 
-                  <span class={`${UPLOAD_NAME}-card__mask__item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
+                  <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
                     <IIconDelete nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
                   </span>
                 </div>
@@ -77,18 +77,18 @@ export default Vue.extend({
             </li>
         ))}
         {this.showTrigger && (
-          <li class={[`${UPLOAD_NAME}-card__item ${prefix}-is--background`, {
+          <li class={[`${UPLOAD_NAME}__card-item ${prefix}-is--background`, {
             [CLASSNAMES.STATUS.disabled]: this.disabled,
           }]} onClick={this.trigger}>
             {this.showUploadProgress && this.loadingFile && this.loadingFile.status === 'progress' ? (
-              <div class={`${UPLOAD_NAME}-card-container ${UPLOAD_NAME}-card__box`}>
+              <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
                 <TLoading />
                 <p>上传中 {Math.min(this.loadingFile.percent, 99)}%</p>
               </div>
             ) : (
-              <div class={`${UPLOAD_NAME}-card-container ${UPLOAD_NAME}-card__box`}>
+              <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
                 <TIconAdd></TIconAdd>
-                <p class={`${UPLOAD_NAME}__small`}>点击上传图片</p>
+                <p class={`${prefix}-size-s`}>点击上传图片</p>
               </div>
             )}
           </li>
