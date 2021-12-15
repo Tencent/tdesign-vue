@@ -859,49 +859,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/base.vue correctly 
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -972,49 +972,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/card.vue correctly 
         </thead>
         <tbody class="t-calendar__table-body">
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
         </tbody>
       </table>
@@ -1259,7 +1259,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
           </div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now">
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now">
             <div class="outerWarrper">
               <div class="number">28</div>
               <!---->
@@ -1357,51 +1357,51 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell-append.vue cor
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"><div class="cell-append-demo-outer"><span class="activeTag t-tag t-tag--primary t-size-s t-tag--dark">今天</span></div>
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"><div class="cell-append-demo-outer"><span class="activeTag t-tag t-tag--primary t-size-s t-tag--dark">今天</span></div>
   </div></span>
 </div>
-<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+<div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
 </tr>
 </tbody>
 </table>
@@ -1523,49 +1523,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
         </thead>
         <tbody class="t-calendar__table-body">
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
         </tbody>
       </table>
@@ -1624,49 +1624,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/events.vue correctl
         </thead>
         <tbody class="t-calendar__table-body">
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
         </tbody>
       </table>
@@ -1735,58 +1735,58 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/first-day-of-week.v
         </thead>
         <tbody class="t-calendar__table-body">
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
         </tbody>
       </table>
@@ -1848,49 +1848,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/head.vue correctly 
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -1937,22 +1937,22 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/mode.vue correctly 
       <table class="t-calendar__table">
         <tbody class="t-calendar__table-body">
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">三月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">四月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">三月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">四月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">五月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">六月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">七月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">八月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">五月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">六月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">七月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">八月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
           <tr class="t-calendar__table-body-row">
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">九月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">十月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">十一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-            <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">十二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">九月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">十月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">十一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">十二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           </tr>
         </tbody>
       </table>
@@ -2010,49 +2010,49 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/range.vue correctly
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -2263,7 +2263,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
   </div>
 </tr>
 <tr class="t-calendar__table-body-row">
-  <div class="t-calendar__table-body-cell t-is-checked t-is-now">
+  <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now">
     <div class="calendar-slot-props-api-demo">
       <div class="number">28</div>
     </div>
@@ -2354,58 +2354,58 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -2418,7 +2418,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/base.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2431,7 +2431,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/check-strictly.vue 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2439,7 +2439,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/check-strictly.vue 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2452,7 +2452,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/collapsed.vue corre
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2460,7 +2460,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/collapsed.vue corre
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2468,7 +2468,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/collapsed.vue corre
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2481,7 +2481,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/disabled.vue correc
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-is-disabled t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader-icon t-is-disabled">
+      <div class="t-cascader t-is-disabled t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2489,7 +2489,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/disabled.vue correc
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-is-disabled t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader-icon t-is-disabled">
+      <div class="t-cascader t-is-disabled t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2502,7 +2502,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/ellipsis.vue correc
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2515,7 +2515,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/filterable.vue corr
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2523,7 +2523,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/filterable.vue corr
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2536,7 +2536,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/keys.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2549,7 +2549,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/load.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2562,7 +2562,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/max.vue correctly 1
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2575,7 +2575,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/multiple.vue correc
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2588,7 +2588,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/show-all-levels.vue
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2601,7 +2601,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/size.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-s"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-s"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2609,7 +2609,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/size.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2617,7 +2617,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/size.vue correctly 
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-l"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-l"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2630,7 +2630,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/trigger.vue correct
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2638,7 +2638,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/trigger.vue correct
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2651,7 +2651,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/value-mode.vue corr
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2659,7 +2659,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/value-mode.vue corr
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2667,7 +2667,7 @@ exports[`ssr snapshot test renders ./examples/cascader/demos/value-mode.vue corr
   <div class="t-demo-cascader">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader-is-multiple"><span class="t-cascader-placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -2928,49 +2928,49 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
       </thead>
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-checked t-is-now"><span><div class="t-calendar__table-body-cell-value">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-value">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-value">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -3125,7 +3125,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
   <div style="width:400px;">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">select cascader data</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select cascader data</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -3133,7 +3133,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
   <div style="width:400px;">
     <div class="t-popup-reference">
       <div name="t-popup_animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader-placeholder">select without data in Cascader</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader-icon">
+      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select without data in Cascader</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
@@ -8869,7 +8869,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div class="t-slider-contianer">
+    <div class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8884,7 +8884,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
     </div>
   </div>
   <div class="block">
-    <div class="t-slider-contianer">
+    <div class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" tooltip-props="[object Object]" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8910,7 +8910,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8925,7 +8925,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8952,7 +8952,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
 <div>
   <div class="demo-slider">
     <div class="block">
-      <div show-tooltip="true" class="t-slider-contianer">
+      <div show-tooltip="true" class="t-slider__container">
         <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8964,8 +8964,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
             </div>
           </div>
         </div>
-        <div class="t-slider-input-container">
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-slider__input-container">
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -8976,7 +8976,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
       </div>
     </div>
     <div class="block">
-      <div show-tooltip="true" class="t-slider-contianer">
+      <div show-tooltip="true" class="t-slider__container">
         <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider t-slider--with-input">
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -8994,16 +8994,16 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
             </div>
           </div>
         </div>
-        <div class="t-slider-input-container">
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-slider__input-container">
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
                 <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
               </svg></button>
           </div>
-          <div class="center-line"></div>
-          <div class="t-input-number t-size-m t-is-controls-right t-slider-input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+          <div class="t-slider__center-line"></div>
+          <div class="t-input-number t-size-m t-is-controls-right t-slider__input"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
                 <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
               </svg></button>
             <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9020,8 +9020,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
 exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="number-vertical-block">
-    <div show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider--vertical">
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -9032,8 +9032,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
           </div>
         </div>
       </div>
-      <div class="t-slider-input-container is-vertical">
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+      <div class="t-slider__input-container is-vertical">
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9044,8 +9044,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
     </div>
   </div>
   <div class="number-vertical-block">
-    <div show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--with-input t-slider--vertical">
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -9062,16 +9062,16 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
           </div>
         </div>
       </div>
-      <div class="t-slider-input-container is-vertical">
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+      <div class="t-slider__input-container is-vertical">
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
               <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
             </svg></button>
         </div>
-        <div class="center-line"></div>
-        <div class="t-input-number t-size-m t-is-controls-right t-slider-input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
+        <div class="t-slider__center-line"></div>
+        <div class="t-input-number t-size-m t-is-controls-right t-slider__input is-vertical"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:medium;">
               <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
             </svg></button>
           <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="0" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up" style="font-size:medium;">
@@ -9087,7 +9087,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
 exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9120,7 +9120,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9164,7 +9164,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
 exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="10" aria-valuemax="30" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:-50%;left:0%;"></div>
@@ -9189,7 +9189,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="10" aria-valuemax="30" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:-50%;"></div>
@@ -9225,7 +9225,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
 exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9240,7 +9240,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
     </div>
   </div>
   <div class="block">
-    <div show-tooltip="true" class="t-slider-contianer">
+    <div show-tooltip="true" class="t-slider__container">
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" class="t-slider">
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
@@ -9266,8 +9266,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="vertical-block">
-    <div show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -9281,8 +9281,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
     </div>
   </div>
   <div class="vertical-block">
-    <div show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider-vertical">
+    <div show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -9307,8 +9307,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
 exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="vertical-marks-block">
-    <div vertical="" show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider-vertical">
+    <div vertical="" show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -9340,8 +9340,8 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
     </div>
   </div>
   <div class="vertical-marks-block">
-    <div vertical="" show-tooltip="true" class="t-slider-contianer is-vertical">
-      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider-vertical">
+    <div vertical="" show-tooltip="true" class="t-slider__container is-vertical">
+      <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="vertical" class="t-slider is-vertical t-slider--vertical">
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
@@ -10363,7 +10363,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         <div class="t-table-content">
           <table style="table-layout:fixed;">
             <colgroup>
-              <col style="width:80px;">
+              <col style="width:100px;">
               <col style="width:236px;">
               <col style="width:290px;">
               <col style="width:235px;">

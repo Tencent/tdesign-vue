@@ -589,7 +589,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -603,7 +603,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -617,7 +617,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -631,7 +631,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -645,7 +645,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -659,7 +659,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -673,7 +673,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -691,7 +691,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 07
               </div>
@@ -705,7 +705,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 08
               </div>
@@ -719,7 +719,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 09
               </div>
@@ -733,7 +733,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 10
               </div>
@@ -747,7 +747,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 11
               </div>
@@ -761,7 +761,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 12
               </div>
@@ -775,7 +775,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 13
               </div>
@@ -793,7 +793,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 14
               </div>
@@ -807,7 +807,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 15
               </div>
@@ -821,7 +821,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 16
               </div>
@@ -835,7 +835,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 17
               </div>
@@ -849,7 +849,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 18
               </div>
@@ -863,7 +863,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 19
               </div>
@@ -877,7 +877,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 20
               </div>
@@ -895,7 +895,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 21
               </div>
@@ -909,7 +909,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 22
               </div>
@@ -923,7 +923,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 23
               </div>
@@ -937,7 +937,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 24
               </div>
@@ -951,7 +951,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 25
               </div>
@@ -965,7 +965,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -979,7 +979,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -993,11 +993,11 @@ exports[`Calendar base demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -1011,7 +1011,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -1025,7 +1025,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -1039,7 +1039,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 31
               </div>
@@ -1053,7 +1053,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -1067,7 +1067,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -1081,7 +1081,7 @@ exports[`Calendar base demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -1792,7 +1792,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -1806,7 +1806,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -1820,7 +1820,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -1834,7 +1834,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -1848,7 +1848,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   04
                 </div>
@@ -1862,7 +1862,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   05
                 </div>
@@ -1876,7 +1876,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   06
                 </div>
@@ -1894,7 +1894,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   07
                 </div>
@@ -1908,7 +1908,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   08
                 </div>
@@ -1922,7 +1922,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   09
                 </div>
@@ -1936,7 +1936,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   10
                 </div>
@@ -1950,7 +1950,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   11
                 </div>
@@ -1964,7 +1964,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   12
                 </div>
@@ -1978,7 +1978,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   13
                 </div>
@@ -1996,7 +1996,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   14
                 </div>
@@ -2010,7 +2010,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   15
                 </div>
@@ -2024,7 +2024,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   16
                 </div>
@@ -2038,7 +2038,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   17
                 </div>
@@ -2052,7 +2052,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   18
                 </div>
@@ -2066,7 +2066,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   19
                 </div>
@@ -2080,7 +2080,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   20
                 </div>
@@ -2098,7 +2098,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   21
                 </div>
@@ -2112,7 +2112,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   22
                 </div>
@@ -2126,7 +2126,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   23
                 </div>
@@ -2140,7 +2140,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   24
                 </div>
@@ -2154,7 +2154,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   25
                 </div>
@@ -2168,7 +2168,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   26
                 </div>
@@ -2182,7 +2182,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   27
                 </div>
@@ -2196,11 +2196,11 @@ exports[`Calendar card demo works fine 1`] = `
             class="t-calendar__table-body-row"
           >
             <div
-              class="t-calendar__table-body-cell t-is-checked t-is-now"
+              class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   28
                 </div>
@@ -2214,7 +2214,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   29
                 </div>
@@ -2228,7 +2228,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -2242,7 +2242,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   31
                 </div>
@@ -2256,7 +2256,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -2270,7 +2270,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -2284,7 +2284,7 @@ exports[`Calendar card demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -3359,7 +3359,7 @@ exports[`Calendar cell demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <div
               class="outerWarrper"
@@ -4059,7 +4059,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -4073,7 +4073,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -4087,7 +4087,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -4101,7 +4101,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -4115,7 +4115,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -4129,7 +4129,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -4143,7 +4143,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -4161,7 +4161,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 07
               </div>
@@ -4175,7 +4175,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 08
               </div>
@@ -4189,7 +4189,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 09
               </div>
@@ -4203,7 +4203,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 10
               </div>
@@ -4217,7 +4217,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 11
               </div>
@@ -4231,7 +4231,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 12
               </div>
@@ -4245,7 +4245,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 13
               </div>
@@ -4263,7 +4263,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 14
               </div>
@@ -4277,7 +4277,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 15
               </div>
@@ -4291,7 +4291,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 16
               </div>
@@ -4305,7 +4305,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 17
               </div>
@@ -4319,7 +4319,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 18
               </div>
@@ -4333,7 +4333,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 19
               </div>
@@ -4347,7 +4347,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 20
               </div>
@@ -4365,7 +4365,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 21
               </div>
@@ -4379,7 +4379,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 22
               </div>
@@ -4393,7 +4393,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 23
               </div>
@@ -4407,7 +4407,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 24
               </div>
@@ -4421,7 +4421,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 25
               </div>
@@ -4435,7 +4435,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -4449,7 +4449,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -4463,11 +4463,11 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -4491,7 +4491,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -4505,7 +4505,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -4519,7 +4519,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 31
               </div>
@@ -4533,7 +4533,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -4547,7 +4547,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -4561,7 +4561,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -5409,7 +5409,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -5423,7 +5423,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -5437,7 +5437,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -5451,7 +5451,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -5465,7 +5465,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   04
                 </div>
@@ -5479,7 +5479,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   05
                 </div>
@@ -5493,7 +5493,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   06
                 </div>
@@ -5511,7 +5511,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   07
                 </div>
@@ -5525,7 +5525,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   08
                 </div>
@@ -5539,7 +5539,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   09
                 </div>
@@ -5553,7 +5553,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   10
                 </div>
@@ -5567,7 +5567,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   11
                 </div>
@@ -5581,7 +5581,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   12
                 </div>
@@ -5595,7 +5595,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   13
                 </div>
@@ -5613,7 +5613,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   14
                 </div>
@@ -5627,7 +5627,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   15
                 </div>
@@ -5641,7 +5641,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   16
                 </div>
@@ -5655,7 +5655,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   17
                 </div>
@@ -5669,7 +5669,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   18
                 </div>
@@ -5683,7 +5683,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   19
                 </div>
@@ -5697,7 +5697,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   20
                 </div>
@@ -5715,7 +5715,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   21
                 </div>
@@ -5729,7 +5729,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   22
                 </div>
@@ -5743,7 +5743,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   23
                 </div>
@@ -5757,7 +5757,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   24
                 </div>
@@ -5771,7 +5771,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   25
                 </div>
@@ -5785,7 +5785,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   26
                 </div>
@@ -5799,7 +5799,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   27
                 </div>
@@ -5813,11 +5813,11 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             class="t-calendar__table-body-row"
           >
             <div
-              class="t-calendar__table-body-cell t-is-checked t-is-now"
+              class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   28
                 </div>
@@ -5831,7 +5831,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   29
                 </div>
@@ -5845,7 +5845,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -5859,7 +5859,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   31
                 </div>
@@ -5873,7 +5873,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -5887,7 +5887,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -5901,7 +5901,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -6510,7 +6510,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -6524,7 +6524,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -6538,7 +6538,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -6552,7 +6552,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -6566,7 +6566,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   04
                 </div>
@@ -6580,7 +6580,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   05
                 </div>
@@ -6594,7 +6594,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   06
                 </div>
@@ -6612,7 +6612,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   07
                 </div>
@@ -6626,7 +6626,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   08
                 </div>
@@ -6640,7 +6640,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   09
                 </div>
@@ -6654,7 +6654,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   10
                 </div>
@@ -6668,7 +6668,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   11
                 </div>
@@ -6682,7 +6682,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   12
                 </div>
@@ -6696,7 +6696,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   13
                 </div>
@@ -6714,7 +6714,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   14
                 </div>
@@ -6728,7 +6728,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   15
                 </div>
@@ -6742,7 +6742,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   16
                 </div>
@@ -6756,7 +6756,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   17
                 </div>
@@ -6770,7 +6770,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   18
                 </div>
@@ -6784,7 +6784,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   19
                 </div>
@@ -6798,7 +6798,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   20
                 </div>
@@ -6816,7 +6816,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   21
                 </div>
@@ -6830,7 +6830,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   22
                 </div>
@@ -6844,7 +6844,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   23
                 </div>
@@ -6858,7 +6858,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   24
                 </div>
@@ -6872,7 +6872,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   25
                 </div>
@@ -6886,7 +6886,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   26
                 </div>
@@ -6900,7 +6900,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   27
                 </div>
@@ -6914,11 +6914,11 @@ exports[`Calendar events demo works fine 1`] = `
             class="t-calendar__table-body-row"
           >
             <div
-              class="t-calendar__table-body-cell t-is-checked t-is-now"
+              class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   28
                 </div>
@@ -6932,7 +6932,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   29
                 </div>
@@ -6946,7 +6946,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -6960,7 +6960,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   31
                 </div>
@@ -6974,7 +6974,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -6988,7 +6988,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -7002,7 +7002,7 @@ exports[`Calendar events demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -7751,7 +7751,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   25
                 </div>
@@ -7765,7 +7765,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   26
                 </div>
@@ -7779,7 +7779,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   27
                 </div>
@@ -7793,7 +7793,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   28
                 </div>
@@ -7807,7 +7807,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   29
                 </div>
@@ -7821,7 +7821,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -7835,7 +7835,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -7853,7 +7853,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -7867,7 +7867,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -7881,7 +7881,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   04
                 </div>
@@ -7895,7 +7895,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   05
                 </div>
@@ -7909,7 +7909,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   06
                 </div>
@@ -7923,7 +7923,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   07
                 </div>
@@ -7937,7 +7937,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   08
                 </div>
@@ -7955,7 +7955,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   09
                 </div>
@@ -7969,7 +7969,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   10
                 </div>
@@ -7983,7 +7983,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   11
                 </div>
@@ -7997,7 +7997,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   12
                 </div>
@@ -8011,7 +8011,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   13
                 </div>
@@ -8025,7 +8025,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   14
                 </div>
@@ -8039,7 +8039,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   15
                 </div>
@@ -8057,7 +8057,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   16
                 </div>
@@ -8071,7 +8071,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   17
                 </div>
@@ -8085,7 +8085,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   18
                 </div>
@@ -8099,7 +8099,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   19
                 </div>
@@ -8113,7 +8113,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   20
                 </div>
@@ -8127,7 +8127,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   21
                 </div>
@@ -8141,7 +8141,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   22
                 </div>
@@ -8159,7 +8159,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   23
                 </div>
@@ -8173,7 +8173,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   24
                 </div>
@@ -8187,7 +8187,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   25
                 </div>
@@ -8201,7 +8201,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   26
                 </div>
@@ -8215,7 +8215,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   27
                 </div>
@@ -8225,11 +8225,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
               </span>
             </div>
             <div
-              class="t-calendar__table-body-cell t-is-checked t-is-now"
+              class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   28
                 </div>
@@ -8243,7 +8243,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   29
                 </div>
@@ -8261,7 +8261,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   30
                 </div>
@@ -8275,7 +8275,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   31
                 </div>
@@ -8289,7 +8289,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   01
                 </div>
@@ -8303,7 +8303,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   02
                 </div>
@@ -8317,7 +8317,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   03
                 </div>
@@ -8331,7 +8331,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   04
                 </div>
@@ -8345,7 +8345,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   05
                 </div>
@@ -8957,7 +8957,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -8971,7 +8971,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -8985,7 +8985,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -8999,7 +8999,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -9013,7 +9013,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -9027,7 +9027,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -9041,7 +9041,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -9059,7 +9059,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 07
               </div>
@@ -9073,7 +9073,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 08
               </div>
@@ -9087,7 +9087,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 09
               </div>
@@ -9101,7 +9101,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 10
               </div>
@@ -9115,7 +9115,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 11
               </div>
@@ -9129,7 +9129,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 12
               </div>
@@ -9143,7 +9143,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 13
               </div>
@@ -9161,7 +9161,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 14
               </div>
@@ -9175,7 +9175,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 15
               </div>
@@ -9189,7 +9189,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 16
               </div>
@@ -9203,7 +9203,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 17
               </div>
@@ -9217,7 +9217,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 18
               </div>
@@ -9231,7 +9231,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 19
               </div>
@@ -9245,7 +9245,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 20
               </div>
@@ -9263,7 +9263,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 21
               </div>
@@ -9277,7 +9277,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 22
               </div>
@@ -9291,7 +9291,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 23
               </div>
@@ -9305,7 +9305,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 24
               </div>
@@ -9319,7 +9319,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 25
               </div>
@@ -9333,7 +9333,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -9347,7 +9347,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -9361,11 +9361,11 @@ exports[`Calendar head demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -9379,7 +9379,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -9393,7 +9393,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -9407,7 +9407,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 31
               </div>
@@ -9421,7 +9421,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -9435,7 +9435,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -9449,7 +9449,7 @@ exports[`Calendar head demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -9923,7 +9923,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   一月
                 </div>
@@ -9937,7 +9937,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   二月
                 </div>
@@ -9951,7 +9951,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   三月
                 </div>
@@ -9965,7 +9965,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   四月
                 </div>
@@ -9983,7 +9983,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   五月
                 </div>
@@ -9997,7 +9997,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   六月
                 </div>
@@ -10011,7 +10011,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   七月
                 </div>
@@ -10025,7 +10025,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   八月
                 </div>
@@ -10043,7 +10043,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   九月
                 </div>
@@ -10057,7 +10057,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   十月
                 </div>
@@ -10071,7 +10071,7 @@ exports[`Calendar mode demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   十一月
                 </div>
@@ -10081,11 +10081,11 @@ exports[`Calendar mode demo works fine 1`] = `
               </span>
             </div>
             <div
-              class="t-calendar__table-body-cell t-is-checked t-is-now"
+              class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
             >
               <span>
                 <div
-                  class="t-calendar__table-body-cell-value"
+                  class="t-calendar__table-body-cell-display"
                 >
                   十二月
                 </div>
@@ -10611,7 +10611,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -10625,7 +10625,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -10639,7 +10639,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -10653,7 +10653,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -10667,7 +10667,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -10681,7 +10681,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -10695,7 +10695,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -10713,7 +10713,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 07
               </div>
@@ -10727,7 +10727,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 08
               </div>
@@ -10741,7 +10741,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 09
               </div>
@@ -10755,7 +10755,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 10
               </div>
@@ -10769,7 +10769,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 11
               </div>
@@ -10783,7 +10783,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 12
               </div>
@@ -10797,7 +10797,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 13
               </div>
@@ -10815,7 +10815,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 14
               </div>
@@ -10829,7 +10829,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 15
               </div>
@@ -10843,7 +10843,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 16
               </div>
@@ -10857,7 +10857,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 17
               </div>
@@ -10871,7 +10871,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 18
               </div>
@@ -10885,7 +10885,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 19
               </div>
@@ -10899,7 +10899,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 20
               </div>
@@ -10917,7 +10917,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 21
               </div>
@@ -10931,7 +10931,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 22
               </div>
@@ -10945,7 +10945,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 23
               </div>
@@ -10959,7 +10959,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 24
               </div>
@@ -10973,7 +10973,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 25
               </div>
@@ -10987,7 +10987,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -11001,7 +11001,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -11015,11 +11015,11 @@ exports[`Calendar range demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -11033,7 +11033,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -11047,7 +11047,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -11061,7 +11061,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 31
               </div>
@@ -11075,7 +11075,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -11089,7 +11089,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -11103,7 +11103,7 @@ exports[`Calendar range demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -12121,7 +12121,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           class="t-calendar__table-body-row"
         >
           <div
-            class="t-calendar__table-body-cell t-is-checked t-is-now"
+            class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <div
               class="calendar-slot-props-api-demo"
@@ -12807,7 +12807,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -12821,7 +12821,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -12835,7 +12835,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -12849,7 +12849,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -12863,7 +12863,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -12877,7 +12877,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 31
               </div>
@@ -12891,7 +12891,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -12909,7 +12909,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -12923,7 +12923,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -12937,7 +12937,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -12951,7 +12951,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -12965,7 +12965,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -12979,7 +12979,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 07
               </div>
@@ -12993,7 +12993,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 08
               </div>
@@ -13011,7 +13011,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 09
               </div>
@@ -13025,7 +13025,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 10
               </div>
@@ -13039,7 +13039,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 11
               </div>
@@ -13053,7 +13053,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 12
               </div>
@@ -13067,7 +13067,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 13
               </div>
@@ -13081,7 +13081,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 14
               </div>
@@ -13095,7 +13095,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 15
               </div>
@@ -13113,7 +13113,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 16
               </div>
@@ -13127,7 +13127,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 17
               </div>
@@ -13141,7 +13141,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 18
               </div>
@@ -13155,7 +13155,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 19
               </div>
@@ -13169,7 +13169,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 20
               </div>
@@ -13183,7 +13183,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 21
               </div>
@@ -13197,7 +13197,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 22
               </div>
@@ -13215,7 +13215,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 23
               </div>
@@ -13229,7 +13229,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 24
               </div>
@@ -13243,7 +13243,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 25
               </div>
@@ -13257,7 +13257,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 26
               </div>
@@ -13271,7 +13271,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 27
               </div>
@@ -13285,7 +13285,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 28
               </div>
@@ -13299,7 +13299,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 29
               </div>
@@ -13317,7 +13317,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 30
               </div>
@@ -13331,7 +13331,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 01
               </div>
@@ -13345,7 +13345,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 02
               </div>
@@ -13359,7 +13359,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 03
               </div>
@@ -13373,7 +13373,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 04
               </div>
@@ -13387,7 +13387,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 05
               </div>
@@ -13401,7 +13401,7 @@ exports[`Calendar value demo works fine 1`] = `
           >
             <span>
               <div
-                class="t-calendar__table-body-cell-value"
+                class="t-calendar__table-body-cell-display"
               >
                 06
               </div>
@@ -14016,7 +14016,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -14030,7 +14030,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -14044,7 +14044,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -14058,7 +14058,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     03
                   </div>
@@ -14072,7 +14072,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     04
                   </div>
@@ -14086,7 +14086,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     05
                   </div>
@@ -14100,7 +14100,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     06
                   </div>
@@ -14118,7 +14118,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     07
                   </div>
@@ -14132,7 +14132,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     08
                   </div>
@@ -14146,7 +14146,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     09
                   </div>
@@ -14160,7 +14160,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     10
                   </div>
@@ -14174,7 +14174,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     11
                   </div>
@@ -14188,7 +14188,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     12
                   </div>
@@ -14202,7 +14202,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     13
                   </div>
@@ -14220,7 +14220,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     14
                   </div>
@@ -14234,7 +14234,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     15
                   </div>
@@ -14248,7 +14248,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     16
                   </div>
@@ -14262,7 +14262,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     17
                   </div>
@@ -14276,7 +14276,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     18
                   </div>
@@ -14290,7 +14290,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     19
                   </div>
@@ -14304,7 +14304,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     20
                   </div>
@@ -14322,7 +14322,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     21
                   </div>
@@ -14336,7 +14336,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     22
                   </div>
@@ -14350,7 +14350,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     23
                   </div>
@@ -14364,7 +14364,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     24
                   </div>
@@ -14378,7 +14378,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     25
                   </div>
@@ -14392,7 +14392,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     26
                   </div>
@@ -14406,7 +14406,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     27
                   </div>
@@ -14420,11 +14420,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-calendar__table-body-row"
             >
               <div
-                class="t-calendar__table-body-cell t-is-checked t-is-now"
+                class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     28
                   </div>
@@ -14438,7 +14438,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     29
                   </div>
@@ -14452,7 +14452,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -14466,7 +14466,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     31
                   </div>
@@ -14480,7 +14480,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -14494,7 +14494,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -14508,7 +14508,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     03
                   </div>
@@ -15105,7 +15105,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     29
                   </div>
@@ -15119,7 +15119,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -15133,7 +15133,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -15147,7 +15147,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -15161,7 +15161,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     03
                   </div>
@@ -15175,7 +15175,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     04
                   </div>
@@ -15189,7 +15189,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     05
                   </div>
@@ -15207,7 +15207,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     06
                   </div>
@@ -15221,7 +15221,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     07
                   </div>
@@ -15235,7 +15235,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     08
                   </div>
@@ -15249,7 +15249,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     09
                   </div>
@@ -15263,7 +15263,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     10
                   </div>
@@ -15277,7 +15277,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     11
                   </div>
@@ -15291,7 +15291,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     12
                   </div>
@@ -15309,7 +15309,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     13
                   </div>
@@ -15323,7 +15323,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     14
                   </div>
@@ -15337,7 +15337,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     15
                   </div>
@@ -15351,7 +15351,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     16
                   </div>
@@ -15365,7 +15365,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     17
                   </div>
@@ -15379,7 +15379,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     18
                   </div>
@@ -15393,7 +15393,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     19
                   </div>
@@ -15411,7 +15411,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     20
                   </div>
@@ -15425,7 +15425,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     21
                   </div>
@@ -15439,7 +15439,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     22
                   </div>
@@ -15453,7 +15453,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     23
                   </div>
@@ -15467,7 +15467,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     24
                   </div>
@@ -15481,7 +15481,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     25
                   </div>
@@ -15495,7 +15495,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     26
                   </div>
@@ -15513,7 +15513,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     27
                   </div>
@@ -15523,11 +15523,11 @@ exports[`Calendar week demo works fine 1`] = `
                 </span>
               </div>
               <div
-                class="t-calendar__table-body-cell t-is-checked t-is-now"
+                class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     28
                   </div>
@@ -15541,7 +15541,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     29
                   </div>
@@ -15555,7 +15555,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -15569,7 +15569,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     31
                   </div>
@@ -15583,7 +15583,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -15597,7 +15597,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -16214,7 +16214,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -16228,7 +16228,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -16242,7 +16242,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -16256,7 +16256,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     03
                   </div>
@@ -16270,7 +16270,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     04
                   </div>
@@ -16284,7 +16284,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     05
                   </div>
@@ -16298,7 +16298,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     06
                   </div>
@@ -16316,7 +16316,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     07
                   </div>
@@ -16330,7 +16330,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     08
                   </div>
@@ -16344,7 +16344,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     09
                   </div>
@@ -16358,7 +16358,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     10
                   </div>
@@ -16372,7 +16372,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     11
                   </div>
@@ -16386,7 +16386,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     12
                   </div>
@@ -16400,7 +16400,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     13
                   </div>
@@ -16418,7 +16418,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     14
                   </div>
@@ -16432,7 +16432,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     15
                   </div>
@@ -16446,7 +16446,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     16
                   </div>
@@ -16460,7 +16460,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     17
                   </div>
@@ -16474,7 +16474,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     18
                   </div>
@@ -16488,7 +16488,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     19
                   </div>
@@ -16502,7 +16502,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     20
                   </div>
@@ -16520,7 +16520,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     21
                   </div>
@@ -16534,7 +16534,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     22
                   </div>
@@ -16548,7 +16548,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     23
                   </div>
@@ -16562,7 +16562,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     24
                   </div>
@@ -16576,7 +16576,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     25
                   </div>
@@ -16590,7 +16590,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     26
                   </div>
@@ -16604,7 +16604,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     27
                   </div>
@@ -16618,11 +16618,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-calendar__table-body-row"
             >
               <div
-                class="t-calendar__table-body-cell t-is-checked t-is-now"
+                class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     28
                   </div>
@@ -16636,7 +16636,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     29
                   </div>
@@ -16650,7 +16650,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     30
                   </div>
@@ -16664,7 +16664,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     31
                   </div>
@@ -16678,7 +16678,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     01
                   </div>
@@ -16692,7 +16692,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     02
                   </div>
@@ -16706,7 +16706,7 @@ exports[`Calendar week demo works fine 1`] = `
               >
                 <span>
                   <div
-                    class="t-calendar__table-body-cell-value"
+                    class="t-calendar__table-body-cell-display"
                   >
                     03
                   </div>
