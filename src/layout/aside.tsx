@@ -39,7 +39,7 @@ export default (Vue as VueConstructor<AsideInstance>).extend({
       width: this.width,
     } : {};
     return (
-      <aside class={`${prefix}-layout--sider`} style={styles}>
+      <aside class={`${prefix}-layout__sider`} style={styles}>
         {this.renderContent()}
       </aside>
     );

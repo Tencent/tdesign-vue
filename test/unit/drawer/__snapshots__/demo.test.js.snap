@@ -8,13 +8,13 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
     class="t-suf-container"
   >
     <div
-      class="t-drawer t-drawer-right t-drawer-attach"
+      class="t-drawer t-drawer--right t-drawer--attach"
     >
       <div
         class="t-drawer__mask"
       />
       <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
         style="width: 300px;"
       >
         <div
@@ -70,7 +70,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
       抽屉弹出方向：
       
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-outline"
+        class="t-radio-group t-size-m t-radio-group__outline"
       >
         <label
           class="t-radio-button"
@@ -159,7 +159,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
       抽屉弹出模式：
       
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-outline"
+        class="t-radio-group t-size-m t-radio-group__outline"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -221,13 +221,13 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
 exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -276,13 +276,13 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
   </div>
    
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -330,13 +330,13 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
   </div>
    
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -428,10 +428,10 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right t-drawer-no-mask"
+    class="t-drawer t-drawer--right t-drawer--without-mask"
   >
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -496,13 +496,13 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -555,7 +555,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio-button"
@@ -658,7 +658,7 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
     抽屉弹出模式：
     
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio-button"
@@ -719,13 +719,13 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
 exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -778,7 +778,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
     class="tdesign-radio-button"
   >
     <div
-      class="btn-top-margin t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="btn-top-margin t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -929,13 +929,13 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
 exports[`Drawer Demo operation wroks fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div
@@ -1047,13 +1047,13 @@ exports[`Drawer Demo operation wroks fine 1`] = `
 exports[`Drawer base demo works fine 1`] = `
 <div>
   <div
-    class="t-drawer t-drawer-right"
+    class="t-drawer t-drawer--right"
   >
     <div
       class="t-drawer__mask"
     />
     <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper-right"
+      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
       style="width: 300px;"
     >
       <div

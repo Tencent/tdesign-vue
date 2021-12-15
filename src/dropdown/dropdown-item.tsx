@@ -50,7 +50,7 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
   },
   methods: {
     renderSuffix(): TNodeReturnValue {
-      return this.hasChildren ? <TIconChevronRight class="children-suffix" /> : null;
+      return this.hasChildren ? <TIconChevronRight class={`${name}-icon`} /> : null;
     },
     handleItemClick(e: MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
@@ -73,7 +73,7 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
     const classes = [
       name,
       {
-        'has-suffix': this.hasChildren,
+        [`${prefix}-dropdown--suffix`]: this.hasChildren,
         [STATUS_CLASSNAMES.disabled]: this.disabled,
         [STATUS_CLASSNAMES.active]: this.active,
       },
@@ -86,8 +86,8 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
           onClick={this.handleItemClick}
           onMouseover={this.handleMouseover}
         >
-          <div class={`${name}__content`}>
-            <span class={`${name}__content__text`}>{renderContent(this, 'content', 'default')}</span>
+          <div class={`${name}-content`}>
+            <span class={`${name}-text`}>{renderContent(this, 'content', 'default')}</span>
           </div>
           {this.renderSuffix()}
         </div>

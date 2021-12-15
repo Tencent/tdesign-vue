@@ -6,7 +6,7 @@ exports[`Tabs ban demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-filled"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -46,7 +46,7 @@ exports[`Tabs ban demo works fine 1`] = `
         </span>
       </label>
       <div
-        class="t-radio-group-filled-bg-block"
+        class="t-radio-group__bg-block"
         style="width: 0px; left: 0px;"
       />
     </div>
@@ -270,7 +270,7 @@ exports[`Tabs combination demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-filled"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -310,7 +310,7 @@ exports[`Tabs combination demo works fine 1`] = `
         </span>
       </label>
       <div
-        class="t-radio-group-filled-bg-block"
+        class="t-radio-group__bg-block"
         style="width: 0px; left: 0px;"
       />
     </div>
@@ -480,7 +480,7 @@ exports[`Tabs icon demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-filled"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -520,7 +520,7 @@ exports[`Tabs icon demo works fine 1`] = `
         </span>
       </label>
       <div
-        class="t-radio-group-filled-bg-block"
+        class="t-radio-group__bg-block"
         style="width: 0px; left: 0px;"
       />
     </div>
@@ -675,7 +675,7 @@ exports[`Tabs position demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-filled"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -753,7 +753,7 @@ exports[`Tabs position demo works fine 1`] = `
         </span>
       </label>
       <div
-        class="t-radio-group-filled-bg-block"
+        class="t-radio-group__bg-block"
         style="width: 0px; left: 0px;"
       />
     </div>

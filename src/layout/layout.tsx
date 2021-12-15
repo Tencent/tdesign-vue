@@ -38,7 +38,7 @@ export default Vue.extend({
       return [
         name,
         {
-          [`${name}-has-sider`]: this.hasSider,
+          [`${name}--with-sider`]: this.hasSider,
         },
       ];
     },

@@ -9,7 +9,7 @@ import { panelProps } from './props';
 import PanelCol from './panel-col';
 import TButton from '../../button/button';
 
-const name = `${componentName}-panel`;
+const name = `${componentName}__panel`;
 
 dayjs.extend(customParseFormat);
 
@@ -94,7 +94,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
     renderFooter() {
       const confirmAction = this.confirmBtnClick.bind(this);
       return (
-        <div class={`${this.sectionComponentName}__footer`}>
+        <div class={`${this.sectionComponentName}-footer`}>
           {/* 样式设置为row-reverse 这样不用特地为确定写个绝对布局 */}
           <t-button theme="primary" variant="base" onClick={confirmAction}>
             {this.t(this.global.confirm)}
@@ -110,7 +110,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
 
     renderBody() {
       return (
-        <div class={`${this.sectionComponentName}__body`}>
+        <div class={`${this.sectionComponentName}-body`}>
           {this.renderSinglePicker(0)}
           {this.rangePicker && this.renderSinglePicker(1)}
         </div>

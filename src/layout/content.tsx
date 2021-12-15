@@ -21,7 +21,7 @@ export default Vue.extend({
 
   render() {
     return (
-      <main class="t-layout--content">
+      <main class="t-layout__content">
         {this.renderContent()}
       </main>
     );

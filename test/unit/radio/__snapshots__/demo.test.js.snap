@@ -89,7 +89,7 @@ exports[`Radio radio button size demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-radio-group t-radio-group-small t-radio-group-outline"
+    class="t-radio-group t-size-s t-radio-group__outline"
   >
     <label
       class="t-radio-button t-is-checked"
@@ -169,7 +169,7 @@ exports[`Radio radio button size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-radio-group t-radio-group-medium t-radio-group-outline"
+    class="t-radio-group t-size-m t-radio-group__outline"
   >
     <label
       class="t-radio-button"
@@ -249,7 +249,7 @@ exports[`Radio radio button size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-radio-group t-radio-group-large t-radio-group-outline"
+    class="t-radio-group t-size-l t-radio-group__outline"
   >
     <label
       class="t-radio-button"
@@ -336,7 +336,7 @@ exports[`Radio radio group demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio"
@@ -415,7 +415,7 @@ exports[`Radio radio group demo works fine 1`] = `
    
   <div>
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio t-is-checked"
@@ -510,7 +510,7 @@ exports[`Radio radio type demo works fine 1`] = `
     </h5>
      
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio-button t-is-checked"
@@ -609,7 +609,7 @@ exports[`Radio radio type demo works fine 1`] = `
     </div>
      
     <div
-      class="t-radio-group t-radio-group-medium t-radio-group-outline"
+      class="t-radio-group t-size-m t-radio-group__outline"
     >
       <label
         class="t-radio-button t-is-disabled"
@@ -722,7 +722,7 @@ exports[`Radio radio type demo works fine 1`] = `
      
     <div>
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-filled"
+        class="t-radio-group t-size-m t-radio-group--filled"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -819,7 +819,7 @@ exports[`Radio radio type demo works fine 1`] = `
           </span>
         </label>
         <div
-          class="t-radio-group-filled-bg-block"
+          class="t-radio-group__bg-block"
           style="width: 0px; left: 0px;"
         />
       </div>
@@ -827,7 +827,7 @@ exports[`Radio radio type demo works fine 1`] = `
      
     <div>
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-filled t-radio-group-primary-filled"
+        class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"
       >
         <label
           class="t-radio-button t-is-checked"
@@ -924,7 +924,7 @@ exports[`Radio radio type demo works fine 1`] = `
           </span>
         </label>
         <div
-          class="t-radio-group-filled-bg-block"
+          class="t-radio-group__bg-block"
           style="width: 0px; left: 0px;"
         />
       </div>
@@ -932,7 +932,7 @@ exports[`Radio radio type demo works fine 1`] = `
      
     <div>
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-filled"
+        class="t-radio-group t-size-m t-radio-group--filled"
       >
         <label
           class="t-radio-button t-is-disabled"
@@ -1034,7 +1034,7 @@ exports[`Radio radio type demo works fine 1`] = `
           </span>
         </label>
         <div
-          class="t-radio-group-filled-bg-block"
+          class="t-radio-group__bg-block"
           style="width: 0px; left: 0px;"
         />
       </div>
@@ -1042,7 +1042,7 @@ exports[`Radio radio type demo works fine 1`] = `
      
     <div>
       <div
-        class="t-radio-group t-radio-group-medium t-radio-group-filled t-radio-group-primary-filled"
+        class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"
       >
         <label
           class="t-radio-button t-is-disabled"
@@ -1144,7 +1144,7 @@ exports[`Radio radio type demo works fine 1`] = `
           </span>
         </label>
         <div
-          class="t-radio-group-filled-bg-block"
+          class="t-radio-group__bg-block"
           style="width: 0px; left: 0px;"
         />
       </div>
