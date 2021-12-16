@@ -26,7 +26,7 @@ jobs:
           export GITHUB_SHA=${{ github.sha }}
           export GITHUB_SHA_SUB=${GITHUB_SHA: 0: 7 }
           export DEPLOY_DOMAIN=https://preview-$GITHUB_SHA_SUB-tdesign-vue.surge.sh
-          npx surge --project ./_site --domain $DEPLOY_DOMAIN --token ${{ secrets.SURGE_TOKEN }}
+          npx surge --project ./_site --domain $DEPLOY_DOMAIN --token ${{ secrets.TDESIGN_SURGE_TOKEN }}
           echo the preview URL is $DEPLOY_DOMAIN
         if: ${{ success() }}
       - run: echo "🚀 This job's status is ${{ job.status }}."
