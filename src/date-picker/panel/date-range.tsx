@@ -297,8 +297,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       firstDayOfWeek,
     } = this;
     return (
-      <div class={`${prefix}-date-range`}>
-        <div class={`${prefix}-date`}>
+      <div class={`${prefix}-date-picker__panels`}>
+        <div class={`${prefix}-date-picker__panel`}>
           <t-date-header
             year={this.leftYear}
             month={this.leftMonth}
@@ -322,7 +322,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
             }}
           />
         </div>
-        <div class={`${prefix}-date`}>
+        <div class={`${prefix}-date-picker__panel `}>
           <t-date-header
             year={this.rightYear}
             month={this.rightMonth}

@@ -25,7 +25,7 @@ export default Vue.extend<{}, CalendarPresetsMethods, {}, CalendarPresetsProps>(
   render() {
     const { presets } = this;
     return (
-      <div class={`${prefix}-date-picker-presets`}>
+      <div class={`${prefix}-date-picker__presets`}>
         <ul>
         {presets && Object.keys(presets).map((key: string) => (
             <li key={key}>

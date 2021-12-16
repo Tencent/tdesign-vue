@@ -151,7 +151,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   },
   render() {
     return (
-      <div class={`${prefix}-date`}>
+      <div class={`${prefix}-date-picker__panel`}>
         <t-date-header
           year={this.year}
           month={this.month}

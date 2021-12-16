@@ -38,22 +38,22 @@ export default Vue.extend({
     const cellClass = [
       name,
       {
-        [`${prefix}-date-cell--now`]: now,
-        [`${prefix}-date-cell--active`]: active,
-        [`${prefix}-date-cell--disabled`]: disabled,
-        [`${prefix}-date-cell--highlight`]: highlight,
-        [`${prefix}-date-cell--active-start`]: startOfRange,
-        [`${prefix}-date-cell--active-end`]: endOfRange,
-        [`${prefix}-date-cell--additional`]: additional,
-        [`${prefix}-date-cell--first-day-of-month`]: firstDayOfMonth,
-        [`${prefix}-date-cell--last-day-of-month`]: lastDayOfMonth,
+        [`${prefix}-date-picker__cell--now`]: now,
+        [`${prefix}-date-picker__cell--active`]: active,
+        [`${prefix}-date-picker__cell--disabled`]: disabled,
+        [`${prefix}-date-picker__cell--highlight`]: highlight,
+        [`${prefix}-date-picker__cell--active-start`]: startOfRange,
+        [`${prefix}-date-picker__cell--active-end`]: endOfRange,
+        [`${prefix}-date-picker__cell--additional`]: additional,
+        [`${prefix}-date-picker__cell--first-day-of-month`]: firstDayOfMonth,
+        [`${prefix}-date-picker__cell--last-day-of-month`]: lastDayOfMonth,
       },
     ];
 
     return (
             <td class={cellClass}>
                 <div
-                    class="t-date-cell__wrapper"
+                    class={`${prefix}-date-picker__cell-wrapper`}
                     onClick={(e: MouseEvent) => {
                       if (!disabled) {
                         onClick(value, { e });
@@ -61,7 +61,7 @@ export default Vue.extend({
                     }}
                     onMouseenter={() => onMouseEnter && onMouseEnter(value)}
                 >
-                    <span class="t-date-cell__text">{{ text }}</span>
+                    <span class={`${prefix}-date-picker__cell-text`}>{{ text }}</span>
                 </div>
             </td>
     );

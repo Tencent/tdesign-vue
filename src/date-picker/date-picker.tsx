@@ -175,11 +175,10 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
     },
     pickerStyles() {
       return {
-        [`${name}--container`]: true,
+        [`${name}__container`]: true,
         [`${name}-picker--open`]: this.isOpen || this.inlineView,
         [`${name}--calendar-inline-view`]: this.inlineView,
-        [`${name}--ranges-show`]: this.range,
-        [`${name}--date`]: this.mode === 'date',
+        [`${name}--range`]: this.range,
       };
     },
   },
@@ -698,7 +697,7 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
       <div class={this.classes}>
         <t-popup
           ref="popup"
-          class={`${name}-popup-reference`}
+          class={`${name}__popup-reference`}
           trigger="click"
           placement="bottom-left"
           disabled={disabled}

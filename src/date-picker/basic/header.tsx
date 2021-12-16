@@ -44,8 +44,8 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
       nextLabel = nextYear;
     }
     return (
-      <div class={`${prefix}-date-picker-header`}>
-        <span class={`${prefix}-date-picker-header-title`}>
+      <div class={`${prefix}-date-picker__header`}>
+        <span class={`${prefix}-date-picker__header-title`}>
           {
             type === 'year' && (
               <span>
@@ -62,7 +62,7 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
           {
             type !== 'year' && (
               <t-button
-                class={`${prefix}-date-header__btn`}
+                class={`${prefix}-date-picker__header-btn`}
                 variant="text"
                 size="small"
                 onClick={() => onTypeChange('year')}
@@ -74,7 +74,7 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
           {
             type === 'date' && (
               <t-button
-                class={`${prefix}-date-header__btn`}
+                class={`${prefix}-date-picker__header-btn`}
                 variant="text"
                 size="small"
                 onClick={() => onTypeChange('month')}
@@ -85,23 +85,23 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
           }
         </span>
 
-        <span class={`${prefix}-date-picker-header-controller`}>
+        <span class={`${prefix}-date-picker__header-controller`}>
           <t-button
-            class={`${prefix}-date-picker-header-controller__btn`}
+            class={`${prefix}-date-picker__header-controller__btn`}
             variant="text"
             onClick={() => onBtnClick(-1)} title={preLabel}
           >
             <t-icon-chevron-left slot="icon" />
           </t-button>
           <t-button
-            class={[`${prefix}-date-picker-header-controller__btn`, `${prefix}-date-picker-header-controller__btn--now`]}
+            class={[`${prefix}-date-picker__header-controller__btn`, `${prefix}-date-picker__header-controller__btn--now`]}
             variant="text"
             onClick={() => onBtnClick(0)} title={now}
           >
             <t-icon-round slot="icon" />
           </t-button>
           <t-button
-            class={`${prefix}-date-picker-header-controller__btn`}
+            class={`${prefix}-date-picker__header-controller__btn`}
             variant="text"
             onClick={() => onBtnClick(1)}
             title={nextLabel}
