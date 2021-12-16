@@ -21,7 +21,7 @@
 ⚠️ `npm` 版本要求至少为 `npm7`，执行 `npm install npm@latest -g` 更新至最新版本。
 
 ```bash
-git clone https://github.com/TDesignOteam/tdesign-vue.git
+git clone https://github.com/Tencent/tdesign-vue.git
 cd tdesign-vue
 git submodule init
 git submodule update

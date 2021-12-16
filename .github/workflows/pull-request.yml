@@ -8,11 +8,8 @@ jobs:
   MAIN_PULL_REQUEST:
     runs-on: ubuntu-latest
     steps:
-      - name: Fix up git URLs
-        run: echo -e '[url "https://github.com/"]\n  insteadOf = "git@github.com:"' >> ~/.gitmodules
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.TEMP_REPO_TOKEN }}
           submodules: recursive
       - uses: actions/setup-node@v2
         with:

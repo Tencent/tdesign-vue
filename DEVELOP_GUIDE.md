@@ -1,6 +1,6 @@
 # 开发指南
 
-tdesign-vue 包含 web-vue 代码和一个子仓库，子仓库指向 [tdesign-common](https://github.com/TDesignOteam/tdesign-common) 仓库
+tdesign-vue 包含 web-vue 代码和一个子仓库，子仓库指向 [tdesign-common](https://github.com/Tencent/tdesign-common) 仓库
 
 ## 公共子仓库 tdesign-common
 
@@ -46,7 +46,7 @@ import './button.less';
 
 ## 开发规范
 
-UI 开发规范参考子仓库 README [子仓库 README](https://github.com/TDesignOteam/tdesign-common/tree/develop/style/web)
+UI 开发规范参考子仓库 README [子仓库 README](https://github.com/Tencent/tdesign-common/tree/develop/style/web)
 
 ### API 规范
 

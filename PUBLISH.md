@@ -36,7 +36,7 @@
 
 - review 这一迭代周期内的所有 MR 是否被正常合并，每个 MR 的描述是否准确，如果有关联的 issue，需要在 MR 评论中补充 issue 链接
 - 是否所有 issue 都得到了处理，如果已有 mr，请在 issue 中评论 mr 链接（目前工蜂还不能像 GitHub 一样在 issue 中自动显示关联 mr）
-- 根据 MR 和 issue 整理 changelog （可以使用 [publish-cli](https://github.com/TDesignOteam/tdesign-starter-cli/tree/main/packages/publish-cli) 帮助生成）
+- 根据 MR 和 issue 整理 changelog （可以使用 [publish-cli](https://github.com/Tencent/tdesign-starter-cli/tree/main/packages/publish-cli) 帮助生成）
 - 如果发布了 Breaking Change 版本，应该把上一个 MAJOR 版本的版本号更新至官网历史版本处，以支持历史版本官网供用户查看。
 
 ## 发布流程
