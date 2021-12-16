@@ -3,7 +3,7 @@ name: TAG_PUSH
 on: create
 
 jobs:
-  Publish:
+  TAG_PUSH:
     runs-on: ubuntu-latest
     if: github.event.ref_type == 'tag'
     steps:

@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/TDesignOteam/tdesign-vue/blob/main/LICENSE">
+  <a href="https://github.com/Tencent/tdesign-vue/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/tdesign-vue.svg?sanitize=true" alt="License">
   </a>
   <a href="https://www.npmjs.com/package/tdesign-vue">
@@ -45,7 +45,7 @@ import 'tdesign-vue/es/style/index.css';
 Vue.use(TDesign);
 ```
 
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/TDesignOteam/tdesign-common/blob/develop/develop-install.md) 了解不同目录下产物的差别。
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign-common/blob/develop/develop-install.md) 了解不同目录下产物的差别。
 
 # 快速体验
 
@@ -59,10 +59,10 @@ npm package 中提供了多种构建产物，可以阅读 [这里](https://githu
 
 # 其他技术栈实现
 
-- 桌面端 Vue 3 实现：[web-vue-next](https://github.com/TDesignOteam/tdesign-vue-next)
-- 桌面端 React 实现： [web-react](https://github.com/TDesignOteam/tdesign-react)
-- 移动端小程序实现： [小程序](https://github.com/TDesignOteam/tdesign-miniprogram)
+- 桌面端 Vue 3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
+- 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
+- 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)
 
 # 开源协议
 
-TDesign 遵循 [MIT 协议](https://github.com/TDesignOteam/tdesign-vue/blob/main/LICENSE)。
+TDesign 遵循 [MIT 协议](https://github.com/Tencent/tdesign-vue/blob/main/LICENSE)。
