@@ -238,7 +238,7 @@ exports[`ssr snapshot test renders ./examples/anchor/demos/base.vue correctly 1`
       <div class="t-anchor__item"><a href="#多级锚点" title="多级锚点" target="_self" class="t-anchor__item-link">多级锚点</a></div>
       <div class="t-anchor__item"><a href="#指定容器锚点" title="指定容器锚点" target="_self" class="t-anchor__item-link">指定容器锚点</a></div>
       <div class="t-anchor__item"><a href="#特定交互锚点" title="特定交互锚点" target="_self" class="t-anchor__item-link">特定交互锚点</a></div>
-      <div class="t-anchor__item"><a href="#尺寸" title="尺寸" target="_self" class="t-anchor__item-link">尺寸</a></div>
+      <div class="t-anchor__item"><a href="#不同尺寸的锚点" title="不同尺寸的锚点" target="_self" class="t-anchor__item-link">不同尺寸的锚点</a></div>
     </div>
   </div>
 </div>

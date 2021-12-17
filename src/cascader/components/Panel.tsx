@@ -21,7 +21,6 @@ import CascaderProps from '../props';
 const name = `${prefix}-cascader`;
 
 export default mixins(getLocalRecevierMixins<CascaderPanelProps & Vue, CascaderConfig>('cascader')).extend({
-
   name: `${name}-panel`,
   props: {
     empty: CascaderProps.empty,
@@ -100,12 +99,7 @@ export default mixins(getLocalRecevierMixins<CascaderPanelProps & Vue, CascaderC
 
     return (
       <div
-        class={[
-          `${name}__panel`,
-          {
-            [`${name}--normal`]: panels.length,
-          },
-        ]}
+        class={[`${name}__panel`, { [`${name}--normal`]: panels.length }]}
         style={{
           width: panels.length === 0 ? `${inputWidth}px` : null,
         }}
