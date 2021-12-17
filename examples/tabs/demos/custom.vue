@@ -30,12 +30,12 @@ export default {
       panelData: [{
         value: 'first',
         label: '原有选项卡',
-        removable: false,
+        removable: true,
         content: '原有选项卡内容',
       }, {
         value: 'second',
         label: '原有选项卡',
-        removable: false,
+        removable: true,
         content: '原有选项卡内容',
       }],
     };
@@ -59,8 +59,8 @@ export default {
       const index = this.panelData.findIndex((data) => data.value === value);
       if (index < 0) return false;
       this.panelData.splice(index, 1);
-      if (this.value === value) {
-        this.value = this.panelData[index - 1].value;
+      if (this.value === value && this.panelData.length) {
+        this.value = this.panelData[Math.max(index - 1, 0)].value;
       }
     },
     changeTab(value) {

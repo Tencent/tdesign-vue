@@ -116,7 +116,8 @@ export default (Vue as VueConstructor<TabVue>).extend({
       return this.listPanels;
     },
     renderContent() {
-      this.listPanels = this.list ? this.renderList() : this.$scopedSlots.default?.({});
+      // default 的函数可能返回null，此时为了防止 panels 的更新失败，默认用空数组
+      this.listPanels = this.list ? this.renderList() : (this.$scopedSlots.default?.({}) || []);
       return (
         <div class={[`${prefix}-tabs__content`]}>
           { this.listPanels }
