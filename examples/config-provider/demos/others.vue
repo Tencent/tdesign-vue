@@ -213,7 +213,7 @@ export default {
   margin: 24px -120px 0 0;
 }
 
-.tdesign-demo-item--locale-provider-base /deep/ .t-transfer-list {
+.tdesign-demo-item--locale-provider-base /deep/ .t-transfer__list {
   width: 280px;
 }
 
