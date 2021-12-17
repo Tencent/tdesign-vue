@@ -4,10 +4,8 @@ import { prefix } from '../../config';
 import { SearchOption } from '../interface';
 import TInput from '../../input';
 
-const name = `${prefix}-transfer-search`;
-
 export default Vue.extend({
-  name,
+  name: 'TTransferSearch',
   functional: true,
   model: {
     prop: 'searchValue',
@@ -44,7 +42,7 @@ export default Vue.extend({
       });
     };
     return (
-      <div class="t-transfer-list-search-wrapper" >
+      <div class={`${prefix}-transfer__search-wrapper`} >
         <TInput
           props={{ ...inputProps }}
           value={searchValue}

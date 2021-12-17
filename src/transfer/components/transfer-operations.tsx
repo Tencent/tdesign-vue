@@ -4,9 +4,8 @@ import TButton from '../../button';
 import { prefix } from '../../config';
 import { TNode } from '../../common';
 
-const name = `${prefix}-transfer-operations`;
 export default Vue.extend({
-  name,
+  name: 'TTransferOperations',
   props: {
     // 控制左按钮的禁用与否
     leftDisabled: {
@@ -77,7 +76,7 @@ export default Vue.extend({
   render(h) {
     const { leftDisabled, rightDisabled } = this.$props;
     return (
-      <div class={name}>
+      <div class={`${prefix}-transfer__operations`}>
         <TButton
           variant={rightDisabled ? 'outline' : 'base'}
           key={rightDisabled ? 'right-outline' : 'right-base'}
