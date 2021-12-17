@@ -8,11 +8,11 @@ exports[`Steps Steps base demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -21,7 +21,7 @@ exports[`Steps Steps base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -128,11 +128,11 @@ exports[`Steps Steps base demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -141,7 +141,7 @@ exports[`Steps Steps base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -258,11 +258,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -271,7 +271,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -455,11 +455,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -468,7 +468,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -622,11 +622,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </svg>
         </span>
         <div
-          class="t-popup-reference"
+          class="t-popup__reference"
         >
           <transition-stub
             appear="true"
-            name="t-popup_animation"
+            name="t-popup--animation"
           >
             <div
               aria-hidden="true"
@@ -635,7 +635,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               style="display: none;"
             >
               <div
-                class="t-popup-content"
+                class="t-popup__content"
               >
                 <div>
                   <p
@@ -684,11 +684,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -697,7 +697,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -851,11 +851,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </svg>
         </span>
         <div
-          class="t-popup-reference"
+          class="t-popup__reference"
         >
           <transition-stub
             appear="true"
-            name="t-popup_animation"
+            name="t-popup--animation"
           >
             <div
               aria-hidden="true"
@@ -864,7 +864,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               style="display: none;"
             >
               <div
-                class="t-popup-content"
+                class="t-popup__content"
               >
                 <p
                   style="padding: 10px;"
@@ -911,11 +911,11 @@ exports[`Steps Steps creatable demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -924,7 +924,7 @@ exports[`Steps Steps creatable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -1015,11 +1015,11 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -1028,7 +1028,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
+            class="t-popup__content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -1322,11 +1322,11 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -1335,7 +1335,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
+            class="t-popup__content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -1656,11 +1656,11 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -1669,7 +1669,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -1990,11 +1990,11 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2003,7 +2003,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2352,11 +2352,11 @@ exports[`Steps Steps disabled demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2365,7 +2365,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2447,11 +2447,11 @@ exports[`Steps Steps disabled demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2460,7 +2460,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2621,11 +2621,11 @@ exports[`Steps Steps filterable demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2634,7 +2634,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2720,11 +2720,11 @@ exports[`Steps Steps filterable demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2733,7 +2733,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2880,11 +2880,11 @@ exports[`Steps Steps group demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2893,7 +2893,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3053,11 +3053,11 @@ exports[`Steps Steps group demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3066,7 +3066,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3249,11 +3249,11 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3262,7 +3262,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3345,11 +3345,11 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3358,7 +3358,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3520,11 +3520,11 @@ exports[`Steps Steps max demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3533,7 +3533,7 @@ exports[`Steps Steps max demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3676,11 +3676,11 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3689,7 +3689,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -3943,11 +3943,11 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -3956,7 +3956,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -4315,11 +4315,11 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -4328,7 +4328,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -4633,11 +4633,11 @@ exports[`Steps Steps noborder demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -4646,7 +4646,7 @@ exports[`Steps Steps noborder demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -4733,11 +4733,11 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -4746,7 +4746,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -4821,11 +4821,11 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-left: 20px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -4834,7 +4834,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -4913,11 +4913,11 @@ exports[`Steps Steps prefix demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -4926,7 +4926,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5023,11 +5023,11 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5036,7 +5036,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5122,11 +5122,11 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5135,7 +5135,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5222,11 +5222,11 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5235,7 +5235,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5331,11 +5331,11 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5344,7 +5344,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5426,11 +5426,11 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5439,7 +5439,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5526,11 +5526,11 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5539,7 +5539,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5636,11 +5636,11 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5649,7 +5649,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -5746,11 +5746,11 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select-wrap"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -5759,7 +5759,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul

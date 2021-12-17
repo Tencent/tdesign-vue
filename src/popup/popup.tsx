@@ -71,9 +71,9 @@ export default Vue.extend({
   computed: {
     overlayClasses(): ClassName {
       const base = [
-        `${name}-content`,
+        `${name}__content`,
         {
-          [`${name}-content--arrow`]: this.showArrow,
+          [`${name}__content--arrow`]: this.showArrow,
           [CLASSNAMES.STATUS.disabled]: this.disabled,
         },
       ] as ClassName;
@@ -361,9 +361,9 @@ export default Vue.extend({
 
   render() {
     return (
-      <div class={`${name}-reference`}>
+      <div class={`${name}__reference`}>
         <transition
-          name={`${name}_animation`}
+          name={`${name}--animation`}
           appear
           onBeforeEnter={this.beforeEnter}
           onEnter={this.enter}
