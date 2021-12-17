@@ -53,7 +53,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     const icon = this.getExpandIcon(expanded);
     if (!icon) return null;
     return (
-      <span {...buttonProps} class={`${prefix}-table-expand-box`}>
+      <span {...buttonProps} class={`${prefix}-table__expand-box`}>
         {icon}
       </span>
     );

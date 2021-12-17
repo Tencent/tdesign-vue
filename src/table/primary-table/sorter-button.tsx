@@ -57,7 +57,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       } else {
         style.bottom = '-1px';
       }
-      const sortClassName = [`${prefix}-table-sort-icon`, className, `${prefix}-table-sort-${direction}`];
+      const sortClassName = [`${prefix}-table__sort-icon`, className, `${prefix}-table-sort-${direction}`];
       return <span style={style} class={sortClassName}>{icon}</span>;
     },
   },
@@ -67,12 +67,12 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     } = this;
     const buttonProps = {
       on: { ...$listeners },
-      class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '',
+      class: allowSortTypes.length > 1 ? `${prefix}-table__double-icons` : '',
     };
     const tips = tooltips[nextSortOrder];
     const sortButton = allowSortTypes
       .map((direction: string) => {
-        const className = direction === sortOrder ? `${prefix}-table-sort-icon-active` : `${prefix}-icon-sort-default`;
+        const className = direction === sortOrder ? `${prefix}-table__sort-icon--active` : `${prefix}-icon-sort--default`;
         return this.getSortIcon(direction, className);
       });
     return <div class={`${prefix}-table__cell--sort-trigger`} {...buttonProps}>

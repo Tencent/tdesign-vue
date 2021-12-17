@@ -64,7 +64,7 @@ export default Vue.extend({
         change: (val: any) => this.onInnerFilterChange(val, column),
       };
       return (
-        <div class={`${prefix}-table-filter-pop-content__inner`}>
+        <div class={`${prefix}-table__filter-pop-content-inner`}>
           {column?.filter?.component
             ? column?.filter?.component((v: FirstParams, b: SecondParams) => {
               const tProps = (typeof b === 'object' && ('attrs' in b)) ? b.attrs : {};
@@ -94,13 +94,13 @@ export default Vue.extend({
             <div class={`${prefix}-table__cell--title`}>
               <div>{title}</div>
               <div class={`${prefix}-table__cell--filter`}>
-                <Popup trigger='click' placement='bottom' showArrow overlayClassName={`${prefix}-table-filter-pop`}>
+                <Popup trigger='click' placement='bottom' showArrow overlayClassName={`${prefix}-table__filter-pop`}>
                   {isFunction(this.filterIcon)
                     ? this.filterIcon(this.$createElement)
-                    : <TIconFilter name="filter" class={`${prefix}-table-filter-icon`} />
+                    : <TIconFilter name="filter" class={`${prefix}-table__filter-icon`} />
                   }
                   <template slot='content'>
-                    <div class={`${prefix}-table-filter-pop-content`}>{this.getFilterContent(column)}</div>
+                    <div class={`${prefix}-table__filter-pop-content`}>{this.getFilterContent(column)}</div>
                   </template>
                 </Popup>
               </div>

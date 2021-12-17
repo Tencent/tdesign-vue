@@ -138,10 +138,10 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       // table verticalAlign
       switch (verticalAlign) {
         case 'top':
-          commonClass.push(`${prefix}-table-valign__top`);
+          commonClass.push(`${prefix}-table--align-top`);
           break;
         case 'bottom':
-          commonClass.push(`${prefix}-table-valign__bottom`);
+          commonClass.push(`${prefix}-table--align-bottom`);
           break;
         default:
       }
@@ -219,7 +219,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     renderEmptyTable(): VNode {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
-        <div class={`${prefix}-table--empty`}>
+        <div class={`${prefix}-table__empty`}>
           {useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}
         </div>
       );
@@ -227,7 +227,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     renderPagination(): VNode {
       const paginationProps = this.pagination;
       return (
-        <div class={`${prefix}-table-pagination`}>
+        <div class={`${prefix}-table__pagination`}>
           <Pagination
             props={{ ...paginationProps }}
             {...{
@@ -357,9 +357,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       body.push(this.renderPagination());
     }
     const handleScroll = throttle(this.handleScroll, 100);
-    const tableContentClass = [`${prefix}-table-content`, {
-      [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
-      [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
+    const tableContentClass = [`${prefix}-table__content`, {
+      [`${prefix}-table__content--scrollable-to-right`]: this.scrollableToRight,
+      [`${prefix}-table__content--scrollable-to-left`]: this.scrollableToLeft,
     }];
     let width;
     const { tableContent: tableContentEl, table: tableEl } = this.$refs as Record<string, HTMLElement>;

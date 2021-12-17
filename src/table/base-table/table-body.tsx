@@ -193,11 +193,11 @@ export default Vue.extend({
   },
   render() {
     if (this.provider.sortOnRowDraggable) {
-      const className = `table-body ${this.provider.dragging ? 'dragging' : ''}`;
+      const className = `${prefix}-table__body ${this.provider.dragging ? 'dragging' : ''}`;
       return <transition-group class={className} tag='tbody'>
         {this.renderBody()}
       </transition-group>;
     }
-    return <tbody class="table-body">{this.renderBody()}</tbody>;
+    return <tbody class={`${prefix}-table__body`}>{this.renderBody()}</tbody>;
   },
 });

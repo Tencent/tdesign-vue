@@ -77,7 +77,7 @@ export default Vue.extend({
       }
     }
     if (align) {
-      attrClass.push(`align-${align}`);
+      attrClass.push(`${prefix}-align-${align}`);
     }
     if (width && !fixed) {
       style.overflow = 'hidden';
@@ -90,7 +90,7 @@ export default Vue.extend({
     }
 
     if (ellipsis === true || typeof ellipsis === 'function') {
-      attrClass.push('text-ellipsis');
+      attrClass.push(`${prefix}-text-ellipsis`);
     }
     if (className) {
       if (typeof className === 'function') {
