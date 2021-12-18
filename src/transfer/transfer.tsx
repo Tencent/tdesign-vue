@@ -24,9 +24,9 @@ import {
   TRANSFER_NAME,
 } from './utils';
 
-const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
+
 export default mixins(getConfigReceiverMixins('transfer')).extend({
   name: TRANSFER_NAME,
   components: {
@@ -39,12 +39,10 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
   },
   props,
   data(): {
-    name: string;
     SOURCE: TransferListType;
     TARGET: TransferListType;
     } {
     return {
-      name,
       SOURCE,
       TARGET,
     };
@@ -224,11 +222,11 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     return (
       <div
         class={[
-          't-transfer',
-          this.showSearch ? 't-transfer-search' : '',
-          this.hasFooter ? 't-transfer-footer' : '',
-          this.showPagination ? 't-transfer-pagination' : '',
-          this.isTreeMode ? 't-transfer-with-tree' : '',
+          `${prefix}-transfer`,
+          this.showSearch ? `${prefix}-transfer__search` : '',
+          this.hasFooter ? `${prefix}-transfer__footer` : '',
+          this.showPagination ? `${prefix}-transfer__pagination` : '',
+          this.isTreeMode ? `${prefix}-transfer--with-tree` : '',
         ]}
       >
         {this.renderTransferList(SOURCE)}

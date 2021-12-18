@@ -25,10 +25,8 @@ import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
 
-const name = `${prefix}-transfer-list`;
-
 export default Vue.extend({
-  name,
+  name: 'TTransferList',
   components: {
     Search,
     TCheckbox,
@@ -85,7 +83,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      name,
       filterValue: '', // 搜索框输入内容,
       // 用于兼容处理 Pagination 的非受控属性（非受控属性仅有 change 事件变化，无 props 变化，因此只需监听事件）
       defaultCurrent: 1,
@@ -196,7 +193,7 @@ export default Vue.extend({
               <TCheckbox
                 disabled={this.disabled || item.disabled}
                 value={item.value}
-                class={[`${name}__item`]}
+                class={[`${prefix}-transfer__list-item`]}
                 key={item.key}
                 v-ripple
                 {...{ props: this.checkboxProps }}
@@ -212,7 +209,7 @@ export default Vue.extend({
       );
 
       return (
-        <div class={`${name}__content narrow-scrollbar`} onScroll={this.scroll}>
+        <div class={`${prefix}-transfer__list-content narrow-scrollbar`} onScroll={this.scroll}>
           {renderTNodeJSXDefault(rootNode, 'tree', {
             defaultNode,
             params: {
@@ -228,7 +225,7 @@ export default Vue.extend({
       const empty = this.empty || this.t(this.global.empty);
       const defaultNode: VNode = typeof empty === 'string' ? (<span>{empty}</span>) : null;
       return (
-        <div class="t-transfer-empty">
+        <div class={`${prefix}-transfer__empty`}>
           {renderTNodeJSXDefault(this, 'empty', {
             defaultNode,
             params: {
@@ -240,7 +237,7 @@ export default Vue.extend({
     },
     renderFooter() {
       const defaultNode = typeof this.footer === 'string'
-        ? (<div class={`${prefix}-transfer-footer`}>{this.footer}</div>)
+        ? (<div class={`${prefix}-transfer__footer`}>{this.footer}</div>)
         : null;
       return renderTNodeJSXDefault(this, 'footer', {
         defaultNode,
@@ -252,8 +249,8 @@ export default Vue.extend({
   },
   render() {
     return (
-      <div class={`${this.name} ${this.name}-${this.listType}`}>
-        <div class={`${this.name}__header`}>
+      <div class={`${prefix}-transfer__list ${prefix}-transfer__list-${this.listType}`}>
+        <div class={`${prefix}-transfer__list-header`}>
           <div>
             {
               this.checkAll
@@ -276,7 +273,7 @@ export default Vue.extend({
           </div>
           {this.renderTitle()}
         </div>
-        <div class={[`${this.name}__body`, this.search ? `${this.name}-with-search` : '']}>
+        <div class={[`${prefix}-transfer__list-body`, this.search ? `${prefix}-transfer__list--with-search` : '']}>
           {this.search && (
             <search
               searchValue={this.filterValue}
@@ -291,7 +288,7 @@ export default Vue.extend({
         </div>
         {
           (this.pagination && this.pageSize > 0 && this.pageTotal > 0)
-          && <div class={`${this.name}__pagination`}>
+          && <div class={`${prefix}-transfer__list-pagination`}>
             <TPagination
               props={this.paginationProps}
               onChange={this.handlePaginationChange}
