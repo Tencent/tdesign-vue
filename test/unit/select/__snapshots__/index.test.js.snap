@@ -2,10 +2,10 @@
 
 exports[`Select :props :bordered 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -25,10 +25,10 @@ exports[`Select :props :bordered 1`] = `
 
 exports[`Select :props :clearable 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -48,10 +48,10 @@ exports[`Select :props :clearable 1`] = `
 
 exports[`Select :props :creatable 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -71,10 +71,10 @@ exports[`Select :props :creatable 1`] = `
 
 exports[`Select :props :disabled 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -94,10 +94,10 @@ exports[`Select :props :disabled 1`] = `
 
 exports[`Select :props :labelInValue 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -117,10 +117,10 @@ exports[`Select :props :labelInValue 1`] = `
 
 exports[`Select :props :loading 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -144,10 +144,10 @@ exports[`Select :props :loading 1`] = `
 
 exports[`Select :props :multiple 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former" value=""><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></li>
@@ -167,10 +167,10 @@ exports[`Select :props :multiple 1`] = `
 
 exports[`Select :props :placeholder 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -190,10 +190,10 @@ exports[`Select :props :placeholder 1`] = `
 
 exports[`Select :props :remote 1`] = `
 <div class="t-select-wrap" remote="true">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -213,10 +213,10 @@ exports[`Select :props :remote 1`] = `
 
 exports[`Select :props :reserveKeyword 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -236,10 +236,10 @@ exports[`Select :props :reserveKeyword 1`] = `
 
 exports[`Select :props :size 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-l t-select-create-option-special"><span></span></li>
@@ -259,10 +259,10 @@ exports[`Select :props :size 1`] = `
 
 exports[`Select Option :props :disabled 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -284,10 +284,10 @@ exports[`Select Option :props :disabled 1`] = `
 
 exports[`Select Option :props :label 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -309,10 +309,10 @@ exports[`Select Option :props :label 1`] = `
 
 exports[`Select Option :props :value 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -334,10 +334,10 @@ exports[`Select Option :props :value 1`] = `
 
 exports[`Select OptionGroup :props :value 1`] = `
 <div class="t-select-wrap">
-  <div class="t-popup-reference t-select-popup-reference">
-    <transition-stub name="t-popup_animation" appear="true">
+  <div class="t-popup__reference t-select-popup-reference">
+    <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
           <div>
             <ul class="t-select-create-option" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
