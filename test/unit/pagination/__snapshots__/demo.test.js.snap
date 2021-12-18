@@ -14,11 +14,11 @@ exports[`Pagination base demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -27,7 +27,7 @@ exports[`Pagination base demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -214,11 +214,11 @@ exports[`Pagination base demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -227,7 +227,7 @@ exports[`Pagination base demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -386,10 +386,10 @@ exports[`Pagination customizable demo works fine 1`] = `
   <div class="t-pagination t-size-m" show-sizer="">
     <div class="t-pagination__total">共 200 项数据</div>
     <div class="t-select-wrap t-pagination__select">
-      <div class="t-popup-reference t-select-popup-reference">
-        <transition-stub name="t-popup_animation" appear="true">
+      <div class="t-popup__reference t-select-popup-reference">
+        <transition-stub name="t-popup--animation" appear="true">
           <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-            <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
+            <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
               <div>
                 <ul class="t-select-create-option" style="display: none;">
                   <li title="" class="t-select-option t-size-m t-select-create-option-special"><span></span></li>
@@ -449,11 +449,11 @@ exports[`Pagination disabled demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -462,7 +462,7 @@ exports[`Pagination disabled demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -673,11 +673,11 @@ exports[`Pagination few demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -686,7 +686,7 @@ exports[`Pagination few demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -859,11 +859,11 @@ exports[`Pagination jump demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -872,7 +872,7 @@ exports[`Pagination jump demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1065,11 +1065,11 @@ exports[`Pagination mini works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1078,7 +1078,7 @@ exports[`Pagination mini works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1274,11 +1274,11 @@ exports[`Pagination more works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1287,7 +1287,7 @@ exports[`Pagination more works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1505,11 +1505,11 @@ exports[`Pagination page-num demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1518,7 +1518,7 @@ exports[`Pagination page-num demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1714,11 +1714,11 @@ exports[`Pagination simple demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1727,7 +1727,7 @@ exports[`Pagination simple demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1841,11 +1841,11 @@ exports[`Pagination simple demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1854,7 +1854,7 @@ exports[`Pagination simple demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -2101,11 +2101,11 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     class="t-select-wrap t-pagination__select"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2114,7 +2114,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2228,11 +2228,11 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     class="t-select-wrap t-pagination__select"
   >
     <div
-      class="t-popup-reference t-select-popup-reference"
+      class="t-popup__reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup_animation"
+        name="t-popup--animation"
       >
         <div
           aria-hidden="true"
@@ -2241,7 +2241,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup-content  t-select-dropdown narrow-scrollbar"
+            class="t-popup__content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
@@ -2488,11 +2488,11 @@ exports[`Pagination total demo works fine 1`] = `
       class="t-select-wrap t-pagination__select"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -2501,7 +2501,7 @@ exports[`Pagination total demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul

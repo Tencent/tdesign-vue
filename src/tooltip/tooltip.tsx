@@ -24,7 +24,7 @@ export default Vue.extend({
     tooltipOverlayClassName(): ClassName {
       return [
         `${prefix}-tooltip`,
-        { [`${prefix}-tooltip-${this.theme}`]: this.theme },
+        { [`${prefix}-tooltip--${this.theme}`]: this.theme },
         this.overlayClassName,
       ];
     },
