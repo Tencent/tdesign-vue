@@ -18,16 +18,18 @@ import Popup, { PopupProps } from '../popup/index';
 import InputContent from './components/InputContent';
 
 // types
-import TreeNode from '../_common/js/tree/tree-node';
 import {
-  ListenersType, TreeNodeValue, EVENT_NAME_WITH_KEBAB,
+  TreeNode,
+  ListenersType,
+  TreeNodeValue,
+  EVENT_NAME_WITH_KEBAB,
   CascaderContextType,
   TdCascaderProps,
+  TreeOptionData,
+  TreeNodeModel,
 } from './interface';
 import props from './props';
 import { CascaderChangeSource, CascaderValue, CascaderChangeContext } from './type';
-import { TreeNodeModel } from '../_common/js/tree/types';
-import { TreeOptionData } from '../common';
 
 const name = `${prefix}-cascader`;
 
@@ -66,7 +68,10 @@ export default Vue.extend({
         // 内部节点时 TreeNode，对外暴露的节点对象是 TreeNodeModel
         setValue: (val: CascaderValue, source: CascaderChangeSource, node?: TreeNodeModel) => {
           if (isEqual(val, this.scopeVal)) return;
-          emitEvent<Parameters<TdCascaderProps['onChange']>>(this, 'change', val, { source, node } as CascaderChangeContext<TreeOptionData>);
+          emitEvent<Parameters<TdCascaderProps['onChange']>>(this, 'change', val, {
+            source,
+            node,
+          } as CascaderChangeContext<TreeOptionData>);
         },
         setVisible: (val: boolean) => {
           this.visible = val;
@@ -142,14 +147,18 @@ export default Vue.extend({
       },
     },
     inputVal() {
-      const { cascaderContext: { value, setExpend } } = this;
+      const {
+        cascaderContext: { value, setExpend },
+      } = this;
       if (!getTreeValue(value).length) {
         setExpend([]);
       }
       this.updatedTreeNodes();
     },
     filterActive() {
-      const { cascaderContext: { filterActive } } = this;
+      const {
+        cascaderContext: { filterActive },
+      } = this;
       if (!filterActive) {
         this.inputVal = '';
       }
@@ -187,13 +196,7 @@ export default Vue.extend({
     // 创建单个 cascader 节点
     init() {
       const {
-        disabled,
-        keys,
-        checkStrictly = false,
-        lazy = true,
-        load,
-        options,
-        valueMode = 'onlyLeaf',
+        disabled, keys, checkStrictly = false, lazy = true, load, options, valueMode = 'onlyLeaf',
       } = this;
       if (!options || (Array.isArray(options) && !options.length)) return;
 
@@ -242,14 +245,7 @@ export default Vue.extend({
   },
   render(): VNode {
     const {
-      visible,
-      trigger,
-      empty,
-      $attrs,
-      cascaderContext,
-      $scopedSlots,
-      placeholder,
-      collapsedItems,
+      visible, trigger, empty, $attrs, cascaderContext, $scopedSlots, placeholder, collapsedItems,
     } = this;
 
     const popupProps = this.popupProps as PopupProps;
@@ -262,19 +258,35 @@ export default Vue.extend({
       };
     });
 
-    return (<div ref="cascader" >
-      <Popup
-        ref="popup"
-        overlayClassName={`${name}__dropdown`}
-        placement="bottom-left"
-        visible={visible}
-        trigger={popupProps?.trigger || 'click'}
-        expandAnimation={true}
-        {...popupProps}
-        content={() => <panel empty={empty} trigger={trigger} cascaderContext={cascaderContext} scopedSlots={{ empty: $scopedSlots.empty }}></panel>}
-      >
-        <InputContent {...$attrs} cascaderContext={cascaderContext} placeholder={placeholder} listeners={listeners} collapsedItems={collapsedItems} scopedSlots={{ collapsedItems: $scopedSlots.collapsedItems }}></InputContent>
-      </Popup>
-    </div >);
+    return (
+      <div ref="cascader">
+        <Popup
+          ref="popup"
+          overlayClassName={`${name}__dropdown`}
+          placement="bottom-left"
+          visible={visible}
+          trigger={popupProps?.trigger || 'click'}
+          expandAnimation={true}
+          {...popupProps}
+          content={() => (
+            <panel
+              empty={empty}
+              trigger={trigger}
+              cascaderContext={cascaderContext}
+              scopedSlots={{ empty: $scopedSlots.empty }}
+            ></panel>
+          )}
+        >
+          <InputContent
+            {...$attrs}
+            cascaderContext={cascaderContext}
+            placeholder={placeholder}
+            listeners={listeners}
+            collapsedItems={collapsedItems}
+            scopedSlots={{ collapsedItems: $scopedSlots.collapsedItems }}
+          ></InputContent>
+        </Popup>
+      </div>
+    );
   },
 });
