@@ -8,6 +8,7 @@
       filterable
       @blur="handleBlur"
       @focus="handleFocus"
+      @enter="handleEnter"
     />
     <t-select
       v-model="value2"
@@ -45,6 +46,9 @@ export default {
     },
     handleFocus({ value, e }) {
       console.log('handleFocus: ', value, e);
+    },
+    handleEnter({ value, e, inputValue }) {
+      console.log('handleEnter: ', value, e, inputValue);
     },
   },
 };
