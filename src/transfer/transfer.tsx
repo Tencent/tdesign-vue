@@ -19,7 +19,10 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import props from './props';
 import {
-  getTransferListOption, emitEvent, getDataValues, getTransferData,
+  getTransferListOption,
+  emitEvent,
+  getDataValues,
+  getTransferData,
   filterTransferData,
   TRANSFER_NAME,
 } from './utils';
@@ -112,7 +115,6 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     },
   },
   methods: {
-
     transferTo(toDirection: TransferListType) {
       const oldTargetValue: Array<TransferValue> = JSON.parse(JSON.stringify(this.value));
       let newTargetValue: Array<TransferValue>;
@@ -122,11 +124,9 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
-        newTargetValue = getDataValues(
-          this.transferData,
-          oldTargetValue.concat(checkedValue),
-          { isTreeMode: this.isTreeMode },
-        );
+        newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), {
+          isTreeMode: this.isTreeMode,
+        });
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
       } else {
@@ -137,7 +137,8 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
       this.handleCheckedChange([], toDirection === SOURCE ? TARGET : SOURCE);
 
       const params: TargetParams = {
-        type: toDirection, movedValue: checkedValue,
+        type: toDirection,
+        movedValue: checkedValue,
       };
       emitEvent<Parameters<TdTransferProps['onChange']>>(this, 'change', newTargetValue, params);
     },

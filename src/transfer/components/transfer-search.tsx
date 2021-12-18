@@ -23,26 +23,30 @@ export default Vue.extend({
   },
   render(_, context): VNode {
     const { searchValue, search, placeholder } = context.props;
-    const inputProps = typeof search === 'object' ? search : {
-      clearable: true,
-    };
+    const inputProps = typeof search === 'object'
+      ? search
+      : {
+        clearable: true,
+      };
     const handleChange = function (value: string, changeCtx: any) {
       context.listeners.change && (context.listeners.change as Function)(value);
-      context.listeners.search && (context.listeners.search as Function)({
-        value,
-        trigger: 'input',
-        e: changeCtx.e,
-      });
+      context.listeners.search
+        && (context.listeners.search as Function)({
+          value,
+          trigger: 'input',
+          e: changeCtx.e,
+        });
     };
     const handleEnter = function (value: string, changeCtx: any) {
-      context.listeners.search && (context.listeners.search as Function)({
-        value,
-        trigger: 'input',
-        e: changeCtx.e,
-      });
+      context.listeners.search
+        && (context.listeners.search as Function)({
+          value,
+          trigger: 'input',
+          e: changeCtx.e,
+        });
     };
     return (
-      <div class={`${prefix}-transfer__search-wrapper`} >
+      <div class={`${prefix}-transfer__search-wrapper`}>
         <TInput
           props={{ ...inputProps }}
           value={searchValue}
