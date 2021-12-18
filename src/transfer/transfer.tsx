@@ -19,14 +19,17 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import props from './props';
 import {
-  getTransferListOption, emitEvent, getDataValues, getTransferData,
+  getTransferListOption,
+  emitEvent,
+  getDataValues,
+  getTransferData,
   filterTransferData,
   TRANSFER_NAME,
 } from './utils';
 
-const name = `${prefix}-transfer`;
 const SOURCE = 'source';
 const TARGET = 'target';
+
 export default mixins(getConfigReceiverMixins('transfer')).extend({
   name: TRANSFER_NAME,
   components: {
@@ -39,12 +42,10 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
   },
   props,
   data(): {
-    name: string;
     SOURCE: TransferListType;
     TARGET: TransferListType;
     } {
     return {
-      name,
       SOURCE,
       TARGET,
     };
@@ -114,7 +115,6 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     },
   },
   methods: {
-
     transferTo(toDirection: TransferListType) {
       const oldTargetValue: Array<TransferValue> = JSON.parse(JSON.stringify(this.value));
       let newTargetValue: Array<TransferValue>;
@@ -124,11 +124,9 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
-        newTargetValue = getDataValues(
-          this.transferData,
-          oldTargetValue.concat(checkedValue),
-          { isTreeMode: this.isTreeMode },
-        );
+        newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), {
+          isTreeMode: this.isTreeMode,
+        });
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
       } else {
@@ -139,7 +137,8 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
       this.handleCheckedChange([], toDirection === SOURCE ? TARGET : SOURCE);
 
       const params: TargetParams = {
-        type: toDirection, movedValue: checkedValue,
+        type: toDirection,
+        movedValue: checkedValue,
       };
       emitEvent<Parameters<TdTransferProps['onChange']>>(this, 'change', newTargetValue, params);
     },
@@ -224,11 +223,11 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     return (
       <div
         class={[
-          't-transfer',
-          this.showSearch ? 't-transfer-search' : '',
-          this.hasFooter ? 't-transfer-footer' : '',
-          this.showPagination ? 't-transfer-pagination' : '',
-          this.isTreeMode ? 't-transfer-with-tree' : '',
+          `${prefix}-transfer`,
+          this.showSearch ? `${prefix}-transfer__search` : '',
+          this.hasFooter ? `${prefix}-transfer__footer` : '',
+          this.showPagination ? `${prefix}-transfer__pagination` : '',
+          this.isTreeMode ? `${prefix}-transfer--with-tree` : '',
         ]}
       >
         {this.renderTransferList(SOURCE)}

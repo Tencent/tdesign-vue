@@ -20,11 +20,11 @@ exports[`Calendar base demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -33,7 +33,7 @@ exports[`Calendar base demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -269,11 +269,11 @@ exports[`Calendar base demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -282,7 +282,7 @@ exports[`Calendar base demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -1110,11 +1110,11 @@ exports[`Calendar card demo works fine 1`] = `
       class="demo-select-base t-select-wrap"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -1123,7 +1123,7 @@ exports[`Calendar card demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -1248,11 +1248,11 @@ exports[`Calendar card demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -1261,7 +1261,7 @@ exports[`Calendar card demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -1497,11 +1497,11 @@ exports[`Calendar card demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -1510,7 +1510,7 @@ exports[`Calendar card demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -2321,11 +2321,11 @@ exports[`Calendar cell demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -2334,7 +2334,7 @@ exports[`Calendar cell demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -2570,11 +2570,11 @@ exports[`Calendar cell demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -2583,7 +2583,7 @@ exports[`Calendar cell demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -3490,11 +3490,11 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -3503,7 +3503,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -3739,11 +3739,11 @@ exports[`Calendar cellAppend demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -3752,7 +3752,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -4840,11 +4840,11 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -4853,7 +4853,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -5089,11 +5089,11 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -5102,7 +5102,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -5941,11 +5941,11 @@ exports[`Calendar events demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -5954,7 +5954,7 @@ exports[`Calendar events demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -6190,11 +6190,11 @@ exports[`Calendar events demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -6203,7 +6203,7 @@ exports[`Calendar events demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -7032,11 +7032,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
       class="demo-select-base t-select-wrap"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -7045,7 +7045,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -7182,11 +7182,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -7195,7 +7195,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -7431,11 +7431,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -7444,7 +7444,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -8388,11 +8388,11 @@ exports[`Calendar head demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -8401,7 +8401,7 @@ exports[`Calendar head demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -8637,11 +8637,11 @@ exports[`Calendar head demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -8650,7 +8650,7 @@ exports[`Calendar head demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -9478,11 +9478,11 @@ exports[`Calendar mode demo works fine 1`] = `
       class="demo-select-base t-select-wrap"
     >
       <div
-        class="t-popup-reference t-select-popup-reference"
+        class="t-popup__reference t-select-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup_animation"
+          name="t-popup--animation"
         >
           <div
             aria-hidden="true"
@@ -9491,7 +9491,7 @@ exports[`Calendar mode demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup-content  t-select-dropdown narrow-scrollbar"
+              class="t-popup__content  t-select-dropdown narrow-scrollbar"
             >
               <div>
                 <ul
@@ -9588,11 +9588,11 @@ exports[`Calendar mode demo works fine 1`] = `
             class="t-select-wrap"
           >
             <div
-              class="t-popup-reference t-select-popup-reference"
+              class="t-popup__reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup_animation"
+                name="t-popup--animation"
               >
                 <div
                   aria-hidden="true"
@@ -9601,7 +9601,7 @@ exports[`Calendar mode demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                    class="t-popup__content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
@@ -10122,11 +10122,11 @@ exports[`Calendar range demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -10135,7 +10135,7 @@ exports[`Calendar range demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -10291,11 +10291,11 @@ exports[`Calendar range demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -10304,7 +10304,7 @@ exports[`Calendar range demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -11143,11 +11143,11 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -11156,7 +11156,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -11392,11 +11392,11 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -11405,7 +11405,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -12238,11 +12238,11 @@ exports[`Calendar value demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -12251,7 +12251,7 @@ exports[`Calendar value demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -12487,11 +12487,11 @@ exports[`Calendar value demo works fine 1`] = `
           class="t-select-wrap"
         >
           <div
-            class="t-popup-reference t-select-popup-reference"
+            class="t-popup__reference t-select-popup-reference"
           >
             <transition-stub
               appear="true"
-              name="t-popup_animation"
+              name="t-popup--animation"
             >
               <div
                 aria-hidden="true"
@@ -12500,7 +12500,7 @@ exports[`Calendar value demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                  class="t-popup__content  t-select-dropdown narrow-scrollbar"
                 >
                   <div>
                     <ul
@@ -13447,11 +13447,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -13460,7 +13460,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul
@@ -13696,11 +13696,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -13709,7 +13709,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul
@@ -14550,11 +14550,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -14563,7 +14563,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul
@@ -14799,11 +14799,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -14812,7 +14812,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul
@@ -15639,11 +15639,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -15652,7 +15652,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul
@@ -15888,11 +15888,11 @@ exports[`Calendar week demo works fine 1`] = `
               class="t-select-wrap"
             >
               <div
-                class="t-popup-reference t-select-popup-reference"
+                class="t-popup__reference t-select-popup-reference"
               >
                 <transition-stub
                   appear="true"
-                  name="t-popup_animation"
+                  name="t-popup--animation"
                 >
                   <div
                     aria-hidden="true"
@@ -15901,7 +15901,7 @@ exports[`Calendar week demo works fine 1`] = `
                     style="display: none;"
                   >
                     <div
-                      class="t-popup-content  t-select-dropdown narrow-scrollbar"
+                      class="t-popup__content  t-select-dropdown narrow-scrollbar"
                     >
                       <div>
                         <ul

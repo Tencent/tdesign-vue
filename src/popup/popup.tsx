@@ -71,19 +71,22 @@ export default Vue.extend({
   computed: {
     overlayClasses(): ClassName {
       const base = [
-        `${name}-content`,
+        `${name}__content`,
         {
-          [`${name}-content--arrow`]: this.showArrow,
+          [`${name}__content--arrow`]: this.showArrow,
           [CLASSNAMES.STATUS.disabled]: this.disabled,
         },
       ] as ClassName;
       return base.concat(this.overlayClassName);
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
-      return triggers.reduce((map, trigger) => ({
-        ...map,
-        [trigger]: this.trigger.includes(trigger),
-      }), {} as any);
+      return triggers.reduce(
+        (map, trigger) => ({
+          ...map,
+          [trigger]: this.trigger.includes(trigger),
+        }),
+        {} as any,
+      );
     },
   },
   watch: {
@@ -146,16 +149,23 @@ export default Vue.extend({
       offEvents.push(on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' })));
       offEvents.push(on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' })));
       offEvents.push(on(popperElm, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }, true)));
-      offEvents.push(on(popperElm, 'mouseleave', (ev: MouseEvent) => {
-        const parent = (this as any).popup;
-        let closeParent: boolean;
-        if (parent?.visible) {
-          const parentRect = parent.$refs.popper.getBoundingClientRect();
-          // close parent if mouse isn't inside
-          closeParent = !(ev.x > parentRect.left && ev.x < parentRect.right && ev.y > parentRect.top && ev.y < parentRect.bottom);
-        }
-        this.handleClose({ trigger: 'trigger-element-hover' }, closeParent);
-      }));
+      offEvents.push(
+        on(popperElm, 'mouseleave', (ev: MouseEvent) => {
+          const parent = (this as any).popup;
+          let closeParent: boolean;
+          if (parent?.visible) {
+            const parentRect = parent.$refs.popper.getBoundingClientRect();
+            // close parent if mouse isn't inside
+            closeParent = !(
+              ev.x > parentRect.left
+              && ev.x < parentRect.right
+              && ev.y > parentRect.top
+              && ev.y < parentRect.bottom
+            );
+          }
+          this.handleClose({ trigger: 'trigger-element-hover' }, closeParent);
+        }),
+      );
     }
     if (this.hasTrigger.focus) {
       if (reference.querySelector('input,textarea')) {
@@ -299,8 +309,7 @@ export default Vue.extend({
     },
     handleDocumentClick(e: Event) {
       const popperElm = this.$refs.popper as HTMLElement;
-      if (!this.$el || this.$el.contains(e.target as Element)
-        || !popperElm || popperElm.contains(e.target as Node)) return;
+      if (!this.$el || this.$el.contains(e.target as Element) || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
@@ -361,9 +370,9 @@ export default Vue.extend({
 
   render() {
     return (
-      <div class={`${name}-reference`}>
+      <div class={`${name}__reference`}>
         <transition
-          name={`${name}_animation`}
+          name={`${name}--animation`}
           appear
           onBeforeEnter={this.beforeEnter}
           onEnter={this.enter}
