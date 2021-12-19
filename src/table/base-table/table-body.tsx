@@ -6,15 +6,18 @@ import baseTableProps from '../base-table-props';
 import primaryTableProps from '../primary-table-props';
 import { BaseTableCol } from '../type';
 import TableRow from './table-row';
+import { renderTNodeJSX } from '../../utils/render-tnode';
 
 export default Vue.extend({
   name: `${prefix}-table-body`,
+
   props: {
     data: baseTableProps.data,
     columns: baseTableProps.columns,
     rowClassName: baseTableProps.rowClassName,
     rowKey: baseTableProps.rowKey,
     rowspanAndColspan: baseTableProps.rowspanAndColspan,
+    firstFullRow: baseTableProps.firstFullRow,
     onRowHover: baseTableProps.onRowHover,
     onRowMouseup: baseTableProps.onRowMouseup,
     onRowMousedown: baseTableProps.onRowMousedown,
@@ -25,9 +28,7 @@ export default Vue.extend({
       type: Object,
       default() {
         return {
-          renderRows(): void {
-
-          },
+          renderRows(): void {},
         };
       },
     },
@@ -36,6 +37,7 @@ export default Vue.extend({
       default: 1,
     },
   },
+
   computed: {
     selectColumn(): any {
       return this.columns.find(({ type }: any) => ['multiple', 'single'].includes(type)) || {};
@@ -119,23 +121,39 @@ export default Vue.extend({
       });
       return props;
     },
+
+    renderFullRow(type: 'firstFullRow' | 'lastFullRow') {
+      const firstFullRowNode = renderTNodeJSX(this, type);
+      if (firstFullRowNode) {
+        return (
+          <tr>
+            <td colspan={this.columns.length} class={`${prefix}-table__row--full`}>
+              {firstFullRowNode}
+            </td>
+          </tr>
+        );
+      }
+      return null;
+    },
+
     renderBody(): Array<VNode> {
       const {
         data,
         rowClassName,
         rowKey,
         provider,
-        $scopedSlots: scopedSlots, rowspanAndColspan, selectedRowKeys, selectColumn,
+        $scopedSlots: scopedSlots,
+        rowspanAndColspan,
+        selectedRowKeys,
+        selectColumn,
       } = this;
-      const body: Array<VNode> = [];
+      let body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
       if (typeof rowspanAndColspan === 'function') {
         allRowspanAndColspanProps = this.getRowspanAndColspanProps();
       }
       data.forEach((row: any, index: number) => {
-        const defaultRowClass = typeof rowClassName === 'function'
-          ? rowClassName({ row, rowIndex: index })
-          : rowClassName;
+        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
         let rowClass: Array<string> = [];
         if (defaultRowClass) {
           rowClass = rowClass.concat(defaultRowClass);
@@ -168,36 +186,53 @@ export default Vue.extend({
             ...this.$listeners,
             'row-dragstart': () => {
               emitEvent(this, 'row-dragstart', {
-                index, row,
+                index,
+                row,
               });
             },
             'row-dragover': ({ e }: { e: MouseEvent }) => {
               e.preventDefault();
               emitEvent(this, 'row-dragover', {
-                index, row, targetElm: rowVnode.elm,
+                index,
+                row,
+                targetElm: rowVnode.elm,
               });
             },
           },
           scopedSlots,
         };
-        rowVnode = <TableRow rowKey={this.rowKey} {...props}/>;
+        rowVnode = <TableRow rowKey={this.rowKey} {...props} />;
         // 按行渲染
         body.push(rowVnode);
 
         provider.renderRows({
-          rows: body, row, rowIndex: index, columns: this.columns,
+          rows: body,
+          row,
+          rowIndex: index,
+          columns: this.columns,
         });
       });
+      const firstRow = this.renderFullRow('firstFullRow');
+      if (firstRow) {
+        body = [firstRow].concat(body);
+      }
+      const lastRow = this.renderFullRow('lastFullRow');
+      if (lastRow) {
+        body = body.concat(lastRow);
+      }
       return body;
     },
   },
+
   render() {
     if (this.provider.sortOnRowDraggable) {
-      const className = `table-body ${this.provider.dragging ? 'dragging' : ''}`;
-      return <transition-group class={className} tag='tbody'>
-        {this.renderBody()}
-      </transition-group>;
+      const className = `${this.provider.dragging ? 'dragging' : ''}`;
+      return (
+        <transition-group class={className} tag="tbody">
+          {this.renderBody()}
+        </transition-group>
+      );
     }
-    return <tbody class="table-body">{this.renderBody()}</tbody>;
+    return <tbody>{this.renderBody()}</tbody>;
   },
 });

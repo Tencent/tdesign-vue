@@ -5,6 +5,7 @@ import getConfigReceiverMixins, { TableConfig } from '../../config-provider/conf
 import { prefix } from '../../config';
 import flatColumns from '../util/props-util';
 import baseTableProps from '../base-table-props';
+import { ClassName } from '../../common';
 import {
   DataType, BaseTableCol, TdBaseTableProps, RowEventContext,
 } from '../type';
@@ -18,6 +19,7 @@ import { PageInfo } from '../../pagination/type';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { emitEvent } from '../../utils/event';
 import { EventNameWithKebab } from '../util/interface';
+import { SIZE_CLASSNAMES } from '../../utils/classnames';
 import primaryTableProps from '../primary-table-props';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
@@ -35,9 +37,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       type: Object,
       default() {
         return {
-          renderRows(): void {
-
-          },
+          renderRows(): void {},
         };
       },
     },
@@ -108,51 +108,24 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return tableHeight !== 'auto';
     },
     // common class
-    commonClass(): Array<string> {
-      const {
-        bordered, stripe, hover, size, verticalAlign, hasFixedColumns, fixedHeader,
-      } = this;
-      const commonClass: Array<string> = [`${prefix}-table`];
-      if (bordered) {
-        commonClass.push(`${prefix}-table--bordered`);
-      }
-      if (stripe) {
-        commonClass.push(`${prefix}-table--striped`);
-      }
-      if (hover) {
-        commonClass.push(`${prefix}-table--hoverable`);
-      }
-      if (this.provider.sortOnRowDraggable) {
-        commonClass.push(`${prefix}-table__row--draggable`);
-      }
-      // table size
-      switch (size) {
-        case 'small':
-          commonClass.push(`${prefix}-size-s`);
-          break;
-        case 'large':
-          commonClass.push(`${prefix}-size-l`);
-          break;
-        default:
-      }
-      // table verticalAlign
-      switch (verticalAlign) {
-        case 'top':
-          commonClass.push(`${prefix}-table-valign__top`);
-          break;
-        case 'bottom':
-          commonClass.push(`${prefix}-table-valign__bottom`);
-          break;
-        default:
-      }
-      // fixed table
-      if (hasFixedColumns) {
-        commonClass.push(`${prefix}-table__cell--fixed ${prefix}-table--has-fixed`);
-      }
-      if (fixedHeader) {
-        commonClass.push(`${prefix}-table__header--fixed`);
-      }
-      return commonClass;
+    commonClass(): ClassName {
+      const classes = [
+        `${prefix}-table`,
+        {
+          [SIZE_CLASSNAMES.small]: this.size === 'small',
+          [SIZE_CLASSNAMES.large]: this.size === 'large',
+          [`${prefix}-table--bordered`]: this.bordered,
+          [`${prefix}-table--striped`]: this.stripe,
+          [`${prefix}-table--hoverable`]: this.hover,
+          [`${prefix}-table__row--draggable`]: this.provider.sortOnRowDraggable,
+          [`${prefix}-table-valign__top`]: this.verticalAlign === 'top',
+          [`${prefix}-table-valign__bottom`]: this.verticalAlign === 'bottom',
+          [`${prefix}-table__cell--fixed`]: this.hasFixedColumns,
+          [`${prefix}-table--has-fixed`]: this.hasFixedColumns,
+          [`${prefix}-table__header--fixed`]: this.fixedHeader,
+        },
+      ];
+      return classes;
     },
   },
   methods: {
@@ -173,12 +146,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const {
         columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
       } = this;
-      return <TableHeader
-              scopedSlots={scopedSlots}
-              columns={columns}
-              columnsProps={flattedColumns}
-              bordered={bordered}
-            />;
+      return (
+        <TableHeader scopedSlots={scopedSlots} columns={columns} columnsProps={flattedColumns} bordered={bordered} />
+      );
     },
     registerRowEvents() {
       const events = {};
@@ -190,10 +160,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return events;
     },
     renderBody(): VNode {
-      const {
-        $listeners: listener,
-        $scopedSlots: scopedSlots,
-      } = this;
+      const { $listeners: listener, $scopedSlots: scopedSlots } = this;
       const rowEvents = this.registerRowEvents();
       const props = {
         props: {
@@ -205,6 +172,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           current: this.current,
           selectedRowKeys: this.selectedRowKeys,
           rowspanAndColspan: this.rowspanAndColspan,
+          firstFullRow: this.firstFullRow,
         },
         scopedSlots,
         on: {
@@ -212,16 +180,13 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           ...rowEvents,
         },
       };
-      return (
-        <TableBody { ...props } />
-      );
+      return <TableBody {...props} />;
     },
     renderEmptyTable(): VNode {
+      if (this.empty === null) return null;
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
-        <div class={`${prefix}-table--empty`}>
-          {useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}
-        </div>
+        <div class={`${prefix}-table--empty`}>{useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}</div>
       );
     },
     renderPagination(): VNode {
@@ -263,18 +228,25 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       }, 10);
       //  fixed table header
       const paddingRight = `${scrollBarWidth}px`;
-      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight: columns.length > 1 ? paddingRight : '' }} ref="scrollHeader">
+      fixedTable.push(
+        <div
+          class={`${prefix}-table__header`}
+          style={{ paddingRight: columns.length > 1 ? paddingRight : '' }}
+          ref="scrollHeader"
+        >
           <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
-        </div>);
+        </div>,
+      );
       const containerStyle = {
         height: isNaN(Number(tableHeight)) ? tableHeight : `${Number(tableHeight)}px`,
         width: hasFixedColumns ? '100%' : undefined,
       };
       // fixed table body
-      fixedTable.push(<div
+      fixedTable.push(
+        <div
           class={`${prefix}-table__body`}
           style={containerStyle}
           {...asyncLoadingProps}
@@ -286,7 +258,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
             {this.renderBody()}
             {this.renderFooter()}
           </table>
-        </div>);
+        </div>,
+      );
       return fixedTable;
     },
     renderLoadingContent(): VNode {
@@ -294,18 +267,17 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     },
     renderFooter() {
       const {
-        flattedColumns: {
-          length: colspan,
-        },
+        flattedColumns: { length: colspan },
       } = this;
       const footerContent: VNode = renderTNodeJSX(this, 'footer');
-      return footerContent ? <tfoot>
-                <tr>
-                  <td colspan={colspan}>
-                    {footerContent}
-                  </td>
-                </tr>
-              </tfoot> : null;
+      const foot = (
+        <tfoot>
+          <tr>
+            <td colspan={colspan}>{footerContent}</td>
+          </tr>
+        </tfoot>
+      );
+      return footerContent ? foot : null;
     },
     handleScroll(e: WheelEvent) {
       this.checkScrollableToLeftOrRight();
@@ -350,17 +322,21 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       tableContent.push(this.renderFooter());
     }
     if (isEmpty) {
-      body.push(this.renderEmptyTable());
+      const empty = this.renderEmptyTable();
+      empty && body.push(empty);
     }
     // 渲染分页
     if (hasPagination) {
       body.push(this.renderPagination());
     }
     const handleScroll = throttle(this.handleScroll, 100);
-    const tableContentClass = [`${prefix}-table-content`, {
-      [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
-      [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
-    }];
+    const tableContentClass = [
+      `${prefix}-table-content`,
+      {
+        [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
+        [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
+      },
+    ];
     let width;
     const { tableContent: tableContentEl, table: tableEl } = this.$refs as Record<string, HTMLElement>;
     if (!hasFixedColumns && tableContentEl && tableContentEl.clientWidth < tableEl.clientWidth) {
@@ -368,24 +344,28 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     }
     return (
       <div class={commonClass} style={{ width }}>
+        {renderTNodeJSX(this, 'topContent')}
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
-          <div
-            ref='tableContent'
-            class={tableContentClass}
-            onScroll={handleScroll}
-          >
-            {fixedTableContent || <table ref="table" style={{ tableLayout }}>{tableContent}</table>}
+          <div ref="tableContent" class={tableContentClass} onScroll={handleScroll}>
+            {fixedTableContent || (
+              <table ref="table" style={{ tableLayout }}>
+                {tableContent}
+              </table>
+            )}
           </div>
           {body}
         </Loading>
       </div>
     );
   },
+
   mounted() {
     if (this.hasFixedColumns) {
       // 首次检查滚动条状态；设置settimeout 是为了等待父组件渲染完
-      setTimeout(() => {
+      let timer = setTimeout(() => {
         this.checkScrollableToLeftOrRight();
+        clearTimeout(timer);
+        timer = null;
       }, 0);
       this.addWindowResizeEventListener();
     }
