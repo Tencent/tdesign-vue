@@ -35,8 +35,8 @@ export default Vue.extend({
       // 计算当前固定列偏移的宽度
       if (fixed) {
         let offsetLeft = 0;
-        const fixedColumns = children.filter((el: TdInstance) => el?.cellData?.col?.fixed === fixed);
-        const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => el === this);
+        const fixedColumns = children.filter((el: TdInstance) => (el?.cellData?.col?.fixed === fixed));
+        const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => (el === this));
         fixedColumns.forEach((el: any, cur) => {
           if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
             const { width } = el.cellData?.col;
@@ -44,7 +44,9 @@ export default Vue.extend({
             offsetLeft += width > 0 ? width : clientWidth;
           }
         });
-        this.isBoundary = fixed === 'left' ? indexInFixedColumns === fixedColumns.length - 1 : indexInFixedColumns === 0;
+        this.isBoundary = fixed === 'left'
+          ? indexInFixedColumns === fixedColumns.length - 1
+          : indexInFixedColumns === 0;
         this.offsetLeft = offsetLeft;
       }
       this.isCutOff = isNodeOverflow(this.$el);
@@ -75,7 +77,7 @@ export default Vue.extend({
       }
     }
     if (align) {
-      attrClass.push(`${prefix}-align-${align}`);
+      attrClass.push(`align-${align}`);
     }
     if (width && !fixed) {
       style.overflow = 'hidden';
@@ -88,19 +90,13 @@ export default Vue.extend({
     }
 
     if (ellipsis === true || typeof ellipsis === 'function') {
-      attrClass.push(`${prefix}-text-ellipsis`);
+      attrClass.push('text-ellipsis');
     }
     if (className) {
       if (typeof className === 'function') {
-        attrClass.push(
-          className({
-            type: cellData.type,
-            col,
-            colIndex,
-            row,
-            rowIndex,
-          }),
-        );
+        attrClass.push(className({
+          type: cellData.type, col, colIndex, row, rowIndex,
+        }));
       } else {
         attrClass.push(className);
       }
@@ -143,24 +139,24 @@ export default Vue.extend({
       let popupCellContent = cellContent;
       if (typeof ellipsis === 'function') {
         popupCellContent = ellipsis(h, {
-          row,
-          col,
-          rowIndex,
-          colIndex,
+          row, col, rowIndex, colIndex,
         });
       }
       cellContent = (
-        <Popup style="display: inline;" overlayStyle={overlayStyle} placement="bottom-left" showArrow={false}>
+        <Popup
+          style="display: inline;"
+          overlayStyle={overlayStyle}
+          placement="bottom-left"
+          showArrow={false}
+        >
           {cellContent}
-          <div slot="content">{popupCellContent}</div>
+          <div slot="content">
+            {popupCellContent}
+          </div>
         </Popup>
       );
     }
-    return (
-      <td style={style} {...tdAttrs}>
-        {cellContent}
-      </td>
-    );
+    return <td style={style} {...tdAttrs}>{cellContent}</td>;
   },
   mounted() {
     this.init();

@@ -2,10 +2,10 @@
 
 exports[`DatePicker :mode 1`] = `
 <div class="t-date-picker t-input t-size-m t-date-picker--month-picker">
-  <div class="t-popup__reference t-date-picker__popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-date-picker__popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content t-date-picker">
+        <div class="t-popup-content t-date-picker">
           <div class="t-date-picker__container">
             <div class="t-date-picker__panel">
               <div class="t-date-picker__header"><span class="t-date-picker__header-title"><span><span>2020</span> 至 <span>2029</span></span></span><span class="t-date-picker__header-controller"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn" title="上个十年"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left"><path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path></svg></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn t-date-picker__header-controller__btn--now" title="当前"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-round"><path fill="currentColor" d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z" fill-opacity="0.9"></path></svg></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn" title="下个十年"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></button></span></div>
@@ -65,10 +65,10 @@ exports[`DatePicker :mode 1`] = `
 
 exports[`DatePicker :range 1`] = `
 <div class="t-date-picker t-input t-size-m t-date-picker--month-picker">
-  <div class="t-popup__reference t-date-picker__popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-date-picker__popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content t-date-picker">
+        <div class="t-popup-content t-date-picker">
           <div class="t-date-picker__container t-date-picker--range">
             <div class="t-date-picker__panels">
               <div class="t-date-picker__panel">
@@ -187,10 +187,10 @@ exports[`DatePicker :range 1`] = `
 
 exports[`DatePicker :value 1`] = `
 <div class="t-date-picker t-input t-size-m t-date-picker--month-picker">
-  <div class="t-popup__reference t-date-picker__popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-date-picker__popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content t-date-picker">
+        <div class="t-popup-content t-date-picker">
           <div class="t-date-picker__container">
             <div class="t-date-picker__panel">
               <div class="t-date-picker__header"><span class="t-date-picker__header-title"><button type="button" class="t-button t-size-s t-button--variant-text t-button--theme-default t-date-picker__header-btn"><span class="t-button__text">2020 年</span></button></span><span class="t-date-picker__header-controller"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn" title="上一年"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left"><path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path></svg></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn t-date-picker__header-controller__btn--now" title="当前"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-round"><path fill="currentColor" d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z" fill-opacity="0.9"></path></svg></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-date-picker__header-controller__btn" title="下一年"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></button></span></div>

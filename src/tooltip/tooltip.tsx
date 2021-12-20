@@ -22,7 +22,11 @@ export default Vue.extend({
   },
   computed: {
     tooltipOverlayClassName(): ClassName {
-      return [`${prefix}-tooltip`, { [`${prefix}-tooltip--${this.theme}`]: this.theme }, this.overlayClassName];
+      return [
+        `${prefix}-tooltip`,
+        { [`${prefix}-tooltip-${this.theme}`]: this.theme },
+        this.overlayClassName,
+      ];
     },
   },
   watch: {

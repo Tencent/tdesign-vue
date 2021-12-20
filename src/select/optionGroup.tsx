@@ -6,7 +6,7 @@ import CLASSNAMES from '../utils/classnames';
 import props from './option-group-props';
 import { ClassName } from '../common';
 
-const name = `${prefix}-select-option-group`;
+const name = `${prefix}-option-group`;
 
 export interface Select extends Vue {
   tSelect: {
@@ -37,7 +37,7 @@ export default (Vue as VueConstructor<Select>).extend({
     const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
     return (
       <li class={this.classes}>
-        <div class={`${name}__header`}>{ this.label }</div>
+        <div class={`${name}-header`}>{ this.label }</div>
         <ul>{children}</ul>
       </li>
     );

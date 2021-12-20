@@ -38,7 +38,7 @@ export default Vue.extend({
           colKey: expandedColKey,
           width: 48,
           attrs: {
-            class: [`${prefix}-table__expandable-icon-cell`],
+            class: [`${prefix}-table-expandable-icon-cell`],
             style: {
               overflow: 'auto',
             },
@@ -87,19 +87,17 @@ export default Vue.extend({
           colKey: 'expanded-row',
           attrs: {
             colspan: columnCounts,
-            class: [`${prefix}-table__expanded-cell`],
+            class: [`${prefix}-table-expanded-cell`],
           },
           render: (h: CreateElement): VNode => expandRowHandler(h, params) as VNode,
         },
       ];
-      rows.push(
-        <TableRow
-          key={`ExpandTableRowBox${rowIndex}`}
-          rowKey={this.rowKey}
-          style={{ ...(!isShowExpanded ? { display: 'none' } : {}) }}
-          columns={columns}
-        />,
-      );
+      rows.push(<TableRow
+        key={`ExpandTableRowBox${rowIndex}`}
+        rowKey={this.rowKey}
+        style={{ ...(!isShowExpanded ? { display: 'none' } : {}) }}
+        columns={columns}
+      />);
     },
 
     // handle

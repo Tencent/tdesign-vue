@@ -45,7 +45,7 @@ describe('Table', () => {
       it('`data` is not undefined', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" data={data} columns={columns}></Table>;
+            return <Table rowKey='id' data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper.vm.$el.getElementsByTagName('tr').length).toBe(data.length + 1);
@@ -58,7 +58,10 @@ describe('Table', () => {
         });
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" columns={columns} empty={empty}></Table>;
+            return (
+              <Table rowKey='id' columns={columns} empty={empty}>
+              </Table>
+            );
           },
         });
         expect(wrapper.find('#empty-container').exists()).toBe(true);
@@ -165,7 +168,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" data={data} columns={columns}></Table>;
+            return <Table rowKey='id' data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -188,7 +191,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" columns={columns} data={data}></Table>;
+            return <Table rowKey='id' columns={columns} data={data}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -214,7 +217,7 @@ describe('Table', () => {
         ];
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" columns={columns} data={data}></Table>;
+            return <Table rowKey='id' columns={columns} data={data}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -224,20 +227,20 @@ describe('Table', () => {
       it('`pagination` visibleWithOnePage is true', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" data={data} columns={columns} pagination={pagination}></Table>;
+            return <Table rowKey='id' data={data} columns={columns} pagination={pagination}></Table>;
           },
         });
-        expect(wrapper.find('.t-table__pagination').exists()).toBe(true);
+        expect(wrapper.find('.t-table-pagination').exists()).toBe(true);
       });
     });
     describe(':props.empty', () => {
       it('`empty` is undefined', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" columns={columns}></Table>;
+            return <Table rowKey='id' columns={columns}></Table>;
           },
         });
-        expect(wrapper.find('.t-table__empty').exists()).toBe(true);
+        expect(wrapper.find('.t-table--empty').exists()).toBe(true);
       });
       it('`empty` is a Function', () => {
         const empty = jest.fn(() => {
@@ -245,7 +248,7 @@ describe('Table', () => {
         });
         mount({
           render() {
-            return <Table rowKey="id" columns={columns} empty={empty}></Table>;
+            return <Table rowKey='id' columns={columns} empty={empty}></Table>;
           },
         });
         expect(empty.mock.calls.length).toBe(1);
@@ -256,7 +259,7 @@ describe('Table', () => {
         const loading = true;
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" columns={columns} loading={loading}></Table>;
+            return <Table rowKey='id' columns={columns} loading={loading}></Table>;
           },
         });
         expect(wrapper.find('.t-loading').exists()).toBe(true);
@@ -267,7 +270,7 @@ describe('Table', () => {
         });
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" loading={loading}></Table>;
+            return <Table rowKey='id' loading={loading}></Table>;
           },
         });
         expect(wrapper.find('.loading__container').exists()).toBe(true);
@@ -297,7 +300,7 @@ describe('Table', () => {
                 size={'small'}
                 hover={true}
                 verticalAlign={'middle'}
-                rowKey="id"
+                rowKey='id'
               ></Table>
             );
           },
@@ -307,7 +310,7 @@ describe('Table', () => {
       it('size = "large", verticalAlign="top"', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" size={'large'} verticalAlign={'top'}></Table>;
+            return <Table rowKey='id' size={'large'} verticalAlign={'top'}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -315,7 +318,7 @@ describe('Table', () => {
       it('size = "medium", verticalAlign="bottom"', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" size={'medium'} verticalAlign={'bottom'}></Table>;
+            return <Table rowKey='id' size={'medium'} verticalAlign={'bottom'}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -323,7 +326,7 @@ describe('Table', () => {
       it('height = 100', () => {
         const wrapper = mount({
           render() {
-            return <Table rowKey="id" height={100} data={data} columns={columns}></Table>;
+            return <Table rowKey='id' height={100} data={data} columns={columns}></Table>;
           },
         });
         expect(wrapper).toMatchSnapshot();
@@ -347,7 +350,7 @@ describe('Table', () => {
       });
       const wrapper = await mount({
         render() {
-          return <Table rowKey="id" empty={empty} columns={columns}></Table>;
+          return <Table rowKey='id' empty={empty} columns={columns}></Table>;
         },
       });
       expect(wrapper.find('.empty__container').exists()).toBe(true);
@@ -421,6 +424,7 @@ describe('Table', () => {
   // asyncLoading
   describe(':asyncLoading', () => {
     // let wrapper;
+
     // it('init status without async loading row', async () => {
     //   wrapper = await mount({
     //     data() {
@@ -435,6 +439,7 @@ describe('Table', () => {
     //   });
     //   expect(wrapper.find('.table-body tr td .t-table--loading-async').exists()).toBe(false);
     // });
+
     // it('with async loading row', async () => {
     //   await wrapper.setData({ asyncLoading: true });
     //   expect(wrapper.find('.table-body tr td .t-table--loading-async').exists()).toBe(true);
@@ -524,13 +529,13 @@ describe('Table', () => {
         },
         render() {
           const { data, columns } = this;
-          return <Table rowKey="id" data={data} columns={columns} />;
+          return <Table rowKey='id' data={data} columns={columns} />;
         },
       });
-      expect(wrapper.findAll('.t-table__body tr').length).toBe(data.length);
+      expect(wrapper.findAll('.table-body tr').length).toBe(data.length);
       await wrapper.setData({ filteredInfo: { firstName: ['Jim'] } });
       await wrapper.setData({ filteredInfo: null });
-      expect(wrapper.findAll('.t-table__body tr').length).toBe(data.length);
+      expect(wrapper.findAll('.table-body tr').length).toBe(data.length);
     });
   });
 
@@ -552,7 +557,7 @@ describe('Table', () => {
       };
       const wrapper = await mount({
         render() {
-          return <Table rowKey="id" data={data} columns={columns} rowspanAndColspan={rowspanAndColspan} />;
+          return <Table rowKey='id' data={data} columns={columns} rowspanAndColspan={rowspanAndColspan} />;
         },
       });
       const allTr = wrapper.findAll('tr').length;

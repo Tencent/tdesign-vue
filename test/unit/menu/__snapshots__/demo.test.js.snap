@@ -3,7 +3,7 @@
 exports[`Menu single demo works fine 1`] = `
 <div>
   <div
-    class="t-menu t-head-menu t-menu--light"
+    class="t-menu t-head-menu t-menu-mode__normal t-menu--light"
   >
     <div
       class="t-head-menu__inner"
@@ -108,7 +108,7 @@ exports[`Menu single demo works fine 1`] = `
   <br />
    
   <div
-    class="t-menu t-head-menu t-menu--dark"
+    class="t-menu t-head-menu t-menu-mode__normal t-menu--dark"
     height="120px"
   >
     <div

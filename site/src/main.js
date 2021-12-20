@@ -17,9 +17,6 @@ import 'tdesign-site-components/lib/styles/style.css';
 import 'tdesign-site-components/lib/styles/prism-theme.less';
 import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 
-// import icons webcomponents
-import 'tdesign-icons-view';
-
 Vue.use(TDesign);
 Vue.use(VueRouter);
 

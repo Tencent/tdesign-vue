@@ -30,7 +30,7 @@ describe('Transfer', () => {
             return <Transfer data={data} checked={checkedValue} pagination={pagination} />;
           },
         });
-        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer__list-content')[0].querySelectorAll('label');
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list__content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {
           const i = Number(item);
@@ -66,7 +66,7 @@ describe('Transfer', () => {
             return <Transfer data={data} defaultChecked={checkedValue} pagination={pagination} />;
           },
         });
-        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer__list-content')[0].querySelectorAll('label');
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list__content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {
           const i = Number(item);
@@ -89,7 +89,7 @@ describe('Transfer', () => {
           },
         });
 
-        const len = wrapper.vm.$el.querySelectorAll('.t-transfer__list-item').length;
+        const len = wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').length;
         expect(len).toBe(data.length);
         expect(wrapper.vm.$el.getElementsByClassName('t-checkbox t-is-disabled').length).toBe(8);
       });
@@ -101,7 +101,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer__list-item').forEach((el, index) => {
+        wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').forEach((el, index) => {
           expect(el.innerHTML.indexOf(data[index].label) > 0).toEqual(true);
         });
       });
@@ -111,33 +111,33 @@ describe('Transfer', () => {
       it('left', async () => {
         const wrapper = await mount({
           render() {
-            return <Transfer data={data} checked={checkedValue} direction="left"></Transfer>;
+            return <Transfer data={data} checked={checkedValue} direction='left'></Transfer>;
           },
         });
 
-        const [el] = wrapper.vm.$el.querySelectorAll('.t-transfer__operations button');
+        const [el] = wrapper.vm.$el.querySelectorAll('.t-transfer-operations button');
         expect([...el.classList]).toContain('t-is-disabled');
       });
 
       it('right', async () => {
         const wrapper = await mount({
           render() {
-            return <Transfer data={data} checked={checkedValue} value={targetValue} direction="right"></Transfer>;
+            return <Transfer data={data} checked={checkedValue} value={targetValue} direction='right'></Transfer>;
           },
         });
 
-        const [, el] = wrapper.vm.$el.querySelectorAll('.t-transfer__operations button');
+        const [, el] = wrapper.vm.$el.querySelectorAll('.t-transfer-operations button');
         expect([...el.classList]).toContain('t-is-disabled');
       });
 
       it('both', async () => {
         const wrapper = await mount({
           render() {
-            return <Transfer data={data} checked={checkedValue} value={targetValue} direction="both"></Transfer>;
+            return <Transfer data={data} checked={checkedValue} value={targetValue} direction='both'></Transfer>;
           },
         });
 
-        const [right, left] = wrapper.vm.$el.querySelectorAll('.t-transfer__operations button');
+        const [right, left] = wrapper.vm.$el.querySelectorAll('.t-transfer-operations button');
         expect([...right.classList]).not.toContain('t-is-disabled');
         expect([...left.classList]).not.toContain('t-is-disabled');
       });
@@ -168,12 +168,12 @@ describe('Transfer', () => {
           },
         });
 
-        expect(wrapper.vm.$el.querySelector('.t-transfer__empty').innerHTML).toEqual('没有数据~');
+        expect(wrapper.vm.$el.querySelector('.t-transfer-empty').innerHTML).toEqual('没有数据~');
       });
 
       it('function', async () => {
         // eslint-disable-next-line
-        const empty = (h) => (
+        const empty = h => (
           <div>
             <button>数据为空</button>
           </div>
@@ -184,9 +184,8 @@ describe('Transfer', () => {
             return <Transfer empty={empty}></Transfer>;
           },
         });
-        expect(wrapper.vm.$el.querySelector('.t-transfer__empty').outerHTML).toEqual(
-          '<div class="t-transfer__empty"><div><button>数据为空</button></div></div>',
-        );
+        expect(wrapper.vm.$el.querySelector('.t-transfer-empty')
+          .outerHTML).toEqual('<div class="t-transfer-empty"><div><button>数据为空</button></div></div>');
       });
     });
 
@@ -199,9 +198,8 @@ describe('Transfer', () => {
           },
         });
 
-        expect(wrapper.vm.$el.querySelector('.t-transfer__list-source > div:last-child').innerHTML).toEqual(
-          'render footer: source',
-        );
+        expect(wrapper.vm.$el.querySelector('.t-transfer-list-source > div:last-child').innerHTML)
+          .toEqual('render footer: source');
       });
 
       it('slot', async () => {
@@ -216,9 +214,8 @@ describe('Transfer', () => {
             );
           },
         });
-        expect(wrapper.vm.$el.querySelector('.t-transfer__list-source').lastChild.querySelector('p').innerHTML).toBe(
-          'source源',
-        );
+        expect(wrapper.vm.$el.querySelector('.t-transfer-list-source').lastChild.querySelector('p').innerHTML)
+          .toBe('source源');
       });
     });
 
@@ -238,12 +235,12 @@ describe('Transfer', () => {
       });
 
       it('data length', async () => {
-        const len = wrapper.vm.$el.querySelectorAll('.t-transfer__list-item').length;
+        const len = wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').length;
         expect(len).toBe(otherData.length);
       });
 
       it('key label', async () => {
-        wrapper.vm.$el.querySelectorAll('.t-transfer__list-item').forEach((el, index) => {
+        wrapper.vm.$el.querySelectorAll('.t-transfer-list__item').forEach((el, index) => {
           expect(el.innerHTML.indexOf(otherData[index].name) > 0).toEqual(true);
         });
       });
@@ -258,9 +255,8 @@ describe('Transfer', () => {
           },
         });
 
-        expect(wrapper.vm.$el.querySelectorAll('.t-transfer__operations .t-button__text')[0].innerHTML).toEqual(
-          'to right',
-        );
+        expect(wrapper.vm.$el.querySelectorAll('.t-transfer-operations .t-button__text')[0].innerHTML)
+          .toEqual('to right');
       });
 
       it('function', async () => {
@@ -270,9 +266,8 @@ describe('Transfer', () => {
             return <Transfer operation={operation}></Transfer>;
           },
         });
-        expect(wrapper.vm.$el.querySelector('.t-transfer__operations button').innerHTML).toEqual(
-          '<span class="t-button__text"><div>go to right</div></span>',
-        );
+        expect(wrapper.vm.$el.querySelector('.t-transfer-operations button').innerHTML)
+          .toEqual('<span class="t-button__text"><div>go to right</div></span>');
       });
     });
 
@@ -291,7 +286,7 @@ describe('Transfer', () => {
         });
         const el = wrapper.vm.$el;
 
-        const len = el.querySelectorAll('.t-transfer__list-item').length;
+        const len = el.querySelectorAll('.t-transfer-list__item').length;
         expect(len).toBe(pageSize);
       });
 
@@ -307,7 +302,7 @@ describe('Transfer', () => {
           },
         });
 
-        const [el] = wrapper.vm.$el.querySelectorAll('.t-transfer__list-item');
+        const [el] = wrapper.vm.$el.querySelectorAll('.t-transfer-list__item');
 
         expect(el.querySelector('input').value).toBe(data[(pageConfig.current - 1) * pageConfig.pageSize].value);
       });
@@ -342,7 +337,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
+        wrapper.vm.$el.querySelectorAll('.t-transfer-operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['1', '2', '5']);
       });
 
@@ -363,7 +358,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
+        wrapper.vm.$el.querySelectorAll('.t-transfer-operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['1', '5', '2']);
       });
 
@@ -384,7 +379,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
+        wrapper.vm.$el.querySelectorAll('.t-transfer-operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['2', '1', '5']);
       });
     });
@@ -396,7 +391,7 @@ describe('Transfer', () => {
             title: ['源列表', '目标列表'],
           },
         });
-        const doms = wrapper.vm.$el.querySelectorAll('.t-transfer__list-header');
+        const doms = wrapper.vm.$el.querySelectorAll('.t-transfer-list__header');
         expect(doms[0].lastChild.innerHTML).toEqual('源列表');
         expect(doms[1].lastChild.innerHTML).toEqual('目标列表');
       });
@@ -405,9 +400,7 @@ describe('Transfer', () => {
     describe('transferItem', () => {
       it('function', async () => {
         const transferItem = (h, { data }) => (
-          <div class="transfer-item">
-            {data.value}:{data.label}
-          </div>
+          <div class="transfer-item">{data.value}:{data.label}</div>
         );
         const wrapper = await mount({
           render() {
@@ -415,9 +408,8 @@ describe('Transfer', () => {
           },
         });
 
-        const allTransferItem = wrapper.vm.$el.querySelectorAll(
-          '.t-transfer__list-source .t-transfer__list-item .transfer-item',
-        );
+        const allTransferItem = wrapper.vm.$el
+          .querySelectorAll('.t-transfer-list-source .t-transfer-list__item .transfer-item');
 
         allTransferItem.forEach((item, index) => {
           expect(item.innerHTML).toEqual(`${data[index].value}:${data[index].label}`);
@@ -443,9 +435,8 @@ describe('Transfer', () => {
           },
         });
 
-        const allTransferItem = wrapper.vm.$el.querySelectorAll(
-          '.t-transfer__list-source .t-transfer__list-item .transfer-item',
-        );
+        const allTransferItem = wrapper.vm.$el
+          .querySelectorAll('.t-transfer-list-source .t-transfer-list__item .transfer-item');
 
         allTransferItem.forEach((item, index) => {
           expect(item.innerHTML).toEqual(`${data[index].value}:${data[index].label}`);
@@ -462,8 +453,7 @@ describe('Transfer', () => {
         });
 
         let count = 0;
-        const domLabels = wrapper.vm.$el
-          .querySelectorAll('.t-transfer__list-target .t-transfer__list-content')[0]
+        const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer-list-target .t-transfer-list__content')[0]
           .querySelectorAll('.t-checkbox__label');
 
         targetValue.forEach((item) => {
@@ -492,7 +482,7 @@ describe('Transfer', () => {
           },
         });
 
-        wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
+        wrapper.vm.$el.querySelectorAll('.t-transfer-operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['1', '2', '5']);
       });
     });
@@ -503,11 +493,18 @@ describe('Transfer', () => {
       const fn = jest.fn();
       const wrapper = await mount({
         render() {
-          return <Transfer data={data} pagination={pagination} checked={checkedValue} onChange={fn} />;
+          return (
+            <Transfer
+              data={data}
+              pagination={pagination}
+              checked={checkedValue}
+              onChange={fn}
+            />
+          );
         },
       });
 
-      wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
+      wrapper.vm.$el.querySelectorAll('.t-transfer-operations button')[0].click();
 
       await wrapper.vm.$nextTick();
       expect(fn).toHaveBeenCalled();
@@ -526,11 +523,9 @@ describe('Transfer', () => {
             return <Transfer data={data} value={targetValue} pagination={pagination} on-checked-change={fn} />;
           },
         });
-        const sourceCheckboxes = wrapper.findAll('.t-transfer__list-source .t-checkbox-group input[type="checkbox"]');
+        const sourceCheckboxes = wrapper.findAll('.t-transfer-list-source .t-checkbox-group input[type="checkbox"]');
         await sourceCheckboxes.at(3).setChecked();
-        const targetSourceCheckboxes = wrapper.findAll(
-          '.t-transfer__list-target .t-checkbox-group input[type="checkbox"]',
-        );
+        const targetSourceCheckboxes = wrapper.findAll('.t-transfer-list-target .t-checkbox-group input[type="checkbox"]');
         await targetSourceCheckboxes.at(0).setChecked();
         expect(fn).toHaveBeenCalledTimes(2);
 

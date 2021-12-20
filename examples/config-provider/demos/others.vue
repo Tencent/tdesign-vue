@@ -1,10 +1,14 @@
 <template>
   <t-config-provider :globalConfig="globalConfig" class="tdesign-demo-item--locale-provider-base">
-    <t-form :data="formData" :rules="rules">
+
+    <t-form
+      :data="formData"
+      :rules="rules"
+    >
       <t-form-item label="User Name" name="username">
         <t-input
           v-model="formData.username"
-          style="width: 400px"
+          style="width: 400px;"
           placeholder="There is no required mark on the left of this input in Form"
         ></t-input>
       </t-form-item>
@@ -12,71 +16,81 @@
         <t-input
           v-model="formData.password"
           type="password"
-          style="width: 400px"
+          style="width: 400px;"
           placeholder="There is required mark on the left of this input in Form"
         ></t-input>
       </t-form-item>
     </t-form>
-    <br /><br />
+    <br><br>
 
-    <t-transfer :data="transferList" v-model="transferTargetValue" :checked.sync="transferChecked" :search="true" />
-    <br /><br />
+    <t-transfer
+      :data="transferList"
+      v-model="transferTargetValue"
+      :checked.sync="transferChecked"
+      :search="true"
+    />
+    <br><br>
 
-    <t-select :options="options1" placeholder="see clear icon, it is configurable" clearable style="width: 400px" />
-    <br /><br />
-    <t-select :options="[]" placeholder="select without data in Select" style="width: 400px" />
-    <br /><br />
-    <t-select placeholder="see loading text in Select" loading style="width: 400px" />
-    <br /><br />
+    <t-select
+      :options="options1"
+      placeholder="see clear icon, it is configurable"
+      clearable
+      style="width: 400px;"
+    />
+    <br><br>
+    <t-select :options="[]" placeholder="select without data in Select" style="width: 400px;" />
+    <br><br>
+    <t-select placeholder="see loading text in Select" loading style="width: 400px;" />
+    <br><br>
 
     <!-- 观察 placeholder -->
-    <t-cascader :options="[]" style="width: 400px" />
-    <br /><br />
+    <t-cascader :options="[]" style="width: 400px;" />
+    <br><br>
     <!-- 观察空数据文本呈现 -->
-    <t-cascader :options="[]" placeholder="select without data in Cascader" style="width: 400px" />
-    <br /><br />
+    <t-cascader :options="[]" placeholder="select without data in Cascader" style="width: 400px;" />
+    <br><br>
     <!-- 观察加载文本 -->
     <!-- <t-cascader placeholder="see loading text in Cascader" loading style="width: 400px;" /> -->
     <!-- <br><br> -->
 
-    <t-tree-select :data="[]" placeholder="see empty data in TreeSelect" style="width: 400px" />
-    <br /><br />
-    <t-tree-select :data="[]" loading placeholder="see loading text in TreeSelect" style="width: 400px" />
-    <br /><br />
+    <t-tree-select :data="[]" placeholder="see empty data in TreeSelect" style="width: 400px;" />
+    <br><br>
+    <t-tree-select :data="[]" loading placeholder="see loading text in TreeSelect" style="width: 400px;" />
+    <br><br>
     <t-tree-select
       v-model="treeValue"
       :data="treeOptions"
       filterable
       placeholder="tree select"
-      style="width: 400px"
+      style="width: 400px;"
       clearable
     />
-    <br /><br />
+    <br><br>
 
-    <t-time-picker placeholder="select time" format="hh:mm:ss a" allowInput />
-    <br /><br /><br />
+    <t-time-picker placeholder="select time" format="hh:mm:ss a" allowInput/>
+    <br><br><br>
 
     <!-- 自定义关闭按钮示例 -->
     <t-tag theme="primary" closable>Fearure Tag</t-tag>
     <t-tag theme="success" closable>Fearure Tag</t-tag>
     <t-tag theme="warning" closable>Fearure Tag</t-tag>
     <t-tag theme="danger" closable>Fearure Tag</t-tag>
-    <br /><br />
+    <br><br>
 
     <!-- 数组件空数据 -->
-    <t-tree :data="[]" />
-    <br /><br />
+    <t-tree :data="[]"/>
+    <br><br>
     <!-- 数组件自定义层级图标 -->
     <t-tree :data="treeData" transition />
-    <br /><br />
-    <br />
+    <br><br>
+    <br>
     <t-steps :current="2" layout="vertical">
       <t-step-item title="Fisrt Step" content="You need to click the blue button"></t-step-item>
       <t-step-item title="Second Step" content="Fill your base information into the form"></t-step-item>
       <t-step-item title="Error Step" status="error" content="Something Wrong! Custom Error Icon!"></t-step-item>
       <t-step-item title="Last Step" content="You haven't finish this step."></t-step-item>
     </t-steps>
-    <br /><br />
+    <br><br>
   </t-config-provider>
 </template>
 
@@ -146,7 +160,7 @@ export default {
         },
         tree: {
           empty: 'Tree Empty Data',
-          folderIcon: (h) => h && <ChevronRightIcon size="18px" />,
+          folderIcon: (h) => h && <ChevronRightIcon size='18px' />,
         },
         select: {
           empty: 'Empty Data',
@@ -199,7 +213,7 @@ export default {
   margin: 24px -120px 0 0;
 }
 
-.tdesign-demo-item--locale-provider-base /deep/ .t-transfer__list {
+.tdesign-demo-item--locale-provider-base /deep/ .t-transfer-list {
   width: 280px;
 }
 

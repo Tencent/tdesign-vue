@@ -70,7 +70,7 @@ exports[`Table base demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -94,7 +94,7 @@ exports[`Table base demo works fine 1`] = `
             >
               <tr>
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   colspan="1"
                   key="index"
                   rowspan="1"
@@ -136,7 +136,7 @@ exports[`Table base demo works fine 1`] = `
                   是否必传
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   colspan="1"
                   key="detail.postion"
                   rowspan="1"
@@ -147,7 +147,7 @@ exports[`Table base demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -155,7 +155,7 @@ exports[`Table base demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -192,7 +192,7 @@ exports[`Table base demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -206,7 +206,7 @@ exports[`Table base demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -243,7 +243,7 @@ exports[`Table base demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -257,7 +257,7 @@ exports[`Table base demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -294,7 +294,7 @@ exports[`Table base demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -308,7 +308,7 @@ exports[`Table base demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -345,7 +345,7 @@ exports[`Table base demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -359,7 +359,7 @@ exports[`Table base demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -396,7 +396,7 @@ exports[`Table base demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -483,7 +483,7 @@ exports[`Table base demo works fine 2`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -507,7 +507,7 @@ exports[`Table base demo works fine 2`] = `
             >
               <tr>
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   colspan="1"
                   key="index"
                   rowspan="1"
@@ -549,7 +549,7 @@ exports[`Table base demo works fine 2`] = `
                   是否必传
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   colspan="1"
                   key="detail.postion"
                   rowspan="1"
@@ -560,7 +560,7 @@ exports[`Table base demo works fine 2`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -568,7 +568,7 @@ exports[`Table base demo works fine 2`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -605,7 +605,7 @@ exports[`Table base demo works fine 2`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -619,7 +619,7 @@ exports[`Table base demo works fine 2`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -656,7 +656,7 @@ exports[`Table base demo works fine 2`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -670,7 +670,7 @@ exports[`Table base demo works fine 2`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -707,7 +707,7 @@ exports[`Table base demo works fine 2`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -721,7 +721,7 @@ exports[`Table base demo works fine 2`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -758,7 +758,7 @@ exports[`Table base demo works fine 2`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -772,7 +772,7 @@ exports[`Table base demo works fine 2`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center row"
+                  class="align-center row"
                   key="index"
                   length="6"
                   style="overflow: hidden;"
@@ -809,7 +809,7 @@ exports[`Table base demo works fine 2`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="6"
                   style="overflow: hidden;"
@@ -838,7 +838,7 @@ exports[`Table customCell demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -900,7 +900,7 @@ exports[`Table customCell demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -1047,7 +1047,7 @@ exports[`Table empty demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -1115,12 +1115,12 @@ exports[`Table empty demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             />
           </table>
         </div>
         <div
-          class="t-table__empty"
+          class="t-table--empty"
         >
           暂无数据
         </div>
@@ -1141,7 +1141,7 @@ exports[`Table empty demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -1209,12 +1209,12 @@ exports[`Table empty demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             />
           </table>
         </div>
         <div
-          class="t-table__empty"
+          class="t-table--empty"
         >
           <span
             style="display: flex; align-items: center; justify-content: center; height: 100px;"
@@ -1327,7 +1327,7 @@ exports[`Table expandable demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -1353,7 +1353,7 @@ exports[`Table expandable demo works fine 1`] = `
             >
               <tr>
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   colspan="1"
                   key="expanded-icon-cell"
                   rowspan="1"
@@ -1407,7 +1407,7 @@ exports[`Table expandable demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -1415,13 +1415,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -1506,7 +1506,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -1561,13 +1561,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center; transform: rotate(90deg);"
@@ -1650,7 +1650,7 @@ exports[`Table expandable demo works fine 1`] = `
               </tr>
               <tr>
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -1705,13 +1705,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -1796,7 +1796,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -1851,13 +1851,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -1942,7 +1942,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -2014,7 +2014,7 @@ exports[`Table expandable demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -2040,7 +2040,7 @@ exports[`Table expandable demo works fine 1`] = `
             >
               <tr>
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   colspan="1"
                   key="expanded-icon-cell"
                   rowspan="1"
@@ -2094,7 +2094,7 @@ exports[`Table expandable demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -2102,13 +2102,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -2193,7 +2193,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -2250,13 +2250,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center; transform: rotate(90deg);"
@@ -2339,7 +2339,7 @@ exports[`Table expandable demo works fine 1`] = `
               </tr>
               <tr>
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -2396,13 +2396,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -2487,7 +2487,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -2544,13 +2544,13 @@ exports[`Table expandable demo works fine 1`] = `
                 rowkey="id"
               >
                 <td
-                  class="t-table__expandable-icon-cell"
+                  class="t-table-expandable-icon-cell"
                   key="expanded-icon-cell"
                   length="6"
                   style="overflow: hidden;"
                 >
                   <span
-                    class="t-table__expand-box"
+                    class="t-table-expand-box"
                   >
                     <span
                       style="transition: all .2s; display: flex; align-items: center;"
@@ -2635,7 +2635,7 @@ exports[`Table expandable demo works fine 1`] = `
                 style="display: none;"
               >
                 <td
-                  class="t-table__expanded-cell"
+                  class="t-table-expanded-cell"
                   colspan="6"
                   key="expanded-row"
                   length="1"
@@ -2805,7 +2805,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -2841,7 +2841,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             >
               <tr>
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   colspan="1"
                   key="index"
                   rowspan="1"
@@ -2915,7 +2915,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -2923,7 +2923,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   key="index"
                   length="8"
                   style="position: sticky; left: 0px;"
@@ -2997,7 +2997,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   key="index"
                   length="8"
                   style="position: sticky; left: 0px;"
@@ -3071,7 +3071,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   key="index"
                   length="8"
                   style="position: sticky; left: 0px;"
@@ -3145,7 +3145,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   key="index"
                   length="8"
                   style="position: sticky; left: 0px;"
@@ -3219,7 +3219,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-table__cell--fixed-left t-align-center"
+                  class="t-table__cell--fixed-left align-center"
                   key="index"
                   length="8"
                   style="position: sticky; left: 0px;"
@@ -3307,7 +3307,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
       class="t-loading__parent"
     >
       <div
-        class="t-table__content"
+        class="t-table-content"
       >
         <div
           class="t-table__header"
@@ -3336,7 +3336,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             >
               <tr>
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   colspan="1"
                   key="index"
                   rowspan="1"
@@ -3378,7 +3378,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是否必传
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   colspan="1"
                   key="detail.postion"
                   rowspan="1"
@@ -3421,7 +3421,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               <col />
             </colgroup>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""
@@ -3429,7 +3429,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3466,7 +3466,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3487,7 +3487,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3524,7 +3524,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3545,7 +3545,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3582,7 +3582,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3603,7 +3603,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3640,7 +3640,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3661,7 +3661,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3698,7 +3698,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3719,7 +3719,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3756,7 +3756,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3777,7 +3777,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3814,7 +3814,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3835,7 +3835,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3872,7 +3872,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3893,7 +3893,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3930,7 +3930,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -3951,7 +3951,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -3988,7 +3988,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4009,7 +4009,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4046,7 +4046,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4067,7 +4067,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4104,7 +4104,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4125,7 +4125,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4162,7 +4162,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4183,7 +4183,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4220,7 +4220,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4241,7 +4241,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4278,7 +4278,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4299,7 +4299,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4336,7 +4336,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4357,7 +4357,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4394,7 +4394,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   是
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4415,7 +4415,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4452,7 +4452,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4473,7 +4473,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4510,7 +4510,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4531,7 +4531,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                 rowkey="index"
               >
                 <td
-                  class="t-align-center"
+                  class="align-center"
                   key="index"
                   length="7"
                   style="overflow: hidden;"
@@ -4568,7 +4568,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
                   否
                 </td>
                 <td
-                  class="t-text-ellipsis"
+                  class="text-ellipsis"
                   key="detail.postion"
                   length="7"
                   style="overflow: hidden;"
@@ -4603,7 +4603,7 @@ exports[`Table multiHeader demo works fine 1`] = `
       class="t-loading__parent"
     >
       <div
-        class="t-table__content"
+        class="t-table-content"
       >
         <table
           style="table-layout: fixed;"
@@ -4633,7 +4633,7 @@ exports[`Table multiHeader demo works fine 1`] = `
             </tr>
             <tr>
               <td
-                class="t-align-left t-text-ellipsis test"
+                class="align-left text-ellipsis test"
                 colspan="1"
                 key="platform"
                 rowspan="2"
@@ -4649,7 +4649,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 类型及默认值
               </td>
               <td
-                class="t-align-left t-text-ellipsis test2"
+                class="align-left text-ellipsis test2"
                 colspan="1"
                 key="property"
                 rowspan="2"
@@ -4658,7 +4658,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 属性
               </td>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 colspan="1"
                 key="description"
                 rowspan="2"
@@ -4669,7 +4669,7 @@ exports[`Table multiHeader demo works fine 1`] = `
             </tr>
             <tr>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 colspan="1"
                 key="type"
                 rowspan="1"
@@ -4678,7 +4678,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 类型
               </td>
               <td
-                class="t-align-left t-text-ellipsis test4"
+                class="align-left text-ellipsis test4"
                 colspan="1"
                 key="default"
                 rowspan="1"
@@ -4687,7 +4687,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 默认值
               </td>
               <td
-                class="t-align-left t-text-ellipsis test3"
+                class="align-left text-ellipsis test3"
                 colspan="1"
                 key="needed"
                 rowspan="1"
@@ -4698,7 +4698,7 @@ exports[`Table multiHeader demo works fine 1`] = `
             </tr>
           </thead>
           <tbody
-            class="t-table__body"
+            class="table-body"
           >
             <tr
               class=""
@@ -4706,7 +4706,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               rowkey="property"
             >
               <td
-                class="t-align-left t-text-ellipsis test"
+                class="align-left text-ellipsis test"
                 key="platform"
                 length="6"
                 style="overflow: hidden;"
@@ -4714,7 +4714,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 公有
               </td>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 key="type"
                 length="6"
                 style="overflow: hidden;"
@@ -4722,7 +4722,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 any[]
               </td>
               <td
-                class="t-align-left t-text-ellipsis test4"
+                class="align-left text-ellipsis test4"
                 key="default"
                 length="6"
                 style="overflow: hidden;"
@@ -4730,7 +4730,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 []
               </td>
               <td
-                class="t-align-left t-text-ellipsis test3"
+                class="align-left text-ellipsis test3"
                 key="needed"
                 length="6"
                 style="overflow: hidden;"
@@ -4738,7 +4738,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 Y
               </td>
               <td
-                class="t-align-left t-text-ellipsis test2"
+                class="align-left text-ellipsis test2"
                 key="property"
                 length="6"
                 style="overflow: hidden;"
@@ -4746,7 +4746,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 data
               </td>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 key="description"
                 length="6"
                 style="overflow: hidden;"
@@ -4760,7 +4760,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               rowkey="property"
             >
               <td
-                class="t-align-left t-text-ellipsis test"
+                class="align-left text-ellipsis test"
                 key="platform"
                 length="6"
                 style="overflow: hidden;"
@@ -4768,7 +4768,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 公有
               </td>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 key="type"
                 length="6"
                 style="overflow: hidden;"
@@ -4776,7 +4776,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 String
               </td>
               <td
-                class="t-align-left t-text-ellipsis test4"
+                class="align-left text-ellipsis test4"
                 key="default"
                 length="6"
                 style="overflow: hidden;"
@@ -4784,7 +4784,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 -1
               </td>
               <td
-                class="t-align-left t-text-ellipsis test3"
+                class="align-left text-ellipsis test3"
                 key="needed"
                 length="6"
                 style="overflow: hidden;"
@@ -4792,7 +4792,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 Y
               </td>
               <td
-                class="t-align-left t-text-ellipsis test2"
+                class="align-left text-ellipsis test2"
                 key="property"
                 length="6"
                 style="overflow: hidden;"
@@ -4800,7 +4800,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 rowkey
               </td>
               <td
-                class="t-align-left t-text-ellipsis row"
+                class="align-left text-ellipsis row"
                 key="description"
                 length="6"
                 style="overflow: hidden;"
@@ -4828,7 +4828,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -4925,7 +4925,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class="t-table__row--selected"
@@ -5278,7 +5278,7 @@ exports[`Table selectSingle demo works fine 1`] = `
         class="t-loading__parent"
       >
         <div
-          class="t-table__content"
+          class="t-table-content"
         >
           <table
             style="table-layout: fixed;"
@@ -5358,7 +5358,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               </tr>
             </thead>
             <tbody
-              class="t-table__body"
+              class="table-body"
             >
               <tr
                 class=""

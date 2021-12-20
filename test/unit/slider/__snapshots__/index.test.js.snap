@@ -6,10 +6,10 @@ exports[`Slider :props  1`] = `
     <div class="t-slider__rail">
       <div class="t-slider__track" style="width: 0%; left: 0%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 0%;">
-        <div class="t-popup__reference" popper-class="">
-          <transition-stub name="t-popup--animation" appear="true">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
             <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-              <div class="t-popup__content t-popup__content--arrow" style="max-width: 480px;">0<div class="t-popup__arrow"></div>
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">0<div class="t-popup__arrow"></div>
               </div>
             </div>
           </transition-stub>
@@ -27,10 +27,10 @@ exports[`Slider [marks] render right 1`] = `
     <div class="t-slider__rail show-input">
       <div class="t-slider__track" style="width: 2%; left: 0%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 2%;">
-        <div class="t-popup__reference" popper-class="">
-          <transition-stub name="t-popup--animation" appear="true">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
             <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-              <div class="t-popup__content t-popup__content--arrow" style="max-width: 480px;">2<div class="t-popup__arrow"></div>
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">2<div class="t-popup__arrow"></div>
               </div>
             </div>
           </transition-stub>
@@ -71,10 +71,10 @@ exports[`Slider [vertical-marks] render right 1`] = `
     <div class="t-slider__rail" style="height: 100%;">
       <div class="t-slider__track" style="height: 40%; bottom: 30%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 30%;">
-        <div class="t-popup__reference" popper-class="">
-          <transition-stub name="t-popup--animation" appear="true">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
             <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-              <div class="t-popup__content t-popup__content--arrow" style="max-width: 480px;">30<div class="t-popup__arrow"></div>
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">30<div class="t-popup__arrow"></div>
               </div>
             </div>
           </transition-stub>
@@ -82,10 +82,10 @@ exports[`Slider [vertical-marks] render right 1`] = `
         </div>
       </div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 70%;">
-        <div class="t-popup__reference" popper-class="">
-          <transition-stub name="t-popup--animation" appear="true">
+        <div class="t-popup-reference" popper-class="">
+          <transition-stub name="t-popup_animation" appear="true">
             <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-              <div class="t-popup__content t-popup__content--arrow" style="max-width: 480px;">70<div class="t-popup__arrow"></div>
+              <div class="t-popup-content t-popup-content--arrow" style="max-width: 480px;">70<div class="t-popup__arrow"></div>
               </div>
             </div>
           </transition-stub>

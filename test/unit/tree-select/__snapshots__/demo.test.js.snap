@@ -6,11 +6,11 @@ exports[`TreeSelect base demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -19,7 +19,7 @@ exports[`TreeSelect base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -212,11 +212,11 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
     class="demo-space"
   >
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -225,7 +225,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -464,11 +464,11 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
    
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -477,7 +477,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -772,11 +772,11 @@ exports[`TreeSelect filterable demo works fine 1`] = `
     style="width: 300px;"
   >
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -785,7 +785,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -983,11 +983,11 @@ exports[`TreeSelect lazy demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -996,7 +996,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -1187,11 +1187,11 @@ exports[`TreeSelect multiple demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1200,7 +1200,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -1445,11 +1445,11 @@ exports[`TreeSelect prefix demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1458,7 +1458,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -1660,11 +1660,11 @@ exports[`TreeSelect props demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1673,7 +1673,7 @@ exports[`TreeSelect props demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -1871,11 +1871,11 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
 >
   <div>
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1884,7 +1884,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p
@@ -2078,11 +2078,11 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
     class="tree-select-multiple"
   >
     <div
-      class="t-popup__reference t-select-popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2091,7 +2091,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select-dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <p

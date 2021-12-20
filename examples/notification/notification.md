@@ -57,7 +57,7 @@ NotificationProps | - | - | 继承 `NotificationProps` 中的全部 API | N
 theme | String | info | 必需。消息类型。可选项：info/success/warning/error。TS 类型：`NotificationThemeList`
 options | Object | - | 必需。消息通知内容。TS 类型：`NotificationOptions`
 
-插件返回值：`Promise<NotificationInstance>[interface NotificationInstance { close: () => void }]`
+插件返回值：`Promise<NotificationInstance>【interface NotificationInstance { close: () => void }】`
 
 ### NotificationPlugin.info
 
@@ -105,7 +105,7 @@ options | Object | - | 必需。消息通知内容。TS 类型：`NotificationIn
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
-options | Object | - | 必需。该插件参数为 `$Notification.info()` 等插件执行后的返回值。示例：`const msg = $Notification.info({}); $Notification.close(msg)`。TS 类型：`Promise<NotificationInstance>`
+options | Object | - | 必需。该插件参数为 $Notification.info() 等插件执行后的返回值。示例：`const msg = $Notification.info({}); $Notification.close(msg)`。TS 类型：`Promise<NotificationInstance>`
 
 ### NotificationPlugin.closeAll
 
@@ -113,4 +113,4 @@ options | Object | - | 必需。该插件参数为 `$Notification.info()` 等插
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
--- | -- | -- | --
+- | - | - | -

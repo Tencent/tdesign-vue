@@ -90,6 +90,7 @@ export default defineComponent({
     // provide
     provide<TdSubMenuInterface>('TdSubmenu', {
       value: props.value,
+      hasIcon: !!ctx.slots.icon,
     });
 
     onMounted(() => {

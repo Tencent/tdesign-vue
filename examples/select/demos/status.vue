@@ -37,7 +37,7 @@ export default {
   display: flex;
 }
 
-.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
+.tdesign-demo-select-base .t-select-wrap + .t-select-wrap {
   margin-left: 36px;
 }
 </style>

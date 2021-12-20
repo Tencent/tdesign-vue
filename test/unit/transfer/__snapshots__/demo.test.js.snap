@@ -6,10 +6,10 @@ exports[`Transfer base demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -35,16 +35,16 @@ exports[`Transfer base demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -65,7 +65,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -85,7 +85,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -105,7 +105,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -125,7 +125,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -146,7 +146,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -166,7 +166,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -186,7 +186,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -206,7 +206,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -227,7 +227,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -247,7 +247,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -267,7 +267,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -287,7 +287,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -308,7 +308,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -328,7 +328,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -348,7 +348,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -368,7 +368,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -389,7 +389,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -409,7 +409,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -429,7 +429,7 @@ exports[`Transfer base demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -452,11 +452,11 @@ exports[`Transfer base demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-base t-button--theme-primary"
@@ -497,10 +497,10 @@ exports[`Transfer base demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -526,10 +526,10 @@ exports[`Transfer base demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -537,7 +537,7 @@ exports[`Transfer base demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -550,10 +550,10 @@ exports[`Transfer checked demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -579,16 +579,16 @@ exports[`Transfer checked demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -609,7 +609,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -629,7 +629,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -649,7 +649,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -669,7 +669,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -690,7 +690,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -710,7 +710,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -730,7 +730,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -750,7 +750,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -771,7 +771,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -791,7 +791,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -811,7 +811,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -831,7 +831,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -852,7 +852,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -872,7 +872,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -892,7 +892,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -912,7 +912,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -933,7 +933,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -953,7 +953,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-checked t-transfer__list-item"
+              class="t-checkbox t-is-checked t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -973,7 +973,7 @@ exports[`Transfer checked demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -996,11 +996,11 @@ exports[`Transfer checked demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-base t-button--theme-primary"
@@ -1041,10 +1041,10 @@ exports[`Transfer checked demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -1070,10 +1070,10 @@ exports[`Transfer checked demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -1081,7 +1081,7 @@ exports[`Transfer checked demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -1097,13 +1097,13 @@ exports[`Transfer custom demo works fine 1`] = `
   </p>
    
   <div
-    class="t-transfer t-transfer__footer"
+    class="t-transfer t-transfer-footer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -1132,16 +1132,16 @@ exports[`Transfer custom demo works fine 1`] = `
         </span>
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1161,7 +1161,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1181,7 +1181,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1201,7 +1201,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1221,7 +1221,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1241,7 +1241,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1261,7 +1261,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1281,7 +1281,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1301,7 +1301,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1321,7 +1321,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1341,7 +1341,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1361,7 +1361,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1381,7 +1381,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1401,7 +1401,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1421,7 +1421,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1441,7 +1441,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1461,7 +1461,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1481,7 +1481,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1501,7 +1501,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1521,7 +1521,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1552,7 +1552,7 @@ exports[`Transfer custom demo works fine 1`] = `
       </div>
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -1582,10 +1582,10 @@ exports[`Transfer custom demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -1615,10 +1615,10 @@ exports[`Transfer custom demo works fine 1`] = `
         </span>
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -1649,10 +1649,10 @@ exports[`Transfer custom demo works fine 1`] = `
     theme="primary"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -1677,16 +1677,16 @@ exports[`Transfer custom demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1708,7 +1708,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1730,7 +1730,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1752,7 +1752,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1774,7 +1774,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1796,7 +1796,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1818,7 +1818,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1840,7 +1840,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1862,7 +1862,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1884,7 +1884,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1906,7 +1906,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1928,7 +1928,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1950,7 +1950,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1972,7 +1972,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -1994,7 +1994,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2016,7 +2016,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2038,7 +2038,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2060,7 +2060,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2082,7 +2082,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2104,7 +2104,7 @@ exports[`Transfer custom demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2129,11 +2129,11 @@ exports[`Transfer custom demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -2175,10 +2175,10 @@ exports[`Transfer custom demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2204,10 +2204,10 @@ exports[`Transfer custom demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -2215,7 +2215,7 @@ exports[`Transfer custom demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -2228,10 +2228,10 @@ exports[`Transfer disabled demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2256,16 +2256,16 @@ exports[`Transfer disabled demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2285,7 +2285,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2305,7 +2305,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2325,7 +2325,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2345,7 +2345,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2365,7 +2365,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2385,7 +2385,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2405,7 +2405,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2425,7 +2425,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2445,7 +2445,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2468,11 +2468,11 @@ exports[`Transfer disabled demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -2514,10 +2514,10 @@ exports[`Transfer disabled demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2543,16 +2543,16 @@ exports[`Transfer disabled demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2573,7 +2573,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2594,7 +2594,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2615,7 +2615,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2636,7 +2636,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2657,7 +2657,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2678,7 +2678,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2699,7 +2699,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2720,7 +2720,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2741,7 +2741,7 @@ exports[`Transfer disabled demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-is-disabled t-transfer__list-item"
+              class="t-checkbox t-is-disabled t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -2765,7 +2765,7 @@ exports[`Transfer disabled demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -2784,10 +2784,10 @@ exports[`Transfer empty demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2813,10 +2813,10 @@ exports[`Transfer empty demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -2824,11 +2824,11 @@ exports[`Transfer empty demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -2870,10 +2870,10 @@ exports[`Transfer empty demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2899,10 +2899,10 @@ exports[`Transfer empty demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -2910,7 +2910,7 @@ exports[`Transfer empty demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -2925,10 +2925,10 @@ exports[`Transfer empty demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -2954,20 +2954,20 @@ exports[`Transfer empty demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           No Data
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -3009,10 +3009,10 @@ exports[`Transfer empty demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -3038,16 +3038,16 @@ exports[`Transfer empty demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           No Data
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -3058,14 +3058,14 @@ exports[`Transfer pagination demo works fine 1`] = `
 <div>
   <div
     checked-value=""
-    class="t-transfer t-transfer__pagination"
+    class="t-transfer t-transfer-pagination"
     theme="primary"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -3090,16 +3090,16 @@ exports[`Transfer pagination demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3119,7 +3119,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3139,7 +3139,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3159,7 +3159,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3179,7 +3179,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3199,7 +3199,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3219,7 +3219,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3239,7 +3239,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3259,7 +3259,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3279,7 +3279,7 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3302,7 +3302,7 @@ exports[`Transfer pagination demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__list-pagination"
+        class="t-transfer-list__pagination"
       >
         <div
           class="t-pagination t-size-s"
@@ -3326,14 +3326,14 @@ exports[`Transfer pagination demo works fine 1`] = `
             </svg>
           </div>
           <div
-            class="t-select__wrap t-pagination__select"
+            class="t-select-wrap t-pagination__select"
           >
             <div
-              class="t-popup__reference t-select__popup-reference"
+              class="t-popup-reference t-select-popup-reference"
             >
               <transition-stub
                 appear="true"
-                name="t-popup--animation"
+                name="t-popup_animation"
               >
                 <div
                   aria-hidden="true"
@@ -3342,15 +3342,15 @@ exports[`Transfer pagination demo works fine 1`] = `
                   style="display: none;"
                 >
                   <div
-                    class="t-popup__content  t-select__dropdown narrow-scrollbar"
+                    class="t-popup-content  t-select-dropdown narrow-scrollbar"
                   >
                     <div>
                       <ul
-                        class="t-select__create-option"
+                        class="t-select-create-option"
                         style="display: none;"
                       >
                         <li
-                          class="t-select-option t-size-s t-select__create-option--special"
+                          class="t-select-option t-size-s t-select-create-option-special"
                           title=""
                         >
                           <span />
@@ -3388,13 +3388,13 @@ exports[`Transfer pagination demo works fine 1`] = `
                   +0
                 </span>
                 <span
-                  class="t-select__single"
+                  class="t-select-selectedSingle"
                   title="1/2"
                 >
                   1/2
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select-right-icon"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -3431,11 +3431,11 @@ exports[`Transfer pagination demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -3477,10 +3477,10 @@ exports[`Transfer pagination demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -3506,10 +3506,10 @@ exports[`Transfer pagination demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -3517,7 +3517,7 @@ exports[`Transfer pagination demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -3528,14 +3528,14 @@ exports[`Transfer search demo works fine 1`] = `
 <div>
   <div
     checked-value=""
-    class="t-transfer t-transfer__search"
+    class="t-transfer t-transfer-search"
     theme="primary"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -3560,10 +3560,10 @@ exports[`Transfer search demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body t-transfer__list--with-search"
+        class="t-transfer-list__body t-transfer-list-with-search"
       >
         <div
-          class="t-transfer__search-wrapper"
+          class="t-transfer-list-search-wrapper"
         >
           <div
             class="t-input t-size-m t-input--suffix"
@@ -3593,13 +3593,13 @@ exports[`Transfer search demo works fine 1`] = `
           </div>
         </div>
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3619,7 +3619,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3639,7 +3639,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3659,7 +3659,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3679,7 +3679,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3699,7 +3699,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3719,7 +3719,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3739,7 +3739,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3759,7 +3759,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3779,7 +3779,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3799,7 +3799,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3819,7 +3819,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3839,7 +3839,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3859,7 +3859,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3879,7 +3879,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3899,7 +3899,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3919,7 +3919,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3939,7 +3939,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3959,7 +3959,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -3979,7 +3979,7 @@ exports[`Transfer search demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4002,11 +4002,11 @@ exports[`Transfer search demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -4048,10 +4048,10 @@ exports[`Transfer search demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -4077,10 +4077,10 @@ exports[`Transfer search demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body t-transfer__list--with-search"
+        class="t-transfer-list__body t-transfer-list-with-search"
       >
         <div
-          class="t-transfer__search-wrapper"
+          class="t-transfer-list-search-wrapper"
         >
           <div
             class="t-input t-size-m t-input--suffix"
@@ -4110,7 +4110,7 @@ exports[`Transfer search demo works fine 1`] = `
           </div>
         </div>
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -4118,7 +4118,7 @@ exports[`Transfer search demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -4131,10 +4131,10 @@ exports[`Transfer target-value demo works fine 1`] = `
     class="t-transfer"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -4159,16 +4159,16 @@ exports[`Transfer target-value demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4188,7 +4188,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4208,7 +4208,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4228,7 +4228,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4248,7 +4248,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4268,7 +4268,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4288,7 +4288,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4308,7 +4308,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4328,7 +4328,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4348,7 +4348,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4371,11 +4371,11 @@ exports[`Transfer target-value demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -4417,10 +4417,10 @@ exports[`Transfer target-value demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -4445,16 +4445,16 @@ exports[`Transfer target-value demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-checkbox-group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4474,7 +4474,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4494,7 +4494,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4514,7 +4514,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4534,7 +4534,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4554,7 +4554,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4574,7 +4574,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4594,7 +4594,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4614,7 +4614,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4634,7 +4634,7 @@ exports[`Transfer target-value demo works fine 1`] = `
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
+              class="t-checkbox t-transfer-list__item"
             >
               <input
                 class="t-checkbox__former"
@@ -4657,7 +4657,7 @@ exports[`Transfer target-value demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>
@@ -4667,13 +4667,13 @@ exports[`Transfer target-value demo works fine 1`] = `
 exports[`Transfer tree demo works fine 1`] = `
 <div>
   <div
-    class="t-transfer t-transfer--with-tree"
+    class="t-transfer t-transfer-with-tree"
   >
     <div
-      class="t-transfer__list t-transfer__list-source"
+      class="t-transfer-list t-transfer-list-source"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -4698,10 +4698,10 @@ exports[`Transfer tree demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__list-content narrow-scrollbar"
+          class="t-transfer-list__content narrow-scrollbar"
         >
           <div
             class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
@@ -5044,11 +5044,11 @@ exports[`Transfer tree demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
     <div
-      class="t-transfer__operations"
+      class="t-transfer-operations"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -5090,10 +5090,10 @@ exports[`Transfer tree demo works fine 1`] = `
       </button>
     </div>
     <div
-      class="t-transfer__list t-transfer__list-target"
+      class="t-transfer-list t-transfer-list-target"
     >
       <div
-        class="t-transfer__list-header"
+        class="t-transfer-list__header"
       >
         <div>
           <label
@@ -5119,10 +5119,10 @@ exports[`Transfer tree demo works fine 1`] = `
         <span />
       </div>
       <div
-        class="t-transfer__list-body"
+        class="t-transfer-list__body"
       >
         <div
-          class="t-transfer__empty"
+          class="t-transfer-empty"
         >
           <span>
             暂无数据
@@ -5130,7 +5130,7 @@ exports[`Transfer tree demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-transfer__footer"
+        class="t-transfer-footer"
       />
     </div>
   </div>

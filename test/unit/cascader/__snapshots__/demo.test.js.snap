@@ -6,11 +6,11 @@ exports[`Cascader base demo works fine 1`] = `
     class="t-demo-cascader"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -19,7 +19,7 @@ exports[`Cascader base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-cascader__dropdown"
+            class="t-popup-content t-cascader__dropdown"
           >
             <div
               class="t-cascader__panel"

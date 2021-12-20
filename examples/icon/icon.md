@@ -2,7 +2,7 @@
 
 ### 安装独立 Icon 包
 
-图标相对其他基础组件较为独立，所以作为一个独立的 npm 包做发布管理。如果项目中直接使用，请安装`tdesign-icons-vue`。 同时 tdesign-vue 也内置了 icon,支持直接通过 t-icon 来使用
+图标相对其他基础组件较为独立，所以作为一个独立的 npm 包做发布管理。如果项目中直接使用，请安装`tdesign-icons-vue`。
 
 ### SVG 全量引入
 
@@ -51,21 +51,21 @@
 
 ### 全部图标
 
-<tdesign-icons-view />
+::: demo demos/all
+:::
 
 ## API
 
 ### IconSVG Props
 
-
-名称 | 类型 | 默认值 | 说明 | 必传
--- | -- | -- | -- | --
-loadDefaultIcons | Boolean | true | 是否加载组件库内置图标 | N
-name | String | - | 必需。图标名称 | Y
-size | String | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等 | N
-style | String | - | HTML 原生属性。可用于设置图标颜色，如：style="color: red" | N
-url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.js)。TS 类型：`string | Array<string>` | N
-onClick | Function |  | 点击时触发。`(context: { e: MouseEvent }) => {}` | N
+| 名称             | 类型           | 默认值    | 说明                                                                                                        | 必传           |
+| ---------------- | -------------- | --------- | ----------------------------------------------------------------------------------------------------------- | -------------- | --- |
+| loadDefaultIcons | Boolean        | true      | 是否加载组件库内置图标                                                                                      | N              |
+| name             | String         | -         | 必需。图标名称                                                                                              | Y              |
+| size             | String         | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等                                                 | N              |
+| style            | String         | -         | HTML 原生属性。可用于设置图标颜色，如：style="color: red"                                                   | N              |
+| url              | String / Array | -         | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.js)。TS 类型：`string | Array<string>` | N   |
+| onClick          | Function       |           | 点击时触发。`(context: { e: MouseEvent }) => {}`                                                            | N              |
 
 ### IconSVG Events
 
@@ -75,15 +75,15 @@ onClick | Function |  | 点击时触发。`(context: { e: MouseEvent }) => {}` |
 
 ### Iconfont Props
 
-名称 | 类型 | 默认值 | 说明 | 必传
--- | -- | -- | -- | --
-loadDefaultIcons | Boolean | true | 是否加载组件库内置图标 | N
-name | String | - | 必需。图标名称 | Y
-size | String | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等 | N
-style | String | - | HTML 原生属性。可用于设置图标颜色，如：style="color: red" | N
-tag | String | i | 图标 DOM 元素，可选值：i/span/div/... | N
-url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.css)。也可以在 index.html 中引入图标地址。TS 类型：`string | Array<string>` | N
-onClick | Function |  | 点击时触发。`(context: { e: MouseEvent }) => {}` | N
+| 名称             | 类型           | 默认值    | 说明                                                                                                                                             | 必传           |
+| ---------------- | -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- | --- |
+| loadDefaultIcons | Boolean        | true      | 是否加载组件库内置图标                                                                                                                           | N              |
+| name             | String         | -         | 必需。图标名称                                                                                                                                   | Y              |
+| size             | String         | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等                                                                                      | N              |
+| style            | String         | -         | HTML 原生属性。可用于设置图标颜色，如：style="color: red"                                                                                        | N              |
+| tag              | String         | i         | 图标 DOM 元素，可选值：i/span/div/...                                                                                                            | N              |
+| url              | String / Array | -         | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.css)。也可以在 index.html 中引入图标地址。TS 类型：`string | Array<string>` | N   |
+| onClick          | Function       |           | 点击时触发。`(context: { e: MouseEvent }) => {}`                                                                                                 | N              |
 
 ### Iconfont Events
 

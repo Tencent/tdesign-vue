@@ -5,11 +5,11 @@ exports[`Time-picker base demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="demos t-popup__reference t-time-picker t-size-m"
+    class="demos t-popup-reference t-time-picker t-size-m"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -18,7 +18,7 @@ exports[`Time-picker base demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-time-picker__panel-container"
+          class="t-popup-content t-time-picker__panel-container"
         >
           <div
             class="t-time-picker__panel"
@@ -867,11 +867,11 @@ exports[`Time-picker base demo works fine 1`] = `
   </div>
    
   <div
-    class="demos t-popup__reference t-time-picker t-size-m"
+    class="demos t-popup-reference t-time-picker t-size-m"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -880,7 +880,7 @@ exports[`Time-picker base demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-time-picker__panel-container"
+          class="t-popup-content t-time-picker__panel-container"
         >
           <div
             class="t-time-picker__panel"

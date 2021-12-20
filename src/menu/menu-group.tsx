@@ -8,7 +8,7 @@ export default defineComponent({
   render() {
     return (
       <div class={`${prefix}-menu-group`}>
-        <div class={`${prefix}-menu-group__title`}>
+        <div class={`${prefix}-menu-group-title`}>
           {this.title}
         </div>
         {this.$slots.default}

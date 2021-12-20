@@ -8,20 +8,20 @@ export type CascaderProps = TdCascaderProps;
 export * from './type';
 export interface CascaderContextType
   extends Pick<
-    TdCascaderProps,
-    | 'size'
-    | 'disabled'
-    | 'checkStrictly'
-    | 'lazy'
-    | 'multiple'
-    | 'filterable'
-    | 'clearable'
-    | 'checkProps'
-    | 'showAllLevels'
-    | 'max'
-    | 'value'
-    | 'minCollapsedNum'
-    | 'loading'
+  TdCascaderProps,
+  | 'size'
+  | 'disabled'
+  | 'checkStrictly'
+  | 'lazy'
+  | 'multiple'
+  | 'filterable'
+  | 'clearable'
+  | 'checkProps'
+  | 'showAllLevels'
+  | 'max'
+  | 'value'
+  | 'minCollapsedNum'
+  | 'loading'
   > {
   treeStore: TreeStore;
   inputWidth: number;
@@ -33,7 +33,7 @@ export interface CascaderContextType
   setTreeNodes: (val: CascaderValue) => void;
   filterActive: boolean;
   setFilterActive: (val: boolean) => void;
-  inputVal: string;
+  inputVal: string,
   setInputVal: (val: string) => void;
   setExpend: (val: TreeNodeValue[]) => void;
 }
@@ -68,6 +68,9 @@ export type ContextType = { e?: Event; node?: TreeNode };
 export { TreeNode } from '../_common/js/tree/tree-node';
 export type { TreeNodeValue } from '../_common/js/tree/types';
 export type { TreeOptionData } from '../_common/js/common';
-export type { TreeNodeModel } from '../tree';
 
-export const EVENT_NAME_WITH_KEBAB = ['remove', 'blur', 'focus'];
+export const EVENT_NAME_WITH_KEBAB = [
+  'remove',
+  'blur',
+  'focus',
+];

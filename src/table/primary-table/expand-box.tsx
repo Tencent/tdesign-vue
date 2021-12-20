@@ -27,11 +27,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
   methods: {
     getDefaultIcon() {
       // if ChevronRightCircleIcon and rotate(90deg) have to be changed, contact me please.
-      return isFunction(this.global.expandIcon) ? (
-        this.global.expandIcon(this.$createElement)
-      ) : (
-        <ChevronRightCircleIcon />
-      );
+      return isFunction(this.global.expandIcon)
+        ? this.global.expandIcon(this.$createElement)
+        : <ChevronRightCircleIcon />;
     },
     getExpandIcon(expanded: boolean) {
       const icon = isFunction(this.expandIcon)
@@ -55,7 +53,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     const icon = this.getExpandIcon(expanded);
     if (!icon) return null;
     return (
-      <span {...buttonProps} class={`${prefix}-table__expand-box`}>
+      <span {...buttonProps} class={`${prefix}-table-expand-box`}>
         {icon}
       </span>
     );

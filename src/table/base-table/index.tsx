@@ -35,7 +35,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       type: Object,
       default() {
         return {
-          renderRows(): void {},
+          renderRows(): void {
+
+          },
         };
       },
     },
@@ -136,10 +138,10 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       // table verticalAlign
       switch (verticalAlign) {
         case 'top':
-          commonClass.push(`${prefix}-table--align-top`);
+          commonClass.push(`${prefix}-table-valign__top`);
           break;
         case 'bottom':
-          commonClass.push(`${prefix}-table--align-bottom`);
+          commonClass.push(`${prefix}-table-valign__bottom`);
           break;
         default:
       }
@@ -171,9 +173,12 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const {
         columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
       } = this;
-      return (
-        <TableHeader scopedSlots={scopedSlots} columns={columns} columnsProps={flattedColumns} bordered={bordered} />
-      );
+      return <TableHeader
+              scopedSlots={scopedSlots}
+              columns={columns}
+              columnsProps={flattedColumns}
+              bordered={bordered}
+            />;
     },
     registerRowEvents() {
       const events = {};
@@ -185,7 +190,10 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return events;
     },
     renderBody(): VNode {
-      const { $listeners: listener, $scopedSlots: scopedSlots } = this;
+      const {
+        $listeners: listener,
+        $scopedSlots: scopedSlots,
+      } = this;
       const rowEvents = this.registerRowEvents();
       const props = {
         props: {
@@ -204,18 +212,22 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           ...rowEvents,
         },
       };
-      return <TableBody {...props} />;
+      return (
+        <TableBody { ...props } />
+      );
     },
     renderEmptyTable(): VNode {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
-        <div class={`${prefix}-table__empty`}>{useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}</div>
+        <div class={`${prefix}-table--empty`}>
+          {useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}
+        </div>
       );
     },
     renderPagination(): VNode {
       const paginationProps = this.pagination;
       return (
-        <div class={`${prefix}-table__pagination`}>
+        <div class={`${prefix}-table-pagination`}>
           <Pagination
             props={{ ...paginationProps }}
             {...{
@@ -251,25 +263,18 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       }, 10);
       //  fixed table header
       const paddingRight = `${scrollBarWidth}px`;
-      fixedTable.push(
-        <div
-          class={`${prefix}-table__header`}
-          style={{ paddingRight: columns.length > 1 ? paddingRight : '' }}
-          ref="scrollHeader"
-        >
+      fixedTable.push(<div class={`${prefix}-table__header`} style={{ paddingRight: columns.length > 1 ? paddingRight : '' }} ref="scrollHeader">
           <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
-        </div>,
-      );
+        </div>);
       const containerStyle = {
         height: isNaN(Number(tableHeight)) ? tableHeight : `${Number(tableHeight)}px`,
         width: hasFixedColumns ? '100%' : undefined,
       };
       // fixed table body
-      fixedTable.push(
-        <div
+      fixedTable.push(<div
           class={`${prefix}-table__body`}
           style={containerStyle}
           {...asyncLoadingProps}
@@ -281,8 +286,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
             {this.renderBody()}
             {this.renderFooter()}
           </table>
-        </div>,
-      );
+        </div>);
       return fixedTable;
     },
     renderLoadingContent(): VNode {
@@ -290,16 +294,18 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     },
     renderFooter() {
       const {
-        flattedColumns: { length: colspan },
+        flattedColumns: {
+          length: colspan,
+        },
       } = this;
       const footerContent: VNode = renderTNodeJSX(this, 'footer');
-      return footerContent ? (
-        <tfoot>
-          <tr>
-            <td colspan={colspan}>{footerContent}</td>
-          </tr>
-        </tfoot>
-      ) : null;
+      return footerContent ? <tfoot>
+                <tr>
+                  <td colspan={colspan}>
+                    {footerContent}
+                  </td>
+                </tr>
+              </tfoot> : null;
     },
     handleScroll(e: WheelEvent) {
       this.checkScrollableToLeftOrRight();
@@ -351,13 +357,10 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       body.push(this.renderPagination());
     }
     const handleScroll = throttle(this.handleScroll, 100);
-    const tableContentClass = [
-      `${prefix}-table__content`,
-      {
-        [`${prefix}-table__content--scrollable-to-right`]: this.scrollableToRight,
-        [`${prefix}-table__content--scrollable-to-left`]: this.scrollableToLeft,
-      },
-    ];
+    const tableContentClass = [`${prefix}-table-content`, {
+      [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
+      [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
+    }];
     let width;
     const { tableContent: tableContentEl, table: tableEl } = this.$refs as Record<string, HTMLElement>;
     if (!hasFixedColumns && tableContentEl && tableContentEl.clientWidth < tableEl.clientWidth) {
@@ -366,12 +369,12 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     return (
       <div class={commonClass} style={{ width }}>
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
-          <div ref="tableContent" class={tableContentClass} onScroll={handleScroll}>
-            {fixedTableContent || (
-              <table ref="table" style={{ tableLayout }}>
-                {tableContent}
-              </table>
-            )}
+          <div
+            ref='tableContent'
+            class={tableContentClass}
+            onScroll={handleScroll}
+          >
+            {fixedTableContent || <table ref="table" style={{ tableLayout }}>{tableContent}</table>}
           </div>
           {body}
         </Loading>

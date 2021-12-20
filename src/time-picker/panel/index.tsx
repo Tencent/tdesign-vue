@@ -41,7 +41,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
       return this.colValues.length > 1;
     },
     formatField() {
-      const match = this.format.match(/(a\s+|A\s+)?(h+|H+)?:?(m+)?:?(s+)?(\s+a|\s+A)?/);
+      const match = this.format.match(/(a\s+|A\s+)?(h+|H+)?:?(m+)?:?(s+)?(\s+a|A)?/);
       const [, startAChart, hour, minute, second, endAChart] = match;
       return {
         startAChart,

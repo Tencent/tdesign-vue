@@ -54,7 +54,9 @@ export default Vue.extend({
       }[column.filter.type];
       if (!component && !column?.filter?.component) return;
       const props = {
-        options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
+        options: ['single', 'multiple'].includes(column.filter.type)
+          ? column.filter?.list
+          : undefined,
         ...(column.filter?.props || {}),
         value: this.filterValue[column.colKey],
       };
@@ -62,18 +64,23 @@ export default Vue.extend({
         change: (val: any) => this.onInnerFilterChange(val, column),
       };
       return (
-        <div class={`${prefix}-table__filter-pop-content-inner`}>
-          {column?.filter?.component ? (
-            column?.filter?.component((v: FirstParams, b: SecondParams) => {
-              const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+        <div class={`${prefix}-table-filter-pop-content__inner`}>
+          {column?.filter?.component
+            ? column?.filter?.component((v: FirstParams, b: SecondParams) => {
+              const tProps = (typeof b === 'object' && ('attrs' in b)) ? b.attrs : {};
               return this.$createElement(v, {
                 props: { ...props, ...tProps },
                 on,
               });
             })
-          ) : (
-            <component value={this.filterValue[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
-          )}
+            : (
+              <component
+                value={this.filterValue[column.colKey]}
+                props={{ ...props }}
+                on={{ ...on }}
+              ></component>
+            )
+          }
         </div>
       );
     },
@@ -87,19 +94,17 @@ export default Vue.extend({
             <div class={`${prefix}-table__cell--title`}>
               <div>{title}</div>
               <div class={`${prefix}-table__cell--filter`}>
-                <Popup trigger="click" placement="bottom" showArrow overlayClassName={`${prefix}-table__filter-pop`}>
-                  {isFunction(this.filterIcon) ? (
-                    this.filterIcon(this.$createElement)
-                  ) : (
-                    <TIconFilter name="filter" class={`${prefix}-table__filter-icon`} />
-                  )}
-                  <template slot="content">
-                    <div class={`${prefix}-table__filter-pop-content`}>{this.getFilterContent(column)}</div>
+                <Popup trigger='click' placement='bottom' showArrow overlayClassName={`${prefix}-table-filter-pop`}>
+                  {isFunction(this.filterIcon)
+                    ? this.filterIcon(this.$createElement)
+                    : <TIconFilter name="filter" class={`${prefix}-table-filter-icon`} />
+                  }
+                  <template slot='content'>
+                    <div class={`${prefix}-table-filter-pop-content`}>{this.getFilterContent(column)}</div>
                   </template>
                 </Popup>
               </div>
-            </div>
-          );
+            </div>);
         }
         return column;
       });

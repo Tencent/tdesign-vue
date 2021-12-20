@@ -5,14 +5,14 @@ exports[`Steps Steps base demo works fine 1`] = `
   class="tdesign-demo-select-base"
 >
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -21,15 +21,15 @@ exports[`Steps Steps base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -95,7 +95,7 @@ exports[`Steps Steps base demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择云解决方案
         </span>
@@ -106,7 +106,7 @@ exports[`Steps Steps base demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -125,14 +125,14 @@ exports[`Steps Steps base demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -141,22 +141,22 @@ exports[`Steps Steps base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-m"
+                class="t-select-empty t-size-m"
               >
                 暂无数据
               </li>
@@ -221,7 +221,7 @@ exports[`Steps Steps base demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择云产品
         </span>
@@ -232,7 +232,7 @@ exports[`Steps Steps base demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -255,14 +255,14 @@ exports[`Steps Steps base demo works fine 1`] = `
 exports[`Steps Steps collapsed demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -271,15 +271,15 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -301,7 +301,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -323,7 +323,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -345,7 +345,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -430,7 +430,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           +1
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -452,14 +452,14 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -468,15 +468,15 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -498,7 +498,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -520,7 +520,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -542,7 +542,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -622,11 +622,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </svg>
         </span>
         <div
-          class="t-popup__reference"
+          class="t-popup-reference"
         >
           <transition-stub
             appear="true"
-            name="t-popup--animation"
+            name="t-popup_animation"
           >
             <div
               aria-hidden="true"
@@ -635,7 +635,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               style="display: none;"
             >
               <div
-                class="t-popup__content"
+                class="t-popup-content"
               >
                 <div>
                   <p
@@ -659,7 +659,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </span>
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -681,14 +681,14 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -697,15 +697,15 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -727,7 +727,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -749,7 +749,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -771,7 +771,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -851,11 +851,11 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </svg>
         </span>
         <div
-          class="t-popup__reference"
+          class="t-popup-reference"
         >
           <transition-stub
             appear="true"
-            name="t-popup--animation"
+            name="t-popup_animation"
           >
             <div
               aria-hidden="true"
@@ -864,7 +864,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
               style="display: none;"
             >
               <div
-                class="t-popup__content"
+                class="t-popup-content"
               >
                 <p
                   style="padding: 10px;"
@@ -884,7 +884,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
           </span>
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -907,15 +907,15 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
 exports[`Steps Steps creatable demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -924,15 +924,15 @@ exports[`Steps Steps creatable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -978,17 +978,16 @@ exports[`Steps Steps creatable demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-input t-size-m t-select__input"
+          class="t-input t-size-m t-select-input"
         >
           <input
             class="t-input__inner"
             placeholder="支持自定义创建"
-            readonly="readonly"
             type="text"
           />
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -1013,14 +1012,14 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
   class="tdesign-demo-select-options"
 >
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1029,15 +1028,15 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content tdesign-demo-select__overlay-option t-select__dropdown narrow-scrollbar"
+            class="t-popup-content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -1287,7 +1286,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择
         </span>
@@ -1298,7 +1297,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -1320,14 +1319,14 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1336,22 +1335,22 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content tdesign-demo-select__overlay-option t-select__dropdown narrow-scrollbar"
+            class="t-popup-content tdesign-demo-select__overlay-option t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-m"
+                class="t-select-empty t-size-m"
               >
                 暂无数据
               </li>
@@ -1620,7 +1619,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择
         </span>
@@ -1631,7 +1630,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -1654,14 +1653,14 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
 exports[`Steps Steps customSelected demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -1670,15 +1669,15 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -1700,7 +1699,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -1722,7 +1721,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -1744,7 +1743,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -1766,7 +1765,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项四"
                 >
                   <label
@@ -1788,7 +1787,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项五"
                 >
                   <label
@@ -1810,7 +1809,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项六"
                 >
                   <label
@@ -1832,7 +1831,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项七"
                 >
                   <label
@@ -1854,7 +1853,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项八"
                 >
                   <label
@@ -1876,7 +1875,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项九"
                 >
                   <label
@@ -1966,7 +1965,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           +3
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -1988,14 +1987,14 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2004,15 +2003,15 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -2034,7 +2033,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -2056,7 +2055,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -2078,7 +2077,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -2100,7 +2099,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项四"
                 >
                   <label
@@ -2122,7 +2121,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项五"
                 >
                   <label
@@ -2144,11 +2143,11 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项六"
                 >
                   <label
-                    class="t-checkbox t-is-checked"
+                    class="t-checkbox"
                   >
                     <input
                       class="t-checkbox__former"
@@ -2166,7 +2165,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项七"
                 >
                   <label
@@ -2188,11 +2187,11 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项八"
                 >
                   <label
-                    class="t-checkbox"
+                    class="t-checkbox t-is-checked"
                   >
                     <input
                       class="t-checkbox__former"
@@ -2210,7 +2209,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项九"
                 >
                   <label
@@ -2283,7 +2282,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
           
-        选项六(6)
+        选项七(6)
       
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -2303,7 +2302,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
           
-        选项七(7)
+        选项八(7)
       
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -2326,7 +2325,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
           +4
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -2349,15 +2348,15 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
 exports[`Steps Steps disabled demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2366,15 +2365,15 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -2414,7 +2413,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
         class="t-select t-is-disabled t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            -请选择-
         </span>
@@ -2425,7 +2424,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -2444,15 +2443,15 @@ exports[`Steps Steps disabled demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2461,15 +2460,15 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -2491,7 +2490,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -2513,7 +2512,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -2535,7 +2534,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -2595,7 +2594,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
           +2
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -2618,15 +2617,15 @@ exports[`Steps Steps disabled demo works fine 1`] = `
 exports[`Steps Steps filterable demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2635,15 +2634,15 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -2689,17 +2688,16 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-input t-size-m t-select__input"
+          class="t-input t-size-m t-select-input"
         >
           <input
             class="t-input__inner"
             placeholder="-请选择-"
-            readonly="readonly"
             type="text"
           />
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -2718,15 +2716,15 @@ exports[`Steps Steps filterable demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2735,15 +2733,15 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -2765,7 +2763,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -2787,7 +2785,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -2809,7 +2807,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -2845,17 +2843,16 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-input t-size-m t-select__input"
+          class="t-input t-size-m t-select-input"
         >
           <input
             class="t-input__inner"
             placeholder="-请选择-"
-            readonly="readonly"
             type="text"
           />
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -2880,14 +2877,14 @@ exports[`Steps Steps group demo works fine 1`] = `
   class="tdesign-demo-select-base"
 >
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -2896,15 +2893,15 @@ exports[`Steps Steps group demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -2912,10 +2909,10 @@ exports[`Steps Steps group demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组一
                   </div>
@@ -2941,10 +2938,10 @@ exports[`Steps Steps group demo works fine 1`] = `
                   </ul>
                 </li>
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组二
                   </div>
@@ -2978,10 +2975,10 @@ exports[`Steps Steps group demo works fine 1`] = `
                   </ul>
                 </li>
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组三
                   </div>
@@ -3023,9 +3020,9 @@ exports[`Steps Steps group demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
-           请选择
+           请选择城市
         </span>
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -3034,7 +3031,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3053,14 +3050,14 @@ exports[`Steps Steps group demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3069,22 +3066,22 @@ exports[`Steps Steps group demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-m"
+                class="t-select-empty t-size-m"
               >
                 暂无数据
               </li>
@@ -3093,10 +3090,10 @@ exports[`Steps Steps group demo works fine 1`] = `
                 style="display: none;"
               >
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组一
                   </div>
@@ -3124,10 +3121,10 @@ exports[`Steps Steps group demo works fine 1`] = `
                   </ul>
                 </li>
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组二
                   </div>
@@ -3165,10 +3162,10 @@ exports[`Steps Steps group demo works fine 1`] = `
                   </ul>
                 </li>
                 <li
-                  class="t-select-option-group t-size-m t-select-option-group__divider"
+                  class="t-option-group t-size-m t-option-group__divider"
                 >
                   <div
-                    class="t-select-option-group__header"
+                    class="t-option-group-header"
                   >
                     分组三
                   </div>
@@ -3214,9 +3211,9 @@ exports[`Steps Steps group demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
-           请选择
+           请选择城市
         </span>
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -3225,7 +3222,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3248,15 +3245,15 @@ exports[`Steps Steps group demo works fine 1`] = `
 exports[`Steps Steps labelInValue demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3265,15 +3262,15 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -3319,13 +3316,13 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           +0
         </span>
         <span
-          class="t-select__single"
+          class="t-select-selectedSingle"
           title="选项一"
         >
           选项一
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3344,15 +3341,15 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3361,15 +3358,15 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -3391,7 +3388,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -3413,7 +3410,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -3435,7 +3432,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -3496,7 +3493,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
           +1
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3519,15 +3516,15 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
 exports[`Steps Steps max demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3536,15 +3533,15 @@ exports[`Steps Steps max demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -3566,7 +3563,7 @@ exports[`Steps Steps max demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项一"
                 >
                   <label
@@ -3588,7 +3585,7 @@ exports[`Steps Steps max demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项二"
                 >
                   <label
@@ -3610,7 +3607,7 @@ exports[`Steps Steps max demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="选项三"
                 >
                   <label
@@ -3640,7 +3637,7 @@ exports[`Steps Steps max demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            -请选择-
         </span>
@@ -3651,7 +3648,7 @@ exports[`Steps Steps max demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3676,14 +3673,14 @@ exports[`Steps Steps multiple demo works fine 1`] = `
   class="tdesign-demo-select-base"
 >
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3692,15 +3689,15 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -3722,7 +3719,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="架构云"
                 >
                   <label
@@ -3744,7 +3741,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="大数据"
                 >
                   <label
@@ -3766,7 +3763,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="区块链"
                 >
                   <label
@@ -3788,7 +3785,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-disabled t-size-m"
+                  class="t-select-option t-is-disabled t-is-selected-multiple t-size-m"
                   title="物联网"
                 >
                   <label
@@ -3811,7 +3808,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="人工智能"
                 >
                   <label
@@ -3833,7 +3830,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="计算场景"
                 >
                   <label
@@ -3921,7 +3918,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           +2
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -3943,14 +3940,14 @@ exports[`Steps Steps multiple demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -3959,15 +3956,15 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -3988,7 +3985,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-m"
+                class="t-select-empty t-size-m"
               >
                 暂无数据
               </li>
@@ -3997,7 +3994,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="云服务器"
                 >
                   <label
@@ -4019,7 +4016,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="云数据库"
                 >
                   <label
@@ -4041,7 +4038,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="域名注册"
                 >
                   <label
@@ -4063,7 +4060,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="网站备案"
                 >
                   <label
@@ -4085,7 +4082,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="对象存储"
                 >
                   <label
@@ -4107,7 +4104,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="低代码平台"
                 >
                   <label
@@ -4293,7 +4290,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           +6
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4315,14 +4312,14 @@ exports[`Steps Steps multiple demo works fine 1`] = `
   <br />
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -4331,15 +4328,15 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -4361,7 +4358,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
               </ul>
               <ul>
                 <li
-                  class="t-select-option t-size-m"
+                  class="t-select-option t-is-selected-multiple t-size-m"
                   title="架构云"
                 >
                   <label
@@ -4383,7 +4380,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="大数据"
                 >
                   <label
@@ -4405,7 +4402,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="区块链"
                 >
                   <label
@@ -4427,7 +4424,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-disabled t-size-m"
+                  class="t-select-option t-is-disabled t-is-selected-multiple t-size-m"
                   title="物联网"
                 >
                   <label
@@ -4450,7 +4447,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="人工智能"
                 >
                   <label
@@ -4472,7 +4469,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
                   </label>
                 </li>
                 <li
-                  class="t-select-option t-is-selected t-size-m"
+                  class="t-select-option t-is-selected t-is-selected-multiple t-size-m"
                   title="计算场景"
                 >
                   <label
@@ -4609,7 +4606,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
           +2
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4632,15 +4629,15 @@ exports[`Steps Steps multiple demo works fine 1`] = `
 exports[`Steps Steps noborder demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -4649,15 +4646,15 @@ exports[`Steps Steps noborder demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -4703,13 +4700,13 @@ exports[`Steps Steps noborder demo works fine 1`] = `
           +0
         </span>
         <span
-          class="t-select__single"
+          class="t-select-selectedSingle"
           title="已选择的选项"
         >
           已选择的选项
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4732,15 +4729,15 @@ exports[`Steps Steps noborder demo works fine 1`] = `
 exports[`Steps Steps popupProps demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -4749,15 +4746,15 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -4795,13 +4792,13 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           +0
         </span>
         <span
-          class="t-select__single"
+          class="t-select-selectedSingle"
           title="已选择的选项"
         >
           已选择的选项
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4820,15 +4817,15 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin-left: 20px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -4837,15 +4834,15 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -4883,13 +4880,13 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
           +0
         </span>
         <span
-          class="t-select__single"
+          class="t-select-selectedSingle"
           title="已选择的选项"
         >
           已选择的选项
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4912,15 +4909,15 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
 exports[`Steps Steps prefix demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -4929,15 +4926,15 @@ exports[`Steps Steps prefix demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -4977,7 +4974,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
         class="t-select t-size-m t-has-prefix"
       >
         <span
-          class="t-select__left-icon"
+          class="t-select-left-icon"
         >
           <svg
             class="t-icon t-icon-browse"
@@ -4988,7 +4985,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            -请选择-
         </span>
@@ -4999,7 +4996,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5022,15 +5019,15 @@ exports[`Steps Steps prefix demo works fine 1`] = `
 exports[`Steps Steps remoteSearch demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5039,15 +5036,15 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -5093,17 +5090,16 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-input t-size-m t-select__input"
+          class="t-input t-size-m t-select-input"
         >
           <input
             class="t-input__inner"
             placeholder="请选择"
-            readonly="readonly"
             type="text"
           />
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5122,15 +5118,15 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5139,15 +5135,15 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected-multiple t-size-m t-select-create-option-special"
                   title=""
                 >
                   <label
@@ -5168,7 +5164,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-m"
+                class="t-select-empty t-size-m"
               >
                 暂无数据
               </li>
@@ -5190,17 +5186,16 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-input t-size-m t-select__input"
+          class="t-input t-size-m t-select-input"
         >
           <input
             class="t-input__inner"
             placeholder="请输入搜索"
-            readonly="readonly"
             type="text"
           />
         </div>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5223,15 +5218,15 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
 exports[`Steps Steps size demo works fine 1`] = `
 <div>
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5240,22 +5235,22 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-s t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-s t-select-create-option-special"
                   title=""
                 >
                   <span />
                 </li>
               </ul>
               <li
-                class="t-select__empty t-size-s"
+                class="t-select-empty t-size-s"
               >
                 暂无数据
               </li>
@@ -5302,7 +5297,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         class="t-select t-size-s"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择
         </span>
@@ -5313,7 +5308,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5332,15 +5327,15 @@ exports[`Steps Steps size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5349,15 +5344,15 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -5397,7 +5392,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择
         </span>
@@ -5408,7 +5403,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5427,15 +5422,15 @@ exports[`Steps Steps size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5444,15 +5439,15 @@ exports[`Steps Steps size demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-l t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-l t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -5492,7 +5487,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         class="t-select t-size-l"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择
         </span>
@@ -5503,7 +5498,7 @@ exports[`Steps Steps size demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5528,14 +5523,14 @@ exports[`Steps Steps status demo works fine 1`] = `
   class="tdesign-demo-select-base"
 >
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5544,15 +5539,15 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -5608,7 +5603,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择云解决方案
         </span>
@@ -5619,7 +5614,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5638,14 +5633,14 @@ exports[`Steps Steps status demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5654,15 +5649,15 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
@@ -5718,7 +5713,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         class="t-select t-is-disabled t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择云解决方案
         </span>
@@ -5729,7 +5724,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select-right-icon"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -5748,14 +5743,14 @@ exports[`Steps Steps status demo works fine 1`] = `
   </div>
    
   <div
-    class="t-select__wrap"
+    class="t-select-wrap"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-popup-reference t-select-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -5764,22 +5759,22 @@ exports[`Steps Steps status demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
+            class="t-popup-content  t-select-dropdown narrow-scrollbar"
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select-create-option"
                 style="display: none;"
               >
                 <li
-                  class="t-select-option t-is-selected t-size-m t-select__create-option--special"
+                  class="t-select-option t-is-selected t-size-m t-select-create-option-special"
                   title=""
                 >
                   <span />
                 </li>
               </ul>
               <li
-                class="t-select__loading-tips t-size-m"
+                class="t-select-loading-tips t-size-m"
               >
                 加载中
               </li>
@@ -5795,7 +5790,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         class="t-select t-size-m"
       >
         <span
-          class="t-select__placeholder"
+          class="t-select-placeholder"
         >
            请选择云解决方案
         </span>
@@ -5806,7 +5801,7 @@ exports[`Steps Steps status demo works fine 1`] = `
           +0
         </span>
         <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+          class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"
         >
           <svg
             class="t-loading__gradient t-icon-loading"

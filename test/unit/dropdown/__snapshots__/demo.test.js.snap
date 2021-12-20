@@ -3,11 +3,11 @@
 exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -16,7 +16,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -122,11 +122,11 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
   class="tdesign-demo-dropdown"
 >
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -135,7 +135,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -245,11 +245,11 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
 exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -258,7 +258,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -349,11 +349,11 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
 exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -362,7 +362,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -695,11 +695,11 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
   class="tdesign-demo-dropdown"
 >
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -708,7 +708,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -870,11 +870,11 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
 exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -883,7 +883,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -977,11 +977,11 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
 exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -990,7 +990,7 @@ exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"
@@ -1083,11 +1083,11 @@ exports[`Dropdown base demo works fine 1`] = `
   class="tdesign-demo-dropdown"
 >
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -1096,7 +1096,7 @@ exports[`Dropdown base demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-dropdown"
+          class="t-popup-content t-dropdown"
         >
           <div
             class="t-dropdown__menu"

@@ -25,7 +25,9 @@ export default Vue.extend({
       type: Object,
       default() {
         return {
-          renderRows(): void {},
+          renderRows(): void {
+
+          },
         };
       },
     },
@@ -123,10 +125,7 @@ export default Vue.extend({
         rowClassName,
         rowKey,
         provider,
-        $scopedSlots: scopedSlots,
-        rowspanAndColspan,
-        selectedRowKeys,
-        selectColumn,
+        $scopedSlots: scopedSlots, rowspanAndColspan, selectedRowKeys, selectColumn,
       } = this;
       const body: Array<VNode> = [];
       let allRowspanAndColspanProps: any;
@@ -134,7 +133,9 @@ export default Vue.extend({
         allRowspanAndColspanProps = this.getRowspanAndColspanProps();
       }
       data.forEach((row: any, index: number) => {
-        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
+        const defaultRowClass = typeof rowClassName === 'function'
+          ? rowClassName({ row, rowIndex: index })
+          : rowClassName;
         let rowClass: Array<string> = [];
         if (defaultRowClass) {
           rowClass = rowClass.concat(defaultRowClass);
@@ -167,30 +168,24 @@ export default Vue.extend({
             ...this.$listeners,
             'row-dragstart': () => {
               emitEvent(this, 'row-dragstart', {
-                index,
-                row,
+                index, row,
               });
             },
             'row-dragover': ({ e }: { e: MouseEvent }) => {
               e.preventDefault();
               emitEvent(this, 'row-dragover', {
-                index,
-                row,
-                targetElm: rowVnode.elm,
+                index, row, targetElm: rowVnode.elm,
               });
             },
           },
           scopedSlots,
         };
-        rowVnode = <TableRow rowKey={this.rowKey} {...props} />;
+        rowVnode = <TableRow rowKey={this.rowKey} {...props}/>;
         // 按行渲染
         body.push(rowVnode);
 
         provider.renderRows({
-          rows: body,
-          row,
-          rowIndex: index,
-          columns: this.columns,
+          rows: body, row, rowIndex: index, columns: this.columns,
         });
       });
       return body;
@@ -198,13 +193,11 @@ export default Vue.extend({
   },
   render() {
     if (this.provider.sortOnRowDraggable) {
-      const className = `${prefix}-table__body ${this.provider.dragging ? 'dragging' : ''}`;
-      return (
-        <transition-group class={className} tag="tbody">
-          {this.renderBody()}
-        </transition-group>
-      );
+      const className = `table-body ${this.provider.dragging ? 'dragging' : ''}`;
+      return <transition-group class={className} tag='tbody'>
+        {this.renderBody()}
+      </transition-group>;
     }
-    return <tbody class={`${prefix}-table__body`}>{this.renderBody()}</tbody>;
+    return <tbody class="table-body">{this.renderBody()}</tbody>;
   },
 });

@@ -4,7 +4,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div style="width: 100%;">
   <div class="t-table t-table__header--fixed">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <div class="t-table__header" style="padding-right: 0px;">
           <table style="table-layout: fixed; padding-right: 0px;">
             <colgroup>
@@ -28,7 +28,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
               <col>
               <col>
             </colgroup>
-            <tbody class="t-table__body">
+            <tbody class="table-body">
               <tr rowkey="id" class="" key="1">
                 <td class="" key="id" length="3">1</td>
                 <td class="" key="type" length="3">Number</td>
@@ -55,18 +55,18 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "large", verticalAlign="top" 1`] = `
 <div style="width: 100%;">
-  <div class="t-table t-size-l t-table--align-top">
+  <div class="t-table t-size-l t-table-valign__top">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
             <tr></tr>
           </thead>
-          <tbody class="t-table__body"></tbody>
+          <tbody class="table-body"></tbody>
         </table>
       </div>
-      <div class="t-table__empty">暂无数据</div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
@@ -74,18 +74,18 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "medium", verticalAlign="bottom" 1`] = `
 <div style="width: 100%;">
-  <div class="t-table t-table--align-bottom">
+  <div class="t-table t-table-valign__bottom">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
             <tr></tr>
           </thead>
-          <tbody class="t-table__body"></tbody>
+          <tbody class="table-body"></tbody>
         </table>
       </div>
-      <div class="t-table__empty">暂无数据</div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 <div style="width: 100%;">
   <div class="t-table t-table--bordered t-table--striped t-table--hoverable t-size-s">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
@@ -109,7 +109,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
               <td class="" key="value" colspan="1" rowspan="1">取值</td>
             </tr>
           </thead>
-          <tbody class="t-table__body">
+          <tbody class="table-body">
             <tr rowkey="id" class="" key="1">
               <td class="" key="id" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
@@ -137,16 +137,16 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
 <div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup></colgroup>
           <thead columnsprops="">
             <tr></tr>
           </thead>
-          <tbody class="t-table__body"></tbody>
+          <tbody class="table-body"></tbody>
         </table>
       </div>
-      <div class="t-table__empty">暂无数据</div>
+      <div class="t-table--empty">暂无数据</div>
     </div>
   </div>
 </div>
@@ -156,7 +156,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
 <div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col style="width: 100px; min-width: 200px;">
@@ -165,24 +165,24 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
           </colgroup>
           <thead columnsprops="[object Object],[object Object],[object Object]">
             <tr>
-              <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" colspan="1" rowspan="1">id</td>
+              <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" colspan="1" rowspan="1">id</td>
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="value" colspan="1" rowspan="1">取值</td>
             </tr>
           </thead>
-          <tbody class="t-table__body">
+          <tbody class="table-body">
             <tr rowkey="id" class="" key="1">
-              <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">1</td>
+              <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">1</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">1</td>
             </tr>
             <tr rowkey="id" class="" key="2">
-              <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">2</td>
+              <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">2</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">2</td>
             </tr>
             <tr rowkey="id" class="" key="3">
-              <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">3</td>
+              <td class="align-left text-ellipsis" key="id" style="overflow: hidden;" length="3">3</td>
               <td class="" key="type" length="3">Number</td>
               <td class="" key="value" length="3">3</td>
             </tr>
@@ -198,7 +198,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
 <div style="width: 100%;">
   <div class="t-table">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
@@ -210,33 +210,33 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
               <td class="" colspan="2" rowspan="1">属性及说明</td>
             </tr>
             <tr>
-              <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" colspan="1" rowspan="2">平台</td>
+              <td class="align-left text-ellipsis test" key="platform" style="overflow: hidden;" colspan="1" rowspan="2">平台</td>
               <td class="" colspan="3" rowspan="1">类型及默认值</td>
-              <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" colspan="1" rowspan="2">属性</td>
-              <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" colspan="1" rowspan="2">说明</td>
+              <td class="align-left text-ellipsis test2" key="property" style="overflow: hidden;" colspan="1" rowspan="2">属性</td>
+              <td class="align-left text-ellipsis row" key="description" style="overflow: hidden;" colspan="1" rowspan="2">说明</td>
             </tr>
             <tr>
-              <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" colspan="1" rowspan="1">类型</td>
-              <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" colspan="1" rowspan="1">默认值</td>
-              <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" colspan="1" rowspan="1">是否必传</td>
+              <td class="align-left text-ellipsis row" key="type" style="overflow: hidden;" colspan="1" rowspan="1">类型</td>
+              <td class="align-left text-ellipsis test4" key="default" style="overflow: hidden;" colspan="1" rowspan="1">默认值</td>
+              <td class="align-left text-ellipsis test3" key="needed" style="overflow: hidden;" colspan="1" rowspan="1">是否必传</td>
             </tr>
           </thead>
-          <tbody class="t-table__body">
+          <tbody class="table-body">
             <tr rowkey="id" class="">
-              <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
-              <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" length="6">any[]</td>
-              <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" length="6">[]</td>
-              <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
-              <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" length="6">data</td>
-              <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" length="6">数据源</td>
+              <td class="align-left text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
+              <td class="align-left text-ellipsis row" key="type" style="overflow: hidden;" length="6">any[]</td>
+              <td class="align-left text-ellipsis test4" key="default" style="overflow: hidden;" length="6">[]</td>
+              <td class="align-left text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
+              <td class="align-left text-ellipsis test2" key="property" style="overflow: hidden;" length="6">data</td>
+              <td class="align-left text-ellipsis row" key="description" style="overflow: hidden;" length="6">数据源</td>
             </tr>
             <tr rowkey="id" class="">
-              <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
-              <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" length="6">String</td>
-              <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" length="6">-1</td>
-              <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
-              <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" length="6">rowkey</td>
-              <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" length="6">指定rowkey</td>
+              <td class="align-left text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
+              <td class="align-left text-ellipsis row" key="type" style="overflow: hidden;" length="6">String</td>
+              <td class="align-left text-ellipsis test4" key="default" style="overflow: hidden;" length="6">-1</td>
+              <td class="align-left text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
+              <td class="align-left text-ellipsis test2" key="property" style="overflow: hidden;" length="6">rowkey</td>
+              <td class="align-left text-ellipsis row" key="description" style="overflow: hidden;" length="6">指定rowkey</td>
             </tr>
           </tbody>
         </table>
@@ -250,7 +250,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
 <div style="width: 100%;">
   <div class="t-table t-table__cell--fixed t-table--has-fixed">
     <div class="t-loading__parent">
-      <div class="t-table__content">
+      <div class="t-table-content">
         <table style="table-layout: fixed;">
           <colgroup>
             <col>
@@ -264,7 +264,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
               <td class="" key="value" colspan="1" rowspan="1">取值</td>
             </tr>
           </thead>
-          <tbody class="t-table__body">
+          <tbody class="table-body">
             <tr rowkey="id" class="" key="1">
               <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">1</td>
               <td class="" key="type" length="3">Number</td>

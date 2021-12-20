@@ -6,11 +6,11 @@ exports[`Progress base demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -19,7 +19,7 @@ exports[`Progress base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             可以在浮层内容中描述禁用原因
@@ -44,11 +44,11 @@ exports[`Progress base demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -57,7 +57,7 @@ exports[`Progress base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
           >
             <div>
               触发元素是指触发浮层内容显示的元素
@@ -82,11 +82,11 @@ exports[`Progress base demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -95,7 +95,7 @@ exports[`Progress base demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
           >
             <div>
               浮层内容是指浮层里面显示的全部内容，这里的浮层内容使用渲染函数定义
@@ -124,12 +124,12 @@ exports[`Progress container demo works fine 1`] = `
     class="t-popup-demo-block"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
       id="myPopup"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -138,7 +138,7 @@ exports[`Progress container demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             触发元素的父元素是组件根元素，通过 CSSSelector 定义
@@ -163,11 +163,11 @@ exports[`Progress container demo works fine 1`] = `
     id="second-popup"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -176,7 +176,7 @@ exports[`Progress container demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             触发元素的父元素是组件跟元素，通过 Funnction 定义
@@ -201,11 +201,11 @@ exports[`Progress container demo works fine 1`] = `
 exports[`Progress destroy demo works fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -214,7 +214,7 @@ exports[`Progress destroy demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
           style="max-width: 480px;"
         >
           当浮层内容被隐藏时，就会从 DOM 节点中移除
@@ -238,11 +238,11 @@ exports[`Progress destroy demo works fine 1`] = `
 exports[`Progress disabled demo works fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -251,7 +251,7 @@ exports[`Progress disabled demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-is-disabled"
+          class="t-popup-content t-is-disabled"
           style="max-width: 480px;"
         >
           我被禁用了，无法显示
@@ -278,11 +278,11 @@ exports[`Progress placement demo works fine 1`] = `
   class="container"
 >
   <div
-    class="placement top center t-popup__reference"
+    class="placement top center t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -291,7 +291,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -314,11 +314,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement top left t-popup__reference"
+    class="placement top left t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -327,7 +327,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -350,11 +350,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement top right t-popup__reference"
+    class="placement top right t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -363,7 +363,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -386,11 +386,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement bottom center t-popup__reference"
+    class="placement bottom center t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -399,7 +399,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -422,11 +422,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement bottom left t-popup__reference"
+    class="placement bottom left t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -435,7 +435,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -458,11 +458,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement bottom right t-popup__reference"
+    class="placement bottom right t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -471,7 +471,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -494,11 +494,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement align t-popup__reference"
+    class="placement align t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -507,7 +507,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -530,11 +530,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement top-align t-popup__reference"
+    class="placement top-align t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -543,7 +543,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -566,11 +566,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement bottom-align t-popup__reference"
+    class="placement bottom-align t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -579,7 +579,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -602,11 +602,11 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement right-full align t-popup__reference"
+    class="placement right-full align t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -615,7 +615,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -638,12 +638,12 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement right-full top-align t-popup__reference"
+    class="placement right-full top-align t-popup-reference"
     destroy-on-hide=""
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -652,7 +652,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -675,12 +675,12 @@ exports[`Progress placement demo works fine 1`] = `
   </div>
    
   <div
-    class="placement right-full bottom-align t-popup__reference"
+    class="placement right-full bottom-align t-popup-reference"
     destroy-on-hide=""
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -689,7 +689,7 @@ exports[`Progress placement demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content t-popup__content--arrow"
+          class="t-popup-content t-popup-content--arrow"
           style="max-width: 480px;"
         >
           这是popup内容
@@ -719,11 +719,11 @@ exports[`Progress style demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -732,7 +732,7 @@ exports[`Progress style demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content tdesign-demo__custom-popup"
+            class="t-popup-content tdesign-demo__custom-popup"
             style="max-width: 480px;"
           >
             浮层拥有自定义类名，可以自定义浮层样式
@@ -756,11 +756,11 @@ exports[`Progress style demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -769,7 +769,7 @@ exports[`Progress style demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             浮层宽度是固定的，不会随内容变化而变化
@@ -793,11 +793,11 @@ exports[`Progress style demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -806,7 +806,7 @@ exports[`Progress style demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             可以设置浮层最大宽度，当内容超出最大宽度时，文本内容才会换行
@@ -830,11 +830,11 @@ exports[`Progress style demo works fine 1`] = `
     class="t-popup-demo-base-item"
   >
     <div
-      class="t-popup__reference"
+      class="t-popup-reference"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -843,7 +843,7 @@ exports[`Progress style demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content"
+            class="t-popup-content"
             style="max-width: 480px;"
           >
             overlayStyle 作为函数使用，可以让浮层内容和触发元素同宽
@@ -870,11 +870,11 @@ exports[`Progress trigger demo works fine 1`] = `
   class="popup-demo-container"
 >
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -883,7 +883,7 @@ exports[`Progress trigger demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
           style="max-width: 480px;"
         >
           文字提示仅展示文本内容
@@ -903,11 +903,11 @@ exports[`Progress trigger demo works fine 1`] = `
   </div>
    
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -916,7 +916,7 @@ exports[`Progress trigger demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
           style="max-width: 480px;"
         >
           文字提示仅展示文本内容
@@ -936,11 +936,11 @@ exports[`Progress trigger demo works fine 1`] = `
   </div>
    
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -949,7 +949,7 @@ exports[`Progress trigger demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
           style="max-width: 480px;"
         >
           文字提示仅展示文本内容
@@ -968,11 +968,11 @@ exports[`Progress trigger demo works fine 1`] = `
   </div>
    
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -981,7 +981,7 @@ exports[`Progress trigger demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
           style="max-width: 480px;"
         >
           文字提示仅展示文本内容
@@ -1009,11 +1009,11 @@ exports[`Progress triggerElement demo works fine 1`] = `
       class="t-popup-demo-base-item"
     >
       <div
-        class="t-popup__reference"
+        class="t-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup--animation"
+          name="t-popup_animation"
         >
           <div
             aria-hidden="true"
@@ -1022,7 +1022,7 @@ exports[`Progress triggerElement demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup__content"
+              class="t-popup-content"
               style="max-width: 480px;"
             >
               我的触发元素通过默认插槽渲染
@@ -1046,11 +1046,11 @@ exports[`Progress triggerElement demo works fine 1`] = `
       class="t-popup-demo-base-item"
     >
       <div
-        class="t-popup__reference"
+        class="t-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup--animation"
+          name="t-popup_animation"
         >
           <div
             aria-hidden="true"
@@ -1059,7 +1059,7 @@ exports[`Progress triggerElement demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup__content"
+              class="t-popup-content"
               style="max-width: 480px;"
             >
               我的触发元素通过插槽(triggerElement)渲染
@@ -1087,11 +1087,11 @@ exports[`Progress triggerElement demo works fine 1`] = `
       class="t-popup-demo-base-item"
     >
       <div
-        class="t-popup__reference"
+        class="t-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup--animation"
+          name="t-popup_animation"
         >
           <div
             aria-hidden="true"
@@ -1100,7 +1100,7 @@ exports[`Progress triggerElement demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup__content"
+              class="t-popup-content"
               style="max-width: 480px;"
             >
               我的触发元素通过渲染函数 default 渲染
@@ -1124,11 +1124,11 @@ exports[`Progress triggerElement demo works fine 1`] = `
       class="t-popup-demo-base-item"
     >
       <div
-        class="t-popup__reference"
+        class="t-popup-reference"
       >
         <transition-stub
           appear="true"
-          name="t-popup--animation"
+          name="t-popup_animation"
         >
           <div
             aria-hidden="true"
@@ -1137,7 +1137,7 @@ exports[`Progress triggerElement demo works fine 1`] = `
             style="display: none;"
           >
             <div
-              class="t-popup__content"
+              class="t-popup-content"
               style="max-width: 480px;"
             >
               我的触发元素通过渲染函数 triggerElement 渲染
@@ -1163,11 +1163,11 @@ exports[`Progress triggerElement demo works fine 1`] = `
 exports[`Progress visible demo works fine 1`] = `
 <div>
   <div
-    class="t-popup__reference"
+    class="t-popup-reference"
   >
     <transition-stub
       appear="true"
-      name="t-popup--animation"
+      name="t-popup_animation"
     >
       <div
         aria-hidden="true"
@@ -1176,7 +1176,7 @@ exports[`Progress visible demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-popup__content"
+          class="t-popup-content"
         >
           <div>
             浮层显示与否可以在外部自由控制

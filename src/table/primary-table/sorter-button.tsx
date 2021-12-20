@@ -35,16 +35,16 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
   },
   computed: {
     allowSortTypes(): SortTypeEnums {
-      return this.sortType === 'all' ? ['asc', 'desc'] : [this.sortType];
+      return this.sortType === 'all'
+        ? ['asc', 'desc']
+        : [this.sortType];
     },
   },
   methods: {
     getSortIcon(direction: string, className: string) {
-      const icon = isFunction(this.global.sortIcon) ? (
-        this.global.sortIcon(this.$createElement)
-      ) : (
-        <TIconChevronDown size="16px" />
-      );
+      const icon = isFunction(this.global.sortIcon)
+        ? this.global.sortIcon(this.$createElement)
+        : <TIconChevronDown size='16px' />;
       let style: Styles = {
         left: '0px',
       };
@@ -57,12 +57,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       } else {
         style.bottom = '-1px';
       }
-      const sortClassName = [`${prefix}-table__sort-icon`, className, `${prefix}-table-sort-${direction}`];
-      return (
-        <span style={style} class={sortClassName}>
-          {icon}
-        </span>
-      );
+      const sortClassName = [`${prefix}-table-sort-icon`, className, `${prefix}-table-sort-${direction}`];
+      return <span style={style} class={sortClassName}>{icon}</span>;
     },
   },
   render() {
@@ -71,23 +67,16 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     } = this;
     const buttonProps = {
       on: { ...$listeners },
-      class: allowSortTypes.length > 1 ? `${prefix}-table__double-icons` : '',
+      class: allowSortTypes.length > 1 ? `${prefix}-table-double-icons` : '',
     };
     const tips = tooltips[nextSortOrder];
-    const sortButton = allowSortTypes.map((direction: string) => {
-      const className = direction === sortOrder ? `${prefix}-table__sort-icon--active` : `${prefix}-icon-sort--default`;
-      return this.getSortIcon(direction, className);
-    });
-    return (
-      <div class={`${prefix}-table__cell--sort-trigger`} {...buttonProps}>
-        {tips ? (
-          <Tooltip style="line-height: 0px;position:relative;" content={tips} showArrow={false}>
-            {sortButton}
-          </Tooltip>
-        ) : (
-          sortButton
-        )}
-      </div>
-    );
+    const sortButton = allowSortTypes
+      .map((direction: string) => {
+        const className = direction === sortOrder ? `${prefix}-table-sort-icon-active` : `${prefix}-icon-sort-default`;
+        return this.getSortIcon(direction, className);
+      });
+    return <div class={`${prefix}-table__cell--sort-trigger`} {...buttonProps}>
+      {tips ? <Tooltip style="line-height: 0px;position:relative;" content={tips} showArrow={false}>{sortButton}</Tooltip> : sortButton}
+    </div>;
   },
 });

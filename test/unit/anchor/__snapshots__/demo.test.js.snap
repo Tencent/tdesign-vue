@@ -80,11 +80,11 @@ exports[`Anchor base demo works fine 1`] = `
       >
         <a
           class="t-anchor__item-link"
-          href="#不同尺寸的锚点"
+          href="#尺寸"
           target="_self"
-          title="不同尺寸的锚点"
+          title="尺寸"
         >
-          不同尺寸的锚点
+          尺寸
         </a>
       </div>
     </div>
@@ -188,11 +188,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     定义
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -201,7 +201,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -238,11 +238,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     服务功能
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -251,7 +251,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -288,11 +288,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     使用指南
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -301,7 +301,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -338,11 +338,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     创建签名
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -351,7 +351,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -388,11 +388,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     创建内容
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -401,7 +401,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -438,11 +438,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     保密协议
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -451,7 +451,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接
@@ -488,11 +488,11 @@ exports[`Anchor target demo works fine 1`] = `
   >
     其他
     <div
-      class="t-popup__reference t-anchor__copy"
+      class="t-popup-reference t-anchor__copy"
     >
       <transition-stub
         appear="true"
-        name="t-popup--animation"
+        name="t-popup_animation"
       >
         <div
           aria-hidden="true"
@@ -501,7 +501,7 @@ exports[`Anchor target demo works fine 1`] = `
           style="display: none;"
         >
           <div
-            class="t-popup__content t-popup__content--arrow"
+            class="t-popup-content t-popup-content--arrow"
             style="max-width: 480px;"
           >
             复制链接

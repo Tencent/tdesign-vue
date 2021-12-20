@@ -2,10 +2,10 @@
 
 exports[`TreeSelect :props :clearable 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -38,10 +38,10 @@ exports[`TreeSelect :props :clearable 1`] = `
 
 exports[`TreeSelect :props :defaultValue 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -74,10 +74,10 @@ exports[`TreeSelect :props :defaultValue 1`] = `
 
 exports[`TreeSelect :props :disabled 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content t-is-disabled  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content t-is-disabled  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -110,10 +110,10 @@ exports[`TreeSelect :props :disabled 1`] = `
 
 exports[`TreeSelect :props :empty string 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -144,10 +144,10 @@ exports[`TreeSelect :props :empty string 1`] = `
 
 exports[`TreeSelect :props :filterable 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -180,10 +180,10 @@ exports[`TreeSelect :props :filterable 1`] = `
 
 exports[`TreeSelect :props :loading 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips">
             <div class="t-select-empty">加载中</div>
@@ -214,10 +214,10 @@ exports[`TreeSelect :props :loading 1`] = `
 
 exports[`TreeSelect :props :loadingText 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">data loading</p>
             <div class="t-tree t-tree--hoverable t-tree--transition" size="medium">
@@ -248,10 +248,10 @@ exports[`TreeSelect :props :loadingText 1`] = `
 
 exports[`TreeSelect :props :max 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -284,10 +284,10 @@ exports[`TreeSelect :props :max 1`] = `
 
 exports[`TreeSelect :props :minCollapsedNum 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -320,10 +320,10 @@ exports[`TreeSelect :props :minCollapsedNum 1`] = `
 
 exports[`TreeSelect :props :multiple 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -356,10 +356,10 @@ exports[`TreeSelect :props :multiple 1`] = `
 
 exports[`TreeSelect :props :placeholder 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -392,10 +392,10 @@ exports[`TreeSelect :props :placeholder 1`] = `
 
 exports[`TreeSelect :props :popupProps 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -428,10 +428,10 @@ exports[`TreeSelect :props :popupProps 1`] = `
 
 exports[`TreeSelect :props :size 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -464,10 +464,10 @@ exports[`TreeSelect :props :size 1`] = `
 
 exports[`TreeSelect :props :treeProps 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -500,10 +500,10 @@ exports[`TreeSelect :props :treeProps 1`] = `
 
 exports[`TreeSelect :props :value 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -536,10 +536,10 @@ exports[`TreeSelect :props :value 1`] = `
 
 exports[`TreeSelect :props :valueType 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -572,10 +572,10 @@ exports[`TreeSelect :props :valueType 1`] = `
 
 exports[`TreeSelect <slot> <collapsedItems> 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -608,10 +608,10 @@ exports[`TreeSelect <slot> <collapsedItems> 1`] = `
 
 exports[`TreeSelect <slot> <empty> 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -644,10 +644,10 @@ exports[`TreeSelect <slot> <empty> 1`] = `
 
 exports[`TreeSelect <slot> <loadingText> 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips">
             <div>data loading</div>
@@ -678,10 +678,10 @@ exports[`TreeSelect <slot> <loadingText> 1`] = `
 
 exports[`TreeSelect <slot> <prefixIcon> 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -714,10 +714,10 @@ exports[`TreeSelect <slot> <prefixIcon> 1`] = `
 
 exports[`TreeSelect function :collapsedItems 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -750,10 +750,10 @@ exports[`TreeSelect function :collapsedItems 1`] = `
 
 exports[`TreeSelect function :empty 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
@@ -786,10 +786,10 @@ exports[`TreeSelect function :empty 1`] = `
 
 exports[`TreeSelect function :loadingText 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips">
             <div>data loading</div>
@@ -820,10 +820,10 @@ exports[`TreeSelect function :loadingText 1`] = `
 
 exports[`TreeSelect function :prefixIcon 1`] = `
 <div>
-  <div class="t-popup__reference t-select-popup-reference">
-    <transition-stub name="t-popup--animation" appear="true">
+  <div class="t-popup-reference t-select-popup-reference">
+    <transition-stub name="t-popup_animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-        <div class="t-popup__content  t-select-dropdown narrow-scrollbar">
+        <div class="t-popup-content  t-select-dropdown narrow-scrollbar">
           <div>
             <p class="t-select-loading-tips" style="display: none;">
             <div class="t-select-empty">加载中</div>
