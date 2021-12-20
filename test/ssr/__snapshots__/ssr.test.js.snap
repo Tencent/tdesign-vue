@@ -3317,7 +3317,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
   <div style="width:100%;">
     <div class="t-table t-table--bordered">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col>
@@ -3330,9 +3330,9 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>Type</div>
-                      <div class="t-table__cell--sort-trigger t-table-double-icons">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons">
                         <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                          <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-icon-sort-default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span>
+                          <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-icon-sort--default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span>
                         </div>
                       </div>
                     </div>
@@ -3342,17 +3342,17 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
                 <td class="" key="property" colspan="1" rowspan="1">Property</td>
               </tr>
             </thead>
-            <tbody class="table-body"></tbody>
+            <tbody class="t-table__body"></tbody>
           </table>
         </div>
-        <div class="t-table--empty">Empty Data</div>
+        <div class="t-table__empty">Empty Data</div>
       </div>
     </div>
   </div> <br><br>
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:48px;">
@@ -3362,14 +3362,14 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
                 <td class="" key="type" colspan="1" rowspan="1">
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>Type</div>
-                      <div class="t-table__cell--sort-trigger t-table-double-icons">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons">
                         <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                          <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-icon-sort-default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span>
+                          <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-icon-sort--default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span>
                         </div>
                       </div>
                     </div>
@@ -3379,37 +3379,37 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
                 <td class="" key="property" colspan="1" rowspan="1">Property</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="property" class="" key="A">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="type" length="4">Array</td>
                 <td class="" key="platform" length="4">Vue(PC)</td>
                 <td class="" key="property" length="4">A</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="4" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>This is expanded row info</div>
                 </td>
               </tr>
               <tr rowKey="property" class="" key="B">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="type" length="4">String</td>
                 <td class="" key="platform" length="4">React(PC)</td>
                 <td class="" key="property" length="4">B</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="4" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>This is expanded row info</div>
                 </td>
               </tr>
               <tr rowKey="property" class="" key="C">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="type" length="4">Object</td>
                 <td class="" key="platform" length="4">Miniprogram</td>
                 <td class="" key="property" length="4">C</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="4" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>This is expanded row info</div>
                 </td>
               </tr>
@@ -10217,7 +10217,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;">
@@ -10231,7 +10231,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
                 <td class="" key="email" colspan="1" rowspan="1" style="overflow:hidden;">Email</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="key" class="" key="1">
                 <td class="" key="firstName" length="3" style="overflow:hidden;">Eric</td>
                 <td class="" key="lastName" length="3" style="overflow:hidden;">Spinke</td>
@@ -10285,7 +10285,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
   <div style="width:100%;">
     <div class="t-table t-table--bordered t-table--striped">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;">
@@ -10297,54 +10297,54 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
+                <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
                 <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1">类型</td>
                 <td class="" key="default" colspan="1" rowspan="1">默认值</td>
                 <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-                <td class="text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+                <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="index" class="" key="0">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">0</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">0</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">String</td>
                 <td class="" key="default" length="6">-</td>
                 <td class="" key="needed" length="6">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="1">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">1</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="6">Number</td>
                 <td class="" key="default" length="6">0</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="2">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">2</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">Array</td>
                 <td class="" key="default" length="6">[]</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="3">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">3</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="6">Object</td>
                 <td class="" key="default" length="6">{}</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="4">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">4</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">String</td>
                 <td class="" key="default" length="6">-</td>
                 <td class="" key="needed" length="6">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               </tr>
             </tbody>
           </table>
@@ -10360,7 +10360,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;">
@@ -10376,7 +10376,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
                 <td class="" key="description" colspan="1" rowspan="1" style="overflow:hidden;">render</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="property" class="" key="data">
                 <td class="" key="type" length="4" style="overflow:hidden;">
                   any[]
@@ -10416,7 +10416,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
 <div style="width:100%;">
   <div class="t-table">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <table style="table-layout:fixed;">
           <colgroup>
             <col>
@@ -10433,7 +10433,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
               <td class="" key="property" colspan="1" rowspan="1">属性名</td>
             </tr>
           </thead>
-          <tbody class="table-body">
+          <tbody class="t-table__body">
             <tr rowKey="property" class="" key="data">
               <td class="" key="type" length="3">标题是用插槽自定义</td>
               <td class="" key="platform" length="3">标题使用 title 方法自定义</td>
@@ -10459,7 +10459,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
     <div style="width:100%;">
       <div class="t-table">
         <div class="t-loading__parent">
-          <div class="t-table-content">
+          <div class="t-table__content">
             <table style="table-layout:fixed;">
               <colgroup>
                 <col style="width:150px;">
@@ -10474,9 +10474,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                     <div class="t-table__cell--sortable">
                       <div class="t-table__cell--title">
                         <div>状态</div>
-                        <div class="t-table__cell--sort-trigger t-table-double-icons">
+                        <div class="t-table__cell--sort-trigger t-table__double-icons">
                           <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                            <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-table-sort-icon-active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                            <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-table__sort-icon--active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                           </div>
                         </div>
                       </div>
@@ -10486,9 +10486,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                     <div class="t-table__cell--sortable">
                       <div class="t-table__cell--title">
                         <div>存活时间(s)</div>
-                        <div class="t-table__cell--sort-trigger t-table-double-icons">
+                        <div class="t-table__cell--sort-trigger t-table__double-icons">
                           <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                            <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-icon-sort-default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                            <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-icon-sort--default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                           </div>
                         </div>
                       </div>
@@ -10497,7 +10497,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                   <td class="" key="owner" colspan="1" rowspan="1" style="overflow:hidden;">管理员</td>
                 </tr>
               </thead>
-              <tbody class="table-body">
+              <tbody class="t-table__body">
                 <tr rowKey="id" class="" key="3">
                   <td class="" key="instance" length="4" style="overflow:hidden;">JQTest3</td>
                   <td class="" key="status" length="4" style="overflow:hidden;">
@@ -10554,7 +10554,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
     <div style="width:100%;">
       <div class="t-table t-table__row--draggable">
         <div class="t-loading__parent">
-          <div class="t-table-content">
+          <div class="t-table__content">
             <table style="table-layout:fixed;">
               <colgroup>
                 <col style="width:150px;">
@@ -10570,7 +10570,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
                   <td class="" key="owner" colspan="1" rowspan="1" style="overflow:hidden;">管理员</td>
                 </tr>
               </thead>
-              <transition-group-stub tag="tbody" class="table-body ">
+              <transition-group-stub tag="tbody" class="t-table__body ">
                 <tr rowKey="id" class="" key="1" draggable="true">
                   <td class="" key="instance" length="4" style="overflow:hidden;">JQTest1</td>
                   <td class="" key="status" length="4" style="overflow:hidden;">
@@ -10626,7 +10626,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col>
@@ -10646,17 +10646,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
                 <td class="" key="description" colspan="1" rowspan="1">说明</td>
               </tr>
             </thead>
-            <tbody class="table-body"></tbody>
+            <tbody class="t-table__body"></tbody>
           </table>
         </div>
-        <div class="t-table--empty">暂无数据</div>
+        <div class="t-table__empty">暂无数据</div>
       </div>
     </div>
   </div> <br><br>
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col>
@@ -10676,10 +10676,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
                 <td class="" key="description" colspan="1" rowspan="1">说明</td>
               </tr>
             </thead>
-            <tbody class="table-body"></tbody>
+            <tbody class="t-table__body"></tbody>
           </table>
         </div>
-        <div class="t-table--empty"><span style="display:flex;align-items:center;justify-content:center;height:100px;">😊 我是自定义的空内容 😊</span></div>
+        <div class="t-table__empty"><span style="display:flex;align-items:center;justify-content:center;height:100px;">😊 我是自定义的空内容 😊</span></div>
       </div>
     </div>
   </div>
@@ -10696,7 +10696,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:48px;">
@@ -10708,7 +10708,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">状态</td>
                 <td class="" key="owner" colspan="1" rowspan="1">管理员</td>
@@ -10718,9 +10718,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="id" class="" key="1">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试1</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -10731,7 +10731,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试1</p><br>
@@ -10743,7 +10743,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="2">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试2</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->
@@ -10754,7 +10754,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr>
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试2</p><br>
@@ -10766,7 +10766,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="3">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试3</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -10777,7 +10777,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试3</p><br>
@@ -10789,7 +10789,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="4">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试4</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->
@@ -10800,7 +10800,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试4</p><br>
@@ -10821,7 +10821,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:48px;">
@@ -10833,7 +10833,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">状态</td>
                 <td class="" key="owner" colspan="1" rowspan="1">管理员</td>
@@ -10843,9 +10843,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="id" class="" key="1">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试1</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -10856,7 +10856,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试1</p><br>
@@ -10868,7 +10868,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="2">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试2</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->
@@ -10879,7 +10879,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr>
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试2</p><br>
@@ -10891,7 +10891,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="3">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试3</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <p class="status">健康</p>
@@ -10902,7 +10902,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试3</p><br>
@@ -10914,7 +10914,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 </td>
               </tr>
               <tr rowKey="id" class="" key="4">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">集群测试4</td>
                 <td class="" key="status" length="6" style="overflow:hidden;">
                   <!---->
@@ -10925,7 +10925,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
                 <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div class="more-detail">
                     <p class="title"><b>集群名称:</b></p>
                     <p class="content">集群测试4</p><br>
@@ -10951,7 +10951,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col>
@@ -10966,7 +10966,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                     <div>FirstName</div>
                     <div class="t-table__cell--filter">
                       <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg>
                       </div>
@@ -10978,7 +10978,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                     <div>LastName</div>
                     <div class="t-table__cell--filter">
                       <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg>
                       </div>
@@ -10990,7 +10990,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                     <div>Email</div>
                     <div class="t-table__cell--filter">
                       <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg>
                       </div>
@@ -11002,7 +11002,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                     <div>Date</div>
                     <div class="t-table__cell--filter">
                       <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                        <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg>
                       </div>
@@ -11011,7 +11011,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="key" class="" key="1">
                 <td class="" key="firstName" length="4">Eric</td>
                 <td class="" key="lastName" length="4">Spinke</td>
@@ -11066,7 +11066,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
   <div style="width:100%;">
     <div class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;">
@@ -11080,7 +11080,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table__cell--fixed-left align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
                 <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
                 <td class="" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
@@ -11090,9 +11090,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
                 <td class="t-table__cell--fixed-right" key="operation" colspan="1" rowspan="1" style="position:sticky;right:0px;">操作</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="index" class="" key="0">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">0</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">0</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11102,7 +11102,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="1">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">1</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">1</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11112,7 +11112,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="2">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">2</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">2</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11122,7 +11122,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="3">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">3</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">3</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11132,7 +11132,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="4">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">4</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">4</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11154,7 +11154,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 <div style="width:100%;">
   <div class="t-table t-table__header--fixed">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <div class="t-table__header" style="padding-right:0px;">
           <table style="table-layout:fixed;padding-right:0px;">
             <colgroup>
@@ -11168,12 +11168,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="align-center" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
+                <td class="t-align-center" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
                 <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1">类型</td>
                 <td class="" key="default" colspan="1" rowspan="1">默认值</td>
                 <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-                <td class="text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+                <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
                 <td class="" key="description" colspan="1" rowspan="1">说明</td>
               </tr>
             </thead>
@@ -11190,185 +11190,185 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <col style="width:200px;">
               <col>
             </colgroup>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="index" class="" key="0">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">0</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">0</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">String</td>
                 <td class="" key="default" length="7">-</td>
                 <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="1">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">1</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">1</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Number</td>
                 <td class="" key="default" length="7">0</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="2">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">2</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">2</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">Array</td>
                 <td class="" key="default" length="7">[]</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="3">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">3</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">3</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Object</td>
                 <td class="" key="default" length="7">{}</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="4">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">4</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">4</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">String</td>
                 <td class="" key="default" length="7">-</td>
                 <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="5">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">5</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">5</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Number</td>
                 <td class="" key="default" length="7">0</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="6">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">6</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">6</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">Array</td>
                 <td class="" key="default" length="7">[]</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="7">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">7</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">7</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Object</td>
                 <td class="" key="default" length="7">{}</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="8">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">8</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">8</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">String</td>
                 <td class="" key="default" length="7">-</td>
                 <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="9">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">9</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">9</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Number</td>
                 <td class="" key="default" length="7">0</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="10">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">10</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">10</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">Array</td>
                 <td class="" key="default" length="7">[]</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="11">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">11</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">11</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Object</td>
                 <td class="" key="default" length="7">{}</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="12">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">12</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">12</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">String</td>
                 <td class="" key="default" length="7">-</td>
                 <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="13">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">13</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">13</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Number</td>
                 <td class="" key="default" length="7">0</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="14">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">14</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">14</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">Array</td>
                 <td class="" key="default" length="7">[]</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="15">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">15</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">15</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Object</td>
                 <td class="" key="default" length="7">{}</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="16">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">16</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">16</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">String</td>
                 <td class="" key="default" length="7">-</td>
                 <td class="" key="needed" length="7">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="17">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">17</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">17</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Number</td>
                 <td class="" key="default" length="7">0</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="18">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">18</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">18</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="7">Array</td>
                 <td class="" key="default" length="7">[]</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
               <tr rowKey="index" class="" key="19">
-                <td class="align-center" key="index" length="7" style="overflow:hidden;">19</td>
+                <td class="t-align-center" key="index" length="7" style="overflow:hidden;">19</td>
                 <td class="" key="platform" length="7" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="7">Object</td>
                 <td class="" key="default" length="7">{}</td>
                 <td class="" key="needed" length="7">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
                 <td class="" key="description" length="7">数据源</td>
               </tr>
             </tbody>
@@ -11384,7 +11384,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 <div style="width:100%;">
   <div class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed t-table__header--fixed">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <div class="t-table__header" style="padding-right:0px;">
           <table style="table-layout:fixed;padding-right:0px;">
             <colgroup>
@@ -11399,7 +11399,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table__cell--fixed-left align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
                 <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
                 <td class="" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
@@ -11423,9 +11423,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <col style="width:150px;">
               <col style="width:100px;">
             </colgroup>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="index" class="" key="0">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">0</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">0</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11435,7 +11435,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="1">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">1</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">1</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11445,7 +11445,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="2">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">2</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">2</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11455,7 +11455,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="3">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">3</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">3</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11465,7 +11465,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="4">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">4</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">4</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11475,7 +11475,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="5">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">5</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">5</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11485,7 +11485,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="6">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">6</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">6</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11495,7 +11495,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="7">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">7</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">7</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11505,7 +11505,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="8">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">8</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">8</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11515,7 +11515,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="9">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">9</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">9</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11525,7 +11525,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="10">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">10</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">10</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11535,7 +11535,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="11">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">11</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">11</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11545,7 +11545,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="12">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">12</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">12</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11555,7 +11555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="13">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">13</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">13</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11565,7 +11565,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="14">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">14</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">14</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11575,7 +11575,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="15">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">15</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">15</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11585,7 +11585,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="16">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">16</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">16</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">String</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">-</td>
@@ -11595,7 +11595,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="17">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">17</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">17</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">0</td>
@@ -11605,7 +11605,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="18">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">18</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">18</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
@@ -11615,7 +11615,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
                 <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
               </tr>
               <tr rowKey="index" class="" key="19">
-                <td class="t-table__cell--fixed-left align-center" key="index" length="8" style="position:sticky;left:0px;">19</td>
+                <td class="t-table__cell--fixed-left t-align-center" key="index" length="8" style="position:sticky;left:0px;">19</td>
                 <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
                 <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
                 <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
@@ -11639,7 +11639,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div style="width:100%;">
     <div class="t-table t-size-s t-table__header--fixed">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <div class="t-table__header" style="padding-right:0px;">
             <table style="table-layout:fixed;padding-right:0px;">
               <colgroup>
@@ -11652,12 +11652,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               </colgroup>
               <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
                 <tr>
-                  <td class="align-left text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
-                  <td class="align-left text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
-                  <td class="align-left text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
-                  <td class="align-left text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-                  <td class="align-left text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
-                  <td class="align-left text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
+                  <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
+                  <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+                  <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
+                  <td class="t-align-left t-text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
+                  <td class="t-align-left t-text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
+                  <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
                 </tr>
               </thead>
             </table>
@@ -11672,7 +11672,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
                 <col style="width:100px;min-width:100px;">
                 <col style="width:100px;min-width:100px;">
               </colgroup>
-              <tbody class="table-body"></tbody>
+              <tbody class="t-table__body"></tbody>
             </table>
           </div>
         </div>
@@ -11692,7 +11692,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div style="width:100%;">
     <div class="t-table t-size-s t-table__header--fixed">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <div class="t-table__header" style="padding-right:0px;">
             <table style="table-layout:fixed;padding-right:0px;">
               <colgroup>
@@ -11705,12 +11705,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               </colgroup>
               <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
                 <tr>
-                  <td class="align-left text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
-                  <td class="align-left text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
-                  <td class="align-left text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
-                  <td class="align-left text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-                  <td class="align-left text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
-                  <td class="align-left text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
+                  <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
+                  <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+                  <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
+                  <td class="t-align-left t-text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
+                  <td class="t-align-left t-text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
+                  <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
                 </tr>
               </thead>
             </table>
@@ -11725,7 +11725,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
                 <col style="width:100px;min-width:100px;">
                 <col style="width:100px;min-width:100px;">
               </colgroup>
-              <tbody class="table-body"></tbody>
+              <tbody class="t-table__body"></tbody>
             </table>
           </div>
         </div>
@@ -11747,7 +11747,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div style="width:100%;">
     <div class="t-table t-size-s t-table__header--fixed">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <div class="t-table__header" style="padding-right:0px;">
             <table style="table-layout:fixed;padding-right:0px;">
               <colgroup>
@@ -11760,12 +11760,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               </colgroup>
               <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
                 <tr>
-                  <td class="align-left text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
-                  <td class="align-left text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
-                  <td class="align-left text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
-                  <td class="align-left text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-                  <td class="align-left text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
-                  <td class="align-left text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
+                  <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
+                  <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+                  <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="1" style="overflow:hidden;">属性</td>
+                  <td class="t-align-left t-text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
+                  <td class="t-align-left t-text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
+                  <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
                 </tr>
               </thead>
             </table>
@@ -11780,7 +11780,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
                 <col style="width:100px;min-width:100px;">
                 <col style="width:100px;min-width:100px;">
               </colgroup>
-              <tbody class="table-body"></tbody>
+              <tbody class="t-table__body"></tbody>
             </table>
           </div>
         </div>
@@ -11803,7 +11803,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 <div style="width:100%;">
   <div class="t-table t-table--bordered t-size-s">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;min-width:100px;">
@@ -11814,48 +11814,48 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           </colgroup>
           <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object]">
             <tr>
-              <td class="align-left text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
-              <td class="align-left text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
-              <td class="align-left text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-              <td class="align-left text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
-              <td class="align-left text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
+              <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+              <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
+              <td class="t-align-left t-text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
+              <td class="t-align-left t-text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
+              <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
             </tr>
           </thead>
-          <tbody class="table-body">
+          <tbody class="t-table__body">
             <tr rowKey="default" class="" key="[]">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Array&lt;any&gt;</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test4" key="default" length="5" style="overflow:hidden;">[]</td>
-              <td colspan="2" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">Y</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="type" length="5" style="overflow:hidden;">Array&lt;any&gt;</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test4" key="default" length="5" style="overflow:hidden;">[]</td>
+              <td colspan="2" rowspan="1" class="t-align-left t-text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">Y</td>
             </tr>
             <tr rowKey="default" class="" key="&quot;&quot;">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
-              <td colspan="2" rowspan="2" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">String/&quot;&quot;</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">描述</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
+              <td colspan="2" rowspan="2" class="t-align-left t-text-ellipsis row" key="type" length="5" style="overflow:hidden;">String/&quot;&quot;</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="description" length="5" style="overflow:hidden;">描述</td>
             </tr>
             <tr rowKey="default" class="" key="{}">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">复杂类型</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test3" key="needed" length="5" style="overflow:hidden;border-left-width:1px;">Y</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="description" length="5" style="overflow:hidden;">复杂类型</td>
             </tr>
             <tr rowKey="default" class="" key="false">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Boolean</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test4" key="default" length="5" style="overflow:hidden;">false</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">N</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;">标识符</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="type" length="5" style="overflow:hidden;">Boolean</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test4" key="default" length="5" style="overflow:hidden;">false</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test3" key="needed" length="5" style="overflow:hidden;">N</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="description" length="5" style="overflow:hidden;">标识符</td>
             </tr>
             <tr rowKey="default" class="" key="-1 / N">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
-              <td colspan="2" rowspan="2" class="align-left text-ellipsis test4" key="default" length="5" style="overflow:hidden;">-1 / N</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">位置</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">公有</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
+              <td colspan="2" rowspan="2" class="t-align-left t-text-ellipsis test4" key="default" length="5" style="overflow:hidden;">-1 / N</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">位置</td>
             </tr>
             <tr rowKey="default" class="" key="-1">
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
-              <td colspan="1" rowspan="1" class="align-left text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">Number 类型</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis test" key="platform" length="5" style="overflow:hidden;">私有</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="type" length="5" style="overflow:hidden;">Number</td>
+              <td colspan="1" rowspan="1" class="t-align-left t-text-ellipsis row" key="description" length="5" style="overflow:hidden;border-left-width:1px;">Number 类型</td>
             </tr>
           </tbody>
         </table>
@@ -11869,7 +11869,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
 <div style="width:100%;">
   <div class="t-table t-table--bordered">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <table style="table-layout:fixed;">
           <colgroup>
             <col>
@@ -11881,33 +11881,33 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
               <td class="" colspan="2" rowspan="1">属性及说明</td>
             </tr>
             <tr>
-              <td class="align-left text-ellipsis test" key="platform" colspan="1" rowspan="2" style="overflow:hidden;">平台</td>
+              <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="2" style="overflow:hidden;">平台</td>
               <td class="" colspan="3" rowspan="1">类型及默认值</td>
-              <td class="align-left text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;">属性</td>
-              <td class="align-left text-ellipsis row" key="description" colspan="1" rowspan="2" style="overflow:hidden;">说明</td>
+              <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;">属性</td>
+              <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="2" style="overflow:hidden;">说明</td>
             </tr>
             <tr>
-              <td class="align-left text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;border-left-width:1px;">类型</td>
-              <td class="align-left text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-              <td class="align-left text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
+              <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;border-left-width:1px;">类型</td>
+              <td class="t-align-left t-text-ellipsis test4" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
+              <td class="t-align-left t-text-ellipsis test3" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
             </tr>
           </thead>
-          <tbody class="table-body">
+          <tbody class="t-table__body">
             <tr rowKey="property" class="" key="data">
-              <td class="align-left text-ellipsis test" key="platform" length="6" style="overflow:hidden;">公有</td>
-              <td class="align-left text-ellipsis row" key="type" length="6" style="overflow:hidden;">any[]</td>
-              <td class="align-left text-ellipsis test4" key="default" length="6" style="overflow:hidden;">[]</td>
-              <td class="align-left text-ellipsis test3" key="needed" length="6" style="overflow:hidden;">Y</td>
-              <td class="align-left text-ellipsis test2" key="property" length="6" style="overflow:hidden;">data</td>
-              <td class="align-left text-ellipsis row" key="description" length="6" style="overflow:hidden;">数据源</td>
+              <td class="t-align-left t-text-ellipsis test" key="platform" length="6" style="overflow:hidden;">公有</td>
+              <td class="t-align-left t-text-ellipsis row" key="type" length="6" style="overflow:hidden;">any[]</td>
+              <td class="t-align-left t-text-ellipsis test4" key="default" length="6" style="overflow:hidden;">[]</td>
+              <td class="t-align-left t-text-ellipsis test3" key="needed" length="6" style="overflow:hidden;">Y</td>
+              <td class="t-align-left t-text-ellipsis test2" key="property" length="6" style="overflow:hidden;">data</td>
+              <td class="t-align-left t-text-ellipsis row" key="description" length="6" style="overflow:hidden;">数据源</td>
             </tr>
             <tr rowKey="property" class="" key="rowkey">
-              <td class="align-left text-ellipsis test" key="platform" length="6" style="overflow:hidden;">公有</td>
-              <td class="align-left text-ellipsis row" key="type" length="6" style="overflow:hidden;">String</td>
-              <td class="align-left text-ellipsis test4" key="default" length="6" style="overflow:hidden;">-1</td>
-              <td class="align-left text-ellipsis test3" key="needed" length="6" style="overflow:hidden;">Y</td>
-              <td class="align-left text-ellipsis test2" key="property" length="6" style="overflow:hidden;">rowkey</td>
-              <td class="align-left text-ellipsis row" key="description" length="6" style="overflow:hidden;">指定rowkey</td>
+              <td class="t-align-left t-text-ellipsis test" key="platform" length="6" style="overflow:hidden;">公有</td>
+              <td class="t-align-left t-text-ellipsis row" key="type" length="6" style="overflow:hidden;">String</td>
+              <td class="t-align-left t-text-ellipsis test4" key="default" length="6" style="overflow:hidden;">-1</td>
+              <td class="t-align-left t-text-ellipsis test3" key="needed" length="6" style="overflow:hidden;">Y</td>
+              <td class="t-align-left t-text-ellipsis test2" key="property" length="6" style="overflow:hidden;">rowkey</td>
+              <td class="t-align-left t-text-ellipsis row" key="description" length="6" style="overflow:hidden;">指定rowkey</td>
             </tr>
           </tbody>
         </table>
@@ -11923,7 +11923,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
     <div style="width:100%;">
       <div class="t-table">
         <div class="t-loading__parent">
-          <div class="t-table-content">
+          <div class="t-table__content">
             <table style="table-layout:fixed;">
               <colgroup>
                 <col style="width:150px;">
@@ -11938,9 +11938,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
                     <div class="t-table__cell--sortable">
                       <div class="t-table__cell--title">
                         <div>状态</div>
-                        <div class="t-table__cell--sort-trigger t-table-double-icons">
+                        <div class="t-table__cell--sort-trigger t-table__double-icons">
                           <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                            <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-table-sort-icon-active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                            <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-table__sort-icon--active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                           </div>
                         </div>
                       </div>
@@ -11950,9 +11950,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
                     <div class="t-table__cell--sortable">
                       <div class="t-table__cell--title">
                         <div>存活时间(s)</div>
-                        <div class="t-table__cell--sort-trigger t-table-double-icons">
+                        <div class="t-table__cell--sort-trigger t-table__double-icons">
                           <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                            <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-table-sort-icon-active t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-icon-sort-default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                            <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-table__sort-icon--active t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-icon-sort--default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                           </div>
                         </div>
                       </div>
@@ -11961,7 +11961,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
                   <td class="" key="owner" colspan="1" rowspan="1" style="overflow:hidden;">管理员</td>
                 </tr>
               </thead>
-              <tbody class="table-body">
+              <tbody class="t-table__body">
                 <tr rowKey="id" class="" key="1">
                   <td class="" key="instance" length="4" style="overflow:hidden;">JQTest1</td>
                   <td class="" key="status" length="4" style="overflow:hidden;">
@@ -12017,7 +12017,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;">
@@ -12029,59 +12029,59 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
+                <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
                 <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1">类型</td>
                 <td class="" key="default" colspan="1" rowspan="1">默认值</td>
                 <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-                <td class="text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+                <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="index" class="" key="0">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">0</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">0</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">String</td>
                 <td class="" key="default" length="6">-</td>
                 <td class="" key="needed" length="6">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="1">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">1</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="6">Number</td>
                 <td class="" key="default" length="6">0</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="2">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">2</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">Array</td>
                 <td class="" key="default" length="6">[]</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="3">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">3</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
                 <td class="" key="type" length="6">Object</td>
                 <td class="" key="default" length="6">{}</td>
                 <td class="" key="needed" length="6">否</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               </tr>
               <tr rowKey="index" class="" key="4">
-                <td class="align-center row" key="index" length="6" style="overflow:hidden;">4</td>
+                <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
                 <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
                 <td class="" key="type" length="6">String</td>
                 <td class="" key="default" length="6">-</td>
                 <td class="" key="needed" length="6">是</td>
-                <td class="text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+                <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="t-table-pagination">
+        <div class="t-table__pagination">
           <div class="t-pagination t-size-m">
             <div class="t-pagination__total">共 60 项数据</div>
             <div class="t-select__wrap t-pagination__select">
@@ -12120,9 +12120,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
 <div style="width:100%;">
-  <div class="t-table t-table--bordered t-table--striped t-table-valign__top">
+  <div class="t-table t-table--bordered t-table--striped t-table--align-top">
     <div class="t-loading__parent">
-      <div class="t-table-content">
+      <div class="t-table__content">
         <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:200px;">
@@ -12138,11 +12138,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
               <td class="" key="email" colspan="1" rowspan="1" style="overflow:hidden;">邮箱</td>
             </tr>
           </thead>
-          <tbody class="table-body"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
-      <div class="t-table--empty">暂无数据</div>
-      <div class="t-table-pagination">
+      <div class="t-table__empty">暂无数据</div>
+      <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 0 项数据</div>
           <div class="t-select__wrap t-pagination__select">
@@ -12174,7 +12174,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:50px;">
@@ -12196,7 +12196,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="tid" class="t-table__row--selected" key="1">
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest1</td>
@@ -12255,7 +12255,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:50px;">
@@ -12277,7 +12277,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="id" class="" key="1">
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">JQTest1</td>
@@ -12342,7 +12342,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
     </div>
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:150px;">
@@ -12362,7 +12362,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
                 </td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="id" class="" key="1">
                 <td class="" key="instance" length="5" style="overflow:hidden;">JQTest1</td>
                 <td class="" key="status" length="5" style="overflow:hidden;">
@@ -12417,7 +12417,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
   <div style="width:100%;">
     <div class="t-table t-table--bordered">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:150px;">
@@ -12432,9 +12432,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>状态</div>
-                      <div class="t-table__cell--sort-trigger t-table-double-icons">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons">
                         <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                          <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-table-sort-icon-active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                          <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-table__sort-icon--active t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                         </div>
                       </div>
                     </div>
@@ -12444,9 +12444,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
-                      <div class="t-table__cell--sort-trigger t-table-double-icons">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons">
                         <div class="t-popup__reference" style="line-height:0px;position:relative;">
-                          <div name="t-popup--animation" appear="true"></div><span class="t-table-sort-icon t-icon-sort-default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table-sort-icon t-icon-sort-default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
+                          <div name="t-popup--animation" appear="true"></div><span class="t-table__sort-icon t-icon-sort--default t-table-sort-asc" style="transform:rotate(-180deg);top:-1px;left:0px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon t-icon-sort--default t-table-sort-desc" style="left:0px;bottom:-1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16px;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
                         </div>
                       </div>
                     </div>
@@ -12455,7 +12455,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
                 <td class="" key="owner" colspan="1" rowspan="1" style="overflow:hidden;">管理员</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="id" class="" key="1">
                 <td class="" key="instance" length="4" style="overflow:hidden;">JQTest1</td>
                 <td class="" key="status" length="4" style="overflow:hidden;">
@@ -12510,7 +12510,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:200px;">
@@ -12523,10 +12523,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="row" key="key" colspan="1" rowspan="1" style="overflow:hidden;">编号</td>
                 <td class="" key="platform" colspan="1" rowspan="1">平台</td>
                 <td class="" key="type" colspan="1" rowspan="1">类型</td>
-                <td class="align-center" key="operate" colspan="1" rowspan="1" style="overflow:hidden;">操作</td>
+                <td class="t-align-center" key="operate" colspan="1" rowspan="1" style="overflow:hidden;">操作</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="key" class="" key="我是 0 号">
                 <td class="row" key="key" length="4" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12536,7 +12536,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 </td>
                 <td class="" key="platform" length="4">共有</td>
                 <td class="" key="type" length="4">String</td>
-                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
                     <div>
                       <div class="t-popup__reference">
@@ -12555,7 +12555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 </td>
                 <td class="" key="platform" length="4">私有</td>
                 <td class="" key="type" length="4">Number</td>
-                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
                     <div>
                       <div class="t-popup__reference">
@@ -12574,7 +12574,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 </td>
                 <td class="" key="platform" length="4">共有</td>
                 <td class="" key="type" length="4">Array</td>
-                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
                     <div>
                       <div class="t-popup__reference">
@@ -12593,7 +12593,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 </td>
                 <td class="" key="platform" length="4">私有</td>
                 <td class="" key="type" length="4">Object</td>
-                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
                     <div>
                       <div class="t-popup__reference">
@@ -12612,7 +12612,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 </td>
                 <td class="" key="platform" length="4">共有</td>
                 <td class="" key="type" length="4">String</td>
-                <td class="align-center" key="operate" length="4" style="overflow:hidden;">
+                <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
                     <div>
                       <div class="t-popup__reference">
@@ -12646,7 +12646,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
   <div style="width:100%;">
     <div class="t-table">
       <div class="t-loading__parent">
-        <div class="t-table-content">
+        <div class="t-table__content">
           <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:48px;">
@@ -12658,7 +12658,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             </colgroup>
             <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
               <tr>
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
                 <td class="t-table__cell--selectable" key="row-select" colspan="1" rowspan="1" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">状态</td>
@@ -12666,9 +12666,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" colspan="1" rowspan="1">描述</td>
               </tr>
             </thead>
-            <tbody class="table-body">
+            <tbody class="t-table__body">
               <tr rowKey="key" class="" key="0">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12683,12 +12683,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" length="6">important.</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>这是展开项数据，我是 0 号</div>
                 </td>
               </tr>
               <tr rowKey="key" class="" key="1">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12703,12 +12703,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" length="6">important.</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>这是展开项数据，我是 1 号</div>
                 </td>
               </tr>
               <tr rowKey="key" class="" key="2">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12723,12 +12723,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" length="6">important.</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>这是展开项数据，我是 2 号</div>
                 </td>
               </tr>
               <tr rowKey="key" class="" key="3">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12743,12 +12743,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" length="6">important.</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>这是展开项数据，我是 3 号</div>
                 </td>
               </tr>
               <tr rowKey="key" class="" key="4">
-                <td class="t-table-expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table-expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
+                <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
                 <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
                 <td class="" key="instance" length="6" style="overflow:hidden;">
                   <div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle" style="margin-right:8px;">
@@ -12763,7 +12763,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
                 <td class="" key="description" length="6">important.</td>
               </tr>
               <tr style="display:none;">
-                <td colspan="6" class="t-table-expanded-cell" key="expanded-row" length="1">
+                <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
                   <div>这是展开项数据，我是 4 号</div>
                 </td>
               </tr>
