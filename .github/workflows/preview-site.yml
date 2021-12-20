@@ -1,25 +1,21 @@
-name: All_ON_PUSH
+name: PREVIEW_SITE
 
-on: push
+on:
+  pull_request:
+    branches: [develop, main, release]
 
 jobs:
-  All_ON_PUSH:
+  PREVIEW_SITE:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-      - name: check_email
-        run: |
-          log_emails=$(git log --pretty=format:"%ae" -1) && if [[ ${log_emails} =~ '@tencent.com' ]];then echo $log_emails && echo "邮箱校验非法" && exit 2;else echo "邮箱校验通过";fi
-        shell: bash
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: '16'
       - name: Install dependencies
-        run: |
-          npm i npm@latest -g
-          npm install
+        run: npm install
         shell: bash
       - run: echo '${{ github.ref }} ...  ${{ github.sha }}'
       - name: Build site
