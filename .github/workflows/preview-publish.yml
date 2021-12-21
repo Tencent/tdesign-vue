@@ -1,8 +1,8 @@
-name: Preview Publish
+name: PREVIEW_PUBLISH
 
 on:
   workflow_run:
-    workflows: ['Preview Build']
+    workflows: ['MAIN_PULL_REQUEST']
     types:
       - completed
 

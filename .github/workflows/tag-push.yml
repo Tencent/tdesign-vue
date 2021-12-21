@@ -14,9 +14,7 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: |
-          npm i npm@latest -g
-          npm install
+        run: npm install
         shell: bash
       - run: echo '${{ github.ref }} ...  ${{ github.ref_name }}'
       - name: Build site
