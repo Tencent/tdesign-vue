@@ -400,6 +400,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
+            placeholder="请输入"
             type="text"
           />
         </div>
@@ -652,6 +653,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
+            placeholder="请输入"
             type="text"
           />
         </div>
@@ -1375,6 +1377,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
+            placeholder="请输入"
             type="text"
           />
         </div>
@@ -2266,6 +2269,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         >
           <input
             class="t-input__inner"
+            placeholder="请输入"
             type="text"
           />
         </div>
