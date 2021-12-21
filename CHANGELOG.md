@@ -1,9 +1,11 @@
 ---
 title: CHANGELOG
 spline: explain
+toc: false
+docClass: timeline
 ---
 
-## 0.31.0 (2021-12-09)
+## 0.31.0 `2021-12-09`
 
 ### BREAKING CHANGES
 
@@ -40,7 +42,7 @@ spline: explain
   - 补充 `onChange` args
   - 空数据时下拉框宽度跟随 input 宽度设置
 
-## 0.30.0 (2021-12-02)
+## 0.30.0 `2021-12-02`
 
 ### BREAKING CHANGES
 
@@ -73,7 +75,7 @@ spline: explain
 - TreeSelect: 补充 `blur` 和 `focus` 事件参数 `FocusEvent` [@chaishi](https://github.com/chaishi)
 - Checkbox: 全选功能支持插槽写法 [@chaishi](https://github.com/chaishi)
 
-## 0.29.1 (2021-11-30)
+## 0.29.1 `2021-11-30`
 
 ### Bug Fixes
 
@@ -88,7 +90,7 @@ spline: explain
 - `firstDayOfWeek` API 重构，官网新增设置星期开始样例
 - 全局配置星期和月份文案格式修改
 
-## 0.29.0 (2021-11-24)
+## 0.29.0 `2021-11-24`
 
 ### BREAKING CHANGES
 
@@ -134,7 +136,7 @@ spline: explain
   - 上传成功后执行 `formatResponse`
 - Tabs: 优化 Panel 渲染实现 [@start940315](https://github.com/start940315)
 
-## 0.28.2 (2021-11-16)
+## 0.28.2 `2021-11-16`
 
 ### BREAKING CHANGES
 
@@ -177,7 +179,7 @@ spline: explain
 - Calendar: 组件及 ConfigProvider 均新增 `fillWithZero` 属性，用于控制日期以 'dd' 格式展示，[@PsTiu](https://github.com/PsTiu)
 - Tabs: 组件重构，修复滚动问题，[@start940315](https://github.com/start940315)
 
-## 0.27.2 (2021-11-09)
+## 0.27.2 `2021-11-09`
 
 ### Bug Fixes
 
@@ -188,7 +190,7 @@ spline: explain
 - Popconfirm: 确认及取消按钮支持 slot 用法 [@zhaodanchun](https://github.com/zhaodanchun)
 - Icon: 包中默认导出及注册 Icon 组件，兼容全量引入图标的用法，[@uyarn](https://github.com/uyarn)
 
-## 0.27.0 (2021-11-08)
+## 0.27.0 `2021-11-08`
 
 ### BREAKING CHANGES
 
@@ -228,7 +230,7 @@ spline: explain
   - `tree.checkStrictly` 控制树形结构的行选中（多选），父子行选中是否独立，默认独立，值为 true
   - `selectChange` 事件回调参数新增 `type`，用以区分操作类型
 
-## 0.26.0 (2021-11-01)
+## 0.26.0 `2021-11-01`
 
 ### Bug Fixes
 
@@ -254,7 +256,7 @@ spline: explain
   - 新增 `pick` 事件，面板中选中日期时触发，
   - 选择时间段时，开始时间优化为 `00:00:00`，结束时间为 `23:59:59`，
 
-## 0.25.0 (2021-10-21)
+## 0.25.0 `2021-10-21`
 
 ### BREAKING CHANGES
 
@@ -280,7 +282,7 @@ spline: explain
 - Dropdown: 支持 `dropdown-item` slot 用法，[@uyarn](https://github.com/uyarn)
 - Popup: 优化弹出层方向判断逻辑 [@uyarn](https://github.com/uyarn)
 
-## 0.24.0 (2021-10-14)
+## 0.24.0 `2021-10-14`
 
 ### BREAKING CHANGES
 
@@ -303,7 +305,7 @@ spline: explain
 - TreeSelect: 新增 `collapsedItems` 和 `minCollapsedNum`，用于支持选择过多时省略显示 [@Godlike-meteor](https://github.com/Godlike-meteor)
 - Select: 新增 `collapsedItems` 和 `minCollapsedNum`，用于支持选择过多时省略显示；增加 `onEnter` 事件，[@geff1991](https://github.com/geff1991)
 
-## 0.23.5 (2021-09-29)
+## 0.23.5 `2021-09-29`
 
 ### Bug Fixes
 
@@ -339,7 +341,7 @@ spline: explain
 
 优化点击动画实现方式，[@vnues](https://github.com/vnues)
 
-## 0.23.4 (2021-09-22)
+## 0.23.4 `2021-09-22`
 
 ### Bug Fixes
 
@@ -353,7 +355,7 @@ spline: explain
 - Menu: 支持超过两级的菜单展示，[@LeeJim](https://github.com/LeeJim)
 - Form: FormItem 支持单独设置 `labelWidth`、`labelAlign`，优先级高于 Form 的同名属性，[@HQ-Lin](https://github.com/HQ-Lin)
 
-## 0.23.2 (2021-09-16)
+## 0.23.2 `2021-09-16`
 
 ### Bug Fixes
 
@@ -365,7 +367,7 @@ spline: explain
 
 - Textarea: 新增 `autosize` 属性，`autosize = true` 时允许文本框高度自动撑开，同时允许手动拖动控制高度
 
-## 0.23.1 (2021-09-14)
+## 0.23.1 `2021-09-14`
 
 ### BREAKING CHANGES
 
@@ -406,13 +408,13 @@ spline: explain
   - 新增 `content` 和 `default` 属性用于定制渲染子元素
 - Tooltip: 新增 `visibleChange` 事件
 
-## 0.22.8 (2021-09-03)
+## 0.22.8 `2021-09-03`
 
 ### Bug Fixes
 
 - Datepicker: 修复未设置 `disableDate` 属性时，时间选项被禁用的问题。
 
-## 0.22.7 (2021-09-03)
+## 0.22.7 `2021-09-03`
 
 ### Bug Fixes
 
@@ -439,7 +441,7 @@ spline: explain
   - 新增 `valueType` 属性，用于控制选中项选中时返回类型，可选值为 `value/object`
 - Table: 支持拖拽排序，使用参见官网 [示例](http://tdesign.tencent.com/vue/components/table#%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F)
 
-## 0.22.6 (2021-08-27)
+## 0.22.6 `2021-08-27`
 
 ### Bug Fixes
 
@@ -457,7 +459,7 @@ spline: explain
 
 - Select: 改进有较多 option 时卡顿的问题
 
-## 0.22.5 (2021-08-20)
+## 0.22.5 `2021-08-20`
 
 ### Bug Fixes
 
@@ -488,13 +490,13 @@ spline: explain
   - 支持键盘交互，
   - 支持数值为空的情况，
 
-## 0.22.3 (2021-08-11)
+## 0.22.3 `2021-08-11`
 
 ### Bug Fixes
 
 - 整理组件声明导出顺序，修复构建产物中组件样式优先级错误的问题
 
-## 0.22.2 (2021-08-11)
+## 0.22.2 `2021-08-11`
 
 ### Bug Fixes
 
@@ -510,7 +512,7 @@ spline: explain
 - Cascader: 增加展开动画
 - Tab: TabPanel `label` 支持 Slot 方式自定义标签内容
 
-## 0.22.1 (2021-08-05)
+## 0.22.1 `2021-08-05`
 
 ### Bug Fixes
 
@@ -527,7 +529,7 @@ spline: explain
   - 区间日期选择时，头部按钮不再同步前进、后退面板区间，支持跨多个月份日期选择，
 - DatePicker、TimePicker、TreeSelect、Select 组件统一增加展开收起动画；Select 箭头增加动画效果。
 
-## 0.22.0 (2021-07-29)
+## 0.22.0 `2021-07-29`
 
 ### Bug Fixes
 
@@ -551,13 +553,13 @@ spline: explain
 - Popup: `visible = true` 前不再创建 DOM 元素
 - 新增 Swiper 组件，见 [官网](https://tdesign.tencent.com/vue/components/swiper)
 
-## 0.21.5 (2021-07-21)
+## 0.21.5 `2021-07-21`
 
 ### Bug Fixes
 
 - Table: 修复 `rowKey` 值不为 `id` 时，`selectedRowData` 返回值为空的问题，
 
-## 0.21.4 (2021-07-21)
+## 0.21.4 `2021-07-21`
 
 ### Bug Fixes
 
@@ -580,7 +582,7 @@ spline: explain
 - TS 支持：导出所有组件 ts 定义，方便在 typescript 项目中使用组件
 - 支持 less@4.x 环境下编译
 
-## 0.21.0 (2021-07-14)
+## 0.21.0 `2021-07-14`
 
 ### BREAKING CHANGES
 
@@ -603,7 +605,7 @@ spline: explain
   - 新增支持排序功能
   - 新增支持过滤功能
 
-## 0.20.1 (2021-07-13)
+## 0.20.1 `2021-07-13`
 
 ### Bug Fixes
 
@@ -622,7 +624,7 @@ spline: explain
 - Upload: 输入框文件上传，新增上传状态显示
 - TreeSelect: `filterable` 和 `filter` 可以单独使用，`filter` 用于自定义本地搜索功能，`filterable` 和 `onSearch` 配合使用用作远程搜索功能配置，
 
-## 0.20.0 (2021-07-07)
+## 0.20.0 `2021-07-07`
 
 ### BREAKING CHANGES
 
@@ -641,7 +643,7 @@ spline: explain
 - Menu: 增加动画效果
 - 新增语言文本全局配置的组件：Tree、Select、TreeSelect
 
-## 0.19.0 (2021-07-02)
+## 0.19.0 `2021-07-02`
 
 ### BREAKING CHANGES
 
@@ -669,7 +671,7 @@ spline: explain
 
 - Form: 新增组件函数 `submit` 和 `reset`，用于处理提交和重置按钮不在 Form 表单内的场景
 
-## 0.18.0 (2021-06-24)
+## 0.18.0 `2021-06-24`
 
 ### BREAKING CHANGES
 
@@ -704,7 +706,7 @@ spline: explain
   - `visible-change` 事件新增参数 `PopupVisibleChangeContext`，用于描述事件来源
 - 新增语言文本全局配置的组件：Popconfirm、Pagination、Calendar、Transfer、Drawer、Dialog
 
-## 0.17.0 (2021-06-16)
+## 0.17.0 `2021-06-16`
 
 ### BREAKING CHANGES
 
@@ -736,7 +738,7 @@ spline: explain
   - meun 嵌套在 t-layout 中，会被 layout 影响背景色
 - Calendar: 新增自定义星期标题能力，见 [官网 demo](http://tdesign.tencent.com/vue/components/calendar#46-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%A8%E6%98%BE%E7%A4%BA)
 
-## 0.16.0 (2021-06-08)
+## 0.16.0 `2021-06-08`
 
 ### Bug Fixes
 
@@ -747,7 +749,7 @@ spline: explain
 
 - Dialog & Drawer: 默认 `z-index` 改为 css 控制
 
-## 0.15.3 (2021-06-03)
+## 0.15.3 `2021-06-03`
 
 ### Bug Fixes
 
@@ -762,7 +764,7 @@ spline: explain
 - Breadcrumb: 面包屑超长部分使用 tooltip 展示
 - 📦 打包构建：使用 `typescript2` 替代 `esbuild`
 
-## 0.15.2 (2021-05-27)
+## 0.15.2 `2021-05-27`
 
 ### BREAKING CHANGES
 
@@ -781,7 +783,7 @@ spline: explain
 - Popup: 支持通过接受 trigger 元素作为参数的函数定制 overlayStyle
 - Select: 扩展 `Options` 类型
 
-## 0.14.0 (2021-05-17)
+## 0.14.0 `2021-05-17`
 
 - Transfer: `page-change` 事件参数和 API 文档保持一致，由 `{page: pageInfo, context: { type: listType }}` 修改为 `(pageInfo, { type: listType })`
 
@@ -802,7 +804,7 @@ spline: explain
   - 支持自定义进度百分比
 - Tag: 支持禁用态设置
 
-## 0.13.0 (2021-04-30)
+## 0.13.0 `2021-04-30`
 
 ### BREAKING CHANGES
 
@@ -824,14 +826,14 @@ spline: explain
 
 - Upload: 新增 `formatResponse` API，用于上传成功后格式化响应数据
 
-## 0.12.1 (2021-04-26)
+## 0.12.1 `2021-04-26`
 
 ### Bug Fixes
 
 - Dialog: 修复组件按需加载场景下不支持插件方式使用的问题
 - Menu: 修复因依赖路径错误，导致组件库包引入后运行报错的问题
 
-## 0.12.0 (2021-04-22) 废弃，构建产物有问题，请直接升级到 0.12.1 版本
+## 0.12.0 `2021-04-22) 废弃，构建产物有问题，请直接升级到 0.12.1 版`
 
 ### BREAKING CHANGES
 
@@ -856,7 +858,7 @@ spline: explain
 - Pagination: 新增 current-change 事件，参数为 `(current, pageInfo)`
 - Message: 支持 `zIndex` 配置
 
-## 0.11.0 (2021-04-14)
+## 0.11.0 `2021-04-14`
 
 ### BREAKING CHANGES
 
@@ -882,7 +884,7 @@ spline: explain
   - 重构：`attach` 的实现和 Dialog 组件保持一致
   - `close` 事件新增参数 `{ trigger: EventSource; e: MouseEvent | KeyboardEvent }` `EventSource` 有如下枚举： `'keydownEsc' | 'clickCloseBtn' | 'clickCancel' | 'clickOverlay'`
 
-## 0.10.0 (2021-04-08)
+## 0.10.0 `2021-04-08`
 
 ### BREAKING CHANGES
 
@@ -905,7 +907,7 @@ spline: explain
 - Form: 新增 API `preventSubmitDefault`，用于控制是否阻止默认 submit 事件，默认值为 true
 - Table: 新增 `ellipsis` 配置，支持 hover 呈现完整的内容
 
-## 0.9.0 (2021-03-30)
+## 0.9.0 `2021-03-30`
 
 ### BREAKING CHANGES
 
@@ -927,7 +929,7 @@ spline: explain
   - 新增 `decimalPlaces`，支持配置小数位数
   - 其他调整详情参见
 
-## 0.8.0 (2021-03-23)
+## 0.8.0 `2021-03-23`
 
 ### BREAKING CHANGES
 
@@ -943,13 +945,13 @@ spline: explain
 - Table: 新增鼠标事件相关 API，支持非受控属性 defaultCurrent 和 defaultPagiSize 用法，详情参见
 - Pagination: 支持非受控属性 defaultCurrent 和 defaultPagiSize 用法
 
-## 0.7.1 (2021-03-11)
+## 0.7.1 `2021-03-11`
 
 ### Bug Fixes
 
 - Select: 修复构建产物 `@TdTypes/` 路径失效问题
 
-## 0.7.0 (2021-03-11)
+## 0.7.0 `2021-03-11`
 
 ### BREAKING CHANGES
 
@@ -963,7 +965,7 @@ spline: explain
 
 - Input: type 支持 Number 类型
 
-## 0.6.0 (2021-03-10)
+## 0.6.0 `2021-03-10`
 
 ### BREAKING CHANGES
 
@@ -980,7 +982,7 @@ spline: explain
 
 - Progress: label 支持 Slot/TNode 类型，详情参见
 
-## 0.5.0 (2021-02-24)
+## 0.5.0 `2021-02-24`
 
 ### BREAKING CHANGES
 
@@ -1000,7 +1002,7 @@ spline: explain
 
 - Form: rules 支持设置对象类型，
 
-## 0.4.0 (2021-02-07)
+## 0.4.0 `2021-02-07`
 
 ### BREAKING CHANGES
 
@@ -1018,7 +1020,7 @@ spline: explain
 
 - Tag: 新增 content 属性
 
-## 0.3.0 (2021-01-26)
+## 0.3.0 `2021-01-26`
 
 ### BREAKING CHANGES
 
@@ -1034,7 +1036,7 @@ spline: explain
 
 - Select: 多选且可搜索时，输入搜索项并选择一个选项后，保持搜索框 focusing
 
-## 0.2.5 (2021-01-20)
+## 0.2.5 `2021-01-20`
 
 ### BREAKING CHANGES
 
@@ -1055,13 +1057,13 @@ spline: explain
 - Tag: 增加 onClick & onClose 事件
 - Radio/RadioGroup: value 同时支持 String 和 Number 类型；Radio/RadioGroup 新增 onChange API
 
-## 0.2.4 (2021-01-14)
+## 0.2.4 `2021-01-14`
 
 ### Bug Fixes
 
 - Message/Notification: 插件无法弹出问题修复，
 
-## 0.2.3 (2021-01-12)
+## 0.2.3 `2021-01-12`
 
 ### BREAKING CHANGES
 
@@ -1084,7 +1086,7 @@ spline: explain
 - Table: 普通的加载状态，数据内容和加载状态互斥的，不共存,
 - Tooltip: 默认增加箭头样式，
 
-### 0.2.2 (2021-01-05)
+### 0.2.2 `2021-01-05`
 
 ### BREAKING CHANGES
 
@@ -1118,7 +1120,7 @@ spline: explain
 
 ---
 
-## 0.2.0 (2020-12-21)
+## 0.2.0 `2020-12-21`
 
 ### BREAKING CHANGES
 
