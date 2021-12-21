@@ -76,7 +76,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     popupClass(): ClassName {
       const { popupObject } = this;
-      return `${popupObject.overlayClassName} ${prefix}-select-dropdown narrow-scrollbar`;
+      return `${popupObject.overlayClassName} ${prefix}-select__dropdown narrow-scrollbar`;
     },
     isObjectValue(): boolean {
       return this.valueType === 'object';
@@ -171,7 +171,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     loadingTextSlot(): ScopedSlotReturnValue {
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
       return useLocale ? (
-        <div class={`${prefix}-select-empty`}>{this.t(this.global.loadingText)}</div>
+        <div class={`${prefix}-select__empty`}>{this.t(this.global.loadingText)}</div>
       ) : (
         renderTNodeJSX(this, 'loadingText')
       );
@@ -179,7 +179,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     emptySlot(): ScopedSlotReturnValue {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return useLocale ? (
-        <div class={`${prefix}-select-empty`}>{this.t(this.global.empty)}</div>
+        <div class={`${prefix}-select__empty`}>{this.t(this.global.empty)}</div>
       ) : (
         renderTNodeJSX(this, 'empty')
       );
@@ -375,7 +375,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         ref="input"
         v-show={this.showFilter}
         v-model={this.filterText}
-        class={`${prefix}-select-input`}
+        class={`${prefix}-select__input`}
         size={this.size}
         disabled={this.disabled}
         placeholder={this.filterPlaceholder}
@@ -415,7 +415,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       <div ref="treeSelect">
         <Popup
           ref="popup"
-          class={`${prefix}-select-popup-reference`}
+          class={`${prefix}-select__popup-reference`}
           visible={this.visible}
           disabled={this.disabled}
           placement={popupObject.placement}
@@ -426,39 +426,39 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
           expandAnimation={true}
         >
           <div class={classes} onmouseenter={() => (this.isHover = true)} onmouseleave={() => (this.isHover = false)}>
-            {this.prefixIconSlot && <span class={`${prefix}-select-left-icon`}>{this.prefixIconSlot[0]}</span>}
-            <span v-show={this.showPlaceholder} class={`${prefix}-select-placeholder`}>
+            {this.prefixIconSlot && <span class={`${prefix}-select__left-icon`}>{this.prefixIconSlot[0]}</span>}
+            <span v-show={this.showPlaceholder} class={`${prefix}-select__placeholder`}>
               {this.placeholder}
             </span>
             {tagItem}
             {collapsedItem}
             {!this.multiple && !this.showPlaceholder && !this.showFilter && (
-              <span title={this.selectedSingle} class={`${prefix}-select-selectedSingle`}>
+              <span title={this.selectedSingle} class={`${prefix}-select__single`}>
                 {this.selectedSingle}
               </span>
             )}
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
-                overlayClassName={`${prefix}-select-right-icon`}
+                overlayClassName={`${prefix}-select__right-icon`}
                 overlayStyle={iconStyle}
                 isActive={this.visible && !this.disabled}
               />
             )}
             <IconCloseCircleFilled
               v-show={this.showClose && !this.showLoading}
-              class={[`${prefix}-select-right-icon`, `${prefix}-select-right-icon__clear`]}
+              class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
               size={this.size}
               nativeOnClick={this.clear}
             />
             <Loading
               v-show={this.showLoading}
-              class={`${prefix}-select-right-icon ${prefix}-select-active-icon`}
+              class={`${prefix}-select__right-icon ${prefix}-select__active-icon`}
               size="small"
             />
           </div>
           <div slot="content">
-            <p v-show={this.showLoading} class={`${prefix}-select-loading-tips`}>
+            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips`}>
               {this.loadingTextSlot}
             </p>
             {treeItem}

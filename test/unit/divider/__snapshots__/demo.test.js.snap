@@ -107,7 +107,7 @@ exports[`Divider vertical demo works fine 1`] = `
   />
    
   <span>
-    合作
+    协作
   </span>
    
   <div
@@ -115,7 +115,7 @@ exports[`Divider vertical demo works fine 1`] = `
   />
    
   <span>
-    创新
+    创造
   </span>
 </div>
 `;

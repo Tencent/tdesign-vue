@@ -30,16 +30,13 @@ packageJSON.dependencies['tdesign-icons-vue'] = pkg.dependencies['tdesign-icons-
 
 const packageJSONContent = JSON.stringify(packageJSON, null, 2);
 
-/**
- * 处理 demo 内容，目前是只处理某些外部依赖
- * @param {string}} demoPath demo 路径
- */
+// TODO 改造codesanbox 使用vite 构建后可删除
 function getDemoContent(demoContent) {
-  return demoContent.replace(/@tencent\//g, '');
+  return demoContent.replace(/lang="jsx"/g, '');
 }
 
 export default {
-  name: "code-sandbox",
+  name: 'code-sandbox',
   props: {
     code: String,
     demoName: String,

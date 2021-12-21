@@ -75,6 +75,18 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     current(val) {
       this.jumpIndex = val;
     },
+    jumpIndex(val) {
+      if (val < 1) {
+        this.$nextTick(() => {
+          this.jumpIndex = 1;
+        });
+      }
+      if (val > this.pageCount) {
+        this.$nextTick(() => {
+          this.jumpIndex = this.pageCount;
+        });
+      }
+    },
   },
 
   computed: {
@@ -94,9 +106,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       return [`${name}__total`];
     },
     sizerClass(): ClassName {
-      return [
-        `${name}__select`,
-      ];
+      return [`${name}__select`];
     },
     preBtnClass(): ClassName {
       return [
@@ -132,9 +142,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       return [`${name}__jump`];
     },
     jumperInputClass(): ClassName {
-      return [
-        `${name}__input`,
-      ];
+      return [`${name}__input`];
     },
     simpleClass(): ClassName {
       return [`${name}__select`];

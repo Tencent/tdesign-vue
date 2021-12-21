@@ -1,6 +1,4 @@
-import Vue, {
-  VNode, VueConstructor,
-} from 'vue';
+import Vue, { VNode, VueConstructor } from 'vue';
 import debounce from 'lodash/debounce';
 import {
   ChevronLeftIcon as TIconChevronLeft,
@@ -63,11 +61,11 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     TIconClose,
     TIconAdd,
   },
-  ...({ resizeObserver: null }),
+  ...{ resizeObserver: null },
   props: {
     theme: tabProps.theme,
     panels: {
-      type: Array as { new(): Array<InstanceType<typeof TTabPanel>> },
+      type: Array as { new (): Array<InstanceType<typeof TTabPanel>> },
       default: (): Array<InstanceType<typeof TTabPanel>> => [] as Array<InstanceType<typeof TTabPanel>>,
     },
     value: tabProps.value,
@@ -156,10 +154,17 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       };
     },
     navsWrapClass(): Array<string | { [key: string]: boolean }> {
-      return [`${prefix}-tabs__nav-wrap`, `${prefix}-is-smooth`, { [`${prefix}-is-vertical`]: this.placement === 'left' || this.placement === 'right' }];
+      return [
+        `${prefix}-tabs__nav-wrap`,
+        `${prefix}-is-smooth`,
+        { [`${prefix}-is-vertical`]: this.placement === 'left' || this.placement === 'right' },
+      ];
     },
     navBarClass(): Array<string> {
       return [`${prefix}-tabs__bar`, `${prefix}-is-${this.placement}`];
+    },
+    navsContainerStyle(): object {
+      return this.addable ? { 'min-height': '48px' } : null;
     },
   },
   watch: {
@@ -277,7 +282,10 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
       const containerWidth = getDomWidth(container);
       const wrapWidth = getDomWidth(wrap);
-      this.scrollLeft = Math.min(this.scrollLeft + containerWidth, wrapWidth - containerWidth + rightOperationsZoneWidth - rightIconWidth);
+      this.scrollLeft = Math.min(
+        this.scrollLeft + containerWidth,
+        wrapWidth - containerWidth + rightOperationsZoneWidth - rightIconWidth,
+      );
     },
 
     shouldMoveToLeftSide(activeTabEl: HTMLElement) {
@@ -367,7 +375,10 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       if (!wrap || !container) return false;
       const containerWidth = getDomWidth(container);
       const wrapWidth = getDomWidth(wrap);
-      return this.fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth, wrapWidth) || this.fixIfLastItemNotTouchRightSide(containerWidth, wrapWidth);
+      return (
+        this.fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth, wrapWidth)
+        || this.fixIfLastItemNotTouchRightSide(containerWidth, wrapWidth)
+      );
     },
 
     handleAddTab(e: MouseEvent) {
@@ -387,61 +398,37 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     },
 
     renderArrows() {
-      return ([
+      return [
         <div ref="leftOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--left`]}>
           <transition name="fade" mode="out-in" appear>
-            {
-              this.canToLeft
-                ? <div
-                  ref="leftIcon"
-                  class={this.leftIconClass}
-                  onClick={this.handleScrollToLeft}
-                >
-                  <TIconChevronLeft />
-                </div>
-                : null
-            }
+            {this.canToLeft ? (
+              <div ref="leftIcon" class={this.leftIconClass} onClick={this.handleScrollToLeft}>
+                <TIconChevronLeft />
+              </div>
+            ) : null}
           </transition>
         </div>,
         <div ref="rightOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--right`]}>
           <transition name="fade" mode="out-in" appear>
-            {
-              this.canToRight
-                ? <div
-                  ref="rightIcon"
-                  class={this.rightIconClass}
-                  onClick={this.handleScrollToRight}
-                >
-                  <TIconChevronRight></TIconChevronRight>
-                </div>
-                : null
-            }
-          </transition>
-          {
-            this.theme === 'card' && this.addable
-              ? <div
-                class={this.addIconClass}
-                onClick={this.handleAddTab}
-              >
-                <TIconAdd></TIconAdd>
+            {this.canToRight ? (
+              <div ref="rightIcon" class={this.rightIconClass} onClick={this.handleScrollToRight}>
+                <TIconChevronRight></TIconChevronRight>
               </div>
-              : null
-          }
+            ) : null}
+          </transition>
+          {this.theme === 'card' && this.addable ? (
+            <div class={this.addIconClass} onClick={this.handleAddTab}>
+              <TIconAdd></TIconAdd>
+            </div>
+          ) : null}
         </div>,
-      ]);
+      ];
     },
     renderNavs() {
       return (
-        <div
-          class={this.navContainerClass}
-        >
-          <div
-            class={this.navScrollContainerClass}
-          >
-            <div
-              ref="navsWrap"
-              class={this.navsWrapClass}
-              style={this.wrapTransformStyle}>
+        <div class={this.navContainerClass}>
+          <div class={this.navScrollContainerClass}>
+            <div ref="navsWrap" class={this.navsWrapClass} style={this.wrapTransformStyle}>
               {this.renderNavBar()}
               {this.navs}
             </div>
@@ -451,9 +438,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     },
     renderNavBar() {
       if (this.theme === 'card') return null;
-      return (
-        <div class={this.navBarClass} style={this.navBarStyle}></div>
-      );
+      return <div class={this.navBarClass} style={this.navBarStyle}></div>;
     },
   },
   mounted() {
@@ -468,7 +453,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
   },
   render() {
     return (
-      <div ref="navsContainer" class={[`${prefix}-tabs__nav`]}>
+      <div ref="navsContainer" class={[`${prefix}-tabs__nav`]} style={this.navsContainerStyle}>
         {this.renderArrows()}
         {this.renderNavs()}
       </div>
