@@ -5,7 +5,7 @@ on:
     branches: [develop, main]
 
 jobs:
-  Check:
+  MAIN_PULL_REQUEST:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
         shell: bash
       - run: npm run lint
       - run: npm run test
-      
+
       - name: Build site
         run: npm run site:preview
       - run: |
