@@ -34,6 +34,7 @@
     "update:coverage-badge": "node script/test/generate-coverage.js",
     "cypress": "cypress run --config-file script/test/cypress.json",
     "cypress-gui": "cypress open --config-file script/test/cypress.json",
+    "start": "npm run dev",
     "dev": "cd site && npm run dev",
     "site": "cd site && npm run build",
     "site:preview": "cd site && npm run build:preview",
