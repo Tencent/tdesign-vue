@@ -1288,6 +1288,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -1306,6 +1307,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -1324,6 +1326,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -3966,6 +3969,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
     >
       <input
         class="t-input__inner"
+        placeholder="请输入"
         type="text"
       />
     </div>
@@ -7142,6 +7146,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -7487,6 +7492,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -7505,6 +7511,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>
@@ -7523,6 +7530,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           type="text"
         />
       </div>

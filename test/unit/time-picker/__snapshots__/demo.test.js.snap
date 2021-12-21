@@ -806,6 +806,7 @@ exports[`Time-picker base demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           readonly="readonly"
           type="text"
         />
@@ -1668,6 +1669,7 @@ exports[`Time-picker base demo works fine 1`] = `
       >
         <input
           class="t-input__inner"
+          placeholder="请输入"
           readonly="readonly"
           type="text"
         />
