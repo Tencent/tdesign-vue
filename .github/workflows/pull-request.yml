@@ -28,7 +28,7 @@ jobs:
       # - name: Build site
         # run: npm run site:preview
       - name: testecho
-        run: echo ${{ TDESIGN_TEST_TOKEN }}
+        run: echo ${{ secrets.TDESIGN_TEST_TOKEN }}
       # - name: Upload surge service and generate preview URL
       #   id: deploy
       #   run: |
