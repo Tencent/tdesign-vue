@@ -34,7 +34,7 @@
     "update:coverage-badge": "node script/test/generate-coverage.js",
     "cypress": "cypress run --config-file script/test/cypress.json",
     "cypress-gui": "cypress open --config-file script/test/cypress.json",
-    "start": "npm run dev",
+    "start": "cd site && npm run dev",
     "dev": "cd site && npm run dev",
     "site": "cd site && npm run build",
     "site:preview": "cd site && npm run build:preview",
@@ -59,7 +59,7 @@
     "test:e2e-gui": "cypress open --config-file script/test/cypress.json",
     "test:build-files": "node script/test/build-files.js",
     "init": "node script/init",
-    "changelog": "publish-cli changelog",
+    "changelog": "node script/generate-changelog.js",
     "robot": "publish-cli robot-msg",
     "prepare": "husky install"
   },
