@@ -137,6 +137,7 @@ export default Vue.extend({
         class: [...fixedClass, ...attrClass].filter((notEmpty) => notEmpty).join(' '),
         key: colKey,
       },
+      style,
     };
     // 如果被截断给加上 Tooltip 提示
     if (ellipsis && this.isCutOff) {
@@ -156,11 +157,7 @@ export default Vue.extend({
         </Popup>
       );
     }
-    return (
-      <td style={style} {...tdAttrs}>
-        {cellContent}
-      </td>
-    );
+    return <td {...tdAttrs}>{cellContent}</td>;
   },
   mounted() {
     this.init();
