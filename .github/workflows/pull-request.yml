@@ -5,7 +5,7 @@ on:
     branches: [develop, main]
 
 jobs:
-  MAIN_PULL_REQUEST:
+  Check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,9 +19,44 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: |
-          npm i npm@latest -g
-          npm install
+        run: npm install
         shell: bash
       - run: npm run lint
       - run: npm run test
+  
+  PrePreview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+        shell: bash
+        
+      - name: Build site
+        run: npm run site:preview
+
+      - run: |
+          zip -r _site.zip _site
+      - name: upload _site artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: _site
+          path: _site.zip
+          retention-days: 5
+
+      - name: Save PR number
+        if: ${{ always() }}
+        run: echo ${{ github.event.number }} > ./pr-id.txt
+
+      - name: Upload PR number
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr
+          path: ./pr-id.txt
