@@ -120,8 +120,7 @@ export default {
         this.$message.warning(firstError);
       }
     },
-    getStatusIcon(h) {
-      console.log(h);
+    getStatusIcon() {
       return <Icon name="help-circle" size="16px" style="color: #0006" />;
     },
   },
