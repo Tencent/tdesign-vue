@@ -3,10 +3,7 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import {
-  ChevronDownIcon as TIconChevronDown,
-  CloseCircleFilledIcon as TIconClose,
-} from 'tdesign-icons-vue';
+import { ChevronDownIcon as TIconChevronDown, CloseCircleFilledIcon as TIconClose } from 'tdesign-icons-vue';
 import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
@@ -116,12 +113,11 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     showPlaceholder(): boolean {
       if (
         !this.showFilter
-          && ((!this.multiple && !this.selectedSingle)
+        && ((!this.multiple && !this.selectedSingle)
           || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
-          || (Array.isArray(this.value) && !this.value.length)
+          || (this.multiple && !this.selectedMultiple.length)
           || this.value === null
-          || this.value === undefined
-          || this.value === '')
+          || this.value === undefined)
       ) {
         return true;
       }
@@ -130,7 +126,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     // 是否为分组选择器
     isGroupOption(): boolean {
       const firstOption = this.options?.[0];
-      return !!(firstOption && ('group' in firstOption) && ('children' in firstOption));
+      return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
     },
     filterPlaceholder(): string {
       if (this.multiple && Array.isArray(this.value) && this.value.length) {
@@ -142,13 +138,13 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder;
     },
     showClose(): boolean {
-      return Boolean(this.clearable
-        && this.isHover
-        && !this.disabled
-        && (
-          (!this.multiple && (this.value || this.value === 0))
-          || (this.multiple && Array.isArray(this.value) && this.value.length)
-        ));
+      return Boolean(
+        this.clearable
+          && this.isHover
+          && !this.disabled
+          && ((!this.multiple && (this.value || this.value === 0))
+            || (this.multiple && Array.isArray(this.value) && this.value.length)),
+      );
     },
     showArrow(): boolean {
       return (
@@ -208,17 +204,19 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return [];
     },
     popupObject(): PopupProps {
-      const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
+      const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;
       return propsObject;
     },
     filterOptions(): Array<TdOptionProps> {
       // filter优先级 filter方法>仅filterable
       if (isFunction(this.filter)) {
         return this.realOptions.filter((option) => this.filter(this.searchInput, option));
-      } if (this.filterable) {
+      }
+      if (this.filterable) {
         // 仅有filterable属性时，默认不区分大小写过滤label
-        return this.realOptions.filter((option) => option[this.realLabel].toString().toLowerCase()
-          .indexOf(this.searchInput.toString().toLowerCase()) !== -1);
+        return this.realOptions.filter(
+          (option) => option[this.realLabel].toString().toLowerCase().indexOf(this.searchInput.toString().toLowerCase()) !== -1,
+        );
       }
       return [];
     },
@@ -226,7 +224,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
       if (isFunction(this.onSearch) || this.$listeners.search) {
         return this.realOptions;
-      } if (this.canFilter && !this.creatable) {
+      }
+      if (this.canFilter && !this.creatable) {
         if (this.searchInput === '') {
           return this.realOptions;
         }
@@ -305,11 +304,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     multiLimitDisabled(value: string | number) {
       if (this.multiple && this.max) {
-        if (
-          Array.isArray(this.value)
-          && this.value.indexOf(value) === -1
-          && this.max <= this.value.length
-        ) {
+        if (Array.isArray(this.value) && this.value.indexOf(value) === -1 && this.max <= this.value.length) {
           return true;
         }
       }
@@ -394,7 +389,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     getOptions(option: OptionInstance) {
       // create option值不push到options里
       if (option.$el && option.$el.className && option.$el.className.indexOf(`${name}__create-option--special`) !== -1) return;
-      const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label);
+      const tmp = this.realOptions.filter(
+        (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
+      );
       if (!tmp.length) {
         this.hasOptions = true;
         const valueLabel = {};
@@ -480,7 +477,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           if (this.showCreateOption && this.hoverIndex === 0) {
             this.createOption(this.searchInput);
           }
-          this.hoverOptions[this.hoverIndex] && this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
+          this.hoverOptions[this.hoverIndex]
+            && this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
           break;
         case 'Escape':
         case 'Tab':
@@ -496,7 +494,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     arrowDownOption() {
       let count = 0;
       while (this.hoverIndex < this.hoverOptions.length) {
-        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) { break; }
+        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
+          break;
+        }
         if (this.hoverIndex === this.hoverOptions.length - 1) {
           this.hoverIndex = 0;
         } else {
@@ -509,7 +509,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     arrowUpOption() {
       let count = 0;
       while (this.hoverIndex > -1) {
-        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) { break; }
+        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
+          break;
+        }
         if (this.hoverIndex === 0) {
           this.hoverIndex = this.hoverOptions.length - 1;
         } else {
@@ -579,13 +581,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           </span>
         );
       }
-      return (
-        <t-icon-close
-          class={closeIconClass}
-          size={this.size}
-          nativeOnClick={this.clearSelect}
-        />
-      );
+      return <t-icon-close class={closeIconClass} size={this.size} nativeOnClick={this.clearSelect} />;
     },
     doFocus() {
       const input = this.$refs.input as HTMLElement;
@@ -630,11 +626,16 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     initHoverindex() {
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
-        const targetIndex = Object.keys(this.hoverOptions).filter((i) => get(this.hoverOptions[i], this.realValue) === this.value);
+        const targetIndex = Object.keys(this.hoverOptions).filter(
+          (i) => get(this.hoverOptions[i], this.realValue) === this.value,
+        );
         this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
       } else if (this.multiple && Array.isArray(this.value) && this.value.length) {
         this.value.some((item: string | number | TdOptionProps) => {
-          const targetIndex = Object.keys(this.hoverOptions).filter((i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue)) || get(this.hoverOptions[i], this.realValue) === item);
+          const targetIndex = Object.keys(this.hoverOptions).filter(
+            (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
+              || get(this.hoverOptions[i], this.realValue) === item,
+          );
           this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
           return this.hoverIndex !== -1;
         });
@@ -669,35 +670,28 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     const loadingTextSlot = this.getLoadingText();
     const placeholderText = this.getPlaceholderText();
     return (
-      <div ref='select' class={`${name}__wrap`}>
+      <div ref="select" class={`${name}__wrap`}>
         <Popup
-          ref='popup'
+          ref="popup"
           visible={this.visible}
           class={`${name}__popup-reference`}
           disabled={disabled}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
-          { ...{ props: { ...popupObject, overlayClassName: popClass } } }
+          {...{ props: { ...popupObject, overlayClassName: popClass } }}
         >
           <div
             class={classes}
-            onMouseenter={ this.hoverEvent.bind(null, true) }
-            onMouseleave={ this.hoverEvent.bind(null, false) }
+            onMouseenter={this.hoverEvent.bind(null, true)}
+            onMouseleave={this.hoverEvent.bind(null, false)}
           >
-            {
-              prefixIconSlot && (<span class="t-select__left-icon">{ prefixIconSlot[0] }</span>)
-            }
-            {
-              showPlaceholder && (
-                <span class={`${name}__placeholder`}> { placeholderText }</span>
-              )
-            }
+            {prefixIconSlot && <span class="t-select__left-icon">{prefixIconSlot[0]}</span>}
+            {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
             {this.valueDisplay || this.$scopedSlots.valueDisplay
               ? renderTNodeJSX(this, 'valueDisplay', {
                 params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
               })
-              : (
-                selectedMultiple.map((item: TdOptionProps, index: number) => (
+              : selectedMultiple.map((item: TdOptionProps, index: number) => (
                   <tag
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
@@ -709,78 +703,60 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     title={get(item, realLabel)}
                     onClose={this.removeTag.bind(null, index)}
                   >
-                    { get(item, realLabel) }
+                    {get(item, realLabel)}
                   </tag>
-                ))
-              )
-            }
-            {this.collapsedItems || this.$scopedSlots.collapsedItems
-              ? renderTNodeJSX(this, 'collapsedItems', {
+              ))}
+            {this.collapsedItems || this.$scopedSlots.collapsedItems ? (
+              renderTNodeJSX(this, 'collapsedItems', {
                 params: {
                   value: selectedMultiple,
                   collapsedSelectedItems: selectedMultiple.slice(this.minCollapsedNum),
                   count: selectedMultiple.length - this.minCollapsedNum,
                 },
               })
-              : <tag
-                  v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum}
-                  size={size}
-                >
-                  { `+${selectedMultiple.length - this.minCollapsedNum}` }
-                </tag>
-            }
-            {!multiple && !showPlaceholder && !showFilter && (
-              <span title={selectedSingle} class={`${name}__single`}>{ selectedSingle }</span>
+            ) : (
+              <tag v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum} size={size}>
+                {`+${selectedMultiple.length - this.minCollapsedNum}`}
+              </tag>
             )}
-            {
-              showFilter && (
-                <t-input
-                  ref='input'
-                  v-model={this.searchInput}
-                  size={size}
-                  placeholder={filterPlaceholder}
-                  disabled={disabled}
-                  class={`${name}__input`}
-                  readonly={!this.visible || !this.showFilter}
-                  onFocus={this.focus}
-                  onBlur={this.blur}
-                  onEnter={this.enter}
-                />
-              )
-            }
-            {
-              this.showArrow && !this.showLoading && (
-                <fake-arrow overlayClassName={`${name}__right-icon`} isActive={ this.visible && !this.disabled}/>
-              )
-            }
-            {
-              this.showClose && !this.showLoading && this.getCloseIcon()
-            }
-            {
-              this.showLoading && (
-                <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small"/>
-              )
-            }
+            {!multiple && !showPlaceholder && !showFilter && (
+              <span title={selectedSingle} class={`${name}__single`}>
+                {selectedSingle}
+              </span>
+            )}
+            {showFilter && (
+              <t-input
+                ref="input"
+                v-model={this.searchInput}
+                size={size}
+                placeholder={filterPlaceholder}
+                disabled={disabled}
+                class={`${name}__input`}
+                readonly={!this.visible || !this.showFilter}
+                onFocus={this.focus}
+                onBlur={this.blur}
+                onEnter={this.enter}
+              />
+            )}
+            {this.showArrow && !this.showLoading && (
+              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
+            )}
+            {this.showClose && !this.showLoading && this.getCloseIcon()}
+            {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
           </div>
-          <div slot='content'>
+          <div slot="content">
             <ul v-show={showCreateOption} class={`${name}__create-option`}>
               <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
             </ul>
-            {
-              loading && (
-                <li class={tipsClass}>{ loadingTextSlot || loadingText }</li>
-              )
-            }
-            {
-              !loading && !displayOptions.length && !showCreateOption && (
-                <li class={emptyClass}>{ emptySlot }</li>
-              )
-            }
-            {
-              !hasOptions && displayOptions.length && !loading
-                ? this.renderDataWithOptions()
-                : <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>{children}</ul>
-            }
+            {loading && <li class={tipsClass}>{loadingTextSlot || loadingText}</li>}
+            {!loading && !displayOptions.length && !showCreateOption && <li class={emptyClass}>{emptySlot}</li>}
+            {!hasOptions && displayOptions.length && !loading ? (
+              this.renderDataWithOptions()
+            ) : (
+              <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
+                {children}
+              </ul>
+            )}
           </div>
         </Popup>
       </div>

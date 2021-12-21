@@ -3139,15 +3139,15 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
     </div>
   </div> <br><br>
   <div style="width:400px;">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select-placeholder">see empty data in TreeSelect</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="see empty data in TreeSelect" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m"><span class="t-select__placeholder">see empty data in TreeSelect</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="see empty data in TreeSelect" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -3156,13 +3156,13 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
     </div>
   </div> <br><br>
   <div style="width:400px;">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select-placeholder">see loading text in TreeSelect</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="see loading text in TreeSelect" type="text" value="" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+      <div class="t-select t-size-m"><span class="t-select__placeholder">see loading text in TreeSelect</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="see loading text in TreeSelect" type="text" value="" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -3171,15 +3171,15 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
     </div>
   </div> <br><br>
   <div style="width:400px;">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select-placeholder" style="display:none;">tree select</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input"><input placeholder="tree select" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m"><span class="t-select__placeholder" style="display:none;">tree select</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input"><input placeholder="tree select" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14877,15 +14877,15 @@ exports[`ssr snapshot test renders ./examples/tree/demos/sync.vue correctly 1`] 
 exports[`ssr snapshot test renders ./examples/tree-select/demos/base.vue correctly 1`] = `
 <div class="tdesign-tree-select-base">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input"><input placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input"><input placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14899,15 +14899,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/base.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue correctly 1`] = `
 <div class="tdesign-tree-select-collapsed">
   <div class="demo-space">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14916,15 +14916,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
     </div>
   </div>
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14938,15 +14938,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
 exports[`ssr snapshot test renders ./examples/tree-select/demos/dvalue.vue correctly 1`] = `
 <div class="tdesign-tree-select-base">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen,guangzhou" class="t-select-selectedSingle">shenzhen,guangzhou</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="shenzhen,guangzhou" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen,guangzhou" class="t-select__single">shenzhen,guangzhou</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="shenzhen,guangzhou" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14965,15 +14965,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/filterable.vue c
     </div>
   </div>
   <div style="width:300px;">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen" class="t-select-selectedSingle">shenzhen</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen" class="t-select__single">shenzhen</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -14987,15 +14987,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/filterable.vue c
 exports[`ssr snapshot test renders ./examples/tree-select/demos/lazy.vue correctly 1`] = `
 <div class="tdesign-tree-select-lazy">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select-placeholder">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m"><span class="t-select__placeholder">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -15009,15 +15009,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/lazy.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/multiple.vue correctly 1`] = `
 <div class="tdesign-tree-select-multiple">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -15031,15 +15031,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/multiple.vue cor
 exports[`ssr snapshot test renders ./examples/tree-select/demos/prefix.vue correctly 1`] = `
 <div class="tdesign-tree-select-prefix">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-has-prefix"><span class="t-select-left-icon"><svg class="t-icon t-icon-user"><use href="#t-icon-user"></use></svg></span><span class="t-select-placeholder">请输入</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-has-prefix"><span class="t-select__left-icon"><svg class="t-icon t-icon-user"><use href="#t-icon-user"></use></svg></span><span class="t-select__placeholder">请输入</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -15053,15 +15053,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/prefix.vue corre
 exports[`ssr snapshot test renders ./examples/tree-select/demos/props.vue correctly 1`] = `
 <div class="tdesign-tree-select-base">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen" class="t-select-selectedSingle">shenzhen</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen" class="t-select__single">shenzhen</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -15075,15 +15075,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/props.vue correc
 exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue correctly 1`] = `
 <div class="tdesign-tree-select-base">
   <div>
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="[object Object]" class="t-select-selectedSingle">[object Object]</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input placeholder="[object Object]" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="[object Object]" class="t-select__single">[object Object]</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="[object Object]" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>
@@ -15092,15 +15092,15 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue co
     </div>
   </div>
   <div class="tree-select-multiple">
-    <div class="t-popup__reference t-select-popup-reference">
+    <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m t-select-selected"><span class="t-select-placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
-        <div class="t-input t-size-m t-select-input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select-right-icon" style="font-size:medium;">
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+        <div class="t-input t-size-m t-select__input" style="display:none;"><input type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select-right-icon t-select-right-icon__clear" style="font-size:medium;display:none;">
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size:medium;display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
         </svg>
-        <div class="t-loading--center t-size-s t-loading t-select-right-icon t-select-active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
             <foreignObject x="1" y="1" width="12" height="12">
               <div class="t-loading__gradient-conic"></div>
             </foreignObject>

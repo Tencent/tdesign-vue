@@ -76,7 +76,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     popupClass(): ClassName {
       const { popupObject } = this;
-      return `${popupObject.overlayClassName} ${prefix}-select-dropdown narrow-scrollbar`;
+      return `${popupObject.overlayClassName} ${prefix}-select__dropdown narrow-scrollbar`;
     },
     isObjectValue(): boolean {
       return this.valueType === 'object';
@@ -107,18 +107,16 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         this.clearable
         && this.isHover
         && !this.disabled
-        && (
-          (!this.multiple && (!!this.value || this.value === 0))
-          || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>))
-        )
+        && ((!this.multiple && (!!this.value || this.value === 0))
+          || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>)))
       );
     },
     showPlaceholder(): boolean {
       if (
         !this.showFilter
         && ((isString(this.value) && this.value === '' && !this.selectedSingle)
-        || (isArray(this.value) && isEmpty(this.value))
-        || isNil(this.value))
+          || (isArray(this.value) && isEmpty(this.value))
+          || isNil(this.value))
       ) {
         return true;
       }
@@ -137,7 +135,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       return !this.loading;
     },
     popupObject(): PopupProps {
-      const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
+      const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;
       return propsObject;
     },
     selectedSingle(): TreeSelectValue {
@@ -172,15 +170,19 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     loadingTextSlot(): ScopedSlotReturnValue {
       const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
-      return useLocale
-        ? <div class={`${prefix}-select-empty`}>{ this.t(this.global.loadingText) }</div>
-        : renderTNodeJSX(this, 'loadingText');
+      return useLocale ? (
+        <div class={`${prefix}-select__empty`}>{this.t(this.global.loadingText)}</div>
+      ) : (
+        renderTNodeJSX(this, 'loadingText')
+      );
     },
     emptySlot(): ScopedSlotReturnValue {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
-      return useLocale
-        ? <div class={`${prefix}-select-empty`}>{ this.t(this.global.empty) }</div>
-        : renderTNodeJSX(this, 'empty');
+      return useLocale ? (
+        <div class={`${prefix}-select__empty`}>{this.t(this.global.empty)}</div>
+      ) : (
+        renderTNodeJSX(this, 'empty')
+      );
     },
     prefixIconSlot(): ScopedSlotReturnValue {
       return renderTNodeJSX(this, 'prefixIcon');
@@ -356,9 +358,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         onExpand={this.treeNodeExpand}
         {...{ props: treeProps }}
       >
-        <template slot='empty'>
-          {this.emptySlot}
-        </template>
+        <template slot="empty">{this.emptySlot}</template>
       </Tree>
     );
     const searchInput = (
@@ -366,7 +366,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         ref="input"
         v-show={this.showFilter}
         v-model={this.filterText}
-        class={`${prefix}-select-input`}
+        class={`${prefix}-select__input`}
         size={this.size}
         disabled={this.disabled}
         placeholder={this.filterPlaceholder}
@@ -375,42 +375,38 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
       />
     );
-    const tagItem = (
-      this.tagList.map((label, index) => (
-        <Tag
-          v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
-          key={index}
-          size={this.size}
-          closable={!this.disabled}
-          disabled={this.disabled}
-          onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
-        >
-          {label}
-        </Tag>
-      ))
-    );
-    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
-    && this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum
-      ? renderTNodeJSX(this, 'collapsedItems',
-        {
-          params:
-            {
-              count: this.tagList.length - this.minCollapsedNum,
-              value: this.selectedMultiple,
-              collapsedSelectedItems: this.selectedMultiple.slice(this.minCollapsedNum),
-            },
-        })
-      : (<Tag
-        v-show={this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum}
+    const tagItem = this.tagList.map((label, index) => (
+      <Tag
+        v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
+        key={index}
         size={this.size}
+        closable={!this.disabled}
+        disabled={this.disabled}
+        onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
       >
-        { `+${this.tagList.length - this.minCollapsedNum}` }
-      </Tag>);
+        {label}
+      </Tag>
+    ));
+    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
+      && this.minCollapsedNum > 0
+      && this.tagList.length > this.minCollapsedNum ? (
+        renderTNodeJSX(this, 'collapsedItems', {
+          params: {
+            count: this.tagList.length - this.minCollapsedNum,
+            value: this.selectedMultiple,
+            collapsedSelectedItems: this.selectedMultiple.slice(this.minCollapsedNum),
+          },
+        })
+      ) : (
+        <Tag v-show={this.minCollapsedNum > 0 && this.tagList.length > this.minCollapsedNum} size={this.size}>
+          {`+${this.tagList.length - this.minCollapsedNum}`}
+        </Tag>
+      );
     return (
-      <div ref='treeSelect'>
+      <div ref="treeSelect">
         <Popup
           ref="popup"
-          class={`${prefix}-select-popup-reference`}
+          class={`${prefix}-select__popup-reference`}
           visible={this.visible}
           disabled={this.disabled}
           placement={popupObject.placement}
@@ -420,46 +416,40 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
           on={{ 'visible-change': this.popupVisibleChange }}
           expandAnimation={true}
         >
-          <div
-            class={classes}
-            onmouseenter={() => this.isHover = true}
-            onmouseleave={() => this.isHover = false}
-          >
-            {
-              this.prefixIconSlot && (<span class={`${prefix}-select-left-icon`}>{this.prefixIconSlot[0]}</span>)
-            }
-            <span v-show={this.showPlaceholder} class={`${prefix}-select-placeholder`}>{this.placeholder}</span>
+          <div class={classes} onmouseenter={() => (this.isHover = true)} onmouseleave={() => (this.isHover = false)}>
+            {this.prefixIconSlot && <span class={`${prefix}-select__left-icon`}>{this.prefixIconSlot[0]}</span>}
+            <span v-show={this.showPlaceholder} class={`${prefix}-select__placeholder`}>
+              {this.placeholder}
+            </span>
             {tagItem}
             {collapsedItem}
-            {
-              !this.multiple && !this.showPlaceholder && !this.showFilter && (
-                <span title={this.selectedSingle} class={`${prefix}-select-selectedSingle`}>{this.selectedSingle}</span>
-              )
-            }
+            {!this.multiple && !this.showPlaceholder && !this.showFilter && (
+              <span title={this.selectedSingle} class={`${prefix}-select__single`}>
+                {this.selectedSingle}
+              </span>
+            )}
             {searchInput}
-            {
-              this.showArrow && !this.showLoading && (
-                <FakeArrow
-                  overlayClassName={`${prefix}-select-right-icon`}
-                  overlayStyle={iconStyle}
-                  isActive={this.visible && !this.disabled}
-                />
-              )
-            }
+            {this.showArrow && !this.showLoading && (
+              <FakeArrow
+                overlayClassName={`${prefix}-select__right-icon`}
+                overlayStyle={iconStyle}
+                isActive={this.visible && !this.disabled}
+              />
+            )}
             <IconCloseCircleFilled
               v-show={this.showClose && !this.showLoading}
-              class={[`${prefix}-select-right-icon`, `${prefix}-select-right-icon__clear`]}
+              class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
               size={this.size}
               nativeOnClick={this.clear}
             />
             <Loading
               v-show={this.showLoading}
-              class={`${prefix}-select-right-icon ${prefix}-select-active-icon`}
+              class={`${prefix}-select__right-icon ${prefix}-select__active-icon`}
               size="small"
             />
           </div>
           <div slot="content">
-            <p v-show={this.showLoading} class={`${prefix}-select-loading-tips`}>
+            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips`}>
               {this.loadingTextSlot}
             </p>
             {treeItem}
