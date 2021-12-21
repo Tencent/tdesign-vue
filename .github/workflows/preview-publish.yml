@@ -2,7 +2,7 @@ name: Preview Publish
 
 on:
   workflow_run:
-    workflows: ['Preview Build']
+    workflows: ['PrePreview']
     types:
       - completed
 
