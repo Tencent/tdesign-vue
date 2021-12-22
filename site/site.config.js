@@ -402,6 +402,12 @@ export default {
           component: () => import('@/examples/progress/progress.md'),
         },
         {
+          title: 'Swiper 轮播框',
+          name: 'swiper',
+          path: '/vue/components/swiper',
+          component: () => import('@/examples/swiper/swiper.md'),
+        },
+        {
           title: 'Table 表格',
           name: 'table',
           meta: {
@@ -514,12 +520,6 @@ export default {
           },
           path: '/vue/components/popup',
           component: () => import('@/examples/popup/popup.md'),
-        },
-        {
-          title: 'Swiper 轮播框',
-          name: 'swiper',
-          path: '/vue/components/swiper',
-          component: () => import('@/examples/swiper/swiper.md'),
         },
       ],
     },
