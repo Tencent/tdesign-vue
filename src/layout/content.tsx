@@ -1,16 +1,11 @@
 import Vue from 'vue';
+import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default Vue.extend({
   name: 'TContent',
 
-  methods: {
-    renderContent() {
-      return this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
-    },
-  },
-
   render() {
-    return <main class="t-layout__content">{renderTNodeJSX(this, 'default')}</main>;
+    return <main class={`${prefix}-layout__content`}>{renderTNodeJSX(this, 'default')}</main>;
   },
 });
