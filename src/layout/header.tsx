@@ -11,7 +11,7 @@ export default Vue.extend({
   render() {
     const styles = this.height ? { height: this.height } : {};
     return (
-      <header class={`header${prefix}-layout__header`} style={styles}>
+      <header class={`${prefix}-layout__header`} style={styles}>
         {renderTNodeJSX(this, 'default')}
       </header>
     );
