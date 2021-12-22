@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import { prefix } from '../config';
+import { ClassName } from '../common';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-layout`;
 
@@ -18,15 +20,6 @@ export default Vue.extend({
     };
   },
 
-  created() {
-    this.$on('aside-mounted', () => {
-      this.hasSider = true;
-    });
-    this.$on('aside-unmounted', () => {
-      this.hasSider = false;
-    });
-  },
-
   methods: {
     renderContent() {
       return this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
@@ -34,7 +27,7 @@ export default Vue.extend({
   },
 
   computed: {
-    classes(): Array<string|object> {
+    classes(): ClassName {
       return [
         name,
         {
@@ -44,13 +37,7 @@ export default Vue.extend({
     },
   },
 
-  watch: {},
-
   render() {
-    return (
-      <section class={this.classes}>
-        {this.renderContent()}
-      </section>
-    );
+    return <section class={this.classes}>{renderTNodeJSX(this, 'default')}</section>;
   },
 });

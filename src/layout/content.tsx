@@ -1,13 +1,8 @@
 import Vue from 'vue';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default Vue.extend({
   name: 'TContent',
-
-  props: {},
-
-  data() {
-    return {};
-  },
 
   methods: {
     renderContent() {
@@ -15,15 +10,7 @@ export default Vue.extend({
     },
   },
 
-  computed: {},
-
-  watch: {},
-
   render() {
-    return (
-      <main class="t-layout__content">
-        {this.renderContent()}
-      </main>
-    );
+    return <main class="t-layout__content">{renderTNodeJSX(this, 'default')}</main>;
   },
 });
