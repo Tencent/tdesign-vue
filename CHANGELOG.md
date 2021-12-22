@@ -5,6 +5,17 @@ toc: false
 docClass: timeline
 ---
 
+## 0.32.0 `2021-12-23`
+
+### BREAKING CHANGES
+
+
+### Bug Fixes
+
+
+### Features
+
+
 ## 0.31.0 `2021-12-09`
 
 ### BREAKING CHANGES
