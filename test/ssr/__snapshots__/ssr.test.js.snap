@@ -3279,20 +3279,14 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
 
 exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.vue correctly 1`] = `
 <div class="tdesign-demo-item__config-provider-base" style="padding:16px;">
-  <div>
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Default</span></button>
-    </div>
+  <div class="t-popup__reference">
+    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Default</span></button>
   </div>
-  <div>
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">Warning</span></button>
-    </div>
+  <div class="t-popup__reference">
+    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">Warning</span></button>
   </div>
-  <div>
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">Danger</span></button>
-    </div>
+  <div class="t-popup__reference">
+    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">Danger</span></button>
   </div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Open Drawer</span></button>
   <div class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
@@ -7563,17 +7557,13 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/base.vue correctl
 <div class="popconfirm-demo">
   <div class="tdesign-demo-block">
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">删除订单</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">删除订单</span></button>
       </div>
     </div>
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">提交审核</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">提交审核</span></button>
       </div>
     </div>
   </div>
@@ -7583,20 +7573,14 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/base.vue correctl
 exports[`ssr snapshot test renders ./examples/popconfirm/demos/button.vue correctly 1`] = `
 <div class="popconfirm-demo">
   <div class="tdesign-demo-block">
-    <div>
-      <div class="t-popup__reference">
-        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（属性-字符串）</span></button>
-      </div>
+    <div class="t-popup__reference">
+      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（属性-字符串）</span></button>
     </div>
-    <div>
-      <div class="t-popup__reference">
-        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（属性-对象）</span></button>
-      </div>
+    <div class="t-popup__reference">
+      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（属性-对象）</span></button>
     </div>
-    <div>
-      <div class="t-popup__reference">
-        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（插槽）</span></button>
-      </div>
+    <div class="t-popup__reference">
+      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">按钮样式（插槽）</span></button>
     </div>
   </div>
 </div>
@@ -7606,17 +7590,13 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/describe.vue corr
 <div class="popconfirm-demo">
   <div class="tdesign-demo-block">
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义浮层内容</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义浮层内容</span></button>
       </div>
     </div>
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">自定义浮层内容</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">自定义浮层内容</span></button>
       </div>
     </div>
   </div>
@@ -7627,40 +7607,30 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/icon.vue correctl
 <div class="popconfirm-demo">
   <div class="tdesign-demo-block">
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">默认</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">默认</span></button>
       </div>
     </div>
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">警告</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">警告</span></button>
       </div>
     </div>
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">危险</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">危险</span></button>
       </div>
     </div>
   </div> <br><br>
   <div class="tdesign-demo-block">
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义图标（插槽）</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义图标（插槽）</span></button>
       </div>
     </div>
     <div class="demo-item">
-      <div>
-        <div class="t-popup__reference">
-          <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义图标（属性）</span></button>
-        </div>
+      <div class="t-popup__reference">
+        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义图标（属性）</span></button>
       </div>
     </div>
   </div>
@@ -7670,15 +7640,11 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/icon.vue correctl
 exports[`ssr snapshot test renders ./examples/popconfirm/demos/inherit.vue correctly 1`] = `
 <div class="popconfirm-demo">
   <div class="tdesign-demo-block">
-    <div>
-      <div class="t-popup__reference">
-        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层出现在下方</span></button>
-      </div>
+    <div class="t-popup__reference">
+      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层出现在下方</span></button>
     </div>
-    <div>
-      <div class="t-popup__reference">
-        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层出现在右侧</span></button>
-      </div>
+    <div class="t-popup__reference">
+      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层出现在右侧</span></button>
     </div>
   </div>
 </div>
@@ -12538,10 +12504,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="" key="type" length="4">String</td>
                 <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
-                    <div>
-                      <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
-                      </div>
+                    <div class="t-popup__reference">
+                      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
                     </div>
                   </div>
                 </td>
@@ -12557,10 +12521,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="" key="type" length="4">Number</td>
                 <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
-                    <div>
-                      <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
-                      </div>
+                    <div class="t-popup__reference">
+                      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
                     </div>
                   </div>
                 </td>
@@ -12576,10 +12538,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="" key="type" length="4">Array</td>
                 <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
-                    <div>
-                      <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
-                      </div>
+                    <div class="t-popup__reference">
+                      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
                     </div>
                   </div>
                 </td>
@@ -12595,10 +12555,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="" key="type" length="4">Object</td>
                 <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
-                    <div>
-                      <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
-                      </div>
+                    <div class="t-popup__reference">
+                      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
                     </div>
                   </div>
                 </td>
@@ -12614,10 +12572,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <td class="" key="type" length="4">String</td>
                 <td class="t-align-center" key="operate" length="4" style="overflow:hidden;">
                   <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button>
-                    <div>
-                      <div class="t-popup__reference">
-                        <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
-                      </div>
+                    <div class="t-popup__reference">
+                      <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button>
                     </div>
                   </div>
                 </td>
