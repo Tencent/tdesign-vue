@@ -270,14 +270,13 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         flattedColumns: { length: colspan },
       } = this;
       const footerContent: VNode = renderTNodeJSX(this, 'footer');
-      const foot = (
+      return footerContent ? (
         <tfoot>
           <tr>
             <td colspan={colspan}>{footerContent}</td>
           </tr>
         </tfoot>
-      );
-      return footerContent ? foot : null;
+      ) : null;
     },
     handleScroll(e: WheelEvent) {
       this.checkScrollableToLeftOrRight();
