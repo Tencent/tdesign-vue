@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- 自定义选中项内容，valueDisplay 为渲染函数（function） -->
     <t-select
       v-model="value1"
@@ -10,24 +9,13 @@
       multiple
       clearable
     />
-    <br/><br/>
+    <br /><br />
 
     <!-- 自定义选中项内容，valueDisplay 为 插槽(slot) -->
-    <t-select
-      v-model="value2"
-      :options="options"
-      placeholder="请选择"
-      multiple
-      clearable
-    >
+    <t-select v-model="value2" :options="options" placeholder="请选择" multiple clearable>
       <template #valueDisplay="{ value, onClose }">
-        <t-tag
-          v-for="(item, index) in value"
-          :key="index"
-          :closable="true"
-          :onClose="() => onClose(index)"
-        >
-          {{item.label}}({{item.value[0].toUpperCase()}})
+        <t-tag v-for="(item, index) in value" :key="index" :closable="true" :onClose="() => onClose(index)">
+          {{ item.label }}({{ item.value[0].toUpperCase() }})
         </t-tag>
       </template>
     </t-select>
@@ -46,10 +34,10 @@ export default {
         { label: '选项三', value: '3' },
         { label: '选项四', value: '4' },
         { label: '选项五', value: '5' },
-        { label: '选项六', value: '10' },
-        { label: '选项七', value: '6' },
-        { label: '选项八', value: '7' },
-        { label: '选项九', value: '8' },
+        { label: '选项六', value: '6' },
+        { label: '选项七', value: '7' },
+        { label: '选项八', value: '8' },
+        { label: '选项九', value: '9' },
       ],
     };
   },
@@ -57,11 +45,7 @@ export default {
     valueDisplay(h, { value, onClose }) {
       if (!(value instanceof Array)) return;
       return value.map((item, index) => (
-        <t-tag
-          key={index}
-          closable={true}
-          onClose={() => onClose(index)}
-        >
+        <t-tag key={index} closable={true} onClose={() => onClose(index)}>
           {item.label}({item.value[0].toUpperCase()})
         </t-tag>
       ));

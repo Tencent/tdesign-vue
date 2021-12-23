@@ -25,15 +25,16 @@ export default function mdToVue(options) {
     <template>
       <td-doc-content ref="tdDocContent" page-status="hidden">
         ${
-          mdSegment.tdDocHeader ?
-          `
+          mdSegment.tdDocHeader
+            ? `
           <td-doc-header
             slot="doc-header"
             ref="tdDocHeader"
             spline="${mdSegment.spline}"
           >
           ${mdSegment.isComponent ? `<td-doc-badge slot="badge" label="coverage" message="${coverage}" />` : ''}
-          </td-doc-header>` : ''
+          </td-doc-header>`
+            : ''
         }
         ${
           mdSegment.isComponent
@@ -51,8 +52,11 @@ export default function mdToVue(options) {
           <div v-show="tab === 'api'" name="API">${mdSegment.apiMd}</div>
           <div v-show="tab === 'design'" name="DESIGN">${mdSegment.designMd}</div>
         `
-            : `<div name="DOC">${mdSegment.docMd}</div>`
+            : `<div name="DOC" class="${mdSegment.docClass}">${mdSegment.docMd}</div>`
         }
+        <div style="margin-top: 48px;">
+          <td-doc-history time="${mdSegment.lastUpdated}"></td-doc-history>
+        </div>
         <td-doc-footer slot="doc-footer"></td-doc-footer>
       </td-doc-content>
     </template>
@@ -135,6 +139,8 @@ function customRender({ source, file, md }) {
     tdDocHeader: true,
     tdDocTabs: DEAULT_TABS,
     apiFlag: /#+\s*API/,
+    docClass: '',
+    lastUpdated: Math.round(fs.statSync(file).mtimeMs),
     ...data,
   };
 
@@ -158,10 +164,19 @@ function customRender({ source, file, md }) {
   };
 
   if (pageData.isComponent) {
-    mdSegment.demoMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${demoMd.replace(/<!--[\s\S]+?-->/g, '')}`).html;
-    mdSegment.apiMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${apiMd.replace(/<!--[\s\S]+?-->/g, '')}`).html;
+    mdSegment.demoMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${demoMd.replace(/<!--[\s\S]+?-->/g, '')}`,
+    ).html;
+    mdSegment.apiMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${apiMd.replace(/<!--[\s\S]+?-->/g, '')}`,
+    ).html;
   } else {
-    mdSegment.docMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${content.replace(/<!--[\s\S]+?-->/g, '')}`).html;
+    mdSegment.docMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${content.replace(/<!--[\s\S]+?-->/g, '')}`,
+    ).html;
   }
 
   // 设计指南内容 不展示 design Tab 则不解析

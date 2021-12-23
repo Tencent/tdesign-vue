@@ -1,15 +1,12 @@
 import Vue from 'vue';
 import { prefix } from '../config';
 import props from './footer-props';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default Vue.extend({
   name: 'TFooter',
 
   props: { ...props },
-
-  data() {
-    return {};
-  },
 
   methods: {
     renderContent() {
@@ -17,17 +14,15 @@ export default Vue.extend({
     },
   },
 
-  computed: {},
-
-  watch: {},
-
   render() {
-    const styles = this.height ? {
-      height: this.height,
-    } : {};
+    const styles = this.height
+      ? {
+        height: this.height,
+      }
+      : {};
     return (
       <footer class={`${prefix}-layout__footer`} style={styles}>
-        {this.renderContent()}
+        {renderTNodeJSX(this, 'default')}
       </footer>
     );
   },

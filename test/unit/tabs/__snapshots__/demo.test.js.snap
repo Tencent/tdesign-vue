@@ -407,6 +407,7 @@ exports[`Tabs custom demo works fine 1`] = `
   >
     <div
       class="t-tabs__nav"
+      style="min-height: 48px;"
     >
       <div
         class="t-tabs__operations t-tabs__operations--left"
@@ -602,6 +603,7 @@ exports[`Tabs operation demo works fine 1`] = `
   >
     <div
       class="t-tabs__nav"
+      style="min-height: 48px;"
     >
       <div
         class="t-tabs__operations t-tabs__operations--left"

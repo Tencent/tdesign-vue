@@ -1,12 +1,10 @@
 <template>
   <div class="tdesign-demo-select-base">
-
     <t-select v-model="value1" :options="options" placeholder="请选择云解决方案" />
 
     <t-select v-model="value2" :options="options" disabled placeholder="请选择云解决方案" />
 
     <t-select v-model="value3" :options="options" loading placeholder="请选择云解决方案" />
-
   </div>
 </template>
 
@@ -37,7 +35,7 @@ export default {
   display: flex;
 }
 
-.tdesign-demo-select-base .t-select-wrap + .t-select-wrap {
+.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
   margin-left: 36px;
 }
 </style>

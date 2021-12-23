@@ -1,6 +1,6 @@
 <template>
   <t-config-provider :globalConfig="globalConfig" style="padding: 16px">
-    <t-pagination v-model="current" :total="36" show-jumper :maxPageBtn="5"/>
+    <t-pagination v-model="current" :total="36" show-jumper :maxPageBtn="5" />
   </t-config-provider>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      current: 12,
+      current: 1,
       globalConfig: {
         pagination: {
           itemsPerPage: '{size} / page',

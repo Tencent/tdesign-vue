@@ -228,7 +228,7 @@ export default Vue.extend({
         change: (val: any) => this.onInnerFilterChange(val, column),
       };
       return (
-        <div class={`${prefix}-table-filter-pop-content__inner`}>
+        <div class={`${prefix}-table__filter-pop-content-inner`}>
           {column?.filter?.component ? (
             column?.filter?.component((v: FirstParams, b: SecondParams) => {
               const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};

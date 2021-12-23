@@ -9,18 +9,9 @@ import {
   TransferListType,
   TransferItemOption,
 } from '../interface';
-import {
-  PageInfo,
-  TdPaginationProps,
-  Pagination as TPagination,
-} from '../../pagination';
-import {
-  Checkbox as TCheckbox,
-  CheckboxGroup as TCheckboxGroup, CheckboxProps,
-} from '../../checkbox';
-import {
-  findTopNode, getLeefCount, getDataValues,
-} from '../utils';
+import { PageInfo, TdPaginationProps, Pagination as TPagination } from '../../pagination';
+import { Checkbox as TCheckbox, CheckboxGroup as TCheckboxGroup, CheckboxProps } from '../../checkbox';
+import { findTopNode, getLeefCount, getDataValues } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
@@ -124,13 +115,15 @@ export default Vue.extend({
         totalContent: false,
         pageSizeOptions: [],
       };
-      return typeof this.pagination === 'object' ? {
-        ...defaultPaginationProps,
-        ...this.pagination,
-        current: this.currentPage,
-        total: this.pageTotal,
-        pageSize: this.pageSize,
-      } : {};
+      return typeof this.pagination === 'object'
+        ? {
+          ...defaultPaginationProps,
+          ...this.pagination,
+          current: this.currentPage,
+          total: this.pageTotal,
+          pageSize: this.pageSize,
+        }
+        : {};
     },
     hasFooter(): boolean {
       return !!this.$slots.default;
@@ -139,7 +132,10 @@ export default Vue.extend({
       return !this.isAllChecked && this.checkedValue.length > 0;
     },
     isAllChecked(): boolean {
-      return this.checkedValue.length > 0 && this.dataSource.every((item) => item.disabled || this.checkedValue.includes(item.value));
+      return (
+        this.checkedValue.length > 0
+        && this.dataSource.every((item) => item.disabled || this.checkedValue.includes(item.value))
+      );
     },
     totalCount(): number {
       return getLeefCount(this.dataSource);
@@ -175,36 +171,34 @@ export default Vue.extend({
       this.$emit('search', event);
     },
     renderTitle() {
-      const defaultNode = this.title && typeof this.title === 'string' ? (<template>{this.title}</template>) : null;
+      const defaultNode = this.title && typeof this.title === 'string' ? <template>{this.title}</template> : null;
       const titleNode = renderTNodeJSXDefault(this, 'title', {
         defaultNode,
         params: {
           type: this.listType,
         },
       });
-      return (<span>{titleNode}</span>);
+      return <span>{titleNode}</span>;
     },
     renderContent() {
       const rootNode = findTopNode(this);
       const defaultNode = (
         <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
-          {
-            this.curPageData.map((item, index) => (
-              <TCheckbox
-                disabled={this.disabled || item.disabled}
-                value={item.value}
-                class={[`${prefix}-transfer__list-item`]}
-                key={item.key}
-                v-ripple
-                {...{ props: this.checkboxProps }}
-                >
-                  {renderTNodeJSXDefault(this, 'transferItem', {
-                    defaultNode: (<span>{item.label}</span>),
-                    params: { data: item.data, index, type: this.listType },
-                  })}
-              </TCheckbox>
-            ))
-          }
+          {this.curPageData.map((item, index) => (
+            <TCheckbox
+              disabled={this.disabled || item.disabled}
+              value={item.value}
+              class={[`${prefix}-transfer__list-item`]}
+              key={item.key}
+              v-ripple
+              {...{ props: this.checkboxProps }}
+            >
+              {renderTNodeJSXDefault(this, 'transferItem', {
+                defaultNode: <span>{item.label}</span>,
+                params: { data: item.data, index, type: this.listType },
+              })}
+            </TCheckbox>
+          ))}
         </TCheckboxGroup>
       );
 
@@ -218,12 +212,12 @@ export default Vue.extend({
               onChange: this.handleCheckedChange,
             },
           })}
-      </div>
+        </div>
       );
     },
     renderEmpty() {
       const empty = this.empty || this.t(this.global.empty);
-      const defaultNode: VNode = typeof empty === 'string' ? (<span>{empty}</span>) : null;
+      const defaultNode: VNode = typeof empty === 'string' ? <span>{empty}</span> : null;
       return (
         <div class={`${prefix}-transfer__empty`}>
           {renderTNodeJSXDefault(this, 'empty', {
@@ -236,9 +230,7 @@ export default Vue.extend({
       );
     },
     renderFooter() {
-      const defaultNode = typeof this.footer === 'string'
-        ? (<div class={`${prefix}-transfer__footer`}>{this.footer}</div>)
-        : null;
+      const defaultNode = typeof this.footer === 'string' ? <div class={`${prefix}-transfer__footer`}>{this.footer}</div> : null;
       return renderTNodeJSXDefault(this, 'footer', {
         defaultNode,
         params: {
@@ -252,24 +244,20 @@ export default Vue.extend({
       <div class={`${prefix}-transfer__list ${prefix}-transfer__list-${this.listType}`}>
         <div class={`${prefix}-transfer__list-header`}>
           <div>
-            {
-              this.checkAll
-              && <TCheckbox
+            {this.checkAll && (
+              <TCheckbox
                 disabled={this.disabled || !this.dataSource.length}
                 checked={this.isAllChecked}
                 indeterminate={this.indeterminate}
                 onChange={this.handleCheckedAllChange}
               />
-            }
-            <span>{
-              this.t(
-                this.global.title,
-                {
-                  checked: this.checkedValue.length,
-                  total: this.totalCount,
-                },
-              )
-            }</span>
+            )}
+            <span>
+              {this.t(this.global.title, {
+                checked: this.checkedValue.length,
+                total: this.totalCount,
+              })}
+            </span>
           </div>
           {this.renderTitle()}
         </div>
@@ -278,7 +266,7 @@ export default Vue.extend({
             <search
               searchValue={this.filterValue}
               placeholder={this.t(this.global.placeholder)}
-              onChange={(e: string) => this.filterValue = e}
+              onChange={(e: string) => (this.filterValue = e)}
               disabled={this.disabled}
               search={this.search}
               onSearch={this.handleSearch}
@@ -286,15 +274,11 @@ export default Vue.extend({
           )}
           {this.curPageData.length > 0 ? this.renderContent() : this.renderEmpty()}
         </div>
-        {
-          (this.pagination && this.pageSize > 0 && this.pageTotal > 0)
-          && <div class={`${prefix}-transfer__list-pagination`}>
-            <TPagination
-              props={this.paginationProps}
-              onChange={this.handlePaginationChange}
-            />
+        {this.pagination && this.pageSize > 0 && this.pageTotal > 0 && (
+          <div class={`${prefix}-transfer__list-pagination`}>
+            <TPagination props={this.paginationProps} onChange={this.handlePaginationChange} />
           </div>
-        }
+        )}
         {this.renderFooter()}
       </div>
     );

@@ -186,13 +186,13 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       if (this.empty === null) return null;
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
-        <div class={`${prefix}-table--empty`}>{useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}</div>
+        <div class={`${prefix}-table__empty`}>{useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}</div>
       );
     },
     renderPagination(): VNode {
       const paginationProps = this.pagination;
       return (
-        <div class={`${prefix}-table-pagination`}>
+        <div class={`${prefix}-table__pagination`}>
           <Pagination
             props={{ ...paginationProps }}
             {...{
@@ -331,10 +331,10 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     }
     const handleScroll = throttle(this.handleScroll, 100);
     const tableContentClass = [
-      `${prefix}-table-content`,
+      `${prefix}-table__content`,
       {
-        [`${prefix}-table-content--scrollable-to-right`]: this.scrollableToRight,
-        [`${prefix}-table-content--scrollable-to-left`]: this.scrollableToLeft,
+        [`${prefix}-table__content--scrollable-to-right`]: this.scrollableToRight,
+        [`${prefix}-table__content--scrollable-to-left`]: this.scrollableToLeft,
       },
     ];
     let width;

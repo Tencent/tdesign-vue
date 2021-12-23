@@ -45,7 +45,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
         disabled: this.disabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
-        placeholder: this.placeholder || undefined,
+        placeholder: this.placeholder || '请输入',
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
@@ -76,7 +76,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
       keypress: this.handleKeypress,
       // input的change事件是失去焦点或者keydown的时候执行。这与api定义的change不符，所以不做任何变化。
       // eslint-disable-next-line @typescript-eslint/no-empty-function
-      change: () => { },
+      change: () => {},
     });
 
     const wrapperAttrs = omit(this.$attrs, Object.keys(this.inputAttrs));
@@ -111,8 +111,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     return (
       <div
         class={classes}
-        onMouseenter={() => this.mouseEvent(true) }
-        onMouseleave={() => this.mouseEvent(false) }
+        onMouseenter={() => this.mouseEvent(true)}
+        onMouseleave={() => this.mouseEvent(false)}
         {...{ attrs: wrapperAttrs, on: wrapperEvents }}
       >
         {prefixIcon ? <span class={`${name}__prefix`}>{prefixIcon}</span> : null}
@@ -124,11 +124,9 @@ export default (Vue as VueConstructor<InputInstance>).extend({
           onInput={this.handleInput}
           onCompositionend={this.onCompositionend}
         />
-        {
-          suffixIcon
-            ? <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span>
-            : null
-        }
+        {suffixIcon ? (
+          <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span>
+        ) : null}
       </div>
     );
   },
@@ -136,11 +134,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     mouseEvent(v: boolean) {
       this.isHover = v;
     },
-    renderIcon(
-      h: CreateElement,
-      icon: string | Function | undefined,
-      iconType: 'prefix-icon' | 'suffix-icon',
-    ) {
+    renderIcon(h: CreateElement, icon: string | Function | undefined, iconType: 'prefix-icon' | 'suffix-icon') {
       if (typeof icon === 'function') {
         return icon(h);
       }

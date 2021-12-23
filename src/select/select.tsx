@@ -3,10 +3,7 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import {
-  ChevronDownIcon as TIconChevronDown,
-  CloseCircleFilledIcon as TIconClose,
-} from 'tdesign-icons-vue';
+import { ChevronDownIcon as TIconChevronDown, CloseCircleFilledIcon as TIconClose } from 'tdesign-icons-vue';
 import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
@@ -31,6 +28,8 @@ const name = `${prefix}-select`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
 // 用户设置overStyle width时，以设置的为准
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
+// 默认垂直滚动条宽度 .narrow-scrollbar 8px
+const DEFAULT_SCROLLY_WIDTH = 8;
 
 export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).extend({
   name: 'TSelect',
@@ -57,6 +56,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       realValue: this.keys && this.keys.value ? this.keys.value : 'value',
       realLabel: this.keys && this.keys.label ? this.keys.label : 'label',
       realOptions: [] as Array<TdOptionProps>,
+      hoverIndex: -1,
+      popupOpenTime: 250, // popup打开弹出层的延迟时间
+      checkScroll: true, // 弹出层执行加宽事件（仅执行一次，且在有滚动条时执行）
     };
   },
   components: {
@@ -90,11 +92,11 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     popClass(): string {
       const { popupObject } = this;
-      return `${popupObject.overlayClassName} ${name}-dropdown narrow-scrollbar`;
+      return `${popupObject.overlayClassName} ${name}__dropdown narrow-scrollbar`;
     },
     tipsClass(): ClassName {
       return [
-        `${name}-loading-tips`,
+        `${name}__loading-tips`,
         {
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
@@ -102,7 +104,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     emptyClass(): ClassName {
       return [
-        `${name}-empty`,
+        `${name}__empty`,
         {
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
@@ -111,12 +113,11 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     showPlaceholder(): boolean {
       if (
         !this.showFilter
-          && ((!this.multiple && !this.selectedSingle)
+        && ((!this.multiple && !this.selectedSingle)
           || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
-          || (Array.isArray(this.value) && !this.value.length)
+          || (this.multiple && !this.selectedMultiple.length)
           || this.value === null
-          || this.value === undefined
-          || this.value === '')
+          || this.value === undefined)
       ) {
         return true;
       }
@@ -125,7 +126,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     // 是否为分组选择器
     isGroupOption(): boolean {
       const firstOption = this.options?.[0];
-      return !!(firstOption && ('group' in firstOption) && ('children' in firstOption));
+      return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
     },
     filterPlaceholder(): string {
       if (this.multiple && Array.isArray(this.value) && this.value.length) {
@@ -137,13 +138,13 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder;
     },
     showClose(): boolean {
-      return Boolean(this.clearable
-        && this.isHover
-        && !this.disabled
-        && (
-          (!this.multiple && (this.value || this.value === 0))
-          || (this.multiple && Array.isArray(this.value) && this.value.length)
-        ));
+      return Boolean(
+        this.clearable
+          && this.isHover
+          && !this.disabled
+          && ((!this.multiple && (this.value || this.value === 0))
+            || (this.multiple && Array.isArray(this.value) && this.value.length)),
+      );
     },
     showArrow(): boolean {
       return (
@@ -174,10 +175,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           target = this.realOptions.filter((item) => get(item, this.realValue) === this.value);
         }
         if (target.length) {
-          if (get(target[0], this.realLabel) === '') {
-            return get(target[0], this.realValue);
+          if (get(target[target.length - 1], this.realLabel) === '') {
+            return get(target[target.length - 1], this.realValue);
           }
-          return get(target[0], this.realLabel);
+          return get(target[target.length - 1], this.realLabel);
         }
       }
       const showText = get(this.value, this.realLabel);
@@ -196,24 +197,26 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           const tmp = this.realOptions.filter((op) => get(op, this.realValue) === item);
           const valueLabel = {};
           set(valueLabel, this.realValue, item);
-          set(valueLabel, this.realLabel, tmp.length ? get(tmp[0], this.realLabel) : item);
-          return tmp.length && tmp[0].disabled ? { ...valueLabel, disabled: true } : valueLabel;
+          set(valueLabel, this.realLabel, tmp.length ? get(tmp[tmp.length - 1], this.realLabel) : item);
+          return tmp.length && tmp[tmp.length - 1].disabled ? { ...valueLabel, disabled: true } : valueLabel;
         });
       }
       return [];
     },
     popupObject(): PopupProps {
-      const propsObject = this.popupProps ? ({ ...this.defaultProps, ...this.popupProps }) : this.defaultProps;
+      const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;
       return propsObject;
     },
     filterOptions(): Array<TdOptionProps> {
       // filter优先级 filter方法>仅filterable
       if (isFunction(this.filter)) {
         return this.realOptions.filter((option) => this.filter(this.searchInput, option));
-      } if (this.filterable) {
+      }
+      if (this.filterable) {
         // 仅有filterable属性时，默认不区分大小写过滤label
-        return this.realOptions.filter((option) => option[this.realLabel].toString().toLowerCase()
-          .indexOf(this.searchInput.toString().toLowerCase()) !== -1);
+        return this.realOptions.filter(
+          (option) => option[this.realLabel].toString().toLowerCase().indexOf(this.searchInput.toString().toLowerCase()) !== -1,
+        );
       }
       return [];
     },
@@ -221,7 +224,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
       if (isFunction(this.onSearch) || this.$listeners.search) {
         return this.realOptions;
-      } if (this.canFilter && !this.creatable) {
+      }
+      if (this.canFilter && !this.creatable) {
         if (this.searchInput === '') {
           return this.realOptions;
         }
@@ -235,6 +239,19 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         map.set(item, true);
       });
       return map;
+    },
+    hoverOptions(): Array<TdOptionProps> {
+      if (!this.showCreateOption) {
+        if (isFunction(this.filter) || this.filterable) {
+          return this.filterOptions;
+        }
+        return this.realOptions;
+      }
+      const willCreateOption = [{ value: this.searchInput, label: this.searchInput }] as Array<TdOptionProps>;
+      if (isFunction(this.filter) || this.filterable) {
+        return willCreateOption.concat(this.filterOptions);
+      }
+      return willCreateOption.concat(this.realOptions);
     },
   },
   watch: {
@@ -266,6 +283,11 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         }
       },
     },
+    visible() {
+      this.visible && document.addEventListener('keydown', this.keydownEvent);
+      !this.visible && document.removeEventListener('keydown', this.keydownEvent);
+      this.visible && Array.isArray(this.hoverOptions) && this.initHoverindex();
+    },
   },
   methods: {
     getRealOptions(options: SelectOption[]): Array<TdOptionProps> {
@@ -282,11 +304,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     multiLimitDisabled(value: string | number) {
       if (this.multiple && this.max) {
-        if (
-          Array.isArray(this.value)
-          && this.value.indexOf(value) === -1
-          && this.max <= this.value.length
-        ) {
+        if (Array.isArray(this.value) && this.value.indexOf(value) === -1 && this.max <= this.value.length) {
           return true;
         }
       }
@@ -300,14 +318,12 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       this.visible = val;
       if (!val) {
-        if (!this.multiple || !this.reserveKeyword || this.creatable) {
-          this.searchInput = '';
-        }
+        this.searchInput = '';
       }
       val && this.monitorWidth();
       val && this.canFilter && this.doFocus();
     },
-    onOptionClick(value: string | number, e: MouseEvent) {
+    onOptionClick(value: string | number, e: MouseEvent | KeyboardEvent) {
       if (this.value !== value) {
         if (this.multiple) {
           const tempValue = Array.isArray(this.value) ? [].concat(this.value) : [];
@@ -342,7 +358,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         this.canFilter && this.doFocus();
       }
     },
-    removeTag(index: number, context?: { e?: MouseEvent }) {
+    removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
       e && e.stopPropagation();
       if (this.disabled) {
@@ -372,15 +388,17 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     getOptions(option: OptionInstance) {
       // create option值不push到options里
-      if (option.$el && option.$el.className.indexOf(`${name}-create-option-special`) !== -1) return;
-      const tmp = this.realOptions.filter((item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label);
+      if (option.$el && option.$el.className && option.$el.className.indexOf(`${name}__create-option--special`) !== -1) return;
+      const tmp = this.realOptions.filter(
+        (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
+      );
       if (!tmp.length) {
         this.hasOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
         const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        this.realOptions = [valueLabelAble].concat(this.realOptions);
+        this.realOptions.push(valueLabelAble);
       }
     },
     destroyOptions(option: OptionInstance) {
@@ -408,26 +426,100 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       emitEvent<Parameters<TdSelectProps['onChange']>>(this, 'change', value);
     },
-    createOption(value: string | number) {
+    createOption(value: string) {
       emitEvent<Parameters<TdSelectProps['onCreate']>>(this, 'create', value);
     },
     debounceOnRemote: debounce(function (this: any) {
       emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', this.searchInput);
     }, 300),
-    focus(e: FocusEvent) {
+    focus(value: string, context: { e: FocusEvent }) {
       this.focusing = true;
-      emitEvent<Parameters<TdSelectProps['onFocus']>>(this, 'focus', { value: this.value, e });
+      emitEvent<Parameters<TdSelectProps['onFocus']>>(this, 'focus', { value: this.value, e: context?.e });
     },
-    blur(e: FocusEvent) {
+    blur(value: string, context: { e: FocusEvent | KeyboardEvent }) {
       this.focusing = false;
-      emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e });
+      emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e: context?.e });
     },
-    enter(e: KeyboardEvent) {
+    enter(value: string, context: { e: KeyboardEvent }) {
       emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', {
         inputValue: this.searchInput,
         value: this.value,
-        e,
+        e: context?.e,
       });
+    },
+    keydownEvent(e: KeyboardEvent) {
+      if (!this.hoverOptions.length) return;
+      const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
+      if (preventKeys.includes(e.code)) {
+        e.preventDefault();
+      }
+      switch (e.code) {
+        case 'ArrowDown':
+          if (this.hoverIndex < this.hoverOptions.length - 1) {
+            this.hoverIndex += 1;
+            this.arrowDownOption();
+          } else {
+            this.hoverIndex = 0;
+            this.arrowDownOption();
+          }
+          break;
+        case 'ArrowUp':
+          if (this.hoverIndex > 0) {
+            this.hoverIndex -= 1;
+            this.arrowUpOption();
+          } else {
+            this.hoverIndex = this.hoverOptions.length - 1;
+            this.arrowUpOption();
+          }
+          break;
+        case 'Enter':
+          if (this.hoverIndex === -1) return;
+          if (this.showCreateOption && this.hoverIndex === 0) {
+            this.createOption(this.searchInput);
+          }
+          this.hoverOptions[this.hoverIndex]
+            && this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
+          break;
+        case 'Escape':
+        case 'Tab':
+          this.visible = false;
+          emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
+          this.searchInput = '';
+          if (this.focusing) {
+            this.blur(this.searchInput, { e });
+          }
+          break;
+      }
+    },
+    arrowDownOption() {
+      let count = 0;
+      while (this.hoverIndex < this.hoverOptions.length) {
+        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
+          break;
+        }
+        if (this.hoverIndex === this.hoverOptions.length - 1) {
+          this.hoverIndex = 0;
+        } else {
+          this.hoverIndex += 1;
+        }
+        count += 1;
+        if (count >= this.hoverOptions.length) break;
+      }
+    },
+    arrowUpOption() {
+      let count = 0;
+      while (this.hoverIndex > -1) {
+        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
+          break;
+        }
+        if (this.hoverIndex === 0) {
+          this.hoverIndex = this.hoverOptions.length - 1;
+        } else {
+          this.hoverIndex -= 1;
+        }
+        count += 1;
+        if (count >= this.hoverOptions.length) break;
+      }
     },
     hoverEvent(v: boolean) {
       this.isHover = v;
@@ -454,7 +546,18 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH
             ? elWidth
             : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
-          Vue.set(this.defaultProps.overlayStyle, 'width', `${Math.ceil(width)}px`);
+          Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width)}px` });
+          // issuse-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
+          if (this.checkScroll) {
+            const timer = setTimeout(() => {
+              const { scrollHeight, clientHeight } = this.getOverlayElm();
+              if (scrollHeight > clientHeight) {
+                Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width) + DEFAULT_SCROLLY_WIDTH}px` });
+              }
+              this.checkScroll = false;
+              clearTimeout(timer);
+            }, this.popupOpenTime);
+          }
         }
       });
     },
@@ -470,7 +573,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder || this.t(this.global.placeholder);
     },
     getCloseIcon() {
-      const closeIconClass = [`${name}-right-icon`, `${name}-right-icon__clear`];
+      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`];
       if (isFunction(this.global.clearIcon)) {
         return (
           <span class={closeIconClass} onClick={this.clearSelect}>
@@ -478,13 +581,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           </span>
         );
       }
-      return (
-        <t-icon-close
-          class={closeIconClass}
-          size={this.size}
-          nativeOnClick={this.clearSelect}
-        />
-      );
+      return <t-icon-close class={closeIconClass} size={this.size} nativeOnClick={this.clearSelect} />;
     },
     doFocus() {
       const input = this.$refs.input as HTMLElement;
@@ -527,6 +624,23 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         ? this.renderGroupOptions(this.options as SelectOptionGroup[])
         : this.renderOptions(this.displayOptions);
     },
+    initHoverindex() {
+      if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
+        const targetIndex = Object.keys(this.hoverOptions).filter(
+          (i) => get(this.hoverOptions[i], this.realValue) === this.value,
+        );
+        this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
+      } else if (this.multiple && Array.isArray(this.value) && this.value.length) {
+        this.value.some((item: string | number | TdOptionProps) => {
+          const targetIndex = Object.keys(this.hoverOptions).filter(
+            (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
+              || get(this.hoverOptions[i], this.realValue) === item,
+          );
+          this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
+          return this.hoverIndex !== -1;
+        });
+      }
+    },
   },
   render(): VNode {
     const {
@@ -556,35 +670,28 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     const loadingTextSlot = this.getLoadingText();
     const placeholderText = this.getPlaceholderText();
     return (
-      <div ref='select' class={`${name}-wrap`}>
+      <div ref="select" class={`${name}__wrap`}>
         <Popup
-          ref='popup'
+          ref="popup"
           visible={this.visible}
-          class={`${name}-popup-reference`}
+          class={`${name}__popup-reference`}
           disabled={disabled}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
-          { ...{ props: { ...popupObject, overlayClassName: popClass } } }
+          {...{ props: { ...popupObject, overlayClassName: popClass } }}
         >
           <div
             class={classes}
-            onMouseenter={ this.hoverEvent.bind(null, true) }
-            onMouseleave={ this.hoverEvent.bind(null, false) }
+            onMouseenter={this.hoverEvent.bind(null, true)}
+            onMouseleave={this.hoverEvent.bind(null, false)}
           >
-            {
-              prefixIconSlot && (<span class="t-select-left-icon">{ prefixIconSlot[0] }</span>)
-            }
-            {
-              showPlaceholder && (
-                <span class={`${name}-placeholder`}> { placeholderText }</span>
-              )
-            }
+            {prefixIconSlot && <span class="t-select__left-icon">{prefixIconSlot[0]}</span>}
+            {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
             {this.valueDisplay || this.$scopedSlots.valueDisplay
               ? renderTNodeJSX(this, 'valueDisplay', {
                 params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
               })
-              : (
-                selectedMultiple.map((item: TdOptionProps, index: number) => (
+              : selectedMultiple.map((item: TdOptionProps, index: number) => (
                   <tag
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
@@ -596,77 +703,60 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     title={get(item, realLabel)}
                     onClose={this.removeTag.bind(null, index)}
                   >
-                    { get(item, realLabel) }
+                    {get(item, realLabel)}
                   </tag>
-                ))
-              )
-            }
-            {this.collapsedItems || this.$scopedSlots.collapsedItems
-              ? renderTNodeJSX(this, 'collapsedItems', {
+              ))}
+            {this.collapsedItems || this.$scopedSlots.collapsedItems ? (
+              renderTNodeJSX(this, 'collapsedItems', {
                 params: {
                   value: selectedMultiple,
                   collapsedSelectedItems: selectedMultiple.slice(this.minCollapsedNum),
                   count: selectedMultiple.length - this.minCollapsedNum,
                 },
               })
-              : <tag
-                  v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum}
-                  size={size}
-                >
-                  { `+${selectedMultiple.length - this.minCollapsedNum}` }
-                </tag>
-            }
-            {!multiple && !showPlaceholder && !showFilter && (
-              <span title={selectedSingle} class={`${name}-selectedSingle`}>{ selectedSingle }</span>
+            ) : (
+              <tag v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum} size={size}>
+                {`+${selectedMultiple.length - this.minCollapsedNum}`}
+              </tag>
             )}
-            {
-              showFilter && (
-                <t-input
-                  ref='input'
-                  v-model={this.searchInput}
-                  size={size}
-                  placeholder={ filterPlaceholder }
-                  disabled={disabled}
-                  class={`${name}-input`}
-                  onFocus={this.focus}
-                  onBlur={this.blur}
-                  onEnter={this.enter}
-                />
-              )
-            }
-            {
-              this.showArrow && !this.showLoading && (
-                <fake-arrow overlayClassName={`${name}-right-icon`} isActive={ this.visible && !this.disabled}/>
-              )
-            }
-            {
-              this.showClose && !this.showLoading && this.getCloseIcon()
-            }
-            {
-              this.showLoading && (
-                <t-loading class={`${name}-right-icon ${name}-active-icon`} size="small"/>
-              )
-            }
+            {!multiple && !showPlaceholder && !showFilter && (
+              <span title={selectedSingle} class={`${name}__single`}>
+                {selectedSingle}
+              </span>
+            )}
+            {showFilter && (
+              <t-input
+                ref="input"
+                v-model={this.searchInput}
+                size={size}
+                placeholder={filterPlaceholder}
+                disabled={disabled}
+                class={`${name}__input`}
+                readonly={!this.visible || !this.showFilter}
+                onFocus={this.focus}
+                onBlur={this.blur}
+                onEnter={this.enter}
+              />
+            )}
+            {this.showArrow && !this.showLoading && (
+              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
+            )}
+            {this.showClose && !this.showLoading && this.getCloseIcon()}
+            {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
           </div>
-          <div slot='content'>
-            <ul v-show={showCreateOption} class={`${name}-create-option`}>
-              <t-option value={this.searchInput} label={this.searchInput} class={`${name}-create-option-special`} />
+          <div slot="content">
+            <ul v-show={showCreateOption} class={`${name}__create-option`}>
+              <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
             </ul>
-            {
-              loading && (
-                <li class={tipsClass}>{ loadingTextSlot || loadingText }</li>
-              )
-            }
-            {
-              !loading && !displayOptions.length && !showCreateOption && (
-                <li class={emptyClass}>{ emptySlot }</li>
-              )
-            }
-            {
-              !hasOptions && displayOptions.length && !loading
-                ? this.renderDataWithOptions()
-                : <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>{children}</ul>
-            }
+            {loading && <li class={tipsClass}>{loadingTextSlot || loadingText}</li>}
+            {!loading && !displayOptions.length && !showCreateOption && <li class={emptyClass}>{emptySlot}</li>}
+            {!hasOptions && displayOptions.length && !loading ? (
+              this.renderDataWithOptions()
+            ) : (
+              <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
+                {children}
+              </ul>
+            )}
           </div>
         </Popup>
       </div>

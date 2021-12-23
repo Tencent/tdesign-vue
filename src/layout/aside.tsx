@@ -2,6 +2,7 @@ import Vue, { VueConstructor } from 'vue';
 import { prefix } from '../config';
 import props from './aside-props';
 import Layout from './layout';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export interface AsideInstance extends Vue {
   layout: InstanceType<typeof Layout>;
@@ -18,29 +19,20 @@ export default (Vue as VueConstructor<AsideInstance>).extend({
       default: undefined,
     },
   },
+
   mounted() {
-    this.layout.$emit('aside-mounted');
+    this.layout.hasSider = true;
   },
+
   destroyed() {
-    this.layout.$emit('aside-unmonuted');
+    this.layout.hasSider = false;
   },
-  methods: {
-    renderContent() {
-      return this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
-    },
-  },
-
-  computed: {},
-
-  watch: {},
 
   render() {
-    const styles = this.width ? {
-      width: this.width,
-    } : {};
+    const styles = this.width ? { width: this.width } : {};
     return (
       <aside class={`${prefix}-layout__sider`} style={styles}>
-        {this.renderContent()}
+        {renderTNodeJSX(this, 'default')}
       </aside>
     );
   },

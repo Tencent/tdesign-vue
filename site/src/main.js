@@ -17,6 +17,9 @@ import 'tdesign-site-components/lib/styles/style.css';
 import 'tdesign-site-components/lib/styles/prism-theme.less';
 import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 
+// import icons webcomponents
+import 'tdesign-icons-view';
+
 Vue.use(TDesign);
 Vue.use(VueRouter);
 
@@ -27,6 +30,19 @@ Vue.component('Codesandbox', Codesandbox);
 const router = new VueRouter({
   mode: process.env.NODE_ENV === 'preview' ? 'hash' : 'history',
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (typeof NProgress !== 'undefined') {
+    NProgress.start();
+  }
+  next();
+});
+
+router.afterEach(() => {
+  if (typeof NProgress !== 'undefined') {
+    NProgress.done();
+  }
 });
 
 new Vue({

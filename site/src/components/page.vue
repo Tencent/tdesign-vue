@@ -27,7 +27,7 @@ import packageJson from '@/package.json';
 
 const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
 
-const historyVersion = ['0.28.2', '0.27.2', '0.26.0', '0.22.8'];
+const historyVersion = [];
 
 export default {
   data() {
@@ -72,7 +72,7 @@ export default {
     },
     changeVersion(version) {
       if (version === packageJson.version) return;
-      location.href = `https://tdesign.cdn-go.cn/tdesign-vue/${version}/`;
+      location.href = `https://${version}-tdesign-vue.surge.sh`;
     },
   },
 };

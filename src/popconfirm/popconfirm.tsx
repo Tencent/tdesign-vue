@@ -94,32 +94,28 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, PopconfirmConfig
       className: `${name}__confirm`,
     });
     return (
-      <div>
-        <Popup
-          ref='popup'
-          visible={this.visible}
-          props={this.innerPopupProps}
-          on={{ 'visible-change': this.onPopupVisibleChange }}
-        >
-          <template slot='content' role='poppconfirm'>
-            <div class={`${name}__content`}>
-              <div class={`${name}__body`}>
-                {this.renderIcon()}
-                <div class={`${name}__inner`}>
-                  {renderTNodeJSX(this, 'content')}
-                </div>
-              </div>
-              {Boolean(cancelBtn || confirmBtn) && (
-                <div class={`${name}__buttons`}>
-                  {cancelBtn}
-                  {confirmBtn}
-                </div>
-              )}
+      <Popup
+        ref="popup"
+        visible={this.visible}
+        props={this.innerPopupProps}
+        on={{ 'visible-change': this.onPopupVisibleChange }}
+      >
+        <template slot="content" role="poppconfirm">
+          <div class={`${name}__content`}>
+            <div class={`${name}__body`}>
+              {this.renderIcon()}
+              <div class={`${name}__inner`}>{renderTNodeJSX(this, 'content')}</div>
             </div>
-          </template>
-          {triggerElement}
-        </Popup>
-      </div>
+            {Boolean(cancelBtn || confirmBtn) && (
+              <div class={`${name}__buttons`}>
+                {cancelBtn}
+                {confirmBtn}
+              </div>
+            )}
+          </div>
+        </template>
+        {triggerElement}
+      </Popup>
     );
   },
 });

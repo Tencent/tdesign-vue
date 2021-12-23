@@ -6,7 +6,12 @@ import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
-  TimePickerInstance, TimePickerPanelInstance, TimeInputEvent, InputTime, TimeInputType, EPickerCols,
+  TimePickerInstance,
+  TimePickerPanelInstance,
+  TimeInputEvent,
+  InputTime,
+  TimeInputType,
+  EPickerCols,
 } from './interface';
 import TPopup, { PopupVisibleChangeContext } from '../popup';
 import { prefix } from '../config';
@@ -68,13 +73,16 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       } = this;
       if (time) {
         return [dayjs(time, this.format)];
-      } if (this.steps.filter((step) => step !== 1).length < 1) {
+      }
+      if (this.steps.filter((step) => step !== 1).length < 1) {
         return [dayjs()];
-      } return [dayjs().hour(0).minute(0).second(0)];
+      }
+      return [dayjs().hour(0).minute(0).second(0)];
     },
     textClassName(): string {
-      const isDefault = (this.inputTime as any)
-        .some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
+      const isDefault = (this.inputTime as any).some(
+        (item: InputTime) => !!item.hour && !!item.minute && !!item.second,
+      );
       return isDefault ? '' : `${name}__group-text`;
     },
   },
@@ -131,13 +139,19 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     // @blur
     onBlurDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
       this.$emit('blur', {
-        trigger, input, value: this.time.format(this.format), e,
+        trigger,
+        input,
+        value: this.time.format(this.format),
+        e,
       });
     },
     // @focus
     onFocusDefault(e: Event, trigger: TimeInputType, index: number, input: number) {
       this.$emit('focus', {
-        trigger, input, value: this.time.format(this.format), e,
+        trigger,
+        input,
+        value: this.time.format(this.format),
+        e,
       });
     },
     // 面板展示隐藏
@@ -275,7 +289,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       };
     },
     // 清除选中
-    clear(context: {e: MouseEvent}) {
+    clear(context: { e: MouseEvent }) {
       const { e } = context;
       this.time = undefined;
       this.needClear = true;
@@ -298,6 +312,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             onClear={this.clear}
             clearable={this.clearable}
             readonly
+            placeholder=" "
             value={this.time ? ' ' : undefined}
             class={this.isShowPanel ? `${prefix}-is-focused` : ''}
           >

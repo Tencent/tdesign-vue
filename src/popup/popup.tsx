@@ -80,10 +80,13 @@ export default Vue.extend({
       return base.concat(this.overlayClassName);
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
-      return triggers.reduce((map, trigger) => ({
-        ...map,
-        [trigger]: this.trigger.includes(trigger),
-      }), {} as any);
+      return triggers.reduce(
+        (map, trigger) => ({
+          ...map,
+          [trigger]: this.trigger.includes(trigger),
+        }),
+        {} as any,
+      );
     },
   },
   watch: {
@@ -146,16 +149,23 @@ export default Vue.extend({
       offEvents.push(on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' })));
       offEvents.push(on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' })));
       offEvents.push(on(popperElm, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }, true)));
-      offEvents.push(on(popperElm, 'mouseleave', (ev: MouseEvent) => {
-        const parent = (this as any).popup;
-        let closeParent: boolean;
-        if (parent?.visible) {
-          const parentRect = parent.$refs.popper.getBoundingClientRect();
-          // close parent if mouse isn't inside
-          closeParent = !(ev.x > parentRect.left && ev.x < parentRect.right && ev.y > parentRect.top && ev.y < parentRect.bottom);
-        }
-        this.handleClose({ trigger: 'trigger-element-hover' }, closeParent);
-      }));
+      offEvents.push(
+        on(popperElm, 'mouseleave', (ev: MouseEvent) => {
+          const parent = (this as any).popup;
+          let closeParent: boolean;
+          if (parent?.visible) {
+            const parentRect = parent.$refs.popper.getBoundingClientRect();
+            // close parent if mouse isn't inside
+            closeParent = !(
+              ev.x > parentRect.left
+              && ev.x < parentRect.right
+              && ev.y > parentRect.top
+              && ev.y < parentRect.bottom
+            );
+          }
+          this.handleClose({ trigger: 'trigger-element-hover' }, closeParent);
+        }),
+      );
     }
     if (this.hasTrigger.focus) {
       if (reference.querySelector('input,textarea')) {
@@ -299,8 +309,7 @@ export default Vue.extend({
     },
     handleDocumentClick(e: Event) {
       const popperElm = this.$refs.popper as HTMLElement;
-      if (!this.$el || this.$el.contains(e.target as Element)
-        || !popperElm || popperElm.contains(e.target as Node)) return;
+      if (!this.$el || this.$el.contains(e.target as Element) || !popperElm || popperElm.contains(e.target as Node)) return;
       this.emitPopVisible(false, { trigger: 'document' });
     },
     emitPopVisible(val: boolean, context: PopupVisibleChangeContext) {
@@ -313,7 +322,7 @@ export default Vue.extend({
     // 需要使用popup的组件设置非对外暴露的expandAnimation开启 对不需要展开收起动画的其他组件无影响
     getContentElm(el: HTMLElement): HTMLElement {
       if (this.expandAnimation) {
-        const content = el.querySelector(`.${name}-content`) as HTMLElement;
+        const content = el.querySelector(`.${name}__content`) as HTMLElement;
         return content;
       }
       return null;

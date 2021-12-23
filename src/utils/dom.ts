@@ -12,7 +12,7 @@ const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 
 const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
-export const on = (((): any => {
+export const on = ((): any => {
   if (!isServer && document.addEventListener) {
     return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
       if (element && event && handler) {
@@ -27,9 +27,9 @@ export const on = (((): any => {
       return () => off(element, event, handler);
     }
   };
-})());
+})();
 
-export const off = (((): any => {
+export const off = ((): any => {
   if (!isServer && document.removeEventListener) {
     return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
       if (element && event) {
@@ -42,7 +42,7 @@ export const off = (((): any => {
       (element as any).detachEvent(`on${event}`, handler);
     }
   };
-})());
+})();
 
 export function once(element: Node, event: string, handler: EventListenerOrEventListenerObject) {
   const handlerFn = typeof handler === 'function' ? handler : handler.handleEvent;
@@ -60,7 +60,7 @@ export function hasClass(el: Element, cls: string): any {
   if (el.classList) {
     return el.classList.contains(cls);
   }
-  return (` ${el.className} `).indexOf(` ${cls} `) > -1;
+  return ` ${el.className} `.indexOf(` ${cls} `) > -1;
 }
 
 export function addClass(el: Element, cls: string): any {
@@ -155,10 +155,7 @@ type ScrollTarget = HTMLElement | Window | Document;
  * @param {boolean} isLeft true为获取scrollLeft, false为获取scrollTop
  * @returns {number}
  */
-export function getScroll(
-  target: ScrollTarget,
-  isLeft?: boolean,
-): number {
+export function getScroll(target: ScrollTarget, isLeft?: boolean): number {
   // node环境或者target为空
   if (typeof window === 'undefined' || !target) {
     return 0;
@@ -237,12 +234,32 @@ export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb
 
 // 用于判断节点内容是否溢出
 export const isNodeOverflow = (ele: Vue | Element | (Vue | Element)[]): boolean => {
-  const { clientWidth = 0, scrollWidth = 0 } = (
-    ele as Element & { clientWidth: number; scrollWidth: number }
-  );
+  const { clientWidth = 0, scrollWidth = 0 } = ele as Element & { clientWidth: number; scrollWidth: number };
 
   if (scrollWidth > clientWidth) {
     return true;
   }
   return false;
+};
+
+// 将子元素selected滚动到父元素parentEle的可视范围内
+export const scrollSelectedIntoView = (parentEle: HTMLElement, selected: HTMLElement) => {
+  // 服务端不处理
+  if (Vue.prototype.$isServer) return;
+  // selected不存在或selected父元素不为parentEle则不处理
+  if (!selected || selected.offsetParent !== parentEle) {
+    parentEle.scrollTop = 0;
+    return;
+  }
+  const selectedTop = selected.offsetTop;
+  const selectedBottom = selectedTop + selected.offsetHeight;
+  const parentScrollTop = parentEle.scrollTop;
+  const parentViewBottom = parentScrollTop + parentEle.clientHeight;
+  if (selectedTop < parentScrollTop) {
+    // selected元素滚动过了，则将其向下滚动到可视范围顶部
+    parentEle.scrollTop = selectedTop;
+  } else if (selectedBottom > parentViewBottom) {
+    // selected元素未滚动到，则将其向上滚动到可视范围底部
+    parentEle.scrollTop = selectedBottom - parentEle.clientHeight;
+  }
 };
