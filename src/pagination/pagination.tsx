@@ -209,7 +209,12 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       if (this.disabled) {
         return;
       }
-      const current = pageIndex;
+      let current = pageIndex;
+      if (pageIndex < min) {
+        current = min;
+      } else if (pageIndex > this.pageCount) {
+        current = this.pageCount;
+      }
       if (this.current !== current) {
         const prev = this.current;
         const pageInfo = {
