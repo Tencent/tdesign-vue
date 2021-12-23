@@ -4,13 +4,7 @@
       <td-doc-search slot="search" ref="tdDocSearch"></td-doc-search>
     </td-header>
     <td-doc-aside ref="tdDocAside" title="Vue for Web">
-      <t-select
-        slot="extra"
-        id="historyVersion"
-        v-model="version"
-        :popupProps="{ zIndex: 500, attach: getAttach }"
-        @change="changeVersion"
-      >
+      <t-select slot="extra" v-model="version" :popupProps="{ zIndex: 500 }" @change="changeVersion">
         <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
           {{ item.label }}
         </t-option>
@@ -61,9 +55,6 @@ export default {
   },
 
   methods: {
-    getAttach() {
-      return document.querySelector('#historyVersion');
-    },
     contentLoaded(callback) {
       requestAnimationFrame(() => {
         this.loaded = true;
