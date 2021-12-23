@@ -5,6 +5,7 @@
       @cell-click="cellClick"
       @cell-double-click="cellDoubleClick"
       @cell-right-click="cellRightClick"
+      @month-change="monthChange"
       @controller-change="controllerChange"
     ></t-calendar>
   </div>
@@ -26,6 +27,9 @@ export default {
     },
     cellRightClick(options) {
       console.log(`鼠标右键点击元格 ${options.cell.formattedDate}`);
+    },
+    monthChange(options) {
+      console.log(`月份切换 ${options.year}-${options.month}`);
     },
     controllerChange(data) {
       console.log('控件值变化', data);
