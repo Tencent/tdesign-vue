@@ -9,11 +9,30 @@ docClass: timeline
 
 ### BREAKING CHANGES
 
+CSS 类名规范: 
+  Table/Menu/Dropdown/Divider/Drawer/Pagination/Dialog/Message/Notification/Anchor/Select/Slider/Form/Badge/List/Cascader/Calendar/DatePicker/Grid/Layout/Popconfirm/Popup/Tooltip/Progress/Radio/Steps/TimePicker/Transfer/Tree/Upload
+  组件相关类名根据 [BEM](https://github.com/Tencent/tdesign-common/blob/develop/css-naming.md) 重新规范，有覆盖过组件库默认样式的同学请参照 [#59](https://github.com/Tencent/tdesign-vue/issues/59) 检查后升级。
 
 ### Bug Fixes
 
+- Input: 修复 Input 无默认 placeholder 的问题，[pr 43](https://github.com/Tencent/tdesign-vue/pull/43)，[@pengYYYYY](https://github.com/pengYYYYY)
+- Pagination: 修复未限制跳转边界的问题，[pr 40](https://github.com/Tencent/tdesign-vue/pull/40)，[@pengYYYYY](https://github.com/pengYYYYY)
+- Select:
+  - 修复 `options` 中的选项 `value` 为空时不能选中的问题，[commit](https://github.com/Tencent/tdesign-vue/commit/25fea9d042964dedf5d7c468464b7acfddbe007f)，[@geff1991](https://github.com/geff1991)
+  - 修复下拉框有滚动条时，会挤占弹出层宽度，导致部分选项出现省略号的问题，[pr 18](https://github.com/Tencent/tdesign-vue/pull/18)，[@geff1991](https://github.com/geff1991)
+- TreeSelect: 修复异步获取数据时报错的问题，[pr 47](https://github.com/Tencent/tdesign-vue/pull/47)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+- Tabs: ，[pr 10](https://github.com/Tencent/tdesign-vue/pull/10)，[@start940315](https://github.com/start940315)
+- Timepicker: 修复 `HH:mm:ss A` 格式下上下午列没有展示的问题，[pr 12](https://github.com/Tencent/tdesign-vue/pull/12)，[@uyarn](https://github.com/uyarn)
+- Checkbox: 修复受控用法下 `change` 重复触发的问题，[pr 43](https://github.com/TDesignOteam/tdesign-vue/pull/43)，[@chaishi](https://github.com/chaishi)
 
 ### Features
+
+- Icon: 官网图标示例支持选中复制代码能力，详情请访问 [官网](https://tdesign.tencent.com/vue/components/icon) 体验
+- Select: 支持键盘交互能力，[pr 18](https://github.com/Tencent/tdesign-vue/pull/18)，[@geff1991](https://github.com/geff1991)
+- Calendar: 支持 `onMonthChange` 事件，[pr 62](https://github.com/Tencent/tdesign-vue/pull/62)，[@PsTiu](https://github.com/PsTiu)
+- Tree: treeNodeModel 添加 `setData`, `remove` 方法；优化动画性能。[pr 58](https://github.com/TDesignOteam/tdesign-vue/pull/58)，[@TabSpace](https://github.com/TabSpace)
+- Form: 过滤 validate 结果，当字段校验不通过时，只返回校验失败的结果，[pr 55](https://github.com/TDesignOteam/tdesign-vue/pull/55)，[@dellyoung](https://github.com/dellyoung)
+- Pagination: 支持受控用法，[pr 42](https://github.com/TDesignOteam/tdesign-vue/pull/42)，[@chaishi](https://github.com/chaishi)
 
 
 ## 0.31.0 `2021-12-09`
