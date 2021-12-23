@@ -94,7 +94,7 @@ export default Vue.extend({
       if (val) {
         this.updatePopper();
         if (!this.hasDocumentEvent && (this.hasTrigger['context-menu'] || this.hasTrigger.click)) {
-          on(document, 'click', this.handleDocumentClick);
+          on(document, 'mousedown', this.handleDocumentClick);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -107,7 +107,7 @@ export default Vue.extend({
         }
       } else {
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick);
+        off(document, 'mousedown', this.handleDocumentClick);
         this.hasDocumentEvent = false;
       }
     },
