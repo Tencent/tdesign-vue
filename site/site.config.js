@@ -336,7 +336,7 @@ export default {
           component: () => import('@/examples/dialog/dialog.md'),
         },
         {
-          title: 'Drawer 模态抽屉',
+          title: 'Drawer 抽屉',
           name: 'drawer',
           path: '/vue/components/drawer',
           component: () => import('@/examples/drawer/drawer.md'),
