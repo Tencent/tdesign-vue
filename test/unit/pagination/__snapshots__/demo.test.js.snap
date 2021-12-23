@@ -429,7 +429,9 @@ exports[`Pagination customizable demo works fine 1`] = `
     <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
-    <div class="t-pagination__jump">跳至<div class="t-input t-size-m t-pagination__input"><input placeholder="请输入" type="text" class="t-input__inner"></div>页</div>
+    <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+      </div>页</div>
   </div>
 </div>
 `;
@@ -646,13 +648,18 @@ exports[`Pagination disabled demo works fine 1`] = `
     >
       跳至
       <div
-        class="t-input t-size-m t-pagination__input"
+        class="t-input-number t-size-m t-input-number--normal t-pagination__input"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input"
+        >
+          <input
+            autocomplete="off"
+            class="t-input__inner"
+            placeholder=""
+            ref="refInputElem"
+          />
+        </div>
       </div>
       页
     </div>
@@ -1039,13 +1046,18 @@ exports[`Pagination jump demo works fine 1`] = `
     >
       跳至
       <div
-        class="t-input t-size-m t-pagination__input"
+        class="t-input-number t-size-m t-input-number--normal t-pagination__input"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input"
+        >
+          <input
+            autocomplete="off"
+            class="t-input__inner"
+            placeholder=""
+            ref="refInputElem"
+          />
+        </div>
       </div>
       页
     </div>
