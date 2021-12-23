@@ -1,19 +1,12 @@
 <template>
   <div class="tdesign-demo-select-base">
-
     <!-- 方式一：使用 options 输出下拉选项。优先级高于 t-option-->
     <t-select v-model="value1" :options="options1" placeholder="请选择云解决方案" />
 
     <!-- 方式二：使用 t-option 输出下拉选项。options 和 t-option 两种实现方式二选一即可 -->
     <t-select v-model="value2" placeholder="请选择云产品">
-      <t-option
-        v-for="item in options2"
-        :value="item.value"
-        :label="item.label"
-        :key="item.value"
-      ></t-option>
+      <t-option v-for="item in options2" :value="item.value" :label="item.label" :key="item.value"></t-option>
     </t-select>
-
   </div>
 </template>
 

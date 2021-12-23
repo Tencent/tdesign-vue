@@ -18,7 +18,7 @@
     <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
 
     <t-table
-      row-key='id'
+      row-key="id"
       :columns="columns"
       :data="data"
       :expanded-row-keys="expandedRowKeys"
@@ -40,34 +40,14 @@
 
     <!-- </t-config-provider> -->
 
-    <div style="margin: 16px 0px;">支持名为 expandedRow 的插槽写法</div>
-
-    <t-table
-      row-key='id'
-      :columns="columns"
-      :data="data"
-      :expanded-row-keys="expandedRowKeys"
-      @expand-change="rehandleExpandChange"
-      :expandIcon="expandIcon"
-      :expandOnRowClick="expandOnRowClick"
-    >
-      <template #expandedRow="{ row }">
-        <div class="more-detail">
-          <p class="title"><b>集群名称:</b></p><p class="content">{{row.instance}}</p><br/>
-          <p class="title"><b>管理员:</b></p><p class="content">{{row.owner}}</p><br/>
-          <p class="title"><b>描述:</b></p><p class="content">{{row.description}}</p>
-        </div>
-      </template>
-      <template #status="{ row }">
-        <p v-if="row.status === 0" class="status">健康</p>
-        <p v-if="row.status === 1" class="status unhealth">异常</p>
-      </template>
-      <template #op-column><p>操作</p></template>
-      <template #op="slotProps">
-        <a class="link" @click="rehandleClickOp(slotProps)">管理</a>
-        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
-      </template>
-    </t-table>
+    <!-- !! 也可以使用具名插槽 `expandedRow` 自定义展开行内容 !! -->
+    <!-- <template #expandedRow="{ row }">
+      <div class="more-detail">
+        <p class="title"><b>集群名称:</b></p><p class="content">{{row.instance}}</p><br/>
+        <p class="title"><b>管理员:</b></p><p class="content">{{row.owner}}</p><br/>
+        <p class="title"><b>描述:</b></p><p class="content">{{row.description}}</p>
+      </div>
+    </template> -->
   </div>
 </template>
 
@@ -77,26 +57,48 @@ import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
   {
-    colKey: 'status', title: '状态', width: 100, cell: 'status',
+    colKey: 'status',
+    title: '状态',
+    width: 100,
+    cell: 'status',
   },
   { colKey: 'owner', title: '管理员' },
   { colKey: 'description', title: '描述' },
   {
-    colKey: 'op', width: 200, title: 'op-column', cell: 'op',
+    colKey: 'op',
+    width: 200,
+    title: 'op-column',
+    cell: 'op',
   },
 ];
 const data = [
   {
-    id: 1, instance: '集群测试1', status: 0, owner: 'jenny;peter', description: '隐藏展开图标',
+    id: 1,
+    instance: '集群测试1',
+    status: 0,
+    owner: 'jenny;peter',
+    description: '隐藏展开图标',
   },
   {
-    id: '2', instance: '集群测试2', status: 1, owner: 'jenny', description: 'test',
+    id: '2',
+    instance: '集群测试2',
+    status: 1,
+    owner: 'jenny',
+    description: 'test',
   },
   {
-    id: 3, instance: '集群测试3', status: 0, owner: 'jenny', description: '自定义图标',
+    id: 3,
+    instance: '集群测试3',
+    status: 0,
+    owner: 'jenny',
+    description: '自定义图标',
   },
   {
-    id: 4, instance: '集群测试4', status: 1, owner: 'peter', description: 'test',
+    id: 4,
+    instance: '集群测试4',
+    status: 1,
+    owner: 'peter',
+    description: 'test',
   },
 ];
 export default {
@@ -112,9 +114,20 @@ export default {
       // defaultExpandedRowKeys: ['2', 4],
       expandedRow: (h, { row }) => (
         <div class="more-detail">
-          <p class="title"><b>集群名称:</b></p><p class="content">{row.instance}</p><br/>
-          <p class="title"><b>管理员:</b></p><p class="content">{row.owner}</p><br/>
-          <p class="title"><b>描述:</b></p><p class="content">{row.description}</p>
+          <p class="title">
+            <b>集群名称:</b>
+          </p>
+          <p class="content">{row.instance}</p>
+          <br />
+          <p class="title">
+            <b>管理员:</b>
+          </p>
+          <p class="content">{row.owner}</p>
+          <br />
+          <p class="title">
+            <b>描述:</b>
+          </p>
+          <p class="content">{row.description}</p>
         </div>
       ),
       globalLocale: {
@@ -167,7 +180,7 @@ export default {
 }
 .status {
   position: relative;
-  color: #00A870;
+  color: #00a870;
   margin-left: 10px;
   &::before {
     position: absolute;
@@ -175,7 +188,7 @@ export default {
     left: 0px;
     transform: translateY(-50%);
     content: '';
-    background-color: #00A870;
+    background-color: #00a870;
     width: 6px;
     height: 6px;
     margin-left: -10px;
@@ -183,9 +196,9 @@ export default {
   }
 }
 .status.unhealth {
-  color: #E34D59;
+  color: #e34d59;
   &::before {
-    background-color: #E34D59;
+    background-color: #e34d59;
   }
 }
 .more-detail {

@@ -4,7 +4,7 @@
       v-model="value"
       placeholder="-请选择-"
       :options="options"
-      style="width: 200px;display: inline-block;margin: 0 20px 20px 0;"
+      style="width: 200px; display: inline-block; margin: 0 20px 20px 0"
       filterable
       @blur="handleBlur"
       @focus="handleFocus"
@@ -16,7 +16,7 @@
       placeholder="-请选择-"
       :options="options"
       :filter="filterMethod"
-      style="width: 400px;display: inline-block;"
+      style="width: 400px; display: inline-block"
       @blur="handleBlur"
       @focus="handleFocus"
     />

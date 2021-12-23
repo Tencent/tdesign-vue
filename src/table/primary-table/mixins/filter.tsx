@@ -1,7 +1,7 @@
 import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { FilterIcon as TIconFilter } from 'tdesign-icons-vue';
-import { PrimaryTableCol, TdPrimaryTableProps } from '../../type';
+import { PrimaryTableCol, TdPrimaryTableProps, FilterValue } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
 import { prefix } from '../../../config';
@@ -9,8 +9,10 @@ import { CheckboxGroup } from '../../../checkbox';
 import { RadioGroup } from '../../../radio';
 import Input from '../../../input';
 import Popup from '../../../popup';
+import TButton from '../../../button';
 import { getTitle } from '../../util/common';
 import { emitEvent } from '../../../utils/event';
+import { renderTNodeJSXDefault } from '../../../utils/render-tnode';
 
 type FilterChangeContext = Parameters<TdPrimaryTableProps['onFilterChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
@@ -19,22 +21,185 @@ type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
+// 筛选条件不为空，才需要显示筛选结果行
+function filterEmptyData(data: FilterValue) {
+  const newFilterValue: FilterValue = {};
+  Object.keys(data).forEach((key) => {
+    const item = data[key];
+    const isArrayTrue = item instanceof Array && item.length;
+    const isObject = typeof item === 'object' && !(item instanceof Array);
+    const isObjectTrue = isObject && Object.keys(item).length;
+    if (isArrayTrue || isObjectTrue || !['null', '', 'undefined'].includes(String(item))) {
+      newFilterValue[key] = item;
+    }
+  });
+  return newFilterValue;
+}
+
 export default Vue.extend({
   name: `${prefix}-primary-table-filter`,
+
+  data() {
+    return {
+      tableWidth: 0,
+      innerFilterValue: this.filterValue,
+      filterPopupVisible: {},
+    };
+  },
+
   props: {
     columns: primaryTableProps.columns,
+    pagination: baseTableProps.pagination,
     filterValue: primaryTableProps.filterValue,
     filterIcon: primaryTableProps.filterIcon,
     data: baseTableProps.data,
+    filterRow: Function,
   },
+
+  computed: {
+    fixedLeftColumn(): boolean {
+      return !!this.columns?.filter((col) => col.fixed === 'left').length;
+    },
+    hasFilterCondition(): boolean {
+      return !!this.columns?.filter((col) => col.filter).length;
+    },
+  },
+
+  watch: {
+    filterValue(val) {
+      this.innerFilterValue = { ...val };
+    },
+  },
+
+  mounted() {
+    // using timer for getting right width
+    let timer = setTimeout(() => {
+      this.updateTableWidth();
+      clearTimeout(timer);
+      timer = null;
+    }, 0);
+  },
+
   methods: {
+    updateTableWidth() {
+      const tbody = this.$el.querySelector(`.${prefix}-table__body`);
+      if (tbody) {
+        this.tableWidth = tbody.clientWidth;
+      } else {
+        const el = this.$el.querySelector(`.${prefix}-table-content`);
+        el && (this.tableWidth = el.clientWidth);
+      }
+    },
+
+    onFilterPopupVisibleChange(visible: boolean, colKey: string) {
+      this.$set(this.filterPopupVisible, colKey, visible);
+    },
+
+    renderFirstFilterRow() {
+      const filterEmpty = filterEmptyData(this.filterValue);
+      if (!this.filterValue || !Object.keys(filterEmpty).length) return null;
+      const defaultNode = (
+        <div class={`${prefix}-table__filter-result`}>
+          <span>搜索 “{this.getFilterResultContent()}”，</span>
+          <span>找到 {this.pagination?.total || this.data?.length} 条结果</span>
+          <TButton theme="primary" variant="text" onClick={this.onResetAll}>
+            清空筛选
+          </TButton>
+        </div>
+      );
+      const filterContent = renderTNodeJSXDefault(this, 'filterRow', {
+        defaultNode,
+      });
+      return (
+        <div
+          style={{ width: this.fixedLeftColumn ? `${this.tableWidth}px` : undefined }}
+          class={`${prefix}-table__row-filter-inner`}
+        >
+          {filterContent}
+        </div>
+      );
+    },
+
+    // 获取搜索条件内容，存在 options 需要获取其 label 显示
+    getFilterResultContent(): string {
+      const arr: string[] = [];
+      this.columns
+        .filter((col) => col.filter)
+        .forEach((col) => {
+          let value = this.filterValue[col.colKey];
+          if (col.filter.list && !['null', '', 'undefined'].includes(String(value))) {
+            const formattedValue = value instanceof Array ? value : [value];
+            const label: string[] = [];
+            col.filter.list.forEach((option) => {
+              if (formattedValue.includes(option.value)) {
+                label.push(option.label);
+              }
+            });
+            value = label.join();
+          }
+          if (value) {
+            arr.push(`${col.title}：${value}`);
+          }
+        });
+      return arr.join('；');
+    },
+
     onInnerFilterChange(val: any, column: PrimaryTableCol) {
       const filterValue = {
-        ...this.filterValue,
+        ...this.innerFilterValue,
         [column.colKey]: val,
       };
+      this.innerFilterValue = filterValue;
+      if (!column.filter.showConfirmAndReset) {
+        this.emitFilterChange(filterValue, column);
+      }
+    },
+
+    emitFilterChange(filterValue: FilterValue, column?: PrimaryTableCol) {
       emitEvent<FilterChangeContext>(this, 'filter-change', filterValue, { col: column });
       emitEvent<ChangeContext>(this, 'change', { filter: filterValue }, { trigger: 'filter' });
+    },
+
+    onReset(column: PrimaryTableCol) {
+      const filterValue: FilterValue = {
+        ...this.innerFilterValue,
+        [column.colKey]:
+          {
+            single: '',
+            multiple: [],
+            input: '',
+          }[column.filter.type]
+          || column.filter.resetValue
+          || '',
+      };
+      this.innerFilterValue = filterValue;
+      this.emitFilterChange(filterValue, column);
+      this.$set(this.filterPopupVisible, column.colKey, false);
+    },
+
+    onResetAll() {
+      this.innerFilterValue = {};
+      this.emitFilterChange({});
+      this.filterPopupVisible = {};
+    },
+
+    onConfirm(column: PrimaryTableCol) {
+      this.emitFilterChange(this.innerFilterValue, column);
+      this.$set(this.filterPopupVisible, column.colKey, false);
+    },
+
+    getBottomButtons(column: PrimaryTableCol) {
+      if (!column.filter.showConfirmAndReset) return;
+      return (
+        <div class={`${prefix}-table__filter--bottom-buttons`}>
+          <TButton theme="default" size="small" onClick={() => this.onReset(column)}>
+            重置
+          </TButton>
+          <TButton theme="primary" size="small" onClick={() => this.onConfirm(column)}>
+            确认
+          </TButton>
+        </div>
+      );
     },
 
     getFilterContent(column: PrimaryTableCol) {
@@ -56,7 +221,7 @@ export default Vue.extend({
       const props = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
-        value: this.filterValue[column.colKey],
+        value: this.innerFilterValue[column.colKey],
       };
       const on = {
         change: (val: any) => this.onInnerFilterChange(val, column),
@@ -72,7 +237,7 @@ export default Vue.extend({
               });
             })
           ) : (
-            <component value={this.filterValue[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
+            <component value={this.innerFilterValue[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
           )}
         </div>
       );
@@ -87,14 +252,26 @@ export default Vue.extend({
             <div class={`${prefix}-table__cell--title`}>
               <div>{title}</div>
               <div class={`${prefix}-table__cell--filter`}>
-                <Popup trigger="click" placement="bottom" showArrow overlayClassName={`${prefix}-table__filter-pop`}>
+                <Popup
+                  visible={this.filterPopupVisible[column.colKey]}
+                  trigger="click"
+                  placement="bottom"
+                  showArrow
+                  overlayClassName={`${prefix}-table__filter-pop`}
+                  on={{
+                    'visible-change': (val: boolean) => this.onFilterPopupVisibleChange(val, column.colKey),
+                  }}
+                >
                   {isFunction(this.filterIcon) ? (
                     this.filterIcon(this.$createElement)
                   ) : (
                     <TIconFilter name="filter" class={`${prefix}-table__filter-icon`} />
                   )}
                   <template slot="content">
-                    <div class={`${prefix}-table__filter-pop-content`}>{this.getFilterContent(column)}</div>
+                    <div class={`${prefix}-table__filter-pop-content`}>
+                      {this.getFilterContent(column)}
+                      {this.getBottomButtons(column)}
+                    </div>
                   </template>
                 </Popup>
               </div>

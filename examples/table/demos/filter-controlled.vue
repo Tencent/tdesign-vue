@@ -15,14 +15,7 @@
     /> -->
 
     <!-- filter-value.sync 等同于 filter-value + filter-change -->
-    <t-table
-      rowKey='key'
-      :columns="columns"
-      :data="data"
-      :filter-value="filterValue"
-      @filter-change="onFilterChange"
-    />
-
+    <t-table rowKey="key" :columns="columns" :data="data" :filter-value="filterValue" @filter-change="onFilterChange" />
   </div>
 </template>
 
@@ -77,6 +70,7 @@ export default {
           // 单选过滤配置
           filter: {
             type: 'single',
+            // showConfirmAndReset: true,
             list: [
               { label: 'anyone', value: '' },
               { label: 'Heriberto', value: 'Heriberto' },
@@ -90,6 +84,8 @@ export default {
           // 多选过滤配置
           filter: {
             type: 'multiple',
+            // 是否显示重置取消按钮，一般情况不需要显示
+            showConfirmAndReset: true,
             list: [
               { label: 'All', checkAll: true },
               { label: 'Skures', value: 'Skures' },
@@ -103,7 +99,13 @@ export default {
           // 输入框过滤配置
           filter: {
             type: 'input',
-            props: { placeholder: '输入关键词过滤' },
+            resetValue: '@',
+            props: {
+              placeholder: '输入关键词过滤',
+              clearable: true,
+            },
+            // 是否显示重置取消按钮
+            showConfirmAndReset: true,
           },
         },
         {
@@ -112,9 +114,7 @@ export default {
           // 自定义过滤组件
           filter: {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            component: (h) => (
-              <t-date-picker defaultValue={''} clearable/>
-            ),
+            component: (h) => <t-date-picker clearable />,
           },
         },
       ],

@@ -23,7 +23,7 @@ export default (Vue as VueConstructor<TabVue>).extend({
     TTabNav,
   },
 
-  ...({ listPanels: null as Array<VNode> }),
+  ...{ listPanels: null as Array<VNode> },
 
   props: { ...props },
 
@@ -100,14 +100,17 @@ export default (Vue as VueConstructor<TabVue>).extend({
             [`${prefix}-is-${this.placement}`]: true,
           }}
         >
-          <TTabNav props={tabNavProps} onChange={this.onChangeTab} onAdd={this.onAddTab} onRemove={this.onRemoveTab}></TTabNav>
+          <TTabNav
+            props={tabNavProps}
+            onChange={this.onChangeTab}
+            onAdd={this.onAddTab}
+            onRemove={this.onRemoveTab}
+          ></TTabNav>
         </div>
       );
     },
     createListPanels() {
-      return this.list.map((item) => (
-        <TTabPanel props={{ ...item }} onRemove={this.onRemoveTab}></TTabPanel>
-      ));
+      return this.list.map((item) => <TTabPanel props={{ ...item }} onRemove={this.onRemoveTab}></TTabPanel>);
     },
     renderList(): VNode[] {
       if (!this.listPanels) {
@@ -117,19 +120,17 @@ export default (Vue as VueConstructor<TabVue>).extend({
     },
     renderContent() {
       // default 的函数可能返回null，此时为了防止 panels 的更新失败，默认用空数组
-      this.listPanels = this.list ? this.renderList() : (this.$scopedSlots.default?.({}) || []);
-      return (
-        <div class={[`${prefix}-tabs__content`]}>
-          { this.listPanels }
-        </div>
-      );
+      this.listPanels = this.list ? this.renderList() : this.$scopedSlots.default?.({}) || [];
+      return <div class={[`${prefix}-tabs__content`]}>{this.listPanels}</div>;
     },
   },
 
   render() {
     return (
       <div class={[`${prefix}-tabs`]}>
-        { this.placement !== 'bottom' ? [this.renderHeader(), this.renderContent()] : [this.renderContent(), this.renderHeader()] }
+        {this.placement !== 'bottom'
+          ? [this.renderHeader(), this.renderContent()]
+          : [this.renderContent(), this.renderHeader()]}
       </div>
     );
   },

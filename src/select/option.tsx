@@ -53,10 +53,12 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   computed: {
     // 键盘上下按键选中hover样式的选项
     hovering(): boolean {
-      return this.tSelect
+      return (
+        this.tSelect
         && this.tSelect.visible
         && this.tSelect.hoverOptions[this.tSelect.hoverIndex]
-        && this.tSelect.hoverOptions[this.tSelect.hoverIndex][this.tSelect.realValue] === this.value;
+        && this.tSelect.hoverOptions[this.tSelect.hoverIndex][this.tSelect.realValue] === this.value
+      );
     },
     multiLimitDisabled(): boolean {
       if (this.tSelect && this.tSelect.multiple && this.tSelect.max) {
@@ -93,7 +95,9 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       if (!this.tSelect) return false;
       if (this.isCreatedOption) return true;
       if (this.tSelect.canFilter && this.tSelect.searchInput !== '') {
-        return this.tSelect.filterOptions.some((option: TdOptionProps) => get(option, this.tSelect.realValue) === this.value);
+        return this.tSelect.filterOptions.some(
+          (option: TdOptionProps) => get(option, this.tSelect.realValue) === this.value,
+        );
       }
       return true;
     },
@@ -150,24 +154,24 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
         v-show={show}
         class={classes}
         title={labelText}
-        onMouseenter={ this.mouseEvent.bind(true) }
-        onMouseleave={ this.mouseEvent.bind(false) }
-        onClick={ this.select }
+        onMouseenter={this.mouseEvent.bind(true)}
+        onMouseleave={this.mouseEvent.bind(false)}
+        onClick={this.select}
         v-ripple
       >
-        {
-          this.tSelect && this.tSelect.multiple
-            ? <t-checkbox
-                checked={selected}
-                disabled={disabled || multiLimitDisabled}
-                nativeOnClick={ (e: MouseEvent) => {
-                  e.preventDefault();
-                } }
-              >
-                {optionChild}
-              </t-checkbox>
-            : <span>{optionChild}</span>
-        }
+        {this.tSelect && this.tSelect.multiple ? (
+          <t-checkbox
+            checked={selected}
+            disabled={disabled || multiLimitDisabled}
+            nativeOnClick={(e: MouseEvent) => {
+              e.preventDefault();
+            }}
+          >
+            {optionChild}
+          </t-checkbox>
+        ) : (
+          <span>{optionChild}</span>
+        )}
       </li>
     );
   },

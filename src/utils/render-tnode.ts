@@ -18,7 +18,7 @@ enum RenderWay {
   Text = 'text',
   JsonString = 'jsonstring',
   VNode = 'vnode',
-  Unknown = 'unknown'
+  Unknown = 'unknown',
 }
 
 export type VmType = Vue | ComponentRenderProxy;
@@ -33,7 +33,7 @@ const getValueRenderWay = (value: RenderTsTypes): RenderWay => {
   // 复杂对象
   if (typeof value === 'object') {
     // 虚拟dom对象
-    if (!(value instanceof Array) && value && (value.context instanceof Vue)) {
+    if (!(value instanceof Array) && value && value.context instanceof Vue) {
       return RenderWay.VNode;
     }
     // 其他复杂对象或数组
@@ -53,7 +53,7 @@ export const RenderTNodeTemplate = Vue.extend({
   },
   render(h: CreateElement, ctx: RenderContext): VNode {
     const { render, params } = ctx.props;
-    const renderResult = (typeof render === 'function') ? render(h, params) : render;
+    const renderResult = typeof render === 'function' ? render(h, params) : render;
     const renderWay = getValueRenderWay(renderResult);
 
     // @ts-ignore
@@ -86,8 +86,8 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true) {
     console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
   }
-  const params = typeof options === 'object' && ('params' in options) ? options.params : null;
-  const defaultNode = typeof options === 'object' && ('defaultNode' in options) ? options.defaultNode : options;
+  const params = typeof options === 'object' && 'params' in options ? options.params : null;
+  const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];
   if (propsNode === false) return;
   if (propsNode === true && defaultNode) {
@@ -103,9 +103,9 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
  * 通过JSX的方式渲染 TNode，props 和 插槽同时处理。与 renderTNodeJSX 区别在于 属性值为 undefined 时会渲染默认节点
  * @param vm 组件实例
  * @param name 插槽和属性名称
- * @example renderTNodeJSX(this, 'closeBtn')
- * @example renderTNodeJSX(this, 'closeBtn', <t-icon-close />)。this.closeBtn 为空时，则兜底渲染 <t-icon-close />
- * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params }) 。params 为渲染节点时所需的参数
+ * @example renderTNodeJSXDefault(this, 'closeBtn')
+ * @example renderTNodeJSXDefault(this, 'closeBtn', <t-icon-close />)。this.closeBtn 为空时，则兜底渲染 <t-icon-close />
+ * @example renderTNodeJSXDefault(this, 'closeBtn', { defaultNode: <t-icon-close />, params }) 。params 为渲染节点时所需的参数
  */
 export const renderTNodeJSXDefault = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
@@ -124,8 +124,8 @@ export const renderTNodeJSXDefault = (vm: VmType, name: string, options?: Scoped
  */
 export const renderContent = (vm: VmType, name1: string, name2: string, options?: VNode | JSXRenderContext) => {
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
-  let defaultNode = (typeof options === 'object' && 'defaultNode' in options) && options.defaultNode;
-  defaultNode = (typeof options === 'object' && 'context' in options) && options;
+  let defaultNode = typeof options === 'object' && 'defaultNode' in options && options.defaultNode;
+  defaultNode = typeof options === 'object' && 'context' in options && options;
   const toParams = params ? { params } : undefined;
   const node1 = renderTNodeJSX(vm, name1, toParams);
   const node2 = renderTNodeJSX(vm, name2, toParams);
