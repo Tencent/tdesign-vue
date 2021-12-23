@@ -9,7 +9,7 @@ import Vue from 'vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
-import TInput from '../input';
+import TInputNumber from '../input-number';
 import { Select, Option } from '../select';
 import CLASSNAMES from '../utils/classnames';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -34,7 +34,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     ChevronRightDoubleIcon,
     ChevronLeftDoubleIcon,
     EllipsisIcon,
-    TInput,
+    TInputNumber,
     TSelect: Select,
     TOption: Option,
   },
@@ -74,18 +74,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   watch: {
     current(val) {
       this.jumpIndex = val;
-    },
-    jumpIndex(val) {
-      if (val < 1) {
-        this.$nextTick(() => {
-          this.jumpIndex = 1;
-        });
-      }
-      if (val > this.pageCount) {
-        this.$nextTick(() => {
-          this.jumpIndex = this.pageCount;
-        });
-      }
     },
   },
 
@@ -397,11 +385,14 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {this.showJumper ? (
           <div class={this.jumperClass}>
             {this.t(this.global.jumpTo)}
-            <t-input
+            <t-input-number
               class={this.jumperInputClass}
               v-model={this.jumpIndex}
               onBlur={this.onJumperChange}
               onEnter={this.onJumperChange}
+              max={this.pageCount}
+              min={min}
+              theme="normal"
             />
             {this.t(this.global.page)}
           </div>
