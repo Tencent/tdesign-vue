@@ -155,12 +155,14 @@
     "rollup-plugin-vue": "^5.1.9",
     "tdesign-icons-view": "0.0.1",
     "tdesign-publish-cli": "^0.0.8",
-    "tdesign-site-components": "^0.5.26",
+    "tdesign-site-components": "^0.5.28",
     "ts-jest": "^26.0.0",
     "typescript": "^4.4.4",
     "vite": "^2.7.6",
     "vite-plugin-tdoc": "^2.0.2",
     "vite-plugin-vue2": "^1.9.0",
+    "vite-plugin-pwa": "^0.11.11",
+    "workbox-precaching": "^6.3.0",
     "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
     "vue-jest": "^3.0.5",
@@ -185,8 +187,5 @@
       "prettier --write",
       "npm run lint:fix"
     ]
-  },
-  "workspaces": [
-    "site"
-  ]
+  }
 }
