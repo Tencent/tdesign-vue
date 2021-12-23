@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-18 21:15:13
+ * updated at 2021-12-23 13:19:48
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -240,6 +240,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   filterIcon?: TNode;
   /**
+   * 自定义过滤状态行及清空筛选等
+   */
+  filterRow?: string | TNode;
+  /**
    * 过滤数据的值
    */
   filterValue?: FilterValue;
@@ -306,7 +310,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
   /**
    * 过滤参数发生变化时触发，泛型 T 指表格数据类型
    */
-  onFilterChange?: (filterValue: FilterValue, context: { col: PrimaryTableCol<T> }) => void;
+  onFilterChange?: (filterValue: FilterValue, context: { col?: PrimaryTableCol<T> }) => void;
   /**
    * 选中行发生变化时触发，泛型 T 指表格数据类型。两个参数，第一个参数为选中行 keys，第二个参数为更多参数，具体如下：`type = uncheck` 表示当前行操作为「取消行选中」；`type = check` 表示当前行操作为「行选中」； `currentRowKey` 表示当前操作行的 rowKey 值； `currentRowData` 表示当前操作行的行数据
    */
@@ -439,7 +443,7 @@ export interface TableColumnFilter {
    */
   props?: FilterProps;
   /**
-   * 重置时设置的值
+   * 重置时设置的值，示例：'' 或 []
    */
   resetValue?: any;
   /**

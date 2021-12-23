@@ -10784,7 +10784,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                   <div>FirstName</div>
                   <div class="t-table__cell--filter">
                     <div class="t-popup__reference">
-                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                         <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                       </svg>
                     </div>
@@ -10796,7 +10796,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                   <div>LastName</div>
                   <div class="t-table__cell--filter">
                     <div class="t-popup__reference">
-                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                         <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                       </svg>
                     </div>
@@ -10808,7 +10808,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                   <div>Email</div>
                   <div class="t-table__cell--filter">
                     <div class="t-popup__reference">
-                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                         <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                       </svg>
                     </div>
@@ -10820,7 +10820,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                   <div>Date</div>
                   <div class="t-table__cell--filter">
                     <div class="t-popup__reference">
-                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table-filter-icon">
+                      <div name="t-popup--animation" appear="true"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon">
                         <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                       </svg>
                     </div>
@@ -11916,7 +11916,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div class="t-table t-table--bordered t-table--striped t-table-valign__top">
+<div class="t-table t-table--bordered t-table--striped t-table-table--align-top">
   <div class="t-loading__parent">
     <div class="t-table__content">
       <table style="table-layout:fixed;">

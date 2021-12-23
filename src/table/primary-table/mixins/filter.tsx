@@ -108,7 +108,6 @@ export default Vue.extend({
         </div>
       );
       const filterContent = renderTNodeJSXDefault(this, 'filterRow', {
-        params: { row: {} },
         defaultNode,
       });
       return (
@@ -258,7 +257,7 @@ export default Vue.extend({
                   trigger="click"
                   placement="bottom"
                   showArrow
-                  overlayClassName={`${prefix}-table-filter-pop`}
+                  overlayClassName={`${prefix}-table__filter-pop`}
                   on={{
                     'visible-change': (val: boolean) => this.onFilterPopupVisibleChange(val, column.colKey),
                   }}
@@ -266,10 +265,10 @@ export default Vue.extend({
                   {isFunction(this.filterIcon) ? (
                     this.filterIcon(this.$createElement)
                   ) : (
-                    <TIconFilter name="filter" class={`${prefix}-table-filter-icon`} />
+                    <TIconFilter name="filter" class={`${prefix}-table__filter-icon`} />
                   )}
                   <template slot="content">
-                    <div class={`${prefix}-table-filter-pop-content`}>
+                    <div class={`${prefix}-table__filter-pop-content`}>
                       {this.getFilterContent(column)}
                       {this.getBottomButtons(column)}
                     </div>
