@@ -1,6 +1,6 @@
 ---
 title: 最佳实践
-description: 欢迎使用 TDesign Starter for Vue, 快速搭建你的项目!
+description: 欢迎使用 TDesign Starter for Vue，快速搭建你的项目!
 spline: explain
 ---
 
@@ -19,7 +19,7 @@ spline: explain
   .
   <a href="https://github.com/Tencent/tdesign-vue-starter">代码仓库</a>
   ·
-  <a href="https://github.com/Tencent/tdesign-vue-starter/issues/new">反馈问题</a>
+  <a href="https://github.com/Tencent/tdesign-vue-starter/issues/new/choose">反馈问题</a>
 </p>
 <p>
   <img src="https://tdesign.gtimg.com/starter/starter.png" style="border-radius:6px;border:1px solid var(--component-border)"/>
@@ -71,120 +71,10 @@ td-starter init
   <img src="https://tdesign.gtimg.com/starter/starter-cli.png" style="border-radius:6px;border:1px solid var(--component-border)"/>
 </p>
 
-### 项目脚本
-
-```bash
-## 安装依赖
-npm install
-
-## 启动项目
-npm run dev
-
-## 项目构建
-npm run build
-
-## 项目预览
-npm run serve
-
-## 项目lint
-npm run lint
-
-## 修复lint
-npm run lint:fix
-
-```
-
-### 路由和菜单
-
-菜单（侧边栏和面包屑）由路由配置自动生成，根据路由变化可自动匹配，开发者无需手动处理这些逻辑。
-可在`src/config/routes.js`文件中修改。
-菜单和路由的映射如下：
-
-```json
-{
-  "path": "/dashboard",
-  "icon": "chart-pie",
-  "title": "仪表板",
-  "component": "../layouts/default.vue",
-  "children": [
-    {
-      "title": "基础仪表盘",
-      "path": "base",
-      "component": "../pages/demo.vue",
-      "children": [
-        {
-          "title": "基础仪表盘",
-          "path": "base",
-          "component": "../pages/demo.vue"
-        }
-      ]
-    }
-  ]
-}
-```
-
-### 布局
-
-网站布局支持“空布局”， “侧边栏导航布局”， “侧边栏布局加头部导航”，“头部导航”四种；布局文件地址在`src/layouts`
-
-其中`src/layouts/td-layout`为动态布局，可以在`src/config/style.js`中进行个性化配置以下功能
-
-- 左侧布局，顶部布局，混合布局
-- 是否展示面包屑
-- 是否展示 footer
-- 是否展示紧凑版页面
-- 主题切换（规划中）
-
-  <br/>
-
-更多定制化布局，推荐使用 TDesign UI layout
-
-- `<t-layout>`
-- `<t-header>`
-- `<t-footer>`
-- `<t-aside>`
-- `<t-content>`
-
-### 转发配置 mock
-
-在 vite.config.js 中 viteMockServe 中配置 localEnabled 为 ture 即可开启 mock server 的拦截。
-
-mock 文件可在 `/mock/index.ts`文件中进行新增，支持采用 `mock.js`模拟数据。
-
-```javascript
-viteMockServe({
-  mockPath: 'mock',
-  localEnabled: true,
-});
-```
-
-### 提交规范
-
-整齐美观的提交规范，沟通维护更加省力, 本项目采用[ Angular Git Commit Guidelines](https://zj-git-guide.readthedocs.io/zh_CN/latest/message/Angular%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E8%A7%84%E8%8C%83/)
-
-### 社区插件
-
-| 名称                                                      | 简介                |
-| --------------------------------------------------------- | ------------------- |
-| [qrcode.vue](https://github.com/scopewu/qrcode.vue)       | vue2 二维码预览工具 |
-| [vue-clipboard2](https://github.com/Inndy/vue-clipboard2) | 剪切板功能          |
-| [nprogress](https://github.com/rstacruz/nprogress)        | 应用加载进度条      |
+详细使用请参照 [TDesign Starter 文档](https://tdesign.tencent.com/starter/docs/get-started)。
 
 ### 兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Edge >=16                                                                                                                                                                                                       | Firefox >=60                                                                                                                                                                                                      | Chrome >=61                                                                                                                                                                                                   | Safari >=11                                                                                                                                                                                                   |
-
-### 常见问题
-
-##### 1、Cannot find module ‘worker_threads’
-
-Vite 运行依赖 Node `12.0.0` 以上版本, Node 10.5 版本之前不支持 Worker，请升级 Node 版本即可。
-
-##### 2、 wasm code commit Allocation failed - process out of memory
-
-方法一、启动项目时内存溢出，需要升级 Node 版本至 `15.3.0` [(完整问题)](https://stackoverflow.com/questions/48387040/how-do-i-determine-the-correct-max-old-space-size-for-node-js)
-
-方法二、调整 Node 内存大小使用限制
-`max_old_space_size=4096`[(完整问题)](https://segmentfault.com/a/1190000010437948)
+| Edge >=79                                                                                                                                                                                                       | Firefox >=83                                                                                                                                                                                                      | Chrome >=69                                                                                                                                                                                                   | Safari >=12                                                                                                                                                                                                   |
