@@ -22,6 +22,11 @@ CSS 类名规范:
 - TreeSelect: 修复空数据时报错的问题，[pr 47](https://github.com/Tencent/tdesign-vue/pull/47)，[@Godlike-meteor](https://github.com/Godlike-meteor)
 - Timepicker: 修复 `HH:mm:ss A` 格式下上下午列没有展示的问题，[pr 12](https://github.com/Tencent/tdesign-vue/pull/12)，[@uyarn](https://github.com/uyarn)
 - Checkbox: 修复受控用法下 `change` 重复触发的问题，[pr 43](https://github.com/TDesignOteam/tdesign-vue/pull/43)，[@chaishi](https://github.com/chaishi)
+- Table: 固定表头与内容没有对齐的问题，[pr 82](https://github.com/Tencent/tdesign-vue/pull/82)，[@realxiaoyu](https://github.com/realyuyanan)
+- Slider: 修复在inputNumber 使用 theme: row 时样式错误问题，[common pr 48](https://github.com/Tencent/tdesign-common/pull/48)，[@southorange1228](https://github.com/southorange1228)
+- InputNumber: 样式遮挡文档，[pr 46](https://github.com/Tencent/tdesign-common/pull/46)，[issue 47](https://github.com/Tencent/tdesign-vue-next/issues/47)，[@clark-cui](https://github.com/clark-cui)
+- Menu: 删除无效 content，[pr 47](https://github.com/Tencent/tdesign-common/pull/47)，[@southorange1228](https://github.com/southorange1228)
+- Upload: 触发元素宽度过大问题，[pr 50](https://github.com/Tencent/tdesign-common/pull/50)，[@byq1213](https://github.com/byq1213)
 
 ### Features
 
