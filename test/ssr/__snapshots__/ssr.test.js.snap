@@ -3319,7 +3319,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="type" colspan="1" rowspan="1">
                 <div class="t-table__cell--sortable">
@@ -3353,7 +3353,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
               <td class="" key="type" colspan="1" rowspan="1">
@@ -10193,7 +10193,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             <col style="width:100px;">
             <col style="width:250px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="firstName" colspan="1" rowspan="1" style="overflow:hidden;">FirstName</td>
               <td class="" key="lastName" colspan="1" rowspan="1" style="overflow:hidden;">LastName</td>
@@ -10262,7 +10262,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
               <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -10333,7 +10333,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
             <col style="width:290px;">
             <col style="width:235px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
               <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -10386,7 +10386,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
           <col>
           <col>
         </colgroup>
-        <thead columnsProps="[object Object],[object Object],[object Object]">
+        <thead>
           <tr>
             <td class="" key="type" colspan="1" rowspan="1"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-app">
                 <path fill="currentColor" d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z" fill-opacity="0.9"></path>
@@ -10428,7 +10428,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               <col style="width:200px;">
               <col style="width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">
@@ -10521,7 +10521,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <col style="width:200px;">
               <col style="width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">状态</td>
@@ -10593,7 +10593,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="platform" colspan="1" rowspan="1">平台</td>
@@ -10621,7 +10621,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="platform" colspan="1" rowspan="1">平台</td>
@@ -10659,7 +10659,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
               <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
@@ -10785,7 +10785,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="firstName" colspan="1" rowspan="1">
                 <div class="t-table__cell--title">
@@ -10902,7 +10902,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <col style="width:150px;">
             <col style="width:100px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__cell--fixed-left t-align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
               <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
@@ -10988,7 +10988,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <col style="width:200px;">
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-align-center" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
               <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -11217,7 +11217,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <col style="width:150px;">
             <col style="width:100px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__cell--fixed-left t-align-center" key="index" colspan="1" rowspan="1" style="position:sticky;left:0px;">序号</td>
               <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
@@ -11468,7 +11468,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
                 <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -11519,7 +11519,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
                 <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -11572,7 +11572,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
                 <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -11624,7 +11624,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           <col style="width:100px;min-width:100px;">
           <col style="width:100px;min-width:100px;">
         </colgroup>
-        <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object]">
+        <thead>
           <tr>
             <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
             <td class="t-align-left t-text-ellipsis row" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
@@ -11685,7 +11685,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           <col>
           <col>
         </colgroup>
-        <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+        <thead>
           <tr>
             <td class="" colspan="4" rowspan="1">汇总属性</td>
             <td class="" colspan="2" rowspan="1">属性及说明</td>
@@ -11739,7 +11739,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               <col style="width:200px;">
               <col style="width:100px;">
             </colgroup>
-            <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+            <thead>
               <tr>
                 <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
                 <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">
@@ -11833,7 +11833,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
               <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
@@ -11936,7 +11936,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
           <col style="width:200px;">
           <col style="width:260px;">
         </colgroup>
-        <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+        <thead>
           <tr>
             <td class="" key="name" colspan="1" rowspan="1" style="overflow:hidden;">姓名</td>
             <td class="" key="gender" colspan="1" rowspan="1" style="overflow:hidden;">性别</td>
@@ -11988,7 +11988,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__cell--selectable" key="row-select" colspan="1" rowspan="1" style="overflow:hidden;"><label class="t-checkbox t-is-indeterminate"><input type="checkbox" indeterminate="indeterminate" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
               <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
@@ -12067,7 +12067,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__cell--selectable" key="row-select" colspan="1" rowspan="1" style="overflow:hidden;"></td>
               <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
@@ -12145,7 +12145,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             <col>
             <col style="width:200px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
               <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">状态</td>
@@ -12217,7 +12217,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             <col style="width:200px;">
             <col style="width:100px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="" key="instance" colspan="1" rowspan="1" style="overflow:hidden;">集群名称</td>
               <td class="" key="status" colspan="1" rowspan="1" style="overflow:hidden;">
@@ -12308,7 +12308,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             <col>
             <col style="width:350px;">
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="row" key="key" colspan="1" rowspan="1" style="overflow:hidden;">编号</td>
               <td class="" key="platform" colspan="1" rowspan="1">平台</td>
@@ -12434,7 +12434,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <col>
             <col>
           </colgroup>
-          <thead columnsProps="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]">
+          <thead>
             <tr>
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" colspan="1" rowspan="1" style="overflow:hidden;"></td>
               <td class="t-table__cell--selectable" key="row-select" colspan="1" rowspan="1" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>

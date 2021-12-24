@@ -86,9 +86,7 @@ exports[`Table base demo works fine 1`] = `
               style="width: 200px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-align-center row"
@@ -495,9 +493,7 @@ exports[`Table base demo works fine 2`] = `
               style="width: 200px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-align-center row"
@@ -846,9 +842,7 @@ exports[`Table customCell demo works fine 1`] = `
               style="width: 235px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class=""
@@ -1045,9 +1039,7 @@ exports[`Table empty demo works fine 1`] = `
             <col />
             <col />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class=""
@@ -1135,9 +1127,7 @@ exports[`Table empty demo works fine 1`] = `
             <col />
             <col />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class=""
@@ -1325,9 +1315,7 @@ exports[`Table expandable demo works fine 1`] = `
               style="width: 200px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-table__expandable-icon-cell"
@@ -2114,9 +2102,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
               style="width: 100px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-table__cell--fixed-left t-align-center"
@@ -2605,9 +2591,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
             />
             <col />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-align-center"
@@ -3882,9 +3866,7 @@ exports[`Table multiHeader demo works fine 1`] = `
           <col />
           <col />
         </colgroup>
-        <thead
-          columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-        >
+        <thead>
           <tr>
             <td
               class=""
@@ -4115,9 +4097,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
               style="width: 200px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-table__cell--selectable"
@@ -4561,9 +4541,7 @@ exports[`Table selectSingle demo works fine 1`] = `
               style="width: 200px;"
             />
           </colgroup>
-          <thead
-            columnsprops="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
-          >
+          <thead>
             <tr>
               <td
                 class="t-table__cell--selectable"
