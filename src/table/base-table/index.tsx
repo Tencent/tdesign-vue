@@ -143,12 +143,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       this.$once('hook:beforeDestroy', () => window.removeEventListener('resize', checkScrollableToLeftOrRight));
     },
     renderHeader(): VNode {
-      const {
-        columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
-      } = this;
-      return (
-        <TableHeader scopedSlots={scopedSlots} columns={columns} columnsProps={flattedColumns} bordered={bordered} />
-      );
+      const { columns, $scopedSlots: scopedSlots, bordered } = this;
+      return <TableHeader scopedSlots={scopedSlots} columns={columns} bordered={bordered} />;
     },
     registerRowEvents() {
       const events = {};
