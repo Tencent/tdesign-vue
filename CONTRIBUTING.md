@@ -15,6 +15,7 @@
 - 发起 pr
 - 会有 PMC 同学来 CR 本次提交的代码，请及时关注 CR 评论通知信息
 - CR 通过后会合并进入 develop 分支，等待周迭代或紧急 patch 版本发布 npm
+- 本仓库采用 [git submodule](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97) 的方式管理子项目 [tdesign-common](https://github.com/Tencent/tdesign-common), 请运行 `git submodule update --init` 初始化子项目
 
 ## 开发
 
