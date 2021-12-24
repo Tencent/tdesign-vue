@@ -127,6 +127,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       ];
       return classes;
     },
+    usePadding(): boolean {
+      return this.scrollableToRight || this.scrollableToLeft;
+    },
   },
   methods: {
     // 检查是否还可以向左或者向右滚动
@@ -214,6 +217,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         scrollBarWidth,
         hasFixedColumns,
         tableHeight,
+        usePadding,
       } = this;
       // handle scroll
       const handleScroll = throttle((e: Event) => {
@@ -224,12 +228,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       }, 10);
       //  fixed table header
       const paddingRight = `${scrollBarWidth}px`;
+      const headerContainerStyle = columns.length > 1 && usePadding ? { paddingRight } : {};
       fixedTable.push(
-        <div
-          class={`${prefix}-table__header`}
-          style={{ paddingRight: columns.length > 1 ? paddingRight : '' }}
-          ref="scrollHeader"
-        >
+        <div class={`${prefix}-table__header`} style={headerContainerStyle} ref="scrollHeader">
           <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
