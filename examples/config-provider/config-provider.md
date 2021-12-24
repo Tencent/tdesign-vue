@@ -11,6 +11,7 @@ datePicker | Object | - | 日期选择器全局配置。TS 类型：`DatePickerC
 dialog | Object | - | 对话框全局配置。TS 类型：`DialogConfig` | N
 drawer | Object | - | 抽屉全局配置。TS 类型：`DrawerConfig` | N
 form | Object | - | 表单组件全局配置。TS 类型：`FormConfig` | N
+input | Object | - | 输入框组件全局配置。TS 类型：`InputConfig` | N
 pagination | Object | - | 分页组件全局配置。TS 类型：`PaginationConfig` | N
 popconfirm | Object | - | 气泡确认框全局配置。TS 类型：`PopconfirmConfig` | N
 select | Object | - | 选择器组件全局配置。TS 类型：`SelectConfig` | N
@@ -22,6 +23,12 @@ transfer | Object | - | 穿梭框全局配置。TS 类型：`TransferConfig` | N
 tree | Object | - | 树组件全局配置。TS 类型：`TreeConfig` | N
 treeSelect | Object | - | 树选择器组件全局配置。TS 类型：`TreeSelectConfig` | N
 upload | Object | - | 上传组件全局配置。TS 类型：`UploadConfig` | N
+
+### InputConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+placeholder | String | 请输入 | 占位符文本 | N
 
 ### PaginationConfig
 
