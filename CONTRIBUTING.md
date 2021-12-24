@@ -21,7 +21,7 @@
 ⚠️ `npm` 版本要求至少为 `npm7`，执行 `npm install npm@latest -g` 更新至最新版本。
 
 ```bash
-git clone --recursive https://github.com/Tencent/tdesign-vue.git
+git clone --recurse-submodules https://github.com/Tencent/tdesign-vue.git
 cd tdesign-vue
 
 # 开发预览
