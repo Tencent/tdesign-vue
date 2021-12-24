@@ -4955,7 +4955,7 @@ exports[`ssr snapshot test renders ./examples/input/demos/addon.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/input/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
-  <div class="t-input t-size-m"><input placeholder="请输入内容（无默认值）" type="text" class="t-input__inner"></div>
+  <div class="t-input t-size-m"><input placeholder="请输入" type="text" class="t-input__inner"></div>
   <div class="t-input t-size-m"><input placeholder="请输入内容（有默认值）" type="text" value="有默认值" class="t-input__inner"></div>
 </div>
 `;
@@ -13195,7 +13195,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/range.vue correc
   <div class="demos t-popup__reference t-time-picker t-size-m">
     <div name="t-popup--animation" appear="true"></div>
     <div class="t-time-picker__group">
-      <div class="t-input t-size-m t-input--suffix"><input readonly="readonly" placeholder="请输入" type="text" value=" " class="t-input__inner"><span class="t-input__suffix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input readonly="readonly" placeholder=" " type="text" value=" " class="t-input__inner"><span class="t-input__suffix"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
       <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input value="00" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="00" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="00" class="t-time-picker__input-item-input"></span>-<span class="t-time-picker__input-item"><input value="23" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="59" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="59" class="t-time-picker__input-item-input"></span></div>
     </div>
   </div>

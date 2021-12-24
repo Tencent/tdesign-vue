@@ -59,8 +59,9 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       return time.map((val: dayjs.Dayjs) => (val ? dayjs(val) : dayjs()));
     },
     textClassName(): string {
-      const isDefault = (this.inputTime as any)
-        .some((item: InputTime) => !!item.hour && !!item.minute && !!item.second);
+      const isDefault = (this.inputTime as any).some(
+        (item: InputTime) => !!item.hour && !!item.minute && !!item.second,
+      );
       return isDefault ? '' : `${name}__group-text`;
     },
   },
@@ -181,10 +182,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         this.time[1] = setTime;
         shouldUpdatePanel = true;
       } else if (index === 1 && !this.time[0]) {
-        this.time[0] = dayjs()
-          .hour(0)
-          .minute(0)
-          .second(0);
+        this.time[0] = dayjs().hour(0).minute(0).second(0);
         shouldUpdatePanel = true;
       }
       this.updateInputTime();
@@ -238,7 +236,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       this.triggerUpdateValue();
     },
     // 清除选中
-    clear(context: {e: MouseEvent}) {
+    clear(context: { e: MouseEvent }) {
       const { e } = context;
       this.time = TIME_PICKER_EMPTY;
       this.updateInputTime();
@@ -268,6 +266,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             size={this.size}
             onClear={this.clear}
             clearable={this.clearable}
+            placeholder=" "
             readonly
             value={!isEqual(this.time, TIME_PICKER_EMPTY) ? ' ' : undefined}
           >

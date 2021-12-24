@@ -79,7 +79,7 @@ exports[`Input base demo works fine 1`] = `
   >
     <input
       class="t-input__inner"
-      placeholder="请输入内容（无默认值）"
+      placeholder="请输入"
       type="text"
     />
   </div>
