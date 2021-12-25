@@ -193,6 +193,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     emitClear(e: MouseEvent) {
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
+      this.focus();
+      this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
       if (this.disabled) return;
