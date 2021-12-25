@@ -20,6 +20,7 @@ header | String / Boolean / Slot / Function | undefined | 头部内容。值为 
 mode | String | overlay | 展开方式，有两种：直接展示在内容上方 和 推开内容区域。可选项：overlay/push | N
 placement | String | right | 抽屉方向。可选项：left/right/top/bottom | N
 showInAttachedElement | Boolean | false | 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative | N
+preventScrollThrough | Boolean | true | 防止滚动穿透 | N
 showOverlay | Boolean | true | 是否显示遮罩层 | N
 size | String | small | 尺寸，支持 'small', 'medium', 'large'，'35px', '30%',  '3em' 等。纵向抽屉调整的是抽屉宽度，横向抽屉调整的是抽屉高度 | N
 sizeDraggable | Boolean | false | 抽屉大小可拖拽调整，横向抽屉调整宽度，纵向抽屉调整高度 | N
