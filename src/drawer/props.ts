@@ -77,6 +77,11 @@ export default {
   },
   /** 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative */
   showInAttachedElement: Boolean,
+  /** 防止滚动穿透 */
+  preventScrollThrough: {
+    type: Boolean,
+    default: true,
+  },
   /** 是否显示遮罩层 */
   showOverlay: {
     type: Boolean,

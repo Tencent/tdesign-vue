@@ -76,6 +76,11 @@ export interface TdDrawerProps {
    */
   showInAttachedElement?: boolean;
   /**
+   * 防止滚动穿透
+   * @default true
+   */
+  preventScrollThrough?: boolean;
+  /**
    * 是否显示遮罩层
    * @default true
    */
@@ -128,10 +133,13 @@ export interface TdDrawerProps {
    * 如果蒙层存在，点击蒙层时触发
    */
   onOverlayClick?: (context: { e: MouseEvent }) => void;
-};
+}
 
 export type FooterButton = string | ButtonProps | TNode;
 
 export type DrawerEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay';
 
-export interface DrawerCloseContext { trigger: DrawerEventSource; e: MouseEvent | KeyboardEvent };
+export interface DrawerCloseContext {
+  trigger: DrawerEventSource;
+  e: MouseEvent | KeyboardEvent;
+}

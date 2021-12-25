@@ -9,12 +9,14 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DrawerConfig } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
+import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
+const lockClass = `${prefix}-drawer-lock`;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
@@ -44,11 +46,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     sizeValue(): string {
       const defaultSize = isNaN(Number(this.size)) ? this.size : `${this.size}px`;
-      return {
-        small: '300px',
-        medium: '500px',
-        large: '760px',
-      }[this.size] || defaultSize;
+      return (
+        {
+          small: '300px',
+          medium: '500px',
+          large: '760px',
+        }[this.size] || defaultSize
+      );
     },
     wrapperStyles(): Styles {
       return {
@@ -62,7 +66,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       return [`${name}__content-wrapper`, `${name}__content-wrapper--${this.placement}`];
     },
     parentNode(): HTMLElement {
-      return this.$el && this.$el.parentNode as HTMLElement;
+      return this.$el && (this.$el.parentNode as HTMLElement);
     },
     modeAndPlacement(): string {
       return [this.mode, this.placement].join();
@@ -73,12 +77,25 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         justifyContent: this.placement === 'right' ? 'flex-start' : 'flex-end',
       };
     },
+    lockFullscreen(): boolean {
+      return this.preventScrollThrough;
+    },
   },
 
   watch: {
     modeAndPlacement: {
       handler() {
         this.handlePushMode();
+      },
+      immediate: true,
+    },
+    visible: {
+      handler(value) {
+        if (value && !this.showInAttachedElement) {
+          this.lockFullscreen && addClass(document.body, lockClass);
+        } else {
+          this.lockFullscreen && removeClass(document.body, lockClass);
+        }
       },
       immediate: true,
     },
@@ -100,19 +117,18 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         onkeydown={this.onKeyDown}
         v-transfer-dom={this.attach}
       >
-        {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick}/>}
+        {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick} />}
         <div class={this.wrapperClasses} style={this.wrapperStyles}>
           {this.header !== false ? <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div> : null}
-          {this.closeBtn !== false
-            ? (
-              <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
-                {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-              </div>)
-            : null}
+          {this.closeBtn !== false ? (
+            <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
+              {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+            </div>
+          ) : null}
           <div class={`${name}__body`}>{body}</div>
-          {this.footer !== false
-            ? <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
-            : null }
+          {this.footer !== false ? (
+            <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+          ) : null}
         </div>
       </div>
     );
@@ -148,13 +164,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button
-          theme={theme}
-          onClick={clickAction}
-          props={isApiObject ? btnApi : {}}
-          class={`${name}-${btnType}`}
-        >
-          { (btnApi && typeof btnApi === 'object') ? btnApi.content : btnApi }
+        <t-button theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}} class={`${name}-${btnType}`}>
+          {btnApi && typeof btnApi === 'object' ? btnApi.content : btnApi}
         </t-button>
       );
     },
