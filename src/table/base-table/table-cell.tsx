@@ -5,6 +5,8 @@ import { isNodeOverflow } from '../../utils/dom';
 import { TdInstance } from '../util/interface';
 import { getRecord } from '../util/common';
 
+export const ELLIPSIS_CLASS_NAME = `${prefix}-text-ellipsis`;
+
 const overlayStyle = {
   width: '100%',
   maxWidth: '400px',
@@ -139,6 +141,7 @@ export default Vue.extend({
       },
       style,
     };
+    let newCellContent = cellContent;
     // 如果被截断给加上 Tooltip 提示
     if (ellipsis && this.isCutOff) {
       let popupCellContent = cellContent;
@@ -150,14 +153,27 @@ export default Vue.extend({
           colIndex,
         });
       }
-      cellContent = (
-        <Popup style="display: inline;" overlayStyle={overlayStyle} placement="bottom-left" showArrow={false}>
+      // 处理自定义节点的超出省略显示
+      this.$nextTick(() => {
+        if (cellContent?.elm) {
+          const elm = cellContent.elm as HTMLElement;
+          elm.classList?.remove?.(ELLIPSIS_CLASS_NAME);
+          elm.classList?.add?.(ELLIPSIS_CLASS_NAME);
+        }
+      });
+      newCellContent = (
+        <Popup
+          style="display: inline;"
+          overlayStyle={overlayStyle}
+          placement="bottom-left"
+          showArrow={false}
+          content={() => popupCellContent}
+        >
           {cellContent}
-          <div slot="content">{popupCellContent}</div>
         </Popup>
       );
     }
-    return <td {...tdAttrs}>{cellContent}</td>;
+    return <td {...tdAttrs}>{newCellContent}</td>;
   },
   mounted() {
     this.init();

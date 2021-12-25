@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-23 13:19:48
+ * updated at 2021-12-25 11:57:19
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -27,6 +27,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default []
    */
   data?: Array<T>;
+  /**
+   * 是否禁用本地数据排序。当 `data` 数据长度超过分页大小时，会自动进行本地数据排序。如果 `disabledDataSort` 设置为 true，则无论何时，都不会进行本地排序
+   * @default false
+   */
+  disableDataSort?: boolean;
   /**
    * 空表格呈现样式
    * @default ''
@@ -213,6 +218,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   columns?: Array<PrimaryTableCol<T>>;
   /**
+   * 是否开始拖拽排序，会显示拖拽图标
+   * @default false
+   */
+  dragSort?: boolean;
+  /**
    * 展开行内容，泛型 T 指表格数据类型
    */
   expandedRow?: TNode<{ row: T; index: number }>;
@@ -275,11 +285,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   showDragCol?: boolean;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`
    */
   sort?: TableSort;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`，非受控属性
    */
   defaultSort?: TableSort;
   /**

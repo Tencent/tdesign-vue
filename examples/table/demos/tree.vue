@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <t-enhanced-table
@@ -27,7 +26,6 @@
       :columns="columns"
       :tree="{ indent: 12, treeNodeColumnIndex: 1, childrenKey: 'list' }"
     ></t-enhanced-table> -->
-
   </div>
 </template>
 <script lang="jsx">
@@ -47,14 +45,14 @@ for (let i = 0; i < 5; i++) {
     description: '数据源',
   };
   obj.list = new Array(2).fill(null).map((t, j) => {
-    const secondIndex = (100 * j) + ((i + 1) * 10);
-    const secondObj = ({
+    const secondIndex = 100 * j + (i + 1) * 10;
+    const secondObj = {
       ...obj,
       key: `我是 ${secondIndex} 号`,
-    });
+    };
     secondObj.list = new Array(3).fill(null).map((m, n) => ({
       ...obj,
-      key: `我是 ${secondIndex * 1000 + (100 * m) + ((n + 1) * 10)} 号`,
+      key: `我是 ${secondIndex * 1000 + 100 * m + (n + 1) * 10} 号`,
     }));
     return secondObj;
   });
@@ -68,10 +66,11 @@ export default {
       data,
       columns: [
         {
-          width: '200',
+          width: 150,
           className: 'row',
           colKey: 'key',
           title: '编号',
+          ellipsis: true,
         },
         {
           colKey: 'platform',
@@ -90,19 +89,16 @@ export default {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           cell: (h, { row }) => (
             <div class="tdesign-table-demo__table-operations">
-              <t-button variant="text" onClick={() => this.appendTo(row)}>插入</t-button>
-              <t-button
-                variant="text"
-                onClick={() => this.onEditClick(row)}
-              >更新</t-button>
-              <t-button
-                variant="text"
-                onClick={() => this.onLookUp(row)}
-              >查看</t-button>
-              <t-popconfirm
-                content="确认删除吗"
-                onConfirm={() => this.onDeleteConfirm(row)}
-              >
+              <t-button variant="text" onClick={() => this.appendTo(row)}>
+                插入
+              </t-button>
+              <t-button variant="text" onClick={() => this.onEditClick(row)}>
+                更新
+              </t-button>
+              <t-button variant="text" onClick={() => this.onLookUp(row)}>
+                查看
+              </t-button>
+              <t-popconfirm content="确认删除吗" onConfirm={() => this.onDeleteConfirm(row)}>
                 <t-button variant="text">删除</t-button>
               </t-popconfirm>
             </div>
