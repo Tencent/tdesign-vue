@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div>
+      <t-button theme="default" @click="setData1">设置为全新的数据</t-button>&nbsp;&nbsp;
+      <t-button theme="default" @click="setData2">单独设置某行数据</t-button>
+    </div>
+    <br />
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <t-enhanced-table
@@ -8,13 +13,9 @@
       :data="data"
       :columns="columns"
       :tree="{ childrenKey: 'list' }"
+      :pagination="pagination"
+      @page-change="onPageChange"
     ></t-enhanced-table>
-
-    <br />
-    <div>
-      <t-button theme="default" @click="setData1">设置为全新的数据</t-button>&nbsp;&nbsp;
-      <t-button theme="default" @click="setData2">单独设置某行数据</t-button>
-    </div>
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
     <!-- indent 定义缩进距离；treeNodeColumnIndex 定义第几列作为树结点展开列 -->
@@ -31,42 +32,53 @@
 <script lang="jsx">
 import { EnhancedTable } from 'tdesign-vue';
 
-const data = [];
-for (let i = 0; i < 5; i++) {
-  const obj = {
-    key: `我是 ${i} 号`,
-    platform: i % 2 === 0 ? '共有' : '私有',
-    type: ['String', 'Number', 'Array', 'Object'][i % 4],
-    default: ['-', '0', '[]', '{}'][i % 4],
-    detail: {
-      postion: `读取 ${i} 个数据的嵌套信息值`,
-    },
-    needed: i % 4 === 0 ? '是' : '否',
-    description: '数据源',
-  };
-  obj.list = new Array(2).fill(null).map((t, j) => {
-    const secondIndex = 100 * j + (i + 1) * 10;
-    const secondObj = {
-      ...obj,
-      key: `我是 ${secondIndex} 号`,
+function getData(currentPage = 1) {
+  const data = [];
+  const pageInfo = `第 ${currentPage} 页`;
+  for (let i = 0; i < 5; i++) {
+    const obj = {
+      key: `我是 ${i} 号（${pageInfo}）`,
+      platform: i % 2 === 0 ? '共有' : '私有',
+      type: ['String', 'Number', 'Array', 'Object'][i % 4],
+      default: ['-', '0', '[]', '{}'][i % 4],
+      detail: {
+        postion: `读取 ${i} 个数据的嵌套信息值`,
+      },
+      needed: i % 4 === 0 ? '是' : '否',
+      description: '数据源',
     };
-    secondObj.list = new Array(3).fill(null).map((m, n) => ({
-      ...obj,
-      key: `我是 ${secondIndex * 1000 + 100 * m + (n + 1) * 10} 号`,
-    }));
-    return secondObj;
-  });
-  data.push(obj);
+    obj.list = new Array(2).fill(null).map((t, j) => {
+      const secondIndex = 100 * j + (i + 1) * 10;
+      const secondObj = {
+        ...obj,
+        key: `我是 ${secondIndex} 号（${pageInfo}）`,
+      };
+      secondObj.list = new Array(3).fill(null).map((m, n) => ({
+        ...obj,
+        key: `我是 ${secondIndex * 1000 + 100 * m + (n + 1) * 10} 号（${pageInfo}）`,
+      }));
+      return secondObj;
+    });
+    data.push(obj);
+  }
+  return data;
 }
+
+const data = getData();
 
 export default {
   components: { TEnhancedTable: EnhancedTable },
   data() {
     return {
       data,
+      pagination: {
+        current: 1,
+        pageSize: 10,
+        total: 100,
+      },
       columns: [
         {
-          width: 150,
+          width: 200,
           className: 'row',
           colKey: 'key',
           title: '编号',
@@ -82,7 +94,7 @@ export default {
         },
         {
           colKey: 'operate',
-          width: 350,
+          width: 300,
           title: '操作',
           align: 'center',
           // 增、删、改、查 等操作
@@ -163,6 +175,14 @@ export default {
         type: 'Number',
       });
       this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+    },
+
+    onPageChange(pageInfo) {
+      this.pagination = {
+        ...this.pagination,
+        ...pageInfo,
+      };
+      this.data = getData(pageInfo.current);
     },
   },
 };
