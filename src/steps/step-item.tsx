@@ -44,7 +44,7 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       return [`${name}__icon`, { [`${name}--${this.status}`]: this.status }];
     },
     canClick(): boolean {
-      return this.status !== 'process';
+      return this.status !== 'process' && !this.steps?.readonly;
     },
   },
   mounted() {

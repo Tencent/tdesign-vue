@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
+ * updated at 2021-12-25 10:38:48
  * */
 
 import { TNode } from '../common';
@@ -32,6 +32,11 @@ export interface TdStepsProps {
    */
   options?: Array<TdStepItemProps>;
   /**
+   * 是否只读
+   * @default false
+   */
+  readonly?: boolean;
+  /**
    * 步骤条顺序，纵向步骤有效（direction = horizontal）
    * @default positive
    */
@@ -45,7 +50,7 @@ export interface TdStepsProps {
    * 当前步骤发生变化时触发
    */
   onChange?: (current: string | number, previous: string | number, context?: { e?: MouseEvent }) => void;
-};
+}
 
 export interface TdStepItemProps {
   /**
@@ -80,6 +85,6 @@ export interface TdStepItemProps {
    * 当前步骤标识
    */
   value?: string | number;
-};
+}
 
 export type StepStatus = 'default' | 'process' | 'finish' | 'error';
