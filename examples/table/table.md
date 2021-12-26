@@ -75,7 +75,7 @@ width | String / Number | - | 列宽 | N
 -- | -- | -- | -- | --
 asyncLoading | String / Slot / Function | - | 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `loading-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容。TS 类型：`'loading' | 'load-more' | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 columns | Array | [] | 列配置，泛型 T 指表格数据类型。TS 类型：`Array<PrimaryTableCol<T>>` | N
-dragSort | Boolean | false | 是否开始拖拽排序，会显示拖拽图标 | N
+dragSort | Boolean | false |【开发中】是否开始拖拽排序，会显示拖拽图标 | N
 expandedRow | String / Slot / Function | - | 展开行内容，泛型 T 指表格数据类型。TS 类型：`TNode<{ row: T; index: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 expandedRowKeys | Array | [] | 展开行。支持语法糖。TS 类型：`Array<string | number>` | N
 defaultExpandedRowKeys | Array | [] | 展开行。非受控属性。TS 类型：`Array<string | number>` | N
