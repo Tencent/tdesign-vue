@@ -51,6 +51,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       actived: [],
       expanded: [],
       nodeInfo: null,
+      treeKey: 0,
     };
   },
   watch: {
@@ -59,6 +60,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       if (!this.multiple) {
         this.actived = this.nodeInfo ? [this.nodeInfo.value] : [];
       }
+    },
+    async data() {
+      await this.changeNodeInfo();
+      this.treeRerender();
     },
   },
   computed: {
@@ -340,16 +345,20 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         this.nodeInfo = null;
       }
     },
+    treeRerender() {
+      this.treeKey += 1;
+    },
   },
   render(): VNode {
     const {
-      treeProps, popupObject, classes, popupClass,
+      treeProps, popupObject, classes, popupClass, treeKey,
     } = this;
     const iconStyle = { 'font-size': this.size };
     const treeItem = (
       <Tree
         ref="tree"
         v-show={this.showTree}
+        key={treeKey}
         value={this.checked}
         hover
         data={this.data}
