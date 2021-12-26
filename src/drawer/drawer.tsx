@@ -16,7 +16,7 @@ import ActionMixin from '../dialog/actions';
 type FooterButtonType = 'confirm' | 'cancel';
 
 const name = `${prefix}-drawer`;
-const lockClass = `${prefix}-drawer-lock`;
+const lockClass = `${prefix}-drawer--lock`;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
@@ -77,9 +77,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         justifyContent: this.placement === 'right' ? 'flex-start' : 'flex-end',
       };
     },
-    lockFullscreen(): boolean {
-      return this.preventScrollThrough;
-    },
   },
 
   watch: {
@@ -92,9 +89,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     visible: {
       handler(value) {
         if (value && !this.showInAttachedElement) {
-          this.lockFullscreen && addClass(document.body, lockClass);
+          this.preventScrollThrough && addClass(document.body, lockClass);
         } else {
-          this.lockFullscreen && removeClass(document.body, lockClass);
+          this.preventScrollThrough && removeClass(document.body, lockClass);
         }
       },
       immediate: true,

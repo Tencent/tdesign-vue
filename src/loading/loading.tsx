@@ -11,7 +11,7 @@ import { ClassName, Styles } from '../common';
 const name = `${prefix}-loading`;
 const centerClass = `${prefix}-loading--center`;
 const fullscreenClass = `${prefix}-loading__fullscreen`;
-const lockClass = `${prefix}-loading-lock`;
+const lockClass = `${prefix}-loading--lock`;
 const overlayClass = `${prefix}-loading__overlay`;
 const relativeClass = `${prefix}-loading__parent`;
 const fullClass = `${prefix}-loading--full`;
@@ -67,11 +67,7 @@ export default Vue.extend({
       return Boolean(this.text || this.$scopedSlots.text);
     },
     baseClasses(): ClassName {
-      return [
-        centerClass,
-        SIZE_CLASSNAMES[this.size],
-        { [inheritColorClass]: this.inheritColor },
-      ];
+      return [centerClass, SIZE_CLASSNAMES[this.size], { [inheritColorClass]: this.inheritColor }];
     },
     hasContent(): boolean {
       return Boolean(this.default || this.$scopedSlots.default || this.content || this.$scopedSlots.content);
@@ -128,13 +124,10 @@ export default Vue.extend({
     if (this.fullscreen) {
       if (!this.loading) return null;
       return (
-        <div
-          class={this.fullScreenClasses}
-          style={this.styles}
-          v-transfer-dom={this.attach}
-        >
+        <div class={this.fullScreenClasses} style={this.styles} v-transfer-dom={this.attach}>
           <div class={this.baseClasses}>
-            {indicator}{text}
+            {indicator}
+            {text}
           </div>
         </div>
       );
@@ -146,11 +139,9 @@ export default Vue.extend({
         <div class={relativeClass}>
           {renderContent(this, 'default', 'content')}
           {this.showWrapLoading && (
-            <div
-              class={this.withContentClasses}
-              style={this.styles}
-            >
-              {indicator}{text}
+            <div class={this.withContentClasses} style={this.styles}>
+              {indicator}
+              {text}
             </div>
           )}
         </div>
@@ -160,12 +151,9 @@ export default Vue.extend({
     // transfer parent node
     if (this.attach) {
       return (
-        <div
-          class={this.attachClasses}
-          style={this.styles}
-          v-transfer-dom={this.attach}
-        >
-          {indicator}{text}
+        <div class={this.attachClasses} style={this.styles} v-transfer-dom={this.attach}>
+          {indicator}
+          {text}
         </div>
       );
     }
@@ -173,7 +161,8 @@ export default Vue.extend({
     // Normal Loading without overlay or content
     return (
       <div class={this.normalClasses} style={this.styles}>
-        {indicator}{text}
+        {indicator}
+        {text}
       </div>
     );
   },
