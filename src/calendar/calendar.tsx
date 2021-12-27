@@ -511,7 +511,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-check-tag
                   class={`${COMPONENT_NAME}__control-tag`}
-                  theme={this.isShowWeekend ? 'default' : 'primary'}
+                  defaultChecked={!this.isShowWeekend}
                   size={this.controlSize}
                   disabled={this.isWeekendToggleDisabled}
                   {...this.weekendBtnVBind}
