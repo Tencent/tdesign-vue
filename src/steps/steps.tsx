@@ -63,23 +63,8 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
         ...item,
         status: this.handleStatus(item, index),
       };
-      if (nodes && nodes[index]) {
-        const vnode = nodes[index];
-        if (vnode.componentOptions) {
-          vnode.componentOptions.propsData = propsData;
-          return vnode;
-        }
-        return (
-          <t-step-item
-            props={{
-              ...item,
-              status: this.handleStatus(item, index),
-            }}
-            key={item.value || index}
-          ></t-step-item>
-        );
-      }
-      return (
+
+      const stepItem = (
         <t-step-item
           props={{
             ...item,
@@ -88,6 +73,16 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
           key={item.value || index}
         ></t-step-item>
       );
+
+      if (nodes && nodes[index]) {
+        const vnode = nodes[index];
+        if (vnode.componentOptions) {
+          vnode.componentOptions.propsData = propsData;
+          return vnode;
+        }
+        return stepItem;
+      }
+      return stepItem;
     });
     return <div class={this.baseClass}>{content}</div>;
   },
