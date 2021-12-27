@@ -9381,7 +9381,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤3</div>
         <div class="t-steps-item__description">这里是提示文字</div>
-        <div class="t-steps-item__extra"></div>
+        <div class="t-steps-item__extra"><button type="button" class="t-button t-size-s t-button--variant-text t-button--theme-default"><span class="t-button__text">上一步</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">下一步</span></button></div>
       </div>
     </div>
   </div>
