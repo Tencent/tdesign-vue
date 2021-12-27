@@ -57,6 +57,12 @@ npm run test:unit
 npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.conf.js
 ```
 
+更新快照
+```
+npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.conf.js --u
+```
+
+
 可以加上`--testNamePattern=<regex>`参数跑指定用例，例如
 
 ```

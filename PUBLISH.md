@@ -44,4 +44,6 @@
 - 从 `develop` 新建 `docs/x.y.z-changelog` 分支，整理 changelog 并 push 分支到远端
 - changelog 分支链接发到群里召唤小伙伴们一起 review
 - review 无误，`squash merge` 到 develop，保持只有一条更改 changelog 内容的 commit
-- 本地删除 node_modules 并重新安装依赖，保证
+- 本地删除 node_modules 目录后重新安装依赖后，执行 `npm run build` 通过
+- 推送 develop 分支到远端，触发部署体验环境，验证体验环境无误
+- 本地 `git tag x.y.z` 后 `git push origin x.y.z`，触发 [TAG_PUSH](https://github.com/Tencent/tdesign-vue/blob/develop/.github/workflows/tag-push.yml) GitAction 进行发包动作

@@ -5,6 +5,7 @@ import getConfigReceiverMixins, { TableConfig } from '../../config-provider/conf
 import { prefix } from '../../config';
 import flatColumns from '../util/props-util';
 import baseTableProps from '../base-table-props';
+import { ClassName } from '../../common';
 import {
   DataType, BaseTableCol, TdBaseTableProps, RowEventContext,
 } from '../type';
@@ -18,6 +19,7 @@ import { PageInfo } from '../../pagination/type';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { emitEvent } from '../../utils/event';
 import { EventNameWithKebab } from '../util/interface';
+import { SIZE_CLASSNAMES } from '../../utils/classnames';
 import primaryTableProps from '../primary-table-props';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
@@ -106,51 +108,27 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return tableHeight !== 'auto';
     },
     // common class
-    commonClass(): Array<string> {
-      const {
-        bordered, stripe, hover, size, verticalAlign, hasFixedColumns, fixedHeader,
-      } = this;
-      const commonClass: Array<string> = [`${prefix}-table`];
-      if (bordered) {
-        commonClass.push(`${prefix}-table--bordered`);
-      }
-      if (stripe) {
-        commonClass.push(`${prefix}-table--striped`);
-      }
-      if (hover) {
-        commonClass.push(`${prefix}-table--hoverable`);
-      }
-      if (this.provider.sortOnRowDraggable) {
-        commonClass.push(`${prefix}-table__row--draggable`);
-      }
-      // table size
-      switch (size) {
-        case 'small':
-          commonClass.push(`${prefix}-size-s`);
-          break;
-        case 'large':
-          commonClass.push(`${prefix}-size-l`);
-          break;
-        default:
-      }
-      // table verticalAlign
-      switch (verticalAlign) {
-        case 'top':
-          commonClass.push(`${prefix}-table--align-top`);
-          break;
-        case 'bottom':
-          commonClass.push(`${prefix}-table--align-bottom`);
-          break;
-        default:
-      }
-      // fixed table
-      if (hasFixedColumns) {
-        commonClass.push(`${prefix}-table__cell--fixed ${prefix}-table--has-fixed`);
-      }
-      if (fixedHeader) {
-        commonClass.push(`${prefix}-table__header--fixed`);
-      }
-      return commonClass;
+    commonClass(): ClassName {
+      const classes = [
+        `${prefix}-table`,
+        {
+          [SIZE_CLASSNAMES.small]: this.size === 'small',
+          [SIZE_CLASSNAMES.large]: this.size === 'large',
+          [`${prefix}-table--bordered`]: this.bordered,
+          [`${prefix}-table--striped`]: this.stripe,
+          [`${prefix}-table--hoverable`]: this.hover,
+          [`${prefix}-table__row--draggable`]: this.provider.sortOnRowDraggable,
+          [`${prefix}-table-table--align-top`]: this.verticalAlign === 'top',
+          [`${prefix}-table-table--align-bottom`]: this.verticalAlign === 'bottom',
+          [`${prefix}-table__cell--fixed`]: this.hasFixedColumns,
+          [`${prefix}-table--has-fixed`]: this.hasFixedColumns,
+          [`${prefix}-table__header--fixed`]: this.fixedHeader,
+        },
+      ];
+      return classes;
+    },
+    usePadding(): boolean {
+      return this.scrollableToRight || this.scrollableToLeft;
     },
   },
   methods: {
@@ -168,12 +146,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       this.$once('hook:beforeDestroy', () => window.removeEventListener('resize', checkScrollableToLeftOrRight));
     },
     renderHeader(): VNode {
-      const {
-        columns, flattedColumns, $scopedSlots: scopedSlots, bordered,
-      } = this;
-      return (
-        <TableHeader scopedSlots={scopedSlots} columns={columns} columnsProps={flattedColumns} bordered={bordered} />
-      );
+      const { columns, $scopedSlots: scopedSlots, bordered } = this;
+      return <TableHeader scopedSlots={scopedSlots} columns={columns} bordered={bordered} />;
     },
     registerRowEvents() {
       const events = {};
@@ -197,6 +171,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           current: this.current,
           selectedRowKeys: this.selectedRowKeys,
           rowspanAndColspan: this.rowspanAndColspan,
+          firstFullRow: this.firstFullRow,
         },
         scopedSlots,
         on: {
@@ -207,6 +182,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return <TableBody {...props} />;
     },
     renderEmptyTable(): VNode {
+      if (this.empty === null) return null;
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       return (
         <div class={`${prefix}-table__empty`}>{useLocale ? this.global.empty : renderTNodeJSX(this, 'empty')}</div>
@@ -241,6 +217,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         scrollBarWidth,
         hasFixedColumns,
         tableHeight,
+        usePadding,
       } = this;
       // handle scroll
       const handleScroll = throttle((e: Event) => {
@@ -251,12 +228,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       }, 10);
       //  fixed table header
       const paddingRight = `${scrollBarWidth}px`;
+      const headerContainerStyle = columns.length > 1 && usePadding ? { paddingRight } : {};
       fixedTable.push(
-        <div
-          class={`${prefix}-table__header`}
-          style={{ paddingRight: columns.length > 1 ? paddingRight : '' }}
-          ref="scrollHeader"
-        >
+        <div class={`${prefix}-table__header`} style={headerContainerStyle} ref="scrollHeader">
           <table style={{ tableLayout, paddingRight }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
@@ -344,7 +318,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       tableContent.push(this.renderFooter());
     }
     if (isEmpty) {
-      body.push(this.renderEmptyTable());
+      const empty = this.renderEmptyTable();
+      empty && body.push(empty);
     }
     // 渲染分页
     if (hasPagination) {
@@ -365,6 +340,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     }
     return (
       <div class={commonClass} style={{ width }}>
+        {renderTNodeJSX(this, 'topContent')}
         <Loading loading={isLoading} showOverlay text={this.renderLoadingContent}>
           <div ref="tableContent" class={tableContentClass} onScroll={handleScroll}>
             {fixedTableContent || (
@@ -378,11 +354,14 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       </div>
     );
   },
+
   mounted() {
     if (this.hasFixedColumns) {
       // 首次检查滚动条状态；设置settimeout 是为了等待父组件渲染完
-      setTimeout(() => {
+      let timer = setTimeout(() => {
         this.checkScrollableToLeftOrRight();
+        clearTimeout(timer);
+        timer = null;
       }, 0);
       this.addWindowResizeEventListener();
     }

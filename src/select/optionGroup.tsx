@@ -37,7 +37,7 @@ export default (Vue as VueConstructor<Select>).extend({
     const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
     return (
       <li class={this.classes}>
-        <div class={`${name}__header`}>{ this.label }</div>
+        <div class={`${name}__header`}>{this.label}</div>
         <ul>{children}</ul>
       </li>
     );

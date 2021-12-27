@@ -4,7 +4,7 @@ import {
 } from '../type';
 
 import primaryTableProps from '../primary-table-props';
-import SimpleTable from '../base-table';
+import BaseTable from '../base-table';
 import mixins from '../../utils/mixins';
 import expand from './mixins/expand';
 import select from './mixins/select';
@@ -28,7 +28,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
   },
   computed: {
     rehandleData(): Array<DataType> {
-      return this.asyncLoadingHandler();
+      return this.asyncLoadingHandler([...this.data]);
     },
     rehandleColumns(): Array<PrimaryTableCol> {
       let columns = this.columns.map((col) => ({ ...col }));
@@ -57,9 +57,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     },
   },
   render() {
-    const {
-      $props, $scopedSlots, rehandleColumns, showColumns,
-    } = this;
+    const { $props, $scopedSlots, rehandleColumns } = this;
     const scopedSlots = {
       ...$scopedSlots,
     };
@@ -68,7 +66,8 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
       'page-change': (pageInfo: PageInfo, newDataSource: Array<DataType>) => {
         emitEvent<PageChangeContext>(this, 'page-change', pageInfo, newDataSource);
         emitEvent<ChangeContext>(
-          this, 'change',
+          this,
+          'change',
           { pagination: pageInfo },
           { trigger: 'pagination', currentData: newDataSource },
         );
@@ -77,7 +76,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
       'row-dragover': this.onDragOver,
     };
     if (this.expandOnRowClick) {
-      on['row-click'] = (params: { row: Record<string, any>, index: number }) => {
+      on['row-click'] = (params: { row: Record<string, any>; index: number }) => {
         this.handleExpandChange(params.row);
       };
     }
@@ -91,15 +90,18 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
           sortOnRowDraggable: this.sortOnRowDraggable,
           dragging: this.dragging,
         },
+        // this.hasFilterCondition is from mixins/filter.tsx
+        firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : undefined,
+        empty: this.empty,
       },
       scopedSlots,
       on,
     };
-    return (
-      <div style="width: 100%">
-        {showColumns && this.renderShowColumns()}
-        <SimpleTable {...baseTableProps} />
-      </div>
-    );
+    // 存在过滤条件，查询结果为空时，不显示空数据节点，有过滤结果行即可
+    if (this.hasFilterCondition) {
+      baseTableProps.props.empty = null;
+    }
+    // TODO: 可使用插槽 `topContent` 自定义显示列
+    return <BaseTable {...baseTableProps} />;
   },
 });

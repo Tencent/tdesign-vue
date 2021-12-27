@@ -27,6 +27,7 @@ const eventsName = {
 
 export default Vue.extend({
   name: `${prefix}-table-row`,
+
   props: {
     rowClass: baseTableProps.rowClassName,
     columns: baseTableProps.columns,
@@ -58,6 +59,7 @@ export default Vue.extend({
       },
     },
   },
+
   methods: {
     // 渲染行
     renderRow(): Array<VNode> {
@@ -65,6 +67,7 @@ export default Vue.extend({
         rowData, columns, index: rowIndex, rowspanAndColspanProps,
       } = this;
       const rowBody: Array<VNode> = [];
+
       let flag = true;
       columns.forEach((column, index) => {
         const customData: CustomData = {
@@ -138,6 +141,7 @@ export default Vue.extend({
       return rowBody;
     },
   },
+
   render() {
     const {
       rowClass, $attrs, rowData, index, rowKey, current,
@@ -167,7 +171,6 @@ export default Vue.extend({
     if (this.provider.sortOnRowDraggable) {
       (trProps.attrs as any).draggable = true;
     }
-
     return <tr {...trProps}>{this.renderRow()}</tr>;
   },
 });

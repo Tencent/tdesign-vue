@@ -11,12 +11,7 @@
         :label="typeof list.group === 'object' ? list.group.label : list.group"
         divider
       >
-        <t-option
-          v-for="item in list.children"
-          :value="item.value"
-          :label="item.label"
-          :key="item.value"
-        >
+        <t-option v-for="item in list.children" :value="item.value" :label="item.label" :key="item.value">
           {{ item.label }}
         </t-option>
       </t-option-group>

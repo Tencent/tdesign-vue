@@ -32,6 +32,19 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  if (typeof NProgress !== 'undefined') {
+    NProgress.start();
+  }
+  next();
+});
+
+router.afterEach(() => {
+  if (typeof NProgress !== 'undefined') {
+    NProgress.done();
+  }
+});
+
 new Vue({
   el: '#app',
   render: (h) => h(App),

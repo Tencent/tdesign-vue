@@ -17,6 +17,14 @@ jobs:
         run: npm install
         shell: bash
       - run: echo '${{ github.ref }} ...  ${{ github.ref_name }}'
+      - run: npm run build
+      - name: publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.TDESIGN_NPM_TOKEN }}
+      - if: steps.publish.outputs.type != 'none'
+        run: |
+          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
       - name: Build site
         run: npm run site:preview
       - name: upload surge service
@@ -27,11 +35,3 @@ jobs:
       - run: echo 'https://${{ github.ref_name }}-tdesign-vue.surge.sh'
         if: ${{ success() }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: npm run build
-      - name: publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.TDESIGN_NPM_TOKEN }}
-      - if: steps.publish.outputs.type != 'none'
-        run: |
-          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"

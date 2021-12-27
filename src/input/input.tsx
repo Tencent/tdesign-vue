@@ -1,7 +1,9 @@
-import Vue, { CreateElement, VNode, VueConstructor } from 'vue';
+import Vue, { CreateElement, VNode } from 'vue';
 import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon as ClearIcon } from 'tdesign-icons-vue';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
+import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 import CLASSNAMES from '../utils/classnames';
 import { emitEvent } from '../utils/event';
@@ -24,7 +26,7 @@ interface InputInstance extends Vue {
   composing: boolean;
 }
 
-export default (Vue as VueConstructor<InputInstance>).extend({
+export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input')).extend({
   name: 'TInput',
   inheritAttrs: false,
   props: { ...props },
@@ -45,7 +47,7 @@ export default (Vue as VueConstructor<InputInstance>).extend({
         disabled: this.disabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
-        placeholder: this.placeholder || '请输入',
+        placeholder: this.placeholder || this.t(this.global.placeholder),
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
@@ -191,6 +193,8 @@ export default (Vue as VueConstructor<InputInstance>).extend({
     emitClear(e: MouseEvent) {
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
+      this.focus();
+      this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
       if (this.disabled) return;

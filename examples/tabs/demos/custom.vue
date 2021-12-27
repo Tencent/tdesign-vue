@@ -15,7 +15,7 @@
       :label="data.label"
       :removable="data.removable"
     >
-      <p style="padding: 25px;">{{ data.content }}</p>
+      <p style="padding: 25px">{{ data.content }}</p>
     </t-tab-panel>
   </t-tabs>
 </template>
@@ -27,17 +27,20 @@ export default {
   data() {
     return {
       value: 'first',
-      panelData: [{
-        value: 'first',
-        label: '原有选项卡',
-        removable: true,
-        content: '原有选项卡内容',
-      }, {
-        value: 'second',
-        label: '原有选项卡',
-        removable: true,
-        content: '原有选项卡内容',
-      }],
+      panelData: [
+        {
+          value: 'first',
+          label: '原有选项卡',
+          removable: true,
+          content: '原有选项卡内容',
+        },
+        {
+          value: 'second',
+          label: '原有选项卡',
+          removable: true,
+          content: '原有选项卡内容',
+        },
+      ],
     };
   },
 

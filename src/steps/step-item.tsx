@@ -38,19 +38,13 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       return this.steps && this.steps.current;
     },
     baseClass(): ClassName {
-      return [
-        name,
-        { [`${name}--${this.status}`]: this.status },
-      ];
+      return [name, { [`${name}--${this.status}`]: this.status }];
     },
     iconClass(): ClassName {
-      return [
-        `${name}-icon`,
-        { [`${name}--${this.status}`]: this.status },
-      ];
+      return [`${name}__icon`, { [`${name}--${this.status}`]: this.status }];
     },
     canClick(): boolean {
-      return this.status !== 'process';
+      return this.status !== 'process' && !this.steps?.readonly;
     },
   },
   mounted() {
@@ -75,12 +69,12 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
               icon = <t-icon-close />;
             }
             break;
-            // default 包含 case 'process' 的情况
+          // default 包含 case 'process' 的情况
           default:
             icon = String(this.index + 1);
             break;
         }
-        defaultIcon = <span class={`${name}-icon__number`}>{icon}</span>;
+        defaultIcon = <span class={`${name}__icon--number`}>{icon}</span>;
       }
       return renderTNodeJSX(this, 'icon', defaultIcon);
     },
@@ -93,12 +87,12 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
     const content = renderContent(this, 'default', 'content');
     return (
       <div class={this.baseClass}>
-        <div class={`${name}__inner ${this.canClick ? `${name}-canclick` : ''}`} onClick={this.onStepClick} >
+        <div class={`${name}__inner ${this.canClick ? `${name}--clickable` : ''}`} onClick={this.onStepClick}>
           <div class={this.iconClass}>{this.renderIcon()}</div>
-          <div class={`${name}-content`}>
-            <div class={`${name}-title`}>{renderTNodeJSX(this, 'title')}</div>
-            <div class={`${name}-description`}>{content}</div>
-            <div class={`${name}-extra`}>{renderTNodeJSX(this, 'extra')}</div>
+          <div class={`${name}__content`}>
+            <div class={`${name}__title`}>{renderTNodeJSX(this, 'title')}</div>
+            <div class={`${name}__description`}>{content}</div>
+            <div class={`${name}__extra`}>{renderTNodeJSX(this, 'extra')}</div>
           </div>
         </div>
       </div>

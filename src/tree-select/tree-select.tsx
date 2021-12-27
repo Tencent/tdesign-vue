@@ -51,6 +51,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       actived: [],
       expanded: [],
       nodeInfo: null,
+      treeKey: 0,
     };
   },
   watch: {
@@ -59,6 +60,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       if (!this.multiple) {
         this.actived = this.nodeInfo ? [this.nodeInfo.value] : [];
       }
+    },
+    async data() {
+      await this.changeNodeInfo();
+      this.treeRerender();
     },
   },
   computed: {
@@ -319,28 +324,41 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
 
       if (tree && !this.multiple && this.value) {
         const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
-        const node = (tree as any).getItem(nodeValue);
-        this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        // 数据源非空
+        if (!isEmpty(this.data)) {
+          const node = (tree as any).getItem(nodeValue);
+          this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        } else {
+          this.nodeInfo = { label: nodeValue, value: nodeValue };
+        }
       } else if (tree && this.multiple && isArray(this.value)) {
         this.nodeInfo = this.value.map((value) => {
           const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
-          const node = (tree as any).getItem(nodeValue);
-          return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+          // 数据源非空
+          if (!isEmpty(this.data)) {
+            const node = (tree as any).getItem(nodeValue);
+            return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+          }
+          return { label: nodeValue, value: nodeValue };
         });
       } else {
         this.nodeInfo = null;
       }
     },
+    treeRerender() {
+      this.treeKey += 1;
+    },
   },
   render(): VNode {
     const {
-      treeProps, popupObject, classes, popupClass,
+      treeProps, popupObject, classes, popupClass, treeKey,
     } = this;
     const iconStyle = { 'font-size': this.size };
     const treeItem = (
       <Tree
         ref="tree"
         v-show={this.showTree}
+        key={treeKey}
         value={this.checked}
         hover
         data={this.data}

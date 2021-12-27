@@ -1,7 +1,6 @@
 import Vue, { VNode } from 'vue';
 import { CreateElement } from 'vue/types/umd';
 import primaryTableProps from '../../primary-table-props';
-import baseTableProps from '../../base-table-props';
 import TableRow from '../../base-table/table-row';
 import Loading from '../../../loading';
 import { prefix } from '../../../config';
@@ -17,16 +16,18 @@ export const ASYNC_LOADING_ROW = 'async-loading-row';
 
 export default Vue.extend({
   name: `${prefix}-primary-table-async-loading`,
+
   props: {
-    data: baseTableProps.data,
     columns: primaryTableProps.columns,
     asyncLoading: primaryTableProps.asyncLoading,
   },
+
   data() {
     return {
       pullDownLoading: false,
     };
   },
+
   computed: {
     classes(): ClassName {
       return [
@@ -38,13 +39,14 @@ export default Vue.extend({
       ];
     },
   },
+
   methods: {
     // 异步加载 pullDownLoading 新增一条数据
-    asyncLoadingHandler(): Array<any> {
+    asyncLoadingHandler(data: TdPrimaryTableProps['data']): TdPrimaryTableProps['data'] {
       if (this.asyncLoading || typeof this.$scopedSlots.asyncLoading === 'function') {
-        return this.data.concat({ colKey: ASYNC_LOADING_ROW });
+        return data.concat({ colKey: ASYNC_LOADING_ROW });
       }
-      return this.data;
+      return data;
     },
     onLoadClick() {
       if (typeof this.asyncLoading !== 'string') return;
@@ -72,10 +74,7 @@ export default Vue.extend({
             }
             return (
               <div class={this.classes} onClick={this.onLoadClick}>
-                {<Loading
-                  loading={asyncLoading === 'loading'}
-                  text={loadingText}
-                />}
+                {<Loading loading={asyncLoading === 'loading'} text={loadingText} />}
               </div>
             );
           },
