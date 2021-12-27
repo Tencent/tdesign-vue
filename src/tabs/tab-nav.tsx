@@ -16,10 +16,6 @@ import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
 
-interface TabNavVue extends Vue {
-  resizeObserver: any;
-}
-
 const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
 
 const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTMLElement => {
@@ -31,6 +27,12 @@ const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTML
   return null;
 };
 
+interface GetLeftCoverWidth {
+  leftZone: HTMLElement;
+  leftIcon: HTMLElement;
+  totalWidthBeforeActiveTab: number;
+}
+
 interface GetRightCoverWidth {
   rightZone: HTMLElement;
   rightIcon: HTMLElement;
@@ -39,20 +41,32 @@ interface GetRightCoverWidth {
   activeTabWidth: number;
 }
 
+// 如果要当前tab左边对齐左操作栏的右边以展示完整的tab，需要获取左边操作栏的宽度
+const getLeftCoverWidth = (o: GetLeftCoverWidth) => {
+  const leftOperationsZoneWidth = getDomWidth(o.leftZone);
+  const leftIconWidth = getDomWidth(o.leftIcon);
+  // 判断当前tab是不是第一个tab
+  if (o.totalWidthBeforeActiveTab === 0) {
+    // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
+    return leftOperationsZoneWidth - leftIconWidth;
+  }
+  return leftOperationsZoneWidth;
+};
+
 // 如果要当前tab右边对齐右操作栏的左边以展示完整的tab，需要获取右边操作栏的宽度
-const getRightCoverWidth = (p: GetRightCoverWidth) => {
-  const rightOperationsZoneWidth = getDomWidth(p.rightZone);
-  const rightIconWidth = getDomWidth(p.rightIcon as HTMLElement);
-  const wrapWidth = getDomWidth(p.wrap);
+const getRightCoverWidth = (o: GetRightCoverWidth) => {
+  const rightOperationsZoneWidth = getDomWidth(o.rightZone);
+  const rightIconWidth = getDomWidth(o.rightIcon as HTMLElement);
+  const wrapWidth = getDomWidth(o.wrap);
   // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
-  if (Math.abs(p.totalWidthBeforeActiveTab + p.activeTabWidth - wrapWidth) < 1) {
+  if (Math.abs(o.totalWidthBeforeActiveTab + o.activeTabWidth - wrapWidth) < 1) {
     // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
     return rightOperationsZoneWidth - rightIconWidth;
   }
   return rightOperationsZoneWidth;
 };
 
-export default (Vue as VueConstructor<TabNavVue>).extend({
+export default Vue.extend({
   name: 'TTabNav',
   components: {
     TTabNavItem,
@@ -61,7 +75,6 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     TIconClose,
     TIconAdd,
   },
-  ...{ resizeObserver: null },
   props: {
     theme: tabProps.theme,
     panels: {
@@ -206,7 +219,7 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       }
       const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
       const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
-      this.canToLeft = this.scrollLeft > -(leftOperationsZoneWidth - leftIconWidth);
+      this.canToLeft = this.scrollLeft + Math.round(leftOperationsZoneWidth - leftIconWidth) > 0;
     },
 
     caculateCanToRight() {
@@ -218,7 +231,9 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       if (!wrap || !container) {
         this.canToRight = false;
       }
-      this.canToRight = this.scrollLeft + getDomWidth(container) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
+      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
+      const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
+      this.canToRight = this.scrollLeft + getDomWidth(container) - (rightOperationsZoneWidth - rightIconWidth) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
     },
 
     caculateNavBarStyle() {
@@ -249,22 +264,26 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
     },
 
     watchDomChange() {
+      const onResize = debounce(() => {
+        this.resetScrollPosition();
+      }, 300);
+      window.addEventListener('resize', onResize);
+      this.$once('beforeDestroy', () => {
+        window.removeEventListener('resize', onResize);
+      });
       if (!this.$refs.navsContainer) return;
       if (!(window as Window & { ResizeObserver?: any }).ResizeObserver) return;
-      this.resizeObserver = new (window as Window & { ResizeObserver?: any }).ResizeObserver(() => {
-        this.resetScrollPosition();
+      const resizeObserver = new (window as Window & { ResizeObserver?: any }).ResizeObserver(onResize);
+      resizeObserver.observe(this.$refs.navsContainer);
+      this.$once('beforeDestroy', () => {
+        resizeObserver.disconnect();
       });
-      this.resizeObserver.observe(this.$refs.navsContainer);
     },
 
-    cancelWatchDomChange() {
-      if (!this.resizeObserver) return;
-      this.resizeObserver.disconnect();
-    },
-
-    resetScrollPosition: debounce(function (this: any) {
+    resetScrollPosition() {
+      this.fixScrollLeft();
       this.caculateCanShowArrow();
-    }, 300),
+    },
 
     handleScrollToLeft() {
       const container = this.$refs.navsContainer as HTMLElement;
@@ -290,18 +309,13 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
 
     shouldMoveToLeftSide(activeTabEl: HTMLElement) {
       const totalWidthBeforeActiveTab = activeTabEl.offsetLeft;
-      // 如果要当前tab左边对齐左操作栏的右边以展示完整的tab，需要获取左边操作栏的宽度
-      const getLeftCoverWidth = () => {
-        const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
-        const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
-        // 判断当前tab是不是第一个tab
-        if (totalWidthBeforeActiveTab === 0) {
-          // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
-          return leftOperationsZoneWidth - leftIconWidth;
-        }
-        return leftOperationsZoneWidth;
-      };
-      const leftCoverWidth = getLeftCoverWidth();
+      const container = this.$refs.navsContainer as HTMLElement;
+      if (!container) return;
+      const leftCoverWidth = getLeftCoverWidth({
+        leftZone: this.$refs.leftOperationsZone as HTMLElement,
+        leftIcon: this.$refs.leftIcon as HTMLElement,
+        totalWidthBeforeActiveTab,
+      });
       // 判断当前tab是不是在左边被隐藏
       const isCurrentTabHiddenInLeftZone = () => this.scrollLeft + leftCoverWidth > totalWidthBeforeActiveTab;
       if (isCurrentTabHiddenInLeftZone()) {
@@ -447,9 +461,6 @@ export default (Vue as VueConstructor<TabNavVue>).extend({
       this.caculateNavBarStyle();
       this.caculateCanShowArrow();
     });
-  },
-  beforeDestroy() {
-    this.cancelWatchDomChange();
   },
   render() {
     return (
