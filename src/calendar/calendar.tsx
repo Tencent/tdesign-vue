@@ -10,11 +10,7 @@ import { getPropsApiByEvent } from '../utils/helper';
 
 // 组件的一些常量
 import {
-  COMPONENT_NAME,
-  MIN_YEAR,
-  FIRST_MONTH_OF_YEAR,
-  LAST_MONTH_OF_YEAR,
-  DEFAULT_YEAR_CELL_NUMINROW,
+  COMPONENT_NAME, MIN_YEAR, FIRST_MONTH_OF_YEAR, LAST_MONTH_OF_YEAR, DEFAULT_YEAR_CELL_NUMINROW,
 } from './const';
 
 // 子组件
@@ -249,11 +245,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     // year模式下日历单元格的数据
     yearCellsData(): CalendarCell[][] {
       const re: CalendarCell[][] = [];
-      const monthsArr: CalendarCell[] = utils.createYearCellsData(
-        this.curSelectedYear,
-        this.curDate,
-        this.format,
-      );
+      const monthsArr: CalendarCell[] = utils.createYearCellsData(this.curSelectedYear, this.curDate, this.format);
       const rowCount = Math.ceil(monthsArr.length / DEFAULT_YEAR_CELL_NUMINROW);
       let index = 0;
       for (let i = 1; i <= rowCount; i++) {
@@ -360,9 +352,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     getWeekDisplay(weekNum: number): string {
       const weekText = this.weekDipalyText;
-      return (typeof (weekText) === 'object' && weekText[weekNum - 1])
-        ? weekText[weekNum - 1]
-        : utils.getDayCn(weekNum);
+      return typeof weekText === 'object' && weekText[weekNum - 1] ? weekText[weekNum - 1] : utils.getDayCn(weekNum);
     },
     checkMonthCellItemShowed(cellData: CalendarCell): boolean {
       return this.isShowWeekend || cellData.day < 6;
@@ -517,7 +507,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                 </t-radio-group>
               </div>
             )}
-            {this.theme === 'full' && this.curSelectedMode && this.isWeekendToggleVisible && (
+            {this.theme === 'full' && this.curSelectedMode === 'month' && this.isWeekendToggleVisible && (
               <div class={`${COMPONENT_NAME}__control-section-cell`}>
                 <t-check-tag
                   class={`${COMPONENT_NAME}__control-tag`}
@@ -591,8 +581,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                       ondblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
                       onRightClickCell={(e: MouseEvent) => this.rightClickCell(e, item)}
                       scopedSlots={{ ...this.$scopedSlots }}
-                    >
-                    </calendar-cell-item>
+                    ></calendar-cell-item>
                 ),
               )}
             </tr>
@@ -606,24 +595,21 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         <tbody class={`${COMPONENT_NAME}__table-body`}>
           {this.yearCellsData.map((cell, cellIndex) => (
             <tr class={`${COMPONENT_NAME}__table-body-row`}>
-              {cell.map(
-                (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
-                    <calendar-cell-item
-                      key={`${cellIndex}-${itemIndex}`}
-                      item={item}
-                      theme={this.theme}
-                      t={this.t}
-                      global={this.global}
-                      cell={this.cell}
-                      fillWithZero={this.fillWithZero}
-                      onClick={(e: MouseEvent) => this.clickCell(e, item)}
-                      ondblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
-                      onRightClickCell={(e: MouseEvent) => this.rightClickCell(e, item)}
-                      scopedSlots={{ ...this.$scopedSlots }}
-                    >
-                    </calendar-cell-item>
-                ),
-              )}
+              {cell.map((item, itemIndex) => (
+                <calendar-cell-item
+                  key={`${cellIndex}-${itemIndex}`}
+                  item={item}
+                  theme={this.theme}
+                  t={this.t}
+                  global={this.global}
+                  cell={this.cell}
+                  fillWithZero={this.fillWithZero}
+                  onClick={(e: MouseEvent) => this.clickCell(e, item)}
+                  ondblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
+                  onRightClickCell={(e: MouseEvent) => this.rightClickCell(e, item)}
+                  scopedSlots={{ ...this.$scopedSlots }}
+                ></calendar-cell-item>
+              ))}
             </tr>
           ))}
         </tbody>

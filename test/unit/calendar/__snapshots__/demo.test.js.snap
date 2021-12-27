@@ -9882,17 +9882,6 @@ exports[`Calendar mode demo works fine 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
-            theme="default"
-          >
-            隐藏周末
-          </span>
-        </div>
-        <div
-          class="t-calendar__control-section-cell"
-        >
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
