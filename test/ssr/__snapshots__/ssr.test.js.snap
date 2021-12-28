@@ -10981,7 +10981,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
   <div class="t-loading__parent">
     <div class="t-table__content">
       <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11209,7 +11209,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
   <div class="t-loading__parent">
     <div class="t-table__content">
       <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11462,7 +11462,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-loading__parent">
       <div class="t-table__content">
         <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11513,7 +11513,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-loading__parent">
       <div class="t-table__content">
         <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11566,7 +11566,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-loading__parent">
       <div class="t-table__content">
         <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
