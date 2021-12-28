@@ -172,6 +172,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           selectedRowKeys: this.selectedRowKeys,
           rowspanAndColspan: this.rowspanAndColspan,
           firstFullRow: this.firstFullRow,
+          lastFullRow: this.lastFullRow,
         },
         scopedSlots,
         on: {
