@@ -1,4 +1,4 @@
-import Vue, { VNode, VueConstructor } from 'vue';
+import Vue, { VNode } from 'vue';
 import debounce from 'lodash/debounce';
 import {
   ChevronLeftIcon as TIconChevronLeft,
