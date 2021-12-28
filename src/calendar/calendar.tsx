@@ -599,23 +599,21 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         <tbody class={`${COMPONENT_NAME}__table-body`}>
           {this.yearCellsData.map((cell, cellIndex) => (
             <tr class={`${COMPONENT_NAME}__table-body-row`}>
-              {cell.map(
-                (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
-                    <calendar-cell-item
-                      key={`${cellIndex}-${itemIndex}`}
-                      item={item}
-                      theme={this.theme}
-                      t={this.t}
-                      global={this.global}
-                      cell={this.cell}
-                      fillWithZero={this.fillWithZero}
-                      onClick={(e: MouseEvent) => this.clickCell(e, item)}
-                      onDblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
-                      onRightclick={(e: MouseEvent) => this.rightClickCell(e, item)}
-                      scopedSlots={{ ...this.$scopedSlots }}
-                    ></calendar-cell-item>
-                ),
-              )}
+              {cell.map((item, itemIndex) => (
+                <calendar-cell-item
+                  key={`${cellIndex}-${itemIndex}`}
+                  item={item}
+                  theme={this.theme}
+                  t={this.t}
+                  global={this.global}
+                  cell={this.cell}
+                  fillWithZero={this.fillWithZero}
+                  onClick={(e: MouseEvent) => this.clickCell(e, item)}
+                  onDblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
+                  onRightclick={(e: MouseEvent) => this.rightClickCell(e, item)}
+                  scopedSlots={{ ...this.$scopedSlots }}
+                ></calendar-cell-item>
+              ))}
             </tr>
           ))}
         </tbody>
