@@ -22,24 +22,13 @@ export default Vue.extend({
   },
 
   render() {
-    let content: TNodeReturnValue = this.$slots.default;
-    if (this.options && this.options.length) {
-      content = this.options.map((option: TdBreadcrumbItemProps, index: number) => (
-          <BreadcrumbItem
-            key={index}
-            maxWidth={option.maxWidth}
-            disabled={option.disabled}
-            href={option.href}
-            target={option.target}
-            to={option.to}
-            router={option.router}
-            replace={option.replace}
-          >
-            {option.default || option.content}
-          </BreadcrumbItem>
-      ));
-    }
+    const content: TNodeReturnValue = this.options && this.options.length
+      ? this.options.map((option: TdBreadcrumbItemProps, index: number) => (
+            <BreadcrumbItem key={index} {...option}>
+              {option.default || option.content}
+            </BreadcrumbItem>
+      ))
+      : this.$slots.default;
     return <div class={name}>{content}</div>;
   },
-
 });
