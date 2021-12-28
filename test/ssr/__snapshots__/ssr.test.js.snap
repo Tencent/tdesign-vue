@@ -840,7 +840,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/base.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1053,7 +1053,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1338,7 +1338,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell-append.vue cor
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1504,7 +1504,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
         <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
@@ -1605,7 +1605,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/events.vue correctl
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
         <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
@@ -1716,7 +1716,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/first-day-of-week.v
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
         <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
@@ -1829,7 +1829,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/head.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1990,7 +1990,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/range.vue correctly
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2091,7 +2091,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2334,7 +2334,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2908,7 +2908,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span theme="default" size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">Hide Weekend</span></div>
+      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">Hide Weekend</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Today</span></button></div>
     </div>
   </div>
