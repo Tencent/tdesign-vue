@@ -80,12 +80,10 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
       }
     },
     handleClick(e: Event) {
-      if (typeof this.$listeners.click === 'function') {
-        this.$listeners.click(e);
-      }
+      this.$emit('click');
       if (!this.checked || !this.allowUncheck) return;
       if (this.radioGroup) {
-        this.radioGroup.$emit('checked-change', null, { e });
+        this.radioGroup.$emit('checked-change', undefined, { e });
       } else {
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', false, { e });
       }
