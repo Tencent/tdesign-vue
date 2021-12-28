@@ -46,7 +46,6 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     return {
       scrollableToLeft: false,
       scrollableToRight: false,
-      scrollBarWidth: 0,
       // 用于兼容处理 Pagination 的非受控属性（非受控属性仅有 change 事件变化，无 props 变化，因此只需监听事件）
       defaultCurrent: 0,
       // 用于兼容处理 Pagination 的非受控属性
@@ -126,9 +125,6 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         },
       ];
       return classes;
-    },
-    usePadding(): boolean {
-      return this.scrollableToRight || this.scrollableToLeft;
     },
   },
   methods: {
@@ -214,10 +210,8 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         columns,
         provider: { asyncLoadingProps },
         tableLayout,
-        scrollBarWidth,
         hasFixedColumns,
         tableHeight,
-        usePadding,
       } = this;
       // handle scroll
       const handleScroll = throttle((e: Event) => {
@@ -227,11 +221,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         this.handleScroll(e as WheelEvent);
       }, 10);
       //  fixed table header
-      const paddingRight = `${scrollBarWidth}px`;
-      const headerContainerStyle = columns.length > 1 && usePadding ? { paddingRight } : {};
       fixedTable.push(
-        <div class={`${prefix}-table__header`} style={headerContainerStyle} ref="scrollHeader">
-          <table style={{ tableLayout, paddingRight }}>
+        <div class={`${prefix}-table__header`} ref="scrollHeader">
+          <table style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
@@ -365,18 +357,6 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       }, 0);
       this.addWindowResizeEventListener();
     }
-
-    const scrollDiv = document.createElement('div');
-    scrollDiv.style.cssText = `
-      width: 99px;
-      height: 99px;
-      overflow: scroll;
-      position: absolute;
-      top: -9999px;`;
-    scrollDiv.classList.add('scrollbar');
-    document.body.appendChild(scrollDiv);
-    this.scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-    document.body.removeChild(scrollDiv);
     const { maxHeight } = this;
     if (maxHeight && (this.$refs.tableContent as HTMLElement).clientHeight > maxHeight) {
       this.useFixedHeader = true;
