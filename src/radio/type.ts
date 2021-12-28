@@ -9,7 +9,7 @@ import { TNode, SizeEnum } from '../common';
 
 export interface TdRadioProps {
   /**
-   * 【开发中】是否允许取消选中
+   * 是否允许取消选中
    * @default false
    */
   allowUncheck?: boolean;
