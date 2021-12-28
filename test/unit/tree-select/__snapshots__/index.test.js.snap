@@ -21,7 +21,7 @@ exports[`TreeSelect :props :clearable 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -57,7 +57,7 @@ exports[`TreeSelect :props :defaultValue 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+2</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -93,7 +93,7 @@ exports[`TreeSelect :props :disabled 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-is-disabled t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-is-disabled t-select__input" style="display: none;"><input disabled="disabled" placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-is-disabled t-select__input" style="display: none;"><input disabled="disabled" placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -127,7 +127,7 @@ exports[`TreeSelect :props :empty string 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -163,7 +163,7 @@ exports[`TreeSelect :props :filterable 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -199,7 +199,7 @@ exports[`TreeSelect :props :loading 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
       </svg>
       <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small">
@@ -231,7 +231,7 @@ exports[`TreeSelect :props :loadingText 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -267,7 +267,7 @@ exports[`TreeSelect :props :max 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -303,7 +303,7 @@ exports[`TreeSelect :props :minCollapsedNum 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+-1</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -339,7 +339,7 @@ exports[`TreeSelect :props :multiple 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -375,7 +375,7 @@ exports[`TreeSelect :props :placeholder 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder">please select address</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="please select address" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="please select address" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -411,7 +411,7 @@ exports[`TreeSelect :props :popupProps 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -447,7 +447,7 @@ exports[`TreeSelect :props :size 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-l"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-l t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-l t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: large;">
+      <div class="t-input t-size-l t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: large;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-l t-select__right-icon t-select__right-icon-clear" style="display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -483,7 +483,7 @@ exports[`TreeSelect :props :treeProps 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -519,7 +519,7 @@ exports[`TreeSelect :props :value 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="shenzhen" class="t-select__single">shenzhen</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="shenzhen" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="shenzhen" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -555,7 +555,7 @@ exports[`TreeSelect :props :valueType 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display: none;"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="[object Object]" class="t-select__single">[object Object]</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="[object Object]" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="[object Object]" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -591,7 +591,7 @@ exports[`TreeSelect <slot> <collapsedItems> 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -627,7 +627,7 @@ exports[`TreeSelect <slot> <empty> 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -663,7 +663,7 @@ exports[`TreeSelect <slot> <loadingText> 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
       </svg>
       <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small">
@@ -697,7 +697,7 @@ exports[`TreeSelect <slot> <prefixIcon> 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m t-has-prefix"><span class="t-select__left-icon"><div><i>icon</i></div></span><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -733,7 +733,7 @@ exports[`TreeSelect function :collapsedItems 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -769,7 +769,7 @@ exports[`TreeSelect function :empty 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
@@ -805,7 +805,7 @@ exports[`TreeSelect function :loadingText 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m"><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
       </svg>
       <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small">
@@ -839,7 +839,7 @@ exports[`TreeSelect function :prefixIcon 1`] = `
       </div>
     </transition-stub>
     <div class="t-select t-size-m t-has-prefix"><span class="t-select__left-icon"></span><span class="t-select__placeholder"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span>
-      <div class="t-input t-size-m t-select__input" style="display: none;"><input placeholder="请输入" type="text" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
+      <div class="t-input t-size-m t-input__inner t-select__input" style="display: none;"><input placeholder="" type="text"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size: medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear" style="font-size: medium; display: none;">
         <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>

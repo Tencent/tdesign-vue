@@ -14,10 +14,9 @@ exports[`Input addon demo works fine 1`] = `
       http://
     </span>
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__inner"
     >
       <input
-        class="t-input__inner"
         placeholder="请输入内容"
         type="text"
       />
@@ -28,10 +27,9 @@ exports[`Input addon demo works fine 1`] = `
     class="t-addon t-addon--append"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__inner"
     >
       <input
-        class="t-input__inner"
         placeholder="请输入内容"
         type="text"
       />
@@ -52,10 +50,9 @@ exports[`Input addon demo works fine 1`] = `
       http://
     </span>
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__inner"
     >
       <input
-        class="t-input__inner"
         placeholder="请输入内容"
         type="text"
       />
@@ -75,23 +72,40 @@ exports[`Input base demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m"
+    class="t-input t-size-m t-input__inner"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="text"
     />
   </div>
    
   <div
-    class="t-input t-size-m"
+    class="t-input t-size-m t-input__inner"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入内容（有默认值）"
       type="text"
     />
+  </div>
+   
+  <div
+    class="t-input t-size-m t-input__inner t-input--prefix t-input--suffix"
+  >
+    <div
+      class="t-input__prefix"
+    >
+      价格：
+    </div>
+    <input
+      placeholder="请输入"
+      type="text"
+    />
+    <div
+      class="t-input__suffix"
+    >
+      元
+    </div>
   </div>
 </div>
 `;
@@ -102,10 +116,9 @@ exports[`Input disabled demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-disabled"
+    class="t-input t-size-m t-input__inner t-is-disabled"
   >
     <input
-      class="t-input__inner"
       disabled="disabled"
       placeholder="请输入"
       type="text"
@@ -124,21 +137,19 @@ exports[`Input group demo works fine 1`] = `
       class="t-input-group t-input-group--separate"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
         style="width: 100px;"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
       </div>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -151,20 +162,18 @@ exports[`Input group demo works fine 1`] = `
       class="t-input-group t-input-group--separate"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
       </div>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -177,20 +186,18 @@ exports[`Input group demo works fine 1`] = `
       class="t-input-group"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
       </div>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -203,11 +210,10 @@ exports[`Input group demo works fine 1`] = `
       class="t-input-group t-input-group--separate"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
         style="width: 100px;"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -220,33 +226,30 @@ exports[`Input group demo works fine 1`] = `
       </span>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
         style="width: 100px;"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
       </div>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
         style="width: 100px;"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
       </div>
        
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
         style="width: 100px;"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -262,10 +265,10 @@ exports[`Input password demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-input--prefix t-input--suffix"
+    class="t-input t-size-m t-input__inner t-input--prefix t-input--suffix"
   >
     <span
-      class="t-input__prefix"
+      class="t-input__prefix t-input__prefix-icon"
     >
       <svg
         class="t-icon t-icon-lock-on"
@@ -287,12 +290,11 @@ exports[`Input password demo works fine 1`] = `
       </svg>
     </span>
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="password"
     />
     <span
-      class="t-input__suffix"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
         class="t-icon t-icon-browse-off t-input__suffix-clear"
@@ -316,10 +318,10 @@ exports[`Input password demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input t-size-m t-input--prefix t-input--suffix"
+    class="t-input t-size-m t-input__inner t-input--prefix t-input--suffix"
   >
     <span
-      class="t-input__prefix"
+      class="t-input__prefix t-input__prefix-icon"
     >
       <svg
         class="t-icon t-icon-lock-on"
@@ -341,12 +343,11 @@ exports[`Input password demo works fine 1`] = `
       </svg>
     </span>
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="password"
     />
     <span
-      class="t-input__suffix"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
         class="t-icon t-icon-browse-off t-input__suffix-clear"
@@ -377,30 +378,27 @@ exports[`Input size demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-l"
+    class="t-input t-size-l t-input__inner"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入内容"
       type="text"
     />
   </div>
    
   <div
-    class="t-input t-size-m"
+    class="t-input t-size-m t-input__inner"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入内容"
       type="text"
     />
   </div>
    
   <div
-    class="t-input t-size-s"
+    class="t-input t-size-s t-input__inner"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入内容"
       type="text"
     />
@@ -414,30 +412,27 @@ exports[`Input status demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-success"
+    class="t-input t-size-m t-input__inner t-is-success"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="text"
     />
   </div>
    
   <div
-    class="t-input t-size-m t-is-warning"
+    class="t-input t-size-m t-input__inner t-is-warning"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="text"
     />
   </div>
    
   <div
-    class="t-input t-size-m t-is-error"
+    class="t-input t-size-m t-input__inner t-is-error"
   >
     <input
-      class="t-input__inner"
       placeholder="请输入"
       type="text"
     />

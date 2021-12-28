@@ -9,6 +9,7 @@ import CLASSNAMES from '../utils/classnames';
 import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import props from './props';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-input`;
 
@@ -47,7 +48,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         disabled: this.disabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
-        placeholder: this.placeholder || this.t(this.global.placeholder),
+        placeholder: this.placeholder ?? this.t(this.global.placeholder),
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
@@ -87,6 +88,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const prefixIcon = this.renderIcon(h, this.prefixIcon, 'prefix-icon');
     let suffixIcon = this.renderIcon(h, this.suffixIcon, 'suffix-icon');
 
+    const label = renderTNodeJSX(this, 'label');
+    const suffix = renderTNodeJSX(this, 'suffix');
+
+    const labelContent = label ? <div class={`${name}__prefix`}>{label}</div> : null;
+    const suffixContent = suffix ? <div class={`${name}__suffix`}>{suffix}</div> : null;
+
     if (this.showClear) {
       suffixIcon = <ClearIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
     }
@@ -102,12 +109,14 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const classes = [
       name,
       CLASSNAMES.SIZE[this.size] || '',
+      `${name}__inner`,
       {
         [CLASSNAMES.STATUS.disabled]: this.disabled,
         [CLASSNAMES.STATUS.focused]: this.focused,
         [`${prefix}-is-${this.status}`]: this.status,
-        [`${name}--prefix`]: prefixIcon,
-        [`${name}--suffix`]: suffixIcon,
+        [`${name}--prefix`]: prefixIcon || labelContent,
+        [`${name}--suffix`]: suffixIcon || suffixContent,
+        [`${name}__inner--focused`]: this.focused,
       },
     ];
     return (
@@ -117,17 +126,20 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         onMouseleave={() => this.mouseEvent(false)}
         {...{ attrs: wrapperAttrs, on: wrapperEvents }}
       >
-        {prefixIcon ? <span class={`${name}__prefix`}>{prefixIcon}</span> : null}
+        {prefixIcon ? <span class={[`${name}__prefix`, `${name}__prefix-icon`]}>{prefixIcon}</span> : null}
+        {labelContent}
         <input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           ref="refInputElem"
           value={this.value}
-          class={`${name}__inner`}
           onInput={this.handleInput}
           onCompositionend={this.onCompositionend}
         />
+        {suffixContent}
         {suffixIcon ? (
-          <span class={[`${name}__suffix`, { [`${name}__clear`]: this.showClear }]}>{suffixIcon}</span>
+          <span class={[`${name}__suffix`, `${name}__suffix-icon`, { [`${name}__clear`]: this.showClear }]}>
+            {suffixIcon}
+          </span>
         ) : null}
       </div>
     );
