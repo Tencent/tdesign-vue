@@ -1284,10 +1284,9 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         checked:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -1303,10 +1302,9 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         expanded:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -1322,10 +1320,9 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         actived:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -3965,10 +3962,9 @@ exports[`Tree:demo filter demo works fine 1`] = `
       filter:
     </span>
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__inner"
     >
       <input
-        class="t-input__inner"
         placeholder="请输入"
         type="text"
       />
@@ -7142,10 +7138,9 @@ exports[`Tree:demo operations demo works fine 1`] = `
         filter:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -7488,10 +7483,9 @@ exports[`Tree:demo sync demo works fine 1`] = `
         checked:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -7507,10 +7501,9 @@ exports[`Tree:demo sync demo works fine 1`] = `
         expanded:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />
@@ -7526,10 +7519,9 @@ exports[`Tree:demo sync demo works fine 1`] = `
         actived:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-input__inner"
       >
         <input
-          class="t-input__inner"
           placeholder="请输入"
           type="text"
         />

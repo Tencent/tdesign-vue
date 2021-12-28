@@ -720,16 +720,15 @@ exports[`DatePicker base demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -2174,16 +2173,15 @@ exports[`DatePicker datePresets demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -3640,16 +3638,15 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
         >
           <div
             allowinput="0"
-            class="t-input t-size-m t-input--suffix"
+            class="t-input t-size-m t-input__inner t-input--suffix"
           >
             <input
-              class="t-input__inner"
               placeholder="请选择日期"
               readonly="readonly"
               type="text"
             />
             <span
-              class="t-input__suffix"
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
                 class="t-icon t-icon-calendar"
@@ -4410,16 +4407,15 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
         >
           <div
             allowinput="0"
-            class="t-input t-size-m t-input--suffix"
+            class="t-input t-size-m t-input__inner t-input--suffix"
           >
             <input
-              class="t-input__inner"
               placeholder="请选择日期"
               readonly="readonly"
               type="text"
             />
             <span
-              class="t-input__suffix"
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
                 class="t-icon t-icon-calendar"
@@ -5875,16 +5871,15 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -7314,16 +7309,15 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="开始时间 至 结束时间"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -8786,16 +8780,15 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-time"
@@ -9111,16 +9104,15 @@ exports[`DatePicker month demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择月份"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -9404,16 +9396,15 @@ exports[`DatePicker year demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-input__inner t-input--suffix"
         >
           <input
-            class="t-input__inner"
             placeholder="请选择年份"
             readonly="readonly"
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
