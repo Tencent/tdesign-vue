@@ -6,7 +6,7 @@ import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { CalendarConfig } from '../config-provider/config-receiver';
 import * as utils from './utils';
-import { getPropsApiByEvent } from '../utils/helper';
+import { emitEvent } from '../utils/event';
 
 // 组件的一些常量
 import {
@@ -365,34 +365,38 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     clickCell(e: MouseEvent, cellData: CalendarCell) {
       this.curDate = dayjs(cellData.date);
-      this.execCellEvent(e, cellData, 'cell-click');
+      const options = this.getCellClickEventOptions(e, cellData);
+      emitEvent<Parameters<TdCalendarProps['onCellClick']>>(this, 'cell-click', options);
     },
     doubleClickCell(e: MouseEvent, cellData: CalendarCell) {
-      this.execCellEvent(e, cellData, 'cell-double-click');
+      const options = this.getCellClickEventOptions(e, cellData);
+      emitEvent<Parameters<TdCalendarProps['onCellDoubleClick']>>(this, 'cell-double-click', options);
     },
     rightClickCell(e: MouseEvent, cellData: CalendarCell) {
       if (this.preventCellContextmenu) {
         e.preventDefault();
       }
-      this.execCellEvent(e, cellData, 'cell-right-click');
+      const options = this.getCellClickEventOptions(e, cellData);
+      emitEvent<Parameters<TdCalendarProps['onCellRightClick']>>(this, 'cell-right-click', options);
     },
-    execCellEvent(e: MouseEvent, cellData: CalendarCell, emitName: string) {
-      const options: CellEventOption = {
+    getCellClickEventOptions(e: MouseEvent, cellData: CalendarCell): CellEventOption {
+      return {
         cell: this.createCalendarCell(cellData),
         e,
       };
-      const cellEvent = this[getPropsApiByEvent(emitName)];
-      if (typeof cellEvent === 'function') {
-        cellEvent(options);
-      }
-      this.$emit(emitName, options);
     },
     controllerChange(): void {
       const options = this.controllerOptions;
-      if (typeof this.onControllerChange === 'function') {
-        this.onControllerChange(options);
-      }
-      this.$emit('controller-change', options);
+      emitEvent<Parameters<TdCalendarProps['onControllerChange']>>(this, 'controller-change', options);
+    },
+    // 月份切换响应事件（包括年和月下拉框变化）
+    monthChange(): void {
+      const options = {
+        year: `${this.controllerOptions.filterDate.getFullYear()}`,
+        month: `${this.controllerOptions.filterDate.getMonth() + 1}`,
+      };
+      emitEvent<Parameters<TdCalendarProps['onMonthChange']>>(this, 'month-change', options);
+      this.controllerChange();
     },
     onWeekendToggleClick(): void {
       this.isShowWeekend = !this.isShowWeekend;
@@ -462,7 +466,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   size={this.controlSize}
                   disabled={this.isYearDisabled}
                   {...this.controllerConfigData.year.selecteProps}
-                  onChange={this.controllerChange}
+                  onChange={this.monthChange}
                 >
                   {this.yearSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -479,7 +483,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
                   {...this.controllerConfigData.year.selecteProps}
-                  onChange={this.controllerChange}
+                  onChange={this.monthChange}
                 >
                   {this.monthSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -578,8 +582,8 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                       cell={this.cell}
                       fillWithZero={this.fillWithZero}
                       onClick={(e: MouseEvent) => this.clickCell(e, item)}
-                      ondblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
-                      onRightClickCell={(e: MouseEvent) => this.rightClickCell(e, item)}
+                      onDblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
+                      onRightclick={(e: MouseEvent) => this.rightClickCell(e, item)}
                       scopedSlots={{ ...this.$scopedSlots }}
                     ></calendar-cell-item>
                 ),
@@ -595,21 +599,23 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         <tbody class={`${COMPONENT_NAME}__table-body`}>
           {this.yearCellsData.map((cell, cellIndex) => (
             <tr class={`${COMPONENT_NAME}__table-body-row`}>
-              {cell.map((item, itemIndex) => (
-                <calendar-cell-item
-                  key={`${cellIndex}-${itemIndex}`}
-                  item={item}
-                  theme={this.theme}
-                  t={this.t}
-                  global={this.global}
-                  cell={this.cell}
-                  fillWithZero={this.fillWithZero}
-                  onClick={(e: MouseEvent) => this.clickCell(e, item)}
-                  ondblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
-                  onRightClickCell={(e: MouseEvent) => this.rightClickCell(e, item)}
-                  scopedSlots={{ ...this.$scopedSlots }}
-                ></calendar-cell-item>
-              ))}
+              {cell.map(
+                (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
+                    <calendar-cell-item
+                      key={`${cellIndex}-${itemIndex}`}
+                      item={item}
+                      theme={this.theme}
+                      t={this.t}
+                      global={this.global}
+                      cell={this.cell}
+                      fillWithZero={this.fillWithZero}
+                      onClick={(e: MouseEvent) => this.clickCell(e, item)}
+                      onDblclick={(e: MouseEvent) => this.doubleClickCell(e, item)}
+                      onRightclick={(e: MouseEvent) => this.rightClickCell(e, item)}
+                      scopedSlots={{ ...this.$scopedSlots }}
+                    ></calendar-cell-item>
+                ),
+              )}
             </tr>
           ))}
         </tbody>
