@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Drawer Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -19,6 +18,7 @@ footer | Boolean / Slot / Function | true | 底部操作栏，默认会有“确
 header | String / Boolean / Slot / Function | undefined | 头部内容。值为 true 显示空白头部，值为 false 不显示头部，值类型为 string 则直接显示值，值类型为 TNode 表示自定义头部内容。TS 类型：`string | boolean | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 mode | String | overlay | 展开方式，有两种：直接展示在内容上方 和 推开内容区域。可选项：overlay/push | N
 placement | String | right | 抽屉方向。可选项：left/right/top/bottom | N
+preventScrollThrough | Boolean | true | 防止滚动穿透 | N
 showInAttachedElement | Boolean | false | 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative | N
 showOverlay | Boolean | true | 是否显示遮罩层 | N
 size | String | small | 尺寸，支持 'small', 'medium', 'large'，'35px', '30%',  '3em' 等。纵向抽屉调整的是抽屉宽度，横向抽屉调整的是抽屉高度 | N

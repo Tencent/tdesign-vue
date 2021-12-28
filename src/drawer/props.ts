@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-01 14:26:00
+ * updated at 2021-12-26 14:30:54
  * */
 
 import { TdDrawerProps } from './type';
@@ -74,6 +74,11 @@ export default {
     validator(val: TdDrawerProps['placement']): boolean {
       return ['left', 'right', 'top', 'bottom'].includes(val);
     },
+  },
+  /** 防止滚动穿透 */
+  preventScrollThrough: {
+    type: Boolean,
+    default: true,
   },
   /** 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative */
   showInAttachedElement: Boolean,
