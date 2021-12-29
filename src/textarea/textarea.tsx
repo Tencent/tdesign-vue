@@ -97,7 +97,7 @@ export default Vue.extend({
         val = typeof stringInfo === 'object' && stringInfo.characters;
       }
       this.$emit('input', val);
-      this.emitEvent('change', val, { e: InputEvent });
+      this.emitEvent('change', val, { e });
 
       this.$nextTick(() => this.setInputValue(val));
       this.adjustTextareaHeight();
