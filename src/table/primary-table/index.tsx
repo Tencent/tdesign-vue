@@ -91,7 +91,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
           dragging: this.dragging,
         },
         // this.hasFilterCondition is from mixins/filter.tsx
-        firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : undefined,
+        firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
         empty: this.empty,
       },
       scopedSlots,
