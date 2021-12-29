@@ -2,14 +2,14 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
+ * updated at 2021-12-28 21:43:41
  * */
 
 import { TNode, SizeEnum } from '../common';
 
 export interface TdRadioProps {
   /**
-   * 【开发中】是否允许取消选中
+   * 是否允许取消选中
    * @default false
    */
   allowUncheck?: boolean;
@@ -34,7 +34,7 @@ export interface TdRadioProps {
    */
   label?: string | TNode;
   /**
-   * HTM 元素原生属性
+   * HTML 元素原生属性
    * @default ''
    */
   name?: string;
@@ -46,15 +46,9 @@ export interface TdRadioProps {
    * 选中状态变化时触发
    */
   onChange?: (checked: boolean, context: { e: Event }) => void;
-};
+}
 
 export interface TdRadioGroupProps {
-  /**
-   * 单选组件按钮形式（请使用 variant 代替）
-   * @default outline
-   * @deprecated
-   */
-  buttonStyle?: 'outline' | 'solid';
   /**
    * 是否禁用全部子单选框
    */
@@ -90,7 +84,7 @@ export interface TdRadioGroupProps {
    * 选中值发生变化时触发
    */
   onChange?: (value: RadioValue, context: { e: Event }) => void;
-};
+}
 
 export type RadioValue = string | number | boolean;
 

@@ -423,7 +423,7 @@ CSS 类名规范:
 
 - Slider: 新增滑块输入组件，[官网 Slider](http://tdesign.tencent.com/vue/components/slider)
 - Radio:
-  - 新增 `variant` 属性用于控制单选框组件按钮形式，原有 `buttonStyle` 属性已废弃
+  - 新增 `variant` 属性用于控制单选框组件按钮形式
   - RadioOption 中的 `label` 和 `value` 更改为非必传，
 - Transfer: 新增树形内容展示支持，使用请参考官网 [样例](https://tdesign.tencent.com/vue/components/transfer#%E4%B8%8Etree%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8)
 - Table:
