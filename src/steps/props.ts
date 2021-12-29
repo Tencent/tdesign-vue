@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
+ * updated at 2021-12-25 10:38:48
  * */
 
 import { TdStepsProps } from './type';
@@ -36,6 +36,8 @@ export default {
   options: {
     type: Array as PropType<TdStepsProps['options']>,
   },
+  /** 是否只读 */
+  readonly: Boolean,
   /** 步骤条顺序，纵向步骤有效（direction = horizontal） */
   sequence: {
     type: String as PropType<TdStepsProps['sequence']>,

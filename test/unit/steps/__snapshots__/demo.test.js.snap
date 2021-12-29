@@ -8,7 +8,7 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
     class="t-steps-item t-steps-item--finish"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--finish"
@@ -64,7 +64,7 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
     class="t-steps-item t-steps-item--default"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--default"
@@ -92,7 +92,7 @@ exports[`Steps Steps NoSequence demo works fine 1`] = `
     class="t-steps-item t-steps-item--default"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--default"
@@ -133,7 +133,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--finish"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--finish"
@@ -189,7 +189,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -217,7 +217,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -250,7 +250,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--finish"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--finish"
@@ -306,7 +306,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -334,7 +334,7 @@ exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -377,7 +377,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--finish"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--finish"
@@ -457,7 +457,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -491,7 +491,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -534,7 +534,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--finish"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--finish"
@@ -614,7 +614,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -648,7 +648,7 @@ exports[`Steps Steps VerticalSequence demo works fine 1`] = `
         class="t-steps-item t-steps-item--default"
       >
         <div
-          class="t-steps-item__inner t-steps-item--clickable"
+          class="t-steps-item__inner "
         >
           <div
             class="t-steps-item__icon t-steps-item--default"
@@ -801,7 +801,29 @@ exports[`Steps Steps extra demo works fine 1`] = `
         </div>
         <div
           class="t-steps-item__extra"
-        />
+        >
+          <button
+            class="t-button t-size-s t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              上一步
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              下一步
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -850,7 +872,7 @@ exports[`Steps Steps icon demo works fine 1`] = `
     class="t-steps-item t-steps-item--finish"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--finish"
@@ -939,7 +961,7 @@ exports[`Steps Steps icon demo works fine 1`] = `
     class="t-steps-item t-steps-item--default"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--default"
@@ -981,7 +1003,7 @@ exports[`Steps Steps icon demo works fine 1`] = `
     class="t-steps-item t-steps-item--default"
   >
     <div
-      class="t-steps-item__inner t-steps-item--clickable"
+      class="t-steps-item__inner "
     >
       <div
         class="t-steps-item__icon t-steps-item--default"
@@ -1507,7 +1529,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--finish"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--finish"
@@ -1587,7 +1609,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--default"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--default"
@@ -1621,7 +1643,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--default"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--default"
@@ -1664,7 +1686,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--finish"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--finish"
@@ -1710,7 +1732,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--finish"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--finish"
@@ -1756,7 +1778,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--error"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--error"
@@ -1802,7 +1824,7 @@ exports[`Steps Steps status demo works fine 1`] = `
       class="t-steps-item t-steps-item--default"
     >
       <div
-        class="t-steps-item__inner t-steps-item--clickable"
+        class="t-steps-item__inner "
       >
         <div
           class="t-steps-item__icon t-steps-item--default"

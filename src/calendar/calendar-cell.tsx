@@ -9,6 +9,12 @@ import { COMPONENT_NAME } from './const';
 import { CalendarCell, TdCalendarProps } from './type';
 import { renderTNodeJSXDefault, renderTNodeJSX } from '../utils/render-tnode';
 
+const clickTypeEmitEventMap = {
+  click: 'click',
+  dblclick: 'dblclick',
+  contextmenu: 'rightclick',
+};
+
 export default Vue.extend({
   name: `${COMPONENT_NAME}-cell`,
   props: {
@@ -42,7 +48,7 @@ export default Vue.extend({
         return fillZero ? `0${dateNum}` : dateNum;
       }
       const map = this.t(this.global.cellMonth).split(',');
-      return map[(this.item.date.getMonth()).toString()];
+      return map[this.item.date.getMonth().toString()];
     },
     cellCls(): Record<string, any> {
       const {
@@ -55,13 +61,14 @@ export default Vue.extend({
           [`${prefix}-is-disabled`]: this.disabled,
           [`${prefix}-is-checked`]: isCurrent,
           [`${prefix}-calendar__table-body-cell--now`]: isNow,
-        }];
+        },
+      ];
     },
   },
   methods: {
     clickCell(e: MouseEvent) {
       if (this.disabled) return;
-      this.$emit('click', e);
+      this.$emit(clickTypeEmitEventMap[e.type], e);
     },
   },
   render(): VNode {
@@ -69,19 +76,21 @@ export default Vue.extend({
       item, cellCls, clickCell, valueDisplay, allowSlot,
     } = this;
 
-    const defaultNode = () => <span>
-      <div class={`${prefix}-calendar__table-body-cell-display`}>{valueDisplay}</div>
-      <div class={`${prefix}-calendar__table-body-cell-content`}>
-        {allowSlot
-          && renderTNodeJSX(this, 'cellAppend', {
-            params: item,
-          })}
-      </div>
-    </span>;
+    const defaultNode = () => (
+      <span>
+        <div class={`${prefix}-calendar__table-body-cell-display`}>{valueDisplay}</div>
+        <div class={`${prefix}-calendar__table-body-cell-content`}>
+          {allowSlot
+            && renderTNodeJSX(this, 'cellAppend', {
+              params: item,
+            })}
+        </div>
+      </span>
+    );
 
     return (
       item && (
-        <div class={cellCls} onClick={clickCell}>
+        <div class={cellCls} onClick={clickCell} ondblclick={clickCell} onContextmenu={clickCell}>
           {typeof this.cell === 'function'
             ? this.cell(this.$createElement, item)
             : renderTNodeJSXDefault(this, 'cell', {

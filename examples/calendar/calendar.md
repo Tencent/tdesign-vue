@@ -24,6 +24,7 @@ onCellClick | Function |  | 日历单元格点击时触发。`(options: { cell: 
 onCellDoubleClick | Function |  | 日历单元格双击时触发。`(options: { cell: CalendarCell; e: MouseEvent }) => {}` | N
 onCellRightClick | Function |  | 日历单元格右击时触发。`(options: { cell: CalendarCell; e: MouseEvent }) => {}` | N
 onControllerChange | Function |  | 右上角控件组选中值有变化的时候触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts)。`(options: ControllerOptions) => {}` | N
+onMonthChange | Function |  | 月份切换时触发。`(options: { month: string; year: string }) => {}` | N
 
 ### Calendar Events
 
@@ -33,6 +34,7 @@ cell-click | `(options: { cell: CalendarCell; e: MouseEvent })` | 日历单元�
 cell-double-click | `(options: { cell: CalendarCell; e: MouseEvent })` | 日历单元格双击时触发
 cell-right-click | `(options: { cell: CalendarCell; e: MouseEvent })` | 日历单元格右击时触发
 controller-change | `(options: ControllerOptions)` | 右上角控件组选中值有变化的时候触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts)
+month-change | `(options: { month: string; year: string })` | 月份切换时触发
 
 ### CalendarController
 

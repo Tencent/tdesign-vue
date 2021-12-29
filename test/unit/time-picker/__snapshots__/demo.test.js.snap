@@ -802,16 +802,15 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-time-picker__group"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-input__inner t-input--suffix"
       >
         <input
-          class="t-input__inner"
           placeholder=" "
           readonly="readonly"
           type="text"
         />
         <span
-          class="t-input__suffix"
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
             class="t-icon t-icon-time"
@@ -1665,16 +1664,15 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-time-picker__group"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-input__inner t-input--suffix"
       >
         <input
-          class="t-input__inner"
           placeholder=" "
           readonly="readonly"
           type="text"
         />
         <span
-          class="t-input__suffix"
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
             class="t-icon t-icon-time"
