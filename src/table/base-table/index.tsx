@@ -66,7 +66,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     dataSource(): Array<DataType> {
       if (!this.hasPagination) return this.data.slice(0);
       const { current, pageSize } = this;
-      if (this.data.length > pageSize) {
+      if (this.data.length > pageSize && !this.disableDataSort) {
         return this.data.slice((current - 1) * pageSize, current * pageSize);
       }
       return this.data;
@@ -135,6 +135,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     // 检查是否还可以向左或者向右滚动
     checkScrollableToLeftOrRight() {
       const scrollContainer = this.$refs[this.fixedHeader ? 'scrollBody' : 'tableContent'] as HTMLElement;
+      if (!scrollContainer) return;
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
       this.scrollableToLeft = scrollLeft > 0;
       this.scrollableToRight = scrollLeft + clientWidth < scrollWidth;
