@@ -111,6 +111,12 @@ export default Vue.extend({
               }
             }
           }
+          if (rowspan > 1 && colspan === -1) {
+            colspan = 1;
+          }
+          if (colspan > 1 && rowspan === -1) {
+            rowspan = 1;
+          }
           props[rowIndex][colKey] = {
             leftedColspan,
             leftedRowspan,
