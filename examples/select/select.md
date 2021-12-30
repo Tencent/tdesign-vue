@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Select Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -21,11 +20,13 @@ max | Number | 0 | 用于控制多选数量，值为 0 则不限制 | N
 minCollapsedNum | Number | 0 | 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠 | N
 multiple | Boolean | false | 是否允许多选 | N
 options | Array | [] | 数据化配置选项内容。TS 类型：`Array<T>` | N
-placeholder | String | - | 占位符 | N
+panelBottomContent | String / Slot / Function | - | 面板内的底部内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+panelTopContent | String / Slot / Function | - | 面板内的顶部内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+placeholder | String | undefined | 占位符 | N
 popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 prefixIcon | Slot / Function | - | 组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 reserveKeyword | Boolean | false | 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 | N
-showCheckAlll | Boolean | false | 【讨论中】是否显示全选 | N
+showArrow | Boolean | true | 是否显示右侧箭头，默认显示 | N
 size | String | medium | 组件尺寸。可选项：small / medium / large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Object / Array | - | 选中值。支持语法糖。TS 类型：`SelectValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 defaultValue | String / Number / Object / Array | - | 选中值。非受控属性。TS 类型：`SelectValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N

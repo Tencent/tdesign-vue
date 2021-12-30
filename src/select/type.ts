@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-18 19:38:26
+ * updated at 2021-12-30 10:58:12
  * */
 
 import { PopupProps } from '../popup';
@@ -82,8 +82,15 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   options?: Array<T>;
   /**
+   * 面板内的底部内容
+   */
+  panelBottomContent?: string | TNode;
+  /**
+   * 面板内的顶部内容
+   */
+  panelTopContent?: string | TNode;
+  /**
    * 占位符
-   * @default ''
    */
   placeholder?: string;
   /**
@@ -100,10 +107,10 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   reserveKeyword?: boolean;
   /**
-   * 【讨论中】是否显示全选
-   * @default false
+   * 是否显示右侧箭头，默认显示
+   * @default true
    */
-  showCheckAlll?: boolean;
+  showArrow?: boolean;
   /**
    * 组件尺寸
    * @default medium
