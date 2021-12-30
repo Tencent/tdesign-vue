@@ -22,7 +22,6 @@ import 'tdesign-icons-view';
 
 Vue.use(TDesign);
 Vue.use(VueRouter);
-
 Vue.config.ignoredElements = [/^td-/];
 
 Vue.component('Codesandbox', Codesandbox);

@@ -232,7 +232,7 @@ export default Vue.extend({
   },
 
   render() {
-    if (this.provider.sortOnRowDraggable) {
+    if (this.provider.sortOnRowDraggable || this.provider.showDragCol) {
       const className = `${prefix}-table__body ${this.provider.dragging ? 'dragging' : ''}`;
       return (
         <transition-group class={className} tag="tbody">

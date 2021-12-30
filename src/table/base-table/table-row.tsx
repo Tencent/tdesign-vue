@@ -55,6 +55,7 @@ export default Vue.extend({
       default() {
         return {
           sortOnRowDraggable: false,
+          showDragCol: false,
         };
       },
     },
@@ -153,11 +154,24 @@ export default Vue.extend({
     const on = {};
     Object.keys(eventsName).forEach((event) => {
       const emitEventName = eventsName[event];
+      // 列拖拽
       on[event] = (e: MouseEvent) => {
-        emitEvent(this, emitEventName, {
-          ...params,
-          e,
-        });
+        if (this.provider.showDragCol && !this.provider.sortOnRowDraggable && e.type.indexOf('dragover') > -1) {
+          // 筛选部分不执行
+          const target = e.target as HTMLInputElement;
+          const father = target.dataset.colkey === 'move-icon' ? target : target.closest('td');
+          if (father.dataset.colkey === 'move-icon') {
+            emitEvent(this, emitEventName, {
+              ...params,
+              e,
+            });
+          }
+        } else {
+          emitEvent(this, emitEventName, {
+            ...params,
+            e,
+          });
+        }
       };
     });
     const trProps = {
@@ -168,7 +182,8 @@ export default Vue.extend({
       },
       on,
     };
-    if (this.provider.sortOnRowDraggable) {
+
+    if (this.provider.sortOnRowDraggable || this.provider.showDragCol) {
       (trProps.attrs as any).draggable = true;
     }
     return <tr {...trProps}>{this.renderRow()}</tr>;

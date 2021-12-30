@@ -132,7 +132,6 @@ export default Vue.extend({
     } else {
       cellContent = this.$createElement(title || '');
     }
-
     const tdAttrs = {
       attrs: {
         ...attrs,

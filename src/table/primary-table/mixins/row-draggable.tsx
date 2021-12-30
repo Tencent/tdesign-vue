@@ -1,12 +1,13 @@
 import Vue from 'vue';
+import { MoveIcon } from 'tdesign-icons-vue';
 import { DataType, TdPrimaryTableProps } from '../../type';
 import { prefix } from '../../../config';
 import { emitEvent } from '../../../utils/event';
 
 export interface RowDragEventArgs {
-  index: number,
-  row: any,
-  targetElm: HTMLElement
+  index: number;
+  row: any;
+  targetElm: HTMLElement;
 }
 
 export default Vue.extend({
@@ -23,6 +24,18 @@ export default Vue.extend({
     },
   },
   methods: {
+    getMoveColColumns(columns: TdPrimaryTableProps['columns']): TdPrimaryTableProps['columns'] {
+      columns.unshift({
+        colKey: 'move-icon',
+        title: '',
+        width: 50,
+        cell: () => <MoveIcon />,
+        attrs: {
+          'data-colkey': 'move-icon',
+        },
+      });
+      return columns;
+    },
     onDragStart({ index, row }: RowDragEventArgs) {
       this.draggingRowCurrentIndex = index;
       this.currentRowData = row;
@@ -47,7 +60,10 @@ export default Vue.extend({
     },
     emitChange(current: DataType, target: DataType, currentIndex: number, targetIndex: number) {
       emitEvent<Parameters<TdPrimaryTableProps['onDragSort']>>(this, 'drag-sort', {
-        current, target, currentIndex, targetIndex,
+        current,
+        target,
+        currentIndex,
+        targetIndex,
       });
     },
   },

@@ -20,7 +20,6 @@ export default function mdToVue(options) {
   if (mdSegment.isComponent) {
     coverage = testCoverage[camelCase(mdSegment.componentName)] || '0%';
   }
-
   const sfc = `
     <template>
       <td-doc-content ref="tdDocContent" page-status="hidden">

@@ -28,7 +28,6 @@ function getDocsRoutes(docs, type) {
   });
   return docsRoutes;
 }
-
 const routes = [
   {
     path: '/vue/components',

@@ -37,6 +37,10 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
       columns = this.getFilterColumns(columns);
       columns = this.getSelectColumns(columns);
       columns = this.getExpandColumns(columns);
+      // 展示列拖拽
+      if (this.showDragCol) {
+        columns = this.getMoveColColumns(columns);
+      }
       return columns;
     },
   },
@@ -88,6 +92,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         provider: {
           renderRows: this.renderRows,
           sortOnRowDraggable: this.sortOnRowDraggable,
+          showDragCol: this.showDragCol,
           dragging: this.dragging,
         },
         // this.hasFilterCondition is from mixins/filter.tsx
