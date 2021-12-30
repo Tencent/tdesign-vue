@@ -34,7 +34,7 @@ import { Icon } from 'tdesign-icons-vue';
 
 export default {
   data() {
-    const timeStamp = new Date('2021-12-12');
+    const timeStamp = new Date('2021-12-12').getTime();
     return {
       index: 2,
       useActived: false,
@@ -77,7 +77,7 @@ export default {
       let item = null;
       this.index += 1;
       const value = `t${this.index}`;
-      const timeStamp = new Date('2021-12-12');
+      const timeStamp = new Date('2021-12-13').getTime();
       item = {
         icon: '',
         value,
@@ -105,7 +105,7 @@ export default {
       data.icon = data.icon === 'folder' ? 'folder-open' : 'folder';
     },
     changeTime(node) {
-      const timeStamp = new Date('2021-12-12');
+      const timeStamp = new Date('2021-12-14').getTime();
       node.setData({
         timeStamp,
       });
