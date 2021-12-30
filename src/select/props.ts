@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-18 19:38:26
+ * updated at 2021-12-30 10:58:12
  * */
 
 import { TdSelectProps } from './type';
@@ -63,10 +63,18 @@ export default {
     type: Array as PropType<TdSelectProps['options']>,
     default: (): TdSelectProps['options'] => [],
   },
+  /** 面板内的底部内容 */
+  panelBottomContent: {
+    type: [String, Function] as PropType<TdSelectProps['panelBottomContent']>,
+  },
+  /** 面板内的顶部内容 */
+  panelTopContent: {
+    type: [String, Function] as PropType<TdSelectProps['panelTopContent']>,
+  },
   /** 占位符 */
   placeholder: {
     type: String,
-    default: '',
+    default: undefined,
   },
   /** 透传给 popup 组件的参数 */
   popupProps: {
@@ -78,8 +86,11 @@ export default {
   },
   /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
   reserveKeyword: Boolean,
-  /** 【讨论中】是否显示全选 */
-  showCheckAlll: Boolean,
+  /** 是否显示右侧箭头，默认显示 */
+  showArrow: {
+    type: Boolean,
+    default: true,
+  },
   /** 组件尺寸 */
   size: {
     type: String as PropType<TdSelectProps['size']>,
