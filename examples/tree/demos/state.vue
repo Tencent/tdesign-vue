@@ -16,7 +16,7 @@
       :icon="icon"
       ref="tree"
     >
-      <template #operations="{node}">
+      <template #operations="{ node }">
         <div class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
           <t-button size="small" variant="base" @click="changeTime(node)">变更时间</t-button>
@@ -34,21 +34,24 @@ import { Icon } from 'tdesign-icons-vue';
 
 export default {
   data() {
-    const timeStamp = Date.now();
+    const timeStamp = new Date('2021-12-12');
     return {
       index: 2,
       useActived: false,
       expandParent: true,
       // icon 要先预置到节点中，才能触发视图更新
-      items: [{
-        icon: '',
-        value: 'node1',
-        timeStamp,
-      }, {
-        icon: '',
-        value: 'node2',
-        timeStamp,
-      }],
+      items: [
+        {
+          icon: '',
+          value: 'node1',
+          timeStamp,
+        },
+        {
+          icon: '',
+          value: 'node2',
+          timeStamp,
+        },
+      ],
     };
   },
   methods: {
@@ -65,7 +68,7 @@ export default {
       if (data.icon) {
         name = data.icon;
       }
-      return <Icon name={name}/>;
+      return <Icon name={name} />;
     },
     label(createElement, node) {
       return `${node.value}: ${node.data.timeStamp}`;
@@ -74,7 +77,7 @@ export default {
       let item = null;
       this.index += 1;
       const value = `t${this.index}`;
-      const timeStamp = Date.now();
+      const timeStamp = new Date('2021-12-12');
       item = {
         icon: '',
         value,
@@ -102,7 +105,7 @@ export default {
       data.icon = data.icon === 'folder' ? 'folder-open' : 'folder';
     },
     changeTime(node) {
-      const timeStamp = Date.now();
+      const timeStamp = new Date('2021-12-12');
       node.setData({
         timeStamp,
       });
