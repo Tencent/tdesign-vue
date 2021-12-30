@@ -31,14 +31,14 @@ function getDocsRoutes(docs, type) {
 
 const routes = [
   {
-    path: '/vue/components',
-    redirect: '/vue/components/overview',
+    path: '/vue',
+    redirect: '/vue/overview',
     component: TdesignComponents,
     children: getDocsRoutes(docs),
   },
   {
     path: '*',
-    redirect: '/vue/components/overview',
+    redirect: '/vue/overview',
   },
   {
     path: '/vue/demos/:componentName/:demoName',
