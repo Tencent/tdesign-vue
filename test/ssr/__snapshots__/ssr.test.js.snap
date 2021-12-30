@@ -8718,6 +8718,27 @@ exports[`ssr snapshot test renders ./examples/select/demos/noborder.vue correctl
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/select/demos/panel.vue correctly 1`] = `
+<div class="tdesign-demo-select-base">
+  <div class="t-select__wrap">
+    <div class="t-popup__reference t-select__popup-reference">
+      <div name="t-popup--animation" appear="true"></div>
+      <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择云解决方案</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-select__wrap">
+    <div class="t-popup__reference t-select__popup-reference">
+      <div name="t-popup--animation" appear="true"></div>
+      <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择云产品</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+        </svg></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/select/demos/popup-props.vue correctly 1`] = `
 <div>
   <div class="t-select__wrap" style="width:200px;display:inline-block;">
