@@ -27,6 +27,12 @@ export default (Vue as VueConstructor<TabVue>).extend({
 
   props: { ...props },
 
+  provide(): { parent: TabVue } {
+    return {
+      parent: this,
+    };
+  },
+
   data() {
     return {
       panels: [] as Array<InstanceType<typeof TTabPanel>>,
