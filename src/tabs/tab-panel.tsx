@@ -15,6 +15,10 @@ export default Vue.extend({
     },
   },
 
+  updated() {
+    (this.$parent as any)?.updatePanels?.({ force: true });
+  },
+
   render() {
     const { destroyOnHide, active } = this;
     if (destroyOnHide && !active) return null;
