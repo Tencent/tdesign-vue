@@ -1,7 +1,7 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <t-addon prepend="filter:">
-      <t-input v-model="filterText" @input="onInput"/>
+      <t-input v-model="filterText" @input.native="onInput"/>
     </t-addon>
 
     <t-tree
