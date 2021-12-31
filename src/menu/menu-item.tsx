@@ -20,7 +20,7 @@ export default defineComponent({
       {
         [`${prefix}-is-active`]: active.value,
         [`${prefix}-is-disabled`]: props.disabled,
-        [`${prefix}-menu__item--plain`]: !ctx.slots.icon,
+        [`${prefix}-menu__item--plain`]: !ctx.slots.icon && !props.icon,
         [`${prefix}-submenu__item`]: !!submenu && !menu.isHead,
       },
     ]);
@@ -39,10 +39,11 @@ export default defineComponent({
           // vue-router 3.1.0+ push/replace cause NavigationDuplicated error
           // https://github.com/vuejs/vue-router/issues/2872
           // 当前path和目标path相同时，会抛出NavigationDuplicated的错误
-          if (err.name !== 'NavigationDuplicated'
-          && !err.message.includes('Avoided redundant navigation to current location')
+          if (
+            err.name !== 'NavigationDuplicated'
+            && !err.message.includes('Avoided redundant navigation to current location')
           ) {
-            throw (err);
+            throw err;
           }
         });
       }
