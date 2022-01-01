@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import set from 'lodash/set';
 import { ChevronDownIcon as TIconChevronDown, CloseCircleFilledIcon as TIconClose } from 'tdesign-icons-vue';
 import TLoading from '../loading';
-import Popup, { PopupProps } from '../popup';
+import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { SelectConfig } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -318,9 +318,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       return false;
     },
-    visibleChange(val: boolean) {
+    visibleChange(val: boolean, context: PopupVisibleChangeContext) {
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      if (this.focusing && !val) {
+      if (this.focusing && !val && context.trigger !== 'document') {
         this.visible = true;
         return;
       }
