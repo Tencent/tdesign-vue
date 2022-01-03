@@ -54,13 +54,13 @@ export default Vue.extend({
     },
 
     renderAvatar() {
-      const avatar = renderTNodeJSX(this, 'avatar')
+      const avatar = renderTNodeJSX(this, 'avatar');
       return avatar ? (
       <div class={`${preName}__avatar`}>
         {typeof avatar === 'string' ? (
           <img src={avatar} alt="" class={`${preName}__avatar-image`} />
         ) : (
-            avatar
+          avatar
         )}
       </div>
       ) : null;
