@@ -101,12 +101,16 @@ export function getPlaceholderShow(
  */
 export function getSingleContent(cascaderContext: CascaderContextType) {
   const {
-    value, multiple, treeStore, showAllLevels,
+    value, multiple, treeStore, showAllLevels, setValue,
   } = cascaderContext;
   if (multiple || !value) return '';
+
   if (Array.isArray(value)) return '';
   const node = treeStore && treeStore.getNodes(value as TreeNodeValue | TreeNode);
   if (!(node && node.length)) {
+    if (value) {
+      setValue(multiple ? [] : '', 'invalid-value');
+    }
     return '';
   }
   const path = node && node[0].getPath();
@@ -191,11 +195,21 @@ export function handleRemoveTagEffect(
   node: TreeNode,
   onRemove: CascaderProps['onRemove'],
 ) {
-  const { disabled, setValue } = cascaderContext;
+  const {
+    disabled, setValue, valueType, treeStore,
+  } = cascaderContext;
 
   if (disabled) return;
   const checked = node.setChecked(!node.isChecked());
-  setValue(checked, 'unchecked', node.getModel());
+  // 处理不同数据类型
+  const resValue = valueType === 'single'
+    ? checked
+    : checked.map((val) => treeStore
+      .getNode(val)
+      .getPath()
+      .map((item) => item.value));
+
+  setValue(resValue, 'unchecked', node.getModel());
   if (isFunction(onRemove)) {
     onRemove({ value: checked, node: node as any });
   }
