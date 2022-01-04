@@ -7,6 +7,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { TdStepsProps, TdStepItemProps } from './type';
 import { emitEvent } from '../utils/event';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-steps`;
 export default mixins(getConfigReceiverMixins('steps')).extend({
@@ -56,37 +57,37 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     },
   },
   render() {
-    const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
-    const options = this.getOptions();
-    const content = options.map((item, index) => {
-      const propsData = {
-        ...item,
-        status: this.handleStatus(item, index),
-      };
-
-      const stepItem = (
-        <t-step-item
-          props={{
-            ...item,
-            status: this.handleStatus(item, index),
-          }}
-          key={item.value || index}
-        ></t-step-item>
-      );
-
-      if (nodes && nodes[index]) {
-        const vnode = nodes[index];
-        if (vnode.componentOptions) {
-          vnode.componentOptions.propsData = propsData;
-          return vnode;
-        }
-        return stepItem;
-      }
-      return stepItem;
-    });
-    return <div class={this.baseClass}>{content}</div>;
+    const { baseClass, renderContent } = this;
+    return <div class={baseClass}>{renderContent()}</div>;
   },
   methods: {
+    renderContent() {
+      let content: VNode[] | null = null;
+      if (this.$scopedSlots.default) {
+        content = renderTNodeJSX(this, 'default');
+      }
+      const options = this.getOptions();
+      return options.map((item, index) => {
+        const vnode = content && content[index];
+        if (vnode?.componentOptions) {
+          const { componentOptions } = vnode;
+          componentOptions.propsData = {
+            ...componentOptions.propsData,
+            status: this.handleStatus(componentOptions.propsData, index),
+          };
+          return vnode;
+        }
+        return (
+          <t-step-item
+            props={{
+              ...item,
+              status: this.handleStatus(item, index),
+            }}
+            key={item.value || index}
+          ></t-step-item>
+        );
+      });
+    },
     getOptions() {
       const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
       let options: Array<TdStepItemProps>;
