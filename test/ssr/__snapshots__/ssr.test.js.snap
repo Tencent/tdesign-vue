@@ -3215,12 +3215,12 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
         </div>
       </div>
     </div>
-    <div class="t-steps-item t-steps-item--error">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--error"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error"><path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path></svg></span></div>
+    <div class="t-steps-item t-steps-item--process">
+      <div class="t-steps-item__inner ">
+        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
         <div class="t-steps-item__content">
-          <div class="t-steps-item__title">Error Step</div>
-          <div class="t-steps-item__description">Something Wrong! Custom Error Icon!</div>
+          <div class="t-steps-item__title">Second Step</div>
+          <div class="t-steps-item__description">Fill your base information into the form</div>
           <div class="t-steps-item__extra"></div>
         </div>
       </div>
@@ -9394,7 +9394,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
     <div class="t-steps-item__inner t-steps-item--clickable">
       <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
       <div class="t-steps-item__content">
-        <div class="t-steps-item__title">步骤3</div>
+        <div class="t-steps-item__title">步骤2</div>
         <div class="t-steps-item__description">这里是提示文字</div>
         <div class="t-steps-item__extra"><button type="button" class="t-button t-size-s t-button--variant-text t-button--theme-default"><span class="t-button__text">上一步</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">下一步</span></button></div>
       </div>
@@ -9442,12 +9442,12 @@ exports[`ssr snapshot test renders ./examples/steps/demos/icon.vue correctly 1`]
   </div>
   <div class="t-steps-item t-steps-item--default">
     <div class="t-steps-item__inner ">
-      <div class="t-steps-item__icon t-steps-item--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-wallet">
-          <path fill="currentColor" d="M11.5 4.5h2a1 1 0 011 1V12a1 1 0 01-1 1h-11a1 1 0 01-1-1V3a1 1 0 011-1h8a1 1 0 011 1v1.5zm-1-1.5h-8v1.5h8V3zm3 2.5h-11V12h11V5.5z" fill-opacity="0.9"></path>
+      <div class="t-steps-item__icon t-steps-item--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-cart">
+          <path fill="currentColor" d="M1 3h1.58l1.39 8.33c.06.39.4.67.78.67H14v-1H4.92L4.6 9h8.63a.8.8 0 00.78-.6l.85-3.4a.8.8 0 00-.78-1H3.76l-.23-1.33A.8.8 0 002.75 2H1v1zm12.07 5H4.42l-.5-3h9.9l-.75 3zM4.75 14.5a.75.75 0 100-1.5.75.75 0 000 1.5zM12.81 14.5a.75.75 0 100-1.5.75.75 0 000 1.5z" fill-opacity="0.9"></path>
         </svg></div>
       <div class="t-steps-item__content">
-        <div class="t-steps-item__title">支付</div>
-        <div class="t-steps-item__description">未开始</div>
+        <div class="t-steps-item__title">购物</div>
+        <div class="t-steps-item__description">进行中状态</div>
         <div class="t-steps-item__extra"></div>
       </div>
     </div>
@@ -9494,7 +9494,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/no-sequence.vue correc
     <div class="t-steps-item__inner ">
       <div class="t-steps-item__icon t-steps-item--default"></div>
       <div class="t-steps-item__content">
-        <div class="t-steps-item__title">未进行的步骤</div>
+        <div class="t-steps-item__title">进行中的步骤</div>
         <div class="t-steps-item__description">这里是提示文字</div>
         <div class="t-steps-item__extra"></div>
       </div>
@@ -9585,7 +9585,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
       <div class="t-steps-item__inner t-steps-item--clickable">
         <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
         <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
+          <div class="t-steps-item__title">进行中的步骤</div>
           <div class="t-steps-item__description"></div>
           <div class="t-steps-item__extra"></div>
         </div>
@@ -9674,7 +9674,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
       <div class="t-steps-item__inner ">
         <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
         <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
+          <div class="t-steps-item__title">进行中的步骤</div>
           <div class="t-steps-item__description">这里是提示文字</div>
           <div class="t-steps-item__extra"></div>
         </div>
@@ -9713,12 +9713,12 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
         </div>
       </div>
     </div>
-    <div class="t-steps-item t-steps-item--error">
+    <div class="t-steps-item t-steps-item--process">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--error"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
         <div class="t-steps-item__content">
-          <div class="t-steps-item__title">错误的步骤</div>
-          <div class="t-steps-item__description">这里是错误提示文字</div>
+          <div class="t-steps-item__title">已完成的步骤</div>
+          <div class="t-steps-item__description">这里是提示文字</div>
           <div class="t-steps-item__extra"></div>
         </div>
       </div>
@@ -9765,7 +9765,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.v
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--default"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -9807,7 +9807,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.v
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--default"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -9856,7 +9856,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -9899,7 +9899,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
