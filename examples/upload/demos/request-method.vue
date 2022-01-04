@@ -7,11 +7,7 @@
       </t-radio-group>
     </div>
 
-    <t-upload
-      v-model="files"
-      :requestMethod="requestMethod"
-      tips="自定义上传方法需要返回成功或失败信息"
-    ></t-upload>
+    <t-upload v-model="files" :requestMethod="requestMethod" tips="自定义上传方法需要返回成功或失败信息"></t-upload>
   </div>
 </template>
 <script>
@@ -29,7 +25,7 @@ export default {
     },
   },
   watch: {
-    // 切换上传示例时，重置 file 数据
+    // 切换上传示例时，重置 files 数据
     uploadMethod() {
       this.files = [];
     },
