@@ -17,7 +17,11 @@ export default Vue.extend({
   name: 'TImageUpload',
 
   components: {
-    TIconAdd, IIconDelete, IIconUpload, TIconBrowse, TLoading,
+    TIconAdd,
+    IIconDelete,
+    IIconUpload,
+    TIconBrowse,
+    TLoading,
   },
   props: {
     showUploadProgress: props.showUploadProgress,
@@ -51,7 +55,7 @@ export default Vue.extend({
     onMaskClick(e: MouseEvent) {
       !this.showTrigger && this.trigger(e);
     },
-    onViewClick(e: MouseEvent, file: UploadFile) {
+    onViewClick(e: MouseEvent, file?: UploadFile) {
       this.$emit('imgPreview', e, file);
     },
   },
@@ -59,13 +63,14 @@ export default Vue.extend({
   render() {
     return (
       <ul class={`${UPLOAD_NAME}__card`}>
-        {this.files && this.files.map((file, index) => (
+        {this.files
+          && this.files.map((file, index) => (
             <li class={`${UPLOAD_NAME}__card-item ${prefix}-is--background`}>
               <div class={`${UPLOAD_NAME}__card-content ${UPLOAD_NAME}__card-box`}>
                 <img class={`${UPLOAD_NAME}__card-image`} src={file.url} />
                 <div class={`${UPLOAD_NAME}__card-mask`} onClick={this.onMaskClick}>
                   <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-                    <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
+                    <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
                   </span>
                   <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
 
@@ -75,11 +80,17 @@ export default Vue.extend({
                 </div>
               </div>
             </li>
-        ))}
+          ))}
         {this.showTrigger && (
-          <li class={[`${UPLOAD_NAME}__card-item ${prefix}-is--background`, {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
-          }]} onClick={this.trigger}>
+          <li
+            class={[
+              `${UPLOAD_NAME}__card-item ${prefix}-is--background`,
+              {
+                [CLASSNAMES.STATUS.disabled]: this.disabled,
+              },
+            ]}
+            onClick={this.trigger}
+          >
             {this.showUploadProgress && this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
                 <TLoading />
