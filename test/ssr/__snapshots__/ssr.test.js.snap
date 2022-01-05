@@ -2405,262 +2405,231 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/base.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/check-strictly.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/collapsed.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/disabled.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-is-disabled t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-is-disabled t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-is-disabled t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-is-disabled t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/ellipsis.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/filterable.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/keys.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/load.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/max.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/multiple.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/show-all-levels.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/size.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-s"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-s"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-l"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-l"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/trigger.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/cascader/demos/value-mode.vue correctly 1`] = `
 <div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
-  <div class="t-demo-cascader">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/cascader/demos/value-type.vue correctly 1`] = `
+<div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
+  </div>
+  <div class="t-demo-cascader t-popup__reference t-cascader__popup">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m t-cascader--multiple"><span class="t-cascader__placeholder">请选择</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div>
 </div>
 `;
@@ -3112,21 +3081,17 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
       </div>
     </div>
   </div> <br><br>
-  <div style="width:400px;">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select cascader data</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-popup__reference t-cascader__popup" style="width:400px;">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select cascader data</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div> <br><br>
-  <div style="width:400px;">
-    <div class="t-popup__reference">
-      <div name="t-popup--animation" appear="true"></div>
-      <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select without data in Cascader</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
-          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
-    </div>
+  <div class="t-popup__reference t-cascader__popup" style="width:400px;">
+    <div name="t-popup--animation" appear="true"></div>
+    <div class="t-cascader t-size-m"><span class="t-cascader__placeholder">select without data in Cascader</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+        <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+      </svg></div>
   </div> <br><br>
   <div style="width:400px;">
     <div class="t-popup__reference t-select__popup-reference">
