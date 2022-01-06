@@ -3566,9 +3566,10 @@ exports[`Transfer search demo works fine 1`] = `
           class="t-transfer__search-wrapper"
         >
           <div
-            class="t-input t-size-m t-input__inner t-input--suffix"
+            class="t-input t-size-m t-input--suffix"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入关键词搜索"
               type="text"
             />
@@ -4082,9 +4083,10 @@ exports[`Transfer search demo works fine 1`] = `
           class="t-transfer__search-wrapper"
         >
           <div
-            class="t-input t-size-m t-input__inner t-input--suffix"
+            class="t-input t-size-m t-input--suffix"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入关键词搜索"
               type="text"
             />
