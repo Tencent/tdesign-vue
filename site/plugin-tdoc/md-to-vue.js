@@ -128,7 +128,7 @@ export default function mdToVue(options) {
 
 // 解析 markdown 内容
 function customRender({ source, file, md }) {
-  const { content, data } = matter(source);
+  let { content, data } = matter(source);
   // console.log('data', data);
 
   // md top data
@@ -152,6 +152,12 @@ function customRender({ source, file, md }) {
 
   // split md
   let [demoMd = '', apiMd = ''] = content.split(pageData.apiFlag);
+
+  // fix code <> tag render error
+  content = content.replace(/`([^`]+)`/g, (str, codeStr) => {
+    codeStr = codeStr.replace(/"/g, "'");
+    return `<td-code text="${codeStr}"></td-code>`;
+  });
 
   // fix table | render error
   apiMd = apiMd.replace(/`[^`]+?`/g, (str) => str.replace(/\|/g, '\\|'));
