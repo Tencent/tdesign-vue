@@ -49,6 +49,7 @@ Input 样式调整: 边框等样式由 `t-input__inner` 调整到上层父级 `t
   - 去除滚动条宽度的计算逻辑，[pr 122](https://github.com/Tencent/tdesign-vue/pull/122)，[@realyuyanan](https://github.com/realyuyanan)
   - 新增 `disableDataSort` 是否禁用本地数据排序，[pr 94](https://github.com/Tencent/tdesign-vue/pull/94)，[@chaishi](https://github.com/chaishi)
 * Cascader: 新增 `valueType` 用于控制选中值的类型，可选值：`single/full`，[pr 170](https://github.com/Tencent/tdesign-vue/pull/170)，[@pengYYYYY](https://github.com/pengYYYYY)
+- Popup: 优化 Popup 及相关的 Dialog/Tooltip 等相关弹窗组件动画实现效果，[pr 106](https://github.com/Tencent/tdesign-common/pull/106)，[@uyarn](https://github.com/uyarn)
 
 ## 0.32.0 `2021-12-23`
 
