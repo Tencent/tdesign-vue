@@ -20,9 +20,7 @@ import TTimePickerPanel from '../time-picker/panel';
 import { EPickerCols } from '../time-picker/interface';
 import { firstUpperCase, extractTimeFormat } from './utils';
 import { TimePickerPanelInstance } from '../time-picker';
-import {
-  DatePickerInstance, DateValue, PickContext,
-} from './interface';
+import { DatePickerInstance, DateValue, PickContext } from './interface';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 dayjs.extend(isBetween);
@@ -33,7 +31,9 @@ const onOpenDebounce = debounce((vm?: any) => {
 
 const name = `${prefix}-date-picker`;
 
-export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInstance, DatePickerConfig>('datePicker')).extend({
+export default mixins(
+  getConfigReceiverMixins<TdDatePickerProps & DatePickerInstance, DatePickerConfig>('datePicker'),
+).extend({
   name: 'TDatePicker',
   components: {
     TIconTime,
@@ -165,7 +165,6 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
     classes(): any {
       return [
         name,
-        `${prefix}-input`,
         CLASSNAMES.SIZE[this.size] || '',
         {
           [`${name}--month-picker`]: this.mode === 'year' || this.mode === 'month',
@@ -621,7 +620,7 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
     };
 
     const panelComponent = range ? (
-      <TDateRange {...{ props: { ...panelProps, onPick } }}/>
+      <TDateRange {...{ props: { ...panelProps, onPick } }} />
     ) : (
       <TDate {...{ props: { ...panelProps } }} />
     );
@@ -641,38 +640,31 @@ export default mixins(getConfigReceiverMixins<TdDatePickerProps & DatePickerInst
               isFooterDisplay={false}
             />
           </div>
-        )
-        }
+        )}
         {!showTime && panelComponent}
-        {
-          (!!presets || enableTimePicker) && (
-            <div class={`${prefix}-date-picker__footer`}>
-              <calendar-presets
-                presets={presets}
-                global={global}
-                {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
-              />
-              {
-                enableTimePicker && (
-                  <div class={`${name}--apply`}>
-                    {
-                      enableTimePicker && (
-                        <t-button theme="primary" variant="text" onClick={this.toggleTime}>
-                          {showTime ? global.selectDate : global.selectTime}
-                        </t-button>
-                      )
-                    }
-                    {
-                      <t-button theme="primary" onClick={this.clickedApply}>
-                        {global.confirm}
-                      </t-button>
-                    }
-                  </div>
-                )
-              }
-            </div>
-          )
-        }
+        {(!!presets || enableTimePicker) && (
+          <div class={`${prefix}-date-picker__footer`}>
+            <calendar-presets
+              presets={presets}
+              global={global}
+              {...{ props: { onClick: range ? this.clickRange : this.dateClick } }}
+            />
+            {enableTimePicker && (
+              <div class={`${name}--apply`}>
+                {enableTimePicker && (
+                  <t-button theme="primary" variant="text" onClick={this.toggleTime}>
+                    {showTime ? global.selectDate : global.selectTime}
+                  </t-button>
+                )}
+                {
+                  <t-button theme="primary" onClick={this.clickedApply}>
+                    {global.confirm}
+                  </t-button>
+                }
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
     const inputClassNames = [

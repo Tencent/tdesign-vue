@@ -26,9 +26,10 @@ exports[`Form base demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-input t-size-m t-input__inner"
+            class="t-input t-size-m"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入内容"
               type="text"
             />
@@ -58,9 +59,10 @@ exports[`Form base demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-input t-size-m t-input__inner"
+            class="t-input t-size-m"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入内容"
               type="text"
             />
