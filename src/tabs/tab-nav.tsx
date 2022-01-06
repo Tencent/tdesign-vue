@@ -118,7 +118,7 @@ export default Vue.extend({
     wrapTransformStyle(): { [key: string]: string } {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return {};
       return {
-        transform: `translate3d(${-this.scrollLeft}px, 0, 0)`,
+        transform: `translate(${-this.scrollLeft}px, 0)`,
       };
     },
     dataCanUpdateNavBarStyle(): Array<any> {

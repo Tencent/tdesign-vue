@@ -9889,7 +9889,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/swiper.vue correctly 
 <div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__content">
-      <div class="t-swiper__swiper-wrap--horizontal" style="width:400%;transform:translate3d(0%,0,0);transition:transform 0.3s;">
+      <div class="t-swiper__swiper-wrap--horizontal" style="width:400%;transform:translate(0%,0);transition:transform 0.3s;">
         <div>
           <div class="t-alert t-alert--success">
             <div class="t-alert__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
@@ -9949,7 +9949,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/swiper.vue correctly 
   </div>
   <div class="t-swiper">
     <div class="t-swiper__content">
-      <div class="t-swiper__swiper-wrap--horizontal" style="width:400%;transform:translate3d(0%,0,0);transition:transform 0.5s;">
+      <div class="t-swiper__swiper-wrap--horizontal" style="width:400%;transform:translate(0%,0);transition:transform 0.5s;">
         <div>
           <div class="t-alert t-alert--success">
             <div class="t-alert__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
@@ -10013,7 +10013,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/swiper.vue correctly 
 exports[`ssr snapshot test renders ./examples/swiper/demos/vertical.vue correctly 1`] = `
 <div class="t-swiper">
   <div class="t-swiper__content">
-    <div class="t-swiper__swiper-wrap--vertical" style="height:400%;transform:translate3d(0,0%,0);transition:transform 0.3s;">
+    <div class="t-swiper__swiper-wrap--vertical" style="height:400%;transform:translate(0,0%);transition:transform 0.3s;">
       <div>
         <div class="t-alert t-alert--success">
           <div class="t-alert__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
@@ -12582,7 +12582,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/ban.vue correctly 1`] =
         </div>
         <div class="t-tabs__nav-container t-is-top">
           <div class="t-tabs__nav-scroll">
-            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
               <div class="t-tabs__bar t-is-top"></div>
             </div>
           </div>
@@ -12614,7 +12614,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
           </div>
           <div class="t-tabs__nav-container t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
                 <div class="t-tabs__bar t-is-top"></div>
               </div>
             </div>
@@ -12642,7 +12642,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
           </div>
           <div class="t-tabs__nav-container t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
                 <div class="t-tabs__bar t-is-top"></div>
               </div>
             </div>
@@ -12679,7 +12679,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/combination.vue correct
         </div>
         <div class="t-tabs__nav-container t-is-top">
           <div class="t-tabs__nav-scroll">
-            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
               <div class="t-tabs__bar t-is-top"></div>
             </div>
           </div>
@@ -12729,7 +12729,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/custom.vue correctly 1`
       </div>
       <div class="t-tabs__nav-container t-tabs__nav--card t-is-top t-is-addable">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);"></div>
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);"></div>
         </div>
       </div>
     </div>
@@ -12761,7 +12761,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/icon.vue correctly 1`] 
         </div>
         <div class="t-tabs__nav-container t-is-top">
           <div class="t-tabs__nav-scroll">
-            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
               <div class="t-tabs__bar t-is-top"></div>
             </div>
           </div>
@@ -12794,7 +12794,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/operation.vue correctly
       </div>
       <div class="t-tabs__nav-container t-tabs__nav--card t-is-top t-is-addable">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);"></div>
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);"></div>
         </div>
       </div>
     </div>
@@ -12826,7 +12826,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/position.vue correctly 
         </div>
         <div class="t-tabs__nav-container t-is-top">
           <div class="t-tabs__nav-scroll">
-            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+            <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
               <div class="t-tabs__bar t-is-top"></div>
             </div>
           </div>
@@ -12858,7 +12858,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/size.vue correctly 1`] 
           </div>
           <div class="t-tabs__nav-container t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
                 <div class="t-tabs__bar t-is-top"></div>
               </div>
             </div>
@@ -12884,7 +12884,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/size.vue correctly 1`] 
           </div>
           <div class="t-tabs__nav-container t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
                 <div class="t-tabs__bar t-is-top"></div>
               </div>
             </div>
@@ -12917,7 +12917,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/theme.vue correctly 1`]
           </div>
           <div class="t-tabs__nav-container t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);">
                 <div class="t-tabs__bar t-is-top"></div>
               </div>
             </div>
@@ -12943,7 +12943,7 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/theme.vue correctly 1`]
           </div>
           <div class="t-tabs__nav-container t-tabs__nav--card t-is-top">
             <div class="t-tabs__nav-scroll">
-              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate3d(0px, 0, 0);"></div>
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);"></div>
             </div>
           </div>
         </div>
