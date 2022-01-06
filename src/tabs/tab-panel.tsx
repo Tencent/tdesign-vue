@@ -4,7 +4,7 @@ import { renderContent } from '../utils/render-tnode';
 import { prefix } from '../config';
 import Tabs from './tabs';
 
-interface TabPanel extends Vue {
+export interface TabPanel extends Vue {
   parent?: InstanceType<typeof Tabs>;
 }
 
