@@ -7,7 +7,7 @@ import { prefix } from '../config';
 import TreeStore from '../_common/js/tree/tree-store';
 import { emitEvent } from '../utils/event';
 import { getPropsApiByEvent } from '../utils/helper';
-import { getTreeValue } from './utils/helper';
+import { getTreeValue, getValue } from './utils/helper';
 
 // common logic
 import { treeNodesEffect, treeStoreExpendEffect } from './utils/cascader';
@@ -105,6 +105,7 @@ export default Vue.extend({
         showAllLevels = true,
         minCollapsedNum = 0,
         loading,
+        valueType = 'single',
       } = this;
 
       const {
@@ -112,6 +113,7 @@ export default Vue.extend({
       } = this;
 
       return {
+        valueType,
         loading,
         size,
         disabled,
@@ -140,8 +142,9 @@ export default Vue.extend({
     // 处理外部传进来的value
     value: {
       handler(val) {
+        const { valueType, multiple } = this;
         if (isEqual(val, this.scopeVal)) return;
-        this.scopeVal = val;
+        this.scopeVal = getValue(val, valueType, multiple);
         this.updateExpend();
         this.updatedTreeNodes();
       },
@@ -169,15 +172,16 @@ export default Vue.extend({
     const {
       value,
       multiple,
-      cascaderContext: { setValue },
+      cascaderContext: { setValue, showAllLevels },
+      valueType,
     } = this;
-    if ((multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value))) {
+    if ((multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value) && !showAllLevels)) {
       const val: CascaderValue = multiple ? [] : '';
       setValue(val, 'invalid-value');
       console.warn('TDesign Cascader Warn:', 'cascader props value invalid, v-model automatic calibration');
     }
     if (!isEmpty(value)) {
-      this.scopeVal = value;
+      this.scopeVal = getValue(value, valueType, multiple);
     }
 
     this.init();
@@ -259,34 +263,32 @@ export default Vue.extend({
     });
 
     return (
-      <div ref="cascader">
-        <Popup
-          ref="popup"
-          overlayClassName={`${name}__dropdown`}
-          placement="bottom-left"
-          visible={visible}
-          trigger={popupProps?.trigger || 'click'}
-          expandAnimation={true}
-          {...popupProps}
-          content={() => (
-            <panel
-              empty={empty}
-              trigger={trigger}
-              cascaderContext={cascaderContext}
-              scopedSlots={{ empty: $scopedSlots.empty }}
-            ></panel>
-          )}
-        >
-          <InputContent
-            {...$attrs}
+      <Popup
+        class={`${name}__popup`}
+        overlayClassName={`${name}__dropdown`}
+        placement="bottom-left"
+        visible={visible}
+        trigger={popupProps?.trigger || 'click'}
+        expandAnimation={true}
+        {...popupProps}
+        content={() => (
+          <panel
+            empty={empty}
+            trigger={trigger}
             cascaderContext={cascaderContext}
-            placeholder={placeholder}
-            listeners={listeners}
-            collapsedItems={collapsedItems}
-            scopedSlots={{ collapsedItems: $scopedSlots.collapsedItems }}
-          ></InputContent>
-        </Popup>
-      </div>
+            scopedSlots={{ empty: $scopedSlots.empty }}
+          ></panel>
+        )}
+      >
+        <InputContent
+          {...$attrs}
+          cascaderContext={cascaderContext}
+          placeholder={placeholder}
+          listeners={listeners}
+          collapsedItems={collapsedItems}
+          scopedSlots={{ collapsedItems: $scopedSlots.collapsedItems }}
+        ></InputContent>
+      </Popup>
     );
   },
 });
