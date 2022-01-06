@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-29 21:24:44
+ * updated at 2021-12-30 19:36:40
  * */
 
 import { TNode } from '../common';
@@ -60,11 +60,11 @@ export interface TdUploadProps {
   /**
    * 用于格式化文件上传后的响应数据。error 用于显示错误提示，如果 error 值为真，组件会判定为上传失败；url 用于上传文件/图片地址。
    */
-  formatResponse?: (response: any, context: FormatResponseContext) => ResponseType ;
+  formatResponse?: (response: any, context: FormatResponseContext) => ResponseType;
   /**
    * 设置上传的请求头部
    */
-  headers?: {[key: string]: string};
+  headers?: { [key: string]: string };
   /**
    * 用于控制文件上传数量，值为 0 则不限制
    * @default 0
@@ -163,18 +163,18 @@ export interface TdUploadProps {
    * 上传成功后触发
    */
   onSuccess?: (context: SuccessContext) => void;
-};
+}
 
-export interface UploadFile extends File {
+export interface UploadFile {
   /**
    * 上一次变更的时间
    */
-  lastModified: number;
+  lastModified?: number;
   /**
    * 文件名称
    * @default ''
    */
-  name: string;
+  name?: string;
   /**
    * 下载进度
    */
@@ -190,42 +190,75 @@ export interface UploadFile extends File {
   /**
    * 文件大小
    */
-  size: number;
+  size?: number;
   /**
    * 文件上传状态：上传成功，上传失败，上传中，等待上传
    * @default ''
    */
-  status?:  'success' | 'fail' | 'progress' | 'waiting';
+  status?: 'success' | 'fail' | 'progress' | 'waiting';
   /**
    * 文件类型
    * @default ''
    */
-  type: string;
+  type?: string;
   /**
    * 文件上传成功后的下载/访问地址
    * @default ''
    */
   url?: string;
-};
+}
 
 export type ResponseType = { error?: string; url?: string } & Record<string, any>;
 
-export interface FormatResponseContext { file: UploadFile };
+export interface FormatResponseContext {
+  file: UploadFile;
+}
 
-export interface RequestMethodResponse { status: 'success' | 'fail'; error?: string; response: { url?: string; [key: string]: any } };
+export interface RequestMethodResponse {
+  status: 'success' | 'fail';
+  error?: string;
+  response: { url?: string; [key: string]: any };
+}
 
-export interface SizeLimitObj { size: number; unit: SizeUnit ; message?: string };
+export interface SizeLimitObj {
+  size: number;
+  unit: SizeUnit;
+  message?: string;
+}
 
 export type SizeUnit = 'B' | 'KB' | 'MB' | 'GB';
 
-export interface TriggerContext { dragActive?: boolean; uploadingFile?: UploadFile | Array<UploadFile> };
+export interface TriggerContext {
+  dragActive?: boolean;
+  uploadingFile?: UploadFile | Array<UploadFile>;
+}
 
-export interface UploadChangeContext { e?: MouseEvent | ProgressEvent; response?: any; trigger: string; index?: number; file?: UploadFile };
+export interface UploadChangeContext {
+  e?: MouseEvent | ProgressEvent;
+  response?: any;
+  trigger: string;
+  index?: number;
+  file?: UploadFile;
+}
 
-export interface ProgressContext { e?: ProgressEvent; file: UploadFile; percent: number; type: UploadProgressType };
+export interface ProgressContext {
+  e?: ProgressEvent;
+  file: UploadFile;
+  percent: number;
+  type: UploadProgressType;
+}
 
 export type UploadProgressType = 'real' | 'mock';
 
-export interface UploadRemoveContext { index?: number; file?: UploadFile; e: MouseEvent };
+export interface UploadRemoveContext {
+  index?: number;
+  file?: UploadFile;
+  e: MouseEvent;
+}
 
-export interface SuccessContext { e: ProgressEvent; file: UploadFile; fileList: UploadFile[]; response: any };
+export interface SuccessContext {
+  e?: ProgressEvent;
+  file?: UploadFile;
+  fileList?: UploadFile[];
+  response: any;
+}

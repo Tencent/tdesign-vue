@@ -802,9 +802,10 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-time-picker__group"
     >
       <div
-        class="t-input t-size-m t-input__inner t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
+          class="t-input__inner"
           placeholder=" "
           readonly="readonly"
           type="text"
@@ -1664,9 +1665,10 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-time-picker__group"
     >
       <div
-        class="t-input t-size-m t-input__inner t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
+          class="t-input__inner"
           placeholder=" "
           readonly="readonly"
           type="text"
