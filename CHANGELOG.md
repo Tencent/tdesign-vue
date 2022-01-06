@@ -32,6 +32,7 @@ Input 样式调整: 边框等样式由 `t-input__inner` 调整到上层父级 `t
 * Radio: 修复边框及填充型 RadioButton 颜色 token 使用错误的问题，[pr 100](https://github.com/Tencent/tdesign-common/pull/100)，[@xiaosansiji](https://github.com/xiaosansiji)
 * Popup: 修复鼠标移到弹出层外松开后弹出层不消失的问题，[pr 65](https://github.com/Tencent/tdesign-vue/pull/65)，[@geff1991](https://github.com/geff1991)
 * Upload: 修复自定义样式按钮样式问题，[#78](https://github.com/Tencent/tdesign-vue/issues/78)，[@byq1213](https://github.com/byq1213)
+* Button: 修复 `small/large` 尺寸下圆形按钮样式问题，[#127](https://github.com/Tencent/tdesign-vue/issues/127)，[@clark-cui](https://github.com/clark-cui)
 ### Features
 
 * Drawer: 增加 `preventScrollThrough` 属性用于控制是否防止滚动穿透，[pr 98](https://github.com/Tencent/tdesign-vue/pull/98)，[#73](https://github.com/Tencent/tdesign-vue/issues/73)，[@caoML](https://github.com/caoML)
