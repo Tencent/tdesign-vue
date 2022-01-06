@@ -38,8 +38,6 @@ import 'tdesign-vue/es/style/index.css';
 Vue.use(TDesign);
 ```
 
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/develop-install.md) 了解不同目录下产物的差别。
-
 ### 按需引用
 
 推荐使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动导入：
