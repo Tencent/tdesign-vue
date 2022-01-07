@@ -32,13 +32,31 @@ function initDragEvent(dragBox: HTMLElement) {
     // 算出鼠标相对元素的位置
     const disX = targetEvent.clientX - target.offsetLeft;
     const disY = targetEvent.clientY - target.offsetTop;
+    const tarWidth = target.offsetWidth;
+    const tarHeight = target.offsetHeight;
+    const transformStyle = document.defaultView.getComputedStyle(target).transform;
+    const reg = /(\d+(\.\d+)?)/g;
+    const tarnsArr = transformStyle.match(reg);
+    const x = parseFloat(tarnsArr[4]);
+    const y = parseFloat(tarnsArr[5]);
+    const winWidth = window.innerWidth;
+    const winHeight = window.innerHeight;
     function mouseMoverHander(documentEvent: MouseEvent) {
       // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
       const left = documentEvent.clientX - disX;
       const top = documentEvent.clientY - disY;
       // 移动当前元素
-      target.style.left = `${left}px`;
-      target.style.top = `${top}px`;
+      // 临界判断
+      if (left + tarWidth - x > winWidth) {
+        target.style.left = `${winWidth - tarWidth + x}px`;
+      } else {
+        target.style.left = (target.offsetLeft - x) < 0 ? `${x}px` : `${left}px`;
+      }
+      if (top + tarHeight - y > winHeight) {
+        target.style.top = `${winHeight - tarHeight + y} px`;
+      } else {
+        target.style.top = (top - y) <= 0 ? `${y}px` : `${top}px`;
+      }
     }
     function mouseUpHandler() {
       // 鼠标弹起来的时候不再移动
