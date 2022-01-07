@@ -47,6 +47,7 @@ export function expendClickEffect(
     setExpend,
     value,
     max,
+    valueType,
   } = cascaderContext;
 
   const isDisabled = node.disabled || (multiple && (value as TreeNodeValue[]).length >= max && max !== 0);
@@ -82,7 +83,7 @@ export function expendClickEffect(
     }
 
     // 非受控状态下更新状态
-    setValue(value, 'checked', node.getModel());
+    setValue(valueType === 'single' ? value : node.getPath().map((item) => item.value), 'checked', node.getModel());
   }
 }
 
@@ -94,7 +95,16 @@ export function expendClickEffect(
  */
 export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderContextType) {
   const {
-    disabled, max, multiple, setVisible, setValue, filterActive, setFilterActive, treeNodes, treeStore,
+    disabled,
+    max,
+    multiple,
+    setVisible,
+    setValue,
+    filterActive,
+    setFilterActive,
+    treeNodes,
+    treeStore,
+    valueType,
   } = cascaderContext;
 
   if (!node || disabled || node.disabled) {
@@ -129,5 +139,12 @@ export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderConte
     setFilterActive(false);
   }
 
-  setValue(checked, 'checked', node.getModel());
+  // 处理不同数据类型
+  const resValue = valueType === 'single'
+    ? checked
+    : checked.map((val) => treeStore
+      .getNode(val)
+      .getPath()
+      .map((item) => item.value));
+  setValue(resValue, 'checked', node.getModel());
 }

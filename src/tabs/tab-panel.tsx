@@ -1,18 +1,31 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import props from './tab-panel-props';
 import { renderContent } from '../utils/render-tnode';
 import { prefix } from '../config';
+import Tabs from './tabs';
 
-export default Vue.extend({
+export interface TabPanel extends Vue {
+  parent?: InstanceType<typeof Tabs>;
+}
+
+export default (Vue as VueConstructor<TabPanel>).extend({
   name: 'TTabPanel',
 
   props: { ...props },
 
+  inject: {
+    parent: { default: null },
+  },
+
   computed: {
     active(): boolean {
-      const { value } = this.$parent as any;
+      const { value } = this.parent || {};
       return this.value === value;
     },
+  },
+
+  updated() {
+    this.parent?.updatePanels?.({ force: true });
   },
 
   render() {

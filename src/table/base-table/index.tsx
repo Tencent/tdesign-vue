@@ -289,6 +289,12 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         emitEvent(this, scrollListenerName, scrollParams);
       }
     },
+    checkMaxHeight() {
+      const { maxHeight } = this;
+      if (maxHeight && (this.$refs.tableContent as HTMLElement).clientHeight > maxHeight) {
+        this.useFixedHeader = true;
+      }
+    },
   },
   render() {
     const {
@@ -356,6 +362,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       </div>
     );
   },
+  updated() {
+    this.checkMaxHeight();
+  },
 
   mounted() {
     if (this.hasFixedColumns) {
@@ -379,9 +388,6 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     document.body.appendChild(scrollDiv);
     this.scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
     document.body.removeChild(scrollDiv);
-    const { maxHeight } = this;
-    if (maxHeight && (this.$refs.tableContent as HTMLElement).clientHeight > maxHeight) {
-      this.useFixedHeader = true;
-    }
+    this.checkMaxHeight();
   },
 });
