@@ -23,8 +23,6 @@ npm i tdesign-vue
 <script src="https://unpkg.com/tdesign-vue/dist/tdesign.min.js"></script>
 ```
 
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/develop-install.md) 了解不同目录下产物的差别。
-
 ### 基础使用
 
 推荐使用 Webpack 或 Rollup 等支持 tree-shaking 特性的构建工具，无需额外配置即可实现组件按需引入：
@@ -37,6 +35,8 @@ import 'tdesign-vue/es/style/index.css';
 
 Vue.use(TDesign);
 ```
+
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
 
 ### 按需引用
 
