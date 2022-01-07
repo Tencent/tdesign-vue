@@ -49,9 +49,9 @@ export default Vue.extend({
   methods: {
     renderCols(_cols: Number | SkeletonRowColObj | Array<SkeletonRowColObj>) {
       const getColItemClass = (obj: SkeletonRowColObj): ClassName => [
-        `${name}-col`,
-        `${name}-type__${obj.type || 'text'}`,
-        { [`${name}-animation__${this.animation}`]: this.animation },
+        `${name}__col`,
+        `${name}--type-${obj.type || 'text'}`,
+        { [`${name}--animation-${this.animation}`]: this.animation },
       ];
 
       const getColItemStyle = (obj: SkeletonRowColObj): Styles => {
@@ -98,7 +98,7 @@ export default Vue.extend({
     renderRowCol(_rowCol?: SkeletonRowCol) {
       const rowCol: SkeletonRowCol = _rowCol || this.rowCol;
 
-      const getBlockClass = (): ClassName => [`${name}-row`];
+      const getBlockClass = (): ClassName => [`${name}__row`];
 
       return rowCol.map((item) => <div class={getBlockClass()}>{this.renderCols(item)}</div>);
     },
