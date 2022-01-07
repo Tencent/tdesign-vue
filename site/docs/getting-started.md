@@ -25,9 +25,24 @@ Vue.use(TDesign);
 
 npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign-common/blob/develop/develop-install.md) 了解不同目录下产物的差别。
 
-### 按需引用
+### 自动引入
 
-推荐使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动导入：
+故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
+
+```html
+<template>
+  <t-button>按钮</t-button>
+</template>
+
+<script>
+  // import { TButton } from 'tdesign-vue' // 组件的引入可以省略
+  export default {
+    // components: { TButton }, // 对应的组件注册也可以省略
+  }
+</script>
+```
+
+推荐使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动引入：
 
 ```
 npm install -D unplugin-vue-components unplugin-auto-import
