@@ -2571,9 +2571,10 @@ exports[`Table fixedHeader demo works fine 1`] = `
     >
       <div
         class="t-table__header"
+        style="padding-right: 0px;"
       >
         <table
-          style="table-layout: fixed; padding-right: 0px;"
+          style="table-layout: fixed;"
         >
           <colgroup>
             <col

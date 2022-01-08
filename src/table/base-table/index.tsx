@@ -128,7 +128,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return classes;
     },
     usePadding(): boolean {
-      return this.scrollableToRight || this.scrollableToLeft;
+      return this.fixedHeader || this.scrollableToRight || this.scrollableToLeft;
     },
   },
   methods: {
@@ -233,7 +233,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const headerContainerStyle = columns.length > 1 && usePadding ? { paddingRight } : {};
       fixedTable.push(
         <div class={`${prefix}-table__header`} style={headerContainerStyle} ref="scrollHeader">
-          <table style={{ tableLayout, paddingRight }}>
+          <table style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
