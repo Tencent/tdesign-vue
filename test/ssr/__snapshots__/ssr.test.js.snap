@@ -10957,8 +10957,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 <div class="t-table t-table__header--fixed">
   <div class="t-loading__parent">
     <div class="t-table__content">
-      <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+      <div class="t-table__header" style="padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11185,8 +11185,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 <div class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed t-table__header--fixed">
   <div class="t-loading__parent">
     <div class="t-table__content">
-      <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+      <div class="t-table__header" style="padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11438,8 +11438,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11489,8 +11489,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11542,8 +11542,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
