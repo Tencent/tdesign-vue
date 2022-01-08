@@ -3678,11 +3678,10 @@ exports[`ssr snapshot test renders ./examples/dialog/demos/icon.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/dialog/demos/modal.vue correctly 1`] = `
-<div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">模态对话框</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">非模态对话框</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">模态对话框-不可拖拽</span></button>
+<div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">模态对话框</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">非模态对话框-可拖拽</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">模态对话框-不可拖拽</span></button>
   <div duration="300" name="t-dialog-zoom__vue"></div>
   <div duration="300" name="t-dialog-zoom__vue"></div>
-  <div duration="300" name="t-dialog-zoom__vue" onClickConfirm="function (){ return this$1.visibleModeless = false; }"></div>
-  <div duration="300" name="t-dialog-zoom__vue" onClickConfirm="function (){ return this$1.visibleModeless = false; }"></div>
+  <div duration="300" name="t-dialog-zoom__vue" onClickConfirm="function () { return (this$1.visibleModeless = false); }"></div>
 </div>
 `;
 
