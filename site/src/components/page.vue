@@ -22,6 +22,7 @@ import packageJson from '@/package.json';
 const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
 
 const historyVersion = [];
+const registryUrl = 'https://mirrors.tencent.com/npm/tdesign-vue';
 
 export default {
   data() {
@@ -52,9 +53,24 @@ export default {
       window.scrollTo(0, 0);
     };
     this.$refs.tdDocSearch.docsearchInfo = { indexName: 'tdesign_doc_vue' };
+    this.initHistoryVersions();
   },
 
   methods: {
+    initHistoryVersions() {
+      fetch(registryUrl)
+        .then((res) => res.json())
+        .then((res) => {
+          const options = [];
+          Object.keys(res.versions).forEach((v) => {
+            if (v === packageJson.version) return false;
+            const nums = v.split('.');
+            if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1) return false;
+            options.unshift({ label: v, value: v });
+          });
+          this.options.push(...options);
+        });
+    },
     contentLoaded(callback) {
       requestAnimationFrame(() => {
         this.loaded = true;
@@ -63,7 +79,8 @@ export default {
     },
     changeVersion(version) {
       if (version === packageJson.version) return;
-      location.href = `https://${version}-tdesign-vue.surge.sh`;
+      const historyUrl = `//${version}-tdesign-vue.surge.sh`;
+      window.open(historyUrl, '_blank');
     },
   },
 };

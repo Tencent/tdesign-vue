@@ -5,6 +5,53 @@ toc: false
 docClass: timeline
 ---
 
+
+## 0.33.0 `2022-01-06`
+
+### BREAKING CHANGES
+
+Input 样式调整: 边框等样式由 `t-input__inner` 调整到上层父级 `t-input` class，[pr 98](https://github.com/Tencent/tdesign-common/pull/98)，[@mokywu](https://github.com/mokywu)，有覆盖过 Input 组件默认样式的同学请检查后升级。
+
+### Bug Fixes
+
+* Calendar: 修复"年/月"模式切换时展示异常的问题，[pr 109](https://github.com/Tencent/tdesign-vue/pull/109)，[#106](https://github.com/Tencent/tdesign-vue/issues/106)，[@PsTiu](https://github.com/PsTiu)
+* Comment: 修复 `avatar` 属性不支持 slot 使用的问题，[pr 165](https://github.com/Tencent/tdesign-vue/pull/165)，[@dreamsqin](https://github.com/dreamsqin)
+* Input: 修复清除操作后没有默认 focus input 的问题，[pr 91](https://github.com/Tencent/tdesign-vue/pull/91)，[#90](https://github.com/Tencent/tdesign-vue/issues/90)，[@clark-cui](https://github.com/clark-cui)
+* Menu: 修正菜单选项的图标判断逻辑，[pr 154](https://github.com/Tencent/tdesign-vue/pull/154)，[@LeeJim](https://github.com/LeeJim)
+* Steps: 修复 `extra` 未正常渲染的问题，[pr 105](https://github.com/Tencent/tdesign-vue/pull/105)，[#36](https://github.com/Tencent/tdesign-vue/issues/36)，[@LuckyWinty](https://github.com/LuckyWinty)
+* Table:
+  - 修复合并单元格后内容丢失的问题，[pr 125](https://github.com/Tencent/tdesign-vue/pull/131)，[#125](https://github.com/Tencent/tdesign-vue/issues/125)，[@realyuyanan](https://github.com/realyuyanan)
+  - 修复固定表头与内容没有对齐的问题，[pr 82](https://github.com/Tencent/tdesign-vue/pull/82)，[#31](https://github.com/Tencent/tdesign-vue/issues/31)，[@realyuyanan](https://github.com/realyuyanan)
+  - 修复 `firstFullRow` 和 `lastFullRow` 属性无效的问题，[pr 124](https://github.com/Tencent/tdesign-vue/pull/124)，[#113](https://github.com/Tencent/tdesign-vue/issues/113)，[@xiecz123](https://github.com/xiecz123)
+  - 修复 DOM 结构上存在多余属性的问题，[#77](https://github.com/Tencent/tdesign-vue/issues/77)，[@realyuyanan](https://github.com/realyuyanan)
+  - 修复 EnhancedTable 第一列 ellipsis 失效的问题，修复分页功能展开异常问题；修复 BaseTable scrollContainer 判空报错的问题，[pr 94](https://github.com/Tencent/tdesign-vue/pull/94)，[#86](https://github.com/Tencent/tdesign-vue/issues/86)，[@chaishi](https://github.com/chaishi)
+  - 修复 Loading 遮罩层不能遮挡固定列的问题，[pr 57](https://github.com/Tencent/tdesign-common/pull/57)，[@chaishi](https://github.com/chaishi)
+* Textarea: 修正 `change` 事件参数，[pr 132](https://github.com/Tencent/tdesign-vue/pull/132)，[@pengYYYYY](https://github.com/pengYYYYY)
+* TreeSelect: 修复组件data异步加载展示异常的问题，[pr 103](https://github.com/Tencent/tdesign-vue/pull/103)，[#96](https://github.com/Tencent/tdesign-vue/issues/96)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+* 修复构建产物中 css 变量文件重复引入的问题，[pr 78](https://github.com/Tencent/tdesign-common/pull/78)，[pr 141](https://github.com/Tencent/tdesign-vue/pull/141)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Radio: 修复边框及填充型 RadioButton 颜色 token 使用错误的问题，[pr 100](https://github.com/Tencent/tdesign-common/pull/100)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Popup: 修复鼠标移到弹出层外松开后弹出层不消失的问题，[pr 65](https://github.com/Tencent/tdesign-vue/pull/65)，[@geff1991](https://github.com/geff1991)
+* Upload: 修复自定义样式按钮样式问题，[#78](https://github.com/Tencent/tdesign-vue/issues/78)，[@byq1213](https://github.com/byq1213)
+* Button: 修复 `small/large` 尺寸下圆形按钮样式问题，[#127](https://github.com/Tencent/tdesign-vue/issues/127)，[@clark-cui](https://github.com/clark-cui)
+### Features
+
+* Drawer: 增加 `preventScrollThrough` 属性用于控制是否防止滚动穿透，[pr 98](https://github.com/Tencent/tdesign-vue/pull/98)，[#73](https://github.com/Tencent/tdesign-vue/issues/73)，[@caoML](https://github.com/caoML)
+* Tabs: [@start940315](https://github.com/start940315)
+  - 窗口 resize 时重新触发计算 navbar 样式，[pr 112](https://github.com/Tencent/tdesign-vue/pull/112)
+  - Tab Panel 更新时联动更新 Tab 父组件，[pr 158](https://github.com/Tencent/tdesign-vue/pull/158)
+  - inject parent，防止 tabs 和 tab_panel 不是直接父子关系，[pr 159](https://github.com/Tencent/tdesign-vue/pull/159)
+* Input:
+  - 新增 `label` 和 `suffix` 用于支持左侧、右侧文本配置能力，[pr 88](https://github.com/Tencent/tdesign-vue/pull/88)，[#81](https://github.com/Tencent/tdesign-vue/issues/81)，[@mokywu](https://github.com/mokywu)
+  - 支持文本全局配置，[pr 85](https://github.com/Tencent/tdesign-vue/pull/85)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Radio: 新增 `allowUncheck` 属性，用于控制是否允许取消选中状态，[pr 123](https://github.com/Tencent/tdesign-vue/pull/123)，[@start940315](https://github.com/start940315)
+* Select: 新增 `showArrow/panelTopContent/panelBottomContent` 属性用于自定义 Select 相关内容区域，[pr 137](https://github.com/Tencent/tdesign-vue/pull/137)，[#137](https://github.com/Tencent/tdesign-vue/issues/137)，[@chaishi](https://github.com/chaishi)
+* Steps: 新增 `readonly` 属性，[pr 93](https://github.com/Tencent/tdesign-vue/pull/93)，[@chaishi](https://github.com/chaishi)
+* Table:
+  - 去除滚动条宽度的计算逻辑，[pr 122](https://github.com/Tencent/tdesign-vue/pull/122)，[@realyuyanan](https://github.com/realyuyanan)
+  - 新增 `disableDataSort` 是否禁用本地数据排序，[pr 94](https://github.com/Tencent/tdesign-vue/pull/94)，[@chaishi](https://github.com/chaishi)
+* Cascader: 新增 `valueType` 用于控制选中值的类型，可选值：`single/full`，[pr 170](https://github.com/Tencent/tdesign-vue/pull/170)，[@pengYYYYY](https://github.com/pengYYYYY)
+- Popup: 优化 Popup 及相关的 Dialog/Tooltip 等相关弹窗组件动画实现效果，[pr 106](https://github.com/Tencent/tdesign-common/pull/106)，[@uyarn](https://github.com/uyarn)
+
 ## 0.32.0 `2021-12-23`
 
 ### BREAKING CHANGES
@@ -1150,8 +1197,6 @@ CSS 类名规范:
 - Pagination: 新增极简迷你版，适应轻量化翻页使用场景，见 [官网示例 1.7](http://tdesign.tencent.com/vue/components/pagination)
 - Anchor: title 属性中增加 TNode 支持，change 支持透传
 - 使用 mockdate 在 jest 运行时 mock 当前时间为固定值，防止 snapshot 失效
-
----
 
 ## 0.2.0 `2020-12-21`
 

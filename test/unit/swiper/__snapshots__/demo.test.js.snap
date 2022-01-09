@@ -12,7 +12,7 @@ exports[`Swiper swiper demo works fine 1`] = `
     >
       <div
         class="t-swiper__swiper-wrap--horizontal"
-        style="width: 400%; transform: translate3d(0%,0,0); transition: transform 0.3s;"
+        style="width: 400%; transform: translate(0%,0); transition: transform 0.3s;"
       >
         <div>
           <div
@@ -186,7 +186,7 @@ exports[`Swiper swiper demo works fine 1`] = `
     >
       <div
         class="t-swiper__swiper-wrap--horizontal"
-        style="width: 400%; transform: translate3d(0%,0,0); transition: transform 0.5s;"
+        style="width: 400%; transform: translate(0%,0); transition: transform 0.5s;"
       >
         <div>
           <div
@@ -363,7 +363,7 @@ exports[`Swiper vertical demo works fine 1`] = `
   >
     <div
       class="t-swiper__swiper-wrap--vertical"
-      style="height: 400%; transform: translate3d(0,0%,0); transition: transform 0.3s;"
+      style="height: 400%; transform: translate(0,0%); transition: transform 0.3s;"
     >
       <div>
         <div
