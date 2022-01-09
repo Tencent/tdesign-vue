@@ -18,7 +18,13 @@ export default Vue.extend({
   name: 'TUploadFlowList',
 
   components: {
-    TButton, TLoading, TIconCheckCircleFilled, TIconTimeFilled, TIconErrorCircleFilled, TIconBrowse, TIconDelete,
+    TButton,
+    TLoading,
+    TIconCheckCircleFilled,
+    TIconTimeFilled,
+    TIconErrorCircleFilled,
+    TIconBrowse,
+    TIconDelete,
   },
 
   props: {
@@ -89,21 +95,37 @@ export default Vue.extend({
       let status = null;
       switch (file.status) {
         case 'success':
-          status = <div class={`${UPLOAD_NAME}__flow-status`}><TIconCheckCircleFilled /><span>上传成功</span></div>;
-          break;
-        case 'fail':
-          status = <div class={`${UPLOAD_NAME}__flow-status`}><TIconErrorCircleFilled /><span>上传失败</span></div>;
-          break;
-        case 'progress':
-          this.showUploadProgress && (
-            status = (
+          status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
-              <TLoading /><span>上传中 {Math.min(file.percent, 99)}%</span>
-            </div>)
+              <TIconCheckCircleFilled />
+              <span>上传成功</span>
+            </div>
           );
           break;
+        case 'fail':
+          status = (
+            <div class={`${UPLOAD_NAME}__flow-status`}>
+              <TIconErrorCircleFilled />
+              <span>上传失败</span>
+            </div>
+          );
+          break;
+        case 'progress':
+          this.showUploadProgress
+            && (status = (
+              <div class={`${UPLOAD_NAME}__flow-status`}>
+                <TLoading />
+                <span>上传中 {Math.min(file.percent, 99)}%</span>
+              </div>
+            ));
+          break;
         case 'waiting':
-          status = <div class={`${UPLOAD_NAME}__flow-status`}><TIconTimeFilled /><span>待上传</span></div>;
+          status = (
+            <div class={`${UPLOAD_NAME}__flow-status`}>
+              <TIconTimeFilled />
+              <span>待上传</span>
+            </div>
+          );
           break;
       }
       return status;
@@ -133,7 +155,7 @@ export default Vue.extend({
       event.preventDefault();
     },
 
-    onViewClick(event: MouseEvent, file: UploadFile) {
+    onViewClick(event: MouseEvent, file?: UploadFile) {
       this.$emit('imgPreview', event, file);
     },
 
@@ -145,16 +167,25 @@ export default Vue.extend({
           onDragenter={this.handleDragenter}
           onDragover={this.handleDragover}
           onDragleave={this.handleDragleave}
-        >{this.dragActive ? '释放鼠标' : '点击上方“选择文件”或将文件拖拽到此区域'}</div>
+        >
+          {this.dragActive ? '释放鼠标' : '点击上方“选择文件”或将文件拖拽到此区域'}
+        </div>
       );
     },
 
     renderFileList() {
       return (
         <table class={`${UPLOAD_NAME}__flow-table`}>
-          <tr><th>文件名</th><th>大小</th><th>状态</th><th>操作</th></tr>
+          <tr>
+            <th>文件名</th>
+            <th>大小</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
           {this.showInitial && (
-            <tr><td colspan={4}>{this.renderDrager()}</td></tr>
+            <tr>
+              <td colspan={4}>{this.renderDrager()}</td>
+            </tr>
           )}
           {this.listFiles.map((file, index) => (
             <tr>
@@ -184,19 +215,18 @@ export default Vue.extend({
               {this.listFiles.map((file, index) => (
                 <li class={`${UPLOAD_NAME}__card-item`}>
                   <div
-                    class={[
-                      `${UPLOAD_NAME}__card-content`,
-                      { [`${prefix}-is-bordered`]: file.status !== 'waiting' },
-                    ]}
+                    class={[`${UPLOAD_NAME}__card-content`, { [`${prefix}-is-bordered`]: file.status !== 'waiting' }]}
                   >
                     {file.status === 'fail' && (
                       <div class={`${UPLOAD_NAME}__card-status-wrap`}>
-                        <TIconErrorCircleFilled /><p>上传失败</p>
+                        <TIconErrorCircleFilled />
+                        <p>上传失败</p>
                       </div>
                     )}
                     {file.status === 'progress' && (
                       <div class={`${UPLOAD_NAME}__card-status-wrap`}>
-                        <TLoading /><p>上传中 {Math.min(file.percent, 99)}</p>
+                        <TLoading />
+                        <p>上传中 {Math.min(file.percent, 99)}</p>
                       </div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
@@ -206,15 +236,17 @@ export default Vue.extend({
                       />
                     )}
                     <div class={`${UPLOAD_NAME}__card-mask`}>
-                      {file.url && <span class={`${UPLOAD_NAME}__card-mask-item`}>
-                        <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)}/>
-                        <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
-                      </span>}
+                      {file.url && (
+                        <span class={`${UPLOAD_NAME}__card-mask-item`}>
+                          <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
+                          <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
+                        </span>
+                      )}
                       <span
                         class={`${UPLOAD_NAME}__card-mask-item`}
                         onClick={(e: MouseEvent) => this.remove({ e, index, file })}
                       >
-                        <TIconDelete/>
+                        <TIconDelete />
                       </span>
                     </div>
                   </div>
@@ -238,10 +270,12 @@ export default Vue.extend({
         {this.display === 'file-flow' && this.renderFileList()}
         {this.display === 'image-flow' && this.renderImgList()}
         <div class={`${UPLOAD_NAME}__flow-bottom`}>
-          <TButton theme='default' onClick={this.cancel}>取消</TButton>
+          <TButton theme="default" onClick={this.cancel}>
+            取消
+          </TButton>
           <TButton
             disabled={!this.allowUpload}
-            theme='primary'
+            theme="primary"
             onClick={(e: MouseEvent) => this.upload(this.waitingUploadFiles, e)}
           >
             {this.uploadText}

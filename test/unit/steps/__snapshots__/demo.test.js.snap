@@ -801,7 +801,29 @@ exports[`Steps Steps extra demo works fine 1`] = `
         </div>
         <div
           class="t-steps-item__extra"
-        />
+        >
+          <button
+            class="t-button t-size-s t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              上一步
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              下一步
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

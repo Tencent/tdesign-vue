@@ -18,6 +18,7 @@ export default Vue.extend({
     rowKey: baseTableProps.rowKey,
     rowspanAndColspan: baseTableProps.rowspanAndColspan,
     firstFullRow: baseTableProps.firstFullRow,
+    lastFullRow: baseTableProps.lastFullRow,
     onRowHover: baseTableProps.onRowHover,
     onRowMouseup: baseTableProps.onRowMouseup,
     onRowMousedown: baseTableProps.onRowMousedown,
@@ -110,6 +111,12 @@ export default Vue.extend({
                 colspan = -1;
               }
             }
+          }
+          if (rowspan > 1 && colspan === -1) {
+            colspan = 1;
+          }
+          if (colspan > 1 && rowspan === -1) {
+            rowspan = 1;
           }
           props[rowIndex][colKey] = {
             leftedColspan,

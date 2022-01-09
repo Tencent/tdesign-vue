@@ -66,7 +66,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     dataSource(): Array<DataType> {
       if (!this.hasPagination) return this.data.slice(0);
       const { current, pageSize } = this;
-      if (this.data.length > pageSize) {
+      if (this.data.length > pageSize && !this.disableDataSort) {
         return this.data.slice((current - 1) * pageSize, current * pageSize);
       }
       return this.data;
@@ -128,13 +128,14 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       return classes;
     },
     usePadding(): boolean {
-      return this.scrollableToRight || this.scrollableToLeft;
+      return this.fixedHeader || this.scrollableToRight || this.scrollableToLeft;
     },
   },
   methods: {
     // 检查是否还可以向左或者向右滚动
     checkScrollableToLeftOrRight() {
       const scrollContainer = this.$refs[this.fixedHeader ? 'scrollBody' : 'tableContent'] as HTMLElement;
+      if (!scrollContainer) return;
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
       this.scrollableToLeft = scrollLeft > 0;
       this.scrollableToRight = scrollLeft + clientWidth < scrollWidth;
@@ -172,6 +173,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           selectedRowKeys: this.selectedRowKeys,
           rowspanAndColspan: this.rowspanAndColspan,
           firstFullRow: this.firstFullRow,
+          lastFullRow: this.lastFullRow,
         },
         scopedSlots,
         on: {
@@ -231,7 +233,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const headerContainerStyle = columns.length > 1 && usePadding ? { paddingRight } : {};
       fixedTable.push(
         <div class={`${prefix}-table__header`} style={headerContainerStyle} ref="scrollHeader">
-          <table style={{ tableLayout, paddingRight }}>
+          <table style={{ tableLayout }}>
             <TableColGroup columns={columns} />
             {this.renderHeader()}
           </table>
@@ -285,6 +287,12 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           e,
         };
         emitEvent(this, scrollListenerName, scrollParams);
+      }
+    },
+    checkMaxHeight() {
+      const { maxHeight } = this;
+      if (maxHeight && (this.$refs.tableContent as HTMLElement).clientHeight > maxHeight) {
+        this.useFixedHeader = true;
       }
     },
   },
@@ -354,6 +362,9 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       </div>
     );
   },
+  updated() {
+    this.checkMaxHeight();
+  },
 
   mounted() {
     if (this.hasFixedColumns) {
@@ -377,9 +388,6 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     document.body.appendChild(scrollDiv);
     this.scrollBarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
     document.body.removeChild(scrollDiv);
-    const { maxHeight } = this;
-    if (maxHeight && (this.$refs.tableContent as HTMLElement).clientHeight > maxHeight) {
-      this.useFixedHeader = true;
-    }
+    this.checkMaxHeight();
   },
 });

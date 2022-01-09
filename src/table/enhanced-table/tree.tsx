@@ -10,6 +10,7 @@ import {
 } from '../type';
 import { getCell } from '../util/common';
 import TableTreeStore, { KeysType } from './tree-store';
+import { prefix } from '../../config';
 
 export default Vue.extend({
   props: {
@@ -50,12 +51,12 @@ export default Vue.extend({
         const currentState = this.store.treeDataMap.get(get(p.row, this.rowKey));
         const colStyle = this.getTreeNodeStyle(currentState?.level);
         const childrenNodes = get(p.row, this.childrenKey);
-        if (childrenNodes && (childrenNodes instanceof Array)) {
+        if (childrenNodes && childrenNodes instanceof Array) {
           const IconNode = this.store.treeDataMap.get(get(p.row, this.rowKey))?.expanded
             ? MinusRectangleIcon
             : AddRectangleIcon;
           return (
-            <div style={colStyle}>
+            <div class={`${prefix}-table__tree-col`} style={colStyle}>
               {!!childrenNodes.length && (
                 <IconNode style={{ marginRight: '8px' }} onClick={() => this.toggleExpandData(p)} />
               )}
@@ -65,6 +66,10 @@ export default Vue.extend({
         }
         return <div style={colStyle}>{cellInfo}</div>;
       };
+      // 树形节点 hover 不需要显示操作符号 [+] 和 [-]
+      if (treeNodeCol.ellipsis === true) {
+        treeNodeCol.ellipsis = (h, p) => getCell(this, { ...p, col: this.columns[treeNodeColumnIndex] });
+      }
       cols[treeNodeColumnIndex] = treeNodeCol;
       return cols;
     },
