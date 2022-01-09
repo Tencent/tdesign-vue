@@ -97,10 +97,6 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
       scopedSlots,
       on,
     };
-    // 存在过滤条件，查询结果为空时，不显示空数据节点，有过滤结果行即可
-    if (this.hasFilterCondition) {
-      baseTableProps.props.empty = null;
-    }
     // TODO: 可使用插槽 `topContent` 自定义显示列
     return <BaseTable {...baseTableProps} />;
   },

@@ -130,12 +130,12 @@ export default Vue.extend({
     },
 
     renderFullRow(type: 'firstFullRow' | 'lastFullRow') {
-      const firstFullRowNode = renderTNodeJSX(this, type);
-      if (firstFullRowNode) {
+      const fullRowNode = renderTNodeJSX(this, type);
+      if (fullRowNode) {
         return (
           <tr>
             <td colspan={this.columns.length} class={`${prefix}-table__row--full`}>
-              {firstFullRowNode}
+              {fullRowNode}
             </td>
           </tr>
         );
