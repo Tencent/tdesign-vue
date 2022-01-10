@@ -111,6 +111,32 @@ export default Vue.extend({
       }
       return paddingObj;
     },
+
+    calcColMargin(gutter: TdRowProps['gutter'], currentSize: string): object {
+      const rowStyle = {};
+      if (Array.isArray(gutter) && gutter.length) {
+        if (typeof gutter[1] === 'number') {
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[1] / 2}px`,
+            marginBottom: `${gutter[1] / 2}px`,
+          });
+        }
+        if (isObject(gutter[1]) && gutter[1][currentSize] !== undefined) {
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[1][currentSize] / 2}px`,
+            marginBottom: `${gutter[1][currentSize] / 2}px`,
+          });
+        }
+      } else if (isObject(gutter) && gutter[currentSize]) {
+        if (Array.isArray(gutter[currentSize]) && gutter[currentSize].length) {
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[currentSize][1] / 2}px`,
+            marginBottom: `${gutter[currentSize][1] / 2}px`,
+          });
+        }
+      }
+      return rowStyle;
+    },
   },
 
   render(): VNode {
@@ -123,9 +149,13 @@ export default Vue.extend({
     const { rowContext }: any = this;
     if (rowContext) {
       const { gutter: rowGutter } = rowContext;
-      Object.assign(colStyle, this.calcColPadding(rowGutter, this.size));
+      Object.assign(colStyle, this.calcColPadding(rowGutter, this.size), this.calcColMargin(rowGutter, this.size));
     }
 
-    return <tag class={classes} style={colStyle}>{renderTNodeJSX(this, 'default')}</tag>;
+    return (
+      <tag class={classes} style={colStyle}>
+        {renderTNodeJSX(this, 'default')}
+      </tag>
+    );
   },
 });

@@ -68,7 +68,10 @@ export default Vue.extend({
           });
         }
         if (typeof gutter[1] === 'number') {
-          Object.assign(rowStyle, { rowGap: `${gutter[1]}px` });
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[1] / -2}px`,
+            marginBottom: `${gutter[1] / -2}px`,
+          });
         }
 
         if (isObject(gutter[0]) && gutter[0][currentSize] !== undefined) {
@@ -78,7 +81,10 @@ export default Vue.extend({
           });
         }
         if (isObject(gutter[1]) && gutter[1][currentSize] !== undefined) {
-          Object.assign(rowStyle, { rowGap: `${gutter[1][currentSize]}px` });
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[1][currentSize] / -2}px`,
+            marginBottom: `${gutter[1][currentSize] / -2}px`,
+          });
         }
       } else if (isObject(gutter) && gutter[currentSize]) {
         if (Array.isArray(gutter[currentSize]) && gutter[currentSize].length) {
@@ -86,7 +92,10 @@ export default Vue.extend({
             marginLeft: `${gutter[currentSize][0] / -2}px`,
             marginRight: `${gutter[currentSize][0] / -2}px`,
           });
-          Object.assign(rowStyle, { rowGap: `${gutter[currentSize][1]}px` });
+          Object.assign(rowStyle, {
+            marginTop: `${gutter[currentSize][1] / -2}px`,
+            marginBottom: `${gutter[currentSize][1] / -2}px`,
+          });
         } else {
           Object.assign(rowStyle, {
             marginLeft: `${gutter[currentSize] / -2}px`,
@@ -100,9 +109,12 @@ export default Vue.extend({
 
   render(): VNode {
     const { tag, classes } = this;
-
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
+    return (
+      <tag class={classes} style={rowStyle}>
+        {this.$slots.default}
+      </tag>
+    );
   },
 });
