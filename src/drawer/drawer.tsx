@@ -87,12 +87,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       immediate: true,
     },
     visible: {
-      handler(value) {
-        if (value && !this.showInAttachedElement) {
-          this.preventScrollThrough && addClass(document.body, lockClass);
-        } else {
-          this.preventScrollThrough && removeClass(document.body, lockClass);
-        }
+      handler(val) {
+        this.handleScrollThrough(val);
       },
       immediate: true,
     },
@@ -100,6 +96,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   updated() {
     this.updatePushMode();
+  },
+
+  mounted() {
+    this.handleScrollThrough(this.visible);
   },
 
   render() {
@@ -132,6 +132,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   },
 
   methods: {
+    handleScrollThrough(visible: boolean) {
+      if (!document || !document.body) return;
+      if (visible && !this.showInAttachedElement) {
+        this.preventScrollThrough && addClass(document.body, lockClass);
+      } else {
+        this.preventScrollThrough && removeClass(document.body, lockClass);
+      }
+    },
     handlePushMode() {
       if (this.mode !== 'push') return;
       this.$nextTick(() => {
