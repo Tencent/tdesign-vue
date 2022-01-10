@@ -23,6 +23,7 @@
 import pkg from '@/package.json';
 import packageJSON from './package.json';
 import mainJsContent from './main.js?raw';
+import babelContent from './.babelrc?raw';
 
 const styleContent = `
 /* 竖排展示 demo 行间距 16px */
@@ -90,6 +91,9 @@ export default {
           files: {
             'package.json': {
               content: packageJSONContent,
+            },
+            '.babelrc': {
+              content: babelContent,
             },
             'src/main.js': {
               content: this.mainJsContent,
