@@ -32,7 +32,6 @@ export default function mdToVue(options) {
             ref="tdDocHeader"
             spline="${mdSegment.spline}"
             platform="web"
-            ${mdSegment.isComponent ? `component-name="${mdSegment.componentName}"` : ''}
           >
           ${mdSegment.isComponent ? `<td-doc-badge slot="badge" label="coverage" message="${coverage}" />` : ''}
           </td-doc-header>`
