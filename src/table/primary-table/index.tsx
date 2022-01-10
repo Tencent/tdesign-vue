@@ -85,9 +85,9 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     const baseTableProps = {
       props: {
         ...$props,
-        data: this.data,
         columns: rehandleColumns,
         provider: {
+          renderExpandedRow: this.expandedRow ?? this.$scopedSlots.expandedRow ? this.renderExpandedRow : undefined,
           sortOnRowDraggable: this.sortOnRowDraggable,
           dragging: this.dragging,
         },

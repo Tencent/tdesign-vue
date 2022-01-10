@@ -209,6 +209,9 @@ export default Vue.extend({
         rowVnode = <TableRow rowKey={this.rowKey} {...props} />;
         // 按行渲染
         body.push(rowVnode);
+        // 渲染展开行
+        const expandedRow = this.provider.renderExpandedRow?.({ row, index });
+        expandedRow && (body = body.concat(expandedRow));
       });
       const firstRow = this.renderFullRow('first-full-row');
       if (firstRow) {
@@ -224,7 +227,7 @@ export default Vue.extend({
 
   render() {
     if (this.provider.sortOnRowDraggable) {
-      const className = `${prefix}-table__body ${this.provider.dragging ? 'dragging' : ''}`;
+      const className = `${prefix}-table__body ${this.provider.dragging ? `${prefix}-table__body--dragging` : ''}`;
       return (
         <transition-group class={className} tag="tbody">
           {this.renderBody()}
