@@ -36,7 +36,6 @@ export default Vue.extend({
       return [
         {
           colKey: expandedColKey,
-          align: 'center',
           width: 48,
           attrs: {
             class: [`${prefix}-table__expandable-icon-cell`],
