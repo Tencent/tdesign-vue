@@ -39,7 +39,7 @@ validate | `(result:  ValidateResultContext<FormData>)` | 校验结束后触发�
 -- | -- | -- | --
 clearValidate | `(fields?: Array<string>)` | - | 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果
 reset | - | - | 重置表单，表单里面没有重置按钮时可以使用该方法（`<button type="reset" />`）
-submit | - | - | 提交表单，表单里面没有重置按钮时可以使用该方法（`<button type="submit" />`）
+submit | - | - | 提交表单，表单里面没有提交按钮时可以使用该方法（`<button type="submit" />`）
 validate | `(params?: FormValidateParams)` | `FormValidateResult<FormData>` | 校验函数。关于参数：params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。关于返回值：返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)
 
 ### FormItem Props
