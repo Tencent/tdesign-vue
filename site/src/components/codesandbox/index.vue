@@ -22,6 +22,7 @@
 <script>
 import pkg from '@/package.json';
 import packageJSON from './package.json';
+import htmlContent from './index.html?raw';
 import mainJsContent from './main.js?raw';
 import babelContent from './.babelrc?raw';
 
@@ -91,6 +92,9 @@ export default {
           files: {
             'package.json': {
               content: packageJSONContent,
+            },
+            'public/index.html': {
+              content: htmlContent,
             },
             '.babelrc': {
               content: babelContent,
