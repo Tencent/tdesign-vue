@@ -18,7 +18,7 @@ import {
   getToday,
   firstUpperCase,
   OptionsType,
-} from '../../_common/js/datepicker/utils';
+} from '../../_common/js/date-picker/utils';
 
 export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   name: 'TDatePanel',
