@@ -90,7 +90,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       handler(val) {
         this.handleScrollThrough(val);
       },
-      immediate: true,
     },
   },
 
@@ -133,7 +132,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   methods: {
     handleScrollThrough(visible: boolean) {
-      if (!document || !document.body) return;
+      if (!document || !document.body || !this.preventScrollThrough) return;
       if (visible && !this.showInAttachedElement) {
         this.preventScrollThrough && addClass(document.body, lockClass);
       } else {
