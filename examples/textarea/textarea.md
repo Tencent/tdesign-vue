@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Textarea Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -11,8 +10,8 @@ autosize | Boolean / Object | false | 高度自动撑开。 autosize = true 表�
 disabled | Boolean | false | 是否禁用文本框 | N
 maxcharacter | Number | - | 用户最多可以输入的字符个数，一个中文汉字表示两个字符长度 | N
 maxlength | Number | - | 用户最多可以输入的字符个数 | N
-name | String | - | 名称 | N
-placeholder | String | - | 占位符 | N
+name | String | - | 名称，HTML 元素原生属性 | N
+placeholder | String | undefined | 占位符 | N
 readonly | Boolean | false | 文本框是否只读 | N
 value | String / Number | - | 文本框值。支持语法糖。TS 类型：`TextareaValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/textarea/type.ts) | N
 defaultValue | String / Number | - | 文本框值。非受控属性。TS 类型：`TextareaValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/textarea/type.ts) | N

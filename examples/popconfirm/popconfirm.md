@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Popconfirm Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -21,7 +20,7 @@ visible | Boolean | - | 是否显示气泡确认框。支持语法糖 | N
 defaultVisible | Boolean | - | 是否显示气泡确认框。非受控属性 | N
 onCancel | Function |  | 点击取消按钮时触发。`(options: { e: MouseEvent }) => {}` | N
 onConfirm | Function |  | 点击确认按钮时触发。`(options: { e: MouseEvent }) => {}` | N
-onVisibleChange | Function |  | 确认框显示或隐藏时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popconfirm/type.ts)。`(visible: boolean, context?: PopconfirmVisibleChangeContext) => {}` | N
+onVisibleChange | Function |  | 确认框显示或隐藏时触发。`interface PopconfirmVisibleChangeContext { trigger?: TriggerSource; e?: MouseEvent }`。`type TriggerSource = 'cancel' | 'confirm' | 'document' | 'trigger-element-click'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popconfirm/type.ts)。`(visible: boolean, context?: PopconfirmVisibleChangeContext) => {}` | N
 
 ### Popconfirm Events
 
@@ -29,4 +28,4 @@ onVisibleChange | Function |  | 确认框显示或隐藏时触发。[详细类�
 -- | -- | --
 cancel | `(options: { e: MouseEvent })` | 点击取消按钮时触发
 confirm | `(options: { e: MouseEvent })` | 点击确认按钮时触发
-visible-change | `(visible: boolean, context?: PopconfirmVisibleChangeContext)` | 确认框显示或隐藏时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popconfirm/type.ts)
+visible-change | `(visible: boolean, context?: PopconfirmVisibleChangeContext)` | 确认框显示或隐藏时触发。`interface PopconfirmVisibleChangeContext { trigger?: TriggerSource; e?: MouseEvent }`。`type TriggerSource = 'cancel' | 'confirm' | 'document' | 'trigger-element-click'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popconfirm/type.ts)

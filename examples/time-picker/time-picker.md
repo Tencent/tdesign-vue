@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### TimePicker Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -12,7 +11,7 @@ disabled | Boolean | false | 是否禁用组件 | N
 disableTime | Function | - | 禁用时间项。TS 类型：`(h: number, m: number, s: number) => boolean` | N
 format | String | 'HH:mm:ss' | 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) | N
 hideDisabledTime | Boolean | true | 是否隐藏禁用状态的时间项 | N
-placeholder | String | - | 占位符 | N
+placeholder | String | undefined | 占位符 | N
 size | String | medium | 尺寸。可选项：small/medium/large | N
 steps | Array | () => [1, 1, 1] | 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1']。TS 类型：`Array<string | number>` | N
 value | String | - | 选中值。支持语法糖。TS 类型：`TimePickerValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
@@ -45,7 +44,7 @@ disabled | Boolean / Array | false | 是否禁用组件，值为数组表示可�
 disableTime | Function | - | 禁用时间项。TS 类型：`(h: number, m: number, s: number, context: { partial: TimeRangePickerPartial }) => boolean`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
 format | String | 'HH:mm:ss' | 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) | N
 hideDisabledTime | Boolean | true | 是否隐藏禁用状态的时间项 | N
-placeholder | String / Array | - | 占位符，值为数组表示可分别为开始日期和结束日期设置占位符。TS 类型：`string | Array<string>` | N
+placeholder | String / Array | undefined | 占位符，值为数组表示可分别为开始日期和结束日期设置占位符。TS 类型：`string | Array<string>` | N
 size | String | medium | 尺寸。可选项：small/medium/large | N
 steps | Array | () => [1, 1, 1] | 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1']。TS 类型：`Array<string | number>` | N
 value | Array | - | 选中值。支持语法糖。TS 类型：`TimeRangeValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N

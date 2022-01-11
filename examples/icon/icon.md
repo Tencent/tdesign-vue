@@ -54,9 +54,7 @@
 <td-icons-view />
 
 ## API
-
 ### IconSVG Props
-
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
@@ -69,9 +67,9 @@ onClick | Function |  | 点击时触发。`(context: { e: MouseEvent }) => {}` |
 
 ### IconSVG Events
 
-| 名称  | 参数                           | 描述       |
-| ----- | ------------------------------ | ---------- |
-| click | `(context: { e: MouseEvent })` | 点击时触发 |
+名称 | 参数 | 描述
+-- | -- | --
+click | `(context: { e: MouseEvent })` | 点击时触发
 
 ### Iconfont Props
 
@@ -87,6 +85,6 @@ onClick | Function |  | 点击时触发。`(context: { e: MouseEvent }) => {}` |
 
 ### Iconfont Events
 
-| 名称  | 参数                           | 描述       |
-| ----- | ------------------------------ | ---------- |
-| click | `(context: { e: MouseEvent })` | 点击时触发 |
+名称 | 参数 | 描述
+-- | -- | --
+click | `(context: { e: MouseEvent })` | 点击时触发
