@@ -3,9 +3,8 @@ import get from 'lodash/get';
 import { TdPrimaryTableProps } from '../../type';
 import baseTableProps from '../../base-table-props';
 import ExpandBox from '../expand-box';
-import TableRow from '../../base-table/table-row';
-import { ExpandProps, RenderExpandRow } from '../../util/interface';
-import { filterDataByIds, getRecord } from '../../util/common';
+import { ExpandProps } from '../../util/interface';
+import { filterDataByIds } from '../../util/common';
 import { prefix } from '../../../config';
 import { emitEvent } from '../../../utils/event';
 import { renderTNodeJSX } from '../../../utils/render-tnode';
@@ -17,6 +16,7 @@ export default Vue.extend({
   name: `${prefix}-primary-table-expand`,
   props: {
     data: baseTableProps.data,
+    columns: baseTableProps.columns,
     rowKey: baseTableProps.rowKey,
     ...ExpandProps,
   },
@@ -66,40 +66,21 @@ export default Vue.extend({
         />
       );
     },
-    // 渲染被展开的TableRow内容
-    renderExpandedRow({
-      rows, row, columns: defaultColumns, rowIndex,
-    }: RenderExpandRow): VNode {
-      const columnCounts = defaultColumns.length;
-      const expandRowHandler = this.getExpandRowHandler();
-      if (!expandRowHandler) return; // 若无展开渲染函数，则无需处理行数据
 
-      const { expandedRowKeys } = this;
-      const id = get(row, this.reRowKey);
-      const isShowExpanded = expandedRowKeys.includes(id);
-      const params = {
-        record: getRecord(row),
-        row,
-        index: rowIndex,
-      };
-      const columns = [
-        {
-          colKey: 'expanded-row',
-          attrs: {
-            colspan: columnCounts,
-            class: [`${prefix}-table__expanded-cell`],
-          },
-          render: (h: CreateElement): VNode => expandRowHandler(h, params) as VNode,
-        },
-      ];
-      rows.push(
-        <TableRow
-          key={`ExpandTableRowBox${rowIndex}`}
-          rowKey={this.rowKey}
-          style={{ ...(!isShowExpanded ? { display: 'none' } : {}) }}
-          columns={columns}
-        />,
-      );
+    // 渲染被展开行
+    renderExpandedRow(
+      params: Parameters<TdPrimaryTableProps['expandedRow']>[1],
+    ): ReturnType<TdPrimaryTableProps['expandedRow']> {
+      const id = get(params.row, this.reRowKey);
+      const isShowExpanded = this.expandedRowKeys.includes(id);
+      if (isShowExpanded) {
+        return (
+          <tr>
+            <td colspan={this.columns.length}>{renderTNodeJSX(this, 'expandedRow', { params })}</td>
+          </tr>
+        );
+      }
+      return null;
     },
 
     // handle
