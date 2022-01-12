@@ -20,7 +20,7 @@ import {
   getToday,
   firstUpperCase,
   setDateTime,
-} from '../utils';
+} from '../../_common/js/date-picker/utils';
 import props from '../props';
 
 const TODAY = getToday();
@@ -291,11 +291,7 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
     },
   },
   render() {
-    const {
-      leftType,
-      rightType,
-      firstDayOfWeek,
-    } = this;
+    const { leftType, rightType, firstDayOfWeek } = this;
     return (
       <div class={`${prefix}-date-picker__panels`}>
         <div class={`${prefix}-date-picker__panel`}>
