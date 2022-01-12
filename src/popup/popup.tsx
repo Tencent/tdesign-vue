@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { createPopper } from '@popperjs/core';
+import { createPopper, Options } from '@popperjs/core';
 import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -8,6 +8,7 @@ import {
 } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { getIEVersion } from '../utils/helper';
 import { PopupVisibleChangeContext } from './type';
 import { Styles, ClassName } from '../common';
 import setStyle from '../utils/set-style';
@@ -221,13 +222,28 @@ export default Vue.extend({
         }
         popperElm.style.display = 'none';
       }
-
-      this.popper = createPopper(this.referenceElm, popperElm, {
+      const popperOptions: Options = {
         placement,
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
-      });
+        modifiers: [],
+        strategy: 'absolute',
+      };
+      if (getIEVersion() <= 9) {
+        popperOptions.modifiers = [
+          {
+            name: 'computeStyles',
+            options: {
+              // 默认为 true，即使用 transform 定位，开启 gpu 加速
+              // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
+              // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
+              gpuAcceleration: false,
+            },
+          },
+        ];
+      }
+      this.popper = createPopper(this.referenceElm, popperElm, popperOptions);
       popperElm.addEventListener('click', stop);
       // 监听trigger元素尺寸变化
       this.resizeSensor = new ResizeSensor(this.referenceElm, () => {
