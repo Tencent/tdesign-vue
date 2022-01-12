@@ -119,7 +119,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
   mounted() {
     this.scrollWidth = window.innerWidth - document.body.offsetWidth;
-    if (this.draggable){
+    if (this.draggable) {
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
     }
   },
