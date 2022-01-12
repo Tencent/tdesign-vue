@@ -89,7 +89,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
           <div class="t-radio-group__bg-block" style="width: 0px; left: 0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" theme="default" size="medium">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" size="medium">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -256,7 +256,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
           <div class="t-radio-group__bg-block" style="width: 0px; left: 0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" theme="primary" size="medium">显示周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-tag--checked t-calendar__control-tag" size="medium">显示周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -367,7 +367,6 @@ exports[`Calendar :props :mode 1`] = `
           <div class="t-radio-group__bg-block" style="width: 0px; left: 0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" theme="default" size="medium">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">本月</span></button></div>
     </div>
   </div>
@@ -477,7 +476,7 @@ exports[`Calendar :props :range 1`] = `
           <div class="t-radio-group__bg-block" style="width: 0px; left: 0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" theme="default" size="medium">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" size="medium">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -791,7 +790,7 @@ exports[`Calendar :props :value 1`] = `
           <div class="t-radio-group__bg-block" style="width: 0px; left: 0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" theme="default" size="medium">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-calendar__control-tag" size="medium">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>

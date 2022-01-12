@@ -15,9 +15,11 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DialogConfig } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
+import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 
 const name = `${prefix}-dialog`;
+const lockClass = `${prefix}-dialog--lock`;
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -116,17 +118,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   watch: {
     visible(value) {
-      const { scrollWidth } = this;
-      let bodyCssText = 'overflow: hidden;';
       if (value) {
+        const { scrollWidth } = this;
         if (scrollWidth > 0) {
-          bodyCssText += `position: relative;width: calc(100% - ${scrollWidth}px);`;
+          const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
+          document.body.style.cssText = bodyCssText;
         }
-        document.body.style.cssText = bodyCssText;
+        addClass(document.body, lockClass);
       } else {
         document.body.style.cssText = '';
+        removeClass(document.body, lockClass);
       }
-      this.disPreventScrollThrough(value);
       this.addKeyboardEvent(value);
     },
   },
@@ -135,7 +137,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   beforeDestroy() {
-    this.disPreventScrollThrough(false);
     this.addKeyboardEvent(false);
   },
 
@@ -151,12 +152,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   methods: {
-    disPreventScrollThrough(disabled: boolean) {
-      // 防止滚动穿透,modal形态才需要
-      if (this.preventScrollThrough && this.isModal) {
-        document.body.style.overflow = disabled ? 'hidden' : '';
-      }
-    },
     addKeyboardEvent(status: boolean) {
       if (status) {
         document.addEventListener('keydown', this.keyboardEvent);
@@ -233,7 +228,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     getIcon() {
       const icon = {
         info: <TIconInfoCircleFilled class={`${prefix}-is-info`} />,
-        warning: <TIconErrorCircleFilled class={`${prefix}-is-warning`}/>,
+        warning: <TIconErrorCircleFilled class={`${prefix}-is-warning`} />,
         danger: <TIconErrorCircleFilled class={`${prefix}-is-error`} />,
         success: <TIconCheckCircleFilled class={`${prefix}-is-success`} />,
       };
@@ -272,7 +267,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           style={this.dialogStyle}
           v-draggable={this.isModeless && this.draggable}
         >
-          <div class={`${name}__header`}>{this.getIcon()}{renderTNodeJSX(this, 'header', defaultHeader)}</div>
+          <div class={`${name}__header`}>
+            {this.getIcon()}
+            {renderTNodeJSX(this, 'header', defaultHeader)}
+          </div>
           <span class={`${name}__close`} onClick={this.closeBtnAcion}>
             {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
           </span>

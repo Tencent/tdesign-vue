@@ -26,7 +26,13 @@ import {
   FlowRemoveContext,
 } from './interface';
 import {
-  TdUploadProps, UploadChangeContext, UploadFile, UploadRemoveContext, RequestMethodResponse, SizeUnit, SizeLimitObj,
+  TdUploadProps,
+  UploadChangeContext,
+  UploadFile,
+  UploadRemoveContext,
+  RequestMethodResponse,
+  SizeUnit,
+  SizeLimitObj,
 } from './type';
 
 const name = `${prefix}-upload`;
@@ -70,7 +76,7 @@ function isOverSizeLimit(fileSize: number, sizeLimit: number, unit: SizeUnit) {
     index = KBIndex;
   }
   const num = SIZE_MAP[unit];
-  const limit = index < KBIndex ? (sizeLimit / num) : (sizeLimit * num);
+  const limit = index < KBIndex ? sizeLimit / num : sizeLimit * num;
   return fileSize <= limit;
 }
 
@@ -110,7 +116,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     // 默认文件上传风格：文件进行上传和上传成功后不显示 tips
     showTips(): boolean {
       if (this.theme === 'file') {
-        const hasNoFile = (!this.files || !this.files.length) && (!this.loadingFile);
+        const hasNoFile = (!this.files || !this.files.length) && !this.loadingFile;
         return this.tips && hasNoFile;
       }
       return Boolean(this.tips);
@@ -121,7 +127,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
     // 单文件非拖拽类文件上传
     showSingleDisplay(): boolean {
-      return (!this.draggable) && ['file', 'file-input'].includes(this.theme);
+      return !this.draggable && ['file', 'file-input'].includes(this.theme);
     },
     // 单文件非拖拽勒图片上传
     showImgCard(): boolean {
@@ -156,8 +162,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       emitEvent<Parameters<TdUploadProps['onRemove']>>(this, 'remove', ctx);
     },
     // handle event of preview img dialog event
-    handlePreviewImg(event: MouseEvent, file: UploadFile) {
-      if (!file.url) throw new Error('Error file');
+    handlePreviewImg(event: MouseEvent, file?: UploadFile) {
+      if (!file || !file.url) throw new Error('Error file');
       this.showImageViewUrl = file.url;
       this.showImageViewDialog = true;
       const previewCtx = { file, e: event };
@@ -359,15 +365,20 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     handleProgress({
       event, file, percent, type = 'real',
     }: InnerProgressContext) {
+      if (!file) throw new Error('Error file');
       file.percent = Math.min(percent, 100);
       this.loadingFile = file;
       const progressCtx = {
-        percent, e: event, file, type,
+        percent,
+        e: event,
+        file,
+        type,
       };
       emitEvent<Parameters<TdUploadProps['onProgress']>>(this, 'progress', progressCtx);
     },
 
     handleSuccess({ event, file, response }: SuccessContext) {
+      if (!file) throw new Error('Error file');
       file.status = 'success';
       let res = response;
       if (typeof this.formatResponse === 'function') {
@@ -376,7 +387,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       // 如果返回值存在 error，则认为当前接口上传失败
       if (res?.error) {
         this.onError({
-          event, file, response: res, resFormatted: true,
+          event,
+          file,
+          response: res,
+          resFormatted: true,
         });
         return;
       }
@@ -390,13 +404,16 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       const context = { e: event, response: res, trigger: 'upload-success' };
       this.emitChangeEvent(files, context);
       const sContext = {
-        file, fileList: files, e: event, response: res,
+        file,
+        fileList: files,
+        e: event,
+        response: res,
       };
       emitEvent<Parameters<TdUploadProps['onSuccess']>>(this, 'success', sContext);
       this.loadingFile = null;
     },
 
-    handlePreview({ file, event }: {file: UploadFile; event: ProgressEvent}) {
+    handlePreview({ file, event }: { file?: UploadFile; event: ProgressEvent }) {
       return { file, event };
     },
 
@@ -432,9 +449,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     handleSizeLimit(fileSize: number) {
-      const sizeLimit: SizeLimitObj = typeof this.sizeLimit === 'number'
-        ? { size: this.sizeLimit, unit: 'KB' }
-        : this.sizeLimit;
+      const sizeLimit: SizeLimitObj = typeof this.sizeLimit === 'number' ? { size: this.sizeLimit, unit: 'KB' } : this.sizeLimit;
       const rSize = isOverSizeLimit(fileSize, sizeLimit.size, sizeLimit.unit);
       if (!rSize) {
         // 有参数 message 则使用，没有就使用全局 global 配置
@@ -471,15 +486,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     getDefaultTrigger() {
       if (this.theme === 'file-input' || this.showUploadList) {
-        return (
-          <TButton variant='outline'>
-            {this.files?.length ? '重新上传' : '选择文件'}
-          </TButton>
-        );
+        return <TButton variant="outline">{this.files?.length ? '重新上传' : '选择文件'}</TButton>;
       }
       return (
-        <TButton variant='outline'>
-          <TIconUpload slot='icon'/>
+        <TButton variant="outline">
+          <TIconUpload slot="icon" />
           {this.files?.length ? '重新上传' : '点击上传'}
         </TButton>
       );
@@ -488,8 +499,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     renderInput() {
       return (
         <input
-          ref='input'
-          type='file'
+          ref="input"
+          type="file"
           disabled={this.disabled}
           onChange={this.handleChange}
           multiple={this.multiple}
@@ -545,9 +556,13 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return renderContent(this, 'default', 'trigger', defaultNode);
     },
     renderCustom(triggerElement: VNode) {
-      return this.draggable
-        ? this.renderDraggerTrigger()
-        : <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>;
+      return this.draggable ? (
+        this.renderDraggerTrigger()
+      ) : (
+        <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+          {triggerElement}
+        </div>
+      );
     },
   },
 
@@ -588,23 +603,25 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
           >
-            <div class={`${name}__trigger`} onclick={this.triggerUpload}>{triggerElement}</div>
+            <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+              {triggerElement}
+            </div>
           </FlowList>
         )}
         {this.showImgDialog && (
           <TDialog
             visible={this.showImageViewDialog}
             showOverlay
-            width='auto'
-            top='10%'
+            width="auto"
+            top="10%"
             class={`${name}__dialog`}
             footer={false}
             header={false}
             onClose={this.cancelPreviewImgDialog}
           >
-              <div class={`${prefix}__dialog-body-img-box`}>
-                <img src={this.showImageViewUrl} alt='' />
-              </div>
+            <div class={`${prefix}__dialog-body-img-box`}>
+              <img src={this.showImageViewUrl} alt="" />
+            </div>
           </TDialog>
         )}
         {!this.errorMsg && this.showTips && <small class={this.tipsClasses}>{this.tips}</small>}

@@ -81,14 +81,12 @@ export default {
   },
   computed: {
     loadingNode() {
-      return this.asyncLoading === 'loading-custom'
-        ? this.customLoadingNode
-        : this.asyncLoading;
+      return this.asyncLoading === 'loading-custom' ? this.customLoadingNode : this.asyncLoading;
     },
   },
   methods: {
     customLoadingNode() {
-      return <div class='t-table--loading-async'>这是自定义加载状态和内容</div>;
+      return <div class="t-table__async-loading">这是自定义加载状态和内容</div>;
     },
     onAsyncLoadingClick({ status }) {
       if (status === 'load-more') {

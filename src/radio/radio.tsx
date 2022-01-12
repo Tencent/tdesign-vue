@@ -59,9 +59,10 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
         <input
           type="radio"
           class={`${prefixCls}__former`}
-          on={{ ...omit(this.$listeners, ['change']) }}
+          on={{ ...omit(this.$listeners, ['change', 'click']) }}
           {...{ domProps: inputProps }}
           onChange={this.handleChange}
+          onClick={this.handleClick}
         />
         <span class={`${prefixCls}__input`}></span>
         <span class={`${prefixCls}__label`}>{renderContent(this, 'default', 'label')}</span>
@@ -76,6 +77,15 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
       } else {
         const target = e.target as HTMLInputElement;
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', target.checked, { e });
+      }
+    },
+    handleClick(e: Event) {
+      this.$emit('click');
+      if (!this.checked || !this.allowUncheck) return;
+      if (this.radioGroup) {
+        this.radioGroup.$emit('checked-change', undefined, { e });
+      } else {
+        emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', false, { e });
       }
     },
   },

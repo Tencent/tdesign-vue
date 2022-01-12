@@ -6,9 +6,7 @@ import CLASSNAMES from '../../utils/classnames';
 import getConnfigRecevierMixins, { CascaderConfig } from '../../config-provider/config-receiver';
 import mixins from '../../utils/mixins';
 import { renderTNodeJSX } from '../../utils/render-tnode';
-import {
-  TreeNode, CascaderContextType, InputContentProps,
-} from '../interface';
+import { TreeNode, CascaderContextType, InputContentProps } from '../interface';
 // component
 import Tag from '../../tag';
 import TLoading from '../../loading';
@@ -29,6 +27,7 @@ import {
   handleRemoveTagEffect,
   innerContentClickEffect,
 } from '../utils/inputContent';
+import { getFullPathLabel } from '../utils/helper';
 
 // type
 import { ClassName } from '../../common';
@@ -37,29 +36,31 @@ import CascaderProps from '../props';
 const name = `${prefix}-cascader`;
 
 interface ComponentComputed {
-  closeIconClass: ClassName,
-  fakeArrowIconClass: ClassName,
-  cascaderInnerClasses: ClassName,
+  closeIconClass: ClassName;
+  fakeArrowIconClass: ClassName;
+  cascaderInnerClasses: ClassName;
   closeShow: boolean;
   showPlaceholder: boolean;
   singleContent: string;
-  multipleContent: TreeNode[]
+  multipleContent: TreeNode[];
 }
 interface ComponentData {
-  isHover: boolean
+  isHover: boolean;
 }
 
 interface ComponentMethods {
-  getInputWidth: () => void
-  outerClickListenerFn: (event: MouseEvent | TouchEvent) => void,
-  InnerContent: () => JSX.Element
-  renderContent: () => JSX.Element
-  renderSuffixIcon: () => JSX.Element
+  getInputWidth: () => void;
+  outerClickListenerFn: (event: MouseEvent | TouchEvent) => void;
+  InnerContent: () => JSX.Element;
+  renderContent: () => JSX.Element;
+  renderSuffixIcon: () => JSX.Element;
 }
 
-interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods{}
+interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods {}
 
-const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType, CascaderConfig>('cascader');
+const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType, CascaderConfig>(
+  'cascader',
+);
 
 export default mixins(cascaderGglobalConfig).extend({
   name: `${name}-input-content`,
@@ -102,7 +103,7 @@ export default mixins(cascaderGglobalConfig).extend({
       return getSingleContent(this.cascaderContext);
     },
     multipleContent() {
-      return getMultipleContent((this.cascaderContext));
+      return getMultipleContent(this.cascaderContext);
     },
     showPlaceholder() {
       return getPlaceholderShow(this.cascaderContext, this.singleContent, this.multipleContent);
@@ -136,9 +137,7 @@ export default mixins(cascaderGglobalConfig).extend({
       return outerClickListenerEffect(this.$refs.inputContent as HTMLElement, this.cascaderContext, event);
     },
     renderContent() {
-      const {
-        placeholder, showPlaceholder,
-      } = this;
+      const { placeholder, showPlaceholder } = this;
       const content = !showPlaceholder ? (
         this.InnerContent()
       ) : (
@@ -148,12 +147,7 @@ export default mixins(cascaderGglobalConfig).extend({
     },
     InnerContent() {
       const {
-        cascaderContext,
-        placeholder,
-        singleContent,
-        multipleContent,
-        listeners,
-        collapsedItems,
+        cascaderContext, placeholder, singleContent, multipleContent, listeners, collapsedItems,
       } = this;
 
       const {
@@ -167,11 +161,13 @@ export default mixins(cascaderGglobalConfig).extend({
         setInputVal,
         minCollapsedNum,
         value,
+        showAllLevels,
       } = cascaderContext;
 
       const { onFocus, onBlur, onRemove } = listeners as InputContentProps['listeners'];
 
-      const renderSelfTag = (node: TreeNode, index: number) => <Tag
+      const renderSelfTag = (node: TreeNode, index: number) => (
+        <Tag
           closable={!disabled}
           key={index}
           disabled={disabled}
@@ -181,8 +177,9 @@ export default mixins(cascaderGglobalConfig).extend({
           }}
           size={size}
         >
-          {node.label}
-        </Tag>;
+          {showAllLevels ? getFullPathLabel(node) : node.label}
+        </Tag>
+      );
       const renderCollItems = () => {
         const tempList: object[] = [];
         multipleContent.forEach((node: TreeNode) => {
@@ -197,41 +194,44 @@ export default mixins(cascaderGglobalConfig).extend({
         <span>
           {minCollapsedNum > 0 && multipleContent.length > minCollapsedNum ? (
             <span>
-              {multipleContent.slice(0, minCollapsedNum).map((node: TreeNode, index: number) => (
-                renderSelfTag(node, index)
-              ))}
-              {collapsedItems || this.$scopedSlots.collapsedItems
-                ? renderTNodeJSX(this, 'collapsedItems', {
+              {multipleContent
+                .slice(0, minCollapsedNum)
+                .map((node: TreeNode, index: number) => renderSelfTag(node, index))}
+              {collapsedItems || this.$scopedSlots.collapsedItems ? (
+                renderTNodeJSX(this, 'collapsedItems', {
                   params: {
                     value: renderCollItems(),
                     collapsedSelectedItems: renderCollItems().slice(minCollapsedNum),
                     count: renderCollItems().length - minCollapsedNum,
                   },
-                }) : <Tag size={size} disabled={disabled}>
-                +{multipleContent.length - minCollapsedNum}
-              </Tag>
-              }
+                })
+              ) : (
+                <Tag size={size} disabled={disabled}>
+                  +{multipleContent.length - minCollapsedNum}
+                </Tag>
+              )}
             </span>
           ) : (
-            multipleContent.map((node: TreeNode, index: number) => (
-              renderSelfTag(node, index)
-            ))
+            multipleContent.map((node: TreeNode, index: number) => renderSelfTag(node, index))
           )}
         </span>
       );
 
-      const inputPlaceholder = multiple ? multipleContent.map((node: TreeNode) => node.label).join('、') : singleContent;
+      const inputPlaceholder = multiple
+        ? multipleContent.map((node: TreeNode) => node.label).join('、')
+        : singleContent;
 
       const filterContent = () => (
         <Input
           size={size}
-          placeholder={ inputPlaceholder || placeholder || this.t(this.global.placeholder)}
+          placeholder={inputPlaceholder || placeholder || this.t(this.global.placeholder)}
           value={inputVal}
           onChange={(value: string) => {
             setInputVal(value);
             setFilterActive(!!value);
           }}
-          onFocus={(v: InputValue, context: { e: FocusEvent }) => isFunction(onFocus) && onFocus({ value, e: context?.e })}
+          onFocus={(v: InputValue, context: { e: FocusEvent }) => isFunction(onFocus) && onFocus({ value, e: context?.e })
+          }
           onBlur={(v: InputValue, context: { e: FocusEvent }) => isFunction(onBlur) && onBlur({ value, e: context?.e })}
           autofocus={visible}
         />
@@ -263,36 +263,38 @@ export default mixins(cascaderGglobalConfig).extend({
         );
       }
       if (closeShow) {
-        return <transition name={`${prefix}-cascader-close-icon-fade`} appear>
-          <CloseCircleFilledIcon class={closeIconClass} size={size} onClick={closeIconClick}/>
-        </transition>;
+        return (
+          <transition name={`${prefix}-cascader-close-icon-fade`} appear>
+            <CloseCircleFilledIcon class={closeIconClass} size={size} onClick={closeIconClick} />
+          </transition>
+        );
       }
 
       return <FakeArrow overlayClassName={fakeArrowIconClass} isActive={visible} disabled={disabled} />;
     },
   },
   render() {
-    const {
-      $attrs, cascaderContext,
-    } = this;
+    const { $attrs, cascaderContext } = this;
 
-    return <div
-      ref='inputContent'
-      class={this.cascaderInnerClasses}
-      {...$attrs}
-      onMouseenter={() => {
-        this.isHover = true;
-      }}
-      onMouseleave={() => {
-        this.isHover = false;
-      }}
-      onClick={(e: MouseEvent) => {
-        e.preventDefault();
-        innerContentClickEffect(cascaderContext);
-      }}
-    >
-      {this.renderContent()}
-      {this.renderSuffixIcon()}
-    </div>;
+    return (
+      <div
+        ref="inputContent"
+        class={this.cascaderInnerClasses}
+        {...$attrs}
+        onMouseenter={() => {
+          this.isHover = true;
+        }}
+        onMouseleave={() => {
+          this.isHover = false;
+        }}
+        onClick={(e: MouseEvent) => {
+          e.preventDefault();
+          innerContentClickEffect(cascaderContext);
+        }}
+      >
+        {this.renderContent()}
+        {this.renderSuffixIcon()}
+      </div>
+    );
   },
 });

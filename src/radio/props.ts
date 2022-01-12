@@ -2,14 +2,14 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
+ * updated at 2021-12-28 21:43:41
  * */
 
 import { TdRadioProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 【开发中】是否允许取消选中 */
+  /** 是否允许取消选中 */
   allowUncheck: Boolean,
   /** 是否选中 */
   checked: Boolean,
@@ -28,7 +28,7 @@ export default {
   label: {
     type: [String, Function] as PropType<TdRadioProps['label']>,
   },
-  /** HTM 元素原生属性 */
+  /** HTML 元素原生属性 */
   name: {
     type: String,
     default: '',

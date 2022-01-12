@@ -93,6 +93,26 @@ exports[`Input base demo works fine 1`] = `
       type="text"
     />
   </div>
+   
+  <div
+    class="t-input t-size-m t-input--prefix t-input--suffix"
+  >
+    <div
+      class="t-input__prefix"
+    >
+      价格：
+    </div>
+    <input
+      class="t-input__inner"
+      placeholder="请输入"
+      type="text"
+    />
+    <div
+      class="t-input__suffix"
+    >
+      元
+    </div>
+  </div>
 </div>
 `;
 
@@ -265,7 +285,7 @@ exports[`Input password demo works fine 1`] = `
     class="t-input t-size-m t-input--prefix t-input--suffix"
   >
     <span
-      class="t-input__prefix"
+      class="t-input__prefix t-input__prefix-icon"
     >
       <svg
         class="t-icon t-icon-lock-on"
@@ -292,7 +312,7 @@ exports[`Input password demo works fine 1`] = `
       type="password"
     />
     <span
-      class="t-input__suffix"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
         class="t-icon t-icon-browse-off t-input__suffix-clear"
@@ -319,7 +339,7 @@ exports[`Input password demo works fine 1`] = `
     class="t-input t-size-m t-input--prefix t-input--suffix"
   >
     <span
-      class="t-input__prefix"
+      class="t-input__prefix t-input__prefix-icon"
     >
       <svg
         class="t-icon t-icon-lock-on"
@@ -346,7 +366,7 @@ exports[`Input password demo works fine 1`] = `
       type="password"
     />
     <span
-      class="t-input__suffix"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
         class="t-icon t-icon-browse-off t-input__suffix-clear"

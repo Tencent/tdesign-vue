@@ -54,10 +54,13 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
       const iconClassName = `${prefix}-tag__icon-close`;
       if (this.global.closeIcon) {
         return this.global.closeIcon((component, b) => {
-          const tProps = (typeof b === 'object' && ('attrs' in b)) ? b.attrs : {};
+          const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
           return this.$createElement(component, {
             props: { ...tProps },
             class: iconClassName,
+            nativeOn: {
+              click: this.handleClose,
+            },
           });
         });
       }
@@ -70,13 +73,18 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
     const closeIcon = this.getCloseIcon();
     // 标签内容
     const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
+    const tagContentWithMaxWidth = (
+      <span style={this.tagStyle} class={`${name}--text`}>
+        {tagContent}
+      </span>
+    );
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
 
     return (
       <span class={this.tagClass} onClick={this.handleClick}>
         {icon}
-        {this.maxWidth ? <span style={this.tagStyle} class={`${name}--text`}>{tagContent}</span> : tagContent}
+        {this.maxWidth ? tagContentWithMaxWidth : tagContent}
         {closeIcon}
       </span>
     );

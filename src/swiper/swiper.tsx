@@ -43,13 +43,9 @@ export default Vue.extend({
       },
     ];
     return (
-      <div
-        class={ swiperClass }
-        onMouseenter={ this.clearTimer }
-        onMouseleave={ this.setTimer }
-      >
-        { this.renderContent() }
-        { this.renderTrigger() }
+      <div class={swiperClass} onMouseenter={this.clearTimer} onMouseleave={this.setTimer}>
+        {this.renderContent()}
+        {this.renderTrigger()}
       </div>
     );
   },
@@ -59,20 +55,20 @@ export default Vue.extend({
       if (this.direction === 'vertical') {
         wraperStyles = {
           height: `${this.items.length * 100}%`,
-          transform: `translate3d(0,${(-this.index * 100) / this.items.length}%,0)`,
+          transform: `translate(0,${(-this.index * 100) / this.items.length}%)`,
           transition: `transform ${this.duration / 1000}s`,
         };
       } else {
         wraperStyles = {
           width: `${this.items.length * 100}%`,
-          transform: `translate3d(${(-this.index * 100) / this.items.length}%,0,0)`,
+          transform: `translate(${(-this.index * 100) / this.items.length}%,0)`,
           transition: `transform ${this.duration / 1000}s`,
         };
       }
       return (
         <div class={`${name}__content`}>
           <div class={`${name}__swiper-wrap--${this.direction}`} style={wraperStyles}>
-            { this.items }
+            {this.items}
           </div>
         </div>
       );
@@ -82,14 +78,9 @@ export default Vue.extend({
       const index = this.index % this.items.length;
       return (
         <ul class="t-swiper__trigger-wrap">
-          {
-            this.items.map((_: VNode, i: number) => (
-              <li
-                class={i === index ? 't-swiper__trigger--active' : ''}
-                onclick={() => this.swiperTo(i, 'touch')}
-              ></li>
-            ))
-          }
+          {this.items.map((_: VNode, i: number) => (
+            <li class={i === index ? 't-swiper__trigger--active' : ''} onclick={() => this.swiperTo(i, 'touch')}></li>
+          ))}
         </ul>
       );
     },
@@ -117,10 +108,12 @@ export default Vue.extend({
 
     setTimer() {
       if (this.interval > 0) {
-        this.timeoutHandler = Number(setTimeout(() => {
-          this.clearTimer();
-          this.swiperToNext('autoplay');
-        }, this.interval));
+        this.timeoutHandler = Number(
+          setTimeout(() => {
+            this.clearTimer();
+            this.swiperToNext('autoplay');
+          }, this.interval),
+        );
       }
     },
 

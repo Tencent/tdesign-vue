@@ -28,3 +28,4 @@ cypress.json
 Dockerfile
 robotMsg.json
 package-lock.json
+.gitlogmap

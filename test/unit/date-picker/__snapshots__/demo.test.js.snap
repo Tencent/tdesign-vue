@@ -5,7 +5,7 @@ exports[`DatePicker base demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m"
+    class="t-date-picker t-size-m"
     theme="primary"
   >
     <div
@@ -729,7 +729,7 @@ exports[`DatePicker base demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -757,7 +757,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m"
+    class="t-date-picker t-size-m"
   >
     <div
       class="t-popup__reference t-date-picker__popup-reference"
@@ -2183,7 +2183,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -2212,7 +2212,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
     class="tdesign-demo-item--datepicker"
   >
     <div
-      class="t-date-picker t-input t-size-m"
+      class="t-date-picker t-size-m"
       theme="primary"
     >
       <div
@@ -3649,7 +3649,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
               type="text"
             />
             <span
-              class="t-input__suffix"
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
                 class="t-icon t-icon-calendar"
@@ -3675,7 +3675,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
     class="tdesign-demo-item--datepicker"
   >
     <div
-      class="t-date-picker t-input t-size-m"
+      class="t-date-picker t-size-m"
       theme="primary"
     >
       <div
@@ -4419,7 +4419,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
               type="text"
             />
             <span
-              class="t-input__suffix"
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
                 class="t-icon t-icon-calendar"
@@ -4448,7 +4448,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m"
+    class="t-date-picker t-size-m"
   >
     <div
       class="t-popup__reference t-date-picker__popup-reference"
@@ -5884,7 +5884,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -5912,7 +5912,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m"
+    class="t-date-picker t-size-m"
   >
     <div
       class="t-popup__reference t-date-picker__popup-reference"
@@ -7323,7 +7323,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -7349,7 +7349,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
   <br />
    
   <div
-    class="t-date-picker t-input t-size-m"
+    class="t-date-picker t-size-m"
     style="width: 350px;"
     theme="primary"
   >
@@ -8795,7 +8795,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-time"
@@ -8828,7 +8828,7 @@ exports[`DatePicker month demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m t-date-picker--month-picker"
+    class="t-date-picker t-size-m t-date-picker--month-picker"
   >
     <div
       class="t-popup__reference t-date-picker__popup-reference"
@@ -9120,7 +9120,7 @@ exports[`DatePicker month demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
@@ -9148,7 +9148,7 @@ exports[`DatePicker year demo works fine 1`] = `
   class="tdesign-demo-item--datepicker"
 >
   <div
-    class="t-date-picker t-input t-size-m t-date-picker--month-picker"
+    class="t-date-picker t-size-m t-date-picker--month-picker"
   >
     <div
       class="t-popup__reference t-date-picker__popup-reference"
@@ -9413,7 +9413,7 @@ exports[`DatePicker year demo works fine 1`] = `
             type="text"
           />
           <span
-            class="t-input__suffix"
+            class="t-input__suffix t-input__suffix-icon"
           >
             <svg
               class="t-icon t-icon-calendar"
