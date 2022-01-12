@@ -270,7 +270,7 @@ export default Vue.extend({
         visible={visible}
         trigger={popupProps?.trigger || 'click'}
         expandAnimation={true}
-        {...popupProps}
+        props={popupProps}
         content={() => (
           <panel
             empty={empty}
