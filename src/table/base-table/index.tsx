@@ -36,9 +36,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     provider: {
       type: Object,
       default() {
-        return {
-          renderRows(): void {},
-        };
+        return {};
       },
     },
   },

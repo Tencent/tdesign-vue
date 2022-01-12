@@ -28,7 +28,7 @@ Vue.config.ignoredElements = [/^td-/];
 Vue.component('Codesandbox', Codesandbox);
 
 const router = new VueRouter({
-  mode: process.env.NODE_ENV === 'preview' ? 'hash' : 'history',
+  mode: 'history',
   routes,
 });
 
