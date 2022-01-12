@@ -3,7 +3,7 @@
     <section class="t-skeleton-demo-card">
       <div class="header">网页（使用 rowCol）</div>
       <div class="content">
-        <t-skeleton :rowCol="rowCol" :loading="loading"></t-skeleton>
+        <t-skeleton :rowCol="rowCol"></t-skeleton>
       </div>
     </section>
 
@@ -12,8 +12,8 @@
       <div class="content">
         <ul class="t-skeleton-demo-list">
           <li v-for="i in 3" :key="i">
-            <t-skeleton class="avatar" theme="avatar" :loading="loading"></t-skeleton>
-            <t-skeleton class="paragraph" theme="paragraph" :loading="loading"></t-skeleton>
+            <t-skeleton class="avatar" theme="avatar"></t-skeleton>
+            <t-skeleton class="paragraph" theme="paragraph"></t-skeleton>
           </li>
         </ul>
       </div>
