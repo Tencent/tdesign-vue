@@ -3334,32 +3334,17 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
               <td class="" key="platform" length="4">Vue(PC)</td>
               <td class="" key="property" length="4">A</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
-            </tr>
             <tr rowKey="property" class="" key="B">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="type" length="4">String</td>
               <td class="" key="platform" length="4">React(PC)</td>
               <td class="" key="property" length="4">B</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
-            </tr>
             <tr rowKey="property" class="" key="C">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="type" length="4">Object</td>
               <td class="" key="platform" length="4">Miniprogram</td>
               <td class="" key="property" length="4">C</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -10207,7 +10192,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
               <td class="" key="email" length="3" style="overflow:hidden;">zcroson5@virginia.edu</td>
             </tr>
             <tr>
-              <td colSpan="3" class="" key="async-loading-row" length="1">
+              <td colspan="3" class="t-table__row--full t-table__row-last-full-row">
                 <div class="t-table__async-loading t-is-loading">
                   <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
                       <foreignObject x="1" y="1" width="12" height="12">
@@ -10663,18 +10648,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="description" length="6">隐藏展开图标</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试1</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny;peter</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">隐藏展开图标</p>
-                </div>
-              </td>
-            </tr>
             <tr rowKey="id" class="" key="2">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="instance" length="6" style="overflow:hidden;">集群测试2</td>
@@ -10687,7 +10660,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
             <tr>
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
+              <td colspan="5">
                 <div class="more-detail">
                   <p class="title"><b>集群名称:</b></p>
                   <p class="content">集群测试2</p><br>
@@ -10709,18 +10682,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="description" length="6">自定义图标</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试3</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">自定义图标</p>
-                </div>
-              </td>
-            </tr>
             <tr rowKey="id" class="" key="4">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="instance" length="6" style="overflow:hidden;">集群测试4</td>
@@ -10731,18 +10692,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">test</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试4</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">peter</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">test</p>
-                </div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -12471,11 +12420,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 0 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="1">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12490,11 +12434,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               </td>
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">important.</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 1 号</div>
-              </td>
             </tr>
             <tr rowKey="key" class="" key="2">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
@@ -12511,11 +12450,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 2 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="3">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12531,11 +12465,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 3 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="4">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12550,11 +12479,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               </td>
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 4 号</div>
-              </td>
             </tr>
           </tbody>
         </table>

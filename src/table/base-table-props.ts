@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-25 11:57:19
+ * updated at 2022-01-10 09:31:10
  * */
 
 import { TdBaseTableProps } from '../table/type';
@@ -27,10 +27,6 @@ export default {
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
     default: '',
-  },
-  /** 展开行内容，可自定义，泛型 T 指表格数据类型 */
-  expandedRow: {
-    type: [String, Function] as PropType<TdBaseTableProps['expandedRow']>,
   },
   /** 首行内容 */
   firstFullRow: {
