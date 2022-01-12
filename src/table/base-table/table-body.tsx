@@ -1,5 +1,6 @@
 import Vue, { VNode } from 'vue';
 import get from 'lodash/get';
+import camelCase from 'lodash/camelCase';
 import { emitEvent } from '../../utils/event';
 import { prefix } from '../../config';
 import baseTableProps from '../base-table-props';
@@ -28,9 +29,7 @@ export default Vue.extend({
     provider: {
       type: Object,
       default() {
-        return {
-          renderRows(): void {},
-        };
+        return {};
       },
     },
     current: {
@@ -129,13 +128,13 @@ export default Vue.extend({
       return props;
     },
 
-    renderFullRow(type: 'firstFullRow' | 'lastFullRow') {
-      const firstFullRowNode = renderTNodeJSX(this, type);
-      if (firstFullRowNode) {
+    renderFullRow(type: 'first-full-row' | 'last-full-row') {
+      const fullRowNode = renderTNodeJSX(this, camelCase(type));
+      if (fullRowNode) {
         return (
           <tr>
-            <td colspan={this.columns.length} class={`${prefix}-table__row--full`}>
-              {firstFullRowNode}
+            <td colspan={this.columns.length} class={`${prefix}-table__row--full ${prefix}-table__row-${type}`}>
+              {fullRowNode}
             </td>
           </tr>
         );
@@ -148,7 +147,6 @@ export default Vue.extend({
         data,
         rowClassName,
         rowKey,
-        provider,
         $scopedSlots: scopedSlots,
         rowspanAndColspan,
         selectedRowKeys,
@@ -211,19 +209,15 @@ export default Vue.extend({
         rowVnode = <TableRow rowKey={this.rowKey} {...props} />;
         // 按行渲染
         body.push(rowVnode);
-
-        provider.renderRows({
-          rows: body,
-          row,
-          rowIndex: index,
-          columns: this.columns,
-        });
+        // 渲染展开行
+        const expandedRow = this.provider.renderExpandedRow?.({ row, index });
+        expandedRow && (body = body.concat(expandedRow));
       });
-      const firstRow = this.renderFullRow('firstFullRow');
+      const firstRow = this.renderFullRow('first-full-row');
       if (firstRow) {
         body = [firstRow].concat(body);
       }
-      const lastRow = this.renderFullRow('lastFullRow');
+      const lastRow = this.renderFullRow('last-full-row');
       if (lastRow) {
         body = body.concat(lastRow);
       }
@@ -233,7 +227,7 @@ export default Vue.extend({
 
   render() {
     if (this.provider.sortOnRowDraggable) {
-      const className = `${prefix}-table__body ${this.provider.dragging ? 'dragging' : ''}`;
+      const className = `${prefix}-table__body ${this.provider.dragging ? `${prefix}-table__body--dragging` : ''}`;
       return (
         <transition-group class={className} tag="tbody">
           {this.renderBody()}
