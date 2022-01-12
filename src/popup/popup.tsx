@@ -13,7 +13,6 @@ import { PopupVisibleChangeContext } from './type';
 import { Styles, ClassName } from '../common';
 import setStyle from '../utils/set-style';
 
-type popperOptionsType = Options & any;
 const stop = (e: MouseEvent) => e.stopPropagation();
 const name = `${prefix}-popup`;
 const placementMap = {
@@ -223,12 +222,14 @@ export default Vue.extend({
         }
         popperElm.style.display = 'none';
       }
-      const popperOptions = {
+      const popperOptions: Options = {
         placement,
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
-      } as popperOptionsType;
+        modifiers: [],
+        strategy: 'absolute',
+      };
       if (getIEVersion() <= 9) {
         popperOptions.modifiers = [
           {
