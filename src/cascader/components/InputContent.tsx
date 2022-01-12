@@ -113,7 +113,9 @@ export default mixins(cascaderGglobalConfig).extend({
     document.addEventListener('click', (event) => {
       this.outerClickListenerFn(event);
     });
-    this.getInputWidth();
+    setTimeout(() => {
+      this.getInputWidth();
+    });
   },
   beforeDestroy() {
     document.removeEventListener('click', (event) => {
