@@ -115,7 +115,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
           [`${prefix}-table--bordered`]: this.bordered,
           [`${prefix}-table--striped`]: this.stripe,
           [`${prefix}-table--hoverable`]: this.hover,
-          [`${prefix}-table__row--draggable`]: this.provider.sortOnRowDraggable || this.provider.showDragCol,
+          [`${prefix}-table__row--draggable`]: this.provider.sortOnDraggable,
           [`${prefix}-table-table--align-top`]: this.verticalAlign === 'top',
           [`${prefix}-table-table--align-bottom`]: this.verticalAlign === 'bottom',
           [`${prefix}-table__cell--fixed`]: this.hasFixedColumns,

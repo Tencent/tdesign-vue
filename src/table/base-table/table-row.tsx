@@ -161,16 +161,10 @@ export default Vue.extend({
           const target = e.target as HTMLInputElement;
           const father = target.dataset.colkey === 'move-icon' ? target : target.closest('td');
           if (father.dataset.colkey === 'move-icon') {
-            emitEvent(this, emitEventName, {
-              ...params,
-              e,
-            });
+            emitEvent(this, emitEventName, { ...params, e });
           }
         } else {
-          emitEvent(this, emitEventName, {
-            ...params,
-            e,
-          });
+          emitEvent(this, emitEventName, { ...params, e });
         }
       };
     });
@@ -183,7 +177,7 @@ export default Vue.extend({
       on,
     };
 
-    if (this.provider.sortOnRowDraggable || this.provider.showDragCol) {
+    if (this.provider.sortOnDraggable) {
       (trProps.attrs as any).draggable = true;
     }
     return <tr {...trProps}>{this.renderRow()}</tr>;

@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import { MoveIcon } from 'tdesign-icons-vue';
-import { DataType, TdPrimaryTableProps } from '../../type';
+import { DataType, TdPrimaryTableProps, TableRowData } from '../../type';
 import { prefix } from '../../../config';
 import { emitEvent } from '../../../utils/event';
 
 export interface RowDragEventArgs {
   index: number;
-  row: any;
+  row: TableRowData;
   targetElm: HTMLElement;
 }
 

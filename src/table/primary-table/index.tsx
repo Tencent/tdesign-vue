@@ -94,6 +94,8 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
           renderExpandedRow: this.expandedRow ?? this.$scopedSlots.expandedRow ? this.renderExpandedRow : undefined,
           sortOnRowDraggable: this.sortOnRowDraggable,
           showDragCol: this.showDragCol,
+          // 表格支持拖拽, 统一变量
+          sortOnDraggable: this.sortOnRowDraggable || this.showDragCol,
           dragging: this.dragging,
         },
         // this.hasFilterCondition is from mixins/filter.tsx
