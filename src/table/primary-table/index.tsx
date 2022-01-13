@@ -13,9 +13,9 @@ import rowDraggable from './mixins/row-draggable';
 import filter from './mixins/filter';
 import showColumns from './mixins/show-columns';
 import asyncLoadingMixin from './mixins/async-loading';
-import { RenderExpandRow } from '../util/interface';
 import { PageInfo } from '../../pagination/type';
 import { emitEvent } from '../../utils/event';
+import { renderTNodeJSX } from '../../utils/render-tnode';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
@@ -27,9 +27,6 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     ...primaryTableProps,
   },
   computed: {
-    rehandleData(): Array<DataType> {
-      return this.asyncLoadingHandler([...this.data]);
-    },
     rehandleColumns(): Array<PrimaryTableCol> {
       let columns = this.columns.map((col) => ({ ...col }));
       columns = this.getShowColumns([...this.columns]);
@@ -50,14 +47,19 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     }
   },
   methods: {
-    // 提供给 BaseTable 添加渲染 Rows 方法
-    renderRows(params: RenderExpandRow): void {
-      const { row, rowIndex, rows } = params;
-      if (row.colKey === 'async-loading-row') {
-        rows.splice(rowIndex, 1, this.renderAsyncLoadingRow());
-        return;
-      }
-      this.renderExpandedRow(params);
+    // 最后一行，通行数据，可能是异步加载状态，可能是其他
+    renderLastFullRow() {
+      const lastFullRow = renderTNodeJSX(this, 'lastFullRow');
+      const asyncLoadingNode = this.renderAsyncLoadingRow();
+      const nodes = [lastFullRow, asyncLoadingNode].filter((v) => ![undefined, null, false].includes(v));
+      if (nodes.length === 0) return null;
+      if (nodes.length === 1) return nodes[0];
+      return (
+        <div>
+          {nodes[0]}
+          {nodes[1]}
+        </div>
+      );
     },
   },
   render() {
@@ -87,25 +89,21 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     const baseTableProps = {
       props: {
         ...$props,
-        data: this.rehandleData,
         columns: rehandleColumns,
         provider: {
-          renderRows: this.renderRows,
+          renderExpandedRow: this.expandedRow ?? this.$scopedSlots.expandedRow ? this.renderExpandedRow : undefined,
           sortOnRowDraggable: this.sortOnRowDraggable,
           showDragCol: this.showDragCol,
           dragging: this.dragging,
         },
         // this.hasFilterCondition is from mixins/filter.tsx
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
+        lastFullRow: this.renderLastFullRow,
         empty: this.empty,
       },
       scopedSlots,
       on,
     };
-    // 存在过滤条件，查询结果为空时，不显示空数据节点，有过滤结果行即可
-    if (this.hasFilterCondition) {
-      baseTableProps.props.empty = null;
-    }
     // TODO: 可使用插槽 `topContent` 自定义显示列
     return <BaseTable {...baseTableProps} />;
   },

@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-25 11:57:19
+ * updated at 2022-01-10 09:31:10
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
@@ -37,10 +37,6 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default ''
    */
   empty?: string | TNode;
-  /**
-   * 展开行内容，可自定义，泛型 T 指表格数据类型
-   */
-  expandedRow?: string | TNode<{ row: T; index: number }>;
   /**
    * 首行内容
    */
@@ -280,7 +276,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   showColumnController?: boolean;
   /**
-   * 【开发中】是否显示为通过拖拽图标进行排序
+   * 【讨论中-待定】是否显示为通过拖拽图标进行排序
    * @default false
    */
   showDragCol?: boolean;
@@ -373,7 +369,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   title?: string | TNode<{ col: PrimaryTableCol; colIndex: number }>;
   /**
-   * 行选中有两种模式：单选和多选
+   * 行选中有两种模式：单选和多选。`colKey` 值为 `row-select` 时，表示当前列选中项， `type=single/multiple` 有效
    * @default single
    */
   type?: 'single' | 'multiple';

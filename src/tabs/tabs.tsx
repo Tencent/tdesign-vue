@@ -27,6 +27,12 @@ export default (Vue as VueConstructor<TabVue>).extend({
 
   props: { ...props },
 
+  provide(): { parent: TabVue } {
+    return {
+      parent: this,
+    };
+  },
+
   data() {
     return {
       panels: [] as Array<InstanceType<typeof TTabPanel>>,
@@ -53,7 +59,7 @@ export default (Vue as VueConstructor<TabVue>).extend({
   },
 
   methods: {
-    updatePanels() {
+    updatePanels({ force = false } = {}) {
       if (!this.listPanels) {
         this.panels = this.panels || [];
         return;
@@ -63,7 +69,7 @@ export default (Vue as VueConstructor<TabVue>).extend({
         .filter(Boolean)
         .filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
       const isUnchange = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
-      if (isUnchange()) return;
+      if (isUnchange() && !force) return;
       this.panels = newPanels;
     },
     onAddTab(e: MouseEvent) {

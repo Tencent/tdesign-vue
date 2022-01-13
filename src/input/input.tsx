@@ -109,14 +109,13 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const classes = [
       name,
       CLASSNAMES.SIZE[this.size] || '',
-      `${name}__inner`,
       {
         [CLASSNAMES.STATUS.disabled]: this.disabled,
         [CLASSNAMES.STATUS.focused]: this.focused,
         [`${prefix}-is-${this.status}`]: this.status,
         [`${name}--prefix`]: prefixIcon || labelContent,
         [`${name}--suffix`]: suffixIcon || suffixContent,
-        [`${name}__inner--focused`]: this.focused,
+        [`${name}--focused`]: this.focused,
       },
     ];
     return (
@@ -131,6 +130,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         <input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           ref="refInputElem"
+          class={`${name}__inner`}
           value={this.value}
           onInput={this.handleInput}
           onCompositionend={this.onCompositionend}

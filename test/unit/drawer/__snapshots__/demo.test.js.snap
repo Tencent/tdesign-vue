@@ -957,9 +957,10 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m t-input__inner"
+            class="t-input t-size-m"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入"
               type="text"
             />
@@ -974,9 +975,10 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m t-input__inner"
+            class="t-input t-size-m"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入"
               type="text"
             />
@@ -991,9 +993,10 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m t-input__inner"
+            class="t-input t-size-m"
           >
             <input
+              class="t-input__inner"
               placeholder="请输入"
               type="text"
             />

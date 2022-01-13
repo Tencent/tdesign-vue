@@ -146,7 +146,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             || (this.multiple && Array.isArray(this.value) && this.value.length)),
       );
     },
-    showArrow(): boolean {
+    showRightArrow(): boolean {
+      if (!this.showArrow) return false;
       return (
         !this.clearable
         || !this.isHover
@@ -291,6 +292,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
   },
   methods: {
     getRealOptions(options: SelectOption[]): Array<TdOptionProps> {
+      let result = [];
       if (this.isGroupOption) {
         let arr: TdOptionProps[] = [];
         options.forEach((item) => {
@@ -298,9 +300,15 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             arr = arr.concat(item.children);
           }
         });
-        return arr;
+        result = arr;
+      } else {
+        result = [...options];
       }
-      return [...options];
+      // support ['A', 'B', 'C'] this type of options
+      return result.map((item) => {
+        if (typeof item !== 'object') return { label: item, value: item };
+        return item;
+      });
     },
     multiLimitDisabled(value: string | number) {
       if (this.multiple && this.max) {
@@ -641,7 +649,33 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         });
       }
     },
+
+    renderContent() {
+      const { loading, showCreateOption, displayOptions } = this;
+      const children = renderTNodeJSX(this, 'default');
+      const emptySlot = this.getEmpty();
+      const loadingTextSlot = this.getLoadingText();
+      return (
+        <div slot="content">
+          {renderTNodeJSX(this, 'panelTopContent')}
+          <ul v-show={showCreateOption} class={`${name}__create-option`}>
+            <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
+          </ul>
+          {loading && <li class={this.tipsClass}>{loadingTextSlot}</li>}
+          {!loading && !displayOptions.length && !showCreateOption && <li class={this.emptyClass}>{emptySlot}</li>}
+          {!this.hasOptions && displayOptions.length && !loading ? (
+            this.renderDataWithOptions()
+          ) : (
+            <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
+              {children}
+            </ul>
+          )}
+          {renderTNodeJSX(this, 'panelBottomContent')}
+        </div>
+      );
+    },
   },
+
   render(): VNode {
     const {
       classes,
@@ -655,19 +689,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       showFilter,
       selectedSingle,
       filterPlaceholder,
-      tipsClass,
-      loading,
-      loadingText,
-      emptyClass,
-      hasOptions,
       realLabel,
-      showCreateOption,
-      displayOptions,
     } = this;
-    const children = renderTNodeJSX(this, 'default');
     const prefixIconSlot = renderTNodeJSX(this, 'prefixIcon');
-    const emptySlot = this.getEmpty();
-    const loadingTextSlot = this.getLoadingText();
     const placeholderText = this.getPlaceholderText();
     return (
       <div ref="select" class={`${name}__wrap`}>
@@ -738,26 +762,13 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 onEnter={this.enter}
               />
             )}
-            {this.showArrow && !this.showLoading && (
+            {this.showRightArrow && !this.showLoading && (
               <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
             {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
           </div>
-          <div slot="content">
-            <ul v-show={showCreateOption} class={`${name}__create-option`}>
-              <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
-            </ul>
-            {loading && <li class={tipsClass}>{loadingTextSlot || loadingText}</li>}
-            {!loading && !displayOptions.length && !showCreateOption && <li class={emptyClass}>{emptySlot}</li>}
-            {!hasOptions && displayOptions.length && !loading ? (
-              this.renderDataWithOptions()
-            ) : (
-              <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
-                {children}
-              </ul>
-            )}
-          </div>
+          {this.renderContent()}
         </Popup>
       </div>
     );

@@ -12,7 +12,7 @@ exports[`Tabs :props :addable 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -35,7 +35,7 @@ exports[`Tabs :props :defaultValue 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -58,7 +58,7 @@ exports[`Tabs :props :disabled 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -104,7 +104,7 @@ exports[`Tabs :props :size 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -127,7 +127,7 @@ exports[`Tabs :props :theme 1`] = `
       </div>
       <div class="t-tabs__nav-container t-tabs__nav--card t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);"></div>
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);"></div>
         </div>
       </div>
     </div>
@@ -148,7 +148,7 @@ exports[`Tabs :props :value 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -171,7 +171,7 @@ exports[`Tabs additional function no valid panel 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
           </div>
         </div>
@@ -194,7 +194,7 @@ exports[`Tabs additional function panel default slot:function | panel slot:funct
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
             <div class="t-tabs__nav-item t-size-m">
               <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
@@ -226,7 +226,7 @@ exports[`Tabs additional function panel:default && panel:panel 1`] = `
       </div>
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
-          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate3d(0px, 0, 0);">
+          <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
             <div class="t-tabs__bar t-is-top"></div>
             <div class="t-tabs__nav-item t-size-m">
               <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
