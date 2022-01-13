@@ -18,7 +18,7 @@ import {
   getToday,
   firstUpperCase,
   OptionsType,
-} from '../utils';
+} from '../../_common/js/date-picker/utils';
 
 export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   name: 'TDatePanel',
@@ -77,7 +77,7 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
         default:
           break;
       }
-      const start = (type === 'date' || type === mode) ? value : new Date(year, month);
+      const start = type === 'date' || type === mode ? value : new Date(year, month);
       return flagActive(data, { start, type });
     },
   },
