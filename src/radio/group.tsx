@@ -64,11 +64,15 @@ export default Vue.extend({
       });
     }
 
-    const groupClass = [`${name}`, SIZE_CLASSNAMES[this.size], {
-      [`${name}__outline`]: this.variant === 'outline',
-      [`${name}--filled`]: this.variant.includes('filled'),
-      [`${name}--primary-filled`]: this.variant === 'primary-filled',
-    }];
+    const groupClass = [
+      `${name}`,
+      SIZE_CLASSNAMES[this.size],
+      {
+        [`${name}__outline`]: this.variant === 'outline',
+        [`${name}--filled`]: this.variant.includes('filled'),
+        [`${name}--primary-filled`]: this.variant === 'primary-filled',
+      },
+    ];
     if (this.variant.includes('filled')) {
       children && children.push(<div style={this.barStyle} class={`${name}__bg-block`}></div>);
     }
