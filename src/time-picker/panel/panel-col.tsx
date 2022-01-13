@@ -274,7 +274,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
   },
   render() {
     return (
-      <div class={`${componentName}__panel-body`} col={`${this.cols.length}`}>
+      <div class={`${componentName}__panel-body`} col-num={`${this.cols.length}`}>
         {this.renderActiveMask()}
         {this.renderScrollers()}
       </div>
