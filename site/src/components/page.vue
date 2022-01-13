@@ -19,20 +19,29 @@
 import siteConfig from '../../site.config.js';
 import packageJson from '@/package.json';
 
+const currentVersion = packageJson.version.replace(/\./g, '_');
 const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
 
-const historyVersion = [];
 const registryUrl = 'https://mirrors.tencent.com/npm/tdesign-vue';
+
+// 过滤小版本号
+export function filterVersions(versions = [], deep = 1) {
+  const versionMap = {};
+
+  versions.forEach((v) => {
+    const nums = v.split('.');
+    versionMap[nums[deep]] = v;
+  });
+
+  return Object.values(versionMap);
+}
 
 export default {
   data() {
     return {
       loaded: false,
-      version: packageJson.version,
-      options: [
-        { value: packageJson.version, label: packageJson.version },
-        ...historyVersion.map((v) => ({ value: v, label: v })),
-      ],
+      version: currentVersion,
+      options: [{ value: packageJson.version.replace(/\./g, '_'), label: packageJson.version }],
     };
   },
 
@@ -66,7 +75,7 @@ export default {
             if (v === packageJson.version) return false;
             const nums = v.split('.');
             if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1) return false;
-            options.unshift({ label: v, value: v });
+            options.unshift({ label: v, value: v.replace(/\./g, '_') });
           });
           this.options.push(...options);
         });
@@ -78,7 +87,7 @@ export default {
       });
     },
     changeVersion(version) {
-      if (version === packageJson.version) return;
+      if (version === currentVersion) return;
       const historyUrl = `//${version}-tdesign-vue.surge.sh`;
       window.open(historyUrl, '_blank');
     },
