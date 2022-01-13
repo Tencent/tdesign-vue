@@ -6,7 +6,7 @@
  */
 
 import { DirectiveBinding } from 'vue/types/options';
-import setStyle from './set-style';
+import setStyle from '../_common/js/utils/set-style';
 import { prefix } from '../config';
 
 const Ripple = {
@@ -21,9 +21,11 @@ const Ripple = {
     let count = 0;
 
     el.addEventListener('pointerdown', (e: PointerEvent) => {
-      if (el.classList.contains(`${prefix}-is-active`)
-      || el.classList.contains(`${prefix}-is-disabled`)
-      || el.classList.contains(`${prefix}-is-checked`)) return;
+      if (
+        el.classList.contains(`${prefix}-is-active`)
+        || el.classList.contains(`${prefix}-is-disabled`)
+        || el.classList.contains(`${prefix}-is-checked`)
+      ) return;
 
       if (e.button !== 0) return; // 非鼠标左键点击；避免出现动画之后不消失的bug
 
@@ -38,8 +40,8 @@ const Ripple = {
         bg = cssVariable;
       }
 
-      const elBorder = parseInt((getComputedStyle(el).borderWidth).replace('px', ''), 10);
-      const border = (elBorder > 0) ? elBorder : 0;
+      const elBorder = parseInt(getComputedStyle(el).borderWidth.replace('px', ''), 10);
+      const border = elBorder > 0 ? elBorder : 0;
       const width = el.offsetWidth;
       const height = el.offsetHeight;
       const style = getComputedStyle(el);
@@ -125,7 +127,7 @@ const Ripple = {
           // 由于容器的尺寸可能会发生变更，因此在动画结束之后，手动移除
           el.removeChild(rippleContainer);
           hasCreateContainer = false;
-        }, (period * 2) + 100);
+        }, period * 2 + 100);
       };
       el.addEventListener('pointerup', handleClearRipple, false);
       el.addEventListener('pointerleave', handleClearRipple, false); // 处理鼠标按下不松手直接离开点击block的情况..
