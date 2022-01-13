@@ -5,6 +5,27 @@ toc: false
 docClass: timeline
 ---
 
+## 0.33.1 `2022-01-13`
+
+### Bug Fixes
+
+* Calendar: 修复月份下拉框组件参数透传错误的问题，[pr 196](https://github.com/Tencent/tdesign-vue/pull/196)，[@PsTiu](https://github.com/PsTiu)
+* Cascader: 修复可过滤状态的样式异常 [pr 228](https://github.com/Tencent/tdesign-vue/pull/228)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Table: [@realyuyanan](https://github.com/realyuyanan)，[@chaishi](https://github.com/chaishi)
+  - 修复固定表头没有对齐的问题，[#206](https://github.com/Tencent/tdesign-vue/issues/206)，[pr 195](https://github.com/Tencent/tdesign-vue/pull/195)
+  - 修复无数据时，表格展示高度与 `height` 设置不一致的问题，[#194](https://github.com/Tencent/tdesign-vue/issues/194)
+  - 修复异步拉取数据 `maxHeight` 设置不生效的问题，[#134](https://github.com/Tencent/tdesign-vue/issues/134)，[pr 191](https://github.com/Tencent/tdesign-vue/pull/191)
+  - 修复表格筛选结果为空时，未显示“暂无数据”的问题，[#178](https://github.com/Tencent/tdesign-vue/issues/178)
+* Tag: 修复自定义图标时，点击关闭事件失效的问题，[#198](https://github.com/Tencent/tdesign-vue/issues/198)，[@chaishi](https://github.com/chaishi)
+* Datepicker: 修复周起始为月最后一天时，周显示错误的问题，[pr 117](https://github.com/Tencent/tdesign-common/pull/117)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Pagination: 去除切换分页时的背景变化动效，减少跨多页切换时的闪烁影响，[#167](https://github.com/Tencent/tdesign-vue/issues/167)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Select: 修复禁用状态下下拉 icon 展示问题，[pr 113](https://github.com/Tencent/tdesign-common/pull/113)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+### Features
+
+* Table: 为了保证每次展开的数据最新，展开行不再进行预渲染；异步加载功能重构，[pr 197](https://github.com/Tencent/tdesign-vue/pull/197)，[@chaishi](https://github.com/chaishi)
+* Alert: 增加内容区折行展开和收起动效，[pr 123](https://github.com/Tencent/tdesign-common/pull/123)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Skeleton: 新增骨架屏组件，详情请访问 [官网](https://tdesign.tencent.com/vue/components/skeleton) 体验
 
 ## 0.33.0 `2022-01-06`
 
