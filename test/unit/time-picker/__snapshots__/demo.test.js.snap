@@ -28,6 +28,7 @@ exports[`Time-picker base demo works fine 1`] = `
             >
               <div
                 class="t-time-picker__panel-body"
+                col-num="3"
               >
                 <div
                   class="t-time-picker__panel-body-active-mask"
@@ -891,6 +892,7 @@ exports[`Time-picker base demo works fine 1`] = `
             >
               <div
                 class="t-time-picker__panel-body"
+                col-num="3"
               >
                 <div
                   class="t-time-picker__panel-body-active-mask"
