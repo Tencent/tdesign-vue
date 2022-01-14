@@ -482,7 +482,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
-                  {...this.controllerConfigData.year.selecteProps}
+                  {...this.controllerConfigData.month.selecteProps}
                   onChange={this.monthChange}
                 >
                   {this.monthSelectOptionList.map((item) => (

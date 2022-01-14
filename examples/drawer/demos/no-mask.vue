@@ -1,6 +1,13 @@
 <template>
   <div>
-    <t-drawer :visible="visible" @close="handleClose" :showOverlay="false" :onConfirm="handleClose" header="抽屉标题">
+    <t-drawer
+      :visible="visible"
+      :showOverlay="false"
+      :onConfirm="handleClose"
+      :preventScrollThrough="false"
+      header="抽屉标题"
+      @close="handleClose"
+    >
       <p>抽屉的内容</p>
     </t-drawer>
 

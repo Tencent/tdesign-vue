@@ -26,23 +26,25 @@ export default {
   },
 
   async mounted() {
+    // eslint-disable-next-line
+    const self = this;
     try {
       const { registerSW } = await import('virtual:pwa-register');
-      this.updateSW = registerSW({
+      self.updateSW = registerSW({
         immediate: true,
         onOfflineReady() {
-          this.offlineReady = true;
-          this.onOfflineReadyFn();
+          self.offlineReady = true;
+          self.onOfflineReadyFn();
         },
         onNeedRefresh() {
-          this.needRefresh = true;
-          this.onNeedRefreshFn();
+          self.needRefresh = true;
+          self.onNeedRefreshFn();
         },
         onRegistered(swRegistration) {
-          swRegistration && this.handleSWManualUpdates(swRegistration);
+          swRegistration && self.handleSWManualUpdates(swRegistration);
         },
         onRegisterError(e) {
-          this.handleSWRegisterError(e);
+          self.handleSWRegisterError(e);
         },
       });
     } catch {

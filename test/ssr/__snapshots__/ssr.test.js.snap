@@ -652,7 +652,7 @@ exports[`ssr snapshot test renders ./examples/breadcrumb/demos/icon.vue correctl
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/breadcrumb/demos/option.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./examples/breadcrumb/demos/options.vue correctly 1`] = `
 <div class="t-breadcrumb">
   <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
   <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-oveflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
@@ -3334,32 +3334,17 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
               <td class="" key="platform" length="4">Vue(PC)</td>
               <td class="" key="property" length="4">A</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
-            </tr>
             <tr rowKey="property" class="" key="B">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="type" length="4">String</td>
               <td class="" key="platform" length="4">React(PC)</td>
               <td class="" key="property" length="4">B</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
-            </tr>
             <tr rowKey="property" class="" key="C">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="4" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="type" length="4">Object</td>
               <td class="" key="platform" length="4">Miniprogram</td>
               <td class="" key="property" length="4">C</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="4" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>This is expanded row info</div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -8816,6 +8801,300 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/skeleton/demos/advance.vue correctly 1`] = `
+<div class="t-skeleton-demo">
+  <section class="t-skeleton-demo-card">
+    <div class="header">网页（使用 rowCol）</div>
+    <div class="content">
+      <div class="t-skeleton">
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:33%;height:180px;">image</div>
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:33%;height:180px;">image</div>
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:33%;height:180px;">image</div>
+        </div>
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-circle" style="width:50px;height:50px;"></div>
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:80%;height:30px;margin:20px 0;"></div>
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:80px;height:30px;margin-left:20px;">确定</div>
+        </div>
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-text"></div>
+        </div>
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-text"></div>
+        </div>
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;margin:0 0 16px 0;"></div>
+        </div>
+        <div class="t-skeleton__row">
+          <div class="t-skeleton__col t-skeleton--type-rect" style="width:100%;height:300px;">
+            <div class="row-col-content">
+              <h3 class="row-col-content__header">标题</h3>
+              <section class="row-col-content__content"> 内容</section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="t-skeleton-demo-card">
+    <div class="header">列表（组合使用）</div>
+    <div class="content">
+      <ul class="t-skeleton-demo-list">
+        <li>
+          <div class="avatar t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-circle" style="width:56px;height:56px;"></div>
+            </div>
+          </div>
+          <div class="paragraph t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;"></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="avatar t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-circle" style="width:56px;height:56px;"></div>
+            </div>
+          </div>
+          <div class="paragraph t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;"></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="avatar t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-circle" style="width:56px;height:56px;"></div>
+            </div>
+          </div>
+          <div class="paragraph t-skeleton">
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text"></div>
+            </div>
+            <div class="t-skeleton__row">
+              <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/skeleton/demos/animation.vue correctly 1`] = `
+<div class="t-skeleton-demo t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        渐变加载动画
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient" style="width:70%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        闪烁加载动画
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed" style="width:70%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/skeleton/demos/base.vue correctly 1`] = `
+<div>
+  <div class="mb-20 t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
+    <div class="t-switch__content t-size-m"></div>
+  </div>
+  <div>
+    <div class="mb-20 t-skeleton">
+      <div class="t-skeleton__row">
+        <div class="t-skeleton__col t-skeleton--type-text"></div>
+      </div>
+      <div class="t-skeleton__row">
+        <div class="t-skeleton__col t-skeleton--type-text"></div>
+      </div>
+      <div class="t-skeleton__row">
+        <div class="t-skeleton__col t-skeleton--type-text"></div>
+      </div>
+      <div class="t-skeleton__row">
+        <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly 1`] = `
+<div class="t-skeleton-demo t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        text
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        avatar
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-circle" style="width:56px;height:56px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        paragraph
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="width:70%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        avatar-text
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-circle"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:32px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        tab
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:200px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
+    <section class="t-skeleton-demo-card">
+      <div class="header">
+        article
+      </div>
+      <div class="content">
+        <div class="t-skeleton">
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-rect" style="width:100%;height:30px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-rect" style="width:100%;height:200px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+          </div>
+          <div class="t-skeleton__row">
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+            <div class="t-skeleton__col t-skeleton--type-text" style="height:30px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`] = `
 <div class="demo-slider">
   <div class="block">
@@ -10207,7 +10486,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
               <td class="" key="email" length="3" style="overflow:hidden;">zcroson5@virginia.edu</td>
             </tr>
             <tr>
-              <td colSpan="3" class="" key="async-loading-row" length="1">
+              <td colspan="3" class="t-table__row--full t-table__row-last-full-row">
                 <div class="t-table__async-loading t-is-loading">
                   <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
                       <foreignObject x="1" y="1" width="12" height="12">
@@ -10663,18 +10942,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="description" length="6">隐藏展开图标</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试1</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny;peter</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">隐藏展开图标</p>
-                </div>
-              </td>
-            </tr>
             <tr rowKey="id" class="" key="2">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;transform:rotate(90deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="instance" length="6" style="overflow:hidden;">集群测试2</td>
@@ -10687,7 +10954,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
             <tr>
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
+              <td colspan="5">
                 <div class="more-detail">
                   <p class="title"><b>集群名称:</b></p>
                   <p class="content">集群测试2</p><br>
@@ -10709,18 +10976,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="description" length="6">自定义图标</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试3</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">自定义图标</p>
-                </div>
-              </td>
-            </tr>
             <tr rowKey="id" class="" key="4">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="" key="instance" length="6" style="overflow:hidden;">集群测试4</td>
@@ -10731,18 +10986,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">test</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试4</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">peter</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">test</p>
-                </div>
-              </td>
             </tr>
           </tbody>
         </table>
@@ -10957,8 +11200,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 <div class="t-table t-table__header--fixed">
   <div class="t-loading__parent">
     <div class="t-table__content">
-      <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+      <div class="t-table__header" style="padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11185,8 +11428,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 <div class="t-table t-table--bordered t-table__cell--fixed t-table--has-fixed t-table__header--fixed">
   <div class="t-loading__parent">
     <div class="t-table__content">
-      <div class="t-table__header">
-        <table style="table-layout:fixed;padding-right:0px;">
+      <div class="t-table__header" style="padding-right:0px;">
+        <table style="table-layout:fixed;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -11438,8 +11681,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11489,8 +11732,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -11542,8 +11785,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   <div class="t-table t-size-s t-table__header--fixed">
     <div class="t-loading__parent">
       <div class="t-table__content">
-        <div class="t-table__header">
-          <table style="table-layout:fixed;padding-right:0px;">
+        <div class="t-table__header" style="padding-right:0px;">
+          <table style="table-layout:fixed;">
             <colgroup>
               <col style="width:100px;min-width:100px;">
               <col style="width:100px;min-width:100px;">
@@ -12471,11 +12714,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 0 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="1">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12490,11 +12728,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               </td>
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">important.</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 1 号</div>
-              </td>
             </tr>
             <tr rowKey="key" class="" key="2">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
@@ -12511,11 +12744,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 2 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="3">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12531,11 +12759,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               <td class="" key="owner" length="6">peter</td>
               <td class="" key="description" length="6">important.</td>
             </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 3 号</div>
-              </td>
-            </tr>
             <tr rowKey="key" class="" key="4">
               <td class="t-table__expandable-icon-cell" key="expanded-icon-cell" length="6" style="overflow:hidden;"><span class="t-table__expand-box"><span style="transition:all .2s;display:flex;align-items:center;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></span></td>
               <td class="t-table__cell--selectable" key="row-select" length="6" style="overflow:hidden;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -12550,11 +12773,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
               </td>
               <td class="" key="owner" length="6">jenny</td>
               <td class="" key="description" length="6">important.</td>
-            </tr>
-            <tr style="display:none;">
-              <td colspan="6" class="t-table__expanded-cell" key="expanded-row" length="1">
-                <div>这是展开项数据，我是 4 号</div>
-              </td>
             </tr>
           </tbody>
         </table>

@@ -306,7 +306,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         trigger="click"
         disabled={disabled}
         visible={this.isShowPanel}
-        overlayClassName={`${componentName}__panel-container`}
+        overlayClassName={`${componentName}__panel-container ${componentName}__range`}
         on={{ 'visible-change': this.panelVisibleChange }}
         expandAnimation={true}
       >

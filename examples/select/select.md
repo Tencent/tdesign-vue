@@ -32,15 +32,15 @@ value | String / Number / Object / Array | - | 选中值。支持语法糖。TS 
 defaultValue | String / Number / Object / Array | - | 选中值。非受控属性。TS 类型：`SelectValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 valueDisplay | Slot / Function | - | 自定义选中项呈现方式。TS 类型：`TNode<{ value: T[]; onClose: () => void }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 valueType | String | value | 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。。可选项：value/object | N
-onBlur | Function |  | 输入框失去焦点时触发。`(context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => {}` | N
-onChange | Function |  | 选中值变化时触发。`(value: SelectValue) => {}` | N
-onClear | Function |  | 点击清除按钮时触发。`(context: { e: MouseEvent }) => {}` | N
-onCreate | Function |  | 当选择新创建的条目时触发。`(value: string | number) => {}` | N
-onEnter | Function |  | 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值。`(context: { inputValue: string; e: KeyboardEvent; value: SelectValue }) => {}` | N
-onFocus | Function |  | 输入框获得焦点时触发。`(context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => {}` | N
-onRemove | Function |  | 多选模式下，选中数据被移除时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts)。`(options: SelectRemoveContext<T>) => {}` | N
-onSearch | Function |  | 输入值变化时，触发搜索事件。主要用于远程搜索新数据。`(filterWords: string) => {}` | N
-onVisibleChange | Function |  | 下拉框隐藏/显示时触发。`(visible: boolean) => {}` | N
+onBlur | Function |  | TS 类型：`(context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => void`<br/>输入框失去焦点时触发 | N
+onChange | Function |  | TS 类型：`(value: SelectValue) => void`<br/>选中值变化时触发 | N
+onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击清除按钮时触发 | N
+onCreate | Function |  | TS 类型：`(value: string | number) => void`<br/>当选择新创建的条目时触发 | N
+onEnter | Function |  | TS 类型：`(context: { inputValue: string; e: KeyboardEvent; value: SelectValue }) => void`<br/>回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值 | N
+onFocus | Function |  | TS 类型：`(context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => void`<br/>输入框获得焦点时触发 | N
+onRemove | Function |  | TS 类型：`(options: SelectRemoveContext<T>) => void`<br/>多选模式下，选中数据被移除时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts)。<br/>`interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent | KeyboardEvent }`<br/> | N
+onSearch | Function |  | TS 类型：`(filterWords: string) => void`<br/>输入值变化时，触发搜索事件。主要用于远程搜索新数据 | N
+onVisibleChange | Function |  | TS 类型：`(visible: boolean) => void`<br/>下拉框隐藏/显示时触发 | N
 
 ### Select Events
 
@@ -52,7 +52,7 @@ clear | `(context: { e: MouseEvent })` | 点击清除按钮时触发
 create | `(value: string | number)` | 当选择新创建的条目时触发
 enter | `(context: { inputValue: string; e: KeyboardEvent; value: SelectValue })` | 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值
 focus | `(context: { value: SelectValue; e: FocusEvent | KeyboardEvent })` | 输入框获得焦点时触发
-remove | `(options: SelectRemoveContext<T>)` | 多选模式下，选中数据被移除时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts)
+remove | `(options: SelectRemoveContext<T>)` | 多选模式下，选中数据被移除时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts)。<br/>`interface SelectRemoveContext<T> { value: string | number; data: T; e: MouseEvent | KeyboardEvent }`<br/>
 search | `(filterWords: string)` | 输入值变化时，触发搜索事件。主要用于远程搜索新数据
 visible-change | `(visible: boolean)` | 下拉框隐藏/显示时触发
 

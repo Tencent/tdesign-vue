@@ -22,7 +22,9 @@
 <script>
 import pkg from '@/package.json';
 import packageJSON from './package.json';
+import htmlContent from './index.html?raw';
 import mainJsContent from './main.js?raw';
+import babelContent from './.babelrc?raw';
 
 const styleContent = `
 /* 竖排展示 demo 行间距 16px */
@@ -90,6 +92,12 @@ export default {
           files: {
             'package.json': {
               content: packageJSONContent,
+            },
+            'public/index.html': {
+              content: htmlContent,
+            },
+            '.babelrc': {
+              content: babelContent,
             },
             'src/main.js': {
               content: this.mainJsContent,

@@ -32,10 +32,7 @@ export default (Vue as VueConstructor<TabPanel>).extend({
     const { destroyOnHide, active } = this;
     if (destroyOnHide && !active) return null;
     return (
-      <div
-        class={`${prefix}-tab-panel`}
-        v-show={active}
-      >
+      <div class={`${prefix}-tab-panel`} v-show={active}>
         {renderContent(this, 'default', 'panel')}
       </div>
     );

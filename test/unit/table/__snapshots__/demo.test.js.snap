@@ -1468,59 +1468,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              style="display: none;"
-            >
-              <td
-                class="t-table__expanded-cell"
-                colspan="6"
-                key="expanded-row"
-                length="1"
-              >
-                <div
-                  class="more-detail"
-                >
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    集群测试1
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    jenny;peter
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    隐藏展开图标
-                  </p>
-                </div>
-              </td>
-            </tr>
-            <tr
               class=""
               key="2"
               rowkey="id"
@@ -1615,10 +1562,7 @@ exports[`Table expandable demo works fine 1`] = `
             </tr>
             <tr>
               <td
-                class="t-table__expanded-cell"
-                colspan="6"
-                key="expanded-row"
-                length="1"
+                colspan="5"
               >
                 <div
                   class="more-detail"
@@ -1758,59 +1702,6 @@ exports[`Table expandable demo works fine 1`] = `
               </td>
             </tr>
             <tr
-              style="display: none;"
-            >
-              <td
-                class="t-table__expanded-cell"
-                colspan="6"
-                key="expanded-row"
-                length="1"
-              >
-                <div
-                  class="more-detail"
-                >
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    集群测试3
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    jenny
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    自定义图标
-                  </p>
-                </div>
-              </td>
-            </tr>
-            <tr
               class=""
               key="4"
               rowkey="id"
@@ -1901,59 +1792,6 @@ exports[`Table expandable demo works fine 1`] = `
                 >
                   删除
                 </a>
-              </td>
-            </tr>
-            <tr
-              style="display: none;"
-            >
-              <td
-                class="t-table__expanded-cell"
-                colspan="6"
-                key="expanded-row"
-                length="1"
-              >
-                <div
-                  class="more-detail"
-                >
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    集群测试4
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    peter
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    test
-                  </p>
-                </div>
               </td>
             </tr>
           </tbody>
@@ -2571,9 +2409,10 @@ exports[`Table fixedHeader demo works fine 1`] = `
     >
       <div
         class="t-table__header"
+        style="padding-right: 0px;"
       >
         <table
-          style="table-layout: fixed; padding-right: 0px;"
+          style="table-layout: fixed;"
         >
           <colgroup>
             <col

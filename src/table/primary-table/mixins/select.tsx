@@ -62,7 +62,7 @@ export default Vue.extend({
               }),
             }
             : {}),
-          ...(isSelection ? ({ title }) : {}),
+          ...(isSelection ? { title } : {}),
         };
       });
     },
@@ -73,7 +73,8 @@ export default Vue.extend({
           indeterminate={this.isSelectedSome}
           disabled={!this.canSelectedRows.length}
           {...{ on: { change: this.handleSelectAll } }}
-        />);
+        />
+      );
     },
 
     // render
@@ -83,16 +84,15 @@ export default Vue.extend({
           checked: this.selectedRowKeys.includes(get(row, this.reRowKey)),
           ...column,
           type: column.type,
-          checkProps: typeof column.checkProps === 'function'
-            ? column.checkProps({ row, rowIndex })
-            : column.checkProps,
+          checkProps:
+            typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
           disabled: typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled,
           rowIndex,
         },
         on: {
           click: (e: MouseEvent) => {
             // 选中行功能中，点击 checkbo/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
-            e.stopPropagation();
+            e?.stopPropagation();
           },
           // radio 单选框可再点击一次关闭选择，input / change 事件无法监听
           change: (): void => this.handleSelectChange(row),
@@ -127,9 +127,9 @@ export default Vue.extend({
       const { selectedRowKeys, canSelectedRows, reRowKey } = this;
       const canSelectedRowKeys = canSelectedRows.map((record) => get(record, reRowKey));
       const disabledSelectedRowKeys = selectedRowKeys.filter((id) => !canSelectedRowKeys.includes(id));
-      const allIds = (this.isSelectedAll
+      const allIds = this.isSelectedAll
         ? [...disabledSelectedRowKeys]
-        : [...disabledSelectedRowKeys, ...canSelectedRowKeys]);
+        : [...disabledSelectedRowKeys, ...canSelectedRowKeys];
       emitEvent<SelectChangeParams>(this, 'select-change', allIds, {
         selectedRowData: filterDataByIds(this.data, allIds, reRowKey),
         type: this.isSelectedAll ? 'uncheck' : 'check',
