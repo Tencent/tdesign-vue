@@ -25,7 +25,6 @@ docClass: timeline
 
 * Table: 为了保证每次展开的数据最新，展开行不再进行预渲染；异步加载功能重构，[pr 197](https://github.com/Tencent/tdesign-vue/pull/197)，[@chaishi](https://github.com/chaishi)
 * Alert: 增加内容区折行展开和收起动效，[pr 123](https://github.com/Tencent/tdesign-common/pull/123)，[@pengYYYYY](https://github.com/pengYYYYY)
-* Skeleton: 新增骨架屏组件，详情请访问 [官网](https://tdesign.tencent.com/vue/components/skeleton) 体验
 
 ## 0.33.0 `2022-01-06`
 
