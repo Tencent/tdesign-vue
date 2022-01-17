@@ -12,7 +12,13 @@ import {
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
-  Data, FormRule, TdFormItemProps, TdFormProps, ValueType, ValidateTriggerType, AllValidateResult,
+  Data,
+  FormRule,
+  TdFormItemProps,
+  TdFormProps,
+  ValueType,
+  ValidateTriggerType,
+  AllValidateResult,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -64,10 +70,14 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
 
   computed: {
     classes(): ClassName {
-      return [CLASS_NAMES.formItem, FORM_ITEM_CLASS_PREFIX + this.name, {
-        [CLASS_NAMES.formItemWithHelp]: this.help,
-        [CLASS_NAMES.formItemWithExtra]: this.renderTipsInfo(),
-      }];
+      return [
+        CLASS_NAMES.formItem,
+        FORM_ITEM_CLASS_PREFIX + this.name,
+        {
+          [CLASS_NAMES.formItemWithHelp]: this.help,
+          [CLASS_NAMES.formItemWithExtra]: this.renderTipsInfo(),
+        },
+      ];
     },
     labelClasses(): ClassName {
       const parent = this.form;
@@ -89,9 +99,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const parent = this.form;
       if (!parent.showErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
-        return this.successBorder
-          ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ')
-          : CLASS_NAMES.success;
+        return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
       }
       if (!this.errorList.length) return;
       const type = this.errorList[0].type || 'error';
@@ -129,15 +137,13 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const { requiredMark } = this.$props;
       if (typeof requiredMark === 'boolean') return requiredMark;
       const parent = this.form;
-      const parentRequiredMark = parent?.requiredMark === undefined
-        ? this.global.requiredMark
-        : parent.requiredMark;
+      const parentRequiredMark = parent?.requiredMark === undefined ? this.global.requiredMark : parent.requiredMark;
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
       return Boolean(parentRequiredMark && isRequired);
     },
     innerRules(): FormRule[] {
       const parent = this.form;
-      return lodashGet(parent?.rules, this.name) || (this.rules || []);
+      return lodashGet(parent?.rules, this.name) || this.rules || [];
     },
   },
 
@@ -161,9 +167,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;
       // 过滤不需要校验的规则
-      const rules = trigger === 'all'
-        ? this.innerRules
-        : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
       // 校验结果，包含正确的校验信息
       const r = await validate(this.value, rules);
       const errorList = r.filter((item) => item.result !== true);
@@ -181,9 +185,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         this.resetHandler();
       }
       this.resetValidating = false;
-      return ({
+      return {
         [this.name]: errorList.length === 0 ? true : r,
-      } as FormItemValidateResult<T>);
+      } as FormItemValidateResult<T>;
     },
     getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
@@ -211,9 +215,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
 
       return (
         <div class={this.labelClasses} style={labelStyle}>
-          <label for={this.for}>
-            {this.getLabelContent()}
-          </label>
+          <label for={this.for}>{this.getLabelContent()}</label>
         </div>
       );
     },
@@ -225,17 +227,17 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       }
       const list = this.errorList;
       if (parent.showErrorMessage && list && list[0] && list[0].message) {
-        return (<p class={CLASS_NAMES.extra}>{list[0].message}</p>);
+        return <p class={CLASS_NAMES.extra}>{list[0].message}</p>;
       }
       if (this.successList.length) {
-        return (<p class={CLASS_NAMES.extra}>{this.successList[0].message}</p>);
+        return <p class={CLASS_NAMES.extra}>{this.successList[0].message}</p>;
       }
       return helpVNode;
     },
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
-          <Icon size='20px'></Icon>
+          <Icon size="20px"></Icon>
         </span>
       );
       const list = this.errorList;
@@ -257,13 +259,8 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       slotStatusIcon: NormalizedScopedSlot,
       props?: TdFormItemProps,
     ): TNodeReturnValue {
-      const resultIcon = (otherContent?: TNodeReturnValue) => (
-        <span class={CLASS_NAMES.status}>{otherContent}</span>
-      );
-      const withoutIcon = () => (
-        <span class={[CLASS_NAMES.status, `${CLASS_NAMES.status}-without-icon`]}>
-        </span>
-      );
+      const resultIcon = (otherContent?: TNodeReturnValue) => <span class={CLASS_NAMES.status}>{otherContent}</span>;
+      const withoutIcon = () => <span class={[CLASS_NAMES.status, `${CLASS_NAMES.status}-without-icon`]}></span>;
       if (statusIcon === true) {
         return this.getDefaultIcon();
       }
@@ -294,6 +291,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const parent = this.form;
       const type = Object.prototype.toString.call(lodashGet(parent.data, this.name));
       let emptyValue: ValueType;
+      if (type === '[object String]') {
+        emptyValue = '';
+      }
       if (type === '[object Array]') {
         emptyValue = [];
       }
