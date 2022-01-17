@@ -48,4 +48,3 @@ export * from './affix';
 export * from './tree-select';
 export * from './comment';
 export * from './icon';
-export * from './skeleton';
