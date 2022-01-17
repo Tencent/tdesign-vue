@@ -598,7 +598,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     renderGroupOptions(options: SelectOptionGroup[]) {
       return (
-        <ul>
+        <ul class={`${name}__list`}>
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
@@ -613,7 +613,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     // options 直传时
     renderOptions(options: SelectOption[]) {
       return (
-        <ul>
+        <ul class={`${name}__list`}>
           {options.map((item: TdOptionProps, index: number) => (
             <t-option
               value={get(item, this.realValue)}
@@ -658,7 +658,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return (
         <div slot="content">
           {renderTNodeJSX(this, 'panelTopContent')}
-          <ul v-show={showCreateOption} class={`${name}__create-option`}>
+          <ul v-show={showCreateOption} class={`${name}__create-option ${name}__list`}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
           {loading && <li class={this.tipsClass}>{loadingTextSlot}</li>}
@@ -666,7 +666,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {!this.hasOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
-            <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
+            <ul v-show={!loading && displayOptions.length} class={`${name}__groups ${name}__list`}>
               {children}
             </ul>
           )}
