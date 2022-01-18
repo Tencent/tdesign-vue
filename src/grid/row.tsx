@@ -5,6 +5,7 @@ import props from './row-props';
 import { ClassName } from '../common';
 import { calcSize } from '../utils/responsive';
 import { TdRowProps } from './type';
+import { getIEVersion } from '../utils/helper';
 
 const name = `${prefix}-row`;
 
@@ -120,8 +121,11 @@ export default Vue.extend({
 
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    const rowGap = this.rowGap(this.gutter, this.size);
+    if (getIEVersion() <= 9) {
+      const rowGap = this.rowGap(this.gutter, this.size);
+      return <tag class={classes} style={rowStyle} row-gap={rowGap}>{this.$slots.default}</tag>;
+    }
 
-    return <tag class={classes} style={rowStyle} row-gap={rowGap}>{this.$slots.default}</tag>;
+    return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
   },
 });
