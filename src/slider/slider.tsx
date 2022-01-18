@@ -1,4 +1,5 @@
 import Vue, { VNode } from 'vue';
+import { getIEVersion } from '@src/utils/helper';
 import { emitEvent } from '../utils/event';
 import { TNode, ClassName } from '../common';
 import props from './props';
@@ -100,8 +101,7 @@ export default Vue.extend({
       }
       if (this.range) {
         return result.filter(
-          (step) => step < (100 * (this.minValue - min)) / rangeDiff
-            || step > (100 * (this.maxValue - min)) / rangeDiff,
+          (step) => step < (100 * (this.minValue - min)) / rangeDiff || step > (100 * (this.maxValue - min)) / rangeDiff,
         );
       }
       return result.filter((step) => step > (100 * (this.firstValue - min)) / rangeDiff);
@@ -374,10 +374,15 @@ export default Vue.extend({
         max, min, sliderNumberClass, range,
       } = this;
       return (
-        <div class={[`${name}__input-container`, {
-          'is-vertical': this.vertical,
-        }]}>
-          {(
+        <div
+          class={[
+            `${name}__input-container`,
+            {
+              'is-vertical': this.vertical,
+            },
+          ]}
+        >
+          {
             <t-input-number
               class={sliderNumberClass}
               value={range ? this.firstValue : this.prevValue}
@@ -394,7 +399,7 @@ export default Vue.extend({
               placeholder={this.inputPlaceholder}
               theme={this.inputTheme}
             ></t-input-number>
-          )}
+          }
           {range && <div class={`${name}__center-line`} />}
           {range && (
             <t-input-number
@@ -421,6 +426,11 @@ export default Vue.extend({
     } = this;
     const buttonGroup = this.inputNumberProps && this.renderInputButton();
     const masks = this.renderMask();
+    let attrs;
+    // 非ie浏览器才添加 disabled 属性
+    if (getIEVersion() > 11) {
+      attrs = { disabled: this.disabled };
+    }
     return (
       <div class={this.containerClass}>
         <div
@@ -438,7 +448,7 @@ export default Vue.extend({
               vertical={vertical}
               value={range ? this.firstValue : this.prevValue}
               ref="button1"
-              disabled={this.disabled}
+              {...(attrs || {})}
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
@@ -449,7 +459,7 @@ export default Vue.extend({
                 vertical={vertical}
                 v-model={this.secondValue}
                 ref="button2"
-                disabled={this.disabled}
+                {...(attrs || {})}
                 tooltip-props={this.tooltipProps}
               ></TSliderButton>
             )}
