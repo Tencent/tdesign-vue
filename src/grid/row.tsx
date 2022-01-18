@@ -96,6 +96,23 @@ export default Vue.extend({
       }
       return rowStyle;
     },
+
+    rowGap(gutter: TdRowProps['gutter'], currentSize: string): object {
+      let rowGap;
+      if (Array.isArray(gutter) && gutter.length) {
+        if (typeof gutter[1] === 'number') {
+          [, rowGap] = gutter;
+        }
+        if (isObject(gutter[1]) && gutter[1][currentSize] !== undefined) {
+          rowGap = gutter[1][currentSize];
+        }
+      } else if (isObject(gutter) && gutter[currentSize]) {
+        if (Array.isArray(gutter[currentSize]) && gutter[currentSize].length) {
+          [, rowGap] = gutter[currentSize];
+        }
+      }
+      return rowGap;
+    },
   },
 
   render(): VNode {
@@ -103,6 +120,8 @@ export default Vue.extend({
 
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
+    const rowGap = this.rowGap(this.gutter, this.size);
+
+    return <tag class={classes} style={rowStyle} row-gap={rowGap}>{this.$slots.default}</tag>;
   },
 });
