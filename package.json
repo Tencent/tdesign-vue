@@ -76,6 +76,7 @@
     "lodash": "^4.17.21",
     "raf": "^3.4.1",
     "tdesign-icons-vue": "~0.0.7",
+    "tdesign-vue": "^0.33.1",
     "validator": "^13.5.1"
   },
   "peerDependencies": {

@@ -1,5 +1,6 @@
 import Vue, { VNode, PropType, VueConstructor } from 'vue';
 import { Styles } from '@src/common';
+import { getIEVersion } from '@src/utils/helper';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
@@ -38,9 +39,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
   computed: {
     placement(): string {
       if (this.tooltipProps instanceof Object) {
-        const {
-          placement,
-        } = this.tooltipProps;
+        const { placement } = this.tooltipProps;
         if (placement) return placement;
       }
 
@@ -107,12 +106,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     setTooltipProps() {
       if (this.tooltipProps instanceof Object) {
         const {
-          trigger,
-          destroyOnClose,
-          showArrow,
-          overlayStyle,
-          overlayClassName,
-          attach,
+          trigger, destroyOnClose, showArrow, overlayStyle, overlayClassName, attach,
         } = this.tooltipProps;
         if (!this.empty(trigger)) {
           this.trigger = trigger;
@@ -279,36 +273,43 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     },
   },
   render(): VNode {
-    return <div
-      ref="button"
-      class={[{ hover: this.hovering, dragging: this.dragging }, 't-slider__button-wrapper']}
-      style={this.wrapperStyle}
-      tabindex="0"
-      show-tooltip={this.showTooltip}
-      disabled={this.disabled}
-      onmouseenter={this.handleMouseEnter}
-      onmouseleave={this.handleMouseLeave}
-      onmousedown={this.onButtonDown}
-      ontouchstart={this.onButtonDown}
-      onfocus={this.handleMouseEnter}
-      onblur={this.handleMouseLeave}
-      onKeydown={this.onNativeKeyDown}
-    >
-      <t-popup
-        ref="popup"
-        popper-class={this.popupClass}
-        disabled={!this.showTooltip}
-        content={String(this.formatValue)}
-        placement={this.placement}
-        trigger={this.trigger}
-        showArrow={this.showArrow}
-        overlayStyle={this.overlayStyle}
-        overlayClassName={this.overlayClassName}
-        attach={this.attach}
-        visible={this.visible}
+    let attrs;
+    // 非ie浏览器才添加 disabled 属性
+    if (getIEVersion() > 11) {
+      attrs = { disabled: this.disabled };
+    }
+    return (
+      <div
+        ref="button"
+        class={[{ hover: this.hovering, dragging: this.dragging }, 't-slider__button-wrapper']}
+        style={this.wrapperStyle}
+        tabindex="0"
+        show-tooltip={this.showTooltip}
+        {...(attrs || {})}
+        onmouseenter={this.handleMouseEnter}
+        onmouseleave={this.handleMouseLeave}
+        onmousedown={this.onButtonDown}
+        ontouchstart={this.onButtonDown}
+        onfocus={this.handleMouseEnter}
+        onblur={this.handleMouseLeave}
+        onKeydown={this.onNativeKeyDown}
       >
-        <div class={['t-slider__button', { hover: this.hovering, dragging: this.dragging }]} />
-      </t-popup>
-    </div>;
+        <t-popup
+          ref="popup"
+          popper-class={this.popupClass}
+          disabled={!this.showTooltip}
+          content={String(this.formatValue)}
+          placement={this.placement}
+          trigger={this.trigger}
+          showArrow={this.showArrow}
+          overlayStyle={this.overlayStyle}
+          overlayClassName={this.overlayClassName}
+          attach={this.attach}
+          visible={this.visible}
+        >
+          <div class={['t-slider__button', { hover: this.hovering, dragging: this.dragging }]} />
+        </t-popup>
+      </div>
+    );
   },
 });
