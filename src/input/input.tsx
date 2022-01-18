@@ -182,7 +182,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     handleKeydown(e: KeyboardEvent) {
       if (this.disabled) return;
-      const { code } = e;
+      const code = e.code || e.key;
       if (code === 'Enter' || code === 'NumpadEnter') {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
       } else {
