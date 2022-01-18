@@ -10953,15 +10953,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <td class="" key="description" length="6">test</td>
               <td class="" key="op" length="6" style="overflow:hidden;"><a class="link">管理</a> <a class="link">删除</a></td>
             </tr>
-            <tr>
-              <td colspan="5">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">集群测试2</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">test</p>
+            <tr class="t-table__expanded-row">
+              <td colspan="6" class="t-table__row--full">
+                <div class="t-table__expanded-row-inner">
+                  <div class="more-detail">
+                    <p class="title"><b>集群名称:</b></p>
+                    <p class="content">集群测试2</p><br>
+                    <p class="title"><b>管理员:</b></p>
+                    <p class="content">jenny</p><br>
+                    <p class="title"><b>描述:</b></p>
+                    <p class="content">test</p>
+                  </div>
                 </div>
               </td>
             </tr>
