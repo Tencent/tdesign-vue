@@ -9143,7 +9143,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
-          <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
+          <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
             <div popper-class="" class="t-popup__reference">
               <div name="t-popup--animation" appear="true"></div>
               <div class="t-slider__button"></div>
@@ -9158,13 +9158,13 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
       <div role="slider" aria-valuemin="0" aria-valuemax="100" aria-orientation="horizontal" aria-disabled="true" class="t-slider t-is-disabled">
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
-          <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
+          <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
             <div popper-class="" class="t-popup__reference">
               <div name="t-popup--animation" appear="true"></div>
               <div class="t-slider__button"></div>
             </div>
           </div>
-          <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
+          <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
             <div popper-class="" class="t-popup__reference">
               <div name="t-popup--animation" appear="true"></div>
               <div class="t-slider__button"></div>
