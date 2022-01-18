@@ -2,7 +2,7 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
+ * updated at 2021-12-26 15:04:09
  * */
 
 import { TNode } from '../common';
@@ -26,8 +26,17 @@ export interface TdSkeletonProps {
    * @default text
    */
   theme?: 'text' | 'avatar' | 'paragraph' | 'avatar-text' | 'tab' | 'article';
-};
+}
 
 export type SkeletonRowCol = Array<Number | SkeletonRowColObj | Array<SkeletonRowColObj>>;
 
-export interface SkeletonRowColObj { width?: string; height?: string; size?: string; marginRight?: string; marginLeft?: string; margin?: string; content?: string | TNode; type?: 'rect' | 'circle' | 'text' };
+export interface SkeletonRowColObj {
+  width?: string;
+  height?: string;
+  size?: string;
+  marginRight?: string;
+  marginLeft?: string;
+  margin?: string;
+  content?: string | TNode;
+  type?: 'rect' | 'circle' | 'text';
+}

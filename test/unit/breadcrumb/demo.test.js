@@ -3,7 +3,7 @@ import base from '@/examples/breadcrumb/demos/base.vue';
 import custom from '@/examples/breadcrumb/demos/custom.vue';
 import to from '@/examples/breadcrumb/demos/to.vue';
 import href from '@/examples/breadcrumb/demos/href.vue';
-import option from '@/examples/breadcrumb/demos/option.vue';
+import options from '@/examples/breadcrumb/demos/options.vue';
 
 // unit test for component in examples.
 describe('Breadcrumb', () => {
@@ -24,7 +24,7 @@ describe('Breadcrumb', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('option demo works fine', () => {
-    const wrapper = mount(option);
+    const wrapper = mount(options);
     expect(wrapper.element).toMatchSnapshot();
   });
 });

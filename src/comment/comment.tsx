@@ -34,11 +34,13 @@ export default Vue.extend({
       const author = renderTNodeJSX(this, 'author');
       const datetime = renderTNodeJSX(this, 'datetime');
 
-      return (author || datetime) && (
-        <div class={`${preName}__author`}>
-          {author && <span class={`${preName}__name`}>{author}</span>}
-          {datetime && <span class={`${preName}__time`}>{datetime}</span>}
-        </div>
+      return (
+        (author || datetime) && (
+          <div class={`${preName}__author`}>
+            {author && <span class={`${preName}__name`}>{author}</span>}
+            {datetime && <span class={`${preName}__time`}>{datetime}</span>}
+          </div>
+        )
       );
     },
 
@@ -47,22 +49,18 @@ export default Vue.extend({
         <div class={`${preName}__content`}>
           {this.renderAuthorDatetime()}
           <div class={`${preName}__detail`}>{renderTNodeJSX(this, 'content')}</div>
-            {this.renderQuote()}
-            {this.renderActions()}
-          </div>
+          {this.renderQuote()}
+          {this.renderActions()}
+        </div>
       );
     },
 
     renderAvatar() {
       const avatar = renderTNodeJSX(this, 'avatar');
       return avatar ? (
-      <div class={`${preName}__avatar`}>
-        {typeof avatar === 'string' ? (
-          <img src={avatar} alt="" class={`${preName}__avatar-image`} />
-        ) : (
-          avatar
-        )}
-      </div>
+        <div class={`${preName}__avatar`}>
+          {typeof avatar === 'string' ? <img src={avatar} alt="" class={`${preName}__avatar-image`} /> : avatar}
+        </div>
       ) : null;
     },
   },
@@ -74,8 +72,8 @@ export default Vue.extend({
           {this.renderAvatar()}
           {this.renderContent()}
         </div>
-          {this.renderReply()}
-        </div>
+        {this.renderReply()}
+      </div>
     );
   },
 });

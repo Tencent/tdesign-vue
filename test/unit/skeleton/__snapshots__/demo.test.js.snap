@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton base demo works fine 1`] = `
+<div>
+  <div
+    class="mb-20 t-switch t-size-m t-is-checked"
+  >
+    <span
+      class="t-switch__handle"
+    />
+    <div
+      class="t-switch__content t-size-m"
+    />
+  </div>
+   
+  <div>
+    <div
+      class="mb-20 t-skeleton"
+    >
+      <div
+        class="t-skeleton__row"
+      >
+        <div
+          class="t-skeleton__col t-skeleton--type-text"
+        />
+      </div>
+      <div
+        class="t-skeleton__row"
+      >
+        <div
+          class="t-skeleton__col t-skeleton--type-text"
+        />
+      </div>
+      <div
+        class="t-skeleton__row"
+      >
+        <div
+          class="t-skeleton__col t-skeleton--type-text"
+        />
+      </div>
+      <div
+        class="t-skeleton__row"
+      >
+        <div
+          class="t-skeleton__col t-skeleton--type-text"
+          style="width: 70%;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

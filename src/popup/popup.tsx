@@ -11,7 +11,7 @@ import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
 import { PopupVisibleChangeContext } from './type';
 import { Styles, ClassName } from '../common';
-import setStyle from '../utils/set-style';
+import setStyle from '../_common/js/utils/set-style';
 
 const stop = (e: MouseEvent) => e.stopPropagation();
 const name = `${prefix}-popup`;

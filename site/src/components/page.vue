@@ -4,13 +4,12 @@
       <td-doc-search slot="search" ref="tdDocSearch"></td-doc-search>
     </td-header>
     <td-doc-aside ref="tdDocAside" title="Vue for Web">
-      <t-select slot="extra" v-model="version" :popupProps="{ zIndex: 500 }" @change="changeVersion">
+      <t-select slot="extra" :value="version" :popupProps="{ zIndex: 500 }" @change="changeVersion">
         <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
           {{ item.label }}
         </t-option>
       </t-select>
     </td-doc-aside>
-
     <router-view :style="contentStyle" @loaded="contentLoaded" />
   </td-doc-layout>
 </template>
@@ -19,20 +18,17 @@
 import siteConfig from '../../site.config.js';
 import packageJson from '@/package.json';
 
+const currentVersion = packageJson.version.replace(/\./g, '_');
 const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
 
-const historyVersion = [];
 const registryUrl = 'https://mirrors.tencent.com/npm/tdesign-vue';
 
 export default {
   data() {
     return {
       loaded: false,
-      version: packageJson.version,
-      options: [
-        { value: packageJson.version, label: packageJson.version },
-        ...historyVersion.map((v) => ({ value: v, label: v })),
-      ],
+      version: currentVersion,
+      options: [],
     };
   },
 
@@ -63,10 +59,9 @@ export default {
         .then((res) => {
           const options = [];
           Object.keys(res.versions).forEach((v) => {
-            if (v === packageJson.version) return false;
             const nums = v.split('.');
             if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1) return false;
-            options.unshift({ label: v, value: v });
+            options.unshift({ label: v, value: v.replace(/\./g, '_') });
           });
           this.options.push(...options);
         });
@@ -78,7 +73,7 @@ export default {
       });
     },
     changeVersion(version) {
-      if (version === packageJson.version) return;
+      if (version === currentVersion) return;
       const historyUrl = `//${version}-tdesign-vue.surge.sh`;
       window.open(historyUrl, '_blank');
     },
