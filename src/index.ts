@@ -1,4 +1,5 @@
 import { VueConstructor } from 'vue';
+import './style/index.js';
 import * as components from './components';
 
 function install(Vue: VueConstructor, config?: object) {
