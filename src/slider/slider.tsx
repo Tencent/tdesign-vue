@@ -1,5 +1,5 @@
 import Vue, { VNode } from 'vue';
-import { getIEVersion } from '@src/utils/helper';
+import { getIEVersion } from '../utils/helper';
 import { emitEvent } from '../utils/event';
 import { TNode, ClassName } from '../common';
 import props from './props';

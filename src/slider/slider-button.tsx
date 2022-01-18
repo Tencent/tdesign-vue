@@ -1,6 +1,6 @@
 import Vue, { VNode, PropType, VueConstructor } from 'vue';
 import { Styles } from '@src/common';
-import { getIEVersion } from '@src/utils/helper';
+import { getIEVersion } from '../utils/helper';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
