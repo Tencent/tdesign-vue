@@ -1560,51 +1560,58 @@ exports[`Table expandable demo works fine 1`] = `
                 </a>
               </td>
             </tr>
-            <tr>
+            <tr
+              class="t-table__expanded-row"
+            >
               <td
-                colspan="5"
+                class="t-table__row--full"
+                colspan="6"
               >
                 <div
-                  class="more-detail"
+                  class="t-table__expanded-row-inner"
                 >
-                  <p
-                    class="title"
+                  <div
+                    class="more-detail"
                   >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    集群测试2
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    jenny
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    test
-                  </p>
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        集群名称:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      集群测试2
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        管理员:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      jenny
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        描述:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      test
+                    </p>
+                  </div>
                 </div>
               </td>
             </tr>

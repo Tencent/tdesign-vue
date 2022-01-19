@@ -4,6 +4,7 @@ import isDate from 'validator/lib/isDate';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'lodash/isEmpty';
 import isURL from 'validator/lib/isURL';
+import isNumber from 'lodash/isNumber';
 import { getCharacterLength } from '../utils/helper';
 import {
   CustomValidator, FormRule, ValueType, AllValidateResult,
@@ -18,9 +19,7 @@ export function isValueEmpty(val: ValueType): boolean {
   if (type === typeMap.Date) {
     return false;
   }
-  return typeof val === 'object'
-    ? isEmpty(val)
-    : ['', undefined, null].includes(val);
+  return typeof val === 'object' ? isEmpty(val) : ['', undefined, null].includes(val);
 }
 
 const VALIDATE_MAP = {
@@ -29,10 +28,10 @@ const VALIDATE_MAP = {
   email: isEmail,
   required: (val: ValueType): boolean => !isValueEmpty(val),
   boolean: (val: ValueType): boolean => typeof val === 'boolean',
-  max: (val: ValueType, num: number): boolean => getCharacterLength(val) <= num,
-  min: (val: ValueType, num: number): boolean => val.length >= num,
-  len: (val: ValueType, num: number): boolean => val.length === num,
-  number: (val: ValueType): boolean => !isNaN(val),
+  max: (val: ValueType, num: number): boolean => (isNumber(val) ? val <= num : getCharacterLength(val) <= num),
+  min: (val: ValueType, num: number): boolean => (isNumber(val) ? val >= num : getCharacterLength(val) >= num),
+  len: (val: ValueType, num: number): boolean => getCharacterLength(val) === num,
+  number: (val: ValueType): boolean => !Number.isNaN(val),
   enum: (val: ValueType, strs: Array<string>): boolean => strs.includes(val),
   idcard: (val: ValueType): boolean => /^(\d{18,18}|\d{15,15}|\d{17,17}x)$/i.test(val),
   telnumber: (val: ValueType): boolean => /^1[3-9]\d{9}$/.test(val),
@@ -47,10 +46,7 @@ const VALIDATE_MAP = {
  * @param rule 校验规则
  * @returns 两种校验结果，一种是内置校验规则的校验结果哦，二种是自定义校验规则（validator）的校验结果
  */
-export async function validateOneRule(
-  value: ValueType,
-  rule: FormRule,
-): Promise<AllValidateResult> {
+export async function validateOneRule(value: ValueType, rule: FormRule): Promise<AllValidateResult> {
   let validateResult: AllValidateResult = { result: true };
   const keys = Object.keys(rule);
   let vOptions = {};
