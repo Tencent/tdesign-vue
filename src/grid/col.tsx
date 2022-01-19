@@ -18,7 +18,7 @@ export default Vue.extend({
 
   data() {
     return {
-      size: calcSize(window.innerWidth),
+      size: 'xs',
     };
   },
 
@@ -61,6 +61,7 @@ export default Vue.extend({
   },
 
   mounted() {
+    this.updateSize();
     window.addEventListener('resize', this.updateSize);
   },
 
@@ -126,6 +127,10 @@ export default Vue.extend({
       Object.assign(colStyle, this.calcColPadding(rowGutter, this.size));
     }
 
-    return <tag class={classes} style={colStyle}>{renderTNodeJSX(this, 'default')}</tag>;
+    return (
+      <tag class={classes} style={colStyle}>
+        {renderTNodeJSX(this, 'default')}
+      </tag>
+    );
   },
 });
