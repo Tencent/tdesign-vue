@@ -1,8 +1,5 @@
 import Vue, { PropType, VNode } from 'vue';
-import {
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from 'tdesign-icons-vue';
+import { CheckCircleFilledIcon, ErrorCircleFilledIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
 import TLoading from '../loading';
@@ -19,7 +16,10 @@ export default Vue.extend({
   name,
 
   components: {
-    TLoading, TIconCheckCircleFilled, TButton, TIconErrorCircleFilled,
+    TLoading,
+    TButton,
+    CheckCircleFilledIcon,
+    ErrorCircleFilledIcon,
   },
 
   props: {
@@ -126,8 +126,9 @@ export default Vue.extend({
 
     renderUploading() {
       if (this.loadingFile.status === 'fail') {
-        return <TIconErrorCircleFilled />;
-      } if (this.loadingFile.status === 'progress' && this.showUploadProgress) {
+        return <ErrorCircleFilledIcon />;
+      }
+      if (this.loadingFile.status === 'progress' && this.showUploadProgress) {
         return (
           <div class={`${UPLOAD_NAME}__single-progress`}>
             <TLoading />
@@ -148,23 +149,17 @@ export default Vue.extend({
           {this.isImage && this.renderImage()}
           <div class={`${UPLOAD_NAME}__dragger-progress-info`}>
             <div class={`${UPLOAD_NAME}__dragger-text`}>
-              <span class={`${UPLOAD_NAME}__single-name`}>
-                {abridgeName(this.inputName)}
-              </span>
+              <span class={`${UPLOAD_NAME}__single-name`}>{abridgeName(this.inputName)}</span>
               {this.loadingFile && this.renderUploading()}
-              {(!this.loadingFile && !!this.file) && <TIconCheckCircleFilled/>}
+              {!this.loadingFile && !!this.file && <CheckCircleFilledIcon />}
             </div>
-            <small class={`${prefix}-size-s`}>
-              文件大小：{returnFileSize(this.size)}
-            </small>
-            <small class={`${prefix}-size-s`}>
-              上传日期：{getCurrentDate()}
-            </small>
+            <small class={`${prefix}-size-s`}>文件大小：{returnFileSize(this.size)}</small>
+            <small class={`${prefix}-size-s`}>上传日期：{getCurrentDate()}</small>
             <div class={`${UPLOAD_NAME}__dragger-btns`}>
               {['progress', 'waiting'].includes(this.loadingFile?.status) && (
                 <TButton
                   theme="primary"
-                  variant='text'
+                  variant="text"
                   class={`${UPLOAD_NAME}__dragger-progress-cancel`}
                   onClick={this.cancel}
                 >
@@ -174,7 +169,7 @@ export default Vue.extend({
               {!this.autoUpload && this.loadingFile?.status === 'waiting' && (
                 <TButton
                   theme="primary"
-                  variant='text'
+                  variant="text"
                   onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
                 >
                   开始上传
@@ -186,11 +181,14 @@ export default Vue.extend({
                 <TButton
                   theme="primary"
                   variant="text"
-                  class={`${UPLOAD_NAME}__dragger-progress-cancel`} onClick={this.reupload}
+                  class={`${UPLOAD_NAME}__dragger-progress-cancel`}
+                  onClick={this.reupload}
                 >
                   重新上传
                 </TButton>
-                <TButton theme="primary" variant='text' onClick={this.remove}>删除</TButton>
+                <TButton theme="primary" variant="text" onClick={this.remove}>
+                  删除
+                </TButton>
               </div>
             )}
           </div>

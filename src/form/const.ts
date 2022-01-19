@@ -1,6 +1,6 @@
 import { prefix } from '../config';
 
-export const FORM_ITEM_CLASS_PREFIX = 't-form-item__';
+export const FORM_ITEM_CLASS_PREFIX = `${prefix}-form-item__`;
 
 const form = `${prefix}-form`;
 const input = `${prefix}-input`;

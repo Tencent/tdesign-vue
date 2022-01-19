@@ -1,6 +1,6 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CaretRightSmallIcon as TIconCaretRightSmall } from 'tdesign-icons-vue';
+import { CaretRightSmallIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TreeConfig } from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
@@ -37,9 +37,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       return styles;
     },
     getClassList(): ClassName {
-      const {
-        node,
-      } = this;
+      const { node } = this;
       const list = [];
       list.push(CLASS_NAMES.treeNode);
       list.push({
@@ -66,11 +64,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
             node: node?.getModel(),
           });
         } else if (node.parent && node.tree) {
-          const {
-            vmIsLeaf,
-            vmIsFirst,
-            level,
-          } = node;
+          const { vmIsLeaf, vmIsFirst, level } = node;
 
           const lineClasses = [];
 
@@ -105,12 +99,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
             'box-shadow': shadowStyles.join(','),
           };
 
-          lineNode = (
-            <span
-              class={lineClasses}
-              style={styles}
-            ></span>
-          );
+          lineNode = <span class={lineClasses} style={styles}></span>;
         }
       } else {
         lineNode = getTNode(line, {
@@ -124,7 +113,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       if (isFunction(this.global.folderIcon)) {
         return this.global.folderIcon(this.$createElement);
       }
-      return <TIconCaretRightSmall/>;
+      return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {
       const { node, treeScope } = this;
@@ -141,7 +130,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
           isDefaultIcon = true;
           iconNode = this.getFolderIcon();
           if (node.loading && node.expanded) {
-            iconNode = (<TLoading/>);
+            iconNode = <TLoading />;
           }
         } else {
           iconNode = '';
@@ -155,14 +144,12 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
 
       iconNode = (
         <span
-          class={[
-            CLASS_NAMES.treeIcon,
-            CLASS_NAMES.folderIcon,
-            isDefaultIcon ? CLASS_NAMES.treeIconDefault : '',
-          ]}
+          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon, isDefaultIcon ? CLASS_NAMES.treeIconDefault : '']}
           trigger="expand"
           ignore="active"
-        >{iconNode}</span>
+        >
+          {iconNode}
+        </span>
       );
       return iconNode;
     },
@@ -221,13 +208,21 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
             onChange={() => this.handleChange()}
             ignore="expand,active"
             {...{ props: itemCheckProps }}
-          >{labelNode}</TCheckBox>
+          >
+            {labelNode}
+          </TCheckBox>
         );
       } else {
         const inner = <span style="position: relative">{labelNode}</span>;
-        labelNode = node.isActivable() // 使用key是为了避免元素复用，从而顺利移除ripple指令
-          ? <span key="1" v-ripple class={labelClasses}>{inner}</span>
-          : <span key="2" class={labelClasses}>{inner}</span>;
+        labelNode = node.isActivable() ? ( // 使用key是为了避免元素复用，从而顺利移除ripple指令
+          <span key="1" v-ripple class={labelClasses}>
+            {inner}
+          </span>
+        ) : (
+          <span key="2" class={labelClasses}>
+            {inner}
+          </span>
+        );
       }
 
       return labelNode;
@@ -249,10 +244,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       }
       if (opNode) {
         opNode = (
-          <span
-            class={CLASS_NAMES.treeOperations}
-            ignore="active,expand"
-          >{opNode}</span>
+          <span class={CLASS_NAMES.treeOperations} ignore="active,expand">
+            {opNode}
+          </span>
         );
       }
       return opNode;
@@ -309,15 +303,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
     }
   },
   render(createElement: CreateElement) {
-    const {
-      node,
-    } = this;
+    const { node } = this;
 
-    const {
-      tree,
-      level,
-      value,
-    } = node;
+    const { tree, level, value } = node;
 
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
@@ -331,7 +319,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
         data-level={level}
         style={styles}
         onClick={(evt: MouseEvent) => this.handleClick(evt)}
-      >{this.renderItem(createElement)}</div>
+      >
+        {this.renderItem(createElement)}
+      </div>
     );
   },
 });

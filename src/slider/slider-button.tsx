@@ -89,7 +89,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       newPos: null,
       prevValue: this.value,
       showTooltip: true,
-
       trigger: 'hover',
       showArrow: true,
       overlayStyle: undefined,
@@ -302,7 +301,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           attach={this.attach}
           visible={this.visible}
         >
-          <div class={['t-slider__button', { hover: this.hovering, dragging: this.dragging }]} />
+          <div class={[`${prefix}-slider__button`, { hover: this.hovering, dragging: this.dragging }]} />
         </t-popup>
       </div>
     );

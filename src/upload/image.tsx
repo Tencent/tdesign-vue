@@ -1,10 +1,5 @@
 import Vue, { PropType } from 'vue';
-import {
-  AddIcon as TIconAdd,
-  DeleteIcon as IIconDelete,
-  UploadIcon as IIconUpload,
-  BrowseIcon as TIconBrowse,
-} from 'tdesign-icons-vue';
+import { AddIcon, DeleteIcon, BrowseIcon } from 'tdesign-icons-vue';
 import { UploadFile } from './type';
 import TLoading from '../loading';
 import { UploadRemoveOptions } from './interface';
@@ -17,10 +12,9 @@ export default Vue.extend({
   name: 'TImageUpload',
 
   components: {
-    TIconAdd,
-    IIconDelete,
-    IIconUpload,
-    TIconBrowse,
+    AddIcon,
+    DeleteIcon,
+    BrowseIcon,
     TLoading,
   },
   props: {
@@ -70,12 +64,12 @@ export default Vue.extend({
                 <img class={`${UPLOAD_NAME}__card-image`} src={file.url} />
                 <div class={`${UPLOAD_NAME}__card-mask`} onClick={this.onMaskClick}>
                   <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-                    <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
+                    <BrowseIcon nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
                   </span>
                   <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
 
                   <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-                    <IIconDelete nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
+                    <DeleteIcon nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
                   </span>
                 </div>
               </div>
@@ -98,7 +92,7 @@ export default Vue.extend({
               </div>
             ) : (
               <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
-                <TIconAdd></TIconAdd>
+                <AddIcon></AddIcon>
                 <p class={`${prefix}-size-s`}>点击上传图片</p>
               </div>
             )}

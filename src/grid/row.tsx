@@ -14,7 +14,7 @@ export interface RowHTMLTagAttributes {
   style: Styles;
   attrs?: {
     'row-gap'?: number;
-  }
+  };
 }
 
 export default Vue.extend({

@@ -54,7 +54,7 @@ export default Vue.extend({
         [`${name}--circle`]: !dot && shape === 'circle',
         [`${name}--round`]: shape === 'round',
         [`${name}--ribbon`]: shape === 'ribbon',
-        't-size-s': this.isSmall(),
+        [`${prefix}-size-s`]: this.isSmall(),
       },
     ];
     const inlineStyle = {
