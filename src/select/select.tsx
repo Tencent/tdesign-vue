@@ -381,6 +381,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     hideMenu() {
       this.visible = false;
+      emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
       e.stopPropagation();
