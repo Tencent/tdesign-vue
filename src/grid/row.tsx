@@ -121,11 +121,11 @@ export default Vue.extend({
 
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    const attributes:any = {
+    const attributes: any = {
       class: classes,
       style: rowStyle,
       attrs: {},
-    }; 
+    };
     if (getIEVersion() <= 9) {
       const rowGap = this.rowGap(this.gutter, this.size);
       attributes.attrs['row-gap'] = rowGap;
