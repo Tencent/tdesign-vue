@@ -1,14 +1,14 @@
 <template>
   <div class="t-skeleton-demo">
     <section class="t-skeleton-demo-card">
-      <div class="header">网页（使用 rowCol）</div>
+      <div class="header">组合成网页效果</div>
       <div class="content">
         <t-skeleton :rowCol="rowCol"></t-skeleton>
       </div>
     </section>
 
     <section class="t-skeleton-demo-card">
-      <div class="header">列表（组合使用）</div>
+      <div class="header">组合成列表效果</div>
       <div class="content">
         <ul class="t-skeleton-demo-list">
           <li v-for="i in 3" :key="i">
@@ -68,24 +68,12 @@ export default {
       ],
     };
   },
-  methods: {},
 };
 </script>
 
 <style scoped lang="less">
 .t-skeleton-demo {
   width: 100%;
-  &-card {
-    margin: 16px;
-    border: 1px solid #eee;
-    .header {
-      padding: 16px;
-      border-bottom: 1px solid #eee;
-    }
-    .content {
-      padding: 16px;
-    }
-  }
 
   &-list {
     > li {
@@ -99,19 +87,6 @@ export default {
         width: 80%;
       }
     }
-  }
-}
-
-.row-col-content {
-  width: 100%;
-  text-align: center;
-  &__header {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  &__content {
-    padding: 10px;
-    height: 200px;
   }
 }
 </style>

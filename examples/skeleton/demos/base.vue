@@ -26,7 +26,6 @@ export default {
       loading: true,
     };
   },
-  methods: {},
 };
 </script>
 
