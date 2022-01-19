@@ -276,7 +276,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     return (
       <div
         ref="button"
-        class={[{ hover: this.hovering, dragging: this.dragging }, 't-slider__button-wrapper']}
+        class={[{ hover: this.hovering, dragging: this.dragging }, `${prefix}-slider__button-wrapper`]}
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
