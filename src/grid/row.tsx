@@ -98,7 +98,7 @@ export default Vue.extend({
       return rowStyle;
     },
 
-    rowGap(gutter: TdRowProps['gutter'], currentSize: string): object {
+    rowGap(gutter: TdRowProps['gutter'], currentSize: string): number {
       let rowGap;
       if (Array.isArray(gutter) && gutter.length) {
         if (typeof gutter[1] === 'number') {
@@ -121,10 +121,12 @@ export default Vue.extend({
 
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    const attributes: any = {
+    const attributes = {
       class: classes,
       style: rowStyle,
-      attrs: {},
+      attrs: {
+        'row-gap': 0,
+      },
     };
     if (getIEVersion() <= 9) {
       const rowGap = this.rowGap(this.gutter, this.size);
