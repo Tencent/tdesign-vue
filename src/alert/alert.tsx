@@ -129,7 +129,7 @@ export default Vue.extend({
             : messageContent}
           {hasCollapse ? (
             <div
-              class="t-alert__collapse"
+              class={`${name}__collapse`}
               onClick={() => {
                 this.collapsed = !this.collapsed;
               }}

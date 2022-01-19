@@ -709,7 +709,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             onMouseenter={this.hoverEvent.bind(null, true)}
             onMouseleave={this.hoverEvent.bind(null, false)}
           >
-            {prefixIconSlot && <span class="t-select__left-icon">{prefixIconSlot[0]}</span>}
+            {prefixIconSlot && <span class={`${name}__left-icon`}>{prefixIconSlot[0]}</span>}
             {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
             {this.valueDisplay || this.$scopedSlots.valueDisplay
               ? renderTNodeJSX(this, 'valueDisplay', {

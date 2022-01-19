@@ -103,7 +103,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <close-icon class="t-submenu-icon"></close-icon>;
+    const defaultCloseBtn = <close-icon class={`${prefix}-submenu-icon`}></close-icon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (
