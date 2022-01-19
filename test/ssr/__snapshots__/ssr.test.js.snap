@@ -4479,17 +4479,17 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 为响应式</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-4px;margin-right:-4px;">
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为固定值</span>
@@ -4519,55 +4519,55 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 响应式，垂直 gutter固定值 </span>
-  <div class="t-row t-row--start t-row--top" style="row-gap:24px;margin-left:-4px;margin-right:-4px;">
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+  <div class="t-row t-row--start t-row--top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为响应式</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-4px;margin-right:-4px;row-gap:8px;">
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
-    <div class="t-col t-col-3" style="padding-left:4px;padding-right:4px;">
+    <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
   </div>

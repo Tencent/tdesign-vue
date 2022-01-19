@@ -18,7 +18,7 @@ export default Vue.extend({
 
   data() {
     return {
-      size: 'xs',
+      size: 'md',
     };
   },
 
