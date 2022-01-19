@@ -3,7 +3,7 @@ import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
-import { UploadIcon as TIconUpload } from 'tdesign-icons-vue';
+import { UploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
@@ -490,7 +490,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       }
       return (
         <TButton variant="outline">
-          <TIconUpload slot="icon" />
+          <UploadIcon slot="icon" />
           {this.files?.length ? '重新上传' : '点击上传'}
         </TButton>
       );

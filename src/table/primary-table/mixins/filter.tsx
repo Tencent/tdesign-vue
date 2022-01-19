@@ -1,6 +1,6 @@
 import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { FilterIcon as TIconFilter } from 'tdesign-icons-vue';
+import { FilterIcon } from 'tdesign-icons-vue';
 import { PrimaryTableCol, TdPrimaryTableProps, FilterValue } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
@@ -266,7 +266,7 @@ export default Vue.extend({
                   {isFunction(this.filterIcon) ? (
                     this.filterIcon(this.$createElement)
                   ) : (
-                    <TIconFilter name="filter" class={`${prefix}-table__filter-icon`} />
+                    <FilterIcon name="filter" class={`${prefix}-table__filter-icon`} />
                   )}
                   <template slot="content">
                     <div class={`${prefix}-table__filter-pop-content`}>

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
+import { CloseIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';
@@ -22,7 +22,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   name: 'TDrawer',
 
   components: {
-    TIconClose,
+    CloseIcon,
     TButton,
   },
 
@@ -103,7 +103,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <t-icon-close class="t-submenu-icon"></t-icon-close>;
+    const defaultCloseBtn = <close-icon class="t-submenu-icon"></close-icon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (

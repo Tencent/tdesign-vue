@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { CheckIcon as TIconCheck, CloseIcon as TIconClose } from 'tdesign-icons-vue';
+import { CheckIcon, CloseIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { StepsConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
@@ -22,8 +22,8 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
     ...props,
   },
   components: {
-    TIconCheck,
-    TIconClose,
+    CheckIcon,
+    CloseIcon,
   },
   inject: {
     steps: { default: undefined },
@@ -60,13 +60,13 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
         let icon: ScopedSlotReturnValue = '';
         switch (this.status) {
           case 'finish':
-            icon = <t-icon-check />;
+            icon = <check-icon />;
             break;
           case 'error':
             if (isFunction(this.global.errorIcon)) {
               icon = this.global.errorIcon(this.$createElement);
             } else {
-              icon = <t-icon-close />;
+              icon = <close-icon />;
             }
             break;
           // default 包含 case 'process' 的情况
