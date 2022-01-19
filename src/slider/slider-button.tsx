@@ -3,6 +3,7 @@ import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
+import { getIEVersion } from '../utils/helper';
 import { TdSliderProps } from './type';
 
 const name = `${prefix}-slider-button`;
@@ -278,7 +279,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
-        disabled={this.disabled}
+        disabled={getIEVersion() > 11 ? this.disabled : undefined}
         onmouseenter={this.handleMouseEnter}
         onmouseleave={this.handleMouseLeave}
         onmousedown={this.onButtonDown}
