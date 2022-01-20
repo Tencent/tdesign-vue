@@ -1389,7 +1389,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1482,7 +1482,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center; transform: rotate(90deg);"
+                    style="transition: all .2s; display: inline-block; align-items: center; transform: rotate(90deg);"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1630,7 +1630,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1723,7 +1723,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
