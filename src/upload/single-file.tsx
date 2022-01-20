@@ -1,9 +1,5 @@
 import Vue, { PropType } from 'vue';
-import {
-  CloseCircleFilledIcon as TIconClearCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-} from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
 import { UploadFile } from './type';
@@ -15,9 +11,9 @@ export default Vue.extend({
   name: 'TUploadSingleFile',
 
   components: {
-    TIconClearCircleFilled,
-    TIconCheckCircleFilled,
-    TIconErrorCircleFilled,
+    CloseCircleFilledIcon,
+    ErrorCircleFilledIcon,
+    CheckCircleFilledIcon,
     Loading,
   },
 
@@ -67,23 +63,17 @@ export default Vue.extend({
       return this.inputName || this.placeholder;
     },
     inputTextClass(): ClassName {
-      return [
-        `${prefix}-input__inner`,
-        { [`${UPLOAD_NAME}__placeholder`]: !this.inputName },
-      ];
+      return [`${prefix}-input__inner`, { [`${UPLOAD_NAME}__placeholder`]: !this.inputName }];
     },
     classes(): ClassName {
-      return [
-        `${UPLOAD_NAME}__single`,
-        `${UPLOAD_NAME}__single-${this.display}`,
-      ];
+      return [`${UPLOAD_NAME}__single`, `${UPLOAD_NAME}__single-${this.display}`];
     },
   },
 
   methods: {
     renderProgress() {
       if (this.loadingFile.status === 'fail') {
-        return <TIconErrorCircleFilled />;
+        return <ErrorCircleFilledIcon />;
       }
       if (this.showUploadProgress) {
         return (
@@ -97,9 +87,10 @@ export default Vue.extend({
 
     renderResult() {
       if (!!this.loadingFile && this.loadingFile.status === 'fail') {
-        return <TIconErrorCircleFilled />;
-      } if (this.file && this.file.name && !this.loadingFile) {
-        return <TIconCheckCircleFilled />;
+        return <ErrorCircleFilledIcon />;
+      }
+      if (this.file && this.file.name && !this.loadingFile) {
+        return <CheckCircleFilledIcon />;
       }
       return '';
     },
@@ -110,14 +101,14 @@ export default Vue.extend({
       return (
         <div class={`${UPLOAD_NAME}__single-display-text t-upload__display-text--margin`}>
           <span class={`${UPLOAD_NAME}__single-name`}>{this.inputName}</span>
-          {this.showProgress
-            ? this.renderProgress()
-            : (
-              <TIconClearCircleFilled
-                class={`${UPLOAD_NAME}__icon-delete`}
-                nativeOnClick={(e: MouseEvent) => this.remove(e)}
-              />
-            )}
+          {this.showProgress ? (
+            this.renderProgress()
+          ) : (
+            <CloseCircleFilledIcon
+              class={`${UPLOAD_NAME}__icon-delete`}
+              nativeOnClick={(e: MouseEvent) => this.remove(e)}
+            />
+          )}
         </div>
       );
     },
@@ -142,7 +133,9 @@ export default Vue.extend({
         {this.$scopedSlots.default && this.$scopedSlots.default(null)}
         {this.showTextPreview && this.renderFilePreviewAsText()}
         {this.showInput && this.showDelete && (
-          <span class={`${UPLOAD_NAME}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>删除</span>
+          <span class={`${UPLOAD_NAME}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
+            删除
+          </span>
         )}
       </div>
     );

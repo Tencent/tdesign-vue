@@ -1,11 +1,9 @@
-import {
-  CloseIcon as TIconClose,
-  InfoCircleFilledIcon as TIconInfoCircleFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from 'tdesign-icons-vue';
 import Vue from 'vue';
 import throttle from 'lodash/throttle';
+import {
+  CloseIcon, InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon,
+} from 'tdesign-icons-vue';
+
 import { prefix } from '../config';
 import TButton from '../button';
 import ActionMixin from './actions';
@@ -30,10 +28,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   name: 'TDialog',
 
   components: {
-    TIconClose,
-    TIconInfoCircleFilled,
-    TIconCheckCircleFilled,
-    TIconErrorCircleFilled,
+    CloseIcon,
+    InfoCircleFilledIcon,
+    CheckCircleFilledIcon,
+    ErrorCircleFilledIcon,
     TButton,
   },
 
@@ -208,10 +206,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
     getIcon() {
       const icon = {
-        info: <TIconInfoCircleFilled class={`${prefix}-is-info`} />,
-        warning: <TIconErrorCircleFilled class={`${prefix}-is-warning`} />,
-        danger: <TIconErrorCircleFilled class={`${prefix}-is-error`} />,
-        success: <TIconCheckCircleFilled class={`${prefix}-is-success`} />,
+        info: <InfoCircleFilledIcon class={`${prefix}-is-info`} />,
+        warning: <ErrorCircleFilledIcon class={`${prefix}-is-warning`} />,
+        danger: <ErrorCircleFilledIcon class={`${prefix}-is-error`} />,
+        success: <CheckCircleFilledIcon class={`${prefix}-is-success`} />,
       };
       return icon[this.theme];
     },
@@ -244,13 +242,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (left + this.diaglogW - this.offsetX > this.windowInnerWidth) {
         this.dLeft = this.windowInnerWidth - this.diaglogW + this.offsetX;
       } else {
-        this.dLeft = (target.offsetLeft < this.offsetX || left <= this.offsetX) ? this.offsetX : left;
+        this.dLeft = target.offsetLeft < this.offsetX || left <= this.offsetX ? this.offsetX : left;
       }
       target.style.left = `${this.dLeft}px`;
       if (top + this.diaglogH - this.offsetY > this.windowInnerHeight) {
         this.dTop = this.windowInnerHeight - this.diaglogH + this.offsetY;
       } else {
-        this.dTop = (top < this.offsetY) ? this.offsetY : top;
+        this.dTop = top < this.offsetY ? this.offsetY : top;
       }
       target.style.top = `${this.dTop}px`;
     },
@@ -289,7 +287,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     renderDialog() {
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <t-icon-close />;
+      const defaultCloseBtn = <close-icon />;
       const body = renderContent(this, 'default', 'body');
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
@@ -312,12 +310,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
-        <div
-          key="dialog"
-          ref="dialog"
-          class={this.dialogClass}
-          style={this.dialogStyle}
-        >
+        <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
           <div class={`${name}__header`}>
             {this.getIcon()}
             {renderTNodeJSX(this, 'header', defaultHeader)}

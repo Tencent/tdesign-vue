@@ -4,11 +4,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import isNil from 'lodash/isNil';
-import {
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-  CloseCircleFilledIcon as TIconCloseCircleFilled,
-} from 'tdesign-icons-vue';
+import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
@@ -29,7 +25,7 @@ import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-r
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
-export type IconConstructor = typeof TIconErrorCircleFilled;
+export type IconConstructor = typeof ErrorCircleFilledIcon;
 
 export type FormInstance = InstanceType<typeof Form>;
 
@@ -242,14 +238,14 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       );
       const list = this.errorList;
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
-        return resultIcon(TIconCheckCircleFilled);
+        return resultIcon(CheckCircleFilledIcon);
       }
       if (list && list[0]) {
         const type = this.errorList[0].type || 'error';
         const icon = {
-          error: TIconCloseCircleFilled,
-          warning: TIconErrorCircleFilled,
-        }[type] || TIconCheckCircleFilled;
+          error: CloseCircleFilledIcon,
+          warning: ErrorCircleFilledIcon,
+        }[type] || CheckCircleFilledIcon;
         return resultIcon(icon);
       }
       return null;

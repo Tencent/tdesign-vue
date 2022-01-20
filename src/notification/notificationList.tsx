@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Notification from './notification';
+import { prefix } from '../config';
 import { TdNotificationProps, NotificationOptions } from './type';
 import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
 import { Styles } from '../common';
@@ -11,14 +12,7 @@ export default Vue.extend({
       type: String,
       default: 'top-right',
       validator(v: string): boolean {
-        return (
-          [
-            'top-left',
-            'top-right',
-            'bottom-left',
-            'bottom-right',
-          ].indexOf(v) > -1
-        );
+        return ['top-left', 'top-right', 'bottom-left', 'bottom-right'].indexOf(v) > -1;
       },
     },
   },
@@ -72,17 +66,15 @@ export default Vue.extend({
   render() {
     if (!this.list.length) return;
     return (
-      <div class={`t-notification__show--${this.placement}`} style={this.styles}>
-        {this.list
-          .map((item, index) => (
-            <t-notification
-              key={item.id}
-              style={this.notificationStyles(item)}
-              {...{ props: item }}
-              {...{ on: this.getListeners(index) }}
-            />
-          ))
-        }
+      <div class={`${prefix}-notification__show--${this.placement}`} style={this.styles}>
+        {this.list.map((item, index) => (
+          <t-notification
+            key={item.id}
+            style={this.notificationStyles(item)}
+            {...{ props: item }}
+            {...{ on: this.getListeners(index) }}
+          />
+        ))}
       </div>
     );
   },

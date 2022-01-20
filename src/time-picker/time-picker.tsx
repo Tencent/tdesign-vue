@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
+import { TimeIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
@@ -36,7 +36,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
 
   components: {
     PickerPanel,
-    TIconTime,
+    TimeIcon,
     TPopup,
     TInput,
     InputItems,
@@ -316,7 +316,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             value={this.time ? ' ' : undefined}
             class={this.isShowPanel ? `${prefix}-is-focused` : ''}
           >
-            <t-icon-time slot="suffix-icon"></t-icon-time>
+            <time-icon slot="suffix-icon"></time-icon>
           </t-input>
           <input-items
             size={this.size}

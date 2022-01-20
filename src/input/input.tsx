@@ -1,5 +1,5 @@
 import Vue, { CreateElement, VNode } from 'vue';
-import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon as ClearIcon } from 'tdesign-icons-vue';
+import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
@@ -95,7 +95,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const suffixContent = suffix ? <div class={`${name}__suffix`}>{suffix}</div> : null;
 
     if (this.showClear) {
-      suffixIcon = <ClearIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
+      suffixIcon = <CloseCircleFilledIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
     }
 
     if (this.type === 'password') {
