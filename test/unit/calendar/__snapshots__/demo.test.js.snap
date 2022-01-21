@@ -492,8 +492,7 @@ exports[`Calendar base demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -2792,8 +2791,7 @@ exports[`Calendar cell demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -3960,8 +3958,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -5309,8 +5306,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -5319,7 +5315,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-m t-button--variant-base t-button--theme-warning"
             type="button"
           >
             <span
@@ -6409,8 +6405,7 @@ exports[`Calendar events demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -7649,8 +7644,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -8854,8 +8848,7 @@ exports[`Calendar head demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -10496,8 +10489,7 @@ exports[`Calendar range demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -11596,8 +11588,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -12690,8 +12681,7 @@ exports[`Calendar value demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -13898,8 +13888,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>
@@ -15000,8 +14989,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>
@@ -16088,8 +16076,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>

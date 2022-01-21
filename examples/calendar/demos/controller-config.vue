@@ -107,12 +107,12 @@ export default {
           currentDayButtonProps: {
             // 用于透传props给“今天”钮组件（“month”模式下有效）
             disabled: false,
-            variant: 'base',
+            theme: 'warning',
           },
           currentMonthButtonProps: {
             // 用于透传props给“本月”按钮组件（“year”模式下有效）
             disabled: false,
-            variant: 'base',
+            theme: 'success',
           },
         },
       },

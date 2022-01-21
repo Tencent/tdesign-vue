@@ -3,6 +3,7 @@ import { prefix } from '../config';
 import props from './check-tag-props';
 import { renderContent } from '../utils/render-tnode';
 import { TNodeReturnValue } from '../common';
+import CLASSNAMES from '../utils/classnames';
 import { TdCheckTagProps } from './type';
 import { emitEvent } from '../utils/event';
 
@@ -17,6 +18,7 @@ export default Vue.extend({
         `${name}`,
         `${name}--check`,
         `${name}--default`,
+        CLASSNAMES.SIZE[this.size],
         {
           [`${name}--checked`]: !this.disabled && this.checked,
           [`${prefix}-is-disabled`]: this.disabled,
