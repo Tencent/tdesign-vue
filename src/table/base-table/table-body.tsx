@@ -5,9 +5,33 @@ import { emitEvent } from '../../utils/event';
 import { prefix } from '../../config';
 import baseTableProps from '../base-table-props';
 import primaryTableProps from '../primary-table-props';
-import { BaseTableCol } from '../type';
 import TableRow from './table-row';
 import { renderTNodeJSX } from '../../utils/render-tnode';
+
+type RowOrColspanProp = {
+  colspan?: number;
+  rowspan?: number;
+};
+
+const setPropsValue = (
+  propsArray: Array<Record<string, RowOrColspanProp>>,
+  rowIndex: number,
+  key: string,
+  value: RowOrColspanProp,
+) => {
+  if (typeof propsArray[rowIndex] === 'undefined') {
+    // eslint-disable-next-line no-param-reassign
+    propsArray[rowIndex] = {
+      [key]: {},
+    };
+  }
+  if (typeof propsArray[rowIndex][key] === 'undefined') {
+    // eslint-disable-next-line no-param-reassign
+    propsArray[rowIndex][key] = {};
+  }
+  // eslint-disable-next-line no-param-reassign
+  propsArray[rowIndex][key] = value;
+};
 
 export default Vue.extend({
   name: `${prefix}-table-body`,
@@ -20,6 +44,7 @@ export default Vue.extend({
     rowspanAndColspan: baseTableProps.rowspanAndColspan,
     firstFullRow: baseTableProps.firstFullRow,
     lastFullRow: baseTableProps.lastFullRow,
+    onCellClick: baseTableProps.onCellClick,
     onRowHover: baseTableProps.onRowHover,
     onRowMouseup: baseTableProps.onRowMouseup,
     onRowMousedown: baseTableProps.onRowMousedown,
@@ -48,13 +73,15 @@ export default Vue.extend({
     getRowspanAndColspanProps() {
       const props: Array<any> = [];
       const { data, columns, rowspanAndColspan } = this;
-      const cacheFirstColumnLeftedRowspan: Array<number> = [];
       data.forEach((rowData, rowIndex) => {
         if (props[rowIndex] === undefined) {
           props[rowIndex] = {};
         }
         columns.forEach((col, colIndex) => {
           const { colKey } = col;
+          if (props[rowIndex]?.[colKey]) {
+            return;
+          }
           let { rowspan, colspan } = rowspanAndColspan({
             col,
             colIndex,
@@ -63,63 +90,23 @@ export default Vue.extend({
           }) || {};
           rowspan = rowspan || 1;
           colspan = colspan || 1;
-          if (colIndex === 0 && rowspan > 1) {
-            // 第一列跨行的话，先提前设置一下第 rowspan + rowindex - 1 行的剩余跨行数
-            cacheFirstColumnLeftedRowspan[rowspan + rowIndex - 1] = 1;
-          }
-          // 剩余要跨的行
-          let leftedRowspan = 0;
-          if (rowIndex === 0 || rowspan > 1) {
-            leftedRowspan = rowspan - 1;
-          } else {
-            // 上一行如果跨行的话，计算一下除去渲染当前行是否还在跨行范围内，以及是否还有剩余
-            const preRowIndex = rowIndex - 1;
-            leftedRowspan = props[preRowIndex]?.[colKey]?.leftedRowspan || 0;
-            if (leftedRowspan > 0) {
-              leftedRowspan -= 1;
-              // 当前单元格跨行置为-1，在渲染时跳过
-              rowspan = -1;
-            }
-          }
-          // 剩余要跨的列
-          let leftedColspan = 0;
-          if (colIndex === 0 || colspan > 1) {
-            leftedColspan = colspan - 1;
-            // 第一列有跨行，行数不减1，防止后后面的单元格判断失误
-            if (colIndex === 0 && (leftedRowspan > 0 || cacheFirstColumnLeftedRowspan[rowIndex] > 0)) {
-              leftedColspan = 1;
-            }
-          } else {
-            // 一种特殊情况，如果当前行的上一行有跨列，应该继承一下他的跨列数
-            if (rowIndex > 0) {
-              const preLeftedColspan = props[rowIndex - 1]?.[colKey]?.leftedColspan;
-              const preLeftedColRowspan = props[rowIndex - 1]?.[colKey]?.leftedRowspan;
-              if (preLeftedColspan > 0 && preLeftedColRowspan > 0) {
-                leftedColspan = preLeftedColspan;
-                // 当前单元格跨行置为-1，在渲染时跳过
-                colspan = -1;
+          if (rowspan > 1 || colspan > 1) {
+            let occupiedRow = 0;
+            while (occupiedRow < rowspan) {
+              let occupiedCol = 1;
+              while (occupiedCol < colspan) {
+                const curColIndex = colIndex + occupiedCol;
+                const nextColKey = columns[curColIndex]?.colKey;
+                setPropsValue(props, rowIndex + occupiedRow, nextColKey, { colspan: -1 });
+                occupiedCol += 1;
               }
-            }
-            // 前一列如果跨列的话，计算一下除去渲染当前列是否还在跨列范围内，以及是否还有剩余
-            const preColKey = (columns[colIndex - 1] as BaseTableCol).colKey;
-            if (leftedColspan === 0) {
-              leftedColspan = props[rowIndex]?.[preColKey]?.leftedColspan || 0;
-              if (leftedColspan > 0) {
-                leftedColspan -= 1;
-                // 当前单元格跨行置为-1，在渲染时跳过
-                colspan = -1;
+              if (occupiedRow > 0) {
+                setPropsValue(props, rowIndex + occupiedRow, colKey, { rowspan: -1 });
               }
+              occupiedRow += 1;
             }
-          }
-          if (rowspan > 1 && colspan === -1) {
-            colspan = 1;
-          }
-          if (colspan > 1 && rowspan === -1) {
-            rowspan = 1;
           }
           props[rowIndex][colKey] = {
-            leftedColspan,
-            leftedRowspan,
             rowspan,
             colspan,
           };

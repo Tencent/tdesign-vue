@@ -162,6 +162,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const rowEvents = this.registerRowEvents();
       const props = {
         props: {
+          ...this.$props,
           rowKey: this.rowKey,
           data: this.dataSource,
           provider: this.provider,

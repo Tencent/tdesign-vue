@@ -30,6 +30,7 @@ export * from './select';
 export * from './slider';
 export * from './steps';
 export * from './switch';
+export * from './skeleton';
 export * from './table';
 export * from './tabs';
 export * from './tag';

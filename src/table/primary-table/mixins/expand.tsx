@@ -20,9 +20,24 @@ export default Vue.extend({
     rowKey: baseTableProps.rowKey,
     ...ExpandProps,
   },
+  data() {
+    return {
+      hasExpandedColumn: false,
+    };
+  },
   computed: {
     reRowKey(): string {
       return this.rowKey || 'id';
+    },
+    columnLength(): number {
+      let len = this.columns.length;
+      if (this.hasExpandedColumn) {
+        len += 1;
+      }
+      return len;
+    },
+    isFirstColumnFixed(): boolean {
+      return this.columns[0].fixed === 'left';
     },
   },
   methods: {
@@ -32,7 +47,9 @@ export default Vue.extend({
     },
     getExpandColumns(columns: Columns): Columns {
       const expandRowHandler = this.getExpandRowHandler();
-      if (!expandRowHandler || !this.expandIcon) return columns;
+      const hasExpandedColumn = Boolean(expandRowHandler && this.expandIcon);
+      this.hasExpandedColumn = hasExpandedColumn;
+      if (!hasExpandedColumn) return columns;
       return [
         {
           colKey: expandedColKey,
@@ -43,6 +60,7 @@ export default Vue.extend({
               overflow: 'auto',
             },
           },
+          fixed: this.isFirstColumnFixed ? 'left' : undefined,
           cell: (h, { row, rowIndex }) => this.renderExpandIconCell({ row, rowIndex }),
         },
         ...columns,
@@ -75,8 +93,10 @@ export default Vue.extend({
       const isShowExpanded = this.expandedRowKeys.includes(id);
       if (isShowExpanded) {
         return (
-          <tr>
-            <td colspan={this.columns.length}>{renderTNodeJSX(this, 'expandedRow', { params })}</td>
+          <tr class={`${prefix}-table__expanded-row`}>
+            <td colspan={this.columnLength} class={`${prefix}-table__row--full`}>
+              <div class={`${prefix}-table__expanded-row-inner`}>{renderTNodeJSX(this, 'expandedRow', { params })}</div>
+            </td>
           </tr>
         );
       }

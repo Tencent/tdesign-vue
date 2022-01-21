@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import { ChevronDownIcon as TIconChevronDown, CloseCircleFilledIcon as TIconClose } from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import TLoading from '../loading';
 import Popup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
@@ -62,8 +62,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     };
   },
   components: {
-    TIconChevronDown,
-    TIconClose,
+    CloseCircleFilledIcon,
     TInput,
     TLoading,
     Tag,
@@ -381,6 +380,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     hideMenu() {
       this.visible = false;
+      emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
       e.stopPropagation();
@@ -589,7 +589,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           </span>
         );
       }
-      return <t-icon-close class={closeIconClass} size={this.size} nativeOnClick={this.clearSelect} />;
+      return <CloseCircleFilledIcon class={closeIconClass} size={this.size} nativeOnClick={this.clearSelect} />;
     },
     doFocus() {
       const input = this.$refs.input as HTMLElement;
@@ -709,7 +709,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             onMouseenter={this.hoverEvent.bind(null, true)}
             onMouseleave={this.hoverEvent.bind(null, false)}
           >
-            {prefixIconSlot && <span class="t-select__left-icon">{prefixIconSlot[0]}</span>}
+            {prefixIconSlot && <span class={`${name}__left-icon`}>{prefixIconSlot[0]}</span>}
             {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
             {this.valueDisplay || this.$scopedSlots.valueDisplay
               ? renderTNodeJSX(this, 'valueDisplay', {

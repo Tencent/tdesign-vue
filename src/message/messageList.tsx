@@ -15,8 +15,10 @@ const getUniqueId = (() => {
   };
 })();
 
+const name = `${prefix}-message__list`;
+
 export const MessageList = Vue.extend({
-  name: `${prefix}-message__list`,
+  name,
   components: { TMessage },
   props: {
     zIndex: Number,
@@ -55,11 +57,13 @@ export const MessageList = Vue.extend({
       return isNaN(Number(val)) ? val : `${val}px`;
     },
     msgStyles(item: { offset: object }) {
-      return item.offset && {
-        position: 'relative',
-        left: this.getOffset(item.offset[0]),
-        top: this.getOffset(item.offset[1]),
-      };
+      return (
+        item.offset && {
+          position: 'relative',
+          left: this.getOffset(item.offset[0]),
+          top: this.getOffset(item.offset[1]),
+        }
+      );
     },
     getListeners(index: number) {
       return {
@@ -71,17 +75,15 @@ export const MessageList = Vue.extend({
   render(): VNode {
     if (!this.list.length) return;
     return (
-      <div class='t-message__list' style={this.styles}>
-        {this.list
-          .map((item, index) => (
-            <t-message
-              key={item.key}
-              style={this.msgStyles(item)}
-              {...{ props: item }}
-              {...{ on: this.getListeners(index) }}
-            />
-          ))
-        }
+      <div class={name} style={this.styles}>
+        {this.list.map((item, index) => (
+          <t-message
+            key={item.key}
+            style={this.msgStyles(item)}
+            {...{ props: item }}
+            {...{ on: this.getListeners(index) }}
+          />
+        ))}
       </div>
     );
   },

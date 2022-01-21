@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { ChevronRightIcon as IconChevronRight } from 'tdesign-icons-vue';
+import { ChevronRightIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';
@@ -11,7 +11,7 @@ const separatorClass = `${prefix}-breadcrumb__separator`;
 const disableClass = `${prefix}-disabled`;
 const linkClass = `${prefix}-link`;
 const maxLengthClass = `${prefix}-breadcrumb__inner`;
-const textFlowClass = `${prefix}-breadcrumb--text-oveflow`;
+const textFlowClass = `${prefix}-breadcrumb--text-overflow`;
 const gestureClass = `${prefix}-gestureClass`;
 
 export interface LocalTBreadcrumb {
@@ -95,11 +95,8 @@ export default Vue.extend({
     const { separator } = localTBreadcrumb;
     const separatorSlot = localTBreadcrumb.$slots.separator;
     const separatorPropContent = typeof separator === 'function' ? separator() : separator;
-    const separatorContent = separatorPropContent || separatorSlot || (<IconChevronRight />);
-    const itemClass = [
-      name,
-      this.themeClassName,
-    ];
+    const separatorContent = separatorPropContent || separatorSlot || <ChevronRightIcon />;
+    const itemClass = [name, this.themeClassName];
     const textClass = [textFlowClass];
 
     if (disabled) {

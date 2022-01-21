@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import Vue from 'vue';
-import { CalendarIcon as TIconCalendar, TimeIcon as TIconTime, CloseIcon as TIconClose } from 'tdesign-icons-vue';
+import { CalendarIcon, TimeIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';
@@ -36,9 +36,8 @@ export default mixins(
 ).extend({
   name: 'TDatePicker',
   components: {
-    TIconTime,
-    TIconCalendar,
-    TIconClose,
+    CalendarIcon,
+    TimeIcon,
     TPopup,
     TButton,
     TInput,
@@ -680,9 +679,9 @@ export default mixins(
         return suffixIconSlot;
       }
       if (enableTimePicker) {
-        return <t-icon-time />;
+        return <time-icon />;
       }
-      return <t-icon-calendar />;
+      return <calendar-icon />;
     };
 
     return (
