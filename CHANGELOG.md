@@ -5,6 +5,28 @@ toc: false
 docClass: timeline
 ---
 
+## 0.33.2 `2022-01-21`
+
+
+### Bug Fixes
+
+* fix table expanded style to inline-block ([ed2b34c](https://github.com/Tencent/tdesign-vue/commit/ed2b34cb196891eb294889a37c2efc4ec9b000bc))
+* **form:** form getEmptyValue ([7a20992](https://github.com/Tencent/tdesign-vue/commit/7a209921f7ce2d6372817e3281064d38b1a127b9))
+* **form:** set min and max to be charactor computed style & update docs ([#249](https://github.com/Tencent/tdesign-vue/issues/249)) ([1381283](https://github.com/Tencent/tdesign-vue/commit/13812832f360d068636ab13239cb31f5d8b9a9ca))
+* grid ssr render error ([#286](https://github.com/Tencent/tdesign-vue/issues/286)) ([54bbfa3](https://github.com/Tencent/tdesign-vue/commit/54bbfa32fa7d7fca93413497ad0bf6b6a983a82b))
+* **ie-slider:** 去掉slider-button的disabled属性，以兼容ie9下事件触发 ([fde0528](https://github.com/Tencent/tdesign-vue/commit/fde0528e44f7dcf0861711dc2099f172c117415a))
+* ie9以下才执行方法 ([7d008d1](https://github.com/Tencent/tdesign-vue/commit/7d008d18acb1e9d485177b5678fc24d786ac0bef))
+* **input:** 兼容IE9，获取input回车事件 ([323b5a6](https://github.com/Tencent/tdesign-vue/commit/323b5a6b4dbb1b2e85469e895b52a1b65960c7e2))
+* ripple-dataset null error ([d66eba9](https://github.com/Tencent/tdesign-vue/commit/d66eba90c056792dae369fe856b7c6f88cabcdc8))
+* **table:** 合并单元格问题 [#242](https://github.com/Tencent/tdesign-vue/issues/242) ([731cf48](https://github.com/Tencent/tdesign-vue/commit/731cf48a1d4e9af71d31011683c4af757a1db890))
+* **table:** expanded colspan and fixed expanded icon ([#255](https://github.com/Tencent/tdesign-vue/issues/255)) ([471abd8](https://github.com/Tencent/tdesign-vue/commit/471abd82b1a2ba74520d4f5c8493229519481fc8))
+* 修复 umd 产物中未包括 reset 及 css variables 声明的问题，[#222](https://github.com/Tencent/tdesign-vue/issues/222)，
+
+### Features
+
+* 
+* Skeleton: 新增骨架屏组件，请参照[官网]()使用，[@Wonder233](https://github.com/Wonder233)
+
 ## 0.33.1 `2022-01-13`
 
 ### Bug Fixes
