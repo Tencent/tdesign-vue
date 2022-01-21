@@ -282,22 +282,28 @@ export default {
           component: () => import('@/examples/list/list.md'),
         },
         {
+          title: 'Loading 加载',
+          name: 'loading',
+          path: '/vue/components/loading',
+          component: () => import('@/examples/loading/loading.md'),
+        },
+        {
           title: 'Progress 进度条',
           name: 'progress',
           path: '/vue/components/progress',
           component: () => import('@/examples/progress/progress.md'),
         },
+        // {
+        //   title: 'Swiper 轮播框',
+        //   name: 'swiper',
+        //   path: '/vue/components/swiper',
+        //   component: () => import('@/examples/swiper/swiper.md'),
+        // },
         {
-          title: 'Skeleton  骨架屏',
+          title: 'Skeleton 骨架屏',
           name: 'skeleton',
           path: '/vue/components/skeleton',
           component: () => import('@/examples/skeleton/skeleton.md'),
-        },
-        {
-          title: 'Swiper 轮播框',
-          name: 'swiper',
-          path: '/vue/components/swiper',
-          component: () => import('@/examples/swiper/swiper.md'),
         },
         {
           title: 'Table 表格',
@@ -346,12 +352,6 @@ export default {
           name: 'drawer',
           path: '/vue/components/drawer',
           component: () => import('@/examples/drawer/drawer.md'),
-        },
-        {
-          title: 'Loading 加载',
-          name: 'loading',
-          path: '/vue/components/loading',
-          component: () => import('@/examples/loading/loading.md'),
         },
         {
           title: 'Message 全局提示',

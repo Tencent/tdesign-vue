@@ -39,7 +39,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
         : this.getDefaultIcon();
       const style: Styles = {
         transition: 'all .2s',
-        display: 'flex',
+        display: 'inline-block',
         'align-items': 'center',
       };
       if (expanded) {
