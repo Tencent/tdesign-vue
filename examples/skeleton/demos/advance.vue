@@ -77,14 +77,17 @@ export default {
 
   &-list {
     > li {
+      display: flex;
+      align-items: center;
       padding: 16px 0;
       .avatar {
         display: inline-block;
-        margin-right: 20px;
+        line-height: 68px;
+        margin-right: 16px;
       }
       .paragraph {
         display: inline-block;
-        width: 80%;
+        width: 90%;
       }
     }
   }
