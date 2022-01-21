@@ -11,7 +11,7 @@ const separatorClass = `${prefix}-breadcrumb__separator`;
 const disableClass = `${prefix}-disabled`;
 const linkClass = `${prefix}-link`;
 const maxLengthClass = `${prefix}-breadcrumb__inner`;
-const textFlowClass = `${prefix}-breadcrumb--text-oveflow`;
+const textFlowClass = `${prefix}-breadcrumb--text-overflow`;
 const gestureClass = `${prefix}-gestureClass`;
 
 export interface LocalTBreadcrumb {
