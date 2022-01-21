@@ -434,6 +434,16 @@ exports[`Input status demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
+    class="t-input t-size-m"
+  >
+    <input
+      class="t-input__inner"
+      placeholder="请输入"
+      type="text"
+    />
+  </div>
+   
+  <div
     class="t-input t-size-m t-is-success"
   >
     <input
@@ -461,6 +471,84 @@ exports[`Input status demo works fine 1`] = `
       placeholder="请输入"
       type="text"
     />
+  </div>
+   
+  <br />
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+      />
+    </div>
+    <div
+      class="t-input__tips t-input__tips--normal"
+    >
+      这是普通文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-is-success"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+      />
+    </div>
+    <div
+      class="t-input__tips t-input__tips--success"
+    >
+      校验通过文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-is-warning"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+      />
+    </div>
+    <div
+      class="t-input__tips t-input__tips--warning"
+    >
+      校验不通过文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-is-error"
+    >
+      <input
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+      />
+    </div>
+    <div
+      class="t-input__tips t-input__tips--error"
+    >
+      校验存在严重问题文本提示
+    </div>
   </div>
 </div>
 `;
