@@ -412,18 +412,15 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
               {label}
             </Tag>
       ));
-    const selectedSingle = !this.multiple
-      && !this.showPlaceholder
-      && !this.showFilter
-      && (this.valueDisplay || this.$scopedSlots.valueDisplay) ? (
-        renderTNodeJSX(this, 'valueDisplay', {
-          params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
-        })
-      ) : (
+    const selectedSingle = this.valueDisplay || this.$scopedSlots.valueDisplay ? (
+      renderTNodeJSX(this, 'valueDisplay', {
+        params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
+      })
+    ) : (
         <span title={this.selectedSingle} class={`${prefix}-select__single`}>
           {this.selectedSingle}
         </span>
-      );
+    );
     const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
       && this.minCollapsedNum > 0
       && this.tagList.length > this.minCollapsedNum ? (
@@ -460,7 +457,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             </span>
             {tagItem}
             {collapsedItem}
-            {selectedSingle}
+            {!this.multiple && !this.showPlaceholder && !this.showFilter && selectedSingle}
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
