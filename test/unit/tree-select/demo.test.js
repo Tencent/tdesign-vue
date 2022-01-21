@@ -7,6 +7,7 @@ import valuetype from '@/examples/tree-select/demos/valuetype.vue';
 import props from '@/examples/tree-select/demos/props.vue';
 import lazy from '@/examples/tree-select/demos/lazy.vue';
 import prefix from '@/examples/tree-select/demos/prefix.vue';
+import valuedisplay from '@/examples/tree-select/demos/valuedisplay.vue';
 
 // unit test for component in examples.
 describe('TreeSelect', () => {
@@ -40,6 +41,10 @@ describe('TreeSelect', () => {
   });
   it('prefix demo works fine', () => {
     const wrapper = mount(prefix);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('valuedisplay demo works fine', () => {
+    const wrapper = mount(valuedisplay);
     expect(wrapper.element).toMatchSnapshot();
   });
 });
