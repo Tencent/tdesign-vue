@@ -20,6 +20,7 @@ pagination | Object | - | 分页配置，值为空则不显示。具体 API 参�
 rowClassName | String / Object / Array / Function | - | 行类名，泛型 T 指表格数据类型。TS 类型：`ClassName | ((params: { row: T; rowIndex: number }) => ClassName)`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 rowKey | String | - | 必需。使用 rowKey 唯一标识一行数据 | Y
 rowspanAndColspan | Function | - | 用于自定义合并单元格，泛型 T 指表格数据类型。TS 类型：`(params: RowspanAndColspanParams<T>) => RowspanColspan`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+scroll | Object | - | 懒加载和虚拟滚动。TS 类型：`TableScroll` | N
 size | String | medium | 表格尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 stripe | Boolean | false | 是否显示斑马纹 | N
 tableLayout | String | fixed | 表格布局方式。可选项：auto/fixed | N
@@ -76,20 +77,20 @@ asyncLoading | String / Slot / Function | - | 异步加载状态。值为 `loadi
 columns | Array | [] | 列配置，泛型 T 指表格数据类型。TS 类型：`Array<PrimaryTableCol<T>>` | N
 dragSort | Boolean | false | 是否开始拖拽排序，会显示拖拽图标 | N
 expandedRow | String / Slot / Function | - | 展开行内容，泛型 T 指表格数据类型。TS 类型：`TNode<{ row: T; index: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-expandedRowKeys | Array | [] | 展开行。支持语法糖。TS 类型：`Array<string | number>` | N
+expandedRowKeys | Array | [] | 展开行。支持语法糖 `.sync`。TS 类型：`Array<string | number>` | N
 defaultExpandedRowKeys | Array | [] | 展开行。非受控属性。TS 类型：`Array<string | number>` | N
 expandIcon | Boolean / Slot / Function | true | 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效。TS 类型：`TNode<ExpandArrowRenderParams<T>>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 expandOnRowClick | Boolean | - | 是否允许点击行展开 | N
 filterIcon | Slot / Function | - | 自定义过滤图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 filterRow | String / Slot / Function | - | 自定义过滤状态行及清空筛选等。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-filterValue | Object | - | 过滤数据的值。支持语法糖。TS 类型：`FilterValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+filterValue | Object | - | 过滤数据的值。支持语法糖 `.sync`。TS 类型：`FilterValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 defaultFilterValue | Object | - | 过滤数据的值。非受控属性。TS 类型：`FilterValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 multipleSort | Boolean | false | 是否支持多列排序 | N
-selectedRowKeys | Array | - | 选中的行，控制属性。支持语法糖。TS 类型：`Array<string | number>` | N
+selectedRowKeys | Array | - | 选中的行，控制属性。支持语法糖 `.sync`。TS 类型：`Array<string | number>` | N
 defaultSelectedRowKeys | Array | - | 选中的行，控制属性。非受控属性。TS 类型：`Array<string | number>` | N
 showColumnController | Boolean | false | 【开发中】是否显示 自定义显示列控制器 | N
 showDragCol | Boolean | false | 【讨论中-待定】是否显示为通过拖拽图标进行排序 | N
-sort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`。支持语法糖。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+sort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`。支持语法糖 `.sync`。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 defaultSort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`。非受控属性。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 sortOnRowDraggable | Boolean | false | 允许表格行拖拽时排序 | N
 `Omit<BaseTableProps<T>, 'columns'>` | - | - | 继承 `Omit<BaseTableProps<T>, 'columns'>` 中的全部 API | N
@@ -168,3 +169,12 @@ props | Array | - | 用于透传筛选器属性，可以对筛选器进行任何
 resetValue | - | - | 重置时设置的值，示例：'' 或 []。TS 类型：`any` | N
 showConfirmAndReset | Boolean | false | 是否显示重置和确认。值为真，过滤事件（filter-change）会在确定时触发；值为假，则数据变化时会立即触发过滤事件 | N
 type | String | - | 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器。TS 类型：`FilterType`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+
+### TableScroll
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+bufferSize | Number | 20 | 表示表格除可视区域外，额外渲染的行数，避免表格快速滚动过程中，新出现的内容来不及渲染从而出现空白 | N
+isFixedRowHeight | Boolean | false | 表示表格每行内容是否同一个固定高度，仅在 `scroll.type` 为 `virtual` 时有效，该属性设置为 `true` 时，可用于简化虚拟滚动内部计算逻辑，提升性能，此时则需要明确指定 `scroll.rowHeight` 属性的值 | N
+rowHeight | Number | - | 表格的行高，不会给`<tr>`元素添加样式高度，仅作为滚动时的行高参考。`scroll.type` 为 `lazy` 时，`rowHeight` 用于给未渲染的行节点指定一个初始高度，该属性默认会设置为表格第一行的行高（滚动加载行数量 = 滚动距离 / rowHeight）；`scroll.type` 为 `virtual` 时，`rowHeight` 用于估算每行的大致高度，从而决定应该渲染哪些行，请尽量将该属性设置为表格每行平均高度，从而使得表格滚动过程更加平滑 | N
+type | String | - | 必需。表格滚动加载类型，有两种：懒加载和虚拟滚动。值为 `lazy` ，表示表格滚动时会进行懒加载，非可视区域内的表格内容将不会默认渲染，直到该内容可见时，才会进行渲染，并且已渲染的内容滚动到不可见时，不会被销毁；<br />值为`virtual`时，表示表格会进行虚拟滚动，无论滚动条滚动到哪个位置，同一时刻，表格仅渲染该可视区域内的表格内容，当表格需要展示的数据量较大时，建议开启该特性。可选项：lazy/virtual | Y
