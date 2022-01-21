@@ -1,7 +1,7 @@
 <template>
   <div class="tdesign-tree-select-valuedisplay">
     <t-tree-select :data="options" v-model="value" clearable placeholder="请选择">
-      <template #valueDisplay="{ value }"> {{ value.label }}({{ value.value.toUpperCase() }}) </template>
+      <template #valueDisplay="{ value }"> {{ value.label }}({{ value.value }}) </template>
     </t-tree-select>
     <t-tree-select
       class="tree-select-multiple"
@@ -14,7 +14,7 @@
     >
       <template #valueDisplay="{ value, onClose }">
         <t-tag v-for="(item, index) in value" :key="index" closable :onClose="() => onClose(index)">
-          {{ item.label }}({{ item.value.toUpperCase() }})
+          {{ item.label }}({{ item.value }})
         </t-tag>
       </template>
     </t-tree-select>
