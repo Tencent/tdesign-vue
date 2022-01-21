@@ -4,6 +4,8 @@ import Popup from '../../popup';
 import { isNodeOverflow } from '../../utils/dom';
 import { TdInstance } from '../util/interface';
 import { getRecord } from '../util/common';
+import { emitEvent } from '../../utils/event';
+import { TdBaseTableProps } from '../type';
 
 export const ELLIPSIS_CLASS_NAME = `${prefix}-text-ellipsis`;
 
@@ -140,6 +142,17 @@ export default Vue.extend({
         key: colKey,
       },
       style,
+      on: {
+        click: (e: MouseEvent) => {
+          emitEvent<Parameters<TdBaseTableProps['onCellClick']>>(this, 'cell-click', {
+            col,
+            colIndex,
+            row,
+            rowIndex,
+            e,
+          });
+        },
+      },
     };
     let newCellContent = cellContent;
     // 如果被截断给加上 Tooltip 提示
