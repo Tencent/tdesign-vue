@@ -138,7 +138,7 @@ export interface TdInputProps {
   /**
    * 粘贴事件，`pasteValue` 表示粘贴板的内容
    */
-  onPaste?: (context: { e: ClipboardEvent<HTMLInputElement>; pasteValue: string }) => void;
+  onPaste?: (context: { e: ClipboardEvent; pasteValue: string }) => void;
 }
 
 export type InputValue = string | number;
