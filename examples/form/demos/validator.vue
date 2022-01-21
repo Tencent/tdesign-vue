@@ -1,45 +1,42 @@
 <template>
   <div>
-    <t-form
-      :data="formData"
-      :rules="rules"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      scrollToFirstError="smooth"
-    >
-      <t-form-item label="用户名" help="这里请填写用户名" name='account'>
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
+      <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
-      <t-form-item label="密码" help="这里请填写密码" name='password'>
+      <t-form-item label="个人简介" help="一句话介绍自己" name="description">
+        <t-input v-model="formData.description"></t-input>
+      </t-form-item>
+      <t-form-item label="密码" name="password">
         <t-input type="password" v-model="formData.password"></t-input>
       </t-form-item>
-      <t-form-item label="邮箱" name='email'>
+      <t-form-item label="邮箱" name="email">
         <t-input v-model="formData.email"></t-input>
       </t-form-item>
-      <t-form-item label="性别" name='gender'>
+      <t-form-item label="性别" name="gender">
         <t-radio-group v-model="formData.gender">
           <t-radio value="male">男</t-radio>
           <t-radio value="femal">女</t-radio>
         </t-radio-group>
       </t-form-item>
-      <t-form-item label="课程" name='course'>
-        <t-checkbox-group
-          v-model="formData.course"
-          :options="courseOptions"
-        ></t-checkbox-group>
+      <t-form-item label="课程" name="course">
+        <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
       </t-form-item>
-      <t-form-item label="学院" name='college'>
+      <t-form-item label="学院" name="college">
         <t-select v-model="formData.college" class="demo-select-base" clearable>
           <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
             {{ item.label }}
           </t-option>
         </t-select>
       </t-form-item>
-      <t-form-item label="入学时间" name='date' :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]">
+      <t-form-item
+        label="入学时间"
+        name="date"
+        :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]"
+      >
         <t-input v-model="formData.date"></t-input>
       </t-form-item>
-      <t-form-item label="个人网站" name='content.url'>
+      <t-form-item label="个人网站" name="content.url">
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
@@ -51,10 +48,10 @@
   </div>
 </template>
 <script>
-
 const INITIAL_DATA = {
   account: '',
   password: '',
+  description: '',
   email: '',
   gender: '',
   college: '',
@@ -82,19 +79,26 @@ export default {
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
-          { min: 2, message: '至少需要两个字', type: 'error' },
+          { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
+          { max: 10, message: '姓名字符长度超出', type: 'warning' },
+        ],
+        description: [
+          { validator: (val) => val.length >= 5, message: '至少 5 个字，中文长度等于英文长度' },
+          { validator: (val) => val.length < 20, message: '不能超过 20 个字，中文长度等于英文长度' },
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
+          { len: 8, message: '请输入 8 位密码', type: 'warning' },
+          { pattern: /[A-Z]+/, message: '密码必须包含大写字母', type: 'warning' },
         ],
         email: [
-          { required: true, message: '格式必须为邮箱', type: 'warning' },
+          { required: true, message: '邮箱必填', type: 'warning' },
+          { email: { ignore_max_length: true }, message: '请输入正确的邮箱地址' },
         ],
-        gender: [
-          { required: true, message: '性别必填', type: 'warning' },
-        ],
+        gender: [{ required: true, message: '性别必填', type: 'warning' }],
         course: [
           { required: true, message: '课程必填', type: 'warning' },
+          { validator: (val) => val.length <= 2, message: '最多选择 2 门课程', type: 'warning' },
         ],
         'content.url': [
           { required: true, message: '个人网站必填', type: 'warning' },

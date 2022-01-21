@@ -1,6 +1,15 @@
 <template>
   <div>
-    <t-form :data="formData" ref="form" @reset="onReset" @submit="onSubmit" :colon="true">
+    <div>
+      <t-radio-group v-model="size" variant="default-filled">
+        <t-radio-button value="medium">中尺寸（默认）</t-radio-button>
+        <t-radio-button value="large">大尺寸</t-radio-button>
+      </t-radio-group>
+    </div>
+    <br /><br />
+
+    <!-- 开发中 -->
+    <t-form :data="formData" :size="size" @reset="onReset" @submit="onSubmit">
       <t-form-item label="姓名" name="name">
         <t-input v-model="formData.name" placeholder="请输入内容"></t-input>
       </t-form-item>
@@ -38,6 +47,7 @@ const INITIAL_DATA = {
 export default {
   data() {
     return {
+      size: 'medium',
       formData: { ...INITIAL_DATA },
       courseOptions: [
         { label: '语文', value: '1' },
@@ -48,11 +58,9 @@ export default {
   },
 
   methods: {
-    // 重置方法：this.$refs.reset()
     onReset() {
       this.$message.success('重置成功');
     },
-    // 提交方法：this.$refs.submit()
     onSubmit({ validateResult, firstError }) {
       if (validateResult === true) {
         this.$message.success('提交成功');

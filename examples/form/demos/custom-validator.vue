@@ -1,37 +1,27 @@
 <template>
   <div>
-    <t-form
-      :data="formData"
-      :rules="rules"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      @validate="onValidate"
-    >
-      <t-form-item label="用户名"  name="account">
-        <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" @validate="onValidate">
+      <t-form-item label="用户名" name="account">
+        <t-input v-model="formData.account"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name="password" help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化">
-        <t-input
-          type="password"
-          v-model="formData.password"
-        ></t-input>
+      <t-form-item
+        label="密码"
+        name="password"
+        help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化"
+      >
+        <t-input type="password" v-model="formData.password"></t-input>
       </t-form-item>
-      <t-form-item label="确认密码" name="rePassword" help="在此处体验普通自定义校验方法">
-        <t-input
-          type="password"
-          v-model="formData.rePassword"
-        ></t-input>
+      <t-form-item label="确认密码" name="rePassword" help="自定义异步校验方法">
+        <t-input type="password" v-model="formData.rePassword"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button  theme="default" variant="base" type="reset">重置</t-button>
+        <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>
     </t-form>
   </div>
 </template>
 <script>
-
 const INITIAL_DATA = {
   account: '',
   password: '',
@@ -45,7 +35,18 @@ export default {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
           {
-            min: 2, message: '至少需要两个字', type: 'error', trigger: 'blur',
+            validator: (val) => new Promise((resolve) => {
+              const timer = setTimeout(() => {
+                if (['Zhang', 'Li', 'Wang'].includes(val)) {
+                  resolve(true);
+                } else {
+                  resolve(false);
+                }
+                clearTimeout(timer);
+              }, 10);
+            }),
+            type: 'error',
+            message: '用户不存在',
           },
         ],
         password: [
@@ -56,6 +57,7 @@ export default {
         rePassword: [
           // 自定义校验规则
           { required: true, message: '密码必填', type: 'error' },
+          // 自定义异步校验规则
           { validator: this.rePassword, message: '两次密码不一致' },
         ],
       },
