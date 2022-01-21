@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import {
-  InfoCircleFilledIcon as TIconInfoCircleFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-  HelpCircleFilledIcon as TIconHelpFill,
-  CloseIcon as TIconClose,
+  InfoCircleFilledIcon,
+  CheckCircleFilledIcon,
+  ErrorCircleFilledIcon,
+  HelpCircleFilledIcon,
+  CloseIcon,
 } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
@@ -19,11 +19,11 @@ export default Vue.extend({
   name: 'TMessage',
 
   components: {
-    TIconInfoCircleFilled,
-    TIconCheckCircleFilled,
-    TIconErrorCircleFilled,
-    TIconHelpFill,
-    TIconClose,
+    InfoCircleFilledIcon,
+    CheckCircleFilledIcon,
+    ErrorCircleFilledIcon,
+    HelpCircleFilledIcon,
+    CloseIcon,
     Loading,
   },
 
@@ -60,13 +60,15 @@ export default Vue.extend({
       if (!this.duration) {
         return;
       }
-      this.timer = Number(setTimeout(() => {
-        this.clearTimer();
-        this.$emit('duration-end');
-        if (this.onDurationEnd) {
-          this.onDurationEnd();
-        }
-      }, this.duration));
+      this.timer = Number(
+        setTimeout(() => {
+          this.clearTimer();
+          this.$emit('duration-end');
+          if (this.onDurationEnd) {
+            this.onDurationEnd();
+          }
+        }, this.duration),
+      );
     },
     clearTimer() {
       this.duration && clearTimeout(this.timer);
@@ -78,7 +80,7 @@ export default Vue.extend({
       }
     },
     renderClose() {
-      const defaultClose = <t-icon-close />;
+      const defaultClose = <close-icon />;
       return (
         <span class={`${name}__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
@@ -92,11 +94,11 @@ export default Vue.extend({
         return this.$scopedSlots.icon(null);
       }
       const component = {
-        info: TIconInfoCircleFilled,
-        success: TIconCheckCircleFilled,
-        warning: TIconErrorCircleFilled,
-        error: TIconErrorCircleFilled,
-        question: TIconHelpFill,
+        info: InfoCircleFilledIcon,
+        success: CheckCircleFilledIcon,
+        warning: ErrorCircleFilledIcon,
+        error: ErrorCircleFilledIcon,
+        question: HelpCircleFilledIcon,
         loading: Loading,
       }[this.theme];
       return <component></component>;
@@ -105,12 +107,11 @@ export default Vue.extend({
 
   render() {
     return (
-      <div class={ this.classes } onMouseenter={ this.clearTimer } onMouseleave={ this.setTimer }>
-        { this.renderIcon() }
-        { renderContent(this, 'default', 'content') }
-        { this.renderClose() }
+      <div class={this.classes} onMouseenter={this.clearTimer} onMouseleave={this.setTimer}>
+        {this.renderIcon()}
+        {renderContent(this, 'default', 'content')}
+        {this.renderClose()}
       </div>
     );
   },
-
 });

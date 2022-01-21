@@ -1,10 +1,10 @@
 import Vue, { VNode, PropType } from 'vue';
 import {
-  TimeFilledIcon as TIconTimeFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-  DeleteIcon as TIconDelete,
-  BrowseIcon as TIconBrowse,
+  TimeFilledIcon,
+  CheckCircleFilledIcon,
+  ErrorCircleFilledIcon,
+  DeleteIcon,
+  BrowseIcon,
 } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
@@ -20,11 +20,11 @@ export default Vue.extend({
   components: {
     TButton,
     TLoading,
-    TIconCheckCircleFilled,
-    TIconTimeFilled,
-    TIconErrorCircleFilled,
-    TIconBrowse,
-    TIconDelete,
+    TimeFilledIcon,
+    CheckCircleFilledIcon,
+    ErrorCircleFilledIcon,
+    DeleteIcon,
+    BrowseIcon,
   },
 
   props: {
@@ -97,7 +97,7 @@ export default Vue.extend({
         case 'success':
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
-              <TIconCheckCircleFilled />
+              <CheckCircleFilledIcon />
               <span>上传成功</span>
             </div>
           );
@@ -105,7 +105,7 @@ export default Vue.extend({
         case 'fail':
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
-              <TIconErrorCircleFilled />
+              <ErrorCircleFilledIcon />
               <span>上传失败</span>
             </div>
           );
@@ -122,7 +122,7 @@ export default Vue.extend({
         case 'waiting':
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
-              <TIconTimeFilled />
+              <TimeFilledIcon />
               <span>待上传</span>
             </div>
           );
@@ -219,7 +219,7 @@ export default Vue.extend({
                   >
                     {file.status === 'fail' && (
                       <div class={`${UPLOAD_NAME}__card-status-wrap`}>
-                        <TIconErrorCircleFilled />
+                        <ErrorCircleFilledIcon />
                         <p>上传失败</p>
                       </div>
                     )}
@@ -238,7 +238,7 @@ export default Vue.extend({
                     <div class={`${UPLOAD_NAME}__card-mask`}>
                       {file.url && (
                         <span class={`${UPLOAD_NAME}__card-mask-item`}>
-                          <TIconBrowse nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
+                          <BrowseIcon nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
                           <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
                         </span>
                       )}
@@ -246,7 +246,7 @@ export default Vue.extend({
                         class={`${UPLOAD_NAME}__card-mask-item`}
                         onClick={(e: MouseEvent) => this.remove({ e, index, file })}
                       >
-                        <TIconDelete />
+                        <DeleteIcon />
                       </span>
                     </div>
                   </div>

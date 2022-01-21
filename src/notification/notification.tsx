@@ -1,10 +1,6 @@
 import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import {
-  InfoCircleFilledIcon as TIconInfoCircleFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  CloseIcon as TIconClose,
-} from 'tdesign-icons-vue';
+import { InfoCircleFilledIcon, CheckCircleFilledIcon, CloseIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
@@ -15,9 +11,9 @@ const name = `${prefix}-notification`;
 export default Vue.extend({
   name: 'TNotification',
   components: {
-    TIconInfoCircleFilled,
-    TIconCheckCircleFilled,
-    TIconClose,
+    InfoCircleFilledIcon,
+    CheckCircleFilledIcon,
+    CloseIcon,
   },
   props: { ...props },
   mounted() {
@@ -46,29 +42,25 @@ export default Vue.extend({
       } else if (this.$scopedSlots.icon) {
         icon = this.$scopedSlots.icon(null);
       } else if (this.theme) {
-        const iconType = this.theme === 'success'
-          ? (<t-icon-check-circle-filled class={`t-is-${this.theme}`} />)
-          : (<t-icon-info-circle-filled class={`t-is-${this.theme}`} />);
-        icon = (<div class='t-notification__icon'>
-          {iconType}
-        </div>);
+        const iconType = this.theme === 'success' ? (
+            <check-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+        ) : (
+            <info-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+        );
+        icon = <div class={`${name}__icon`}>{iconType}</div>;
       }
       return icon;
     },
     renderClose() {
-      const defaultClose = <t-icon-close />;
+      const defaultClose = <close-icon />;
       return (
-        <span class='t-message__close' onClick={this.close}>
+        <span class={`${prefix}-message__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
         </span>
       );
     },
     renderContent() {
-      return (
-        <div class={`${name}__content`}>
-          {renderContent(this, 'default', 'content')}
-        </div>
-      );
+      return <div class={`${name}__content`}>{renderContent(this, 'default', 'content')}</div>;
     },
   },
   render(h: CreateElement) {

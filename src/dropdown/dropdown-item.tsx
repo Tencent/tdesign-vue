@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import { ChevronRightIcon as TIconChevronRight } from 'tdesign-icons-vue';
+import { ChevronRightIcon } from 'tdesign-icons-vue';
 import TDivider from '../divider';
 import { prefix } from '../config';
 import itemProps from './dropdown-item-props';
@@ -16,14 +16,14 @@ const name = `${prefix}-dropdown__item`;
 
 export interface DropdownItemInstance extends Vue {
   dropdown: {
-    handleMenuClick: (data: DropdownOption, context: { e: MouseEvent }) => void
+    handleMenuClick: (data: DropdownOption, context: { e: MouseEvent }) => void;
   };
 }
 
 export default (Vue as VueConstructor<DropdownItemInstance>).extend({
   name: 'TDropdownItem',
   components: {
-    TIconChevronRight,
+    ChevronRightIcon,
     TDivider,
   },
   directives: { ripple },
@@ -50,7 +50,7 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
   },
   methods: {
     renderSuffix(): TNodeReturnValue {
-      return this.hasChildren ? <TIconChevronRight class={`${name}-icon`} /> : null;
+      return this.hasChildren ? <ChevronRightIcon class={`${name}-icon`} /> : null;
     },
     handleItemClick(e: MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
@@ -80,12 +80,7 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
     ];
     return (
       <div>
-        <div
-          v-ripple
-          class={classes}
-          onClick={this.handleItemClick}
-          onMouseover={this.handleMouseover}
-        >
+        <div v-ripple class={classes} onClick={this.handleItemClick} onMouseover={this.handleMouseover}>
           <div class={`${name}-content`}>
             <span class={`${name}-text`}>{renderContent(this, 'content', 'default')}</span>
           </div>

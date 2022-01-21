@@ -1,8 +1,5 @@
 import Vue from 'vue';
-import {
-  InfoCircleFilledIcon as TIconInfoCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from 'tdesign-icons-vue';
+import { InfoCircleFilledIcon, ErrorCircleFilledIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PopconfirmConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
@@ -16,7 +13,7 @@ import ActionMixin from '../dialog/actions';
 const name = `${prefix}-popconfirm`;
 const popupName = `${prefix}-popup`;
 
-type IconConstructor = typeof TIconInfoCircleFilled;
+type IconConstructor = typeof InfoCircleFilledIcon;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, PopconfirmConfig>('popconfirm')).extend({
   name: 'TPopconfirm',
@@ -34,9 +31,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, PopconfirmConfig
   computed: {
     themeIcon(): IconConstructor {
       const iconMap = {
-        default: TIconInfoCircleFilled,
-        warning: TIconErrorCircleFilled,
-        danger: TIconErrorCircleFilled,
+        default: InfoCircleFilledIcon,
+        warning: ErrorCircleFilledIcon,
+        danger: ErrorCircleFilledIcon,
       };
       return iconMap[this.theme];
     },

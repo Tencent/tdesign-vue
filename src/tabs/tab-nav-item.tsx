@@ -1,7 +1,5 @@
 import Vue, { VNode } from 'vue';
-import {
-  CloseIcon as TIconClose,
-} from 'tdesign-icons-vue';
+import { CloseIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
@@ -12,7 +10,7 @@ import tabPanelProps from './tab-panel-props';
 export default Vue.extend({
   name: 'TTabNavItem',
   components: {
-    TIconClose,
+    CloseIcon,
   },
 
   directives: { ripple },
@@ -57,33 +55,27 @@ export default Vue.extend({
     },
     renderCardItem(): VNode {
       return (
-        <div
-          class={this.navItemClass}
-          onClick={this.onClickNav}
-          v-ripple
-        >
+        <div class={this.navItemClass} onClick={this.onClickNav} v-ripple>
           <span class={`${prefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
-          {
-            this.removable && !this.disabled
-              ? <TIconClose
-                class="remove-btn"
-                nativeOnClick={this.removeBtnClick}
-              />
-              : null
-          }
+          {this.removable && !this.disabled ? (
+            <CloseIcon class="remove-btn" nativeOnClick={this.removeBtnClick} />
+          ) : null}
         </div>
       );
     },
     renderNormalItem(): VNode {
       return (
-        <div
-          class={this.navItemClass}
-          onClick={this.onClickNav}
-        >
-          <div class={[`${prefix}-tabs__nav-item-wrapper`, {
-            [`${prefix}-is-disabled`]: this.disabled,
-            [`${prefix}-is-active`]: this.active,
-          }]} v-ripple>
+        <div class={this.navItemClass} onClick={this.onClickNav}>
+          <div
+            class={[
+              `${prefix}-tabs__nav-item-wrapper`,
+              {
+                [`${prefix}-is-disabled`]: this.disabled,
+                [`${prefix}-is-active`]: this.active,
+              },
+            ]}
+            v-ripple
+          >
             <span class={`${prefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
           </div>
         </div>

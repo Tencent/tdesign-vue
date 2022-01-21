@@ -8,7 +8,7 @@ import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import isNil from 'lodash/isNil';
-import { CloseCircleFilledIcon as IconCloseCircleFilled } from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TreeSelectConfig } from '../config-provider/config-receiver';
@@ -454,7 +454,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
                 isActive={this.visible && !this.disabled}
               />
             )}
-            <IconCloseCircleFilled
+            <CloseCircleFilledIcon
               v-show={this.showClose && !this.showLoading}
               class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
               size={this.size}

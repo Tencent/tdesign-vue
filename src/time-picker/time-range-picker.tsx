@@ -3,7 +3,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import isFunction from 'lodash/isFunction';
 import isEqual from 'lodash/isEqual';
 
-import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
+import { TimeIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
@@ -31,7 +31,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
 
   components: {
     PickerPanel,
-    TIconTime,
+    TimeIcon,
     InputItems,
     TPopup,
     TInput,
@@ -270,7 +270,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             readonly
             value={!isEqual(this.time, TIME_PICKER_EMPTY) ? ' ' : undefined}
           >
-            <t-icon-time slot="suffix-icon"></t-icon-time>
+            <time-icon slot="suffix-icon"></time-icon>
           </t-input>
           <input-items
             size={this.size}

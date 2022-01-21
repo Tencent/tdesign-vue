@@ -1,11 +1,6 @@
 import Vue, { VNode } from 'vue';
 import debounce from 'lodash/debounce';
-import {
-  ChevronLeftIcon as TIconChevronLeft,
-  ChevronRightIcon as TIconChevronRight,
-  CloseIcon as TIconClose,
-  AddIcon as TIconAdd,
-} from 'tdesign-icons-vue';
+import { ChevronLeftIcon, ChevronRightIcon, AddIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
@@ -70,10 +65,9 @@ export default Vue.extend({
   name: 'TTabNav',
   components: {
     TTabNavItem,
-    TIconChevronLeft,
-    TIconChevronRight,
-    TIconClose,
-    TIconAdd,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    AddIcon,
   },
   props: {
     theme: tabProps.theme,
@@ -183,12 +177,12 @@ export default Vue.extend({
   watch: {
     dataCanUpdateArrow() {
       this.$nextTick(() => {
-        this.caculateCanShowArrow();
+        this.calculateCanShowArrow();
       });
     },
     dataCanUpdateNavBarStyle() {
       this.$nextTick(() => {
-        this.caculateNavBarStyle();
+        this.calculateNavBarStyle();
       });
     },
     value() {
@@ -203,12 +197,12 @@ export default Vue.extend({
     },
   },
   methods: {
-    caculateCanShowArrow() {
-      this.caculateCanToLeft();
-      this.caculateCanToRight();
+    calculateCanShowArrow() {
+      this.calculateCanToLeft();
+      this.calculateCanToRight();
     },
 
-    caculateCanToLeft() {
+    calculateCanToLeft() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) {
         this.canToLeft = false;
       }
@@ -222,7 +216,7 @@ export default Vue.extend({
       this.canToLeft = this.scrollLeft + Math.round(leftOperationsZoneWidth - leftIconWidth) > 0;
     },
 
-    caculateCanToRight() {
+    calculateCanToRight() {
       if (['left', 'right'].includes(this.placement.toLowerCase())) {
         this.canToRight = false;
       }
@@ -236,7 +230,7 @@ export default Vue.extend({
       this.canToRight = this.scrollLeft + getDomWidth(container) - (rightOperationsZoneWidth - rightIconWidth) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
     },
 
-    caculateNavBarStyle() {
+    calculateNavBarStyle() {
       const getNavBarStyle = () => {
         if (this.theme === 'card') return {};
         const getPropName = () => {
@@ -282,7 +276,7 @@ export default Vue.extend({
 
     resetScrollPosition() {
       this.fixScrollLeft();
-      this.caculateCanShowArrow();
+      this.calculateCanShowArrow();
     },
 
     handleScrollToLeft() {
@@ -417,7 +411,7 @@ export default Vue.extend({
           <transition name="fade" mode="out-in" appear>
             {this.canToLeft ? (
               <div ref="leftIcon" class={this.leftIconClass} onClick={this.handleScrollToLeft}>
-                <TIconChevronLeft />
+                <ChevronLeftIcon />
               </div>
             ) : null}
           </transition>
@@ -426,13 +420,13 @@ export default Vue.extend({
           <transition name="fade" mode="out-in" appear>
             {this.canToRight ? (
               <div ref="rightIcon" class={this.rightIconClass} onClick={this.handleScrollToRight}>
-                <TIconChevronRight></TIconChevronRight>
+                <ChevronRightIcon />
               </div>
             ) : null}
           </transition>
           {this.theme === 'card' && this.addable ? (
             <div class={this.addIconClass} onClick={this.handleAddTab}>
-              <TIconAdd></TIconAdd>
+              <AddIcon />
             </div>
           ) : null}
         </div>,
@@ -458,8 +452,8 @@ export default Vue.extend({
   mounted() {
     this.$nextTick(() => {
       this.watchDomChange();
-      this.caculateNavBarStyle();
-      this.caculateCanShowArrow();
+      this.calculateNavBarStyle();
+      this.calculateCanShowArrow();
     });
   },
   render() {

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { RoundIcon as TIconRound, ChevronLeftIcon as TIconChevronLeft, ChevronRightIcon as TIconChevronRight } from 'tdesign-icons-vue';
+import { RoundIcon, ChevronLeftIcon, ChevronRightIcon } from 'tdesign-icons-vue';
 import TButton from '../../button/button';
 import mixins from '../../utils/mixins';
 import getConfigReceiverMixins, { DatePickerConfig } from '../../config-provider/config-receiver';
@@ -8,9 +8,9 @@ import { prefix } from '../../config';
 export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker')).extend({
   components: {
     TButton,
-    TIconChevronLeft,
-    TIconChevronRight,
-    TIconRound,
+    RoundIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
   },
   props: {
     year: Number,
@@ -46,59 +46,54 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
     return (
       <div class={`${prefix}-date-picker__header`}>
         <span class={`${prefix}-date-picker__header-title`}>
-          {
-            type === 'year' && (
-              <span>
-                <span>
-                  {startYear}
-                </span>
-                  {rangeSeparator}
-                <span>
-                  {startYear + 9}
-                </span>
-              </span>
-            )
-          }
-          {
-            type !== 'year' && (
-              <t-button
-                class={`${prefix}-date-picker__header-btn`}
-                variant="text"
-                size="small"
-                onClick={() => onTypeChange('year')}
-              >
-                { `${year} ${yearAriaLabel}`}
-              </t-button>
-            )
-          }
-          {
-            type === 'date' && (
-              <t-button
-                class={`${prefix}-date-picker__header-btn`}
-                variant="text"
-                size="small"
-                onClick={() => onTypeChange('month')}
-              >
-                {this.global.months[month]}
-              </t-button>
-            )
-          }
+          {type === 'year' && (
+            <span>
+              <span>{startYear}</span>
+              {rangeSeparator}
+              <span>{startYear + 9}</span>
+            </span>
+          )}
+          {type !== 'year' && (
+            <t-button
+              class={`${prefix}-date-picker__header-btn`}
+              variant="text"
+              size="small"
+              onClick={() => onTypeChange('year')}
+            >
+              {`${year} ${yearAriaLabel}`}
+            </t-button>
+          )}
+          {type === 'date' && (
+            <t-button
+              class={`${prefix}-date-picker__header-btn`}
+              variant="text"
+              size="small"
+              onClick={() => onTypeChange('month')}
+            >
+              {this.global.months[month]}
+            </t-button>
+          )}
         </span>
 
         <span class={`${prefix}-date-picker__header-controller`}>
           <t-button
             class={`${prefix}-date-picker__header-controller__btn`}
             variant="text"
-            onClick={() => onBtnClick(-1)} title={preLabel}
+            onClick={() => onBtnClick(-1)}
+            title={preLabel}
           >
-            <t-icon-chevron-left slot="icon" />
+            <chevron-left-icon slot="icon" />
           </t-button>
           <t-button
-            class={[`${prefix}-date-picker__header-controller__btn`, `${prefix}-date-picker__header-controller__btn--now`]}
+            class={[
+              `${prefix}-date-picker__header-controller__btn`,
+              `${prefix}-date-picker__header-controller__btn--now`,
+            ]}
             variant="text"
-            onClick={() => onBtnClick(0)} title={now}
+            onClick={() => onBtnClick(0)}
+            title={now}
           >
-            <t-icon-round slot="icon" />
+            <round-icon slot="icon" />
           </t-button>
           <t-button
             class={`${prefix}-date-picker__header-controller__btn`}
@@ -106,7 +101,7 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
             onClick={() => onBtnClick(1)}
             title={nextLabel}
           >
-            <t-icon-chevron-right slot="icon" />
+            <chevron-right-icon slot="icon" />
           </t-button>
         </span>
       </div>

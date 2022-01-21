@@ -1,7 +1,13 @@
 import {
-  defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance, watch,
+  defineComponent,
+  computed,
+  inject,
+  ref,
+  provide,
+  onMounted,
+  getCurrentInstance,
+  watch,
 } from '@vue/composition-api';
-import { ChevronRightIcon as TIconChevronRight } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
@@ -12,7 +18,6 @@ import { TdMenuInterface, TdSubMenuInterface } from './const';
 export default defineComponent({
   name: 'TSubmenu',
   components: {
-    TIconChevronRight,
     FakeArrow,
   },
   directives: {
@@ -28,7 +33,7 @@ export default defineComponent({
 
     const isActive = computed(() => activeValues.value.indexOf(props.value) > -1);
     const popupVisible = ref(false);
-    const rippleColor = computed(() => theme.value === 'light' ? '#E7E7E7' : '#383838');
+    const rippleColor = computed(() => (theme.value === 'light' ? '#E7E7E7' : '#383838'));
     const isOpen = computed(() => {
       if (mode.value === 'popup') {
         return popupVisible.value;
@@ -128,9 +133,7 @@ export default defineComponent({
         <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {renderTNodeJSX(this, 'title')}
         </div>,
-        <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">
-        {renderContent(this, 'default', 'content')}
-        </ul>,
+        <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">{renderContent(this, 'default', 'content')}</ul>,
       ];
 
       const popupSubmenu = [
@@ -170,8 +173,7 @@ export default defineComponent({
               overlayClassName={this.arrowClass}
               overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }}
             />
-          )
-          }
+          )}
         </div>,
         <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
           {child}
@@ -210,7 +212,7 @@ export default defineComponent({
       child = this.isHead ? this.renderHeadSubmenu() : this.renderSubmenu();
     }
     return (
-      <li class={this.classes} { ...{ on: events } }>
+      <li class={this.classes} {...{ on: events }}>
         {child}
       </li>
     );
