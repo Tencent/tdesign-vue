@@ -15,7 +15,6 @@
       :bordered="bordered"
       :hover="hover"
     ></t-table>
-
   </div>
 </template>
 <script lang="jsx">

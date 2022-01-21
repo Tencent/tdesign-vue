@@ -44,6 +44,7 @@ export default Vue.extend({
     rowspanAndColspan: baseTableProps.rowspanAndColspan,
     firstFullRow: baseTableProps.firstFullRow,
     lastFullRow: baseTableProps.lastFullRow,
+    onCellClick: baseTableProps.onCellClick,
     onRowHover: baseTableProps.onRowHover,
     onRowMouseup: baseTableProps.onRowMouseup,
     onRowMousedown: baseTableProps.onRowMousedown,

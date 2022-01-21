@@ -25,12 +25,12 @@ const Ripple = {
         el.classList.contains(`${prefix}-is-active`)
         || el.classList.contains(`${prefix}-is-disabled`)
         || el.classList.contains(`${prefix}-is-checked`)
-      ) return;
+      ) { return; }
 
       if (e.button !== 0) return; // 非鼠标左键点击；避免出现动画之后不消失的bug
 
       // 支持通过dataset传递背景色
-      if (bg === defaultBg && el.dataset.ripple) {
+      if (bg === defaultBg && el?.dataset.ripple) {
         bg = el.dataset.ripple;
       }
 

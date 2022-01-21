@@ -24,7 +24,7 @@ export default Vue.extend({
 
   data() {
     return {
-      size: calcSize(window.innerWidth),
+      size: 'md',
     };
   },
 
@@ -50,6 +50,7 @@ export default Vue.extend({
   },
 
   mounted() {
+    this.updateSize();
     window.addEventListener('resize', this.updateSize);
   },
 
