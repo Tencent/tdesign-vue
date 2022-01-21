@@ -68,6 +68,8 @@ exports[`Textarea maxlength demo works fine 1`] = `
     </span>
   </div>
    
+  <br />
+   
   <div
     class="t-textarea"
   >
@@ -89,23 +91,89 @@ exports[`Textarea type demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-textarea"
+    class="t-textarea t-is-disabled"
   >
     <textarea
       class="t-textarea__inner t-is-disabled"
       disabled="disabled"
-      placeholder=""
     />
   </div>
    
   <div
-    class="t-textarea"
+    class="t-textarea t-is-readonly"
   >
     <textarea
       class="t-textarea__inner"
-      placeholder=""
       readonly="readonly"
     />
+  </div>
+   
+  <div
+    class="t-textarea__wrap"
+  >
+    <div
+      class="t-textarea"
+    >
+      <textarea
+        class="t-textarea__inner"
+      />
+    </div>
+    <div
+      class="t-textarea__tips t-textarea__tips--normal"
+    >
+      这是普通文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-textarea__wrap"
+  >
+    <div
+      class="t-textarea"
+    >
+      <textarea
+        class="t-textarea__inner t-is-success"
+      />
+    </div>
+    <div
+      class="t-textarea__tips t-textarea__tips--success"
+    >
+      校验通过文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-textarea__wrap"
+  >
+    <div
+      class="t-textarea"
+    >
+      <textarea
+        class="t-textarea__inner t-is-warning"
+      />
+    </div>
+    <div
+      class="t-textarea__tips t-textarea__tips--warning"
+    >
+      校验不通过文本提示
+    </div>
+  </div>
+   
+  <div
+    class="t-textarea__wrap"
+  >
+    <div
+      class="t-textarea"
+    >
+      <textarea
+        class="t-textarea__inner t-is-error"
+      />
+    </div>
+    <div
+      class="t-textarea__tips t-textarea__tips--error"
+    >
+      校验存在严重问题文本提示
+    </div>
   </div>
 </div>
 `;

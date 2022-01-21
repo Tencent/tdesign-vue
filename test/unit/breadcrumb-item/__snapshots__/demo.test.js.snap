@@ -8,7 +8,7 @@ exports[`Breadcrumb-item base demo works fine 1`] = `
     class="t-breadcrumb__item light"
   >
     <span
-      class="t-breadcrumb--text-oveflow"
+      class="t-breadcrumb--text-overflow"
     >
       <span
         class="t-breadcrumb__inner"
@@ -40,7 +40,7 @@ exports[`Breadcrumb-item base demo works fine 1`] = `
     class="t-breadcrumb__item light"
   >
     <span
-      class="t-breadcrumb--text-oveflow"
+      class="t-breadcrumb--text-overflow"
     >
       <span
         class="t-breadcrumb__inner"
