@@ -10,22 +10,22 @@ docClass: timeline
 
 ### Bug Fixes
 
-* fix table expanded style to inline-block ([ed2b34c](https://github.com/Tencent/tdesign-vue/commit/ed2b34cb196891eb294889a37c2efc4ec9b000bc))
-* **form:** form getEmptyValue ([7a20992](https://github.com/Tencent/tdesign-vue/commit/7a209921f7ce2d6372817e3281064d38b1a127b9))
-* **form:** set min and max to be charactor computed style & update docs ([#249](https://github.com/Tencent/tdesign-vue/issues/249)) ([1381283](https://github.com/Tencent/tdesign-vue/commit/13812832f360d068636ab13239cb31f5d8b9a9ca))
-* grid ssr render error ([#286](https://github.com/Tencent/tdesign-vue/issues/286)) ([54bbfa3](https://github.com/Tencent/tdesign-vue/commit/54bbfa32fa7d7fca93413497ad0bf6b6a983a82b))
-* **ie-slider:** 去掉slider-button的disabled属性，以兼容ie9下事件触发 ([fde0528](https://github.com/Tencent/tdesign-vue/commit/fde0528e44f7dcf0861711dc2099f172c117415a))
-* ie9以下才执行方法 ([7d008d1](https://github.com/Tencent/tdesign-vue/commit/7d008d18acb1e9d485177b5678fc24d786ac0bef))
-* **input:** 兼容IE9，获取input回车事件 ([323b5a6](https://github.com/Tencent/tdesign-vue/commit/323b5a6b4dbb1b2e85469e895b52a1b65960c7e2))
-* ripple-dataset null error ([d66eba9](https://github.com/Tencent/tdesign-vue/commit/d66eba90c056792dae369fe856b7c6f88cabcdc8))
-* **table:** 合并单元格问题 [#242](https://github.com/Tencent/tdesign-vue/issues/242) ([731cf48](https://github.com/Tencent/tdesign-vue/commit/731cf48a1d4e9af71d31011683c4af757a1db890))
-* **table:** expanded colspan and fixed expanded icon ([#255](https://github.com/Tencent/tdesign-vue/issues/255)) ([471abd8](https://github.com/Tencent/tdesign-vue/commit/471abd82b1a2ba74520d4f5c8493229519481fc8))
-* 修复 umd 产物中未包括 reset 及 css variables 声明的问题，[#222](https://github.com/Tencent/tdesign-vue/issues/222)，
+* Form:
+  - 修复无法重置自定义校验消息的问题，[issue #89](https://github.com/Tencent/tdesign-vue/issues/89)，[pr #254](https://github.com/Tencent/tdesign-vue/pull/254)，[@dellyoung](https://github.com/dellyoung)
+  - FormRule 的 `min` 和 `len` 根据一个中文等于两个字符的计算规则进行，和 `max` 保持一致；`min` 和 `len` 在值为 Number 时，进行数字大小的校验而非数字长度校验，[issue #249](https://github.com/Tencent/tdesign-vue/issues/249)，[pr #249](https://github.com/Tencent/tdesign-vue/pull/249)，[@chaishi](https://github.com/chaishi)
+* Grid: 修复 ssr 渲染报错的问题，[issue #284](https://github.com/Tencent/tdesign-vue/issues/284)，[pr #286](https://github.com/Tencent/tdesign-vue/pull/286)，[@HQ-Lin](https://github.com/HQ-Lin)
+* Table:
+  - 修复首列数据跨行合并时会导致同行数据前移的问题，[issue #242](https://github.com/Tencent/tdesign-vue/issues/242)，[pr #253](https://github.com/Tencent/tdesign-vue/pull/253)，[@realyuyanan](https://github.com/realyuyanan)
+  - 修复展开行功能中，图标列无法固定在左侧的问题；修复展开行 colspan 不正确问题，[issue #255](https://github.com/Tencent/tdesign-vue/issues/255)，[pr #255](https://github.com/Tencent/tdesign-vue/pull/255)，[@chaishi](https://github.com/chaishi)
+* 修复 umd 产物中未包括 reset 及 css variables 声明的问题，[issue #222](https://github.com/Tencent/tdesign-vue/issues/222)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Select: 修复 `visible-change` 事件触发异常的问题，[issue #274](https://github.com/Tencent/tdesign-vue/issues/274)，[pr #281](https://github.com/Tencent/tdesign-vue/pull/281)，[@xiewenxia](https://github.com/xiewenxia)
+* Icon: 修复 ssr 渲染问题，[pr #262](https://github.com/Tencent/tdesign-vue/pull/262)，[@uyarn](https://github.com/uyarn)
 
 ### Features
 
-* 
-* Skeleton: 新增骨架屏组件，请参照[官网]()使用，[@Wonder233](https://github.com/Wonder233)
+* Table: 新增 `onCellClick` 事件，[issue #240](https://github.com/Tencent/tdesign-vue/issues/240)，[pr #297](https://github.com/Tencent/tdesign-vue/pull/297)，[@chaishi](https://github.com/chaishi)
+* Skeleton: 新增骨架屏组件，请参照[官网](https://tdesign.tencent.com/vue/components/skeleton)使用，[@Wonder233](https://github.com/Wonder233)
+* Textarea: 新增属性 `status` 用于控制状态，`tips` 用于控制信息提示，[pr 299](https://github.com/Tencent/tdesign-vue/pull/299)，[@chaishi](https://github.com/chaishi)
 
 ## 0.33.1 `2022-01-13`
 
