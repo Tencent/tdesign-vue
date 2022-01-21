@@ -26,6 +26,7 @@ docClass: timeline
 * Table: 新增 `onCellClick` 事件，[issue #240](https://github.com/Tencent/tdesign-vue/issues/240)，[pr #297](https://github.com/Tencent/tdesign-vue/pull/297)，[@chaishi](https://github.com/chaishi)
 * Skeleton: 新增骨架屏组件，请参照[官网](https://tdesign.tencent.com/vue/components/skeleton)使用，[@Wonder233](https://github.com/Wonder233)
 * Textarea: 新增属性 `status` 用于控制状态，`tips` 用于控制信息提示，[pr 299](https://github.com/Tencent/tdesign-vue/pull/299)，[@chaishi](https://github.com/chaishi)
+* Input: 新增 `tips` 用于控制信息提示， 新增 `mousenter`、`mouseleavt` 、`paste` 事件，[pr #305](https://github.com/Tencent/tdesign-vue/pull/305)，[@chaishi](https://github.com/chaishi)
 
 ## 0.33.1 `2022-01-13`
 
