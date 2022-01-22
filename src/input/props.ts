@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-28 11:39:46
  * */
 
 import { TdInputProps } from './type';
@@ -17,6 +16,10 @@ export default {
   clearable: Boolean,
   /** 是否禁用输入框 */
   disabled: Boolean,
+  /** 【讨论中】指定输入框展示值的格式 */
+  format: {
+    type: Function as PropType<TdInputProps['format']>,
+  },
   /** 左侧文本 */
   label: {
     type: [String, Function] as PropType<TdInputProps['label']>,
@@ -56,7 +59,6 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdInputProps['status']>,
-    default: undefined as TdInputProps['status'],
     validator(val: TdInputProps['status']): boolean {
       return ['success', 'warning', 'error'].includes(val);
     },
@@ -68,6 +70,10 @@ export default {
   /** 组件后置图标 */
   suffixIcon: {
     type: Function as PropType<TdInputProps['suffixIcon']>,
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdInputProps['tips']>,
   },
   /** 输入框类型 */
   type: {
@@ -101,4 +107,10 @@ export default {
   onKeypress: Function as PropType<TdInputProps['onKeypress']>,
   /** 释放键盘时触发 */
   onKeyup: Function as PropType<TdInputProps['onKeyup']>,
+  /** 进入输入框时触发 */
+  onMouseenter: Function as PropType<TdInputProps['onMouseenter']>,
+  /** 离开输入框时触发 */
+  onMouseleave: Function as PropType<TdInputProps['onMouseleave']>,
+  /** 粘贴事件，`pasteValue` 表示粘贴板的内容 */
+  onPaste: Function as PropType<TdInputProps['onPaste']>,
 };
