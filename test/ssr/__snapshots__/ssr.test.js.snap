@@ -4066,6 +4066,102 @@ exports[`ssr snapshot test renders ./examples/form/demos/base.vue correctly 1`] 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/form/demos/clear-validate.vue correctly 1`] = `
+<div>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">用户名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+        <div class="t-form__help">这是用户名字段帮助说明</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+        <div class="t-form__help">一句话介绍自己</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__password">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">密码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" type="password" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__email">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">邮箱</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__gender">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label><label class="t-checkbox"><input type="checkbox" name="" value="4" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">体育</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__college">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="demo-select-base t-select__wrap">
+            <div class="t-popup__reference t-select__popup-reference">
+              <div name="t-popup--animation" appear="true"></div>
+              <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+                  <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__date">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__content.url">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text"> 提交 </span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text"> 重置 </span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">
+        清空校验结果
+      </span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text"> 清除指定字段的校验结果 </span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/form/demos/custom-validator.vue correctly 1`] = `
 <div>
   <form class="t-form">
@@ -4092,7 +4188,62 @@ exports[`ssr snapshot test renders ./examples/form/demos/custom-validator.vue co
         <div class="t-form__controls-content">
           <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" type="password" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
         </div>
-        <div class="t-form__help">在此处体验普通自定义校验方法</div>
+        <div class="t-form__help">自定义异步校验方法</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/form/demos/disabled.vue correctly 1`] = `
+<div>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__name">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__tel">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__status">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+            <div class="t-switch__content t-size-m"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__gender">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
+        </div>
       </div>
     </div>
     <div class="t-form__item t-form-item__" style="padding-top:8px;">
@@ -4159,6 +4310,268 @@ exports[`ssr snapshot test renders ./examples/form/demos/login.vue correctly 1`]
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/form/demos/reset.vue correctly 1`] = `
+<div>
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="empty" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">重置为空</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="initial" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><div class="t-popup__reference"><div name="t-popup--animation" appear="true"></div> 重置为初始值 </div></span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div>
+  </div> <br><br>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__name">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="TDesign" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__tel">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="12345678910" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox t-is-checked"><input type="checkbox" name="" value="1" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/form/demos/size.vue correctly 1`] = `
+<div>
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中尺寸（默认）</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大尺寸</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div>
+  </div> <br><br>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__name">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__tel">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__status">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+            <div class="t-switch__content t-size-m"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__gender">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/form/demos/validate-complicated-data.vue correctly 1`] = `
+<div>
+  <form class="t-form" style="max-width:100%;">
+    <div class="t-form__item t-form-item__school">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">学校</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">学校一</span></label><label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">学校二</span></label><label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">学校三</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-tabs" style="margin-left:30px;border:1px solid var(--td-component-stroke);">
+      <div class="t-tabs__header t-is-top">
+        <div class="t-tabs__nav" style="min-height:48px;">
+          <div class="t-tabs__operations t-tabs__operations--left">
+            <div name="fade" mode="out-in" appear="true"></div>
+          </div>
+          <div class="t-tabs__operations t-tabs__operations--right">
+            <div name="fade" mode="out-in" appear="true"></div>
+            <div class="t-tabs__add-btn t-tabs__btn t-size-m"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add">
+                <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+          <div class="t-tabs__nav-container t-tabs__nav--card t-is-top t-is-addable">
+            <div class="t-tabs__nav-scroll">
+              <div class="t-tabs__nav-wrap t-is-smooth" style="transform:translate(0px, 0);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-tabs__content">
+        <div class="t-tab-panel">
+          <div style="padding:24px 24px 24px 0;">
+            <div class="t-form__item t-form-item__students[0].name">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">姓名</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="StudentA" class="t-input__inner"></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__students[0].courseType">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">选科</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="wenke" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">文科</span></label> <label class="t-radio"><input type="radio" value="like" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">理科</span></label></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__students[0].course">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">课程</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-checkbox-group"><label class="t-checkbox t-is-indeterminate"><input type="checkbox" indeterminate="indeterminate" name="" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">全部</span></label><label class="t-checkbox t-is-checked"><input type="checkbox" name="" value="1" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">物理</span></label><label class="t-checkbox"><input type="checkbox" name="" value="4" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">化学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="5" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">地理</span></label><label class="t-checkbox"><input type="checkbox" name="" value="6" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">历史</span></label></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__" style="padding-top:8px;">
+              <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="t-tab-panel" style="display:none;">
+          <div style="padding:24px 24px 24px 0;">
+            <div class="t-form__item t-form-item__students[1].name">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">姓名</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="StudentB" class="t-input__inner"></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__students[1].courseType">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">选科</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="wenke" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">文科</span></label> <label class="t-radio"><input type="radio" value="like" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">理科</span></label></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__students[1].course">
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">课程</label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content">
+                  <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">全部</span></label><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">物理</span></label><label class="t-checkbox"><input type="checkbox" name="" value="4" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">化学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="5" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">地理</span></label><label class="t-checkbox"><input type="checkbox" name="" value="6" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">历史</span></label></div>
+                </div>
+              </div>
+            </div>
+            <div class="t-form__item t-form-item__" style="padding-top:8px;">
+              <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+              <div class="t-form__controls" style="margin-left:80px;">
+                <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/form/demos/validate-message.vue correctly 1`] = `
+<div>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__name">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__tel">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入内容" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__status">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+            <div class="t-switch__content t-size-m"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__gender">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly 1`] = `
 <div>
   <form class="t-form">
@@ -4168,16 +4581,24 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
         </div>
-        <div class="t-form__help">这里请填写用户名</div>
+        <div class="t-form__help">这是用户名字段帮助说明</div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__password t-form__item-with-help t-form__item-with-extra">
+    <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+        </div>
+        <div class="t-form__help">一句话介绍自己</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__password">
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">密码</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" type="password" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
         </div>
-        <div class="t-form__help">这里请填写密码</div>
       </div>
     </div>
     <div class="t-form__item t-form-item__email">
@@ -4228,7 +4649,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__content.url">
-      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
@@ -4238,7 +4659,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
     <div class="t-form__item t-form-item__" style="padding-top:8px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
       <div class="t-form__controls" style="margin-left:100px;">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清除校验结果</span></button></div>
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清空校验结果</span></button></div>
       </div>
     </div>
   </form>
@@ -4246,22 +4667,26 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
 `;
 
 exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue correctly 1`] = `
-<div>
+<div class="tdesign-demo-form-status">
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">显示校验图标</span></label> <label class="t-radio-button"><input type="radio" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">隐藏校验图标</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div>
+  </div> <br><br>
   <form class="t-form">
-    <div class="t-form__item t-form-item__fail t-form__item-with-help t-form__item-with-extra">
+    <div class="t-form__item t-form-item__fail">
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">失败</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+          <div class="t-input t-size-m"><input placeholder="校验不通过状态" type="text" value="" class="t-input__inner"></div>
         </div>
-        <div class="t-form__help">这是校验通过后的提示信息</div>
       </div>
     </div>
     <div class="t-form__item t-form-item__warning">
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">警告</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+          <div class="t-input t-size-m"><input placeholder="校验警告状态" type="text" value="" class="t-input__inner"></div>
         </div>
       </div>
     </div>
@@ -4269,7 +4694,15 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
       <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">成功</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+          <div class="t-input t-size-m"><input placeholder="不带绿色边框的成功状态" type="text" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__success">
+      <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">成功</label></div>
+      <div class="t-form__controls" style="margin-left:80px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="带绿色边框的成功状态" type="text" value="" class="t-input__inner"></div>
         </div>
       </div>
     </div>
@@ -4277,7 +4710,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">失败</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="隐藏状态图标" type="text" value="" class="t-input__inner"></div><span class="t-form__status t-form__status-without-icon"></span>
+          <div class="t-input t-size-m"><input placeholder="隐藏状态图标" type="text" value="" class="t-input__inner"></div>
         </div>
       </div>
     </div>
@@ -4285,7 +4718,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">警告</label></div>
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
+          <div class="t-input t-size-m"><input placeholder="校验警告状态" type="text" value="" class="t-input__inner"></div>
         </div>
       </div>
     </div>
@@ -4294,6 +4727,14 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
       <div class="t-form__controls" style="margin-left:80px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="正在校验中，请稍等" type="text" value="" class="t-input__inner"></div><span class="t-form__status"><div style="width:24px;display:flex;justify-content:center;"><div slot="statusIcon" class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></div></span>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__help">
+      <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
+      <div class="t-form__controls" style="margin-left:80px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="自定义右侧图标" type="text" value="" class="t-input__inner"></div><span class="t-form__status"><svg class="t-icon t-icon-help-circle" style="font-size:16px;color:#0006;"><use href="#t-icon-help-circle"></use></svg></span>
         </div>
       </div>
     </div>
@@ -4306,19 +4747,10 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__help t-form__item-with-help t-form__item-with-extra">
-      <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
-      <div class="t-form__controls" style="margin-left:80px;">
-        <div class="t-form__controls-content">
-          <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div><span class="t-form__status"><svg class="t-icon t-icon-help-circle" style="font-size:16px;color:#0006;"><use href="#t-icon-help-circle"></use></svg></span>
-        </div>
-        <div class="t-form__help">自定义帮助图标</div>
-      </div>
-    </div>
     <div class="t-form__item t-form-item__" style="padding-top:8px;">
       <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
       <div class="t-form__controls" style="margin-left:80px;">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button><span class="t-form__status t-form__status-without-icon"></span></div>
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
   </form>
