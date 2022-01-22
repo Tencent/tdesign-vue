@@ -33,31 +33,19 @@ export default {
       formData: { ...INITIAL_DATA },
       rules: {
         account: [
-          { required: true, message: '姓名必填', type: 'error' },
+          { required: true, message: '用户名必填', type: 'error' },
           {
-            validator: (val) => new Promise((resolve) => {
-              const timer = setTimeout(() => {
-                if (['Zhang', 'Li', 'Wang'].includes(val)) {
-                  resolve(true);
-                } else {
-                  resolve(false);
-                }
-                clearTimeout(timer);
-              }, 10);
-            }),
-            type: 'error',
-            message: '用户不存在',
+            validator: this.userNameValidator,
           },
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
-          // 不同的校验结果有不同的错误信息提醒，切错误信息类型不同
+          // 自定义校验规则：不同的值可以有不同的校验结果，不同的校验类型
           { validator: this.passwordValidator },
         ],
         rePassword: [
-          // 自定义校验规则
           { required: true, message: '密码必填', type: 'error' },
-          // 自定义异步校验规则
+          // 自定义校验规则：自定义异步校验规则
           { validator: this.rePassword, message: '两次密码不一致' },
         ],
       },
@@ -87,6 +75,19 @@ export default {
       this.$refs.form.validate({
         fields: ['account'],
         trigger: 'blur',
+      });
+    },
+    // 自定义异步校验器，使用 resolve 返回结果控制校验结果、校验信息、校验结果类型
+    userNameValidator(val) {
+      return new Promise((resolve) => {
+        const timer = setTimeout(() => {
+          if (['Zhang', 'Li', 'Wang'].includes(val)) {
+            resolve({ result: true });
+          } else {
+            resolve({ result: false, message: '用户名不存在', type: 'error' });
+          }
+          clearTimeout(timer);
+        }, 10);
       });
     },
     // 自定义校验器，不同的值输出不同的校验结果。支持异步校验（文案选自某密码重置站点，如有侵权，请联系我们删除）

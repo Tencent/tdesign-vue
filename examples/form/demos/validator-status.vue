@@ -30,10 +30,10 @@
         <t-input v-model="formData.warning" placeholder="校验警告状态"></t-input>
       </t-form-item>
       <t-form-item label="成功" name="success">
-        <t-input v-model="formData.success" placeholder="不带边框的成功状态"></t-input>
+        <t-input v-model="formData.success" placeholder="不带绿色边框的成功状态"></t-input>
       </t-form-item>
       <t-form-item label="成功" name="success" successBorder>
-        <t-input v-model="formData.success" placeholder="带边框的成功状态"></t-input>
+        <t-input v-model="formData.success" placeholder="带绿色边框的成功状态"></t-input>
       </t-form-item>
       <t-form-item label="失败" name="failB" :statusIcon="false">
         <t-input v-model="formData.failB" placeholder="隐藏状态图标"></t-input>

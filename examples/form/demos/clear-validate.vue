@@ -40,9 +40,12 @@
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
-        <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>
+        <t-button theme="primary" type="submit" style="margin-right: 10px"> 提交 </t-button>
+        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px"> 重置 </t-button>
+        <t-button theme="default" variant="base" @click="handleClear" style="margin-right: 10px">
+          清空校验结果
+        </t-button>
+        <t-button theme="default" variant="base" @click="clearFieldsValidateResult"> 清除指定字段的校验结果 </t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -129,6 +132,11 @@ export default {
     },
     handleClear() {
       this.$refs.form.clearValidate();
+    },
+    // 清除指定字段的校验结果
+    clearFieldsValidateResult() {
+      this.$refs.form.clearValidate(['email', 'course', 'content.url']);
+      this.$message.success('已清除邮箱、课程、个人网站等字段校验结果');
     },
   },
 };
