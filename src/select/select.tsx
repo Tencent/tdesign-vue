@@ -384,7 +384,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
-      e.stopPropagation();
+      e && e.stopPropagation();
       if (this.multiple) {
         this.emitChange([]);
       } else {
