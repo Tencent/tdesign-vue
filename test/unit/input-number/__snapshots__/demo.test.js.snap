@@ -24,12 +24,11 @@ exports[`InputNumber center demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -79,12 +78,11 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -134,13 +132,12 @@ exports[`InputNumber disabled demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-is-disabled t-input-number-text-align"
         disabled="disabled"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -190,12 +187,11 @@ exports[`InputNumber format demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -245,12 +241,11 @@ exports[`InputNumber left demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -300,12 +295,11 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -352,12 +346,11 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -403,12 +396,11 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -458,12 +450,11 @@ exports[`InputNumber step demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -513,7 +504,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input t-align-left"
     >
       <input
         autocomplete="off"
