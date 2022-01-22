@@ -300,6 +300,12 @@ export default {
         //   component: () => import('@/examples/swiper/swiper.md'),
         // },
         {
+          title: 'Skeleton 骨架屏',
+          name: 'skeleton',
+          path: '/vue/components/skeleton',
+          component: () => import('@/examples/skeleton/skeleton.md'),
+        },
+        {
           title: 'Table 表格',
           name: 'table',
           path: '/vue/components/table',

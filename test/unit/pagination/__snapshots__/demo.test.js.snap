@@ -31,7 +31,7 @@ exports[`Pagination base demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -47,7 +47,7 @@ exports[`Pagination base demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -231,7 +231,7 @@ exports[`Pagination base demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -247,7 +247,7 @@ exports[`Pagination base demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -391,11 +391,11 @@ exports[`Pagination customizable demo works fine 1`] = `
           <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
             <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
               <div>
-                <ul class="t-select__create-option" style="display: none;">
+                <ul class="t-select__create-option t-select__list" style="display: none;">
                   <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                 </ul>
                 <li class="t-select__empty t-size-m">暂无数据</li>
-                <ul class="t-select__groups" style="display: none;">
+                <ul class="t-select__groups t-select__list" style="display: none;">
                   <li title="10 条/页" class="t-select-option t-size-m"><span>10 条/页</span></li>
                   <li title="20 条/页" class="t-select-option t-is-selected t-size-m"><span>20 条/页</span></li>
                   <li title="30 条/页" class="t-select-option t-size-m"><span>30 条/页</span></li>
@@ -468,7 +468,7 @@ exports[`Pagination disabled demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -484,7 +484,7 @@ exports[`Pagination disabled demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -698,7 +698,7 @@ exports[`Pagination few demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -714,7 +714,7 @@ exports[`Pagination few demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -884,7 +884,7 @@ exports[`Pagination jump demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -900,7 +900,7 @@ exports[`Pagination jump demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1096,7 +1096,7 @@ exports[`Pagination mini works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1112,7 +1112,7 @@ exports[`Pagination mini works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1305,7 +1305,7 @@ exports[`Pagination more works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1321,7 +1321,7 @@ exports[`Pagination more works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1536,7 +1536,7 @@ exports[`Pagination page-num demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1552,7 +1552,7 @@ exports[`Pagination page-num demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1745,7 +1745,7 @@ exports[`Pagination simple demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1761,7 +1761,7 @@ exports[`Pagination simple demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1872,7 +1872,7 @@ exports[`Pagination simple demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1882,7 +1882,9 @@ exports[`Pagination simple demo works fine 1`] = `
                     <span />
                   </li>
                 </ul>
-                <ul>
+                <ul
+                  class="t-select__list"
+                >
                   <li
                     class="t-select-option t-is-selected t-size-m"
                     title="1/20"
@@ -2132,7 +2134,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select__create-option t-select__list"
                 style="display: none;"
               >
                 <li
@@ -2148,7 +2150,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
                 暂无数据
               </li>
               <ul
-                class="t-select__groups"
+                class="t-select__groups t-select__list"
                 style="display: none;"
               >
                 <li
@@ -2259,7 +2261,7 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           >
             <div>
               <ul
-                class="t-select__create-option"
+                class="t-select__create-option t-select__list"
                 style="display: none;"
               >
                 <li
@@ -2269,7 +2271,9 @@ exports[`Pagination simple-mini demo works fine 1`] = `
                   <span />
                 </li>
               </ul>
-              <ul>
+              <ul
+                class="t-select__list"
+              >
                 <li
                   class="t-select-option t-is-selected t-size-s"
                   title="1/20"
@@ -2519,7 +2523,7 @@ exports[`Pagination total demo works fine 1`] = `
             >
               <div>
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -2535,7 +2539,7 @@ exports[`Pagination total demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
