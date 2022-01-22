@@ -5,6 +5,7 @@ import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import isNil from 'lodash/isNil';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import lodashTemplate from 'lodash/template';
 import { prefix } from '../config';
 import { validate } from './form-model';
 import {
@@ -15,6 +16,7 @@ import {
   ValueType,
   ValidateTriggerType,
   AllValidateResult,
+  FormErrorMessage,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -149,6 +151,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const ruleName = index !== -1 ? this.name.slice(index + 1) : this.name;
       return lodashGet(parent?.rules, ruleName) || [];
     },
+    errorMessages(): FormErrorMessage {
+      return this.form.errorMessage ?? this.global.errorMessage;
+    },
   },
 
   watch: {
@@ -202,7 +207,21 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
       // 校验结果，包含正确的校验信息
       const r = await validate(this.value, rules);
-      const errorList = r.filter((item) => item.result !== true);
+      const errorList = r
+        .filter((item) => item.result !== true)
+        .map((item) => {
+          Object.keys(item).forEach((key) => {
+            if (!item.message && this.errorMessages[key]) {
+              const compiled = lodashTemplate(this.errorMessages[key]);
+              // eslint-disable-next-line no-param-reassign
+              item.message = compiled({
+                name: this.label,
+                validate: item[key],
+              });
+            }
+          });
+          return item;
+        });
       this.errorList = errorList;
       // 仅有自定义校验方法才会存在 successList
       this.successList = r.filter((item) => item.result === true && item.message && item.type === 'success');

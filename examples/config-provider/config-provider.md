@@ -175,6 +175,7 @@ sizeLimitMessage | String | '文件大小不能超过 {sizeLimit}' | 文件大�
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
+errorMessage | Object | - | 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 requiredMark | Boolean | true | 是否显示必填符号，默认显示 | N
 
 ### TagConfig

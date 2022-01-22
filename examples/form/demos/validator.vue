@@ -76,6 +76,7 @@ export default {
         { label: '软件学院', value: '2' },
         { label: '物联网学院', value: '3' },
       ],
+      // 校验规则中的 message 和 type 均为非必需字段
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },

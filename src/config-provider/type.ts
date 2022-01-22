@@ -6,6 +6,7 @@
 
 import { CalendarController } from '../calendar';
 import { ButtonProps } from '../button';
+import { FormErrorMessage } from '../form';
 import { TNode } from '../common';
 
 export interface GlobalConfigProvider {
@@ -476,6 +477,10 @@ export interface UploadConfig {
 }
 
 export interface FormConfig {
+  /**
+   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
+   */
+  errorMessage?: FormErrorMessage;
   /**
    * 是否显示必填符号，默认显示
    * @default true
