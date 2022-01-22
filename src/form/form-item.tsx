@@ -101,7 +101,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const type = this.errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
-
+    disabled(): boolean {
+      return this.form.disabled;
+    },
     contentClasses(): ClassName {
       const getErrorClass: string = this.errorClasses;
       return [CLASS_NAMES.controls, getErrorClass];
@@ -155,6 +157,10 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     },
   },
 
+  created() {
+    this.addWatch();
+  },
+
   mounted() {
     this.initialValue = cloneDeep(this.value);
     this.form.$emit('form-item-created', this);
@@ -165,6 +171,30 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
   },
 
   methods: {
+    addWatch() {
+      if (this.disabled === undefined) return;
+      this.$watch(
+        'disabled',
+        (val) => {
+          this.$nextTick(() => {
+            this.setChildrenDisabled(val, this.$children);
+          });
+        },
+        { immediate: true },
+      );
+    },
+    // 设置表单内组件的禁用状态
+    setChildrenDisabled(disabled: boolean, children: Vue[]) {
+      children.forEach((item) => {
+        if (this.form.controlledComponents?.includes(item.$options.name)) {
+          // eslint-disable-next-line no-param-reassign
+          item.$data.formDisabled = disabled;
+        }
+        if (item.$children?.length) {
+          this.setChildrenDisabled(disabled, item.$children);
+        }
+      });
+    },
     // T 表示表单数据的类型
     async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;

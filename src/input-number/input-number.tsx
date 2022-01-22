@@ -48,6 +48,8 @@ export default Vue.extend({
   },
   data() {
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       userInput: null,
       filterValue: null,
       isError: false,
@@ -55,11 +57,14 @@ export default Vue.extend({
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     disabledReduce(): boolean {
-      return this.disabled || this.isError || Number(this.value) - this.step < this.min;
+      return this.tDisabled || this.isError || Number(this.value) - this.step < this.min;
     },
     disabledAdd(): boolean {
-      return this.disabled || this.isError || Number(this.value) + this.step > this.max;
+      return this.tDisabled || this.isError || Number(this.value) + this.step > this.max;
     },
     valueDecimalPlaces(): number {
       const tempVal = this.filterValue !== null && !isNaN(Number(this.filterValue)) && !isNaN(parseFloat(this.filterValue))
@@ -87,7 +92,7 @@ export default Vue.extend({
         class: [
           `${name}__decrease`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabledReduce,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabledReduce,
           },
         ],
       };
@@ -104,7 +109,7 @@ export default Vue.extend({
         class: [
           `${name}__increase`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabledAdd,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabledAdd,
           },
         ],
       };
@@ -122,7 +127,7 @@ export default Vue.extend({
           name,
           CLASSNAMES.SIZE[this.size],
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${prefix}-is-controls-right`]: this.theme === 'column',
             [`${name}--normal`]: this.theme === 'normal',
           },
@@ -144,7 +149,7 @@ export default Vue.extend({
         class: [
           `${prefix}-input__inner`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${name}-text-align`]: this.theme === 'row',
           },
         ],
@@ -165,7 +170,7 @@ export default Vue.extend({
     inputAttrs(): InputNumberAttr {
       return {
         attrs: {
-          disabled: this.disabled,
+          disabled: this.tDisabled,
           autocomplete: 'off',
           ref: 'refInputElem',
           placeholder: this.placeholder,
@@ -190,7 +195,7 @@ export default Vue.extend({
       return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
-      if (this.disabledAdd) return;
+      if (this.tDisabledAdd) return;
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
       this.handleAction(
@@ -200,7 +205,7 @@ export default Vue.extend({
       );
     },
     handleReduce(e: MouseEvent) {
-      if (this.disabledReduce) return;
+      if (this.tDisabledReduce) return;
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
       this.handleAction(

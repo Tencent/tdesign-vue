@@ -20,6 +20,14 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   data?: FormData;
   /**
+   * 是否禁用整个表单
+   */
+  disabled?: boolean;
+  /**
+   * 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`
+   */
+  formControlledComponents?: Array<string>;
+  /**
    * 表单字段标签对齐方式：左对齐、右对齐、顶部对齐
    * @default right
    */
@@ -67,9 +75,14 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   size?: 'medium' | 'large';
   /**
-   * 校验状态图标
+   * 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标
    */
   statusIcon?: boolean | TNode<TdFormItemProps>;
+  /**
+   * 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件
+   * @default false
+   */
+  submitWithWarningMessage?: boolean;
   /**
    * 表单重置时触发
    */
@@ -87,7 +100,7 @@ export interface TdFormProps<FormData extends Data = Data> {
 /** 组件实例方法 */
 export interface FormInstanceFunctions<FormData extends Data = Data> {
   /**
-   * 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果
+   * 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果。清除邮箱校验结果示例：`clearValidate(['email'])`
    */
   clearValidate?: (fields?: Array<string>) => void;
   /**
@@ -143,7 +156,7 @@ export interface TdFormItemProps {
    */
   rules?: Array<FormRule>;
   /**
-   * 校验状态图标。优先级高级 Form 的 statusIcon
+   * 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。优先级高级 Form 的 statusIcon
    */
   statusIcon?: boolean | TNode;
   /**

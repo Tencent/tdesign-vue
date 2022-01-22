@@ -22,6 +22,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   data() {
     return {
       isHover: false,
+      formDisabled: undefined,
     };
   },
   props: { ...props },
@@ -51,6 +52,9 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
     },
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     // 键盘上下按键选中hover样式的选项
     hovering(): boolean {
       return (
@@ -76,7 +80,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       return [
         `${prefix}-select-option`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.multiLimitDisabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled || this.multiLimitDisabled,
           [CLASSNAMES.STATUS.selected]: this.selected,
           [CLASSNAMES.SIZE[this.tSelect && this.tSelect.size]]: this.tSelect && this.tSelect.size,
           [`${prefix}-select-option__hover`]: this.hovering,
@@ -124,7 +128,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   methods: {
     select(e: MouseEvent | KeyboardEvent) {
       e.stopPropagation();
-      if (this.disabled || this.multiLimitDisabled) {
+      if (this.tDisabled || this.multiLimitDisabled) {
         return false;
       }
       const parent = this.$el.parentNode as HTMLElement;

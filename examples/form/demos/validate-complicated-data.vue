@@ -142,8 +142,7 @@ export default {
           const item = this.formData.students[i];
           const keys = Object.keys(item).map((key) => `students[${i}].${key}`);
           // 数组数据 key 在 validateResult 中存在，则表示校验不通过
-          const isInvalid = keys.find((key) => validateResult[key]);
-          if (isInvalid) {
+          if (keys.find((key) => validateResult[key])) {
             this.studentTab = item.id;
             return;
           }

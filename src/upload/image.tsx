@@ -66,11 +66,16 @@ export default Vue.extend({
                   <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
                     <BrowseIcon nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
                   </span>
-                  <span class={`${UPLOAD_NAME}__card-mask-item-divider`}></span>
-
-                  <span class={`${UPLOAD_NAME}__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-                    <DeleteIcon nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
-                  </span>
+                  {!this.disabled && [
+                    <span class={`${UPLOAD_NAME}__card-mask-item-divider`} key="divider"></span>,
+                    <span
+                      class={`${UPLOAD_NAME}__card-mask-item`}
+                      onClick={(e: MouseEvent) => e.stopPropagation()}
+                      key="delete-icon"
+                    >
+                      <DeleteIcon nativeOnClick={(e: MouseEvent) => this.remove({ e, file, index })} />
+                    </span>,
+                  ]}
                 </div>
               </div>
             </li>
