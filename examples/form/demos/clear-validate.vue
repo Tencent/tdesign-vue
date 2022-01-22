@@ -81,30 +81,30 @@ export default {
       ],
       rules: {
         account: [
-          { required: true, message: '姓名必填', type: 'error' },
-          { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
-          { max: 10, message: '姓名字符长度超出', type: 'warning' },
+          { required: true, message: '姓名必填' },
+          { min: 2, message: '至少需要两个字符，一个中文等于两个字符' },
+          { max: 10, message: '姓名字符长度超出' },
         ],
         description: [
           { validator: (val) => val.length >= 5, message: '至少 5 个字，中文长度等于英文长度' },
           { validator: (val) => val.length < 20, message: '不能超过 20 个字，中文长度等于英文长度' },
         ],
         password: [
-          { required: true, message: '密码必填', type: 'error' },
-          { len: 8, message: '请输入 8 位密码', type: 'warning' },
-          { pattern: /[A-Z]+/, message: '密码必须包含大写字母', type: 'warning' },
+          { required: true, message: '密码必填' },
+          { len: 8, message: '请输入 8 位密码' },
+          { pattern: /[A-Z]+/, message: '密码必须包含大写字母' },
         ],
         email: [
-          { required: true, message: '邮箱必填', type: 'warning' },
+          { required: true, message: '邮箱必填' },
           { email: { ignore_max_length: true }, message: '请输入正确的邮箱地址' },
         ],
-        gender: [{ required: true, message: '性别必填', type: 'warning' }],
+        gender: [{ required: true, message: '性别必填' }],
         course: [
-          { required: true, message: '课程必填', type: 'warning' },
-          { validator: (val) => val.length <= 2, message: '最多选择 2 门课程', type: 'warning' },
+          { required: true, message: '课程必填' },
+          { validator: (val) => val.length <= 2, message: '最多选择 2 门课程' },
         ],
         'content.url': [
-          { required: true, message: '个人网站必填', type: 'warning' },
+          { required: true, message: '个人网站必填' },
           {
             url: {
               protocols: ['http', 'https', 'ftp'],

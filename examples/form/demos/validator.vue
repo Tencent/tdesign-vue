@@ -1,6 +1,7 @@
 <template>
   <div>
-    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
+    <!--  scrollToFirstError="smooth" -->
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit">
       <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
@@ -32,7 +33,10 @@
       <t-form-item
         label="入学时间"
         name="date"
-        :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]"
+        :rules="[
+          { required: true, message: '此项必填' },
+          { date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' },
+        ]"
       >
         <t-input v-model="formData.date"></t-input>
       </t-form-item>
@@ -76,6 +80,7 @@ export default {
         { label: '软件学院', value: '2' },
         { label: '物联网学院', value: '3' },
       ],
+      // FormItem.rules 优先级大于 Form.rules
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
@@ -83,25 +88,34 @@ export default {
           { max: 10, message: '姓名字符长度超出', type: 'warning' },
         ],
         description: [
-          { validator: (val) => val.length >= 5, message: '至少 5 个字，中文长度等于英文长度' },
-          { validator: (val) => val.length < 20, message: '不能超过 20 个字，中文长度等于英文长度' },
+          {
+            validator: (val) => val.length >= 5,
+            message: '至少 5 个字，中文长度等于英文长度',
+            type: 'warning',
+          },
+          {
+            validator: (val) => val.length < 20,
+            message: '不能超过 20 个字，中文长度等于英文长度',
+            type: 'warning',
+          },
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
           { len: 8, message: '请输入 8 位密码', type: 'warning' },
           { pattern: /[A-Z]+/, message: '密码必须包含大写字母', type: 'warning' },
         ],
+        college: [{ required: true, message: '此项必填' }],
         email: [
-          { required: true, message: '邮箱必填', type: 'warning' },
+          { required: true, message: '邮箱必填' },
           { email: { ignore_max_length: true }, message: '请输入正确的邮箱地址' },
         ],
-        gender: [{ required: true, message: '性别必填', type: 'warning' }],
+        gender: [{ required: true, message: '性别必填' }],
         course: [
-          { required: true, message: '课程必填', type: 'warning' },
+          { required: true, message: '课程必填' },
           { validator: (val) => val.length <= 2, message: '最多选择 2 门课程', type: 'warning' },
         ],
         'content.url': [
-          { required: true, message: '个人网站必填', type: 'warning' },
+          { required: true, message: '个人网站必填' },
           {
             url: {
               protocols: ['http', 'https', 'ftp'],

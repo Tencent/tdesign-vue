@@ -4143,7 +4143,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/clear-validate.vue corr
       </div>
     </div>
     <div class="t-form__item t-form-item__content.url">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
@@ -4626,7 +4626,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__college">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">学院</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="demo-select-base t-select__wrap">
@@ -4641,7 +4641,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__date">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
@@ -4649,7 +4649,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__content.url">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="" class="t-input__inner"></div>
