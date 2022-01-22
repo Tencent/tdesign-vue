@@ -239,7 +239,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         this.focusing = true;
       }
     },
-    removeTag(index: number, data: TreeOptionData, e: MouseEvent) {
+    removeTag(index: number, data: TreeOptionData, e?: MouseEvent) {
       if (this.disabled) {
         return;
       }
@@ -393,18 +393,34 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
       />
     );
-    const tagItem = this.tagList.map((label, index) => (
-      <Tag
-        v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
-        key={index}
-        size={this.size}
-        closable={!this.disabled}
-        disabled={this.disabled}
-        onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
-      >
-        {label}
-      </Tag>
-    ));
+    const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)
+      ? renderTNodeJSX(this, 'valueDisplay', {
+        params: {
+          value: this.nodeInfo,
+          onClose: (index: number) => this.removeTag(index, null),
+        },
+      })
+      : this.tagList.map((label, index) => (
+            <Tag
+              v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
+              key={index}
+              size={this.size}
+              closable={!this.disabled}
+              disabled={this.disabled}
+              onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
+            >
+              {label}
+            </Tag>
+      ));
+    const selectedSingle = this.valueDisplay || this.$scopedSlots.valueDisplay ? (
+      renderTNodeJSX(this, 'valueDisplay', {
+        params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
+      })
+    ) : (
+        <span title={this.selectedSingle} class={`${prefix}-select__single`}>
+          {this.selectedSingle}
+        </span>
+    );
     const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
       && this.minCollapsedNum > 0
       && this.tagList.length > this.minCollapsedNum ? (
@@ -441,11 +457,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             </span>
             {tagItem}
             {collapsedItem}
-            {!this.multiple && !this.showPlaceholder && !this.showFilter && (
-              <span title={this.selectedSingle} class={`${prefix}-select__single`}>
-                {this.selectedSingle}
-              </span>
-            )}
+            {!this.multiple && !this.showPlaceholder && !this.showFilter && selectedSingle}
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
