@@ -92,7 +92,7 @@ export default Vue.extend({
         class: [
           `${name}__decrease`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.tDisabledReduce,
+            [CLASSNAMES.STATUS.disabled]: this.disabledReduce,
           },
         ],
       };
@@ -109,7 +109,7 @@ export default Vue.extend({
         class: [
           `${name}__increase`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.tDisabledAdd,
+            [CLASSNAMES.STATUS.disabled]: this.disabledAdd,
           },
         ],
       };
@@ -195,7 +195,7 @@ export default Vue.extend({
       return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
-      if (this.tDisabledAdd) return;
+      if (this.disabledAdd) return;
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
       this.handleAction(
@@ -205,7 +205,7 @@ export default Vue.extend({
       );
     },
     handleReduce(e: MouseEvent) {
-      if (this.tDisabledReduce) return;
+      if (this.disabledReduce) return;
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
       this.handleAction(
@@ -236,7 +236,7 @@ export default Vue.extend({
       // only allow one [.e] and two [-]
       let filterVal = s.replace(/[^\d.eE。-]/g, '').replace('。', '.');
       if (this.multiE(filterVal) || this.multiDot(filterVal) || this.multiNegative(filterVal)) {
-        filterVal = filterVal.substr(0, filterVal.length - 1);
+        filterVal = filterVal.substring(0, filterVal.length - 1);
       }
       return filterVal;
     },
