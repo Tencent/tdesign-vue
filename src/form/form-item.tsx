@@ -139,7 +139,13 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     },
     innerRules(): FormRule[] {
       const parent = this.form;
-      return lodashGet(parent?.rules, this.name) || this.rules || [];
+      if (this.rules?.length) return this.rules || [];
+      if (!this.name) {
+        return [];
+      }
+      const index = this.name.lastIndexOf('.') || -1;
+      const ruleName = index !== -1 ? this.name.slice(index + 1) : this.name;
+      return lodashGet(parent?.rules, ruleName) || [];
     },
   },
 
