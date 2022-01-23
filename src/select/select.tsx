@@ -368,7 +368,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
-      e && e.stopPropagation();
+      e?.stopPropagation();
       if (this.disabled) {
         return;
       }
@@ -384,7 +384,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation();
       if (this.multiple) {
         this.emitChange([]);
       } else {

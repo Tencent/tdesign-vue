@@ -135,6 +135,7 @@ export default Vue.extend({
           `${prefix}-input`,
           {
             [`${prefix}-is-error`]: this.isError,
+            [`${prefix}-align-${this.align}`]: this.align,
           },
         ],
       };
