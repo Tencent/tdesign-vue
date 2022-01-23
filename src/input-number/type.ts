@@ -9,7 +9,6 @@ import { TNode } from '../common';
 export interface TdInputNumberProps {
   /**
    * 文本内容位置，居左/居中/居右
-   * @default left
    */
   align?: 'left' | 'center' | 'right';
   /**

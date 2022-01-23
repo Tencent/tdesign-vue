@@ -11,7 +11,6 @@ export default {
   /** 文本内容位置，居左/居中/居右 */
   align: {
     type: String as PropType<TdInputNumberProps['align']>,
-    default: 'left' as TdInputNumberProps['align'],
     validator(val: TdInputNumberProps['align']): boolean {
       return ['left', 'center', 'right'].includes(val);
     },
