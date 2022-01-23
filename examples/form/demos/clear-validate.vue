@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!--  scrollToFirstError="smooth" -->
-    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit">
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
       <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
@@ -33,10 +32,7 @@
       <t-form-item
         label="入学时间"
         name="date"
-        :rules="[
-          { required: true, message: '此项必填' },
-          { date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' },
-        ]"
+        :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]"
       >
         <t-input v-model="formData.date"></t-input>
       </t-form-item>
@@ -44,9 +40,12 @@
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
-        <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>
+        <t-button theme="primary" type="submit" style="margin-right: 10px"> 提交 </t-button>
+        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px"> 重置 </t-button>
+        <t-button theme="default" variant="base" @click="handleClear" style="margin-right: 10px">
+          清空校验结果
+        </t-button>
+        <t-button theme="default" variant="base" @click="clearFieldsValidateResult"> 清除指定字段的校验结果 </t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -80,31 +79,21 @@ export default {
         { label: '软件学院', value: '2' },
         { label: '物联网学院', value: '3' },
       ],
-      // FormItem.rules 优先级大于 Form.rules
       rules: {
         account: [
-          { required: true, message: '姓名必填', type: 'error' },
-          { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
-          { max: 10, message: '姓名字符长度超出', type: 'warning' },
+          { required: true, message: '姓名必填' },
+          { min: 2, message: '至少需要两个字符，一个中文等于两个字符' },
+          { max: 10, message: '姓名字符长度超出' },
         ],
         description: [
-          {
-            validator: (val) => val.length >= 5,
-            message: '至少 5 个字，中文长度等于英文长度',
-            type: 'warning',
-          },
-          {
-            validator: (val) => val.length < 20,
-            message: '不能超过 20 个字，中文长度等于英文长度',
-            type: 'warning',
-          },
+          { validator: (val) => val.length >= 5, message: '至少 5 个字，中文长度等于英文长度' },
+          { validator: (val) => val.length < 20, message: '不能超过 20 个字，中文长度等于英文长度' },
         ],
         password: [
-          { required: true, message: '密码必填', type: 'error' },
-          { len: 8, message: '请输入 8 位密码', type: 'warning' },
-          { pattern: /[A-Z]+/, message: '密码必须包含大写字母', type: 'warning' },
+          { required: true, message: '密码必填' },
+          { len: 8, message: '请输入 8 位密码' },
+          { pattern: /[A-Z]+/, message: '密码必须包含大写字母' },
         ],
-        college: [{ required: true, message: '此项必填' }],
         email: [
           { required: true, message: '邮箱必填' },
           { email: { ignore_max_length: true }, message: '请输入正确的邮箱地址' },
@@ -112,7 +101,7 @@ export default {
         gender: [{ required: true, message: '性别必填' }],
         course: [
           { required: true, message: '课程必填' },
-          { validator: (val) => val.length <= 2, message: '最多选择 2 门课程', type: 'warning' },
+          { validator: (val) => val.length <= 2, message: '最多选择 2 门课程' },
         ],
         'content.url': [
           { required: true, message: '个人网站必填' },
@@ -143,6 +132,11 @@ export default {
     },
     handleClear() {
       this.$refs.form.clearValidate();
+    },
+    // 清除指定字段的校验结果
+    clearFieldsValidateResult() {
+      this.$refs.form.clearValidate(['email', 'course', 'content.url']);
+      this.$message.success('已清除邮箱、课程、个人网站等字段校验结果');
     },
   },
 };

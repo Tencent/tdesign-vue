@@ -139,7 +139,11 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     },
     innerRules(): FormRule[] {
       const parent = this.form;
-      return lodashGet(parent?.rules, this.name) || this.rules || [];
+      if (this.rules?.length) return this.rules || [];
+      if (!this.name) return [];
+      const index = this.name.lastIndexOf('.') || -1;
+      const pRuleName = this.name.slice(index + 1);
+      return lodashGet(parent?.rules, this.name) || lodashGet(parent?.rules, pRuleName) || [];
     },
   },
 
@@ -233,7 +237,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
-          <Icon size="20px"></Icon>
+          <Icon></Icon>
         </span>
       );
       const list = this.errorList;
@@ -256,12 +260,8 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       props?: TdFormItemProps,
     ): TNodeReturnValue {
       const resultIcon = (otherContent?: TNodeReturnValue) => <span class={CLASS_NAMES.status}>{otherContent}</span>;
-      const withoutIcon = () => <span class={[CLASS_NAMES.status, `${CLASS_NAMES.status}-without-icon`]}></span>;
       if (statusIcon === true) {
         return this.getDefaultIcon();
-      }
-      if (statusIcon === false) {
-        return withoutIcon();
       }
       if (typeof statusIcon === 'function') {
         return resultIcon(statusIcon(this.$createElement, props));
@@ -277,6 +277,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const slotStatusIcon = this.$scopedSlots.statusIcon;
       const parentStatusIcon = parent.statusIcon;
       const parentSlotStatusIcon = parent.$scopedSlots.statusIcon;
+      if (statusIcon === false) return;
       let resultIcon: TNodeReturnValue = this.getIcon(statusIcon, slotStatusIcon);
       if (resultIcon) return resultIcon;
       if (resultIcon === false) return;
