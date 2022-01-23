@@ -320,10 +320,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     visibleChange(val: boolean) {
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      if (this.focusing && !val) {
-        this.visible = true;
-        return;
-      }
       this.visible = val;
       if (!val) {
         this.searchInput = '';
@@ -603,7 +599,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
-              <t-option-group label={groupList.group} divider={groupList.divider}>
+              <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
                 {this.renderOptions(children)}
               </t-option-group>
             );
