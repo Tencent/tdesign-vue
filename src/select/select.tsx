@@ -25,6 +25,7 @@ import { emitEvent } from '../utils/event';
 export type OptionInstance = InstanceType<typeof Option>;
 
 const name = `${prefix}-select`;
+const listName = `${name}__list`;
 // trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
 // 用户设置overStyle width时，以设置的为准
 const DEFAULT_MAX_OVERLAY_WIDTH = 500;
@@ -367,7 +368,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
-      e && e.stopPropagation();
+      e?.stopPropagation();
       if (this.disabled) {
         return;
       }
@@ -383,7 +384,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation();
       if (this.multiple) {
         this.emitChange([]);
       } else {
@@ -598,7 +599,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     renderGroupOptions(options: SelectOptionGroup[]) {
       return (
-        <ul>
+        <ul class={listName}>
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
@@ -613,7 +614,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     // options 直传时
     renderOptions(options: SelectOption[]) {
       return (
-        <ul>
+        <ul class={listName}>
           {options.map((item: TdOptionProps, index: number) => (
             <t-option
               value={get(item, this.realValue)}
@@ -658,7 +659,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return (
         <div slot="content">
           {renderTNodeJSX(this, 'panelTopContent')}
-          <ul v-show={showCreateOption} class={`${name}__create-option`}>
+          <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
           {loading && <li class={this.tipsClass}>{loadingTextSlot}</li>}
@@ -666,7 +667,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {!this.hasOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
-            <ul v-show={!loading && displayOptions.length} class={`${prefix}-select__groups`}>
+            <ul v-show={!loading && displayOptions.length} class={[`${prefix}-select__groups`, listName]}>
               {children}
             </ul>
           )}

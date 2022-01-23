@@ -720,7 +720,7 @@ exports[`DatePicker base demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -2174,7 +2174,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -3640,7 +3640,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
         >
           <div
             allowinput="0"
-            class="t-input t-size-m t-input--suffix"
+            class="t-input t-size-m t-is-readonly t-input--suffix"
           >
             <input
               class="t-input__inner"
@@ -4410,7 +4410,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
         >
           <div
             allowinput="0"
-            class="t-input t-size-m t-input--suffix"
+            class="t-input t-size-m t-is-readonly t-input--suffix"
           >
             <input
               class="t-input__inner"
@@ -5875,7 +5875,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -7314,7 +7314,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -8786,7 +8786,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -9111,7 +9111,7 @@ exports[`DatePicker month demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
@@ -9404,7 +9404,7 @@ exports[`DatePicker year demo works fine 1`] = `
       >
         <div
           allowinput="0"
-          class="t-input t-size-m t-input--suffix"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
           <input
             class="t-input__inner"
