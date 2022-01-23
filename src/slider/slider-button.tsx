@@ -275,7 +275,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     return (
       <div
         ref="button"
-        class={[{ hover: this.hovering, dragging: this.dragging }, `${prefix}-slider__button-wrapper`]}
+        class={`${prefix}-slider__button-wrapper`}
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
@@ -301,7 +301,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           attach={this.attach}
           visible={this.visible}
         >
-          <div class={[`${prefix}-slider__button`, { hover: this.hovering, dragging: this.dragging }]} />
+          <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
         </t-popup>
       </div>
     );
