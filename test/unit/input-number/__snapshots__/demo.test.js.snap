@@ -24,7 +24,7 @@ exports[`InputNumber center demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -78,7 +78,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -132,7 +132,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -187,7 +187,7 @@ exports[`InputNumber format demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -241,7 +241,7 @@ exports[`InputNumber left demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -295,7 +295,7 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -346,7 +346,7 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -396,7 +396,7 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -450,7 +450,7 @@ exports[`InputNumber step demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -504,7 +504,7 @@ exports[`InputNumber undefined demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input t-align-left"
+      class="t-input"
     >
       <input
         autocomplete="off"
