@@ -11935,7 +11935,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           <tr>
             <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="2" style="overflow:hidden;">平台</td>
             <td class="" colspan="3" rowspan="1">类型及默认值</td>
-            <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;">属性</td>
+            <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;border-left-width:1px;">属性</td>
             <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="2" style="overflow:hidden;">说明</td>
           </tr>
           <tr>
