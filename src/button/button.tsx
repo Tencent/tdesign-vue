@@ -23,6 +23,14 @@ export default Vue.extend({
 
   directives: { ripple },
 
+  methods: {
+    handleIE() {
+      if (getIEVersion() <= 9) {
+        this.$el.removeAttribute('disabled');
+      }
+    },
+  },
+
   render(): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
@@ -68,10 +76,6 @@ export default Vue.extend({
       },
     };
 
-    if (getIEVersion() <= 9) {
-      delete buttonAttrs.attrs.disabled;
-    }
-
     return (
       <button
         v-ripple
@@ -82,5 +86,9 @@ export default Vue.extend({
         {buttonContent}
       </button>
     );
+  },
+
+  mounted() {
+    this.handleIE();
   },
 });
