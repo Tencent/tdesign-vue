@@ -8,6 +8,11 @@ import { TNode, SizeEnum } from '../common';
 
 export interface TdInputProps {
   /**
+   * 文本内容位置，居左/居中/居右
+   * @default left
+   */
+  align?: 'left' | 'center' | 'right';
+  /**
    * 是否开启自动填充功能
    * @default false
    */

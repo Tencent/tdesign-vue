@@ -8,6 +8,14 @@ import { TdInputProps } from './type';
 import { PropType } from 'vue';
 
 export default {
+  /** 文本内容位置，居左/居中/居右 */
+  align: {
+    type: String as PropType<TdInputProps['align']>,
+    default: 'left' as TdInputProps['align'],
+    validator(val: TdInputProps['align']): boolean {
+      return ['left', 'center', 'right'].includes(val);
+    },
+  },
   /** 是否开启自动填充功能 */
   autocomplete: Boolean,
   /** 自动聚焦 */

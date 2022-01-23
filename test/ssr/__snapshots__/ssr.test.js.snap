@@ -3228,7 +3228,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
       <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
     </svg></div>
   <div class="t-pagination__jump">jump to<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-      <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="1" class="t-input__inner"></div>
+      <div class="t-input"><input autocomplete="off" ref="refInputElem" value="1" class="t-input__inner"></div>
     </div>
   </div>
 </div>
@@ -4893,6 +4893,14 @@ exports[`ssr snapshot test renders ./examples/input/demos/addon.vue correctly 1`
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/input/demos/align.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:300px;">
+  <div class="t-input t-size-m"><input placeholder="请输入" type="text" value="左对齐" class="t-input__inner"></div>
+  <div class="t-input t-size-m t-align-center"><input placeholder="请输入" type="text" value="居中对齐" class="t-input__inner"></div>
+  <div class="t-input t-size-m t-align-right"><input placeholder="请输入" type="text" value="右对齐" class="t-input__inner"></div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/input/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div class="t-input t-size-m"><input placeholder="请输入" type="text" class="t-input__inner"></div>
@@ -5000,12 +5008,51 @@ exports[`ssr snapshot test renders ./examples/input/demos/textarea.vue correctly
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/input-number/demos/align.vue correctly 1`] = `
+<div class="tdesign-demo-block-column">
+  <div style="width:20%;">
+    <div class="t-input-number t-size-m" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+          <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
+        </svg></button>
+      <div class="t-input t-align-left"><input autocomplete="off" ref="refInputElem" value="100" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+          <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+        </svg></button>
+    </div>
+    <div class="t-input-number t-size-m" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+          <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
+        </svg></button>
+      <div class="t-input t-align-center"><input autocomplete="off" ref="refInputElem" value="200" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+          <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+        </svg></button>
+    </div>
+    <div class="t-input-number t-size-m" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+          <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
+        </svg></button>
+      <div class="t-input t-align-right"><input autocomplete="off" ref="refInputElem" value="300" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+          <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+        </svg></button>
+    </div>
+  </div>
+  <div style="width:20%;">
+    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+      <div class="t-input t-align-left"><input autocomplete="off" ref="refInputElem" value="100" class="t-input__inner"></div>
+    </div>
+    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+      <div class="t-input t-align-center"><input autocomplete="off" ref="refInputElem" value="200" class="t-input__inner"></div>
+    </div>
+    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+      <div class="t-input t-align-right"><input autocomplete="off" ref="refInputElem" value="300" class="t-input__inner"></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/input-number/demos/center.vue correctly 1`] = `
 <div>
   <div class="t-input-number t-size-m"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5017,7 +5064,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/default.vue cor
   <div class="t-input-number t-size-m"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="2021" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="2021" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5029,7 +5076,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/disabled.vue co
   <div class="t-input-number t-size-m t-is-disabled"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input disabled="disabled" autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner t-is-disabled t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input disabled="disabled" autocomplete="off" ref="refInputElem" value="3" class="t-input__inner t-is-disabled t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5053,7 +5100,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/format.vue corr
   <div class="t-input-number t-size-m"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3%" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3%" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5065,7 +5112,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/left.vue correc
   <div class="t-input-number t-size-m t-is-controls-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down t-size-m">
         <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up t-size-m">
         <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5075,7 +5122,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/left.vue correc
 exports[`ssr snapshot test renders ./examples/input-number/demos/normal.vue correctly 1`] = `
 <div>
   <div class="t-input-number t-size-m t-input-number--normal">
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner"></div>
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner"></div>
   </div>
 </div>
 `;
@@ -5085,21 +5132,21 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/size.vue correc
   <div class="t-input-number t-size-s"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-s">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-s">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-s">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
   <div class="t-input-number t-size-m" style="margin:0 50px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
   <div class="t-input-number t-size-l"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-l">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-l">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-l">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -5111,7 +5158,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/step.vue correc
   <div class="t-input-number t-size-m"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
         <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
       </svg></button>
-    <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="3.20" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+    <div class="t-input"><input autocomplete="off" ref="refInputElem" value="3.20" class="t-input__inner t-input-number-text-align"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
         <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
@@ -7216,7 +7263,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="1" class="t-input__inner"></div>
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" value="1" class="t-input__inner"></div>
       </div>页</div>
   </div>
 </div>
@@ -7252,7 +7299,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="1" class="t-input__inner"></div>
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" value="1" class="t-input__inner"></div>
       </div>页</div>
   </div>
 </div>
@@ -7314,7 +7361,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="1" class="t-input__inner"></div>
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" value="1" class="t-input__inner"></div>
       </div>页</div>
   </div>
 </div>
@@ -8821,7 +8868,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/skeleton/demos/advance.vue correctly 1`] = `
 <div class="t-skeleton-demo">
   <section class="t-skeleton-demo-card">
-    <div class="header">网页（使用 rowCol）</div>
+    <div class="header">组合成网页效果</div>
     <div class="content">
       <div class="t-skeleton">
         <div class="t-skeleton__row">
@@ -8855,7 +8902,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/advance.vue correct
     </div>
   </section>
   <section class="t-skeleton-demo-card">
-    <div class="header">列表（组合使用）</div>
+    <div class="header">组合成列表效果</div>
     <div class="content">
       <ul class="t-skeleton-demo-list">
         <li>
@@ -8975,7 +9022,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/base.vue correctly 
     <div class="t-switch__content t-size-m"></div>
   </div>
   <div>
-    <div class="mb-20 t-skeleton">
+    <div class="t-skeleton">
       <div class="t-skeleton__row">
         <div class="t-skeleton__col t-skeleton--type-text"></div>
       </div>
@@ -8998,7 +9045,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        text
+        文本
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -9012,7 +9059,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        avatar
+        头像
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -9026,7 +9073,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        paragraph
+        段落
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -9046,7 +9093,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        avatar-text
+        头像描述
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -9061,7 +9108,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        tab
+        选项卡
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -9078,7 +9125,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
-        article
+        文章
       </div>
       <div class="content">
         <div class="t-skeleton">
@@ -11935,7 +11982,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           <tr>
             <td class="t-align-left t-text-ellipsis test" key="platform" colspan="1" rowspan="2" style="overflow:hidden;">平台</td>
             <td class="" colspan="3" rowspan="1">类型及默认值</td>
-            <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;">属性</td>
+            <td class="t-align-left t-text-ellipsis test2" key="property" colspan="1" rowspan="2" style="overflow:hidden;border-left-width:1px;">属性</td>
             <td class="t-align-left t-text-ellipsis row" key="description" colspan="1" rowspan="2" style="overflow:hidden;">说明</td>
           </tr>
           <tr>
@@ -12158,7 +12205,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
             </svg></div>
           <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-              <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" value="1" class="t-input__inner"></div>
+              <div class="t-input"><input autocomplete="off" ref="refInputElem" value="1" class="t-input__inner"></div>
             </div>页</div>
         </div>
       </div>
@@ -15098,6 +15145,44 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/props.vue correc
       <div name="t-popup--animation" appear="true"></div>
       <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="shenzhen" class="t-select__single">shenzhen</span>
         <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
+          <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+        </svg>
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/tree-select/demos/valuedisplay.vue correctly 1`] = `
+<div class="tdesign-tree-select-valuedisplay">
+  <div>
+    <div class="t-popup__reference t-select__popup-reference">
+      <div name="t-popup--animation" appear="true"></div>
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span> () <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="shenzhen" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+        </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
+          <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+        </svg>
+        <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+  <div class="tree-select-multiple">
+    <div class="t-popup__reference t-select__popup-reference">
+      <div name="t-popup--animation" appear="true"></div>
+      <div class="t-select t-size-m t-select-selected"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+        <div class="t-input t-size-m t-select__input"><input placeholder="" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
           <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
