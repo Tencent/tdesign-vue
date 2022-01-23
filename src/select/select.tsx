@@ -264,6 +264,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
     },
     searchInput(val) {
+      if (!val && !this.visible) return;
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
       }
