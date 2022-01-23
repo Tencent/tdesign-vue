@@ -55,6 +55,12 @@ export default Vue.extend({
     window.addEventListener('resize', this.updateSize);
   },
 
+  watch: {
+    disabled() {
+      this.handleIE();
+    },
+  },
+
   beforeDestroy() {
     window.removeEventListener('resize', this.updateSize);
   },

@@ -26,8 +26,20 @@ export default Vue.extend({
   methods: {
     handleIE() {
       if (getIEVersion() <= 9) {
-        this.$el.removeAttribute('disabled');
+        this.$nextTick(() => {
+          this.$el.removeAttribute('disabled');
+        });
       }
+    },
+  },
+
+  watch: {
+    disabled() {
+      this.handleIE();
+    },
+
+    loading() {
+      this.handleIE();
     },
   },
 
