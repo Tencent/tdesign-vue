@@ -2830,7 +2830,7 @@ exports[`ssr snapshot test renders ./examples/comment/demos/reply-form.vue corre
     <div class="t-comment__content">
       <div class="t-comment__detail">
         <div class="form-container">
-          <div class="t-textarea"><textarea placeholder="请输入内容" class="t-textarea__inner"></textarea></div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">回复</span></button>
+          <div class="t-textarea"><textarea placeholder="请输入内容" class="t-textarea__inner"></textarea></div> <button type="button" class="form-submit t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">回复</span></button>
         </div>
       </div>
     </div>
