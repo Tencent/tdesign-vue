@@ -5,7 +5,7 @@ import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
-import { getIEVersion } from '../utils/helper';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 const name = `${prefix}-button`;
 
