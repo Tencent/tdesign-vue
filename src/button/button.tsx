@@ -5,8 +5,16 @@ import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
+import { getIEVersion } from '../utils/helper';
 
 const name = `${prefix}-button`;
+
+export interface ButtonHTMLAttributes {
+  attrs?: {
+    disabled?: boolean;
+    type?: string;
+  };
+}
 
 export default Vue.extend({
   name: 'TButton',
@@ -53,12 +61,22 @@ export default Vue.extend({
       on.click = this.onClick;
     }
 
+    const buttonAttrs: ButtonHTMLAttributes = {
+      attrs: {
+        type: this.type,
+        disabled,
+      },
+    };
+
+    if (getIEVersion() <= 9) {
+      delete buttonAttrs.attrs.disabled;
+    }
+
     return (
       <button
         v-ripple
         class={buttonClass}
-        type={this.type}
-        disabled={disabled}
+        {...buttonAttrs}
         {...{ on }}
       >
         {buttonContent}
