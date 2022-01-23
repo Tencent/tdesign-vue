@@ -57,7 +57,7 @@ const GLOBAL_CONFIG = {
       weekend: {
         visible: true,
         showWeekendButtonProps: {
-          size: 'large',
+          size: 'small',
         },
         hideWeekendButtonProps: {
           size: 'small',
