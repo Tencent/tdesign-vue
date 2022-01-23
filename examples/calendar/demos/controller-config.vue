@@ -62,7 +62,6 @@ export default {
       controllerConfig: {
         visible: true,
         disabled: false, // 是否禁用（全部控件）
-        // 模式切换单选组件设置
         // 年份选择框组件相关设置
         year: {
           visible: true, // 是否显示
@@ -81,6 +80,7 @@ export default {
             size: 'small',
           },
         },
+        // 模式切换单选组件设置
         mode: {
           visible: true, // 是否显示
           radioGroupProps: {
