@@ -288,7 +288,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
-      this.visible && Array.isArray(this.hoverOptions) && this.initHoverindex();
     },
   },
   methods: {
@@ -461,6 +460,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       switch (e.code) {
         case 'ArrowDown':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex < this.hoverOptions.length - 1) {
             this.hoverIndex += 1;
             this.arrowDownOption();
@@ -470,6 +473,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           break;
         case 'ArrowUp':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex > 0) {
             this.hoverIndex -= 1;
             this.arrowUpOption();
