@@ -661,7 +661,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       const emptySlot = this.getEmpty();
       const loadingTextSlot = this.getLoadingText();
       return (
-        <div slot="content">
+        <div slot="content" class={`${name}__dropdown-inner`}>
           {renderTNodeJSX(this, 'panelTopContent')}
           <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
