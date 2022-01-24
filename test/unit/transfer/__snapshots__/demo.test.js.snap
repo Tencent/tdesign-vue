@@ -3344,7 +3344,9 @@ exports[`Transfer pagination demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"

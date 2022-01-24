@@ -35,7 +35,9 @@ exports[`Calendar base demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -284,7 +286,9 @@ exports[`Calendar base demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -1124,7 +1128,9 @@ exports[`Calendar card demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1262,7 +1268,9 @@ exports[`Calendar card demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -1511,7 +1519,9 @@ exports[`Calendar card demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -2335,7 +2345,9 @@ exports[`Calendar cell demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -2584,7 +2596,9 @@ exports[`Calendar cell demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -3503,7 +3517,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -3752,7 +3768,9 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -4852,7 +4870,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -5101,7 +5121,9 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -5952,7 +5974,9 @@ exports[`Calendar events demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -6201,7 +6225,9 @@ exports[`Calendar events demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -7042,7 +7068,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -7192,7 +7220,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -7441,7 +7471,9 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -8397,7 +8429,9 @@ exports[`Calendar head demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -8646,7 +8680,9 @@ exports[`Calendar head demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -9486,7 +9522,9 @@ exports[`Calendar mode demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -9596,7 +9634,9 @@ exports[`Calendar mode demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
                         class="t-select__create-option t-select__list"
                         style="display: none;"
@@ -10119,7 +10159,9 @@ exports[`Calendar range demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -10288,7 +10330,9 @@ exports[`Calendar range demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -11139,7 +11183,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -11388,7 +11434,9 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -12233,7 +12281,9 @@ exports[`Calendar value demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -12482,7 +12532,9 @@ exports[`Calendar value demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
                       class="t-select__create-option t-select__list"
                       style="display: none;"
@@ -13441,7 +13493,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"
@@ -13690,7 +13744,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"
@@ -14543,7 +14599,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"
@@ -14792,7 +14850,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"
@@ -15631,7 +15691,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"
@@ -15880,7 +15942,9 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
                           class="t-select__create-option t-select__list"
                           style="display: none;"

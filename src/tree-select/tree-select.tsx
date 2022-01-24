@@ -228,10 +228,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
   },
   methods: {
     async popupVisibleChange(visible: boolean) {
-      if (this.focusing && !visible) {
-        this.visible = true;
-        return;
-      }
       await (this.visible = visible);
       if (this.showFilter && this.visible) {
         const searchInput = this.$refs.input as HTMLElement;
