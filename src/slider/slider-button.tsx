@@ -3,7 +3,7 @@ import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
-import { getIEVersion } from '../utils/helper';
+import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
 
 const name = `${prefix}-slider-button`;
@@ -97,9 +97,15 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       destroyOnClose: null,
     };
   },
+  watch: {
+    disabled() {
+      this.handleIE();
+    },
+  },
   mounted() {
     this.showTooltip = !this.tooltipProps === false;
     this.setTooltipProps();
+    this.handleIE();
   },
   methods: {
     setTooltipProps() {
@@ -120,6 +126,13 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         if (!this.empty(attach)) {
           this.attach = attach as string;
         }
+      }
+    },
+    handleIE() {
+      if (getIEVersion() <= 11) {
+        this.$nextTick(() => {
+          this.$el.removeAttribute('disabled');
+        });
       }
     },
     showPopup() {
@@ -279,7 +292,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
-        disabled={getIEVersion() > 11 ? this.disabled : undefined}
         onmouseenter={this.handleMouseEnter}
         onmouseleave={this.handleMouseLeave}
         onmousedown={this.onButtonDown}
