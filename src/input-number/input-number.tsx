@@ -191,20 +191,30 @@ export default Vue.extend({
     },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
-      const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
+      let value = this.value || 0;
+      let { step } = this;
+      if (this.value === undefined && this.min > -Infinity) {
+        value = this.min;
+        step = 0;
+      }
       this.handleAction(
-        Number(this.toDecimalPlaces((value * factor + this.step * factor) / factor).toFixed(this.digitsNum)),
+        Number(this.toDecimalPlaces((value * factor + step * factor) / factor).toFixed(this.digitsNum)),
         'add',
         e,
       );
     },
     handleReduce(e: MouseEvent) {
       if (this.disabledReduce) return;
-      const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
+      let value = this.value || 0;
+      let { step } = this;
+      if (this.value === undefined && this.max < Infinity) {
+        value = this.max;
+        step = 0;
+      }
       this.handleAction(
-        Number(this.toDecimalPlaces((value * factor - this.step * factor) / factor).toFixed(this.digitsNum)),
+        Number(this.toDecimalPlaces((value * factor - step * factor) / factor).toFixed(this.digitsNum)),
         'reduce',
         e,
       );
