@@ -56,7 +56,11 @@ export default Vue.extend({
   },
 
   watch: {
-    disabled() {
+    gutter() {
+      this.handleIE();
+    },
+
+    size() {
       this.handleIE();
     },
   },
