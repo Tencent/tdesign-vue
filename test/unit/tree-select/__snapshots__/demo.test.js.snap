@@ -160,10 +160,10 @@ exports[`TreeSelect base demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -421,10 +421,10 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -674,10 +674,10 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -935,10 +935,10 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -1139,10 +1139,10 @@ exports[`TreeSelect lazy demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -1398,10 +1398,10 @@ exports[`TreeSelect multiple demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -1613,10 +1613,10 @@ exports[`TreeSelect prefix demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -1824,10 +1824,10 @@ exports[`TreeSelect props demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -2035,10 +2035,10 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
@@ -2290,10 +2290,10 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           />
         </svg>
         <svg
-          class="t-icon t-icon-close-circle-filled t-select__right-icon t-select__right-icon-clear"
+          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
           fill="none"
           height="1em"
-          style="font-size: medium; display: none;"
+          style="display: none;"
           viewBox="0 0 16 16"
           width="1em"
         >
