@@ -5820,13 +5820,17 @@ exports[`ssr snapshot test renders ./examples/list/demos/base.vue correctly 1`] 
   <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
-        <div class="t-list-item__content">列表内容的描述性文字</div>
+        <div class="t-list-item__content">
+          列表内容的描述性文字
+        </div>
     <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></li>
 </div>
 </li>
 <li class="t-list-item">
   <div class="t-list-item-main">
-    <div class="t-list-item__content">列表内容的描述性文字</div>
+    <div class="t-list-item__content">
+      列表内容的描述性文字
+    </div>
 <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></li>
 </div>
 </li>
@@ -5938,8 +5942,8 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
   <div class="t-list t-size-m t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item__content">
-          <div class="t-list-item-main">
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">
             <div class="t-list-item__meta">
               <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
               <div class="t-list-item__meta-content">
@@ -6183,52 +6187,84 @@ exports[`ssr snapshot test renders ./examples/list/demos/scroll.vue correctly 1`
 <div class="t-list t-size-m" style="max-height:200px;">
   <ul class="t-list__inner">
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+      <div class="t-list-item-main">
+        <div class="t-list-item__content">列表内容的描述性文字</div>
+      </div>
     </li>
   </ul>
   <div class="t-list__load"></div>
@@ -6240,13 +6276,19 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-s t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6254,13 +6296,19 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-m t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6268,13 +6316,19 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-l t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6287,16 +6341,24 @@ exports[`ssr snapshot test renders ./examples/list/demos/stripe.vue correctly 1`
   <div class="t-list t-size-m t-list--stripe">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
+        <div class="t-list-item-main">
+          <div class="t-list-item__content">列表内容的描述性文字</div>
+        </div>
       </li>
     </ul>
     <div class="t-list__load"></div>
