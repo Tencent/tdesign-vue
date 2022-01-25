@@ -2687,17 +2687,19 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
   <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
-        <div class="t-comment">
-          <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
-            <div class="t-comment__content">
-              <div class="t-comment__author"><span class="t-comment__name">评论作者名A</span><span class="t-comment__time">今天16:38</span></div>
-              <div class="t-comment__detail">评论作者名A写的评论内容。</div>
-              <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
-                <li> </li>
-                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
-              </ul>
+        <div class="t-list-item__content">
+          <div class="t-comment">
+            <div class="t-comment__inner">
+              <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
+              <div class="t-comment__content">
+                <div class="t-comment__author"><span class="t-comment__name">评论作者名A</span><span class="t-comment__time">今天16:38</span></div>
+                <div class="t-comment__detail">评论作者名A写的评论内容。</div>
+                <ul class="t-comment__actions">
+                  <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                  <li> </li>
+                  <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -2705,17 +2707,19 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
     </li>
     <li class="t-list-item">
       <div class="t-list-item-main">
-        <div class="t-comment">
-          <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
-            <div class="t-comment__content">
-              <div class="t-comment__author"><span class="t-comment__name">评论作者名B</span><span class="t-comment__time">今天16:38</span></div>
-              <div class="t-comment__detail">评论作者名B写的评论内容。</div>
-              <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
-                <li> </li>
-                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
-              </ul>
+        <div class="t-list-item__content">
+          <div class="t-comment">
+            <div class="t-comment__inner">
+              <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
+              <div class="t-comment__content">
+                <div class="t-comment__author"><span class="t-comment__name">评论作者名B</span><span class="t-comment__time">今天16:38</span></div>
+                <div class="t-comment__detail">评论作者名B写的评论内容。</div>
+                <ul class="t-comment__actions">
+                  <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                  <li> </li>
+                  <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -2723,17 +2727,19 @@ exports[`ssr snapshot test renders ./examples/comment/demos/list.vue correctly 1
     </li>
     <li class="t-list-item">
       <div class="t-list-item-main">
-        <div class="t-comment">
-          <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
-            <div class="t-comment__content">
-              <div class="t-comment__author"><span class="t-comment__name">评论作者名C</span><span class="t-comment__time">今天16:38</span></div>
-              <div class="t-comment__detail">评论作者名C写的评论内容。</div>
-              <ul class="t-comment__actions">
-                <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
-                <li> </li>
-                <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
-              </ul>
+        <div class="t-list-item__content">
+          <div class="t-comment">
+            <div class="t-comment__inner">
+              <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
+              <div class="t-comment__content">
+                <div class="t-comment__author"><span class="t-comment__name">评论作者名C</span><span class="t-comment__time">今天16:38</span></div>
+                <div class="t-comment__detail">评论作者名C写的评论内容。</div>
+                <ul class="t-comment__actions">
+                  <li><span><svg class="t-icon t-icon-thumb-up"><use href="#t-icon-thumb-up"></use></svg> <span class="action-text">6</span></span></li>
+                  <li> </li>
+                  <li><span><svg class="t-icon t-icon-chat"><use href="#t-icon-chat"></use></svg> <span class="action-text">回复</span></span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -5814,13 +5820,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/base.vue correctly 1`] 
   <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
-        列表内容的描述性文字
+        <div class="t-list-item__content">列表内容的描述性文字</div>
     <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></li>
 </div>
 </li>
 <li class="t-list-item">
   <div class="t-list-item-main">
-    列表内容的描述性文字
+    <div class="t-list-item__content">列表内容的描述性文字</div>
 <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></li>
 </div>
 </li>
@@ -5836,33 +5842,39 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
@@ -5877,33 +5889,39 @@ exports[`ssr snapshot test renders ./examples/list/demos/header-footer.vue corre
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
@@ -5920,34 +5938,40 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
   <div class="t-list t-size-m t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+        <div class="t-list-item__content">
+          <div class="t-list-item-main">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
@@ -5960,13 +5984,15 @@ exports[`ssr snapshot test renders ./examples/list/demos/image-text.vue correctl
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">
-              <p>列表内容的描述性文字</p>
-              </p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">
+                <p>列表内容的描述性文字</p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -5988,33 +6014,39 @@ exports[`ssr snapshot test renders ./examples/list/demos/loading.vue correctly 1
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
@@ -6035,30 +6067,36 @@ exports[`ssr snapshot test renders ./examples/list/demos/multiline.vue correctly
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容的描述性文字</p>
+              </div>
             </div>
           </div>
         </div>
@@ -6075,11 +6113,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
     <ul class="t-list__inner">
       <li class="t-list-item">
         <div class="t-list-item-main">
-          <div class="t-list-item__meta">
-            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-            <div class="t-list-item__meta-content">
-              <h3 class="t-list-item__meta-title">列表标题</h3>
-              <p class="t-list-item__meta-description">列表内容列表内容</p>
+          <div class="t-list-item__content">
+            <div class="t-list-item__meta">
+              <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+              <div class="t-list-item__meta-content">
+                <h3 class="t-list-item__meta-title">列表标题</h3>
+                <p class="t-list-item__meta-description">列表内容列表内容</p>
+              </div>
             </div>
           </div>
       <li class="t-list-item__action"><span><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></span></li>
@@ -6087,11 +6127,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
   </li>
   <li class="t-list-item">
     <div class="t-list-item-main">
-      <div class="t-list-item__meta">
-        <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-        <div class="t-list-item__meta-content">
-          <h3 class="t-list-item__meta-title">列表标题</h3>
-          <p class="t-list-item__meta-description">列表内容列表内容</p>
+      <div class="t-list-item__content">
+        <div class="t-list-item__meta">
+          <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+          <div class="t-list-item__meta-content">
+            <h3 class="t-list-item__meta-title">列表标题</h3>
+            <p class="t-list-item__meta-description">列表内容列表内容</p>
+          </div>
         </div>
       </div>
   <li class="t-list-item__action"><span><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作1</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作2</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">操作3</span></button></span></li>
@@ -6105,11 +6147,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
   <ul class="t-list__inner">
     <li class="t-list-item">
       <div class="t-list-item-main">
-        <div class="t-list-item__meta">
-          <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-          <div class="t-list-item__meta-content">
-            <h3 class="t-list-item__meta-title">列表标题</h3>
-            <p class="t-list-item__meta-description">列表内容列表内容</p>
+        <div class="t-list-item__content">
+          <div class="t-list-item__meta">
+            <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+            <div class="t-list-item__meta-content">
+              <h3 class="t-list-item__meta-title">列表标题</h3>
+              <p class="t-list-item__meta-description">列表内容列表内容</p>
+            </div>
           </div>
         </div>
     <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit"><path fill="currentColor" d="M10.88 1.74l3.25 3.24.7-.7-3.24-3.25-.7.7zM2.35 13.86l3.62-.72 7.3-7.3-3.25-3.24-7.3 7.3L2 13.5a.3.3 0 00.35.35zm7.67-9.85l1.83 1.83-6.38 6.38-2.28.46.45-2.29 6.38-6.38z" fill-opacity="0.9"></path></svg></span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-download"><path fill="currentColor" d="M12.26 5.81L8.5 9.58V.5h-1v9.08L3.74 5.8l-.71.71 4.62 4.62c.2.2.5.2.7 0l4.62-4.62-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2h-1v2H3v-2H2z" fill-opacity="0.9"></path></svg></span></button></li>
@@ -6117,11 +6161,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/operation.vue correctly
 </li>
 <li class="t-list-item">
   <div class="t-list-item-main">
-    <div class="t-list-item__meta">
-      <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
-      <div class="t-list-item__meta-content">
-        <h3 class="t-list-item__meta-title">列表标题</h3>
-        <p class="t-list-item__meta-description">列表内容列表内容</p>
+    <div class="t-list-item__content">
+      <div class="t-list-item__meta">
+        <div class="t-list-item__meta-avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg"></div>
+        <div class="t-list-item__meta-content">
+          <h3 class="t-list-item__meta-title">列表标题</h3>
+          <p class="t-list-item__meta-description">列表内容列表内容</p>
+        </div>
       </div>
     </div>
 <li class="t-list-item__action"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit"><path fill="currentColor" d="M10.88 1.74l3.25 3.24.7-.7-3.24-3.25-.7.7zM2.35 13.86l3.62-.72 7.3-7.3-3.25-3.24-7.3 7.3L2 13.5a.3.3 0 00.35.35zm7.67-9.85l1.83 1.83-6.38 6.38-2.28.46.45-2.29 6.38-6.38z" fill-opacity="0.9"></path></svg></span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-download"><path fill="currentColor" d="M12.26 5.81L8.5 9.58V.5h-1v9.08L3.74 5.8l-.71.71 4.62 4.62c.2.2.5.2.7 0l4.62-4.62-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2h-1v2H3v-2H2z" fill-opacity="0.9"></path></svg></span></button></li>
@@ -6137,52 +6183,52 @@ exports[`ssr snapshot test renders ./examples/list/demos/scroll.vue correctly 1`
 <div class="t-list t-size-m" style="max-height:200px;">
   <ul class="t-list__inner">
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
     <li class="t-list-item">
-      <div class="t-list-item-main">列表内容的描述性文字</div>
+      <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
     </li>
   </ul>
   <div class="t-list__load"></div>
@@ -6194,13 +6240,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-s t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6208,13 +6254,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-m t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6222,13 +6268,13 @@ exports[`ssr snapshot test renders ./examples/list/demos/size.vue correctly 1`] 
   <div class="t-list t-size-l t-list--split">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
     </ul>
     <div class="t-list__load"></div>
@@ -6241,16 +6287,16 @@ exports[`ssr snapshot test renders ./examples/list/demos/stripe.vue correctly 1`
   <div class="t-list t-size-m t-list--stripe">
     <ul class="t-list__inner">
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
       <li class="t-list-item">
-        <div class="t-list-item-main">列表内容的描述性文字</div>
+        <div class="t-list-item-main"><div class="t-list-item__content">列表内容的描述性文字</div></div>
       </li>
     </ul>
     <div class="t-list__load"></div>
