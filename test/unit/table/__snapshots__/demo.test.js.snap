@@ -3750,7 +3750,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               colspan="1"
               key="property"
               rowspan="2"
-              style="overflow: hidden;"
+              style="overflow: hidden; border-left-width: 1px;"
             >
               属性
             </td>

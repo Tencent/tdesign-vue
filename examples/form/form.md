@@ -10,12 +10,13 @@
 colon | Boolean | false | 是否在表单标签字段右侧显示冒号 | N
 data | Object | {} | 表单数据。TS 类型：`FormData` | N
 disabled | Boolean | undefined | 是否禁用整个表单 | N
+errorMessage | Object | - | 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts) | N
 formControlledComponents | Array | - | 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`。TS 类型：`Array<string>` | N
 labelAlign | String | right | 表单字段标签对齐方式：左对齐、右对齐、顶部对齐。可选项：left/right/top | N
 labelWidth | String / Number | '100px' | 可以整体设置label标签宽度，默认为100px | N
 layout | String | vertical | 表单布局，有两种方式：纵向布局 和 行内布局。可选项：vertical/inline | N
 preventSubmitDefault | Boolean | true | 是否阻止表单提交默认事件，即提交后会刷新页面 | N
-requiredMark | Boolean | undefined | 是否显示必填符号，默认显示 | N
+requiredMark | Boolean | undefined | 是否显示必填符号（*），默认显示 | N
 resetType | String | empty | 重置表单的方式，值为 empty 表示重置表单为空，值为 initial 表示重置表单数据为初始值。可选项：empty/initial | N
 rules | Object | - | 表单字段校验规则。TS 类型：`{ [field in keyof FormData]: Array<FormRule> }` | N
 scrollToFirstError | String | - | 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动。可选项：smooth/auto | N
@@ -54,7 +55,7 @@ label | String / Slot / Function | '' | 字段标签名称。TS 类型：`string
 labelAlign | String | - | 表单字段标签对齐方式：左对齐、右对齐、顶部对齐。默认使用 Form 的对齐方式，优先级高于 Form.labelAlign。可选项：left/right/top | N
 labelWidth | String / Number | - | 可以整体设置标签宽度，优先级高于 Form.labelWidth | N
 name | String | - | 表单字段名称 | N
-requiredMark | Boolean | undefined | 是否显示必填符号，优先级高于 Form.requiredMark | N
+requiredMark | Boolean | undefined | 是否显示必填符号（*），优先级高于 Form.requiredMark | N
 rules | Array | [] | 表单字段校验规则。TS 类型：`Array<FormRule>` | N
 statusIcon | Boolean / Slot / Function | undefined | 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。优先级高级 Form 的 statusIcon。TS 类型：`boolean | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 successBorder | Boolean | false | 是否显示校验成功的边框，默认不显示 | N

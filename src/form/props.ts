@@ -20,6 +20,10 @@ export default {
     type: Boolean,
     default: undefined,
   },
+  /** 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }` */
+  errorMessage: {
+    type: Object as PropType<TdFormProps['errorMessage']>,
+  },
   /** 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled` */
   formControlledComponents: {
     type: Array as PropType<TdFormProps['formControlledComponents']>,
@@ -50,7 +54,7 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 是否显示必填符号，默认显示 */
+  /** 是否显示必填符号（*），默认显示 */
   requiredMark: {
     type: Boolean,
     default: undefined,

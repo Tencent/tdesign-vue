@@ -15,7 +15,7 @@ exports[`Skeleton base demo works fine 1`] = `
    
   <div>
     <div
-      class="mb-20 t-skeleton"
+      class="t-skeleton"
     >
       <div
         class="t-skeleton__row"

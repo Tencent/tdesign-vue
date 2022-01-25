@@ -260,12 +260,13 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
 
     controllerConfigData(): Record<string, any> {
-      if (typeof this.controllerConfig === 'boolean') {
-        return getDefaultControllerConfigData(this.controllerConfig);
+      const controllerConfig = this.controllerConfig ?? this.global.controllerConfig ?? true;
+      if (typeof controllerConfig === 'boolean') {
+        return getDefaultControllerConfigData(controllerConfig);
       }
       return {
         ...getDefaultControllerConfigData(),
-        ...this.controllerConfig,
+        ...controllerConfig,
       };
     },
 
@@ -323,6 +324,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       const p = this.curSelectedMode === 'month' ? 'currentDayButtonProps' : 'currentMonthButtonProps';
       return this.checkControllerDisabled('current', p);
     },
+
+    filterYearStr(): string {
+      return `${this.controllerOptions.filterDate.getFullYear()}`;
+    },
+    filterMonthStr(): string {
+      return `${this.controllerOptions.filterDate.getMonth() + 1}`;
+    },
+    filterYearMonth(): { month: string; year: string } {
+      return {
+        year: this.filterYearStr,
+        month: this.filterMonthStr,
+      };
+    },
   },
   watch: {
     value: {
@@ -342,6 +356,12 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         this.isShowWeekend = v;
       },
       immediate: true,
+    },
+    filterYearMonth: {
+      handler(v: { month: string; year: string }) {
+        emitEvent<Parameters<TdCalendarProps['onMonthChange']>>(this, 'month-change', v);
+        this.controllerChange();
+      },
     },
   },
   methods: {
@@ -388,15 +408,6 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     controllerChange(): void {
       const options = this.controllerOptions;
       emitEvent<Parameters<TdCalendarProps['onControllerChange']>>(this, 'controller-change', options);
-    },
-    // 月份切换响应事件（包括年和月下拉框变化）
-    monthChange(): void {
-      const options = {
-        year: `${this.controllerOptions.filterDate.getFullYear()}`,
-        month: `${this.controllerOptions.filterDate.getMonth() + 1}`,
-      };
-      emitEvent<Parameters<TdCalendarProps['onMonthChange']>>(this, 'month-change', options);
-      this.controllerChange();
     },
     onWeekendToggleClick(): void {
       this.isShowWeekend = !this.isShowWeekend;
@@ -465,8 +476,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
                   disabled={this.isYearDisabled}
-                  {...this.controllerConfigData.year.selecteProps}
-                  onChange={this.monthChange}
+                  props={{ ...this.controllerConfigData.year.selecteProps }}
                 >
                   {this.yearSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -482,8 +492,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
-                  {...this.controllerConfigData.month.selecteProps}
-                  onChange={this.monthChange}
+                  props={{ ...this.controllerConfigData.month.selecteProps }}
                 >
                   {this.monthSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -500,7 +509,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   variant="default-filled"
                   size={this.controlSize}
                   disabled={this.isModeDisabled}
-                  {...this.controllerConfigData.mode.radioGroupProps}
+                  props={{ ...this.controllerConfigData.mode.radioGroupProps }}
                   onChange={this.controllerChange}
                 >
                   {this.modeSelectOptionList.map((item) => (
@@ -516,10 +525,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                 <t-check-tag
                   class={`${COMPONENT_NAME}__control-tag`}
                   defaultChecked={!this.isShowWeekend}
-                  size={this.controlSize}
                   disabled={this.isWeekendToggleDisabled}
-                  {...this.weekendBtnVBind}
                   onClick={this.onWeekendToggleClick}
+                  props={{ ...this.weekendBtnVBind }}
                 >
                   {this.weekendBtnText}
                 </t-check-tag>
@@ -533,7 +541,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   onClick={() => {
                     this.toCurrent();
                   }}
-                  {...this.currentBtnVBind}
+                  props={{ ...this.currentBtnVBind }}
                 >
                   {this.currentBtnText}
                 </t-button>

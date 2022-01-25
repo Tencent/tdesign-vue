@@ -269,6 +269,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
     },
     searchInput(val) {
+      if (!val && !this.visible) return;
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
       }
@@ -292,7 +293,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
-      this.visible && Array.isArray(this.hoverOptions) && this.initHoverindex();
     },
   },
   methods: {
@@ -325,10 +325,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     visibleChange(val: boolean) {
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      if (this.focusing && !val) {
-        this.visible = true;
-        return;
-      }
       this.visible = val;
       if (!val) {
         this.searchInput = '';
@@ -373,7 +369,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
-      e && e.stopPropagation();
+      e?.stopPropagation();
       if (this.tDisabled) {
         return;
       }
@@ -389,7 +385,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
     },
     clearSelect(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation();
       if (this.multiple) {
         this.emitChange([]);
       } else {
@@ -469,6 +465,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       switch (e.code) {
         case 'ArrowDown':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex < this.hoverOptions.length - 1) {
             this.hoverIndex += 1;
             this.arrowDownOption();
@@ -478,6 +478,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           break;
         case 'ArrowUp':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex > 0) {
             this.hoverIndex -= 1;
             this.arrowUpOption();
@@ -608,7 +612,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
-              <t-option-group label={groupList.group} divider={groupList.divider}>
+              <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
                 {this.renderOptions(children)}
               </t-option-group>
             );
@@ -662,7 +666,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       const emptySlot = this.getEmpty();
       const loadingTextSlot = this.getLoadingText();
       return (
-        <div slot="content">
+        <div slot="content" class={`${name}__dropdown-inner`}>
           {renderTNodeJSX(this, 'panelTopContent')}
           <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />

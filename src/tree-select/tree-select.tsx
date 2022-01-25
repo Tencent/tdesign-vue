@@ -233,10 +233,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
   },
   methods: {
     async popupVisibleChange(visible: boolean) {
-      if (this.focusing && !visible) {
-        this.visible = true;
-        return;
-      }
       await (this.visible = visible);
       if (this.showFilter && this.visible) {
         const searchInput = this.$refs.input as HTMLElement;
@@ -244,7 +240,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         this.focusing = true;
       }
     },
-    removeTag(index: number, data: TreeOptionData, e: MouseEvent) {
+    removeTag(index: number, data: TreeOptionData, e?: MouseEvent) {
       if (this.tDisabled) {
         return;
       }
@@ -332,6 +328,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         // 数据源非空
         if (!isEmpty(this.data)) {
           const node = (tree as any).getItem(nodeValue);
+          if (!node) return;
           this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
         } else {
           this.nodeInfo = { label: nodeValue, value: nodeValue };
@@ -342,6 +339,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
           // 数据源非空
           if (!isEmpty(this.data)) {
             const node = (tree as any).getItem(nodeValue);
+            if (!node) return;
             return { label: node.data[this.realLabel], value: node.data[this.realValue] };
           }
           return { label: nodeValue, value: nodeValue };
@@ -400,18 +398,34 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
       />
     );
-    const tagItem = this.tagList.map((label, index) => (
-      <Tag
-        v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
-        key={index}
-        size={this.size}
-        closable={!this.tDisabled}
-        disabled={this.tDisabled}
-        onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
-      >
-        {label}
-      </Tag>
-    ));
+    const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)
+      ? renderTNodeJSX(this, 'valueDisplay', {
+        params: {
+          value: this.nodeInfo,
+          onClose: (index: number) => this.removeTag(index, null),
+        },
+      })
+      : this.tagList.map((label, index) => (
+            <Tag
+              v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
+              key={index}
+              size={this.size}
+              closable={!this.tDisabled}
+              disabled={this.tDisabled}
+              onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
+            >
+              {label}
+            </Tag>
+      ));
+    const selectedSingle = this.valueDisplay || this.$scopedSlots.valueDisplay ? (
+      renderTNodeJSX(this, 'valueDisplay', {
+        params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
+      })
+    ) : (
+        <span title={this.selectedSingle} class={`${prefix}-select__single`}>
+          {this.selectedSingle}
+        </span>
+    );
     const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
       && this.minCollapsedNum > 0
       && this.tagList.length > this.minCollapsedNum ? (
@@ -448,11 +462,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             </span>
             {tagItem}
             {collapsedItem}
-            {!this.multiple && !this.showPlaceholder && !this.showFilter && (
-              <span title={this.selectedSingle} class={`${prefix}-select__single`}>
-                {this.selectedSingle}
-              </span>
-            )}
+            {!this.multiple && !this.showPlaceholder && !this.showFilter && selectedSingle}
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow

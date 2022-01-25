@@ -5,6 +5,7 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
+align | String | - | 文本内容位置，居左/居中/居右。可选项：left/center/right | N
 decimalPlaces | Number | undefined | [小数位数](https://en.wiktionary.org/wiki/decimal_place) | N
 disabled | Boolean | false | 禁用组件 | N
 format | Function | - | 指定输入框展示值的格式。TS 类型：`(value: number) => number | string` | N

@@ -101,9 +101,11 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const type = this.errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
+
     disabled(): boolean {
       return this.form.disabled;
     },
+
     contentClasses(): ClassName {
       const getErrorClass: string = this.errorClasses;
       return [CLASS_NAMES.controls, getErrorClass];
@@ -142,12 +144,10 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     innerRules(): FormRule[] {
       const parent = this.form;
       if (this.rules?.length) return this.rules || [];
-      if (!this.name) {
-        return [];
-      }
+      if (!this.name) return [];
       const index = this.name.lastIndexOf('.') || -1;
-      const ruleName = index !== -1 ? this.name.slice(index + 1) : this.name;
-      return lodashGet(parent?.rules, ruleName) || [];
+      const pRuleName = this.name.slice(index + 1);
+      return lodashGet(parent?.rules, this.name) || lodashGet(parent?.rules, pRuleName) || [];
     },
   },
 

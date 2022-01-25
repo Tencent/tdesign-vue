@@ -39,7 +39,7 @@ export default {
     type: String,
     default: '',
   },
-  /** 是否显示必填符号，优先级高于 Form.requiredMark */
+  /** 是否显示必填符号（*），优先级高于 Form.requiredMark */
   requiredMark: {
     type: Boolean,
     default: undefined,
