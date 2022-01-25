@@ -840,7 +840,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/base.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1053,7 +1053,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1338,7 +1338,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell-append.vue cor
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1427,14 +1427,6 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
     </fieldset>
     <fieldset>
       <legend>控件局部</legend>
-      <p><label>是否显示“模式切换”控件：</label>
-      <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
-        <div class="t-switch__content t-size-m"></div>
-      </div> <label>是否禁用“模式切换”控件：</label>
-      <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
-        <div class="t-switch__content t-size-m"></div>
-      </div>
-      </p>
       <p><label>是否显示“年份选择”控件：</label>
       <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
         <div class="t-switch__content t-size-m"></div>
@@ -1447,6 +1439,14 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
       <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
         <div class="t-switch__content t-size-m"></div>
       </div> <label>是否禁用“月份选择”控件：</label>
+      <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-m"></div>
+      </div>
+      </p>
+      <p><label>是否显示“模式切换”控件：</label>
+      <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-m"></div>
+      </div> <label>是否禁用“模式切换”控件：</label>
       <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
         <div class="t-switch__content t-size-m"></div>
       </div>
@@ -1483,7 +1483,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
           <div class="t-select__wrap">
             <div class="t-popup__reference t-select__popup-reference">
               <div name="t-popup--animation" appear="true"></div>
-              <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+              <div class="t-select t-size-s"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
                   <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
                 </svg></div>
             </div>
@@ -1493,19 +1493,19 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
           <div class="t-select__wrap">
             <div class="t-popup__reference t-select__popup-reference">
               <div name="t-popup--animation" appear="true"></div>
-              <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+              <div class="t-select t-size-s"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
                   <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
                 </svg></div>
             </div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell" style="height:auto;">
-          <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+          <div class="t-radio-group t-size-s t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
-        <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
+        <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-s t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><button type="button" size="medium" class="t-button t-size-s t-button--variant-base t-button--theme-warning"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
     <div class="t-calendar__panel t-calendar__panel--month">
@@ -1605,7 +1605,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/events.vue correctl
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
         <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
@@ -1716,7 +1716,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/first-day-of-week.v
             <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
           </div>
         </div>
-        <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
         <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
       </div>
     </div>
@@ -1820,7 +1820,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/head.vue correctly 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -1981,7 +1981,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/range.vue correctly
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2082,7 +2082,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2325,7 +2325,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">隐藏周末</span></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
       <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
   </div>
@@ -2847,7 +2847,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
         <div class="t-select__wrap">
           <div class="t-popup__reference t-select__popup-reference">
             <div name="t-popup--animation" appear="true"></div>
-            <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+            <div class="t-select t-size-s"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -2857,19 +2857,19 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
         <div class="t-select__wrap">
           <div class="t-popup__reference t-select__popup-reference">
             <div name="t-popup--animation" appear="true"></div>
-            <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+            <div class="t-select t-size-s"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
         </div>
       </div>
       <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Month</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Year</span></label>
+        <div class="t-radio-group t-size-s t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Month</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">Year</span></label>
           <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
         </div>
       </div>
-      <div class="t-calendar__control-section-cell"><span size="medium" class="t-tag t-tag--check t-tag--default t-calendar__control-tag">Hide Weekend</span></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Today</span></button></div>
+      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-s t-calendar__control-tag">Hide Weekend</span></div>
+      <div class="t-calendar__control-section-cell"><button type="button" size="medium" class="t-button t-size-s t-button--variant-base t-button--theme-warning"><span class="t-button__text">Today</span></button></div>
     </div>
   </div>
   <div class="t-calendar__panel t-calendar__panel--month">
@@ -2890,17 +2890,17 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
           <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">1</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">2</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">3</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">4</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
         <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">5</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">6</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">7</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">8</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">9</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
@@ -2929,7 +2929,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/calendar.vue
           <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
           <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">1</div><div class="t-calendar__table-body-cell-content"></div></span></div>
         </tr>
       </tbody>
     </table>
@@ -9037,17 +9037,21 @@ exports[`ssr snapshot test renders ./examples/select/demos/group.vue correctly 1
   <div class="t-select__wrap">
     <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+      <div class="t-select t-size-m"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-is-readonly t-select__input"><input readonly="readonly" placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
+        </svg>
+      </div>
     </div>
   </div>
   <div class="t-select__wrap">
     <div class="t-popup__reference t-select__popup-reference">
       <div name="t-popup--animation" appear="true"></div>
-      <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+      <div class="t-select t-size-m"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+        <div class="t-input t-size-m t-is-readonly t-select__input"><input readonly="readonly" placeholder="请选择" type="text" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-        </svg></div>
+        </svg>
+      </div>
     </div>
   </div>
 </div>
@@ -13707,7 +13711,7 @@ exports[`ssr snapshot test renders ./examples/tag/demos/delete.vue correctly 1`]
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/tag/demos/disabled.vue correctly 1`] = `<div class="tdesign-tag-disabled tag-demo"><span class="check-tag t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled">失效标签</span> <span class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled">失效标签</span></div>`;
+exports[`ssr snapshot test renders ./examples/tag/demos/disabled.vue correctly 1`] = `<div class="tdesign-tag-disabled tag-demo"><span class="check-tag t-tag t-tag--check t-tag--default t-size-m t-is-disabled t-tag--disabled">失效标签</span> <span class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled">失效标签</span></div>`;
 
 exports[`ssr snapshot test renders ./examples/tag/demos/icon.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
@@ -13723,11 +13727,11 @@ exports[`ssr snapshot test renders ./examples/tag/demos/long-text.vue correctly 
 exports[`ssr snapshot test renders ./examples/tag/demos/plain.vue correctly 1`] = `<div class="tdesign-tag-plain"><span class="t-tag t-tag--primary t-size-m t-tag--plain">标签一</span> <span class="t-tag t-tag--success t-size-m t-tag--plain">标签二</span> <span class="t-tag t-tag--default t-size-m t-tag--plain">标签三</span> <span class="t-tag t-tag--warning t-size-m t-tag--plain">标签四</span> <span class="t-tag t-tag--danger t-size-m t-tag--plain">标签五</span></div>`;
 
 exports[`ssr snapshot test renders ./examples/tag/demos/selectable.vue correctly 1`] = `
-<div class="tag-demo"><span class="t-tag t-tag--check t-tag--default t-tag--checked">
+<div class="tag-demo"><span class="t-tag t-tag--check t-tag--default t-size-m t-tag--checked">
     选中
-  </span><span class="t-tag t-tag--check t-tag--default">
+  </span><span class="t-tag t-tag--check t-tag--default t-size-m">
     未选
-  </span><span class="t-tag t-tag--check t-tag--default t-is-disabled t-tag--disabled">
+  </span><span class="t-tag t-tag--check t-tag--default t-size-m t-is-disabled t-tag--disabled">
     禁用
   </span></div>
 `;
