@@ -95,7 +95,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
           });
 
           const styles = {
-            '--level': `${level}`,
+            '--level': String(level),
             'box-shadow': shadowStyles.join(','),
           };
 
