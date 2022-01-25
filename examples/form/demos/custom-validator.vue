@@ -1,37 +1,27 @@
 <template>
   <div>
-    <t-form
-      :data="formData"
-      :rules="rules"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      @validate="onValidate"
-    >
-      <t-form-item label="用户名"  name="account">
-        <t-input v-model="formData.account" @blur="handleBlur()"></t-input>
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" @validate="onValidate">
+      <t-form-item label="用户名" name="account">
+        <t-input v-model="formData.account"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name="password" help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化">
-        <t-input
-          type="password"
-          v-model="formData.password"
-        ></t-input>
+      <t-form-item
+        label="密码"
+        name="password"
+        help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化"
+      >
+        <t-input type="password" v-model="formData.password"></t-input>
       </t-form-item>
-      <t-form-item label="确认密码" name="rePassword" help="在此处体验普通自定义校验方法">
-        <t-input
-          type="password"
-          v-model="formData.rePassword"
-        ></t-input>
+      <t-form-item label="确认密码" name="rePassword" help="自定义异步校验方法">
+        <t-input type="password" v-model="formData.rePassword"></t-input>
       </t-form-item>
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button  theme="default" variant="base" type="reset">重置</t-button>
+        <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>
     </t-form>
   </div>
 </template>
 <script>
-
 const INITIAL_DATA = {
   account: '',
   password: '',
@@ -43,19 +33,19 @@ export default {
       formData: { ...INITIAL_DATA },
       rules: {
         account: [
-          { required: true, message: '姓名必填', type: 'error' },
+          { required: true, message: '用户名必填', type: 'error' },
           {
-            min: 2, message: '至少需要两个字', type: 'error', trigger: 'blur',
+            validator: this.userNameValidator,
           },
         ],
         password: [
           { required: true, message: '密码必填', type: 'error' },
-          // 不同的校验结果有不同的错误信息提醒，切错误信息类型不同
+          // 自定义校验规则：不同的值可以有不同的校验结果，不同的校验类型
           { validator: this.passwordValidator },
         ],
         rePassword: [
-          // 自定义校验规则
           { required: true, message: '密码必填', type: 'error' },
+          // 自定义校验规则：自定义异步校验规则
           { validator: this.rePassword, message: '两次密码不一致' },
         ],
       },
@@ -85,6 +75,19 @@ export default {
       this.$refs.form.validate({
         fields: ['account'],
         trigger: 'blur',
+      });
+    },
+    // 自定义异步校验器，使用 resolve 返回结果控制校验结果、校验信息、校验结果类型
+    userNameValidator(val) {
+      return new Promise((resolve) => {
+        const timer = setTimeout(() => {
+          if (['Zhang', 'Li', 'Wang'].includes(val)) {
+            resolve({ result: true });
+          } else {
+            resolve({ result: false, message: '用户名不存在', type: 'error' });
+          }
+          clearTimeout(timer);
+        }, 10);
       });
     },
     // 自定义校验器，不同的值输出不同的校验结果。支持异步校验（文案选自某密码重置站点，如有侵权，请联系我们删除）

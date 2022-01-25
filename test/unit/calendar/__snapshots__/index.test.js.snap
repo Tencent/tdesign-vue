@@ -11,7 +11,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -55,7 +55,7 @@ exports[`Calendar :props :firstDayOfWeek 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -178,7 +178,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -222,7 +222,7 @@ exports[`Calendar :props :isShowWeekendDefault 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -324,7 +324,7 @@ exports[`Calendar :props :mode 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -408,7 +408,7 @@ exports[`Calendar :props :range 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -442,7 +442,7 @@ exports[`Calendar :props :range 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -556,7 +556,7 @@ exports[`Calendar :props :theme 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -600,7 +600,7 @@ exports[`Calendar :props :theme 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -712,7 +712,7 @@ exports[`Calendar :props :value 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>
@@ -756,7 +756,7 @@ exports[`Calendar :props :value 1`] = `
             <transition-stub name="t-popup--animation" appear="true">
               <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
                 <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-                  <div>
+                  <div class="t-select__dropdown-inner">
                     <ul class="t-select__create-option t-select__list" style="display: none;">
                       <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                     </ul>

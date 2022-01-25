@@ -29,7 +29,9 @@ exports[`Pagination base demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -229,7 +231,9 @@ exports[`Pagination base demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -390,7 +394,7 @@ exports[`Pagination customizable demo works fine 1`] = `
         <transition-stub name="t-popup--animation" appear="true">
           <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
             <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-              <div>
+              <div class="t-select__dropdown-inner">
                 <ul class="t-select__create-option t-select__list" style="display: none;">
                   <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
                 </ul>
@@ -430,7 +434,7 @@ exports[`Pagination customizable demo works fine 1`] = `
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" class="t-input__inner"></div>
       </div>页</div>
   </div>
 </div>
@@ -466,7 +470,9 @@ exports[`Pagination disabled demo works fine 1`] = `
             <div
               class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -656,7 +662,6 @@ exports[`Pagination disabled demo works fine 1`] = `
           <input
             autocomplete="off"
             class="t-input__inner"
-            placeholder=""
             ref="refInputElem"
           />
         </div>
@@ -696,7 +701,9 @@ exports[`Pagination few demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -882,7 +889,9 @@ exports[`Pagination jump demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1054,7 +1063,6 @@ exports[`Pagination jump demo works fine 1`] = `
           <input
             autocomplete="off"
             class="t-input__inner"
-            placeholder=""
             ref="refInputElem"
           />
         </div>
@@ -1094,7 +1102,9 @@ exports[`Pagination mini works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1303,7 +1313,9 @@ exports[`Pagination more works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1534,7 +1546,9 @@ exports[`Pagination page-num demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1743,7 +1757,9 @@ exports[`Pagination simple demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -1870,7 +1886,9 @@ exports[`Pagination simple demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
@@ -2132,7 +2150,9 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           <div
             class="t-popup__content  t-select__dropdown narrow-scrollbar"
           >
-            <div>
+            <div
+              class="t-select__dropdown-inner"
+            >
               <ul
                 class="t-select__create-option t-select__list"
                 style="display: none;"
@@ -2259,7 +2279,9 @@ exports[`Pagination simple-mini demo works fine 1`] = `
           <div
             class="t-popup__content  t-select__dropdown narrow-scrollbar"
           >
-            <div>
+            <div
+              class="t-select__dropdown-inner"
+            >
               <ul
                 class="t-select__create-option t-select__list"
                 style="display: none;"
@@ -2521,7 +2543,9 @@ exports[`Pagination total demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
                   class="t-select__create-option t-select__list"
                   style="display: none;"
