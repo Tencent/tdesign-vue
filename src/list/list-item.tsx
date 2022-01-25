@@ -15,7 +15,7 @@ export default Vue.extend({
     return (
       <li class={name}>
         <div class={`${name}-main`}>
-          {content}
+          <div class={`${name}__content`}>{content}</div>
           {propsActionContent && <li class={`${name}__action`}>{propsActionContent}</li>}
         </div>
       </li>
