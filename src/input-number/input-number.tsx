@@ -178,7 +178,8 @@ export default Vue.extend({
       if (this.inputing && this.userInput !== null) {
         return this.filterValue;
       }
-      if (this.value === undefined) return '';
+
+      if (this.value === undefined || this.value === null) return '';
       // end input
       return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
