@@ -323,6 +323,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         // 数据源非空
         if (!isEmpty(this.data)) {
           const node = (tree as any).getItem(nodeValue);
+          if (!node) return;
           this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
         } else {
           this.nodeInfo = { label: nodeValue, value: nodeValue };
@@ -333,6 +334,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
           // 数据源非空
           if (!isEmpty(this.data)) {
             const node = (tree as any).getItem(nodeValue);
+            if (!node) return;
             return { label: node.data[this.realLabel], value: node.data[this.realValue] };
           }
           return { label: nodeValue, value: nodeValue };
