@@ -1,7 +1,6 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <t-calendar
-      :value="value"
       @cell-click="cellClick"
       @cell-double-click="cellDoubleClick"
       @cell-right-click="cellRightClick"
@@ -13,11 +12,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      value: null,
-    };
-  },
   methods: {
     cellClick(options) {
       console.log(`鼠标左键单击单元格 ${options.cell.formattedDate}`);

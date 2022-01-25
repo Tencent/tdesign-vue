@@ -89,12 +89,7 @@ export default Vue.extend({
     };
 
     return (
-      <button
-        v-ripple
-        class={buttonClass}
-        {...buttonAttrs}
-        {...{ on }}
-      >
+      <button v-ripple class={buttonClass} {...buttonAttrs} {...{ on }}>
         {buttonContent}
       </button>
     );

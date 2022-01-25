@@ -258,7 +258,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, { e });
     },
     handleKeydownEnter(e: KeyboardEvent) {
-      if (!['Enter', 'NumpadEnter'].includes(e.code)) return;
+      if (!['Enter', 'NumpadEnter'].includes(e.code || e.key)) return;
       emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, { e });
     },
     handleKeydown(e: KeyboardEvent) {
@@ -272,8 +272,9 @@ export default Vue.extend({
         Enter: this.handleKeydownEnter,
         NumpadEnter: this.handleKeydownEnter,
       };
-      if (keyEvent[e.code] !== undefined) {
-        keyEvent[e.code](e);
+      const code = e.code || e.key;
+      if (keyEvent[code] !== undefined) {
+        keyEvent[code](e);
       }
     },
     handleKeyup(e: KeyboardEvent) {
