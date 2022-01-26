@@ -96,7 +96,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
 
           const styles = {
             '--level': level ? String(level) : undefined,
-            'box-shadow': shadowStyles.length ? shadowStyles.join(',') : undefined,
+            'box-shadow': shadowStyles.join(','),
           };
 
           lineNode = <span class={lineClasses} style={styles}></span>;
