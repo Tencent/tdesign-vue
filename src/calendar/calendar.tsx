@@ -7,6 +7,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { CalendarConfig } from '../config-provider/config-receiver';
 import * as utils from './utils';
 import { emitEvent } from '../utils/event';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 // 组件的一些常量
 import {
@@ -363,8 +364,32 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         this.controllerChange();
       },
     },
+    curSelectedMode() {
+      this.handleIE();
+    },
+    isShowWeekend() {
+      this.handleIE();
+    },
+    isControllerVisible() {
+      this.handleIE();
+    },
+  },
+  mounted() {
+    this.handleIE();
   },
   methods: {
+    handleIE() {
+      if (getIEVersion() <= 9) {
+        this.$nextTick(() => {
+          const element = this.$el.children[this.isControllerVisible ? 1 : 0];
+          if (this.curSelectedMode === 'month') {
+            element.setAttribute('is-show-weekend', `${this.isShowWeekend}`);
+          } else {
+            element.removeAttribute('is-show-weekend');
+          }
+        });
+      }
+    },
     getCalendarWeekSlotData(item: CellColHeader): CalendarWeek {
       return {
         day: item.num,
