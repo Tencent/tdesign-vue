@@ -41,6 +41,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
   props: { ...props },
   data() {
     return {
+      // Form 表单控制禁用态时的变量
+      formDisabled: undefined,
       isHover: false,
       visible: false,
       searchInput: '',
@@ -83,7 +85,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return [
         `${name}`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
           [`${prefix}-has-prefix`]: this.$scopedSlots.prefixIcon,
@@ -110,6 +112,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
       ];
+    },
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
     },
     showPlaceholder(): boolean {
       if (
@@ -142,7 +147,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return Boolean(
         this.clearable
           && this.isHover
-          && !this.disabled
+          && !this.tDisabled
           && ((!this.multiple && (this.value || this.value === 0))
             || (this.multiple && Array.isArray(this.value) && this.value.length)),
       );
@@ -152,7 +157,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return (
         !this.clearable
         || !this.isHover
-        || this.disabled
+        || this.tDisabled
         || (!this.multiple && !this.value && this.value !== 0)
         || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
       );
@@ -161,10 +166,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.filterable || isFunction(this.filter);
     },
     showLoading(): boolean {
-      return this.loading && !this.disabled;
+      return this.loading && !this.tDisabled;
     },
     showFilter(): boolean {
-      if (this.disabled) return false;
+      if (this.tDisabled) return false;
       if (!this.multiple && this.selectedSingle && this.canFilter) {
         return this.visible;
       }
@@ -366,7 +371,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
       e?.stopPropagation();
-      if (this.disabled) {
+      if (this.tDisabled) {
         return;
       }
       const val = this.value[index];
@@ -717,7 +722,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     const {
       classes,
       popupObject,
-      disabled,
+      tDisabled,
       popClass,
       size,
       showPlaceholder,
@@ -736,7 +741,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           ref="popup"
           visible={this.visible}
           class={`${name}__popup-reference`}
-          disabled={disabled}
+          disabled={tDisabled}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
           {...{ props: { ...popupObject, overlayClassName: popClass } }}
@@ -757,8 +762,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
                     size={size}
-                    closable={!item.disabled && !disabled}
-                    disabled={disabled}
+                    closable={!item.disabled && !tDisabled}
+                    disabled={tDisabled}
                     style="max-width: 100%;"
                     maxWidth="100%"
                     title={get(item, realLabel)}
@@ -791,7 +796,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 v-model={this.searchInput}
                 size={size}
                 placeholder={filterPlaceholder}
-                disabled={disabled}
+                disabled={tDisabled}
                 class={`${name}__input`}
                 readonly={!this.visible || !this.showFilter}
                 onFocus={this.focus}
@@ -800,7 +805,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
               />
             )}
             {this.showRightArrow && !this.showLoading && (
-              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
+              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.tDisabled} />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
             {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}

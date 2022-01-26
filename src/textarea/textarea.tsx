@@ -30,6 +30,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      formDisabled: undefined,
       focused: false,
       mouseHover: false,
       textareaStyle: {},
@@ -37,11 +38,14 @@ export default Vue.extend({
   },
 
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     textareaClasses(): ClassName {
       return [
         name,
         {
-          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
         },
       ];
@@ -49,7 +53,7 @@ export default Vue.extend({
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
         autofocus: this.autofocus,
-        disabled: this.disabled,
+        disabled: this.tDisabled,
         readonly: this.readonly,
         placeholder: this.placeholder,
         maxlength: this.maxlength || undefined,
@@ -129,19 +133,19 @@ export default Vue.extend({
       }
     },
     emitKeyDown(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keydown', this.value, { e });
     },
     emitKeyUp(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keyup', this.value, { e });
     },
     emitKeypress(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keypress', this.value, { e });
     },
     emitFocus(e: FocusEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.focused = true;
       this.emitEvent('focus', this.value, { e });
     },
@@ -163,7 +167,7 @@ export default Vue.extend({
       `${name}__inner`,
       {
         [`${prefix}-is-${this.status}`]: this.status,
-        [CLASSNAMES.STATUS.disabled]: this.disabled,
+        [CLASSNAMES.STATUS.disabled]: this.tDisabled,
         [CLASSNAMES.STATUS.focused]: this.focused,
         [`${prefix}-resize-none`]: typeof this.autosize === 'object',
       },

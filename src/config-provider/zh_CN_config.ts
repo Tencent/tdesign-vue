@@ -90,6 +90,7 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
   treeSelect: {
     empty: '暂无数据',
     loadingText: '加载中',
+    placeholder: '请选择',
   },
   datePicker: {
     placeholder: {

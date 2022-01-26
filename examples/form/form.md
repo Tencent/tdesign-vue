@@ -9,17 +9,21 @@
 -- | -- | -- | -- | --
 colon | Boolean | false | 是否在表单标签字段右侧显示冒号 | N
 data | Object | {} | 表单数据。TS 类型：`FormData` | N
+disabled | Boolean | undefined | 是否禁用整个表单 | N
+errorMessage | Object | - | 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts) | N
+formControlledComponents | Array | - | 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`。TS 类型：`Array<string>` | N
 labelAlign | String | right | 表单字段标签对齐方式：左对齐、右对齐、顶部对齐。可选项：left/right/top | N
 labelWidth | String / Number | '100px' | 可以整体设置label标签宽度，默认为100px | N
 layout | String | vertical | 表单布局，有两种方式：纵向布局 和 行内布局。可选项：vertical/inline | N
 preventSubmitDefault | Boolean | true | 是否阻止表单提交默认事件，即提交后会刷新页面 | N
-requiredMark | Boolean | undefined | 是否显示必填符号，默认显示 | N
+requiredMark | Boolean | undefined | 是否显示必填符号（*），默认显示 | N
 resetType | String | empty | 重置表单的方式，值为 empty 表示重置表单为空，值为 initial 表示重置表单数据为初始值。可选项：empty/initial | N
 rules | Object | - | 表单字段校验规则。TS 类型：`{ [field in keyof FormData]: Array<FormRule> }` | N
 scrollToFirstError | String | - | 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动。可选项：smooth/auto | N
 showErrorMessage | Boolean | true | 校验不通过时，是否显示错误提示信息 | N
 size | String | medium | 表单尺寸。可选项：medium/large | N
-statusIcon | Boolean / Slot / Function | undefined | 校验状态图标。TS 类型：`boolean | TNode<TdFormItemProps>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+statusIcon | Boolean / Slot / Function | undefined | 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。TS 类型：`boolean | TNode<TdFormItemProps>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+submitWithWarningMessage | Boolean | false | 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件 | N
 onReset | Function |  | TS 类型：`(context: { e?: FormResetEvent }) => void`<br/>表单重置时触发 | N
 onSubmit | Function |  | TS 类型：`(context: SubmitContext<FormData>) => void`<br/>表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`interface SubmitContext<T extends Data = Data> { e?: FormSubmitEvent; validateResult: FormValidateResult<T>; firstError?: string }`<br/><br/>`type FormValidateResult<T> = boolean | ValidateResultObj<T>`<br/><br/>`type ValidateResultObj<T> = { [key in keyof T]: boolean | ValidateResultList }`<br/><br/>`type ValidateResultList = Array<AllValidateResult>`<br/><br/>`type AllValidateResult = CustomValidateObj | ValidateResultType`<br/><br/>`interface ValidateResultType extends FormRule { result: boolean }`<br/><br/>`type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList }`<br/><br/>`type ErrorList = Array<FormRule>`<br/> | N
 onValidate | Function |  | TS 类型：`(result: ValidateResultContext<FormData>) => void`<br/>校验结束后触发，result 值为 true 表示校验通过；如果校验不通过，result 值为校验结果列表。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>`<br/> | N
@@ -36,7 +40,7 @@ validate | `(result: ValidateResultContext<FormData>)` | 校验结束后触发�
 
 名称 | 参数 | 返回值 | 描述
 -- | -- | -- | --
-clearValidate | `(fields?: Array<string>)` | - | 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果
+clearValidate | `(fields?: Array<string>)` | - | 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果。清除邮箱校验结果示例：`clearValidate(['email'])`
 reset | - | - | 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法
 submit | - | - | 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法
 validate | `(params?: FormValidateParams)` | `FormValidateResult<FormData>` | 校验函数。关于参数：params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。关于返回值：返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`interface FormValidateParams { fields?: Array<string>; trigger?: ValidateTriggerType }`<br/><br/>`type ValidateTriggerType = 'blur' | 'change' | 'all'`<br/>
@@ -51,9 +55,9 @@ label | String / Slot / Function | '' | 字段标签名称。TS 类型：`string
 labelAlign | String | - | 表单字段标签对齐方式：左对齐、右对齐、顶部对齐。默认使用 Form 的对齐方式，优先级高于 Form.labelAlign。可选项：left/right/top | N
 labelWidth | String / Number | - | 可以整体设置标签宽度，优先级高于 Form.labelWidth | N
 name | String | - | 表单字段名称 | N
-requiredMark | Boolean | undefined | 是否显示必填符号，优先级高于 Form.requiredMark | N
+requiredMark | Boolean | undefined | 是否显示必填符号（*），优先级高于 Form.requiredMark | N
 rules | Array | [] | 表单字段校验规则。TS 类型：`Array<FormRule>` | N
-statusIcon | Boolean / Slot / Function | undefined | 校验状态图标。优先级高级 Form 的 statusIcon。TS 类型：`boolean | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+statusIcon | Boolean / Slot / Function | undefined | 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。优先级高级 Form 的 statusIcon。TS 类型：`boolean | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 successBorder | Boolean | false | 是否显示校验成功的边框，默认不显示 | N
 
 ### FormRule

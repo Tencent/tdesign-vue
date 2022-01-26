@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-24 15:22:11
  * */
 
 import { CalendarController } from '../calendar';
@@ -456,6 +455,11 @@ export interface TreeSelectConfig {
    * @default '加载中'
    */
   loadingText?: string;
+  /**
+   * 占位符描述文本
+   * @default '请选择'
+   */
+  placeholder?: string;
 }
 
 export interface UploadConfig {

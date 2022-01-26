@@ -44,13 +44,19 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
   data(): {
     SOURCE: TransferListType;
     TARGET: TransferListType;
+    formDisabled: boolean;
     } {
     return {
       SOURCE,
       TARGET,
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
     };
   },
   computed: {
+    tDisabled(): boolean | boolean[] {
+      return this.formDisabled || this.disabled;
+    },
     isTreeMode(): boolean {
       const treeSlot = this.$scopedSlots.tree;
       return typeof treeSlot === 'function';
@@ -103,7 +109,7 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
       return getTransferListOption<boolean>(this.showCheckAll);
     },
     disabledOption(): TransferListOptionBase<boolean> {
-      return getTransferListOption<boolean>(this.disabled);
+      return getTransferListOption<boolean>(this.tDisabled);
     },
     titleOption(): TransferListOptionBase<string> {
       // TODO：此处需分别处理 Array 和 TNode 内容
