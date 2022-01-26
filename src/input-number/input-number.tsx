@@ -200,16 +200,8 @@ export default Vue.extend({
     getClickValue(op: string) {
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
-      let clickVal = 0;
-      switch (op) {
-        case 'add':
-          clickVal = this.toDecimalPlaces((value * factor + this.step * factor) / factor);
-          break;
-        case 'reduce':
-          clickVal = this.toDecimalPlaces((value * factor - this.step * factor) / factor);
-          break;
-        default:
-      }
+      const addOrReduce = { add: 1, reduce: -1 }[op];
+      let clickVal = this.toDecimalPlaces(value * factor + addOrReduce * this.step * factor);
       if (this.value === undefined) {
         clickVal = Math.min(Math.max(clickVal, this.min), this.max);
       }
