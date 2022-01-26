@@ -5879,11 +5879,11 @@ exports[`Steps Steps status demo works fine 1`] = `
                   <span />
                 </li>
               </ul>
-              <li
+              <div
                 class="t-select__loading-tips t-size-m"
               >
                 加载中
-              </li>
+              </div>
               <ul
                 class="t-select__groups t-select__list"
                 style="display: none;"
