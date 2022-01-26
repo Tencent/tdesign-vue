@@ -211,7 +211,7 @@ export default mixins(
       this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
-      this.dateFormat = this.format;
+      this.dateFormat = this.format || this.global.format;
       const start = new Date(startDate);
       let end = new Date(endDate);
       if (!this.range) {

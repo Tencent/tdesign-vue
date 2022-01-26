@@ -96,7 +96,7 @@ const GLOBAL_CONFIG_EN: GlobalConfigProvider = {
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     firstDayOfWeek: 7,
     rangeSeparator: ' ~ ',
-    format: 'YYYY-MM-DD',
+    format: 'DD/MM/YYYY',
     yearAriaLabel: '',
     confirm: 'Confirm',
     selectTime: 'Select Time',
