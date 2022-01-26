@@ -41,7 +41,7 @@ validate | `(result: ValidateResultContext<FormData>)` | 校验结束后触发�
 名称 | 参数 | 返回值 | 描述
 -- | -- | -- | --
 clearValidate | `(fields?: Array<keyof FormData>)` | - | 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果。清除邮箱校验结果示例：`clearValidate(['email'])`
-reset | `(params?: FormResetParams)` | - | 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`， 。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`interface FormResetParams { type: 'initial' | 'empty'; fields?: Array<keyof FormData> }`<br/>
+reset | `(params?: FormResetParams)` | - | 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段（重置指定字段的特性处于开发中），示例：`reset({ type: 'initial', fields: ['name', 'age'] })`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`interface FormResetParams { type: 'initial' | 'empty'; fields?: Array<keyof FormData> }`<br/>
 submit | - | - | 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法，此方法不会触发 `submit` 事件
 validate | `(params?: FormValidateParams)` | `FormValidateResult<FormData>` | 校验函数，泛型 `FormData` 表示表单数据 TS 类型。【关于参数】params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts)。<br/>`interface FormValidateParams { fields?: Array<string>; trigger?: ValidateTriggerType }`<br/><br/>`type ValidateTriggerType = 'blur' | 'change' | 'all'`<br/>
 
@@ -80,22 +80,22 @@ telnumber | Boolean | - | 内置校验方法，校验值是否为手机号码，
 trigger | String | change | 校验触发方式。可选项：change/blur | N
 type | String | error | 校验未通过时呈现的错误信息类型，有 告警信息提示 和 错误信息提示 等两种。可选项：error/warning | N
 url | Boolean / Object | - | 内置校验方法，校验值是否为网络链接地址，[参数文档](https://github.com/validatorjs/validator.js)，示例：`{ url: { protocols: ['http','https','ftp'] }, message: '请输入正确的 Url 地址' }`。TS 类型：`boolean | IsURLOptions`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts) | N
-validator | Function | - | 自定义校验规则。TS 类型：`CustomValidator`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts) | N
+validator | Function | - | 自定义校验规则，示例：`{ validator: (val) => val.length > 0, message: '请输入内容'}`。TS 类型：`CustomValidator`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/form/type.ts) | N
 
 ### FormErrorMessage
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-boolean | String | - | 布尔类型校验不通过时的表单项显示文案 | N
-date | String | - | 日期校验规则不通过时的表单项显示文案 | N
-enum | String | - | 枚举值校验规则不通过时的表单项显示文案 | N
-idcard | String | - | 身份证号码校验不通过时的表单项显示文案 | N
-len | String | - | 值长度校验不通过时的表单项显示文案 | N
-max | String | - | 值的长度太长或值本身太大时，校验不通过的表单项显示文案 | N
-min | String | - | 值的长度太短或值本身太小时，校验不通过的表单项显示文案 | N
-number | String | - | 数字类型校验不通过时的表单项显示文案 | N
-pattern | String | - | 正则表达式校验不通过时的表单项显示文案 | N
-required | String | - | 没有填写必填项时的表单项显示文案 | N
-telnumber | String | - | 手机号号码校验不通过时的表单项显示文案 | N
-url | String | - | 链接校验规则不通过时的表单项显示文案 | N
-validator | String | - | 自定义校验规则校验不通过时的表单项显示文案 | N
+boolean | String | - | 布尔类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}数据类型必须是布尔类型'` | N
+date | String | - | 日期校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'` | N
+enum | String | - | 枚举值校验规则不通过时的表单项显示文案，全局配置默认是：`${name}只能是${validate}等` | N
+idcard | String | - | 身份证号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'` | N
+len | String | - | 值长度校验不通过时的表单项显示文案，全局配置默认是：`'${name}字符长度必须是 ${validate}'` | N
+max | String | - | 值的长度太长或值本身太大时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符'` | N
+min | String | - | 值的长度太短或值本身太小时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符'` | N
+number | String | - | 数字类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}必须是数字'` | N
+pattern | String | - | 正则表达式校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'` | N
+required | String | - | 没有填写必填项时的表单项显示文案，全局配置默认是：`'${name}必填'` | N
+telnumber | String | - | 手机号号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'` | N
+url | String | - | 链接校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'` | N
+validator | String | - | 自定义校验规则校验不通过时的表单项显示文案，全局配置默认是：'${name}不符合要求' | N

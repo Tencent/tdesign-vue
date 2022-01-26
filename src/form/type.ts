@@ -108,7 +108,7 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
    */
   clearValidate?: (fields?: Array<keyof FormData>) => void;
   /**
-   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`，
+   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
    */
   reset?: (params?: FormResetParams) => void;
   /**
@@ -239,74 +239,74 @@ export interface FormRule {
    */
   url?: boolean | IsURLOptions;
   /**
-   * 自定义校验规则
+   * 自定义校验规则，示例：`{ validator: (val) => val.length > 0, message: '请输入内容'}`
    */
   validator?: CustomValidator;
 }
 
 export interface FormErrorMessage {
   /**
-   * 布尔类型校验不通过时的表单项显示文案
+   * 布尔类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}数据类型必须是布尔类型'`
    * @default ''
    */
   boolean?: string;
   /**
-   * 日期校验规则不通过时的表单项显示文案
+   * 日期校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
    * @default ''
    */
   date?: string;
   /**
-   * 枚举值校验规则不通过时的表单项显示文案
+   * 枚举值校验规则不通过时的表单项显示文案，全局配置默认是：`${name}只能是${validate}等`
    * @default ''
    */
   enum?: string;
   /**
-   * 身份证号码校验不通过时的表单项显示文案
+   * 身份证号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
    * @default ''
    */
   idcard?: string;
   /**
-   * 值长度校验不通过时的表单项显示文案
+   * 值长度校验不通过时的表单项显示文案，全局配置默认是：`'${name}字符长度必须是 ${validate}'`
    * @default ''
    */
   len?: string;
   /**
-   * 值的长度太长或值本身太大时，校验不通过的表单项显示文案
+   * 值的长度太长或值本身太大时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符'`
    * @default ''
    */
   max?: string;
   /**
-   * 值的长度太短或值本身太小时，校验不通过的表单项显示文案
+   * 值的长度太短或值本身太小时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符'`
    * @default ''
    */
   min?: string;
   /**
-   * 数字类型校验不通过时的表单项显示文案
+   * 数字类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}必须是数字'`
    * @default ''
    */
   number?: string;
   /**
-   * 正则表达式校验不通过时的表单项显示文案
+   * 正则表达式校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
    * @default ''
    */
   pattern?: string;
   /**
-   * 没有填写必填项时的表单项显示文案
+   * 没有填写必填项时的表单项显示文案，全局配置默认是：`'${name}必填'`
    * @default ''
    */
   required?: string;
   /**
-   * 手机号号码校验不通过时的表单项显示文案
+   * 手机号号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
    * @default ''
    */
   telnumber?: string;
   /**
-   * 链接校验规则不通过时的表单项显示文案
+   * 链接校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
    * @default ''
    */
   url?: string;
   /**
-   * 自定义校验规则校验不通过时的表单项显示文案
+   * 自定义校验规则校验不通过时的表单项显示文案，全局配置默认是：'${name}不符合要求'
    * @default ''
    */
   validator?: string;
