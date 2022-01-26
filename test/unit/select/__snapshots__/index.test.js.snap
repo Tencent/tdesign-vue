@@ -125,7 +125,7 @@ exports[`Select :props :loading 1`] = `
             <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
-            <li class="t-select__loading-tips t-size-m">加载中</li>
+            <div class="t-select__loading-tips t-size-m">加载中</div>
             <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
