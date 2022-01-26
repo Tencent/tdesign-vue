@@ -191,33 +191,29 @@ export default Vue.extend({
     },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
-      const factor = 10 ** this.digitsNum;
-      let value = this.value || 0;
-      let { step } = this;
-      if (this.value === undefined && this.min > -Infinity) {
-        value = this.min;
-        step = 0;
-      }
-      this.handleAction(
-        Number(this.toDecimalPlaces((value * factor + step * factor) / factor).toFixed(this.digitsNum)),
-        'add',
-        e,
-      );
+      this.handleAction(this.getClickValue('add'), 'add', e);
     },
     handleReduce(e: MouseEvent) {
       if (this.disabledReduce) return;
+      this.handleAction(this.getClickValue('reduce'), 'reduce', e);
+    },
+    getClickValue(op: string) {
+      const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
-      let value = this.value || 0;
-      let { step } = this;
-      if (this.value === undefined && this.max < Infinity) {
-        value = this.max;
-        step = 0;
+      let clickVal = 0;
+      switch (op) {
+        case 'add':
+          clickVal = this.toDecimalPlaces((value * factor + this.step * factor) / factor);
+          break;
+        case 'reduce':
+          clickVal = this.toDecimalPlaces((value * factor - this.step * factor) / factor);
+          break;
+        default:
       }
-      this.handleAction(
-        Number(this.toDecimalPlaces((value * factor - step * factor) / factor).toFixed(this.digitsNum)),
-        'reduce',
-        e,
-      );
+      if (this.value === undefined) {
+        clickVal = Math.min(Math.max(clickVal, this.min), this.max);
+      }
+      return Number(clickVal.toFixed(this.digitsNum));
     },
     handleInput(e: InputEvent) {
       // get
