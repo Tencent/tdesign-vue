@@ -64,7 +64,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
             node: node?.getModel(),
           });
         } else if (node.parent && node.tree) {
-          const { vmIsLeaf, vmIsFirst } = node;
+          const { vmIsLeaf, vmIsFirst, level } = node;
 
           const lineClasses = [];
 
@@ -95,8 +95,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
           });
 
           const styles = {
-            // '--level': level ? String(level) : undefined,
-            'box-shadow': shadowStyles.join(','),
+            '--level': level ? String(level) : undefined,
+            'box-shadow': shadowStyles.length ? shadowStyles.join(',') : undefined,
           };
 
           lineNode = <span class={lineClasses} style={styles}></span>;
