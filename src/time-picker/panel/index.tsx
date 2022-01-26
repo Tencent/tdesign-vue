@@ -72,14 +72,15 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
     },
   },
   watch: {
-    isShowPanel: {
-      handler(val: boolean) {
-        if (val) {
-          this.panelColUpdate();
-        }
-      },
-      immediate: true,
+    isShowPanel(val: boolean) {
+      if (val) {
+        this.panelColUpdate();
+      }
     },
+  },
+  mounted() {
+    // 不做 isShowPanel 的判断，故无法合并到 watch
+    this.panelColUpdate();
   },
   methods: {
     panelColUpdate() {

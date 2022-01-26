@@ -19,8 +19,9 @@
   display: flex;
   align-items: center;
 
-  > div {
+  > * {
     margin-right: 8px;
+    width: auto;
   }
 }
 </style>

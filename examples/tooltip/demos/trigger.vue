@@ -14,3 +14,13 @@
     </t-tooltip>
   </div>
 </template>
+<style lang="less">
+.tdesign-tooltip-demo {
+  > * {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+}
+</style>
