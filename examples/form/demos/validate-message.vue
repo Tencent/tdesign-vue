@@ -130,13 +130,13 @@ export default {
           { pattern: /[A-Z]+/, message: '密码必须包含大写字母' },
         ],
         email: [{ required: true }, { email: { ignore_max_length: true } }],
-        gender: [{ required: true, type: 'warning' }],
+        gender: [{ required: true }],
         course: [
-          { required: true, type: 'warning' },
+          { required: true },
           { validator: (val) => val.length <= 2, message: '最多选择 2 门课程', type: 'warning' },
         ],
         'content.url': [
-          { required: true, message: 'xxx', type: 'warning' },
+          { required: true },
           {
             url: {
               protocols: ['http', 'https', 'ftp'],
