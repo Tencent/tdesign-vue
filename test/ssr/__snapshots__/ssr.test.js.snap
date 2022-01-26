@@ -4286,6 +4286,14 @@ exports[`ssr snapshot test renders ./examples/form/demos/disabled.vue correctly 
         </div>
       </div>
     </div>
+    <div class="t-form__item t-form-item__personalProfile">
+      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div clearable="" class="t-textarea"><textarea clearable="" placeholder="简单描述自己的经历" class="t-textarea__inner"></textarea></div>
+        </div>
+      </div>
+    </div>
     <div class="t-form__item t-form-item__message">
       <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">短信</label></div>
       <div class="t-form__controls" style="margin-left:100px;">

@@ -28,6 +28,9 @@
       <t-form-item label="日期" name="date">
         <t-date-picker v-model="formData.date" mode="date" clearable />
       </t-form-item>
+      <t-form-item label="个人简介" name="personalProfile">
+        <t-textarea v-model="formData.personalProfile" placeholder="简单描述自己的经历" clearable />
+      </t-form-item>
       <t-form-item label="短信" name="message">
         <t-switch v-model="formData.message" :label="['接受', '不接']"></t-switch>
       </t-form-item>
@@ -66,6 +69,7 @@ const INITIAL_DATA = {
   gender: '',
   course: [],
   college: '',
+  personalProfile: '',
   address1: undefined,
   address2: undefined,
   gradePoint: undefined,

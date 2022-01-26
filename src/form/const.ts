@@ -26,9 +26,10 @@ export const CLASS_NAMES = {
 };
 
 // 允许 Form 统一控制的表单
-export const FORM_CONTROLE_COMPONENT = [
+export const FORM_CONTROLE_COMPONENTS = [
   'TInput',
   'TInputNumber',
+  'TTextarea',
   'TCascader',
   'TSelect',
   'TOption',
