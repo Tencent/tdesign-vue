@@ -60,6 +60,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       hoverIndex: -1,
       popupOpenTime: 250, // popup打开弹出层的延迟时间
       checkScroll: true, // 弹出层执行加宽事件（仅执行一次，且在有滚动条时执行）
+      isInited: false,
     };
   },
   components: {
@@ -679,6 +680,37 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         </div>
       );
     },
+  },
+
+  updated() {
+    if (this.realOptions.length || this.isInited) return;
+
+    // Parse options from slots before popup, execute only once
+    const children = renderTNodeJSX(this, 'default');
+    if (children) {
+      this.realOptions = parseOptions(children);
+      this.isInited = true;
+    }
+
+    function parseOptions(vnodes: VNode[]): TdOptionProps[] {
+      if (!vnodes) return [];
+      return vnodes.reduce((options, vnode) => {
+        if (vnode.componentOptions.tag === 't-option') {
+          const propsData = vnode.componentOptions.propsData as any;
+          return options.concat({
+            label: propsData.label,
+            value: propsData.value,
+            disabled: propsData.disabled,
+            content: propsData.content,
+            default: propsData.default,
+          });
+        }
+        if (vnode.componentOptions.tag === 't-option-group') {
+          return options.concat(parseOptions(vnode.componentOptions.children));
+        }
+        return options;
+      }, []);
+    }
   },
 
   render(): VNode {
