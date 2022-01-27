@@ -22,6 +22,7 @@ export interface LocalTBreadcrumb {
   };
   maxItemWidth: string;
 }
+
 const localTBreadcrumbOrigin: LocalTBreadcrumb = {
   separator: '',
   theme: 'light',
