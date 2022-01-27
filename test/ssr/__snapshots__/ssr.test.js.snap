@@ -13948,7 +13948,7 @@ exports[`ssr snapshot test renders ./examples/tag/demos/base.vue correctly 1`] =
   <div class="tag-demo"><span class="t-tag t-tag--default t-size-m t-tag--dark">标签一</span> <a href="https://www.tencent.com/zh-cn" target="_blank"><span class="t-tag t-tag--default t-size-m t-tag--dark">超链接</span></a></div>
   <div class="tag-demo"><span class="t-tag t-tag--primary t-size-m t-tag--dark">标签一</span> <span class="t-tag t-tag--success t-size-m t-tag--dark">标签二</span> <span class="t-tag t-tag--warning t-size-m t-tag--dark">标签三</span> <span class="t-tag t-tag--danger t-size-m t-tag--dark">标签四</span></div>
   <div class="tag-demo light"><span class="t-tag t-tag--primary t-size-m t-tag--light">标签一</span> <span class="t-tag t-tag--success t-size-m t-tag--light">标签二</span> <span class="t-tag t-tag--warning t-size-m t-tag--light">标签三</span> <span class="t-tag t-tag--danger t-size-m t-tag--light">标签四</span></div>
-  <div class="tag-demo plain"><span class="t-tag t-tag--primary t-size-m t-tag--plain">标签一</span> <span class="t-tag t-tag--success t-size-m t-tag--plain">标签二</span> <span class="t-tag t-tag--warning t-size-m t-tag--plain">标签三</span> <span class="t-tag t-tag--danger t-size-m t-tag--plain">标签四</span></div>
+  <div class="tag-demo plain"><span class="t-tag t-tag--primary t-size-m t-tag--outline">标签一</span> <span class="t-tag t-tag--success t-size-m t-tag--outline">标签二</span> <span class="t-tag t-tag--warning t-size-m t-tag--outline">标签三</span> <span class="t-tag t-tag--danger t-size-m t-tag--outline">标签四</span></div>
 </div>
 `;
 
