@@ -12,11 +12,11 @@
       <t-tag theme="warning" variant="light" closable>标签三</t-tag>
       <t-tag theme="danger" variant="light" closable>标签四</t-tag>
     </div>
-    <div class="tag-block plain">
-      <t-tag variant="plain" theme="primary" closable>标签一</t-tag>
-      <t-tag variant="plain" theme="success" closable>标签二</t-tag>
-      <t-tag variant="plain" theme="warning" closable>标签三</t-tag>
-      <t-tag variant="plain" theme="danger" closable>标签四</t-tag>
+    <div class="tag-block">
+      <t-tag variant="outline" theme="primary" closable>标签一</t-tag>
+      <t-tag variant="outline" theme="success" closable>标签二</t-tag>
+      <t-tag variant="outline" theme="warning" closable>标签三</t-tag>
+      <t-tag variant="outline" theme="danger" closable>标签四</t-tag>
     </div>
     <div class="tag-block">
       <t-tag
@@ -38,14 +38,7 @@
         <add-icon />
         添加标签
       </t-tag>
-      <t-input
-        v-else
-        ref="input"
-        size="small"
-        style="width: 94px"
-        @blur="handleInputEnter"
-        @enter="handleInputEnter"
-      />
+      <t-input v-else ref="input" size="small" style="width: 94px" @blur="handleInputEnter" @enter="handleInputEnter" />
     </div>
   </div>
 </template>

@@ -18,11 +18,11 @@
       <t-tag theme="warning" variant="light">标签三</t-tag>
       <t-tag theme="danger" variant="light">标签四</t-tag>
     </div>
-    <div class="tag-demo plain">
-      <t-tag variant="outline" theme="primary">标签一</t-tag>
-      <t-tag variant="outline" theme="success">标签二</t-tag>
-      <t-tag variant="outline" theme="warning">标签三</t-tag>
-      <t-tag variant="outline" theme="danger">标签四</t-tag>
+    <div class="tag-demo">
+      <t-tag theme="primary" variant="outline">标签一</t-tag>
+      <t-tag theme="success" variant="outline">标签二</t-tag>
+      <t-tag theme="warning" variant="outline">标签三</t-tag>
+      <t-tag theme="danger" variant="outline">标签四</t-tag>
     </div>
   </div>
 </template>
