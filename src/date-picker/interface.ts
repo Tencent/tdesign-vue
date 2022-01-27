@@ -2,9 +2,7 @@ import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
 import { DatePickerConfig } from '../config-provider/config-receiver';
 import { EPickerCols } from '../time-picker/interface';
-import {
-  DateValue, TdDatePickerProps, TdDateRangePickerProps,
-} from './type';
+import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
 
 export * from './type';
 export type DatePickerProps = TdDatePickerProps;
@@ -28,6 +26,7 @@ export interface DatePickerData {
   inlineView: boolean;
   els: Element[];
   isOpen: boolean;
+  formDisabled: boolean;
   startTimeValue: dayjs.Dayjs;
   endTimeValue: dayjs.Dayjs;
 }
@@ -71,6 +70,7 @@ export interface DatePickerComputed {
   max: Date | null;
   classes: any;
   pickerStyles: any;
+  tDisabled: boolean;
 }
 
 export type DisableDate = Array<DateValue> | DisableDateObj | ((date: Date | string) => boolean);
@@ -252,7 +252,10 @@ export interface DateHeaderProps {
 export interface DateRangeMethods {
   initialPicker(): void;
   getLeftAndRightDataFromValue(value: Array<Date>): {
-    leftYear: number; leftMonth: number; rightYear: number; rightMonth: number
+    leftYear: number;
+    leftMonth: number;
+    rightYear: number;
+    rightMonth: number;
   };
   getData(value: { year: number; month: number; type: string }): object;
   getClickHandler(direction: string, date: DateValue, e: MouseEvent): object;
@@ -306,4 +309,4 @@ export interface Cell {
   value: Date;
 }
 
-export interface DatePickerInstance extends Vue, DatePickerData, DatePickerMethods, DatePickerComputed { }
+export interface DatePickerInstance extends Vue, DatePickerData, DatePickerMethods, DatePickerComputed {}

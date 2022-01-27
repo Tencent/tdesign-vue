@@ -48,6 +48,8 @@ export default Vue.extend({
   },
   data() {
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       userInput: null,
       filterValue: null,
       isError: false,
@@ -55,11 +57,14 @@ export default Vue.extend({
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     disabledReduce(): boolean {
-      return this.disabled || this.isError || Number(this.value) - this.step < this.min;
+      return this.tDisabled || this.isError || Number(this.value) - this.step < this.min;
     },
     disabledAdd(): boolean {
-      return this.disabled || this.isError || Number(this.value) + this.step > this.max;
+      return this.tDisabled || this.isError || Number(this.value) + this.step > this.max;
     },
     valueDecimalPlaces(): number {
       const tempVal = this.filterValue !== null && !isNaN(Number(this.filterValue)) && !isNaN(parseFloat(this.filterValue))
@@ -122,7 +127,7 @@ export default Vue.extend({
           name,
           CLASSNAMES.SIZE[this.size],
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${prefix}-is-controls-right`]: this.theme === 'column',
             [`${name}--normal`]: this.theme === 'normal',
           },
@@ -145,7 +150,7 @@ export default Vue.extend({
         class: [
           `${prefix}-input__inner`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${name}-text-align`]: this.theme === 'row',
           },
         ],
@@ -166,7 +171,7 @@ export default Vue.extend({
     inputAttrs(): InputNumberAttr {
       return {
         attrs: {
-          disabled: this.disabled,
+          disabled: this.tDisabled,
           autocomplete: 'off',
           ref: 'refInputElem',
           placeholder: this.placeholder,
@@ -192,23 +197,21 @@ export default Vue.extend({
     },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
-      const value = this.value || 0;
-      const factor = 10 ** this.digitsNum;
-      this.handleAction(
-        Number(this.toDecimalPlaces((value * factor + this.step * factor) / factor).toFixed(this.digitsNum)),
-        'add',
-        e,
-      );
+      this.handleAction(this.getClickValue('add'), 'add', e);
     },
     handleReduce(e: MouseEvent) {
       if (this.disabledReduce) return;
+      this.handleAction(this.getClickValue('reduce'), 'reduce', e);
+    },
+    getClickValue(op: string) {
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
-      this.handleAction(
-        Number(this.toDecimalPlaces((value * factor - this.step * factor) / factor).toFixed(this.digitsNum)),
-        'reduce',
-        e,
-      );
+      const addOrReduce = { add: 1, reduce: -1 }[op];
+      let clickVal = this.toDecimalPlaces(value * factor + addOrReduce * this.step * factor);
+      if (this.value === undefined) {
+        clickVal = Math.min(Math.max(clickVal, this.min), this.max);
+      }
+      return Number(clickVal.toFixed(this.digitsNum));
     },
     handleInput(e: InputEvent) {
       // get
@@ -232,7 +235,7 @@ export default Vue.extend({
       // only allow one [.e] and two [-]
       let filterVal = s.replace(/[^\d.eE。-]/g, '').replace('。', '.');
       if (this.multiE(filterVal) || this.multiDot(filterVal) || this.multiNegative(filterVal)) {
-        filterVal = filterVal.substr(0, filterVal.length - 1);
+        filterVal = filterVal.substring(0, filterVal.length - 1);
       }
       return filterVal;
     },
@@ -258,7 +261,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, { e });
     },
     handleKeydownEnter(e: KeyboardEvent) {
-      if (!['Enter', 'NumpadEnter'].includes(e.code)) return;
+      if (!['Enter', 'NumpadEnter'].includes(e.code || e.key)) return;
       emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, { e });
     },
     handleKeydown(e: KeyboardEvent) {
@@ -272,8 +275,9 @@ export default Vue.extend({
         Enter: this.handleKeydownEnter,
         NumpadEnter: this.handleKeydownEnter,
       };
-      if (keyEvent[e.code] !== undefined) {
-        keyEvent[e.code](e);
+      const code = e.code || e.key;
+      if (keyEvent[code] !== undefined) {
+        keyEvent[code](e);
       }
     },
     handleKeyup(e: KeyboardEvent) {

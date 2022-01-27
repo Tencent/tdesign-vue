@@ -162,6 +162,7 @@ folderIcon | Function | - | 目录层级图标，传入收起状态图标即可�
 -- | -- | -- | -- | --
 empty | String | '暂无数据' | “暂无数据”描述文本 | N
 loadingText | String | '加载中' | “加载中”描述文本 | N
+placeholder | String | '请选择' | 占位符描述文本 | N
 
 ### UploadConfig
 

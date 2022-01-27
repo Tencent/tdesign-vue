@@ -7,7 +7,7 @@
       :onSearch="remoteMethod"
       :loading="loading"
       :options="options"
-      style="width: 200px;display: inline-block;margin: 0 20px 20px 0;"
+      style="width: 200px; display: inline-block; margin: 0 20px 20px 0"
     />
     <t-select
       v-model="value2"
@@ -18,7 +18,7 @@
       @search="remoteMethod2"
       :loading="loading2"
       reserveKeyword
-      style="width: 400px;display: inline-block;"
+      style="width: 400px; display: inline-block"
     />
   </div>
 </template>
@@ -45,41 +45,45 @@ export default {
     },
     remoteMethod(search) {
       console.log('search', search);
-      if (search) {
-        this.loading = true;
-        setTimeout(() => {
-          this.loading = false;
-          this.options = [{
-            value: `${search}_test1`,
-            label: `${search}_test1`,
-          }, {
-            value: `${search}_test2`,
-            label: `${search}_test2`,
-          }, {
-            value: `${search}_test3`,
-            label: `${search}_test3`,
-          }];
-        }, 500);
-      }
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.options = [
+          {
+            value: `${search}test1`,
+            label: `${search}test1`,
+          },
+          {
+            value: `${search}test2`,
+            label: `${search}test2`,
+          },
+          {
+            value: `${search}test3`,
+            label: `${search}test3`,
+          },
+        ];
+      }, 500);
     },
     remoteMethod2(search) {
       console.log('search2', search);
-      if (search) {
-        this.loading2 = true;
-        setTimeout(() => {
-          this.loading2 = false;
-          this.options2 = [{
-            value: `${search}_test1`,
-            label: `${search}_test1`,
-          }, {
-            value: `${search}_test2`,
-            label: `${search}_test2`,
-          }, {
-            value: `${search}_test3`,
-            label: `${search}_test3`,
-          }];
-        }, 500);
-      }
+      this.loading2 = true;
+      setTimeout(() => {
+        this.loading2 = false;
+        this.options2 = [
+          {
+            value: `${search}test1`,
+            label: `${search}test1`,
+          },
+          {
+            value: `${search}test2`,
+            label: `${search}test2`,
+          },
+          {
+            value: `${search}test3`,
+            label: `${search}test3`,
+          },
+        ];
+      }, 500);
     },
   },
 };

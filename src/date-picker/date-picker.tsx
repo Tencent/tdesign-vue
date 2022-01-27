@@ -22,6 +22,7 @@ import { firstUpperCase, extractTimeFormat } from '../_common/js/date-picker/uti
 import { TimePickerPanelInstance } from '../time-picker';
 import { DatePickerInstance, DateValue, PickContext } from './interface';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { ClassName } from '../common';
 
 dayjs.extend(isBetween);
 
@@ -64,12 +65,14 @@ export default mixins(
       showTime: false,
       els: [],
       isOpen: false,
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       startTimeValue: dayjs(),
       endTimeValue: dayjs(),
     };
   },
   computed: {
-    inputListeners() {
+    inputListeners(): any {
       return {
         ...this.$listeners,
         focus: this.onNativeFocus,
@@ -151,17 +154,17 @@ export default mixins(
         }
       },
     },
-    min() {
+    min(): Date {
       const disableDate: any = this.disableDate || {};
       const { before } = disableDate;
       return before ? new Date(before) : null;
     },
-    max() {
+    max(): Date {
       const disableDate: any = this.disableDate || {};
       const { after } = disableDate;
       return after ? new Date(after) : null;
     },
-    classes(): any {
+    classes(): ClassName {
       return [
         name,
         CLASSNAMES.SIZE[this.size] || '',
@@ -171,13 +174,16 @@ export default mixins(
         },
       ];
     },
-    pickerStyles() {
+    pickerStyles(): ClassName {
       return {
         [`${name}__container`]: true,
         [`${name}-picker--open`]: this.isOpen || this.inlineView,
         [`${name}--calendar-inline-view`]: this.inlineView,
         [`${name}--range`]: this.range,
       };
+    },
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
     },
   },
   mounted() {
@@ -211,7 +217,7 @@ export default mixins(
       this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
-      this.dateFormat = this.format;
+      this.dateFormat = this.format || this.global.format;
       const start = new Date(startDate);
       let end = new Date(endDate);
       if (!this.range) {
@@ -309,7 +315,7 @@ export default mixins(
       }
     },
     toggle() {
-      if (!this.disabled) {
+      if (!this.tDisabled) {
         if (this.isOpen) {
           this.close();
         } else {
@@ -318,7 +324,7 @@ export default mixins(
       }
     },
     open() {
-      if (!this.disabled) {
+      if (!this.tDisabled) {
         const { formattedValue } = this;
         // set default value;
         if (formattedValue) {
@@ -334,7 +340,7 @@ export default mixins(
       }
     },
     close() {
-      if (!this.disabled) {
+      if (!this.tDisabled) {
         this.tempValue = '';
         this.isOpen = false;
         this.showTime = false;
@@ -397,7 +403,7 @@ export default mixins(
       this.close();
 
       // set value
-      if (!this.disabled) {
+      if (!this.tDisabled) {
         const selectedDates: any[] = [];
         this.selectedDates = selectedDates;
         this.formattedValue = '';
@@ -591,7 +597,7 @@ export default mixins(
   render() {
     const {
       popupProps,
-      disabled,
+      tDisabled,
       clearable,
       allowInput,
       size,
@@ -691,7 +697,7 @@ export default mixins(
           class={`${name}__popup-reference`}
           trigger="click"
           placement="bottom-left"
-          disabled={disabled}
+          disabled={tDisabled}
           showArrow={false}
           visible={isOpen}
           popupProps={popupProps}
@@ -703,7 +709,7 @@ export default mixins(
             <t-input
               ref="native"
               v-model={this.formattedValue}
-              disabled={disabled}
+              disabled={tDisabled}
               clearable={clearable}
               placeholder={this.getPlaceholderText()}
               readonly={!allowInput}

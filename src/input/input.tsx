@@ -35,19 +35,23 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   props: { ...props },
   data() {
     return {
+      formDisabled: undefined,
       isHover: false,
       focused: false,
       renderType: this.type,
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     showClear(): boolean {
-      return this.value && !this.disabled && this.clearable && this.isHover;
+      return this.value && !this.tDisabled && this.clearable && this.isHover;
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
         autofocus: this.autofocus,
-        disabled: this.disabled,
+        disabled: this.tDisabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
         placeholder: this.placeholder ?? this.t(this.global.placeholder),
@@ -61,11 +65,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         name,
         CLASSNAMES.SIZE[this.size] || '',
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.focused]: this.focused,
           [`${prefix}-is-${this.status}`]: this.status,
           [`${prefix}-align-${this.align}`]: this.align !== 'left',
-          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
           [`${name}--focused`]: this.focused,
         },
@@ -126,7 +130,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
 
     handleKeydown(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       const code = e.code || e.key;
       if (code === 'Enter' || code === 'NumpadEnter') {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
@@ -135,15 +139,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }
     },
     handleKeyUp(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', this.value, { e });
     },
     handleKeypress(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', this.value, { e });
     },
     onHandlePaste(e: ClipboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       // @ts-ignore
       const clipData = e.clipboardData || window.clipboardData;
       emitEvent<Parameters<TdInputProps['onPaste']>>(this, 'paste', { e, pasteValue: clipData?.getData('text/plain') });
@@ -160,7 +164,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },

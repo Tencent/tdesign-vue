@@ -5,7 +5,7 @@ import {
   Data, FormValidateResult, TdFormProps, FormValidateParams, AllValidateResult,
 } from './type';
 import props from './props';
-import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES } from './const';
+import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROLE_COMPONENTS } from './const';
 import { emitEvent } from '../utils/event';
 import FormItem, { FormItemValidateResult } from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
@@ -39,6 +39,13 @@ export default Vue.extend({
           [`${name}-inline`]: this.layout === 'inline',
         },
       ];
+    },
+    controlledComponents(): string[] {
+      let fields = FORM_CONTROLE_COMPONENTS;
+      if (this.formControlledComponents?.length) {
+        fields = fields.concat(this.formControlledComponents);
+      }
+      return fields;
     },
   },
 
@@ -76,7 +83,7 @@ export default Vue.extend({
     },
     // 对外方法，该方法会触发表单组件错误信息显示
     async validate<T = Record<string, any>>(param?: FormValidateParams): Promise<FormValidateResult<T>> {
-      const { fields, trigger = 'all' } = (param || {});
+      const { fields, trigger = 'all' } = param || {};
       const list = this.children
         .filter((child) => this.isFunction(child.validate) && this.needValidate(child.name, fields))
         .map((child) => child.validate<T>(trigger));
@@ -114,9 +121,7 @@ export default Vue.extend({
         e && e.preventDefault();
         e && e.stopPropagation();
       }
-      this.children
-        .filter((child: any) => this.isFunction(child.resetField))
-        .map((child: any) => child.resetField());
+      this.children.filter((child: any) => this.isFunction(child.resetField)).map((child: any) => child.resetField());
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
     clearValidate(fields?: Array<string>) {
@@ -147,5 +152,4 @@ export default Vue.extend({
       </form>
     );
   },
-
 });

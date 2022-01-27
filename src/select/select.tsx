@@ -41,6 +41,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
   props: { ...props },
   data() {
     return {
+      // Form 表单控制禁用态时的变量
+      formDisabled: undefined,
       isHover: false,
       visible: false,
       searchInput: '',
@@ -60,6 +62,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       hoverIndex: -1,
       popupOpenTime: 250, // popup打开弹出层的延迟时间
       checkScroll: true, // 弹出层执行加宽事件（仅执行一次，且在有滚动条时执行）
+      isInited: false,
     };
   },
   components: {
@@ -82,7 +85,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return [
         `${name}`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
           [`${prefix}-has-prefix`]: this.$scopedSlots.prefixIcon,
@@ -109,6 +112,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
       ];
+    },
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
     },
     showPlaceholder(): boolean {
       if (
@@ -141,7 +147,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return Boolean(
         this.clearable
           && this.isHover
-          && !this.disabled
+          && !this.tDisabled
           && ((!this.multiple && (this.value || this.value === 0))
             || (this.multiple && Array.isArray(this.value) && this.value.length)),
       );
@@ -151,7 +157,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return (
         !this.clearable
         || !this.isHover
-        || this.disabled
+        || this.tDisabled
         || (!this.multiple && !this.value && this.value !== 0)
         || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
       );
@@ -160,10 +166,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.filterable || isFunction(this.filter);
     },
     showLoading(): boolean {
-      return this.loading && !this.disabled;
+      return this.loading && !this.tDisabled;
     },
     showFilter(): boolean {
-      if (this.disabled) return false;
+      if (this.tDisabled) return false;
       if (!this.multiple && this.selectedSingle && this.canFilter) {
         return this.visible;
       }
@@ -264,6 +270,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
     },
     searchInput(val) {
+      if (!val && !this.visible) return;
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
       }
@@ -287,7 +294,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
-      this.visible && Array.isArray(this.hoverOptions) && this.initHoverindex();
     },
   },
   methods: {
@@ -320,10 +326,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     visibleChange(val: boolean) {
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      if (this.focusing && !val) {
-        this.visible = true;
-        return;
-      }
       this.visible = val;
       if (!val) {
         this.searchInput = '';
@@ -369,7 +371,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
       e?.stopPropagation();
-      if (this.disabled) {
+      if (this.tDisabled) {
         return;
       }
       const val = this.value[index];
@@ -464,6 +466,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       switch (e.code) {
         case 'ArrowDown':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex < this.hoverOptions.length - 1) {
             this.hoverIndex += 1;
             this.arrowDownOption();
@@ -473,6 +479,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           break;
         case 'ArrowUp':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex > 0) {
             this.hoverIndex -= 1;
             this.arrowUpOption();
@@ -603,7 +613,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
-              <t-option-group label={groupList.group} divider={groupList.divider}>
+              <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
                 {this.renderOptions(children)}
               </t-option-group>
             );
@@ -657,12 +667,12 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       const emptySlot = this.getEmpty();
       const loadingTextSlot = this.getLoadingText();
       return (
-        <div slot="content">
+        <div slot="content" class={`${name}__dropdown-inner`}>
           {renderTNodeJSX(this, 'panelTopContent')}
           <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
-          {loading && <li class={this.tipsClass}>{loadingTextSlot}</li>}
+          {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
           {!loading && !displayOptions.length && !showCreateOption && <li class={this.emptyClass}>{emptySlot}</li>}
           {!this.hasOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
@@ -677,11 +687,42 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
   },
 
+  updated() {
+    if (this.realOptions.length || this.isInited) return;
+
+    // Parse options from slots before popup, execute only once
+    const children = renderTNodeJSX(this, 'default');
+    if (children) {
+      this.realOptions = parseOptions(children);
+      this.isInited = true;
+    }
+
+    function parseOptions(vnodes: VNode[]): TdOptionProps[] {
+      if (!vnodes) return [];
+      return vnodes.reduce((options, vnode) => {
+        if (vnode.componentOptions.tag === 't-option') {
+          const propsData = vnode.componentOptions.propsData as any;
+          return options.concat({
+            label: propsData.label,
+            value: propsData.value,
+            disabled: propsData.disabled,
+            content: propsData.content,
+            default: propsData.default,
+          });
+        }
+        if (vnode.componentOptions.tag === 't-option-group') {
+          return options.concat(parseOptions(vnode.componentOptions.children));
+        }
+        return options;
+      }, []);
+    }
+  },
+
   render(): VNode {
     const {
       classes,
       popupObject,
-      disabled,
+      tDisabled,
       popClass,
       size,
       showPlaceholder,
@@ -700,7 +741,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           ref="popup"
           visible={this.visible}
           class={`${name}__popup-reference`}
-          disabled={disabled}
+          disabled={tDisabled}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
           {...{ props: { ...popupObject, overlayClassName: popClass } }}
@@ -721,8 +762,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
                     size={size}
-                    closable={!item.disabled && !disabled}
-                    disabled={disabled}
+                    closable={!item.disabled && !tDisabled}
+                    disabled={tDisabled}
                     style="max-width: 100%;"
                     maxWidth="100%"
                     title={get(item, realLabel)}
@@ -755,7 +796,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 v-model={this.searchInput}
                 size={size}
                 placeholder={filterPlaceholder}
-                disabled={disabled}
+                disabled={tDisabled}
                 class={`${name}__input`}
                 readonly={!this.visible || !this.showFilter}
                 onFocus={this.focus}
@@ -764,7 +805,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
               />
             )}
             {this.showRightArrow && !this.showLoading && (
-              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
+              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.tDisabled} />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
             {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
