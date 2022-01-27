@@ -23,7 +23,6 @@ docClass: timeline
   - 分组情况下，无子选项时不展示该分组，搜索过滤无子选项时也不展示该分组
   - 修复键盘交互样式导致初次弹出下拉框选项样式不同的问题，[pr #260](https://github.com/Tencent/tdesign-vue/issues/260)
   - 优化 `stopPropagation` 判断防止偶现报错，[pr #246](https://github.com/Tencent/tdesign-vue/issues/246)
-* Table: 修复配置多级表头展示样式的问题 [#290](https://github.com/Tencent/tdesign-vue/issues/290)，[@realyuyanan](https://github.com/realyuyanan)
 * Input: 修复输入框相关样式重复引入的问题，[pr #182](https://github.com/Tencent/tdesign-common/pull/182)，[@xiaosansiji](https://github.com/xiaosansiji)
 * Form: [pr #310](https://github.com/Tencent/tdesign-vue/pull/310)，[@chaishi](https://github.com/chaishi)
   - 支持对象和数组嵌套的复杂数据校验，同时可以判断是数组的第几项校验不通过，[issue #185](https://github.com/Tencent/tdesign-vue/issues/185)
