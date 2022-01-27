@@ -12,6 +12,10 @@ export default {
   asyncLoading: {
     type: [String, Function] as PropType<TdPrimaryTableProps['asyncLoading']>,
   },
+  /** 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐 */
+  columnController: {
+    type: Object as PropType<TdPrimaryTableProps['columnController']>,
+  },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdPrimaryTableProps['columns']>,
@@ -66,8 +70,6 @@ export default {
   defaultSelectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['defaultSelectedRowKeys']>,
   },
-  /** 【开发中】是否显示 自定义显示列控制器 */
-  showColumnController: Boolean,
   /** 【讨论中-待定】是否显示为通过拖拽图标进行排序 */
   showDragCol: Boolean,
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true` */

@@ -5,6 +5,7 @@
  * */
 
 import { PaginationProps, PageInfo } from '../pagination';
+import { PopupProps } from '../popup';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
@@ -182,10 +183,10 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   colKey?: string;
   /**
-   * 内容超出时，是否显示省略号。值为 true ，则浮层默认显示单元格内容；值类型为 Function 则显示自定义内容
+   * 内容超出时，是否显示省略号。值为 `true`，则浮层默认显示单元格内容；值类型为 `Function` 则显示自定义内容；值类型为 `Object`，则自动透传属性到 Popup 组件
    * @default false
    */
-  ellipsis?: boolean | TNode<BaseTableCellParams<T>>;
+  ellipsis?: boolean | TNode<BaseTableCellParams<T>> | PopupProps;
   /**
    * 固定列显示位置
    * @default left
@@ -215,6 +216,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `loading-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容
    */
   asyncLoading?: 'loading' | 'load-more' | TNode;
+  /**
+   * 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐
+   */
+  columnController?: TableColumnController;
   /**
    * 列配置，泛型 T 指表格数据类型
    * @default []
@@ -277,11 +282,6 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 选中的行，控制属性，非受控属性
    */
   defaultSelectedRowKeys?: Array<string | number>;
-  /**
-   * 【开发中】是否显示 自定义显示列控制器
-   * @default false
-   */
-  showColumnController?: boolean;
   /**
    * 【讨论中-待定】是否显示为通过拖拽图标进行排序
    * @default false
@@ -545,6 +545,11 @@ export interface BaseTableRenderParams<T> extends BaseTableCellParams<T> {
 export type RenderType = 'cell' | 'title';
 
 export type DataType = TableRowData;
+
+export interface TableColumnController {
+  fields: string[];
+  displayType: 'fixed-width' | 'auto-width';
+}
 
 export interface ExpandArrowRenderParams<T> {
   row: T;
