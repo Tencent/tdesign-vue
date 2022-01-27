@@ -18,6 +18,8 @@
   </div>
 </template>
 <script lang="jsx">
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({
@@ -33,6 +35,7 @@ for (let i = 0; i < 5; i++) {
   });
 }
 export default {
+  components: { TTable },
   data() {
     return {
       data,
@@ -69,6 +72,10 @@ export default {
           title: '详情信息',
           width: 200,
           ellipsis: true,
+
+          // 透传省略内容浮层 Popup 组件全部特性，示例代码有效，勿删！！！
+          // ellipsis: { placement: 'top', destroyOnClose: false },
+
           // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
           // ellipsis: (h, {
           //   row, col, rowIndex, colIndex,
@@ -86,17 +93,6 @@ export default {
         defaultPageSize: 10,
         total: 120,
       },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   current: 1,
-      //   pageSize: 10,
-      //   total: 120,
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (pageInfo.current) => {
-      //     this.pagination.current = pageInfo.current;
-      //     this.pagination.pageSize = pageInfo.pageSize;
-      //   },
-      // },
     };
   },
 };
