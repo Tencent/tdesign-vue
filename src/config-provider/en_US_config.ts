@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import { GlobalConfigProvider } from './type';
 
 // 文件有效，为国际化做准备
@@ -121,6 +122,21 @@ const GLOBAL_CONFIG_EN: GlobalConfigProvider = {
   },
   form: {
     requiredMark: true,
+    errorMessage: {
+      date: '${name} is invalid',
+      url: '${name} is invalid',
+      required: '${name} is required',
+      max: '${name} must be at least ${validate} characters',
+      min: '${name} cannot be longer than ${validate} characters',
+      len: '${name} must be exactly ${validate} characters',
+      enum: '${name} must be one of ${validate}',
+      idcard: '${name} is invalid',
+      telnumber: '${name} is invalid',
+      pattern: '${name} is invalid',
+      validator: '${name} is invalid',
+      boolean: '${name} is not a boolean',
+      number: '${name} must be a number',
+    },
   },
   input: {
     placeholder: '',

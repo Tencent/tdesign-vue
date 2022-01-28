@@ -5,6 +5,7 @@
  * */
 
 import { CalendarController } from '../calendar';
+import { FormErrorMessage } from '../form';
 import { ButtonProps } from '../button';
 import { TNode } from '../common';
 
@@ -37,6 +38,10 @@ export interface GlobalConfigProvider {
    * 输入框组件全局配置
    */
   input?: InputConfig;
+  /**
+   * 列表组件全局配置
+   */
+  list?: ListConfig;
   /**
    * 分页组件全局配置
    */
@@ -83,6 +88,18 @@ export interface GlobalConfigProvider {
   upload?: UploadConfig;
 }
 
+export interface TreeConfig {
+  /**
+   * “暂无数据”描述文本
+   * @default '暂无数据'
+   */
+  empty?: string;
+  /**
+   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
+   */
+  folderIcon?: TNode;
+}
+
 export interface InputConfig {
   /**
    * 占位符文本
@@ -91,32 +108,9 @@ export interface InputConfig {
   placeholder?: string;
 }
 
-export interface PaginationConfig {
-  /**
-   * 每页条数文本，示例：`'{ total } / page'`
-   * @default '{size} 条/页'
-   */
-  itemsPerPage?: string;
-  /**
-   * 页码跳转文本，示例：'jump to'
-   * @default '跳至'
-   */
-  jumpTo?: string;
-  /**
-   * “页”文本，示例：'page'
-   * @default '页'
-   */
-  page?: string;
-  /**
-   * 数据总条数文本，示例：`'total { total }'`
-   * @default '共 {total} 项数据'
-   */
-  total?: string;
-}
-
 export interface CalendarConfig {
   /**
-   * 月份描述文本
+   * 语言配置，月份描述文本
    * @default '一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月'
    */
   cellMonth?: string;
@@ -135,47 +129,47 @@ export interface CalendarConfig {
    */
   firstDayOfWeek?: number;
   /**
-   * “隐藏周末”描述文本
+   * 语言配置，“隐藏周末”描述文本
    * @default '隐藏周末'
    */
   hideWeekend?: string;
   /**
-   * 模式切换时的“月”描述文本
+   * 语言配置，模式切换时的“月”描述文本
    * @default '月'
    */
   monthRadio?: string;
   /**
-   * "月"选择描述文本
+   * 语言配置，"月"选择描述文本
    * @default '{month} 月'
    */
   monthSelection?: string;
   /**
-   * “显示周末”描述文本
+   * 语言配置，“显示周末”描述文本
    * @default '显示周末末'
    */
   showWeekend?: string;
   /**
-   * “本月”描述文本
+   * 语言配置，“本月”描述文本
    * @default '本月'
    */
   thisMonth?: string;
   /**
-   * “今天”描述文本
+   * 语言配置，“今天”描述文本
    * @default '今天'
    */
   today?: string;
   /**
-   * 星期描述文本，示例：'周一,周二,周三,周四,周五,周六,周日'
+   * 语言配置，星期描述文本，示例：'周一,周二,周三,周四,周五,周六,周日'
    * @default 一,二,三,四,五,六,日
    */
   week?: string;
   /**
-   * 模式切换时的“年”描述文本
+   * 语言配置，模式切换时的“年”描述文本
    * @default '年'
    */
   yearRadio?: string;
   /**
-   * “年”选择描述文本
+   * 语言配置，“年”选择描述文本
    * @default '{year} 年'
    */
   yearSelection?: string;
@@ -199,50 +193,29 @@ export interface CascaderConfig {
   placeholder?: string;
 }
 
-export interface TransferConfig {
+export interface FormConfig {
   /**
-   * 空数据描述文本
-   * @default '暂无数据'
+   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
    */
-  empty?: string;
+  errorMessage?: FormErrorMessage;
   /**
-   * 占位符描述文本
-   * @default '请输入关键词搜索'
+   * 是否显示必填符号（*），默认显示
+   * @default true
    */
-  placeholder?: string;
-  /**
-   * 穿梭框标题描述文本
-   * @default '{checked} / {total} 项'
-   */
-  title?: string;
+  requiredMark?: boolean;
 }
 
-export interface TimePickerConfig {
+export interface DrawerConfig {
   /**
-   * “上午”描述文本
-   * @default '上午'
+   * “取消”描述文本
+   * @default '取消'
    */
-  anteMeridiem?: string;
+  cancel?: string | ButtonProps;
   /**
-   * “确定”描述文本
-   * @default '确定'
+   * “确认”描述文本
+   * @default '确认'
    */
-  confirm?: string;
-  /**
-   * “此刻”描述文本
-   * @default '此刻'
-   */
-  now?: string;
-  /**
-   * 占位符描述文本
-   * @default '请选择时间'
-   */
-  placeholder?: string;
-  /**
-   * “下午”描述文本
-   * @default '下午'
-   */
-  postMeridiem?: string;
+  confirm?: string | ButtonProps;
 }
 
 export interface DatePickerConfig {
@@ -271,6 +244,11 @@ export interface DatePickerConfig {
    * @default 'YYYY-MM-DD'
    */
   format?: string;
+  /**
+   * “月” 描述文本
+   * @default '月'
+   */
+  monthAriaLabel?: string;
   /**
    * 星期文本描述，默认值：['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
    */
@@ -364,17 +342,34 @@ export interface DialogConfig {
   confirmBtnTheme?: { default: string; info: string; warning: string; danger: string; success: string };
 }
 
-export interface DrawerConfig {
+export interface UploadConfigProgress {
   /**
-   * “取消”描述文本
-   * @default '取消'
+   * 语言配置，“上传失败”文本描述
+   * @default '上传失败'
    */
-  cancel?: string | ButtonProps;
+  failText?: string;
   /**
-   * “确认”描述文本
-   * @default '确认'
+   * 语言配置，“上传成功”文本描述
+   * @default '上传成功'
    */
-  confirm?: string | ButtonProps;
+  successText?: string;
+  /**
+   * 语言配置，“上传中”文本描述
+   * @default '上传中'
+   */
+  uploadingText?: string;
+  /**
+   * 语言配置，“待上传”文本描述
+   * @default '待上传'
+   */
+  waitingText?: string;
+}
+
+export interface StepsConfig {
+  /**
+   * 错误步骤图标，【注意】使用渲染函数输出图标组件
+   */
+  errorIcon?: TNode;
 }
 
 export interface PopconfirmConfig {
@@ -392,22 +387,6 @@ export interface PopconfirmConfig {
    * 确认按钮主题色，即 Popconfirm 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }
    */
   confirmBtnTheme?: { default: string; warning: string; danger: string };
-}
-
-export interface TableConfig {
-  /**
-   * “暂无数据”描述文本
-   * @default '暂无数据'
-   */
-  empty?: string;
-  /**
-   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
-   */
-  expandIcon?: TNode;
-  /**
-   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
-   */
-  sortIcon?: TNode;
 }
 
 export interface SelectConfig {
@@ -432,16 +411,139 @@ export interface SelectConfig {
   placeholder?: string;
 }
 
-export interface TreeConfig {
+export interface PaginationConfig {
   /**
-   * “暂无数据”描述文本
+   * 每页条数文本，示例：`'{ total } / page'`
+   * @default '{size} 条/页'
+   */
+  itemsPerPage?: string;
+  /**
+   * 页码跳转文本，示例：'jump to'
+   * @default '跳至'
+   */
+  jumpTo?: string;
+  /**
+   * “页”文本，示例：'page'
+   * @default '页'
+   */
+  page?: string;
+  /**
+   * 数据总条数文本，示例：`'total { total }'`
+   * @default '共 {total} 项数据'
+   */
+  total?: string;
+}
+
+export interface ListConfig {
+  /**
+   * 语言配置，'点击加载更多' 描述文本
+   * @default '点击加载更多'
+   */
+  loadingMoreText?: string;
+  /**
+   * 语言配置，'正在加载中，请稍后' 描述文本
+   * @default '正在加载中，请稍后'
+   */
+  loadingText?: string;
+}
+
+export interface TableConfig {
+  /**
+   * 语言配置，'暂无数据' 描述文本
    * @default '暂无数据'
    */
   empty?: string;
   /**
-   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
+   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
    */
-  folderIcon?: TNode;
+  expandIcon?: TNode;
+  /**
+   * 语言配置，'输入关键词过滤' 描述文本
+   * @default '输入关键词过滤'
+   */
+  filterInputPlaceholder?: string;
+  /**
+   * 语言配置，'点击加载更多' 描述文本
+   * @default '点击加载更多'
+   */
+  loadingMoreText?: string;
+  /**
+   * 语言配置，'正在加载中，请稍后' 描述文本
+   * @default '正在加载中，请稍后'
+   */
+  loadingText?: string;
+  /**
+   * 语言配置，'点击升序' 描述文本
+   * @default '点击升序'
+   */
+  sortAscendingOperationText?: string;
+  /**
+   * 语言配置，'点击取消排序' 描述文本
+   * @default '点击取消排序'
+   */
+  sortCancelOperationText?: string;
+  /**
+   * 语言配置，'点击降序' 描述文本
+   * @default '点击降序'
+   */
+  sortDescendingOperationText?: string;
+  /**
+   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
+   */
+  sortIcon?: TNode;
+}
+
+export interface TagConfig {
+  /**
+   * 关闭图标，【注意】使用渲染函数输出图标组件
+   */
+  closeIcon?: TNode;
+}
+
+export interface TimePickerConfig {
+  /**
+   * 语言配置，“上午”描述文本
+   * @default '上午'
+   */
+  anteMeridiem?: string;
+  /**
+   * 语言配置，“确定”描述文本
+   * @default '确定'
+   */
+  confirm?: string;
+  /**
+   * 语言配置，“此刻”描述文本
+   * @default '此刻'
+   */
+  now?: string;
+  /**
+   * 语言配置，占位符描述文本
+   * @default '请选择时间'
+   */
+  placeholder?: string;
+  /**
+   * 语言配置，“下午”描述文本
+   * @default '下午'
+   */
+  postMeridiem?: string;
+}
+
+export interface TransferConfig {
+  /**
+   * 空数据描述文本
+   * @default '暂无数据'
+   */
+  empty?: string;
+  /**
+   * 占位符描述文本
+   * @default '请输入关键词搜索'
+   */
+  placeholder?: string;
+  /**
+   * 穿梭框标题描述文本
+   * @default '{checked} / {total} 项'
+   */
+  title?: string;
 }
 
 export interface TreeSelectConfig {
@@ -464,37 +566,77 @@ export interface TreeSelectConfig {
 
 export interface UploadConfig {
   /**
-   * “取消上传” 描述文本
+   * 语言配置，“取消上传” 描述文本
    * @default '取消上传'
    */
   cancelUploadText?: string;
   /**
-   * 文件大小超出限制时提醒文本
+   * 语言配置，拖拽相关。示例：{ dragDropText: '释放图标', draggingText: '拖拽到此区域', clickAndDragText: '点击上方“选择文件”或将文件拖到此区域' }
+   */
+  dragger?: UploadConfigDragger;
+  /**
+   * 语言配置，文件信息相关。示例：{  fileNameText: '文件名', fileSizeText: '文件尺寸', fileStatusText: '状态', fileOperationText: '操作', fileOperationDateText: '上传日期' }
+   */
+  file?: UploadConfigFileList;
+  /**
+   * 语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }
+   */
+  progress?: UploadConfigProgress;
+  /**
+   * 语言配置，文件大小超出限制时提醒文本
    * @default '文件大小不能超过 {sizeLimit}'
    */
   sizeLimitMessage?: string;
+  /**
+   * 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }
+   */
+  triggerUploadText?: UploadTriggerUploadText;
 }
 
-export interface FormConfig {
+export interface UploadConfigDragger {
   /**
-   * 是否显示必填符号，默认显示
-   * @default true
+   * 语言配置，'点击上方“选择文件”或将文件拖到此区域' 描述文本
+   * @default '点击上方“选择文件”或将文件拖到此区域'
    */
-  requiredMark?: boolean;
+  clickAndDragText?: string;
+  /**
+   * 语言配置，'释放图标' 描述文本
+   * @default '释放图标'
+   */
+  dragDropText?: string;
+  /**
+   * 语言配置，'拖拽到此区域' 描述文本
+   * @default '拖拽到此区域'
+   */
+  draggingText?: string;
 }
 
-export interface TagConfig {
+export interface UploadConfigFileList {
   /**
-   * 关闭图标，【注意】使用渲染函数输出图标组件
+   * 语言配置，'文件名' 描述文本
+   * @default '文件名'
    */
-  closeIcon?: TNode;
-}
-
-export interface StepsConfig {
+  fileNameText?: string;
   /**
-   * 错误步骤图标，【注意】使用渲染函数输出图标组件
+   * 语言配置，'上传日期' 描述文本
+   * @default '上传日期'
    */
-  errorIcon?: TNode;
+  fileOperationDateText?: string;
+  /**
+   * 语言配置，'操作' 描述文本
+   * @default '操作'
+   */
+  fileOperationText?: string;
+  /**
+   * 语言配置，'文件尺寸' 描述文本
+   * @default '文件尺寸'
+   */
+  fileSizeText?: string;
+  /**
+   * 语言配置，'状态' 描述文本
+   * @default '状态'
+   */
+  fileStatusText?: string;
 }
 
 export interface ConfigPresetDate {
@@ -502,3 +644,11 @@ export interface ConfigPresetDate {
 }
 
 export type DateConfigValue = string | Date | Array<DateConfigValue>;
+
+export interface UploadTriggerUploadText {
+  image?: string;
+  normal?: string;
+  fileInput?: string;
+  reupload?: string;
+  delete?: string;
+}
