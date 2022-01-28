@@ -61,20 +61,20 @@ export default function useFixed(props: TdBaseTableProps) {
   const setColumnsStickyLeftAndRight = (tableContentElm: HTMLElement) => {
     if (!tableContentElm) return;
     // t-table__content -> table -> tr -> th
-    const tr = tableContentElm.querySelectorAll('thead.t-table__header > tr > th');
+    const tr: NodeListOf<HTMLElement> = tableContentElm.querySelectorAll('thead.t-table__header > tr > th');
     const stickyLeft: number[] = [0];
     const stickyRight: number[] = [0];
     if (tr?.length) {
       const len = tr.length;
       for (let i = 1; i < len; i++) {
         if (props.columns[i].fixed !== 'left') break;
-        const width = tr[i - 1].clientWidth;
+        const width = tr[i - 1].offsetWidth;
         const left = stickyLeft[i - 1] + width;
         stickyLeft.push(left);
       }
       for (let i = len - 2; i >= 0; i--) {
         if (props.columns[i].fixed !== 'right') break;
-        const width = tr[i + 1].clientWidth;
+        const width = tr[i + 1].offsetWidth;
         const left = stickyRight[len - (i + 2)] + width;
         stickyRight.push(left);
       }

@@ -16,6 +16,12 @@ export const TABLE_CLASS_STRIPED = `${prefix}-table--striped`;
 export const TABLE_CLASS_HOVER = `${prefix}-table--hoverable`;
 export const TABLE_CLASS_HEADER_FIXED = `${prefix}-table__header--fixed`;
 
+export const TAVLE_CLASS_VERTICAL_ALIGN = {
+  top: `${prefix}-vertical-align-top`,
+  middle: `${prefix}-vertical-align-middle`,
+  bottom: `${prefix}-vertical-align-bottom`,
+};
+
 export const TABLE_CLASS_COLUMN_FIXED = {
   left: `${prefix}-table__cell--fixed-left`,
   right: `${prefix}-table__cell--fixed-right`,
@@ -62,13 +68,18 @@ export default function useStyle(props: TdBaseTableProps) {
     },
   ]);
 
-  const tableContentHeightStyles = computed<Styles>(() => ({
+  const tableContentStyles = computed<Styles>(() => ({
     height: formatCSSUnit(props.height),
     maxHeight: formatCSSUnit(props.maxHeight),
   }));
 
+  const tableElementStyles = computed<Styles>(() => ({
+    width: formatCSSUnit(props.tableContentWidth),
+  }));
+
   return {
     tableClasses,
-    tableContentHeightStyles,
+    tableElementStyles,
+    tableContentStyles,
   };
 }

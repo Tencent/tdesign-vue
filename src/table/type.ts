@@ -95,6 +95,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   stripe?: boolean;
   /**
+   * 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示
+   * @default ''
+   */
+  tableContentWidth?: string;
+  /**
    * 表格布局方式
    * @default fixed
    */

@@ -20,9 +20,9 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdBaseTableProps, context: SetupContext) {
-    const { columns } = toRefs(props);
+    const { columns, tableLayout, tableContentWidth } = toRefs(props);
     // 表格基础样式类
-    const { tableClasses, tableContentHeightStyles } = useStyle(props);
+    const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
     const {
       tableContentRef,
@@ -61,11 +61,12 @@ export default defineComponent({
 
     onMounted(updateStatus);
 
-    watch(columns, updateStatus);
+    watch([columns, tableLayout, tableContentWidth], updateStatus);
 
     return {
       baseTableClasses,
-      tableContentHeightStyles,
+      tableContentStyles,
+      tableElementStyles,
       renderTableHeader,
       renderTableBody,
       renderColgroup,
@@ -84,10 +85,10 @@ export default defineComponent({
         <div
           ref="tableContentRef"
           class={TABLE_CLASS_CONTENT}
-          style={this.tableContentHeightStyles}
+          style={this.tableContentStyles}
           onScroll={this.onTableContentScroll}
         >
-          <table class={TABLE_CLASS_LAYOUT[this.tableLayout]}>
+          <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
             {this.renderColgroup()}
             {this.renderTableHeader({
               isFixedHeader: this.isFixedHeader,

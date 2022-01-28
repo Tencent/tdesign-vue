@@ -82,6 +82,11 @@ export default {
   },
   /** 是否显示斑马纹 */
   stripe: Boolean,
+  /** 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示 */
+  tableContentWidth: {
+    type: String,
+    default: '',
+  },
   /** 表格布局方式 */
   tableLayout: {
     type: String as PropType<TdBaseTableProps['tableLayout']>,

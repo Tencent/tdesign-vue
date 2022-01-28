@@ -7,11 +7,12 @@
       </t-radio-group>
     </div>
     <br /><br />
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。 -->
     <t-table
       rowKey="index"
       :data="data"
       :columns="columns"
-      :height="250"
+      :max-height="250"
       :table-layout="tableLayout"
       bordered
     ></t-table>

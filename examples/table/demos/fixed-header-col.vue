@@ -1,9 +1,28 @@
 <template>
-  <t-table rowKey="index" :data="data" :columns="columns" height="200" bordered>
-    <template #operation="slotProps">
-      <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
-    </template>
-  </t-table>
+  <!-- 父元素宽度不能超过 100% -->
+  <div class="tdesign-demo-block-column" style="width: 100%">
+    <div>
+      <t-radio-group v-model="tableLayout" variant="default-filled">
+        <t-radio-button value="fixed">table-layout: fixed</t-radio-button>
+        <t-radio-button value="auto">table-layout: auto</t-radio-button>
+      </t-radio-group>
+    </div>
+
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。 -->
+    <t-table
+      rowKey="index"
+      :data="data"
+      :columns="columns"
+      :table-layout="tableLayout"
+      :table-content-width="tableLayout === 'fixed' ? undefined : '1600px'"
+      height="300"
+      bordered
+    >
+      <template #operation="slotProps">
+        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
+      </template>
+    </t-table>
+  </div>
 </template>
 <script>
 import TTable from '../../../src/table/base-table';
@@ -26,6 +45,7 @@ export default {
   components: { TTable },
   data() {
     return {
+      tableLayout: 'fixed',
       data,
       columns: [
         {
@@ -39,7 +59,6 @@ export default {
           colKey: 'platform',
           title: '平台',
           width: 100,
-          fixed: 'left',
         },
         {
           colKey: 'type',
@@ -65,7 +84,6 @@ export default {
           colKey: 'needed',
           title: '是否必传',
           width: 150,
-          fixed: 'right',
         },
         {
           colKey: 'operation',
