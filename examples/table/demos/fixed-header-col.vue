@@ -1,17 +1,13 @@
 <template>
-  <t-table
-    rowKey="index"
-    :data="data"
-    :columns="columns"
-    height="200"
-    bordered
-  >
+  <t-table rowKey="index" :data="data" :columns="columns" height="200" bordered>
     <template #operation="slotProps">
       <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
     </template>
   </t-table>
 </template>
 <script>
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 20; i++) {
   data.push({
@@ -27,6 +23,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 export default {
+  components: { TTable },
   data() {
     return {
       data,

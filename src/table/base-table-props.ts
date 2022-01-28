@@ -34,7 +34,6 @@ export default {
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,
-    default: 'auto',
   },
   /** 是否显示鼠标悬浮状态 */
   hover: Boolean,

@@ -5,6 +5,7 @@
       <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
+      <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
     </div>
 
     <t-table
@@ -14,6 +15,7 @@
       :stripe="stripe"
       :bordered="bordered"
       :hover="hover"
+      :table-layout="tableLayout ? 'auto' : 'fixed'"
     ></t-table>
   </div>
 </template>
@@ -39,6 +41,7 @@ export default {
   data() {
     return {
       data,
+      tableLayout: false,
       stripe: true,
       bordered: true,
       hover: false,

@@ -7,10 +7,19 @@
       </t-radio-group>
     </div>
     <br /><br />
-    <t-table rowKey="index" :data="data" :columns="columns" :height="200" :table-layout="tableLayout"></t-table>
+    <t-table
+      rowKey="index"
+      :data="data"
+      :columns="columns"
+      :height="250"
+      :table-layout="tableLayout"
+      bordered
+    ></t-table>
   </div>
 </template>
 <script>
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 20; i++) {
   data.push({
@@ -26,6 +35,8 @@ for (let i = 0; i < 20; i++) {
   });
 }
 export default {
+  components: { TTable },
+
   data() {
     return {
       tableLayout: 'fixed',

@@ -43,7 +43,6 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   firstFullRow?: string | TNode;
   /**
    * 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`
-   * @default 'auto'
    */
   height?: string | number;
   /**

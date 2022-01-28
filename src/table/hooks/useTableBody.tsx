@@ -4,12 +4,19 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { TABLE_CLASS_BODY, TABLE_TD_ELLIPSIS_CLASS } from './useStyle';
 import { TdBaseTableProps, BaseTableCellParams, TableRowData } from '../type';
+import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
 // import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
 
 export interface RenderEllipsisCellParams {
   columnLength: number;
   cellNode: any;
+}
+
+export interface RenderTableBodyParams {
+  // 固定列 left/right 具体值
+  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  showColumnShadow: { left: boolean; right: boolean };
 }
 
 export default function useTableBody(props: TdBaseTableProps, context: SetupContext) {
@@ -44,34 +51,45 @@ export default function useTableBody(props: TdBaseTableProps, context: SetupCont
     );
   };
 
-  const tableBody = (
-    <tbody class={TABLE_CLASS_BODY}>
-      {props.data?.map((row, rowIndex) => {
-        const columnLength = props.columns.length;
-        return (
-          <tr>
-            {props.columns.map((col, colIndex) => {
-              const cellNode = renderCell({
-                row, col, rowIndex, colIndex,
-              });
-              const classes = { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis };
-              return (
-                <td class={classes}>
-                  {col.ellipsis
-                    ? renderEllipsisCell({
-                      row, rowIndex, col, colIndex,
-                    }, { cellNode, columnLength })
-                    : cellNode}
-                </td>
-              );
-            })}
-          </tr>
-        );
-      })}
-    </tbody>
-  );
+  const renderTableBody = ({ columnStickyLeftAndRight }: RenderTableBodyParams) => {
+    const columnLength = props.columns.length;
+    return (
+      <tbody class={TABLE_CLASS_BODY}>
+        {props.data?.map((row, rowIndex) => (
+            <tr>
+              {props.columns.map((col, colIndex) => {
+                const cellNode = renderCell({
+                  row,
+                  col,
+                  rowIndex,
+                  colIndex,
+                });
+                const tdStyles = getColumnFixedStyles(col, colIndex, columnStickyLeftAndRight, columnLength);
+                const classes = [tdStyles.classes, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
+                return (
+                  <td class={classes} style={tdStyles.style}>
+                    {col.ellipsis
+                      ? renderEllipsisCell(
+                        {
+                          row,
+                          rowIndex,
+                          col,
+                          colIndex,
+                        },
+                        { cellNode, columnLength },
+                      )
+                      : cellNode}
+                  </td>
+                );
+              })}
+            </tr>
+        ))}
+      </tbody>
+    );
+  };
 
   return {
-    tableBody,
+    renderCell,
+    renderTableBody,
   };
 }

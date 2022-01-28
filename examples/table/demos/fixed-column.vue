@@ -14,12 +14,7 @@
       </t-radio-group>
     </div>
 
-    <t-table
-      :data="data"
-      :columns="columns"
-      rowKey="index"
-      bordered
-    >
+    <t-table :data="data" :columns="columns" rowKey="index" bordered>
       <template #operation="slotProps">
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
       </template>
@@ -27,6 +22,8 @@
   </div>
 </template>
 <script>
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({
@@ -42,6 +39,8 @@ for (let i = 0; i < 5; i++) {
   });
 }
 export default {
+  components: { TTable },
+
   data() {
     return {
       data,
