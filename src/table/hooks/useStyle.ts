@@ -38,6 +38,7 @@ export const TABLE_CLASS_LAYOUT = {
 
 export const TABLE_CLASS_ALIGN = {
   top: `${prefix}-table-table--align-top`,
+  middle: `${prefix}-table-table--align-middle`,
   bottom: `${prefix}-table-table--align-bottom`,
 };
 
@@ -52,7 +53,7 @@ export const TABEL_CLASSNAMES = {
 };
 
 export function formatCSSUnit(unit: string | number) {
-  if (unit === undefined) return unit;
+  if (!unit) return unit;
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 

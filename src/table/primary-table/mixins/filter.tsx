@@ -82,7 +82,7 @@ export default Vue.extend({
 
   methods: {
     updateTableWidth() {
-      if (!this.$el) return;
+      if (!this.$el || typeof this.$el?.querySelector !== 'function') return;
       const tbody = this.$el?.querySelector(`.${prefix}-table__body`);
       if (tbody) {
         this.tableWidth = tbody.clientWidth;

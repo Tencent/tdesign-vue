@@ -14,16 +14,16 @@ export interface RenderTableHeaderParams {
 
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
   const renderTitle = (col: TdBaseTableProps['columns'][0], index: number) => {
+    const params = { col, colIndex: index };
     if (isFunction(col.title)) {
-      return col.title(h, { col, colIndex: index });
+      return col.title(h, params);
     }
     if (isString(col.title) && context.slots[col.title]) {
-      return context.slots[col.title];
+      return context.slots[col.title](params);
     }
     if (isFunction(col.render)) {
       return col.render(h, {
-        col,
-        colIndex: index,
+        ...params,
         type: 'title',
         row: {},
         rowIndex: -1,

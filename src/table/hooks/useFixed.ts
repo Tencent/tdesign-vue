@@ -1,5 +1,5 @@
 import {
-  ref, reactive, onMounted, onUpdated, computed,
+  ref, reactive, onMounted, watch, computed, toRefs,
 } from '@vue/composition-api';
 import { ClassName, Styles } from '../../common';
 import { TdBaseTableProps } from '../type';
@@ -37,6 +37,7 @@ export function getColumnFixedStyles(
 }
 
 export default function useFixed(props: TdBaseTableProps) {
+  const { columns, tableLayout, tableContentWidth } = toRefs(props);
   const tableContentRef = ref();
   const isFixedHeader = ref(false);
   const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>({ right: [], left: [] });
@@ -49,6 +50,7 @@ export default function useFixed(props: TdBaseTableProps) {
 
   const setIsFixedHeader = () => {
     const timer = setTimeout(() => {
+      if (!tableContentRef.value) return;
       isFixedHeader.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
       clearTimeout(timer);
     }, 0);
@@ -96,9 +98,24 @@ export default function useFixed(props: TdBaseTableProps) {
     updateColumnFixedStatus(target);
   };
 
-  onMounted(setIsFixedHeader);
+  const updateFixedStatus = () => {
+    const timer = setTimeout(() => {
+      if (isFixedColumn.value) {
+        updateColumnFixedStatus(tableContentRef.value);
+        setColumnsStickyLeftAndRight(tableContentRef.value);
+        clearTimeout(timer);
+      }
+    }, 0);
+    return () => {
+      clearTimeout(timer);
+    };
+  };
 
-  onUpdated(setIsFixedHeader);
+  watch([columns, tableLayout, tableContentWidth], updateFixedStatus);
+
+  onMounted(updateFixedStatus);
+
+  onMounted(setIsFixedHeader);
 
   return {
     isFixedHeader,
