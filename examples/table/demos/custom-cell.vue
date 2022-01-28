@@ -1,10 +1,8 @@
 <template>
   <div>
-    <t-table :data="data" :columns="columns" rowKey="property">
+    <t-table :data="data" :columns="columns" rowKey="property" verticalAlign="top">
       <!-- 插槽方式 自定义单元格：cell 的值为插槽名称，参数有：{col, colIndex, row, rowIndex}  -->
-      <template #type-slot-name="{ col, row }">
-        {{ row[col.colKey] }}
-      </template>
+      <template #type-slot-name="{ col, row }"> 自定义插槽名称：{{ row[col.colKey] }} </template>
 
       <!-- 插槽方式 自定义单元格， colKey 的值默认为插槽名称  -->
       <template #platform="{ row }">
@@ -47,7 +45,7 @@ export default {
           title: '类型',
           // type-slot-name 会被用于自定义单元格的插槽名称
           cell: 'type-slot-name',
-          width: 100,
+          width: 200,
         },
         {
           // 没有 cell 的情况下， platform 会被用作自定义单元格的插槽名称
@@ -59,7 +57,7 @@ export default {
           colKey: 'property',
           title: '属性名',
           cell: (h, { col, row }) => <div>使用 cell 方法自定义单元格：{row[col.colKey]}</div>,
-          width: 290,
+          width: 270,
         },
         {
           colKey: 'description',

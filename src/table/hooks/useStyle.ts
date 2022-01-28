@@ -37,9 +37,9 @@ export const TABLE_CLASS_LAYOUT = {
 };
 
 export const TABLE_CLASS_ALIGN = {
-  top: `${prefix}-table-table--align-top`,
-  middle: `${prefix}-table-table--align-middle`,
-  bottom: `${prefix}-table-table--align-bottom`,
+  top: `${prefix}-table--align-top`,
+  middle: `${prefix}-table--align-middle`,
+  bottom: `${prefix}-table--align-bottom`,
 };
 
 export const TABLE_TD_ELLIPSIS_CLASS = `${prefix}-table-td--ellipsis`;
