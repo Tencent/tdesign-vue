@@ -63,7 +63,9 @@ export default defineComponent({
       return (
         <TPopup
           content={this.popupContent || (() => cellNode)}
-          destroyOnClose={true}
+          destroyOnClose={false}
+          zIndex={1}
+          attach={() => this.root}
           placement={this.placement}
           props={this.popupProps}
         >
