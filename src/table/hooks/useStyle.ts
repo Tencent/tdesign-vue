@@ -15,6 +15,7 @@ export const TABLE_CLASS_BORDERED = `${prefix}-table--bordered`;
 export const TABLE_CLASS_STRIPED = `${prefix}-table--striped`;
 export const TABLE_CLASS_HOVER = `${prefix}-table--hoverable`;
 export const TABLE_CLASS_HEADER_FIXED = `${prefix}-table__header--fixed`;
+export const TABLE_CLASS_FOOTER_FIXED = `${prefix}-table__footer--fixed`;
 
 export const TAVLE_CLASS_VERTICAL_ALIGN = {
   top: `${prefix}-vertical-align-top`,

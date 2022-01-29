@@ -95,7 +95,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   stripe?: boolean;
   /**
-   * 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示
+   * 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度
    * @default ''
    */
   tableContentWidth?: string;
@@ -196,6 +196,10 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    * @default left
    */
   fixed?: 'left' | 'right';
+  /**
+   * 自定义底部内容。值类型为 Function 表示以函数形式渲染底部内容。值类型为 string 表示使用插槽渲染，插槽名称为 `foot` 的值
+   */
+  foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
    * 列最小宽度
    */

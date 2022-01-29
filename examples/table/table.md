@@ -23,7 +23,7 @@ rowspanAndColspan | Function | - | 用于自定义合并单元格，泛型 T 指
 scroll | Object | - | 懒加载和虚拟滚动。TS 类型：`TableScroll` | N
 size | String | medium | 表格尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 stripe | Boolean | false | 是否显示斑马纹 | N
-tableContentWidth | String | - | 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示 | N
+tableContentWidth | String | - | 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度 | N
 tableLayout | String | fixed | 表格布局方式。可选项：auto/fixed | N
 topContent | String / Slot / Function | - | 表格顶部内容，可以用于自定义列设置等。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 verticalAlign | String | middle | 行内容上下方向对齐。可选项：top/middle/bottom | N
@@ -67,6 +67,7 @@ className | String / Object / Array / Function | - | 列类名，值类型是 Fu
 colKey | String | - | 渲染列所需字段 | N
 ellipsis | Boolean / Object / Slot / Function | false | 内容超出时，是否显示省略号。值为 `true`，则浮层默认显示单元格内容；值类型为 `Function` 则显示自定义内容；值类型为 `Object`，则自动透传属性到 Popup 组件。TS 类型：`boolean | TNode<BaseTableCellParams<T>> | PopupProps`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 fixed | String | left | 固定列显示位置。可选项：left/right | N
+foot | String / Function | - | 自定义底部内容。值类型为 Function 表示以函数形式渲染底部内容。值类型为 string 表示使用插槽渲染，插槽名称为 `foot` 的值。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 minWidth | String / Number | - | 列最小宽度 | N
 render | Function | - | 自定义表头或单元格，泛型 T 指表格数据类型。TS 类型：`TNode<BaseTableRenderParams<T>>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 title | String / Function | - | 自定义表头渲染。值类型为 Function 表示以函数形式渲染表头。值类型为 string 表示使用插槽渲染，插槽名称为 title 的值。优先级高于 render。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N

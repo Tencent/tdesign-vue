@@ -2,6 +2,7 @@ import { computed, defineComponent, SetupContext } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
+import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
 import useStyle, {
   TABLE_CLASS_CONTENT,
@@ -37,6 +38,7 @@ export default defineComponent({
     } = useFixed(props);
     const { renderTableHeader, renderColgroup } = useTableHeader(props, context);
     const { renderTableBody } = useTableBody(props, context);
+    const { renderTableFooter } = useTableFooter(props, context);
 
     const baseTableClasses = computed(() => [
       tableClasses.value,
@@ -50,9 +52,10 @@ export default defineComponent({
       baseTableClasses,
       tableContentStyles,
       tableElementStyles,
+      renderColgroup,
       renderTableHeader,
       renderTableBody,
-      renderColgroup,
+      renderTableFooter,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
@@ -80,6 +83,10 @@ export default defineComponent({
             {this.renderTableBody({
               columnStickyLeftAndRight: this.columnStickyLeftAndRight,
               showColumnShadow: this.showColumnShadow,
+            })}
+            {this.renderTableFooter({
+              isFixedHeader: this.isFixedHeader,
+              columnStickyLeftAndRight: this.columnStickyLeftAndRight,
             })}
           </table>
         </div>
