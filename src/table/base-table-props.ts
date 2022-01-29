@@ -31,6 +31,10 @@ export default {
   firstFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['firstFullRow']>,
   },
+  /** 固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行 */
+  fixedRows: {
+    type: Array as PropType<TdBaseTableProps['fixedRows']>,
+  },
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,
@@ -64,7 +68,7 @@ export default {
     default: '',
     required: true,
   },
-  /** 用于自定义合并单元格，泛型 T 指表格数据类型 */
+  /** 用于自定义合并单元格，支持对象和函数两种数据类型，泛型 T 指表格数据类型。<br />示例一：`{ 1: { colspan: 9 } }`，表示第 2 行跨 9 列。<br />示例二：`{ 0: { colspan: 'full' } }`，表示第 1 行通栏显示。<br /> 示例三：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`。<br />如果是 `footer`，示例：`{ footer: { colspan: 'full' } }` */
   rowspanAndColspan: {
     type: Function as PropType<TdBaseTableProps['rowspanAndColspan']>,
   },

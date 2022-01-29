@@ -23,6 +23,13 @@ export const TAVLE_CLASS_VERTICAL_ALIGN = {
   bottom: `${prefix}-vertical-align-bottom`,
 };
 
+export const TABLE_CLASS_ROW_FIXED = {
+  top: `${prefix}-table__row--fixed-top`,
+  bottom: `${prefix}-table__row--fixed-bottom`,
+  firstBottom: `${prefix}-table__row--fixed-bottom-first`,
+  withoutBorderBottom: `${prefix}-table__row--without-border-bottom`,
+};
+
 export const TABLE_CLASS_COLUMN_FIXED = {
   left: `${prefix}-table__cell--fixed-left`,
   right: `${prefix}-table__cell--fixed-right`,

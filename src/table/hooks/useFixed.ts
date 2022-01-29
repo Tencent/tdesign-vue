@@ -3,11 +3,16 @@ import {
 } from '@vue/composition-api';
 import { ClassName, Styles } from '../../common';
 import { TdBaseTableProps } from '../type';
-import { TABLE_CLASS_COLUMN_FIXED } from './useStyle';
+import { TABLE_CLASS_COLUMN_FIXED, TABLE_CLASS_ROW_FIXED } from './useStyle';
+
+// 固定行的数量不得超过 70 - 50 = 20
+const FIXED_ROW_MAX_Z_INDEX = 70;
 
 export interface ColumnStickyLeftAndRight {
   left: number[];
   right: number[];
+  top: number[];
+  bottom?: number[];
 }
 
 // 固定列相关类名处理
@@ -36,13 +41,56 @@ export function getColumnFixedStyles(
   };
 }
 
+// 固定行相关类名处理
+export function getRowFixedStyles(
+  rowIndex: number,
+  columnStickyLeftAndRight: ColumnStickyLeftAndRight,
+  rowLength: number,
+  fixedRows: TdBaseTableProps['fixedRows'],
+): { style: Styles; classes: ClassName } {
+  if (!fixedRows || !fixedRows.length) return { style: undefined, classes: undefined };
+  const pos = columnStickyLeftAndRight;
+  const fixedTop = rowIndex < fixedRows[0];
+  const fixedBottom = rowIndex > rowLength - 1 - fixedRows[1];
+  const firstFixedBottomRow = rowLength - pos.bottom.length + 1;
+  const rowClasses = {
+    [TABLE_CLASS_ROW_FIXED.top]: fixedTop,
+    [TABLE_CLASS_ROW_FIXED.bottom]: fixedBottom,
+    [TABLE_CLASS_ROW_FIXED.firstBottom]: rowIndex === firstFixedBottomRow,
+    [TABLE_CLASS_ROW_FIXED.withoutBorderBottom]: rowIndex === firstFixedBottomRow - 1,
+  };
+  let zIndex = FIXED_ROW_MAX_Z_INDEX;
+  if (fixedTop) {
+    zIndex = FIXED_ROW_MAX_Z_INDEX - rowIndex;
+  } else if (fixedBottom) {
+    zIndex = FIXED_ROW_MAX_Z_INDEX - rowIndex + 1;
+  }
+  const rowStyles = {
+    top: fixedTop ? pos.top[rowIndex + 1] && `${pos.top[rowIndex + 1]}px` : undefined,
+    bottom: fixedBottom ? `${pos.bottom[rowLength - rowIndex]}px` : undefined,
+    zIndex,
+  };
+  return {
+    style: rowStyles,
+    classes: rowClasses,
+  };
+}
+
+const defaultStickyPositions: ColumnStickyLeftAndRight = {
+  right: [],
+  left: [],
+  top: [],
+  bottom: [],
+};
+
 export default function useFixed(props: TdBaseTableProps) {
   const {
-    data, columns, tableLayout, tableContentWidth,
+    data, columns, tableLayout, tableContentWidth, fixedRows,
   } = toRefs(props);
   const tableContentRef = ref();
+  const tableRef = ref();
   const isFixedHeader = ref(false);
-  const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>({ right: [], left: [] });
+  const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>(defaultStickyPositions);
   const showColumnShadow = reactive({
     left: false,
     right: false,
@@ -61,32 +109,82 @@ export default function useFixed(props: TdBaseTableProps) {
     };
   };
 
-  // 左侧或右侧固定列需要计算位置（left/right）
-  const setColumnsStickyLeftAndRight = (tableContentElm: HTMLElement) => {
+  // 此处不使用 querySelectorAll 是为了保证获取到绝对直接子节点，不影响子孙节点
+  const getThNodeList = (tableContentElm: HTMLElement): HTMLElement[] => {
     if (!tableContentElm) return;
-    // t-table__content -> table -> tr -> th
-    const tr: NodeListOf<HTMLElement> = tableContentElm.querySelectorAll('thead.t-table__header > tr > th');
-    const stickyLeft: number[] = [0];
-    const stickyRight: number[] = [0];
-    if (tr?.length) {
-      const len = tr.length;
+    const thArr: HTMLElement[] = [];
+    const tableChildren = tableContentElm.children[0]?.children;
+    for (let i = 0, len = tableChildren.length; i < len; i++) {
+      if (tableChildren[i].tagName.toLowerCase() === 'thead') {
+        const trChildren = tableChildren[i].children[0].children;
+        for (let j = 0, trLen = trChildren.length; j < trLen; j++) {
+          thArr.push(trChildren[j] as HTMLElement);
+        }
+        break;
+      }
+    }
+    return thArr;
+  };
+
+  const getTrNodeList = (tableContentElm: HTMLElement): HTMLElement[] => {
+    if (!tableContentElm) return;
+    const trArr: HTMLElement[] = [];
+    const tableChildren = tableContentElm.children[0]?.children;
+    for (let i = 0, len = tableChildren.length; i < len; i++) {
+      if (['thead', 'tbody', 'tfoot'].includes(tableChildren[i].tagName.toLowerCase())) {
+        const trs = tableChildren[i].children;
+        for (let j = 0, trLen = trs.length; j < trLen; j++) {
+          trArr.push(trs[j] as HTMLElement);
+        }
+      }
+    }
+    return trArr;
+  };
+
+  // 左侧或右侧固定列需要计算位置（left/right）
+  const setColumnsStickyLeftAndRight = (tableContentElm: HTMLElement): ColumnStickyLeftAndRight => {
+    if (!tableContentElm) return;
+    const stickyPos: ColumnStickyLeftAndRight = {
+      left: [0],
+      top: [0],
+      right: [0],
+      bottom: [0],
+    };
+    // 固定列
+    const thList: HTMLElement[] = getThNodeList(tableContentElm);
+    if (isFixedColumn && thList?.length) {
+      const len = thList.length;
       for (let i = 1; i < len; i++) {
         if (props.columns[i].fixed !== 'left') break;
-        const width = tr[i - 1].offsetWidth;
-        const left = stickyLeft[i - 1] + width;
-        stickyLeft.push(left);
+        const width = thList[i - 1].offsetWidth;
+        const left = stickyPos.left[i - 1] + width;
+        stickyPos.left.push(left);
       }
       for (let i = len - 2; i >= 0; i--) {
         if (props.columns[i].fixed !== 'right') break;
-        const width = tr[i + 1].offsetWidth;
-        const left = stickyRight[len - (i + 2)] + width;
-        stickyRight.push(left);
+        const width = thList[i + 1].offsetWidth;
+        const left = stickyPos.right[len - (i + 2)] + width;
+        stickyPos.right.push(left);
       }
     }
-    columnStickyLeftAndRight.value = {
-      left: stickyLeft,
-      right: stickyRight,
-    };
+
+    // 冻结行
+    const trList = getTrNodeList(tableContentElm);
+    if (props.fixedRows?.length && trList?.length) {
+      for (let i = 1; i <= props.fixedRows[0]; i++) {
+        const height = trList[i - 1].offsetHeight;
+        const top = (stickyPos.top[i - 1] || 0) + height;
+        stickyPos.top.push(top);
+      }
+      const len = trList.length;
+      const min = len - 1 - props.fixedRows[1];
+      for (let i = len - 2; i >= min; i--) {
+        const height = trList[i + 1].offsetHeight;
+        const bottom = (stickyPos.bottom[len - (i + 2)] || 0) + height;
+        stickyPos.bottom.push(bottom);
+      }
+    }
+    columnStickyLeftAndRight.value = stickyPos;
   };
 
   const updateColumnFixedStatus = (target: HTMLElement) => {
@@ -104,16 +202,18 @@ export default function useFixed(props: TdBaseTableProps) {
     const timer = setTimeout(() => {
       if (isFixedColumn.value) {
         updateColumnFixedStatus(tableContentRef.value);
-        setColumnsStickyLeftAndRight(tableContentRef.value);
-        clearTimeout(timer);
       }
+      if (isFixedColumn.value || props.fixedRows?.length) {
+        setColumnsStickyLeftAndRight(tableContentRef.value);
+      }
+      clearTimeout(timer);
     }, 0);
     return () => {
       clearTimeout(timer);
     };
   };
 
-  watch([data, columns, tableLayout, tableContentWidth], updateFixedStatus);
+  watch([data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows], updateFixedStatus);
 
   onMounted(updateFixedStatus);
 
@@ -121,6 +221,7 @@ export default function useFixed(props: TdBaseTableProps) {
 
   return {
     isFixedHeader,
+    tableRef,
     tableContentRef,
     isFixedColumn,
     columnStickyLeftAndRight,

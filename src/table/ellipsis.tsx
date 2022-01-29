@@ -31,6 +31,7 @@ export default defineComponent({
     placement: String as PropType<PopupProps['placement']>,
     /** 透传 Popup 组件属性 */
     popupProps: Object as PropType<PopupProps>,
+    zIndex: Number,
   },
 
   setup() {
@@ -64,7 +65,7 @@ export default defineComponent({
         <TPopup
           content={this.popupContent || (() => cellNode)}
           destroyOnClose={false}
-          zIndex={1}
+          zIndex={this.zIndex || 1}
           attach={() => this.root}
           placement={this.placement}
           props={this.popupProps}

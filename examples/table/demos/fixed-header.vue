@@ -7,13 +7,17 @@
       </t-radio-group>
     </div>
     <br /><br />
-    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。 -->
+    <div><t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox></div>
+    <br /><br />
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。需同时设置 table-content-width -->
+    <!-- fixedRows: [2, 2] 表示冻结表头的两行，和表尾的两行 -->
     <t-table
       rowKey="index"
       :data="data"
       :columns="columns"
-      :max-height="320"
       :table-layout="tableLayout"
+      :max-height="fixedTopAndBottomRows ? 500 : 300"
+      :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
       bordered
     ></t-table>
   </div>
@@ -41,6 +45,8 @@ export default {
   data() {
     return {
       tableLayout: 'fixed',
+      // 是否冻结首尾两行
+      fixedTopAndBottomRows: false,
       data,
       columns: [
         {
@@ -58,7 +64,7 @@ export default {
         {
           colKey: 'default',
           title: '默认值',
-          foot: '[](4)',
+          foot: '-',
         },
         {
           colKey: 'needed',

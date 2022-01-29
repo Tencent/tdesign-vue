@@ -6,7 +6,7 @@ import upperFirst from 'lodash/upperFirst';
 import { TABLE_CLASS_BODY, TABLE_TD_ELLIPSIS_CLASS, TAVLE_CLASS_VERTICAL_ALIGN } from './useStyle';
 import { BaseTableCellParams, TableRowData } from '../type';
 import { BaseTableProps } from '../interface';
-import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
+import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } from './useFixed';
 // import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
 
@@ -60,6 +60,7 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
     // 最后一个元素，底部有对齐，避免信息右侧超出父元素
     const placement = colIndex === columnLength - 1 ? 'bottom-right' : 'bottom-left';
     const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
+
     return (
       <TEllipsis
         placement={placement}
@@ -86,8 +87,9 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
           context.emit(`row-${eventName}`, p);
         };
       });
+      const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, props.data.length, props.fixedRows);
       const trNode = (
-        <tr on={trListeners}>
+        <tr on={trListeners} style={trStyles.style} class={trStyles.classes}>
           {props.columns.map((col, colIndex) => {
             const params = {
               row,

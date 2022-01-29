@@ -29,6 +29,7 @@ export default defineComponent({
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
     const {
+      tableRef,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
@@ -49,6 +50,7 @@ export default defineComponent({
     ]);
 
     return {
+      tableRef,
       baseTableClasses,
       tableContentStyles,
       tableElementStyles,
@@ -67,7 +69,7 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={this.baseTableClasses}>
+      <div ref="tableRef" class={this.baseTableClasses}>
         <div
           ref="tableContentRef"
           class={TABLE_CLASS_CONTENT}

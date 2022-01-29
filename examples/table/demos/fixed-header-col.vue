@@ -8,14 +8,18 @@
       </t-radio-group>
     </div>
 
-    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。 -->
+    <div><t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox></div>
+
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。需同时设置 table-content-width -->
+    <!-- fixedRows: [2, 2] 表示冻结表头的两行，和表尾的两行 -->
     <t-table
       rowKey="index"
       :data="data"
       :columns="columns"
       :table-layout="tableLayout"
       :table-content-width="tableLayout === 'fixed' ? undefined : '1600px'"
-      height="300"
+      :max-height="fixedTopAndBottomRows ? 500 : 300"
+      :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
       bordered
     >
       <template #operation="slotProps">
@@ -45,6 +49,7 @@ export default {
   components: { TTable },
   data() {
     return {
+      fixedTopAndBottomRows: false,
       tableLayout: 'fixed',
       data,
       columns: [
@@ -72,7 +77,7 @@ export default {
           colKey: 'default',
           title: '默认值',
           width: 150,
-          foot: '[](4)',
+          foot: '-',
         },
         {
           colKey: 'detail.postion',
