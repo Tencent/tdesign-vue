@@ -37,7 +37,9 @@ export function getColumnFixedStyles(
 }
 
 export default function useFixed(props: TdBaseTableProps) {
-  const { columns, tableLayout, tableContentWidth } = toRefs(props);
+  const {
+    data, columns, tableLayout, tableContentWidth,
+  } = toRefs(props);
   const tableContentRef = ref();
   const isFixedHeader = ref(false);
   const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>({ right: [], left: [] });
@@ -111,7 +113,7 @@ export default function useFixed(props: TdBaseTableProps) {
     };
   };
 
-  watch([columns, tableLayout, tableContentWidth], updateFixedStatus);
+  watch([data, columns, tableLayout, tableContentWidth], updateFixedStatus);
 
   onMounted(updateFixedStatus);
 

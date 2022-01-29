@@ -45,19 +45,16 @@ export default {
           title: '类型',
           // type-slot-name 会被用于自定义单元格的插槽名称
           cell: 'type-slot-name',
-          width: 200,
         },
         {
           // 没有 cell 的情况下， platform 会被用作自定义单元格的插槽名称
           colKey: 'platform',
           title: '平台',
-          width: 80,
         },
         {
           colKey: 'property',
           title: '属性名',
           cell: (h, { col, row }) => <div>使用 cell 方法自定义单元格：{row[col.colKey]}</div>,
-          width: 270,
         },
         {
           colKey: 'description',
@@ -67,7 +64,6 @@ export default {
             if (type === 'title') return 'render';
             return `render 方法渲染单元格: ${rowIndex}-${colIndex}`;
           },
-          width: 235,
         },
       ],
     };

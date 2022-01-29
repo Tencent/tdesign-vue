@@ -42,7 +42,7 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
     if (isFunction(col.cell)) {
       return col.cell(h, params);
     }
-    if (isString(col.cell) && context.slots[col.colKey]) {
+    if (context.slots[col.colKey]) {
       return context.slots[col.colKey](params);
     }
     if (isString(col.cell) && context.slots[col.cell]) {
@@ -90,7 +90,10 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
         <tr on={trListeners}>
           {props.columns.map((col, colIndex) => {
             const params = {
-              row, rowIndex, col, colIndex,
+              row,
+              rowIndex,
+              col,
+              colIndex,
             };
             const cellNode = renderCell(params);
             const tdStyles = getColumnFixedStyles(col, colIndex, columnStickyLeftAndRight, columnLength);
