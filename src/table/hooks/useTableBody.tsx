@@ -3,10 +3,13 @@ import get from 'lodash/get';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
+import { prefix } from '../../config';
 import { TABLE_CLASS_BODY, TABLE_TD_ELLIPSIS_CLASS, TAVLE_CLASS_VERTICAL_ALIGN } from './useStyle';
-import { BaseTableCellParams, TableRowData } from '../type';
+import { BaseTableCellParams, TableRowData, TdBaseTableProps } from '../type';
 import { BaseTableProps } from '../interface';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } from './useFixed';
+import { useTNodeJSX } from '../../hooks/tnode';
 // import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
 
@@ -72,6 +75,16 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
     );
   };
 
+  const getFullRow = (fullRow: TdBaseTableProps['firstFullRow'], type: 'first-full-row' | 'last-full-row') => {
+    if (!fullRow) return null;
+    const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
+    return (
+      <tr class={classes}>
+        <td colspan={props.columns.length}>{useTNodeJSX(camelCase(type))}</td>
+      </tr>
+    );
+  };
+
   const renderTableBody = ({ columnStickyLeftAndRight }: RenderTableBodyParams) => {
     const columnLength = props.columns.length;
     const trNodeList: JSX.Element[] = [];
@@ -120,7 +133,13 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
         trNodeList.push(props.renderExpandedRow({ row, index: rowIndex }));
       }
     });
-    return <tbody class={tbodyClases.value}>{trNodeList}</tbody>;
+    return (
+      <tbody class={tbodyClases.value}>
+        {getFullRow(props.firstFullRow, 'first-full-row')}
+        {trNodeList}
+        {getFullRow(props.lastFullRow, 'last-full-row')}
+      </tbody>
+    );
   };
 
   return {

@@ -85,7 +85,7 @@ const defaultStickyPositions: ColumnStickyLeftAndRight = {
 
 export default function useFixed(props: TdBaseTableProps) {
   const {
-    data, columns, tableLayout, tableContentWidth, fixedRows,
+    data, columns, tableLayout, tableContentWidth, fixedRows, firstFullRow, lastFullRow,
   } = toRefs(props);
   const tableContentRef = ref();
   const tableRef = ref();
@@ -213,7 +213,10 @@ export default function useFixed(props: TdBaseTableProps) {
     };
   };
 
-  watch([data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows], updateFixedStatus);
+  watch(
+    [data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow],
+    updateFixedStatus,
+  );
 
   onMounted(updateFixedStatus);
 
