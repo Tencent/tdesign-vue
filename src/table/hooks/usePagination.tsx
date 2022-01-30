@@ -20,7 +20,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
   });
 
   // 是否开启本地数据分页
-  const isPaginateData = computed(() => Boolean(!props.disableDataSort && pagination && props.data.length > pageSize.value));
+  const isPaginateData = computed(() => Boolean(!props.disablePageData && pagination && props.data.length > pageSize.value));
 
   const dataSource = computed(() => {
     // data 数据数量超出分页大小时，则自动启动数据分页

@@ -20,8 +20,8 @@ export default {
     type: Array as PropType<TdBaseTableProps['data']>,
     default: (): TdBaseTableProps['data'] => [],
   },
-  /** 是否禁用本地数据排序。当 `data` 数据长度超过分页大小时，会自动进行本地数据排序。如果 `disabledDataSort` 设置为 true，则无论何时，都不会进行本地排序 */
-  disableDataSort: Boolean,
+  /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disablePageData` 设置为 true，则无论何时，都不会进行本地数据分页 */
+  disablePageData: Boolean,
   /** 空表格呈现样式 */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
