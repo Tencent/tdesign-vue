@@ -78,10 +78,12 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
 
   const getFullRow = (fullRow: TdBaseTableProps['firstFullRow'], type: 'first-full-row' | 'last-full-row') => {
     if (!fullRow) return null;
+    const fullRowNode = useTNodeJSX(camelCase(type));
+    if (['', null, undefined, false].includes(fullRowNode)) return null;
     const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
     return (
       <tr class={classes}>
-        <td colspan={props.columns.length}>{useTNodeJSX(camelCase(type))}</td>
+        <td colspan={props.columns.length}>{fullRowNode}</td>
       </tr>
     );
   };

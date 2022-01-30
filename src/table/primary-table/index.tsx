@@ -82,6 +82,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         this.handleExpandChange(params.row);
       };
     }
+    const hasLastFullRow = this.lastFullRow || this.$scopedSlots.lastFullRow || this.asyncLoading || this.$scopedSlots.asyncLoading;
     const baseTableProps = {
       props: {
         ...$props,
@@ -93,7 +94,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         },
         // this.hasFilterCondition is from mixins/filter.tsx
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
-        lastFullRow: this.renderLastFullRow,
+        lastFullRow: hasLastFullRow ? this.renderLastFullRow : undefined,
         empty: this.empty,
       },
       scopedSlots,
