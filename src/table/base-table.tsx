@@ -1,9 +1,12 @@
-import { computed, defineComponent, SetupContext } from '@vue/composition-api';
+import {
+  computed, defineComponent, SetupContext, h,
+} from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
 import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
+import usePagination from './hooks/usePagination';
 import useStyle, {
   TABLE_CLASS_CONTENT,
   TABLE_CLASS_LAYOUT,
@@ -40,6 +43,7 @@ export default defineComponent({
     const { renderTableHeader, renderColgroup } = useTableHeader(props, context);
     const { renderTableBody } = useTableBody(props, context);
     const { renderTableFooter } = useTableFooter(props, context);
+    const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     const baseTableClasses = computed(() => [
       tableClasses.value,
@@ -64,6 +68,9 @@ export default defineComponent({
       columnStickyLeftAndRight,
       showColumnShadow,
       onTableContentScroll,
+      isPaginateData,
+      dataSource,
+      renderPagination,
     };
   },
 
@@ -85,6 +92,7 @@ export default defineComponent({
             {this.renderTableBody({
               columnStickyLeftAndRight: this.columnStickyLeftAndRight,
               showColumnShadow: this.showColumnShadow,
+              data: this.isPaginateData ? this.dataSource : this.data,
             })}
             {this.renderTableFooter({
               isFixedHeader: this.isFixedHeader,
@@ -92,6 +100,7 @@ export default defineComponent({
             })}
           </table>
         </div>
+        {this.renderPagination(h)}
       </div>
     );
   },

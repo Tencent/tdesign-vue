@@ -19,6 +19,7 @@ export interface RenderEllipsisCellParams {
 }
 
 export interface RenderTableBodyParams {
+  data: TdBaseTableProps['data'];
   // 固定列 left/right 具体值
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   showColumnShadow: { left: boolean; right: boolean };
@@ -85,10 +86,10 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
     );
   };
 
-  const renderTableBody = ({ columnStickyLeftAndRight }: RenderTableBodyParams) => {
+  const renderTableBody = ({ columnStickyLeftAndRight, data }: RenderTableBodyParams) => {
     const columnLength = props.columns.length;
     const trNodeList: JSX.Element[] = [];
-    props.data?.forEach((row, rowIndex) => {
+    data?.forEach((row, rowIndex) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row
       Object.keys(ROW_LISTENERS).forEach((eventName) => {
@@ -100,7 +101,7 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
           context.emit(`row-${eventName}`, p);
         };
       });
-      const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, props.data.length, props.fixedRows);
+      const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
       const trNode = (
         <tr on={trListeners} style={trStyles.style} class={trStyles.classes}>
           {props.columns.map((col, colIndex) => {
