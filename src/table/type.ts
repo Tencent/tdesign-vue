@@ -28,10 +28,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   data?: Array<T>;
   /**
-   * 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disablePageData` 设置为 true，则无论何时，都不会进行本地数据分页
+   * 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页
    * @default false
    */
-  disablePageData?: boolean;
+  disableDataPage?: boolean;
   /**
    * 空表格呈现样式
    * @default ''
@@ -68,7 +68,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   maxHeight?: string | number;
   /**
-   * 分页配置，值为空则不显示。具体 API 参考分页组件
+   * 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。
    */
   pagination?: PaginationProps;
   /**
@@ -300,11 +300,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   showDragCol?: boolean;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
    */
   sort?: TableSort;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`，非受控属性
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性
    */
   defaultSort?: TableSort;
   /**

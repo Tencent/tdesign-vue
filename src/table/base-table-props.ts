@@ -20,8 +20,8 @@ export default {
     type: Array as PropType<TdBaseTableProps['data']>,
     default: (): TdBaseTableProps['data'] => [],
   },
-  /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disablePageData` 设置为 true，则无论何时，都不会进行本地数据分页 */
-  disablePageData: Boolean,
+  /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 */
+  disableDataPage: Boolean,
   /** 空表格呈现样式 */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
@@ -54,7 +54,7 @@ export default {
   maxHeight: {
     type: [String, Number] as PropType<TdBaseTableProps['maxHeight']>,
   },
-  /** 分页配置，值为空则不显示。具体 API 参考分页组件 */
+  /** 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。 */
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },

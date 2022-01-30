@@ -1,7 +1,7 @@
 import { SetupContext, h } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
-import { TdBaseTableProps } from '../type';
+import { TdPrimaryTableProps } from '../type';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
 import { formatCSSUnit, TABLE_CLASS_HEADER, TABLE_CLASS_HEADER_FIXED } from './useStyle';
 
@@ -12,9 +12,11 @@ export interface RenderTableHeaderParams {
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
 }
 
-export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
-  const renderTitle = (col: TdBaseTableProps['columns'][0], index: number) => {
+export default function useTableHeader(props: TdPrimaryTableProps, context: SetupContext) {
+  const renderTitle = (col: TdPrimaryTableProps['columns'][0], index: number) => {
     const params = { col, colIndex: index };
+    // 表头不需要渲染单选按钮
+    if (col.colKey === 'row-select' && col.type === 'single') return null;
     if (isFunction(col.title)) {
       return col.title(h, params);
     }

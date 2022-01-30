@@ -56,6 +56,7 @@ export default Vue.extend({
           ...c,
           ...(isSelection
             ? {
+              ...c,
               render: (h, slotProps: Record<string, any>): VNode => this.renderSelectCell({
                 column: c,
                 ...slotProps,
@@ -79,14 +80,16 @@ export default Vue.extend({
 
     // render
     renderSelectCell({ column = {}, row = {}, rowIndex }: Record<string, any>): VNode {
+      const checked = this.selectedRowKeys.includes(get(row, this.reRowKey));
+      const disabled = typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled;
       const selectBoxProps = {
         props: {
-          checked: this.selectedRowKeys.includes(get(row, this.reRowKey)),
+          checked,
           ...column,
           type: column.type,
           checkProps:
             typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
-          disabled: typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled,
+          disabled,
           rowIndex,
         },
         on: {

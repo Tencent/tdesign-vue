@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, h,
+  computed, defineComponent, SetupContext, h, PropType,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -15,6 +15,7 @@ import useStyle, {
   TABLE_ROOT_CLASS_COLUMN_FIXED,
 } from './hooks/useStyle';
 import { BaseTableProps } from './interface';
+import { useTNodeJSX } from '../hooks/tnode';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -25,6 +26,7 @@ export default defineComponent({
      * 以下属性为非公开属性，请勿在业务中使用
      */
     renderExpandedRow: Function,
+    selectedRowKeys: Array as PropType<Array<string | number>>,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
@@ -77,6 +79,7 @@ export default defineComponent({
   render() {
     return (
       <div ref="tableRef" class={this.baseTableClasses}>
+        {useTNodeJSX('topContent')}
         <div
           ref="tableContentRef"
           class={TABLE_CLASS_CONTENT}

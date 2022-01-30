@@ -104,8 +104,15 @@ export default function useTableBody(props: BaseTableProps, context: SetupContex
         };
       });
       const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
+      // 自定义行类名
+      let customClasses = isFunction(props.rowClassName) ? props.rowClassName({ row, rowIndex }) : props.rowClassName;
+      // { 1: 't-row-custom-class-name' } 设置第 2 行的类名为 t-row-custom-class-name
+      if (typeof customClasses === 'object' && customClasses[rowIndex]) {
+        customClasses = customClasses[rowIndex];
+      }
+      const classes = [trStyles.classes, customClasses];
       const trNode = (
-        <tr on={trListeners} style={trStyles.style} class={trStyles.classes}>
+        <tr on={trListeners} style={trStyles.style} class={classes}>
           {props.columns.map((col, colIndex) => {
             const params = {
               row,

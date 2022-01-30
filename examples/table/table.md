@@ -8,7 +8,7 @@
 bordered | Boolean | false | 是否显示表格边框 | N
 columns | Array | [] | 列配置，泛型 T 指表格数据类型。TS 类型：`Array<BaseTableCol<T>>` | N
 data | Array | [] | 数据源，泛型 T 指表格数据类型。TS 类型：`Array<T>` | N
-disablePageData | Boolean | false | 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disablePageData` 设置为 true，则无论何时，都不会进行本地数据分页 | N
+disableDataPage | Boolean | false | 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 | N
 empty | String / Slot / Function | '' | 空表格呈现样式。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 firstFullRow | String / Slot / Function | - | 首行内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 fixedRows | Array | - | 固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行。TS 类型：`Array<number>` | N
@@ -17,7 +17,7 @@ hover | Boolean | false | 是否显示鼠标悬浮状态 | N
 lastFullRow | String / Slot / Function | - | 尾行内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loading | Boolean / Slot / Function | false | 加载中状态。值为 true 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。TS 类型：`boolean | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 maxHeight | String / Number | - | 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px | N
-pagination | Object | - | 分页配置，值为空则不显示。具体 API 参考分页组件。TS 类型：`PaginationProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+pagination | Object | - | 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。。TS 类型：`PaginationProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 rowClassName | String / Object / Array / Function | - | 行类名，泛型 T 指表格数据类型。TS 类型：`ClassName | ((params: { row: T; rowIndex: number }) => ClassName)`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 rowKey | String | - | 必需。使用 rowKey 唯一标识一行数据 | Y
 rowspanAndColspan | Function | - | 用于自定义合并单元格，支持对象和函数两种数据类型，泛型 T 指表格数据类型。<br />示例一：`{ 1: { colspan: 9 } }`，表示第 2 行跨 9 列。<br />示例二：`{ 0: { colspan: 'full' } }`，表示第 1 行通栏显示。<br /> 示例三：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`。<br />如果是 `footer`，示例：`{ footer: { colspan: 'full' } }`。TS 类型：`TableRowspanAndColspan`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
@@ -95,8 +95,8 @@ multipleSort | Boolean | false | 是否支持多列排序 | N
 selectedRowKeys | Array | - | 选中的行，控制属性。支持语法糖 `.sync`。TS 类型：`Array<string | number>` | N
 defaultSelectedRowKeys | Array | - | 选中的行，控制属性。非受控属性。TS 类型：`Array<string | number>` | N
 showDragCol | Boolean | false | 【讨论中-待定】是否显示为通过拖拽图标进行排序 | N
-sort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`。支持语法糖 `.sync`。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
-defaultSort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`。非受控属性。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+sort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。支持语法糖 `.sync`。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+defaultSort | Object / Array | - | 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。非受控属性。TS 类型：`TableSort`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 sortOnRowDraggable | Boolean | false | 允许表格行拖拽时排序 | N
 `Omit<BaseTableProps<T>, 'columns'>` | - | - | 继承 `Omit<BaseTableProps<T>, 'columns'>` 中的全部 API | N
 onAsyncLoadingClick | Function |  | TS 类型：`(context: { status: 'loading' | 'load-more' }) => void`<br/>异步加载区域被点击时触发 | N
