@@ -4,6 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { LoadingProps } from '../loading';
 import { PaginationProps, PageInfo } from '../pagination';
 import { PopupProps } from '../popup';
 import { CheckboxProps } from '../checkbox';
@@ -63,6 +64,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default false
    */
   loading?: boolean | TNode;
+  /**
+   * 透传加载组件全部属性
+   */
+  loadingProps?: LoadingProps;
   /**
    * 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px
    */

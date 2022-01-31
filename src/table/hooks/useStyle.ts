@@ -5,6 +5,8 @@ import { ClassName, Styles } from '../../common';
 import { SIZE_CLASSNAMES } from '../../utils/classnames';
 
 export const TABLE_CLASS = `${prefix}-table`;
+export const TABLE_CLASS_EMPTY = `${prefix}-table__empty`;
+export const TABLE_CLASS_EMPTY_ROW = `${prefix}-table__empty-row`;
 export const TABLE_ROOT_CLASS_HEADER_FIXED = `${prefix}-table--header-fixed`;
 export const TABLE_ROOT_CLASS_COLUMN_FIXED = `${prefix}-table--column-fixed`;
 export const TABLE_CLASS_CONTENT = `${prefix}-table__content`;

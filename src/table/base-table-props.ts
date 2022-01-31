@@ -50,6 +50,10 @@ export default {
     type: [Boolean, Function] as PropType<TdBaseTableProps['loading']>,
     default: false,
   },
+  /** 透传加载组件全部属性 */
+  loadingProps: {
+    type: Object as PropType<TdBaseTableProps['loadingProps']>,
+  },
   /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px */
   maxHeight: {
     type: [String, Number] as PropType<TdBaseTableProps['maxHeight']>,

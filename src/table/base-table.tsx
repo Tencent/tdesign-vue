@@ -7,6 +7,9 @@ import useTableBody from './hooks/useTableBody';
 import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
+import Loading from '../loading';
+import { BaseTableProps } from './interface';
+import { useTNodeJSX } from '../hooks/tnode';
 import useStyle, {
   TABLE_CLASS_CONTENT,
   TABLE_CLASS_LAYOUT,
@@ -14,8 +17,6 @@ import useStyle, {
   TABLE_ROOT_CLASS_HEADER_FIXED,
   TABLE_ROOT_CLASS_COLUMN_FIXED,
 } from './hooks/useStyle';
-import { BaseTableProps } from './interface';
-import { useTNodeJSX } from '../hooks/tnode';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -73,36 +74,50 @@ export default defineComponent({
       isPaginateData,
       dataSource,
       renderPagination,
+      slots: context.slots,
     };
   },
 
   render() {
+    const tableContent = (
+      <div
+        ref="tableContentRef"
+        class={TABLE_CLASS_CONTENT}
+        style={this.tableContentStyles}
+        onScroll={this.onTableContentScroll}
+      >
+        <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
+          {this.renderColgroup()}
+          {this.renderTableHeader({
+            isFixedHeader: this.isFixedHeader,
+            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+          })}
+          {this.renderTableBody({
+            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            showColumnShadow: this.showColumnShadow,
+            data: this.isPaginateData ? this.dataSource : this.data,
+          })}
+          {this.renderTableFooter({
+            isFixedHeader: this.isFixedHeader,
+            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+          })}
+        </table>
+      </div>
+    );
+
+    const customLoadingText = useTNodeJSX('loading', { slots: this.slots });
+    const loadingContent = this.loading ? (
+      <Loading loading={!!this.loading} showOverlay text={() => customLoadingText} props={this.loadingProps}>
+        {tableContent}
+      </Loading>
+    ) : (
+      tableContent
+    );
+
     return (
       <div ref="tableRef" class={this.baseTableClasses}>
-        {useTNodeJSX('topContent')}
-        <div
-          ref="tableContentRef"
-          class={TABLE_CLASS_CONTENT}
-          style={this.tableContentStyles}
-          onScroll={this.onTableContentScroll}
-        >
-          <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
-            {this.renderColgroup()}
-            {this.renderTableHeader({
-              isFixedHeader: this.isFixedHeader,
-              columnStickyLeftAndRight: this.columnStickyLeftAndRight,
-            })}
-            {this.renderTableBody({
-              columnStickyLeftAndRight: this.columnStickyLeftAndRight,
-              showColumnShadow: this.showColumnShadow,
-              data: this.isPaginateData ? this.dataSource : this.data,
-            })}
-            {this.renderTableFooter({
-              isFixedHeader: this.isFixedHeader,
-              columnStickyLeftAndRight: this.columnStickyLeftAndRight,
-            })}
-          </table>
-        </div>
+        {useTNodeJSX('topContent', { slots: this.slots })}
+        {loadingContent}
         {this.renderPagination(h)}
       </div>
     );

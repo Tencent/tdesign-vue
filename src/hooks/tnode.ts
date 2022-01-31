@@ -1,6 +1,13 @@
-import { getCurrentInstance, h } from '@vue/composition-api';
+import { getCurrentInstance, SetupContext, h } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import log from '../_common/js/log';
+
+export interface UseTNodeJSXOptions<T> {
+  // 因 getCurrentInstance 无法获取到插槽信息，所以需要 slots 参数
+  slots: SetupContext['slots'];
+  defaultNode?: string | JSX.Element;
+  params?: T;
+}
 
 /**
  * 通过 JSX 的方式渲染 TNode，props 和 插槽同时处理，也能处理默认值为 true 则渲染默认节点的情况
@@ -12,25 +19,23 @@ import log from '../_common/js/log';
  * @example useTNodeJSX('closeBtn')  优先级 props function 大于 插槽
  * @example useTNodeJSX('closeBtn', { defaultNode: <close-icon />, params })。 params 为渲染节点时所需的参数
  */
-export function useTNodeJSX<T>(name: string, options?: { defaultNode?: JSX.Element; params: T }) {
+export function useTNodeJSX<T>(name: string, options?: UseTNodeJSXOptions<T>) {
   const vm = getCurrentInstance();
-  // 插槽和属性同时存在，则提醒用户只需要选择一种方式即可
-  if (vm.slots[name] && vm.props[name] && vm.props[name] !== true) {
+  const slotNode = vm.slots[name] || options.slots[name];
+  const propsNode = vm.props[name];
+  // 同名插槽和属性同时存在，则提醒用户只需要选择一种方式即可
+  if (slotNode && vm.props[name] && vm.props[name] !== true) {
     log.warn('', `Both slots.${name} and $props.${name} exist, $props.${name} is preferred`);
   }
-  const propsNode = vm.props[name];
   // props 值为 false，则表示无论何种情况都不显示元素
   if (propsNode === false) return null;
+  if (propsNode === true) return slotNode?.(options?.params) || options?.defaultNode;
   // props 值类型为 Function，则表示使用渲染函数输出
   if (isFunction(propsNode)) return propsNode(h, options?.params);
-  // props 值为 true，使用插槽渲染，如果插槽不存在，则使用默认节点 defaultNode 渲染
-  if (propsNode === true && options?.defaultNode) {
-    return vm.slots[name] ? vm.slots[name](options?.params) : options?.defaultNode;
-  }
   // props 为其他数据类型，只要不为空，则直接输出
   if (!['', undefined, null].includes(String(propsNode))) return propsNode;
   // 兜底输出插槽内容
-  return vm.slots[name]?.(options?.params) || options?.defaultNode;
+  return slotNode?.(options?.params) || options?.defaultNode;
 }
 
 export default useTNodeJSX;
