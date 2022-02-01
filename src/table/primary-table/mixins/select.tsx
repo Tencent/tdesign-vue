@@ -17,6 +17,7 @@ export default Vue.extend({
     data: baseTableProps.data,
     rowKey: baseTableProps.rowKey,
     selectedRowKeys: primaryTableProps.selectedRowKeys,
+    expandedRow: primaryTableProps.expandedRow,
   },
   computed: {
     reRowKey(): string {
@@ -52,11 +53,14 @@ export default Vue.extend({
         const isSelection = ['multiple', 'single'].includes(c.type);
         const isMultiple = c.type === 'multiple';
         const title = isMultiple ? this.getSelectedHeader() : '';
+        const minWidth = this.expandedRow ? 40 : 64;
         return {
           ...c,
           ...(isSelection
             ? {
+              className: `${prefix}-table__cell--selectable`,
               ...c,
+              width: Math.max(minWidth, parseInt(String(c.width), 10)),
               render: (h, slotProps: Record<string, any>): VNode => this.renderSelectCell({
                 column: c,
                 ...slotProps,
