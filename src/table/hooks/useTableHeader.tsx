@@ -1,6 +1,7 @@
 import { SetupContext, h, computed } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
+import { prefix } from '../../config';
 import { TdBaseTableProps } from '../type';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
 import {
@@ -8,6 +9,8 @@ import {
   TABLE_CLASS_HEADER,
   TABLE_CLASS_HEADER_FIXED,
   TABLE_CLASS_HEADER_TH_BORDERED,
+  TABLE_CLASS_BORDERED,
+  TABLE_CLASS_HEADER_MULTIPLE,
 } from './useStyle';
 import { TableColums, getThRowspanAndColspan, getThList } from './useMultiHeader';
 
@@ -60,14 +63,20 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         }
         const thStyles = getColumnFixedStyles(col, index, columnStickyLeftAndRight, columnLength);
         const colParams = {
-          col, colIndex: index, row: {}, rowIndex: -1,
+          col,
+          colIndex: index,
+          row: {},
+          rowIndex: -1,
         };
         const customClasses = isFunction(col.className) ? col.className({ ...colParams, type: 'th' }) : col.className;
         const thClasses = [
           thStyles.classes,
           customClasses,
-          // 受 rowspan 影响，部分 tr > th:first-child 需要补足左边框
-          { [TABLE_CLASS_HEADER_TH_BORDERED]: thBorderMap.get(col) },
+          {
+            // 受 rowspan 影响，部分 tr > th:first-child 需要补足左边框
+            [TABLE_CLASS_HEADER_TH_BORDERED]: thBorderMap.get(col),
+            [`${prefix}-table__th-${col.colKey}`]: col.colKey,
+          },
         ];
         return (
           <th class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
@@ -80,7 +89,15 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   };
 
   const renderTableHeader = ({ isFixedHeader, columnStickyLeftAndRight }: RenderTableHeaderParams) => {
-    const theadClasses = [TABLE_CLASS_HEADER, { [TABLE_CLASS_HEADER_FIXED]: isFixedHeader }];
+    const isMultipleHeader = thList.value.length > 1;
+    const theadClasses = [
+      TABLE_CLASS_HEADER,
+      {
+        [TABLE_CLASS_HEADER_FIXED]: isFixedHeader,
+        [TABLE_CLASS_BORDERED]: isMultipleHeader,
+        [TABLE_CLASS_HEADER_MULTIPLE]: isMultipleHeader,
+      },
+    ];
     return (
       <thead ref="theadRef" class={theadClasses}>
         {renderThNodeList(columnStickyLeftAndRight)}

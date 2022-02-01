@@ -279,6 +279,9 @@ export default Vue.extend({
             </div>
           );
         }
+        if (column.children?.length) {
+          column.children = [...this.getFilterColumns(column.children)];
+        }
         return column;
       });
     },

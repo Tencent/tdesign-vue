@@ -19,6 +19,8 @@ export const TABLE_CLASS_STRIPED = `${prefix}-table--striped`;
 export const TABLE_CLASS_HOVER = `${prefix}-table--hoverable`;
 export const TABLE_CLASS_HEADER_FIXED = `${prefix}-table__header--fixed`;
 export const TABLE_CLASS_FOOTER_FIXED = `${prefix}-table__footer--fixed`;
+// 多级表头类名
+export const TABLE_CLASS_HEADER_MULTIPLE = `${prefix}-table__header--multiple`;
 
 export const TAVLE_CLASS_VERTICAL_ALIGN = {
   top: `${prefix}-vertical-align-top`,

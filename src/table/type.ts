@@ -88,7 +88,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
    * 用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`
    */
-  rowspanAndColspan?: TableRowspanAndColspanFunc;
+  rowspanAndColspan?: TableRowspanAndColspanFunc<T>;
   /**
    * 懒加载和虚拟滚动
    */
@@ -513,18 +513,11 @@ export interface TableScroll {
   type: 'lazy' | 'virtual';
 }
 
-export type TableRowspanAndColspanFunc = (params: RowspanAndColspanParams<T>) => RowspanColspan;
+export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;
 
 export interface RowspanColspan {
   colspan?: number;
   rowspan?: number;
-}
-
-export interface RowspanAndColspanParams<T> {
-  row: T;
-  col: BaseTableCol;
-  rowIndex: number;
-  colIndex: number;
 }
 
 export interface BaseTableCellEventContext<T> {

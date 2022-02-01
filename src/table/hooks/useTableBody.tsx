@@ -12,7 +12,9 @@ import {
   TABLE_CLASS_EMPTY,
   TABLE_CLASS_EMPTY_ROW,
 } from './useStyle';
-import { BaseTableCellParams, TableRowData, TdBaseTableProps } from '../type';
+import {
+  BaseTableCellParams, RowspanColspan, TableRowData, TdBaseTableProps,
+} from '../type';
 import { BaseTableProps } from '../interface';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } from './useFixed';
 import { useTNodeJSX } from '../../hooks/tnode';
@@ -30,6 +32,12 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   showColumnShadow: { left: boolean; right: boolean };
+}
+
+export interface RenderTdExtra {
+  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  columnLength: number;
+  cellSpans: RowspanColspan;
 }
 
 export const ROW_LISTENERS = {
@@ -107,21 +115,66 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     </tr>
   );
 
-  const renderTableBody = ({ columnStickyLeftAndRight, data, columns }: RenderTableBodyParams) => {
+  const setSkippedCell = (
+    skipSpansMap: Map<any, boolean>,
+    { rowIndex, colIndex }: BaseTableCellParams<TableRowData>,
+    cellSpans: RowspanColspan,
+  ) => {
+    if (!cellSpans.rowspan && !cellSpans.colspan) return;
+    const maxRowIndex = rowIndex + (cellSpans.rowspan || 1);
+    const maxColIndex = colIndex + (cellSpans.colspan || 1);
+    for (let i = rowIndex; i < maxRowIndex; i++) {
+      for (let j = colIndex; j < maxColIndex; j++) {
+        if (i !== rowIndex || j !== colIndex) {
+          skipSpansMap.set([i, j].join(), true);
+        }
+      }
+    }
+  };
+
+  const renderTd = (params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) => {
+    const { col, colIndex } = params;
+    const { columnLength, cellSpans } = extra;
+    const cellNode = renderCell(params);
+    const tdStyles = getColumnFixedStyles(col, colIndex, extra.columnStickyLeftAndRight, columnLength);
+    const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
+    const classes = [tdStyles.classes, customClasses, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
+    // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};
+    const onClick = (e: MouseEvent) => {
+      const p = { ...params, e };
+      props.onCellClick?.(p);
+      // Vue3 ignore this line
+      emit('cell-click', p);
+    };
+    return (
+      <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
+        {col.ellipsis ? renderEllipsisCell(params, { cellNode, columnLength }) : cellNode}
+      </td>
+    );
+  };
+
+  const getTrListeners = (row: TableRowData, rowIndex: number) => {
+    const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
+    // add events to row
+    Object.keys(ROW_LISTENERS).forEach((eventName) => {
+      trListeners[eventName] = (e: MouseEvent) => {
+        const p = { e, row, index: rowIndex };
+        props[`onRow${upperFirst(eventName)}`]?.(p);
+        props.onRowClick?.(p);
+        // Vue3 ignore this line
+        emit(`row-${eventName}`, p);
+      };
+    });
+    return trListeners;
+  };
+
+  const renderTableBody = (p: RenderTableBodyParams) => {
+    const { columnStickyLeftAndRight, data, columns } = p;
     const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
+    // 受合并单元格影响，部分单元格不显示
+    const skipSpansMap = new Map<any, boolean>();
     data?.forEach((row, rowIndex) => {
-      const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
-      // add events to row
-      Object.keys(ROW_LISTENERS).forEach((eventName) => {
-        trListeners[eventName] = (e: MouseEvent) => {
-          const p = { e, row, index: rowIndex };
-          props[`onRow${upperFirst(eventName)}`]?.(p);
-          props.onRowClick?.(p);
-          // Vue3 ignore this line
-          emit(`row-${eventName}`, p);
-        };
-      });
       const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
       // 自定义行类名
       let customClasses = isFunction(props.rowClassName) ? props.rowClassName({ row, rowIndex }) : props.rowClassName;
@@ -131,29 +184,23 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       }
       const classes = [trStyles.classes, customClasses];
       const trNode = (
-        <tr on={trListeners} style={trStyles.style} class={classes}>
+        <tr on={getTrListeners(row, rowIndex)} style={trStyles.style} class={classes}>
           {columns.map((col, colIndex) => {
+            const cellSpans: RowspanColspan = {};
+            if (isFunction(props.rowspanAndColspan)) {
+              const o = props.rowspanAndColspan({
+                row, col, rowIndex, colIndex,
+              });
+              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+            }
+            const skipped = skipSpansMap.get([rowIndex, colIndex].join());
+            if (skipped) return null;
             const params = {
-              row,
-              rowIndex,
-              col,
-              colIndex,
+              row, col, rowIndex, colIndex,
             };
-            const cellNode = renderCell(params);
-            const tdStyles = getColumnFixedStyles(col, colIndex, columnStickyLeftAndRight, columnLength);
-            const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
-            const classes = [tdStyles.classes, customClasses, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
-            const onClick = (e: MouseEvent) => {
-              const p = { ...params, e };
-              props.onCellClick?.(p);
-              // Vue3 ignore this line
-              emit('cell-click', p);
-            };
-            return (
-              <td class={classes} style={tdStyles.style} {...col.attrs} onClick={onClick}>
-                {col.ellipsis ? renderEllipsisCell(params, { cellNode, columnLength }) : cellNode}
-              </td>
-            );
+            setSkippedCell(skipSpansMap, params, cellSpans);
+            return renderTd(params, { columnStickyLeftAndRight, columnLength, cellSpans });
           })}
         </tr>
       );
@@ -169,7 +216,6 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       trNodeList,
       getFullRow(columnLength, props.lastFullRow, 'last-full-row'),
     ];
-
     const isEmpty = !data?.length && !props.loading;
     return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(columns) : list}</tbody>;
   };
