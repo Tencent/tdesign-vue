@@ -26,6 +26,7 @@ export interface RenderEllipsisCellParams {
 
 export interface RenderTableBodyParams {
   data: TdBaseTableProps['data'];
+  columns: TdBaseTableProps['columns'];
   // 固定列 left/right 具体值
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   showColumnShadow: { left: boolean; right: boolean };
@@ -82,28 +83,32 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     );
   };
 
-  const getFullRow = (fullRow: TdBaseTableProps['firstFullRow'], type: 'first-full-row' | 'last-full-row') => {
+  const getFullRow = (
+    columnLength: number,
+    fullRow: TdBaseTableProps['firstFullRow'],
+    type: 'first-full-row' | 'last-full-row',
+  ) => {
     if (!fullRow) return null;
     const fullRowNode = useTNodeJSX(camelCase(type), { slots });
     if (['', null, undefined, false].includes(fullRowNode)) return null;
     const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
     return (
       <tr class={classes}>
-        <td colspan={props.columns.length}>{fullRowNode}</td>
+        <td colspan={columnLength}>{fullRowNode}</td>
       </tr>
     );
   };
 
-  const renderEmpty = () => (
-      <tr class={TABLE_CLASS_EMPTY_ROW}>
-        <td colspan={props.columns.length}>
-          <div class={TABLE_CLASS_EMPTY}>{useTNodeJSX('empty', { slots, defaultNode: '暂无数据' })}</div>
-        </td>
-      </tr>
+  const renderEmpty = (columns: RenderTableBodyParams['columns']) => (
+    <tr class={TABLE_CLASS_EMPTY_ROW}>
+      <td colspan={columns.length}>
+        <div class={TABLE_CLASS_EMPTY}>{useTNodeJSX('empty', { slots, defaultNode: '暂无数据' })}</div>
+      </td>
+    </tr>
   );
 
-  const renderTableBody = ({ columnStickyLeftAndRight, data }: RenderTableBodyParams) => {
-    const columnLength = props.columns.length;
+  const renderTableBody = ({ columnStickyLeftAndRight, data, columns }: RenderTableBodyParams) => {
+    const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
     data?.forEach((row, rowIndex) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
@@ -127,7 +132,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       const classes = [trStyles.classes, customClasses];
       const trNode = (
         <tr on={trListeners} style={trStyles.style} class={classes}>
-          {props.columns.map((col, colIndex) => {
+          {columns.map((col, colIndex) => {
             const params = {
               row,
               rowIndex,
@@ -136,7 +141,8 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
             };
             const cellNode = renderCell(params);
             const tdStyles = getColumnFixedStyles(col, colIndex, columnStickyLeftAndRight, columnLength);
-            const classes = [tdStyles.classes, col.className, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
+            const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
+            const classes = [tdStyles.classes, customClasses, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
             const onClick = (e: MouseEvent) => {
               const p = { ...params, e };
               props.onCellClick?.(p);
@@ -159,13 +165,13 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     });
 
     const list = [
-      getFullRow(props.firstFullRow, 'first-full-row'),
+      getFullRow(columnLength, props.firstFullRow, 'first-full-row'),
       trNodeList,
-      getFullRow(props.lastFullRow, 'last-full-row'),
+      getFullRow(columnLength, props.lastFullRow, 'last-full-row'),
     ];
 
     const isEmpty = !data?.length && !props.loading;
-    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty() : list}</tbody>;
+    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(columns) : list}</tbody>;
   };
 
   return {

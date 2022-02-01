@@ -79,7 +79,9 @@ export default Vue.extend({
     },
 
     // render
-    renderSelectCell({ column = {}, row = {}, rowIndex }: Record<string, any>): VNode {
+    renderSelectCell({
+      column = {}, row = {}, rowIndex, type,
+    }: Record<string, any>): VNode {
       const checked = this.selectedRowKeys.includes(get(row, this.reRowKey));
       const disabled = typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled;
       const selectBoxProps = {
@@ -101,10 +103,11 @@ export default Vue.extend({
           change: (): void => this.handleSelectChange(row),
         },
       };
+      // 表头不需要渲染单选按钮
+      if (type === 'title' && column.type === 'single') return null;
       return <SelectBox {...selectBoxProps} />;
     },
 
-    // handle：
     handleSelectChange(record: Record<string, any> = {}): void {
       let selectedRowKeys = [...this.selectedRowKeys] as Array<string | number>;
       const { reRowKey } = this;

@@ -1,10 +1,5 @@
 <template>
-  <t-table
-    row-key="property"
-    :data="data"
-    :columns="columns"
-    :bordered="true">
-  </t-table>
+  <t-table row-key="property" :data="data" :columns="columns" :bordered="true"> </t-table>
 </template>
 <script>
 export default {
@@ -12,6 +7,7 @@ export default {
     return {
       data: [
         {
+          id: 1,
           platform: '公有',
           property: 'data',
           type: 'any[]',
@@ -20,6 +16,7 @@ export default {
           description: '数据源',
         },
         {
+          id: 2,
           platform: '公有',
           property: 'rowkey',
           type: 'String',
@@ -29,6 +26,10 @@ export default {
         },
       ],
       columns: [
+        {
+          title: '序号',
+          colKey: 'id',
+        },
         {
           title: '汇总属性',
           children: [

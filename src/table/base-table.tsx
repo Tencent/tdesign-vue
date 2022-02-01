@@ -43,7 +43,7 @@ export default defineComponent({
       columnStickyLeftAndRight,
       onTableContentScroll,
     } = useFixed(props);
-    const { renderTableHeader, renderColgroup } = useTableHeader(props, context);
+    const { renderTableHeader, renderColgroup, spansAndLeafNodes } = useTableHeader(props, context);
     const { renderTableBody } = useTableBody(props, context);
     const { renderTableFooter } = useTableFooter(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
@@ -58,6 +58,7 @@ export default defineComponent({
 
     return {
       tableRef,
+      spansAndLeafNodes,
       baseTableClasses,
       tableContentStyles,
       tableElementStyles,
@@ -96,6 +97,7 @@ export default defineComponent({
             columnStickyLeftAndRight: this.columnStickyLeftAndRight,
             showColumnShadow: this.showColumnShadow,
             data: this.isPaginateData ? this.dataSource : this.data,
+            columns: this.spansAndLeafNodes.leafColumns,
           })}
           {this.renderTableFooter({
             isFixedHeader: this.isFixedHeader,

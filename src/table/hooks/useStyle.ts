@@ -11,6 +11,7 @@ export const TABLE_ROOT_CLASS_HEADER_FIXED = `${prefix}-table--header-fixed`;
 export const TABLE_ROOT_CLASS_COLUMN_FIXED = `${prefix}-table--column-fixed`;
 export const TABLE_CLASS_CONTENT = `${prefix}-table__content`;
 export const TABLE_CLASS_HEADER = `${prefix}-table__header`;
+export const TABLE_CLASS_HEADER_TH_BORDERED = `${prefix}-table__header-th--bordered`;
 export const TABLE_CLASS_BODY = `${prefix}-table__body`;
 export const TABLE_CLASS_FOOTER = `${prefix}-table__footer`;
 export const TABLE_CLASS_BORDERED = `${prefix}-table--bordered`;

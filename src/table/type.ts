@@ -86,9 +86,9 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   rowKey: string;
   /**
-   * 用于自定义合并单元格，支持对象和函数两种数据类型，泛型 T 指表格数据类型。<br />示例一：`{ 1: { colspan: 9 } }`，表示第 2 行跨 9 列。<br />示例二：`{ 0: { colspan: 'full' } }`，表示第 1 行通栏显示。<br /> 示例三：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`。<br />如果是 `footer`，示例：`{ footer: { colspan: 'full' } }`
+   * 用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`
    */
-  rowspanAndColspan?: TableRowspanAndColspan;
+  rowspanAndColspan?: TableRowspanAndColspanFunc;
   /**
    * 懒加载和虚拟滚动
    */
@@ -513,17 +513,11 @@ export interface TableScroll {
   type: 'lazy' | 'virtual';
 }
 
-export type TableRowspanAndColspan = TableRowspanAndColspanObj | TableRowspanAndColspanFunc;
-
-export interface TableRowspanAndColspanObj {
-  [index: string]: RowspanColspan;
-}
-
 export type TableRowspanAndColspanFunc = (params: RowspanAndColspanParams<T>) => RowspanColspan;
 
 export interface RowspanColspan {
-  colspan: number;
-  rowspan: number;
+  colspan?: number;
+  rowspan?: number;
 }
 
 export interface RowspanAndColspanParams<T> {
