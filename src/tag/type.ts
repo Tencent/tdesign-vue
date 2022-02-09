@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TNode, SizeEnum } from '../common';
@@ -50,10 +49,10 @@ export interface TdTagProps {
    */
   theme?: 'default' | 'primary' | 'warning' | 'danger' | 'success';
   /**
-   * 影响标签风格（theme）
+   * 标签风格变体
    * @default dark
    */
-  variant?: 'dark' | 'light' | 'plain';
+  variant?: 'dark' | 'light' | 'outline' | 'light-outline';
   /**
    * 点击时触发
    */
@@ -62,7 +61,7 @@ export interface TdTagProps {
    * 如果关闭按钮存在，点击关闭按钮时触发
    */
   onClose?: (context: { e: MouseEvent }) => void;
-};
+}
 
 export interface TdCheckTagProps {
   /**
@@ -89,6 +88,11 @@ export interface TdCheckTagProps {
    */
   disabled?: boolean;
   /**
+   * 标签尺寸
+   * @default medium
+   */
+  size?: SizeEnum;
+  /**
    * 组件子元素
    */
   onChange?: (checked: boolean) => void;
@@ -96,4 +100,4 @@ export interface TdCheckTagProps {
    * 点击标签时触发
    */
   onClick?: (context: { e: MouseEvent }) => void;
-};
+}

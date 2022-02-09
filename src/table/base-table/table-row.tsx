@@ -1,7 +1,7 @@
 import Vue, { VNode, PropType, CreateElement } from 'vue';
 import get from 'lodash/get';
 import { prefix } from '../../config';
-import { BaseTableCol, RowspanColspan } from '../type';
+import { BaseTableCol, RowspanColspan, TdBaseTableProps } from '../type';
 import baseTableProps from '../base-table-props';
 import TableCell from './table-cell';
 import { CustomData, CellData, CellParams } from '../util/interface';
@@ -50,6 +50,7 @@ export default Vue.extend({
       type: Number,
       default: 1,
     },
+    onCellClick: baseTableProps.onCellClick,
     provider: {
       type: Object,
       default() {
@@ -136,7 +137,12 @@ export default Vue.extend({
           customRender,
           type: 'td',
         };
-        rowBody.push(<TableCell cellData={cellData} length={columns.length} />);
+        const on = {
+          'cell-click': (p: Parameters<TdBaseTableProps['onCellClick']>[0]) => {
+            emitEvent<Parameters<TdBaseTableProps['onCellClick']>>(this, 'cell-click', p);
+          },
+        };
+        rowBody.push(<TableCell on={on} cellData={cellData} length={columns.length} />);
       });
       return rowBody;
     },
@@ -150,7 +156,9 @@ export default Vue.extend({
       row: rowData,
       index,
     };
-    const on = {};
+    const on = {
+      ...this.$listeners,
+    };
     Object.keys(eventsName).forEach((event) => {
       const emitEventName = eventsName[event];
       on[event] = (e: MouseEvent) => {

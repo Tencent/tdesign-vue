@@ -6,7 +6,6 @@
       placement="top"
       :overlay-style="{ width: '200px' }"
       show-arrow
-      trigger="click"
     >
       <t-button variant="outline"> top </t-button>
     </t-tooltip>

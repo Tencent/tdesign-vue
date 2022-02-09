@@ -23,22 +23,5 @@ export default {
       ],
     };
   },
-  methods: {},
 };
 </script>
-
-<style scoped lang="less">
-.t-skeleton-demo {
-  &-card {
-    margin: 16px;
-    border: 1px solid #eee;
-    .header {
-      padding: 16px;
-      border-bottom: 1px solid #eee;
-    }
-    .content {
-      padding: 16px;
-    }
-  }
-}
-</style>

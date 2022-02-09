@@ -26,6 +26,13 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
     checkboxGroup: { default: undefined },
   },
 
+  data() {
+    return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
+    };
+  },
+
   computed: {
     labelClasses(): ClassName {
       return [
@@ -38,20 +45,19 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
       ];
     },
     disabled$(): boolean {
+      if (this.formDisabled) return this.formDisabled;
       if (!this.checkAll && !this.checked$ && this.checkboxGroup?.maxExceeded) {
         return true;
       }
       if (this.disabled !== undefined) return this.disabled;
-      return !!(this.checkboxGroup?.disabled);
+      return !!this.checkboxGroup?.disabled;
     },
     name$(): string {
-      return this.name || (this.checkboxGroup?.name);
+      return this.name || this.checkboxGroup?.name;
     },
     checked$(): boolean {
       if (this.checkAll) return this.checkboxGroup?.isCheckAll;
-      return this.checkboxGroup
-        ? !!this.checkboxGroup.checkedMap[this.value]
-        : this.checked;
+      return this.checkboxGroup ? !!this.checkboxGroup.checkedMap[this.value] : this.checked;
     },
     indeterminate$(): boolean {
       if (this.checkAll) return this.checkboxGroup?.indeterminate;
@@ -63,7 +69,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
     return (
       <label class={this.labelClasses}>
         <input
-          type='checkbox'
+          type="checkbox"
           on={{ ...omit(this.$listeners, ['checked', 'change']) }}
           class={`${name}__former`}
           disabled={this.disabled$}
@@ -75,9 +81,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
           onChange={this.handleChange}
         ></input>
         <span class={`${name}__input`}></span>
-        <span class={`${name}__label`}>
-          {renderContent(this, 'default', 'label')}
-        </span>
+        <span class={`${name}__label`}>{renderContent(this, 'default', 'label')}</span>
       </label>
     );
   },

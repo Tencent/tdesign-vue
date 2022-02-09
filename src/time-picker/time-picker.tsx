@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import isFunction from 'lodash/isFunction';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimeIcon as TIconTime } from 'tdesign-icons-vue';
+import { TimeIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TimePickerConfig } from '../config-provider/config-receiver';
 import {
@@ -36,7 +36,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
 
   components: {
     PickerPanel,
-    TIconTime,
+    TimeIcon,
     TPopup,
     TInput,
     InputItems,
@@ -54,6 +54,8 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     const time = value || defaultValue;
     // 初始化数据
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       els: [],
       focus: false,
       isShowPanel: false,
@@ -66,6 +68,9 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
   },
 
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     // 传递给选择面板的时间值
     panelValue(): Array<dayjs.Dayjs> {
       const {
@@ -307,7 +312,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       return (
         <div class={classes} onClick={() => (this.isShowPanel = true)}>
           <t-input
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             size={this.size}
             onClear={this.clear}
             clearable={this.clearable}
@@ -316,12 +321,12 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             value={this.time ? ' ' : undefined}
             class={this.isShowPanel ? `${prefix}-is-focused` : ''}
           >
-            <t-icon-time slot="suffix-icon"></t-icon-time>
+            <time-icon slot="suffix-icon"></time-icon>
           </t-input>
           <input-items
             size={this.size}
             dayjs={this.inputTime}
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             format={this.format}
             steps={this.steps}
             allowInput={this.allowInput}
@@ -339,7 +344,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
   render() {
     // 初始化数据
     const {
-      $props: { size, className, disabled },
+      $props: { size, className, tDisabled },
     } = this;
     // 样式类名
     const classes = [name, CLASSNAMES.SIZE[size] || '', className];
@@ -350,7 +355,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         placement="bottom-left"
         class={classes}
         trigger="click"
-        disabled={disabled}
+        disabled={tDisabled}
         visible={this.isShowPanel}
         overlayClassName={`${componentName}__panel-container`}
         on={{ 'visible-change': this.panelVisibleChange }}
@@ -362,7 +367,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             ref="panel"
             format={this.format}
             value={this.panelValue}
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             isShowPanel={this.isShowPanel}
             ontime-pick={this.pickTime}
             onsure={this.makeSure}

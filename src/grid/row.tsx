@@ -2,11 +2,20 @@ import Vue, { VNode } from 'vue';
 import isObject from 'lodash/isObject';
 import { prefix } from '../config';
 import props from './row-props';
-import { ClassName } from '../common';
+import { ClassName, Styles } from '../common';
 import { calcSize } from '../utils/responsive';
 import { TdRowProps } from './type';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 const name = `${prefix}-row`;
+
+export interface RowHTMLTagAttributes {
+  class: ClassName;
+  style: Styles;
+  attrs?: {
+    'row-gap'?: number;
+  };
+}
 
 export default Vue.extend({
   name: 'TRow',
@@ -15,7 +24,7 @@ export default Vue.extend({
 
   data() {
     return {
-      size: calcSize(window.innerWidth),
+      size: 'md',
     };
   },
 
@@ -41,7 +50,19 @@ export default Vue.extend({
   },
 
   mounted() {
+    this.updateSize();
+    this.handleIE();
     window.addEventListener('resize', this.updateSize);
+  },
+
+  watch: {
+    gutter() {
+      this.handleIE();
+    },
+
+    size() {
+      this.handleIE();
+    },
   },
 
   beforeDestroy() {
@@ -53,7 +74,16 @@ export default Vue.extend({
       this.size = calcSize(window.innerWidth);
     },
 
-    calcRowStyle(gutter: TdRowProps['gutter'], currentSize: string): object {
+    handleIE() {
+      if (getIEVersion() <= 9) {
+        const rowGap = this.rowGap(this.gutter, this.size);
+        if (rowGap) {
+          this.$el.setAttribute('row-gap', `${rowGap}`);
+        }
+      }
+    },
+
+    calcRowStyle(gutter: TdRowProps['gutter'], currentSize: string): Styles {
       const rowStyle = {};
       if (typeof gutter === 'number') {
         Object.assign(rowStyle, {
@@ -96,6 +126,23 @@ export default Vue.extend({
       }
       return rowStyle;
     },
+
+    rowGap(gutter: TdRowProps['gutter'], currentSize: string): number {
+      let rowGap;
+      if (Array.isArray(gutter) && gutter.length) {
+        if (typeof gutter[1] === 'number') {
+          [, rowGap] = gutter;
+        }
+        if (isObject(gutter[1]) && gutter[1][currentSize] !== undefined) {
+          rowGap = gutter[1][currentSize];
+        }
+      } else if (isObject(gutter) && gutter[currentSize]) {
+        if (Array.isArray(gutter[currentSize]) && gutter[currentSize].length) {
+          [, rowGap] = gutter[currentSize];
+        }
+      }
+      return rowGap;
+    },
   },
 
   render(): VNode {
@@ -103,6 +150,11 @@ export default Vue.extend({
 
     const rowStyle = this.calcRowStyle(this.gutter, this.size);
 
-    return <tag class={classes} style={rowStyle}>{this.$slots.default}</tag>;
+    const attributes: RowHTMLTagAttributes = {
+      class: classes,
+      style: rowStyle,
+      attrs: {},
+    };
+    return <tag {...attributes}>{this.$slots.default}</tag>;
   },
 });

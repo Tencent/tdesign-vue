@@ -30,15 +30,9 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
   },
   render() {
     const {
-      type,
-      data,
-      onCellClick,
-      onCellMouseEnter,
-      firstDayOfWeek,
+      type, data, onCellClick, onCellMouseEnter, firstDayOfWeek,
     } = this;
-    const {
-      weekdays,
-    } = this.global;
+    const { weekdays } = this.global;
 
     const weekArr = [];
     let wi = firstDayOfWeek - 1;
@@ -48,39 +42,31 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
       wi = (wi + len + 1) % len;
     }
 
-    const panelClass = `t-date-picker--${type}`;
+    const panelClass = `${prefix}-date-picker--${type}`;
 
     return (
       <div class={panelClass}>
         <table>
-          {
-            type === 'date' && (
-              <thead>
-                <tr>
-                  {
-                    weekArr.map((value: string, i: number) => (
-                      <th key={i}>{value}</th>
-                    ))
-                  }
-                </tr>
-              </thead>
-            )
-          }
+          {type === 'date' && (
+            <thead>
+              <tr>
+                {weekArr.map((value: string, i: number) => (
+                  <th key={i}>{value}</th>
+                ))}
+              </tr>
+            </thead>
+          )}
           <tbody>
-            {
-              data.map((row: Cell[], i: number) => (
-                <tr key={i}>
-                  {
-                    row.map((col: Cell, j: number) => (
-                      <t-date-picker-cell
-                        {...{ props: { ...col, onClick: onCellClick, onMouseEnter: onCellMouseEnter } }}
-                        key={j}
-                      />
-                    ))
-                  }
-                </tr>
-              ))
-            }
+            {data.map((row: Cell[], i: number) => (
+              <tr key={i}>
+                {row.map((col: Cell, j: number) => (
+                  <t-date-picker-cell
+                    {...{ props: { ...col, onClick: onCellClick, onMouseEnter: onCellMouseEnter } }}
+                    key={j}
+                  />
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

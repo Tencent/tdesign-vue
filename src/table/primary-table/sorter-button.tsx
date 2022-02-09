@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { PropType } from 'vue/types/umd';
 import isFunction from 'lodash/isFunction';
-import { ChevronDownIcon as TIconChevronDown } from 'tdesign-icons-vue';
+import { ChevronDownIcon } from 'tdesign-icons-vue';
 import mixins from '../../utils/mixins';
 import getConfigReceiverMixins, { TableConfig } from '../../config-provider/config-receiver';
 import { SortType } from '../type';
@@ -43,7 +43,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
       const icon = isFunction(this.global.sortIcon) ? (
         this.global.sortIcon(this.$createElement)
       ) : (
-        <TIconChevronDown size="16px" />
+        <ChevronDownIcon size="16px" />
       );
       let style: Styles = {
         left: '0px',

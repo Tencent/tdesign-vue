@@ -3344,9 +3344,11 @@ exports[`Transfer pagination demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -3356,7 +3358,9 @@ exports[`Transfer pagination demo works fine 1`] = `
                           <span />
                         </li>
                       </ul>
-                      <ul>
+                      <ul
+                        class="t-select__list"
+                      >
                         <li
                           class="t-select-option t-is-selected t-size-s"
                           title="1/2"

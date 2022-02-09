@@ -1,9 +1,6 @@
 import Vue, { VNode } from 'vue';
 import {
-  AddIcon as Add,
-  RemoveIcon as Remove,
-  ChevronDownIcon as ChevronDown,
-  ChevronUpIcon as ChevronUp,
+  AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
 } from 'tdesign-icons-vue';
 import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
@@ -43,14 +40,16 @@ export default Vue.extend({
   name: 'TInputNumber',
   props: { ...props },
   components: {
-    Add,
-    Remove,
-    ChevronDown,
-    ChevronUp,
+    AddIcon,
+    RemoveIcon,
+    ChevronDownIcon,
+    ChevronUpIcon,
     TButton,
   },
   data() {
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       userInput: null,
       filterValue: null,
       isError: false,
@@ -58,16 +57,17 @@ export default Vue.extend({
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     disabledReduce(): boolean {
-      return this.disabled || this.isError || (Number(this.value) - this.step < this.min);
+      return this.tDisabled || this.isError || Number(this.value) - this.step < this.min;
     },
     disabledAdd(): boolean {
-      return this.disabled || this.isError || (Number(this.value) + this.step > this.max);
+      return this.tDisabled || this.isError || Number(this.value) + this.step > this.max;
     },
     valueDecimalPlaces(): number {
-      const tempVal = this.filterValue !== null
-        && !isNaN(Number(this.filterValue))
-        && !isNaN(parseFloat(this.filterValue))
+      const tempVal = this.filterValue !== null && !isNaN(Number(this.filterValue)) && !isNaN(parseFloat(this.filterValue))
         ? this.filterValue
         : String(this.value);
       const tempIndex = tempVal.indexOf('.') + 1;
@@ -124,12 +124,12 @@ export default Vue.extend({
     cmptWrapClasses(): ClassName {
       return {
         class: [
-          't-input-number',
+          name,
           CLASSNAMES.SIZE[this.size],
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
-            't-is-controls-right': this.theme === 'column',
-            't-input-number--normal': this.theme === 'normal',
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
+            [`${prefix}-is-controls-right`]: this.theme === 'column',
+            [`${name}--normal`]: this.theme === 'normal',
           },
         ],
       };
@@ -137,9 +137,10 @@ export default Vue.extend({
     inputWrapProps(): ClassName {
       return {
         class: [
-          't-input',
+          `${prefix}-input`,
           {
-            't-is-error': this.isError,
+            [`${prefix}-is-error`]: this.isError,
+            [`${prefix}-align-${this.align}`]: this.align,
           },
         ],
       };
@@ -147,9 +148,9 @@ export default Vue.extend({
     inputClasses(): ClassName {
       return {
         class: [
-          't-input__inner',
+          `${prefix}-input__inner`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabled,
+            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${name}-text-align`]: this.theme === 'row',
           },
         ],
@@ -170,7 +171,7 @@ export default Vue.extend({
     inputAttrs(): InputNumberAttr {
       return {
         attrs: {
-          disabled: this.disabled,
+          disabled: this.tDisabled,
           autocomplete: 'off',
           ref: 'refInputElem',
           placeholder: this.placeholder,
@@ -189,24 +190,28 @@ export default Vue.extend({
   },
   methods: {
     decreaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-down size={this.size} /> : <remove size={this.size} />;
+      return this.theme === 'column' ? <chevron-down-icon size={this.size} /> : <remove-icon size={this.size} />;
     },
     increaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-up size={this.size} /> : <add size={this.size} />;
+      return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd) return;
-      const value = this.value || 0;
-      const factor = 10 ** this.digitsNum;
-      this.handleAction(Number(this.toDecimalPlaces(((value * factor)
-        + (this.step * factor)) / factor).toFixed(this.digitsNum)), 'add', e);
+      this.handleAction(this.getClickValue('add'), 'add', e);
     },
     handleReduce(e: MouseEvent) {
       if (this.disabledReduce) return;
+      this.handleAction(this.getClickValue('reduce'), 'reduce', e);
+    },
+    getClickValue(op: string) {
       const value = this.value || 0;
       const factor = 10 ** this.digitsNum;
-      this.handleAction(Number(this.toDecimalPlaces(((value * factor)
-        - (this.step * factor)) / factor).toFixed(this.digitsNum)), 'reduce', e);
+      const addOrReduce = { add: 1, reduce: -1 }[op];
+      let clickVal = this.toDecimalPlaces(value * factor + addOrReduce * this.step * factor);
+      if (this.value === undefined) {
+        clickVal = Math.min(Math.max(clickVal, this.min), this.max);
+      }
+      return Number(clickVal.toFixed(this.digitsNum));
     },
     handleInput(e: InputEvent) {
       // get
@@ -230,7 +235,7 @@ export default Vue.extend({
       // only allow one [.e] and two [-]
       let filterVal = s.replace(/[^\d.eE。-]/g, '').replace('。', '.');
       if (this.multiE(filterVal) || this.multiDot(filterVal) || this.multiNegative(filterVal)) {
-        filterVal = filterVal.substr(0, filterVal.length - 1);
+        filterVal = filterVal.substring(0, filterVal.length - 1);
       }
       return filterVal;
     },
@@ -242,7 +247,7 @@ export default Vue.extend({
       if (val < this.min) return this.min;
       return parseFloat(s);
     },
-    handleChange(value: number, ctx: { type: ChangeSource; e: ChangeContextEvent; }) {
+    handleChange(value: number, ctx: { type: ChangeSource; e: ChangeContextEvent }) {
       this.updateValue(value);
       emitEvent<Parameters<TdInputNumberProps['onChange']>>(this, 'change', value, ctx);
     },
@@ -256,7 +261,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, { e });
     },
     handleKeydownEnter(e: KeyboardEvent) {
-      if (!['Enter', 'NumpadEnter'].includes(e.code)) return;
+      if (!['Enter', 'NumpadEnter'].includes(e.code || e.key)) return;
       emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, { e });
     },
     handleKeydown(e: KeyboardEvent) {
@@ -270,8 +275,9 @@ export default Vue.extend({
         Enter: this.handleKeydownEnter,
         NumpadEnter: this.handleKeydownEnter,
       };
-      if (keyEvent[e.code] !== undefined) {
-        keyEvent[e.code](e);
+      const code = e.code || e.key;
+      if (keyEvent[code] !== undefined) {
+        keyEvent[code](e);
       }
     },
     handleKeyup(e: KeyboardEvent) {
@@ -363,22 +369,27 @@ export default Vue.extend({
   render(): VNode {
     return (
       <div {...this.cmptWrapClasses}>
-        {
-          this.theme !== 'normal'
-          && <t-button {...this.reduceClasses} {...this.reduceEvents} variant="outline" shape="square" icon={this.decreaseIcon} />
-        }
-        <div {...this.inputWrapProps}>
-          <input
-            value={this.displayValue}
-            {...this.inputClasses}
-            {...this.inputAttrs}
-            {...this.inputEvents}
+        {this.theme !== 'normal' && (
+          <t-button
+            {...this.reduceClasses}
+            {...this.reduceEvents}
+            variant="outline"
+            shape="square"
+            icon={this.decreaseIcon}
           />
+        )}
+        <div {...this.inputWrapProps}>
+          <input value={this.displayValue} {...this.inputClasses} {...this.inputAttrs} {...this.inputEvents} />
         </div>
-        {
-          this.theme !== 'normal'
-          && <t-button {...this.addClasses} {...this.addEvents} variant="outline" shape="square" icon={this.increaseIcon} />
-        }
+        {this.theme !== 'normal' && (
+          <t-button
+            {...this.addClasses}
+            {...this.addEvents}
+            variant="outline"
+            shape="square"
+            icon={this.increaseIcon}
+          />
+        )}
       </div>
     );
   },

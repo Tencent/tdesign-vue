@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { CloseIcon as TIconClose } from 'tdesign-icons-vue';
+import { CloseIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';
@@ -22,7 +22,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   name: 'TDrawer',
 
   components: {
-    TIconClose,
+    CloseIcon,
     TButton,
   },
 
@@ -88,6 +88,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     visible: {
       handler(val) {
+        if (val) {
+          (this.$refs.drawerContainer as HTMLDivElement).focus?.();
+        }
         this.handleScrollThrough(val);
       },
     },
@@ -103,7 +106,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <t-icon-close class="t-submenu-icon"></t-icon-close>;
+    const defaultCloseBtn = <close-icon class={`${prefix}-submenu-icon`}></close-icon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (
@@ -112,6 +115,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         style={{ zIndex: this.zIndex }}
         onkeydown={this.onKeyDown}
         v-transfer-dom={this.attach}
+        ref="drawerContainer"
+        tabindex={0}
       >
         {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick} />}
         <div class={this.wrapperClasses} style={this.wrapperStyles}>

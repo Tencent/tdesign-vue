@@ -3,6 +3,7 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon,
 } from 'tdesign-icons-vue';
+
 import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
@@ -23,7 +24,7 @@ export default Vue.extend({
   props: { ...props },
   render(): VNode {
     const compClass = [
-      `${name}`,
+      name,
       `${name}--${this.theme}`,
       {
         [`${prefix}-is-hidden`]: !this.visible,
@@ -31,9 +32,9 @@ export default Vue.extend({
     ];
     return (
       <div class={compClass}>
-        { this.renderIcon()}
-        { this.renderContent()}
-        { this.renderClose()}
+        {this.renderIcon()}
+        {this.renderContent()}
+        {this.renderClose()}
       </div>
     );
   },
@@ -51,12 +52,12 @@ export default Vue.extend({
       } else if (this.$scopedSlots.icon) {
         iconContent = this.$scopedSlots.icon && this.$scopedSlots.icon(null)[0];
       } else {
-        const component = ({
+        const component = {
           info: InfoCircleFilledIcon,
           success: CheckCircleFilledIcon,
           warning: ErrorCircleFilledIcon,
           error: ErrorCircleFilledIcon,
-        })[this.theme];
+        }[this.theme];
         iconContent = <component></component>;
       }
       return iconContent ? <div class={`${name}__icon`}>{iconContent}</div> : null;
@@ -64,23 +65,28 @@ export default Vue.extend({
 
     renderClose(): VNode {
       let closeContent: ScopedSlotReturnValue = null;
-      if (typeof this.close === 'string') {
+      if (this.close === true || this.close === '') {
+        closeContent = <CloseIcon />;
+      } else if (typeof this.close === 'string') {
         closeContent = this.close;
       } else if (typeof this.close === 'function') {
         closeContent = this.close(this.$createElement);
-      } else if (this.close === true) {
-        closeContent = <CloseIcon/>;
       } else {
         closeContent = this.$scopedSlots.close && this.$scopedSlots.close(null)[0];
       }
-      return closeContent ? <div class={`${name}__close`} onClick={this.handleClose}>{closeContent}</div> : null;
+
+      return closeContent ? (
+        <div class={`${name}__close`} onClick={this.handleClose}>
+          {closeContent}
+        </div>
+      ) : null;
     },
 
     renderContent(): VNode {
       return (
         <div class={`${name}__content`}>
-          { this.renderTitle()}
-          { this.renderMessage()}
+          {this.renderTitle()}
+          {this.renderMessage()}
         </div>
       );
     },
@@ -94,12 +100,8 @@ export default Vue.extend({
       const operationContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'operation');
       return (
         <div class={`${name}__message`}>
-          { this.renderDescription()}
-          { operationContent ? (
-            <div class={`${name}__operation`}>
-              { operationContent }
-            </div>
-          ) : null}
+          {this.renderDescription()}
+          {operationContent ? <div class={`${name}__operation`}>{operationContent}</div> : null}
         </div>
       );
     },
@@ -112,8 +114,9 @@ export default Vue.extend({
         messageContent = renderTNodeJSX(this, 'message');
       }
 
-      const contentLength = Object.prototype.toString
-        .call(messageContent) === '[object Array]' ? (messageContent as Array<ScopedSlotReturnValue>).length : 1;
+      const contentLength = Object.prototype.toString.call(messageContent) === '[object Array]'
+        ? (messageContent as Array<ScopedSlotReturnValue>).length
+        : 1;
       const hasCollapse = this.maxLine > 0 && this.maxLine < contentLength;
       if (hasCollapse && this.collapsed) {
         messageContent = (messageContent as Array<ScopedSlotReturnValue>).slice(0, this.maxLine);
@@ -122,16 +125,17 @@ export default Vue.extend({
       // 如果需要折叠，则元素之间补<br/>；否则不补
       return (
         <div class={`${name}__description`}>
-          { hasCollapse ? (messageContent as Array<string | VNode>).map((content) => (
-            <div>
-              { content}
-            </div>
-          )) : messageContent}
-          { hasCollapse ? (
-            <div class="t-alert__collapse" onClick={() => {
-              this.collapsed = !this.collapsed;
-            }} >
-              { this.collapsed ? '展开全部' : '收起'}
+          {hasCollapse
+            ? (messageContent as Array<string | VNode>).map((content) => <div>{content}</div>)
+            : messageContent}
+          {hasCollapse ? (
+            <div
+              class={`${name}__collapse`}
+              onClick={() => {
+                this.collapsed = !this.collapsed;
+              }}
+            >
+              {this.collapsed ? '展开全部' : '收起'}
             </div>
           ) : null}
         </div>

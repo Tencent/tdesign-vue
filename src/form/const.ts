@@ -1,6 +1,6 @@
 import { prefix } from '../config';
 
-export const FORM_ITEM_CLASS_PREFIX = 't-form-item__';
+export const FORM_ITEM_CLASS_PREFIX = `${prefix}-form-item__`;
 
 const form = `${prefix}-form`;
 const input = `${prefix}-input`;
@@ -24,3 +24,24 @@ export const CLASS_NAMES = {
   error: `${is}-error`,
   warning: `${is}-warning`,
 };
+
+// 允许 Form 统一控制的表单
+export const FORM_CONTROLE_COMPONENTS = [
+  'TInput',
+  'TInputNumber',
+  'TTextarea',
+  'TCascader',
+  'TSelect',
+  'TOption',
+  'TSwitch',
+  'TCheckbox',
+  'TCheckboxGroup',
+  'TRadio',
+  'TRadioGroup',
+  'TTreeSelect',
+  'TDatePicker',
+  'TTimePicker',
+  'TUpload',
+  'TTransfer',
+  'TSlider',
+];

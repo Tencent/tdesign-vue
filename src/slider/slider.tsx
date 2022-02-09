@@ -48,9 +48,14 @@ export default Vue.extend({
       inputPlaceholder: '',
       inputTheme: 'column',
       showSteps: false,
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     containerClass(): ClassName {
       return [`${name}__container`, { 'is-vertical': this.vertical }];
     },
@@ -61,12 +66,12 @@ export default Vue.extend({
           'is-vertical': this.vertical,
           [`${name}--with-input`]: this.inputNumberProps,
           [`${name}--vertical`]: this.vertical,
-          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-is-disabled`]: this.tDisabled,
         },
       ];
     },
     sliderRailClass(): ClassName {
-      return [`${name}__rail`, { 'show-input': this.inputNumberProps, disabled: this.disabled }];
+      return [`${name}__rail`, { 'show-input': this.inputNumberProps, disabled: this.tDisabled }];
     },
     sliderNumberClass(): ClassName {
       return [
@@ -100,8 +105,7 @@ export default Vue.extend({
       }
       if (this.range) {
         return result.filter(
-          (step) => step < (100 * (this.minValue - min)) / rangeDiff
-            || step > (100 * (this.maxValue - min)) / rangeDiff,
+          (step) => step < (100 * (this.minValue - min)) / rangeDiff || step > (100 * (this.maxValue - min)) / rangeDiff,
         );
       }
       return result.filter((step) => step > (100 * (this.firstValue - min)) / rangeDiff);
@@ -294,7 +298,7 @@ export default Vue.extend({
     },
     // 全局点击
     onSliderClick(event: MouseEvent): void {
-      if (this.disabled || this.dragging) {
+      if (this.tDisabled || this.dragging) {
         return;
       }
       this.resetSize();
@@ -333,7 +337,7 @@ export default Vue.extend({
 
     // mark 点击触发修改事件
     changeValue(point: number) {
-      if (this.disabled || this.dragging) {
+      if (this.tDisabled || this.dragging) {
         return;
       }
       this.resetSize();
@@ -374,10 +378,15 @@ export default Vue.extend({
         max, min, sliderNumberClass, range,
       } = this;
       return (
-        <div class={[`${name}__input-container`, {
-          'is-vertical': this.vertical,
-        }]}>
-          {(
+        <div
+          class={[
+            `${name}__input-container`,
+            {
+              'is-vertical': this.vertical,
+            },
+          ]}
+        >
+          {
             <t-input-number
               class={sliderNumberClass}
               value={range ? this.firstValue : this.prevValue}
@@ -386,7 +395,7 @@ export default Vue.extend({
               onChange={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
-              disabled={this.disabled}
+              disabled={this.tDisabled}
               min={min}
               max={max}
               decimalPlaces={this.inputDecimalPlaces}
@@ -394,7 +403,7 @@ export default Vue.extend({
               placeholder={this.inputPlaceholder}
               theme={this.inputTheme}
             ></t-input-number>
-          )}
+          }
           {range && <div class={`${name}__center-line`} />}
           {range && (
             <t-input-number
@@ -402,7 +411,7 @@ export default Vue.extend({
               v-model={this.secondValue}
               ref="input"
               step={this.step}
-              disabled={this.disabled}
+              disabled={this.tDisabled}
               min={min}
               max={max}
               decimalPlaces={this.inputDecimalPlaces}
@@ -438,7 +447,7 @@ export default Vue.extend({
               vertical={vertical}
               value={range ? this.firstValue : this.prevValue}
               ref="button1"
-              disabled={this.disabled}
+              disabled={this.tDisabled}
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
@@ -449,7 +458,7 @@ export default Vue.extend({
                 vertical={vertical}
                 v-model={this.secondValue}
                 ref="button2"
-                disabled={this.disabled}
+                disabled={this.tDisabled}
                 tooltip-props={this.tooltipProps}
               ></TSliderButton>
             )}

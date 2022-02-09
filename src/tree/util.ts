@@ -2,11 +2,7 @@ import { VNode } from 'vue';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import {
-  TypeMark,
-  TypeLineModel,
-  TypeTNodeProp,
-  TypeGetTNodeOption,
-  TypeTargetNode,
+  TypeMark, TypeLineModel, TypeTNodeProp, TypeGetTNodeOption, TypeTargetNode,
 } from './interface';
 
 export { emitEvent } from '../utils/event';
@@ -26,16 +22,16 @@ export function getParentsToRoot(element?: HTMLElement, root?: HTMLElement): HTM
 
 export function getParentMarks(name: string, element?: HTMLElement, root?: HTMLElement): TypeMark[] {
   const list = getParentsToRoot(element, root);
-  return (
-    list.map((el) => {
+  return list
+    .map((el) => {
       const mark: TypeMark = {
         name,
-        value: el.getAttribute(name) || '',
+        value: el?.getAttribute(name) || '',
         el,
       };
       return mark;
-    }).filter((mark) => mark.value)
-  );
+    })
+    .filter((mark) => mark.value);
 }
 
 export function getMark(name: string, element?: HTMLElement, root?: HTMLElement): TypeMark {
@@ -97,7 +93,7 @@ export function getLineModel(nodes: TreeNode[], node: TreeNode, index: number): 
 }
 
 export function isTreeNodeValue(item: unknown): boolean {
-  return (typeof item === 'string' || typeof item === 'number');
+  return typeof item === 'string' || typeof item === 'number';
 }
 
 export function getNode(store: TreeStore, item: TypeTargetNode): TreeNode {

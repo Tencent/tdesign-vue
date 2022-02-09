@@ -10,10 +10,9 @@ exports[`InputNumber center demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -30,7 +29,6 @@ exports[`InputNumber center demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -39,10 +37,9 @@ exports[`InputNumber center demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -67,10 +64,9 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -87,7 +83,6 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -96,10 +91,9 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -124,10 +118,9 @@ exports[`InputNumber disabled demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -145,7 +138,6 @@ exports[`InputNumber disabled demo works fine 1`] = `
         autocomplete="off"
         class="t-input__inner t-is-disabled t-input-number-text-align"
         disabled="disabled"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -154,10 +146,9 @@ exports[`InputNumber disabled demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -182,10 +173,9 @@ exports[`InputNumber format demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -202,7 +192,6 @@ exports[`InputNumber format demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -211,10 +200,9 @@ exports[`InputNumber format demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -239,10 +227,9 @@ exports[`InputNumber left demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-chevron-down"
+        class="t-icon t-icon-chevron-down t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -259,7 +246,6 @@ exports[`InputNumber left demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -268,10 +254,9 @@ exports[`InputNumber left demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-chevron-up"
+        class="t-icon t-icon-chevron-up t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -315,7 +300,6 @@ exports[`InputNumber size demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -348,10 +332,9 @@ exports[`InputNumber size demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -368,7 +351,6 @@ exports[`InputNumber size demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -377,10 +359,9 @@ exports[`InputNumber size demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -420,7 +401,6 @@ exports[`InputNumber size demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -456,10 +436,9 @@ exports[`InputNumber step demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -476,7 +455,6 @@ exports[`InputNumber step demo works fine 1`] = `
       <input
         autocomplete="off"
         class="t-input__inner t-input-number-text-align"
-        placeholder=""
         ref="refInputElem"
       />
     </div>
@@ -485,10 +463,9 @@ exports[`InputNumber step demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -513,10 +490,9 @@ exports[`InputNumber undefined demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-remove"
+        class="t-icon t-icon-remove t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >
@@ -542,10 +518,9 @@ exports[`InputNumber undefined demo works fine 1`] = `
       type="button"
     >
       <svg
-        class="t-icon t-icon-add"
+        class="t-icon t-icon-add t-size-m"
         fill="none"
         height="1em"
-        style="font-size: medium;"
         viewBox="0 0 16 16"
         width="1em"
       >

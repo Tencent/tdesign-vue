@@ -1389,7 +1389,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1482,7 +1482,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center; transform: rotate(90deg);"
+                    style="transition: all .2s; display: inline-block; align-items: center; transform: rotate(90deg);"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1560,51 +1560,58 @@ exports[`Table expandable demo works fine 1`] = `
                 </a>
               </td>
             </tr>
-            <tr>
+            <tr
+              class="t-table__expanded-row"
+            >
               <td
-                colspan="5"
+                class="t-table__row--full"
+                colspan="6"
               >
                 <div
-                  class="more-detail"
+                  class="t-table__expanded-row-inner"
                 >
-                  <p
-                    class="title"
+                  <div
+                    class="more-detail"
                   >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    集群测试2
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    jenny
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    test
-                  </p>
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        集群名称:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      集群测试2
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        管理员:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      jenny
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        描述:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      test
+                    </p>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -1623,7 +1630,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -1716,7 +1723,7 @@ exports[`Table expandable demo works fine 1`] = `
                   class="t-table__expand-box"
                 >
                   <span
-                    style="transition: all .2s; display: flex; align-items: center;"
+                    style="transition: all .2s; display: inline-block; align-items: center;"
                   >
                     <svg
                       class="t-icon t-icon-chevron-right-circle"
@@ -3743,7 +3750,7 @@ exports[`Table multiHeader demo works fine 1`] = `
               colspan="1"
               key="property"
               rowspan="2"
-              style="overflow: hidden;"
+              style="overflow: hidden; border-left-width: 1px;"
             >
               属性
             </td>

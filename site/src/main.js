@@ -33,8 +33,8 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (typeof NProgress !== 'undefined') {
-    NProgress.start();
+  if (to.name !== from.name) {
+    window.NProgress && window.NProgress.start();
   }
   next();
 });

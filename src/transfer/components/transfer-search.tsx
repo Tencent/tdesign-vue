@@ -1,5 +1,5 @@
 import Vue, { PropType, VNode } from 'vue';
-import { SearchIcon as TIconSearch } from 'tdesign-icons-vue';
+import { SearchIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
 import TInput from '../../input';
@@ -54,7 +54,7 @@ export default Vue.extend({
           on-enter={handleEnter}
           placeholder={placeholder}
         >
-          <TIconSearch slot="suffix-icon" />
+          <SearchIcon slot="suffix-icon" />
         </TInput>
       </div>
     );

@@ -3,7 +3,7 @@ import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
-import { UploadIcon as TIconUpload } from 'tdesign-icons-vue';
+import { UploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 import { prefix } from '../config';
@@ -100,6 +100,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
   data() {
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       dragActive: false,
       // 加载中的文件
       loadingFile: null as UploadFile,
@@ -113,6 +115,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   },
 
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     // 默认文件上传风格：文件进行上传和上传成功后不显示 tips
     showTips(): boolean {
       if (this.theme === 'file') {
@@ -172,13 +177,13 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     handleChange(event: HTMLInputEvent): void {
       const { files } = event.target;
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.uploadFiles(files);
       (this.$refs.input as HTMLInputElement).value = '';
     },
 
     handleDragChange(files: FileList): void {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.uploadFiles(files);
     },
 
@@ -418,18 +423,18 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     triggerUpload() {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       (this.$refs.input as HTMLInputElement).click();
     },
 
     handleDragenter(e: DragEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.dragActive = true;
       emitEvent<Parameters<TdUploadProps['onDragenter']>>(this, 'dragenter', { e });
     },
 
     handleDragleave(e: DragEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.dragActive = false;
       emitEvent<Parameters<TdUploadProps['onDragleave']>>(this, 'dragleave', { e });
     },
@@ -490,7 +495,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       }
       return (
         <TButton variant="outline">
-          <TIconUpload slot="icon" />
+          <UploadIcon slot="icon" />
           {this.files?.length ? '重新上传' : '点击上传'}
         </TButton>
       );
@@ -501,7 +506,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         <input
           ref="input"
           type="file"
-          disabled={this.disabled}
+          disabled={this.tDisabled}
           onChange={this.handleChange}
           multiple={this.multiple}
           accept={this.accept}
@@ -584,12 +589,13 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             toUploadFiles={this.toUploadFiles}
             max={this.max}
             onImgPreview={this.handlePreviewImg}
-            disabled={this.disabled}
+            disabled={this.tDisabled}
           ></ImageCard>
         )}
         {this.showUploadList && (
           <FlowList
             files={this.files}
+            disabled={this.tDisabled}
             placeholder={this.placeholder}
             autoUpload={this.autoUpload}
             toUploadFiles={this.toUploadFiles}

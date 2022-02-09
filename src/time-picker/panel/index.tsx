@@ -72,19 +72,20 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
     },
   },
   watch: {
-    isShowPanel(val: boolean) {
-      if (val) {
-        this.panelColUpdate();
-      }
+    isShowPanel: {
+      handler(val: boolean) {
+        if (val) {
+          this.panelColUpdate();
+        }
+      },
+      immediate: true,
     },
   },
   methods: {
     panelColUpdate() {
-      const panelCol0 = this.$refs.panelCol_0 as TimePickerPanelColInstance;
-      const panelCol1 = this.$refs.panelCol_1 as TimePickerPanelColInstance;
       this.$nextTick(() => {
-        panelCol0 && panelCol0.updateTimeScrollPos();
-        panelCol1 && panelCol1.updateTimeScrollPos();
+        (this.$refs.panelCol_0 as TimePickerPanelColInstance)?.updateTimeScrollPos();
+        (this.$refs.panelCol_1 as TimePickerPanelColInstance)?.updateTimeScrollPos();
       });
     },
     scrollToTime(colIndex: number, col: EPickerCols, time: number | string, behavior: ScrollBehavior) {

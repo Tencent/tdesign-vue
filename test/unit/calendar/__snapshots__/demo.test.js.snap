@@ -35,9 +35,11 @@ exports[`Calendar base demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -53,7 +55,7 @@ exports[`Calendar base demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -284,9 +286,11 @@ exports[`Calendar base demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -302,7 +306,7 @@ exports[`Calendar base demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -492,8 +496,7 @@ exports[`Calendar base demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -1124,9 +1127,11 @@ exports[`Calendar card demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1142,7 +1147,7 @@ exports[`Calendar card demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -1262,9 +1267,11 @@ exports[`Calendar card demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -1280,7 +1287,7 @@ exports[`Calendar card demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -1511,9 +1518,11 @@ exports[`Calendar card demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -1529,7 +1538,7 @@ exports[`Calendar card demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -2335,9 +2344,11 @@ exports[`Calendar cell demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -2353,7 +2364,7 @@ exports[`Calendar cell demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -2584,9 +2595,11 @@ exports[`Calendar cell demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -2602,7 +2615,7 @@ exports[`Calendar cell demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -2792,8 +2805,7 @@ exports[`Calendar cell demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -3503,9 +3515,11 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -3521,7 +3535,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -3752,9 +3766,11 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -3770,7 +3786,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -3960,8 +3976,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -4628,38 +4643,6 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
        
       <p>
         <label>
-          是否显示“模式切换”控件：
-        </label>
-         
-        <div
-          class="t-switch t-size-m t-is-checked"
-        >
-          <span
-            class="t-switch__handle"
-          />
-          <div
-            class="t-switch__content t-size-m"
-          />
-        </div>
-         
-        <label>
-          是否禁用“模式切换”控件：
-        </label>
-         
-        <div
-          class="t-switch t-size-m"
-        >
-          <span
-            class="t-switch__handle"
-          />
-          <div
-            class="t-switch__content t-size-m"
-          />
-        </div>
-      </p>
-       
-      <p>
-        <label>
           是否显示“年份选择”控件：
         </label>
          
@@ -4708,6 +4691,38 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
          
         <label>
           是否禁用“月份选择”控件：
+        </label>
+         
+        <div
+          class="t-switch t-size-m"
+        >
+          <span
+            class="t-switch__handle"
+          />
+          <div
+            class="t-switch__content t-size-m"
+          />
+        </div>
+      </p>
+       
+      <p>
+        <label>
+          是否显示“模式切换”控件：
+        </label>
+         
+        <div
+          class="t-switch t-size-m t-is-checked"
+        >
+          <span
+            class="t-switch__handle"
+          />
+          <div
+            class="t-switch__content t-size-m"
+          />
+        </div>
+         
+        <label>
+          是否禁用“模式切换”控件：
         </label>
          
         <div
@@ -4852,29 +4867,31 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
-                          class="t-select-option t-size-m t-select__create-option--special"
+                          class="t-select-option t-size-s t-select__create-option--special"
                           title=""
                         >
                           <span />
                         </li>
                       </ul>
                       <li
-                        class="t-select__empty t-size-m"
+                        class="t-select__empty t-size-s"
                       >
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2010 年"
                         >
                           <span>
@@ -4882,7 +4899,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2011 年"
                         >
                           <span>
@@ -4890,7 +4907,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2012 年"
                         >
                           <span>
@@ -4898,7 +4915,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2013 年"
                         >
                           <span>
@@ -4906,7 +4923,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2014 年"
                         >
                           <span>
@@ -4914,7 +4931,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2015 年"
                         >
                           <span>
@@ -4922,7 +4939,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2016 年"
                         >
                           <span>
@@ -4930,7 +4947,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2017 年"
                         >
                           <span>
@@ -4938,7 +4955,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2018 年"
                         >
                           <span>
@@ -4946,7 +4963,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2019 年"
                         >
                           <span>
@@ -4954,7 +4971,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-is-selected t-size-m"
+                          class="t-select-option t-is-selected t-size-s"
                           title="2020 年"
                         >
                           <span>
@@ -4962,7 +4979,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2021 年"
                         >
                           <span>
@@ -4970,7 +4987,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2022 年"
                         >
                           <span>
@@ -4978,7 +4995,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2023 年"
                         >
                           <span>
@@ -4986,7 +5003,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2024 年"
                         >
                           <span>
@@ -4994,7 +5011,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2025 年"
                         >
                           <span>
@@ -5002,7 +5019,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2026 年"
                         >
                           <span>
@@ -5010,7 +5027,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2027 年"
                         >
                           <span>
@@ -5018,7 +5035,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2028 年"
                         >
                           <span>
@@ -5026,7 +5043,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2029 年"
                         >
                           <span>
@@ -5034,7 +5051,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2030 年"
                         >
                           <span>
@@ -5047,7 +5064,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 </div>
               </transition-stub>
               <div
-                class="t-select t-size-m"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select__placeholder"
@@ -5055,7 +5072,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                    请选择
                 </span>
                 <span
-                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  class="t-tag t-tag--default t-size-s t-tag--dark"
                   style="display: none;"
                 >
                   +0
@@ -5101,29 +5118,31 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
-                          class="t-select-option t-size-m t-select__create-option--special"
+                          class="t-select-option t-size-s t-select__create-option--special"
                           title=""
                         >
                           <span />
                         </li>
                       </ul>
                       <li
-                        class="t-select__empty t-size-m"
+                        class="t-select__empty t-size-s"
                       >
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="1 月"
                         >
                           <span>
@@ -5131,7 +5150,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="2 月"
                         >
                           <span>
@@ -5139,7 +5158,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="3 月"
                         >
                           <span>
@@ -5147,7 +5166,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="4 月"
                         >
                           <span>
@@ -5155,7 +5174,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="5 月"
                         >
                           <span>
@@ -5163,7 +5182,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="6 月"
                         >
                           <span>
@@ -5171,7 +5190,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="7 月"
                         >
                           <span>
@@ -5179,7 +5198,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="8 月"
                         >
                           <span>
@@ -5187,7 +5206,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="9 月"
                         >
                           <span>
@@ -5195,7 +5214,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="10 月"
                         >
                           <span>
@@ -5203,7 +5222,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-size-m"
+                          class="t-select-option t-size-s"
                           title="11 月"
                         >
                           <span>
@@ -5211,7 +5230,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                           </span>
                         </li>
                         <li
-                          class="t-select-option t-is-selected t-size-m"
+                          class="t-select-option t-is-selected t-size-s"
                           title="12 月"
                         >
                           <span>
@@ -5224,7 +5243,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 </div>
               </transition-stub>
               <div
-                class="t-select t-size-m"
+                class="t-select t-size-s"
               >
                 <span
                   class="t-select__placeholder"
@@ -5232,7 +5251,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                    请选择
                 </span>
                 <span
-                  class="t-tag t-tag--default t-size-m t-tag--dark"
+                  class="t-tag t-tag--default t-size-s t-tag--dark"
                   style="display: none;"
                 >
                   +0
@@ -5261,7 +5280,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           style="height: auto;"
         >
           <div
-            class="t-radio-group t-size-m t-radio-group--filled"
+            class="t-radio-group t-size-s t-radio-group--filled"
           >
             <label
               class="t-radio-button t-is-checked"
@@ -5309,8 +5328,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-s t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -5319,7 +5337,8 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-size-s t-button--variant-base t-button--theme-warning"
+            size="medium"
             type="button"
           >
             <span
@@ -5952,9 +5971,11 @@ exports[`Calendar events demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -5970,7 +5991,7 @@ exports[`Calendar events demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -6201,9 +6222,11 @@ exports[`Calendar events demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -6219,7 +6242,7 @@ exports[`Calendar events demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -6409,8 +6432,7 @@ exports[`Calendar events demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -7042,9 +7064,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -7060,7 +7084,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -7192,9 +7216,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -7210,7 +7236,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -7441,9 +7467,11 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -7459,7 +7487,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -7649,8 +7677,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           class="t-calendar__control-section-cell"
         >
           <span
-            class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-            size="medium"
+            class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
           >
             隐藏周末
           </span>
@@ -8397,9 +8424,11 @@ exports[`Calendar head demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -8415,7 +8444,7 @@ exports[`Calendar head demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -8646,9 +8675,11 @@ exports[`Calendar head demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -8664,7 +8695,7 @@ exports[`Calendar head demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -8854,8 +8885,7 @@ exports[`Calendar head demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -9486,9 +9516,11 @@ exports[`Calendar mode demo works fine 1`] = `
             <div
               class="t-popup__content  t-select__dropdown narrow-scrollbar"
             >
-              <div>
+              <div
+                class="t-select__dropdown-inner"
+              >
                 <ul
-                  class="t-select__create-option"
+                  class="t-select__create-option t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -9504,7 +9536,7 @@ exports[`Calendar mode demo works fine 1`] = `
                   暂无数据
                 </li>
                 <ul
-                  class="t-select__groups"
+                  class="t-select__groups t-select__list"
                   style="display: none;"
                 >
                   <li
@@ -9596,9 +9628,11 @@ exports[`Calendar mode demo works fine 1`] = `
                   <div
                     class="t-popup__content  t-select__dropdown narrow-scrollbar"
                   >
-                    <div>
+                    <div
+                      class="t-select__dropdown-inner"
+                    >
                       <ul
-                        class="t-select__create-option"
+                        class="t-select__create-option t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -9614,7 +9648,7 @@ exports[`Calendar mode demo works fine 1`] = `
                         暂无数据
                       </li>
                       <ul
-                        class="t-select__groups"
+                        class="t-select__groups t-select__list"
                         style="display: none;"
                       >
                         <li
@@ -10119,9 +10153,11 @@ exports[`Calendar range demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -10137,7 +10173,7 @@ exports[`Calendar range demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -10288,9 +10324,11 @@ exports[`Calendar range demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -10306,7 +10344,7 @@ exports[`Calendar range demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -10496,8 +10534,7 @@ exports[`Calendar range demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -11139,9 +11176,11 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -11157,7 +11196,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -11388,9 +11427,11 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -11406,7 +11447,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -11596,8 +11637,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -12233,9 +12273,11 @@ exports[`Calendar value demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -12251,7 +12293,7 @@ exports[`Calendar value demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -12482,9 +12524,11 @@ exports[`Calendar value demo works fine 1`] = `
                 <div
                   class="t-popup__content  t-select__dropdown narrow-scrollbar"
                 >
-                  <div>
+                  <div
+                    class="t-select__dropdown-inner"
+                  >
                     <ul
-                      class="t-select__create-option"
+                      class="t-select__create-option t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -12500,7 +12544,7 @@ exports[`Calendar value demo works fine 1`] = `
                       暂无数据
                     </li>
                     <ul
-                      class="t-select__groups"
+                      class="t-select__groups t-select__list"
                       style="display: none;"
                     >
                       <li
@@ -12690,8 +12734,7 @@ exports[`Calendar value demo works fine 1`] = `
         class="t-calendar__control-section-cell"
       >
         <span
-          class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-          size="medium"
+          class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
         >
           隐藏周末
         </span>
@@ -13441,9 +13484,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -13459,7 +13504,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -13690,9 +13735,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -13708,7 +13755,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -13898,8 +13945,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>
@@ -14543,9 +14589,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -14561,7 +14609,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -14792,9 +14840,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -14810,7 +14860,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -15000,8 +15050,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>
@@ -15631,9 +15680,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -15649,7 +15700,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -15880,9 +15931,11 @@ exports[`Calendar week demo works fine 1`] = `
                     <div
                       class="t-popup__content  t-select__dropdown narrow-scrollbar"
                     >
-                      <div>
+                      <div
+                        class="t-select__dropdown-inner"
+                      >
                         <ul
-                          class="t-select__create-option"
+                          class="t-select__create-option t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -15898,7 +15951,7 @@ exports[`Calendar week demo works fine 1`] = `
                           暂无数据
                         </li>
                         <ul
-                          class="t-select__groups"
+                          class="t-select__groups t-select__list"
                           style="display: none;"
                         >
                           <li
@@ -16088,8 +16141,7 @@ exports[`Calendar week demo works fine 1`] = `
             class="t-calendar__control-section-cell"
           >
             <span
-              class="t-tag t-tag--check t-tag--default t-calendar__control-tag"
-              size="medium"
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
             >
               隐藏周末
             </span>

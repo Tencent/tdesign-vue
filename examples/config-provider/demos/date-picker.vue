@@ -1,17 +1,17 @@
 <template>
   <t-config-provider :globalConfig="globalConfig" class="tdesign-demo-item__locale-provider-date-picker">
-    <t-date-picker mode="date" :firstDayOfWeek="7"/>
-    <br><br>
-    <t-date-picker mode="date" range/>
-    <br><br>
-    <t-date-picker mode="month"/>
-    <br><br>
-    <t-date-picker mode="month" range/>
-    <br><br>
-    <t-date-picker mode="year"/>
-    <br><br>
-    <t-date-picker mode="year" range/>
-    <br><br>
+    <t-date-picker mode="date" :firstDayOfWeek="7" />
+    <br /><br />
+    <t-date-picker mode="date" range />
+    <br /><br />
+    <t-date-picker mode="month" />
+    <br /><br />
+    <t-date-picker mode="month" range />
+    <br /><br />
+    <t-date-picker mode="year" />
+    <br /><br />
+    <t-date-picker mode="year" range />
+    <br /><br />
   </t-config-provider>
 </template>
 
@@ -27,7 +27,7 @@ const DATE_PICK_CONFIGS = {
   weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   rangeSeparator: ' ~ ',
-  format: 'YYYYMMDD',
+  format: 'DD/MM/YYYY',
   yearAriaLabel: '',
   now: 'Now',
   selectTime: 'Select Time',
@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 .tdesign-demo-item__locale-provider-date-picker {
-  padding: 16px
+  padding: 16px;
 }
 .tdesign-demo-item__locale-provider-date-picker .t-date-picker {
   width: 400px;

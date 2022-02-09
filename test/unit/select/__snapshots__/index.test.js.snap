@@ -6,12 +6,12 @@ exports[`Select :props :bordered 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -29,12 +29,12 @@ exports[`Select :props :clearable 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -52,12 +52,12 @@ exports[`Select :props :creatable 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -75,12 +75,12 @@ exports[`Select :props :disabled 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -98,12 +98,12 @@ exports[`Select :props :labelInValue 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -121,12 +121,12 @@ exports[`Select :props :loading 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
-            <li class="t-select__loading-tips t-size-m">加载中</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <div class="t-select__loading-tips t-size-m">加载中</div>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -148,12 +148,12 @@ exports[`Select :props :multiple 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former" value=""><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -171,12 +171,12 @@ exports[`Select :props :placeholder 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -194,12 +194,12 @@ exports[`Select :props :remote 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -217,12 +217,12 @@ exports[`Select :props :reserveKeyword 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -240,12 +240,12 @@ exports[`Select :props :size 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-l t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-l">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;"></ul>
+            <ul class="t-select__groups t-select__list" style="display: none;"></ul>
           </div>
         </div>
       </div>
@@ -263,12 +263,12 @@ exports[`Select Option :props :disabled 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;">
+            <ul class="t-select__groups t-select__list" style="display: none;">
               <li title="1" class="t-select-option t-is-disabled t-is-selected t-size-m"><span>1</span></li>
             </ul>
           </div>
@@ -288,12 +288,12 @@ exports[`Select Option :props :label 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;">
+            <ul class="t-select__groups t-select__list" style="display: none;">
               <li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
             </ul>
           </div>
@@ -313,12 +313,12 @@ exports[`Select Option :props :value 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;">
+            <ul class="t-select__groups t-select__list" style="display: none;">
               <li title="1" class="t-select-option t-is-selected t-size-m"><span>1</span></li>
             </ul>
           </div>
@@ -338,12 +338,12 @@ exports[`Select OptionGroup :props :value 1`] = `
     <transition-stub name="t-popup--animation" appear="true">
       <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
         <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-          <div>
-            <ul class="t-select__create-option" style="display: none;">
+          <div class="t-select__dropdown-inner">
+            <ul class="t-select__create-option t-select__list" style="display: none;">
               <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
             </ul>
             <li class="t-select__empty t-size-m">暂无数据</li>
-            <ul class="t-select__groups" style="display: none;">
+            <ul class="t-select__groups t-select__list" style="display: none;">
               <li class="t-select-option-group t-size-m t-select-option-group__divider">
                 <div class="t-select-option-group__header">num</div>
                 <ul>

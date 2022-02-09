@@ -1,10 +1,9 @@
-import {
-  CloseIcon as TIconClose,
-  InfoCircleFilledIcon as TIconInfoCircleFilled,
-  CheckCircleFilledIcon as TIconCheckCircleFilled,
-  ErrorCircleFilledIcon as TIconErrorCircleFilled,
-} from 'tdesign-icons-vue';
 import Vue from 'vue';
+import throttle from 'lodash/throttle';
+import {
+  CloseIcon, InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon,
+} from 'tdesign-icons-vue';
+
 import { prefix } from '../config';
 import TButton from '../button';
 import ActionMixin from './actions';
@@ -25,50 +24,31 @@ function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
 }
 
-// 注册元素的拖拽事件
-function initDragEvent(dragBox: HTMLElement) {
-  const target = dragBox;
-  target.addEventListener('mousedown', (targetEvent: MouseEvent) => {
-    // 算出鼠标相对元素的位置
-    const disX = targetEvent.clientX - target.offsetLeft;
-    const disY = targetEvent.clientY - target.offsetTop;
-    function mouseMoverHander(documentEvent: MouseEvent) {
-      // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
-      const left = documentEvent.clientX - disX;
-      const top = documentEvent.clientY - disY;
-      // 移动当前元素
-      target.style.left = `${left}px`;
-      target.style.top = `${top}px`;
-    }
-    function mouseUpHandler() {
-      // 鼠标弹起来的时候不再移动
-      document.removeEventListener('mousemove', mouseMoverHander);
-      // 预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
-      document.removeEventListener('mouseup', mouseUpHandler);
-    }
-    // 元素按下时注册document鼠标监听事件
-    document.addEventListener('mousemove', mouseMoverHander);
-    // 鼠标弹起来移除document鼠标监听事件
-    document.addEventListener('mouseup', mouseUpHandler);
-    // 拖拽结束移除鼠标监听事件，解决文字拖拽结束事件未解绑问题
-    document.addEventListener('dragend', mouseUpHandler);
-  });
-}
-
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
   name: 'TDialog',
 
   components: {
-    TIconClose,
-    TIconInfoCircleFilled,
-    TIconCheckCircleFilled,
-    TIconErrorCircleFilled,
+    CloseIcon,
+    InfoCircleFilledIcon,
+    CheckCircleFilledIcon,
+    ErrorCircleFilledIcon,
     TButton,
   },
 
   data() {
     return {
       scrollWidth: 0,
+      disX: 0,
+      disY: 0,
+      windowInnerWidth: 0,
+      windowInnerHeight: 0,
+      // translate 偏移影响的 需要调整
+      offsetX: 0,
+      offsetY: 0,
+      diaglogW: 0,
+      diaglogH: 0,
+      dLeft: 0,
+      dTop: 0,
     };
   },
 
@@ -130,24 +110,23 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         removeClass(document.body, lockClass);
       }
       this.addKeyboardEvent(value);
+      if (this.isModeless && this.draggable) {
+        this.initDragEvent(value);
+      }
     },
   },
   mounted() {
     this.scrollWidth = window.innerWidth - document.body.offsetWidth;
+    if (this.draggable) {
+      window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
+    }
   },
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
   },
 
-  // 注册v-draggable指令,传入ture时候初始化拖拽事件
   directives: {
-    draggable(el, binding) {
-      // el 指令绑定的元素
-      if (el && binding && binding.value) {
-        initDragEvent(el);
-      }
-    },
     TransferDom,
   },
 
@@ -227,18 +206,88 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
     getIcon() {
       const icon = {
-        info: <TIconInfoCircleFilled class={`${prefix}-is-info`} />,
-        warning: <TIconErrorCircleFilled class={`${prefix}-is-warning`} />,
-        danger: <TIconErrorCircleFilled class={`${prefix}-is-error`} />,
-        success: <TIconCheckCircleFilled class={`${prefix}-is-success`} />,
+        info: <InfoCircleFilledIcon class={`${prefix}-is-info`} />,
+        warning: <ErrorCircleFilledIcon class={`${prefix}-is-warning`} />,
+        danger: <ErrorCircleFilledIcon class={`${prefix}-is-error`} />,
+        success: <CheckCircleFilledIcon class={`${prefix}-is-success`} />,
       };
       return icon[this.theme];
     },
-
+    mousedownHanler(targetEvent: MouseEvent) {
+      const target = this.$refs.dialog as HTMLElement;
+      // 算出鼠标相对元素的位置
+      this.disX = targetEvent.clientX - target.offsetLeft;
+      this.disY = targetEvent.clientY - target.offsetTop;
+      this.diaglogW = target.offsetWidth;
+      this.diaglogH = target.offsetHeight;
+      const [x, y] = this.getTranslateXY(target);
+      this.offsetX = x;
+      this.offsetY = y;
+      this.windowInnerWidth = window.innerWidth;
+      this.windowInnerHeight = window.innerHeight;
+      // 元素按下时注册document鼠标监听事件
+      document.addEventListener('mousemove', this.mouseMoverHander);
+      // 鼠标弹起来移除document鼠标监听事件
+      document.addEventListener('mouseup', this.mouseUpHandler);
+      // 拖拽结束移除鼠标监听事件，解决文字拖拽结束事件未解绑问题(window系统双击文本然后拖拽触发)
+      document.addEventListener('dragend', this.mouseUpHandler);
+    },
+    mouseMoverHander(documentEvent: MouseEvent) {
+      const target = this.$refs.dialog as HTMLElement;
+      // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
+      const left = documentEvent.clientX - this.disX;
+      const top = documentEvent.clientY - this.disY;
+      // 移动当前元素
+      // 临界判断
+      if (left + this.diaglogW - this.offsetX > this.windowInnerWidth) {
+        this.dLeft = this.windowInnerWidth - this.diaglogW + this.offsetX;
+      } else {
+        this.dLeft = target.offsetLeft < this.offsetX || left <= this.offsetX ? this.offsetX : left;
+      }
+      target.style.left = `${this.dLeft}px`;
+      if (top + this.diaglogH - this.offsetY > this.windowInnerHeight) {
+        this.dTop = this.windowInnerHeight - this.diaglogH + this.offsetY;
+      } else {
+        this.dTop = top < this.offsetY ? this.offsetY : top;
+      }
+      target.style.top = `${this.dTop}px`;
+    },
+    mouseUpHandler() {
+      document.removeEventListener('mousemove', this.mouseMoverHander);
+      document.removeEventListener('mouseup', this.mouseUpHandler);
+      document.removeEventListener('dragend', this.mouseUpHandler);
+    },
+    initDragEvent(status: boolean) {
+      const target = this.$refs.dialog as HTMLElement;
+      if (status) {
+        target.addEventListener('mousedown', this.mousedownHanler);
+      } else {
+        target.removeEventListener('mousedown', this.mousedownHanler);
+      }
+    },
+    /**
+     * 获取设置的translate值
+     */
+    getTranslateXY(target: HTMLElement) {
+      const transformStyle = document.defaultView.getComputedStyle(target).transform;
+      const reg = /(\d+(\.\d+)?)/g;
+      const tarnsArr = transformStyle.match(reg);
+      return [parseFloat(tarnsArr[4]), parseFloat(tarnsArr[5])];
+    },
+    /**
+     * 打开弹窗，浏览器动态调整大小的时候缩放
+     */
+    resizeAdjustPosition() {
+      if (this.visible) {
+        const target = this.$refs.dialog as HTMLElement;
+        target.style.left = `${this.dLeft * (window.innerWidth / this.windowInnerWidth)}px`;
+        target.style.top = `${this.dTop * (window.innerHeight / this.windowInnerHeight)}px`;
+      }
+    },
     renderDialog() {
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <t-icon-close />;
+      const defaultCloseBtn = <close-icon />;
       const body = renderContent(this, 'default', 'body');
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
@@ -261,12 +310,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
-        <div
-          key="dialog"
-          class={this.dialogClass}
-          style={this.dialogStyle}
-          v-draggable={this.isModeless && this.draggable}
-        >
+        <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
           <div class={`${name}__header`}>
             {this.getIcon()}
             {renderTNodeJSX(this, 'header', defaultHeader)}
