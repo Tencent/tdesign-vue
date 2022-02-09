@@ -76,7 +76,7 @@ export function getRowFixedStyles(
   };
 }
 
-const defaultStickyPositions: ColumnStickyLeftAndRight = {
+const defaultStickyPos: ColumnStickyLeftAndRight = {
   right: [],
   left: [],
   top: [],
@@ -90,15 +90,15 @@ export default function useFixed(props: TdBaseTableProps) {
   const tableContentRef = ref();
   const tableRef = ref();
   const isFixedHeader = ref(false);
-  const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>(defaultStickyPositions);
+  const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>(defaultStickyPos);
   const showColumnShadow = reactive({
     left: false,
     right: false,
   });
 
-  const isFixedColumn = computed<boolean>(() => !!props.columns.find((col) => ['left', 'right'].includes(col.fixed)));
+  const isFixedColumn = computed<boolean>(() => !!columns.value.find((col) => ['left', 'right'].includes(col.fixed)));
 
-  const setIsFixedHeader = () => {
+  const updateFixedHeader = () => {
     const timer = setTimeout(() => {
       if (!tableContentRef.value) return;
       isFixedHeader.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
@@ -170,14 +170,14 @@ export default function useFixed(props: TdBaseTableProps) {
 
     // 冻结行
     const trList = getTrNodeList(tableContentElm);
-    if (props.fixedRows?.length && trList?.length) {
-      for (let i = 1; i <= props.fixedRows[0]; i++) {
+    if (fixedRows.value?.length && trList?.length) {
+      for (let i = 1; i <= fixedRows.value[0]; i++) {
         const height = trList[i - 1].offsetHeight;
         const top = (stickyPos.top[i - 1] || 0) + height;
         stickyPos.top.push(top);
       }
       const len = trList.length;
-      const min = len - 1 - props.fixedRows[1];
+      const min = len - 1 - fixedRows.value[1];
       for (let i = len - 2; i >= min; i--) {
         const height = trList[i + 1].offsetHeight;
         const bottom = (stickyPos.bottom[len - (i + 2)] || 0) + height;
@@ -188,8 +188,9 @@ export default function useFixed(props: TdBaseTableProps) {
   };
 
   const updateColumnFixedStatus = (target: HTMLElement) => {
+    const isShowRight = target.clientWidth + target.scrollLeft !== target.scrollWidth;
     showColumnShadow.left = target.scrollLeft !== 0;
-    showColumnShadow.right = target.clientWidth + target.scrollLeft !== target.scrollWidth;
+    showColumnShadow.right = isShowRight;
   };
 
   const onTableContentScroll = (e: WheelEvent) => {
@@ -203,7 +204,7 @@ export default function useFixed(props: TdBaseTableProps) {
       if (isFixedColumn.value) {
         updateColumnFixedStatus(tableContentRef.value);
       }
-      if (isFixedColumn.value || props.fixedRows?.length) {
+      if (isFixedColumn.value || fixedRows.value?.length) {
         setColumnsStickyLeftAndRight(tableContentRef.value);
       }
       clearTimeout(timer);
@@ -214,15 +215,15 @@ export default function useFixed(props: TdBaseTableProps) {
   };
 
   watch(
-    [data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow],
+    [data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow, isFixedColumn],
     updateFixedStatus,
   );
 
-  watch([maxHeight], setIsFixedHeader);
+  watch([maxHeight], updateFixedHeader);
 
   onMounted(updateFixedStatus);
 
-  onMounted(setIsFixedHeader);
+  onMounted(updateFixedHeader);
 
   return {
     isFixedHeader,

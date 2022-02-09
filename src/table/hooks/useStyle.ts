@@ -1,4 +1,4 @@
-import { computed } from '@vue/composition-api';
+import { computed, toRefs } from '@vue/composition-api';
 import { prefix } from '../../config';
 import { TdBaseTableProps } from '../type';
 import { ClassName, Styles } from '../../common';
@@ -71,24 +71,27 @@ export function formatCSSUnit(unit: string | number) {
 }
 
 export default function useStyle(props: TdBaseTableProps) {
+  const {
+    size, bordered, stripe, hover, verticalAlign, height, maxHeight, tableContentWidth,
+  } = toRefs(props);
   const tableClasses = computed<ClassName>(() => [
     TABLE_CLASS,
     {
-      [SIZE_CLASSNAMES[props.size]]: props.size,
-      [TABLE_CLASS_BORDERED]: props.bordered,
-      [TABLE_CLASS_STRIPED]: props.stripe,
-      [TABLE_CLASS_HOVER]: props.hover,
-      [TABLE_CLASS_ALIGN[props.verticalAlign]]: props.verticalAlign !== 'middle',
+      [SIZE_CLASSNAMES[size.value]]: size.value,
+      [TABLE_CLASS_BORDERED]: bordered.value,
+      [TABLE_CLASS_STRIPED]: stripe.value,
+      [TABLE_CLASS_HOVER]: hover.value,
+      [TABLE_CLASS_ALIGN[verticalAlign.value]]: verticalAlign.value !== 'middle',
     },
   ]);
 
   const tableContentStyles = computed<Styles>(() => ({
-    height: formatCSSUnit(props.height),
-    maxHeight: formatCSSUnit(props.maxHeight),
+    height: formatCSSUnit(height.value),
+    maxHeight: formatCSSUnit(maxHeight.value),
   }));
 
   const tableElementStyles = computed<Styles>(() => ({
-    width: formatCSSUnit(props.tableContentWidth),
+    width: formatCSSUnit(tableContentWidth.value),
   }));
 
   return {
