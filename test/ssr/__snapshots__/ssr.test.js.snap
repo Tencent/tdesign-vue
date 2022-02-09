@@ -3263,7 +3263,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.v
   <div class="t-popup__reference">
     <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">Danger</span></button>
   </div> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Open Drawer</span></button>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">Drawer</div>
@@ -3711,7 +3711,7 @@ exports[`ssr snapshot test renders ./examples/divider/demos/vertical.vue correct
 exports[`ssr snapshot test renders ./examples/drawer/demos/attach-parent.vue correctly 1`] = `
 <div class="t-container">
   <div class="t-suf-container">
-    <div class="t-drawer t-drawer--right t-drawer--attach">
+    <div tabindex="0" class="t-drawer t-drawer--right t-drawer--attach">
       <div class="t-drawer__mask"></div>
       <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
         <div class="t-drawer__header">抽屉标题</div>
@@ -3738,7 +3738,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/attach-parent.vue cor
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/base.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3758,7 +3758,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/base.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">
@@ -3771,7 +3771,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
       <div class="t-drawer__footer"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">确定</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">取消</span></button></div>
     </div>
   </div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3784,7 +3784,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3812,7 +3812,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/destroy.vue correctly
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/no-mask.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right t-drawer--without-mask">
+  <div tabindex="0" class="t-drawer t-drawer--right t-drawer--without-mask">
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
       <div class="t-drawer__close-btn"></div>
@@ -3829,7 +3829,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/no-mask.vue correctly
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/operation.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3855,7 +3855,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/operation.vue correct
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3876,7 +3876,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correct
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/popup.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
@@ -3898,7 +3898,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/popup.vue correctly 1
 
 exports[`ssr snapshot test renders ./examples/drawer/demos/size.vue correctly 1`] = `
 <div>
-  <div class="t-drawer t-drawer--right">
+  <div tabindex="0" class="t-drawer t-drawer--right">
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
