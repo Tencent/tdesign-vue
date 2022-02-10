@@ -14271,7 +14271,7 @@ exports[`ssr snapshot test renders ./examples/tooltip/demos/arrow.vue correctly 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1`] = `
 <div class="tdesign-tooltip-placement">
   <div showArrow="true" class="placement top center t-popup__reference">
-    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top </span></button>
+    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> top </span></button>
   </div>
   <div showArrow="true" class="placement top left t-popup__reference">
     <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button>
@@ -14280,7 +14280,7 @@ exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1
     <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button>
   </div>
   <div showArrow="true" class="placement bottom center t-popup__reference">
-    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom </span></button>
+    <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> bottom </span></button>
   </div>
   <div showArrow="true" class="placement bottom left t-popup__reference">
     <div name="t-popup--animation" appear="true"></div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button>
