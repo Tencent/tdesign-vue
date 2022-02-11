@@ -1,14 +1,13 @@
 import Vue, { VNode } from 'vue';
-import { BulletpointIcon } from 'tdesign-icons-vue';
-import Button from '../../../button';
-import Dialog from '../../../dialog';
+import { SettingIcon } from 'tdesign-icons-vue';
+
+import { DialogPlugin } from '../../../dialog/plugin';
 import Checkbox from '../../../checkbox';
 import CheckboxGroup from '../../../checkbox/group';
 import primaryTableProps from '../../primary-table-props';
 import { TdPrimaryTableProps } from '../../type';
 import { prefix } from '../../../config';
 
-const content = '自定义列';
 export default Vue.extend({
   name: `${prefix}-primary-show-columns`,
   props: {
@@ -35,62 +34,61 @@ export default Vue.extend({
         }));
     },
     isAllShowColumns(): boolean {
-      return this.showColumnCheckboxOpts
-        .every(({ value }: Record<string, any>) => this.showColumnCheckboxKeys.includes(value));
+      return this.showColumnCheckboxOpts.every(({ value }: Record<string, any>) => this.showColumnCheckboxKeys.includes(value));
     },
     isSomeShowColumns(): boolean {
       return (
         !this.isAllShowColumns
-        && this.showColumnCheckboxOpts
-          .some(({ value }: Record<string, any>) => this.showColumnCheckboxKeys.includes(value))
+        && this.showColumnCheckboxOpts.some(({ value }: Record<string, any>) => this.showColumnCheckboxKeys.includes(value))
       );
     },
   },
   methods: {
     getShowColumns(columns: TdPrimaryTableProps['columns']): TdPrimaryTableProps['columns'] {
-      return columns.filter(({ colKey }) => this.showColumnKeys.includes(colKey)
-        || !this.showColumnCheckboxOpts
-          .map(({ value }: Record<string, any>) => value).includes(colKey));
+      return columns.filter(
+        ({ colKey }) => this.showColumnKeys.includes(colKey)
+          || !this.showColumnCheckboxOpts.map(({ value }: Record<string, any>) => value).includes(colKey),
+      );
     },
 
-    renderShowColumnsDlgFooter(): VNode {
-      return (
-        <div>
-          <Button variant="base" theme="primary" {...{ on: { click: this.handleConfirmShowColumnsDlg } }}>
-            确定
-          </Button>
-          <Button {...{ on: { click: this.handleCancelShowColumnsDlg } }}>取消</Button>
-        </div>
-      );
-    },
-    renderShowColumnsDlg(): VNode {
-      return (
-        <Dialog header={content} footer={this.renderShowColumnsDlgFooter}
-          visible={this.isShowColumnsDlg}>
-          <div slot="body">
-            <div>
-              <Checkbox
-                indeterminate={this.isSomeShowColumns}
-                checked={this.isAllShowColumns}
-                onChange={this.handleClickAllShowColumns}
-              >
-                全选
-              </Checkbox>
-            </div>
-            <CheckboxGroup options={this.showColumnCheckboxOpts}
-              vModel={this.showColumnCheckboxKeys} />
-          </div>
-        </Dialog>
-      );
-    },
     renderShowColumns(): VNode {
+      const handleToggleColumnController = () => {
+        const dialogTmp = DialogPlugin.confirm({
+          header: '自定义设置表格列',
+          body: () => (
+            <div class={`${prefix}-table__column-controller`}>
+              <div class={`${prefix}-table__column-controller-body`}>
+                <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
+                <div>
+                  <Checkbox
+                    indeterminate={this.isSomeShowColumns}
+                    checked={this.isAllShowColumns}
+                    onChange={this.handleClickAllShowColumns}
+                  >
+                    全选
+                  </Checkbox>
+                </div>
+                <CheckboxGroup options={this.showColumnCheckboxOpts} vModel={this.showColumnCheckboxKeys} />
+              </div>
+            </div>
+          ),
+          confirmBtn: '确定',
+          cancelBtn: '取消',
+          onConfirm: () => {
+            this.showColumnKeys = [...this.showColumnCheckboxKeys];
+            dialogTmp.hide();
+          },
+          onClose: () => {
+            dialogTmp.hide();
+          },
+        });
+      };
       return (
-        <div>
-          <div>
-            <Button icon={() => <BulletpointIcon/> }
-              onClick={() => (this.isShowColumnsDlg = true)}>{content}</Button>
-          </div>
-          {this.renderShowColumnsDlg()}
+        <div class={`${prefix}-table__top-content`}>
+          <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
+            <SettingIcon slot="icon" />
+            自定义列
+          </t-button>
         </div>
       );
     },
@@ -100,13 +98,7 @@ export default Vue.extend({
         ? []
         : this.showColumnCheckboxOpts.map(({ value }: Record<string, any>) => value);
     },
-    handleConfirmShowColumnsDlg(): void {
-      this.showColumnKeys = [...this.showColumnCheckboxKeys];
-      this.handleCancelShowColumnsDlg();
-    },
-    handleCancelShowColumnsDlg(): void {
-      this.isShowColumnsDlg = false;
-    },
+
     updateColumns(): void {
       this.showColumnKeys = this.columns.map(({ colKey }) => colKey);
       this.showColumnCheckboxKeys = this.columns.map(({ colKey }) => colKey);
