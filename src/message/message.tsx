@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import Vue from 'vue';
 import {
   InfoCircleFilledIcon,
@@ -13,6 +12,7 @@ import { THEME_LIST } from './const';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
+import { fadeIn, fadeOut } from './animation';
 
 const name = `${prefix}-message`;
 
@@ -28,7 +28,10 @@ export default Vue.extend({
     Loading,
   },
 
-  props: { ...props, placement: String }, // todo: 把placement加到配置里
+  props: {
+    ...props,
+    placement: String, // just for animation
+  },
 
   data() {
     return {
@@ -58,47 +61,10 @@ export default Vue.extend({
 
   mounted() {
     const msgDom = this.$refs.msg as HTMLElement;
-    const offsetWidth = msgDom?.offsetWidth || 0;
-    const offsetHeight = msgDom?.offsetHeight || 0;
-    const fadeInKeyframes: Array<Keyframe> | null = this.getFadeInKeyframes(
-      this.$props.placement,
-      offsetWidth,
-      offsetHeight,
-    );
-    if (!fadeInKeyframes) return;
-    const styleAfterFadeIn = fadeInKeyframes[fadeInKeyframes.length - 1];
-    const keys = Object.keys(styleAfterFadeIn);
-    for (let i = 0; i < keys.length; i += 1) {
-      const key = keys[i];
-      msgDom.style[key] = styleAfterFadeIn[key];
-    }
-    msgDom.animate(fadeInKeyframes, {
-      duration: 200,
-      easing: 'linear',
-    });
+    fadeIn(msgDom, this.$props.placement);
   },
 
   methods: {
-    fadeOut(onFinish: Function) {
-      const msgDom = this.$refs.msg as HTMLElement;
-      const offsetHeight = msgDom?.offsetHeight || 0;
-      const fadeOutKeyframes: Array<Keyframe> = this.getFadeOutKeyframes(this.$props.placement, offsetHeight);
-      const styleAfterFadeOut = fadeOutKeyframes[fadeOutKeyframes.length - 1];
-      const keys = Object.keys(styleAfterFadeOut);
-      for (let i = 0; i < keys.length; i += 1) {
-        const key = keys[i];
-        msgDom.style[key] = styleAfterFadeOut[key];
-      }
-
-      const animation = msgDom.animate(fadeOutKeyframes, {
-        duration: 200,
-        easing: 'linear',
-      });
-      animation.onfinish = () => {
-        msgDom.style.display = 'none';
-        onFinish();
-      };
-    },
     setTimer() {
       if (!this.duration) {
         return;
@@ -106,7 +72,8 @@ export default Vue.extend({
       this.timer = Number(
         setTimeout(() => {
           this.clearTimer();
-          this.fadeOut(() => {
+          const msgDom = this.$refs.msg as HTMLElement;
+          fadeOut(msgDom, this.$props.placement, () => {
             this.$emit('duration-end');
           });
           if (this.onDurationEnd) {
@@ -117,47 +84,6 @@ export default Vue.extend({
     },
     clearTimer() {
       this.duration && clearTimeout(this.timer);
-    },
-    getFadeInKeyframes(placement: string, offsetWidth: Number, offsetHeight: Number): Array<Keyframe> | null {
-      if (['top-left', 'left', 'bottom-left'].includes(placement)) {
-        return [
-          { opacity: 0, marginLeft: `-${offsetWidth}px` },
-          { opacity: 1, marginLeft: '0' },
-        ];
-      }
-      if (['top-right', 'right', 'bottom-right'].includes(placement)) {
-        return [
-          { opacity: 0, marginRight: `-${offsetWidth}px` },
-          { opacity: 1, marginRight: '0' },
-        ];
-      }
-      if (['top'].includes(placement)) {
-        return [
-          { opacity: 0, marginTop: `-${offsetHeight}px` },
-          { opacity: 1, marginTop: '0' },
-        ];
-      }
-      if (['center', 'bottom'].includes(placement)) {
-        return [
-          { opacity: 0, transform: `translate3d(0, ${offsetHeight}px, 0)` },
-          { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-        ];
-      }
-      return null;
-    },
-    getFadeOutKeyframes(placement: string, offsetHeight: Number): Array<Keyframe> | null {
-      if (['bottom-left', 'bottom', 'bottom-right'].includes(placement)) {
-        const marginOffset = `${offsetHeight}px`;
-        return [
-          { opacity: 1, marginTop: '0px' },
-          { opacity: 0, marginTop: marginOffset },
-        ];
-      }
-      const marginOffset = `-${offsetHeight}px`;
-      return [
-        { opacity: 1, marginTop: '0px' },
-        { opacity: 0, marginTop: marginOffset },
-      ];
     },
     close(e?: MouseEvent) {
       this.$emit('close-btn-click', { e });

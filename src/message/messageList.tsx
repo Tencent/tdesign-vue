@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import Vue, { VNode } from 'vue';
 import { PLACEMENT_OFFSET } from './const';
 import TMessage from './message';

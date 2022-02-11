@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 export const THEME_LIST: string[] = ['info', 'success', 'warning', 'error', 'question', 'loading'];
 
 const DISTANCE = '32px';
