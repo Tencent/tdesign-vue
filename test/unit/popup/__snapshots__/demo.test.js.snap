@@ -55,17 +55,20 @@ exports[`Progress container demo works fine 1`] = `
   <div
     class="t-popup-demo-block"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    <div
       id="myPopup"
-      type="button"
     >
-      <span
-        class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+        type="button"
       >
-        父元素为组件本身
-      </span>
-    </button>
+        <span
+          class="t-button__text"
+        >
+          父元素为组件本身
+        </span>
+      </button>
+    </div>
   </div>
    
   <div

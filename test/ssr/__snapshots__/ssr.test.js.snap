@@ -7904,7 +7904,9 @@ exports[`ssr snapshot test renders ./examples/popup/demos/base.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/popup/demos/container.vue correctly 1`] = `
 <div>
-  <div class="t-popup-demo-block"><button type="button" id="myPopup" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为组件本身</span></button></div>
+  <div class="t-popup-demo-block">
+    <div id="myPopup"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为组件本身</span></button></div>
+  </div>
   <div id="second-popup" class="t-popup-demo-block"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为其他元素</span></button></div>
 </div>
 `;
