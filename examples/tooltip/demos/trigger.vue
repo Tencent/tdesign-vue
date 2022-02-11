@@ -14,7 +14,7 @@
     </t-tooltip>
   </div>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 .tdesign-tooltip-demo {
   > * {
     display: inline-block;
