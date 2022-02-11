@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import _Message from './message';
 import withInstall from '../utils/withInstall';
 import { TdMessageProps } from './type';

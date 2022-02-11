@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Vue.prototype.$message = MessagePlugin;
  *
