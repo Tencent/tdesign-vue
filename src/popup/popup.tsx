@@ -268,7 +268,16 @@ export default Vue.extend({
       this.mouseInRange = true;
       this.handleOpen({});
     },
-    onMouseLeave() {
+    onMouseLeave(ev: MouseEvent) {
+      // 子元素存在打开的 popup 时，ui 可能重叠，而 dom 节点多是并列关系
+      // 需要做碰撞检测去阻止父级 popup 关闭
+      if (this.visibleState > 1) {
+        const rect = (this.$refs.popper as HTMLElement).getBoundingClientRect();
+        if (
+          ev.x > rect.x && ev.x < rect.x + rect.width
+          && ev.y > rect.y && ev.y < rect.y + rect.height
+        ) return;
+      }
       this.mouseInRange = false;
       this.handleClose({});
     },
