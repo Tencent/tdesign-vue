@@ -26,6 +26,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
   // 表头二维数据
   const thList = computed(() => getThList(props.columns));
+  const isMultipleHeader = computed(() => thList.value.length > 1);
 
   const renderTitle = (col: TableColums[0], index: number) => {
     const params = { col, colIndex: index };
@@ -89,7 +90,6 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   };
 
   const renderTableHeader = ({ isFixedHeader, columnStickyLeftAndRight }: RenderTableHeaderParams) => {
-    const isMultipleHeader = thList.value.length > 1;
     const theadClasses = [
       TABLE_CLASS_HEADER,
       {
@@ -111,5 +111,6 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
     renderTitle,
     renderTableHeader,
     renderColgroup,
+    isMultipleHeader,
   };
 }

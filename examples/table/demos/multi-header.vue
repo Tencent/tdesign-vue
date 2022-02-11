@@ -101,10 +101,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* todo */
-.tdesign-demo-table-multi-header .t-table__th-needed {
-  border-right: 0 !important;
-}
-</style>

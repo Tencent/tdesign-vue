@@ -16,6 +16,7 @@ import useStyle, {
   TABLE_CLASS_COLUMN_FIXED,
   TABLE_ROOT_CLASS_HEADER_FIXED,
   TABLE_ROOT_CLASS_COLUMN_FIXED,
+  TABLE_ROOT_CLASS_MULTIPLE_HEADER,
 } from './hooks/useStyle';
 
 export default defineComponent({
@@ -43,7 +44,9 @@ export default defineComponent({
       columnStickyLeftAndRight,
       onTableContentScroll,
     } = useFixed(props);
-    const { renderTableHeader, renderColgroup, spansAndLeafNodes } = useTableHeader(props, context);
+    const {
+      renderTableHeader, renderColgroup, isMultipleHeader, spansAndLeafNodes,
+    } = useTableHeader(props, context);
     const { renderTableBody } = useTableBody(props, context);
     const { renderTableFooter } = useTableFooter(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
@@ -52,6 +55,7 @@ export default defineComponent({
       tableClasses.value,
       { [TABLE_ROOT_CLASS_HEADER_FIXED]: isFixedHeader.value },
       { [TABLE_ROOT_CLASS_COLUMN_FIXED]: isFixedColumn.value },
+      { [TABLE_ROOT_CLASS_MULTIPLE_HEADER]: isMultipleHeader.value },
       { [TABLE_CLASS_COLUMN_FIXED.leftShadow]: showColumnShadow.left },
       { [TABLE_CLASS_COLUMN_FIXED.rightShadow]: showColumnShadow.right },
     ]);
