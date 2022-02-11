@@ -58,6 +58,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
+        unselectable: this.readonly ? 'on' : 'off',
       });
     },
     inputClasses(): ClassName {

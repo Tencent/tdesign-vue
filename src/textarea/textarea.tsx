@@ -58,6 +58,7 @@ export default Vue.extend({
         placeholder: this.placeholder,
         maxlength: this.maxlength || undefined,
         name: this.name || undefined,
+        unselectable: this.readonly ? 'on' : 'off',
       });
     },
     characterNumber(): number {
