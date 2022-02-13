@@ -12,16 +12,16 @@ disableDate | Object / Array / Function | - | 禁用日期，示例：['A', 'B']
 enableTimePicker | Boolean | false | 是否显示时间选择 | N
 firstDayOfWeek | Number | - | 第一天从星期几开始。可选项：1/2/3/4/5/6/7 | N
 format | String | undefined | 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) | N
-inputProps | Object | - | 透传给输入框（Input）组件的参数。TS 类型：`InputProps` `import { InputProps } from '@Input'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+inputProps | Object | - | 透传给输入框（Input）组件的参数。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 mode | String | month | 选择器模式。可选项：year/month/date | N
 placeholder | String / Array | undefined | 占位符。TS 类型：`string | Array<string>` | N
-popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupProps` `import { PopupProps } from '@Popup'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 prefixIcon | Slot / Function | - | 用于自定义组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 presets | Object | - | 预设快捷日期选择，示例：`{ '元旦': '2021-01-01', '昨天':  dayjs().subtract(1, 'day').format('YYYY-MM-DD'), '特定日期': () => ['2021-02-01'] }`。TS 类型：`PresetDate` `interface PresetDate { [name: string]: DateValue | (() => DateValue) }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 range | Boolean | false | 是否呈现为日期范围选择器（临时 API，后期将调整为是 DateRangePicker 组件） | N
 size | String | medium | 尺寸。可选项：small/medium/large | N
 suffixIcon | Slot / Function | - | 用于自定义组件后置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-timePickerProps | Boolean | - | 透传 TimePicker 组件属性。TS 类型：`TimePickerProps` `import { TimePickerProps } from '@TimePicker'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+timePickerProps | Boolean | - | 透传 TimePicker 组件属性。TS 类型：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 value | String / Array / Date | - | 选中值。支持语法糖 `v-model`。TS 类型：`DateValue` `type DateValue = string | Date | Array<DateValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 defaultValue | String / Array / Date | - | 选中值。非受控属性。TS 类型：`DateValue` `type DateValue = string | Date | Array<DateValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 onBlur | Function |  | TS 类型：`(context: { value: DateValue; e: FocusEvent }) => void`<br/>当输入框失去焦点时触发 | N
