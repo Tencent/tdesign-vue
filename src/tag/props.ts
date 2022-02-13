@@ -58,7 +58,7 @@ export default {
     type: String as PropType<TdTagProps['variant']>,
     default: 'dark' as TdTagProps['variant'],
     validator(val: TdTagProps['variant']): boolean {
-      return ['dark', 'light', 'plain'].includes(val);
+      return ['dark', 'light', 'outline', 'light-outline'].includes(val);
     },
   },
   /** 点击时触发 */

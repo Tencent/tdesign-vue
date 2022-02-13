@@ -4,7 +4,7 @@
       <td-doc-search slot="search" ref="tdDocSearch"></td-doc-search>
     </td-header>
     <td-doc-aside ref="tdDocAside" title="Vue for Web">
-      <t-select slot="extra" :value="version" :popupProps="{ zIndex: 500 }" @change="changeVersion">
+      <t-select slot="extra" :value="version" :popupProps="{ zIndex: 800 }" @change="changeVersion">
         <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
           {{ item.label }}
         </t-option>
