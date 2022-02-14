@@ -714,6 +714,7 @@ exports[`Progress custom demo works fine 1`] = `
             r="53"
             stroke="#aaa"
             stroke-width="6"
+            style="stroke: #aaa;"
           />
           <circle
             class="t-progress__circle-inner"

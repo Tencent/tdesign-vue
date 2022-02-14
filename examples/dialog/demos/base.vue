@@ -1,6 +1,10 @@
 <template>
   <div>
     <t-button theme="primary" @click="visible = true">基础确认对话框</t-button>
+    <!-- :onClose="onClose" 和 @close="onClose" 等效 -->
+    <!-- :onConfirm="onConfirm" 和 @confirm="onConfirm" 等效 -->
+    <!-- :onCancel="onCancel" 和 @cancel="onCancel" 等效 -->
+    <!-- :onEscKeydown="onEscKeydown" 和 @escKeydown="onEscKeydown" 等效 -->
     <t-dialog
       header="对话框标题"
       body="对话框内容"

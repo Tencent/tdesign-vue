@@ -2,11 +2,12 @@
   <div>
     <div class='t-popup-demo-block'>
       <t-popup
-        id="myPopup"
         content="触发元素的父元素是组件根元素，通过 CSSSelector 定义"
         attach="#myPopup"
       >
-        <t-button variant='outline'>父元素为组件本身</t-button>
+        <div id="myPopup">
+          <t-button variant='outline'>父元素为组件本身</t-button>
+        </div>
       </t-popup>
     </div>
     <div class='t-popup-demo-block' id='second-popup'>
@@ -29,7 +30,6 @@ export default {
 </script>
 <style scoped>
 .t-popup-demo-block {
-  width: 300px;
   margin-right: 30px;
   display: inline-block;
 }
