@@ -310,7 +310,14 @@ export default Vue.extend({
 
   render(h) {
     const { visible, destroyOnClose, hasTrigger } = this;
-    const content = visible || !destroyOnClose ? h('div', {
+    const ref = renderContent(this, 'default', 'triggerElement');
+    const content = renderTNodeJSX(this, 'content');
+
+    if (this.hideEmptyPopup && ['', undefined, null].includes(content)) {
+      return ref;
+    }
+
+    const overlay = visible || !destroyOnClose ? h('div', {
       class: name,
       ref: 'popper',
       directives: destroyOnClose ? undefined : [{
@@ -329,8 +336,12 @@ export default Vue.extend({
         },
       },
     }, [
-      h('div', { class: this.overlayClasses, ref: 'overlay' }, [
-        renderTNodeJSX(this, 'content'),
+      h('div', {
+        class: this.overlayClasses,
+        ref: 'overlay',
+      },
+      [
+        content,
         this.showArrow && h('div', { class: `${name}__arrow` }),
       ]),
     ]) : null;
@@ -349,8 +360,8 @@ export default Vue.extend({
             onBeforeEnter={this.onBeforeEnter}
             onAfterEnter={this.onAfterEnter}
             onAfterLeave={this.destroyPopper}
-          >{(visible || !destroyOnClose) && content}</transition>
-          {renderContent(this, 'default', 'triggerElement')}
+          >{(visible || !destroyOnClose) && overlay}</transition>
+          {ref}
         </Container>
     );
   },
