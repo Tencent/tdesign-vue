@@ -9,6 +9,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
   >
     <div
       class="t-drawer t-drawer--right t-drawer--attach"
+      tabindex="0"
     >
       <div
         class="t-drawer__mask"
@@ -222,6 +223,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -277,6 +279,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
    
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -331,6 +334,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
    
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -429,6 +433,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right t-drawer--without-mask"
+    tabindex="0"
   >
     <div
       class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
@@ -497,6 +502,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -720,6 +726,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -930,6 +937,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -1051,6 +1059,7 @@ exports[`Drawer base demo works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"

@@ -5,7 +5,7 @@
       v-model="targetValue"
       :checked.sync="checked"
       @change="onChange"
-      @checkedChange="handleCheckedChange"
+      @checked-change="handleCheckedChange"
     />
   </div>
 </template>
@@ -31,7 +31,10 @@ export default {
       checked, sourceChecked, targetChecked, type,
     }) {
       console.log('handleCheckedChange', {
-        checked, sourceChecked, targetChecked, type,
+        checked,
+        sourceChecked,
+        targetChecked,
+        type,
       });
     },
     onChange(newTargetValue) {

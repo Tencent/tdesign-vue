@@ -41,6 +41,12 @@ const routes = [
     redirect: '/vue/overview',
   },
   {
+    name: 'demos',
+    path: '/vue/demos/:componentName/',
+    component: () => import('./components/demo-page.vue'),
+  },
+  {
+    name: 'demos',
     path: '/vue/demos/:componentName/:demoName',
     component: () => import('./components/demo-page.vue'),
   },

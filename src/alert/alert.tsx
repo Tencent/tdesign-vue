@@ -65,15 +65,16 @@ export default Vue.extend({
 
     renderClose(): VNode {
       let closeContent: ScopedSlotReturnValue = null;
-      if (typeof this.close === 'string') {
+      if (this.close === true || this.close === '') {
+        closeContent = <CloseIcon />;
+      } else if (typeof this.close === 'string') {
         closeContent = this.close;
       } else if (typeof this.close === 'function') {
         closeContent = this.close(this.$createElement);
-      } else if (this.close === true) {
-        closeContent = <CloseIcon />;
       } else {
         closeContent = this.$scopedSlots.close && this.$scopedSlots.close(null)[0];
       }
+
       return closeContent ? (
         <div class={`${name}__close`} onClick={this.handleClose}>
           {closeContent}

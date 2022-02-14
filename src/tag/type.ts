@@ -52,7 +52,7 @@ export interface TdTagProps {
    * 标签风格变体
    * @default dark
    */
-  variant?: 'dark' | 'light' | 'plain';
+  variant?: 'dark' | 'light' | 'outline' | 'light-outline';
   /**
    * 点击时触发
    */
