@@ -59,6 +59,7 @@ export default Vue.extend({
         background: this.color && getBackgroundColor(this.color),
       };
     },
+    // 进度条的颜色
     circlePathStyle(): Styles {
       const strokeColor = typeof this.color === 'object' ? '' : this.color;
       return {
@@ -95,7 +96,7 @@ export default Vue.extend({
       return this.diameter / 2;
     },
     radius(): number {
-      return this.rPoints - (this.circleStrokeWidth / 2);
+      return this.rPoints - this.circleStrokeWidth / 2;
     },
     circleStyle(): Styles {
       if (this.theme !== PRO_THEME.CIRCLE) {
@@ -120,12 +121,37 @@ export default Vue.extend({
       const defaultWidth = this.size === CIRCLE_SIZE.SMALL ? 4 : 6;
       return this.strokeWidth ? Number(this.strokeWidth) : defaultWidth;
     },
-    strokeDashArr(): string {
+
+    /**
+     * theme=circle 计算环形的周长
+     */
+    circleStrokePerimeter(): number {
       const radius = this.diameter / 2;
       const perimeter = Math.PI * 2 * (radius - this.circleStrokeWidth);
-      const percent = this.percentage / 100;
-      return `${perimeter * percent}  ${perimeter * (1 - percent)}`;
+      return perimeter;
     },
+
+    /**
+     * theme=circle 计算环形进度条的长度
+     */
+    getPercentLength(): string {
+      const percent = this.percentage / 100;
+      return `${this.circleStrokePerimeter * percent}`;
+    },
+    /**
+     * theme=circle 环形进度条展示百分比
+     */
+    strokeDashArr(): string {
+      return `${this.getPercentLength} ${this.circleStrokePerimeter - Number(this.getPercentLength)}`;
+    },
+
+    /**
+     * theme=circle 进度条偏移
+     */
+    strokeDashOff(): string {
+      return `${this.getPercentLength}`;
+    },
+
     plumpStyles(): Styles {
       return {};
       // return this.percentage > 10 ? { color: '#fff' } : { right: '-2.5rem' };
@@ -161,9 +187,7 @@ export default Vue.extend({
   },
 
   render() {
-    const labelContent = (
-      (<div class={`${name}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>)
-    );
+    const labelContent = <div class={`${name}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>;
     // 进度大于 10 ，进度百分比显示在内部；进度百分比小于 10 进度显示在外部
     const PLUMP_SEPARATE = 10;
     const separateClasses = this.percentage > PLUMP_SEPARATE ? `${name}--over-ten` : `${name}--under-ten`;
@@ -178,6 +202,7 @@ export default Vue.extend({
           </div>
         )}
 
+        {/* 进度条内展示百分比 */}
         {this.theme === PRO_THEME.PLUMP && (
           <div
             class={[
@@ -193,6 +218,7 @@ export default Vue.extend({
           </div>
         )}
 
+        {/* 环形进度条部分 */}
         {this.theme === PRO_THEME.CIRCLE && (
           <div class={`${name}--circle ${name}--status--${this.statusStyle}`} style={this.circleStyle}>
             {labelContent}
@@ -203,7 +229,7 @@ export default Vue.extend({
                 r={this.radius}
                 stroke-width={this.circleStrokeWidth}
                 stroke={this.trackColor}
-                fill='none'
+                fill="none"
                 class={`${name}__circle-outer`}
               />
               <circle
@@ -211,11 +237,12 @@ export default Vue.extend({
                 cy={this.rPoints}
                 r={this.radius}
                 stroke-width={this.circleStrokeWidth}
-                fill='none'
-                stroke-linecap='round'
+                fill="none"
+                stroke-linecap="round"
                 class={`${name}__circle-inner`}
                 transform={`matrix(0,-1,1,0,0,${this.diameter})`}
                 stroke-dasharray={this.strokeDashArr}
+                stroke-dashoffset={this.strokeDashOff}
                 style={this.circlePathStyle}
               />
             </svg>
