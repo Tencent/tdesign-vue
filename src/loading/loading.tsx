@@ -100,8 +100,11 @@ export default Vue.extend({
     showWrapLoading(): boolean {
       return this.hasContent && this.loading && this.delayCounted;
     },
-    showNormalLoading(): boolean {
-      return !this.hasContent && this.loading && this.delayCounted;
+    showFullScreenLoading(): boolean {
+      return this.fullscreen && this.loading && this.delayCounted;
+    },
+    showAttachedLoading(): boolean {
+      return this.attach && this.loading && this.delayCounted;
     },
   },
 
@@ -122,7 +125,7 @@ export default Vue.extend({
 
     // full screen loading
     if (this.fullscreen) {
-      if (!this.loading) return null;
+      if (!this.showFullScreenLoading) return null;
       return (
         <div class={this.fullScreenClasses} style={this.styles} v-transfer-dom={this.attach}>
           <div class={this.baseClasses}>
@@ -150,6 +153,7 @@ export default Vue.extend({
 
     // transfer parent node
     if (this.attach) {
+      if (!this.showAttachedLoading) return;
       return (
         <div class={this.attachClasses} style={this.styles} v-transfer-dom={this.attach}>
           {indicator}

@@ -557,7 +557,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       this.$nextTick(() => {
         let styles = (this.popupProps && this.popupProps.overlayStyle) || {};
         if (this.popupProps && isFunction(this.popupProps.overlayStyle)) {
-          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement) || {};
+          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
         }
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
