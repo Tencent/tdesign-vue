@@ -195,7 +195,7 @@ export default Vue.extend({
       if (!this.$refs) return;
       const refOverlayElm = this.$refs.overlay as HTMLElement;
       if (typeof overlayStyle === 'function' && referenceElm && refOverlayElm) {
-        const userOverlayStyle = overlayStyle(referenceElm);
+        const userOverlayStyle = overlayStyle(referenceElm, refOverlayElm);
         this.setOverlayStyle(userOverlayStyle);
       } else if (typeof overlayStyle === 'object' && refOverlayElm) {
         this.setOverlayStyle(overlayStyle);
@@ -309,7 +309,9 @@ export default Vue.extend({
   },
 
   render(h) {
-    const { visible, destroyOnClose, hasTrigger } = this;
+    const {
+      visible, destroyOnClose, hasTrigger, onScroll,
+    } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
 
@@ -339,6 +341,7 @@ export default Vue.extend({
       h('div', {
         class: this.overlayClasses,
         ref: 'overlay',
+        on: onScroll ? { scroll(e: WheelEvent) { onScroll({ e }); } } : undefined,
       },
       [
         content,
