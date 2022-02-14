@@ -7,10 +7,12 @@ import CheckboxGroup from '../../../checkbox/group';
 import primaryTableProps from '../../primary-table-props';
 import { TdPrimaryTableProps } from '../../type';
 import { prefix } from '../../../config';
+import { renderTNodeJSXDefault } from '../../../utils/render-tnode';
 
 export default Vue.extend({
   name: `${prefix}-primary-show-columns`,
   props: {
+    columnController: primaryTableProps.columnController,
     columns: primaryTableProps.columns,
     showColumns: {
       type: Boolean,
@@ -26,11 +28,14 @@ export default Vue.extend({
   },
   computed: {
     showColumnCheckboxOpts(): Record<string, any> {
+      const enbledKeys = new Set(this.columnController?.fields || this.columns.map(({ colKey }) => colKey));
+
       return this.columns
         .filter(({ colKey, title }) => colKey && title) // 去空
         .map(({ colKey, title }) => ({
           label: title,
           value: colKey,
+          disabled: !enbledKeys.has(colKey),
         }));
     },
     isAllShowColumns(): boolean {
@@ -53,13 +58,19 @@ export default Vue.extend({
 
     renderShowColumns(): VNode {
       const handleToggleColumnController = () => {
-        const dialogTmp = DialogPlugin.confirm({
-          header: '自定义设置表格列',
-          body: () => (
-            <div class={`${prefix}-table__column-controller`}>
+        const handleCheckChange = (vals: string[]) => {
+          this.showColumnCheckboxKeys = vals;
+        };
+        const body = renderTNodeJSXDefault(this, 'columnControllerContent', {
+          defaultNode: (
+            <div
+              class={`${prefix}-table__column-controller ${prefix}-table__column-controller--${
+                this.columnController.displayType === 'fixed-width' ? 'fixed' : 'auto'
+              }`}
+            >
               <div class={`${prefix}-table__column-controller-body`}>
                 <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
-                <div>
+                <div class={`${prefix}-table__column-controller-block`}>
                   <Checkbox
                     indeterminate={this.isSomeShowColumns}
                     checked={this.isAllShowColumns}
@@ -68,12 +79,23 @@ export default Vue.extend({
                     全选
                   </Checkbox>
                 </div>
-                <CheckboxGroup options={this.showColumnCheckboxOpts} vModel={this.showColumnCheckboxKeys} />
+                <div class={`${prefix}-table__column-controller-block`}>
+                  <CheckboxGroup
+                    options={this.showColumnCheckboxOpts}
+                    value={this.showColumnCheckboxKeys}
+                    onChange={handleCheckChange}
+                  />
+                </div>
               </div>
             </div>
           ),
-          confirmBtn: '确定',
+        });
+        const dialogTmp = DialogPlugin.confirm({
+          header: '自定义设置表格列',
+          body,
+          confirmBtn: '确认',
           cancelBtn: '取消',
+          width: 612,
           onConfirm: () => {
             this.showColumnKeys = [...this.showColumnCheckboxKeys];
             dialogTmp.hide();
@@ -94,14 +116,20 @@ export default Vue.extend({
     },
 
     handleClickAllShowColumns(): void {
-      this.showColumnCheckboxKeys = this.isAllShowColumns
-        ? []
-        : this.showColumnCheckboxOpts.map(({ value }: Record<string, any>) => value);
+      if (this.isAllShowColumns) {
+        this.showColumnCheckboxKeys = this.showColumnCheckboxOpts
+          .filter((item: any) => item.disabled)
+          .map(({ value }: Record<string, any>) => value);
+      } else {
+        this.showColumnCheckboxKeys = this.showColumnCheckboxOpts.map(({ value }: Record<string, any>) => value);
+      }
     },
 
     updateColumns(): void {
-      this.showColumnKeys = this.columns.map(({ colKey }) => colKey);
-      this.showColumnCheckboxKeys = this.columns.map(({ colKey }) => colKey);
+      const keys = this.columns.map(({ colKey }) => colKey);
+
+      this.showColumnKeys = keys;
+      this.showColumnCheckboxKeys = keys;
     },
   },
   watch: {

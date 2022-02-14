@@ -8,7 +8,7 @@
       :stripe="stripe"
       :bordered="bordered"
       :hover="hover"
-      showColumnController
+      :columnController="{ displayType: 'auto-width' }"
     ></t-table>
   </div>
 </template>

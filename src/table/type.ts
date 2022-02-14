@@ -216,6 +216,14 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   asyncLoading?: 'loading' | 'load-more' | TNode;
   /**
+   * 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段；`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐
+   */
+  columnController?: TableColumnController;
+  /**
+   * 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容
+   */
+  columnControllerContent?: string | TNode;
+  /**
    * 列配置，泛型 T 指表格数据类型
    * @default []
    */
@@ -278,21 +286,16 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   defaultSelectedRowKeys?: Array<string | number>;
   /**
-   * 【开发中】是否显示 自定义显示列控制器
-   * @default false
-   */
-  showColumnController?: boolean;
-  /**
    * 【讨论中-待定】是否显示为通过拖拽图标进行排序
    * @default false
    */
   showDragCol?: boolean;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
    */
   sort?: TableSort;
   /**
-   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDatasort = true`，非受控属性
+   * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性
    */
   defaultSort?: TableSort;
   /**
@@ -496,16 +499,11 @@ export interface TableScroll {
   type: 'lazy' | 'virtual';
 }
 
-export interface RowspanColspan {
-  colspan: number;
-  rowspan: number;
-}
+export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;
 
-export interface RowspanAndColspanParams<T> {
-  row: T;
-  col: BaseTableCol;
-  rowIndex: number;
-  colIndex: number;
+export interface RowspanColspan {
+  colspan?: number;
+  rowspan?: number;
 }
 
 export interface BaseTableCellEventContext<T> {
@@ -545,6 +543,11 @@ export interface BaseTableRenderParams<T> extends BaseTableCellParams<T> {
 export type RenderType = 'cell' | 'title';
 
 export type DataType = TableRowData;
+
+export interface TableColumnController {
+  fields?: string[];
+  displayType: 'fixed-width' | 'auto-width';
+}
 
 export interface ExpandArrowRenderParams<T> {
   row: T;

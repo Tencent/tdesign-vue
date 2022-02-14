@@ -95,7 +95,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
         lastFullRow: this.renderLastFullRow,
         empty: this.empty,
-        topContent: this.showColumnController ? this.renderShowColumns() : '',
+        topContent: this.columnController ? this.renderShowColumns() : '',
       },
       scopedSlots,
       on,
