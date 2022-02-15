@@ -349,6 +349,7 @@ exports[`Steps Steps creatable demo works fine 1`] = `
           placeholder="支持自定义创建"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -769,6 +770,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           placeholder="-请选择-"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -810,6 +812,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
           placeholder="-请选择-"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -856,6 +859,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           placeholder="请选择"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -896,6 +900,7 @@ exports[`Steps Steps group demo works fine 1`] = `
           placeholder="请选择"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -1649,6 +1654,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           placeholder="请选择"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg
@@ -1690,6 +1696,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
           placeholder="请输入搜索"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
       </div>
       <svg

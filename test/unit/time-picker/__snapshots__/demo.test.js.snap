@@ -15,6 +15,7 @@ exports[`Time-picker base demo works fine 1`] = `
         placeholder=" "
         readonly="readonly"
         type="text"
+        unselectable="on"
       />
       <span
         class="t-input__suffix t-input__suffix-icon"
@@ -83,6 +84,7 @@ exports[`Time-picker base demo works fine 1`] = `
         placeholder=" "
         readonly="readonly"
         type="text"
+        unselectable="on"
       />
       <span
         class="t-input__suffix t-input__suffix-icon"

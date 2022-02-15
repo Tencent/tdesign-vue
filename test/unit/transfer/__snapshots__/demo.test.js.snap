@@ -3521,6 +3521,7 @@ exports[`Transfer search demo works fine 1`] = `
               class="t-input__inner"
               placeholder="请输入关键词搜索"
               type="text"
+              unselectable="off"
             />
             <span
               class="t-input__suffix t-input__suffix-icon"
@@ -4038,6 +4039,7 @@ exports[`Transfer search demo works fine 1`] = `
               class="t-input__inner"
               placeholder="请输入关键词搜索"
               type="text"
+              unselectable="off"
             />
             <span
               class="t-input__suffix t-input__suffix-icon"

@@ -20,6 +20,7 @@ exports[`DatePicker base demo works fine 1`] = `
           placeholder="请选择日期"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -63,6 +64,7 @@ exports[`DatePicker datePresets demo works fine 1`] = `
           placeholder="请选择日期"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -108,6 +110,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
+            unselectable="on"
           />
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -150,6 +153,7 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
             placeholder="请选择日期"
             readonly="readonly"
             type="text"
+            unselectable="on"
           />
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -194,6 +198,7 @@ exports[`DatePicker datePresetsTime demo works fine 1`] = `
           placeholder="请选择日期"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -237,6 +242,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
           placeholder="开始时间 至 结束时间"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -280,6 +286,7 @@ exports[`DatePicker dateRange demo works fine 1`] = `
           placeholder="请选择日期"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -328,6 +335,7 @@ exports[`DatePicker month demo works fine 1`] = `
           placeholder="请选择月份"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -371,6 +379,7 @@ exports[`DatePicker year demo works fine 1`] = `
           placeholder="请选择年份"
           readonly="readonly"
           type="text"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"

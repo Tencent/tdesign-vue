@@ -29,6 +29,7 @@ exports[`TreeSelect base demo works fine 1`] = `
           class="t-input__inner"
           placeholder="请选择"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -157,6 +158,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           class="t-input__inner"
           placeholder=""
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -279,6 +281,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
           class="t-input__inner"
           placeholder=""
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -426,6 +429,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
           class="t-input__inner"
           placeholder="shenzhen"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -517,6 +521,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
           class="t-input__inner"
           placeholder="请选择"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -645,6 +650,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
           class="t-input__inner"
           placeholder=""
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -747,6 +753,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
           class="t-input__inner"
           placeholder="请输入"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -845,6 +852,7 @@ exports[`TreeSelect props demo works fine 1`] = `
           class="t-input__inner"
           placeholder="shenzhen"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -943,6 +951,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           class="t-input__inner"
           placeholder="[object Object]"
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
@@ -1065,6 +1074,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
           class="t-input__inner"
           placeholder=""
           type="text"
+          unselectable="off"
         />
       </div>
       <svg
