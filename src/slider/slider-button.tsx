@@ -3,8 +3,10 @@ import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
 import Popup from '../popup/popup';
+import Tooltip from '../tooltip/index';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
+import { TdTooltipProps } from '../tooltip/type';
 
 const name = `${prefix}-slider-button`;
 interface SliderInstanceType extends Vue {
@@ -127,6 +129,12 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           this.attach = attach as string;
         }
       }
+    },
+    getTooltipProps(): TdTooltipProps {
+      if (this.tooltipProps instanceof Object) {
+        return this.tooltipProps;
+      }
+      return {};
     },
     handleIE() {
       if (getIEVersion() <= 11) {
@@ -300,7 +308,11 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         onblur={this.handleMouseLeave}
         onKeydown={this.onNativeKeyDown}
       >
-        <t-popup
+        <Tooltip props={this.getTooltipProps()} content={String(this.formatValue)}>
+          <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
+        </Tooltip>
+
+        {/* <t-popup
           ref="popup"
           popper-class={this.popupClass}
           disabled={!this.showTooltip}
@@ -314,7 +326,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           visible={this.visible}
         >
           <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
-        </t-popup>
+        </t-popup> */}
       </div>
     );
   },

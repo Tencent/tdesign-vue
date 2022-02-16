@@ -66,7 +66,6 @@ export default Vue.extend({
     return (
       <Popup
         visible={this.visible}
-        showArrow={this.showArrow}
         props={this.getPopupProps()}
         on={{
           'visible-change': this.onTipVisibleChange,
