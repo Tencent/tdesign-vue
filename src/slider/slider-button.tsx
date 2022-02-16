@@ -311,22 +311,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         <Tooltip props={this.getTooltipProps()} content={String(this.formatValue)}>
           <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
         </Tooltip>
-
-        {/* <t-popup
-          ref="popup"
-          popper-class={this.popupClass}
-          disabled={!this.showTooltip}
-          content={String(this.formatValue)}
-          placement={this.placement}
-          trigger={this.trigger}
-          showArrow={this.showArrow}
-          overlayStyle={this.overlayStyle}
-          overlayClassName={this.overlayClassName}
-          attach={this.attach}
-          visible={this.visible}
-        >
-          <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
-        </t-popup> */}
       </div>
     );
   },
