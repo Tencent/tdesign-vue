@@ -126,14 +126,12 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
       // 如果不存在非1 steps的列或已存在初始值时 正常滚动初始化 否则 只顶到各列的首行
       const { hour, minute, second } = EPickerCols;
       const isNormalScroll = this.steps.filter((step) => step !== 1).length < 1
-        || (Number(this.splitValue[hour]) !== Number(this.steps[0]) - 1
+        || Number(this.splitValue[hour]) !== Number(this.steps[0]) - 1
         || Number(this.splitValue[minute]) !== Number(this.steps[1]) - 1
-        || Number(this.splitValue[second]) !== Number(this.steps[2]) - 1);
+        || Number(this.splitValue[second]) !== Number(this.steps[2]) - 1;
 
       this.cols.forEach((col: EPickerCols) => {
-        isNormalScroll
-          ? this.scrollToTime(col, this.splitValue[col])
-          : this.scrollToTime(col, 0);
+        isNormalScroll ? this.scrollToTime(col, this.splitValue[col]) : this.scrollToTime(col, 0);
       });
     },
     generateColRows(col: EPickerCols) {
@@ -198,7 +196,7 @@ export default (Vue as VueConstructor<TimePickerPanelColInstance>).extend({
         <ul
           class={`${componentName}__panel-body-scroll`}
           ref={`${col}_scroller`}
-          onMousewheel={debounce(() => this.handleScroll(col), 50)}
+          onScroll={debounce(() => this.handleScroll(col), 50)}
         >
           {this.generateColRows(col)}
         </ul>
