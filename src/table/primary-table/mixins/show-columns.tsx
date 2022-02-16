@@ -57,42 +57,43 @@ export default Vue.extend({
     },
 
     renderShowColumns(): VNode {
+      const handleCheckChange = (vals: string[]) => {
+        this.showColumnCheckboxKeys = vals;
+      };
+
       const handleToggleColumnController = () => {
-        const handleCheckChange = (vals: string[]) => {
-          this.showColumnCheckboxKeys = vals;
-        };
-        const body = renderTNodeJSXDefault(this, 'columnControllerContent', {
-          defaultNode: (
-            <div
-              class={`${prefix}-table__column-controller ${prefix}-table__column-controller--${
-                this.columnController.displayType === 'fixed-width' ? 'fixed' : 'auto'
-              }`}
-            >
-              <div class={`${prefix}-table__column-controller-body`}>
-                <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
-                <div class={`${prefix}-table__column-controller-block`}>
-                  <Checkbox
-                    indeterminate={this.isSomeShowColumns}
-                    checked={this.isAllShowColumns}
-                    onChange={this.handleClickAllShowColumns}
-                  >
-                    全选
-                  </Checkbox>
-                </div>
-                <div class={`${prefix}-table__column-controller-block`}>
-                  <CheckboxGroup
-                    options={this.showColumnCheckboxOpts}
-                    value={this.showColumnCheckboxKeys}
-                    onChange={handleCheckChange}
-                  />
-                </div>
-              </div>
-            </div>
-          ),
-        });
         const dialogTmp = DialogPlugin.confirm({
           header: '自定义设置表格列',
-          body,
+          body: () => {
+            const defaultNode = (
+              <div
+                class={`${prefix}-table__column-controller ${prefix}-table__column-controller--${
+                  this.columnController.displayType === 'fixed-width' ? 'fixed' : 'auto'
+                }`}
+              >
+                <div class={`${prefix}-table__column-controller-body`}>
+                  <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
+                  <div class={`${prefix}-table__column-controller-block`}>
+                    <Checkbox
+                      indeterminate={this.isSomeShowColumns}
+                      checked={this.isAllShowColumns}
+                      onChange={this.handleClickAllShowColumns}
+                    >
+                      全选
+                    </Checkbox>
+                  </div>
+                  <div class={`${prefix}-table__column-controller-block`}>
+                    <CheckboxGroup
+                      options={this.showColumnCheckboxOpts}
+                      value={this.showColumnCheckboxKeys}
+                      onChange={handleCheckChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+            return renderTNodeJSXDefault(this, 'columnControllerContent', defaultNode);
+          },
           confirmBtn: '确认',
           cancelBtn: '取消',
           width: 612,
