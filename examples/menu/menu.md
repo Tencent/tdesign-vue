@@ -24,7 +24,6 @@ value | String / Number | - | 激活菜单项。支持语法糖 `.sync`。TS 类
 defaultValue | String / Number | - | 激活菜单项。非受控属性。TS 类型：`MenuValue` `type MenuValue = string | number`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/menu/type.ts) | N
 width | String / Number / Array | '232px' | 菜单宽度。值类型为数组时，分别表示菜单展开和折叠的宽度。[ 展开时的宽度, 折叠时的宽度 ]，示例：['200px', '80px']。TS 类型：`string | number | Array<string | number>` | N
 onChange | Function |  | TS 类型：`(value: MenuValue) => void`<br/>激活菜单项发生变化时触发 | N
-onCollapsed | Function |  | TS 类型：`(options: { collapsed: boolean; e?: MouseEvent }) => void`<br/>侧边栏导航展开/收起发生变化时触发 | N
 onExpand | Function |  | TS 类型：`(value: Array<MenuValue>) => void`<br/>展开的菜单项发生变化时触发 | N
 
 ### Menu Events
@@ -32,7 +31,6 @@ onExpand | Function |  | TS 类型：`(value: Array<MenuValue>) => void`<br/>展
 名称 | 参数 | 描述
 -- | -- | --
 change | `(value: MenuValue)` | 激活菜单项发生变化时触发
-collapsed | `(options: { collapsed: boolean; e?: MouseEvent })` | 侧边栏导航展开/收起发生变化时触发
 expand | `(value: Array<MenuValue>)` | 展开的菜单项发生变化时触发
 
 ### HeadMenu Props
