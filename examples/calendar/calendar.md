@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Calendar Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -18,8 +17,8 @@ mode | String | month | 日历展示维度。可选项：month/year | N
 preventCellContextmenu | Boolean | false | 是否禁用单元格右键默认系统菜单 | N
 range | Array | - | 用于设置日历的年月份显示范围，[范围开始，范围结束]。TS 类型：`Array<CalendarValue>` | N
 theme | String | full | 日历风格。可选项：full/card | N
-value | String / Date | - | 当前高亮的日期。TS 类型：`CalendarValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
-week | Array / Slot / Function | - | 用于自定义日历星期呈现方式。CalendarWeek.day 表示当前是星期几。示例一：['周一', '周二', '周三', '周四', '周五', '星期六', '星期天']。示例二：`({ day }) => '周' + day`。TS 类型：`Array<string> | TNode<CalendarWeek>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+value | String / Date | - | 当前高亮的日期。TS 类型：`CalendarValue` `type CalendarValue = string | Date`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+week | Array / Slot / Function | - | 用于自定义日历星期呈现方式。CalendarWeek.day 表示当前是星期几。示例一：['周一', '周二', '周三', '周四', '周五', '星期六', '星期天']。示例二：`({ day }) => '周' + day`。TS 类型：`Array<string> | TNode<CalendarWeek>` `interface CalendarWeek { day: WeekDay }` `type WeekDay = 1 | 2 | 3 | 4 | 5 | 6 | 7`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
 onCellClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格点击时触发 | N
 onCellDoubleClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格双击时触发 | N
 onCellRightClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格右击时触发 | N
@@ -42,10 +41,10 @@ month-change | `(options: { month: string; year: string })` | 月份切换时触
 -- | -- | -- | -- | --
 current | Object | - | “今天(本月)”按钮控制器。TS 类型：`{ visible?: boolean; currentDayButtonProps?: ButtonProps; currentMonthButtonProps?: ButtonProps }` | N
 disabled | Boolean | false | 是否禁用右上角控制器 | N
-mode | Object | - | 日历展示维度控制器。TS 类型：`{ visible?: boolean; radioGroupProps?: RadioGroupProps }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+mode | Object | - | 日历展示维度控制器。TS 类型：`{ visible?: boolean; radioGroupProps?: RadioGroupProps }`，[Radio API Documents](./radio?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
 month | Object | - | 日历月份控制器。TS 类型：`{ visible?: boolean; selectProps?: SelectProps }` | N
-weekend | Object | - | 隐藏/显示周末控制器。TS 类型：`{ visible?: boolean; showWeekendButtonProps?: ButtonProps; hideWeekendButtonProps?: ButtonProps }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
-year | Object | - | 日历年份控制器。TS 类型：`{ visible?: boolean; selectProps?: SelectProps }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+weekend | Object | - | 隐藏/显示周末控制器。TS 类型：`{ visible?: boolean; showWeekendButtonProps?: ButtonProps; hideWeekendButtonProps?: ButtonProps }`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+year | Object | - | 日历年份控制器。TS 类型：`{ visible?: boolean; selectProps?: SelectProps }`，[Select API Documents](./select?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
 
 ### CalendarCell
 

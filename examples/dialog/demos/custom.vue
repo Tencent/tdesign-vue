@@ -1,16 +1,20 @@
 <template>
   <div>
-    <p>弹窗内容自定义</p><br>
+    <p>弹窗内容自定义</p>
+    <br />
     <div>
       <t-button theme="primary" @click="bodyVisible1 = true">隐藏标题</t-button>
       <t-button theme="primary" @click="bodyVisible2 = true">渲染函数定义内容</t-button>
       <t-button theme="primary" @click="bodyVisible3 = true">插槽方式定义内容</t-button>
+
+      <!-- :onClose="onClose" 和 @close="onClose" 等效 -->
+      <!-- :onConfirm="onConfirm" 和 @confirm="onConfirm" 等效 -->
       <t-dialog
         :header="false"
         body="这是对话框内容，对话框标题已被隐藏"
         :visible="bodyVisible1"
         :onClose="bodyClose1"
-        :onClickConfirm="bodyClose1"
+        :onConfirm="bodyClose1"
       ></t-dialog>
 
       <t-dialog
@@ -18,26 +22,26 @@
         header="对话框标题"
         :body="renderDialog2Body"
         :onClose="bodyClose2"
-        :onClickConfirm="bodyClose2"
+        :onConfirm="bodyClose2"
       >
         <!-- <div slot="body">被渲染函数覆盖的插槽内容</div> -->
       </t-dialog>
 
-      <t-dialog
-        header="对话框标题"
-        :visible="bodyVisible3"
-        :onClose="bodyClose3"
-        :onClickConfirm="bodyClose3"
-      >
+      <t-dialog header="对话框标题" :visible="bodyVisible3" :onClose="bodyClose3" :onConfirm="bodyClose3">
         <div slot="body">
           <div>这是使用插槽定义的对话框内容</div>
         </div>
       </t-dialog>
     </div>
 
-    <br><br><br>
-    <p>操作按钮自定义</p><br>
-    <p>底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer 来自定义控制</p><br>
+    <br /><br /><br />
+    <p>操作按钮自定义</p>
+    <br />
+    <p>
+      底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer
+      来自定义控制
+    </p>
+    <br />
     <t-button theme="primary" @click="visible1 = true">按钮文字</t-button>
     <t-button theme="primary" @click="visible2 = true">按钮属性</t-button>
     <t-button theme="primary" @click="visible3 = true">渲染函数按钮</t-button>
@@ -88,7 +92,7 @@
       body="不需要底部按钮的内容"
       :footer="false"
       :onClose="close4"
-      :onClickConfirm="close4"
+      :onConfirm="close4"
     ></t-dialog>
   </div>
 </template>
@@ -109,7 +113,11 @@ export default {
   },
   methods: {
     getConfirmBtn() {
-      return <t-button theme='primary' disabled>我知道了</t-button>;
+      return (
+        <t-button theme="primary" disabled>
+          我知道了
+        </t-button>
+      );
     },
     // 使用 button.content 渲染函数输出
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

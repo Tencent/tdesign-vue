@@ -211,18 +211,6 @@ describe('TreeSelect', () => {
       inputElement.trigger('blur');
       expect(treeSelectWrapper.emitted().blur).toBeTruthy();
     });
-    it('change', () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return <TreeSelect data={options} onChange={fn} />;
-        },
-      });
-      const treeSelectWrapper = wrapper.findComponent(TreeSelect);
-      const treeNodeElement = wrapper.find('.t-tree__label');
-      treeNodeElement.trigger('click');
-      expect(treeSelectWrapper.emitted().change).toBeTruthy();
-    });
     it('clear', () => {
       const value = 'shenzhen';
       const wrapper = mount({

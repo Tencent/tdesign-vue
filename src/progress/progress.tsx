@@ -53,6 +53,11 @@ export default Vue.extend({
         borderRadius: height,
       };
     },
+    circleStrokeStyle(): Styles {
+      return {
+        stroke: this.trackColor,
+      };
+    },
     barStyle(): Styles {
       return {
         width: `${this.percentage}%`,
@@ -203,6 +208,7 @@ export default Vue.extend({
                 stroke={this.trackColor}
                 fill="none"
                 class={`${name}__circle-outer`}
+                style={this.circleStrokeStyle}
               />
               <circle
                 cx={this.rPoints}

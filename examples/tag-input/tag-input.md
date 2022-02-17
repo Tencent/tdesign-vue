@@ -10,7 +10,8 @@ collapsedItems | Slot / Function | - | 标签过多的情况下，折叠项内�
 disabled | Boolean | false | 是否禁用标签输入框 | N
 dragSort | Boolean | false | 【开发中】拖拽调整标签顺序 | N
 excessTagsDisplayType | String | scroll | 标签超出时的呈现方式，有两种：横向滚动显示 和 换行显示。可选项：scroll/break-line | N
-inputProps | Object | - | 透传 Input 输入框组件全部属性。TS 类型：`InputProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
+hideInput | Boolean | false | 是否隐藏输入框 | N
+inputProps | Object | - | 透传 Input 输入框组件全部属性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
 label | String / Slot / Function | - | 左侧文本。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 max | Number | - | 最大允许输入的标签数量 | N
 minCollapsedNum | Number | 0 | 最小折叠数量，用于标签数量过多的情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠 | N
@@ -21,13 +22,13 @@ status | String | - | 输入框状态。可选项：success/warning/error | N
 suffix | String / Slot / Function | - | 后置图标前的后置内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 suffixIcon | Slot / Function | - | 组件后置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 tag | String / Slot / Function | - | 自定义标签的内部内容，每一个标签的当前值。注意和 `valueDisplay` 区分，`valueDisplay`  是用来定义全部标签内容，而非某一个标签。TS 类型：`string | TNode<{ value: string | number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-tagProps | Object | - | 透传 Tag 组件全部属性。TS 类型：`TagProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
+tagProps | Object | - | 透传 Tag 组件全部属性。TS 类型：`TagProps`，[Tag API Documents](./tag?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-value | Array | - | 值。支持语法糖 `v-model`。TS 类型：`TagInputValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
-defaultValue | Array | - | 值。非受控属性。TS 类型：`TagInputValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
+value | Array | - | 值。支持语法糖 `v-model`。TS 类型：`TagInputValue` `type TagInputValue = Array<string | number>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
+defaultValue | Array | - | 值。非受控属性。TS 类型：`TagInputValue` `type TagInputValue = Array<string | number>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts) | N
 valueDisplay | String / Slot / Function | - | 自定义值呈现的全部内容，参数为所有标签的值。TS 类型：`string | TNode<{ value: TagInputValue }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 onBlur | Function |  | TS 类型：`(value: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => void`<br/>失去焦点时触发 | N
-onChange | Function |  | TS 类型：`(value: TagInputValue, context: TagInputChangeContext) => void`<br/>值变化时触发，参数 `trigger` 表示数据变化的触发来源。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts)。<br/>`interface TagInputChangeContext { trigger: TagInputTriggerSource; index?: number; item?: string | number; e: MouseEvent | KeyboardEvent }`<br/><br/>`type TagInputTriggerSource = 'enter' | 'tag-remove' | 'backspace' | 'clear'`<br/> | N
+onChange | Function |  | TS 类型：`(value: TagInputValue, context: TagInputChangeContext) => void`<br/>值变化时触发，参数 `context.trigger` 表示数据变化的触发来源；`context.index` 指当前变化项的下标；`context.item` 指当前变化项；`context.e` 表示事件参数。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts)。<br/>`interface TagInputChangeContext { trigger: TagInputTriggerSource; index?: number; item?: string | number; e: MouseEvent | KeyboardEvent }`<br/><br/>`type TagInputTriggerSource = 'enter' | 'tag-remove' | 'backspace' | 'clear'`<br/> | N
 onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>清空按钮点击时触发 | N
 onEnter | Function |  | TS 类型：`(value: TagInputValue, context: { e: KeyboardEvent; inputValue: InputValue }) => void`<br/>按键按下 Enter 时触发 | N
 onFocus | Function |  | TS 类型：`(value: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => void`<br/>聚焦时触发 | N
@@ -41,7 +42,7 @@ onRemove | Function |  | TS 类型：`(context: TagInputRemoveContext) => void`<
 名称 | 参数 | 描述
 -- | -- | --
 blur | `(value: TagInputValue, context: { inputValue: InputValue; e: FocusEvent })` | 失去焦点时触发
-change | `(value: TagInputValue, context: TagInputChangeContext)` | 值变化时触发，参数 `trigger` 表示数据变化的触发来源。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts)。<br/>`interface TagInputChangeContext { trigger: TagInputTriggerSource; index?: number; item?: string | number; e: MouseEvent | KeyboardEvent }`<br/><br/>`type TagInputTriggerSource = 'enter' | 'tag-remove' | 'backspace' | 'clear'`<br/>
+change | `(value: TagInputValue, context: TagInputChangeContext)` | 值变化时触发，参数 `context.trigger` 表示数据变化的触发来源；`context.index` 指当前变化项的下标；`context.item` 指当前变化项；`context.e` 表示事件参数。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tag-input/type.ts)。<br/>`interface TagInputChangeContext { trigger: TagInputTriggerSource; index?: number; item?: string | number; e: MouseEvent | KeyboardEvent }`<br/><br/>`type TagInputTriggerSource = 'enter' | 'tag-remove' | 'backspace' | 'clear'`<br/>
 clear | `(context: { e: MouseEvent })` | 清空按钮点击时触发
 enter | `(value: TagInputValue, context: { e: KeyboardEvent; inputValue: InputValue })` | 按键按下 Enter 时触发
 focus | `(value: TagInputValue, context: { inputValue: InputValue; e: FocusEvent })` | 聚焦时触发

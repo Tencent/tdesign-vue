@@ -72,18 +72,19 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
     },
   },
   watch: {
-    isShowPanel: {
-      handler(val: boolean) {
-        if (val) {
-          this.panelColUpdate();
-        }
-      },
-      immediate: true,
+    isShowPanel(val: boolean) {
+      if (val) {
+        this.panelColUpdate();
+      }
     },
+  },
+  mounted() {
+    // 不做 isShowPanel 的判断，故无法合并到 watch
+    this.panelColUpdate();
   },
   methods: {
     panelColUpdate() {
-      this.$nextTick(() => {
+      setTimeout(() => {
         (this.$refs.panelCol_0 as TimePickerPanelColInstance)?.updateTimeScrollPos();
         (this.$refs.panelCol_1 as TimePickerPanelColInstance)?.updateTimeScrollPos();
       });
@@ -100,7 +101,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
           <t-button theme="primary" variant="base" onClick={confirmAction}>
             {this.t(this.global.confirm)}
           </t-button>
-          { this.showNowTime && (
+          {this.showNowTime && (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
               {this.t(this.global.now)}
             </t-button>
