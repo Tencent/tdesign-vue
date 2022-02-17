@@ -121,4 +121,6 @@ export default {
   onMouseleave: Function as PropType<TdInputProps['onMouseleave']>,
   /** 粘贴事件，`pasteValue` 表示粘贴板的内容 */
   onPaste: Function as PropType<TdInputProps['onPaste']>,
+  /** 输入框中滚动鼠标时触发 */
+  onWheel: Function as PropType<TdInputProps['onWheel']>,
 };

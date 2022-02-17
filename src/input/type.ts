@@ -144,6 +144,10 @@ export interface TdInputProps {
    * 粘贴事件，`pasteValue` 表示粘贴板的内容
    */
   onPaste?: (context: { e: ClipboardEvent; pasteValue: string }) => void;
+  /**
+   * 输入框中滚动鼠标时触发
+   */
+  onWheel?: (context: { e: WheelEvent }) => void;
 }
 
 export type InputValue = string | number;

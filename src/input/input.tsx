@@ -153,6 +153,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const clipData = e.clipboardData || window.clipboardData;
       emitEvent<Parameters<TdInputProps['onPaste']>>(this, 'paste', { e, pasteValue: clipData?.getData('text/plain') });
     },
+    onHandleMousewheel(e: WheelEvent) {
+      emitEvent<Parameters<TdInputProps['onWheel']>>(this, 'wheel', { e });
+    },
     emitPassword() {
       const { renderType } = this;
       const toggleType = renderType === 'password' ? 'text' : 'password';
@@ -248,6 +251,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         class={classes}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
+        onwheel={this.onHandleMousewheel}
         {...{ attrs: wrapperAttrs, on: wrapperEvents }}
       >
         {prefixIcon ? <span class={[`${name}__prefix`, `${name}__prefix-icon`]}>{prefixIcon}</span> : null}
