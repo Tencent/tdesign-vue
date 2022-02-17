@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, computed, provide, watch, onMounted,
+  defineComponent, ref, computed, watchEffect, provide, watch, onMounted,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './props';
@@ -53,7 +53,10 @@ export default defineComponent({
     };
     const emitChange = deliver('change');
     const emitExpand = deliver('expand');
-    const emitCollapse = deliver('collapsed');
+
+    watchEffect(() => {
+      mode.value = props.collapsed ? 'popup' : props.expandType;
+    });
 
     const vMenu = new VMenu({ isMutex: isMutex.value, expandValues: expandValues.value });
     provide<TdMenuInterface>('TdMenu', {
@@ -102,19 +105,6 @@ export default defineComponent({
     };
     watch(() => props.value, updateActiveValues);
     watch(() => props.defaultValue, updateActiveValues);
-    watch(
-      () => props.expandType,
-      (value) => {
-        mode.value = props.collapsed ? 'popup' : value;
-      },
-    );
-    watch(
-      () => props.collapsed,
-      (collapsed) => {
-        mode.value = collapsed ? 'popup' : props.expandType;
-        emitCollapse(collapsed);
-      },
-    );
 
     // timelifes
     onMounted(() => {
