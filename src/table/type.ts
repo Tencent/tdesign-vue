@@ -506,6 +506,13 @@ export interface RowspanColspan {
   rowspan?: number;
 }
 
+export interface RowspanAndColspanParams<T> {
+  row: T;
+  col: BaseTableCol;
+  rowIndex: number;
+  colIndex: number;
+}
+
 export interface BaseTableCellEventContext<T> {
   row: T;
   col: BaseTableCol;
