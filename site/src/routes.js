@@ -1,4 +1,4 @@
-import config from '../site.config.js';
+import config from '../site.config';
 import TdesignComponents from './components/page.vue';
 
 const { docs } = config;

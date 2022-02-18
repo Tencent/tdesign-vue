@@ -1,49 +1,67 @@
 import { mount } from '@vue/test-utils';
 import TreeSelect from '@/src/tree-select/index.ts';
 
-const options = [{
-  label: '广东省',
-  value: 'guangdong',
-  children: [{
-    label: '广州市',
-    value: 'guangzhou',
-  }, {
-    label: '深圳市',
-    value: 'shenzhen',
-  }],
-}, {
-  label: '江苏省',
-  value: 'jiangsu',
-  children: [{
-    label: '南京市',
-    value: 'nanjing',
-  }, {
-    label: '苏州市',
-    value: 'suzhou',
-  }],
-}];
+const options = [
+  {
+    label: '广东省',
+    value: 'guangdong',
+    children: [
+      {
+        label: '广州市',
+        value: 'guangzhou',
+      },
+      {
+        label: '深圳市',
+        value: 'shenzhen',
+      },
+    ],
+  },
+  {
+    label: '江苏省',
+    value: 'jiangsu',
+    children: [
+      {
+        label: '南京市',
+        value: 'nanjing',
+      },
+      {
+        label: '苏州市',
+        value: 'suzhou',
+      },
+    ],
+  },
+];
 
-const propsOptions = [{
-  name: '广东省',
-  pinyin: 'guangdong',
-  children: [{
-    name: '广州市',
-    pinyin: 'guangzhou',
-  }, {
-    name: '深圳市',
-    pinyin: 'shenzhen',
-  }],
-}, {
-  name: '江苏省',
-  pinyin: 'jiangsu',
-  children: [{
-    name: '南京市',
-    pinyin: 'nanjing',
-  }, {
-    name: '苏州市',
-    pinyin: 'suzhou',
-  }],
-}];
+const propsOptions = [
+  {
+    name: '广东省',
+    pinyin: 'guangdong',
+    children: [
+      {
+        name: '广州市',
+        pinyin: 'guangzhou',
+      },
+      {
+        name: '深圳市',
+        pinyin: 'shenzhen',
+      },
+    ],
+  },
+  {
+    name: '江苏省',
+    pinyin: 'jiangsu',
+    children: [
+      {
+        name: '南京市',
+        pinyin: 'nanjing',
+      },
+      {
+        name: '苏州市',
+        pinyin: 'suzhou',
+      },
+    ],
+  },
+];
 
 const objectValue = { label: '深圳市', value: 'shenzhen' };
 
@@ -323,7 +341,11 @@ describe('TreeSelect', () => {
   describe('function', () => {
     it(':collapsedItems', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const renderCollapsedItems = (h) => (<div><span>更多...</span></div>);
+      const renderCollapsedItems = (h) => (
+        <div>
+          <span>更多...</span>
+        </div>
+      );
       const wrapper = mount({
         render() {
           return <TreeSelect collapsedItems={renderCollapsedItems} />;
@@ -333,7 +355,7 @@ describe('TreeSelect', () => {
     });
     it(':empty', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const renderEmpty = (h) => (<div>no data</div>);
+      const renderEmpty = (h) => <div>no data</div>;
       const wrapper = mount({
         render() {
           return <TreeSelect empty={renderEmpty}></TreeSelect>;
@@ -343,7 +365,7 @@ describe('TreeSelect', () => {
     });
     it(':loadingText', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const renderLoadingText = (h) => (<div>data loading</div>);
+      const renderLoadingText = (h) => <div>data loading</div>;
       const wrapper = mount({
         render() {
           return <TreeSelect loading={true} loadingText={renderLoadingText} />;
@@ -353,7 +375,11 @@ describe('TreeSelect', () => {
     });
     it(':prefixIcon', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const renderPrefixIcon = (h) => (<div><i>icon</i></div>);
+      const renderPrefixIcon = (h) => (
+        <div>
+          <i>icon</i>
+        </div>
+      );
       const wrapper = mount({
         render() {
           return <TreeSelect prefixIcon={renderPrefixIcon} />;
