@@ -6,7 +6,7 @@ exports[`Slider :props  1`] = `
     <div class="t-slider__rail">
       <div class="t-slider__track" style="width: 0%; left: 0%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 0%;">
-        <div class="t-slider__button" popper-class=""></div>
+        <div class="t-slider__button"></div>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@ exports[`Slider [marks] render right 1`] = `
     <div class="t-slider__rail show-input">
       <div class="t-slider__track" style="width: 2%; left: 0%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left: 2%;">
-        <div class="t-slider__button" popper-class=""></div>
+        <div class="t-slider__button"></div>
       </div>
       <div>
         <div>
@@ -55,10 +55,10 @@ exports[`Slider [vertical-marks] render right 1`] = `
     <div class="t-slider__rail" style="height: 100%;">
       <div class="t-slider__track" style="height: 40%; bottom: 30%;"></div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 30%;">
-        <div class="t-slider__button" popper-class=""></div>
+        <div class="t-slider__button"></div>
       </div>
       <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom: 70%;">
-        <div class="t-slider__button" popper-class=""></div>
+        <div class="t-slider__button"></div>
       </div>
       <div>
         <div>
