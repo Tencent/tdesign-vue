@@ -7,6 +7,8 @@ import { PopupProps, PopupVisibleChangeContext } from '../popup';
 import { ClassName } from '../common';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
+type PopupInstanceType = InstanceType<typeof Popup>;
+
 export default Vue.extend({
   name: 'TTooltip',
   components: { Popup },
@@ -61,10 +63,14 @@ export default Vue.extend({
       // delete r.visible;
       return r;
     },
+    updatedTooltip() {
+      this.$refs.popup && (this.$refs.popup as PopupInstanceType).updatePopper();
+    },
   },
   render() {
     return (
       <Popup
+        ref="popup"
         visible={this.visible}
         props={this.getPopupProps()}
         on={{
