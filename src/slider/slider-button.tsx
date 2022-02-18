@@ -3,6 +3,7 @@ import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
 import Tooltip from '../tooltip/index';
+import ITooltip from '../tooltip/tooltip';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
 import { TdTooltipProps } from '../tooltip/type';
@@ -12,7 +13,7 @@ interface SliderInstanceType extends Vue {
   slider: InstanceType<typeof Slider>;
 }
 
-type TooltipInstanceType = InstanceType<typeof Tooltip>;
+type TooltipInstanceType = InstanceType<typeof ITooltip>;
 
 export default (Vue as VueConstructor<SliderInstanceType>).extend({
   name,
@@ -281,7 +282,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       this.$emit('input', value);
       this.$nextTick(() => {
         this.showTooltipComponent();
-        // @ts-ignore
         this.$refs.tooltip && (this.$refs.tooltip as TooltipInstanceType).updatedTooltip();
       });
       if (!this.dragging && this.value !== this.prevValue) {
