@@ -127,7 +127,7 @@ export default Vue.extend({
     },
     strokeDashArr(): string {
       const radius = this.diameter / 2;
-      const perimeter = Math.PI * 2 * (radius - this.circleStrokeWidth);
+      const perimeter = Math.PI * 2 * radius;
       const percent = this.percentage / 100;
       return `${perimeter * percent}  ${perimeter * (1 - percent)}`;
     },
@@ -210,18 +210,20 @@ export default Vue.extend({
                 class={`${name}__circle-outer`}
                 style={this.circleStrokeStyle}
               />
-              <circle
-                cx={this.rPoints}
-                cy={this.rPoints}
-                r={this.radius}
-                stroke-width={this.circleStrokeWidth}
-                fill="none"
-                stroke-linecap="round"
-                class={`${name}__circle-inner`}
-                transform={`matrix(0,-1,1,0,0,${this.diameter})`}
-                stroke-dasharray={this.strokeDashArr}
-                style={this.circlePathStyle}
-              />
+              {this.percentage > 0 && (
+                <circle
+                  cx={this.rPoints}
+                  cy={this.rPoints}
+                  r={this.radius}
+                  stroke-width={this.circleStrokeWidth}
+                  fill="none"
+                  stroke-linecap="round"
+                  class={`${name}__circle-inner`}
+                  transform={`matrix(0,-1,1,0,0,${this.diameter})`}
+                  stroke-dasharray={this.strokeDashArr}
+                  style={this.circlePathStyle}
+                />
+              )}
             </svg>
           </div>
         )}
