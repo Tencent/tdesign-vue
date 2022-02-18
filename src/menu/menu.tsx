@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, computed, provide, watchEffect, watch, onMounted,
+  defineComponent, ref, computed, watchEffect, provide, watch, onMounted,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import props from './props';
@@ -53,11 +53,9 @@ export default defineComponent({
     };
     const emitChange = deliver('change');
     const emitExpand = deliver('expand');
-    const emitCollapse = deliver('collapsed');
 
     watchEffect(() => {
-      mode.value = props.collapsed ? 'popup' : 'normal';
-      emitCollapse(mode.value);
+      mode.value = props.collapsed ? 'popup' : props.expandType;
     });
 
     const vMenu = new VMenu({ isMutex: isMutex.value, expandValues: expandValues.value });
@@ -81,7 +79,8 @@ export default defineComponent({
           const index = expanded.indexOf(value);
 
           if (type === 'add') {
-            if (index === -1) { // 可能初始expanded里包含了该value
+            if (index === -1) {
+              // 可能初始expanded里包含了该value
               expanded.push(value);
             }
           } else if (type === 'remove') {
@@ -130,11 +129,9 @@ export default defineComponent({
     return (
       <div class={this.menuClass} style={this.styles}>
         <div class={`${prefix}-default-menu__inner`}>
-          {logo && (<div class={`${prefix}-menu__logo`}>{logo}</div>)}
-          <ul class={this.innerClasses}>
-            {renderContent(this, 'default', 'content')}
-          </ul>
-          {operations && (<div class={`${prefix}-menu__operations`}>{operations}</div>)}
+          {logo && <div class={`${prefix}-menu__logo`}>{logo}</div>}
+          <ul class={this.innerClasses}>{renderContent(this, 'default', 'content')}</ul>
+          {operations && <div class={`${prefix}-menu__operations`}>{operations}</div>}
         </div>
       </div>
     );

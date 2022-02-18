@@ -971,6 +971,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
               class="t-input__inner"
               placeholder="请输入"
               type="text"
+              unselectable="off"
             />
           </div>
         </div>
@@ -989,6 +990,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
               class="t-input__inner"
               placeholder="请输入"
               type="text"
+              unselectable="off"
             />
           </div>
         </div>
@@ -1007,6 +1009,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
               class="t-input__inner"
               placeholder="请输入"
               type="text"
+              unselectable="off"
             />
           </div>
         </div>

@@ -1,20 +1,29 @@
 <template>
   <component v-if="demo" :is="demo"></component>
-  <h1 class="empty-demo" v-else>请输入正确的 demo 路径，例如：/vue/demos/:componentName/:demoName</h1>
+  <ul class="empty-demo" v-else>
+    <li v-for="demoName in demoList[componentName]" :key="demoName">
+      <router-link :to="{ path: `/vue/demos/${componentName}/${demoName}` }">
+        <t-button theme="default" variant="text">{{ demoName }}</t-button>
+      </router-link>
+    </li>
+  </ul>
 </template>
 
 <script>
 const demoReq = import.meta.globEager('../../../examples/**/demos/*.vue');
 
 const demoObject = {};
+const demoList = {};
 Object.keys(demoReq).forEach((key) => {
   const match = key.match(/([\w-]+).demos.([\w-]+).vue/);
   const [, componentName, demoName] = match;
 
   demoObject[`${componentName}-${demoName}`] = demoReq[key].default;
+  demoList[componentName] = [demoName].concat(demoList[componentName]);
 });
 
 export default {
+  name: 'demos',
 
   components: {
     ...demoObject,
@@ -23,18 +32,46 @@ export default {
   data() {
     return {
       demo: null,
+      demoList,
     };
   },
+
+  computed: {
+    componentName() {
+      return this.$route.params.componentName;
+    },
+    currentDemos() {
+      return this.demoList[this.componentName].join('<br />');
+    },
+  },
+
+  watch: {
+    $route(v) {
+      if (v.name !== 'demos') return;
+      this.renderDemo();
+    },
+  },
+
   mounted() {
-    const { componentName, demoName } = this.$route.params;
-    console.log('%c 所有 demo 路径参考: \n', 'color: #0052d9;', demoObject);
-    this.demo = `${componentName}-${demoName}`;
+    this.renderDemo();
+  },
+
+  methods: {
+    renderDemo() {
+      const { componentName, demoName } = this.$route.params;
+      console.log('%c 所有 demo 路径参考: \n', 'color: #0052d9;', demoObject);
+      if (componentName && demoName) {
+        this.demo = `${componentName}-${demoName}`;
+      } else {
+        this.demo = '';
+      }
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .empty-demo {
-  margin: 100px 48px;
+  margin: 48px 240px;
 }
 </style>

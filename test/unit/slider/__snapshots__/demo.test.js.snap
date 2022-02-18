@@ -32,34 +32,8 @@ exports[`Slider base demo works fine 1`] = `
             tabindex="0"
           >
             <div
-              class="t-popup__reference"
-              popper-class=""
-            >
-              <transition-stub
-                appear="true"
-                name="t-popup--animation"
-              >
-                <div
-                  aria-hidden="true"
-                  class="t-popup"
-                  role="tooltip"
-                  style="display: none;"
-                >
-                  <div
-                    class="t-popup__content t-popup__content--arrow"
-                    style="max-width: 480px;"
-                  >
-                    0
-                    <div
-                      class="t-popup__arrow"
-                    />
-                  </div>
-                </div>
-              </transition-stub>
-              <div
-                class="t-slider__button"
-              />
-            </div>
+              class="t-slider__button"
+            />
           </div>
         </div>
       </div>
@@ -95,34 +69,8 @@ exports[`Slider base demo works fine 1`] = `
             tabindex="0"
           >
             <div
-              class="t-popup__reference"
-              popper-class=""
-            >
-              <transition-stub
-                appear="true"
-                name="t-popup--animation"
-              >
-                <div
-                  aria-hidden="true"
-                  class="t-popup"
-                  role="tooltip"
-                  style="display: none;"
-                >
-                  <div
-                    class="t-popup__content t-popup__content--arrow"
-                    style="max-width: 480px;"
-                  >
-                    0
-                    <div
-                      class="t-popup__arrow"
-                    />
-                  </div>
-                </div>
-              </transition-stub>
-              <div
-                class="t-slider__button"
-              />
-            </div>
+              class="t-slider__button"
+            />
           </div>
           <div
             class="t-slider__button-wrapper"
@@ -131,34 +79,8 @@ exports[`Slider base demo works fine 1`] = `
             tabindex="0"
           >
             <div
-              class="t-popup__reference"
-              popper-class=""
-            >
-              <transition-stub
-                appear="true"
-                name="t-popup--animation"
-              >
-                <div
-                  aria-hidden="true"
-                  class="t-popup"
-                  role="tooltip"
-                  style="display: none;"
-                >
-                  <div
-                    class="t-popup__content t-popup__content--arrow"
-                    style="max-width: 480px;"
-                  >
-                    0
-                    <div
-                      class="t-popup__arrow"
-                    />
-                  </div>
-                </div>
-              </transition-stub>
-              <div
-                class="t-slider__button"
-              />
-            </div>
+              class="t-slider__button"
+            />
           </div>
         </div>
       </div>
