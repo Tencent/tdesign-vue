@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import siteConfig from '../../site.config.js';
+import siteConfig from '../../site.config';
 import packageJson from '@/package.json';
 
 const currentVersion = packageJson.version.replace(/\./g, '_');
