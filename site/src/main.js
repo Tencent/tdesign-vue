@@ -5,7 +5,7 @@ import TDesign from 'tdesign-vue';
 import routes from './routes';
 import App from './App.vue';
 
-import Codesandbox from './components/code-sandbox/index.vue';
+import Codesandbox from './components/codesandbox/index.vue';
 import Stackblitz from './components/stackblitz/index.vue';
 
 // import tdesign style;
