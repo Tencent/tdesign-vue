@@ -336,7 +336,7 @@ export default Vue.extend({
                     } as VNodeDirective,
             ],
           on: {
-            mousedown: () => {
+            click: () => {
               this.contentClicked = true;
             },
             ...(hasTrigger.hover && {

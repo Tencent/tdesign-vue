@@ -685,37 +685,45 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         </div>
       );
     },
+    /**
+     * Parse options from slots before popup, execute only once
+     */
+    initOptions() {
+      if (this.realOptions.length || this.isInited) return;
+
+      const children = renderTNodeJSX(this, 'default');
+      if (children) {
+        this.realOptions = parseOptions(children);
+        this.isInited = true;
+      }
+
+      function parseOptions(vnodes: VNode[]): TdOptionProps[] {
+        if (!vnodes) return [];
+        return vnodes.reduce((options, vnode) => {
+          if (vnode.componentOptions?.tag === 't-option') {
+            const propsData = vnode.componentOptions.propsData as any;
+            return options.concat({
+              label: propsData.label,
+              value: propsData.value,
+              disabled: propsData.disabled,
+              content: propsData.content,
+              default: propsData.default,
+            });
+          }
+          if (vnode.componentOptions?.tag === 't-option-group') {
+            return options.concat(parseOptions(vnode.componentOptions.children));
+          }
+          return options;
+        }, []);
+      }
+    },
   },
 
+  mounted() {
+    this.initOptions();
+  },
   updated() {
-    if (this.realOptions.length || this.isInited) return;
-
-    // Parse options from slots before popup, execute only once
-    const children = renderTNodeJSX(this, 'default');
-    if (children) {
-      this.realOptions = parseOptions(children);
-      this.isInited = true;
-    }
-
-    function parseOptions(vnodes: VNode[]): TdOptionProps[] {
-      if (!vnodes) return [];
-      return vnodes.reduce((options, vnode) => {
-        if (vnode.componentOptions.tag === 't-option') {
-          const propsData = vnode.componentOptions.propsData as any;
-          return options.concat({
-            label: propsData.label,
-            value: propsData.value,
-            disabled: propsData.disabled,
-            content: propsData.content,
-            default: propsData.default,
-          });
-        }
-        if (vnode.componentOptions.tag === 't-option-group') {
-          return options.concat(parseOptions(vnode.componentOptions.children));
-        }
-        return options;
-      }, []);
-    }
+    this.initOptions();
   },
 
   render(): VNode {
