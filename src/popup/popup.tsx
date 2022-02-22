@@ -53,6 +53,10 @@ export default Vue.extend({
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
       mouseInRange: false,
+      /**
+       * mark popup as clicked when mousedown
+       * consume this flag right after click event bubbles up to document
+       */
       contentClicked: false,
       refClicked: false,
     };
@@ -328,16 +332,23 @@ export default Vue.extend({
           directives: destroyOnClose
             ? undefined
             : [
-                    {
-                      name: 'show',
-                      rawName: 'v-show',
-                      value: visible,
-                      expression: 'visible',
-                    } as VNodeDirective,
+                {
+                  name: 'show',
+                  rawName: 'v-show',
+                  value: visible,
+                  expression: 'visible',
+                } as VNodeDirective,
             ],
           on: {
-            click: () => {
+            mousedown: () => {
               this.contentClicked = true;
+            },
+            mouseup: () => {
+              // make sure to execute after document click is triggered
+              setTimeout(() => {
+                // make sure flag is consumed
+                this.contentClicked = false;
+              });
             },
             ...(hasTrigger.hover && {
               mouseenter: this.onMouseEnter,
