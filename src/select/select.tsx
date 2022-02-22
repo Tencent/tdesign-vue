@@ -673,7 +673,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
           {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
-          {!loading && !displayOptions.length && !showCreateOption && <li class={this.emptyClass}>{emptySlot}</li>}
+          {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
           {!this.hasOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
