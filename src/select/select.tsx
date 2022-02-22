@@ -700,18 +700,19 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       function parseOptions(vnodes: VNode[]): TdOptionProps[] {
         if (!vnodes) return [];
         return vnodes.reduce((options, vnode) => {
-          if (vnode.componentOptions?.tag === 't-option') {
-            const propsData = vnode.componentOptions.propsData as any;
+          const { componentOptions } = vnode;
+          if (componentOptions?.tag === 't-option') {
+            const propsData = componentOptions.propsData as any;
             return options.concat({
               label: propsData.label,
               value: propsData.value,
               disabled: propsData.disabled,
-              content: propsData.content,
+              content: componentOptions.children ? () => componentOptions.children : propsData.content,
               default: propsData.default,
             });
           }
-          if (vnode.componentOptions?.tag === 't-option-group') {
-            return options.concat(parseOptions(vnode.componentOptions.children));
+          if (componentOptions?.tag === 't-option-group') {
+            return options.concat(parseOptions(componentOptions.children));
           }
           return options;
         }, []);
