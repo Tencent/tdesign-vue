@@ -94,8 +94,8 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
       TABLE_CLASS_HEADER,
       {
         [TABLE_CLASS_HEADER_FIXED]: isFixedHeader,
-        [TABLE_CLASS_BORDERED]: isMultipleHeader,
-        [TABLE_CLASS_HEADER_MULTIPLE]: isMultipleHeader,
+        [TABLE_CLASS_BORDERED]: props.bordered && isMultipleHeader.value,
+        [TABLE_CLASS_HEADER_MULTIPLE]: isMultipleHeader.value,
       },
     ];
     return (

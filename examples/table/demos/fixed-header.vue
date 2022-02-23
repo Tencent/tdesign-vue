@@ -53,7 +53,7 @@ export default {
           width: 120,
           colKey: 'platform',
           title: '平台',
-          foot: '公有(5)',
+          foot: '汇总',
         },
         {
           width: 120,
