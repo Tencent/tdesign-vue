@@ -385,6 +385,11 @@ export default Vue.extend({
             this.updateOverlayStyle();
           }
         }}
+        onRefResize={() => {
+          if (visible) {
+            this.updatePopper();
+          }
+        }}
         parent={this}
         visible={visible}
         attach={this.attach}
