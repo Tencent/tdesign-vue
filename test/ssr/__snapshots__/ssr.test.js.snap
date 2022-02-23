@@ -10636,6 +10636,83 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
+<div class="tdesign-demo-block-column-large">
+  <div class="t-table t-table--bordered t-table--striped">
+    <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
+          <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
+          <path fill="currentColor" d="M8 1.25l6.06 3.38v6.75L8 14.75l-6.06-3.38V4.63L8 1.25zM2.94 5.21v5.58L8 13.6l5.06-2.82V5.2L8 2.4 2.94 5.21z" fill-opacity="0.9"></path>
+        </svg><span class="t-button__text">自定义列</span></button></div>
+    <div class="t-loading__parent">
+      <div class="t-table__content">
+        <table style="table-layout:fixed;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col>
+            <col>
+            <col>
+            <col style="width:200px;">
+          </colgroup>
+          <thead>
+            <tr>
+              <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
+              <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+              <td class="" key="type" colspan="1" rowspan="1">类型</td>
+              <td class="" key="default" colspan="1" rowspan="1">默认值</td>
+              <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
+              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr rowKey="index" class="" key="0">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">0</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">String</td>
+              <td class="" key="default" length="6">-</td>
+              <td class="" key="needed" length="6">是</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="1">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+              <td class="" key="type" length="6">Number</td>
+              <td class="" key="default" length="6">0</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="2">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">Array</td>
+              <td class="" key="default" length="6">[]</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="3">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+              <td class="" key="type" length="6">Object</td>
+              <td class="" key="default" length="6">{}</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="4">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">String</td>
+              <td class="" key="default" length="6">-</td>
+              <td class="" key="needed" length="6">是</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue correctly 1`] = `
 <div class="t-table">
   <div class="t-loading__parent">
@@ -14711,7 +14788,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/base.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue correctly 1`] = `
 <div class="tdesign-tree-select-collapsed">
   <div class="demo-space t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close" style="display:none;"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -14725,7 +14806,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
     </div>
   </div>
   <div class="t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close" style="display:none;"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -14806,7 +14891,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/lazy.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/multiple.vue correctly 1`] = `
 <div class="tdesign-tree-select-multiple">
   <div class="t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -14909,7 +14998,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue co
     </div>
   </div>
   <div class="tree-select-multiple t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="[object Object]" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">undefined</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="[object Object]" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">undefined</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
