@@ -12,9 +12,13 @@ export default {
   asyncLoading: {
     type: [String, Function] as PropType<TdPrimaryTableProps['asyncLoading']>,
   },
-  /** 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐 */
+  /** 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段；`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐 */
   columnController: {
     type: Object as PropType<TdPrimaryTableProps['columnController']>,
+  },
+  /** 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容 */
+  columnControllerContent: {
+    type: [String, Function] as PropType<TdPrimaryTableProps['columnControllerContent']>,
   },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {

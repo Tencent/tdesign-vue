@@ -85,6 +85,7 @@ export default {
     type: String as PropType<TdBaseTableProps['size']>,
     default: 'medium' as TdBaseTableProps['size'],
     validator(val: TdBaseTableProps['size']): boolean {
+      if (!val) return true;
       return ['small', 'medium', 'large'].includes(val);
     },
   },
@@ -100,6 +101,7 @@ export default {
     type: String as PropType<TdBaseTableProps['tableLayout']>,
     default: 'fixed' as TdBaseTableProps['tableLayout'],
     validator(val: TdBaseTableProps['tableLayout']): boolean {
+      if (!val) return true;
       return ['auto', 'fixed'].includes(val);
     },
   },
@@ -112,6 +114,7 @@ export default {
     type: String as PropType<TdBaseTableProps['verticalAlign']>,
     default: 'middle' as TdBaseTableProps['verticalAlign'],
     validator(val: TdBaseTableProps['verticalAlign']): boolean {
+      if (!val) return true;
       return ['top', 'middle', 'bottom'].includes(val);
     },
   },
