@@ -52,6 +52,7 @@ export const useTNodeJSX = () => {
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);
 
+    const { slots } = instance.setupContext;
     // 处理 props 类型的Node
     let propsNode;
     if (Object.keys(instance.props).includes(name)) {
@@ -62,8 +63,8 @@ export const useTNodeJSX = () => {
     if (propsNode === false) return;
 
     // 同名function和slot优先处理插槽
-    if (instance.slots[name]) {
-      return instance.slots[name](params);
+    if (slots[name]) {
+      return slots[name](params);
     }
     if (isFunction(propsNode)) return propsNode(h, params);
 

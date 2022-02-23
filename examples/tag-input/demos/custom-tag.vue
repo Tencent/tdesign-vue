@@ -5,7 +5,7 @@
       <template #tag="{ value }">
         <img
           src="https://tdesign.gtimg.com/site/avatar.jpg"
-          style="max-width: 16px; max-height: 16px; border-radius: 50%"
+          style="max-width: 20px; max-height: 20px; border-radius: 50%"
         />
         <span>&nbsp;&nbsp;{{ value }}</span>
       </template>
@@ -15,17 +15,17 @@
 
     <!-- 方式二：使用 valueDisplay 定义全部内容。也可以使用同名渲染函数 valueDisplay -->
     <t-tag-input v-model="tags" clearable>
-      <template #valueDisplay="{ value }">
+      <template #valueDisplay="{ value, onClose }">
         <t-tag
           v-for="(item, index) in value"
           :key="item"
           closable
           style="margin-right: 4px"
-          @close="() => onTagDelete(index)"
+          @close="() => onClose(index)"
         >
           <img
             src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 16px; max-height: 16px; border-radius: 50%"
+            style="max-width: 20px; max-height: 20px; border-radius: 50%"
           />
           <span>&nbsp;&nbsp;{{ item }}</span>
         </t-tag>

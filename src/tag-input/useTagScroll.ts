@@ -4,12 +4,11 @@
  */
 
 import {
-  onMounted, onUnmounted, ref, toRefs, getCurrentInstance,
+  onMounted, onUnmounted, ref, toRefs,
 } from '@vue/composition-api';
 import { TdTagInputProps } from './type';
 
-export default function useTagScroll() {
-  const props = getCurrentInstance().props as TdTagInputProps;
+export default function useTagScroll(props: TdTagInputProps) {
   const tagInputRef = ref();
   const { excessTagsDisplayType, readonly, disabled } = toRefs(props);
   // 允许向右滚动的最大距离

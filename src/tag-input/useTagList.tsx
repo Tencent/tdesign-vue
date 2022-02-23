@@ -1,4 +1,4 @@
-import { ref, getCurrentInstance, toRefs } from '@vue/composition-api';
+import { ref, SetupContext, toRefs } from '@vue/composition-api';
 import { TagInputValue, TdTagInputProps, TagInputChangeContext } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
@@ -9,16 +9,15 @@ import { useTNodeJSX } from '../hooks/tnode';
 export type ChangeParams = [TagInputChangeContext];
 
 // handle tag add and remove
-export default function useTagList() {
-  const instance = getCurrentInstance();
-  const props = instance.props as TdTagInputProps;
-  const renderTnode = useTNodeJSX();
-
-  const { onRemove, max } = toRefs(props);
+export default function useTagList(props: TdTagInputProps, context: SetupContext) {
+  const renderTNode = useTNodeJSX();
+  const {
+    onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
+  } = toRefs(props);
   // handle controlled property and uncontrolled property
   const [tagValue, setTagValue] = useDefault<TdTagInputProps['value'], TdTagInputProps>(
     props,
-    instance.emit,
+    context.emit,
     'value',
     'change',
   );
@@ -26,11 +25,11 @@ export default function useTagList() {
   const oldInputValue = ref<InputValue>();
 
   // 点击标签关闭按钮，删除标签
-  const onClose = (p: { e: MouseEvent; index: number; item: string | number }) => {
+  const onClose = (p: { e?: MouseEvent; index: number; item: string | number }) => {
     const arr = [...tagValue.value];
     arr.splice(p.index, 1);
-    setTagValue<ChangeParams>(arr, { trigger: 'tag-remove', index: p.index, e: p.e });
-    onRemove.value?.({ ...p, trigger: 'tag-remove', value: tagValue.value });
+    setTagValue<ChangeParams>(arr, { trigger: 'tag-remove', ...p });
+    onRemove.value?.({ ...p, trigger: 'tag-remove', value: arr });
   };
 
   const clearAll = (context: { e: MouseEvent }) => {
@@ -48,6 +47,7 @@ export default function useTagList() {
       setTagValue<ChangeParams>(newValue, {
         trigger: 'enter',
         index: newValue.length - 1,
+        item: valueStr,
         e: context.e,
       });
     }
@@ -57,10 +57,11 @@ export default function useTagList() {
   // 按下回退键，删除标签
   const onInputBackspaceKeyUp = (value: InputValue, context: { e: KeyboardEvent }) => {
     const { e } = context;
+    if (!tagValue.value || !tagValue.value.length) return;
     // 回车键删除，输入框值为空时，才允许 Backspace 删除标签
     if (!oldInputValue.value && ['Backspace', 'NumpadDelete'].includes(e.code)) {
-      const index = tagValue.value?.length;
-      const item = tagValue.value?.[index];
+      const index = tagValue.value.length - 1;
+      const item = tagValue.value[index];
       const trigger = 'backspace';
       setTagValue<ChangeParams>(tagValue.value.slice(0, -1), {
         e,
@@ -81,24 +82,19 @@ export default function useTagList() {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderLabel = ({ displayNode, label }: { displayNode: any; label: any }, h: any) => {
-    const {
-      minCollapsedNum, size, disabled, tagProps, readonly,
-    } = props;
-
-    const newList = minCollapsedNum ? tagValue.value.slice(0, minCollapsedNum) : tagValue.value;
-
+    const newList = minCollapsedNum.value ? tagValue.value.slice(0, minCollapsedNum.value) : tagValue.value;
     const list = displayNode
       ? [displayNode]
       : newList?.map((item, index) => {
-        const tagContent = renderTnode('tag', { params: { value: item } });
+        const tagContent = renderTNode('tag', { params: { value: item } });
         return (
             <Tag
               key={item}
-              size={size}
-              disabled={disabled}
+              size={size.value}
+              disabled={disabled.value}
               onClose={(context: { e: MouseEvent }) => onClose({ e: context.e, item, index })}
-              closable={!readonly && !disabled}
-              {...tagProps}
+              closable={!readonly.value && !disabled.value}
+              {...tagProps.value}
             >
               {tagContent ?? item}
             </Tag>
@@ -114,11 +110,11 @@ export default function useTagList() {
     // 超出省略
     if (newList.length !== tagValue.value.length) {
       const len = tagValue.value.length - newList.length;
-      const more = renderTnode('collapsedItems', {
+      const more = renderTNode('collapsedItems', {
         params: {
           value: tagValue,
           count: tagValue.value.length,
-          collapsedTags: tagValue.value.slice(minCollapsedNum, tagValue.value.length),
+          collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
         },
       });
       list.push(more ?? <Tag key="more">+{len}</Tag>);
