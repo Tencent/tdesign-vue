@@ -71,6 +71,8 @@ export const RenderTNodeTemplate = Vue.extend({
 interface JSXRenderContext {
   defaultNode?: VNode;
   params?: Record<string, any>;
+  // 是否不打印 LOG
+  silent?: boolean;
 }
 
 /**
