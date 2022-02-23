@@ -7401,6 +7401,15 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
+      <div class="t-notification__title__wrap"><span class="t-notification__title">带关闭按钮</span><span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-notification__content">这是一条消息通知</div>
+    </div>
+  </div>
+  <div class="t-notification">
+    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+      </svg></div>
+    <div class="t-notification__main">
       <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">使用 function 自定义底部内容</div>
       <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
@@ -7414,8 +7423,8 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
       <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message__close"></span></div>
       <div class="t-notification__content">1. 使用插槽自定义标题 2. 使用插槽自定义底部内容</div>
       <div class="t-notification__detail"><button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
-        稍后提醒我(10s)
-      </span></button></div>
+          稍后提醒我(10s)
+        </span></button></div>
     </div>
   </div>
 </div>
@@ -7965,7 +7974,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7976,7 +7985,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7987,7 +7996,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8002,7 +8011,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8015,7 +8024,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8028,7 +8037,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8042,7 +8051,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
           <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
             <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8053,7 +8062,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8064,7 +8073,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
           <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8081,7 +8090,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  50.265482457436704" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="295.5610368497277  56.2973403523291" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8109,7 +8118,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
         <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="150.79644737231007  351.85837720205683" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="188.4955592153876  439.822971502571" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8127,7 +8136,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
         </svg>
       </div>
     </div>
@@ -8146,7 +8155,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8315,7 +8324,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8327,7 +8336,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8339,7 +8348,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8351,7 +8360,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8364,7 +8373,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
         <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
           <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8373,7 +8382,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
         <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
           <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8408,7 +8417,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8438,7 +8447,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8478,7 +8487,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9176,7 +9185,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9188,10 +9197,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9208,7 +9217,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9220,10 +9229,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9241,7 +9250,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
           </div>
         </div>
@@ -9262,10 +9271,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
           </div>
         </div>
@@ -9300,7 +9309,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9321,10 +9330,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9358,7 +9367,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9388,10 +9397,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9426,7 +9435,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:-50%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9448,10 +9457,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:-50%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9478,7 +9487,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9490,10 +9499,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9510,7 +9519,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9522,10 +9531,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9542,7 +9551,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9572,10 +9581,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -13369,23 +13378,23 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/twelve-hour-meri
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/arrow.vue correctly 1`] = `<div><span showArrow="true"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">带箭头文字提示</span></button> </span></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/arrow.vue correctly 1`] = `<div><span><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">带箭头文字提示</span></button> </span></div>`;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1`] = `<div class="tdesign-tooltip-placement"><button type="button" showArrow="true" class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> top </span></button> <button type="button" showArrow="true" class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button> <button type="button" showArrow="true" class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button> <button type="button" showArrow="true" class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> bottom </span></button> <button type="button" showArrow="true" class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button> <button type="button" showArrow="true" class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-right </span></button> <button type="button" showArrow="true" class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left </span></button> <button type="button" showArrow="true" class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-top </span></button> <button type="button" showArrow="true" class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-bottom </span></button> <button type="button" showArrow="true" class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right </span></button> <button type="button" showArrow="true" class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-top </span></button> <button type="button" showArrow="true" class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-bottom </span></button></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1`] = `<div class="tdesign-tooltip-placement"><button type="button" class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> top </span></button> <button type="button" class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button> <button type="button" class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button> <button type="button" class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> bottom </span></button> <button type="button" class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button> <button type="button" class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-right </span></button> <button type="button" class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left </span></button> <button type="button" class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-top </span></button> <button type="button" class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-bottom </span></button> <button type="button" class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right </span></button> <button type="button" class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-top </span></button> <button type="button" class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-bottom </span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/duration.vue correctly 1`] = `
-<div><button type="button" disabled="disabled" visible="visible" showArrow="true" class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"><span class="t-button__text">定时消失</span></button>
+<div><button type="button" disabled="disabled" visible="visible" class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"><span class="t-button__text">定时消失</span></button>
   <!---->
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/no-arrow.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">不带箭头的文字提示</span></button></div>`;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/theme.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">default</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">primary</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-success"><span class="t-button__text">success</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">danger</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">warning</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">light</span></button></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/theme.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">default</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">primary</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-success"><span class="t-button__text">success</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">danger</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">warning</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">light</span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/trigger.vue correctly 1`] = `
-<div class="tdesign-tooltip-demo"><button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button>
-  <div class="t-input t-size-m"><input placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button>
+<div class="tdesign-tooltip-demo"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button>
+  <div class="t-input t-size-m"><input placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button>
 </div>
 `;
 

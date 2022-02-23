@@ -22,14 +22,22 @@ export function isValueEmpty(val: ValueType): boolean {
   return typeof val === 'object' ? isEmpty(val) : ['', undefined, null].includes(val);
 }
 
+// 比较值大小
+const compareValue: (val: ValueType, num: number, isMax: boolean) => boolean = (val, num, isMax) => {
+  const compare: (a: number | any, b: number) => boolean = (a, b) => (isMax ? a <= b : a >= b);
+  if (isNumber(val)) return compare(val, num);
+  if (Array.isArray(val)) return compare(val.length, num);
+  return compare(getCharacterLength(val), num);
+};
+
 const VALIDATE_MAP = {
   date: isDate,
   url: isURL,
   email: isEmail,
   required: (val: ValueType): boolean => !isValueEmpty(val),
   boolean: (val: ValueType): boolean => typeof val === 'boolean',
-  max: (val: ValueType, num: number): boolean => (isNumber(val) ? val <= num : getCharacterLength(val) <= num),
-  min: (val: ValueType, num: number): boolean => (isNumber(val) ? val >= num : getCharacterLength(val) >= num),
+  max: (val: ValueType, num: number): boolean => compareValue(val, num, true),
+  min: (val: ValueType, num: number): boolean => compareValue(val, num, false),
   len: (val: ValueType, num: number): boolean => getCharacterLength(val) === num,
   number: (val: ValueType): boolean => !Number.isNaN(val),
   enum: (val: ValueType, strs: Array<string>): boolean => strs.includes(val),
