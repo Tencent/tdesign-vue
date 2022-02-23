@@ -58,10 +58,11 @@ export default Vue.extend({
         placeholder: this.placeholder,
         maxlength: this.maxlength || undefined,
         name: this.name || undefined,
+        unselectable: this.readonly ? 'on' : 'off',
       });
     },
     characterNumber(): number {
-      const characterInfo = getCharacterLength(String(this.value));
+      const characterInfo = getCharacterLength(String(this.value || ''));
       if (typeof characterInfo === 'object') {
         return characterInfo.length;
       }

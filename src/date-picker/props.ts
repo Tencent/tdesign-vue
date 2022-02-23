@@ -10,7 +10,7 @@ import { PropType } from 'vue';
 export default {
   /** 是否允许输入日期 */
   allowInput: Boolean,
-  /** 是否显示清楚按钮 */
+  /** 是否显示清除按钮 */
   clearable: Boolean,
   /** 是否禁用组件 */
   disabled: Boolean,

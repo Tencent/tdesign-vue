@@ -557,7 +557,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       this.$nextTick(() => {
         let styles = (this.popupProps && this.popupProps.overlayStyle) || {};
         if (this.popupProps && isFunction(this.popupProps.overlayStyle)) {
-          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement) || {};
+          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
         }
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
@@ -673,7 +673,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
           {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
-          {!loading && !displayOptions.length && !showCreateOption && <li class={this.emptyClass}>{emptySlot}</li>}
+          {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
           {!this.hasOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
@@ -685,37 +685,46 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         </div>
       );
     },
+    /**
+     * Parse options from slots before popup, execute only once
+     */
+    initOptions() {
+      if (this.realOptions.length || this.isInited) return;
+
+      const children = renderTNodeJSX(this, 'default');
+      if (children) {
+        this.realOptions = parseOptions(children);
+        this.isInited = true;
+      }
+
+      function parseOptions(vnodes: VNode[]): TdOptionProps[] {
+        if (!vnodes) return [];
+        return vnodes.reduce((options, vnode) => {
+          const { componentOptions } = vnode;
+          if (componentOptions?.tag === 't-option') {
+            const propsData = componentOptions.propsData as any;
+            return options.concat({
+              label: propsData.label,
+              value: propsData.value,
+              disabled: propsData.disabled,
+              content: componentOptions.children ? () => componentOptions.children : propsData.content,
+              default: propsData.default,
+            });
+          }
+          if (componentOptions?.tag === 't-option-group') {
+            return options.concat(parseOptions(componentOptions.children));
+          }
+          return options;
+        }, []);
+      }
+    },
   },
 
+  mounted() {
+    this.initOptions();
+  },
   updated() {
-    if (this.realOptions.length || this.isInited) return;
-
-    // Parse options from slots before popup, execute only once
-    const children = renderTNodeJSX(this, 'default');
-    if (children) {
-      this.realOptions = parseOptions(children);
-      this.isInited = true;
-    }
-
-    function parseOptions(vnodes: VNode[]): TdOptionProps[] {
-      if (!vnodes) return [];
-      return vnodes.reduce((options, vnode) => {
-        if (vnode.componentOptions.tag === 't-option') {
-          const propsData = vnode.componentOptions.propsData as any;
-          return options.concat({
-            label: propsData.label,
-            value: propsData.value,
-            disabled: propsData.disabled,
-            content: propsData.content,
-            default: propsData.default,
-          });
-        }
-        if (vnode.componentOptions.tag === 't-option-group') {
-          return options.concat(parseOptions(vnode.componentOptions.children));
-        }
-        return options;
-      }, []);
-    }
+    this.initOptions();
   },
 
   render(): VNode {

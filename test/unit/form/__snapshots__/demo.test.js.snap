@@ -32,6 +32,7 @@ exports[`Form base demo works fine 1`] = `
               class="t-input__inner"
               placeholder="请输入内容"
               type="text"
+              unselectable="off"
             />
           </div>
         </div>
@@ -65,6 +66,7 @@ exports[`Form base demo works fine 1`] = `
               class="t-input__inner"
               placeholder="请输入内容"
               type="text"
+              unselectable="off"
             />
           </div>
         </div>

@@ -6,7 +6,7 @@
       header="提示"
       body="对话框内容"
       :visible.sync="visible1"
-      @confirm="onClickConfirm"
+      @confirm="onConfirm"
       :onClose="close1"
     >
     </t-dialog>
@@ -17,7 +17,7 @@
       header="成功"
       body="对话框内容"
       :visible.sync="visible2"
-      @confirm="onClickConfirm"
+      @confirm="onConfirm"
       :onClose="close2"
     >
     </t-dialog>
@@ -28,10 +28,9 @@
       header="警示"
       body="对话框内容"
       :visible.sync="visible3"
-      @confirm="onClickConfirm"
+      @confirm="onConfirm"
       :onClose="close3"
       :cancelBtn="null"
-
     >
     </t-dialog>
 
@@ -41,26 +40,19 @@
       header="错误"
       body="对话框内容"
       :visible.sync="visible4"
-      @confirm="onClickConfirm"
+      @confirm="onConfirm"
       :onClose="close4"
       :cancelBtn="null"
     >
     </t-dialog>
 
     <t-button theme="primary" @click="visible5 = true">自定义图标</t-button>
-    <t-dialog
-      body="对话框内容"
-      :closeBtn="false"
-      :visible.sync="visible5"
-      @confirm="onClickConfirm"
-      :onClose="close5"
-    >
+    <t-dialog body="对话框内容" :closeBtn="false" :visible.sync="visible5" @confirm="onConfirm" :onClose="close5">
       <div slot="header">
         <icon name="check-circle-filled" color="orange" />
-        <span style="vertical-align: middle;">对话框标题</span>
+        <span style="vertical-align: middle">对话框标题</span>
       </div>
     </t-dialog>
-
   </div>
 </template>
 <script>
@@ -81,7 +73,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    onClickConfirm(context) {
+    onConfirm(context) {
       const { e } = context;
       // todo something else here
       this.sendingRequest();

@@ -21,7 +21,7 @@ import Input, { InputValue, InputBlurEventParams, InputFocustEventParams } from 
 import FakeArrow from '../common-components/fake-arrow';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
-import { TreeSelectValue, TdTreeSelectProps } from './type';
+import { TreeSelectValue, TdTreeSelectProps, TreeSelectNodeValue } from './type';
 import { ClassName, TreeOptionData } from '../common';
 import { prefix } from '../config';
 import { RemoveOptions, NodeOptions } from './interface';
@@ -277,11 +277,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     treeNodeChange(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<TreeOptionData>; e: MouseEvent }) {
       let current: TreeSelectValue = value;
       if (this.isObjectValue) {
-        const { tree } = this.$refs;
-        current = value.map((nodeValue) => {
-          const node = (tree as any).getItem(nodeValue);
-          return { label: node.data[this.realLabel], value: node.data[this.realValue] };
-        });
+        current = value.map((nodeValue) => this.getTreeNode(this.data, nodeValue));
       }
       this.change(current, context.node);
       this.actived = value;
@@ -293,10 +289,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       }
       let current: TreeSelectValue = value;
       if (this.isObjectValue) {
-        const { tree } = this.$refs;
         const nodeValue = isEmpty(value) ? '' : value[0];
-        const node = (tree as any).getItem(nodeValue);
-        current = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        current = this.getTreeNode(this.data, nodeValue);
       } else {
         current = isEmpty(value) ? '' : value[0];
       }
@@ -320,33 +314,42 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.search(this.filterText);
     },
     async changeNodeInfo() {
-      const { tree } = this.$refs;
       await this.value;
 
-      if (tree && !this.multiple && this.value) {
+      if (!this.multiple && this.value) {
         const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
-        // 数据源非空
-        if (!isEmpty(this.data)) {
-          const node = (tree as any).getItem(nodeValue);
-          if (!node) return;
-          this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
-        } else {
+        const node = this.getTreeNode(this.data, nodeValue);
+        if (!node) {
           this.nodeInfo = { label: nodeValue, value: nodeValue };
+        } else {
+          this.nodeInfo = node;
         }
-      } else if (tree && this.multiple && isArray(this.value)) {
+      } else if (this.multiple && isArray(this.value)) {
         this.nodeInfo = this.value.map((value) => {
           const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
-          // 数据源非空
-          if (!isEmpty(this.data)) {
-            const node = (tree as any).getItem(nodeValue);
-            if (!node) return;
-            return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+          const node = this.getTreeNode(this.data, nodeValue);
+          if (!node) {
+            return { label: nodeValue, value: nodeValue };
           }
-          return { label: nodeValue, value: nodeValue };
+          return node;
         });
       } else {
         this.nodeInfo = null;
       }
+    },
+    getTreeNode(data: Array<TreeOptionData>, targetValue: TreeSelectValue): TreeSelectNodeValue | null {
+      for (let i = 0, len = data.length; i < len; i++) {
+        if (data[i][this.realValue] === targetValue) {
+          return { label: data[i][this.realLabel], value: data[i][this.realValue] };
+        }
+        if (data[i]?.children) {
+          const result = this.getTreeNode(data[i]?.children, targetValue);
+          if (!isNil(result)) {
+            return result;
+          }
+        }
+      }
+      return null;
     },
     treeRerender() {
       this.treeKey += 1;
@@ -412,6 +415,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
               size={this.size}
               closable={!this.tDisabled}
               disabled={this.tDisabled}
+              maxWidth={300}
+              title={label}
               onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
             >
               {label}

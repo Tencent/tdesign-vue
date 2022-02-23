@@ -1,6 +1,6 @@
 <template>
   <t-tooltip content="在 CodeSandbox 中打开">
-    <t-loading size="small" show-overlay :loading="loading">
+    <t-loading size="small" :loading="loading">
       <div class="action-online" @click="onRunOnline">
         <svg fill="none" height="20" viewBox="0 0 23 23" width="20" xmlns="http://www.w3.org/2000/svg">
           <g clip-rule="evenodd" fill-rule="evenodd">
@@ -20,68 +20,30 @@
 </template>
 
 <script>
-import pkg from '@/package.json';
-import packageJSON from './package.json';
-import htmlContent from './index.html?raw';
-import mainJsContent from './main.js?raw';
-import babelContent from './.babelrc?raw';
+import {
+  mainJsContent, htmlContent, pkgContent, styleContent, babelContent,
+} from './content';
 
-const styleContent = `
-/* 竖排展示 demo 行间距 16px */
-.tdesign-demo-block-column {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-}
-
-/* 竖排展示 demo 行间距 32px */
-.tdesign-demo-block-column-large {
-  display: flex;
-  flex-direction: column;
-  row-gap: 32px;
-}
-
-/* 横排排展示 demo 列间距 16px */
-.tdesign-demo-block-row {
-  display: flex;
-  column-gap: 16px;
-  align-items: center;
-}
-`;
-
-packageJSON.dependencies['tdesign-vue'] = pkg.version;
-packageJSON.dependencies['tdesign-icons-vue'] = pkg.dependencies['tdesign-icons-vue'];
-
-const packageJSONContent = JSON.stringify(packageJSON, null, 2);
-
-// TODO 改造codesanbox 使用vite 构建后可删除
+// lang="jsx" 在 webpack 环境中会报错
 function getDemoContent(demoContent) {
   return demoContent.replace(/lang="jsx"/g, '');
 }
 
 export default {
-  name: 'code-sandbox',
+  name: 'CodeSandbox',
   props: {
     code: String,
     demoName: String,
     componentName: String,
   },
-
   data() {
-    return {
-      loading: false,
-    };
+    return { loading: false };
   },
-
-  mounted() {
-    this.mainJsContent = mainJsContent
-      .replace(/componentName/g, this.componentName)
-      .replace(/demoName/g, this.demoName);
-  },
-
   methods: {
     onRunOnline() {
+      const { code } = this;
       this.loading = true;
+
       fetch('https://codesandbox.io/api/v1/sandboxes/define?json=1', {
         method: 'POST',
         headers: {
@@ -91,53 +53,32 @@ export default {
         body: JSON.stringify({
           files: {
             'package.json': {
-              content: packageJSONContent,
+              content: pkgContent,
             },
             'public/index.html': {
               content: htmlContent,
             },
-            '.babelrc': {
-              content: babelContent,
-            },
             'src/main.js': {
-              content: this.mainJsContent,
+              content: mainJsContent,
             },
             'src/index.css': {
               content: styleContent,
             },
             'src/demo.vue': {
-              content: getDemoContent(this.code),
+              content: getDemoContent(code),
+            },
+            '.babelrc': {
+              content: babelContent,
             },
           },
         }),
       })
         .then((x) => x.json())
         .then(({ sandbox_id: sandboxId }) => {
-          this.loading = false;
           window.open(`https://codesandbox.io/s/${sandboxId}?file=/src/demo.vue`);
-        });
+        })
+        .finally(() => (this.loading = false));
     },
   },
 };
 </script>
-
-<style lang="less">
-.action-online {
-  width: 32px;
-  height: 32px;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  transition: all 0.2s linear;
-  cursor: pointer;
-  border-radius: 3px;
-  color: var(--text-secondary);
-
-  &:hover {
-    color: var(--text-primary);
-    background-color: var(--bg-color-demo-hover, rgb(243, 243, 243));
-  }
-}
-</style>

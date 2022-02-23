@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
  * */
 
 import { TNode, ClassName, Styles, AttachNode } from '../common';
@@ -32,18 +31,35 @@ export interface TdPopupProps {
    */
   disabled?: boolean;
   /**
+   * 【开发中】浮层是否隐藏空内容，默认不隐藏
+   * @default false
+   */
+  hideEmptyPopup?: boolean;
+  /**
    * 浮层类名，示例：'name1 name2 name3' 或 `['name1', 'name2']` 或 `[{ 'name1': true }]`
    */
   overlayClassName?: ClassName;
   /**
-   * 浮层样式
+   * 浮层样式，第一个参数 `triggerElement` 表示触发元素 DOM 节点，第二个参数 `popupElement` 表示浮层元素 DOM 节点
    */
-  overlayStyle?: Styles | ((trigger: HTMLElement) => Styles);
+  overlayStyle?: Styles | ((triggerElement: HTMLElement, popupElement: HTMLElement) => Styles);
   /**
    * 浮层出现位置
    * @default top
    */
-  placement?: 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
+  placement?:
+    | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'left-top'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-bottom';
   /**
    * 是否显示浮层箭头
    * @default false
@@ -73,13 +89,27 @@ export interface TdPopupProps {
    */
   zIndex?: number;
   /**
+   * 下拉选项滚动事件
+   */
+  onScroll?: (context: { e: WheelEvent }) => void;
+  /**
    * 当浮层隐藏或显示时触发
    */
   onVisibleChange?: (visible: boolean, context: PopupVisibleChangeContext) => void;
-};
+}
 
-export interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource };
+export interface PopupVisibleChangeContext {
+  e?: PopupTriggerEvent;
+  trigger?: PopupTriggerSource;
+}
 
 export type PopupTriggerEvent = MouseEvent | FocusEvent | KeyboardEvent;
 
-export type PopupTriggerSource = 'document' | 'trigger-element-click' | 'trigger-element-hover' | 'trigger-element-blur' | 'trigger-element-focus' | 'context-menu' | 'keydown-esc';
+export type PopupTriggerSource =
+  | 'document'
+  | 'trigger-element-click'
+  | 'trigger-element-hover'
+  | 'trigger-element-blur'
+  | 'trigger-element-focus'
+  | 'context-menu'
+  | 'keydown-esc';

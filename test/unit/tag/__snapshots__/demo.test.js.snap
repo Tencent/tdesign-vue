@@ -80,28 +80,28 @@ exports[`Tag base demo works fine 1`] = `
   </div>
    
   <div
-    class="tag-demo plain"
+    class="tag-demo"
   >
     <span
-      class="t-tag t-tag--primary t-size-m t-tag--plain"
+      class="t-tag t-tag--primary t-size-m t-tag--outline"
     >
       标签一
     </span>
      
     <span
-      class="t-tag t-tag--success t-size-m t-tag--plain"
+      class="t-tag t-tag--success t-size-m t-tag--outline"
     >
       标签二
     </span>
      
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--plain"
+      class="t-tag t-tag--warning t-size-m t-tag--outline"
     >
       标签三
     </span>
      
     <span
-      class="t-tag t-tag--danger t-size-m t-tag--plain"
+      class="t-tag t-tag--danger t-size-m t-tag--outline"
     >
       标签四
     </span>
@@ -274,10 +274,10 @@ exports[`Tag delete demo works fine 1`] = `
   </div>
    
   <div
-    class="tag-block plain"
+    class="tag-block"
   >
     <span
-      class="t-tag t-tag--primary t-size-m t-tag--plain t-tag--close"
+      class="t-tag t-tag--primary t-size-m t-tag--outline t-tag--close"
     >
       标签一
       <svg
@@ -296,7 +296,7 @@ exports[`Tag delete demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--success t-size-m t-tag--plain t-tag--close"
+      class="t-tag t-tag--success t-size-m t-tag--outline t-tag--close"
     >
       标签二
       <svg
@@ -315,7 +315,7 @@ exports[`Tag delete demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--plain t-tag--close"
+      class="t-tag t-tag--warning t-size-m t-tag--outline t-tag--close"
     >
       标签三
       <svg
@@ -334,7 +334,7 @@ exports[`Tag delete demo works fine 1`] = `
     </span>
      
     <span
-      class="t-tag t-tag--danger t-size-m t-tag--plain t-tag--close"
+      class="t-tag t-tag--danger t-size-m t-tag--outline t-tag--close"
     >
       标签四
       <svg
@@ -563,34 +563,34 @@ exports[`Tag long-text demo works fine 1`] = `
 
 exports[`Tag plain demo works fine 1`] = `
 <div
-  class="tdesign-tag-plain"
+  class="tdesign-tag-outline"
 >
   <span
-    class="t-tag t-tag--primary t-size-m t-tag--plain"
+    class="t-tag t-tag--primary t-size-m t-tag--outline"
   >
     标签一
   </span>
    
   <span
-    class="t-tag t-tag--success t-size-m t-tag--plain"
+    class="t-tag t-tag--success t-size-m t-tag--outline"
   >
     标签二
   </span>
    
   <span
-    class="t-tag t-tag--default t-size-m t-tag--plain"
+    class="t-tag t-tag--default t-size-m t-tag--outline"
   >
     标签三
   </span>
    
   <span
-    class="t-tag t-tag--warning t-size-m t-tag--plain"
+    class="t-tag t-tag--warning t-size-m t-tag--outline"
   >
     标签四
   </span>
    
   <span
-    class="t-tag t-tag--danger t-size-m t-tag--plain"
+    class="t-tag t-tag--danger t-size-m t-tag--outline"
   >
     标签五
   </span>

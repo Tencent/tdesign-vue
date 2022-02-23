@@ -43,7 +43,7 @@ export default Vue.extend({
         const indexInFixedColumns = fixedColumns.findIndex((el: Vue) => el === this);
         fixedColumns.forEach((el: any, cur) => {
           if ((fixed === 'right' && cur > indexInFixedColumns) || (fixed === 'left' && cur < indexInFixedColumns)) {
-            const { width } = el.cellData?.col;
+            const width = parseInt(el.cellData?.col.with, 10);
             const { clientWidth } = el.$el;
             offsetLeft += width > 0 ? width : clientWidth;
           }

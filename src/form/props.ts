@@ -24,7 +24,7 @@ export default {
   errorMessage: {
     type: Object as PropType<TdFormProps['errorMessage']>,
   },
-  /** 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled` */
+  /** 允许表单统一控制禁用状态的自定义组件名称列表。默认会有组件库的全部输入类组件：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。对于自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`。示例：`['CustomUpload', 'CustomInput']` */
   formControlledComponents: {
     type: Array as PropType<TdFormProps['formControlledComponents']>,
   },

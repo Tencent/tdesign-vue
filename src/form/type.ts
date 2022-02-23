@@ -28,7 +28,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   errorMessage?: FormErrorMessage;
   /**
-   * 允许表单统一控制禁用状态的组件名称列表，可以是自定义组件，默认有：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。如果是自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`
+   * 允许表单统一控制禁用状态的自定义组件名称列表。默认会有组件库的全部输入类组件：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。对于自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`。示例：`['CustomUpload', 'CustomInput']`
    */
   formControlledComponents?: Array<string>;
   /**
@@ -106,17 +106,17 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
   /**
    * 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果。清除邮箱校验结果示例：`clearValidate(['email'])`
    */
-  clearValidate?: (fields?: Array<string>) => void;
+  clearValidate?: (fields?: Array<keyof FormData>) => void;
   /**
-   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法
+   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
    */
-  reset?: () => void;
+  reset?: (params?: FormResetParams) => void;
   /**
-   * 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法
+   * 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法，此方法不会触发 `submit` 事件
    */
   submit?: () => void;
   /**
-   * 校验函数。关于参数：params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。关于返回值：返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
+   * 校验函数，泛型 `FormData` 表示表单数据 TS 类型。【关于参数】params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
    */
   validate?: (params?: FormValidateParams) => FormValidateResult<FormData>;
 }
@@ -239,25 +239,77 @@ export interface FormRule {
    */
   url?: boolean | IsURLOptions;
   /**
-   * 自定义校验规则
+   * 自定义校验规则，示例：`{ validator: (val) => val.length > 0, message: '请输入内容'}`
    */
   validator?: CustomValidator;
 }
 
 export interface FormErrorMessage {
-  date?: string;
-  url?: string;
-  required?: string;
-  max?: string;
-  min?: string;
-  len?: string;
-  enum?: string;
-  idcard?: string;
-  telnumber?: string;
-  pattern?: string;
-  validator?: string;
+  /**
+   * 布尔类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}数据类型必须是布尔类型'`
+   * @default ''
+   */
   boolean?: string;
+  /**
+   * 日期校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
+   * @default ''
+   */
+  date?: string;
+  /**
+   * 枚举值校验规则不通过时的表单项显示文案，全局配置默认是：`${name}只能是${validate}等`
+   * @default ''
+   */
+  enum?: string;
+  /**
+   * 身份证号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
+   * @default ''
+   */
+  idcard?: string;
+  /**
+   * 值长度校验不通过时的表单项显示文案，全局配置默认是：`'${name}字符长度必须是 ${validate}'`
+   * @default ''
+   */
+  len?: string;
+  /**
+   * 值的长度太长或值本身太大时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符'`
+   * @default ''
+   */
+  max?: string;
+  /**
+   * 值的长度太短或值本身太小时，校验不通过的表单项显示文案，全局配置默认是：`'${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符'`
+   * @default ''
+   */
+  min?: string;
+  /**
+   * 数字类型校验不通过时的表单项显示文案，全局配置默认是：`'${name}必须是数字'`
+   * @default ''
+   */
   number?: string;
+  /**
+   * 正则表达式校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
+   * @default ''
+   */
+  pattern?: string;
+  /**
+   * 没有填写必填项时的表单项显示文案，全局配置默认是：`'${name}必填'`
+   * @default ''
+   */
+  required?: string;
+  /**
+   * 手机号号码校验不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
+   * @default ''
+   */
+  telnumber?: string;
+  /**
+   * 链接校验规则不通过时的表单项显示文案，全局配置默认是：`'请输入正确的${name}'`
+   * @default ''
+   */
+  url?: string;
+  /**
+   * 自定义校验规则校验不通过时的表单项显示文案，全局配置默认是：'${name}不符合要求'
+   * @default ''
+   */
+  validator?: string;
 }
 
 export interface SubmitContext<T extends Data = Data> {
@@ -283,6 +335,11 @@ export type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList };
 export type ErrorList = Array<FormRule>;
 
 export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
+
+export interface FormResetParams {
+  type: 'initial' | 'empty';
+  fields?: Array<keyof FormData>;
+}
 
 export interface FormValidateParams {
   fields?: Array<string>;
