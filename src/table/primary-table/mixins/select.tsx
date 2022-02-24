@@ -17,6 +17,7 @@ export default Vue.extend({
     data: baseTableProps.data,
     rowKey: baseTableProps.rowKey,
     selectedRowKeys: primaryTableProps.selectedRowKeys,
+    expandedRow: primaryTableProps.expandedRow,
   },
   computed: {
     reRowKey(): string {
@@ -52,10 +53,14 @@ export default Vue.extend({
         const isSelection = ['multiple', 'single'].includes(c.type);
         const isMultiple = c.type === 'multiple';
         const title = isMultiple ? this.getSelectedHeader() : '';
+        const minWidth = this.expandedRow ? 40 : 64;
         return {
           ...c,
           ...(isSelection
             ? {
+              className: `${prefix}-table__cell--selectable`,
+              ...c,
+              width: Math.max(minWidth, parseInt(String(c.width), 10)),
               render: (h, slotProps: Record<string, any>): VNode => this.renderSelectCell({
                 column: c,
                 ...slotProps,
@@ -78,15 +83,19 @@ export default Vue.extend({
     },
 
     // render
-    renderSelectCell({ column = {}, row = {}, rowIndex }: Record<string, any>): VNode {
+    renderSelectCell({
+      column = {}, row = {}, rowIndex, type,
+    }: Record<string, any>): VNode {
+      const checked = this.selectedRowKeys.includes(get(row, this.reRowKey));
+      const disabled = typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled;
       const selectBoxProps = {
         props: {
-          checked: this.selectedRowKeys.includes(get(row, this.reRowKey)),
+          checked,
           ...column,
           type: column.type,
           checkProps:
             typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
-          disabled: typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled,
+          disabled,
           rowIndex,
         },
         on: {
@@ -98,10 +107,11 @@ export default Vue.extend({
           change: (): void => this.handleSelectChange(row),
         },
       };
+      // 表头不需要渲染单选按钮
+      if (type === 'title' && column.type === 'single') return null;
       return <SelectBox {...selectBoxProps} />;
     },
 
-    // handle：
     handleSelectChange(record: Record<string, any> = {}): void {
       let selectedRowKeys = [...this.selectedRowKeys] as Array<string | number>;
       const { reRowKey } = this;

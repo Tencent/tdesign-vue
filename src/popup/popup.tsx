@@ -332,12 +332,12 @@ export default Vue.extend({
           directives: destroyOnClose
             ? undefined
             : [
-                {
-                  name: 'show',
-                  rawName: 'v-show',
-                  value: visible,
-                  expression: 'visible',
-                } as VNodeDirective,
+                    {
+                      name: 'show',
+                      rawName: 'v-show',
+                      value: visible,
+                      expression: 'visible',
+                    } as VNodeDirective,
             ],
           on: {
             mousedown: () => {

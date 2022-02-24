@@ -14,10 +14,20 @@
       </t-radio-group>
     </div>
 
+    <div>
+      <t-radio-group v-model="tableLayout" variant="default-filled">
+        <t-radio-button value="fixed">table-layout: fixed</t-radio-button>
+        <t-radio-button value="auto">table-layout: auto</t-radio-button>
+      </t-radio-group>
+    </div>
+
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。这种模式下的固定列，必须指定 tableContentWidth -->
     <t-table
+      rowKey="index"
       :data="data"
       :columns="columns"
-      rowKey="index"
+      :table-layout="tableLayout"
+      :table-content-width="tableLayout === 'fixed' ? undefined : '1200px'"
       bordered
     >
       <template #operation="slotProps">
@@ -27,6 +37,8 @@
   </div>
 </template>
 <script>
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({
@@ -42,9 +54,12 @@ for (let i = 0; i < 5; i++) {
   });
 }
 export default {
+  components: { TTable },
+
   data() {
     return {
       data,
+      tableLayout: 'fixed',
       leftFixedColumn: 2,
       rightFixedColumn: 1,
     };
@@ -54,7 +69,7 @@ export default {
       return [
         {
           align: 'center',
-          width: 100,
+          width: 80,
           colKey: 'index',
           title: '序号',
           fixed: 'left',

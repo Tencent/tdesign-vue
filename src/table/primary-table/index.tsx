@@ -1,8 +1,10 @@
+import get from 'lodash/get';
+import isFunction from 'lodash/isFunction';
 import baseTableProps from '../base-table-props';
 import {
-  DataType, TdBaseTableProps, TdPrimaryTableProps, PrimaryTableCol,
+  DataType, TdBaseTableProps, TdPrimaryTableProps, PrimaryTableCol, TableRowData,
 } from '../type';
-
+import { prefix } from '../../config';
 import primaryTableProps from '../primary-table-props';
 import BaseTable from '../base-table';
 import mixins from '../../utils/mixins';
@@ -19,6 +21,9 @@ import { renderTNodeJSX } from '../../utils/render-tnode';
 
 type PageChangeContext = Parameters<TdBaseTableProps['onPageChange']>;
 type ChangeContext = Parameters<TdPrimaryTableProps['onChange']>;
+
+const TABLE_ROW_CLASS_SELECTED = `${prefix}-table__row--selected`;
+const TABLE_ROW_CLASS_DISABLED = `${prefix}-table__row--disabled`;
 
 export default mixins(expand, select, sort, rowDraggable, filter, showColumns, asyncLoadingMixin).extend({
   name: 'TTable',
@@ -57,6 +62,17 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         </div>
       );
     },
+    getSelectedRowClasses({ row, rowIndex }: { row: TableRowData; rowIndex: number }) {
+      const col = this.columns[0];
+      const customClasses = isFunction(this.rowClassName) ? this.rowClassName({ row, rowIndex }) : this.rowClassName;
+      return [
+        {
+          [TABLE_ROW_CLASS_SELECTED]: this.selectedRowKeys?.includes(get(row, this.reRowKey)),
+          [TABLE_ROW_CLASS_DISABLED]: isFunction(col.disabled) ? col.disabled({ row, rowIndex }) : col.disabled,
+        },
+        customClasses,
+      ];
+    },
   },
   render() {
     const { $props, $scopedSlots, rehandleColumns } = this;
@@ -82,20 +98,30 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         this.handleExpandChange(params.row);
       };
     }
+    const hasLastFullRow = this.lastFullRow || this.$scopedSlots.lastFullRow || this.asyncLoading || this.$scopedSlots.asyncLoading;
     const baseTableProps = {
       props: {
         ...$props,
         columns: rehandleColumns,
+        renderExpandedRow: this.expandedRow ?? this.$scopedSlots.expandedRow ? this.renderExpandedRow : undefined,
         provider: {
-          renderExpandedRow: this.expandedRow ?? this.$scopedSlots.expandedRow ? this.renderExpandedRow : undefined,
           sortOnRowDraggable: this.sortOnRowDraggable,
           dragging: this.dragging,
         },
         // this.hasFilterCondition is from mixins/filter.tsx
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
-        lastFullRow: this.renderLastFullRow,
+        lastFullRow: hasLastFullRow ? this.renderLastFullRow : undefined,
         empty: this.empty,
-        topContent: this.columnController ? this.renderShowColumns() : '',
+        topContent: this.columnController
+          ? () => (
+              <div>
+                {this.renderShowColumns()}
+                {renderTNodeJSX(this, 'topContent')}
+              </div>
+          )
+          : this.topContent,
+        rowClassName:
+          this.selectedRowKeys?.length || this.columns[0].disabled ? this.getSelectedRowClasses : this.rowClassName,
       },
       scopedSlots,
       on,

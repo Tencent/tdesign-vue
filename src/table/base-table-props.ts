@@ -20,8 +20,8 @@ export default {
     type: Array as PropType<TdBaseTableProps['data']>,
     default: (): TdBaseTableProps['data'] => [],
   },
-  /** 是否禁用本地数据排序。当 `data` 数据长度超过分页大小时，会自动进行本地数据排序。如果 `disabledDataSort` 设置为 true，则无论何时，都不会进行本地排序 */
-  disableDataSort: Boolean,
+  /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 */
+  disableDataPage: Boolean,
   /** 空表格呈现样式 */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
@@ -31,10 +31,13 @@ export default {
   firstFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['firstFullRow']>,
   },
+  /** 固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行 */
+  fixedRows: {
+    type: Array as PropType<TdBaseTableProps['fixedRows']>,
+  },
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,
-    default: 'auto',
   },
   /** 是否显示鼠标悬浮状态 */
   hover: Boolean,
@@ -47,11 +50,15 @@ export default {
     type: [Boolean, Function] as PropType<TdBaseTableProps['loading']>,
     default: false,
   },
+  /** 透传加载组件全部属性 */
+  loadingProps: {
+    type: Object as PropType<TdBaseTableProps['loadingProps']>,
+  },
   /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px */
   maxHeight: {
     type: [String, Number] as PropType<TdBaseTableProps['maxHeight']>,
   },
-  /** 分页配置，值为空则不显示。具体 API 参考分页组件 */
+  /** 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。 */
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },
@@ -65,7 +72,7 @@ export default {
     default: '',
     required: true,
   },
-  /** 用于自定义合并单元格，泛型 T 指表格数据类型 */
+  /** 用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }` */
   rowspanAndColspan: {
     type: Function as PropType<TdBaseTableProps['rowspanAndColspan']>,
   },
@@ -78,16 +85,23 @@ export default {
     type: String as PropType<TdBaseTableProps['size']>,
     default: 'medium' as TdBaseTableProps['size'],
     validator(val: TdBaseTableProps['size']): boolean {
+      if (!val) return true;
       return ['small', 'medium', 'large'].includes(val);
     },
   },
   /** 是否显示斑马纹 */
   stripe: Boolean,
+  /** 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度 */
+  tableContentWidth: {
+    type: String,
+    default: '',
+  },
   /** 表格布局方式 */
   tableLayout: {
     type: String as PropType<TdBaseTableProps['tableLayout']>,
     default: 'fixed' as TdBaseTableProps['tableLayout'],
     validator(val: TdBaseTableProps['tableLayout']): boolean {
+      if (!val) return true;
       return ['auto', 'fixed'].includes(val);
     },
   },
@@ -100,6 +114,7 @@ export default {
     type: String as PropType<TdBaseTableProps['verticalAlign']>,
     default: 'middle' as TdBaseTableProps['verticalAlign'],
     validator(val: TdBaseTableProps['verticalAlign']): boolean {
+      if (!val) return true;
       return ['top', 'middle', 'bottom'].includes(val);
     },
   },

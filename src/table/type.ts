@@ -4,7 +4,9 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { LoadingProps } from '../loading';
 import { PaginationProps, PageInfo } from '../pagination';
+import { PopupProps } from '../popup';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
@@ -27,10 +29,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   data?: Array<T>;
   /**
-   * 是否禁用本地数据排序。当 `data` 数据长度超过分页大小时，会自动进行本地数据排序。如果 `disabledDataSort` 设置为 true，则无论何时，都不会进行本地排序
+   * 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页
    * @default false
    */
-  disableDataSort?: boolean;
+  disableDataPage?: boolean;
   /**
    * 空表格呈现样式
    * @default ''
@@ -41,8 +43,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   firstFullRow?: string | TNode;
   /**
+   * 固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行
+   */
+  fixedRows?: Array<number>;
+  /**
    * 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`
-   * @default 'auto'
    */
   height?: string | number;
   /**
@@ -60,11 +65,15 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   loading?: boolean | TNode;
   /**
+   * 透传加载组件全部属性
+   */
+  loadingProps?: LoadingProps;
+  /**
    * 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px
    */
   maxHeight?: string | number;
   /**
-   * 分页配置，值为空则不显示。具体 API 参考分页组件
+   * 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。
    */
   pagination?: PaginationProps;
   /**
@@ -77,9 +86,9 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   rowKey: string;
   /**
-   * 用于自定义合并单元格，泛型 T 指表格数据类型
+   * 用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`
    */
-  rowspanAndColspan?: (params: RowspanAndColspanParams<T>) => RowspanColspan;
+  rowspanAndColspan?: TableRowspanAndColspanFunc<T>;
   /**
    * 懒加载和虚拟滚动
    */
@@ -94,6 +103,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default false
    */
   stripe?: boolean;
+  /**
+   * 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度
+   * @default ''
+   */
+  tableContentWidth?: string;
   /**
    * 表格布局方式
    * @default fixed
@@ -182,15 +196,19 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   colKey?: string;
   /**
-   * 内容超出时，是否显示省略号。值为 true ，则浮层默认显示单元格内容；值类型为 Function 则显示自定义内容
+   * 内容超出时，是否显示省略号。值为 `true`，则浮层默认显示单元格内容；值类型为 `Function` 则自定义浮层显示内容；值类型为 `Object`，则自动透传属性到 Popup 组件
    * @default false
    */
-  ellipsis?: boolean | TNode<BaseTableCellParams<T>>;
+  ellipsis?: boolean | TNode<BaseTableCellParams<T>> | PopupProps;
   /**
    * 固定列显示位置
    * @default left
    */
   fixed?: 'left' | 'right';
+  /**
+   * 自定义表尾表尾。值类型为 Function 表示以函数形式渲染表尾内容。值类型为 string 表示使用插槽渲染，插槽名称为 `foot` 值
+   */
+  foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
    * 列最小宽度
    */
@@ -504,13 +522,6 @@ export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => 
 export interface RowspanColspan {
   colspan?: number;
   rowspan?: number;
-}
-
-export interface RowspanAndColspanParams<T> {
-  row: T;
-  col: BaseTableCol;
-  rowIndex: number;
-  colIndex: number;
 }
 
 export interface BaseTableCellEventContext<T> {

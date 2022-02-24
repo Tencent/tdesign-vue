@@ -234,12 +234,8 @@ export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb
 
 // 用于判断节点内容是否溢出
 export const isNodeOverflow = (ele: Vue | Element | (Vue | Element)[]): boolean => {
-  const { clientWidth = 0, scrollWidth = 0 } = ele as Element & { clientWidth: number; scrollWidth: number };
-
-  if (scrollWidth > clientWidth) {
-    return true;
-  }
-  return false;
+  const { clientWidth = 0, scrollWidth = 0 } = ele as Element;
+  return scrollWidth > clientWidth;
 };
 
 // 将子元素selected滚动到父元素parentEle的可视范围内

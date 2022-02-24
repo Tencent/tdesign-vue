@@ -5,6 +5,7 @@
       <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
+      <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
     </div>
 
     <t-table
@@ -14,10 +15,13 @@
       :stripe="stripe"
       :bordered="bordered"
       :hover="hover"
+      :table-layout="tableLayout ? 'auto' : 'fixed'"
     ></t-table>
   </div>
 </template>
 <script lang="jsx">
+import TTable from '../../../src/table/base-table';
+
 const data = [];
 for (let i = 0; i < 5; i++) {
   data.push({
@@ -33,9 +37,11 @@ for (let i = 0; i < 5; i++) {
   });
 }
 export default {
+  components: { TTable },
   data() {
     return {
       data,
+      tableLayout: false,
       stripe: true,
       bordered: true,
       hover: false,
@@ -68,7 +74,16 @@ export default {
           colKey: 'detail.postion',
           title: '详情信息',
           width: 200,
+          /**
+           * 1.内容超出时，是否显示省略号。值为 true，则浮层默认显示单元格内容；
+           * 2.值类型为 Function 则自定义浮层显示内容；
+           * 3.值类型为 Object，则自动透传属性到 Popup 组件。
+           */
           ellipsis: true,
+
+          // 透传省略内容浮层 Popup 组件全部特性，示例代码有效，勿删！！！
+          // ellipsis: { placement: 'top', destroyOnClose: false },
+
           // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
           // ellipsis: (h, {
           //   row, col, rowIndex, colIndex,
@@ -86,17 +101,6 @@ export default {
         defaultPageSize: 10,
         total: 120,
       },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   current: 1,
-      //   pageSize: 10,
-      //   total: 120,
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (pageInfo.current) => {
-      //     this.pagination.current = pageInfo.current;
-      //     this.pagination.pageSize = pageInfo.pageSize;
-      //   },
-      // },
     };
   },
 };

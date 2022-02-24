@@ -64,7 +64,7 @@ export default mixins(getConfigReceiverMixins<Vue, TableConfig>('table')).extend
     dataSource(): Array<DataType> {
       if (!this.hasPagination) return this.data.slice(0);
       const { current, pageSize } = this;
-      if (this.data.length > pageSize && !this.disableDataSort) {
+      if (this.data.length > pageSize && !this.disableDataPage) {
         return this.data.slice((current - 1) * pageSize, current * pageSize);
       }
       return this.data;
