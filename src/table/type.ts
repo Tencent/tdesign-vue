@@ -82,11 +82,9 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   pagination?: PaginationProps;
   /**
-   * HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素
+   * HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，示例二：[{ draggable: true }, { title: '超出省略显示' }]
    */
-  rowAttributes?:
-    | HTMLElementAttributes
-    | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => HTMLElementAttributes);
+  rowAttributes?: TableRowAttributes<T>;
   /**
    * 行类名，泛型 T 指表格数据类型。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body`  表示类名作用于 `tbody` 中的元素；`params.type=body` 表示类名作用于 `tfoot` 中的元素
    */
@@ -527,6 +525,11 @@ export interface TableScroll {
    */
   type: 'lazy' | 'virtual';
 }
+
+export type TableRowAttributes<T> =
+  | HTMLElementAttributes
+  | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => HTMLElementAttributes)
+  | Array<TableRowAttributes<TableRowAttributes>>;
 
 export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;
 

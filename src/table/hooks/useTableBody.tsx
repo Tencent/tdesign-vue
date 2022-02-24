@@ -5,6 +5,7 @@ import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import { prefix } from '../../config';
+import { formatRowAttributes } from '../util/common';
 import {
   TABLE_CLASS_BODY,
   TABLE_TD_ELLIPSIS_CLASS,
@@ -186,9 +187,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     const dataLength = data.length;
     data?.forEach((row, rowIndex) => {
       const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
-      const trAttributes = isFunction(props.rowAttributes)
-        ? props.rowAttributes({ row, rowIndex, type: 'body' })
-        : props.rowAttributes;
+      const trAttributes = formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' });
       // 自定义行类名
       let customClasses = isFunction(props.rowClassName)
         ? props.rowClassName({ row, rowIndex, type: 'body' })

@@ -2,6 +2,7 @@ import { SetupContext, h } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { BaseTableCellParams, TableRowData, TdBaseTableProps } from '../type';
+import { formatRowAttributes } from '../util/common';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
 import { TABLE_CLASS_FOOTER, TABLE_CLASS_FOOTER_FIXED } from './useStyle';
 
@@ -31,9 +32,7 @@ export default function useTableFooter(props: TdBaseTableProps, context: SetupCo
     return (
       <tfoot ref="tfooterRef" class={theadClasses}>
         {props.footData.map((row, rowIndex) => {
-          const trAttributes = isFunction(props.rowAttributes)
-            ? props.rowAttributes({ row, rowIndex, type: 'foot' })
-            : props.rowAttributes;
+          const trAttributes = formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'foot' });
           // 自定义行类名
           const customClasses = isFunction(props.rowClassName)
             ? props.rowClassName({ row, rowIndex, type: 'foot' })
@@ -45,7 +44,10 @@ export default function useTableFooter(props: TdBaseTableProps, context: SetupCo
                 return (
                   <td class={tdStyles.classes} style={tdStyles.style}>
                     {renderTFootCell({
-                      row, rowIndex, col, colIndex,
+                      row,
+                      rowIndex,
+                      col,
+                      colIndex,
                     })}
                   </td>
                 );
