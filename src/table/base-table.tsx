@@ -32,6 +32,7 @@ export default defineComponent({
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
+    const renderTNode = useTNodeJSX();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
@@ -79,7 +80,7 @@ export default defineComponent({
       isPaginateData,
       dataSource,
       renderPagination,
-      slots: context.slots,
+      renderTNode,
     };
   },
 
@@ -111,9 +112,14 @@ export default defineComponent({
       </div>
     );
 
-    const customLoadingText = useTNodeJSX('loading', { slots: this.slots });
+    const customLoadingText = this.renderTNode('loading');
     const loadingContent = this.loading ? (
-      <Loading loading={!!this.loading} showOverlay text={() => customLoadingText} props={this.loadingProps}>
+      <Loading
+        loading={!!this.loading}
+        text={customLoadingText ? () => customLoadingText : undefined}
+        props={this.loadingProps}
+        showOverlay
+      >
         {tableContent}
       </Loading>
     ) : (
@@ -122,7 +128,7 @@ export default defineComponent({
 
     return (
       <div ref="tableRef" class={this.baseTableClasses}>
-        {useTNodeJSX('topContent', { slots: this.slots })}
+        {this.renderTNode('topContent')}
         {loadingContent}
         {this.renderPagination(h)}
       </div>

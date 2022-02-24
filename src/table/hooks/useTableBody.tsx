@@ -54,6 +54,8 @@ export const ROW_LISTENERS = {
 };
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
+  const renderTNode = useTNodeJSX();
+
   const tbodyClases = computed(() => [
     TABLE_CLASS_BODY,
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
@@ -100,7 +102,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     type: 'first-full-row' | 'last-full-row',
   ) => {
     if (!fullRow) return null;
-    const fullRowNode = useTNodeJSX(camelCase(type), { slots });
+    const fullRowNode = renderTNode(camelCase(type));
     if (['', null, undefined, false].includes(fullRowNode)) return null;
     const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
     return (
@@ -113,7 +115,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   const renderEmpty = (columns: RenderTableBodyParams['columns']) => (
     <tr class={TABLE_CLASS_EMPTY_ROW}>
       <td colspan={columns.length}>
-        <div class={TABLE_CLASS_EMPTY}>{useTNodeJSX('empty', { slots, defaultNode: '暂无数据' })}</div>
+        <div class={TABLE_CLASS_EMPTY}>{renderTNode('empty') || '暂无数据'}</div>
       </td>
     </tr>
   );
