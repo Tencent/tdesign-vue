@@ -10,7 +10,7 @@ import { PopupProps } from '../popup';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
-import { TNode, OptionData, SizeEnum, ClassName } from '../common';
+import { TNode, OptionData, SizeEnum, ClassName, HTMLElementAttributes } from '../common';
 
 export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
@@ -47,6 +47,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   fixedRows?: Array<number>;
   /**
+   * 表尾数据源，泛型 T 指表格数据类型
+   * @default []
+   */
+  footData?: Array<T>;
+  /**
    * 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`
    */
   height?: string | number;
@@ -77,9 +82,15 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   pagination?: PaginationProps;
   /**
-   * 行类名，泛型 T 指表格数据类型
+   * HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素
    */
-  rowClassName?: ClassName | ((params: { row: T; rowIndex: number }) => ClassName);
+  rowAttributes?:
+    | HTMLElementAttributes
+    | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => HTMLElementAttributes);
+  /**
+   * 行类名，泛型 T 指表格数据类型。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body`  表示类名作用于 `tbody` 中的元素；`params.type=body` 表示类名作用于 `tfoot` 中的元素
+   */
+  rowClassName?: ClassName | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => ClassName);
   /**
    * 使用 rowKey 唯一标识一行数据
    * @default ''

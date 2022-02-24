@@ -186,15 +186,20 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     const dataLength = data.length;
     data?.forEach((row, rowIndex) => {
       const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
+      const trAttributes = isFunction(props.rowAttributes)
+        ? props.rowAttributes({ row, rowIndex, type: 'body' })
+        : props.rowAttributes;
       // 自定义行类名
-      let customClasses = isFunction(props.rowClassName) ? props.rowClassName({ row, rowIndex }) : props.rowClassName;
+      let customClasses = isFunction(props.rowClassName)
+        ? props.rowClassName({ row, rowIndex, type: 'body' })
+        : props.rowClassName;
       // { 1: 't-row-custom-class-name' } 设置第 2 行的类名为 t-row-custom-class-name
       if (typeof customClasses === 'object' && customClasses[rowIndex]) {
         customClasses = customClasses[rowIndex];
       }
       const classes = [trStyles.classes, customClasses];
       const trNode = (
-        <tr on={getTrListeners(row, rowIndex)} style={trStyles.style} class={classes}>
+        <tr on={getTrListeners(row, rowIndex)} attrs={trAttributes} style={trStyles.style} class={classes}>
           {columns.map((col, colIndex) => {
             const cellSpans: RowspanColspan = {};
             if (isFunction(props.rowspanAndColspan)) {
@@ -217,7 +222,10 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
             };
             setSkippedCell(skipSpansMap, params, cellSpans);
             return renderTd(params, {
-              dataLength, columnStickyLeftAndRight, columnLength, cellSpans,
+              dataLength,
+              columnStickyLeftAndRight,
+              columnLength,
+              cellSpans,
             });
           })}
         </tr>

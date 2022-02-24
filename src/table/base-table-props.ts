@@ -35,6 +35,11 @@ export default {
   fixedRows: {
     type: Array as PropType<TdBaseTableProps['fixedRows']>,
   },
+  /** 表尾数据源，泛型 T 指表格数据类型 */
+  footData: {
+    type: Array as PropType<TdBaseTableProps['footData']>,
+    default: (): TdBaseTableProps['footData'] => [],
+  },
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,
@@ -62,7 +67,11 @@ export default {
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },
-  /** 行类名，泛型 T 指表格数据类型 */
+  /** HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素 */
+  rowAttributes: {
+    type: Object as PropType<TdBaseTableProps['rowAttributes']>,
+  },
+  /** 行类名，泛型 T 指表格数据类型。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body`  表示类名作用于 `tbody` 中的元素；`params.type=body` 表示类名作用于 `tfoot` 中的元素 */
   rowClassName: {
     type: [String, Object, Array, Function] as PropType<TdBaseTableProps['rowClassName']>,
   },
