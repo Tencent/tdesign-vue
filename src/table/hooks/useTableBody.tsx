@@ -11,6 +11,7 @@ import {
   TAVLE_CLASS_VERTICAL_ALIGN,
   TABLE_CLASS_EMPTY,
   TABLE_CLASS_EMPTY_ROW,
+  TABLE_TD_LAST_ROW,
 } from './useStyle';
 import {
   BaseTableCellParams, RowspanColspan, TableRowData, TdBaseTableProps,
@@ -37,6 +38,7 @@ export interface RenderTableBodyParams {
 export interface RenderTdExtra {
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   columnLength: number;
+  dataLength: number;
   cellSpans: RowspanColspan;
 }
 
@@ -133,12 +135,19 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   const renderTd = (params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) => {
-    const { col, colIndex } = params;
-    const { columnLength, cellSpans } = extra;
+    const { col, colIndex, rowIndex } = params;
+    const { columnLength, cellSpans, dataLength } = extra;
     const cellNode = renderCell(params);
     const tdStyles = getColumnFixedStyles(col, colIndex, extra.columnStickyLeftAndRight, columnLength);
     const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
-    const classes = [tdStyles.classes, customClasses, { [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis }];
+    const classes = [
+      tdStyles.classes,
+      customClasses,
+      {
+        [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis,
+        [TABLE_TD_LAST_ROW]: rowIndex + cellSpans.rowspan === dataLength,
+      },
+    ];
     // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};
     const onClick = (e: MouseEvent) => {
       const p = { ...params, e };
@@ -174,6 +183,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     const trNodeList: JSX.Element[] = [];
     // 受合并单元格影响，部分单元格不显示
     const skipSpansMap = new Map<any, boolean>();
+    const dataLength = data.length;
     data?.forEach((row, rowIndex) => {
       const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
       // 自定义行类名
@@ -189,7 +199,10 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
             const cellSpans: RowspanColspan = {};
             if (isFunction(props.rowspanAndColspan)) {
               const o = props.rowspanAndColspan({
-                row, col, rowIndex, colIndex,
+                row,
+                col,
+                rowIndex,
+                colIndex,
               });
               o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
               o?.colspan > 1 && (cellSpans.colspan = o.colspan);
@@ -197,10 +210,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
             const skipped = skipSpansMap.get([rowIndex, colIndex].join());
             if (skipped) return null;
             const params = {
-              row, col, rowIndex, colIndex,
+              row,
+              col,
+              rowIndex,
+              colIndex,
             };
             setSkippedCell(skipSpansMap, params, cellSpans);
-            return renderTd(params, { columnStickyLeftAndRight, columnLength, cellSpans });
+            return renderTd(params, {
+              dataLength, columnStickyLeftAndRight, columnLength, cellSpans,
+            });
           })}
         </tr>
       );
