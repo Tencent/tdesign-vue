@@ -7,6 +7,9 @@
 import { LoadingProps } from '../loading';
 import { PaginationProps, PageInfo } from '../pagination';
 import { PopupProps } from '../popup';
+import { CheckboxGroupProps } from '../checkbox';
+import { DialogProps } from '../dialog';
+import { CheckboxGroupValue } from '../checkbox';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
@@ -243,7 +246,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   asyncLoading?: 'loading' | 'load-more' | TNode;
   /**
-   * 【开发中】自定义显示列控制器，值为空不会显示。`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段；`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐；`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐
+   * 【开发中】自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性
    */
   columnController?: TableColumnController;
   /**
@@ -256,7 +259,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   columns?: Array<PrimaryTableCol<T>>;
   /**
-   * 是否开始拖拽排序，会显示拖拽图标
+   * 是否开启拖拽排序
    * @default false
    */
   dragSort?: boolean;
@@ -326,7 +329,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   defaultSort?: TableSort;
   /**
-   * 允许表格行拖拽时排序
+   * 【已废弃】允许表格行拖拽时排序
    * @default false
    */
   sortOnRowDraggable?: boolean;
@@ -342,6 +345,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型
    */
   onChange?: (data: TableChangeData, context: TableChangeContext<Array<T>>) => void;
+  /**
+   * 【开发中】列配置发生变化时触发，`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列；`context.type` 表示当前操作属于选中列或是取消列
+   */
+  onColumnChange?: (context: PrimaryTableColumnChange<T>) => void;
   /**
    * 表格数据发生变化时触发，比如：本地排序方法 sorter
    */
@@ -579,6 +586,8 @@ export type DataType = TableRowData;
 export interface TableColumnController {
   fields?: string[];
   displayType: 'fixed-width' | 'auto-width';
+  checkboxProps?: CheckboxGroupProps;
+  dialogProps?: DialogProps;
 }
 
 export interface ExpandArrowRenderParams<T> {
@@ -617,6 +626,12 @@ export interface TableChangeContext<T> {
 }
 
 export type TableChangeTrigger = 'filter' | 'sorter' | 'pagination';
+
+export interface PrimaryTableColumnChange<T> {
+  columns?: CheckboxGroupValue;
+  currentColumn?: PrimaryTableCol<T>;
+  type?: 'check' | 'uncheck';
+}
 
 export interface DragSortContext<T> {
   currentIndex: number;

@@ -15,7 +15,7 @@ export interface JSXRenderContext {
 }
 
 export function isVNode(p: any) {
-  return typeof p === 'function';
+  return typeof p === 'object' && p?.context?.$root;
 }
 
 export type OptionsType = VNode | JSXRenderContext | string;
