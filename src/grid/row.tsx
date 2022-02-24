@@ -75,7 +75,7 @@ export default Vue.extend({
     },
 
     handleIE() {
-      if (getIEVersion() <= 9) {
+      if (getIEVersion() <= 11) {
         const rowGap = this.rowGap(this.gutter, this.size);
         if (rowGap) {
           this.$el.setAttribute('row-gap', `${rowGap}`);
