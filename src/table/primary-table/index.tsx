@@ -112,13 +112,20 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
         lastFullRow: hasLastFullRow ? this.renderLastFullRow : undefined,
         empty: this.empty,
+        topContent: this.columnController
+          ? () => (
+              <div>
+                {this.renderShowColumns()}
+                {renderTNodeJSX(this, 'topContent')}
+              </div>
+          )
+          : this.topContent,
         rowClassName:
           this.selectedRowKeys?.length || this.columns[0].disabled ? this.getSelectedRowClasses : this.rowClassName,
       },
       scopedSlots,
       on,
     };
-    // TODO: 可使用插槽 `topContent` 自定义显示列
     return <BaseTable {...baseTableProps} />;
   },
 });

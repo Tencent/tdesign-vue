@@ -1,6 +1,7 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <!-- 按钮操作区域 -->
+    <!-- 设置哪些列允许自定义显示 :columnController="{ fields: ['platform', 'type', 'default']}" -->
     <t-table
       rowKey="index"
       :data="data"
@@ -64,15 +65,6 @@ export default {
           title: '详情信息',
           width: 200,
           ellipsis: true,
-          // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
-          // ellipsis: (h, {
-          //   row, col, rowIndex, colIndex,
-          // }) => {
-          //   if (rowIndex % 2) {
-          //     return <div>is even row {rowIndex + 1}, with data {row.detail.postion}</div>;
-          //   }
-          //   return <div>is odd row {rowIndex + 1}, with data {row.detail.postion}</div>;
-          // },
         },
       ],
       /** 非受控用法：与分页组件对齐 */
@@ -81,17 +73,6 @@ export default {
         defaultPageSize: 10,
         total: 120,
       },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   current: 1,
-      //   pageSize: 10,
-      //   total: 120,
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (pageInfo.current) => {
-      //     this.pagination.current = pageInfo.current;
-      //     this.pagination.pageSize = pageInfo.pageSize;
-      //   },
-      // },
     };
   },
 };
