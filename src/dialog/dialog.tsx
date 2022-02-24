@@ -315,11 +315,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             {this.getIcon()}
             {renderTNodeJSX(this, 'header', defaultHeader)}
           </div>
-          {
-            this.closeBtn ? <span class={`${name}__close`} onClick={this.closeBtnAcion}>
-            {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-          </span> : <span></span>
-          }
+          {this.closeBtn ? (
+            <span class={`${name}__close`} onClick={this.closeBtnAcion}>
+              {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+            </span>
+          ) : null}
           {/* <span class={`${name}__close`} onClick={this.closeBtnAcion}>
             {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
           </span> */}
