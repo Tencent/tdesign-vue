@@ -1,6 +1,7 @@
 import Vue, { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { FilterIcon } from 'tdesign-icons-vue';
+import isEmpty from 'lodash/isEmpty';
 import { PrimaryTableCol, TdPrimaryTableProps, FilterValue } from '../../type';
 import primaryTableProps from '../../primary-table-props';
 import baseTableProps from '../../base-table-props';
@@ -73,10 +74,9 @@ export default Vue.extend({
 
   mounted() {
     // using timer for getting right width
-    let timer = setTimeout(() => {
+    const timer = setTimeout(() => {
       this.updateTableWidth();
       clearTimeout(timer);
-      timer = null;
     }, 0);
   },
 
@@ -227,8 +227,12 @@ export default Vue.extend({
       const on = {
         change: (val: any) => this.onInnerFilterChange(val, column),
       };
+      const wrapperListeners: { click?: Function } = {};
+      if (column.filter.showConfirmAndReset) {
+        wrapperListeners.click = (e: MouseEvent) => e.stopPropagation();
+      }
       return (
-        <div class={`${prefix}-table__filter-pop-content-inner`}>
+        <div class={`${prefix}-table__filter-pop-content-inner`} on={wrapperListeners}>
           {column?.filter?.component ? (
             column?.filter?.component((v: FirstParams, b: SecondParams) => {
               const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
@@ -249,6 +253,7 @@ export default Vue.extend({
         const column: PrimaryTableCol = { ...item };
         if (column.filter) {
           const title = getTitle(this, column, index);
+          const isFilterHighlight = !isEmpty(this.filterValue[column.colKey]);
           column.title = () => (
             <div class={`${prefix}-table__cell--title`}>
               <div>{title}</div>
@@ -266,7 +271,10 @@ export default Vue.extend({
                   {isFunction(this.filterIcon) ? (
                     this.filterIcon(this.$createElement)
                   ) : (
-                    <FilterIcon name="filter" class={`${prefix}-table__filter-icon`} />
+                    <FilterIcon
+                      name="filter"
+                      class={[`${prefix}-table__filter-icon`, { [`${prefix}-is-focus`]: isFilterHighlight }]}
+                    />
                   )}
                   <template slot="content">
                     <div class={`${prefix}-table__filter-pop-content`}>
