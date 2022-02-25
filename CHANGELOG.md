@@ -23,7 +23,7 @@ docClass: timeline
 ### Features
 
 * Input: 新增 `format` 属性用于格式化数据，[pr #447](https://github.com/Tencent/tdesign-vue/pull/447)，[@mokywu](https://github.com/mokywu)
-* Drawer: 新增 `sizeDraggable` 属性用于支持用户拖动改变 `drawer` 大小，[pr #463](https://github.com/Tencent/tdesign-vue/pull/463)，[@uyarn](https://github.com/uyarn)
+* Drawer: 新增 `sizeDraggable` 属性用于支持用户拖动改变 Drawer 大小，[pr #463](https://github.com/Tencent/tdesign-vue/pull/463)，[@uyarn](https://github.com/uyarn)
 
 
 ## 0.35.0 `2022-02-18`
