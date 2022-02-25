@@ -1,4 +1,6 @@
-import { ref, toRefs, watch } from '@vue/composition-api';
+import {
+  ref, toRefs, watch, getCurrentInstance,
+} from '@vue/composition-api';
 
 // utils
 import isObject from 'lodash/isObject';
@@ -11,6 +13,8 @@ import { Styles } from '../common';
 const MAX_POPUP_WIDTH = 1000;
 
 export default function useOverlayStyle(props: TdSelectInputProps) {
+  const instance = getCurrentInstance();
+
   const { popupProps, borderless } = toRefs(props);
   const innerPopupVisible = ref(false);
   const tOverlayStyle = ref<TdPopupProps['overlayStyle']>();
@@ -37,6 +41,7 @@ export default function useOverlayStyle(props: TdSelectInputProps) {
     const newVisible = context.trigger === 'trigger-element-click' ? true : visible;
     innerPopupVisible.value = newVisible;
     props.onPopupVisibleChange?.(newVisible, context);
+    instance.emit('popupVisibleChange', newVisible, context);
   };
 
   watch([innerPopupVisible, popupProps], () => {

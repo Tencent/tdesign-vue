@@ -105,12 +105,8 @@ export default Vue.extend({
   render(): VNode {
     let children = null;
     if (this.options?.length) {
-      children = this.optionList?.map((option) => (
-        <Checkbox
-          key={option.value}
-          props={{ ...option }}
-          checked={this.checkedMap[option.value]}
-        >
+      children = this.optionList?.map((option, index) => (
+        <Checkbox key={index} {...option} checked={this.checkedMap[option.value]}>
           {this.renderLabel(option)}
         </Checkbox>
       ));
@@ -119,15 +115,11 @@ export default Vue.extend({
       this.optionList = this.getOptionListBySlots(nodes);
       children = nodes;
     }
-    return (
-      <div class={name}>
-        {children}
-      </div>
-    );
+    return <div class={name}>{children}</div>;
   },
 
   methods: {
-    onCheckedChange(p: { checked: boolean, checkAll: boolean, e: Event, option: TdCheckboxProps }) {
+    onCheckedChange(p: { checked: boolean; checkAll: boolean; e: Event; option: TdCheckboxProps }) {
       const { checked, checkAll, e } = p;
       if (checkAll) {
         this.onCheckAllChange(checked, { e });
@@ -178,10 +170,8 @@ export default Vue.extend({
       }
       return [...val];
     },
-    onCheckAllChange(checked: boolean, context: { e: Event, source?: 't-checkbox' }) {
-      const value: CheckboxGroupValue = checked
-        ? this.getAllCheckboxValue()
-        : [];
+    onCheckAllChange(checked: boolean, context: { e: Event; source?: 't-checkbox' }) {
+      const value: CheckboxGroupValue = checked ? this.getAllCheckboxValue() : [];
       this.emitChange(value, context.e);
     },
   },

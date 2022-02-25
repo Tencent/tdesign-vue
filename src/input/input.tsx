@@ -1,5 +1,6 @@
 import Vue, { CreateElement, VNode } from 'vue';
 import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import camelCase from 'lodash/camelCase';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
@@ -102,9 +103,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       if (typeof icon === 'function') {
         return icon(h);
       }
+
+      // 插槽名称为中划线
       if (this.$scopedSlots[iconType]) {
         return this.$scopedSlots[iconType](null);
       }
+      // 插槽名称为驼峰
+      if (this.$scopedSlots[camelCase(iconType)]) {
+        return this.$scopedSlots[camelCase(iconType)](null);
+      }
+
       return null;
     },
     setInputValue(v: InputValue = ''): void {

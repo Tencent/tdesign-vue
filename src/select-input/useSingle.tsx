@@ -72,7 +72,11 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     return (
       <Input
         ref="inputRef"
-        {...commonInputProps.value}
+        clearable={true}
+        props={{
+          ...commonInputProps.value,
+          ...props.inputProps,
+        }}
         scopedSlots={{ ...context.slots }}
         autoWidth={props.borderless || props.autoWidth}
         placeholder={singleValueDisplay ? '' : props.placeholder}
@@ -87,7 +91,6 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value, { ...context, inputValue: val });
         }}
-        {...props.inputProps}
       />
     );
   };

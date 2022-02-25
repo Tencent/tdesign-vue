@@ -47,7 +47,7 @@ export function getParams(options?: OptionsType) {
 
 export const useTNodeJSX = () => {
   const instance = getCurrentInstance();
-  return function renderTNodeJSX(name: string, options?: OptionsType) {
+  return function (name: string, options?: OptionsType) {
     // assemble params && defaultNode
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);
@@ -88,7 +88,7 @@ export const useTNodeJSX = () => {
  */
 export const useTNodeDefault = () => {
   const renderTNodeJSX = useTNodeJSX();
-  return function renderTNodeJSXDefault(name: string, options?: VNode | JSXRenderContext) {
+  return function (name: string, options?: VNode | JSXRenderContext) {
     const defaultNode = getDefaultNode(options);
     return renderTNodeJSX(name, options) || defaultNode;
   };
@@ -107,7 +107,7 @@ export const useTNodeDefault = () => {
  */
 export const useContent = () => {
   const renderTNodeJSX = useTNodeJSX();
-  return function renderContent(name1: string, name2: string, options?: VNode | JSXRenderContext) {
+  return function (name1: string, name2: string, options?: VNode | JSXRenderContext) {
     // assemble params && defaultNode
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);

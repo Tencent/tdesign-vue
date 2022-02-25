@@ -102,7 +102,7 @@ export default defineComponent({
 
   render(h) {
     const suffixIconNode = this.showClearIcon ? (
-      <CloseCircleFilledIcon class={CLEAR_CLASS} onClick={this.clearAll} />
+      <CloseCircleFilledIcon class={CLEAR_CLASS} onClick={this.onClearClick} />
     ) : (
       renderTNodeJSX(this, 'suffixIcon')
     );

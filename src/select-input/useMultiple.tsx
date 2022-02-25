@@ -1,12 +1,9 @@
 import { SetupContext, computed, ref } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
-
-// components
-import TagInput, { TagInputValue } from '../tag-input';
-
-// utils
 import { TdSelectInputProps, SelectInputChangeContext, SelectInputKeys } from './type';
+import TagInput, { TagInputValue } from '../tag-input';
 import { SelectInputCommonProperties } from './interface';
+import { InputValue } from '../input';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
@@ -39,7 +36,8 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     props.onTagChange?.(val, context);
   };
 
-  const renderSelectMultiple = (p: RenderSelectMultipleParams) => (
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const renderSelectMultiple = (p: RenderSelectMultipleParams, h: any) => (
     <TagInput
       ref="tagInputRef"
       {...p.commonInputProps}
@@ -53,8 +51,17 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       placeholder={tPlaceholder.value}
       value={tags.value}
       onChange={onTagInputChange}
-      on={{ 'input-change': props.onInputChange }}
+      on={{
+        // 'input-change': props.onInputChange,
+        clear: p.onInnerClear,
+      }}
       tagProps={props.tagProps}
+      onBlur={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
+        props.onBlur?.(props.value, { ...context, tagInputValue: val });
+      }}
+      onFocus={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
+        props.onFocus?.(props.value, { ...context, tagInputValue: val });
+      }}
       {...props.tagInputProps}
     />
   );

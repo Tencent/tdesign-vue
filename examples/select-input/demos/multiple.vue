@@ -45,7 +45,87 @@
   </div>
 </template>
 <script>
-export default {};
+import { ChevronDownIcon } from 'tdesign-icons-vue';
+
+const OPTIONS = [
+  // 全选
+  { label: 'Check All', checkAll: true },
+  { label: 'tdesign-vue', value: 1 },
+  { label: 'tdesign-react', value: 2 },
+  { label: 'tdesign-miniprogram', value: 3 },
+  { label: 'tdesign-angular', value: 4 },
+  { label: 'tdesign-mobile-vue', value: 5 },
+  { label: 'tdesign-mobile-react', value: 6 },
+];
+
+export default {
+  components: {
+    ChevronDownIcon,
+  },
+  data() {
+    return {
+      excessTagsDisplayType: 'break-line',
+      allowInput: false,
+      creatable: false,
+      displayOptions: [...OPTIONS],
+      options: [...OPTIONS],
+      value: [
+        { label: 'Vue', value: 1 },
+        { label: 'React', value: 2 },
+        { label: 'Miniprogram', value: 3 },
+      ],
+    };
+  },
+  computed: {
+    checkboxValue() {
+      const arr = [];
+      const list = this.value;
+      // 此处不使用 forEach，减少函数迭代
+      for (let i = 0, len = list.length; i < len; i++) {
+        list[i].value && arr.push(list[i].value);
+      }
+      return arr;
+    },
+  },
+  methods: {
+    onCheckedChange(val, { current, type }) {
+      // current 不存在，则表示操作全选
+      if (!current) {
+        this.value.value = type === 'check' ? this.options.slice(1) : [];
+        return;
+      }
+      // 普通操作
+      if (type === 'check') {
+        const option = this.options.value.find((t) => t.value === current);
+        this.value.push(option);
+      } else {
+        this.value = this.value.filter((v) => v.value !== current);
+      }
+    },
+    onTagChange(currentTags, context) {
+      console.log(currentTags, context);
+      const { trigger, index, item } = context;
+      if (trigger === 'clear') {
+        this.value = [];
+      }
+      if (['tag-remove', 'backspace'].includes(trigger)) {
+        this.value.splice(index, 1);
+      }
+      // 如果允许创建新条目
+      if (this.creatable && trigger === 'enter') {
+        const current = { label: item, value: item };
+        this.value.push(current);
+        const newOptions = this.options.concat(current);
+        this.options = newOptions;
+        this.displayOptions = newOptions;
+      }
+    },
+    onInputChange(val) {
+      const newOptions = this.options.filter((t) => t.label.indexOf(val) !== -1);
+      this.displayOptions = newOptions;
+    },
+  },
+};
 </script>
 <style>
 .tdesign-demo__select-empty-multiple {
