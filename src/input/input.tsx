@@ -39,6 +39,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       isHover: false,
       focused: false,
       renderType: this.type,
+      inputValue: this.value,
     };
   },
   computed: {
@@ -85,6 +86,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
             (this.$refs.refInputElem as HTMLInputElement).focus();
           });
         }
+      },
+      immediate: true,
+    },
+    value: {
+      handler(val) {
+        this.inputValue = val;
       },
       immediate: true,
     },
@@ -165,15 +172,19 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
+      this.inputValue = this.value;
       if (this.tDisabled) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
-    emitBlur(e: FocusEvent) {
+    formatAndEmitBlur(e: FocusEvent) {
+      if (this.format) {
+        this.inputValue = this.format(this.value);
+      }
       this.focused = false;
       emitEvent<Parameters<TdInputProps['onBlur']>>(this, 'blur', this.value, { e });
     },
-    onCompositionend(e: InputEvent) {
+    compositionendHandler(e: InputEvent) {
       this.inputValueChangeHandle(e);
     },
     inputValueChangeHandle(e: InputEvent) {
@@ -202,7 +213,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   render(h: CreateElement): VNode {
     const inputEvents = getValidAttrs({
       focus: this.emitFocus,
-      blur: this.emitBlur,
+      blur: this.formatAndEmitBlur,
       keydown: this.handleKeydown,
       keyup: this.handleKeyUp,
       keypress: this.handleKeypress,
@@ -256,9 +267,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           ref="refInputElem"
           class={`${name}__inner`}
-          value={this.value}
+          value={this.inputValue}
           onInput={this.handleInput}
-          onCompositionend={this.onCompositionend}
+          onCompositionend={this.compositionendHandler}
         />
         {suffixContent}
         {suffixIcon ? (
