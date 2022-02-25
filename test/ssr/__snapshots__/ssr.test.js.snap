@@ -3570,6 +3570,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correct
       <div class="t-drawer__footer">
         <div style="display:flex;justify-content:flex-start;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"><span class="t-button__text">确认</span></button><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"><span class="t-button__text">取消</span></button></div>
       </div>
+      <div style="z-index:1;position:absolute;background:transparent;left:0;width:16px;height:100%;cursor:col-resize;"></div>
     </div>
   </div>
   <div class="tdesign-radio-button">
@@ -5158,6 +5159,12 @@ exports[`ssr snapshot test renders ./examples/input/demos/focus.vue correctly 1`
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/input/demos/format.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input t-size-m"><input placeholder="请输入数字" type="text" unselectable="off" value="" class="t-input__inner"></div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/input/demos/group.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div>
@@ -5185,6 +5192,14 @@ exports[`ssr snapshot test renders ./examples/input/demos/group.vue correctly 1`
       <div class="t-input t-size-m" style="width:100px;"><input placeholder="请输入" type="text" unselectable="off" value="678901" class="t-input__inner"></div>
       <div class="t-input t-size-m" style="width:100px;"><input placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/input/demos/max-length-count.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" maxlength="5" type="text" unselectable="off" value="" class="t-input__inner">
+    <div class="t-input__suffix">0/5</div>
   </div>
 </div>
 `;
