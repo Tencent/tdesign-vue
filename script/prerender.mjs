@@ -23,7 +23,8 @@ function initPageList() {
 
 async function initPreviewServer() {
   const previewServer = await preview({
-    preview: { port: 9999, open: false },
+    preview: { port: 9999, open: true },
+    build: { outDir: './_site' }
   });
 
   previewServer.printUrls();

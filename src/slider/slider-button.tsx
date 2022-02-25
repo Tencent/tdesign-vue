@@ -157,7 +157,9 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     },
     handleMouseLeave() {
       this.hovering = false;
-      this.hideTooltipComponent();
+      if (!this.dragging) {
+        this.hideTooltipComponent();
+      }
     },
     onButtonDown(event: MouseEvent) {
       if (this.disabled) {
@@ -251,10 +253,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         setTimeout(() => {
           this.dragging = false;
           this.hideTooltipComponent();
-          if (!this.isClick) {
-            this.setPosition(this.newPos);
-            // this.$parent.emitChange(parseInt(this.newPos));
-          }
         }, 0);
         window.removeEventListener('mousemove', this.onDragging);
         window.removeEventListener('touchmove', this.onDragging);
@@ -308,7 +306,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         onblur={this.handleMouseLeave}
         onKeydown={this.onNativeKeyDown}
       >
-        <Tooltip ref="tooltip" props={this.getTooltipProps()} content={String(this.formatValue)}>
+        <Tooltip ref="tooltip" props={this.getTooltipProps()} visible={this.visible} content={String(this.formatValue)}>
           <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
         </Tooltip>
       </div>
