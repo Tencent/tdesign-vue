@@ -5,6 +5,27 @@ toc: false
 docClass: timeline
 ---
 
+## 0.35.1 `2022-02-25`
+
+### Bug Fixes
+
+* Slider:
+  - 修复拖动过程中 Tooltip 不展示的问题，[pr #440](https://github.com/Tencent/tdesign-vue/pull/440)，[@LuckyWinty](https://github.com/LuckyWinty)
+  - 修复游标定位问题，[pr #248](https://github.com/Tencent/tdesign-common/pull/248)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Popup/Select: [pr #445](https://github.com/Tencent/tdesign-vue/pull/445)，[@ikeq](https://github.com/ikeq)
+  - 修复 Select 多选时 options 初始化解析失败的问题，[issue #458](https://github.com/Tencent/tdesign-vue/issues/458)
+  - 优化 Select 空状态样式
+  - 修复 Popup content 事件导致的可能需多次点击进行关闭的问题
+  - 修复 Popup 触发元素尺寸变化后位置不更新的问题
+* TreeSelect: 限制多选 Tag 展示宽度，默认为 `300px`，[pr #450](https://github.com/Tencent/tdesign-vue/pull/450)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+* Button: 修复 `primary outline` 模式下边框展示异常的问题，[pr #238](https://github.com/Tencent/tdesign-common/pull/238)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+### Features
+
+* Input: 新增 `format` 属性用于格式化数据，[pr #447](https://github.com/Tencent/tdesign-vue/pull/447)，[@mokywu](https://github.com/mokywu)
+* Drawer: 新增 `sizeDraggable` 属性用于支持用户拖动改变 `drawer` 大小，[pr #463](https://github.com/Tencent/tdesign-vue/pull/463)，[@uyarn](https://github.com/uyarn)
+
+
 ## 0.35.0 `2022-02-18`
 ### BREAKING CHANGES
 * Menu: 移除冗余事件 `onCollapsed`，[pr #428](https://github.com/Tencent/tdesign-vue/pull/428)，[@LeeJim](https://github.com/LeeJim)
