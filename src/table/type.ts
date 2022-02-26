@@ -266,7 +266,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
   /**
    * 展开行内容，泛型 T 指表格数据类型
    */
-  expandedRow?: TNode<{ row: T; index: number }>;
+  expandedRow?: TNode<TableExpandedRowParams<T>>;
   /**
    * 展开行
    * @default []
@@ -281,7 +281,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效
    * @default true
    */
-  expandIcon?: TNode<ExpandArrowRenderParams<T>>;
+  expandIcon?: boolean | TNode<ExpandArrowRenderParams<T>>;
   /**
    * 是否允许点击行展开
    */
@@ -329,8 +329,9 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   defaultSort?: TableSort;
   /**
-   * 【已废弃】允许表格行拖拽时排序
+   * 允许表格行拖拽时排序
    * @default false
+   * @deprecated
    */
   sortOnRowDraggable?: boolean;
   /**
@@ -346,7 +347,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onChange?: (data: TableChangeData, context: TableChangeContext<Array<T>>) => void;
   /**
-   * 【开发中】列配置发生变化时触发，`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列；`context.type` 表示当前操作属于选中列或是取消列
+   * 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列
    */
   onColumnChange?: (context: PrimaryTableColumnChange<T>) => void;
   /**
@@ -588,6 +589,12 @@ export interface TableColumnController {
   displayType: 'fixed-width' | 'auto-width';
   checkboxProps?: CheckboxGroupProps;
   dialogProps?: DialogProps;
+}
+
+export interface TableExpandedRowParams<T> {
+  row: T;
+  index: number;
+  columns: PrimaryTableCol<T>[] | BaseTableCol<T>[];
 }
 
 export interface ExpandArrowRenderParams<T> {

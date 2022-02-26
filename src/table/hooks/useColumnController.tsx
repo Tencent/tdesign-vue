@@ -71,15 +71,14 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     }
   };
 
-  watch(
-    [props.columns],
-    ([val]) => {
-      const keys = val.map((t) => t.colKey);
-      displayColumnKeys.value = keys;
-      columnCheckboxKeys.value = keys;
-    },
-    { immediate: true },
-  );
+  const updateControlCols = () => {
+    if (!columnController.value) return;
+    const keys = columns.value?.map((t) => t.colKey);
+    displayColumnKeys.value = keys;
+    columnCheckboxKeys.value = keys;
+  };
+
+  watch([columns, columnController], updateControlCols, { immediate: true });
 
   const handleToggleColumnController = () => {
     const dialogInstance = DialogPlugin.confirm({

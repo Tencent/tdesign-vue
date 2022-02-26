@@ -47,6 +47,7 @@ export function getRowFixedStyles(
   columnStickyLeftAndRight: ColumnStickyLeftAndRight,
   rowLength: number,
   fixedRows: TdBaseTableProps['fixedRows'],
+  hasFoot: boolean,
 ): { style: Styles; classes: ClassName } {
   if (!fixedRows || !fixedRows.length) return { style: undefined, classes: undefined };
   const pos = columnStickyLeftAndRight;
@@ -65,9 +66,10 @@ export function getRowFixedStyles(
   } else if (fixedBottom) {
     zIndex = FIXED_ROW_MAX_Z_INDEX - rowIndex + 1;
   }
+  const bottomPos = hasFoot ? rowLength - rowIndex : rowLength - rowIndex - 1;
   const rowStyles = {
     top: fixedTop ? pos.top[rowIndex + 1] && `${pos.top[rowIndex + 1]}px` : undefined,
-    bottom: fixedBottom ? `${pos.bottom[rowLength - rowIndex]}px` : undefined,
+    bottom: fixedBottom ? `${pos.bottom[bottomPos]}px` : undefined,
     zIndex,
   };
   return {
@@ -90,6 +92,7 @@ export default function useFixed(props: TdBaseTableProps) {
   const tableContentRef = ref();
   const tableRef = ref();
   const isFixedHeader = ref(false);
+  // 固定列、固定表头、固定表尾等内容的位置信息
   const columnStickyLeftAndRight = ref<ColumnStickyLeftAndRight>(defaultStickyPos);
   const showColumnShadow = reactive({
     left: false,

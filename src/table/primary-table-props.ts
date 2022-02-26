@@ -84,7 +84,7 @@ export default {
   defaultSort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['defaultSort']>,
   },
-  /** 【已废弃】允许表格行拖拽时排序 */
+  /** 已废弃。允许表格行拖拽时排序 */
   sortOnRowDraggable: Boolean,
   /** 异步加载区域被点击时触发 */
   onAsyncLoadingClick: Function as PropType<TdPrimaryTableProps['onAsyncLoadingClick']>,
@@ -92,7 +92,7 @@ export default {
   onCellClick: Function as PropType<TdPrimaryTableProps['onCellClick']>,
   /** 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型 */
   onChange: Function as PropType<TdPrimaryTableProps['onChange']>,
-  /** 【开发中】列配置发生变化时触发，`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列；`context.type` 表示当前操作属于选中列或是取消列 */
+  /** 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列 */
   onColumnChange: Function as PropType<TdPrimaryTableProps['onColumnChange']>,
   /** 表格数据发生变化时触发，比如：本地排序方法 sorter */
   onDataChange: Function as PropType<TdPrimaryTableProps['onDataChange']>,

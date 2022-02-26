@@ -3,7 +3,6 @@ import _PrimaryTable from './primary-table';
 import _EnhancedTable from './enhanced-table/index';
 // import mapProps from '../utils/map-props';
 import withInstall from '../utils/withInstall';
-import { TdBaseTableProps, TdPrimaryTableProps, TdEnhancedTableProps } from './type';
 
 import './style';
 
@@ -26,10 +25,8 @@ import './style';
 //   },
 // ])(_PrimaryTable);
 
-export type BaseTableProps = TdBaseTableProps;
-export type PrimaryTableProps = TdPrimaryTableProps;
-export type EnhancedTableProps = TdEnhancedTableProps;
 export * from './type';
+export * from './interface';
 
 export const BaseTable = withInstall(_BaseTable);
 export const PrimaryTable = withInstall(_PrimaryTable);

@@ -7,8 +7,6 @@
   </div>
 </template>
 <script lang="jsx">
-import TTable from '../../../src/table/base-table';
-
 const data = [];
 for (let i = 0; i < 3; i++) {
   data.push({
@@ -24,7 +22,6 @@ for (let i = 0; i < 3; i++) {
   });
 }
 export default {
-  components: { TTable },
   data() {
     return {
       data,

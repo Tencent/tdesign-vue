@@ -85,6 +85,7 @@ export default defineComponent({
   },
 
   render() {
+    const { columnStickyLeftAndRight } = this;
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -96,17 +97,17 @@ export default defineComponent({
           {this.renderColgroup()}
           {this.renderTableHeader({
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
           })}
           {this.renderTableBody({
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
             showColumnShadow: this.showColumnShadow,
             data: this.isPaginateData ? this.dataSource : this.data,
             columns: this.spansAndLeafNodes.leafColumns,
           })}
           {this.renderTableFooter({
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
           })}
         </table>
       </div>

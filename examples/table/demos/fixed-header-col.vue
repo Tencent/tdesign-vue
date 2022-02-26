@@ -15,6 +15,7 @@
     <t-table
       rowKey="index"
       :data="data"
+      :footData="[{}]"
       :columns="columns"
       :table-layout="tableLayout"
       :table-content-width="tableLayout === 'fixed' ? undefined : '1600px'"
@@ -29,8 +30,6 @@
   </div>
 </template>
 <script>
-import TTable from '../../../src/table/base-table';
-
 const data = [];
 for (let i = 0; i < 20; i++) {
   data.push({
@@ -46,7 +45,6 @@ for (let i = 0; i < 20; i++) {
   });
 }
 export default {
-  components: { TTable },
   data() {
     return {
       fixedTopAndBottomRows: false,

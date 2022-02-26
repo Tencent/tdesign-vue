@@ -26,7 +26,7 @@ export default function useTableFooter(props: TdBaseTableProps, context: SetupCo
   };
 
   const renderTableFooter = ({ isFixedHeader, columnStickyLeftAndRight }: RenderTableHeaderParams) => {
-    if (!props.footData || !props.footData.length) return null;
+    if (!props.footData || !props.footData.length || !props.columns) return null;
     const theadClasses = [TABLE_CLASS_FOOTER, { [TABLE_CLASS_FOOTER_FIXED]: isFixedHeader }];
     const columnLength = props.columns.length;
     return (
