@@ -7,7 +7,9 @@ import BaseTable from './base-table';
 import { useTNodeJSX } from '../hooks/tnode';
 import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
+import { renderTitle } from './hooks/useTableHeader';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
+import useSorter from './hooks/useSorter';
 
 export default defineComponent({
   name: 'TTable',
@@ -26,17 +28,22 @@ export default defineComponent({
     const {
       showExpandedRow, showExpandIconColumn, getExpandColumn, renderExpandedRow, onInnerExpandRowClick,
     } = useRowExpand(props, context);
+    // 排序
+    const { renderTitleWidthIcon } = useSorter(props, context);
 
-    // 影响列数量的因素有：自定义列配置、展开/收起行
+    // 1. 影响列数量的因素有：自定义列配置、展开/收起行；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = () => {
-      if (!props.columnController && !showExpandIconColumn.value) return columns.value;
       const arr: PrimaryTableCol<TableRowData>[] = [];
       if (showExpandIconColumn.value) {
         arr.push(getExpandColumn(h));
       }
       for (let i = 0, len = columns.value.length; i < len; i++) {
-        const item = columns.value[i];
+        const item = { ...columns.value[i] };
         if (displayColumnKeys.value.length && !displayColumnKeys.value.includes(item.colKey)) continue;
+        if (item.sorter || item.filter) {
+          const titleContent = renderTitle(h, context.slots, item, i);
+          item.title = (h, p) => renderTitleWidthIcon(h, p, titleContent);
+        }
         arr.push(item);
       }
       return arr;
@@ -55,19 +62,23 @@ export default defineComponent({
   },
 
   render(h) {
+    const topContent = this.columnController
+      ? () => (
+          <div>
+            {this.renderColumnController(h)}
+            {this.renderTNode('topContent')}
+          </div>
+      )
+      : this.topContent;
+
     const props = {
       ...this.$props,
       columns: this.tColumns,
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
-      topContent: this.columnController
-        ? () => (
-            <div>
-              {this.renderColumnController(h)}
-              {this.renderTNode('topContent')}
-            </div>
-        )
-        : this.topContent,
+      topContent,
     };
+
+    // 事件
     const on: { [key: string]: Function } = {};
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;

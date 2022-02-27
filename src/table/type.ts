@@ -404,7 +404,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   render?: TNode<PrimaryTableRenderParams<T>>;
   /**
-   * 该列是否支持排序。值为 true 表示该列支持排序；值类型为函数，表示对本地数据 `data` 进行排序。泛型 T 指表格数据类型
+   * 该列是否支持排序。值为 true 表示该列支持排序；值类型为函数，表示对本地数据 `data` 进行排序，返回值参考 [MDN Array.sort](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)。泛型 T 指表格数据类型
    * @default false
    */
   sorter?: boolean | SorterFun<T>;
@@ -537,7 +537,7 @@ export interface TableScroll {
 export type TableRowAttributes<T> =
   | HTMLElementAttributes
   | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => HTMLElementAttributes)
-  | Array<TableRowAttributes<TableRowAttributes>>;
+  | Array<TableRowAttributes<T>>;
 
 export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;
 
@@ -679,9 +679,7 @@ export interface PrimaryTableRenderParams<T> extends PrimaryTableCellParams<T> {
   type: RenderType;
 }
 
-export type SorterFun<T> = (a: T, b: T) => SortNumber;
-
-export type SortNumber = 1 | -1 | 0;
+export type SorterFun<T> = (a: T, b: T) => number;
 
 export type SortType = 'desc' | 'asc' | 'all';
 

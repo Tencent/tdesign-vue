@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  computed, ref, SetupContext, toRefs, watch,
+  computed, ref, SetupContext, toRefs, watch, h,
 } from '@vue/composition-api';
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
@@ -35,7 +35,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       const item = columns.value[i];
       if (item.colKey) {
         arr.push({
-          label: () => renderTitle(context.slots, item, i),
+          label: () => renderTitle(h, context.slots, item, i),
           value: item.colKey,
           disabled: !enabledColKeys.value.has(item.colKey),
         });

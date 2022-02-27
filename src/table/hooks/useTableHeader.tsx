@@ -1,6 +1,7 @@
-import { SetupContext, h, computed } from '@vue/composition-api';
+import { SetupContext, computed, h } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
+import { CreateElement } from 'vue';
 import { prefix } from '../../config';
 import { TdBaseTableProps } from '../type';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
@@ -21,7 +22,8 @@ export interface RenderTableHeaderParams {
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
 }
 
-export const renderTitle = (slots: SetupContext['slots'], col: TableColums[0], index: number) => {
+// 渲染表头的通用方法
+export const renderTitle = (h: CreateElement, slots: SetupContext['slots'], col: TableColums[0], index: number) => {
   const params = { col, colIndex: index };
   if (isFunction(col.title)) {
     return col.title(h, params);
@@ -39,6 +41,8 @@ export const renderTitle = (slots: SetupContext['slots'], col: TableColums[0], i
   }
   return col.title;
 };
+
+// export const renderTitleWidthIcon = () => <div>'1234'</div>;
 
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
@@ -81,7 +85,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         ];
         return (
           <th class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
-            {renderTitle(context.slots, col, index)}
+            {renderTitle(h, context.slots, col, index)}
           </th>
         );
       });

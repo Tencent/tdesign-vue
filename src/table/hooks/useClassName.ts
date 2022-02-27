@@ -67,6 +67,21 @@ export default function useClassName() {
       rowInner: `${prefix}-table__expanded-row-inner`,
       td: `${prefix}-table__row--full`,
     },
+
+    // 排序功能，全部类型
+    tableSortClasses: {
+      sortable: `${prefix}-table__cell--sortable`,
+      title: `${prefix}-table__cell--title`,
+      trigger: `${prefix}-table__cell--sort-trigger`,
+      doubleIcon: `${prefix}-table__double-icons`,
+      sortIcon: `${prefix}-table__sort-icon`,
+      iconDirection: {
+        asc: `${prefix}-table-sort-asc`,
+        desc: `${prefix}-table-sort-desc`,
+      },
+      iconActive: `${prefix}-table__sort-icon--active`,
+      iconDefault: `${prefix}-icon-sort--default`,
+    },
   };
 
   return {
