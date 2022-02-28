@@ -6,6 +6,7 @@ import {
 import intersection from 'lodash/intersection';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
+import isFunction from 'lodash/isFunction';
 import useDefault from '../../hooks/useDefaultValue';
 import {
   PrimaryTableCellParams,
@@ -15,8 +16,9 @@ import {
   TdPrimaryTableProps,
 } from '../type';
 import { filterDataByIds, isRowSelectedDisabled } from '../util/common';
-import SelectBox from '../primary-table/select-box';
 import useClassName from './useClassName';
+import Checkbox from '../../checkbox';
+import Radio from '../../radio';
 import { ClassName } from '../../common';
 import log from '../../_common/js/log';
 
@@ -67,7 +69,7 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
   function getSelectedHeader(h: CreateElement) {
     const isIndeterminate = inersectionKeys.value.length > 0 && inersectionKeys.value.length < canSelectedRows.value.length;
     return () => (
-      <SelectBox
+      <Checkbox
         checked={inersectionKeys.value.length === canSelectedRows.value.length}
         indeterminate={isIndeterminate}
         disabled={!canSelectedRows.value.length}
@@ -81,14 +83,15 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
     const { col: column, row = {}, rowIndex } = p;
     const checked = tSelectedRowKeys.value.includes(get(row, props.rowKey || 'id'));
     const disabled = typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled;
+    const checkProps = isFunction(column.checkProps) ? column.checkProps({ row, rowIndex }) : column.checkProps;
     const selectBoxProps = {
       props: {
         checked,
         ...column,
         type: column.type,
-        checkProps: typeof column.checkProps === 'function' ? column.checkProps({ row, rowIndex }) : column.checkProps,
         disabled,
         rowIndex,
+        ...checkProps,
       },
       on: {
         click: (e: MouseEvent) => {
@@ -99,7 +102,9 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
         change: () => handleSelectChange(row),
       },
     };
-    return <SelectBox {...selectBoxProps} />;
+    if (column.type === 'single') return <Radio {...selectBoxProps} />;
+    if (column.type === 'multiple') return <Checkbox {...selectBoxProps} />;
+    return null;
   }
 
   function handleSelectChange(row: TableRowData = {}) {
