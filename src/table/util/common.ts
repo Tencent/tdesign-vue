@@ -1,7 +1,10 @@
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
-import { PrimaryTableCol, TableRowData, TdBaseTableProps } from '../type';
-import { HTMLElementAttributes } from '../../common';
+import get from 'lodash/get';
+import {
+  PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
+} from '../type';
+import { ClassName, HTMLElementAttributes } from '../../common';
 
 export function toString(obj: any): string {
   return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
@@ -25,6 +28,7 @@ export interface FormatRowAttributesParams {
   type: 'body' | 'foot';
 }
 
+// 行属性
 export function formatRowAttributes(attributes: TdBaseTableProps['rowAttributes'], params: FormatRowAttributesParams) {
   if (!attributes) return undefined;
   const attrList = attributes instanceof Array ? attributes : [attributes];
@@ -36,6 +40,31 @@ export function formatRowAttributes(attributes: TdBaseTableProps['rowAttributes'
     result = Object.assign(result, attrProperty);
   }
   return result;
+}
+
+// 行类名，['A', 'B']，[() => 'A', () => 'B']
+export function formatRowClassNames(
+  rowClassNames: TdBaseTableProps['rowClassName'],
+  params: RowClassNameParams<TableRowData>,
+  rowKey: string,
+): ClassName {
+  const rowClassList = rowClassNames instanceof Array ? rowClassNames : [rowClassNames];
+  const { row, rowIndex } = params;
+  // 自定义行类名
+  let customClasses: ClassName = [];
+  for (let i = 0, len = rowClassList.length; i < len; i++) {
+    const rName = rowClassList[i];
+    let tClass = isFunction(rName) ? rName(params) : rName;
+    if (typeof tClass === 'object') {
+      // 根据下标设置行类名
+      tClass[rowIndex] && (tClass = tClass[rowIndex]);
+      // 根据行唯一标识设置行类名
+      const rowId = get(row, rowKey || 'id');
+      tClass[rowId] && (tClass = tClass[rowId]);
+    }
+    customClasses = customClasses.concat(tClass);
+  }
+  return customClasses;
 }
 
 export function filterDataByIds(

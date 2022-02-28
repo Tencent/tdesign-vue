@@ -4,8 +4,7 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
-import { prefix } from '../../config';
-import { formatRowAttributes } from '../util/common';
+import { formatRowAttributes, formatRowClassNames } from '../util/common';
 import {
   TABLE_CLASS_BODY,
   TABLE_TD_ELLIPSIS_CLASS,
@@ -22,6 +21,7 @@ import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } fro
 import { useTNodeJSX } from '../../hooks/tnode';
 // import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
+import useClassName from './useClassName';
 
 export interface RenderEllipsisCellParams {
   columnLength: number;
@@ -55,6 +55,8 @@ export const ROW_LISTENERS = {
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
   const renderTNode = useTNodeJSX();
+
+  const { tableFullRowClasses } = useClassName();
 
   const tbodyClases = computed(() => [
     TABLE_CLASS_BODY,
@@ -104,7 +106,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     if (!fullRow) return null;
     const fullRowNode = renderTNode(camelCase(type));
     if (['', null, undefined, false].includes(fullRowNode)) return null;
-    const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
+    const classes = [tableFullRowClasses.base, tableFullRowClasses[type]];
     return (
       <tr class={classes}>
         <td colspan={columnLength}>{fullRowNode}</td>
@@ -196,14 +198,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         !!props.footData?.length,
       );
       const trAttributes = formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' });
-      // 自定义行类名
-      let customClasses = isFunction(props.rowClassName)
-        ? props.rowClassName({ row, rowIndex, type: 'body' })
-        : props.rowClassName;
-      // { 1: 't-row-custom-class-name' } 表示设置第 2 行的类名为 t-row-custom-class-name
-      if (typeof customClasses === 'object' && customClasses[rowIndex]) {
-        customClasses = customClasses[rowIndex];
-      }
+      const customClasses = formatRowClassNames(props.rowClassName, { row, rowIndex, type: 'body' }, props.rowKey);
       const classes = [trStyles.classes, customClasses];
       const trNode = (
         <tr on={getTrListeners(row, rowIndex)} attrs={trAttributes} style={trStyles.style} class={classes}>

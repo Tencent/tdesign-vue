@@ -91,7 +91,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
    * 行类名，泛型 T 指表格数据类型。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body`  表示类名作用于 `tbody` 中的元素；`params.type=body` 表示类名作用于 `tfoot` 中的元素
    */
-  rowClassName?: ClassName | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => ClassName);
+  rowClassName?: ClassName | ((params: RowClassNameParams<T>) => ClassName);
   /**
    * 使用 rowKey 唯一标识一行数据
    * @default ''
@@ -538,6 +538,12 @@ export type TableRowAttributes<T> =
   | HTMLElementAttributes
   | ((params: { row: T; rowIndex: number; type: 'body' | 'foot' }) => HTMLElementAttributes)
   | Array<TableRowAttributes<T>>;
+
+export interface RowClassNameParams<T> {
+  row: T;
+  rowIndex: number;
+  type: 'body' | 'foot';
+}
 
 export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;
 

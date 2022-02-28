@@ -59,6 +59,13 @@ export default function useClassName() {
 
     TABLE_TD_ELLIPSIS_CLASS: `${prefix}-table-td--ellipsis`,
 
+    // 行通栏，一列铺满整行
+    tableFullRowClasses: {
+      base: `${prefix}-table__row--full`,
+      firstRow: `${prefix}-table__row-first-full-row`,
+      lastRow: `${prefix}-table__row-last-full-row`,
+    },
+
     // 展开/收起行，全部类名
     tableExpandClasses: {
       iconBox: `${prefix}-table__expand-box`,
@@ -68,7 +75,7 @@ export default function useClassName() {
       td: `${prefix}-table__row--full`,
     },
 
-    // 排序功能，全部类型
+    // 排序功能，全部类名
     tableSortClasses: {
       sortable: `${prefix}-table__cell--sortable`,
       title: `${prefix}-table__cell--title`,
@@ -81,6 +88,12 @@ export default function useClassName() {
       },
       iconActive: `${prefix}-table__sort-icon--active`,
       iconDefault: `${prefix}-icon-sort--default`,
+    },
+
+    // 行选中功能，全部类名
+    tableSelectedClasses: {
+      selected: `${prefix}-table__row--selected`,
+      disabled: `${prefix}-table__row--disabled`,
     },
   };
 

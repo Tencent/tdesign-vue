@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, h, PropType,
+  computed, defineComponent, SetupContext, h,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -25,10 +25,9 @@ export default defineComponent({
   props: {
     ...props,
     /**
-     * 以下属性为非公开属性，请勿在业务中使用
+     * 渲染展开行，非公开属性，请勿在业务中使用
      */
     renderExpandedRow: Function,
-    selectedRowKeys: Array as PropType<Array<string | number>>,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {

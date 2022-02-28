@@ -8,6 +8,7 @@ import { useTNodeJSX } from '../hooks/tnode';
 import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
 import { renderTitle } from './hooks/useTableHeader';
+import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 
@@ -30,6 +31,8 @@ export default defineComponent({
     } = useRowExpand(props, context);
     // 排序
     const { renderTitleWidthIcon } = useSorter(props, context);
+    // 过滤
+    const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props, context);
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = () => {
@@ -38,9 +41,10 @@ export default defineComponent({
         arr.push(getExpandColumn(h));
       }
       for (let i = 0, len = columns.value.length; i < len; i++) {
-        const item = { ...columns.value[i] };
+        let item = { ...columns.value[i] };
         if (displayColumnKeys.value.length && !displayColumnKeys.value.includes(item.colKey)) continue;
-        if (item.sorter || item.filter) {
+        item = formatToRowSelectColumn(item);
+        if (item.sorter) {
           const titleContent = renderTitle(h, context.slots, item, i);
           item.title = (h, p) => renderTitleWidthIcon(h, p, titleContent);
         }
@@ -54,6 +58,7 @@ export default defineComponent({
     return {
       tColumns,
       showExpandedRow,
+      tRowClassNames,
       renderTNode,
       renderColumnController,
       renderExpandedRow,
@@ -73,6 +78,7 @@ export default defineComponent({
 
     const props = {
       ...this.$props,
+      rowClassName: this.tRowClassNames,
       columns: this.tColumns,
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
       topContent,
