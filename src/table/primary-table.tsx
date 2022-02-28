@@ -29,29 +29,27 @@ export default defineComponent({
   setup(props: TdPrimaryTableProps, context) {
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
-    // 自定义列配置
+    // 自定义列配置功能
     const { displayColumnKeys, renderColumnController } = useColumnController(props, context);
-    // 展开/收起行
+    // 展开/收起行功能
     const {
       showExpandedRow, showExpandIconColumn, getExpandColumn, renderExpandedRow, onInnerExpandRowClick,
     } = useRowExpand(props, context);
-    // 排序
+    // 排序功能
     const { renderSortIcon } = useSorter(props, context);
-    // 行选中
+    // 行选中功能
     const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props, context);
-    // 过滤
+    // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
     const { renderTitleWidthIcon } = useTableHeader(props, context);
 
-    // 1. 影响列数量的因素有：自定义列配置、展开/收起行；2. 影响表头内容的因素有：排序图标、筛选图标
-    const getColumns = () => {
+    // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
+    const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
       const arr: PrimaryTableCol<TableRowData>[] = [];
-      if (showExpandIconColumn.value) {
-        arr.push(getExpandColumn(h));
-      }
-      for (let i = 0, len = columns.value.length; i < len; i++) {
-        let item = { ...columns.value[i] };
-        if (displayColumnKeys.value.length && !displayColumnKeys.value.includes(item.colKey)) continue;
+      for (let i = 0, len = columns.length; i < len; i++) {
+        let item = { ...columns[i] };
+        const isDisplayColumn = item.children?.length || displayColumnKeys.value?.includes(item.colKey);
+        if (!isDisplayColumn) continue;
         item = formatToRowSelectColumn(item);
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
@@ -62,12 +60,24 @@ export default defineComponent({
             return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
           };
         }
-        arr.push(item);
+        if (item.children?.length) {
+          item.children = getColumns(item.children);
+        }
+        // 多级表头和自定义列配置特殊逻辑：要么子节点不存在，要么子节点长度大于 1
+        if (!item.children || item.children?.length) {
+          arr.push(item);
+        }
       }
       return arr;
     };
 
-    const tColumns = computed(getColumns);
+    const tColumns = computed(() => {
+      const cols = getColumns(columns.value);
+      if (showExpandIconColumn.value) {
+        cols.unshift(getExpandColumn(h));
+      }
+      return cols;
+    });
 
     return {
       tColumns,
@@ -94,26 +104,25 @@ export default defineComponent({
       });
       return listenser;
     },
+
+    formatNode(api: string, renderInnerNode: Function, condition: boolean) {
+      if (!condition) return this[api];
+      const innerNode = renderInnerNode(h);
+      const propsNode = this.renderTNode(api);
+      return innerNode || propsNode
+        ? () => (
+            <div>
+              {innerNode}
+              {propsNode}
+            </div>
+        )
+        : null;
+    },
   },
 
-  render(h) {
-    const topContent = this.columnController
-      ? () => (
-          <div>
-            {this.renderColumnController(h)}
-            {this.renderTNode('topContent')}
-          </div>
-      )
-      : this.topContent;
-
-    const firstFullRow = this.hasEmptyCondition
-      ? this.firstFullRow
-      : () => (
-          <div>
-            {this.renderFirstFilterRow(h)}
-            {this.renderTNode('firstFullRow')}
-          </div>
-      );
+  render() {
+    const topContent = this.formatNode('topContent', this.renderColumnController, !!this.columnController);
+    const firstFullRow = this.formatNode('firstFullRow', this.renderFirstFilterRow, this.hasEmptyCondition);
 
     const props = {
       ...this.$props,

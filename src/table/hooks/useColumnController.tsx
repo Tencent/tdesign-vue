@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  computed, ref, SetupContext, toRefs, watch, h,
+  computed, ref, SetupContext, toRefs, h,
 } from '@vue/composition-api';
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
@@ -12,27 +12,44 @@ import { prefix } from '../../config';
 import { DialogPlugin } from '../../dialog/plugin';
 import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
-import { TdPrimaryTableProps } from '../type';
+import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
+
+export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
+  for (let i = 0, len = columns.length; i < len; i++) {
+    const col = columns[i];
+    col.colKey && keys.push(col.colKey);
+    if (col.children?.length) {
+      // eslint-disable-next-line no-param-reassign
+      keys = keys.concat(getColumnKeys(col.children, [...keys]));
+    }
+  }
+  return keys;
+}
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
   const { columns, columnController } = toRefs(props);
 
   const enabledColKeys = computed(() => {
-    const arr = (columnController.value?.fields || columns.value?.map((t) => t.colKey) || []).filter((v) => v);
+    const arr = (columnController.value?.fields || [...new Set(getColumnKeys(columns.value))] || []).filter((v) => v);
     return new Set(arr);
   });
 
-  // 确认后的列配置
-  const displayColumnKeys = ref<CheckboxGroupValue>([]);
-  // 弹框内的多选
-  const columnCheckboxKeys = ref<CheckboxGroupValue>([]);
+  const keys = [...new Set(getColumnKeys(columns.value))];
 
-  const checkboxOptions = computed<CheckboxOptionObj[]>(() => {
-    const arr: CheckboxOptionObj[] = [];
+  // 确认后的列配置
+  const displayColumnKeys = ref<CheckboxGroupValue>(keys);
+  // 弹框内的多选
+  const columnCheckboxKeys = ref<CheckboxGroupValue>(keys);
+
+  const checkboxOptions = computed<CheckboxOptionObj[]>(() => getCheckboxOptions(columns.value));
+
+  const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+
+  function getCheckboxOptions(columns: PrimaryTableCol[], arr: CheckboxOptionObj[] = []) {
     // 减少循环次数
-    for (let i = 0, len = columns.value.length; i < len; i++) {
-      const item = columns.value[i];
+    for (let i = 0, len = columns.length; i < len; i++) {
+      const item = columns[i];
       if (item.colKey) {
         arr.push({
           label: () => renderTitle(h, context.slots, item, i),
@@ -40,15 +57,15 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
           disabled: !enabledColKeys.value.has(item.colKey),
         });
       }
+      if (item.children?.length) {
+        getCheckboxOptions(item.children, arr);
+      }
     }
     return arr;
-  });
-
-  const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+  }
 
   const handleCheckChange = (val: CheckboxGroupValue) => {
     columnCheckboxKeys.value = val;
-    // type: 'check', // currentColumn: 0,
     const params = { columns: val };
     props.onColumnChange?.(params);
     // Vue3 ignore next linet
@@ -70,15 +87,6 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       context.emit('column-change', { type: 'uncheck', columns: disabledColKeys });
     }
   };
-
-  const updateControlCols = () => {
-    if (!columnController.value) return;
-    const keys = columns.value?.map((t) => t.colKey);
-    displayColumnKeys.value = keys;
-    columnCheckboxKeys.value = keys;
-  };
-
-  watch([columns, columnController], updateControlCols, { immediate: true });
 
   const handleToggleColumnController = () => {
     const dialogInstance = DialogPlugin.confirm({

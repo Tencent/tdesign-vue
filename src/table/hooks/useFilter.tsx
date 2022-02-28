@@ -81,8 +81,9 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         </TButton>
       </div>
     );
-    const filterContent = renderTNode('filterRow', defaultNode);
-    return <div class={tableFilterClasses.inner}>{filterContent}</div>;
+    const filterContent = renderTNode('filterRow');
+    if (props.filterRow && !filterContent) return null;
+    return <div class={tableFilterClasses.inner}>{filterContent || defaultNode}</div>;
   }
 
   // 获取搜索条件内容，存在 options 需要获取其 label 显示
@@ -187,7 +188,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     const props = {
       options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
       ...(column.filter?.props || {}),
-      value: innerFilterValue.value[column.colKey],
+      value: innerFilterValue.value?.[column.colKey],
     };
     const on = {
       change: (val: any) => onInnerFilterChange(val, column),
@@ -207,7 +208,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
             });
           })
         ) : (
-          <component value={innerFilterValue.value[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
+          <component value={innerFilterValue.value?.[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
         )}
       </div>
     );
@@ -236,7 +237,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         {isFunction(props.filterIcon) ? (
           props.filterIcon(h)
         ) : (
-          <FilterIcon name="filter" class={[{ [isFocusClass]: !isEmpty(tFilterValue.value[col.colKey]) }]} />
+          <FilterIcon name="filter" class={[{ [isFocusClass]: !isEmpty(tFilterValue.value?.[col.colKey]) }]} />
         )}
       </Popup>
     );
