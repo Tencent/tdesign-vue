@@ -17,7 +17,7 @@ import {
   ValidateTriggerType,
   AllValidateResult,
   FormErrorMessage,
-  ErrorList as IErrorList,
+  ErrorList,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -156,7 +156,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     errorMessages(): FormErrorMessage {
       return this.form.errorMessage ?? this.global.errorMessage;
     },
-    errorListValue(): IErrorList {
+    errorListValue(): ErrorList {
       const parent = this.form;
       const validateMessage = parent?.validateMessage?.[this.name] || [];
       return validateMessage.length ? validateMessage : this.errorList;
