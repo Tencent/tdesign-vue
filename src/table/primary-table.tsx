@@ -8,10 +8,15 @@ import { useTNodeJSX } from '../hooks/tnode';
 import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
 import useTableHeader, { renderTitle } from './hooks/useTableHeader';
+import { ROW_LISTENERS } from './hooks/useTableBody';
 import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
+
+export interface PrimaryTableListeners {
+  [key: string]: Function;
+}
 
 export default defineComponent({
   name: 'TTable',
@@ -77,6 +82,20 @@ export default defineComponent({
     };
   },
 
+  methods: {
+    // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
+    getListenser(): PrimaryTableListeners {
+      const allEvents = ROW_LISTENERS.concat(['page-change', 'row-click', 'cell-click', 'scrollX', 'scrollY']);
+      const listenser: PrimaryTableListeners = {};
+      allEvents.forEach((key) => {
+        listenser[key] = (...args: any) => {
+          this.$emit(key, ...args);
+        };
+      });
+      return listenser;
+    },
+  },
+
   render(h) {
     const topContent = this.columnController
       ? () => (
@@ -105,12 +124,12 @@ export default defineComponent({
       firstFullRow,
     };
 
-    // 事件
-    const on: { [key: string]: Function } = {};
+    // 事件，Vue3 do not need this.getListenser
+    const on: PrimaryTableListeners = this.getListenser();
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;
     }
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
-    return <BaseTable scopedSlots={this.$scopedSlots} props={props} on={on} attrs={this.$attrs} />;
+    return <BaseTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
   },
 });

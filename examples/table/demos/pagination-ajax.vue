@@ -7,6 +7,8 @@
     :loading="isLoading"
     :pagination="pagination"
     @change="rehandleChange"
+    @page-change="onPageChange"
+    data-a="sheep"
     bordered
     stripe
   >
@@ -82,12 +84,16 @@ export default {
       }
       this.isLoading = false;
     },
-    // 也可以使用 page-change 事件
-    async rehandleChange(changeParams, triggerAndData) {
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    rehandleChange(changeParams, triggerAndData) {
       console.log('分页、排序、过滤等发生变化时会触发 change 事件：', changeParams, triggerAndData);
-      const { current, pageSize } = changeParams.pagination;
-      const pagination = { current, pageSize };
-      await this.fetchData(pagination);
+    },
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    async onPageChange(pageInfo) {
+      console.log('page-change', pageInfo);
+      await this.fetchData(pageInfo);
     },
   },
 };

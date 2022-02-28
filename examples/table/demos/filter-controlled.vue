@@ -13,7 +13,9 @@
       :data="data"
       :filter-value.sync="filterValue"
       :filterIcon="filterIcon"
-    /> -->
+    >
+      <template #filterRow>自定义过滤行信息</template>
+    </t-table> -->
 
     <!-- filter-value.sync 等同于 filter-value + filter-change -->
     <t-table rowKey="key" :columns="columns" :data="data" :filter-value="filterValue" @filter-change="onFilterChange" />

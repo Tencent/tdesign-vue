@@ -43,15 +43,7 @@ export interface RenderTdExtra {
   cellSpans: RowspanColspan;
 }
 
-export const ROW_LISTENERS = {
-  click: 'onRowClick',
-  dbclick: 'onRowDbClick',
-  hover: 'onRowHover',
-  mousedown: 'onRowMousedown',
-  mouseenter: 'onRowMouseenter',
-  mouseleave: 'onRowMouseleave',
-  mouseup: 'onRowMouseup',
-};
+export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
   const renderTNode = useTNodeJSX();
@@ -170,11 +162,10 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   const getTrListeners = (row: TableRowData, rowIndex: number) => {
     const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
     // add events to row
-    Object.keys(ROW_LISTENERS).forEach((eventName) => {
+    ROW_LISTENERS.forEach((eventName) => {
       trListeners[eventName] = (e: MouseEvent) => {
         const p = { e, row, index: rowIndex };
         props[`onRow${upperFirst(eventName)}`]?.(p);
-        props.onRowClick?.(p);
         // Vue3 ignore this line
         emit(`row-${eventName}`, p);
       };
