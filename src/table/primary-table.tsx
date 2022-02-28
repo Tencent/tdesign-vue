@@ -13,6 +13,7 @@ import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
+import useAsyncLoading from './hooks/useAsyncLoading';
 
 export interface PrimaryTableListeners {
   [key: string]: Function;
@@ -42,6 +43,7 @@ export default defineComponent({
     // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
     const { renderTitleWidthIcon } = useTableHeader(props, context);
+    const { renderAsyncLoading } = useAsyncLoading(props, context);
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
@@ -89,6 +91,7 @@ export default defineComponent({
       renderExpandedRow,
       onInnerExpandRowClick,
       renderFirstFilterRow,
+      renderAsyncLoading,
     };
   },
 
@@ -123,6 +126,7 @@ export default defineComponent({
   render() {
     const topContent = this.formatNode('topContent', this.renderColumnController, !!this.columnController);
     const firstFullRow = this.formatNode('firstFullRow', this.renderFirstFilterRow, this.hasEmptyCondition);
+    const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
     const props = {
       ...this.$props,
@@ -131,6 +135,7 @@ export default defineComponent({
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
       topContent,
       firstFullRow,
+      lastFullRow,
     };
 
     // 事件，Vue3 do not need this.getListenser

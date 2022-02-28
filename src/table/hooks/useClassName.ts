@@ -108,7 +108,10 @@ export default function useClassName() {
       contentInner: `${prefix}-table__filter-pop-content-inner`,
     },
 
+    asyncLoadingClass: `${prefix}-table__async-loading`,
     isFocusClass: `${prefix}-is-focus`,
+    isLoadingClass: `${prefix}-is-loading`,
+    isLoadMoreClass: `${prefix}-is-load-more`,
   };
 
   return {
