@@ -1,6 +1,7 @@
-import { SetupContext, h, computed } from '@vue/composition-api';
+import { SetupContext, computed, h } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
+import { CreateElement } from 'vue';
 import { prefix } from '../../config';
 import { TdBaseTableProps } from '../type';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
@@ -21,31 +22,34 @@ export interface RenderTableHeaderParams {
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
 }
 
+// 渲染表头的通用方法
+export const renderTitle = (h: CreateElement, slots: SetupContext['slots'], col: TableColums[0], index: number) => {
+  const params = { col, colIndex: index };
+  if (isFunction(col.title)) {
+    return col.title(h, params);
+  }
+  if (isString(col.title) && slots[col.title]) {
+    return slots[col.title](params);
+  }
+  if (isFunction(col.render)) {
+    return col.render(h, {
+      ...params,
+      type: 'title',
+      row: {},
+      rowIndex: -1,
+    });
+  }
+  return col.title;
+};
+
+// export const renderTitleWidthIcon = () => <div>'1234'</div>;
+
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
   // 表头二维数据
   const thList = computed(() => getThList(props.columns));
   const isMultipleHeader = computed(() => thList.value.length > 1);
-
-  const renderTitle = (col: TableColums[0], index: number) => {
-    const params = { col, colIndex: index };
-    if (isFunction(col.title)) {
-      return col.title(h, params);
-    }
-    if (isString(col.title) && context.slots[col.title]) {
-      return context.slots[col.title](params);
-    }
-    if (isFunction(col.render)) {
-      return col.render(h, {
-        ...params,
-        type: 'title',
-        row: {},
-        rowIndex: -1,
-      });
-    }
-    return col.title;
-  };
 
   const renderColgroup = () => props.columns.map((col) => <col style={{ width: formatCSSUnit(col.width) }}></col>);
 
@@ -81,7 +85,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         ];
         return (
           <th class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
-            {renderTitle(col, index)}
+            {renderTitle(h, context.slots, col, index)}
           </th>
         );
       });
@@ -108,7 +112,6 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   return {
     thList,
     spansAndLeafNodes,
-    renderTitle,
     renderTableHeader,
     renderColgroup,
     isMultipleHeader,

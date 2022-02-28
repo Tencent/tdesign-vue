@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, h, PropType,
+  computed, defineComponent, SetupContext, h,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -25,13 +25,13 @@ export default defineComponent({
   props: {
     ...props,
     /**
-     * 以下属性为非公开属性，请勿在业务中使用
+     * 渲染展开行，非公开属性，请勿在业务中使用
      */
     renderExpandedRow: Function,
-    selectedRowKeys: Array as PropType<Array<string | number>>,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
+    const renderTNode = useTNodeJSX();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
@@ -79,11 +79,12 @@ export default defineComponent({
       isPaginateData,
       dataSource,
       renderPagination,
-      slots: context.slots,
+      renderTNode,
     };
   },
 
   render() {
+    const { columnStickyLeftAndRight } = this;
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -95,25 +96,30 @@ export default defineComponent({
           {this.renderColgroup()}
           {this.renderTableHeader({
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
           })}
           {this.renderTableBody({
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
             showColumnShadow: this.showColumnShadow,
             data: this.isPaginateData ? this.dataSource : this.data,
             columns: this.spansAndLeafNodes.leafColumns,
           })}
           {this.renderTableFooter({
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight: this.columnStickyLeftAndRight,
+            columnStickyLeftAndRight,
           })}
         </table>
       </div>
     );
 
-    const customLoadingText = useTNodeJSX('loading', { slots: this.slots });
+    const customLoadingText = this.renderTNode('loading');
     const loadingContent = this.loading ? (
-      <Loading loading={!!this.loading} showOverlay text={() => customLoadingText} props={this.loadingProps}>
+      <Loading
+        loading={!!this.loading}
+        text={customLoadingText ? () => customLoadingText : undefined}
+        props={this.loadingProps}
+        showOverlay
+      >
         {tableContent}
       </Loading>
     ) : (
@@ -122,7 +128,7 @@ export default defineComponent({
 
     return (
       <div ref="tableRef" class={this.baseTableClasses}>
-        {useTNodeJSX('topContent', { slots: this.slots })}
+        {this.renderTNode('topContent')}
         {loadingContent}
         {this.renderPagination(h)}
       </div>

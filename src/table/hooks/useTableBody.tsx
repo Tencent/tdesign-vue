@@ -4,7 +4,7 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
-import { prefix } from '../../config';
+import { formatRowAttributes, formatRowClassNames } from '../util/common';
 import {
   TABLE_CLASS_BODY,
   TABLE_TD_ELLIPSIS_CLASS,
@@ -21,6 +21,7 @@ import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } fro
 import { useTNodeJSX } from '../../hooks/tnode';
 // import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
+import useClassName from './useClassName';
 
 export interface RenderEllipsisCellParams {
   columnLength: number;
@@ -53,6 +54,10 @@ export const ROW_LISTENERS = {
 };
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
+  const renderTNode = useTNodeJSX();
+
+  const { tableFullRowClasses } = useClassName();
+
   const tbodyClases = computed(() => [
     TABLE_CLASS_BODY,
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
@@ -99,9 +104,9 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     type: 'first-full-row' | 'last-full-row',
   ) => {
     if (!fullRow) return null;
-    const fullRowNode = useTNodeJSX(camelCase(type), { slots });
+    const fullRowNode = renderTNode(camelCase(type));
     if (['', null, undefined, false].includes(fullRowNode)) return null;
-    const classes = [`${prefix}-table__row--full`, `${prefix}-table__row-${type}`];
+    const classes = [tableFullRowClasses.base, tableFullRowClasses[type]];
     return (
       <tr class={classes}>
         <td colspan={columnLength}>{fullRowNode}</td>
@@ -112,7 +117,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   const renderEmpty = (columns: RenderTableBodyParams['columns']) => (
     <tr class={TABLE_CLASS_EMPTY_ROW}>
       <td colspan={columns.length}>
-        <div class={TABLE_CLASS_EMPTY}>{useTNodeJSX('empty', { slots, defaultNode: '暂无数据' })}</div>
+        <div class={TABLE_CLASS_EMPTY}>{renderTNode('empty') || '暂无数据'}</div>
       </td>
     </tr>
   );
@@ -185,39 +190,39 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     const skipSpansMap = new Map<any, boolean>();
     const dataLength = data.length;
     data?.forEach((row, rowIndex) => {
-      const trStyles = getRowFixedStyles(rowIndex, columnStickyLeftAndRight, data.length, props.fixedRows);
-      // 自定义行类名
-      let customClasses = isFunction(props.rowClassName) ? props.rowClassName({ row, rowIndex }) : props.rowClassName;
-      // { 1: 't-row-custom-class-name' } 设置第 2 行的类名为 t-row-custom-class-name
-      if (typeof customClasses === 'object' && customClasses[rowIndex]) {
-        customClasses = customClasses[rowIndex];
-      }
+      const trStyles = getRowFixedStyles(
+        rowIndex,
+        columnStickyLeftAndRight,
+        data.length,
+        props.fixedRows,
+        !!props.footData?.length,
+      );
+      const trAttributes = formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' });
+      const customClasses = formatRowClassNames(props.rowClassName, { row, rowIndex, type: 'body' }, props.rowKey);
       const classes = [trStyles.classes, customClasses];
       const trNode = (
-        <tr on={getTrListeners(row, rowIndex)} style={trStyles.style} class={classes}>
+        <tr on={getTrListeners(row, rowIndex)} attrs={trAttributes} style={trStyles.style} class={classes}>
           {columns.map((col, colIndex) => {
             const cellSpans: RowspanColspan = {};
-            if (isFunction(props.rowspanAndColspan)) {
-              const o = props.rowspanAndColspan({
-                row,
-                col,
-                rowIndex,
-                colIndex,
-              });
-              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-            }
-            const skipped = skipSpansMap.get([rowIndex, colIndex].join());
-            if (skipped) return null;
             const params = {
               row,
               col,
               rowIndex,
               colIndex,
             };
+            if (isFunction(props.rowspanAndColspan)) {
+              const o = props.rowspanAndColspan(params);
+              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+            }
+            const skipped = skipSpansMap.get([rowIndex, colIndex].join());
+            if (skipped) return null;
             setSkippedCell(skipSpansMap, params, cellSpans);
             return renderTd(params, {
-              dataLength, columnStickyLeftAndRight, columnLength, cellSpans,
+              dataLength,
+              columnStickyLeftAndRight,
+              columnLength,
+              cellSpans,
             });
           })}
         </tr>
@@ -225,7 +230,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       trNodeList.push(trNode);
       // 执行展开行渲染
       if (props.renderExpandedRow) {
-        trNodeList.push(props.renderExpandedRow({ row, index: rowIndex }));
+        trNodeList.push(props.renderExpandedRow(h, { row, index: rowIndex, columns }));
       }
     });
 

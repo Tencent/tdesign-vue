@@ -23,6 +23,14 @@
 </template>
 
 <script>
+const data = new Array(5).fill(null).map((item, index) => ({
+  id: index + 100,
+  instance: `JQTest${index + 1}`,
+  status: index % 2,
+  owner: 'jenny;peter',
+  description: 'test',
+}));
+
 export default {
   data() {
     return {
@@ -31,6 +39,7 @@ export default {
         {
           colKey: 'row-select',
           type: 'single',
+          className: 'demo-single-select-cell',
 
           // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删）。disabled 参数：{row: RowData; rowIndex: number })
           // 这种方式禁用行选中，当前行会添加行类名 t-table__row--disabled，禁用行文字变灰
@@ -57,36 +66,7 @@ export default {
           cell: 'op',
         },
       ],
-      data: [
-        {
-          id: 1,
-          instance: 'JQTest1',
-          status: 0,
-          owner: 'jenny;peter',
-          description: 'test',
-        },
-        {
-          id: '2',
-          instance: 'JQTest2',
-          status: 1,
-          owner: 'jenny',
-          description: 'test',
-        },
-        {
-          id: 3,
-          instance: 'JQTest3',
-          status: 0,
-          owner: 'jenny',
-          description: 'test',
-        },
-        {
-          id: 4,
-          instance: 'JQTest4',
-          status: 1,
-          owner: 'peter',
-          description: 'test',
-        },
-      ],
+      data,
     };
   },
   methods: {

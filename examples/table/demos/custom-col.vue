@@ -6,10 +6,11 @@
       rowKey="index"
       :data="data"
       :columns="columns"
-      :stripe="stripe"
-      :bordered="bordered"
-      :hover="hover"
-      :columnController="{ displayType: 'auto-width' }"
+      :columnController="{ displayType: 'fixed-width', fields: ['platform', 'type', 'default'] }"
+      tableLayout="auto"
+      stripe
+      bordered
+      @column-change="onColumnChange"
     ></t-table>
   </div>
 </template>
@@ -32,19 +33,14 @@ export default {
   data() {
     return {
       data,
-      stripe: true,
-      bordered: true,
-      hover: false,
       columns: [
         {
           align: 'center',
-          width: '100',
           className: 'row',
           colKey: 'index',
           title: '序号',
         },
         {
-          width: 100,
           colKey: 'platform',
           title: '平台',
         },
@@ -63,17 +59,16 @@ export default {
         {
           colKey: 'detail.postion',
           title: '详情信息',
-          width: 200,
           ellipsis: true,
         },
       ],
-      /** 非受控用法：与分页组件对齐 */
-      pagination: {
-        defaultCurrent: 2,
-        defaultPageSize: 10,
-        total: 120,
-      },
     };
+  },
+
+  methods: {
+    onColumnChange(params) {
+      console.log(params);
+    },
   },
 };
 </script>

@@ -6,8 +6,19 @@
         <div style="margin: 16px">
           <t-checkbox v-model="allowMultipleSort">是否允许多字段排序</t-checkbox>
         </div>
+        <div style="margin: 16px">排序：{{ JSON.stringify(sort) || '暂无' }}</div>
 
         <!-- 本地数据排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
+        <!-- 1. 支持语法糖：sort.sync，效果同 :sort="sort" + onSortChange。2. 支持非受控属性 defaultSort -->
+        <!-- 2. 支持语法糖：data.sync，效果同 :data="data" + onDataChange -->
+        <!-- 语法糖用法示例代码，有效勿删 -->
+        <!-- <t-table
+          rowKey="id"
+          :columns="columns"
+          :data.sync="data"
+          :sort.sync="sort"
+        > -->
+
         <t-table
           rowKey="id"
           :columns="columns"
@@ -17,7 +28,7 @@
           @data-change="dataChange"
           :multipleSort="allowMultipleSort"
         >
-          <icon slot='op-column' name="descending-order"/>
+          <icon slot="op-column" name="descending-order" />
           <template #status="{ row }">
             <p class="status" :class="['', 'warning', 'unhealth'][row.status]">
               {{ ['健康', '警告', '异常'][row.status] }}
@@ -35,7 +46,11 @@ import { CaretDownSmallIcon, Icon } from 'tdesign-icons-vue';
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
   {
-    colKey: 'status', title: '状态', width: 100, sortType: 'all', sorter: (a, b) => a.status - b.status,
+    colKey: 'status',
+    title: '状态',
+    width: 100,
+    sortType: 'all',
+    sorter: (a, b) => a.status - b.status,
   },
   {
     colKey: 'survivalTime',
@@ -50,16 +65,32 @@ const columns = [
 // 本地数据排序，表示组件内部会对参数 data 进行数据排序。如果 data 数据为 10 条，就仅对这 10 条数据进行排序。
 const data = [
   {
-    id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', survivalTime: 1000,
+    id: 1,
+    instance: 'JQTest1',
+    status: 0,
+    owner: 'jenny;peter',
+    survivalTime: 1000,
   },
   {
-    id: 2, instance: 'JQTest2', status: 1, owner: 'jenny', survivalTime: 1000,
+    id: 2,
+    instance: 'JQTest2',
+    status: 1,
+    owner: 'jenny',
+    survivalTime: 1000,
   },
   {
-    id: 3, instance: 'JQTest3', status: 2, owner: 'jenny', survivalTime: 500,
+    id: 3,
+    instance: 'JQTest3',
+    status: 2,
+    owner: 'jenny',
+    survivalTime: 500,
   },
   {
-    id: 4, instance: 'JQTest4', status: 1, owner: 'peter', survivalTime: 1500,
+    id: 4,
+    instance: 'JQTest4',
+    status: 1,
+    owner: 'peter',
+    survivalTime: 1500,
   },
 ];
 
@@ -76,14 +107,16 @@ export default {
         sortBy: 'status',
         descending: true,
       },
-      multipleSorts: [{
-        sortBy: 'status',
-        descending: true,
-      }],
+      multipleSorts: [
+        {
+          sortBy: 'status',
+          descending: true,
+        },
+      ],
       allowMultipleSort: false,
       globalLocale: {
         table: {
-          sortIcon: (h) => h && <CaretDownSmallIcon size='16px' />,
+          sortIcon: (h) => h && <CaretDownSmallIcon size="16px" />,
         },
       },
     };
@@ -97,11 +130,14 @@ export default {
     },
   },
   methods: {
+    // 除了监听 sortChange 事件调整排序，也可以监听 change 事件
     sortChange(sort, options) {
       this.sort = sort;
       console.log('#### sortChange:', sort, options);
     },
     dataChange(data) {
+      // data 同 sortChange 中的 options.currentDataSource，
+      // 因此也可以直接在 sortChange 中对 data 进行赋值操作
       this.data = data;
     },
   },
@@ -129,7 +165,7 @@ export default {
   }
   .status {
     position: relative;
-    color: #00A870;
+    color: #00a870;
     margin-left: 10px;
     &::before {
       position: absolute;
@@ -137,7 +173,7 @@ export default {
       left: 0px;
       transform: translateY(-50%);
       content: '';
-      background-color: #00A870;
+      background-color: #00a870;
       width: 6px;
       height: 6px;
       margin-left: -10px;
@@ -145,15 +181,15 @@ export default {
     }
   }
   .status.unhealth {
-    color: #E34D59;
+    color: #e34d59;
     &::before {
-      background-color: #E34D59;
+      background-color: #e34d59;
     }
   }
   .status.warning {
-    color: #ED7B2F;
+    color: #ed7b2f;
     &::before {
-      background-color: #ED7B2F;
+      background-color: #ed7b2f;
     }
   }
 }

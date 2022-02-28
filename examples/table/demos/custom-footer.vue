@@ -1,13 +1,12 @@
 <template>
   <div class="tdesign-demo-block-column-large">
-    <t-table rowKey="index" :data="data" :columns="columns">
+    <!-- rowClassName="tdesign-demo__row-custom-name" -->
+    <t-table rowKey="index" :data="data" :columns="columns" :foot-data="footData" :rowClassName="rowClassName">
       <template #t-foot-required> 插槽渲染表尾 </template>
     </t-table>
   </div>
 </template>
 <script lang="jsx">
-import TTable from '../../../src/table/base-table';
-
 const data = [];
 for (let i = 0; i < 3; i++) {
   data.push({
@@ -23,10 +22,11 @@ for (let i = 0; i < 3; i++) {
   });
 }
 export default {
-  components: { TTable },
   data() {
     return {
       data,
+      // 表尾有一行数据
+      footData: [{}],
       columns: [
         {
           align: 'center',
@@ -40,7 +40,7 @@ export default {
           width: 100,
           colKey: 'platform',
           title: '平台',
-          foot: '无误',
+          foot: (h, { rowIndex }) => <span>第 {rowIndex + 1} 行</span>,
         },
         {
           colKey: 'type',
@@ -50,7 +50,7 @@ export default {
         {
           colKey: 'default',
           title: '默认值',
-          foot: '-',
+          foot: (h, { row }) => <span>{row.default || '空'}</span>,
         },
         {
           colKey: 'required',
@@ -68,6 +68,14 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    // type 可选值：foot 和 body
+    rowClassName({ type }) {
+      if (type === 'foot') return 't-tdesign__custom-footer-tr';
+      return 't-tdesign__custom-body-tr';
+    },
   },
 };
 </script>

@@ -1,12 +1,13 @@
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
-import { PrimaryTableCol, TableRowData } from '../type';
+import get from 'lodash/get';
+import {
+  PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
+} from '../type';
+import { ClassName, HTMLElementAttributes } from '../../common';
 
 export function toString(obj: any): string {
-  return Object.prototype.toString
-    .call(obj)
-    .slice(8, -1)
-    .toLowerCase();
+  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
 }
 
 export function debounce<T = any>(fn: Function, delay = 200): () => void {
@@ -19,6 +20,51 @@ export function debounce<T = any>(fn: Function, delay = 200): () => void {
       fn.apply(context, args);
     }, delay);
   };
+}
+
+export interface FormatRowAttributesParams {
+  row: TableRowData;
+  rowIndex: number;
+  type: 'body' | 'foot';
+}
+
+// 行属性
+export function formatRowAttributes(attributes: TdBaseTableProps['rowAttributes'], params: FormatRowAttributesParams) {
+  if (!attributes) return undefined;
+  const attrList = attributes instanceof Array ? attributes : [attributes];
+  let result: HTMLElementAttributes = {};
+  for (let i = 0; i < attrList.length; i++) {
+    const attrItem = attrList[i];
+    if (!attrItem) continue;
+    const attrProperty = isFunction(attrItem) ? attrItem(params) : attrItem;
+    result = Object.assign(result, attrProperty);
+  }
+  return result;
+}
+
+// 行类名，['A', 'B']，[() => 'A', () => 'B']
+export function formatRowClassNames(
+  rowClassNames: TdBaseTableProps['rowClassName'],
+  params: RowClassNameParams<TableRowData>,
+  rowKey: string,
+): ClassName {
+  const rowClassList = rowClassNames instanceof Array ? rowClassNames : [rowClassNames];
+  const { row, rowIndex } = params;
+  // 自定义行类名
+  let customClasses: ClassName = [];
+  for (let i = 0, len = rowClassList.length; i < len; i++) {
+    const rName = rowClassList[i];
+    let tClass = isFunction(rName) ? rName(params) : rName;
+    if (typeof tClass === 'object') {
+      // 根据下标设置行类名
+      tClass[rowIndex] && (tClass = tClass[rowIndex]);
+      // 根据行唯一标识设置行类名
+      const rowId = get(row, rowKey || 'id');
+      tClass[rowId] && (tClass = tClass[rowId]);
+    }
+    customClasses = customClasses.concat(tClass);
+  }
+  return customClasses;
 }
 
 export function filterDataByIds(
@@ -40,10 +86,7 @@ export enum SCROLL_DIRECTION {
 let preScrollLeft: any;
 let preScrollTop: any;
 
-export const getScrollDirection = (
-  scrollLeft: number,
-  scrollTop: number,
-): SCROLL_DIRECTION => {
+export const getScrollDirection = (scrollLeft: number, scrollTop: number): SCROLL_DIRECTION => {
   let direction = SCROLL_DIRECTION.UNKNOWN;
   if (preScrollTop !== scrollTop) {
     direction = SCROLL_DIRECTION.Y;
@@ -62,15 +105,16 @@ export const getRecord = (record: Record<any, any>) => {
   const result = {};
   Object.keys(record).forEach((key) => {
     const descriptor = Object.getOwnPropertyDescriptor(record, key);
-    descriptor && Reflect.defineProperty(result, key, {
-      set(val) {
-        descriptor.set(val);
-      },
-      get() {
-        console.warn('The parameter `record` will be deprecated, please use `row` instead');
-        return descriptor.get();
-      },
-    });
+    descriptor
+      && Reflect.defineProperty(result, key, {
+        set(val) {
+          descriptor.set(val);
+        },
+        get() {
+          console.warn('The parameter `record` will be deprecated, please use `row` instead');
+          return descriptor.get();
+        },
+      });
   });
   return result;
 };
@@ -81,9 +125,7 @@ export function getTitle(vm: Vue, column: PrimaryTableCol, colIndex: number) {
   if (isFunction(column.title)) {
     result = column.title(vm.$createElement, { col: column, colIndex });
   } else if (isString(column.title)) {
-    result = vm.$scopedSlots[column.title]
-      ? vm.$scopedSlots[column.title](null)
-      : column.title;
+    result = vm.$scopedSlots[column.title] ? vm.$scopedSlots[column.title](null) : column.title;
   } else if (isFunction(column.render)) {
     result = column.render(vm.$createElement, {
       type: 'title',
@@ -110,9 +152,7 @@ export function getCell(vm: Vue, p: GetCellParams) {
   if (isFunction(col.cell)) {
     result = col.cell(vm.$createElement, { ...p });
   } else if (isString(col.cell)) {
-    result = vm.$scopedSlots[col.cell]
-      ? vm.$scopedSlots[col.cell](p)
-      : row[col.colKey];
+    result = vm.$scopedSlots[col.cell] ? vm.$scopedSlots[col.cell](p) : row[col.colKey];
   } else if (isFunction(col.render)) {
     result = col.render(vm.$createElement, {
       type: 'cell',
@@ -122,10 +162,12 @@ export function getCell(vm: Vue, p: GetCellParams) {
   return result || row[col.colKey];
 }
 
-export function isRowSelectedDisabled(selectColumn: PrimaryTableCol, row: Record<string, any>, rowIndex: number): boolean {
-  let disabled = isFunction(selectColumn.disabled)
-    ? selectColumn.disabled({ row, rowIndex })
-    : selectColumn.disabled;
+export function isRowSelectedDisabled(
+  selectColumn: PrimaryTableCol,
+  row: Record<string, any>,
+  rowIndex: number,
+): boolean {
+  let disabled = isFunction(selectColumn.disabled) ? selectColumn.disabled({ row, rowIndex }) : selectColumn.disabled;
   if (selectColumn.checkProps) {
     if (isFunction(selectColumn.checkProps)) {
       disabled = disabled || selectColumn.checkProps({ row, rowIndex }).disabled;

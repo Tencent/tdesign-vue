@@ -108,6 +108,7 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
           sortOnRowDraggable: this.sortOnRowDraggable,
           dragging: this.dragging,
         },
+        // rowAttributes: this.sortOnRowDraggable ? [{ draggable: true }, this.rowAttributes] : this.rowAttributes,
         // this.hasFilterCondition is from mixins/filter.tsx
         firstFullRow: this.hasFilterCondition ? this.renderFirstFilterRow : this.firstFullRow,
         lastFullRow: hasLastFullRow ? this.renderLastFullRow : undefined,

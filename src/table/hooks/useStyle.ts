@@ -77,6 +77,7 @@ export default function useStyle(props: TdBaseTableProps) {
   const {
     size, bordered, stripe, hover, verticalAlign, height, maxHeight, tableContentWidth,
   } = toRefs(props);
+
   const tableClasses = computed<ClassName>(() => [
     TABLE_CLASS,
     {
