@@ -14,6 +14,8 @@ import {
   TABLE_CLASS_HEADER_MULTIPLE,
 } from './useStyle';
 import { TableColums, getThRowspanAndColspan, getThList } from './useMultiHeader';
+import useClassName from './useClassName';
+import { TNodeReturnValue } from '../../common';
 
 export interface RenderTableHeaderParams {
   // 是否固定表头
@@ -42,9 +44,8 @@ export const renderTitle = (h: CreateElement, slots: SetupContext['slots'], col:
   return col.title;
 };
 
-// export const renderTitleWidthIcon = () => <div>'1234'</div>;
-
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
+  const { tableSortClasses, tableFilterClasses } = useClassName();
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
   // 表头二维数据
@@ -109,11 +110,33 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
     );
   };
 
+  // eslint-disable-next-line
+  const renderTitleWidthIcon = (h: CreateElement, [title, sortIcon, filterIcon]: TNodeReturnValue[]) => {
+    const classes = {
+      [tableSortClasses.sortable]: sortIcon,
+      [tableFilterClasses.filterable]: filterIcon,
+    };
+    return (
+      <div class={classes}>
+        <div class={tableSortClasses.title}>
+          <div>{title}</div>
+          {Boolean(sortIcon || filterIcon) && (
+            <span>
+              {sortIcon}
+              {filterIcon}
+            </span>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return {
     thList,
-    spansAndLeafNodes,
-    renderTableHeader,
-    renderColgroup,
     isMultipleHeader,
+    spansAndLeafNodes,
+    renderColgroup,
+    renderTableHeader,
+    renderTitleWidthIcon,
   };
 }

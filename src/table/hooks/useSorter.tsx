@@ -6,22 +6,14 @@ import isFunction from 'lodash/isFunction';
 import {
   SortInfo, TdPrimaryTableProps, PrimaryTableCol, TableRowData,
 } from '../type';
-import useClassName from './useClassName';
 import SorterButton from '../sorter-button';
-import { TNodeReturnValue } from '../../common';
 import useDefaultValue from '../../hooks/useDefaultValue';
-
-export interface RenderTitleWidthIconParams {
-  col: PrimaryTableCol<TableRowData>;
-  colIndex: number;
-}
 
 export type SortMap = Record<string, SortInfo & { index: number }>;
 
 export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupContext) {
   const { sort, data } = toRefs(props);
   const originalData = ref();
-  const { tableSortClasses } = useClassName();
   // uncontroll and controll
   const [tSortInfo, setTSortInfo] = useDefaultValue(
     sort,
@@ -149,25 +141,19 @@ export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupCon
     return result;
   }
 
-  const renderTitleWidthIcon = (h: CreateElement, { col }: RenderTitleWidthIconParams, title: TNodeReturnValue) => {
+  // eslint-disable-next-line
+  function renderSortIcon(h: CreateElement, { col }: { col: PrimaryTableCol<TableRowData>; colIndex: number }) {
+    if (!col.sorter) return null;
     const nextSort = getSingleNextSort(col);
     const sorterButtonsProps = {
       sortType: col.sortType,
       sortOrder: getSortOrder(sortMap.value[col.colKey]?.descending),
       nextSortOrder: getSortOrder(nextSort?.descending),
     };
-
-    return (
-      <div class={tableSortClasses.sortable}>
-        <div class={tableSortClasses.title}>
-          <div>{title}</div>
-          {<SorterButton props={sorterButtonsProps} onClick={() => handleSortHeaderClick(col)} />}
-        </div>
-      </div>
-    );
-  };
+    return <SorterButton props={sorterButtonsProps} onClick={() => handleSortHeaderClick(col)} />;
+  }
 
   return {
-    renderTitleWidthIcon,
+    renderSortIcon,
   };
 }

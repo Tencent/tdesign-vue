@@ -95,6 +95,20 @@ export default function useClassName() {
       selected: `${prefix}-table__row--selected`,
       disabled: `${prefix}-table__row--disabled`,
     },
+
+    // 过滤功能，全部类名
+    tableFilterClasses: {
+      filterable: `${prefix}-table__cell--filterable`,
+      popup: `${prefix}-table__filter-pop`,
+      icon: `${prefix}-table__filter-icon`,
+      popupContent: `${prefix}-table__filter-pop-content`,
+      result: `${prefix}-table__filter-result`,
+      inner: `${prefix}-table__row-filter-inner`,
+      bottomButtons: `${prefix}-table__filter--bottom-buttons`,
+      contentInner: `${prefix}-table__filter-pop-content-inner`,
+    },
+
+    isFocusClass: `${prefix}-is-focus`,
   };
 
   return {

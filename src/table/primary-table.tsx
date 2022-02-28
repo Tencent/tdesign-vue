@@ -7,10 +7,11 @@ import BaseTable from './base-table';
 import { useTNodeJSX } from '../hooks/tnode';
 import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
-import { renderTitle } from './hooks/useTableHeader';
+import useTableHeader, { renderTitle } from './hooks/useTableHeader';
 import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
+import useFilter from './hooks/useFilter';
 
 export default defineComponent({
   name: 'TTable',
@@ -30,9 +31,12 @@ export default defineComponent({
       showExpandedRow, showExpandIconColumn, getExpandColumn, renderExpandedRow, onInnerExpandRowClick,
     } = useRowExpand(props, context);
     // 排序
-    const { renderTitleWidthIcon } = useSorter(props, context);
-    // 过滤
+    const { renderSortIcon } = useSorter(props, context);
+    // 行选中
     const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props, context);
+    // 过滤
+    const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
+    const { renderTitleWidthIcon } = useTableHeader(props, context);
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = () => {
@@ -44,9 +48,14 @@ export default defineComponent({
         let item = { ...columns.value[i] };
         if (displayColumnKeys.value.length && !displayColumnKeys.value.includes(item.colKey)) continue;
         item = formatToRowSelectColumn(item);
-        if (item.sorter) {
+        // 添加排序图标和过滤图标
+        if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
-          item.title = (h, p) => renderTitleWidthIcon(h, p, titleContent);
+          item.title = (h, p) => {
+            const sortIcon = renderSortIcon(h, p);
+            const filterIcon = renderFilterIcon(h, p);
+            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
+          };
         }
         arr.push(item);
       }
@@ -59,10 +68,12 @@ export default defineComponent({
       tColumns,
       showExpandedRow,
       tRowClassNames,
+      hasEmptyCondition,
       renderTNode,
       renderColumnController,
       renderExpandedRow,
       onInnerExpandRowClick,
+      renderFirstFilterRow,
     };
   },
 
@@ -76,12 +87,22 @@ export default defineComponent({
       )
       : this.topContent;
 
+    const firstFullRow = this.hasEmptyCondition
+      ? this.firstFullRow
+      : () => (
+          <div>
+            {this.renderFirstFilterRow(h)}
+            {this.renderTNode('firstFullRow')}
+          </div>
+      );
+
     const props = {
       ...this.$props,
       rowClassName: this.tRowClassNames,
       columns: this.tColumns,
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
       topContent,
+      firstFullRow,
     };
 
     // 事件

@@ -5,7 +5,8 @@
       <span style="padding-left: 36px">已选筛选条件：{{ filterValue }}</span>
     </div>
 
-    <!-- 可以使用语法糖 .sync ，此处代码有效，勿删！ 其中，filterIcon 用于自定义筛选图标-->
+    <!-- 此处代码有效，勿删！支持语法糖 filter-value.sync ， 支持非受控属性 defaultfilterValue -->
+    <!-- 其中，filterIcon 用于自定义筛选图标。 -->
     <!-- <t-table
       rowKey='key'
       :columns="columns"
