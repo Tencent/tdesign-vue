@@ -88,9 +88,9 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   submitWithWarningMessage?: boolean;
   /**
-   * 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空
+   * 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型
    */
-  validateMessage?: FormValidateMessage;
+  validateMessage?: FormValidateMessage<FormData>;
   /**
    * 表单重置时触发
    */
@@ -316,7 +316,9 @@ export interface FormErrorMessage {
   validator?: string;
 }
 
-export type FormValidateMessage = { [field in keyof FormData]: Array<{ type: 'error' | 'warning'; message: string }> };
+export type FormValidateMessage<FormData> = {
+  [field in keyof FormData]: Array<{ type: 'warning' | 'error'; message: string }>;
+};
 
 export interface SubmitContext<T extends Data = Data> {
   e?: FormSubmitEvent;

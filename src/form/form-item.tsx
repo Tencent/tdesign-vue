@@ -303,8 +303,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         return resultIcon(CheckCircleFilledIcon);
       }
       if (list && list[0]) {
-        const errorList = this.errorListValue;
-        const type = errorList[0].type || 'error';
+        const type = list[0].type || 'error';
         const icon = {
           error: CloseCircleFilledIcon,
           warning: ErrorCircleFilledIcon,
