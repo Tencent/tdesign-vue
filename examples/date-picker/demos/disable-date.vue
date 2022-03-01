@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tdesign-demo-item--datepicker">
-      <t-date-picker mode="date" :disableDate="disableDate"></t-date-picker>
+      <t-date-picker mode="date" :disableDate="disableDate" @change="onChange"></t-date-picker>
     </div>
     <div class="tdesign-demo-item--datepicker">
       <t-date-picker mode="date" :disableDate="disableDate2"></t-date-picker>
@@ -13,10 +13,9 @@
       <t-date-picker mode="date" :disableDate="disableDate4"></t-date-picker>
     </div>
     <div class="tdesign-demo-item--datepicker">
-      <t-date-picker mode="date" :disableDate="getDisableDate" ></t-date-picker>
+      <t-date-picker mode="date" :disableDate="getDisableDate"></t-date-picker>
     </div>
   </div>
-
 </template>
 <script>
 import dayjs from 'dayjs';

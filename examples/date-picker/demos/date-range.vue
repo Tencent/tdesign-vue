@@ -1,8 +1,8 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
     <t-date-picker mode="date" range :placeholder="['开始时间', '结束时间']" />
-    <br>
-    <br>
+    <br />
+    <br />
     <t-date-picker
       theme="primary"
       mode="date"
@@ -11,6 +11,7 @@
       enableTimePicker
       style="width: 350px"
       @pick="onPick"
+      @change="onChange"
     />
   </div>
 </template>
@@ -21,6 +22,9 @@ export default {
     // 选中日期时的事件
     onPick(value, context) {
       console.log('onPick:', value, context);
+    },
+    onChange(value) {
+      console.log('onChange:', value);
     },
   },
 };

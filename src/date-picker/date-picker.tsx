@@ -341,6 +341,7 @@ export default mixins(
       });
       // submit formate date
       this.submitInput(selectedDates, true);
+      this.$emit('onChange', selectedDates);
 
       if (closePicker) {
         this.close();
