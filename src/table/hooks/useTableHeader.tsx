@@ -25,7 +25,7 @@ export interface RenderTableHeaderParams {
 }
 
 // 渲染表头的通用方法
-export const renderTitle = (h: CreateElement, slots: SetupContext['slots'], col: TableColums[0], index: number) => {
+export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col: TableColums[0], index: number) {
   const params = { col, colIndex: index };
   if (isFunction(col.title)) {
     return col.title(h, params);
@@ -42,7 +42,7 @@ export const renderTitle = (h: CreateElement, slots: SetupContext['slots'], col:
     });
   }
   return col.title;
-};
+}
 
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
   const { tableSortClasses, tableFilterClasses } = useClassName();

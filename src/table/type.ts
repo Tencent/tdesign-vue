@@ -424,7 +424,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
   type?: 'single' | 'multiple';
 }
 
-export interface TdEnhancedTableProps<T extends TableRowData = TableRowData> {
+export interface TdEnhancedTableProps<T extends TableRowData = TableRowData> extends TdPrimaryTableProps<T> {
   /**
    * 树形结构相关配置。`tree.indent` 表示树结点缩进距离，单位：px，默认为 24px。`tree.treeNodeColumnIndex` 表示树结点在第几列渲染，默认为 0 ，第一列。`tree.childrenKey` 表示树形结构子节点字段，默认为 children。`tree.checkStrictly` 表示树形结构的行选中（多选），父子行选中是否独立，默认独立，值为 true
    */
