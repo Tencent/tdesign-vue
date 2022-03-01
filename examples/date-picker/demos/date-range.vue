@@ -4,7 +4,6 @@
     <br />
     <br />
     <t-date-picker
-      theme="primary"
       mode="date"
       range
       format="YYYY-MM-DD HH:mm:ss"
