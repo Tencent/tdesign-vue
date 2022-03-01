@@ -13,15 +13,19 @@ export interface TdInputProps {
    */
   align?: 'left' | 'center' | 'right';
   /**
-   * 是否开启自动填充功能
-   * @default false
+   * 是否开启自动填充功能，HTML5 原生属性，[点击查看详情](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
    */
-  autocomplete?: boolean;
+  autocomplete?: 'on' | 'off';
   /**
    * 自动聚焦
    * @default false
    */
   autofocus?: boolean;
+  /**
+   * 宽度随内容自适应
+   * @default false
+   */
+  autoWidth?: boolean;
   /**
    * 是否可清空
    * @default false
@@ -33,9 +37,9 @@ export interface TdInputProps {
    */
   disabled?: boolean;
   /**
-   * 【讨论中】指定输入框展示值的格式
+   * 指定输入框展示值的格式
    */
-  format?: (value: number | number) => number | string;
+  format?: (value: InputValue) => number | string;
   /**
    * 左侧文本
    */
@@ -112,6 +116,14 @@ export interface TdInputProps {
    * 清空按钮点击时触发
    */
   onClear?: (context: { e: MouseEvent }) => void;
+  /**
+   * 中文输入结束时触发
+   */
+  onCompositionend?: (value: InputValue, context: { e: CompositionEvent }) => void;
+  /**
+   * 中文输入开始时触发
+   */
+  onCompositionstart?: (value: InputValue, context: { e: CompositionEvent }) => void;
   /**
    * 回车键按下时触发
    */

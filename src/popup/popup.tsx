@@ -53,6 +53,10 @@ export default Vue.extend({
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
       mouseInRange: false,
+      /**
+       * mark popup as clicked when mousedown
+       * consume this flag right after click event bubbles up to document
+       */
       contentClicked: false,
       refClicked: false,
     };
@@ -163,17 +167,20 @@ export default Vue.extend({
       this.popper?.destroy();
 
       this.popper = createPopper(reference, popperElm, {
-        modifiers: getIEVersion() > 9 ? [] : [
-          {
-            name: 'computeStyles',
-            options: {
-              // 默认为 true，即使用 transform 定位，开启 gpu 加速
-              // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
-              // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
-              gpuAcceleration: false,
-            },
-          },
-        ],
+        modifiers:
+          getIEVersion() > 9
+            ? []
+            : [
+              {
+                name: 'computeStyles',
+                options: {
+                  // 默认为 true，即使用 transform 定位，开启 gpu 加速
+                  // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
+                  // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
+                  gpuAcceleration: false,
+                },
+              },
+            ],
         placement: getPopperPlacement(currentPlacement),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
@@ -273,10 +280,7 @@ export default Vue.extend({
       // 需要做碰撞检测去阻止父级 popup 关闭
       if (this.visibleState > 1) {
         const rect = (this.$refs.popper as HTMLElement).getBoundingClientRect();
-        if (
-          ev.x > rect.x && ev.x < rect.x + rect.width
-          && ev.y > rect.y && ev.y < rect.y + rect.height
-        ) return;
+        if (ev.x > rect.x && ev.x < rect.x + rect.width && ev.y > rect.y && ev.y < rect.y + rect.height) return;
       }
       this.mouseInRange = false;
       this.handleClose({});
@@ -319,53 +323,89 @@ export default Vue.extend({
       return ref;
     }
 
-    const overlay = visible || !destroyOnClose ? h('div', {
-      class: name,
-      ref: 'popper',
-      directives: destroyOnClose ? undefined : [{
-        name: 'show',
-        rawName: 'v-show',
-        value: visible,
-        expression: 'visible',
-      } as VNodeDirective],
-      on: {
-        mousedown: () => {
-          this.contentClicked = true;
+    const overlay = visible || !destroyOnClose
+      ? h(
+        'div',
+        {
+          class: name,
+          ref: 'popper',
+          directives: destroyOnClose
+            ? undefined
+            : [
+                {
+                  name: 'show',
+                  rawName: 'v-show',
+                  value: visible,
+                  expression: 'visible',
+                } as VNodeDirective,
+            ],
+          on: {
+            mousedown: () => {
+              this.contentClicked = true;
+            },
+            mouseup: () => {
+              // make sure to execute after document click is triggered
+              setTimeout(() => {
+                // make sure flag is consumed
+                this.contentClicked = false;
+              });
+            },
+            ...(hasTrigger.hover && {
+              mouseenter: this.onMouseEnter,
+              mouseleave: this.onMouseLeave,
+            }),
+          },
         },
-        ...hasTrigger.hover && {
-          mouseenter: this.onMouseEnter,
-          mouseleave: this.onMouseLeave,
-        },
-      },
-    }, [
-      h('div', {
-        class: this.overlayClasses,
-        ref: 'overlay',
-        on: onScroll ? { scroll(e: WheelEvent) { onScroll({ e }); } } : undefined,
-      },
-      [
-        content,
-        this.showArrow && h('div', { class: `${name}__arrow` }),
-      ]),
-    ]) : null;
+        [
+          h(
+            'div',
+            {
+              class: this.overlayClasses,
+              ref: 'overlay',
+              on: onScroll
+                ? {
+                  scroll(e: WheelEvent) {
+                    onScroll({ e });
+                  },
+                }
+                : undefined,
+            },
+            [content, this.showArrow && h('div', { class: `${name}__arrow` })],
+          ),
+        ],
+      )
+      : null;
 
     return (
-        <Container ref="container" onMounted={() => {
+      <Container
+        ref="container"
+        onMounted={() => {
           if (visible) {
             this.updatePopper();
             this.updateOverlayStyle();
           }
-        }} parent={this} visible={visible} attach={this.attach}>
-          <transition
-            slot="content"
-            name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
-            appear
-            onBeforeEnter={this.onBeforeEnter}
-            onAfterEnter={this.onAfterEnter}
-            onAfterLeave={this.destroyPopper}
-          >{(visible || !destroyOnClose) && overlay}</transition>
-          {ref}
-        </Container>
+        }}
+        onRefResize={() => {
+          if (visible) {
+            this.updatePopper();
+          }
+        }}
+        parent={this}
+        visible={visible}
+        attach={this.attach}
+      >
+        <transition
+          slot="content"
+          name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
+          appear
+          onBeforeEnter={this.onBeforeEnter}
+          onAfterEnter={this.onAfterEnter}
+          onAfterLeave={this.destroyPopper}
+        >
+          {(visible || !destroyOnClose) && overlay}
+        </transition>
+        {ref}
+      </Container>
     );
   },
 });

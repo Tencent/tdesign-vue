@@ -628,7 +628,7 @@ exports[`ssr snapshot test renders ./examples/breadcrumb/demos/href.vue correctl
     <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">首页</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
     <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1(覆盖路由)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
     <div class="t-breadcrumb__item light"><a href="http://tdesign.tencent.com/" target="_blank" class="t-breadcrumb--text-overflow t-link"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></a><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-disabled"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3(disabled)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-is-disabled"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3(disabled)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
     <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-gestureClass"><span class="t-breadcrumb__inner" style="max-width:120px;">页面4自定义点击</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
   </div>
   <div style="margin-top:20px;">点击计数器：0</div>
@@ -3570,6 +3570,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correct
       <div class="t-drawer__footer">
         <div style="display:flex;justify-content:flex-start;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"><span class="t-button__text">确认</span></button><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"><span class="t-button__text">取消</span></button></div>
       </div>
+      <div style="z-index:1;position:absolute;background:transparent;left:0;width:16px;height:100%;cursor:col-resize;"></div>
     </div>
   </div>
   <div class="tdesign-radio-button">
@@ -4010,6 +4011,106 @@ exports[`ssr snapshot test renders ./examples/form/demos/disabled.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/form/demos/error-message.vue correctly 1`] = `
+<div>
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="default" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
+          使用表单默认校验信息
+        </span></span></label> <label class="t-radio-button"><input type="radio" value="config" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
+          表单统一配置校验信息
+        </span></span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div>
+  </div> <br><br>
+  <form class="t-form">
+    <div class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">用户名</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+        <div class="t-form__help">这是用户名字段帮助说明</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+        <div class="t-form__help">一句话介绍自己</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__password">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">密码</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" type="password" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__email">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">邮箱</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__gender">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__course">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label><label class="t-checkbox"><input type="checkbox" name="" value="4" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">体育</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__college">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="demo-select-base t-select__wrap">
+            <div class="t-select t-size-m t-select__popup-reference"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__date">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__content.url">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人网站</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清空校验结果</span></button></div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/form/demos/layout.vue correctly 1`] = `
 <div>
   <div class="controls">
@@ -4273,40 +4374,32 @@ exports[`ssr snapshot test renders ./examples/form/demos/validate-complicated-da
 
 exports[`ssr snapshot test renders ./examples/form/demos/validate-message.vue correctly 1`] = `
 <div>
-  <div>
-    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="default" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
-          使用表单默认校验信息
-        </span></span></label> <label class="t-radio-button"><input type="radio" value="config" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
-          表单统一配置校验信息
-        </span></span></label>
-      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-    </div>
-  </div> <br><br>
   <form class="t-form">
     <div class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra">
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">用户名</label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls t-is-error" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
         </div>
-        <div class="t-form__help">这是用户名字段帮助说明</div>
+        <p class="t-input__extra">自定义用户名校验信息提示</p>
       </div>
     </div>
     <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls t-is-error" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m"><input placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
         </div>
-        <div class="t-form__help">一句话介绍自己</div>
+        <p class="t-input__extra">自定义个人简介校验信息提示</p>
       </div>
     </div>
-    <div class="t-form__item t-form-item__password">
+    <div class="t-form__item t-form-item__password t-form__item-with-extra">
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">密码</label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls t-is-warning" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" type="password" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse-off t-input__suffix-clear"><path fill="currentColor" d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z" fill-opacity="0.9"></path><path fill="currentColor" d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z" fill-opacity="0.9"></path></svg></span></div>
         </div>
+        <p class="t-input__extra">自定义密码校验信息提示</p>
       </div>
     </div>
     <div class="t-form__item t-form-item__email">
@@ -4364,7 +4457,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validate-message.vue co
     <div class="t-form__item t-form-item__" style="padding-top:8px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
       <div class="t-form__controls" style="margin-left:100px;">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清空校验结果</span></button></div>
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">设置校验信息提示</span></button></div>
       </div>
     </div>
   </form>
@@ -5158,6 +5251,12 @@ exports[`ssr snapshot test renders ./examples/input/demos/focus.vue correctly 1`
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/input/demos/format.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input t-size-m"><input placeholder="请输入数字" type="text" unselectable="off" value="" class="t-input__inner"></div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/input/demos/group.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div>
@@ -5185,6 +5284,14 @@ exports[`ssr snapshot test renders ./examples/input/demos/group.vue correctly 1`
       <div class="t-input t-size-m" style="width:100px;"><input placeholder="请输入" type="text" unselectable="off" value="678901" class="t-input__inner"></div>
       <div class="t-input t-size-m" style="width:100px;"><input placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/input/demos/max-length-count.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input t-size-m t-input--suffix"><input placeholder="请输入" maxlength="5" type="text" unselectable="off" value="" class="t-input__inner">
+    <div class="t-input__suffix">0/5</div>
   </div>
 </div>
 `;
@@ -7401,6 +7508,15 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
         <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-notification__main">
+      <div class="t-notification__title__wrap"><span class="t-notification__title">带关闭按钮</span><span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-notification__content">这是一条消息通知</div>
+    </div>
+  </div>
+  <div class="t-notification">
+    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+      </svg></div>
+    <div class="t-notification__main">
       <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message__close"></span></div>
       <div class="t-notification__content">使用 function 自定义底部内容</div>
       <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
@@ -7414,8 +7530,8 @@ exports[`ssr snapshot test renders ./examples/notification/demos/operation.vue c
       <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message__close"></span></div>
       <div class="t-notification__content">1. 使用插槽自定义标题 2. 使用插槽自定义底部内容</div>
       <div class="t-notification__detail"><button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
-        稍后提醒我(10s)
-      </span></button></div>
+          稍后提醒我(10s)
+        </span></button></div>
     </div>
   </div>
 </div>
@@ -7965,7 +8081,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7976,7 +8092,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -7987,7 +8103,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8002,7 +8118,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8015,7 +8131,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8028,7 +8144,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8042,7 +8158,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
           <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
             <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8053,7 +8169,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8064,7 +8180,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
           <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8081,7 +8197,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  50.265482457436704" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="295.5610368497277  56.2973403523291" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8109,7 +8225,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
         <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="150.79644737231007  351.85837720205683" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="188.4955592153876  439.822971502571" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8127,7 +8243,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
         </svg>
       </div>
     </div>
@@ -8146,7 +8262,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="138.2300767579509  175.92918860102844" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8315,7 +8431,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="94.2477796076938  219.9114857512855" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8327,7 +8443,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="235.61944901923448  78.53981633974483" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8339,7 +8455,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="157.07963267948966  157.07963267948966" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8351,7 +8467,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="314.1592653589793  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -8364,7 +8480,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
         <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
           <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="60.31857894892403  140.74335088082273" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8373,7 +8489,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
         <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
           <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="348.71678454846705  116.23892818282235" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8408,7 +8524,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8438,7 +8554,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -8478,7 +8594,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="251.32741228718348  62.83185307179585" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9176,7 +9292,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9188,10 +9304,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/base.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9208,7 +9324,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9220,10 +9336,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/disabled.vue correctl
         <div class="t-slider__rail disabled">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" disabled="disabled" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9241,7 +9357,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
           </div>
         </div>
@@ -9262,10 +9378,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number.vue corr
           <div class="t-slider__rail show-input">
             <div class="t-slider__track" style="width:0%;left:0%;"></div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
             <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-              <div popper-class="" class="t-slider__button"></div>
+              <div class="t-slider__button"></div>
             </div>
           </div>
         </div>
@@ -9300,7 +9416,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9321,10 +9437,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/input-number-vertical
         <div class="t-slider__rail show-input" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9358,7 +9474,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9388,10 +9504,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/marks.vue correctly 1
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9426,7 +9542,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:-50%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9448,10 +9564,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/min-and-max.vue corre
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:-50%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:-50%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9478,7 +9594,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9490,10 +9606,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/step.vue correctly 1`
         <div class="t-slider__rail">
           <div class="t-slider__track" style="width:0%;left:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="left:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9510,7 +9626,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9522,10 +9638,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical.vue correctl
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
         </div>
       </div>
@@ -9542,7 +9658,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -9572,10 +9688,10 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
         <div class="t-slider__rail" style="height:100%;">
           <div class="t-slider__track" style="height:0%;bottom:0%;"></div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div tabindex="0" show-tooltip="true" class="t-slider__button-wrapper" style="bottom:0%;">
-            <div popper-class="" class="t-slider__button"></div>
+            <div class="t-slider__button"></div>
           </div>
           <div>
             <div>
@@ -10618,6 +10734,83 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
                 <div>使用 cell 方法自定义单元格：rowkey</div>
               </td>
               <td class="" key="description" length="4" style="overflow:hidden;">render 方法渲染单元格: 1-3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
+<div class="tdesign-demo-block-column-large">
+  <div class="t-table t-table--bordered t-table--striped">
+    <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
+          <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
+          <path fill="currentColor" d="M8 1.25l6.06 3.38v6.75L8 14.75l-6.06-3.38V4.63L8 1.25zM2.94 5.21v5.58L8 13.6l5.06-2.82V5.2L8 2.4 2.94 5.21z" fill-opacity="0.9"></path>
+        </svg><span class="t-button__text">自定义列</span></button></div>
+    <div class="t-loading__parent">
+      <div class="t-table__content">
+        <table style="table-layout:fixed;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col>
+            <col>
+            <col>
+            <col style="width:200px;">
+          </colgroup>
+          <thead>
+            <tr>
+              <td class="t-align-center row" key="index" colspan="1" rowspan="1" style="overflow:hidden;">序号</td>
+              <td class="" key="platform" colspan="1" rowspan="1" style="overflow:hidden;">平台</td>
+              <td class="" key="type" colspan="1" rowspan="1">类型</td>
+              <td class="" key="default" colspan="1" rowspan="1">默认值</td>
+              <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
+              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr rowKey="index" class="" key="0">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">0</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">String</td>
+              <td class="" key="default" length="6">-</td>
+              <td class="" key="needed" length="6">是</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="1">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+              <td class="" key="type" length="6">Number</td>
+              <td class="" key="default" length="6">0</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="2">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">Array</td>
+              <td class="" key="default" length="6">[]</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="3">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">私有</td>
+              <td class="" key="type" length="6">Object</td>
+              <td class="" key="default" length="6">{}</td>
+              <td class="" key="needed" length="6">否</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+            </tr>
+            <tr rowKey="index" class="" key="4">
+              <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
+              <td class="" key="platform" length="6" style="overflow:hidden;">共有</td>
+              <td class="" key="type" length="6">String</td>
+              <td class="" key="default" length="6">-</td>
+              <td class="" key="needed" length="6">是</td>
+              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
             </tr>
           </tbody>
         </table>
@@ -13505,23 +13698,23 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/twelve-hour-meri
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/arrow.vue correctly 1`] = `<div><span showArrow="true"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">带箭头文字提示</span></button> </span></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/arrow.vue correctly 1`] = `<div><span><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">带箭头文字提示</span></button> </span></div>`;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1`] = `<div class="tdesign-tooltip-placement"><button type="button" showArrow="true" class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> top </span></button> <button type="button" showArrow="true" class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button> <button type="button" showArrow="true" class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button> <button type="button" showArrow="true" class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> bottom </span></button> <button type="button" showArrow="true" class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button> <button type="button" showArrow="true" class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-right </span></button> <button type="button" showArrow="true" class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left </span></button> <button type="button" showArrow="true" class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-top </span></button> <button type="button" showArrow="true" class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-bottom </span></button> <button type="button" showArrow="true" class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right </span></button> <button type="button" showArrow="true" class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-top </span></button> <button type="button" showArrow="true" class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-bottom </span></button></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/base.vue correctly 1`] = `<div class="tdesign-tooltip-placement"><button type="button" class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> top </span></button> <button type="button" class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button> <button type="button" class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button> <button type="button" class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default" style="width:80px;"><span class="t-button__text"> bottom </span></button> <button type="button" class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button> <button type="button" class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-right </span></button> <button type="button" class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left </span></button> <button type="button" class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-top </span></button> <button type="button" class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-bottom </span></button> <button type="button" class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right </span></button> <button type="button" class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-top </span></button> <button type="button" class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-bottom </span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/duration.vue correctly 1`] = `
-<div><button type="button" disabled="disabled" visible="visible" showArrow="true" class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"><span class="t-button__text">定时消失</span></button>
+<div><button type="button" disabled="disabled" visible="visible" class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"><span class="t-button__text">定时消失</span></button>
   <!---->
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/no-arrow.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">不带箭头的文字提示</span></button></div>`;
 
-exports[`ssr snapshot test renders ./examples/tooltip/demos/theme.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">default</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">primary</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-success"><span class="t-button__text">success</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">danger</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">warning</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">light</span></button></div>`;
+exports[`ssr snapshot test renders ./examples/tooltip/demos/theme.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">default</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">primary</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-success"><span class="t-button__text">success</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">danger</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">warning</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">light</span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/trigger.vue correctly 1`] = `
-<div class="tdesign-tooltip-demo"><button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button>
-  <div class="t-input t-size-m"><input placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button> <button type="button" showArrow="true" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button>
+<div class="tdesign-tooltip-demo"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button>
+  <div class="t-input t-size-m"><input placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button>
 </div>
 `;
 
@@ -14838,7 +15031,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/base.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue correctly 1`] = `
 <div class="tdesign-tree-select-collapsed">
   <div class="demo-space t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close" style="display:none;"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+1</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -14852,7 +15049,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/collapsed.vue co
     </div>
   </div>
   <div class="t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close" style="display:none;">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close" style="display:none;"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">更多...</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -14933,7 +15134,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/lazy.vue correct
 exports[`ssr snapshot test renders ./examples/tree-select/demos/multiple.vue correctly 1`] = `
 <div class="tdesign-tree-select-multiple">
   <div class="t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">guangzhou<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">shenzhen<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="guangzhou" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">guangzhou</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="shenzhen" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">shenzhen</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">
@@ -15036,7 +15241,11 @@ exports[`ssr snapshot test renders ./examples/tree-select/demos/valuetype.vue co
     </div>
   </div>
   <div class="tree-select-multiple t-select__wrap">
-    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">undefined<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
+    <div class="t-select t-size-m t-select-selected t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择</span><span title="[object Object]" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">undefined</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span title="[object Object]" class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"><span class="t-tag--text" style="max-width:300px;">undefined</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close">
+        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+      </svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+2</span>
       <div class="t-input t-size-m t-select__input" style="display:none;"><input placeholder="" type="text" unselectable="off" value="" class="t-input__inner"></div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon" style="font-size:medium;">
         <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
       </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear" style="display:none;">

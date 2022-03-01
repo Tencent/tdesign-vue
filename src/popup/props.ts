@@ -40,7 +40,20 @@ export default {
     type: String as PropType<TdPopupProps['placement']>,
     default: 'top' as TdPopupProps['placement'],
     validator(val: TdPopupProps['placement']): boolean {
-      return ['top', 'left', 'right', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left-top', 'left-bottom', 'right-top', 'right-bottom'].includes(val);
+      return [
+        'top',
+        'left',
+        'right',
+        'bottom',
+        'top-left',
+        'top-right',
+        'bottom-left',
+        'bottom-right',
+        'left-top',
+        'left-bottom',
+        'right-top',
+        'right-bottom',
+      ].includes(val);
     },
   },
   /** 是否显示浮层箭头 */
@@ -61,8 +74,8 @@ export default {
   visible: Boolean,
   /** 是否显示浮层，非受控属性 */
   defaultVisible: {
-   type: Boolean,
-   default: undefined 
+    type: Boolean,
+    default: undefined,
   },
   /** 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500 */
   zIndex: {

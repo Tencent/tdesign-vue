@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-23 10:43:39
  * */
 
 import { TdMenuProps } from './type';
@@ -11,11 +10,11 @@ import { PropType } from 'vue';
 export default {
   /** 是否收起菜单 */
   collapsed: Boolean,
-  /** 展开的子菜单集合 */
+  /** 子菜单展开的导航集合 */
   expanded: {
     type: Array as PropType<TdMenuProps['expanded']>,
   },
-  /** 展开的子菜单集合，非受控属性 */
+  /** 子菜单展开的导航集合，非受控属性 */
   defaultExpanded: {
     type: Array as PropType<TdMenuProps['defaultExpanded']>,
   },
@@ -60,8 +59,6 @@ export default {
   },
   /** 激活菜单项发生变化时触发 */
   onChange: Function as PropType<TdMenuProps['onChange']>,
-  /** 侧边栏导航展开/收起发生变化时触发 */
-  onCollapsed: Function as PropType<TdMenuProps['onCollapsed']>,
   /** 展开的菜单项发生变化时触发 */
   onExpand: Function as PropType<TdMenuProps['onExpand']>,
 };

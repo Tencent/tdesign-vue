@@ -124,6 +124,12 @@ export default Vue.extend({
       this.children.filter((child: any) => this.isFunction(child.resetField)).map((child: any) => child.resetField());
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
+    onKeyDownHandler(e?: KeyboardEvent) {
+      if (this.preventSubmitDefault && e.key === 'Enter') {
+        e && e.preventDefault();
+        e && e.stopPropagation();
+      }
+    },
     clearValidate(fields?: Array<string>) {
       this.children.forEach((child) => {
         if (this.isFunction(child.resetHandler) && this.needValidate(child.name, fields)) {
@@ -145,6 +151,7 @@ export default Vue.extend({
     const on = {
       submit: this.submitHandler,
       reset: this.resetHandler,
+      keydown: this.onKeyDownHandler,
     };
     return (
       <form ref="form" class={this.formClass} {...{ on }}>
