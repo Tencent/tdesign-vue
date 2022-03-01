@@ -108,10 +108,17 @@ export default function useClassName() {
       contentInner: `${prefix}-table__filter-pop-content-inner`,
     },
 
+    // 通用类名
     asyncLoadingClass: `${prefix}-table__async-loading`,
     isFocusClass: `${prefix}-is-focus`,
     isLoadingClass: `${prefix}-is-loading`,
     isLoadMoreClass: `${prefix}-is-load-more`,
+
+    // 树形结构类名
+    tableTreeClasses: {
+      col: `${prefix}-table__tree-col`,
+      icon: `${prefix}-table__tree-op-icon`,
+    },
   };
 
   return {

@@ -3,6 +3,7 @@ import { isRowSelectedDisabled } from '../util/common';
 import {
   PrimaryTableCol, TableRowState, TableRowValue, PrimaryTableCellParams, TableRowData,
 } from '../type';
+import log from '../../_common/js/log';
 
 export type TableTreeDataMap<T extends TableRowData = TableRowData> = Map<string | number, TableRowState<T>>;
 
@@ -10,7 +11,10 @@ export interface TableRowModel<T> extends TableRowState<T> {
   setData?: (key: string | number, data: T) => void;
 }
 
-export interface KeysType { rowKey: string, childrenKey: string }
+export interface KeysType {
+  rowKey: string;
+  childrenKey: string;
+}
 
 /**
  * 表格树形结构处理器
@@ -51,7 +55,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     r.rowIndex = p.rowIndex;
     r.expanded = !r.expanded;
     this.treeDataMap.set(rowValue, r);
-    this.updateExpandRow(r, dataSouce, keys);
+    return this.updateExpandRow(r, dataSouce, keys);
   }
 
   updateExpandRow(changeRow: TableRowState<T>, dataSource: T[], keys: KeysType) {
@@ -74,6 +78,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       rowKey: keys.rowKey,
       minRowIndex: rowIndex + 1,
     });
+    return dataSource;
   }
 
   /**
@@ -134,7 +139,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         const siblings = get(r.parent.row, keys.childrenKey);
         const index = siblings.findIndex((item: TableRowData) => get(item, keys.rowKey) === key);
         siblings.splice(index, 1);
-        updateRowExpandLength(this.treeDataMap, r.parent.row, (-1) * removeNumber, 'delete', {
+        updateRowExpandLength(this.treeDataMap, r.parent.row, -1 * removeNumber, 'delete', {
           rowKey: keys.rowKey,
           childrenKey: keys.childrenKey,
         });
@@ -178,9 +183,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       path: [...state.path],
       expanded: false,
       expandChildrenLength: 0,
-      rowIndex: isShowNewNode
-        ? state.rowIndex + (state.expandChildrenLength || 0) + 1
-        : -1,
+      rowIndex: isShowNewNode ? state.rowIndex + (state.expandChildrenLength || 0) + 1 : -1,
     };
     newState.path = newState.path.concat(newState);
     if (children?.length) {
@@ -291,7 +294,7 @@ export function updateChildrenRowState<T>(
   const childrenNodes = get(row, keys.childrenKey);
   childrenNodes.forEach((item: T, kidRowIndex: number) => {
     const rowValue = get(item, keys.rowKey);
-    const index = expanded ? (rowIndex + 1) + kidRowIndex : -1;
+    const index = expanded ? rowIndex + 1 + kidRowIndex : -1;
     const curState = treeDataMap.get(rowValue);
     const newState: TableRowState<T> = {
       ...curState,
@@ -308,11 +311,16 @@ export function updateChildrenRowState<T>(
     if (!expanded) {
       const children = get(item, keys.childrenKey);
       if (children?.length) {
-        updateChildrenRowState(treeDataMap, {
-          ...newState,
-          rowIndex: -1,
-          expanded: false,
-        } as any, expanded, keys);
+        updateChildrenRowState(
+          treeDataMap,
+          {
+            ...newState,
+            rowIndex: -1,
+            expanded: false,
+          } as any,
+          expanded,
+          keys,
+        );
       }
     }
   });
@@ -341,13 +349,16 @@ export function updateRowData<T extends TableRowData = TableRowData>(
 export function updateRowIndex<T>(
   treeDataMap: TableTreeDataMap,
   dataSource: T[],
-  extra: { rowKey: string, minRowIndex?: number, maxRowIndex?: number, },
+  extra: { rowKey: string; minRowIndex?: number; maxRowIndex?: number },
 ) {
   const start = extra.minRowIndex || 0;
   const end = extra.maxRowIndex || dataSource.length;
   for (let rowIndex = start; rowIndex < end; rowIndex++) {
     const item = dataSource[rowIndex];
     const state = treeDataMap.get(get(item, extra.rowKey));
+    if (!state) {
+      log.warn('Table', 'tree map went wrong');
+    }
     state.rowIndex = rowIndex;
   }
 }

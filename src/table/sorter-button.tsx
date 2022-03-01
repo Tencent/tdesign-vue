@@ -4,6 +4,7 @@ import useClassName from './hooks/useClassName';
 import { SortType } from './type';
 import Tooltip from '../tooltip';
 
+// TODO: GLOBLE_CONFIG
 const tooltips = {
   asc: '点击升序',
   desc: '点击降序',

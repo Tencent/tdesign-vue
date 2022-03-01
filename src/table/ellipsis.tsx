@@ -1,6 +1,6 @@
 /** 超出省略显示 */
 import {
-  defineComponent, PropType, ref, onMounted, computed,
+  defineComponent, PropType, ref, computed, onUpdated,
 } from '@vue/composition-api';
 import { TNode } from '../common';
 import { prefix } from '../config';
@@ -25,7 +25,7 @@ export default defineComponent({
     },
     /** 内容，同 content，可以单独自定义浮层内容，无需和触发元素保持一致 */
     popupContent: {
-      type: [String, Function] as PropType<string | TNode>,
+      type: [String, Number, Function] as PropType<string | TNode>,
     },
     /** 浮层位置 */
     placement: String as PropType<PopupProps['placement']>,
@@ -40,14 +40,8 @@ export default defineComponent({
 
     const ellipsisClasses = computed(() => [ELLIPSIS_CLASS, { [ELLIPSIS_CLASS_TEXT]: isOverflow.value }]);
 
-    onMounted(() => {
-      const timer = setTimeout(() => {
-        isOverflow.value = isNodeOverflow(root.value);
-        clearTimeout(timer);
-      }, 0);
-      return () => {
-        clearTimeout(timer);
-      };
+    onUpdated(() => {
+      isOverflow.value = isNodeOverflow(root.value);
     });
 
     return { root, isOverflow, ellipsisClasses };

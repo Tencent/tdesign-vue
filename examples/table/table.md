@@ -150,6 +150,7 @@ type | String | single | 行选中有两种模式：单选和多选。`colKey` �
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 tree | Object | - | 树形结构相关配置。`tree.indent` 表示树结点缩进距离，单位：px，默认为 24px。`tree.treeNodeColumnIndex` 表示树结点在第几列渲染，默认为 0 ，第一列。`tree.childrenKey` 表示树形结构子节点字段，默认为 children。`tree.checkStrictly` 表示树形结构的行选中（多选），父子行选中是否独立，默认独立，值为 true。TS 类型：`TableTreeConfig` `interface TableTreeConfig { indent?: number; treeNodeColumnIndex?: number; childrenKey?: 'children'; checkStrictly?: boolean }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+`PrimaryTableProps<T>` | - | - | 继承 `PrimaryTableProps<T>` 中的全部 API | N
 
 ### EnhancedTableInstanceFunctions 组件实例方法
 

@@ -15,12 +15,14 @@ import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useAsyncLoading from './hooks/useAsyncLoading';
 
+export const ALL_EVENTS = ROW_LISTENERS.concat(['page-change', 'row-click', 'cell-click', 'scrollX', 'scrollY']);
+
 export interface PrimaryTableListeners {
   [key: string]: Function;
 }
 
 export default defineComponent({
-  name: 'TTable',
+  name: 'TPrimaryTable',
 
   props: {
     ...baseTableProps,
@@ -65,7 +67,7 @@ export default defineComponent({
         if (item.children?.length) {
           item.children = getColumns(item.children);
         }
-        // 多级表头和自定义列配置特殊逻辑：要么子节点不存在，要么子节点长度大于 1
+        // 多级表头和自定义列配置特殊逻辑：要么子节点不存在，要么子节点长度大于 1，方便做自定义列配置
         if (!item.children || item.children?.length) {
           arr.push(item);
         }
@@ -98,9 +100,8 @@ export default defineComponent({
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListenser(): PrimaryTableListeners {
-      const allEvents = ROW_LISTENERS.concat(['page-change', 'row-click', 'cell-click', 'scrollX', 'scrollY']);
       const listenser: PrimaryTableListeners = {};
-      allEvents.forEach((key) => {
+      ALL_EVENTS.forEach((key) => {
         listenser[key] = (...args: any) => {
           this.$emit(key, ...args);
         };

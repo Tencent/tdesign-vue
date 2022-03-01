@@ -19,7 +19,6 @@ import {
 import { BaseTableProps } from '../interface';
 import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } from './useFixed';
 import { useTNodeJSX } from '../../hooks/tnode';
-// import isObject from 'lodash/isObject';
 import TEllipsis from '../ellipsis';
 import useClassName from './useClassName';
 
@@ -45,6 +44,23 @@ export interface RenderTdExtra {
 
 export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
 
+export function renderCell(params: BaseTableCellParams<TableRowData>, slots: SetupContext['slots']) {
+  const { col, row } = params;
+  if (isFunction(col.cell)) {
+    return col.cell(h, params);
+  }
+  if (slots[col.colKey]) {
+    return slots[col.colKey](params);
+  }
+  if (isString(col.cell) && slots[col.cell]) {
+    return slots[col.cell](params);
+  }
+  if (isFunction(col.render)) {
+    return col.render(h, { ...params, type: 'cell' });
+  }
+  return get(row, col.colKey);
+}
+
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
   const renderTNode = useTNodeJSX();
 
@@ -54,23 +70,6 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     TABLE_CLASS_BODY,
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
   ]);
-
-  const renderCell = (params: BaseTableCellParams<TableRowData>) => {
-    const { col, row } = params;
-    if (isFunction(col.cell)) {
-      return col.cell(h, params);
-    }
-    if (slots[col.colKey]) {
-      return slots[col.colKey](params);
-    }
-    if (isString(col.cell) && slots[col.cell]) {
-      return slots[col.cell](params);
-    }
-    if (isFunction(col.render)) {
-      return col.render(h, { ...params, type: 'cell' });
-    }
-    return get(row, col.colKey);
-  };
 
   const renderEllipsisCell = (cellParams: BaseTableCellParams<TableRowData>, params: RenderEllipsisCellParams) => {
     const { columnLength, cellNode } = params;
@@ -134,7 +133,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   const renderTd = (params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) => {
     const { col, colIndex, rowIndex } = params;
     const { columnLength, cellSpans, dataLength } = extra;
-    const cellNode = renderCell(params);
+    const cellNode = renderCell(params, slots);
     const tdStyles = getColumnFixedStyles(col, colIndex, extra.columnStickyLeftAndRight, columnLength);
     const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
     const classes = [
