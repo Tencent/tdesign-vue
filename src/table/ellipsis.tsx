@@ -1,6 +1,6 @@
 /** 超出省略显示 */
 import {
-  defineComponent, PropType, ref, computed, onMounted,
+  defineComponent, PropType, ref, computed, watch, toRefs,
 } from '@vue/composition-api';
 import { TNode } from '../common';
 import { prefix } from '../config';
@@ -34,14 +34,23 @@ export default defineComponent({
     zIndex: Number,
   },
 
-  setup() {
+  setup(props) {
+    const { popupContent, content, default: defaultNode } = toRefs(props);
     const root = ref();
     const isOverflow = ref(false);
 
     const ellipsisClasses = computed(() => [ELLIPSIS_CLASS, { [ELLIPSIS_CLASS_TEXT]: isOverflow.value }]);
 
-    onMounted(() => {
-      isOverflow.value = isNodeOverflow(root.value);
+    const updateIsOverflow = () => {
+      if (!root.value) return;
+      const timer = setTimeout(() => {
+        isOverflow.value = isNodeOverflow(root.value);
+        clearTimeout(timer);
+      });
+    };
+
+    watch([popupContent, content, root, defaultNode], () => {
+      updateIsOverflow();
     });
 
     return { root, isOverflow, ellipsisClasses };

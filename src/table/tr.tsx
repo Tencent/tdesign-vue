@@ -209,10 +209,10 @@ export default defineComponent({
     } = this;
     return (
       <tr
-        on={this.getTrListeners(row, rowIndex)}
         attrs={this.trAttributes}
         style={this.trStyles.style}
         class={this.classes}
+        on={this.getTrListeners(row, rowIndex)}
       >
         {this.columns?.map((col, colIndex) => {
           const cellSpans: RowspanColspan = {};

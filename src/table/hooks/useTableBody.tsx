@@ -34,15 +34,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
   ]);
 
-  const getTrListeners = (row: TableRowData, rowIndex: number) => {
+  const getTrListeners = () => {
     const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
     // add events to row
     ROW_AND_TD_LISTENERS.forEach((eventName) => {
-      trListeners[eventName] = (e: MouseEvent) => {
-        const p = { e, row, index: rowIndex };
-        props[`onRow${upperFirst(eventName)}`]?.(p);
+      const name = ['cell-click'].includes(eventName) ? eventName : `row-${eventName}`;
+      trListeners[name] = (context) => {
+        props[`onRow${upperFirst(eventName)}`]?.(context);
         // Vue3 ignore this line
-        emit(`row-${eventName}`, p);
+        emit(name, context);
       };
     });
     return trListeners;
@@ -113,7 +113,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         trProps.onCellClick = props.onCellClick;
       }
       // Vue3 do not need getTrListeners
-      const on = getTrListeners(row, rowIndex);
+      const on = getTrListeners();
 
       const trNode = <TrElement scopedSlots={slots} on={on} props={trProps}></TrElement>;
       trNodeList.push(trNode);

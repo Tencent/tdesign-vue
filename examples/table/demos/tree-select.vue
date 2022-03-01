@@ -121,7 +121,7 @@ export default {
     },
 
     rehandleSelectChange(value, { selectedRowData }) {
-      this.selectedRowKeys = value;
+      // this.selectedRowKeys = value;
       console.log(value, selectedRowData);
     },
 

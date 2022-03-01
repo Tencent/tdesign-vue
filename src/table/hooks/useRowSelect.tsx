@@ -30,7 +30,7 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
   const tRowClassNames = ref();
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefault(
     selectedRowKeys,
-    props.defaultSelectedRowKeys,
+    props.defaultSelectedRowKeys || [],
     props.onSelectChange,
     context.emit,
     'selectedRowKeys',
@@ -132,7 +132,7 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
   function handleSelectAll(checked: boolean) {
     const reRowKey = props.rowKey || 'id';
     const canSelectedRowKeys = canSelectedRows.value.map((record) => get(record, reRowKey));
-    const disabledSelectedRowKeys = selectedRowKeys.value.filter((id) => !canSelectedRowKeys.includes(id));
+    const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
     const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
     setTSelectedRowKeys(allIds, {
       selectedRowData: filterDataByIds(props.data, allIds, reRowKey),
