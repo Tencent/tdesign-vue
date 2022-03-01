@@ -1,10 +1,26 @@
 <template>
   <div>
+    <!-- 可以使用全局 ConfigProvider errorMessage 配置规则校验结果描述，而无需给每一个表单都配置校验信息 -->
+    <div>
+      <t-radio-group v-model="errorConfig" variant="default-filled">
+        <t-radio-button value="default">
+          <t-popup content="Form.errorMessage 为空，使用组件内置校验信息。重置后，点击提交观察校验结果信息">
+            使用表单默认校验信息
+          </t-popup>
+        </t-radio-button>
+        <t-radio-button value="config">
+          <t-popup content="统一配置 Form.errorMessage，使用自定义配置的校验信息。重置后，点击提交观察校验结果信息">
+            表单统一配置校验信息
+          </t-popup>
+        </t-radio-button>
+      </t-radio-group>
+    </div>
+    <br /><br />
     <!-- error-message 非必需 -->
     <t-form
       :data="formData"
       :rules="rules"
-      :validate-message="validateMessage"
+      :error-message="errorConfig === 'default' ? undefined : errorMessage"
       ref="form"
       @reset="onReset"
       @submit="onSubmit"
@@ -51,7 +67,7 @@
       <t-form-item style="padding-top: 8px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
-        <t-button theme="default" variant="base" @click="handleValidateMessage">设置校验信息提示</t-button>
+        <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -71,32 +87,11 @@ const INITIAL_DATA = {
   },
   course: [],
 };
-const validateMessage = {
-  account: [
-    {
-      type: 'error',
-      message: '自定义用户名校验信息提示',
-    },
-  ],
-  description: [
-    {
-      type: 'error',
-      message: '自定义个人简介校验信息提示',
-    },
-  ],
-  password: [
-    {
-      type: 'warning',
-      message: '自定义密码校验信息提示',
-    },
-  ],
-};
-
 export default {
   data() {
     return {
+      errorConfig: 'default',
       formData: { ...INITIAL_DATA },
-      validateMessage: {},
       courseOptions: [
         { label: '语文', value: '1' },
         { label: '数学', value: '2' },
@@ -108,6 +103,16 @@ export default {
         { label: '软件学院', value: '2' },
         { label: '物联网学院', value: '3' },
       ],
+      errorMessage: {
+        date: '${name}不正确',
+        url: '${name}不正确',
+        required: '请输入${name}',
+        max: '${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符',
+        min: '${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符',
+        len: '${name}字符长度必须是 ${validate}',
+        pattern: '${name}不正确',
+        validator: '${name}有误',
+      },
       rules: {
         account: [
           { required: true },
@@ -142,13 +147,10 @@ export default {
       },
     };
   },
-  mounted() {
-    this.validateMessage = validateMessage;
-  },
+
   methods: {
     onReset() {
       this.$message.success('重置成功');
-      this.validateMessage = {};
     },
     onSubmit({ validateResult, firstError }) {
       if (validateResult === true) {
@@ -158,9 +160,8 @@ export default {
         this.$message.warning(firstError);
       }
     },
-    handleValidateMessage() {
-      this.$message.success('设置表单校验信息提示成功');
-      this.validateMessage = validateMessage;
+    handleClear() {
+      this.$refs.form.clearValidate();
     },
   },
 };
