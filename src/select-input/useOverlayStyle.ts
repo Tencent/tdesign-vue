@@ -41,7 +41,7 @@ export default function useOverlayStyle(props: TdSelectInputProps) {
     const newVisible = context.trigger === 'trigger-element-click' ? true : visible;
     innerPopupVisible.value = newVisible;
     props.onPopupVisibleChange?.(newVisible, context);
-    instance.emit('popupVisibleChange', newVisible, context);
+    instance.emit('popup-visible-change', newVisible, context);
   };
 
   watch([innerPopupVisible, popupProps], () => {

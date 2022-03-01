@@ -31,6 +31,7 @@ export default defineComponent({
     const {
       multiple, value, popupVisible, borderless,
     } = toRefs(props);
+
     const { commonInputProps, onInnerClear, renderSelectSingle } = useSingle(props, context);
     const { renderSelectMultiple } = useMultiple(props, context);
     const { tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayStyle(props);
@@ -74,8 +75,7 @@ export default defineComponent({
         on={{
           'visible-change': this.onInnerPopupVisibleChange,
         }}
-        props={this.popupProps}
-        overlayStyle={this.tOverlayStyle}
+        props={{ ...this.popupProps, overlayStyle: this.tOverlayStyle }}
       >
         {this.multiple
           ? this.renderSelectMultiple(

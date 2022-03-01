@@ -18,6 +18,7 @@
 
     <!-- :popup-props="{ trigger: 'hover' }" -->
     <t-select-input
+      :input-value.sync="inputValue"
       :value="value"
       :allow-input="allowInput"
       :placeholder="allowInput ? '请选择或输入' : '请选择'"
@@ -30,9 +31,9 @@
     >
       <template #panel>
         <t-checkbox-group
-          v-if="displayOptions.length"
+          v-if="options.length"
           :value="checkboxValue"
-          :options="displayOptions"
+          :options="options"
           class="tdesign-demo__pannel-options-multiple"
           @change="onCheckedChange"
         />
@@ -65,9 +66,9 @@ export default {
   data() {
     return {
       excessTagsDisplayType: 'break-line',
-      allowInput: false,
-      creatable: false,
-      displayOptions: [...OPTIONS],
+      allowInput: true,
+      creatable: true,
+      inputValue: '',
       options: [...OPTIONS],
       value: [
         { label: 'Vue', value: 1 },
@@ -89,14 +90,15 @@ export default {
   },
   methods: {
     onCheckedChange(val, { current, type }) {
+      console.log(current);
       // current 不存在，则表示操作全选
       if (!current) {
-        this.value.value = type === 'check' ? this.options.slice(1) : [];
+        this.value = type === 'check' ? this.options.slice(1) : [];
         return;
       }
       // 普通操作
       if (type === 'check') {
-        const option = this.options.value.find((t) => t.value === current);
+        const option = this.options.find((t) => t.value === current);
         this.value.push(option);
       } else {
         this.value = this.value.filter((v) => v.value !== current);
@@ -117,12 +119,11 @@ export default {
         this.value.push(current);
         const newOptions = this.options.concat(current);
         this.options = newOptions;
-        this.displayOptions = newOptions;
+        this.inputValue = '';
       }
     },
-    onInputChange(val) {
-      const newOptions = this.options.filter((t) => t.label.indexOf(val) !== -1);
-      this.displayOptions = newOptions;
+    onInputChange(val, context) {
+      console.log(val, context);
     },
   },
 };

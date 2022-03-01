@@ -1,5 +1,5 @@
 import {
-  SetupContext, ref, watch, computed, toRefs,
+  SetupContext, ref, watch, computed, toRefs, getCurrentInstance,
 } from '@vue/composition-api';
 
 // utils
@@ -36,6 +36,8 @@ const DEFAULT_KEYS = {
 };
 
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
+  const instance = getCurrentInstance();
+
   const { value } = toRefs(props);
   const inputRef = ref();
   const inputValue = ref<string | number>('');
@@ -46,13 +48,15 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   const onInnerClear = (context: { e: MouseEvent }) => {
     context?.e?.stopPropagation();
     props.onClear?.(context);
+    instance.emit('clear', context);
     inputValue.value = '';
   };
 
   const onInnerInputChange = (value: InputValue, context: { e: InputEvent | MouseEvent }) => {
     if (props.allowInput) {
       inputValue.value = value;
-      props.onInputChange?.(value, context);
+      props.onInputChange?.(value, { ...context, trigger: 'input' });
+      instance.emit('input-change', value, { ...context, trigger: 'input' });
     }
   };
 
@@ -87,9 +91,11 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onClear={onInnerClear}
         onBlur={(val: InputValue, context: { e: MouseEvent }) => {
           props.onBlur?.(value, { ...context, inputValue: val });
+          instance.emit('blur', props.value, { ...context, tagInputValue: val });
         }}
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value, { ...context, inputValue: val });
+          instance.emit('focus', props.value, { ...context, tagInputValue: val });
         }}
       />
     );

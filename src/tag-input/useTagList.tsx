@@ -3,7 +3,7 @@ import { TagInputValue, TdTagInputProps, TagInputChangeContext } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
 import { prefix } from '../config';
-import useDefault from '../hooks/useDefault';
+import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 
 export type ChangeParams = [TagInputChangeContext];
@@ -12,14 +12,17 @@ export type ChangeParams = [TagInputChangeContext];
 export default function useTagList(props: TdTagInputProps, context: SetupContext) {
   const renderTNode = useTNodeJSX();
   const {
-    onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
+    value, onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
   } = toRefs(props);
+
   // handle controlled property and uncontrolled property
-  const [tagValue, setTagValue] = useDefault<TdTagInputProps['value'], TdTagInputProps>(
-    props,
+  const [tagValue, setTagValue] = useVModel(
+    value,
+    value,
+    props.defaultValue || [],
+    props.onChange,
     context.emit,
     'value',
-    'change',
   );
   // const { onChange } = props;
   const oldInputValue = ref<InputValue>();
@@ -28,12 +31,12 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
   const onClose = (p: { e?: MouseEvent; index: number; item: string | number }) => {
     const arr = [...tagValue.value];
     arr.splice(p.index, 1);
-    setTagValue<ChangeParams>(arr, { trigger: 'tag-remove', ...p });
+    setTagValue(arr, { trigger: 'tag-remove', ...p });
     onRemove.value?.({ ...p, trigger: 'tag-remove', value: arr });
   };
 
   const clearAll = (context: { e: MouseEvent }) => {
-    setTagValue<ChangeParams>([], { trigger: 'clear', e: context.e });
+    setTagValue([], { trigger: 'clear', e: context.e });
   };
 
   // 按下 Enter 键，新增标签
@@ -44,7 +47,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     let newValue: TagInputValue = tagValue.value;
     if (!isLimitExceeded) {
       newValue = tagValue.value instanceof Array ? tagValue.value.concat(String(valueStr)) : [valueStr];
-      setTagValue<ChangeParams>(newValue, {
+      setTagValue(newValue, {
         trigger: 'enter',
         index: newValue.length - 1,
         item: valueStr,
@@ -63,7 +66,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
       const index = tagValue.value.length - 1;
       const item = tagValue.value[index];
       const trigger = 'backspace';
-      setTagValue<ChangeParams>(tagValue.value.slice(0, -1), {
+      setTagValue(tagValue.value.slice(0, -1), {
         e,
         index,
         item,

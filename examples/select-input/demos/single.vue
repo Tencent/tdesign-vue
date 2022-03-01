@@ -53,7 +53,7 @@ export default {
       this.selectValue = undefined;
     },
     onPopupVisibleChange(val) {
-      console.log(123);
+      console.log(val);
       this.popupVisible = val;
     },
   },

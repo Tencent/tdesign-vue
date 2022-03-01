@@ -5,7 +5,7 @@
  * */
 
 import { TdSelectInputProps } from './type';
-import { PropType } from '@vue/composition-api';
+import { PropType } from 'vue';
 
 export default {
   /** 是否允许输入 */
@@ -25,6 +25,15 @@ export default {
   /** 透传 Input 输入框组件全部属性 */
   inputProps: {
     type: Object as PropType<TdSelectInputProps['inputProps']>,
+  },
+  /** 输入框的值 */
+  inputValue: {
+    type: [String, Number] as PropType<TdSelectInputProps['inputValue']>,
+    default: undefined,
+  },
+  /** 输入框的值，非受控属性 */
+  defaultInputValue: {
+    type: [String, Number] as PropType<TdSelectInputProps['defaultInputValue']>,
   },
   /** 定义字段别名，示例：`{ label: 'text', value: 'id', children: 'list' }` */
   keys: {
@@ -53,6 +62,9 @@ export default {
   /** 透传 Popup 浮层组件全部属性 */
   popupProps: {
     type: Object as PropType<TdSelectInputProps['popupProps']>,
+    default: () => {
+      return Object.create(null);
+    },
   },
   /** 是否显示下拉框，受控属性 */
   popupVisible: {
@@ -65,6 +77,7 @@ export default {
   status: {
     type: String as PropType<TdSelectInputProps['status']>,
     validator(val: TdSelectInputProps['status']): boolean {
+      if (!val) return true;
       return ['success', 'warning', 'error'].includes(val);
     },
   },
@@ -108,7 +121,7 @@ export default {
   onEnter: Function as PropType<TdSelectInputProps['onEnter']>,
   /** 聚焦时触发 */
   onFocus: Function as PropType<TdSelectInputProps['onFocus']>,
-  /** 输入框值发生变化时触发 */
+  /** 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发、失去焦点等 */
   onInputChange: Function as PropType<TdSelectInputProps['onInputChange']>,
   /** 进入输入框时触发 */
   onMouseenter: Function as PropType<TdSelectInputProps['onMouseenter']>,

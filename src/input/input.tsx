@@ -47,6 +47,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     tDisabled(): boolean {
       return this.formDisabled || this.disabled;
     },
+    tPlaceholder(): string {
+      return this.placeholder || this.t(this.global.placeholder);
+    },
     showClear(): boolean {
       return this.value && !this.tDisabled && this.clearable && this.isHover;
     },
@@ -56,7 +59,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         disabled: this.tDisabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
-        placeholder: this.placeholder ?? this.t(this.global.placeholder),
+        placeholder: this.tPlaceholder,
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
@@ -84,7 +87,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       handler(val) {
         if (val === true) {
           this.$nextTick(() => {
-            (this.$refs.refInputElem as HTMLInputElement).focus();
+            (this.$refs.inputRef as HTMLInputElement).focus();
           });
         }
       },
@@ -100,9 +103,24 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
   created() {
     this.composing = false;
+    if (this.autoWidth) {
+      this.addListenders();
+    }
   },
 
   methods: {
+    addListenders() {
+      this.$watch(
+        () => this.value + this.placeholder,
+        () => {
+          if (!this.autoWidth) return;
+          this.$nextTick(() => {
+            this.updateInputWidth();
+          });
+        },
+        { immediate: true },
+      );
+    },
     mouseEvent(v: boolean) {
       this.isHover = v;
     },
@@ -123,7 +141,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       return null;
     },
     setInputValue(v: InputValue = ''): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       if (!input) return;
       const sV = String(v);
       if (input.value !== sV) {
@@ -131,11 +149,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }
     },
     focus(): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       input?.focus();
     },
     blur(): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       input?.blur();
     },
     handleInput(e: InputEvent): void {
@@ -198,6 +216,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     compositionendHandler(e: InputEvent) {
       this.inputValueChangeHandle(e);
     },
+    onRootClick(e: MouseEvent) {
+      (this.$refs.inputRef as HTMLInputElement)?.focus();
+      this.$emit('click', e);
+    },
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
@@ -218,6 +240,13 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     onInputMouseleave(e: MouseEvent) {
       this.mouseEvent(false);
       this.onMouseleave?.({ e });
+    },
+
+    updateInputWidth() {
+      const pre = this.$refs.inputPreRef as HTMLSpanElement;
+      if (!pre) return;
+      const width = pre.offsetWidth;
+      (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
     },
   },
 
@@ -268,6 +297,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const inputNode = (
       <div
         class={classes}
+        onClick={this.onRootClick}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
         onwheel={this.onHandleMousewheel}
@@ -277,12 +307,17 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         {labelContent}
         <input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
-          ref="refInputElem"
+          ref="inputRef"
           class={`${name}__inner`}
           value={this.inputValue}
           onInput={this.handleInput}
           onCompositionend={this.compositionendHandler}
         />
+        {this.autoWidth && (
+          <span ref="inputPreRef" class={`${prefix}-input__input-pre`}>
+            {this.value || this.tPlaceholder}
+          </span>
+        )}
         {suffixContent}
         {suffixIcon ? (
           <span class={[`${name}__suffix`, `${name}__suffix-icon`, { [`${name}__clear`]: this.showClear }]}>

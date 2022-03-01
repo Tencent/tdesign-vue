@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, computed, toRefs, nextTick,
+  defineComponent, computed, toRefs, nextTick,
 } from '@vue/composition-api';
 
 // components
@@ -16,6 +16,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import useTagScroll from './useTagScroll';
 import useTagList from './useTagList';
 import useHover from './useHover';
+import useDefault from '../hooks/useDefault';
 
 // constants class
 const NAME_CLASS = `${prefix}-tag-input`;
@@ -28,7 +29,15 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdTagInputProps, context) {
-    const tInputValue = ref<InputValue>();
+    const { inputValue } = toRefs(props);
+    const [tInputValue, setTInputValue] = useDefault(
+      inputValue,
+      props.defaultInputValue,
+      props.onInputChange,
+      context.emit,
+      'inputValue',
+    );
+
     const {
       excessTagsDisplayType, readonly, disabled, clearable, placeholder,
     } = toRefs(props);
@@ -56,12 +65,18 @@ export default defineComponent({
       },
     ]);
 
-    const tagInputPlaceholder = computed(() => (isHover.value || !tagValue.value?.length ? placeholder.value : ''));
+    const tagInputPlaceholder = computed(() => (!tagValue.value?.length ? placeholder.value : ''));
 
-    const showClearIcon = computed(() => Boolean(!readonly.value && !disabled.value && clearable.value && isHover.value && tagValue.value?.length));
+    const showClearIcon = computed(() => Boolean(
+      !readonly.value
+          && !disabled.value
+          && clearable.value
+          && isHover.value
+          && (tagValue.value?.length || tInputValue.value),
+    ));
 
     const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
-      tInputValue.value = '';
+      setTInputValue('', { e: context.e, trigger: 'enter' });
       onInnerEnter(value, context);
       nextTick(() => {
         scrollToRight();
@@ -72,9 +87,11 @@ export default defineComponent({
       tagInputRef.value.focus();
     };
 
-    const onClearClick = (context: { e: MouseEvent }) => {
-      clearAll(context);
-      tInputValue.value = '';
+    const onClearClick = (ctx: { e: MouseEvent }) => {
+      clearAll(ctx);
+      setTInputValue('', { e: ctx.e, trigger: 'clear' });
+      props.onClear?.(ctx);
+      context.emit('clear', ctx);
     };
 
     return {
@@ -84,6 +101,7 @@ export default defineComponent({
       tagInputPlaceholder,
       showClearIcon,
       tagInputRef,
+      setTInputValue,
       addHover,
       cancelHover,
       onInputEnter,
@@ -120,8 +138,8 @@ export default defineComponent({
         ref="tagInputRef"
         {...this.inputProps}
         value={this.tInputValue}
-        onChange={(val: InputValue) => {
-          this.tInputValue = val;
+        onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
+          this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
         onMousewheel={this.onWheel}
         size={this.size}

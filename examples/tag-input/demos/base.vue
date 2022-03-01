@@ -4,16 +4,17 @@
 
     <t-tag-input :value="tags2" label="Controlled: " clearable @change="onChange" />
 
-    <t-tag-input :default-value="tags3" label="UnControlled: " clearable />
+    <t-tag-input :default-value="tags3" :input-value.sync="inputValue" label="UnControlled: " clearable />
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      tags1: ['Vue', 'React'],
-      tags2: ['Vue', 'React'],
-      tags3: ['Vue', 'React'],
+      tags1: ['Vue', 'React1'],
+      tags2: ['Vue', 'React2'],
+      tags3: ['Vue', 'React3'],
+      inputValue: '123',
     };
   },
   methods: {

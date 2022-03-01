@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 15:52:27
  * */
 
 import { TNode } from '../common';
@@ -58,7 +57,7 @@ export interface TdCheckboxProps {
    * 值变化时触发
    */
   onChange?: (checked: boolean, context: { e: Event }) => void;
-};
+}
 
 export interface TdCheckboxGroupProps {
   /**
@@ -91,13 +90,25 @@ export interface TdCheckboxGroupProps {
    */
   defaultValue?: CheckboxGroupValue;
   /**
-   * 值变化时触发
+   * 值变化时触发。`context.current` 表示当前变化的数据项，如果是全选则为空；`context.type` 表示引起选中数据变化的是选中或是取消选中
    */
-  onChange?: (value: CheckboxGroupValue, context: { e: Event }) => void;
-};
+  onChange?: (value: CheckboxGroupValue, context: CheckboxGroupChangeContext) => void;
+}
 
 export type CheckboxOption = string | number | CheckboxOptionObj;
 
-export interface CheckboxOptionObj { label?: string | TNode; value?: string | number; disabled?: boolean; name?: string; checkAll?: true };
+export interface CheckboxOptionObj {
+  label?: string | TNode;
+  value?: string | number;
+  disabled?: boolean;
+  name?: string;
+  checkAll?: true;
+}
 
 export type CheckboxGroupValue = Array<string | number>;
+
+export interface CheckboxGroupChangeContext {
+  e: Event;
+  current: CheckboxOption | TdCheckboxProps;
+  type: 'check' | 'uncheck';
+}
