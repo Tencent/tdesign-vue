@@ -47,7 +47,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   layout?: 'vertical' | 'inline';
   /**
-   * 是否阻止表单提交默认事件，即提交后会刷新页面
+   * 是否阻止表单提交默认事件（表单提交默认事件会刷新页面），设置为 `true` 可以避免刷新
    * @default true
    */
   preventSubmitDefault?: boolean;
@@ -87,6 +87,10 @@ export interface TdFormProps<FormData extends Data = Data> {
    * @default false
    */
   submitWithWarningMessage?: boolean;
+  /**
+   * 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型
+   */
+  validateMessage?: FormValidateMessage<FormData>;
   /**
    * 表单重置时触发
    */
@@ -311,6 +315,10 @@ export interface FormErrorMessage {
    */
   validator?: string;
 }
+
+export type FormValidateMessage<FormData> = {
+  [field in keyof FormData]: Array<{ type: 'warning' | 'error'; message: string }>;
+};
 
 export interface SubmitContext<T extends Data = Data> {
   e?: FormSubmitEvent;
