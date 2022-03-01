@@ -3190,7 +3190,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-range.vue c
       <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" placeholder="开始时间 至 结束时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
     </div>
   </div> <br> <br>
-  <div theme="primary" class="t-date-picker t-size-m" style="width:350px;">
+  <div class="t-date-picker t-size-m" style="width:350px;">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
