@@ -11,12 +11,16 @@
 
     <t-table
       row-key="property"
-      :data="data"
+      :data.sync="data"
+      :sort.sync="sortInfo"
       :columns="columns"
       :bordered="bordered"
       :max-height="fixedHeader ? 300 : undefined"
+      :columnController="{ displayType: 'fixed-width' }"
+      :filterRow="() => null"
       table-layout="auto"
-      @data-change="(val) => (data = val)"
+      @data-change="onDataChange"
+      @filter-change="onFilterChange"
     ></t-table>
   </div>
 </template>
@@ -40,6 +44,7 @@ for (let i = 0; i < 6; i++) {
 export default {
   data() {
     return {
+      sortInfo: {},
       bordered: true,
       fixedHeader: false,
       data,
@@ -87,6 +92,15 @@ export default {
               ellipsis: true,
               colKey: 'property',
               title: '属性',
+              filter: {
+                type: 'single',
+                list: [
+                  { label: 'any', value: '' },
+                  { label: 'A', value: 'A' },
+                  { label: 'B', value: 'B' },
+                  { label: 'D', value: 'D' },
+                ],
+              },
             },
             {
               align: 'left',
@@ -98,6 +112,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onDataChange(a, b) {
+      console.log(a, b);
+    },
+    onFilterChange(filterValue) {
+      this.data = data.filter((t) => !filterValue.property || filterValue.property === t.property);
+    },
   },
 };
 </script>

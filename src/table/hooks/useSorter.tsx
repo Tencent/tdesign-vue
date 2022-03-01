@@ -6,22 +6,14 @@ import isFunction from 'lodash/isFunction';
 import {
   SortInfo, TdPrimaryTableProps, PrimaryTableCol, TableRowData,
 } from '../type';
-import useClassName from './useClassName';
 import SorterButton from '../sorter-button';
-import { TNodeReturnValue } from '../../common';
 import useDefaultValue from '../../hooks/useDefaultValue';
-
-export interface RenderTitleWidthIconParams {
-  col: PrimaryTableCol<TableRowData>;
-  colIndex: number;
-}
 
 export type SortMap = Record<string, SortInfo & { index: number }>;
 
 export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupContext) {
   const { sort, data } = toRefs(props);
   const originalData = ref();
-  const { tableSortClasses } = useClassName();
   // uncontroll and controll
   const [tSortInfo, setTSortInfo] = useDefaultValue(
     sort,
@@ -31,18 +23,9 @@ export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupCon
     'sort',
     'sort-change',
   );
-  // uncontroll and controll
   const [tData, setTData] = useDefaultValue(data, [], props.onDataChange, emit, 'data', 'data-change');
   // 本地数据排序：用于记录哪些字段是自定义排序函数
-  const sorterFuncMap = computed(() => {
-    const map: { [key: string]: Function } = {};
-    props.columns.forEach((col) => {
-      if (isFunction(col.sorter)) {
-        map[col.colKey] = col.sorter;
-      }
-    });
-    return map;
-  });
+  const sorterFuncMap = computed(() => getSorterFuncMap(props.columns));
 
   const sortArray = computed<Array<SortInfo>>(() => {
     const sort = tSortInfo.value;
@@ -58,6 +41,21 @@ export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupCon
     });
     return sortMap;
   });
+
+  function getSorterFuncMap(columns: PrimaryTableCol[], map: { [key: string]: Function } = {}) {
+    for (let i = 0, len = columns.length; i < len; i++) {
+      const col = columns[i];
+      if (isFunction(col.sorter)) {
+        // eslint-disable-next-line no-param-reassign
+        map[col.colKey] = col.sorter;
+      }
+      // 多级表头中的排序功能
+      if (col.children?.length) {
+        getSorterFuncMap(col.children, map);
+      }
+    }
+    return map;
+  }
 
   function handleDataSort(sortInfo: SortInfo | Array<SortInfo>) {
     const sort = sortInfo;
@@ -149,25 +147,19 @@ export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupCon
     return result;
   }
 
-  const renderTitleWidthIcon = (h: CreateElement, { col }: RenderTitleWidthIconParams, title: TNodeReturnValue) => {
+  // eslint-disable-next-line
+  function renderSortIcon(h: CreateElement, { col }: { col: PrimaryTableCol<TableRowData>; colIndex: number }) {
+    if (!col.sorter) return null;
     const nextSort = getSingleNextSort(col);
     const sorterButtonsProps = {
       sortType: col.sortType,
       sortOrder: getSortOrder(sortMap.value[col.colKey]?.descending),
       nextSortOrder: getSortOrder(nextSort?.descending),
     };
-
-    return (
-      <div class={tableSortClasses.sortable}>
-        <div class={tableSortClasses.title}>
-          <div>{title}</div>
-          {<SorterButton props={sorterButtonsProps} onClick={() => handleSortHeaderClick(col)} />}
-        </div>
-      </div>
-    );
-  };
+    return <SorterButton props={sorterButtonsProps} onClick={() => handleSortHeaderClick(col)} />;
+  }
 
   return {
-    renderTitleWidthIcon,
+    renderSortIcon,
   };
 }
