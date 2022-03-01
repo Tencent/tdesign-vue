@@ -1,4 +1,3 @@
-import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import Vue from 'vue';
@@ -7,7 +6,6 @@ import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';
 import CLASSNAMES from '../utils/classnames';
-import { clickOut } from '../utils/dom';
 import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
 import TPopup from '../popup';
@@ -25,10 +23,6 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 
 dayjs.extend(isBetween);
-
-const onOpenDebounce = debounce((vm?: any) => {
-  vm.createPopover();
-}, 250);
 
 const name = `${prefix}-date-picker`;
 
@@ -63,7 +57,6 @@ export default mixins(
       multiSeparator: ',',
       inlineView: false,
       showTime: false,
-      els: [],
       isOpen: false,
       // 表单控制禁用态时的变量
       formDisabled: undefined,
@@ -205,16 +198,7 @@ export default mixins(
         this.dateClick(new Date(end));
       }
     },
-    initClickAway(el: Element) {
-      this.els.push(el);
-      if (this.els.length > 1) {
-        clickOut(this.els, () => {
-          this.clickAway();
-        });
-      }
-    },
     attachDatePicker(): any {
-      this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
       this.dateFormat = this.format || this.global.format;
@@ -334,7 +318,6 @@ export default mixins(
         // open
         this.isOpen = true;
         this.$nextTick(() => {
-          onOpenDebounce(this);
           this.$emit('open', this.selectedDates);
         });
       }
