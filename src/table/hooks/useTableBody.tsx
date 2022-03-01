@@ -1,31 +1,20 @@
 import { SetupContext, h, computed } from '@vue/composition-api';
-import get from 'lodash/get';
-import isString from 'lodash/isString';
-import isFunction from 'lodash/isFunction';
-import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
-import { formatRowAttributes, formatRowClassNames } from '../util/common';
+import upperFirst from 'lodash/upperFirst';
+import pick from 'lodash/pick';
+import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
 import {
-  TABLE_CLASS_BODY,
-  TABLE_TD_ELLIPSIS_CLASS,
-  TAVLE_CLASS_VERTICAL_ALIGN,
-  TABLE_CLASS_EMPTY,
-  TABLE_CLASS_EMPTY_ROW,
-  TABLE_TD_LAST_ROW,
+  TABLE_CLASS_BODY, TAVLE_CLASS_VERTICAL_ALIGN, TABLE_CLASS_EMPTY, TABLE_CLASS_EMPTY_ROW,
 } from './useStyle';
 import {
-  BaseTableCellParams, RowspanColspan, TableRowData, TdBaseTableProps,
+  RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
 } from '../type';
 import { BaseTableProps } from '../interface';
-import { ColumnStickyLeftAndRight, getColumnFixedStyles, getRowFixedStyles } from './useFixed';
+import { ColumnStickyLeftAndRight } from './useFixed';
 import { useTNodeJSX } from '../../hooks/tnode';
-import TEllipsis from '../ellipsis';
 import useClassName from './useClassName';
 
-export interface RenderEllipsisCellParams {
-  columnLength: number;
-  cellNode: any;
-}
+export const ROW_AND_TD_LISTENERS = ROW_LISTENERS.concat('cell-click');
 
 export interface RenderTableBodyParams {
   data: TdBaseTableProps['data'];
@@ -33,32 +22,6 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   showColumnShadow: { left: boolean; right: boolean };
-}
-
-export interface RenderTdExtra {
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
-  columnLength: number;
-  dataLength: number;
-  cellSpans: RowspanColspan;
-}
-
-export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
-
-export function renderCell(params: BaseTableCellParams<TableRowData>, slots: SetupContext['slots']) {
-  const { col, row } = params;
-  if (isFunction(col.cell)) {
-    return col.cell(h, params);
-  }
-  if (slots[col.colKey]) {
-    return slots[col.colKey](params);
-  }
-  if (isString(col.cell) && slots[col.cell]) {
-    return slots[col.cell](params);
-  }
-  if (isFunction(col.render)) {
-    return col.render(h, { ...params, type: 'cell' });
-  }
-  return get(row, col.colKey);
 }
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
@@ -71,22 +34,18 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
   ]);
 
-  const renderEllipsisCell = (cellParams: BaseTableCellParams<TableRowData>, params: RenderEllipsisCellParams) => {
-    const { columnLength, cellNode } = params;
-    const { col, colIndex } = cellParams;
-    // 最后一个元素，底部有对齐，避免信息右侧超出父元素
-    const placement = colIndex === columnLength - 1 ? 'bottom-right' : 'bottom-left';
-    const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
-
-    return (
-      <TEllipsis
-        placement={placement}
-        popupContent={content && (() => content)}
-        popupProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
-      >
-        {cellNode}
-      </TEllipsis>
-    );
+  const getTrListeners = (row: TableRowData, rowIndex: number) => {
+    const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
+    // add events to row
+    ROW_AND_TD_LISTENERS.forEach((eventName) => {
+      trListeners[eventName] = (e: MouseEvent) => {
+        const p = { e, row, index: rowIndex };
+        props[`onRow${upperFirst(eventName)}`]?.(p);
+        // Vue3 ignore this line
+        emit(`row-${eventName}`, p);
+      };
+    });
+    return trListeners;
   };
 
   const getFullRow = (
@@ -113,11 +72,11 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     </tr>
   );
 
-  const setSkippedCell = (
-    skipSpansMap: Map<any, boolean>,
-    { rowIndex, colIndex }: BaseTableCellParams<TableRowData>,
-    cellSpans: RowspanColspan,
-  ) => {
+  // 受合并单元格影响，部分单元格不显示
+  let skipSpansMap = new Map<any, boolean>();
+
+  const onTrRowspanOrColspan = (params: BaseTableCellParams<TableRowData>, cellSpans: RowspanColspan) => {
+    const { rowIndex, colIndex } = params;
     if (!cellSpans.rowspan && !cellSpans.colspan) return;
     const maxRowIndex = rowIndex + (cellSpans.rowspan || 1);
     const maxColIndex = colIndex + (cellSpans.colspan || 1);
@@ -130,94 +89,35 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     }
   };
 
-  const renderTd = (params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) => {
-    const { col, colIndex, rowIndex } = params;
-    const { columnLength, cellSpans, dataLength } = extra;
-    const cellNode = renderCell(params, slots);
-    const tdStyles = getColumnFixedStyles(col, colIndex, extra.columnStickyLeftAndRight, columnLength);
-    const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
-    const classes = [
-      tdStyles.classes,
-      customClasses,
-      {
-        [TABLE_TD_ELLIPSIS_CLASS]: col.ellipsis,
-        [TABLE_TD_LAST_ROW]: rowIndex + cellSpans.rowspan === dataLength,
-      },
-    ];
-    // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};
-    const onClick = (e: MouseEvent) => {
-      const p = { ...params, e };
-      props.onCellClick?.(p);
-      // Vue3 ignore this line
-      emit('cell-click', p);
-    };
-    return (
-      <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
-        {col.ellipsis ? renderEllipsisCell(params, { cellNode, columnLength }) : cellNode}
-      </td>
-    );
-  };
-
-  const getTrListeners = (row: TableRowData, rowIndex: number) => {
-    const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
-    // add events to row
-    ROW_LISTENERS.forEach((eventName) => {
-      trListeners[eventName] = (e: MouseEvent) => {
-        const p = { e, row, index: rowIndex };
-        props[`onRow${upperFirst(eventName)}`]?.(p);
-        // Vue3 ignore this line
-        emit(`row-${eventName}`, p);
-      };
-    });
-    return trListeners;
-  };
-
   const renderTableBody = (p: RenderTableBodyParams) => {
     const { columnStickyLeftAndRight, data, columns } = p;
     const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
-    // 受合并单元格影响，部分单元格不显示
-    const skipSpansMap = new Map<any, boolean>();
+    // 每次渲染清空合并单元格信息
+    skipSpansMap = new Map<any, boolean>();
     const dataLength = data.length;
+
     data?.forEach((row, rowIndex) => {
-      const trStyles = getRowFixedStyles(
+      const trProps: TrProps = {
+        ...pick(props, TABLE_PROPS),
+        columns,
+        row,
         rowIndex,
+        dataLength,
         columnStickyLeftAndRight,
-        data.length,
-        props.fixedRows,
-        !!props.footData?.length,
-      );
-      const trAttributes = formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' });
-      const customClasses = formatRowClassNames(props.rowClassName, { row, rowIndex, type: 'body' }, props.rowKey);
-      const classes = [trStyles.classes, customClasses];
-      const trNode = (
-        <tr on={getTrListeners(row, rowIndex)} attrs={trAttributes} style={trStyles.style} class={classes}>
-          {columns.map((col, colIndex) => {
-            const cellSpans: RowspanColspan = {};
-            const params = {
-              row,
-              col,
-              rowIndex,
-              colIndex,
-            };
-            if (isFunction(props.rowspanAndColspan)) {
-              const o = props.rowspanAndColspan(params);
-              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-            }
-            const skipped = skipSpansMap.get([rowIndex, colIndex].join());
-            if (skipped) return null;
-            setSkippedCell(skipSpansMap, params, cellSpans);
-            return renderTd(params, {
-              dataLength,
-              columnStickyLeftAndRight,
-              columnLength,
-              cellSpans,
-            });
-          })}
-        </tr>
-      );
+        skipSpansMap,
+        // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
+        onTrRowspanOrColspan,
+      };
+      if (props.onCellClick) {
+        trProps.onCellClick = props.onCellClick;
+      }
+      // Vue3 do not need getTrListeners
+      const on = getTrListeners(row, rowIndex);
+
+      const trNode = <TrElement scopedSlots={slots} on={on} props={trProps}></TrElement>;
       trNodeList.push(trNode);
+
       // 执行展开行渲染
       if (props.renderExpandedRow) {
         trNodeList.push(props.renderExpandedRow(h, { row, index: rowIndex, columns }));
@@ -234,7 +134,6 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   return {
-    renderCell,
     renderTableBody,
   };
 }

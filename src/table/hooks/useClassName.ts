@@ -3,6 +3,9 @@ import { prefix } from '../../config';
 export default function useClassName() {
   // TODO: const { prefix } = useConfig();
   const classNames = {
+    tableBaseClass: {
+      tdLastRow: `${prefix}-table__td-last-row`,
+    },
     // 定义为固定变量大写，方便后期动态化时搜索替换
     TABLE_CLASS: `${prefix}-table`,
     TABLE_CLASS_EMPTY: `${prefix}-table__empty`,
@@ -57,7 +60,7 @@ export default function useClassName() {
       bottom: `${prefix}-table--align-bottom`,
     },
 
-    TABLE_TD_ELLIPSIS_CLASS: `${prefix}-table-td--ellipsis`,
+    tdEllipsisClass: `${prefix}-table-td--ellipsis`,
 
     // 行通栏，一列铺满整行
     tableFullRowClasses: {

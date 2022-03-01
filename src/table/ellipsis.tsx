@@ -1,6 +1,6 @@
 /** 超出省略显示 */
 import {
-  defineComponent, PropType, ref, computed, onUpdated,
+  defineComponent, PropType, ref, computed, onMounted,
 } from '@vue/composition-api';
 import { TNode } from '../common';
 import { prefix } from '../config';
@@ -40,7 +40,7 @@ export default defineComponent({
 
     const ellipsisClasses = computed(() => [ELLIPSIS_CLASS, { [ELLIPSIS_CLASS_TEXT]: isOverflow.value }]);
 
-    onUpdated(() => {
+    onMounted(() => {
       isOverflow.value = isNodeOverflow(root.value);
     });
 
