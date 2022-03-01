@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
-import Vue from 'vue';
 import { CalendarIcon, TimeIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './props';
@@ -391,6 +390,8 @@ export default mixins(
         const selectedDates: any[] = [];
         this.selectedDates = selectedDates;
         this.formattedValue = '';
+        this.start = new Date();
+        this.end = new Date();
         this.submitInput(selectedDates, triggerChange);
       }
     },
@@ -552,22 +553,6 @@ export default mixins(
       }
       const d1 = new Date(date);
       return dayjs(d1).format(dateFormat);
-    },
-
-    createPopover() {
-      if (this.inlineView) {
-        return;
-      }
-      const nativeInput = this.$refs.native as Vue;
-
-      const tip: HTMLElement = this.$refs.dropdownPopup as HTMLElement;
-      const refEl: Element = ((nativeInput && nativeInput.$el) || this.$el) as Element;
-
-      if (!tip || !refEl) {
-        return;
-      }
-
-      this.initClickAway(tip);
     },
     getPlaceholderText() {
       const { placeholder, mode } = this;
