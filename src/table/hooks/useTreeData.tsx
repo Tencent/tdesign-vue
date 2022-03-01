@@ -14,7 +14,7 @@ import {
   TableRowState,
 } from '../type';
 import useClassName from './useClassName';
-import { renderCell } from './useTableBody';
+import { renderCell } from '../tr';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
@@ -32,6 +32,8 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     [data],
     ([val]) => {
       if (!val) return [];
+      // 如果没有树形解构，则不需要相关逻辑
+      if (!props.tree || !Object.keys(props.tree).length) return val;
       const newVal = [...cloneDeep(val)];
       dataSource.value = newVal;
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
@@ -40,6 +42,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   );
 
   onUnmounted(() => {
+    if (!props.tree || !Object.keys(props.tree).length) return;
     store.value.treeDataMap?.clear();
     store.value = null;
   });
@@ -81,7 +84,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     newCol.cell = (h, p) => {
       const cellInfo = renderCell({ ...p, col: { ...treeNodeCol.value } }, context.slots);
       const currentState = store.value.treeDataMap.get(get(p.row, rowDataKeys.value.rowKey));
-      const colStyle = getTreeNodeStyle(currentState?.level, col.ellipsis);
+      const colStyle = getTreeNodeStyle(currentState?.level, !!col.ellipsis);
       const childrenNodes = get(p.row, rowDataKeys.value.childrenKey);
       if (childrenNodes && childrenNodes instanceof Array) {
         const IconNode = store.value.treeDataMap.get(get(p.row, rowDataKeys.value.rowKey))?.expanded
