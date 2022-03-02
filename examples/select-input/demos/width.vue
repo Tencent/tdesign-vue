@@ -58,7 +58,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      selectValue: 'TDesign',
+    };
+  },
+};
 </script>
 <style>
 .tdesign-demo__select-empty-width {

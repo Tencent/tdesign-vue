@@ -1,14 +1,16 @@
 <template>
   <div>
+    <!-- :popup-props="{ trigger: 'hover' }" -->
     <t-select-input
       :value="selectValue"
       :popup-visible="popupVisible"
       placeholder="Please Select"
-      borderless
-      style="width: 200px"
       clearable
+      auto-width
+      allow-input
       @popup-visible-change="onPopupVisibleChange"
       @clear="onClear"
+      @input-change="onInputChange"
     >
       <template #panel>
         <ul class="tdesign-demo__select-input-ul-single">
@@ -17,10 +19,15 @@
           </li>
         </ul>
       </template>
+      <template #suffixIcon>
+        <chevron-down-icon />
+      </template>
     </t-select-input>
   </div>
 </template>
-<script lang="jsx">
+<script>
+import { ChevronDownIcon } from 'tdesign-icons-vue';
+
 const options = [
   // 全选
   { label: 'all frameworks', checkAll: true },
@@ -33,6 +40,7 @@ const options = [
 ];
 
 export default {
+  components: { ChevronDownIcon },
   data() {
     return {
       selectValue: { label: 'tdesign-vue', value: 1 },
