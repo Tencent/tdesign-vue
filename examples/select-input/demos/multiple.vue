@@ -18,7 +18,7 @@
 
     <!-- :popup-props="{ trigger: 'hover' }" -->
     <t-select-input
-      :inputValue.sync="inputValue"
+      :input-value.sync="inputValue"
       :value="value"
       :allow-input="allowInput"
       :placeholder="allowInput ? '请选择或输入' : '请选择'"

@@ -4,7 +4,7 @@
     <t-select-input :value="selectValue1" placeholder="Please Select" clearable @clear="onClear">
       <template #valueDisplay>
         <span class="displaySpan">
-          <ControlPlatformIcon class="tdesign-demo-select-input__img" />
+          <control-platform-icon class="tdesign-demo-select-input__img" />
           {{ selectValue1.label }}
         </span>
       </template>
@@ -23,7 +23,7 @@
     <t-select-input :value="selectValue2" placeholder="Please Select" multiple @tag-change="onTagChange2">
       <template #tag="{ value }">
         <span class="displaySpan">
-          <ControlPlatformIcon />
+          <control-platform-icon />
           {{ value }}
         </span>
       </template>
@@ -46,7 +46,7 @@
           @close="() => onClose(index)"
         >
           <span class="displaySpan">
-            <ControlPlatformIcon />
+            <control-platform-icon />
             <span>{{ item }}</span>
           </span>
         </t-tag>
@@ -58,6 +58,8 @@
   </div>
 </template>
 <script>
+import { ControlPlatformIcon } from 'tdesign-icons-vue';
+
 const options = [
   { label: 'tdesign-vue', value: 1 },
   { label: 'tdesign-react', value: 2 },
@@ -67,6 +69,7 @@ const options = [
   { label: 'tdesign-mobile-react', value: 6 },
 ];
 export default {
+  components: { ControlPlatformIcon },
   data() {
     return {
       options,

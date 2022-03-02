@@ -10,7 +10,6 @@
       allow-input
       @popup-visible-change="onPopupVisibleChange"
       @clear="onClear"
-      @input-change="onInputChange"
     >
       <template #panel>
         <ul class="tdesign-demo__select-input-ul-single">

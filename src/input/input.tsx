@@ -48,7 +48,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       return this.formDisabled || this.disabled;
     },
     tPlaceholder(): string {
-      return this.placeholder || this.t(this.global.placeholder);
+      return this.placeholder ?? this.t(this.global.placeholder);
     },
     showClear(): boolean {
       return this.value && !this.tDisabled && this.clearable && this.isHover;
@@ -78,6 +78,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
           [`${name}--focused`]: this.focused,
+          [`${name}--auto-width`]: this.autoWidth,
         },
       ];
     },

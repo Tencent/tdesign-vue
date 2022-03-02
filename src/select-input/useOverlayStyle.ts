@@ -15,7 +15,7 @@ const MAX_POPUP_WIDTH = 1000;
 export default function useOverlayStyle(props: TdSelectInputProps) {
   const instance = getCurrentInstance();
 
-  const { popupProps, borderless } = toRefs(props);
+  const { popupProps, autoWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
   const tOverlayStyle = ref<TdPopupProps['overlayStyle']>();
 
@@ -50,7 +50,7 @@ export default function useOverlayStyle(props: TdSelectInputProps) {
     const overlayStyle = popupProps.value?.overlayStyle || {};
     if (isFunction(overlayStyle) || (isObject(overlayStyle) && overlayStyle.width)) {
       result = overlayStyle;
-    } else if (!borderless.value) {
+    } else if (!autoWidth.value) {
       result = macthWidthFunc;
     }
     tOverlayStyle.value = result;

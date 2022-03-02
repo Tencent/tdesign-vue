@@ -32,13 +32,18 @@ const COMMON_PROPERTIES = [
 
 const DEFAULT_KEYS = {
   label: 'label',
-  key: 'key',
+  value: 'value',
 };
+
+function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputProps['keys']) {
+  const iKeys = keys || DEFAULT_KEYS;
+  return isObject(value) ? value[iKeys.label] : value;
+}
 
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
   const instance = getCurrentInstance();
 
-  const { value } = toRefs(props);
+  const { value, keys } = toRefs(props);
   const inputRef = ref();
   const inputValue = ref<string | number>('');
   const renderTNode = useTNodeJSX();
@@ -63,35 +68,35 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   watch(
     [value],
     () => {
-      const iKeys = { ...DEFAULT_KEYS, ...props.keys };
-      inputValue.value = isObject(value.value) ? value.value[iKeys.label] : value.value;
+      inputValue.value = getInputValue(value.value, keys.value);
     },
     { immediate: true },
   );
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectSingle = (h: any) => {
     const singleValueDisplay = renderTNode('valueDisplay');
     const prefixContent = [singleValueDisplay, renderTNode('label')];
+    const inputProps = {
+      ...commonInputProps.value,
+      ...props.inputProps,
+      value: singleValueDisplay ? undefined : inputValue.value,
+      label: prefixContent.length ? () => prefixContent : undefined,
+      autoWidth: props.autoWidth,
+      readonly: !props.allowInput,
+      placeholder: singleValueDisplay ? '' : props.placeholder,
+    };
+
     return (
       <Input
         ref="inputRef"
-        clearable={true}
-        props={{
-          ...commonInputProps.value,
-          ...props.inputProps,
-        }}
-        scopedSlots={{ ...context.slots }}
-        autoWidth={props.borderless || props.autoWidth}
-        placeholder={singleValueDisplay ? '' : props.placeholder}
-        value={singleValueDisplay ? undefined : inputValue.value}
-        label={prefixContent.length ? () => prefixContent : undefined}
+        props={inputProps}
+        scopedSlots={context.slots}
         onChange={onInnerInputChange}
-        readonly={!props.allowInput}
         onClear={onInnerClear}
         onBlur={(val: InputValue, context: { e: MouseEvent }) => {
           props.onBlur?.(value, { ...context, inputValue: val });
-          instance.emit('blur', props.value, { ...context, tagInputValue: val });
+          inputValue.value = getInputValue(value.value, keys.value);
+          instance.emit('blur', props.value, { ...context, inputValue: val });
         }}
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value, { ...context, inputValue: val });

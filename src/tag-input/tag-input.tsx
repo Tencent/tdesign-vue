@@ -36,6 +36,7 @@ export default defineComponent({
       props.onInputChange,
       context.emit,
       'inputValue',
+      'input-change',
     );
 
     const {
@@ -65,7 +66,10 @@ export default defineComponent({
       },
     ]);
 
-    const tagInputPlaceholder = computed(() => (!tagValue.value?.length ? placeholder.value : ''));
+    const tagInputPlaceholder = computed(() => {
+      if (props.readonly) return '';
+      return !tagValue.value?.length ? placeholder.value : undefined;
+    });
 
     const showClearIcon = computed(() => Boolean(
       !readonly.value
@@ -142,6 +146,7 @@ export default defineComponent({
           this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
         onMousewheel={this.onWheel}
+        autoWidth={this.autoWidth}
         size={this.size}
         readonly={this.readonly}
         disabled={this.disabled}
@@ -152,7 +157,6 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
-        // onPaste={this.onPaste}
         onEnter={this.onInputEnter}
         onKeyup={this.onInputBackspaceKeyUp}
         onMouseenter={(context: { e: MouseEvent }) => {
@@ -165,9 +169,11 @@ export default defineComponent({
         }}
         onFocus={(inputValue: InputValue, context: { e: MouseEvent }) => {
           this.onFocus?.(this.tagValue, { e: context.e, inputValue });
+          this.$emit('focus', this.tagValue, { e: context.e, inputValue });
         }}
         onBlur={(inputValue: InputValue, context: { e: MouseEvent }) => {
           this.onBlur?.(this.tagValue, { e: context.e, inputValue });
+          this.$emit('blur', this.tagValue, { e: context.e, inputValue });
         }}
       />
     );
