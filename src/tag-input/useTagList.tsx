@@ -97,7 +97,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
               disabled={disabled.value}
               onClose={(context: { e: MouseEvent }) => onClose({ e: context.e, item, index })}
               closable={!readonly.value && !disabled.value}
-              {...tagProps.value}
+              props={tagProps.value}
             >
               {tagContent ?? item}
             </Tag>

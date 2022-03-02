@@ -1200,7 +1200,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
       class="t-input__prefix"
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
       >
         Vue
         <svg
@@ -1218,7 +1218,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
       >
         React
         <svg
@@ -1236,7 +1236,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
       >
         Miniprogram
         <svg
@@ -1270,7 +1270,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
       class="t-input__prefix"
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
       >
         Vue
         <svg
@@ -1288,7 +1288,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
       >
         React
         <svg
@@ -1306,7 +1306,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
       >
         Miniprogram
         <svg
@@ -1340,7 +1340,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
       class="t-input__prefix"
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
       >
         Vue
         <svg
@@ -1358,7 +1358,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
       >
         React
         <svg
@@ -1376,7 +1376,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
       >
         Miniprogram
         <svg
@@ -1410,7 +1410,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
       class="t-input__prefix"
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
       >
         Vue
         <svg
@@ -1428,7 +1428,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
       >
         React
         <svg
@@ -1446,7 +1446,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
       >
         Miniprogram
         <svg
