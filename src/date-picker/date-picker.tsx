@@ -562,6 +562,16 @@ export default mixins(
       }
       return placeholderStr;
     },
+    onPopupVisibleChange(
+      visible: boolean,
+      context: {
+        trigger: string;
+      },
+    ) {
+      if (context.trigger === 'document') {
+        this.toggle();
+      }
+    },
   },
   render() {
     const {
@@ -673,6 +683,7 @@ export default mixins(
           overlayClassName={name}
           content={popupContent}
           expandAnimation={true}
+          on={{ 'visible-change': this.onPopupVisibleChange }}
         >
           <div class={inputClassNames} onClick={this.toggle}>
             <t-input
