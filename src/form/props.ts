@@ -103,7 +103,7 @@ export default {
   },
   /** 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件 */
   submitWithWarningMessage: Boolean,
-  /** 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型 */
+  /** 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型。**半受控属性**，值为空时，会启动内部校验，否则不启动内部校验 */
   validateMessage: {
     type: Object as PropType<TdFormProps['validateMessage']>,
   },
