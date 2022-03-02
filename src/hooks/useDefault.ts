@@ -6,9 +6,10 @@ export default function useDefault<T, P extends any[]>(
   value: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
-  // emit 和 eventName 用于支持 .sync:xxx 语法糖
-  emit?: SetupContext['emit'],
-  propsName?: string,
+  // emit 和 propsName 用于支持 .sync 语法糖。而 eventName 用于支持 @change 类型的事件
+  emit: SetupContext['emit'],
+  propsName: string,
+  eventName: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
   const internalValue = ref();
   internalValue.value = defaultValue;
@@ -19,8 +20,8 @@ export default function useDefault<T, P extends any[]>(
       value,
       (newValue, ...args) => {
         onChange?.(newValue, ...args);
-        emit?.(`update:${propsName}`, newValue, ...args);
-        emit?.('input-change', newValue, ...args);
+        propsName && emit?.(`update:${propsName}`, newValue, ...args);
+        eventName && emit?.(eventName, newValue, ...args);
       },
     ];
   }
@@ -31,7 +32,7 @@ export default function useDefault<T, P extends any[]>(
     (newValue, ...args) => {
       internalValue.value = newValue;
       onChange?.(newValue, ...args);
-      emit?.('input-change', newValue, ...args);
+      eventName && emit?.(eventName, newValue, ...args);
     },
   ];
 }
