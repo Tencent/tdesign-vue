@@ -1,4 +1,3 @@
-// import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
 import { VNode } from 'vue';
 import upperFirst from 'lodash/upperFirst';
 import pick from 'lodash/pick';
