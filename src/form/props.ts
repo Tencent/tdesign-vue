@@ -33,6 +33,7 @@ export default {
     type: String as PropType<TdFormProps['labelAlign']>,
     default: 'right' as TdFormProps['labelAlign'],
     validator(val: TdFormProps['labelAlign']): boolean {
+      if (!val) return true;
       return ['left', 'right', 'top'].includes(val);
     },
   },
@@ -46,10 +47,11 @@ export default {
     type: String as PropType<TdFormProps['layout']>,
     default: 'vertical' as TdFormProps['layout'],
     validator(val: TdFormProps['layout']): boolean {
+      if (!val) return true;
       return ['vertical', 'inline'].includes(val);
     },
   },
-  /** 是否阻止表单提交默认事件，即提交后会刷新页面 */
+  /** 是否阻止表单提交默认事件（表单提交默认事件会刷新页面），设置为 `true` 可以避免刷新 */
   preventSubmitDefault: {
     type: Boolean,
     default: true,
@@ -64,6 +66,7 @@ export default {
     type: String as PropType<TdFormProps['resetType']>,
     default: 'empty' as TdFormProps['resetType'],
     validator(val: TdFormProps['resetType']): boolean {
+      if (!val) return true;
       return ['empty', 'initial'].includes(val);
     },
   },
@@ -75,6 +78,7 @@ export default {
   scrollToFirstError: {
     type: String as PropType<TdFormProps['scrollToFirstError']>,
     validator(val: TdFormProps['scrollToFirstError']): boolean {
+      if (!val) return true;
       return ['smooth', 'auto'].includes(val);
     },
   },
@@ -88,6 +92,7 @@ export default {
     type: String as PropType<TdFormProps['size']>,
     default: 'medium' as TdFormProps['size'],
     validator(val: TdFormProps['size']): boolean {
+      if (!val) return true;
       return ['medium', 'large'].includes(val);
     },
   },
@@ -98,6 +103,10 @@ export default {
   },
   /** 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件 */
   submitWithWarningMessage: Boolean,
+  /** 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型 */
+  validateMessage: {
+    type: Object as PropType<TdFormProps['validateMessage']>,
+  },
   /** 表单重置时触发 */
   onReset: Function as PropType<TdFormProps['onReset']>,
   /** 表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表 */

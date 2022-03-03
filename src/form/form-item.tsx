@@ -17,6 +17,7 @@ import {
   ValidateTriggerType,
   AllValidateResult,
   FormErrorMessage,
+  ErrorList,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -99,8 +100,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
       }
-      if (!this.errorList.length) return;
-      const type = this.errorList[0].type || 'error';
+      const errorList = this.errorListValue;
+      if (!errorList.length) return;
+      const type = errorList[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
 
@@ -153,6 +155,11 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     },
     errorMessages(): FormErrorMessage {
       return this.form.errorMessage ?? this.global.errorMessage;
+    },
+    errorListValue(): ErrorList {
+      const parent = this.form;
+      const validateMessage = parent?.validateMessage?.[this.name] || [];
+      return validateMessage.length ? validateMessage : this.errorList;
     },
   },
 
@@ -276,7 +283,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       if (this.help) {
         helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
       }
-      const list = this.errorList;
+      const list = this.errorListValue;
       if (parent.showErrorMessage && list && list[0] && list[0].message) {
         return <p class={CLASS_NAMES.extra}>{list[0].message}</p>;
       }
@@ -291,12 +298,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
           <Icon></Icon>
         </span>
       );
-      const list = this.errorList;
+      const list = this.errorListValue;
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return resultIcon(CheckCircleFilledIcon);
       }
       if (list && list[0]) {
-        const type = this.errorList[0].type || 'error';
+        const type = list[0].type || 'error';
         const icon = {
           error: CloseCircleFilledIcon,
           warning: ErrorCircleFilledIcon,

@@ -109,9 +109,15 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -127,10 +133,16 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="display: none;"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -232,9 +244,15 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -250,10 +268,16 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="display: none;"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -601,9 +625,15 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -619,9 +649,15 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -1025,9 +1061,15 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="[object Object]"
       >
-        undefined
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          undefined
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -1043,9 +1085,15 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="[object Object]"
       >
-        undefined
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          undefined
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"

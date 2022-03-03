@@ -415,6 +415,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
               size={this.size}
               closable={!this.tDisabled}
               disabled={this.tDisabled}
+              maxWidth={300}
+              title={label}
               onClose={(e: MouseEvent) => this.removeTag(index, null, e)}
             >
               {label}
