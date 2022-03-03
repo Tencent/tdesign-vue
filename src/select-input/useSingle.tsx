@@ -5,11 +5,12 @@ import {
 // utils
 import isObject from 'lodash/isObject';
 import pick from 'lodash/pick';
+import { SelectInputCommonProperties } from './interface';
+import { TdSelectInputProps } from './type';
 
 // components
 import Input, { InputValue } from '../input';
-import { SelectInputCommonProperties } from './interface';
-import { TdSelectInputProps } from './type';
+import Loading from '../loading';
 
 // hooks
 import { useTNodeJSX } from '../hooks/tnode';
@@ -84,6 +85,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       autoWidth: props.autoWidth,
       readonly: !props.allowInput,
       placeholder: singleValueDisplay ? '' : props.placeholder,
+      suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };
 
     return (
