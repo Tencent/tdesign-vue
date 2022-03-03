@@ -157,6 +157,23 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     errorClasses(): ClassName {
       return this.tipsClasses.concat(`${name}__tips-error`);
     },
+    uploadInOneRequest(): boolean {
+      return this.multiple && this.uploadAllFilesInOneRequest;
+    },
+    canBatchUpload(): boolean {
+      return this.uploadInOneRequest && this.batchUpload;
+    },
+    uploadListTriggerText(): string {
+      let uploadText = '选择文件';
+      if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
+        if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
+          uploadText = '重新选择';
+        } else {
+          uploadText = '继续选择';
+        }
+      }
+      return uploadText;
+    },
   },
 
   methods: {
@@ -203,24 +220,37 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     handleMultipleRemove(options: UploadRemoveOptions) {
       const changeCtx = { trigger: 'remove', ...options };
-      const files = this.files.concat();
-      files.splice(options.index, 1);
+      let files: UploadFile[];
+      if (!this.canBatchUpload) {
+        files = this.files.concat();
+        files.splice(options.index, 1);
+      } else {
+        // All files remove in batchUpload
+        files = [];
+        options.files = this.files.concat();
+      }
       this.emitChangeEvent(files, changeCtx);
       this.emitRemoveEvent(options);
     },
 
     handleListRemove(context: FlowRemoveContext) {
       const { file } = context;
-      const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
+      const index = findIndex(this.toUploadFiles, (o) => o.name === file?.name);
       if (index >= 0) {
         this.toUploadFiles.splice(index, 1);
       } else {
-        const index = findIndex(this.files, (o) => o.name === file.name);
+        const index = findIndex(this.files, (o) => o.name === file?.name);
         this.handleMultipleRemove({ e: context.e, index });
       }
     },
 
     uploadFiles(files: FileList) {
+      // 合并上传前则需要清空已上传列表
+      if (this.canBatchUpload && this.files?.length > 0) {
+        const context = { trigger: 'batch-clear' };
+        this.emitChangeEvent([], context);
+      }
+
       let tmpFiles = [...files];
       if (this.max) {
         tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
@@ -261,27 +291,32 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       });
     },
 
-    async upload(file: UploadFile): Promise<void> {
+    async upload(currentFiles: UploadFile | UploadFile[]): Promise<void> {
+      // support allFilesInOneRequest upload，兼容原有的单文件模式
+      const innerFiles = Array.isArray(currentFiles) ? currentFiles : [currentFiles];
+
       if (!this.action && !this.requestMethod) {
         console.error('TDesign Upload Error: one of action and requestMethod must be exist.');
         return;
       }
       this.errorMsg = '';
-      file.status = 'progress';
-      this.loadingFile = file;
-      // requestMethod 为父组件定义的自定义上传方法
-      if (this.requestMethod) {
-        this.handleRequestMethod(file);
-      } else {
-        // 模拟进度条
-        if (this.useMockProgress) {
+      innerFiles.forEach((file) => {
+        file.status = 'progress';
+        this.loadingFile = file;
+        if (!this.requestMethod && this.useMockProgress) {
           this.handleMockProgress(file);
         }
+      });
+
+      // requestMethod 为父组件定义的自定义上传方法
+      if (this.requestMethod) {
+        this.handleRequestMethod(innerFiles);
+      } else {
         const request = xhr;
         this.xhrReq = request({
           action: this.action,
           data: this.data,
-          file,
+          files: innerFiles,
           name: this.name,
           headers: this.headers,
           withCredentials: this.withCredentials,
@@ -307,18 +342,24 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       }, 10);
     },
 
-    handleRequestMethod(file: UploadFile) {
+    handleRequestMethod(files: UploadFile[]) {
       if (!isFunction(this.requestMethod)) {
         console.warn('TDesign Upload Warn: `requestMethod` must be a function.');
         return;
       }
-      this.requestMethod(file).then((res: RequestMethodResponse) => {
+      // requestMethod first argument can be file or currentFiles
+      const requestMethodParam = this.uploadInOneRequest ? files : files[0];
+      this.requestMethod(requestMethodParam).then((res: RequestMethodResponse) => {
         if (!this.handleRequestMethodResponse(res)) return;
         if (res.status === 'success') {
-          this.handleSuccess({ file, response: res.response });
+          this.handleSuccess({ files, response: res.response });
         } else if (res.status === 'fail') {
           const r = res.response || {};
-          this.onError({ file, response: { ...r, error: res.error } });
+          this.onError({
+            file: this.uploadInOneRequest ? null : files[0],
+            files,
+            response: { ...r, error: res.error },
+          });
         }
       });
     },
@@ -346,24 +387,43 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return true;
     },
 
-    multipleUpload(files: Array<UploadFile>) {
-      files.forEach((file) => {
-        this.upload(file);
-      });
+    multipleUpload(currentFiles: Array<UploadFile>) {
+      if (this.uploadAllFilesInOneRequest) {
+        // 一个请求同时上传多个文件
+        this.upload(currentFiles);
+      } else {
+        currentFiles.forEach((file) => {
+          this.upload(file);
+        });
+      }
     },
 
-    onError(options: { event?: ProgressEvent; file: UploadFile; response?: any; resFormatted?: boolean }) {
+    onError(options: {
+      event?: ProgressEvent;
+      file: UploadFile;
+      files: UploadFile[];
+      response?: any;
+      resFormatted?: boolean;
+    }) {
       const {
-        event, file, response, resFormatted,
+        event, file, files, response, resFormatted,
       } = options;
-      file.status = 'fail';
-      this.loadingFile = file;
+      const innerFiles = Array.isArray(files) ? files : [file];
+
+      innerFiles.forEach((file) => {
+        file.status = 'fail';
+        this.loadingFile = file;
+      });
       let res = response;
       if (!resFormatted && typeof this.formatResponse === 'function') {
-        res = this.formatResponse(response, { file });
+        res = this.formatResponse(response, { file, currentFiles: files });
       }
       this.errorMsg = res?.error;
-      const context = { e: event, file };
+      const context = {
+        e: event,
+        file: this.uploadInOneRequest ? null : innerFiles[0],
+        currentFiles: innerFiles,
+      };
       emitEvent<Parameters<TdUploadProps['onFail']>>(this, 'fail', context);
     },
 
@@ -382,35 +442,54 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       emitEvent<Parameters<TdUploadProps['onProgress']>>(this, 'progress', progressCtx);
     },
 
-    handleSuccess({ event, file, response }: SuccessContext) {
-      if (!file) throw new Error('Error file');
-      file.status = 'success';
+    handleSuccess({
+      event, file, files: currentFiles, response,
+    }: SuccessContext) {
+      const innerFiles = Array.isArray(currentFiles) ? currentFiles : [file];
+      if (innerFiles?.length <= 0) throw new Error('Error file');
+
+      innerFiles.forEach((file) => {
+        file.status = 'success';
+      });
+
       let res = response;
       if (typeof this.formatResponse === 'function') {
-        res = this.formatResponse(response, { file });
+        res = this.formatResponse(response, {
+          file: this.uploadInOneRequest ? null : innerFiles[0],
+          currentFiles: innerFiles,
+        });
       }
       // 如果返回值存在 error，则认为当前接口上传失败
       if (res?.error) {
         this.onError({
           event,
-          file,
+          file: this.uploadInOneRequest ? null : innerFiles[0],
+          files: innerFiles,
           response: res,
           resFormatted: true,
         });
         return;
       }
-      file.url = res.url || file.url;
-      // 从待上传文件队列中移除上传成功的文件
-      const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
-      this.toUploadFiles.splice(index, 1);
+      if (!this.uploadInOneRequest) {
+        innerFiles[0].url = res.url || innerFiles[0].url;
+      }
+
+      innerFiles.forEach((file) => {
+        // 从待上传文件队列中移除上传成功的文件
+        const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
+        this.toUploadFiles.splice(index, 1);
+      });
+
       // 上传成功的文件发送到 files
-      const newFile: UploadFile = { ...file, response: res };
-      const files = this.multiple ? this.files.concat(newFile) : [newFile];
+      const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
+      const uploadedFiles = this.multiple ? this.files.concat(newFiles) : newFiles;
+
       const context = { e: event, response: res, trigger: 'upload-success' };
-      this.emitChangeEvent(files, context);
+      this.emitChangeEvent(uploadedFiles, context);
       const sContext = {
-        file,
-        fileList: files,
+        file: this.uploadInOneRequest ? null : newFiles[0],
+        fileList: uploadedFiles,
+        currentFiles: newFiles,
         e: event,
         response: res,
       };
@@ -491,7 +570,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     getDefaultTrigger() {
       if (this.theme === 'file-input' || this.showUploadList) {
-        return <TButton variant="outline">{this.files?.length ? '重新上传' : '选择文件'}</TButton>;
+        return <TButton variant="outline">{this.uploadListTriggerText}</TButton>;
       }
       return (
         <TButton variant="outline">
@@ -604,6 +683,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}
+            batchUpload={this.canBatchUpload}
             onImgPreview={this.handlePreviewImg}
             onChange={this.handleDragChange}
             onDragenter={this.handleDragenter}

@@ -31,6 +31,8 @@ export default Vue.extend({
     showUploadProgress: props.showUploadProgress,
     // 已上传完成的文件
     files: Array as PropType<Array<UploadFile>>,
+    // 合并上传
+    batchUpload: Boolean,
     // 上传队列中的文件（可能存在已经上传过的文件）
     toUploadFiles: Array as PropType<Array<UploadFile>>,
     placeholder: String,
@@ -89,6 +91,9 @@ export default Vue.extend({
     uploadText(): string {
       if (this.isUploading) return '上传中...';
       return this.failedList && this.failedList.length ? '重新上传' : '开始上传';
+    },
+    batchRemoveRow(): boolean {
+      return this.batchUpload && this.files.length > 0;
     },
   },
   methods: {
@@ -188,21 +193,38 @@ export default Vue.extend({
               <td colspan={4}>{this.renderDrager()}</td>
             </tr>
           )}
-          {this.listFiles.map((file, index) => (
-            <tr>
-              <td>{abridgeName(file.name, 7, 10)}</td>
-              <td>{returnFileSize(file.size)}</td>
-              <td>{this.renderStatus(file)}</td>
-              <td>
-                <span
-                  class={`${UPLOAD_NAME}__flow-button`}
-                  onClick={(e: MouseEvent) => this.remove({ e, index, file })}
-                >
-                  删除
-                </span>
-              </td>
-            </tr>
-          ))}
+          {this.listFiles.map((file, index) => {
+            // 只有合并上传模式下，当前已上传文件列表有数据且当前为第一行的时候，才需要进行单元格合并
+            const isBatchFirstRow = this.batchUpload && this.files.length > 0 && index === 0;
+            const showRowAction = !this.batchUpload || isBatchFirstRow || (this.batchUpload && this.toUploadFiles.length > 0);
+            return (
+              <tr>
+                <td>{abridgeName(file.name, 7, 10)}</td>
+                <td>{returnFileSize(file.size)}</td>
+                <td>{this.renderStatus(file)}</td>
+                {showRowAction ? (
+                  <td
+                    rowspan={isBatchFirstRow ? this.listFiles.length : ''}
+                    class={isBatchFirstRow ? `${UPLOAD_NAME}__flow-table__batch-row` : ''}
+                  >
+                    <span
+                      class={`${UPLOAD_NAME}__flow-button`}
+                      onClick={(e: MouseEvent) => this.remove({
+                        e,
+                        index: isBatchFirstRow ? -1 : index,
+                        file: isBatchFirstRow ? null : file,
+                      })
+                      }
+                    >
+                      删除
+                    </span>
+                  </td>
+                ) : (
+                  ''
+                )}
+              </tr>
+            );
+          })}
         </table>
       );
     },
