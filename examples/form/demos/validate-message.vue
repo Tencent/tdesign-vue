@@ -1,15 +1,7 @@
 <template>
   <div>
     <!-- error-message 非必需 -->
-    <t-form
-      :data="formData"
-      :rules="rules"
-      :validate-message="validateMessage"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      scrollToFirstError="smooth"
-    >
+    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
       <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
@@ -62,6 +54,9 @@ export default {
       },
     };
   },
+  mounted() {
+    this.$refs.form.setValidateMessage(validateMessage);
+  },
   methods: {
     onReset() {
       this.$message.success('重置成功');
@@ -76,7 +71,7 @@ export default {
     },
     handleValidateMessage() {
       this.$message.success('设置表单校验信息提示成功');
-      this.validateMessage = JSON.parse(JSON.stringify(this.validateMessage)); // 源对象完全不变时，通过深拷贝确保触发更新
+      this.$refs.form.setValidateMessage(validateMessage);
     },
   },
 };

@@ -203,11 +203,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       });
     },
     // 设置表单错误信息
-    setValidateMessage(validateMessage: FormItemValidateMessage) {
+    setValidateMessage(validateMessage: FormItemValidateMessage[]) {
       if (!validateMessage || !Array.isArray(validateMessage)) return;
       if (validateMessage.length === 0) {
         this.errorList = [];
         this.verifyStatus = VALIDATE_STATUS.SUCCESS;
+        return;
       }
       this.errorList = validateMessage;
       this.verifyStatus = VALIDATE_STATUS.FAIL;

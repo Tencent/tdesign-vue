@@ -30,15 +30,6 @@ export default Vue.extend({
     };
   },
 
-  watch: {
-    validateMessage: {
-      handler(newValidateMessage: FormValidateMessage<FormData>) {
-        this.setValidateMessage(newValidateMessage);
-      },
-      deep: true,
-    },
-  },
-
   data() {
     return {
       children: [] as Array<FormItemInstance>,
@@ -71,10 +62,6 @@ export default Vue.extend({
       const index = this.children.findIndex((item) => item === formItem);
       this.children.splice(index, 1);
     });
-  },
-
-  mounted() {
-    this.setValidateMessage(this.$props.validateMessage); // 适配validateMessage有初始值的情况
   },
 
   methods: {
