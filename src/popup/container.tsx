@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { getAttach } from '../utils/dom';
+import { getAttach, removeDom } from '../utils/dom';
 import props from './props';
 
 function isContentRectChanged(rect1: DOMRectReadOnly, rect2: DOMRectReadOnly) {
@@ -89,7 +89,7 @@ export default Vue.extend({
         },
         destroyed() {
           parent.content = null;
-          elm.remove();
+          removeDom(elm);
         },
       });
       getAttach(this.attach).appendChild(elm);
