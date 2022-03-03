@@ -1,14 +1,16 @@
-import Vue, { PropType } from 'vue';
+import { PropType } from 'vue';
 import { ChevronRightIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 
 // utils
 import CLASSNAMES from '../../utils/classnames';
 import ripple from '../../utils/ripple';
+import mixins from '../../utils/mixins';
 
 // common logic
 import { getFullPathLabel } from '../utils/helper';
 import { getCascaderItemClass, getCascaderItemIconClass, getLabelIsEllipsis } from '../utils/item';
+import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
 
 // component
 import Loading from '../../loading';
@@ -24,7 +26,9 @@ import {
 const name = `${prefix}-cascader-item`;
 const ComponentClassName = `${prefix}-cascader__item`;
 
-export default Vue.extend({
+const keepAnimationMixins = getKeepAnimationMixins();
+
+export default mixins(keepAnimationMixins).extend({
   name,
 
   directives: { ripple },
@@ -145,7 +149,7 @@ export default Vue.extend({
     }
 
     return (
-      <li v-ripple class={itemClass} onClick={handleClick} onMouseenter={handleMouseenter}>
+      <li v-ripple={this.keepAnimation.ripple} class={itemClass} onClick={handleClick} onMouseenter={handleMouseenter}>
         {cascaderContext.multiple
           ? RenderCheckBox(node, cascaderContext, handleChange)
           : RenderLabelContent(node, cascaderContext)}
