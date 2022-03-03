@@ -109,8 +109,21 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.addListenders();
     }
   },
-
+  mounted() {
+    this.adjustInputClass();
+  },
+  updated() {
+    this.adjustInputClass();
+  },
   methods: {
+    // fix behave differently with vue3 https://v3.cn.vuejs.org/guide/migration/attrs-includes-class-style.html
+    adjustInputClass() {
+      const classList = [...this.$el.classList];
+      if (classList.includes(INPUT_WRAP_CLASS)) {
+        this.$el.children[0].classList.add(...classList);
+        this.$el.setAttribute('class', INPUT_WRAP_CLASS);
+      }
+    },
     addListenders() {
       this.$watch(
         () => this.value + this.placeholder,
