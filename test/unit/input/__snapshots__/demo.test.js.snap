@@ -531,7 +531,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__wrap"
     >
       <input
         autocomplete=""
@@ -552,7 +552,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-success"
+      class="t-input t-size-m t-is-success t-input__wrap"
     >
       <input
         autocomplete=""
@@ -573,7 +573,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-warning"
+      class="t-input t-size-m t-is-warning t-input__wrap"
     >
       <input
         autocomplete=""
@@ -594,7 +594,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-error"
+      class="t-input t-size-m t-is-error t-input__wrap"
     >
       <input
         autocomplete=""

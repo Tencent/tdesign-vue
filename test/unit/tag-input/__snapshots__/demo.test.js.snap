@@ -884,10 +884,10 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-readonly t-input--prefix"
+        class="t-input t-size-m t-is-readonly t-input--prefix t-input__wrap t-tag-input"
       >
         <div
           class="t-input__prefix"
@@ -933,10 +933,10 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-success t-input--prefix"
+        class="t-input t-size-m t-is-success t-input--prefix t-input__wrap t-tag-input"
       >
         <div
           class="t-input__prefix"
@@ -1020,10 +1020,10 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-warning t-input--prefix"
+        class="t-input t-size-m t-is-warning t-input--prefix t-input__wrap t-tag-input"
       >
         <div
           class="t-input__prefix"
@@ -1107,10 +1107,10 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-error t-input--prefix"
+        class="t-input t-size-m t-is-error t-input--prefix t-input__wrap t-tag-input"
       >
         <div
           class="t-input__prefix"
