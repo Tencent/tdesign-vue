@@ -16,6 +16,7 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
@@ -39,6 +40,7 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
@@ -71,6 +73,7 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>

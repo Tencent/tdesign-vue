@@ -36,6 +36,7 @@
           :options="options"
           class="tdesign-demo__panel-options-multiple"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
         <div v-else class="tdesign-demo__select-empty-multiple">暂无数据</div>
       </template>

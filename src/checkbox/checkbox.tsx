@@ -79,8 +79,6 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
           value={this.value}
           checked={this.checked$}
           onChange={this.handleChange}
-          // 阻止点击事件冒泡，在
-          onClick={(e: MouseEvent) => e.stopPropagation()}
         ></input>
         <span class={`${name}__input`}></span>
         <span class={`${name}__label`}>{renderContent(this, 'default', 'label')}</span>

@@ -3,6 +3,7 @@ import {
 } from '@vue/composition-api';
 // utils && types
 import isObject from 'lodash/isObject';
+import Vue from 'vue';
 import { TdSelectInputProps, SelectInputChangeContext, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
 
@@ -12,7 +13,7 @@ import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
 
 // hooks
-import useDefault from '../hooks/useDefault';
+import useDefault from '../hooks/useDefaultValue';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
@@ -57,7 +58,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const renderSelectMultiple = (p: RenderSelectMultipleParams, h: any) => {
+  const renderSelectMultiple = (p: RenderSelectMultipleParams, h: Vue.CreateElement) => {
     const tagInputProps = {
       ...props.tagInputProps,
       ...p.commonInputProps,
@@ -70,6 +71,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       collapsedItems: props.collapsedItems,
       tag: props.tag,
       valueDisplay: props.valueDisplay,
+      value: tags.value,
       inputValue: tInputValue.value || '',
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };

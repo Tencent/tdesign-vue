@@ -10,9 +10,10 @@
       allow-input
       @popup-visible-change="onPopupVisibleChange"
       @clear="onClear"
+      @input-change="onInputChange"
     >
       <template #panel>
-        <ul class="tdesign-demo__select-input-ul-single">
+        <ul class="tdesign-demo__select-input-ul-auto-width">
           <li v-for="item in options" :key="item.value" @click="() => onOptionClick(item)">
             {{ item.label }}
           </li>
@@ -58,14 +59,17 @@ export default {
     onPopupVisibleChange(val) {
       this.popupVisible = val;
     },
+    onInputChange(ctx) {
+      console.log(ctx);
+    },
   },
 };
 </script>
 <style lang="less" scoped>
-.tdesign-demo__select-input-ul-single {
+.tdesign-demo__select-input-ul-auto-width {
   padding: 4px 0;
 }
-.tdesign-demo__select-input-ul-single > li {
+.tdesign-demo__select-input-ul-auto-width > li {
   display: block;
   border-radius: 3px;
   height: 40px;
@@ -80,7 +84,7 @@ export default {
   text-overflow: ellipsis;
 }
 
-.tdesign-demo__select-input-ul-single > li:hover {
+.tdesign-demo__select-input-ul-auto-width > li:hover {
   background-color: var(--td-bg-color-container-hover);
 }
 </style>

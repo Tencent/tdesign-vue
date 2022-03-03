@@ -18,6 +18,7 @@
           :options="options"
           class="tdesign-demo__panel-options-excess-tags-display-type"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
@@ -42,6 +43,7 @@
           :options="options"
           class="tdesign-demo__panel-options-excess-tags-display-type"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>

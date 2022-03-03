@@ -16,7 +16,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import useTagScroll from './useTagScroll';
 import useTagList from './useTagList';
 import useHover from './useHover';
-import useDefault from '../hooks/useDefault';
+import useDefault from '../hooks/useDefaultValue';
 
 // constants class
 const NAME_CLASS = `${prefix}-tag-input`;

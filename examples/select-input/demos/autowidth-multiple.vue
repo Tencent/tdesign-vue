@@ -16,6 +16,7 @@
           :options="options"
           class="tdesign-demo__panel-options-borderless-multiple"
           @change="onCheckedChange"
+          @click="(e) => e.stopPropagation()"
         />
       </template>
       <template #suffixIcon>

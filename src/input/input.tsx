@@ -1,6 +1,7 @@
 import Vue, { CreateElement, VNode } from 'vue';
 import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import camelCase from 'lodash/camelCase';
+import kebabCase from 'lodash/kebabCase';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
@@ -51,7 +52,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       return this.placeholder ?? this.t(this.global.placeholder);
     },
     showClear(): boolean {
-      return this.value && !this.tDisabled && this.clearable && this.isHover;
+      return (this.value && !this.disabled && this.clearable && this.isHover) || this.showClearIconOnEmpty;
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
@@ -131,8 +132,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }
 
       // 插槽名称为中划线
-      if (this.$scopedSlots[iconType]) {
-        return this.$scopedSlots[iconType](null);
+      if (this.$scopedSlots[kebabCase(iconType)]) {
+        return this.$scopedSlots[kebabCase(iconType)](null);
       }
       // 插槽名称为驼峰
       if (this.$scopedSlots[camelCase(iconType)]) {

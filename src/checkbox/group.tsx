@@ -117,7 +117,11 @@ export default Vue.extend({
       this.optionList = this.getOptionListBySlots(nodes);
       children = nodes;
     }
-    return <div class={name}>{children}</div>;
+    return (
+      <div class={name} onClick={(e: MouseEvent) => this.$emit('click', e)}>
+        {children}
+      </div>
+    );
   },
 
   methods: {

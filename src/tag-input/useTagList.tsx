@@ -84,7 +84,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const renderLabel = ({ displayNode, label }: { displayNode: any; label: any }, h: any) => {
+  const renderLabel = ({ displayNode, label }: { displayNode: any; label: any }, h: Vue.CreateElement) => {
     const newList = minCollapsedNum.value ? tagValue.value.slice(0, minCollapsedNum.value) : tagValue.value;
     const list = displayNode
       ? [displayNode]
