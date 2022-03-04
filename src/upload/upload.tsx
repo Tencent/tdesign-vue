@@ -3,6 +3,7 @@ import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
+import without from 'lodash/without';
 import { UploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
@@ -11,6 +12,7 @@ import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from '../_common/js/upload/xhr';
+import log from '../_common/js/log';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
@@ -185,7 +187,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
     // handle event of preview img dialog event
     handlePreviewImg(event: MouseEvent, file?: UploadFile) {
-      if (!file || !file.url) throw new Error('Error file');
+      if (!file || !file.url) return log.error('Uploader', 'Preview Error file');
+
       this.showImageViewUrl = file.url;
       this.showImageViewDialog = true;
       const previewCtx = { file, e: event };
@@ -434,7 +437,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       event, file, files: currentFiles, percent, type = 'real',
     }: InnerProgressContext) {
       const innerFiles = Array.isArray(currentFiles) ? currentFiles : [file];
-      if (innerFiles?.length <= 0) throw new Error('Error file');
+      if (innerFiles?.length <= 0) return log.error('Uploader', 'Progress Error files');
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
@@ -454,7 +457,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       event, file, files: currentFiles, response,
     }: SuccessContext) {
       const innerFiles = Array.isArray(currentFiles) ? currentFiles : [file];
-      if (innerFiles?.length <= 0) throw new Error('Error file');
+      if (innerFiles?.length <= 0) return log.error('Uploader', 'success no files');
 
       innerFiles.forEach((file) => {
         file.status = 'success';
@@ -482,11 +485,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         innerFiles[0].url = res.url || innerFiles[0].url;
       }
 
-      innerFiles.forEach((file) => {
-        // 从待上传文件队列中移除上传成功的文件
-        const index = findIndex(this.toUploadFiles, (o) => o.name === file.name);
-        this.toUploadFiles.splice(index, 1);
-      });
+      // 从待上传文件队列中移除上传成功的文件
+      this.toUploadFiles = without(this.toUploadFiles, ...innerFiles);
 
       // 上传成功的文件发送到 files
       const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
