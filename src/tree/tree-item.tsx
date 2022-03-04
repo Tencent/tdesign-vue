@@ -2,7 +2,7 @@ import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { CaretRightSmallIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TreeConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { TreeConfig, getKeepAnimationMixins } from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
 import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -11,6 +11,8 @@ import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
 import { ClassName } from '../common';
 import ripple from '../utils/ripple';
+
+const keepAnimationMixins = getKeepAnimationMixins();
 
 export const TreeItemProps = {
   node: {
@@ -21,7 +23,7 @@ export const TreeItemProps = {
   },
 };
 
-export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
@@ -199,7 +201,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
 
         labelNode = (
           <TCheckBox
-            v-ripple
+            v-ripple={this.keepAnimation.ripple}
             class={labelClasses}
             checked={node.checked}
             indeterminate={node.indeterminate}
@@ -215,7 +217,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       } else {
         const inner = <span style="position: relative">{labelNode}</span>;
         labelNode = node.isActivable() ? ( // 使用key是为了避免元素复用，从而顺利移除ripple指令
-          <span key="1" v-ripple class={labelClasses}>
+          <span key="1" v-ripple={this.keepAnimation.ripple} class={labelClasses}>
             {inner}
           </span>
         ) : (

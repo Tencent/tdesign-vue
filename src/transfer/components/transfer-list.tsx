@@ -1,4 +1,5 @@
-import Vue, { VNode, PropType } from 'vue';
+import { VNode, PropType } from 'vue';
+import mixins from '../../utils/mixins';
 import { prefix } from '../../config';
 import {
   EmptyType,
@@ -15,8 +16,11 @@ import { findTopNode, getLeefCount, getDataValues } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
+import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
 
-export default Vue.extend({
+const keepAnimationMixins = getKeepAnimationMixins();
+
+export default mixins(keepAnimationMixins).extend({
   name: 'TTransferList',
   components: {
     Search,
@@ -190,7 +194,7 @@ export default Vue.extend({
               value={item.value}
               class={[`${prefix}-transfer__list-item`]}
               key={item.key}
-              v-ripple
+              v-ripple={this.keepAnimation.ripple}
               {...{ props: this.checkboxProps }}
             >
               {renderTNodeJSXDefault(this, 'transferItem', {
