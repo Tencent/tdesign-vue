@@ -17,6 +17,7 @@ exports[`Input addon demo works fine 1`] = `
       class="t-input t-size-m"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入内容"
         type="text"
@@ -32,6 +33,7 @@ exports[`Input addon demo works fine 1`] = `
       class="t-input t-size-m"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入内容"
         type="text"
@@ -57,6 +59,7 @@ exports[`Input addon demo works fine 1`] = `
       class="t-input t-size-m"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入内容"
         type="text"
@@ -81,6 +84,7 @@ exports[`Input base demo works fine 1`] = `
     class="t-input t-size-m"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -92,6 +96,7 @@ exports[`Input base demo works fine 1`] = `
     class="t-input t-size-m"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入内容（有默认值）"
       type="text"
@@ -108,6 +113,7 @@ exports[`Input base demo works fine 1`] = `
       价格：
     </div>
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -118,25 +124,6 @@ exports[`Input base demo works fine 1`] = `
     >
       元
     </div>
-  </div>
-</div>
-`;
-
-exports[`Input disabled demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="max-width: 500px;"
->
-  <div
-    class="t-input t-size-m t-is-disabled"
-  >
-    <input
-      class="t-input__inner"
-      disabled="disabled"
-      placeholder="请输入"
-      type="text"
-      unselectable="off"
-    />
   </div>
 </div>
 `;
@@ -155,6 +142,7 @@ exports[`Input group demo works fine 1`] = `
         style="width: 100px;"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -166,6 +154,7 @@ exports[`Input group demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -183,6 +172,7 @@ exports[`Input group demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -194,6 +184,7 @@ exports[`Input group demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -211,6 +202,7 @@ exports[`Input group demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -222,6 +214,7 @@ exports[`Input group demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -240,6 +233,7 @@ exports[`Input group demo works fine 1`] = `
         style="width: 100px;"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -258,6 +252,7 @@ exports[`Input group demo works fine 1`] = `
         style="width: 100px;"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -270,6 +265,7 @@ exports[`Input group demo works fine 1`] = `
         style="width: 100px;"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -282,6 +278,7 @@ exports[`Input group demo works fine 1`] = `
         style="width: 100px;"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -324,6 +321,7 @@ exports[`Input password demo works fine 1`] = `
       </svg>
     </span>
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="password"
@@ -379,6 +377,7 @@ exports[`Input password demo works fine 1`] = `
       </svg>
     </span>
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="password"
@@ -419,6 +418,7 @@ exports[`Input size demo works fine 1`] = `
     class="t-input t-size-l"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入内容"
       type="text"
@@ -430,6 +430,7 @@ exports[`Input size demo works fine 1`] = `
     class="t-input t-size-m"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入内容"
       type="text"
@@ -441,6 +442,7 @@ exports[`Input size demo works fine 1`] = `
     class="t-input t-size-s"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入内容"
       type="text"
@@ -456,9 +458,38 @@ exports[`Input status demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
+    class="t-input t-size-m t-is-disabled"
+  >
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      disabled="disabled"
+      placeholder="请输入"
+      type="text"
+      unselectable="off"
+    />
+  </div>
+   
+  <div
+    class="t-input t-size-m t-is-readonly"
+  >
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请输入"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
+    />
+  </div>
+   
+  <br />
+   
+  <div
     class="t-input t-size-m"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -470,6 +501,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input t-size-m t-is-success"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -481,6 +513,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input t-size-m t-is-warning"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -492,6 +525,7 @@ exports[`Input status demo works fine 1`] = `
     class="t-input t-size-m t-is-error"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="请输入"
       type="text"
@@ -505,9 +539,10 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-input__wrap"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入"
         type="text"
@@ -525,9 +560,10 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-success"
+      class="t-input t-size-m t-is-success t-input__wrap"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入"
         type="text"
@@ -545,9 +581,10 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-warning"
+      class="t-input t-size-m t-is-warning t-input__wrap"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入"
         type="text"
@@ -565,9 +602,10 @@ exports[`Input status demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-error"
+      class="t-input t-size-m t-is-error t-input__wrap"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入"
         type="text"

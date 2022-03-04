@@ -11,6 +11,7 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-input t-size-m t-is-readonly t-input--suffix"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder=" "
         readonly="readonly"
@@ -80,6 +81,7 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-input t-size-m t-is-readonly t-input--suffix"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder=" "
         readonly="readonly"
