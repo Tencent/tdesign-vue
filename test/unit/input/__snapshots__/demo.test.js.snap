@@ -458,6 +458,34 @@ exports[`Input status demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
+    class="t-input t-size-m t-is-disabled"
+  >
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      disabled="disabled"
+      placeholder="请输入"
+      type="text"
+      unselectable="off"
+    />
+  </div>
+   
+  <div
+    class="t-input t-size-m t-is-readonly"
+  >
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请输入"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
+    />
+  </div>
+   
+  <br />
+   
+  <div
     class="t-input t-size-m"
   >
     <input

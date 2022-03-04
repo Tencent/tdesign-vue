@@ -5260,6 +5260,8 @@ exports[`ssr snapshot test renders ./examples/input/demos/size.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/input/demos/status.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input t-size-m t-is-disabled"><input disabled="disabled" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="禁用状态" class="t-input__inner"></div>
+  <div class="t-input t-size-m t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请输入" type="text" unselectable="on" value="只读状态" class="t-input__inner"></div> <br>
   <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
   <div class="t-input t-size-m t-is-success"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
   <div class="t-input t-size-m t-is-warning"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="警告状态" class="t-input__inner"></div>
