@@ -2,6 +2,7 @@ import { SetupContext, computed } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/upperFirst';
+import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
 import {
@@ -120,7 +121,9 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       // Vue3 do not need getTrListeners
       const on = getTrListeners();
 
-      const trNode = <TrElement scopedSlots={slots} on={on} props={trProps}></TrElement>;
+      const trNode = (
+        <TrElement key={get(row, props.rowKey || 'id')} scopedSlots={slots} on={on} props={trProps}></TrElement>
+      );
       trNodeList.push(trNode);
 
       // 执行展开行渲染

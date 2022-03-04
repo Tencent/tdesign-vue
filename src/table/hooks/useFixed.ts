@@ -306,7 +306,7 @@ export default function useFixed(props: TdBaseTableProps) {
 
   watch([isFixedColumn], updateFixedColumnHandler, { immediate: true });
 
-  watch([maxHeight], updateFixedHeader, { immediate: true });
+  watch([maxHeight, data, columns], updateFixedHeader, { immediate: true });
 
   return {
     isFixedHeader,

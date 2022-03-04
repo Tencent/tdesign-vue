@@ -69,7 +69,7 @@ const columns = [
     cell: 'op',
   },
 ];
-const data = new Array(5).fill(null).map((item, index) => ({
+const data = new Array(1000).fill(null).map((item, index) => ({
   id: index + 100,
   instance: `JQTest${index + 1}`,
   status: index % 2,
