@@ -13,10 +13,21 @@ describe('Upload', () => {
       });
       expect(wrapper.exists()).toBe(true);
     });
+
+    it(':batchUpload', () => {
+      const wrapper = mount({
+        render() {
+          return <Upload multiple uploadAllFilesInOneRequest batchUpload></Upload>;
+        },
+      });
+
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 
   // test events
-  // describe('@event', () => {});
+  // describe('@event', () => {
+  // });
 
   // // test slots
   // describe('<slot>', () => {

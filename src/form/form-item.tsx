@@ -17,6 +17,7 @@ import {
   ValidateTriggerType,
   AllValidateResult,
   FormErrorMessage,
+  FormItemValidateMessage,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -99,8 +100,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
       }
-      if (!this.errorList.length) return;
-      const type = this.errorList[0].type || 'error';
+      const list = this.errorList;
+      if (!list.length) return;
+      const type = list[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
 
@@ -200,6 +202,17 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         }
       });
     },
+    // 设置表单错误信息
+    setValidateMessage(validateMessage: FormItemValidateMessage[]) {
+      if (!validateMessage || !Array.isArray(validateMessage)) return;
+      if (validateMessage.length === 0) {
+        this.errorList = [];
+        this.verifyStatus = VALIDATE_STATUS.SUCCESS;
+        return;
+      }
+      this.errorList = validateMessage;
+      this.verifyStatus = VALIDATE_STATUS.FAIL;
+    },
     // T 表示表单数据的类型
     async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;
@@ -296,7 +309,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         return resultIcon(CheckCircleFilledIcon);
       }
       if (list && list[0]) {
-        const type = this.errorList[0].type || 'error';
+        const type = list[0].type || 'error';
         const icon = {
           error: CloseCircleFilledIcon,
           warning: ErrorCircleFilledIcon,
