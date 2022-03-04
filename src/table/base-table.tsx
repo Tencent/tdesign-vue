@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, h,
+  computed, defineComponent, SetupContext, h, toRefs, ref, provide,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -7,6 +7,7 @@ import useTableBody from './hooks/useTableBody';
 import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
+import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -60,6 +61,28 @@ export default defineComponent({
       { [TABLE_CLASS_COLUMN_FIXED.rightShadow]: showColumnShadow.right },
     ]);
 
+    const {
+      type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
+    } = props.scroll || {};
+    const { data } = toRefs<any>(props);
+    const {
+      trs = null,
+      scrollHeight = null,
+      visibleData = null,
+      translateY = null,
+      handleScroll = null,
+      handleRowMounted = null,
+    } = type === 'virtual'
+      ? useVirtualScroll({
+        container: tableContentRef,
+        data,
+        fixedHeight: isFixedRowHeight,
+        lineHeight: rowHeight,
+        bufferSize,
+      })
+      : {};
+    provide('tableContentRef', tableContentRef);
+    provide('rowHeightRef', ref(rowHeight));
     return {
       tableRef,
       spansAndLeafNodes,
@@ -80,18 +103,41 @@ export default defineComponent({
       dataSource,
       renderPagination,
       renderTNode,
+      scrollType: type,
+      rowHeight,
+      trs,
+      bufferSize,
+      scrollHeight,
+      visibleData,
+      translateY,
+      handleRowMounted,
+      handleVirtualScroll: handleScroll,
     };
   },
 
   render() {
-    const { columnStickyLeftAndRight } = this;
+    const { columnStickyLeftAndRight, onTableContentScroll } = this;
+    const data = this.isPaginateData ? this.dataSource : this.data;
+    const isVirtual = this.scrollType === 'virtual';
+    const onScroll = isVirtual
+      ? (e: WheelEvent) => {
+        onTableContentScroll(e);
+        this.handleVirtualScroll();
+      }
+      : onTableContentScroll;
     const tableContent = (
-      <div
-        ref="tableContentRef"
-        class={TABLE_CLASS_CONTENT}
-        style={this.tableContentStyles}
-        onScroll={this.onTableContentScroll}
-      >
+      <div ref="tableContentRef" class={TABLE_CLASS_CONTENT} style={this.tableContentStyles} onScroll={onScroll}>
+        {isVirtual && (
+          <div
+            style={{
+              position: 'absolute',
+              width: '1px',
+              height: '1px',
+              transition: 'transform .2s',
+              transform: `translate(0, ${this.scrollHeight}px)`,
+            }}
+          />
+        )}
         <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
           {this.renderColgroup()}
           {this.renderTableHeader({
@@ -101,8 +147,14 @@ export default defineComponent({
           {this.renderTableBody({
             columnStickyLeftAndRight,
             showColumnShadow: this.showColumnShadow,
-            data: this.isPaginateData ? this.dataSource : this.data,
+            data: isVirtual ? this.visibleData : data,
             columns: this.spansAndLeafNodes.leafColumns,
+            translateY: this.translateY,
+            scrollType: this.scrollType,
+            rowHeight: this.rowHeight,
+            trs: this.trs,
+            bufferSize: this.bufferSize,
+            handleRowMounted: this.handleRowMounted,
           })}
           {this.renderTableFooter({
             isFixedHeader: this.isFixedHeader,

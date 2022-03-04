@@ -2,6 +2,7 @@ import { SetupContext, h, computed } from '@vue/composition-api';
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/upperFirst';
 import pick from 'lodash/pick';
+import get from 'lodash/get';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
 import {
   TABLE_CLASS_BODY, TAVLE_CLASS_VERTICAL_ALIGN, TABLE_CLASS_EMPTY, TABLE_CLASS_EMPTY_ROW,
@@ -22,6 +23,12 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   columnStickyLeftAndRight: ColumnStickyLeftAndRight;
   showColumnShadow: { left: boolean; right: boolean };
+  translateY: object;
+  scrollType: string;
+  rowHeight: number;
+  trs: Map<number, object>;
+  bufferSize: number;
+  handleRowMounted: Function;
 }
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
@@ -90,7 +97,17 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   const renderTableBody = (p: RenderTableBodyParams) => {
-    const { columnStickyLeftAndRight, data, columns } = p;
+    const {
+      columnStickyLeftAndRight,
+      data,
+      columns,
+      scrollType,
+      rowHeight,
+      trs,
+      bufferSize,
+      handleRowMounted,
+      translateY,
+    } = p;
     const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
     // 每次渲染清空合并单元格信息
@@ -108,6 +125,10 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
+        scrollType,
+        rowHeight,
+        trs,
+        bufferSize,
       };
       if (props.onCellClick) {
         trProps.onCellClick = props.onCellClick;
@@ -115,7 +136,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       // Vue3 do not need getTrListeners
       const on = getTrListeners(row, rowIndex);
 
-      const trNode = <TrElement scopedSlots={slots} on={on} props={trProps}></TrElement>;
+      const trNode = (
+        <TrElement
+          scopedSlots={slots}
+          key={get(row, props.rowKey || 'id')}
+          on={on}
+          props={trProps}
+          onRowMounted={handleRowMounted}
+        ></TrElement>
+      );
       trNodeList.push(trNode);
 
       // 执行展开行渲染
@@ -130,7 +159,14 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       getFullRow(columnLength, props.lastFullRow, 'last-full-row'),
     ];
     const isEmpty = !data?.length && !props.loading;
-    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(columns) : list}</tbody>;
+    return (
+      <tbody
+        class={tbodyClases.value}
+        style={{ transform: scrollType === 'virtual' && `translate(0, ${translateY}px)` }}
+      >
+        {isEmpty ? renderEmpty(columns) : list}
+      </tbody>
+    );
   };
 
   return {

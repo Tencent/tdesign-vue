@@ -29,7 +29,7 @@ const useVirtualScroll = ({
   let offset = 0; // 少于一行行高的偏移量
   let start = 0; // 第一条显示的行
   let last = 0; // 最后一条显示的行
-  let revising = false; // 是否正在修正滚动条
+  // let revising = false; // 是否正在修正滚动条
 
   const reset = () => {
     data.value.forEach((item: any, i: number) => {
@@ -99,7 +99,7 @@ const useVirtualScroll = ({
     }
     if (state.cachedScrollY[0] > 0) {
       // 修正滚动过快时，滚动到顶部时，滚动条多余的问题
-      revising = true;
+      // revising = true;
       const distance = state.cachedScrollY[0]; // 第一个元素scrollY即为多出的量
       const length = Math.min(last, data.value.length);
       for (let i = 0; i < length; i++) {
@@ -109,11 +109,11 @@ const useVirtualScroll = ({
       const scrollTop = state.cachedScrollY[index - 1] ? state.cachedScrollY[index - 1] + offset : offset;
       container.value.scrollTop = scrollTop;
       beforeScrollTop = scrollTop;
-      revising = false;
+      // revising = false;
     }
     // 修正拖动过快时，滚动到顶端时，滚动条不足的偏差
     if (state.cachedScrollY[start] < 0) {
-      revising = true;
+      // revising = true;
       const s = state.cachedHeight.slice(0, Math.max(0, index)).reduce((sum, v) => sum + v, 0) + offset;
       container.value.scrollTop = s;
       beforeScrollTop = s;
@@ -121,11 +121,11 @@ const useVirtualScroll = ({
         index = 0;
         offset = 0;
       }
-      revising = false;
+      // revising = false;
     }
     if (last === data.value.length) {
       // 滚动到底部时，修正底部有空余的问题
-      revising = true;
+      // revising = true;
       for (let i = last - 1; i >= start; i--) {
         if (i === last - 1) {
           state.cachedScrollY[i] = scrollHeight.value - state.cachedHeight[i];
@@ -133,7 +133,7 @@ const useVirtualScroll = ({
           state.cachedScrollY[i] = state.cachedScrollY[i + 1] - state.cachedHeight[i];
         }
       }
-      revising = false;
+      // revising = false;
     }
   };
 
@@ -213,7 +213,7 @@ const useVirtualScroll = ({
     index = 0;
     offset = 0;
     start = 0;
-    revising = false;
+    // revising = false;
     trs = new Map();
     updateVisibleData();
     container.value && (container.value.scrollTop = 0);

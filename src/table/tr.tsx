@@ -1,5 +1,14 @@
 import {
-  defineComponent, PropType, SetupContext, h, computed,
+  defineComponent,
+  PropType,
+  SetupContext,
+  h,
+  computed,
+  ref,
+  Ref,
+  onMounted,
+  onBeforeUnmount,
+  inject,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
@@ -73,6 +82,10 @@ export interface TrProps extends TrCommonProps {
   // 属性透传，引用传值，可内部改变
   skipSpansMap: Map<any, boolean>;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
+  scrollType: string;
+  rowHeight: number;
+  trs: Map<number, object>;
+  bufferSize: number;
 }
 
 export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -106,6 +119,10 @@ export default defineComponent({
     // 扫描到 rowspan 或者 colspan 时触发
     onTrRowspanOrColspan: Function as PropType<TrProps['onTrRowspanOrColspan']>,
     ...pick(baseTableProps, TABLE_PROPS),
+    scrollType: String,
+    rowHeight: Number,
+    trs: Map,
+    bufferSize: Number,
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -141,6 +158,67 @@ export default defineComponent({
       return trListeners;
     };
 
+    const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
+      try {
+        const io = new window.IntersectionObserver(
+          (entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting) {
+              callback();
+              io.unobserve(element);
+            }
+          },
+          {
+            rootMargin: `0px 0px ${marginBottom}px 0px`,
+            root,
+          },
+        );
+        io.observe(element);
+        return io;
+      } catch (e) {
+        console.error(e);
+        callback();
+      }
+    };
+    const tr = ref(null);
+    const isInit = ref(props.rowIndex === 0);
+    const init = () => {
+      !isInit.value
+        && requestAnimationFrame(() => {
+          isInit.value = true;
+        });
+    };
+    const { trs, row: rowData, scrollType } = props;
+    onMounted(() => {
+      const { rowIndex, rowHeight, bufferSize } = props;
+      if (scrollType === 'virtual') {
+        const { $index } = rowData;
+        trs.set($index, tr.value);
+        context.emit('rowMounted');
+      } else if (scrollType === 'lazy') {
+        const tableContentRef: Ref = inject('tableContentRef');
+        if (rowHeight === 0) {
+          const rowHeightRef: Ref = inject('rowHeightRef');
+          if (rowIndex === 0) {
+            // 获取第一行高度
+            const { offsetHeight } = tr.value;
+            rowHeightRef.value = offsetHeight;
+          } else {
+            const height = rowHeightRef.value;
+            observe(tr.value, tableContentRef.value, init, height * bufferSize);
+          }
+        } else {
+          observe(tr.value, tableContentRef.value, init, rowHeight * bufferSize);
+        }
+      }
+    });
+    onBeforeUnmount(() => {
+      if (scrollType === 'virtual') {
+        const { $index } = rowData;
+        trs.delete($index);
+      }
+    });
+
     return {
       tSlots: context.slots,
       tdEllipsisClass,
@@ -149,6 +227,8 @@ export default defineComponent({
       classes,
       trAttributes,
       getTrListeners,
+      tr,
+      isInit,
     };
   },
 
@@ -205,38 +285,43 @@ export default defineComponent({
 
   render(h) {
     const {
-      row, rowIndex, dataLength, columnStickyLeftAndRight,
+      row, rowIndex, dataLength, columnStickyLeftAndRight, scrollType, isInit,
     } = this;
+    const hasHolder = scrollType === 'lazy' && !isInit;
+    const rowHeightRef: Ref = inject('rowHeightRef');
     return (
       <tr
+        ref="tr"
         on={this.getTrListeners(row, rowIndex)}
         attrs={this.trAttributes}
         style={this.trStyles.style}
         class={this.classes}
       >
-        {this.columns?.map((col, colIndex) => {
-          const cellSpans: RowspanColspan = {};
-          const params = {
-            row,
-            col,
-            rowIndex,
-            colIndex,
-          };
-          if (isFunction(this.rowspanAndColspan)) {
-            const o = this.rowspanAndColspan(params);
-            o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-            o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-            this.onTrRowspanOrColspan?.(params, cellSpans);
-          }
-          const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
-          if (skipped) return null;
-          return this.renderTd(h, params, {
-            dataLength,
-            columnStickyLeftAndRight,
-            columnLength: this.columns.length,
-            cellSpans,
-          });
-        })}
+        {hasHolder
+          ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />]
+          : this.columns?.map((col, colIndex) => {
+            const cellSpans: RowspanColspan = {};
+            const params = {
+              row,
+              col,
+              rowIndex,
+              colIndex,
+            };
+            if (isFunction(this.rowspanAndColspan)) {
+              const o = this.rowspanAndColspan(params);
+              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+              this.onTrRowspanOrColspan?.(params, cellSpans);
+            }
+            const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
+            if (skipped) return null;
+            return this.renderTd(h, params, {
+              dataLength,
+              columnStickyLeftAndRight,
+              columnLength: this.columns.length,
+              cellSpans,
+            });
+          })}
       </tr>
     );
   },
