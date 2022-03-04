@@ -11,7 +11,7 @@
 
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
     <t-table
-      row-key="property"
+      row-key="index"
       :data.sync="data"
       :sort.sync="sortInfo"
       :columns="columns"
