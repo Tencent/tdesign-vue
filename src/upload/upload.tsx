@@ -303,15 +303,15 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       innerFiles.forEach((file) => {
         file.status = 'progress';
         this.loadingFile = file;
-        if (!this.requestMethod && this.useMockProgress) {
-          this.handleMockProgress(file);
-        }
       });
 
       // requestMethod 为父组件定义的自定义上传方法
       if (this.requestMethod) {
         this.handleRequestMethod(innerFiles);
       } else {
+        if (this.useMockProgress) {
+          this.handleMockProgress(innerFiles);
+        }
         const request = xhr;
         this.xhrReq = request({
           action: this.action,
@@ -327,16 +327,19 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       }
     },
     /** 模拟进度条 Mock Progress */
-    handleMockProgress(file: UploadFile) {
+    handleMockProgress(files: UploadFile[]) {
       const timer = setInterval(() => {
-        if (file.status === 'success' || file.percent >= 99) {
-          clearInterval(timer);
-          return;
-        }
-        file.percent += 1;
+        files.forEach((file) => {
+          if (file.status === 'success' || file.percent >= 99) {
+            clearInterval(timer);
+            return;
+          }
+          file.percent += 1;
+        });
+        const { percent } = files[0];
         this.handleProgress({
-          file,
-          percent: file.percent,
+          files,
+          percent,
           type: 'mock',
         });
       }, 10);
@@ -428,16 +431,21 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     handleProgress({
-      event, file, percent, type = 'real',
+      event, file, files: currentFiles, percent, type = 'real',
     }: InnerProgressContext) {
-      if (!file) throw new Error('Error file');
-      file.percent = Math.min(percent, 100);
-      this.loadingFile = file;
+      const innerFiles = Array.isArray(currentFiles) ? currentFiles : [file];
+      if (innerFiles?.length <= 0) throw new Error('Error file');
+
+      innerFiles.forEach((file) => {
+        file.percent = Math.min(percent, 100);
+        this.loadingFile = file;
+      });
       const progressCtx = {
         percent,
         e: event,
         file,
         type,
+        currentFiles: innerFiles,
       };
       emitEvent<Parameters<TdUploadProps['onProgress']>>(this, 'progress', progressCtx);
     },
