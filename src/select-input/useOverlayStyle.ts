@@ -1,8 +1,6 @@
 import {
   ref, toRefs, watch, getCurrentInstance,
 } from '@vue/composition-api';
-
-// utils
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import { TdPopupProps, PopupVisibleChangeContext } from '../popup';

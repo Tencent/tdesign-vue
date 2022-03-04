@@ -128,26 +128,6 @@ exports[`Input base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input disabled demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="max-width: 500px;"
->
-  <div
-    class="t-input t-size-m t-is-disabled"
-  >
-    <input
-      autocomplete=""
-      class="t-input__inner"
-      disabled="disabled"
-      placeholder="请输入"
-      type="text"
-      unselectable="off"
-    />
-  </div>
-</div>
-`;
-
 exports[`Input group demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"

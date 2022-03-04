@@ -2,17 +2,12 @@ import {
   defineComponent, computed, toRefs, nextTick,
 } from '@vue/composition-api';
 
-// components
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import TInput, { InputValue } from '../input';
-
-// utils
 import { TdTagInputProps } from './type';
 import props from './props';
 import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
-
-// hooks
 import useTagScroll from './useTagScroll';
 import useTagList from './useTagList';
 import useHover from './useHover';
@@ -67,7 +62,7 @@ export default defineComponent({
     ]);
 
     const tagInputPlaceholder = computed(() => {
-      if (props.readonly) return '';
+      if (props.readonly || (props.autoWidth && !isHover.value)) return '';
       return !tagValue.value?.length ? placeholder.value : undefined;
     });
 

@@ -1,16 +1,10 @@
 import {
   computed, defineComponent, ref, SetupContext, toRefs,
 } from '@vue/composition-api';
-
-// components
 import Popup from '../popup';
-
-// utils
 import { prefix } from '../config';
 import props from './props';
 import { TdSelectInputProps } from './type';
-
-// hooks
 import useSingle from './useSingle';
 import useMultiple from './useMultiple';
 import useOverlayStyle from './useOverlayStyle';
