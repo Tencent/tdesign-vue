@@ -51,7 +51,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -108,7 +108,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -165,7 +165,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -211,7 +211,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -268,7 +268,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -343,7 +343,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -421,7 +421,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -518,7 +518,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -582,7 +582,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -639,7 +639,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -719,7 +719,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -771,7 +771,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -823,7 +823,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -869,7 +869,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
         autocomplete=""
         class="t-input__inner"
         disabled="disabled"
-        placeholder="请输入"
+        placeholder=""
         type="text"
         unselectable="off"
       />
@@ -999,7 +999,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder="请输入"
+          placeholder=""
           type="text"
           unselectable="off"
         />
@@ -1086,7 +1086,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder="请输入"
+          placeholder=""
           type="text"
           unselectable="off"
         />
@@ -1173,7 +1173,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder="请输入"
+          placeholder=""
           type="text"
           unselectable="off"
         />
@@ -1257,7 +1257,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -1327,7 +1327,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -1397,7 +1397,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
@@ -1467,7 +1467,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     <input
       autocomplete=""
       class="t-input__inner"
-      placeholder="请输入"
+      placeholder=""
       type="text"
       unselectable="off"
     />
