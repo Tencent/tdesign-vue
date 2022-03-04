@@ -294,6 +294,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
+      !this.visible && (this.showCreateOption = false);
     },
   },
   methods: {

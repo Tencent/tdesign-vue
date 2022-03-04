@@ -192,6 +192,13 @@ export default {
           component: () => import('@/examples/input-number/input-number.md'),
         },
         {
+          title: 'TagInput 标签输入框',
+          name: 'tag-input',
+          docType: 'form',
+          path: '/vue/components/tag-input',
+          component: () => import('@/examples/tag-input/tag-input.md'),
+        },
+        {
           title: 'Radio 单选框',
           name: 'radio',
           path: '/vue/components/radio',
@@ -202,6 +209,13 @@ export default {
           name: 'select',
           path: '/vue/components/select',
           component: () => import('@/examples/select/select.md'),
+        },
+        {
+          title: 'SelectInput 筛选器输入框',
+          name: 'select-input',
+          docType: 'form',
+          path: '/vue/components/select-input',
+          component: () => import('@/examples/select-input/select-input.md'),
         },
         {
           title: 'Slider 滑块',

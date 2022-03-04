@@ -2,7 +2,12 @@ import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
 import { prefix } from '../config';
 import {
-  Data, FormValidateResult, TdFormProps, FormValidateParams, AllValidateResult,
+  Data,
+  FormValidateResult,
+  TdFormProps,
+  FormValidateParams,
+  AllValidateResult,
+  FormValidateMessage,
 } from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROLE_COMPONENTS } from './const';
@@ -102,6 +107,14 @@ export default Vue.extend({
         firstError: this.getFirstError<T>(result),
       });
       return result;
+    },
+    setValidateMessage(validateMessage: FormValidateMessage<FormData>) {
+      const keys = Object.keys(validateMessage || {});
+      if (!keys.length) return;
+      const list = this.children
+        .filter((child) => this.isFunction(child.setValidateMessage) && keys.includes(child.name))
+        .map((child) => child.setValidateMessage(validateMessage[child.name]));
+      Promise.all(list);
     },
     submitHandler<T>(e?: FormSubmitEvent) {
       if (this.preventSubmitDefault) {

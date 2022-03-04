@@ -971,6 +971,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             class="t-input t-size-m"
           >
             <input
+              autocomplete=""
               class="t-input__inner"
               placeholder="请输入"
               type="text"
@@ -990,6 +991,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             class="t-input t-size-m"
           >
             <input
+              autocomplete=""
               class="t-input__inner"
               placeholder="请输入"
               type="text"
@@ -1009,6 +1011,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
             class="t-input t-size-m"
           >
             <input
+              autocomplete=""
               class="t-input__inner"
               placeholder="请输入"
               type="text"

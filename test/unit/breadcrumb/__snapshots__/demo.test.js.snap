@@ -293,7 +293,7 @@ exports[`Breadcrumb href demo works fine 1`] = `
       class="t-breadcrumb__item light"
     >
       <span
-        class="t-breadcrumb--text-overflow t-disabled"
+        class="t-breadcrumb--text-overflow t-is-disabled"
       >
         <span
           class="t-breadcrumb__inner"

@@ -8,7 +8,7 @@ import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-breadcrumb__item`;
 const separatorClass = `${prefix}-breadcrumb__separator`;
-const disableClass = `${prefix}-disabled`;
+const disableClass = `${prefix}-is-disabled`;
 const linkClass = `${prefix}-link`;
 const maxLengthClass = `${prefix}-breadcrumb__inner`;
 const textFlowClass = `${prefix}-breadcrumb--text-overflow`;
