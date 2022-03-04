@@ -310,7 +310,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         },
       ];
       return (
-        <div class={classes} onClick={() => (this.isShowPanel = true)}>
+        <div class={classes}>
           <t-input
             disabled={this.tDisabled}
             size={this.size}
