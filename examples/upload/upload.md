@@ -26,6 +26,8 @@ headers | Object | - | 设置上传的请求头部。TS 类型：`{[key: string]
 max | Number | 0 | 用于控制文件上传数量，值为 0 则不限制 | N
 method | String | POST | HTTP 请求类型。可选项：POST/GET/PUT/OPTION | N
 multiple | Boolean | false | 是否支持多选文件 | N
+uploadAllFilesInOneRequest | Boolean | false | 上传时是否只使用一个接口上传所有的文件，需配合 multiple 使用。 | N
+batchUpload | Boolean | false | 是否为合并上传模式，配合 multiple 与 uploadAllFilesInOneRequest 一起使用。当处于合并上传模式时，每次选择上传文件都会清空已上传的文件列表，等待再次合并上传。  | N
 name | String | 'file' | 文件上传时的名称 | N
 placeholder | String | - | 占位符 | N
 requestMethod | Function | - | 自定义上传方法。返回值 status 表示上传成功或失败，error 表示上传失败的原因，response 表示请求上传成功后的返回数据，response.url 表示上传成功后的图片地址。示例一：`{ status: 'fail', error: '上传失败', response }`。示例二：`{ status: 'success', response: { url: 'https://tdesign.gtimg.com/site/avatar.jpg' } }`。TS 类型：`(files: UploadFile) => Promise<RequestMethodResponse>` `interface RequestMethodResponse { status: 'success' | 'fail'; error?: string; response: { url?: string; [key: string]: any } }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/upload/type.ts) | N
