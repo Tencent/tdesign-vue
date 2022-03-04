@@ -55,52 +55,28 @@
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
 const columns = [
-  { colKey: 'instance', title: '集群名称', width: 150 },
+  { colKey: 'instance', title: '集群名称' },
   {
     colKey: 'status',
     title: '状态',
-    width: 100,
     cell: 'status',
   },
   { colKey: 'owner', title: '管理员' },
   { colKey: 'description', title: '描述' },
   {
     colKey: 'op',
-    width: 200,
     title: 'op-column',
     cell: 'op',
   },
 ];
-const data = [
-  {
-    id: 1,
-    instance: '集群测试1',
-    status: 0,
-    owner: 'jenny;peter',
-    description: '隐藏展开图标',
-  },
-  {
-    id: '2',
-    instance: '集群测试2',
-    status: 1,
-    owner: 'jenny',
-    description: 'test',
-  },
-  {
-    id: 3,
-    instance: '集群测试3',
-    status: 0,
-    owner: 'jenny',
-    description: '自定义图标',
-  },
-  {
-    id: 4,
-    instance: '集群测试4',
-    status: 1,
-    owner: 'peter',
-    description: 'test',
-  },
-];
+const data = new Array(5).fill(null).map((item, index) => ({
+  id: index + 100,
+  instance: `JQTest${index + 1}`,
+  status: index % 2,
+  owner: 'jenny;peter',
+  description: 'test',
+}));
+
 export default {
   data() {
     return {

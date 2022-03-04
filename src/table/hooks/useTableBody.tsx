@@ -1,4 +1,5 @@
-import { SetupContext, h, computed } from '@vue/composition-api';
+import { SetupContext, computed } from '@vue/composition-api';
+import { CreateElement } from 'vue';
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/upperFirst';
 import pick from 'lodash/pick';
@@ -10,7 +11,7 @@ import {
   RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
 } from '../type';
 import { BaseTableProps } from '../interface';
-import { ColumnStickyLeftAndRight } from './useFixed';
+import { RowAndColFixedPosition } from './useFixed';
 import { useTNodeJSX } from '../../hooks/tnode';
 import useClassName from './useClassName';
 
@@ -20,7 +21,7 @@ export interface RenderTableBodyParams {
   data: TdBaseTableProps['data'];
   columns: TdBaseTableProps['columns'];
   // 固定列 left/right 具体值
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
 }
 
@@ -49,6 +50,8 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   const getFullRow = (
+    // eslint-disable-next-line
+    h: CreateElement,
     columnLength: number,
     fullRow: TdBaseTableProps['firstFullRow'],
     type: 'first-full-row' | 'last-full-row',
@@ -64,7 +67,8 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     );
   };
 
-  const renderEmpty = (columns: RenderTableBodyParams['columns']) => (
+  // eslint-disable-next-line
+  const renderEmpty = (h: CreateElement, columns: RenderTableBodyParams['columns']) => (
     <tr class={TABLE_CLASS_EMPTY_ROW}>
       <td colspan={columns.length}>
         <div class={TABLE_CLASS_EMPTY}>{renderTNode('empty') || '暂无数据'}</div>
@@ -89,8 +93,9 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     }
   };
 
-  const renderTableBody = (p: RenderTableBodyParams) => {
-    const { columnStickyLeftAndRight, data, columns } = p;
+  // eslint-disable-next-line
+  const renderTableBody = (h: CreateElement, p: RenderTableBodyParams) => {
+    const { rowAndColFixedPosition, data, columns } = p;
     const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
     // 每次渲染清空合并单元格信息
@@ -104,7 +109,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         row,
         rowIndex,
         dataLength,
-        columnStickyLeftAndRight,
+        rowAndColFixedPosition,
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
@@ -120,17 +125,18 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
 
       // 执行展开行渲染
       if (props.renderExpandedRow) {
-        trNodeList.push(props.renderExpandedRow(h, { row, index: rowIndex, columns }));
+        const expandedContent = props.renderExpandedRow(h, { row, index: rowIndex, columns });
+        expandedContent && trNodeList.push(expandedContent);
       }
     });
 
     const list = [
-      getFullRow(columnLength, props.firstFullRow, 'first-full-row'),
+      getFullRow(h, columnLength, props.firstFullRow, 'first-full-row'),
       trNodeList,
-      getFullRow(columnLength, props.lastFullRow, 'last-full-row'),
+      getFullRow(h, columnLength, props.lastFullRow, 'last-full-row'),
     ];
     const isEmpty = !data?.length && !props.loading;
-    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(columns) : list}</tbody>;
+    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(h, columns) : list}</tbody>;
   };
 
   return {

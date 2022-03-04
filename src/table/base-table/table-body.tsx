@@ -145,7 +145,7 @@ export default Vue.extend({
         allRowspanAndColspanProps = this.getRowspanAndColspanProps();
       }
       data.forEach((row: any, index: number) => {
-        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index }) : rowClassName;
+        const defaultRowClass = typeof rowClassName === 'function' ? rowClassName({ row, rowIndex: index, type: 'body' }) : rowClassName;
         let rowClass: Array<string> = [];
         if (defaultRowClass) {
           rowClass = rowClass.concat(defaultRowClass);

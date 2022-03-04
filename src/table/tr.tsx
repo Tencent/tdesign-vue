@@ -8,7 +8,7 @@ import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import { formatRowAttributes, formatRowClassNames } from './util/common';
-import { ColumnStickyLeftAndRight, getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
+import { getRowFixedStyles, getColumnFixedStyles, RowAndColFixedPosition } from './hooks/useFixed';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {
@@ -17,7 +17,7 @@ import {
 import baseTableProps from './base-table-props';
 
 export interface RenderTdExtra {
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  rowAndColFixedPosition: RowAndColFixedPosition;
   columnLength: number;
   dataLength: number;
   cellSpans: RowspanColspan;
@@ -69,7 +69,7 @@ export interface TrProps extends TrCommonProps {
   row: TableRowData;
   rowIndex: number;
   dataLength: number;
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  rowAndColFixedPosition: RowAndColFixedPosition;
   // 属性透传，引用传值，可内部改变
   skipSpansMap: Map<any, boolean>;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
@@ -100,7 +100,7 @@ export default defineComponent({
     row: Object as PropType<TableRowData>,
     rowIndex: Number,
     dataLength: Number,
-    columnStickyLeftAndRight: Object as PropType<ColumnStickyLeftAndRight>,
+    rowAndColFixedPosition: Map as PropType<RowAndColFixedPosition>,
     // 合并单元格，是否跳过渲染
     skipSpansMap: Map as PropType<TrProps['skipSpansMap']>,
     // 扫描到 rowspan 或者 colspan 时触发
@@ -110,11 +110,11 @@ export default defineComponent({
 
   setup(props: TrProps, context: SetupContext) {
     const { tdEllipsisClass, tableBaseClass } = useClassName();
-    const {
-      row, rowIndex, dataLength, columnStickyLeftAndRight,
-    } = props;
+    const { row, rowIndex, dataLength } = props;
     // 固定列、固定行样式和类名
-    const trStyles = computed(() => getRowFixedStyles(rowIndex, columnStickyLeftAndRight, dataLength, props.fixedRows, !!props.footData?.length));
+    const rowId = get(row, props.rowKey || 'id');
+    const trStyles = computed(() => getRowFixedStyles(rowId, rowIndex, dataLength, props.fixedRows, props.rowAndColFixedPosition));
+    // const trStyles = computed<{ classes?: ClassName; style?: Styles }>(() => ({}));
 
     const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' }));
 
@@ -124,7 +124,7 @@ export default defineComponent({
         { row, rowIndex, type: 'body' },
         props.rowKey || 'id',
       );
-      return [trStyles.value.classes, customClasses];
+      return [trStyles.value?.classes, customClasses];
     });
 
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
@@ -176,9 +176,11 @@ export default defineComponent({
     },
     renderTd(h: CreateElement, params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) {
       const { col, colIndex, rowIndex } = params;
-      const { columnLength, cellSpans, dataLength } = extra;
+      const {
+        columnLength, cellSpans, dataLength, rowAndColFixedPosition,
+      } = extra;
       const cellNode = renderCell(params, this.tSlots);
-      const tdStyles = getColumnFixedStyles(col, colIndex, extra.columnStickyLeftAndRight, columnLength);
+      const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition);
       const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
       const classes = [
         tdStyles.classes,
@@ -205,12 +207,12 @@ export default defineComponent({
 
   render(h) {
     const {
-      row, rowIndex, dataLength, columnStickyLeftAndRight,
+      row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
     return (
       <tr
         attrs={this.trAttributes}
-        style={this.trStyles.style}
+        style={this.trStyles?.style}
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
@@ -232,7 +234,7 @@ export default defineComponent({
           if (skipped) return null;
           return this.renderTd(h, params, {
             dataLength,
-            columnStickyLeftAndRight,
+            rowAndColFixedPosition,
             columnLength: this.columns.length,
             cellSpans,
           });

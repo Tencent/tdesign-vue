@@ -1,6 +1,4 @@
-import {
-  computed, defineComponent, SetupContext, h,
-} from '@vue/composition-api';
+import { computed, defineComponent, SetupContext } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
@@ -41,7 +39,7 @@ export default defineComponent({
       isFixedHeader,
       isFixedColumn,
       showColumnShadow,
-      columnStickyLeftAndRight,
+      rowAndColFixedPosition,
       onTableContentScroll,
     } = useFixed(props);
     const {
@@ -73,7 +71,7 @@ export default defineComponent({
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
-      columnStickyLeftAndRight,
+      rowAndColFixedPosition,
       showColumnShadow,
       onTableContentScroll,
       isPaginateData,
@@ -83,8 +81,8 @@ export default defineComponent({
     };
   },
 
-  render() {
-    const { columnStickyLeftAndRight } = this;
+  render(h) {
+    const { rowAndColFixedPosition } = this;
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -93,20 +91,20 @@ export default defineComponent({
         onScroll={this.onTableContentScroll}
       >
         <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
-          {this.renderColgroup()}
-          {this.renderTableHeader({
+          {this.renderColgroup(h)}
+          {this.renderTableHeader(h, {
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight,
+            rowAndColFixedPosition,
           })}
-          {this.renderTableBody({
-            columnStickyLeftAndRight,
+          {this.renderTableBody(h, {
+            rowAndColFixedPosition,
             showColumnShadow: this.showColumnShadow,
             data: this.isPaginateData ? this.dataSource : this.data,
             columns: this.spansAndLeafNodes.leafColumns,
           })}
-          {this.renderTableFooter({
+          {this.renderTableFooter(h, {
             isFixedHeader: this.isFixedHeader,
-            columnStickyLeftAndRight,
+            rowAndColFixedPosition,
           })}
         </table>
       </div>
