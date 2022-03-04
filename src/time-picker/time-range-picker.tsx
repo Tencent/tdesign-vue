@@ -133,6 +133,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     },
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
+      if (this.disabled) return;
       if (context) {
         const isClickDoc = context.trigger === 'document';
         this.isShowPanel = !isClickDoc;
@@ -260,7 +261,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         },
       ];
       return (
-        <div class={classes} onClick={() => (this.isShowPanel = true)}>
+        <div class={classes}>
           <t-input
             disabled={this.disabled}
             size={this.size}
