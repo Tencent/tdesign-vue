@@ -58,7 +58,10 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
               class={`${prefix}-date-picker__header-btn`}
               variant="text"
               size="small"
-              onClick={() => onTypeChange('year')}
+              onClick={(e: Event) => {
+                e.stopPropagation();
+                onTypeChange('year');
+              }}
             >
               {`${year} ${yearAriaLabel}`}
             </t-button>
@@ -68,7 +71,10 @@ export default mixins(getConfigReceiverMixins<Vue, DatePickerConfig>('datePicker
               class={`${prefix}-date-picker__header-btn`}
               variant="text"
               size="small"
-              onClick={() => onTypeChange('month')}
+              onClick={(e: Event) => {
+                e.stopPropagation();
+                onTypeChange('month');
+              }}
             >
               {this.global.months[month]}
             </t-button>
