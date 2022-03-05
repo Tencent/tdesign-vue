@@ -7,6 +7,8 @@ import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
 import { TABLE_CLASS_COLUMN_FIXED, TABLE_CLASS_ROW_FIXED } from './useStyle';
 
+// 固定表头，固定列，固定行，不麻烦。但是加上多级表头，你试试，加上合并单元格，你再试试。
+
 // 固定行的数量不得超过 70 - 50 = 20
 const FIXED_ROW_MAX_Z_INDEX = 70;
 
@@ -29,6 +31,7 @@ export interface FixedColumnInfo {
   offsetHeight?: number;
   clientHeight?: number;
   col?: BaseTableCol;
+  index?: number;
   lastLeftFixedCol?: boolean;
   firstRightFixedCol?: boolean;
 }
@@ -115,19 +118,35 @@ export default function useFixed(props: TdBaseTableProps) {
 
   const isFixedColumn = ref(false);
 
-  function getColumnMap(columns: BaseTableCol[], map: RowAndColFixedPosition = new Map(), parent = '') {
+  function getColumnMap(
+    columns: BaseTableCol[],
+    map: RowAndColFixedPosition = new Map(),
+    levelNodes: FixedColumnInfo[][] = [],
+    level = 0,
+    parent = '',
+  ) {
     for (let i = 0, len = columns.length; i < len; i++) {
       const col = columns[i];
       if (['left', 'right'].includes(col.fixed)) {
         isFixedColumn.value = true;
       }
       const key = col.colKey || i;
-      map.set(key, { col, parent });
+      const columnInfo: FixedColumnInfo = { col, parent, index: i };
+      map.set(key, columnInfo);
       if (col.children?.length) {
-        getColumnMap(col.children, map, col.colKey);
+        getColumnMap(col.children, map, levelNodes, level + 1, col.colKey);
+      }
+      if (levelNodes[level]) {
+        levelNodes[level].push(columnInfo);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        levelNodes[level] = [columnInfo];
       }
     }
-    return map;
+    return {
+      newColumnsMap: map,
+      levelNodes,
+    };
   }
 
   const setFixedLeftPos = (
@@ -148,10 +167,8 @@ export default function useFixed(props: TdBaseTableProps) {
       const width = !isNextColFixed && (!col.children || !col.children.length)
         ? lastColInfo?.clientWidth
         : lastColInfo?.offsetWidth;
+      // const width = lastColInfo?.clientWidth;
       colInfo.left = (lastColInfo?.left || defaultWidth) + (width || 0);
-      if (!isNextColFixed) {
-        colInfo.lastLeftFixedCol = true;
-      }
       // 多级表头
       if (col.children?.length) {
         setFixedLeftPos(col.children, initialColumnMap, colInfo);
@@ -172,15 +189,13 @@ export default function useFixed(props: TdBaseTableProps) {
       // 多级表头，使用父元素作为初始基本位置
       const defaultWidth = i === columns.length - 1 ? parent?.right || 0 : 0;
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i + 1);
-      const isNextColFixed = columns[i - 1]?.fixed;
       // 最后一层 header 的最后一列使用 clientWidth
-      const width = !isNextColFixed && (!col.children || !col.children.length)
+      const isLastColFixed = columns[i - 1]?.fixed;
+      const width = !isLastColFixed && (!col.children || !col.children.length)
         ? lastColInfo?.clientWidth
         : lastColInfo?.offsetWidth;
+      // const width = lastColInfo?.clientWidth;
       colInfo.right = (lastColInfo?.right || defaultWidth) + (width || 0);
-      if (!isNextColFixed) {
-        colInfo.firstRightFixedCol = true;
-      }
       // 多级表头
       if (col.children?.length) {
         setFixedRightPos(col.children, initialColumnMap, colInfo);
@@ -198,9 +213,8 @@ export default function useFixed(props: TdBaseTableProps) {
         const colKey = th.dataset.colkey;
         if (!colKey) {
           log.warn('TDesign Table', `${th.innerText} missing colKey. colKey is required for fixed column feature.`);
-          continue;
         }
-        const obj = initialColumnMap.get(colKey || i);
+        const obj = initialColumnMap.get(colKey || j);
         if (obj?.col?.fixed) {
           initialColumnMap.set(colKey, { ...obj, offsetWidth: th.offsetWidth, clientWidth: th.clientWidth });
         }
@@ -272,10 +286,28 @@ export default function useFixed(props: TdBaseTableProps) {
     updateColumnFixedShadow(target);
   };
 
+  // 多级表头场景较为复杂：为了滚动的阴影效果，需要知道哪些列是边界列，左侧固定列的最后一列，右侧固定列的第一列，每一层表头都需要兼顾
+  const setIsLastOrFirstFixedCol = (levelNodes: FixedColumnInfo[][]) => {
+    for (let t = 0; t < levelNodes.length; t++) {
+      const nodes = levelNodes[t];
+      for (let i = 0, len = nodes.length; i < len; i++) {
+        const colMapInfo = nodes[i];
+        const nextColMapInfo = nodes[i + 1];
+        if (colMapInfo.col.fixed === 'left' && nextColMapInfo?.col.fixed !== 'left') {
+          colMapInfo.lastLeftFixedCol = true;
+        }
+        const lastColMapInfo = nodes[i - 1];
+        if (colMapInfo.col.fixed === 'right' && lastColMapInfo?.col.fixed !== 'right') {
+          colMapInfo.firstRightFixedCol = true;
+        }
+      }
+    }
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updateFixedStatus = () => {
-    const newColumnsMap = getColumnMap(columns.value);
-    // rowAndColFixedPosition.value = newColumnsMap;
+    const { newColumnsMap, levelNodes } = getColumnMap(columns.value);
+    setIsLastOrFirstFixedCol(levelNodes);
     const timer = setTimeout(() => {
       if (isFixedColumn.value || fixedRows.value?.length) {
         setRowAndColFixedPosition(tableContentRef.value, newColumnsMap);

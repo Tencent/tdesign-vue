@@ -159,6 +159,7 @@ export default defineComponent({
     };
 
     const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
+      if (!window || !window.IntersectionObserver) return;
       try {
         const io = new window.IntersectionObserver(
           (entries) => {

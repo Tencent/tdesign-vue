@@ -21,7 +21,7 @@ const columns = [
   },
   {
     colKey: 'instance',
-    title: '集群名称集群名称集群名称集群名称集群名称集群名称集群名称',
+    title: '集群名称',
   },
   {
     colKey: 'survivalTime',

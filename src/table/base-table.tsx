@@ -134,7 +134,7 @@ export default defineComponent({
       }
       : onTableContentScroll;
 
-    const colgroup = this.renderColgroup(h);
+    const colgroup = this.renderColgroup(h, this.spansAndLeafNodes?.leafColumns || this.columns);
     const header = this.renderTableHeader(h, {
       isFixedHeader: this.isFixedHeader,
       rowAndColFixedPosition,

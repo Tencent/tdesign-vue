@@ -226,6 +226,7 @@ const useVirtualScroll = ({
     }
   };
   onMounted(() => {
+    if (!window || !window.IntersectionObserver) return;
     const ob = new window.IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting || entry.intersectionRatio) {

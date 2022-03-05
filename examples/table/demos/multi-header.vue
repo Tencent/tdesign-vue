@@ -1,6 +1,6 @@
 <template>
   <!-- 注意控制父元素宽度 -->
-  <div style="width: 100%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-header">
+  <div style="width: 90%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-header">
     <!-- 按钮操作区域 -->
     <div>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
@@ -20,8 +20,6 @@
       :max-height="fixedHeader ? 380 : undefined"
       :columnController="{ displayType: 'auto-width' }"
       :filterRow="() => null"
-      tableContentWidth="1200"
-      table-layout="auto"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
     ></t-table>
@@ -40,12 +38,16 @@ for (let i = 0; i < 6; i++) {
       postion: `读取 ${i} 个数据的嵌套信息值`,
     },
     needed: i % 4 === 0 ? '是' : '否',
+    type_default: '-',
     description: '数据源',
     field1: '字段1',
     field2: '字段2',
     field3: '字段3',
     field4: '字段4',
     field5: '字段5',
+    field6: '字段6',
+    field7: '字段7',
+    field8: '字段8',
   });
 }
 
@@ -55,10 +57,12 @@ function getColumns(fixedLeftCol, fixedRightCol) {
       title: '序号',
       colKey: 'index',
       fixed: fixedLeftCol && 'left',
+      width: 100,
     },
     {
       title: '汇总属性',
       fixed: fixedLeftCol && 'left',
+      width: 100,
       colKey: 'total_info',
       children: [
         {
@@ -66,23 +70,27 @@ function getColumns(fixedLeftCol, fixedRightCol) {
           colKey: 'platform',
           title: '平台',
           fixed: fixedLeftCol && 'left',
+          width: 100,
         },
         {
           title: '类型及默认值',
           colKey: 'type_default',
           fixed: fixedLeftCol && 'left',
+          width: 100,
           children: [
             {
               align: 'left',
               colKey: 'type',
               title: '类型',
               fixed: fixedLeftCol && 'left',
+              width: 100,
             },
             {
               align: 'left',
               colKey: 'default',
               title: '默认值',
               fixed: fixedLeftCol && 'left',
+              width: 100,
               sorter: (a, b) => a.default - b.default,
             },
             {
@@ -90,6 +98,7 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               colKey: 'needed',
               title: '是否必传',
               fixed: fixedLeftCol && 'left',
+              width: 100,
             },
           ],
         },
@@ -98,24 +107,29 @@ function getColumns(fixedLeftCol, fixedRightCol) {
     {
       colKey: 'field1',
       title: '字段1',
+      width: 100,
     },
     {
       colKey: 'field2',
       title: '字段2',
+      width: 100,
     },
 
     {
       colKey: 'field3',
       title: '字段3',
+      width: 100,
     },
     {
       colKey: 'field4',
       title: '字段4',
+      width: 100,
     },
     {
       title: '属性及说明',
       colKey: 'instruction',
       fixed: fixedRightCol && 'right',
+      width: 100,
       children: [
         {
           align: 'left',
@@ -123,6 +137,7 @@ function getColumns(fixedLeftCol, fixedRightCol) {
           colKey: 'property',
           title: '属性',
           fixed: fixedRightCol && 'right',
+          width: 100,
           filter: {
             type: 'single',
             list: [
@@ -132,6 +147,26 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               { label: 'D', value: 'D' },
             ],
           },
+          children: [
+            {
+              colKey: 'field6',
+              title: '字段6',
+              fixed: fixedRightCol && 'right',
+              width: 100,
+            },
+            {
+              colKey: 'field7',
+              title: '字段7',
+              fixed: fixedRightCol && 'right',
+              width: 100,
+            },
+            {
+              colKey: 'field8',
+              title: '字段8',
+              fixed: fixedRightCol && 'right',
+              width: 100,
+            },
+          ],
         },
         {
           align: 'left',
@@ -139,6 +174,7 @@ function getColumns(fixedLeftCol, fixedRightCol) {
           colKey: 'description',
           title: '说明',
           fixed: fixedRightCol && 'right',
+          width: 100,
         },
       ],
     },
@@ -146,6 +182,7 @@ function getColumns(fixedLeftCol, fixedRightCol) {
       colKey: 'field5',
       title: '字段5',
       fixed: fixedRightCol && 'right',
+      width: 100,
     },
   ];
 }

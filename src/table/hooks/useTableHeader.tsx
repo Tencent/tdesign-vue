@@ -3,7 +3,7 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
 import { prefix } from '../../config';
-import { TdBaseTableProps } from '../type';
+import { BaseTableCol, TdBaseTableProps } from '../type';
 import { RowAndColFixedPosition, getColumnFixedStyles } from './useFixed';
 import {
   formatCSSUnit,
@@ -53,7 +53,13 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   const isMultipleHeader = computed(() => thList.value.length > 1);
 
   // eslint-disable-next-line
-  const renderColgroup = (h: CreateElement) => props.columns.map((col) => <col style={{ width: formatCSSUnit(col.width) }}></col>);
+  const renderColgroup = (h: CreateElement, columns: BaseTableCol[]) => (
+    <colgroup>
+      {columns.map((col) => (
+        <col style={{ width: formatCSSUnit(col.width) }}></col>
+      ))}
+    </colgroup>
+  );
 
   // eslint-disable-next-line
   const renderThNodeList = (h: CreateElement, rowAndColFixedPosition: RowAndColFixedPosition) => {

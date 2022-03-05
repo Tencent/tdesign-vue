@@ -3043,12 +3043,14 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.v
 
 exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue correctly 1`] = `
 <div style="padding:16px;">
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
@@ -3073,13 +3075,15 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
     </table>
   </div>
 </div> <br><br>
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:64px;">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col style="width:64px;">
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
@@ -10691,12 +10695,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:250px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:250px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">FirstName</th>
@@ -10755,15 +10761,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
 exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示斑马纹</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示悬浮效果</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">宽度自适应</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--striped">
+  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -10834,13 +10842,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m t-table--align-top">
+  <div class="t-table t-size-m t-table--align-top" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -10881,7 +10891,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m t-table--bordered t-table--striped">
+  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
     <div>
       <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -10890,12 +10900,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
     </div>
     <div class="t-table__content">
       <table class="t-table--layout-auto" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -10966,15 +10978,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:150px;">
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:150px;">
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -11036,12 +11050,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue correctly 1`] = `
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="type" class="t-table__th-type"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-app">
@@ -11073,13 +11089,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
   <div class="item">
     <div style="margin:16px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否允许多字段排序</span></label></div>
     <div style="margin:16px;">排序：{&quot;sortBy&quot;:&quot;status&quot;,&quot;descending&quot;:true}</div>
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -11154,13 +11172,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
   <div class="item">
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -11220,15 +11240,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11249,15 +11271,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11278,15 +11302,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11317,15 +11343,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col style="width:64px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
@@ -11404,13 +11432,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
 exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span></div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">
@@ -11498,17 +11528,19 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed">
+  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:80px;">
-        <col style="width:100px;">
-        <col style="width:150px;">
-        <col style="width:150px;">
-        <col style="width:250px;">
-        <col style="width:100px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:80px;">
+          <col style="width:100px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:250px;">
+          <col style="width:100px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index">序号</th>
@@ -11587,15 +11619,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
     </div>
   </div> <br><br>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div> <br><br>
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col>
-        <col>
-        <col style="width:200px;">
-        <col>
+        <colgroup>
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="platform" class="t-table__th-platform">平台</th>
@@ -11832,17 +11866,19 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
     </div>
   </div>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed">
+  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col style="width:150px;">
-        <col style="width:250px;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col style="width:150px;">
+          <col style="width:250px;">
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index">序号</th>
@@ -12077,16 +12113,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 
 exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12109,16 +12147,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12139,16 +12179,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12177,14 +12219,16 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correctly 1`] = `
-<div class="t-table t-size-s t-table--bordered">
+<div class="t-table t-size-s t-table--bordered" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
+      <colgroup>
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="platform" class="t-table__th-platform">平台</th>
@@ -12237,9 +12281,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
+<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:90%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--multiple-header">
+  <div class="t-table t-size-m t-table--bordered t-table--multiple-header" style="position:relative;">
     <div>
       <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -12247,15 +12291,23 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__content">
-      <table class="t-table--layout-auto" style="width:1200px;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header t-table--bordered t-table__header--multiple">
           <tr>
             <th data-colkey="index" rowspan="3" class="t-table__th-index">序号</th>
@@ -12264,13 +12316,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="field2" rowspan="3" class="t-table__th-field2">字段2</th>
             <th data-colkey="field3" rowspan="3" class="t-table__th-field3">字段3</th>
             <th data-colkey="field4" rowspan="3" class="t-table__th-field4">字段4</th>
+            <th data-colkey="instruction" colspan="4" class="t-table__th-instruction">属性及说明</th>
             <th data-colkey="field5" rowspan="3" class="t-table__th-field5">字段5</th>
-            <th data-colkey="instruction" colspan="2" class="t-table__th-instruction">属性及说明</th>
           </tr>
           <tr>
             <th data-colkey="platform" rowspan="2" class="t-table__header-th--bordered t-table__th-platform">平台</th>
             <th data-colkey="type_default" colspan="3" class="t-table__th-type_default">类型及默认值</th>
-            <th data-colkey="property" rowspan="2" class="t-table__th-property">
+            <th data-colkey="property" colspan="3" class="t-table__th-property">
               <div class="t-table__cell--filterable">
                 <div class="t-table__cell--title">
                   <div>属性</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
@@ -12290,6 +12342,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
     </div>
     </th>
     <th data-colkey="needed" class="t-table__th-needed">是否必传</th>
+    <th data-colkey="field6" class="t-table__th-field6">字段6</th>
+    <th data-colkey="field7" class="t-table__th-field7">字段7</th>
+    <th data-colkey="field8" class="t-table__th-field8">字段8</th>
     </tr>
     </thead>
     <tbody class="t-table__body t-vertical-align-middle">
@@ -12303,13 +12358,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">A</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
       <tr>
         <td>1</td>
@@ -12321,13 +12376,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">B</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
       <tr>
         <td>2</td>
@@ -12339,13 +12394,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">C</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
       <tr>
         <td>3</td>
@@ -12357,13 +12412,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">A</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
       <tr>
         <td>4</td>
@@ -12375,13 +12430,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">B</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
       <tr>
         <td>5</td>
@@ -12393,13 +12448,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <td>字段2</td>
         <td>字段3</td>
         <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">C</div>
-        </td>
+        <td>字段6</td>
+        <td>字段7</td>
+        <td>字段8</td>
         <td class="t-table-td--ellipsis">
           <div class="t-table__ellipsis">数据源</div>
         </td>
+        <td>字段5</td>
       </tr>
     </tbody>
     </table>
@@ -12421,13 +12476,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
       &quot;descending&quot;: false
       }
       ]</p> <br>
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -12501,15 +12558,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -12609,13 +12668,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-table--align-top">
+<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-table--align-top" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:200px;">
-      <col style="width:200px;">
-      <col style="width:200px;">
-      <col style="width:260px;">
+      <colgroup>
+        <col style="width:200px;">
+        <col style="width:200px;">
+        <col style="width:200px;">
+        <col style="width:260px;">
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="name" class="t-table__th-name">UNKNOW_USER</th>
@@ -12657,15 +12718,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="row-select" class="demo-multiple-select-cell t-table__th-row-select"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></th>
@@ -12743,15 +12806,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="row-select" class="demo-single-select-cell t-table__th-row-select"></th>
@@ -12829,14 +12894,16 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue correctly 1`] = `
 <div>
-  <div show-columns="" class="t-table t-size-m">
+  <div show-columns="" class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -12902,13 +12969,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
     &quot;sortBy&quot;: &quot;status&quot;,
     &quot;descending&quot;: true
     }</p>
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col style="width:200px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col style="width:200px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -12982,14 +13051,16 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button></div> <br>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col style="width:220px;">
-        <col>
-        <col>
-        <col style="width:250px;">
+        <colgroup>
+          <col>
+          <col style="width:220px;">
+          <col>
+          <col>
+          <col style="width:250px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="id" class="t-table__th-id">编号</th>
@@ -13134,15 +13205,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <br>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:20px;">
-        <col style="width:200px;">
-        <col style="width:100px;">
-        <col>
-        <col>
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:20px;">
+          <col style="width:200px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
@@ -13231,6 +13304,51 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue correctly 1`] = `
+<div class="demo-container">
+  <div class="item">
+    <div class="t-table t-size-m" style="position:relative;">
+      <table class="t-table--layout-fixed t-table__virtual-scroll-header" style="width:undefinedpx;">
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="id" class="t-table__th-id">id</th>
+            <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
+            <th data-colkey="survivalTime" class="t-table__th-survivalTime">存活时间(s)</th>
+            <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+          </tr>
+        </thead>
+      </table>
+      <div class="t-table__content" style="height:200px;">
+        <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 480000px);"></div>
+        <table class="t-table--layout-fixed" style="width:;">
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead class="t-table__header">
+            <tr>
+              <th data-colkey="id" class="t-table__th-id">id</th>
+              <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">存活时间(s)</th>
+              <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body t-vertical-align-middle" style="transform:translate(0, 0px);">
+            <tr class="t-table__empty-row">
+              <td colspan="4">
+                <div class="t-table__empty">暂无数据</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
