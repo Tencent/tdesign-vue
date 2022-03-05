@@ -1,273 +1,278 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height height = 100 1`] = `
-<div class="t-table t-table__header--fixed">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <div class="t-table__header" style="padding-right: 0px;">
-        <table style="table-layout: fixed;">
-          <colgroup>
-            <col>
-            <col>
-            <col>
-          </colgroup>
-          <thead>
-            <tr>
-              <td class="" key="id" colspan="1" rowspan="1">id</td>
-              <td class="" key="type" colspan="1" rowspan="1">类型</td>
-              <td class="" key="value" colspan="1" rowspan="1">取值</td>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div class="t-table__body" style="height: 100px;">
-        <table style="table-layout: fixed;">
-          <colgroup>
-            <col>
-            <col>
-            <col>
-          </colgroup>
-          <tbody class="t-table__body">
-            <tr rowkey="id" class="" key="1">
-              <td class="" key="id" length="3">1</td>
-              <td class="" key="type" length="3">Number</td>
-              <td class="" key="value" length="3">1</td>
-            </tr>
-            <tr rowkey="id" class="" key="2">
-              <td class="" key="id" length="3">2</td>
-              <td class="" key="type" length="3">Number</td>
-              <td class="" key="value" length="3">2</td>
-            </tr>
-            <tr rowkey="id" class="" key="3">
-              <td class="" key="id" length="3">3</td>
-              <td class="" key="type" length="3">Number</td>
-              <td class="" key="value" length="3">3</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<div class="t-table t-size-m">
+  <div class="t-table__content" style="height: 100px;">
+    <table class="t-table--layout-fixed">
+      <col>
+      <col>
+      <col>
+      <thead class="t-table__header">
+        <tr>
+          <th data-colkey="id" class="t-table__th-id">id</th>
+          <th data-colkey="type" class="t-table__th-type">类型</th>
+          <th data-colkey="value" class="t-table__th-value">取值</th>
+        </tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="">
+          <td class="">1</td>
+          <td class="">Number</td>
+          <td class="">1</td>
+        </tr>
+        <tr class="">
+          <td class="">2</td>
+          <td class="">Number</td>
+          <td class="">2</td>
+        </tr>
+        <tr class="">
+          <td class="">3</td>
+          <td class="">Number</td>
+          <td class="">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "large", verticalAlign="top" 1`] = `
-<div class="t-table t-size-l t-table-table--align-top">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup></colgroup>
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody class="t-table__body"></tbody>
-      </table>
-    </div>
-    <div class="t-table__empty">暂无数据</div>
+<div class="t-table t-size-l t-table--align-top">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <thead class="t-table__header">
+        <tr></tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-top">
+        <tr class="t-table__empty-row">
+          <td colspan="0">
+            <div class="t-table__empty">暂无数据</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "medium", verticalAlign="bottom" 1`] = `
-<div class="t-table t-table-table--align-bottom">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup></colgroup>
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody class="t-table__body"></tbody>
-      </table>
-    </div>
-    <div class="t-table__empty">暂无数据</div>
+<div class="t-table t-size-m t-table--align-bottom">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <thead class="t-table__header">
+        <tr></tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-bottom">
+        <tr class="t-table__empty-row">
+          <td colspan="0">
+            <div class="t-table__empty">暂无数据</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "small", verticalAlign="middle" 1`] = `
 <div class="t-table t-size-s t-table--bordered t-table--striped t-table--hoverable">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup>
-          <col>
-          <col>
-          <col>
-        </colgroup>
-        <thead>
-          <tr>
-            <td class="" key="id" colspan="1" rowspan="1">id</td>
-            <td class="" key="type" colspan="1" rowspan="1">类型</td>
-            <td class="" key="value" colspan="1" rowspan="1">取值</td>
-          </tr>
-        </thead>
-        <tbody class="t-table__body">
-          <tr rowkey="id" class="" key="1">
-            <td class="" key="id" length="3">1</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">1</td>
-          </tr>
-          <tr rowkey="id" class="" key="2">
-            <td class="" key="id" length="3">2</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">2</td>
-          </tr>
-          <tr rowkey="id" class="" key="3">
-            <td class="" key="id" length="3">3</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">3</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <col>
+      <col>
+      <col>
+      <thead class="t-table__header">
+        <tr>
+          <th data-colkey="id" class="t-table__th-id">id</th>
+          <th data-colkey="type" class="t-table__th-type">类型</th>
+          <th data-colkey="value" class="t-table__th-value">取值</th>
+        </tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="">
+          <td class="">1</td>
+          <td class="">Number</td>
+          <td class="">1</td>
+        </tr>
+        <tr class="">
+          <td class="">2</td>
+          <td class="">Number</td>
+          <td class="">2</td>
+        </tr>
+        <tr class="">
+          <td class="">3</td>
+          <td class="">Number</td>
+          <td class="">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
-<div class="t-table">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup></colgroup>
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody class="t-table__body"></tbody>
-      </table>
-    </div>
-    <div class="t-table__empty">暂无数据</div>
+<div class="t-table t-size-m">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <thead class="t-table__header">
+        <tr></tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="t-table__empty-row">
+          <td colspan="0">
+            <div class="t-table__empty">暂无数据</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.columns \`columns\` with align, width, minWidth and ellipsis 1`] = `
-<div class="t-table">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup>
-          <col style="width: 100px; min-width: 200px;">
-          <col>
-          <col>
-        </colgroup>
-        <thead>
-          <tr>
-            <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" colspan="1" rowspan="1">id</td>
-            <td class="" key="type" colspan="1" rowspan="1">类型</td>
-            <td class="" key="value" colspan="1" rowspan="1">取值</td>
-          </tr>
-        </thead>
-        <tbody class="t-table__body">
-          <tr rowkey="id" class="" key="1">
-            <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">1</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">1</td>
-          </tr>
-          <tr rowkey="id" class="" key="2">
-            <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">2</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">2</td>
-          </tr>
-          <tr rowkey="id" class="" key="3">
-            <td class="t-align-left t-text-ellipsis" key="id" style="overflow: hidden;" length="3">3</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">3</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="t-table t-size-m">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <col style="width: 100px;">
+      <col>
+      <col>
+      <thead class="t-table__header">
+        <tr>
+          <th data-colkey="id" class="t-table__th-id">id</th>
+          <th data-colkey="type" class="t-table__th-type">类型</th>
+          <th data-colkey="value" class="t-table__th-value">取值</th>
+        </tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="">
+          <td class="t-table-td--ellipsis">
+            <div class="t-table__ellipsis">1</div>
+          </td>
+          <td class="">Number</td>
+          <td class="">1</td>
+        </tr>
+        <tr class="">
+          <td class="t-table-td--ellipsis">
+            <div class="t-table__ellipsis">2</div>
+          </td>
+          <td class="">Number</td>
+          <td class="">2</td>
+        </tr>
+        <tr class="">
+          <td class="t-table-td--ellipsis">
+            <div class="t-table__ellipsis">3</div>
+          </td>
+          <td class="">Number</td>
+          <td class="">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.columns \`columns\` with children 1`] = `
-<div class="t-table">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup>
-          <col>
-          <col>
-        </colgroup>
-        <thead>
-          <tr>
-            <td class="" colspan="4" rowspan="1">汇总属性</td>
-            <td class="" colspan="2" rowspan="1">属性及说明</td>
-          </tr>
-          <tr>
-            <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" colspan="1" rowspan="2">平台</td>
-            <td class="" colspan="3" rowspan="1">类型及默认值</td>
-            <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" colspan="1" rowspan="2">属性</td>
-            <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" colspan="1" rowspan="2">说明</td>
-          </tr>
-          <tr>
-            <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" colspan="1" rowspan="1">类型</td>
-            <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" colspan="1" rowspan="1">默认值</td>
-            <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" colspan="1" rowspan="1">是否必传</td>
-          </tr>
-        </thead>
-        <tbody class="t-table__body">
-          <tr rowkey="id" class="">
-            <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
-            <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" length="6">any[]</td>
-            <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" length="6">[]</td>
-            <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
-            <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" length="6">data</td>
-            <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" length="6">数据源</td>
-          </tr>
-          <tr rowkey="id" class="">
-            <td class="t-align-left t-text-ellipsis test" key="platform" style="overflow: hidden;" length="6">公有</td>
-            <td class="t-align-left t-text-ellipsis row" key="type" style="overflow: hidden;" length="6">String</td>
-            <td class="t-align-left t-text-ellipsis test4" key="default" style="overflow: hidden;" length="6">-1</td>
-            <td class="t-align-left t-text-ellipsis test3" key="needed" style="overflow: hidden;" length="6">Y</td>
-            <td class="t-align-left t-text-ellipsis test2" key="property" style="overflow: hidden;" length="6">rowkey</td>
-            <td class="t-align-left t-text-ellipsis row" key="description" style="overflow: hidden;" length="6">指定rowkey</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="t-table t-size-m t-table--multiple-header">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <col>
+      <col>
+      <thead class="t-table__header t-table__header--multiple">
+        <tr>
+          <th colspan="4" class="">汇总属性</th>
+          <th colspan="2" class="">属性及说明</th>
+        </tr>
+        <tr>
+          <th data-colkey="platform" rowspan="2" class="test t-table__th-platform">平台</th>
+          <th colspan="3" class="">类型及默认值</th>
+          <th data-colkey="property" rowspan="2" class="test2 t-table__th-property">属性</th>
+          <th data-colkey="description" rowspan="2" class="row t-table__th-description">说明</th>
+        </tr>
+        <tr>
+          <th data-colkey="type" class="row t-table__header-th--bordered t-table__th-type">类型</th>
+          <th data-colkey="default" class="test4 t-table__th-default">默认值</th>
+          <th data-colkey="needed" class="test3 t-table__th-needed">是否必传</th>
+        </tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="">
+          <td class="test t-table-td--ellipsis">
+            <div class="t-table__ellipsis">公有</div>
+          </td>
+          <td class="row t-table-td--ellipsis">
+            <div class="t-table__ellipsis">any[]</div>
+          </td>
+          <td class="test4 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">[]</div>
+          </td>
+          <td class="test3 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">Y</div>
+          </td>
+          <td class="test2 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">data</div>
+          </td>
+          <td class="row t-table-td--ellipsis">
+            <div class="t-table__ellipsis">数据源</div>
+          </td>
+        </tr>
+        <tr class="">
+          <td class="test t-table-td--ellipsis">
+            <div class="t-table__ellipsis">公有</div>
+          </td>
+          <td class="row t-table-td--ellipsis">
+            <div class="t-table__ellipsis">String</div>
+          </td>
+          <td class="test4 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">-1</div>
+          </td>
+          <td class="test3 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">Y</div>
+          </td>
+          <td class="test2 t-table-td--ellipsis">
+            <div class="t-table__ellipsis">rowkey</div>
+          </td>
+          <td class="row t-table-td--ellipsis">
+            <div class="t-table__ellipsis">指定rowkey</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
 
 exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
-<div class="t-table t-table__cell--fixed t-table--has-fixed">
-  <div class="t-loading__parent">
-    <div class="t-table__content">
-      <table style="table-layout: fixed;">
-        <colgroup>
-          <col>
-          <col>
-          <col>
-        </colgroup>
-        <thead>
-          <tr>
-            <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" colspan="1" rowspan="1">id</td>
-            <td class="" key="type" colspan="1" rowspan="1">类型</td>
-            <td class="" key="value" colspan="1" rowspan="1">取值</td>
-          </tr>
-        </thead>
-        <tbody class="t-table__body">
-          <tr rowkey="id" class="" key="1">
-            <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">1</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">1</td>
-          </tr>
-          <tr rowkey="id" class="" key="2">
-            <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">2</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">2</td>
-          </tr>
-          <tr rowkey="id" class="" key="3">
-            <td class="t-table__cell--fixed-left" key="id" style="position: sticky; left: 0px;" length="3">3</td>
-            <td class="" key="type" length="3">Number</td>
-            <td class="" key="value" length="3">3</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="t-table t-size-m t-table--column-fixed">
+  <div class="t-table__content">
+    <table class="t-table--layout-fixed">
+      <col>
+      <col>
+      <col>
+      <thead class="t-table__header">
+        <tr>
+          <th data-colkey="id" class="t-table__th-id">id</th>
+          <th data-colkey="type" class="t-table__th-type">类型</th>
+          <th data-colkey="value" class="t-table__th-value">取值</th>
+        </tr>
+      </thead>
+      <tbody class="t-table__body t-vertical-align-middle">
+        <tr class="">
+          <td class="">1</td>
+          <td class="">Number</td>
+          <td class="">1</td>
+        </tr>
+        <tr class="">
+          <td class="">2</td>
+          <td class="">Number</td>
+          <td class="">2</td>
+        </tr>
+        <tr class="">
+          <td class="">3</td>
+          <td class="">Number</td>
+          <td class="">3</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;

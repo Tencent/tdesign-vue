@@ -1,8 +1,9 @@
-import { SetupContext, h, computed } from '@vue/composition-api';
+import { SetupContext, computed } from '@vue/composition-api';
+import { CreateElement } from 'vue';
 import camelCase from 'lodash/camelCase';
 import upperFirst from 'lodash/upperFirst';
-import pick from 'lodash/pick';
 import get from 'lodash/get';
+import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
 import {
   TABLE_CLASS_BODY, TAVLE_CLASS_VERTICAL_ALIGN, TABLE_CLASS_EMPTY, TABLE_CLASS_EMPTY_ROW,
@@ -11,7 +12,7 @@ import {
   RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
 } from '../type';
 import { BaseTableProps } from '../interface';
-import { ColumnStickyLeftAndRight } from './useFixed';
+import { RowAndColFixedPosition } from './useFixed';
 import { useTNodeJSX } from '../../hooks/tnode';
 import useClassName from './useClassName';
 
@@ -21,7 +22,7 @@ export interface RenderTableBodyParams {
   data: TdBaseTableProps['data'];
   columns: TdBaseTableProps['columns'];
   // 固定列 left/right 具体值
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
   translateY: object;
   scrollType: string;
@@ -41,21 +42,23 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
   ]);
 
-  const getTrListeners = (row: TableRowData, rowIndex: number) => {
+  const getTrListeners = () => {
     const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
     // add events to row
     ROW_AND_TD_LISTENERS.forEach((eventName) => {
-      trListeners[eventName] = (e: MouseEvent) => {
-        const p = { e, row, index: rowIndex };
-        props[`onRow${upperFirst(eventName)}`]?.(p);
+      const name = ['cell-click'].includes(eventName) ? eventName : `row-${eventName}`;
+      trListeners[name] = (context) => {
+        props[`onRow${upperFirst(eventName)}`]?.(context);
         // Vue3 ignore this line
-        emit(`row-${eventName}`, p);
+        emit(name, context);
       };
     });
     return trListeners;
   };
 
   const getFullRow = (
+    // eslint-disable-next-line
+    h: CreateElement,
     columnLength: number,
     fullRow: TdBaseTableProps['firstFullRow'],
     type: 'first-full-row' | 'last-full-row',
@@ -71,7 +74,8 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     );
   };
 
-  const renderEmpty = (columns: RenderTableBodyParams['columns']) => (
+  // eslint-disable-next-line
+  const renderEmpty = (h: CreateElement, columns: RenderTableBodyParams['columns']) => (
     <tr class={TABLE_CLASS_EMPTY_ROW}>
       <td colspan={columns.length}>
         <div class={TABLE_CLASS_EMPTY}>{renderTNode('empty') || '暂无数据'}</div>
@@ -96,9 +100,10 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     }
   };
 
-  const renderTableBody = (p: RenderTableBodyParams) => {
+  // eslint-disable-next-line
+  const renderTableBody = (h: CreateElement, p: RenderTableBodyParams) => {
     const {
-      columnStickyLeftAndRight,
+      rowAndColFixedPosition,
       data,
       columns,
       scrollType,
@@ -121,7 +126,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         row,
         rowIndex,
         dataLength,
-        columnStickyLeftAndRight,
+        rowAndColFixedPosition,
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
@@ -134,37 +139,36 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         trProps.onCellClick = props.onCellClick;
       }
       // Vue3 do not need getTrListeners
-      const on = getTrListeners(row, rowIndex);
+      const on: { [keys: string]: Function } = getTrListeners();
+      if (handleRowMounted) {
+        on.onRowMounted = handleRowMounted;
+      }
 
       const trNode = (
-        <TrElement
-          scopedSlots={slots}
-          key={get(row, props.rowKey || 'id')}
-          on={on}
-          props={trProps}
-          onRowMounted={handleRowMounted}
-        ></TrElement>
+        <TrElement scopedSlots={slots} key={get(row, props.rowKey || 'id')} on={on} props={trProps}></TrElement>
       );
       trNodeList.push(trNode);
 
       // 执行展开行渲染
       if (props.renderExpandedRow) {
-        trNodeList.push(props.renderExpandedRow(h, { row, index: rowIndex, columns }));
+        const expandedContent = props.renderExpandedRow(h, { row, index: rowIndex, columns });
+        expandedContent && trNodeList.push(expandedContent);
       }
     });
 
     const list = [
-      getFullRow(columnLength, props.firstFullRow, 'first-full-row'),
+      getFullRow(h, columnLength, props.firstFullRow, 'first-full-row'),
       trNodeList,
-      getFullRow(columnLength, props.lastFullRow, 'last-full-row'),
+      getFullRow(h, columnLength, props.lastFullRow, 'last-full-row'),
     ];
     const isEmpty = !data?.length && !props.loading;
+
     return (
       <tbody
         class={tbodyClases.value}
         style={{ transform: scrollType === 'virtual' && `translate(0, ${translateY}px)` }}
       >
-        {isEmpty ? renderEmpty(columns) : list}
+        {isEmpty ? renderEmpty(h, columns) : list}
       </tbody>
     );
   };

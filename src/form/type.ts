@@ -47,7 +47,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   layout?: 'vertical' | 'inline';
   /**
-   * 是否阻止表单提交默认事件，即提交后会刷新页面
+   * 是否阻止表单提交默认事件（表单提交默认事件会刷新页面），设置为 `true` 可以避免刷新
    * @default true
    */
   preventSubmitDefault?: boolean;
@@ -111,6 +111,10 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
    * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
    */
   reset?: (params?: FormResetParams) => void;
+  /**
+   * 设置自定义校验结果，如远程校验信息直接呈现。注意需要在组件挂载结束后使用该方法。`FormData` 指表单数据泛型
+   */
+  setValidateMessage?: (message: FormValidateMessage<FormData>) => void;
   /**
    * 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法，此方法不会触发 `submit` 事件
    */
@@ -339,6 +343,13 @@ export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
 export interface FormResetParams {
   type: 'initial' | 'empty';
   fields?: Array<keyof FormData>;
+}
+
+export type FormValidateMessage<FormData> = { [field in keyof FormData]: FormItemValidateMessage[] };
+
+export interface FormItemValidateMessage {
+  type: 'warning' | 'error';
+  message: string;
 }
 
 export interface FormValidateParams {

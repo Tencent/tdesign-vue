@@ -354,6 +354,7 @@ exports[`Progress trigger demo works fine 1`] = `
     class="t-input t-size-m"
   >
     <input
+      autocomplete=""
       class="t-input__inner"
       placeholder="获得焦点时触发"
       type="text"

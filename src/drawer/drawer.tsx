@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { CloseIcon } from 'tdesign-icons-vue';
+
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';
@@ -26,12 +27,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     TButton,
   },
 
-  props: { ...props },
+  props,
 
   directives: {
     TransferDom,
   },
-
+  data() {
+    return {
+      isSizeDragging: false,
+      draggedSizeValue: null,
+    };
+  },
   computed: {
     drawerClasses(): ClassName {
       return [
@@ -45,6 +51,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       ];
     },
     sizeValue(): string {
+      if (this.draggedSizeValue) return this.draggedSizeValue;
       const defaultSize = isNaN(Number(this.size)) ? this.size : `${this.size}px`;
       return (
         {
@@ -58,8 +65,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       return {
         // 用于抵消动画效果：transform: translateX(100%); 等
         transform: this.visible ? 'translateX(0)' : undefined,
-        width: ['left', 'right'].includes(this.placement) ? this.sizeValue : '',
-        height: ['top', 'bottom'].includes(this.placement) ? this.sizeValue : '',
+        width: this.isHorizontal ? this.sizeValue : '',
+        height: this.isVertical ? this.sizeValue : '',
       };
     },
     wrapperClasses(): ClassName {
@@ -77,6 +84,29 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         justifyContent: this.placement === 'right' ? 'flex-start' : 'flex-end',
       };
     },
+    isHorizontal(): boolean {
+      return ['right', 'left'].includes(this.placement);
+    },
+    isVertical(): boolean {
+      return ['top', 'bottom'].includes(this.placement);
+    },
+    draggableLineStyles(): Styles {
+      const oppositeMap = {
+        left: 'right',
+        right: 'left',
+        top: 'bottom',
+        bottom: 'top',
+      };
+      return {
+        zIndex: 1,
+        position: 'absolute',
+        background: 'transparent',
+        [oppositeMap[this.placement]]: 0,
+        width: this.isHorizontal ? '16px' : '100%',
+        height: this.isHorizontal ? '100%' : '16px',
+        cursor: this.isHorizontal ? 'col-resize' : 'row-resize',
+      };
+    },
   },
 
   watch: {
@@ -91,6 +121,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         if (val) {
           (this.$refs.drawerContainer as HTMLDivElement).focus?.();
         }
+
         this.handleScrollThrough(val);
       },
     },
@@ -130,12 +161,44 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
           {this.footer !== false ? (
             <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
           ) : null}
+          {this.sizeDraggable && (
+            <div
+              style={this.draggableLineStyles}
+              onMousedown={this.enableDrag}
+              onMousemove={this.handleMousemove}
+              onMouseup={this.disableDrag}
+              onMouseleave={this.disableDrag}
+            ></div>
+          )}
         </div>
       </div>
     );
   },
 
   methods: {
+    enableDrag() {
+      this.isSizeDragging = true;
+    },
+    handleMousemove(e: MouseEvent) {
+      const { x, y } = e;
+      if (this.isSizeDragging && this.sizeDraggable) {
+        if (this.placement === 'right') {
+          this.draggedSizeValue = `${document.documentElement.clientWidth - x + 8}px`;
+        }
+        if (this.placement === 'left') {
+          this.draggedSizeValue = `${x + 8}px`;
+        }
+        if (this.placement === 'top') {
+          this.draggedSizeValue = `${y + 8}px`;
+        }
+        if (this.placement === 'bottom') {
+          this.draggedSizeValue = `${document.documentElement.clientHeight - y + 8}px`;
+        }
+      }
+    },
+    disableDrag() {
+      this.isSizeDragging = false;
+    },
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
       if (visible && !this.showInAttachedElement) {

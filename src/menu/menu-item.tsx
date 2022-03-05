@@ -6,9 +6,14 @@ import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
 import ripple from '../utils/ripple';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { AnimationType } from '../config-provider/type';
+
+const keepAnimationMixins = getKeepAnimationMixins();
 
 export default defineComponent({
   name: 'TMenuItem',
+  mixins: [keepAnimationMixins],
   props: { ...props },
   directives: { ripple },
   setup(props, ctx) {
@@ -67,7 +72,11 @@ export default defineComponent({
   },
   render() {
     return (
-      <li v-ripple class={this.classes} onClick={this.handleClick}>
+      <li
+        v-ripple={(this.keepAnimation as Record<AnimationType, boolean>).ripple}
+        class={this.classes}
+        onClick={this.handleClick}
+      >
         {renderTNodeJSX(this, 'icon')}
         <span class={[`${prefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
       </li>

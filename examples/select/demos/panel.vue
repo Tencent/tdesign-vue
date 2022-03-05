@@ -8,8 +8,7 @@
     </t-select>
 
     <!-- 自定义面板底部内容；如新增项 。同时支持插槽和 Props（this,panelBottomContent）-->
-    <t-select v-model="value2" placeholder="请选择云产品" clearable>
-      <t-option v-for="item in options2" :value="item.value" :label="item.label" :key="item.value"></t-option>
+    <t-select v-model="value2" placeholder="请选择云产品" clearable :options="options2">
       <!-- 自定义底部内容 -->
       <div slot="panelBottomContent" class="select-panel-footer">
         <t-button v-if="editOrCreate === 'create'" theme="primary" variant="text" @click="onAdd">新增选项</t-button>

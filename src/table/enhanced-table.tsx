@@ -1,10 +1,25 @@
-import { defineComponent, SetupContext, computed } from '@vue/composition-api';
+import {
+  defineComponent, SetupContext, computed, ref,
+} from '@vue/composition-api';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
-import PrimaryTable, { PrimaryTableListeners, ALL_EVENTS } from './primary-table';
+import PrimaryTable, { PrimaryTableListeners, BASE_TABLE_ALL_EVENTS, BASE_EVENTS } from './primary-table';
 import { TdEnhancedTableProps, PrimaryTableCol, TableRowData } from './type';
 import useTreeData from './hooks/useTreeData';
+import useTreeSelect from './hooks/useTreeSelect';
+
+const PRIMARY_B_EVENTS = [
+  'change',
+  'expand-change',
+  'filter-change',
+  'sort-change',
+  'data-change',
+  'drag-sort',
+  'async-loading-click',
+];
+const NOT_ROW_EVENTS = BASE_EVENTS.concat(PRIMARY_B_EVENTS);
+const PRIMARY_ALL_EVENTS = BASE_TABLE_ALL_EVENTS.concat(PRIMARY_B_EVENTS);
 
 export default defineComponent({
   name: 'TEnhancedTable',
@@ -19,6 +34,10 @@ export default defineComponent({
     const {
       store, dataSource, formatTreeColum, ...treeInstanceFunctions
     } = useTreeData(props, context);
+
+    const treeDataMap = ref(store.value.treeDataMap);
+
+    const { onInnerSelectChange } = useTreeSelect(props, treeDataMap, context);
 
     // 影响列和单元格内容的因素有：树形节点需要添加操作符 [+] [-]
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
@@ -47,6 +66,7 @@ export default defineComponent({
       store,
       dataSource,
       tColumns,
+      onInnerSelectChange,
       ...treeInstanceFunctions,
     };
   },
@@ -55,9 +75,10 @@ export default defineComponent({
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListenser(): PrimaryTableListeners {
       const listenser: PrimaryTableListeners = {};
-      ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
-          this.$emit(key, ...args);
+      PRIMARY_ALL_EVENTS.forEach((key) => {
+        const name = NOT_ROW_EVENTS.includes(key) ? key : `row-${key}`;
+        listenser[name] = (...args: any) => {
+          this.$emit(name, ...args);
         };
       });
       return listenser;
@@ -73,7 +94,10 @@ export default defineComponent({
       disableDataPage: Boolean(this.tree && Object.keys(this.tree).length),
     };
     // 事件，Vue3 do not need this.getListenser
-    const on: PrimaryTableListeners = this.getListenser();
+    const on: PrimaryTableListeners = {
+      ...this.getListenser(),
+      'select-change': this.onInnerSelectChange,
+    };
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
     return <PrimaryTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
   },

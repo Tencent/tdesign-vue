@@ -12,6 +12,7 @@
 
     <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。需同时设置 table-content-width -->
     <!-- fixedRows: [2, 2] 表示冻结表头的两行，和表尾的两行 -->
+    <!-- footData 可以是多行，均支持固定在底部 -->
     <t-table
       rowKey="index"
       :data="data"

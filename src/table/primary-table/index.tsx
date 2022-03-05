@@ -64,7 +64,9 @@ export default mixins(expand, select, sort, rowDraggable, filter, showColumns, a
     },
     getSelectedRowClasses({ row, rowIndex }: { row: TableRowData; rowIndex: number }) {
       const col = this.columns[0];
-      const customClasses = isFunction(this.rowClassName) ? this.rowClassName({ row, rowIndex }) : this.rowClassName;
+      const customClasses = isFunction(this.rowClassName)
+        ? this.rowClassName({ row, rowIndex, type: 'body' })
+        : this.rowClassName;
       return [
         {
           [TABLE_ROW_CLASS_SELECTED]: this.selectedRowKeys?.includes(get(row, this.reRowKey)),

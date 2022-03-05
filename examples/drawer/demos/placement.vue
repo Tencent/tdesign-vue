@@ -5,9 +5,10 @@
       header="抽屉标题"
       :visible="visible"
       @cancel="visible = false"
-      :onOverlayClick="() => visible = false"
-      :onConfirm="() => visible = false"
+      :onOverlayClick="() => (visible = false)"
+      :onConfirm="() => (visible = false)"
       :placement="placement"
+      :sizeDraggable="true"
     >
       <p>抽屉的内容</p>
     </t-drawer>

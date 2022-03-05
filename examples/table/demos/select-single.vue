@@ -40,6 +40,8 @@ export default {
           colKey: 'row-select',
           type: 'single',
           className: 'demo-single-select-cell',
+          // 允许单选(Radio)取消行选中
+          checkProps: { allowUnCheck: true },
 
           // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删）。disabled 参数：{row: RowData; rowIndex: number })
           // 这种方式禁用行选中，当前行会添加行类名 t-table__row--disabled，禁用行文字变灰

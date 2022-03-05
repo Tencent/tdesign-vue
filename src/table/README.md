@@ -27,3 +27,4 @@
 - hooks/useTableFooter 表尾，BaseTable
 - hooks/useTableHeader 表头，BaseTable
 - hooks/useTreeData 树形结构，EnhancedTable
+- hooks/useTreeSelect 树形选择，EnhancedTable

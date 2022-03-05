@@ -1,10 +1,10 @@
-import { SetupContext, computed, h } from '@vue/composition-api';
+import { SetupContext, computed } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
 import { prefix } from '../../config';
 import { TdBaseTableProps } from '../type';
-import { ColumnStickyLeftAndRight, getColumnFixedStyles } from './useFixed';
+import { RowAndColFixedPosition, getColumnFixedStyles } from './useFixed';
 import {
   formatCSSUnit,
   TABLE_CLASS_HEADER,
@@ -21,7 +21,7 @@ export interface RenderTableHeaderParams {
   // 是否固定表头
   isFixedHeader: boolean;
   // 固定列 left/right 具体值
-  columnStickyLeftAndRight: ColumnStickyLeftAndRight;
+  rowAndColFixedPosition: RowAndColFixedPosition;
 }
 
 // 渲染表头的通用方法
@@ -52,14 +52,15 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   const thList = computed(() => getThList(props.columns));
   const isMultipleHeader = computed(() => thList.value.length > 1);
 
-  const renderColgroup = () => props.columns.map((col) => <col style={{ width: formatCSSUnit(col.width) }}></col>);
+  // eslint-disable-next-line
+  const renderColgroup = (h: CreateElement) => props.columns.map((col) => <col style={{ width: formatCSSUnit(col.width) }}></col>);
 
-  const renderThNodeList = (columnStickyLeftAndRight: RenderTableHeaderParams['columnStickyLeftAndRight']) => {
+  // eslint-disable-next-line
+  const renderThNodeList = (h: CreateElement, rowAndColFixedPosition: RowAndColFixedPosition) => {
     // thBorderMap: rowspan 会影响 tr > th 是否为第一列表头，从而影响边框
     const thBorderMap = new Map<any, boolean>();
     const thRowspanAndColspan = spansAndLeafNodes.value.rowspanAndColspanMap;
     return thList.value.map((row, rowIndex) => {
-      const columnLength = row.length;
       const thRow = row.map((col: TableColums[0], index: number) => {
         const rospanAndColspan = thRowspanAndColspan.get(col);
         if (index === 0 && rospanAndColspan.rowspan > 1) {
@@ -67,7 +68,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
             thBorderMap.set(thList.value[j][0], true);
           }
         }
-        const thStyles = getColumnFixedStyles(col, index, columnStickyLeftAndRight, columnLength);
+        const thStyles = getColumnFixedStyles(col, index, rowAndColFixedPosition);
         const colParams = {
           col,
           colIndex: index,
@@ -85,7 +86,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
           },
         ];
         return (
-          <th class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
+          <th data-colkey={col.colKey} class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
             {renderTitle(h, context.slots, col, index)}
           </th>
         );
@@ -94,7 +95,8 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
     });
   };
 
-  const renderTableHeader = ({ isFixedHeader, columnStickyLeftAndRight }: RenderTableHeaderParams) => {
+  // eslint-disable-next-line
+  const renderTableHeader = (h: CreateElement, { isFixedHeader, rowAndColFixedPosition }: RenderTableHeaderParams) => {
     const theadClasses = [
       TABLE_CLASS_HEADER,
       {
@@ -105,7 +107,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
     ];
     return (
       <thead ref="theadRef" class={theadClasses}>
-        {renderThNodeList(columnStickyLeftAndRight)}
+        {renderThNodeList(h, rowAndColFixedPosition)}
       </thead>
     );
   };

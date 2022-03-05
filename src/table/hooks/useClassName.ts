@@ -122,6 +122,11 @@ export default function useClassName() {
       col: `${prefix}-table__tree-col`,
       icon: `${prefix}-table__tree-op-icon`,
     },
+
+    virtualScrollClasses: {
+      cursor: `${prefix}-table__virtual-scroll-cursor`,
+      header: `${prefix}-table__virtual-scroll-header`,
+    },
   };
 
   return {

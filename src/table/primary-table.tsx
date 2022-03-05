@@ -15,7 +15,8 @@ import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useAsyncLoading from './hooks/useAsyncLoading';
 
-export const ALL_EVENTS = ROW_LISTENERS.concat(['page-change', 'row-click', 'cell-click', 'scrollX', 'scrollY']);
+export const BASE_EVENTS = ['page-change', 'cell-click', 'scrollX', 'scrollY'];
+export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.concat(BASE_EVENTS);
 
 export interface PrimaryTableListeners {
   [key: string]: Function;
@@ -101,9 +102,10 @@ export default defineComponent({
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListenser(): PrimaryTableListeners {
       const listenser: PrimaryTableListeners = {};
-      ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
-          this.$emit(key, ...args);
+      BASE_TABLE_ALL_EVENTS.forEach((key) => {
+        const name = BASE_EVENTS.includes(key) ? key : `row-${key}`;
+        listenser[name] = (...args: any) => {
+          this.$emit(name, ...args);
         };
       });
       return listenser;
