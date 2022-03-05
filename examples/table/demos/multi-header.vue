@@ -9,6 +9,7 @@
       <t-checkbox v-model="fixedRightCol">固定右侧列</t-checkbox>
     </div>
 
+    <!-- tableContentWidth 必须大于表格的外层宽度，否则请设置 width: 100% -->
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
     <t-table
       row-key="index"
@@ -112,10 +113,6 @@ function getColumns(fixedLeftCol, fixedRightCol) {
       title: '字段4',
     },
     {
-      colKey: 'field5',
-      title: '字段5',
-    },
-    {
       title: '属性及说明',
       colKey: 'instruction',
       fixed: fixedRightCol && 'right',
@@ -144,6 +141,11 @@ function getColumns(fixedLeftCol, fixedRightCol) {
           fixed: fixedRightCol && 'right',
         },
       ],
+    },
+    {
+      colKey: 'field5',
+      title: '字段5',
+      fixed: fixedRightCol && 'right',
     },
   ];
 }

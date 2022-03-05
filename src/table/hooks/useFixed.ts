@@ -9,8 +9,6 @@ import { TABLE_CLASS_COLUMN_FIXED, TABLE_CLASS_ROW_FIXED } from './useStyle';
 
 // 固定行的数量不得超过 70 - 50 = 20
 const FIXED_ROW_MAX_Z_INDEX = 70;
-const T_FOOT_ROW_FIXED_KEY = '__T_FOOT_INNER__';
-const T_HEADER_FIXED_KEY = '__T_HEADER_INNER__';
 
 export interface ColumnStickyLeftAndRight {
   left: number[];
@@ -141,12 +139,16 @@ export default function useFixed(props: TdBaseTableProps) {
       const col = columns[i];
       if (!col.fixed) return;
       const colInfo = initialColumnMap.get(col.colKey || i);
+      // 多级表头，使用父元素作为初始基本位置
       const defaultWidth = i === 0 ? parent?.left || 0 : 0;
       const lastCol = columns[i - 1];
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i - 1);
       const isNextColFixed = columns[i + 1]?.fixed;
-      // const width = (isNextColFixed ? lastColInfo?.offsetWidth : lastColInfo?.clientWidth) || 0;
-      colInfo.left = Math.round(lastColInfo?.left || defaultWidth) + (lastColInfo?.offsetWidth || 0);
+      // 最后一层 header 的最后一列使用 clientWidth
+      const width = !isNextColFixed && (!col.children || !col.children.length)
+        ? lastColInfo?.clientWidth
+        : lastColInfo?.offsetWidth;
+      colInfo.left = (lastColInfo?.left || defaultWidth) + (width || 0);
       if (!isNextColFixed) {
         colInfo.lastLeftFixedCol = true;
       }
@@ -167,16 +169,17 @@ export default function useFixed(props: TdBaseTableProps) {
       if (!col.fixed) return;
       const colInfo = initialColumnMap.get(col.colKey || i);
       const lastCol = columns[i + 1];
-      const defaultWidth = i === 0 ? parent?.right || 0 : 0;
+      // 多级表头，使用父元素作为初始基本位置
+      const defaultWidth = i === columns.length - 1 ? parent?.right || 0 : 0;
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i + 1);
       const isNextColFixed = columns[i - 1]?.fixed;
-      // const width = (isNextColFixed ? lastColInfo?.offsetWidth : lastColInfo?.clientWidth) || 0;
-      colInfo.right = (lastColInfo?.right || defaultWidth) + (lastColInfo?.offsetWidth || 0);
+      // 最后一层 header 的最后一列使用 clientWidth
+      const width = !isNextColFixed && (!col.children || !col.children.length)
+        ? lastColInfo?.clientWidth
+        : lastColInfo?.offsetWidth;
+      colInfo.right = (lastColInfo?.right || defaultWidth) + (width || 0);
       if (!isNextColFixed) {
         colInfo.firstRightFixedCol = true;
-      }
-      if (parent?.right) {
-        colInfo.right += parent.right;
       }
       // 多级表头
       if (col.children?.length) {
@@ -208,7 +211,12 @@ export default function useFixed(props: TdBaseTableProps) {
   };
 
   // 设置固定行位置信息 top/bottom
-  const setFixedRowPosition = (trList: HTMLCollection, initialColumnMap: RowAndColFixedPosition) => {
+  const setFixedRowPosition = (
+    trList: HTMLCollection,
+    initialColumnMap: RowAndColFixedPosition,
+    thead: HTMLTableSectionElement,
+    tfoot: HTMLTableSectionElement,
+  ) => {
     const [fixedTopRows, fixedBottomRows] = fixedRows.value || [];
     const { data, rowKey = 'id' } = props;
     for (let i = 0; i < fixedTopRows; i++) {
@@ -219,7 +227,7 @@ export default function useFixed(props: TdBaseTableProps) {
       const lastRowInfo = initialColumnMap.get(lastRowId) || {};
       let defaultBottom = 0;
       if (i === 0) {
-        defaultBottom = initialColumnMap.get(T_HEADER_FIXED_KEY)?.offsetHeight || 0;
+        defaultBottom = thead?.offsetHeight || 0;
       }
       thisRowInfo.top = (lastRowInfo.top || defaultBottom) + (lastRowInfo.offsetHeight || 0);
       initialColumnMap.set(rowId, { ...thisRowInfo, offsetHeight: tr.offsetHeight, clientHeight: tr.clientHeight });
@@ -232,7 +240,7 @@ export default function useFixed(props: TdBaseTableProps) {
       const lastRowInfo = initialColumnMap.get(lastRowId) || {};
       let defaultBottom = 0;
       if (i === data.length - 1) {
-        defaultBottom = initialColumnMap.get(T_FOOT_ROW_FIXED_KEY)?.offsetHeight || 0;
+        defaultBottom = tfoot?.offsetHeight || 0;
       }
       thisRowInfo.bottom = (lastRowInfo.bottom || defaultBottom) + (lastRowInfo.offsetHeight || 0);
       initialColumnMap.set(rowId, { ...thisRowInfo, offsetHeight: tr.offsetHeight, clientHeight: tr.clientHeight });
@@ -242,17 +250,12 @@ export default function useFixed(props: TdBaseTableProps) {
   const setRowAndColFixedPosition = (tableContentElm: HTMLElement, initialColumnMap: RowAndColFixedPosition) => {
     rowAndColFixedPosition.value.clear();
     const thead = tableContentElm.querySelector('thead');
+    // 处理固定列
     thead && setFixedColPosition(thead.children, initialColumnMap);
+    // 处理冻结行
     const tbody = tableContentElm.querySelector('tbody');
     const tfoot = tableContentElm.querySelector('tfoot');
-    tfoot
-      && initialColumnMap.set(T_FOOT_ROW_FIXED_KEY, {
-        offsetHeight: tfoot.offsetHeight,
-        clientHeight: tfoot.clientHeight,
-      });
-    thead
-      && initialColumnMap.set(T_HEADER_FIXED_KEY, { offsetHeight: thead.offsetHeight, clientHeight: thead.clientHeight });
-    tbody && setFixedRowPosition(tbody.children, initialColumnMap);
+    tbody && setFixedRowPosition(tbody.children, initialColumnMap, thead, tfoot);
     // 更新最终 Map
     rowAndColFixedPosition.value = initialColumnMap;
   };
