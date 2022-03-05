@@ -111,6 +111,9 @@ export default function useFixed(props: TdBaseTableProps) {
     left: false,
     right: false,
   });
+  // 虚拟滚动不能使用 CSS sticky 固定表头
+  const virtualScrollHeaderPos = ref<{ left: number; top: number }>({ left: 0, top: 0 });
+  const tableWidth = ref();
 
   const isFixedColumn = ref(false);
 
@@ -254,7 +257,7 @@ export default function useFixed(props: TdBaseTableProps) {
     rowAndColFixedPosition.value = initialColumnMap;
   };
 
-  const updateColumnFixedStatus = (target: HTMLElement) => {
+  const updateColumnFixedShadow = (target: HTMLElement) => {
     const isShowRight = target.clientWidth + target.scrollLeft !== target.scrollWidth;
     showColumnShadow.left = target.scrollLeft !== 0;
     showColumnShadow.right = isShowRight;
@@ -263,7 +266,7 @@ export default function useFixed(props: TdBaseTableProps) {
   const onTableContentScroll = (e: WheelEvent) => {
     props.onScrollX?.({ e });
     const target = (e.target || e.srcElement) as HTMLElement;
-    updateColumnFixedStatus(target);
+    updateColumnFixedShadow(target);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -285,6 +288,12 @@ export default function useFixed(props: TdBaseTableProps) {
     const timer = setTimeout(() => {
       if (!tableContentRef.value) return;
       isFixedHeader.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
+      const pos = tableContentRef.value.getBoundingClientRect();
+      virtualScrollHeaderPos.value = {
+        top: pos.top,
+        left: pos.left,
+      };
+      tableWidth.value = tableContentRef.value.offsetWidth;
       clearTimeout(timer);
     }, 0);
   };
@@ -292,7 +301,7 @@ export default function useFixed(props: TdBaseTableProps) {
   const updateFixedColumnHandler = () => {
     const timer = setTimeout(() => {
       if (isFixedColumn.value) {
-        updateColumnFixedStatus(tableContentRef.value);
+        updateColumnFixedShadow(tableContentRef.value);
       }
       clearTimeout(timer);
     }, 0);
@@ -309,13 +318,15 @@ export default function useFixed(props: TdBaseTableProps) {
   watch([maxHeight, data, columns], updateFixedHeader, { immediate: true });
 
   return {
+    tableWidth,
     isFixedHeader,
     tableRef,
     tableContentRef,
     isFixedColumn,
     showColumnShadow,
     rowAndColFixedPosition,
+    virtualScrollHeaderPos,
     onTableContentScroll,
-    updateColumnFixedStatus,
+    updateColumnFixedShadow,
   };
 }

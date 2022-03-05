@@ -1,10 +1,13 @@
-import { computed, defineComponent, SetupContext } from '@vue/composition-api';
+import {
+  computed, defineComponent, SetupContext, toRefs, ref, provide,
+} from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
 import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
+import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -16,6 +19,7 @@ import useStyle, {
   TABLE_ROOT_CLASS_COLUMN_FIXED,
   TABLE_ROOT_CLASS_MULTIPLE_HEADER,
 } from './hooks/useStyle';
+import useClassName from './hooks/useClassName';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -30,11 +34,14 @@ export default defineComponent({
 
   setup(props: BaseTableProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
+    const { virtualScrollClasses } = useClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
     const {
       tableRef,
+      virtualScrollHeaderPos,
+      tableWidth,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
@@ -58,12 +65,38 @@ export default defineComponent({
       { [TABLE_CLASS_COLUMN_FIXED.rightShadow]: showColumnShadow.right },
     ]);
 
+    const {
+      type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
+    } = props.scroll || {};
+    const { data } = toRefs<any>(props);
+    const {
+      trs = null,
+      scrollHeight = null,
+      visibleData = null,
+      translateY = null,
+      handleScroll = null,
+      handleRowMounted = null,
+    } = type === 'virtual'
+      ? useVirtualScroll({
+        container: tableContentRef,
+        data,
+        fixedHeight: isFixedRowHeight,
+        lineHeight: rowHeight,
+        bufferSize,
+      })
+      : {};
+    provide('tableContentRef', tableContentRef);
+    provide('rowHeightRef', ref(rowHeight));
+
     return {
+      virtualScrollHeaderPos,
+      tableWidth,
       tableRef,
       spansAndLeafNodes,
       baseTableClasses,
       tableContentStyles,
       tableElementStyles,
+      virtualScrollClasses,
       renderColgroup,
       renderTableHeader,
       renderTableBody,
@@ -78,29 +111,55 @@ export default defineComponent({
       dataSource,
       renderPagination,
       renderTNode,
+      scrollType: type,
+      rowHeight,
+      trs,
+      bufferSize,
+      scrollHeight,
+      visibleData,
+      translateY,
+      handleRowMounted,
+      handleVirtualScroll: handleScroll,
     };
   },
 
   render(h) {
-    const { rowAndColFixedPosition } = this;
+    const { rowAndColFixedPosition, onTableContentScroll } = this;
+    const data = this.isPaginateData ? this.dataSource : this.data;
+    const isVirtual = this.scrollType === 'virtual';
+    const onScroll = isVirtual
+      ? (e: WheelEvent) => {
+        onTableContentScroll(e);
+        this.handleVirtualScroll();
+      }
+      : onTableContentScroll;
+
+    const colgroup = this.renderColgroup(h);
+    const header = this.renderTableHeader(h, {
+      isFixedHeader: this.isFixedHeader,
+      rowAndColFixedPosition,
+    });
+
     const tableContent = (
-      <div
-        ref="tableContentRef"
-        class={TABLE_CLASS_CONTENT}
-        style={this.tableContentStyles}
-        onScroll={this.onTableContentScroll}
-      >
+      <div ref="tableContentRef" class={TABLE_CLASS_CONTENT} style={this.tableContentStyles} onScroll={onScroll}>
+        {isVirtual && (
+          <div class={this.virtualScrollClasses.cursor} style={{ transform: `translate(0, ${this.scrollHeight}px)` }} />
+        )}
+
         <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
-          {this.renderColgroup(h)}
-          {this.renderTableHeader(h, {
-            isFixedHeader: this.isFixedHeader,
-            rowAndColFixedPosition,
-          })}
+          {colgroup}
+          {header}
           {this.renderTableBody(h, {
             rowAndColFixedPosition,
             showColumnShadow: this.showColumnShadow,
-            data: this.isPaginateData ? this.dataSource : this.data,
+            data: isVirtual ? this.visibleData : data,
             columns: this.spansAndLeafNodes.leafColumns,
+            translateY: this.translateY,
+            scrollType: this.scrollType,
+            rowHeight: this.rowHeight,
+            trs: this.trs,
+            bufferSize: this.bufferSize,
+            handleRowMounted: this.handleRowMounted,
           })}
           {this.renderTableFooter(h, {
             isFixedHeader: this.isFixedHeader,
@@ -125,7 +184,18 @@ export default defineComponent({
     );
 
     return (
-      <div ref="tableRef" class={this.baseTableClasses}>
+      <div ref="tableRef" class={this.baseTableClasses} style="position: relative">
+        {isVirtual && (
+          <table
+            class={[TABLE_CLASS_LAYOUT[this.tableLayout], this.virtualScrollClasses.header]}
+            style={{
+              ...this.tableElementStyles,
+              width: `${this.tableWidth}px`,
+            }}
+          >
+            {header}
+          </table>
+        )}
         {this.renderTNode('topContent')}
         {loadingContent}
         {this.renderPagination(h)}

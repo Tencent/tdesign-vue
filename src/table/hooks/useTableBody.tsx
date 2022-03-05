@@ -24,6 +24,12 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
+  translateY: object;
+  scrollType: string;
+  rowHeight: number;
+  trs: Map<number, object>;
+  bufferSize: number;
+  handleRowMounted: Function;
 }
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
@@ -96,7 +102,17 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
 
   // eslint-disable-next-line
   const renderTableBody = (h: CreateElement, p: RenderTableBodyParams) => {
-    const { rowAndColFixedPosition, data, columns } = p;
+    const {
+      rowAndColFixedPosition,
+      data,
+      columns,
+      scrollType,
+      rowHeight,
+      trs,
+      bufferSize,
+      handleRowMounted,
+      translateY,
+    } = p;
     const columnLength = columns.length;
     const trNodeList: JSX.Element[] = [];
     // 每次渲染清空合并单元格信息
@@ -114,15 +130,22 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
+        scrollType,
+        rowHeight,
+        trs,
+        bufferSize,
       };
       if (props.onCellClick) {
         trProps.onCellClick = props.onCellClick;
       }
       // Vue3 do not need getTrListeners
-      const on = getTrListeners();
+      const on: { [keys: string]: Function } = getTrListeners();
+      if (handleRowMounted) {
+        on.onRowMounted = handleRowMounted;
+      }
 
       const trNode = (
-        <TrElement key={get(row, props.rowKey || 'id')} scopedSlots={slots} on={on} props={trProps}></TrElement>
+        <TrElement scopedSlots={slots} key={get(row, props.rowKey || 'id')} on={on} props={trProps}></TrElement>
       );
       trNodeList.push(trNode);
 
@@ -139,7 +162,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       getFullRow(h, columnLength, props.lastFullRow, 'last-full-row'),
     ];
     const isEmpty = !data?.length && !props.loading;
-    return <tbody class={tbodyClases.value}>{isEmpty ? renderEmpty(h, columns) : list}</tbody>;
+
+    return (
+      <tbody
+        class={tbodyClases.value}
+        style={{ transform: scrollType === 'virtual' && `translate(0, ${translateY}px)` }}
+      >
+        {isEmpty ? renderEmpty(h, columns) : list}
+      </tbody>
+    );
   };
 
   return {
