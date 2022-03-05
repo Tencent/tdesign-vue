@@ -1,6 +1,8 @@
-import { prefix } from '../config';
+import { useConfig } from '../config-provider/useConfig';
 
 export default function useCommonClassName() {
+  const { classPrefix: prefix } = useConfig();
+
   const sizeClassNames = {
     small: `${prefix}-size-s`,
     medium: `${prefix}-size-m`,

@@ -13,6 +13,7 @@ import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
 import useStyle from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
+import { TableConfig, useConfig } from '../config-provider/useConfig';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -32,6 +33,7 @@ export default defineComponent({
     } = useClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
+    const { global } = useConfig<TableConfig>('table');
     // 固定表头和固定列逻辑
     const {
       tableRef,
@@ -84,6 +86,7 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     return {
+      global,
       virtualScrollHeaderPos,
       tableWidth,
       tableRef,

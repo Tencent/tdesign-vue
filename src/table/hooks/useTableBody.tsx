@@ -5,6 +5,7 @@ import upperFirst from 'lodash/upperFirst';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
+import { TableConfig, useConfig } from '../../config-provider/useConfig';
 import {
   RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
 } from '../type';
@@ -31,7 +32,7 @@ export interface RenderTableBodyParams {
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
   const renderTNode = useTNodeJSX();
-
+  const { t, global } = useConfig<TableConfig>('table');
   const { tableFullRowClasses, tableBaseClass } = useClassName();
 
   const tbodyClases = computed(() => [tableBaseClass.body]);
@@ -72,7 +73,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   const renderEmpty = (h: CreateElement, columns: RenderTableBodyParams['columns']) => (
     <tr class={tableBaseClass.emptyRow}>
       <td colspan={columns.length}>
-        <div class={tableBaseClass.empty}>{renderTNode('empty') || '暂无数据'}</div>
+        <div class={tableBaseClass.empty}>{renderTNode('empty') || t(global.value.empty)}</div>
       </td>
     </tr>
   );

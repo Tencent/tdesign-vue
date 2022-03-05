@@ -3056,7 +3056,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__cell--sortable">
                 <div class="t-table__cell--title">
-                  <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
+                  <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span>
                 </div></span>
               </div>
     </div>
@@ -3068,7 +3068,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
     <tbody class="t-table__body">
       <tr class="t-table__empty-row">
         <td colspan="3">
-          <div class="t-table__empty">暂无数据</div>
+          <div class="t-table__empty">Empty Data</div>
         </td>
       </tr>
     </tbody>
@@ -3090,7 +3090,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
           <th data-colkey="type" class="t-table__th-type">
             <div class="t-table__cell--sortable">
               <div class="t-table__cell--title">
-                <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
+                <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span>
               </div></span>
             </div>
   </div>
@@ -3101,19 +3101,19 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
   </thead>
   <tbody class="t-table__body">
     <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
       <td>Array</td>
       <td>Vue(PC)</td>
       <td>A</td>
     </tr>
     <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
       <td>String</td>
       <td>React(PC)</td>
       <td>B</td>
     </tr>
     <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
       <td>Object</td>
       <td>Miniprogram</td>
       <td>C</td>

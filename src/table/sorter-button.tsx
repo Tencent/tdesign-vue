@@ -3,13 +3,7 @@ import { ChevronDownIcon } from 'tdesign-icons-vue';
 import useClassName from './hooks/useClassName';
 import { SortType } from './type';
 import Tooltip from '../tooltip';
-
-// TODO: GLOBLE_CONFIG
-const tooltips = {
-  asc: '点击升序',
-  desc: '点击降序',
-  undefined: '点击取消排序',
-};
+import { TableConfig, useConfig } from '../config-provider/useConfig';
 
 type SortTypeEnums = Array<'desc' | 'asc'>;
 
@@ -31,6 +25,7 @@ export default defineComponent({
 
   setup(props, context) {
     const { tableSortClasses } = useClassName();
+    const { t, global } = useConfig<TableConfig>('table');
 
     const allowSortTypes = computed<SortTypeEnums>(() => props.sortType === 'all' ? ['asc', 'desc'] : [props.sortType]);
 
@@ -41,14 +36,15 @@ export default defineComponent({
     return {
       tableSortClasses,
       allowSortTypes,
+      t,
+      global,
       onClick,
     };
   },
 
   methods: {
     getSortIcon(direction: string, activeClass: string) {
-      // TODO: GLOBLE_CONFIG
-      const icon = <ChevronDownIcon />;
+      const icon = this.t(this.global.sortIcon) || <ChevronDownIcon />;
       const styles = {
         transform: direction === 'asc' ? 'rotate(-180deg)' : undefined,
       };
@@ -68,6 +64,11 @@ export default defineComponent({
   render() {
     const { tableSortClasses } = this;
     const classes = [tableSortClasses.trigger, { [tableSortClasses.doubleIcon]: this.allowSortTypes.length > 1 }];
+    const tooltips = {
+      asc: this.global.sortAscendingOperationText,
+      desc: this.global.sortDescendingOperationText,
+      undefined: this.global.sortCancelOperationText,
+    };
     const tips = tooltips[this.nextSortOrder];
     const sortButton = this.allowSortTypes.map((direction: string) => {
       const activeClass = direction === this.sortOrder ? tableSortClasses.iconActive : tableSortClasses.iconDefault;

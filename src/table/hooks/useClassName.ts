@@ -1,7 +1,7 @@
-import { prefix } from '../../config';
+import { useConfig } from '../../config-provider/useConfig';
 
 export default function useClassName() {
-  // TODO: const { prefix } = useConfig();
+  const { classPrefix: prefix } = useConfig();
   const classNames = {
     tableBaseClass: {
       table: `${prefix}-table`,
