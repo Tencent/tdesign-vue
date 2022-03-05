@@ -145,7 +145,7 @@ exports[`Table base demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -489,7 +489,7 @@ exports[`Table base demo works fine 2`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -691,7 +691,7 @@ exports[`Table base demo works fine 2`] = `
 exports[`Table customCell demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m t-table--align-top"
+    class="t-table t-size-m t-vertical-align-top"
     style="position: relative;"
   >
     <div
@@ -737,7 +737,7 @@ exports[`Table customCell demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-top"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -903,7 +903,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -984,7 +984,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -1067,7 +1067,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -1243,7 +1243,7 @@ exports[`Table expandable demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -1846,7 +1846,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -2239,7 +2239,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -3409,7 +3409,7 @@ exports[`Table multiHeader demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -3973,7 +3973,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -4375,7 +4375,7 @@ exports[`Table selectSingle demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""

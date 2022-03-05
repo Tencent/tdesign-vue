@@ -69,6 +69,7 @@ const columns = [
     cell: 'op',
   },
 ];
+
 const data = new Array(5).fill(null).map((item, index) => ({
   id: index + 100,
   instance: `JQTest${index + 1}`,
@@ -127,7 +128,7 @@ export default {
           // 第一行不显示展开图标
           if (index === 0) return false;
           // 第三行，使用自定义展开图标
-          if (row.id === 3) return <ChevronRightIcon />;
+          if (row.id === 103) return <ChevronRightIcon />;
           // 其他行，使用表格同款展开图标
           return <ChevronRightCircleIcon />;
         };

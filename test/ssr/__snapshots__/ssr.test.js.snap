@@ -3065,7 +3065,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
     <th data-colkey="property" class="t-table__th-property">Property</th>
     </tr>
     </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
+    <tbody class="t-table__body">
       <tr class="t-table__empty-row">
         <td colspan="3">
           <div class="t-table__empty">暂无数据</div>
@@ -3099,7 +3099,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
   <th data-colkey="property" class="t-table__th-property">Property</th>
   </tr>
   </thead>
-  <tbody class="t-table__body t-vertical-align-middle">
+  <tbody class="t-table__body">
     <tr>
       <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
       <td>Array</td>
@@ -10710,7 +10710,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             <th data-colkey="email" class="t-table__th-email">Email</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>Eric</td>
             <td>Spinke</td>
@@ -10782,7 +10782,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -10842,7 +10842,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m t-table--align-top" style="position:relative;">
+  <div class="t-table t-size-m t-vertical-align-top" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -10859,7 +10859,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
             <th data-colkey="description" class="t-table__th-description">render</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-top">
+        <tbody class="t-table__body">
           <tr>
             <td> 自定义插槽名称：any[] </td>
             <td><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-attach">
@@ -10918,7 +10918,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -10999,7 +10999,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-tdesign__custom-body-tr">
             <td class="row">0</td>
             <td>共有</td>
@@ -11067,7 +11067,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
           <th data-colkey="property" class="t-table__th-property">属性名</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr>
           <td>标题是用插槽自定义</td>
           <td>标题使用 title 方法自定义</td>
@@ -11120,7 +11120,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
     <th data-colkey="owner" class="t-table__th-owner">管理员</th>
     </tr>
     </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
+    <tbody class="t-table__body">
       <tr>
         <td>JQTest1</td>
         <td>
@@ -11189,7 +11189,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <th data-colkey="owner" class="t-table__th-owner">管理员</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle">
+          <tbody class="t-table__body">
             <tr>
               <td>JQTest1</td>
               <td>
@@ -11261,7 +11261,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty">暂无数据</div>
@@ -11292,7 +11292,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty"><span>😊 使用插槽自定义的空内容 😊</span></div>
@@ -11323,7 +11323,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty"><span>😊 使用渲染函数自定义的空内容 😊</span></div>
@@ -11366,7 +11366,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest1</td>
@@ -11473,7 +11473,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>Eric</td>
             <td>Spinke</td>
@@ -11553,7 +11553,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <th data-colkey="operation" class="t-table__th-operation">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>0</td>
             <td>共有</td>
@@ -11640,7 +11640,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>共有</td>
             <td>String</td>
@@ -11891,7 +11891,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <th data-colkey="operation" class="t-table__th-operation">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>0</td>
             <td>共有</td>
@@ -12135,7 +12135,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12169,7 +12169,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
@@ -12201,7 +12201,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12238,7 +12238,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           <th data-colkey="description" class="t-table__th-description">说明</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr>
           <td>公有</td>
           <td>Array&lt;any&gt;</td>
@@ -12347,7 +12347,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
     <th data-colkey="field8" class="t-table__th-field8">字段8</th>
     </tr>
     </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
+    <tbody class="t-table__body">
       <tr>
         <td>0</td>
         <td>共有</td>
@@ -12507,7 +12507,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
     <th data-colkey="owner" class="t-table__th-owner">管理员</th>
     </tr>
     </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
+    <tbody class="t-table__body">
       <tr>
         <td>JQTest1</td>
         <td>
@@ -12579,7 +12579,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -12668,7 +12668,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-table--align-top" style="position:relative;">
+<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-vertical-align-top" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -12685,7 +12685,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
           <th data-colkey="email" class="t-table__th-email">邮箱</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-top">
+      <tbody class="t-table__body">
         <tr class="t-table__empty-row">
           <td colspan="4">
             <div class="t-table__empty">暂无数据</div>
@@ -12741,7 +12741,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
@@ -12829,7 +12829,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
@@ -12915,7 +12915,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>JQTest1</td>
             <td>
@@ -13000,7 +13000,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
   <th data-colkey="owner" class="t-table__th-owner">管理员</th>
   </tr>
   </thead>
-  <tbody class="t-table__body t-vertical-align-middle">
+  <tbody class="t-table__body">
     <tr>
       <td>JQTest1</td>
       <td>
@@ -13070,7 +13070,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             <th data-colkey="operate" class="t-table__th-operate">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis">0</div>
@@ -13226,7 +13226,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <th data-colkey="description" class="t-table__th-description">描述</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -13340,7 +13340,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
               <th data-colkey="owner" class="t-table__th-owner">管理员</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle" style="transform:translate(0, 0px);">
+          <tbody class="t-table__body" style="transform:translate(0, 0px);">
             <tr class="t-table__empty-row">
               <td colspan="4">
                 <div class="t-table__empty">暂无数据</div>

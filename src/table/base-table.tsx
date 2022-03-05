@@ -11,14 +11,7 @@ import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
-import useStyle, {
-  TABLE_CLASS_CONTENT,
-  TABLE_CLASS_LAYOUT,
-  TABLE_CLASS_COLUMN_FIXED,
-  TABLE_ROOT_CLASS_HEADER_FIXED,
-  TABLE_ROOT_CLASS_COLUMN_FIXED,
-  TABLE_ROOT_CLASS_MULTIPLE_HEADER,
-} from './hooks/useStyle';
+import useStyle from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 
 export default defineComponent({
@@ -34,7 +27,9 @@ export default defineComponent({
 
   setup(props: BaseTableProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
-    const { virtualScrollClasses } = useClassName();
+    const {
+      virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
+    } = useClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     // 固定表头和固定列逻辑
@@ -56,13 +51,13 @@ export default defineComponent({
     const { renderTableFooter } = useTableFooter(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
-    const baseTableClasses = computed(() => [
+    const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
-      { [TABLE_ROOT_CLASS_HEADER_FIXED]: isFixedHeader.value },
-      { [TABLE_ROOT_CLASS_COLUMN_FIXED]: isFixedColumn.value },
-      { [TABLE_ROOT_CLASS_MULTIPLE_HEADER]: isMultipleHeader.value },
-      { [TABLE_CLASS_COLUMN_FIXED.leftShadow]: showColumnShadow.left },
-      { [TABLE_CLASS_COLUMN_FIXED.rightShadow]: showColumnShadow.right },
+      { [tableBaseClass.headerFixed]: isFixedHeader.value },
+      { [tableBaseClass.columnFixed]: isFixedColumn.value },
+      { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
+      { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
+      { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
     ]);
 
     const {
@@ -92,11 +87,13 @@ export default defineComponent({
       virtualScrollHeaderPos,
       tableWidth,
       tableRef,
+      tableBaseClass,
       spansAndLeafNodes,
-      baseTableClasses,
+      dynamicBaseTableClasses,
       tableContentStyles,
       tableElementStyles,
       virtualScrollClasses,
+      tableLayoutClasses,
       renderColgroup,
       renderTableHeader,
       renderTableBody,
@@ -141,12 +138,17 @@ export default defineComponent({
     });
 
     const tableContent = (
-      <div ref="tableContentRef" class={TABLE_CLASS_CONTENT} style={this.tableContentStyles} onScroll={onScroll}>
+      <div
+        ref="tableContentRef"
+        class={this.tableBaseClass.content}
+        style={this.tableContentStyles}
+        onScroll={onScroll}
+      >
         {isVirtual && (
           <div class={this.virtualScrollClasses.cursor} style={{ transform: `translate(0, ${this.scrollHeight}px)` }} />
         )}
 
-        <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
+        <table class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
           {header}
           {this.renderTableBody(h, {
@@ -184,10 +186,10 @@ export default defineComponent({
     );
 
     return (
-      <div ref="tableRef" class={this.baseTableClasses} style="position: relative">
+      <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {isVirtual && (
           <table
-            class={[TABLE_CLASS_LAYOUT[this.tableLayout], this.virtualScrollClasses.header]}
+            class={[this.tableLayoutClasses[this.tableLayout], this.virtualScrollClasses.header]}
             style={{
               ...this.tableElementStyles,
               width: `${this.tableWidth}px`,

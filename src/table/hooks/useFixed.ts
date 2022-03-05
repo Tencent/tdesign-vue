@@ -5,7 +5,6 @@ import get from 'lodash/get';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
-import { TABLE_CLASS_COLUMN_FIXED, TABLE_CLASS_ROW_FIXED } from './useStyle';
 
 // 固定表头，固定列，固定行，不麻烦。但是加上多级表头，你试试，加上合并单元格，你再试试。
 
@@ -17,6 +16,22 @@ export interface ColumnStickyLeftAndRight {
   right: number[];
   top: number[];
   bottom?: number[];
+}
+
+export interface TableColFixedClasses {
+  left: string;
+  right: string;
+  lastLeft: string;
+  firstRight: string;
+  leftShadow: string;
+  rightShadow: string;
+}
+
+export interface TableRowFixedClasses {
+  top: string;
+  bottom: string;
+  firstBottom: string;
+  withoutBorderBottom: string;
 }
 
 export interface FixedColumnInfo {
@@ -44,14 +59,15 @@ export function getColumnFixedStyles(
   col: TdBaseTableProps['columns'][0],
   index: number,
   rowAndColFixedPosition: RowAndColFixedPosition,
+  tableColFixedClasses: TableColFixedClasses,
 ): { style?: Styles; classes?: ClassName } {
   const fixedPos = rowAndColFixedPosition?.get(col.colKey || index);
   if (!fixedPos) return {};
   const thClasses = {
-    [TABLE_CLASS_COLUMN_FIXED.left]: col.fixed === 'left',
-    [TABLE_CLASS_COLUMN_FIXED.right]: col.fixed === 'right',
-    [TABLE_CLASS_COLUMN_FIXED.lastLeft]: col.fixed === 'left' && fixedPos.lastLeftFixedCol,
-    [TABLE_CLASS_COLUMN_FIXED.firstRight]: col.fixed === 'right' && fixedPos.firstRightFixedCol,
+    [tableColFixedClasses.left]: col.fixed === 'left',
+    [tableColFixedClasses.right]: col.fixed === 'right',
+    [tableColFixedClasses.lastLeft]: col.fixed === 'left' && fixedPos.lastLeftFixedCol,
+    [tableColFixedClasses.firstRight]: col.fixed === 'right' && fixedPos.firstRightFixedCol,
   };
   const thStyles = {
     left: col.fixed === 'left' ? `${fixedPos.left}px` : undefined,
@@ -70,6 +86,7 @@ export function getRowFixedStyles(
   rowLength: number,
   fixedRows: TdBaseTableProps['fixedRows'],
   rowAndColFixedPosition: RowAndColFixedPosition,
+  tableRowFixedClasses: TableRowFixedClasses,
 ): { style: Styles; classes: ClassName } {
   if (!fixedRows || !fixedRows.length) return { style: undefined, classes: undefined };
   const fixedTop = rowIndex < fixedRows[0];
@@ -77,10 +94,10 @@ export function getRowFixedStyles(
   const firstFixedBottomRow = rowLength - fixedRows[1];
   const fixedPos = rowAndColFixedPosition?.get(rowId) || {};
   const rowClasses = {
-    [TABLE_CLASS_ROW_FIXED.top]: fixedTop,
-    [TABLE_CLASS_ROW_FIXED.bottom]: fixedBottom,
-    [TABLE_CLASS_ROW_FIXED.firstBottom]: rowIndex === firstFixedBottomRow,
-    [TABLE_CLASS_ROW_FIXED.withoutBorderBottom]: rowIndex === firstFixedBottomRow - 1,
+    [tableRowFixedClasses.top]: fixedTop,
+    [tableRowFixedClasses.bottom]: fixedBottom,
+    [tableRowFixedClasses.firstBottom]: rowIndex === firstFixedBottomRow,
+    [tableRowFixedClasses.withoutBorderBottom]: rowIndex === firstFixedBottomRow - 1,
   };
   let zIndex = FIXED_ROW_MAX_Z_INDEX;
   if (fixedTop) {
