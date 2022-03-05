@@ -65,6 +65,19 @@ const useVirtualScroll = ({
     return 0;
   });
 
+  /** 第二种实现，使用watch监听cachedScrollY也可 */
+  // const translateY = ref(0);
+  // watch(() => state.cachedScrollY, () => {
+  //   const { visibleData } = state;
+  //   const firstRow = visibleData[0];
+  //   if (firstRow) {
+  //     // 修复只有一个元素时存在偏移的问题
+  //     translateY.value = visibleData.length === 1 ? 0 : state.cachedScrollY[firstRow.$index];
+  //     return;
+  //   }
+  //   translateY.value = 0;
+  // });
+
   // 更新可视区域的节点数据
   const updateVisibleData = () => {
     last = Math.min(start + visibleCount + bufferSize * 2, data.value.length);
@@ -77,7 +90,6 @@ const useVirtualScroll = ({
       return; // 快速调整高度时，新的元素可能来不及加载，暂时跳过更新
     }
     const anchorDomHeight = anchorDom.getBoundingClientRect().height; // 获取锚点元素的高
-
     state.cachedScrollY[index] = container.value.scrollTop - offset; // 锚点元素scrollY= 容器滚动高度 - 锚点元素的offset
     state.cachedHeight[index] = anchorDomHeight;
 
@@ -87,7 +99,8 @@ const useVirtualScroll = ({
       const { height } = tr.getBoundingClientRect();
       state.cachedHeight[i] = height;
       const scrollY = state.cachedScrollY[i - 1] + state.cachedHeight[i - 1]; // 当前元素的y 是前一个元素的y+前一个元素高度
-      state.cachedScrollY[i] = scrollY;
+      // state.cachedScrollY[i] = scrollY;
+      state.cachedScrollY.splice(i, 1, scrollY); // 兼容vue2的composition api
     }
 
     for (let i = index - 1; i >= state.visibleData[0].$index; i--) {
@@ -95,7 +108,8 @@ const useVirtualScroll = ({
       const { height } = tr.getBoundingClientRect();
       state.cachedHeight[i] = height;
       const scrollY = state.cachedScrollY[i + 1] - state.cachedHeight[i]; // 当前元素的y是下一个元素y - 当前元素高度
-      state.cachedScrollY[i] = scrollY;
+      // state.cachedScrollY[i] = scrollY;
+      state.cachedScrollY.splice(i, 1, scrollY);
     }
     if (state.cachedScrollY[0] > 0) {
       // 修正滚动过快时，滚动到顶部时，滚动条多余的问题
@@ -103,7 +117,8 @@ const useVirtualScroll = ({
       const distance = state.cachedScrollY[0]; // 第一个元素scrollY即为多出的量
       const length = Math.min(last, data.value.length);
       for (let i = 0; i < length; i++) {
-        state.cachedScrollY[i] -= distance;
+        // state.cachedScrollY[i] -= distance;
+        state.cachedScrollY.splice(i, 1, state.cachedScrollY[i] - distance);
       }
 
       const scrollTop = state.cachedScrollY[index - 1] ? state.cachedScrollY[index - 1] + offset : offset;
@@ -128,9 +143,11 @@ const useVirtualScroll = ({
       // revising = true;
       for (let i = last - 1; i >= start; i--) {
         if (i === last - 1) {
-          state.cachedScrollY[i] = scrollHeight.value - state.cachedHeight[i];
+          // state.cachedScrollY[i] = scrollHeight.value - state.cachedHeight[i];
+          state.cachedScrollY.splice(i, 1, scrollHeight.value - state.cachedHeight[i]);
         } else {
-          state.cachedScrollY[i] = state.cachedScrollY[i + 1] - state.cachedHeight[i];
+          // state.cachedScrollY[i] = state.cachedScrollY[i + 1] - state.cachedHeight[i];
+          state.cachedScrollY.splice(i, 1, state.cachedScrollY[i + 1] - state.cachedHeight[i]);
         }
       }
       // revising = false;
@@ -226,7 +243,9 @@ const useVirtualScroll = ({
     }
   };
   onMounted(() => {
-    if (!window || !window.IntersectionObserver) return;
+    if (!window || !window.IntersectionObserver) {
+      return;
+    }
     const ob = new window.IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting || entry.intersectionRatio) {

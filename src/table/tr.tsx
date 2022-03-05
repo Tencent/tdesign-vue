@@ -9,6 +9,7 @@ import {
   onMounted,
   onBeforeUnmount,
   inject,
+  nextTick,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
@@ -159,7 +160,9 @@ export default defineComponent({
     };
 
     const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
-      if (!window || !window.IntersectionObserver) return;
+      if (!window || !window.IntersectionObserver) {
+        return;
+      }
       try {
         const io = new window.IntersectionObserver(
           (entries) => {
@@ -196,22 +199,24 @@ export default defineComponent({
       if (scrollType === 'virtual') {
         const { $index } = rowData;
         trs.set($index, tr.value);
-        context.emit('rowMounted');
+        context.emit('onRowMounted');
       } else if (scrollType === 'lazy') {
         const tableContentRef: Ref = inject('tableContentRef');
-        if (rowHeight === 0) {
-          const rowHeightRef: Ref = inject('rowHeightRef');
-          if (rowIndex === 0) {
-            // 获取第一行高度
-            const { offsetHeight } = tr.value;
-            rowHeightRef.value = offsetHeight;
+        const rowHeightRef: Ref = inject('rowHeightRef');
+        nextTick(() => {
+          if (rowHeight === undefined) {
+            if (rowIndex === 0) {
+              // 获取第一行高度
+              const { offsetHeight } = tr.value;
+              rowHeightRef.value = offsetHeight;
+            } else {
+              const height = rowHeightRef.value;
+              observe(tr.value, tableContentRef.value, init, height * bufferSize);
+            }
           } else {
-            const height = rowHeightRef.value;
-            observe(tr.value, tableContentRef.value, init, height * bufferSize);
+            observe(tr.value, tableContentRef.value, init, rowHeight * bufferSize);
           }
-        } else {
-          observe(tr.value, tableContentRef.value, init, rowHeight * bufferSize);
-        }
+        });
       }
     });
 

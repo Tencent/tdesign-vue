@@ -166,7 +166,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     return (
       <tbody
         class={tbodyClases.value}
-        style={{ transform: scrollType === 'virtual' && `translate(0, ${translateY}px)` }}
+        style={scrollType === 'virtual' && { transform: `translate(0, ${translateY}px)` }}
       >
         {isEmpty ? renderEmpty(h, columns) : list}
       </tbody>

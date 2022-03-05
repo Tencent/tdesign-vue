@@ -328,7 +328,7 @@ export default function useFixed(props: TdBaseTableProps) {
         top: pos.top,
         left: pos.left,
       };
-      tableWidth.value = tableContentRef.value.offsetWidth;
+      tableWidth.value = tableContentRef.value.clientWidth;
       clearTimeout(timer);
     }, 0);
   };

@@ -16,7 +16,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>
@@ -46,7 +46,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-top" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-top">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -66,7 +66,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-bottom" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-bottom">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -94,7 +94,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>
@@ -124,7 +124,7 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -152,7 +152,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="">
           <td class="t-table-td--ellipsis">
             <div class="t-table__ellipsis">1</div>
@@ -209,7 +209,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
           <th data-colkey="needed" class="test3 t-table__th-needed">是否必传</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="">
           <td class="test t-table-td--ellipsis">
             <div class="t-table__ellipsis">公有</div>
@@ -272,7 +272,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle" style="transform: false;">
+      <tbody class="t-table__body t-vertical-align-middle">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>
