@@ -15,6 +15,7 @@ import useStyle from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
 import { Affix } from '../affix';
+import useCommonClassName from '../hooks/useCommonClassName';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -32,6 +33,7 @@ export default defineComponent({
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
+    const { statusClassNames } = useCommonClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig<TableConfig>('table');
@@ -46,6 +48,7 @@ export default defineComponent({
       isFixedColumn,
       thWidthList,
       showColumnShadow,
+      showAffixHeader,
       rowAndColFixedPosition,
       onTableContentScroll,
       updateHeaderScroll,
@@ -125,6 +128,8 @@ export default defineComponent({
       visibleData,
       translateY,
       affixHeaderRef,
+      showAffixHeader,
+      statusClassNames,
       renderColgroup,
       renderTableHeader,
       renderTableBody,
@@ -166,7 +171,7 @@ export default defineComponent({
     const affixedHeader = Boolean((this.headerAffixedTop || isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth}px` }}
+        style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
         class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || isVirtual }}
       >
         <table

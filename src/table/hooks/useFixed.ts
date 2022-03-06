@@ -2,6 +2,7 @@ import {
   ref, reactive, watch, toRefs, SetupContext, onMounted, onUnmounted, computed,
 } from '@vue/composition-api';
 import get from 'lodash/get';
+import debounce from 'lodash/debounce';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
@@ -127,10 +128,12 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     maxHeight,
     headerAffixedTop,
   } = toRefs(props);
-  const tableContentRef = ref();
-  const tableRef = ref();
+  const tableContentRef = ref<HTMLDivElement>();
+  const tableRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
-  const affixHeaderRef = ref();
+  const affixHeaderRef = ref<HTMLDivElement>();
+  // 当表格完全滚动消失在视野时，需要隐藏吸顶表头
+  const showAffixHeader = ref(true);
   const scrollbarWidth = ref(0);
   // 固定列、固定表头、固定表尾等内容的位置信息
   const rowAndColFixedPosition = ref<RowAndColFixedPosition>(new Map());
@@ -397,7 +400,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       }
     }
     thWidthList.value = widthMap;
-    tableWidth.value = tableContentRef.value.getBoundingClientRect().width - scrollbarWidth.value / 2;
+    const rect = tableContentRef.value.getBoundingClientRect();
+    tableWidth.value = rect.width - scrollbarWidth.value / 2;
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -412,6 +416,12 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       setThWidthList(thead.children);
       clearTimeout(timer);
     }, 0);
+  };
+
+  const onDocumentScroll = () => {
+    const pos = tableContentRef.value.getBoundingClientRect();
+    const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
+    showAffixHeader.value = r;
   };
 
   watch(
@@ -430,6 +440,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     setThWidthListHander,
     { immediate: true },
   );
+
+  watch([headerAffixedTop], () => {
+    document.addEventListener('scroll', debounce(onDocumentScroll, 60));
+  });
 
   onMounted(() => {
     scrollbarWidth.value = getScrollbarWidth();
@@ -454,6 +468,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     } else {
       log.warn('table', 'The browser does not support Javascript event binding');
     }
+    if (props.headerAffixedTop) {
+      document.removeEventListener('scroll', onDocumentScroll);
+    }
   });
 
   return {
@@ -462,6 +479,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     isFixedHeader,
     tableRef,
     tableContentRef,
+    showAffixHeader,
     isFixedColumn,
     showColumnShadow,
     rowAndColFixedPosition,

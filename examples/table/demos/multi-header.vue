@@ -6,9 +6,9 @@
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <!-- 只要有 maxHeight，就有固定表头，无论该值是否存在 -->
       <t-checkbox v-model="fixedHeader">显示固定表头</t-checkbox>
+      <t-checkbox v-model="virtualScroll">虚拟滚动</t-checkbox>
       <t-checkbox v-model="fixedLeftCol">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightCol">固定右侧列</t-checkbox>
-      <t-checkbox v-model="virtualScroll">虚拟滚动</t-checkbox>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
     </div>
 
@@ -20,10 +20,10 @@
       :sort.sync="sortInfo"
       :columns="columns"
       :bordered="bordered"
-      :max-height="fixedHeader ? 380 : 900"
+      :max-height="fixedHeader ? 380 : 1000"
       :columnController="{ displayType: 'auto-width' }"
       :filterRow="() => null"
-      :headerAffixProps="{ offsetTop: 114 }"
+      :headerAffixProps="{ offsetTop: 0 }"
       :headerAffixedTop="headerAffixedTop"
       :scroll="virtualScroll ? { type: 'virtual', rowHeight: 48, bufferSize: 10 } : undefined"
       @data-change="onDataChange"
@@ -33,7 +33,7 @@
 </template>
 <script>
 const data = [];
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 600; i++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',

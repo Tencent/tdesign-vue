@@ -3075,6 +3075,24 @@ exports[`Table multiHeader demo works fine 1`] = `
     </label>
      
     <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        虚拟滚动
+      </span>
+    </label>
+     
+    <label
       class="t-checkbox"
     >
       <input
@@ -3107,24 +3125,6 @@ exports[`Table multiHeader demo works fine 1`] = `
         class="t-checkbox__label"
       >
         固定右侧列
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        虚拟滚动
       </span>
     </label>
      
@@ -3191,7 +3191,7 @@ exports[`Table multiHeader demo works fine 1`] = `
     >
       <div
         class="t-table__virtual-scroll-cursor"
-        style="transform: translate(0, 48000px);"
+        style="transform: translate(0, 28800px);"
       />
       <table
         class="t-table--layout-fixed"
