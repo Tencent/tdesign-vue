@@ -16,7 +16,7 @@
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
     <t-table
       row-key="index"
-      :data.sync="data"
+      :data="data"
       :sort.sync="sortInfo"
       :columns="columns"
       :bordered="bordered"
@@ -39,7 +39,7 @@ for (let i = 0; i < 600; i++) {
     platform: i % 2 === 0 ? '共有' : '私有',
     type: ['String', 'Number', 'Array', 'Object'][i % 4],
     property: ['A', 'B', 'C'][i % 3],
-    default: [1, 2, 3, 4, 5, 6][i % 6],
+    default: i,
     detail: {
       postion: `读取 ${i} 个数据的嵌套信息值`,
     },
@@ -212,8 +212,8 @@ export default {
     },
   },
   methods: {
-    onDataChange(a, b) {
-      console.log(a, b);
+    onDataChange(val) {
+      this.data = val.concat();
     },
     onFilterChange(filterValue) {
       this.data = data.filter((t) => !filterValue.property || filterValue.property === t.property);

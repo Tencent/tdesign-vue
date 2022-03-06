@@ -8,6 +8,7 @@ export default function useClassName() {
       body: `${prefix}-table__body`,
       content: `${prefix}-table__content`,
       tdLastRow: `${prefix}-table__td-last-row`,
+      thCellInner: `${prefix}-table__th-cell-inner`,
       bordered: `${prefix}-table--bordered`,
       striped: `${prefix}-table--striped`,
       hover: `${prefix}-table--hoverable`,
