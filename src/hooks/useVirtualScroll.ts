@@ -21,7 +21,7 @@ const useVirtualScroll = ({
     cachedScrollY: [],
   });
   const updateId = ref(0);
-  let trs = new Map(); // 当前展示的行元素和数据
+  const trs = new Map(); // 当前展示的行元素和数据
 
   let visibleCount = 0; // 可见的节点数量
   let beforeScrollTop = 0; // 上一次的滚动条位置
@@ -238,7 +238,7 @@ const useVirtualScroll = ({
     offset = 0;
     start = 0;
     // revising = false;
-    trs = new Map();
+    trs.clear();
     updateVisibleData();
     container.value && (container.value.scrollTop = 0);
   });
