@@ -171,11 +171,17 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   onRowMouseup?: (context: RowEventContext<T>) => void;
   /**
-   * 表格内容横向滚动时触发
+   * 表格内容滚动时触发
+   */
+  onScroll?: (params: { e: WheelEvent }) => void;
+  /**
+   * 表格内容横向滚动时触发。请更为使用 `onScroll` 事件
+   * @deprecated
    */
   onScrollX?: (params: { e: WheelEvent }) => void;
   /**
-   * 表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条
+   * 表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条。请更为使用 `onScroll` 事件
+   * @deprecated
    */
   onScrollY?: (params: { e: WheelEvent }) => void;
 }

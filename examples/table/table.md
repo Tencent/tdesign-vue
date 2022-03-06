@@ -40,8 +40,9 @@ onRowMousedown | Function |  | TS 类型：`(context: RowEventContext<T>) => voi
 onRowMouseenter | Function |  | TS 类型：`(context: RowEventContext<T>) => void`<br/>鼠标在表格行进入时触发，泛型 T 指表格数据类型 | N
 onRowMouseleave | Function |  | TS 类型：`(context: RowEventContext<T>) => void`<br/>鼠标在表格行离开时触发，泛型 T 指表格数据类型 | N
 onRowMouseup | Function |  | TS 类型：`(context: RowEventContext<T>) => void`<br/>鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型 | N
-onScrollX | Function |  | TS 类型：`(params: { e: WheelEvent }) => void`<br/>表格内容横向滚动时触发 | N
-onScrollY | Function |  | TS 类型：`(params: { e: WheelEvent }) => void`<br/>表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条 | N
+onScroll | Function |  | TS 类型：`(params: { e: WheelEvent }) => void`<br/>表格内容滚动时触发 | N
+onScrollX | Function |  | TS 类型：`(params: { e: WheelEvent }) => void`<br/>已废弃。表格内容横向滚动时触发。请更为使用 `onScroll` 事件 | N
+onScrollY | Function |  | TS 类型：`(params: { e: WheelEvent }) => void`<br/>已废弃。表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条。请更为使用 `onScroll` 事件 | N
 
 ### BaseTable Events
 
@@ -56,8 +57,9 @@ row-mousedown | `(context: RowEventContext<T>)` | 鼠标在表格行按下时触
 row-mouseenter | `(context: RowEventContext<T>)` | 鼠标在表格行进入时触发，泛型 T 指表格数据类型
 row-mouseleave | `(context: RowEventContext<T>)` | 鼠标在表格行离开时触发，泛型 T 指表格数据类型
 row-mouseup | `(context: RowEventContext<T>)` | 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型
-scroll-x | `(params: { e: WheelEvent })` | 表格内容横向滚动时触发
-scroll-y | `(params: { e: WheelEvent })` | 表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条
+scroll | `(params: { e: WheelEvent })` | 表格内容滚动时触发
+scroll-x | `(params: { e: WheelEvent })` | 已废弃。表格内容横向滚动时触发。请更为使用 `onScroll` 事件
+scroll-y | `(params: { e: WheelEvent })` | 已废弃。表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条。请更为使用 `onScroll` 事件
 
 ### BaseTableCol
 

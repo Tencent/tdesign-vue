@@ -15,7 +15,7 @@ import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useAsyncLoading from './hooks/useAsyncLoading';
 
-export const BASE_EVENTS = ['page-change', 'cell-click', 'scrollX', 'scrollY'];
+export const BASE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.concat(BASE_EVENTS);
 
 export interface PrimaryTableListeners {

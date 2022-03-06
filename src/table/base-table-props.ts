@@ -145,8 +145,10 @@ export default {
   onRowMouseleave: Function as PropType<TdBaseTableProps['onRowMouseleave']>,
   /** 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型 */
   onRowMouseup: Function as PropType<TdBaseTableProps['onRowMouseup']>,
-  /** 表格内容横向滚动时触发 */
+  /** 表格内容滚动时触发 */
+  onScroll: Function as PropType<TdBaseTableProps['onScroll']>,
+  /** 已废弃。表格内容横向滚动时触发。请更为使用 `onScroll` 事件 */
   onScrollX: Function as PropType<TdBaseTableProps['onScrollX']>,
-  /** 表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条 */
+  /** 已废弃。表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条。请更为使用 `onScroll` 事件 */
   onScrollY: Function as PropType<TdBaseTableProps['onScrollY']>,
 };

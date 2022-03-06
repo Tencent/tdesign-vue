@@ -1,5 +1,5 @@
 import {
-  ref, reactive, watch, toRefs,
+  ref, reactive, watch, toRefs, SetupContext,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
@@ -116,7 +116,7 @@ export function getRowFixedStyles(
   };
 }
 
-export default function useFixed(props: TdBaseTableProps) {
+export default function useFixed(props: TdBaseTableProps, context: SetupContext) {
   const {
     data, columns, tableLayout, tableContentWidth, fixedRows, firstFullRow, lastFullRow, maxHeight,
   } = toRefs(props);
@@ -297,8 +297,17 @@ export default function useFixed(props: TdBaseTableProps) {
     showColumnShadow.right = isShowRight;
   };
 
+  // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
   const onTableContentScroll = (e: WheelEvent) => {
     props.onScrollX?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll-x', { e });
+    props.onScrollY?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll-y', { e });
+    props.onScroll?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll', { e });
     const target = (e.target || e.srcElement) as HTMLElement;
     updateColumnFixedShadow(target);
   };

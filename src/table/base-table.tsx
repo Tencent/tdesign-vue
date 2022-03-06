@@ -45,7 +45,7 @@ export default defineComponent({
       showColumnShadow,
       rowAndColFixedPosition,
       onTableContentScroll,
-    } = useFixed(props);
+    } = useFixed(props, context);
     const {
       renderTableHeader, renderColgroup, isMultipleHeader, spansAndLeafNodes,
     } = useTableHeader(props, context);
