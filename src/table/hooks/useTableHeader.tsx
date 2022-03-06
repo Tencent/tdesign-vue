@@ -97,7 +97,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         const styles = { ...(thStyles.style || {}), width };
         return (
           <th data-colkey={col.colKey} class={thClasses} style={styles} attrs={{ ...rospanAndColspan }}>
-            {renderTitle(h, context.slots, col, index)}
+            <div class={tableBaseClass.thCellInner}>{renderTitle(h, context.slots, col, index)}</div>
           </th>
         );
       });

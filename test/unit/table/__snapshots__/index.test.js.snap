@@ -11,9 +11,15 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="id" class="t-table__th-id">id</th>
-          <th data-colkey="type" class="t-table__th-type">类型</th>
-          <th data-colkey="value" class="t-table__th-value">取值</th>
+          <th data-colkey="id" class="t-table__th-id">
+            <div class="t-table__th-cell-inner">id</div>
+          </th>
+          <th data-colkey="type" class="t-table__th-type">
+            <div class="t-table__th-cell-inner">类型</div>
+          </th>
+          <th data-colkey="value" class="t-table__th-value">
+            <div class="t-table__th-cell-inner">取值</div>
+          </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
@@ -89,9 +95,15 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="id" class="t-table__th-id">id</th>
-          <th data-colkey="type" class="t-table__th-type">类型</th>
-          <th data-colkey="value" class="t-table__th-value">取值</th>
+          <th data-colkey="id" class="t-table__th-id">
+            <div class="t-table__th-cell-inner">id</div>
+          </th>
+          <th data-colkey="type" class="t-table__th-type">
+            <div class="t-table__th-cell-inner">类型</div>
+          </th>
+          <th data-colkey="value" class="t-table__th-value">
+            <div class="t-table__th-cell-inner">取值</div>
+          </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
@@ -147,9 +159,15 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="id" class="t-table__th-id">id</th>
-          <th data-colkey="type" class="t-table__th-type">类型</th>
-          <th data-colkey="value" class="t-table__th-value">取值</th>
+          <th data-colkey="id" class="t-table__th-id">
+            <div class="t-table__th-cell-inner">id</div>
+          </th>
+          <th data-colkey="type" class="t-table__th-type">
+            <div class="t-table__th-cell-inner">类型</div>
+          </th>
+          <th data-colkey="value" class="t-table__th-value">
+            <div class="t-table__th-cell-inner">取值</div>
+          </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
@@ -194,19 +212,37 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
       </colgroup>
       <thead class="t-table__header t-table__header--multiple">
         <tr>
-          <th colspan="4" class="">汇总属性</th>
-          <th colspan="2" class="">属性及说明</th>
+          <th colspan="4" class="">
+            <div class="t-table__th-cell-inner">汇总属性</div>
+          </th>
+          <th colspan="2" class="">
+            <div class="t-table__th-cell-inner">属性及说明</div>
+          </th>
         </tr>
         <tr>
-          <th data-colkey="platform" rowspan="2" class="test t-table__th-platform">平台</th>
-          <th colspan="3" class="">类型及默认值</th>
-          <th data-colkey="property" rowspan="2" class="test2 t-table__th-property">属性</th>
-          <th data-colkey="description" rowspan="2" class="row t-table__th-description">说明</th>
+          <th data-colkey="platform" rowspan="2" class="test t-table__th-platform">
+            <div class="t-table__th-cell-inner">平台</div>
+          </th>
+          <th colspan="3" class="">
+            <div class="t-table__th-cell-inner">类型及默认值</div>
+          </th>
+          <th data-colkey="property" rowspan="2" class="test2 t-table__th-property">
+            <div class="t-table__th-cell-inner">属性</div>
+          </th>
+          <th data-colkey="description" rowspan="2" class="row t-table__th-description">
+            <div class="t-table__th-cell-inner">说明</div>
+          </th>
         </tr>
         <tr>
-          <th data-colkey="type" class="row t-table__header-th--bordered t-table__th-type">类型</th>
-          <th data-colkey="default" class="test4 t-table__th-default">默认值</th>
-          <th data-colkey="needed" class="test3 t-table__th-needed">是否必传</th>
+          <th data-colkey="type" class="row t-table__header-th--bordered t-table__th-type">
+            <div class="t-table__th-cell-inner">类型</div>
+          </th>
+          <th data-colkey="default" class="test4 t-table__th-default">
+            <div class="t-table__th-cell-inner">默认值</div>
+          </th>
+          <th data-colkey="needed" class="test3 t-table__th-needed">
+            <div class="t-table__th-cell-inner">是否必传</div>
+          </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
@@ -267,9 +303,15 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="id" class="t-table__th-id">id</th>
-          <th data-colkey="type" class="t-table__th-type">类型</th>
-          <th data-colkey="value" class="t-table__th-value">取值</th>
+          <th data-colkey="id" class="t-table__th-id">
+            <div class="t-table__th-cell-inner">id</div>
+          </th>
+          <th data-colkey="type" class="t-table__th-type">
+            <div class="t-table__th-cell-inner">类型</div>
+          </th>
+          <th data-colkey="value" class="t-table__th-value">
+            <div class="t-table__th-cell-inner">取值</div>
+          </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
