@@ -80,6 +80,7 @@ exports[`Table base demo works fine 1`] = `
    
   <div
     class="t-table t-size-m t-table--bordered t-table--striped"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -87,18 +88,20 @@ exports[`Table base demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col />
-        <col />
-        <col />
-        <col
-          style="width: 200px;"
-        />
+        <colgroup>
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col />
+          <col />
+          <col />
+          <col
+            style="width: 200px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -142,7 +145,7 @@ exports[`Table base demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -421,6 +424,7 @@ exports[`Table base demo works fine 2`] = `
    
   <div
     class="t-table t-size-m t-table--bordered t-table--striped"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -428,18 +432,20 @@ exports[`Table base demo works fine 2`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col />
-        <col />
-        <col />
-        <col
-          style="width: 200px;"
-        />
+        <colgroup>
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col />
+          <col />
+          <col />
+          <col
+            style="width: 200px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -483,7 +489,7 @@ exports[`Table base demo works fine 2`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -685,7 +691,8 @@ exports[`Table base demo works fine 2`] = `
 exports[`Table customCell demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m t-table--align-top"
+    class="t-table t-size-m t-vertical-align-top"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -693,10 +700,12 @@ exports[`Table customCell demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -728,7 +737,7 @@ exports[`Table customCell demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-top"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -835,6 +844,7 @@ exports[`Table empty demo works fine 1`] = `
 >
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -842,12 +852,14 @@ exports[`Table empty demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -891,7 +903,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -913,6 +925,7 @@ exports[`Table empty demo works fine 1`] = `
    
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -920,12 +933,14 @@ exports[`Table empty demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -969,7 +984,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -993,6 +1008,7 @@ exports[`Table empty demo works fine 1`] = `
    
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -1000,12 +1016,14 @@ exports[`Table empty demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -1049,7 +1067,7 @@ exports[`Table empty demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class="t-table__empty-row"
@@ -1164,6 +1182,7 @@ exports[`Table expandable demo works fine 1`] = `
    
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -1171,14 +1190,16 @@ exports[`Table expandable demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 64px;"
-        />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col
+            style="width: 64px;"
+          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -1222,7 +1243,7 @@ exports[`Table expandable demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -1736,6 +1757,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
    
   <div
     class="t-table t-size-m t-table--bordered t-table--column-fixed"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -1743,30 +1765,32 @@ exports[`Table fixedColumn demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 80px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 150px;"
-        />
-        <col
-          style="width: 150px;"
-        />
-        <col
-          style="width: 250px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 150px;"
-        />
-        <col
-          style="width: 100px;"
-        />
+        <colgroup>
+          <col
+            style="width: 80px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 150px;"
+          />
+          <col
+            style="width: 150px;"
+          />
+          <col
+            style="width: 250px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 150px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -1822,7 +1846,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -2149,6 +2173,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
    
   <div
     class="t-table t-size-m t-table--bordered"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -2157,18 +2182,20 @@ exports[`Table fixedHeader demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 120px;"
-        />
-        <col
-          style="width: 120px;"
-        />
-        <col />
-        <col />
-        <col
-          style="width: 200px;"
-        />
-        <col />
+        <colgroup>
+          <col
+            style="width: 120px;"
+          />
+          <col
+            style="width: 120px;"
+          />
+          <col />
+          <col />
+          <col
+            style="width: 200px;"
+          />
+          <col />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -2212,7 +2239,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -3008,7 +3035,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
 exports[`Table multiHeader demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large tdesign-demo-table-multi-header"
-  style="width: 100%;"
+  style="width: 90%;"
 >
   <div>
     <label
@@ -3030,7 +3057,7 @@ exports[`Table multiHeader demo works fine 1`] = `
     </label>
      
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
     >
       <input
         class="t-checkbox__former"
@@ -3044,6 +3071,24 @@ exports[`Table multiHeader demo works fine 1`] = `
         class="t-checkbox__label"
       >
         显示固定表头
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        虚拟滚动
       </span>
     </label>
      
@@ -3082,10 +3127,29 @@ exports[`Table multiHeader demo works fine 1`] = `
         固定右侧列
       </span>
     </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        表头吸顶
+      </span>
+    </label>
   </div>
    
   <div
     class="t-table t-size-m t-table--bordered t-table--multiple-header"
+    style="position: relative;"
   >
     <div>
       <div
@@ -3123,19 +3187,59 @@ exports[`Table multiHeader demo works fine 1`] = `
     </div>
     <div
       class="t-table__content"
+      style="max-height: 380px;"
     >
+      <div
+        class="t-table__virtual-scroll-cursor"
+        style="transform: translate(0, 28800px);"
+      />
       <table
-        class="t-table--layout-auto"
-        style="width: 1200px;"
+        class="t-table--layout-fixed"
       >
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
+        <colgroup>
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header t-table--bordered t-table__header--multiple"
         >
@@ -3183,18 +3287,18 @@ exports[`Table multiHeader demo works fine 1`] = `
               字段4
             </th>
             <th
+              class="t-table__th-instruction"
+              colspan="4"
+              data-colkey="instruction"
+            >
+              属性及说明
+            </th>
+            <th
               class="t-table__th-field5"
               data-colkey="field5"
               rowspan="3"
             >
               字段5
-            </th>
-            <th
-              class="t-table__th-instruction"
-              colspan="2"
-              data-colkey="instruction"
-            >
-              属性及说明
             </th>
           </tr>
           <tr>
@@ -3214,8 +3318,8 @@ exports[`Table multiHeader demo works fine 1`] = `
             </th>
             <th
               class="t-table__th-property"
+              colspan="3"
               data-colkey="property"
-              rowspan="2"
             >
               <div
                 class="t-table__cell--filterable"
@@ -3226,22 +3330,27 @@ exports[`Table multiHeader demo works fine 1`] = `
                   <div>
                     属性
                   </div>
-                  <span>
-                    <svg
-                      class="t-icon t-icon-filter t-table__filter-icon"
-                      fill="none"
-                      height="1em"
-                      name="filter"
-                      viewBox="0 0 16 16"
-                      width="1em"
+                  <div
+                    class="t-table__filter-icon-wrap"
+                  >
+                    <div
+                      class="t-table__filter-icon"
                     >
-                      <path
-                        d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
+                      <svg
+                        class="t-icon t-icon-filter"
+                        fill="none"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        width="1em"
+                      >
+                        <path
+                          d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z"
+                          fill="currentColor"
+                          fill-opacity="0.9"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
             </th>
@@ -3273,7 +3382,9 @@ exports[`Table multiHeader demo works fine 1`] = `
                   <div>
                     默认值
                   </div>
-                  <span>
+                  <div
+                    class="t-table__filter-icon-wrap"
+                  >
                     <div
                       class="t-table__cell--sort-trigger t-table__double-icons"
                     >
@@ -3315,7 +3426,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                         </span>
                       </span>
                     </div>
-                  </span>
+                  </div>
                 </div>
               </div>
             </th>
@@ -3325,440 +3436,40 @@ exports[`Table multiHeader demo works fine 1`] = `
             >
               是否必传
             </th>
+            <th
+              class="t-table__th-field6"
+              data-colkey="field6"
+            >
+              字段6
+            </th>
+            <th
+              class="t-table__th-field7"
+              data-colkey="field7"
+            >
+              字段7
+            </th>
+            <th
+              class="t-table__th-field8"
+              data-colkey="field8"
+            >
+              字段8
+            </th>
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
+          style="transform: translate(0, 0px);"
         >
           <tr
-            class=""
+            class="t-table__empty-row"
           >
             <td
-              class=""
-            >
-              0
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              String
-            </td>
-            <td
-              class=""
-            >
-              1
-            </td>
-            <td
-              class=""
-            >
-              是
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
+              colspan="14"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__empty"
               >
-                A
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-            >
-              1
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              2
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                B
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-            >
-              2
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              3
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                C
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-            >
-              3
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Object
-            </td>
-            <td
-              class=""
-            >
-              4
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                A
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-            >
-              4
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              String
-            </td>
-            <td
-              class=""
-            >
-              5
-            </td>
-            <td
-              class=""
-            >
-              是
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                B
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class=""
-            >
-              5
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              6
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              字段1
-            </td>
-            <td
-              class=""
-            >
-              字段2
-            </td>
-            <td
-              class=""
-            >
-              字段3
-            </td>
-            <td
-              class=""
-            >
-              字段4
-            </td>
-            <td
-              class=""
-            >
-              字段5
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                C
-              </div>
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis"
-              >
-                数据源
+                暂无数据
               </div>
             </td>
           </tr>
@@ -3773,6 +3484,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
 <div>
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -3780,20 +3492,22 @@ exports[`Table selectMultiple demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 64px;"
-        />
-        <col
-          style="width: 150px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col />
-        <col />
-        <col
-          style="width: 200px;"
-        />
+        <colgroup>
+          <col
+            style="width: 64px;"
+          />
+          <col
+            style="width: 150px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col />
+          <col />
+          <col
+            style="width: 200px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -3853,7 +3567,7 @@ exports[`Table selectMultiple demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""
@@ -4188,6 +3902,7 @@ exports[`Table selectSingle demo works fine 1`] = `
 <div>
   <div
     class="t-table t-size-m"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -4195,20 +3910,22 @@ exports[`Table selectSingle demo works fine 1`] = `
       <table
         class="t-table--layout-fixed"
       >
-        <col
-          style="width: 64px;"
-        />
-        <col
-          style="width: 150px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col />
-        <col />
-        <col
-          style="width: 200px;"
-        />
+        <colgroup>
+          <col
+            style="width: 64px;"
+          />
+          <col
+            style="width: 150px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col />
+          <col />
+          <col
+            style="width: 200px;"
+          />
+        </colgroup>
         <thead
           class="t-table__header"
         >
@@ -4252,7 +3969,7 @@ exports[`Table selectSingle demo works fine 1`] = `
           </tr>
         </thead>
         <tbody
-          class="t-table__body t-vertical-align-middle"
+          class="t-table__body"
         >
           <tr
             class=""

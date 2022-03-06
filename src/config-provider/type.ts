@@ -5,14 +5,14 @@
  * */
 
 import { CalendarController } from '../calendar';
-import { FormErrorMessage } from '../form';
 import { ButtonProps } from '../button';
+import { FormErrorMessage } from '../form';
 import { TNode } from '../common';
 
 export interface GlobalConfigProvider {
   /**
    * 动画效果控制，`ripple`指波纹动画， `expand` 指展开动画，`fade` 指渐变动画
-   * @default { include: ['ripple','expand','fade'], exclude: [] }
+   * @default `{ include: ['ripple','expand','fade'], exclude: [] }`
    */
   animation?: Record<'include' | 'exclude', Array<AnimationType>>;
   /**
@@ -23,6 +23,11 @@ export interface GlobalConfigProvider {
    * 级联选择器全局配置
    */
   cascader?: CascaderConfig;
+  /**
+   * CSS 类名前缀
+   * @default t
+   */
+  classPrefix?: string;
   /**
    * 日期选择器全局配置
    */
@@ -93,24 +98,35 @@ export interface GlobalConfigProvider {
   upload?: UploadConfig;
 }
 
-export interface TreeConfig {
-  /**
-   * “暂无数据”描述文本
-   * @default '暂无数据'
-   */
-  empty?: string;
-  /**
-   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
-   */
-  folderIcon?: TNode;
-}
-
 export interface InputConfig {
   /**
    * 占位符文本
    * @default 请输入
    */
   placeholder?: string;
+}
+
+export interface PaginationConfig {
+  /**
+   * 每页条数文本，示例：`'{ total } / page'`
+   * @default '{size} 条/页'
+   */
+  itemsPerPage?: string;
+  /**
+   * 页码跳转文本，示例：'jump to'
+   * @default '跳至'
+   */
+  jumpTo?: string;
+  /**
+   * “页”文本，示例：'page'
+   * @default '页'
+   */
+  page?: string;
+  /**
+   * 数据总条数文本，示例：`'total { total }'`
+   * @default '共 {total} 项数据'
+   */
+  total?: string;
 }
 
 export interface CalendarConfig {
@@ -198,29 +214,50 @@ export interface CascaderConfig {
   placeholder?: string;
 }
 
-export interface FormConfig {
+export interface TransferConfig {
   /**
-   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
+   * 空数据描述文本
+   * @default '暂无数据'
    */
-  errorMessage?: FormErrorMessage;
+  empty?: string;
   /**
-   * 是否显示必填符号（*），默认显示
-   * @default true
+   * 占位符描述文本
+   * @default '请输入关键词搜索'
    */
-  requiredMark?: boolean;
+  placeholder?: string;
+  /**
+   * 穿梭框标题描述文本
+   * @default '{checked} / {total} 项'
+   */
+  title?: string;
 }
 
-export interface DrawerConfig {
+export interface TimePickerConfig {
   /**
-   * “取消”描述文本
-   * @default '取消'
+   * 语言配置，“上午”描述文本
+   * @default '上午'
    */
-  cancel?: string | ButtonProps;
+  anteMeridiem?: string;
   /**
-   * “确认”描述文本
-   * @default '确认'
+   * 语言配置，“确定”描述文本
+   * @default '确定'
    */
-  confirm?: string | ButtonProps;
+  confirm?: string;
+  /**
+   * 语言配置，“此刻”描述文本
+   * @default '此刻'
+   */
+  now?: string;
+  /**
+   * 语言配置，占位符描述文本
+   * @default '请选择时间'
+   */
+  placeholder?: string;
+  /**
+   * 语言配置，“下午”描述文本
+   * @default '下午'
+   */
+  postMeridiem?: string;
 }
 
 export interface DatePickerConfig {
@@ -347,34 +384,17 @@ export interface DialogConfig {
   confirmBtnTheme?: { default: string; info: string; warning: string; danger: string; success: string };
 }
 
-export interface UploadConfigProgress {
+export interface DrawerConfig {
   /**
-   * 语言配置，“上传失败”文本描述
-   * @default '上传失败'
+   * “取消”描述文本
+   * @default '取消'
    */
-  failText?: string;
+  cancel?: string | ButtonProps;
   /**
-   * 语言配置，“上传成功”文本描述
-   * @default '上传成功'
+   * “确认”描述文本
+   * @default '确认'
    */
-  successText?: string;
-  /**
-   * 语言配置，“上传中”文本描述
-   * @default '上传中'
-   */
-  uploadingText?: string;
-  /**
-   * 语言配置，“待上传”文本描述
-   * @default '待上传'
-   */
-  waitingText?: string;
-}
-
-export interface StepsConfig {
-  /**
-   * 错误步骤图标，【注意】使用渲染函数输出图标组件
-   */
-  errorIcon?: TNode;
+  confirm?: string | ButtonProps;
 }
 
 export interface PopconfirmConfig {
@@ -394,79 +414,20 @@ export interface PopconfirmConfig {
   confirmBtnTheme?: { default: string; warning: string; danger: string };
 }
 
-export interface SelectConfig {
-  /**
-   * 清除图标，【注意】使用渲染函数输出图标组件
-   */
-  clearIcon?: TNode;
-  /**
-   * “暂无数据”描述文本
-   * @default '暂无数据'
-   */
-  empty?: string;
-  /**
-   * “加载中”描述文本
-   * @default '加载中'
-   */
-  loadingText?: string;
-  /**
-   * 占位符描述文本
-   * @default '请选择'
-   */
-  placeholder?: string;
-}
-
-export interface PaginationConfig {
-  /**
-   * 每页条数文本，示例：`'{ total } / page'`
-   * @default '{size} 条/页'
-   */
-  itemsPerPage?: string;
-  /**
-   * 页码跳转文本，示例：'jump to'
-   * @default '跳至'
-   */
-  jumpTo?: string;
-  /**
-   * “页”文本，示例：'page'
-   * @default '页'
-   */
-  page?: string;
-  /**
-   * 数据总条数文本，示例：`'total { total }'`
-   * @default '共 {total} 项数据'
-   */
-  total?: string;
-}
-
-export interface ListConfig {
-  /**
-   * 语言配置，'点击加载更多' 描述文本
-   * @default '点击加载更多'
-   */
-  loadingMoreText?: string;
-  /**
-   * 语言配置，'正在加载中，请稍后' 描述文本
-   * @default '正在加载中，请稍后'
-   */
-  loadingText?: string;
-}
-
 export interface TableConfig {
   /**
    * 语言配置，'暂无数据' 描述文本
    * @default '暂无数据'
    */
-  empty?: string;
+  empty?: string | TNode;
   /**
-   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
+   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标
    */
   expandIcon?: TNode;
   /**
-   * 语言配置，'输入关键词过滤' 描述文本
-   * @default '输入关键词过滤'
+   * 过滤图标，如果没有配置，组件会内置默认图标
    */
-  filterInputPlaceholder?: string;
+  filterIcon?: TNode;
   /**
    * 语言配置，'点击加载更多' 描述文本
    * @default '点击加载更多'
@@ -493,62 +454,43 @@ export interface TableConfig {
    */
   sortDescendingOperationText?: string;
   /**
-   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
+   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标
    */
   sortIcon?: TNode;
 }
 
-export interface TagConfig {
+export interface SelectConfig {
   /**
-   * 关闭图标，【注意】使用渲染函数输出图标组件
+   * 清除图标，【注意】使用渲染函数输出图标组件
    */
-  closeIcon?: TNode;
-}
-
-export interface TimePickerConfig {
+  clearIcon?: TNode;
   /**
-   * 语言配置，“上午”描述文本
-   * @default '上午'
-   */
-  anteMeridiem?: string;
-  /**
-   * 语言配置，“确定”描述文本
-   * @default '确定'
-   */
-  confirm?: string;
-  /**
-   * 语言配置，“此刻”描述文本
-   * @default '此刻'
-   */
-  now?: string;
-  /**
-   * 语言配置，占位符描述文本
-   * @default '请选择时间'
-   */
-  placeholder?: string;
-  /**
-   * 语言配置，“下午”描述文本
-   * @default '下午'
-   */
-  postMeridiem?: string;
-}
-
-export interface TransferConfig {
-  /**
-   * 空数据描述文本
+   * “暂无数据”描述文本
    * @default '暂无数据'
    */
   empty?: string;
   /**
+   * “加载中”描述文本
+   * @default '加载中'
+   */
+  loadingText?: string;
+  /**
    * 占位符描述文本
-   * @default '请输入关键词搜索'
+   * @default '请选择'
    */
   placeholder?: string;
+}
+
+export interface TreeConfig {
   /**
-   * 穿梭框标题描述文本
-   * @default '{checked} / {total} 项'
+   * “暂无数据”描述文本
+   * @default '暂无数据'
    */
-  title?: string;
+  empty?: string;
+  /**
+   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
+   */
+  folderIcon?: TNode;
 }
 
 export interface TreeSelectConfig {
@@ -567,6 +509,19 @@ export interface TreeSelectConfig {
    * @default '请选择'
    */
   placeholder?: string;
+}
+
+export interface ListConfig {
+  /**
+   * 语言配置，'点击加载更多' 描述文本
+   * @default '点击加载更多'
+   */
+  loadingMoreText?: string;
+  /**
+   * 语言配置，'正在加载中，请稍后' 描述文本
+   * @default '正在加载中，请稍后'
+   */
+  loadingText?: string;
 }
 
 export interface UploadConfig {
@@ -596,6 +551,29 @@ export interface UploadConfig {
    * 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }
    */
   triggerUploadText?: UploadTriggerUploadText;
+}
+
+export interface UploadConfigProgress {
+  /**
+   * 语言配置，“上传失败”文本描述
+   * @default '上传失败'
+   */
+  failText?: string;
+  /**
+   * 语言配置，“上传成功”文本描述
+   * @default '上传成功'
+   */
+  successText?: string;
+  /**
+   * 语言配置，“上传中”文本描述
+   * @default '上传中'
+   */
+  uploadingText?: string;
+  /**
+   * 语言配置，“待上传”文本描述
+   * @default '待上传'
+   */
+  waitingText?: string;
 }
 
 export interface UploadConfigDragger {
@@ -642,6 +620,32 @@ export interface UploadConfigFileList {
    * @default '状态'
    */
   fileStatusText?: string;
+}
+
+export interface FormConfig {
+  /**
+   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
+   */
+  errorMessage?: FormErrorMessage;
+  /**
+   * 是否显示必填符号（*），默认显示
+   * @default true
+   */
+  requiredMark?: boolean;
+}
+
+export interface TagConfig {
+  /**
+   * 关闭图标，【注意】使用渲染函数输出图标组件
+   */
+  closeIcon?: TNode;
+}
+
+export interface StepsConfig {
+  /**
+   * 错误步骤图标，【注意】使用渲染函数输出图标组件
+   */
+  errorIcon?: TNode;
 }
 
 export type AnimationType = 'ripple' | 'expand' | 'fade';

@@ -5,7 +5,7 @@ import isFunction from 'lodash/isFunction';
 import { BaseTableCellParams, TableRowData, TdBaseTableProps } from '../type';
 import { formatRowAttributes } from '../util/common';
 import { getColumnFixedStyles, RowAndColFixedPosition } from './useFixed';
-import { TABLE_CLASS_FOOTER, TABLE_CLASS_FOOTER_FIXED } from './useStyle';
+import useClassName from './useClassName';
 
 export interface RenderTableHeaderParams {
   // 是否固定表头
@@ -15,6 +15,7 @@ export interface RenderTableHeaderParams {
 }
 
 export default function useTableFooter(props: TdBaseTableProps, context: SetupContext) {
+  const { tableColFixedClasses, tableFooterClasses } = useClassName();
   const renderTFootCell = (p: BaseTableCellParams<TableRowData>) => {
     const { col } = p;
     if (isFunction(col.foot)) {
@@ -29,7 +30,7 @@ export default function useTableFooter(props: TdBaseTableProps, context: SetupCo
   // eslint-disable-next-line
   const renderTableFooter = (h: CreateElement, { isFixedHeader, rowAndColFixedPosition }: RenderTableHeaderParams) => {
     if (!props.footData || !props.footData.length || !props.columns) return null;
-    const theadClasses = [TABLE_CLASS_FOOTER, { [TABLE_CLASS_FOOTER_FIXED]: isFixedHeader }];
+    const theadClasses = [tableFooterClasses.footer, { [tableFooterClasses.fixed]: isFixedHeader }];
     return (
       <tfoot ref="tfooterRef" class={theadClasses}>
         {props.footData.map((row, rowIndex) => {
@@ -41,7 +42,7 @@ export default function useTableFooter(props: TdBaseTableProps, context: SetupCo
           return (
             <tr attrs={trAttributes} class={customClasses}>
               {props.columns.map((col, colIndex) => {
-                const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition);
+                const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, tableColFixedClasses);
                 return (
                   <td class={tdStyles.classes} style={tdStyles.style}>
                     {renderTFootCell({

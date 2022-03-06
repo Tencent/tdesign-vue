@@ -127,11 +127,20 @@ export default defineComponent({
   },
 
   setup(props: TrProps, context: SetupContext) {
-    const { tdEllipsisClass, tableBaseClass } = useClassName();
+    const {
+      tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses,
+    } = useClassName();
     const { row, rowIndex, dataLength } = props;
     // 固定列、固定行样式和类名
     const rowId = get(row, props.rowKey || 'id');
-    const trStyles = computed(() => getRowFixedStyles(rowId, rowIndex, dataLength, props.fixedRows, props.rowAndColFixedPosition));
+    const trStyles = computed(() => getRowFixedStyles(
+      rowId,
+      rowIndex,
+      dataLength,
+      props.fixedRows,
+      props.rowAndColFixedPosition,
+      tableRowFixedClasses,
+    ));
     // const trStyles = computed<{ classes?: ClassName; style?: Styles }>(() => ({}));
 
     const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' }));
@@ -228,6 +237,7 @@ export default defineComponent({
     });
 
     return {
+      tableColFixedClasses,
       tSlots: context.slots,
       tdEllipsisClass,
       tableBaseClass,
@@ -268,7 +278,7 @@ export default defineComponent({
         columnLength, cellSpans, dataLength, rowAndColFixedPosition,
       } = extra;
       const cellNode = renderCell(params, this.tSlots);
-      const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition);
+      const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
       const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
       const classes = [
         tdStyles.classes,

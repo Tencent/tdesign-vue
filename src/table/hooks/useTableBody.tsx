@@ -5,9 +5,7 @@ import upperFirst from 'lodash/upperFirst';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from '../tr';
-import {
-  TABLE_CLASS_BODY, TAVLE_CLASS_VERTICAL_ALIGN, TABLE_CLASS_EMPTY, TABLE_CLASS_EMPTY_ROW,
-} from './useStyle';
+import { TableConfig, useConfig } from '../../config-provider/useConfig';
 import {
   RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
 } from '../type';
@@ -34,13 +32,10 @@ export interface RenderTableBodyParams {
 
 export default function useTableBody(props: BaseTableProps, { emit, slots }: SetupContext) {
   const renderTNode = useTNodeJSX();
+  const { t, global } = useConfig<TableConfig>('table');
+  const { tableFullRowClasses, tableBaseClass } = useClassName();
 
-  const { tableFullRowClasses } = useClassName();
-
-  const tbodyClases = computed(() => [
-    TABLE_CLASS_BODY,
-    { [TAVLE_CLASS_VERTICAL_ALIGN[props.verticalAlign]]: props.verticalAlign },
-  ]);
+  const tbodyClases = computed(() => [tableBaseClass.body]);
 
   const getTrListeners = () => {
     const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
@@ -76,9 +71,9 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
 
   // eslint-disable-next-line
   const renderEmpty = (h: CreateElement, columns: RenderTableBodyParams['columns']) => (
-    <tr class={TABLE_CLASS_EMPTY_ROW}>
+    <tr class={tableBaseClass.emptyRow}>
       <td colspan={columns.length}>
-        <div class={TABLE_CLASS_EMPTY}>{renderTNode('empty') || '暂无数据'}</div>
+        <div class={tableBaseClass.empty}>{renderTNode('empty') || t(global.value.empty)}</div>
       </td>
     </tr>
   );

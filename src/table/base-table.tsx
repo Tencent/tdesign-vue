@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, toRefs, ref, provide,
+  computed, defineComponent, SetupContext, toRefs, ref, provide, nextTick,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -11,15 +11,11 @@ import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
-import useStyle, {
-  TABLE_CLASS_CONTENT,
-  TABLE_CLASS_LAYOUT,
-  TABLE_CLASS_COLUMN_FIXED,
-  TABLE_ROOT_CLASS_HEADER_FIXED,
-  TABLE_ROOT_CLASS_COLUMN_FIXED,
-  TABLE_ROOT_CLASS_MULTIPLE_HEADER,
-} from './hooks/useStyle';
+import useStyle from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
+import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { Affix } from '../affix';
+import useCommonClassName from '../hooks/useCommonClassName';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -34,21 +30,29 @@ export default defineComponent({
 
   setup(props: BaseTableProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
-    const { virtualScrollClasses } = useClassName();
+    const {
+      virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
+    } = useClassName();
+    const { statusClassNames } = useCommonClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
+    const { global } = useConfig<TableConfig>('table');
     // 固定表头和固定列逻辑
     const {
       tableRef,
+      affixHeaderRef,
       virtualScrollHeaderPos,
       tableWidth,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
+      thWidthList,
       showColumnShadow,
+      showAffixHeader,
       rowAndColFixedPosition,
       onTableContentScroll,
-    } = useFixed(props);
+      updateHeaderScroll,
+    } = useFixed(props, context);
     const {
       renderTableHeader, renderColgroup, isMultipleHeader, spansAndLeafNodes,
     } = useTableHeader(props, context);
@@ -56,14 +60,22 @@ export default defineComponent({
     const { renderTableFooter } = useTableFooter(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
-    const baseTableClasses = computed(() => [
+    const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
-      { [TABLE_ROOT_CLASS_HEADER_FIXED]: isFixedHeader.value },
-      { [TABLE_ROOT_CLASS_COLUMN_FIXED]: isFixedColumn.value },
-      { [TABLE_ROOT_CLASS_MULTIPLE_HEADER]: isMultipleHeader.value },
-      { [TABLE_CLASS_COLUMN_FIXED.leftShadow]: showColumnShadow.left },
-      { [TABLE_CLASS_COLUMN_FIXED.rightShadow]: showColumnShadow.right },
+      { [tableBaseClass.headerFixed]: isFixedHeader.value },
+      { [tableBaseClass.columnFixed]: isFixedColumn.value },
+      { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
+      { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
+      { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
     ]);
+
+    const onFixedChange = (val: number | false) => {
+      if (val !== false) {
+        nextTick(() => {
+          updateHeaderScroll();
+        });
+      }
+    };
 
     const {
       type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
@@ -89,28 +101,25 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     return {
+      global,
       virtualScrollHeaderPos,
       tableWidth,
       tableRef,
+      tableBaseClass,
       spansAndLeafNodes,
-      baseTableClasses,
+      dynamicBaseTableClasses,
       tableContentStyles,
       tableElementStyles,
       virtualScrollClasses,
-      renderColgroup,
-      renderTableHeader,
-      renderTableBody,
-      renderTableFooter,
+      tableLayoutClasses,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
       rowAndColFixedPosition,
       showColumnShadow,
-      onTableContentScroll,
+      thWidthList,
       isPaginateData,
       dataSource,
-      renderPagination,
-      renderTNode,
       scrollType: type,
       rowHeight,
       trs,
@@ -118,7 +127,19 @@ export default defineComponent({
       scrollHeight,
       visibleData,
       translateY,
+      affixHeaderRef,
+      showAffixHeader,
+      statusClassNames,
+      renderColgroup,
+      renderTableHeader,
+      renderTableBody,
+      renderTableFooter,
+      onTableContentScroll,
+      renderPagination,
+      renderTNode,
       handleRowMounted,
+      onFixedChange,
+      updateHeaderScroll,
       handleVirtualScroll: handleScroll,
     };
   },
@@ -134,19 +155,47 @@ export default defineComponent({
       }
       : onTableContentScroll;
 
-    const colgroup = this.renderColgroup(h);
+    const colgroup = this.renderColgroup(h, this.spansAndLeafNodes?.leafColumns || this.columns);
     const header = this.renderTableHeader(h, {
       isFixedHeader: this.isFixedHeader,
       rowAndColFixedPosition,
     });
+    const fixedHeader = (isVirtual || this.headerAffixedTop) && !!Object.keys(this.thWidthList).length
+      ? this.renderTableHeader(h, {
+        isFixedHeader: this.isFixedHeader,
+        rowAndColFixedPosition,
+        thWidthList: this.thWidthList,
+      })
+      : null;
+
+    const affixedHeader = Boolean((this.headerAffixedTop || isVirtual) && this.tableWidth) && (
+      <div
+        ref="affixHeaderRef"
+        style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
+        class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || isVirtual }}
+      >
+        <table
+          class={[this.tableLayoutClasses[this.tableLayout]]}
+          style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}
+        >
+          {colgroup}
+          {fixedHeader}
+        </table>
+      </div>
+    );
 
     const tableContent = (
-      <div ref="tableContentRef" class={TABLE_CLASS_CONTENT} style={this.tableContentStyles} onScroll={onScroll}>
+      <div
+        ref="tableContentRef"
+        class={this.tableBaseClass.content}
+        style={this.tableContentStyles}
+        onScroll={onScroll}
+      >
         {isVirtual && (
           <div class={this.virtualScrollClasses.cursor} style={{ transform: `translate(0, ${this.scrollHeight}px)` }} />
         )}
 
-        <table class={TABLE_CLASS_LAYOUT[this.tableLayout]} style={this.tableElementStyles}>
+        <table class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
           {header}
           {this.renderTableBody(h, {
@@ -184,20 +233,19 @@ export default defineComponent({
     );
 
     return (
-      <div ref="tableRef" class={this.baseTableClasses} style="position: relative">
-        {isVirtual && (
-          <table
-            class={[TABLE_CLASS_LAYOUT[this.tableLayout], this.virtualScrollClasses.header]}
-            style={{
-              ...this.tableElementStyles,
-              width: `${this.tableWidth}px`,
-            }}
-          >
-            {header}
-          </table>
-        )}
+      <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {this.renderTNode('topContent')}
+
+        {this.headerAffixedTop ? (
+          <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
+            {affixedHeader}
+          </Affix>
+        ) : (
+          affixedHeader
+        )}
+
         {loadingContent}
+
         {this.renderPagination(h)}
       </div>
     );

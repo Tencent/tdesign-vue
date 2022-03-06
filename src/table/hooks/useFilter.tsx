@@ -3,7 +3,6 @@ import {
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { FilterIcon } from 'tdesign-icons-vue';
-import isFunction from 'lodash/isFunction';
 import isEmpty from 'lodash/isEmpty';
 import Popup from '../../popup';
 import useClassName from './useClassName';
@@ -16,6 +15,7 @@ import { useTNodeDefault } from '../../hooks/tnode';
 import { CheckboxGroup } from '../../checkbox';
 import { RadioGroup } from '../../radio';
 import Input from '../../input';
+import { TableConfig, useConfig } from '../../config-provider/useConfig';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
@@ -38,6 +38,7 @@ function filterEmptyData(data: FilterValue) {
 
 export default function useFilter(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
+  const { t, global } = useConfig<TableConfig>('table');
   const { filterValue } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
   // 记录筛选列是否处理下拉展开状态
@@ -214,8 +215,10 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     );
   }
 
+  // 图标：内置图标，组件自定义图标，全局配置图标
   function renderFilterIcon(h: CreateElement, { col }: { col: PrimaryTableCol<TableRowData>; colIndex: number }) {
     if (!col.filter || (col.filter && !Object.keys(col.filter).length)) return null;
+    const defaultFilterIcon = t(global.value.filterIcon) || <FilterIcon />;
     return (
       <Popup
         visible={filterPopupVisible.value[col.colKey]}
@@ -226,7 +229,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         on={{
           'visible-change': (val: boolean) => onFilterPopupVisibleChange(val, col.colKey),
         }}
-        class={tableFilterClasses.icon}
+        class={[tableFilterClasses.icon, { [isFocusClass]: !isEmpty(tFilterValue.value?.[col.colKey]) }]}
         content={() => (
           <div class={tableFilterClasses.popupContent}>
             {getFilterContent(h, col)}
@@ -234,11 +237,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
           </div>
         )}
       >
-        {isFunction(props.filterIcon) ? (
-          props.filterIcon(h)
-        ) : (
-          <FilterIcon name="filter" class={[{ [isFocusClass]: !isEmpty(tFilterValue.value?.[col.colKey]) }]} />
-        )}
+        <div>{renderTNode('filterIcon', defaultFilterIcon)}</div>
       </Popup>
     );
   }

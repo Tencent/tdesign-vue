@@ -3,16 +3,9 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
 import { prefix } from '../../config';
-import { TdBaseTableProps } from '../type';
+import { BaseTableCol, TdBaseTableProps } from '../type';
 import { RowAndColFixedPosition, getColumnFixedStyles } from './useFixed';
-import {
-  formatCSSUnit,
-  TABLE_CLASS_HEADER,
-  TABLE_CLASS_HEADER_FIXED,
-  TABLE_CLASS_HEADER_TH_BORDERED,
-  TABLE_CLASS_BORDERED,
-  TABLE_CLASS_HEADER_MULTIPLE,
-} from './useStyle';
+import { formatCSSUnit } from './useStyle';
 import { TableColums, getThRowspanAndColspan, getThList } from './useMultiHeader';
 import useClassName from './useClassName';
 import { TNodeReturnValue } from '../../common';
@@ -22,6 +15,8 @@ export interface RenderTableHeaderParams {
   isFixedHeader: boolean;
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
+  // 虚拟滚动单独渲染表头；表头吸顶单独渲染表头
+  thWidthList?: { [colKey: string]: number };
 }
 
 // 渲染表头的通用方法
@@ -45,7 +40,9 @@ export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col:
 }
 
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
-  const { tableSortClasses, tableFilterClasses } = useClassName();
+  const {
+    tableSortClasses, tableFilterClasses, tableHeaderClasses, tableBaseClass, tableColFixedClasses,
+  } = useClassName();
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
   // 表头二维数据
@@ -53,10 +50,20 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   const isMultipleHeader = computed(() => thList.value.length > 1);
 
   // eslint-disable-next-line
-  const renderColgroup = (h: CreateElement) => props.columns.map((col) => <col style={{ width: formatCSSUnit(col.width) }}></col>);
+  const renderColgroup = (h: CreateElement, columns: BaseTableCol[]) => (
+    <colgroup>
+      {columns.map((col) => (
+        <col style={{ width: formatCSSUnit(col.width) }}></col>
+      ))}
+    </colgroup>
+  );
 
   // eslint-disable-next-line
-  const renderThNodeList = (h: CreateElement, rowAndColFixedPosition: RowAndColFixedPosition) => {
+  const renderThNodeList = (
+    h: CreateElement,
+    rowAndColFixedPosition: RowAndColFixedPosition,
+    thWidthList: RenderTableHeaderParams['thWidthList'],
+  ) => {
     // thBorderMap: rowspan 会影响 tr > th 是否为第一列表头，从而影响边框
     const thBorderMap = new Map<any, boolean>();
     const thRowspanAndColspan = spansAndLeafNodes.value.rowspanAndColspanMap;
@@ -68,7 +75,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
             thBorderMap.set(thList.value[j][0], true);
           }
         }
-        const thStyles = getColumnFixedStyles(col, index, rowAndColFixedPosition);
+        const thStyles = getColumnFixedStyles(col, index, rowAndColFixedPosition, tableColFixedClasses);
         const colParams = {
           col,
           colIndex: index,
@@ -81,12 +88,15 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
           customClasses,
           {
             // 受 rowspan 影响，部分 tr > th:first-child 需要补足左边框
-            [TABLE_CLASS_HEADER_TH_BORDERED]: thBorderMap.get(col),
+            [tableHeaderClasses.thBordered]: thBorderMap.get(col),
             [`${prefix}-table__th-${col.colKey}`]: col.colKey,
           },
         ];
+        const withoutChildren = !col.children?.length;
+        const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
+        const styles = { ...(thStyles.style || {}), width };
         return (
-          <th data-colkey={col.colKey} class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
+          <th data-colkey={col.colKey} class={thClasses} style={styles} attrs={{ ...rospanAndColspan }}>
             {renderTitle(h, context.slots, col, index)}
           </th>
         );
@@ -96,18 +106,21 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   };
 
   // eslint-disable-next-line
-  const renderTableHeader = (h: CreateElement, { isFixedHeader, rowAndColFixedPosition }: RenderTableHeaderParams) => {
+  const renderTableHeader = (
+    h: CreateElement,
+    { isFixedHeader, rowAndColFixedPosition, thWidthList }: RenderTableHeaderParams,
+  ) => {
     const theadClasses = [
-      TABLE_CLASS_HEADER,
+      tableHeaderClasses.header,
       {
-        [TABLE_CLASS_HEADER_FIXED]: isFixedHeader,
-        [TABLE_CLASS_BORDERED]: props.bordered && isMultipleHeader.value,
-        [TABLE_CLASS_HEADER_MULTIPLE]: isMultipleHeader.value,
+        [tableHeaderClasses.fixed]: isFixedHeader,
+        [tableBaseClass.bordered]: props.bordered && isMultipleHeader.value,
+        [tableHeaderClasses.multipleHeader]: isMultipleHeader.value,
       },
     ];
     return (
       <thead ref="theadRef" class={theadClasses}>
-        {renderThNodeList(h, rowAndColFixedPosition)}
+        {renderThNodeList(h, rowAndColFixedPosition, thWidthList)}
       </thead>
     );
   };
@@ -123,10 +136,10 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         <div class={tableSortClasses.title}>
           <div>{title}</div>
           {Boolean(sortIcon || filterIcon) && (
-            <span>
+            <div class={tableFilterClasses.iconWrap}>
               {sortIcon}
               {filterIcon}
-            </span>
+            </div>
           )}
         </div>
       </div>

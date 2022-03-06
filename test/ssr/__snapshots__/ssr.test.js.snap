@@ -3043,81 +3043,136 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.v
 
 exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue correctly 1`] = `
 <div style="padding:16px;">
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__cell--sortable">
                 <div class="t-table__cell--title">
-                  <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-                </div></span>
+                  <div>Type</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                  </div>
+                </div>
               </div>
+            </th>
+            <th data-colkey="platform" class="t-table__th-platform">
+              <div class="t-table__cell--filterable">
+                <div class="t-table__cell--title">
+                  <div>Platform</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th data-colkey="property" class="t-table__th-property">
+              <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--title">
+                  <div>Property</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr class="t-table__empty-row">
+            <td colspan="3">
+              <div class="t-table__empty">Empty Data</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    </th>
-    <th data-colkey="platform" class="t-table__th-platform">Platform</th>
-    <th data-colkey="property" class="t-table__th-property">Property</th>
-    </tr>
-    </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
-      <tr class="t-table__empty-row">
-        <td colspan="3">
-          <div class="t-table__empty">暂无数据</div>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-  </div>
-</div> <br><br>
-<div class="t-table t-size-m">
-  <div class="t-table__content">
-    <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:64px;">
-      <col>
-      <col>
-      <col>
-      <thead class="t-table__header">
-        <tr>
-          <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
-          <th data-colkey="type" class="t-table__th-type">
-            <div class="t-table__cell--sortable">
-              <div class="t-table__cell--title">
-                <div>Type</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-              </div></span>
-            </div>
-  </div>
-  </th>
-  <th data-colkey="platform" class="t-table__th-platform">Platform</th>
-  <th data-colkey="property" class="t-table__th-property">Property</th>
-  </tr>
-  </thead>
-  <tbody class="t-table__body t-vertical-align-middle">
-    <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
-      <td>Array</td>
-      <td>Vue(PC)</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
-      <td>String</td>
-      <td>React(PC)</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
-      <td>Object</td>
-      <td>Miniprogram</td>
-      <td>C</td>
-    </tr>
-  </tbody>
-  </table>
+  </div> <br><br>
+  <div class="t-table t-size-m" style="position:relative;">
+    <div class="t-table__content">
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:64px;">
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
+            <th data-colkey="type" class="t-table__th-type">
+              <div class="t-table__cell--sortable">
+                <div class="t-table__cell--title">
+                  <div>Type</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="t-table__th-platform">
+              <div class="t-table__cell--filterable">
+                <div class="t-table__cell--title">
+                  <div>Platform</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th data-colkey="property" class="t-table__th-property">
+              <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--title">
+                  <div>Property</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td>Array</td>
+            <td>Vue(PC)</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td>String</td>
+            <td>React(PC)</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td>Object</td>
+            <td>Miniprogram</td>
+            <td>C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> <br><br>
 </div>
-</div> <br><br></div>
 `;
 
 exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correctly 1`] = `
@@ -10691,12 +10746,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:250px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:250px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">FirstName</th>
@@ -10704,7 +10761,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             <th data-colkey="email" class="t-table__th-email">Email</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>Eric</td>
             <td>Spinke</td>
@@ -10755,15 +10812,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
 exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示斑马纹</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示悬浮效果</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">宽度自适应</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--striped">
+  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -10774,7 +10833,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -10834,13 +10893,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m t-table--align-top">
+  <div class="t-table t-size-m t-vertical-align-top" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -10849,7 +10910,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
             <th data-colkey="description" class="t-table__th-description">render</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-top">
+        <tbody class="t-table__body">
           <tr>
             <td> 自定义插槽名称：any[] </td>
             <td><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-attach">
@@ -10881,7 +10942,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m t-table--bordered t-table--striped">
+  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
     <div>
       <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -10890,12 +10951,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
     </div>
     <div class="t-table__content">
       <table class="t-table--layout-auto" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -10906,7 +10969,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -10966,15 +11029,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:150px;">
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:150px;">
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -10985,7 +11050,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-tdesign__custom-body-tr">
             <td class="row">0</td>
             <td>共有</td>
@@ -11036,12 +11101,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue correctly 1`] = `
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="type" class="t-table__th-type"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-app">
@@ -11051,7 +11118,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
           <th data-colkey="property" class="t-table__th-property">属性名</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr>
           <td>标题是用插槽自定义</td>
           <td>标题使用 title 方法自定义</td>
@@ -11073,94 +11140,102 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
   <div class="item">
     <div style="margin:16px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否允许多字段排序</span></label></div>
     <div style="margin:16px;">排序：{&quot;sortBy&quot;:&quot;status&quot;,&quot;descending&quot;:true}</div>
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>状态</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-                  </div></span>
+                    <div>状态</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                    </div>
+                  </div>
                 </div>
+              </th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+                <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--title">
+                    <div>存活时间(s)</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr>
+              <td>JQTest1</td>
+              <td>
+                <p class="status">
+                  健康
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny;peter</td>
+            </tr>
+            <tr>
+              <td>JQTest2</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td>JQTest3</td>
+              <td>
+                <p class="status unhealth">
+                  异常
+                </p>
+              </td>
+              <td>500</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td>JQTest4</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1500</td>
+              <td>peter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      </th>
-      <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-        <div class="t-table__cell--sortable">
-          <div class="t-table__cell--title">
-            <div>存活时间(s)</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-          </div></span>
-        </div>
     </div>
-    </th>
-    <th data-colkey="owner" class="t-table__th-owner">管理员</th>
-    </tr>
-    </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
-      <tr>
-        <td>JQTest1</td>
-        <td>
-          <p class="status">
-            健康
-          </p>
-        </td>
-        <td>1000</td>
-        <td>jenny;peter</td>
-      </tr>
-      <tr>
-        <td>JQTest2</td>
-        <td>
-          <p class="status warning">
-            警告
-          </p>
-        </td>
-        <td>1000</td>
-        <td>jenny</td>
-      </tr>
-      <tr>
-        <td>JQTest3</td>
-        <td>
-          <p class="status unhealth">
-            异常
-          </p>
-        </td>
-        <td>500</td>
-        <td>jenny</td>
-      </tr>
-      <tr>
-        <td>JQTest4</td>
-        <td>
-          <p class="status warning">
-            警告
-          </p>
-        </td>
-        <td>1500</td>
-        <td>peter</td>
-      </tr>
-    </tbody>
-    </table>
   </div>
-</div>
-</div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
   <div class="item">
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -11169,7 +11244,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <th data-colkey="owner" class="t-table__th-owner">管理员</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle">
+          <tbody class="t-table__body">
             <tr>
               <td>JQTest1</td>
               <td>
@@ -11220,15 +11295,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11239,7 +11316,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty">暂无数据</div>
@@ -11249,15 +11326,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11268,7 +11347,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty"><span>😊 使用插槽自定义的空内容 😊</span></div>
@@ -11278,15 +11357,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">类型</th>
@@ -11297,7 +11378,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr class="t-table__empty-row">
             <td colspan="6">
               <div class="t-table__empty"><span>😊 使用渲染函数自定义的空内容 😊</span></div>
@@ -11317,15 +11398,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col style="width:64px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
@@ -11338,7 +11421,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest1</td>
@@ -11404,46 +11487,70 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
 exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span></div>
-  <div class="t-table t-size-m">
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col>
-        <col>
-        <col>
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">
               <div class="t-table__cell--filterable">
                 <div class="t-table__cell--title">
-                  <div>FirstName</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
+                  <div>FirstName</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
                 </div>
               </div>
             </th>
             <th data-colkey="lastName" class="t-table__th-lastName">
-              <div class="t-table__cell--filterable">
+              <div class="t-table__cell--sortable t-table__cell--filterable">
                 <div class="t-table__cell--title">
-                  <div>LastName</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
+                  <div>LastName</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
                 </div>
               </div>
             </th>
             <th data-colkey="email" class="t-table__th-email">
               <div class="t-table__cell--filterable">
                 <div class="t-table__cell--title">
-                  <div>Email</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
+                  <div>Email</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
                 </div>
               </div>
             </th>
             <th data-colkey="createTime" class="t-table__th-createTime">
               <div class="t-table__cell--filterable">
                 <div class="t-table__cell--title">
-                  <div>Date</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
+                  <div>Date</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
                 </div>
               </div>
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>Eric</td>
             <td>Spinke</td>
@@ -11498,17 +11605,19 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed">
+  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:80px;">
-        <col style="width:100px;">
-        <col style="width:150px;">
-        <col style="width:150px;">
-        <col style="width:250px;">
-        <col style="width:100px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:80px;">
+          <col style="width:100px;">
+          <col style="width:150px;">
+          <col style="width:150px;">
+          <col style="width:250px;">
+          <col style="width:100px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index">序号</th>
@@ -11521,7 +11630,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <th data-colkey="operation" class="t-table__th-operation">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>0</td>
             <td>共有</td>
@@ -11587,15 +11696,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
     </div>
   </div> <br><br>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div> <br><br>
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col>
-        <col>
-        <col style="width:200px;">
-        <col>
+        <colgroup>
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="platform" class="t-table__th-platform">平台</th>
@@ -11606,7 +11717,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <th data-colkey="description" class="t-table__th-description">说明</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>共有</td>
             <td>String</td>
@@ -11832,17 +11943,19 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
     </div>
   </div>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed">
+  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col style="width:150px;">
-        <col style="width:250px;">
-        <col style="width:120px;">
-        <col style="width:120px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col style="width:150px;">
+          <col style="width:250px;">
+          <col style="width:120px;">
+          <col style="width:120px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index">序号</th>
@@ -11855,7 +11968,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <th data-colkey="operation" class="t-table__th-operation">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>0</td>
             <td>共有</td>
@@ -12077,16 +12190,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 
 exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12097,7 +12212,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12109,16 +12224,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12129,7 +12246,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
@@ -12139,16 +12256,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s">
+  <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
       <div class="t-table__content" style="height:150px;">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">类型</th>
@@ -12159,7 +12278,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
               <th data-colkey="description" class="row t-table__th-description">说明</th>
             </tr>
           </thead>
-          <tbody class="t-table__body t-vertical-align-middle"></tbody>
+          <tbody class="t-table__body"></tbody>
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12177,14 +12296,16 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correctly 1`] = `
-<div class="t-table t-size-s t-table--bordered">
+<div class="t-table t-size-s t-table--bordered" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
-      <col style="width:100px;">
+      <colgroup>
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="platform" class="t-table__th-platform">平台</th>
@@ -12194,7 +12315,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           <th data-colkey="description" class="t-table__th-description">说明</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr>
           <td>公有</td>
           <td>Array&lt;any&gt;</td>
@@ -12237,25 +12358,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
-  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--multiple-header">
+<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:90%;">
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">虚拟滚动</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
+  <div class="t-table t-size-m t-table--bordered t-table--multiple-header" style="position:relative;">
     <div>
       <div class="t-table__top-content"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
             <path fill="currentColor" d="M8 1.25l6.06 3.38v6.75L8 14.75l-6.06-3.38V4.63L8 1.25zM2.94 5.21v5.58L8 13.6l5.06-2.82V5.2L8 2.4 2.94 5.21z" fill-opacity="0.9"></path>
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
-    <div class="t-table__content">
-      <table class="t-table--layout-auto" style="width:1200px;">
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
-        <col>
+    <div class="t-table__content" style="max-height:380px;">
+      <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header t-table--bordered t-table__header--multiple">
           <tr>
             <th data-colkey="index" rowspan="3" class="t-table__th-index">序号</th>
@@ -12264,16 +12394,21 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="field2" rowspan="3" class="t-table__th-field2">字段2</th>
             <th data-colkey="field3" rowspan="3" class="t-table__th-field3">字段3</th>
             <th data-colkey="field4" rowspan="3" class="t-table__th-field4">字段4</th>
+            <th data-colkey="instruction" colspan="4" class="t-table__th-instruction">属性及说明</th>
             <th data-colkey="field5" rowspan="3" class="t-table__th-field5">字段5</th>
-            <th data-colkey="instruction" colspan="2" class="t-table__th-instruction">属性及说明</th>
           </tr>
           <tr>
             <th data-colkey="platform" rowspan="2" class="t-table__header-th--bordered t-table__th-platform">平台</th>
             <th data-colkey="type_default" colspan="3" class="t-table__th-type_default">类型及默认值</th>
-            <th data-colkey="property" rowspan="2" class="t-table__th-property">
+            <th data-colkey="property" colspan="3" class="t-table__th-property">
               <div class="t-table__cell--filterable">
                 <div class="t-table__cell--title">
-                  <div>属性</div><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" name="filter" class="t-icon t-icon-filter t-table__filter-icon"><path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path></svg></span>
+                  <div>属性</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                        <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                      </svg></div>
+                  </div>
                 </div>
               </div>
             </th>
@@ -12284,127 +12419,29 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__cell--sortable">
                 <div class="t-table__cell--title">
-                  <div>默认值</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-                </div></span>
+                  <div>默认值</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                  </div>
+                </div>
               </div>
+            </th>
+            <th data-colkey="needed" class="t-table__th-needed">是否必传</th>
+            <th data-colkey="field6" class="t-table__th-field6">字段6</th>
+            <th data-colkey="field7" class="t-table__th-field7">字段7</th>
+            <th data-colkey="field8" class="t-table__th-field8">字段8</th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body" style="transform:translate(0, 0px);">
+          <tr class="t-table__empty-row">
+            <td colspan="14">
+              <div class="t-table__empty">暂无数据</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    </th>
-    <th data-colkey="needed" class="t-table__th-needed">是否必传</th>
-    </tr>
-    </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
-      <tr>
-        <td>0</td>
-        <td>共有</td>
-        <td>String</td>
-        <td>1</td>
-        <td>是</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">A</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>私有</td>
-        <td>Number</td>
-        <td>2</td>
-        <td>否</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">B</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>共有</td>
-        <td>Array</td>
-        <td>3</td>
-        <td>否</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">C</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>私有</td>
-        <td>Object</td>
-        <td>4</td>
-        <td>否</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">A</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>共有</td>
-        <td>String</td>
-        <td>5</td>
-        <td>是</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">B</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>私有</td>
-        <td>Number</td>
-        <td>6</td>
-        <td>否</td>
-        <td>字段1</td>
-        <td>字段2</td>
-        <td>字段3</td>
-        <td>字段4</td>
-        <td>字段5</td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">C</div>
-        </td>
-        <td class="t-table-td--ellipsis">
-          <div class="t-table__ellipsis">数据源</div>
-        </td>
-      </tr>
-    </tbody>
-    </table>
   </div>
-</div>
 </div>
 `;
 
@@ -12421,95 +12458,103 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
       &quot;descending&quot;: false
       }
       ]</p> <br>
-    <div class="t-table t-size-m">
+    <div class="t-table t-size-m" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
-          <col style="width:150px;">
-          <col style="width:100px;">
-          <col style="width:200px;">
-          <col style="width:100px;">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>状态</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-                  </div></span>
+                    <div>状态</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                    </div>
+                  </div>
                 </div>
+              </th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+                <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--title">
+                    <div>存活时间(s)</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr>
+              <td>JQTest1</td>
+              <td>
+                <p class="status">健康</p>
+                <!---->
+                <!---->
+              </td>
+              <td>1000</td>
+              <td>jenny;peter</td>
+            </tr>
+            <tr>
+              <td>JQTest2</td>
+              <td>
+                <!---->
+                <p class="status warning">警告</p>
+                <!---->
+              </td>
+              <td>1000</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td>JQTest3</td>
+              <td>
+                <!---->
+                <!---->
+                <p class="status unhealth">异常</p>
+              </td>
+              <td>500</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td>JQTest4</td>
+              <td>
+                <!---->
+                <p class="status warning">警告</p>
+                <!---->
+              </td>
+              <td>1500</td>
+              <td>peter</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      </th>
-      <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-        <div class="t-table__cell--sortable">
-          <div class="t-table__cell--title">
-            <div>存活时间(s)</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-          </div></span>
-        </div>
     </div>
-    </th>
-    <th data-colkey="owner" class="t-table__th-owner">管理员</th>
-    </tr>
-    </thead>
-    <tbody class="t-table__body t-vertical-align-middle">
-      <tr>
-        <td>JQTest1</td>
-        <td>
-          <p class="status">健康</p>
-          <!---->
-          <!---->
-        </td>
-        <td>1000</td>
-        <td>jenny;peter</td>
-      </tr>
-      <tr>
-        <td>JQTest2</td>
-        <td>
-          <!---->
-          <p class="status warning">警告</p>
-          <!---->
-        </td>
-        <td>1000</td>
-        <td>jenny</td>
-      </tr>
-      <tr>
-        <td>JQTest3</td>
-        <td>
-          <!---->
-          <!---->
-          <p class="status unhealth">异常</p>
-        </td>
-        <td>500</td>
-        <td>jenny</td>
-      </tr>
-      <tr>
-        <td>JQTest4</td>
-        <td>
-          <!---->
-          <p class="status warning">警告</p>
-          <!---->
-        </td>
-        <td>1500</td>
-        <td>peter</td>
-      </tr>
-    </tbody>
-    </table>
   </div>
-</div>
-</div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index">序号</th>
@@ -12520,7 +12565,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">详情信息</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="row">0</td>
             <td>共有</td>
@@ -12609,13 +12654,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-table--align-top">
+<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-vertical-align-top" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
-      <col style="width:200px;">
-      <col style="width:200px;">
-      <col style="width:200px;">
-      <col style="width:260px;">
+      <colgroup>
+        <col style="width:200px;">
+        <col style="width:200px;">
+        <col style="width:200px;">
+        <col style="width:260px;">
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="name" class="t-table__th-name">UNKNOW_USER</th>
@@ -12624,7 +12671,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
           <th data-colkey="email" class="t-table__th-email">邮箱</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-top">
+      <tbody class="t-table__body">
         <tr class="t-table__empty-row">
           <td colspan="4">
             <div class="t-table__empty">暂无数据</div>
@@ -12657,15 +12704,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="row-select" class="demo-multiple-select-cell t-table__th-row-select"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></th>
@@ -12678,7 +12727,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
@@ -12743,15 +12792,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="row-select" class="demo-single-select-cell t-table__th-row-select"></th>
@@ -12764,7 +12815,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
@@ -12829,14 +12880,16 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue correctly 1`] = `
 <div>
-  <div show-columns="" class="t-table t-size-m">
+  <div show-columns="" class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col>
-        <col>
-        <col style="width:200px;">
+        <colgroup>
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+          <col style="width:200px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
@@ -12848,7 +12901,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td>JQTest1</td>
             <td>
@@ -12902,94 +12955,102 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
     &quot;sortBy&quot;: &quot;status&quot;,
     &quot;descending&quot;: true
     }</p>
-  <div class="t-table t-size-m t-table--bordered">
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:150px;">
-        <col style="width:100px;">
-        <col style="width:200px;">
-        <col style="width:100px;">
+        <colgroup>
+          <col style="width:150px;">
+          <col style="width:100px;">
+          <col style="width:200px;">
+          <col style="width:100px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
             <th data-colkey="status" class="t-table__th-status">
               <div class="t-table__cell--sortable">
                 <div class="t-table__cell--title">
-                  <div>状态</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-                </div></span>
+                  <div>状态</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                  </div>
+                </div>
               </div>
+            </th>
+            <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+              <div class="t-table__cell--sortable">
+                <div class="t-table__cell--title">
+                  <div>存活时间(s)</div>
+                  <div class="t-table__filter-icon-wrap">
+                    <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr>
+            <td>JQTest1</td>
+            <td>
+              <p class="status">健康</p>
+              <!---->
+              <!---->
+            </td>
+            <td>1000</td>
+            <td>jenny;peter</td>
+          </tr>
+          <tr>
+            <td>JQTest2</td>
+            <td>
+              <!---->
+              <p class="status warning">警告</p>
+              <!---->
+            </td>
+            <td>1000</td>
+            <td>jenny</td>
+          </tr>
+          <tr>
+            <td>JQTest3</td>
+            <td>
+              <!---->
+              <!---->
+              <p class="status unhealth">异常</p>
+            </td>
+            <td>500</td>
+            <td>jenny</td>
+          </tr>
+          <tr>
+            <td>JQTest4</td>
+            <td>
+              <!---->
+              <p class="status warning">警告</p>
+              <!---->
+            </td>
+            <td>1500</td>
+            <td>peter</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    </th>
-    <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-      <div class="t-table__cell--sortable">
-        <div class="t-table__cell--title">
-          <div>存活时间(s)</div><span><div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc" style="transform:rotate(-180deg);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span>
-        </div></span>
-      </div>
   </div>
-  </th>
-  <th data-colkey="owner" class="t-table__th-owner">管理员</th>
-  </tr>
-  </thead>
-  <tbody class="t-table__body t-vertical-align-middle">
-    <tr>
-      <td>JQTest1</td>
-      <td>
-        <p class="status">健康</p>
-        <!---->
-        <!---->
-      </td>
-      <td>1000</td>
-      <td>jenny;peter</td>
-    </tr>
-    <tr>
-      <td>JQTest2</td>
-      <td>
-        <!---->
-        <p class="status warning">警告</p>
-        <!---->
-      </td>
-      <td>1000</td>
-      <td>jenny</td>
-    </tr>
-    <tr>
-      <td>JQTest3</td>
-      <td>
-        <!---->
-        <!---->
-        <p class="status unhealth">异常</p>
-      </td>
-      <td>500</td>
-      <td>jenny</td>
-    </tr>
-    <tr>
-      <td>JQTest4</td>
-      <td>
-        <!---->
-        <p class="status warning">警告</p>
-        <!---->
-      </td>
-      <td>1500</td>
-      <td>peter</td>
-    </tr>
-  </tbody>
-  </table>
-</div>
-</div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button></div> <br>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col>
-        <col style="width:220px;">
-        <col>
-        <col>
-        <col style="width:250px;">
+        <colgroup>
+          <col>
+          <col style="width:220px;">
+          <col>
+          <col>
+          <col style="width:250px;">
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="id" class="t-table__th-id">编号</th>
@@ -12999,7 +13060,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             <th data-colkey="operate" class="t-table__th-operate">操作</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis">0</div>
@@ -13134,15 +13195,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <br>
-  <div class="t-table t-size-m">
+  <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
-        <col style="width:64px;">
-        <col style="width:20px;">
-        <col style="width:200px;">
-        <col style="width:100px;">
-        <col>
-        <col>
+        <colgroup>
+          <col style="width:64px;">
+          <col style="width:20px;">
+          <col style="width:200px;">
+          <col style="width:100px;">
+          <col>
+          <col>
+        </colgroup>
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__"></th>
@@ -13153,7 +13216,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <th data-colkey="description" class="t-table__th-description">描述</th>
           </tr>
         </thead>
-        <tbody class="t-table__body t-vertical-align-middle">
+        <tbody class="t-table__body">
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
@@ -13231,6 +13294,41 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue correctly 1`] = `
+<div class="demo-container">
+  <div class="item">
+    <div class="t-table t-size-m" style="position:relative;">
+      <div class="t-table__content" style="height:300px;">
+        <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 480000px);"></div>
+        <table class="t-table--layout-fixed" style="width:;">
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead class="t-table__header">
+            <tr>
+              <th data-colkey="id" class="t-table__th-id">id</th>
+              <th data-colkey="instance" class="t-table__th-instance">集群名称</th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">存活时间(s)</th>
+              <th data-colkey="owner" class="t-table__th-owner">管理员</th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body" style="transform:translate(0, 0px);">
+            <tr class="t-table__empty-row">
+              <td colspan="4">
+                <div class="t-table__empty">暂无数据</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

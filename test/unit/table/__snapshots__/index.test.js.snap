@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height height = 100 1`] = `
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position: relative;">
   <div class="t-table__content" style="height: 100px;">
     <table class="t-table--layout-fixed">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="id" class="t-table__th-id">id</th>
@@ -14,7 +16,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>
@@ -37,13 +39,14 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "large", verticalAlign="top" 1`] = `
-<div class="t-table t-size-l t-table--align-top">
+<div class="t-table t-size-l t-vertical-align-top" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
+      <colgroup></colgroup>
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-top">
+      <tbody class="t-table__body">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -56,13 +59,14 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "medium", verticalAlign="bottom" 1`] = `
-<div class="t-table t-size-m t-table--align-bottom">
+<div class="t-table t-size-m t-vertical-align-bottom" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
+      <colgroup></colgroup>
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-bottom">
+      <tbody class="t-table__body">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -75,12 +79,14 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size, :props.verticalAlign, :props.height size = "small", verticalAlign="middle" 1`] = `
-<div class="t-table t-size-s t-table--bordered t-table--striped t-table--hoverable">
+<div class="t-table t-size-s t-table--bordered t-table--striped t-table--hoverable" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="id" class="t-table__th-id">id</th>
@@ -88,7 +94,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>
@@ -111,13 +117,14 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
 `;
 
 exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
+      <colgroup></colgroup>
       <thead class="t-table__header">
         <tr></tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="t-table__empty-row">
           <td colspan="0">
             <div class="t-table__empty">暂无数据</div>
@@ -130,12 +137,14 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
 `;
 
 exports[`Table :props :props.columns \`columns\` with align, width, minWidth and ellipsis 1`] = `
-<div class="t-table t-size-m">
+<div class="t-table t-size-m" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
-      <col style="width: 100px;">
-      <col>
-      <col>
+      <colgroup>
+        <col style="width: 100px;">
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="id" class="t-table__th-id">id</th>
@@ -143,7 +152,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="">
           <td class="t-table-td--ellipsis">
             <div class="t-table__ellipsis">1</div>
@@ -172,11 +181,17 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
 `;
 
 exports[`Table :props :props.columns \`columns\` with children 1`] = `
-<div class="t-table t-size-m t-table--multiple-header">
+<div class="t-table t-size-m t-table--multiple-header" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
-      <col>
-      <col>
+      <colgroup>
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+      </colgroup>
       <thead class="t-table__header t-table__header--multiple">
         <tr>
           <th colspan="4" class="">汇总属性</th>
@@ -194,7 +209,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
           <th data-colkey="needed" class="test3 t-table__th-needed">是否必传</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="">
           <td class="test t-table-td--ellipsis">
             <div class="t-table__ellipsis">公有</div>
@@ -242,12 +257,14 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
 `;
 
 exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
-<div class="t-table t-size-m t-table--column-fixed">
+<div class="t-table t-size-m t-table--column-fixed" style="position: relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed">
-      <col>
-      <col>
-      <col>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
       <thead class="t-table__header">
         <tr>
           <th data-colkey="id" class="t-table__th-id">id</th>
@@ -255,7 +272,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
           <th data-colkey="value" class="t-table__th-value">取值</th>
         </tr>
       </thead>
-      <tbody class="t-table__body t-vertical-align-middle">
+      <tbody class="t-table__body">
         <tr class="">
           <td class="">1</td>
           <td class="">Number</td>

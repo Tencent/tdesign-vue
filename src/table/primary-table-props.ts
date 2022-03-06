@@ -41,14 +41,14 @@ export default {
     type: Array as PropType<TdPrimaryTableProps['defaultExpandedRowKeys']>,
     default: (): TdPrimaryTableProps['defaultExpandedRowKeys'] => [],
   },
-  /** 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效 */
+  /** 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效。支持全局配置 `GlobalConfigProvider` */
   expandIcon: {
     type: [Boolean, Function] as PropType<TdPrimaryTableProps['expandIcon']>,
     default: true,
   },
   /** 是否允许点击行展开 */
   expandOnRowClick: Boolean,
-  /** 自定义过滤图标 */
+  /** 自定义过滤图标，支持全局配置 `GlobalConfigProvider` */
   filterIcon: {
     type: Function as PropType<TdPrimaryTableProps['filterIcon']>,
   },
@@ -83,6 +83,10 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['defaultSort']>,
+  },
+  /** 自定义排序图标，支持全局配置 `GlobalConfigProvider` */
+  sortIcon: {
+    type: Function as PropType<TdPrimaryTableProps['sortIcon']>,
   },
   /** 已废弃。允许表格行拖拽时排序 */
   sortOnRowDraggable: Boolean,

@@ -1,23 +1,12 @@
 <template>
   <t-config-provider :globalConfig="globalConfig" style="padding: 16px">
     <!-- 全局配置：空数据呈现，演示 -->
-    <t-table
-      :data="[]"
-      :columns="columns"
-      bordered
-      rowKey="property"
-    ></t-table>
-    <br><br>
+    <t-table :data="[]" :columns="columns" bordered rowKey="property"></t-table>
+    <br /><br />
 
     <!-- 全局配置：自定义展开图标和排序图标，演示 -->
-    <t-table
-      :data="data"
-      :columns="columns"
-      :expandedRow="expandedRow"
-      expandOnRowClick
-      rowKey="property"
-    ></t-table>
-    <br><br>
+    <t-table :data="data" :columns="columns" :expandedRow="expandedRow" expandOnRowClick rowKey="property"></t-table>
+    <br /><br />
   </t-config-provider>
 </template>
 
@@ -33,10 +22,17 @@ const columns = [
   {
     colKey: 'platform',
     title: 'Platform',
+    filter: {
+      type: 'single',
+    },
   },
   {
     colKey: 'property',
     title: 'Property',
+    sorter: true,
+    filter: {
+      type: 'single',
+    },
   },
 ];
 
@@ -52,9 +48,18 @@ export default {
       // 全局特性配置
       globalConfig: {
         table: {
+          // 支持 String 和 Function 两种数据类型
           empty: 'Empty Data',
+          // empty: (h) => h && <div class='custom-empty-content'>Empty Data</div>,
           expandIcon: (h) => h && <ChevronRightIcon />,
-          sortIcon: (h) => h && <CaretDownSmallIcon size='18px' />,
+          sortIcon: (h) => h && <CaretDownSmallIcon size="18px" />,
+          // filterIcon: () => <span>Filter</span>,
+          filterInputPlaceholder: 'Enter Keyword',
+          loadingMoreText: 'Load More',
+          loadingText: 'Loading',
+          sortAscendingOperationText: 'ascending sort',
+          sortCancelOperationText: 'cancel sort',
+          sortDescendingOperationText: 'decending sort',
         },
       },
       columns,

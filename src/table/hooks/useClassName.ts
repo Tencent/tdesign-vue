@@ -1,46 +1,52 @@
-import { prefix } from '../../config';
+import { useConfig } from '../../config-provider/useConfig';
 
 export default function useClassName() {
-  // TODO: const { prefix } = useConfig();
+  const { classPrefix: prefix } = useConfig();
   const classNames = {
     tableBaseClass: {
+      table: `${prefix}-table`,
+      body: `${prefix}-table__body`,
+      content: `${prefix}-table__content`,
       tdLastRow: `${prefix}-table__td-last-row`,
+      bordered: `${prefix}-table--bordered`,
+      striped: `${prefix}-table--striped`,
+      hover: `${prefix}-table--hoverable`,
+      empty: `${prefix}-table__empty`,
+      emptyRow: `${prefix}-table__empty-row`,
+      headerFixed: `${prefix}-table--header-fixed`,
+      columnFixed: `${prefix}-table--column-fixed`,
+      multipleHeader: `${prefix}-table--multiple-header`,
+      affixedHeader: `${prefix}-table--affixed-header`,
+      affixedHeaderElm: `${prefix}-table__affixed-header-elm`,
     },
-    // 定义为固定变量大写，方便后期动态化时搜索替换
-    TABLE_CLASS: `${prefix}-table`,
-    TABLE_CLASS_EMPTY: `${prefix}-table__empty`,
-    TABLE_CLASS_EMPTY_ROW: `${prefix}-table__empty-row`,
-    TABLE_ROOT_CLASS_HEADER_FIXED: `${prefix}-table--header-fixed`,
-    TABLE_ROOT_CLASS_COLUMN_FIXED: `${prefix}-table--column-fixed`,
-    TABLE_CLASS_CONTENT: `${prefix}-table__content`,
-    TABLE_CLASS_HEADER: `${prefix}-table__header`,
-    TABLE_CLASS_HEADER_TH_BORDERED: `${prefix}-table__header-th--bordered`,
-    TABLE_TD_LAST_ROW: `${prefix}-table__td-last-row`,
-    TABLE_CLASS_BODY: `${prefix}-table__body`,
-    TABLE_CLASS_FOOTER: `${prefix}-table__footer`,
-    TABLE_CLASS_BORDERED: `${prefix}-table--bordered`,
-    TABLE_CLASS_STRIPED: `${prefix}-table--striped`,
-    TABLE_CLASS_HOVER: `${prefix}-table--hoverable`,
-    TABLE_CLASS_HEADER_FIXED: `${prefix}-table__header--fixed`,
-    TABLE_CLASS_FOOTER_FIXED: `${prefix}-table__footer--fixed`,
-    // 多级表头类名
-    TABLE_CLASS_HEADER_MULTIPLE: `${prefix}-table__header--multiple`,
-    TABLE_ROOT_CLASS_MULTIPLE_HEADER: `${prefix}-table--multiple-header`,
 
-    TAVLE_CLASS_VERTICAL_ALIGN: {
+    tableHeaderClasses: {
+      header: `${prefix}-table__header`,
+      thBordered: `${prefix}-table__header-th--bordered`,
+      fixed: `${prefix}-table__header--fixed`,
+      multipleHeader: `${prefix}-table__header--multiple`,
+    },
+
+    tableFooterClasses: {
+      footer: `${prefix}-table__footer`,
+      fixed: `${prefix}-table__footer--fixed`,
+    },
+    // 多级表头类名
+
+    tableAlignClasses: {
       top: `${prefix}-vertical-align-top`,
       middle: `${prefix}-vertical-align-middle`,
       bottom: `${prefix}-vertical-align-bottom`,
     },
 
-    TABLE_CLASS_ROW_FIXED: {
+    tableRowFixedClasses: {
       top: `${prefix}-table__row--fixed-top`,
       bottom: `${prefix}-table__row--fixed-bottom`,
       firstBottom: `${prefix}-table__row--fixed-bottom-first`,
       withoutBorderBottom: `${prefix}-table__row--without-border-bottom`,
     },
 
-    TABLE_CLASS_COLUMN_FIXED: {
+    tableColFixedClasses: {
       left: `${prefix}-table__cell--fixed-left`,
       right: `${prefix}-table__cell--fixed-right`,
       lastLeft: `${prefix}-table__cell--fixed-left-last`,
@@ -49,15 +55,9 @@ export default function useClassName() {
       rightShadow: `${prefix}-table__content--scrollable-to-right`,
     },
 
-    TABLE_CLASS_LAYOUT: {
+    tableLayoutClasses: {
       auto: `${prefix}-table--layout-auto`,
       fixed: `${prefix}-table--layout-fixed`,
-    },
-
-    TABLE_CLASS_ALIGN: {
-      top: `${prefix}-table--align-top`,
-      middle: `${prefix}-table--align-middle`,
-      bottom: `${prefix}-table--align-bottom`,
     },
 
     tdEllipsisClass: `${prefix}-table-td--ellipsis`,
@@ -109,6 +109,7 @@ export default function useClassName() {
       inner: `${prefix}-table__row-filter-inner`,
       bottomButtons: `${prefix}-table__filter--bottom-buttons`,
       contentInner: `${prefix}-table__filter-pop-content-inner`,
+      iconWrap: `${prefix}-table__filter-icon-wrap`,
     },
 
     // 通用类名
@@ -129,14 +130,5 @@ export default function useClassName() {
     },
   };
 
-  return {
-    ...classNames,
-    TABEL_CLASSNAMES: {
-      TABLE_CLASS: classNames.TABLE_CLASS,
-      TABLE_CLASS_CONTENT: classNames.TABLE_CLASS_CONTENT,
-      TABLE_CLASS_HEADER: classNames.TABLE_CLASS_HEADER,
-      TABLE_CLASS_BODY: classNames.TABLE_CLASS_BODY,
-      TABLE_CLASS_FOOTER: classNames.TABLE_CLASS_FOOTER,
-    },
-  };
+  return classNames;
 }

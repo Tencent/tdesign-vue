@@ -11,7 +11,7 @@ import useDefaultValue from '../../hooks/useDefaultValue';
 
 export type SortMap = Record<string, SortInfo & { index: number }>;
 
-export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupContext) {
+export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: SetupContext) {
   const { sort, data } = toRefs(props);
   const originalData = ref();
   // uncontroll and controll
@@ -155,8 +155,15 @@ export default function useSorter(props: TdPrimaryTableProps, { emit }: SetupCon
       sortType: col.sortType,
       sortOrder: getSortOrder(sortMap.value[col.colKey]?.descending),
       nextSortOrder: getSortOrder(nextSort?.descending),
+      sortIcon: props.sortIcon,
     };
-    return <SorterButton props={sorterButtonsProps} onClick={() => handleSortHeaderClick(col)} />;
+    return (
+      <SorterButton
+        scopedSlots={{ sortIcon: slots.sortIcon }}
+        props={sorterButtonsProps}
+        onClick={() => handleSortHeaderClick(col)}
+      />
+    );
   }
 
   return {

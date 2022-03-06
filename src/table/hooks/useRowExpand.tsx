@@ -13,10 +13,12 @@ import {
 import useClassName from './useClassName';
 import { useTNodeJSX } from '../../hooks/tnode';
 import useDefaultValue from '../../hooks/useDefaultValue';
+import { TableConfig, useConfig } from '../../config-provider/useConfig';
 
 export default function useRowExpand(props: TdPrimaryTableProps, context: SetupContext) {
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
+  const { t, global } = useConfig<TableConfig>('table');
   const { tableExpandClasses } = useClassName();
   // controlled and uncontrolled
   const [tExpandedRowKeys, setTExpandedRowKeys] = useDefaultValue(
@@ -52,7 +54,7 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
     const expanded = tExpandedRowKeys.value.includes(currentId);
     // TODO: GLOBLE_CONFIG expandIcon
     const icon = renderTNode('expandIcon', {
-      defaultNode: <ChevronRightCircleIcon />,
+      defaultNode: t(global.value.expandIcon) || <ChevronRightCircleIcon />,
       params: { row, index: rowIndex },
     });
     if (!icon) return null;

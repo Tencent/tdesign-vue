@@ -22,7 +22,7 @@ export default {
   },
   /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 */
   disableDataPage: Boolean,
-  /** 空表格呈现样式 */
+  /** 空表格呈现样式，支持全局配置 `GlobalConfigProvider` */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
     default: '',
@@ -39,6 +39,12 @@ export default {
   footData: {
     type: Array as PropType<TdBaseTableProps['footData']>,
     default: (): TdBaseTableProps['footData'] => [],
+  },
+  /** 【开发中】表头吸顶 */
+  headerAffixedTop: Boolean,
+  /** 【开发中】表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
+  headerAffixProps: {
+    type: Object as PropType<TdBaseTableProps['headerAffixProps']>,
   },
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
@@ -145,8 +151,10 @@ export default {
   onRowMouseleave: Function as PropType<TdBaseTableProps['onRowMouseleave']>,
   /** 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型 */
   onRowMouseup: Function as PropType<TdBaseTableProps['onRowMouseup']>,
-  /** 表格内容横向滚动时触发 */
+  /** 表格内容滚动时触发 */
+  onScroll: Function as PropType<TdBaseTableProps['onScroll']>,
+  /** 已废弃。表格内容横向滚动时触发。请更为使用 `onScroll` 事件 */
   onScrollX: Function as PropType<TdBaseTableProps['onScrollX']>,
-  /** 表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条 */
+  /** 已废弃。表格内容纵向滚动时触发。当内容超出高度(height)或最大高度(max-height)时，会出现纵向滚动条。请更为使用 `onScroll` 事件 */
   onScrollY: Function as PropType<TdBaseTableProps['onScrollY']>,
 };
