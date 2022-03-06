@@ -16,6 +16,8 @@ export default function useClassName() {
       headerFixed: `${prefix}-table--header-fixed`,
       columnFixed: `${prefix}-table--column-fixed`,
       multipleHeader: `${prefix}-table--multiple-header`,
+      affixedHeader: `${prefix}-table--affixed-header`,
+      affixedHeaderElm: `${prefix}-table__affixed-header-elm`,
     },
 
     tableHeaderClasses: {

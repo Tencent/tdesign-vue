@@ -15,6 +15,8 @@ export interface RenderTableHeaderParams {
   isFixedHeader: boolean;
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
+  // 虚拟滚动单独渲染表头；表头吸顶单独渲染表头
+  thWidthList?: { [colKey: string]: number };
 }
 
 // 渲染表头的通用方法
@@ -57,7 +59,11 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   );
 
   // eslint-disable-next-line
-  const renderThNodeList = (h: CreateElement, rowAndColFixedPosition: RowAndColFixedPosition) => {
+  const renderThNodeList = (
+    h: CreateElement,
+    rowAndColFixedPosition: RowAndColFixedPosition,
+    thWidthList: RenderTableHeaderParams['thWidthList'],
+  ) => {
     // thBorderMap: rowspan 会影响 tr > th 是否为第一列表头，从而影响边框
     const thBorderMap = new Map<any, boolean>();
     const thRowspanAndColspan = spansAndLeafNodes.value.rowspanAndColspanMap;
@@ -86,8 +92,11 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
             [`${prefix}-table__th-${col.colKey}`]: col.colKey,
           },
         ];
+        const withoutChildren = !col.children?.length;
+        const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
+        const styles = { ...(thStyles.style || {}), width };
         return (
-          <th data-colkey={col.colKey} class={thClasses} style={thStyles.style} attrs={{ ...rospanAndColspan }}>
+          <th data-colkey={col.colKey} class={thClasses} style={styles} attrs={{ ...rospanAndColspan }}>
             {renderTitle(h, context.slots, col, index)}
           </th>
         );
@@ -97,7 +106,10 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   };
 
   // eslint-disable-next-line
-  const renderTableHeader = (h: CreateElement, { isFixedHeader, rowAndColFixedPosition }: RenderTableHeaderParams) => {
+  const renderTableHeader = (
+    h: CreateElement,
+    { isFixedHeader, rowAndColFixedPosition, thWidthList }: RenderTableHeaderParams,
+  ) => {
     const theadClasses = [
       tableHeaderClasses.header,
       {
@@ -108,7 +120,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
     ];
     return (
       <thead ref="theadRef" class={theadClasses}>
-        {renderThNodeList(h, rowAndColFixedPosition)}
+        {renderThNodeList(h, rowAndColFixedPosition, thWidthList)}
       </thead>
     );
   };

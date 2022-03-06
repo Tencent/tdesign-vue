@@ -5,7 +5,7 @@
         row-key="id"
         :columns="columns"
         :data="data"
-        :height="200"
+        :height="300"
         :scroll="{ type: 'virtual', rowHeight: 48, bufferSize: 30 }"
       >
       </t-table>

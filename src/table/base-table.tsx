@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, SetupContext, toRefs, ref, provide,
+  computed, defineComponent, SetupContext, toRefs, ref, provide, nextTick,
 } from '@vue/composition-api';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -14,6 +14,7 @@ import { useTNodeJSX } from '../hooks/tnode';
 import useStyle from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { Affix } from '../affix';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -37,14 +38,17 @@ export default defineComponent({
     // 固定表头和固定列逻辑
     const {
       tableRef,
+      affixHeaderRef,
       virtualScrollHeaderPos,
       tableWidth,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
+      thWidthList,
       showColumnShadow,
       rowAndColFixedPosition,
       onTableContentScroll,
+      updateHeaderScroll,
     } = useFixed(props, context);
     const {
       renderTableHeader, renderColgroup, isMultipleHeader, spansAndLeafNodes,
@@ -61,6 +65,14 @@ export default defineComponent({
       { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
       { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
     ]);
+
+    const onFixedChange = (val: number | false) => {
+      if (val !== false) {
+        nextTick(() => {
+          updateHeaderScroll();
+        });
+      }
+    };
 
     const {
       type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
@@ -97,20 +109,14 @@ export default defineComponent({
       tableElementStyles,
       virtualScrollClasses,
       tableLayoutClasses,
-      renderColgroup,
-      renderTableHeader,
-      renderTableBody,
-      renderTableFooter,
       tableContentRef,
       isFixedHeader,
       isFixedColumn,
       rowAndColFixedPosition,
       showColumnShadow,
-      onTableContentScroll,
+      thWidthList,
       isPaginateData,
       dataSource,
-      renderPagination,
-      renderTNode,
       scrollType: type,
       rowHeight,
       trs,
@@ -118,7 +124,17 @@ export default defineComponent({
       scrollHeight,
       visibleData,
       translateY,
+      affixHeaderRef,
+      renderColgroup,
+      renderTableHeader,
+      renderTableBody,
+      renderTableFooter,
+      onTableContentScroll,
+      renderPagination,
+      renderTNode,
       handleRowMounted,
+      onFixedChange,
+      updateHeaderScroll,
       handleVirtualScroll: handleScroll,
     };
   },
@@ -139,6 +155,29 @@ export default defineComponent({
       isFixedHeader: this.isFixedHeader,
       rowAndColFixedPosition,
     });
+    const fixedHeader = (isVirtual || this.headerAffixedTop) && !!Object.keys(this.thWidthList).length
+      ? this.renderTableHeader(h, {
+        isFixedHeader: this.isFixedHeader,
+        rowAndColFixedPosition,
+        thWidthList: this.thWidthList,
+      })
+      : null;
+
+    const affixedHeader = Boolean((this.headerAffixedTop || isVirtual) && this.tableWidth) && (
+      <div
+        ref="affixHeaderRef"
+        style={{ width: `${this.tableWidth}px` }}
+        class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || isVirtual }}
+      >
+        <table
+          class={[this.tableLayoutClasses[this.tableLayout]]}
+          style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}
+        >
+          {colgroup}
+          {fixedHeader}
+        </table>
+      </div>
+    );
 
     const tableContent = (
       <div
@@ -190,19 +229,18 @@ export default defineComponent({
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
-        {isVirtual && (
-          <table
-            class={[this.tableLayoutClasses[this.tableLayout], this.virtualScrollClasses.header]}
-            style={{
-              ...this.tableElementStyles,
-              width: `${this.tableWidth}px`,
-            }}
-          >
-            {header}
-          </table>
-        )}
         {this.renderTNode('topContent')}
+
+        {this.headerAffixedTop ? (
+          <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
+            {affixedHeader}
+          </Affix>
+        ) : (
+          affixedHeader
+        )}
+
         {loadingContent}
+
         {this.renderPagination(h)}
       </div>
     );

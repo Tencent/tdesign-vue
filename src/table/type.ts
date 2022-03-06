@@ -4,6 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { AffixProps } from '../affix';
 import { LoadingProps } from '../loading';
 import { PaginationProps, PageInfo } from '../pagination';
 import { PopupProps } from '../popup';
@@ -54,6 +55,15 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default []
    */
   footData?: Array<T>;
+  /**
+   * 【开发中】表头吸顶
+   * @default false
+   */
+  headerAffixedTop?: boolean;
+  /**
+   * 【开发中】表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性
+   */
+  headerAffixProps?: AffixProps;
   /**
    * 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`
    */
