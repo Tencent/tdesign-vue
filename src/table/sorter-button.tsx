@@ -4,6 +4,8 @@ import useClassName from './hooks/useClassName';
 import { SortType } from './type';
 import Tooltip from '../tooltip';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { useTNodeDefault } from '../hooks/tnode';
+import { TNode } from '../common';
 
 type SortTypeEnums = Array<'desc' | 'asc'>;
 
@@ -21,10 +23,12 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    sortIcon: Function as PropType<TNode>,
   },
 
   setup(props, context) {
     const { tableSortClasses } = useClassName();
+    const renderTNode = useTNodeDefault();
     const { t, global } = useConfig<TableConfig>('table');
 
     const allowSortTypes = computed<SortTypeEnums>(() => props.sortType === 'all' ? ['asc', 'desc'] : [props.sortType]);
@@ -34,17 +38,19 @@ export default defineComponent({
     };
 
     return {
-      tableSortClasses,
-      allowSortTypes,
       t,
       global,
+      tableSortClasses,
+      allowSortTypes,
       onClick,
+      renderTNode,
     };
   },
 
   methods: {
     getSortIcon(direction: string, activeClass: string) {
-      const icon = this.t(this.global.sortIcon) || <ChevronDownIcon />;
+      const defaultIcon = this.t(this.global.sortIcon) || <ChevronDownIcon />;
+      const icon = this.renderTNode('sortIcon', defaultIcon);
       const styles = {
         transform: direction === 'asc' ? 'rotate(-180deg)' : undefined,
       };

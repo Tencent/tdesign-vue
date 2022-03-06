@@ -37,7 +37,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   disableDataPage?: boolean;
   /**
-   * 空表格呈现样式
+   * 空表格呈现样式，支持全局配置 `GlobalConfigProvider`
    * @default ''
    */
   empty?: string | TNode;
@@ -278,7 +278,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   defaultExpandedRowKeys?: Array<string | number>;
   /**
-   * 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效
+   * 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效。支持全局配置 `GlobalConfigProvider`
    * @default true
    */
   expandIcon?: boolean | TNode<ExpandArrowRenderParams<T>>;
@@ -287,7 +287,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   expandOnRowClick?: boolean;
   /**
-   * 自定义过滤图标
+   * 自定义过滤图标，支持全局配置 `GlobalConfigProvider`
    */
   filterIcon?: TNode;
   /**
@@ -328,6 +328,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性
    */
   defaultSort?: TableSort;
+  /**
+   * 自定义排序图标，支持全局配置 `GlobalConfigProvider`
+   */
+  sortIcon?: TNode;
   /**
    * 允许表格行拖拽时排序
    * @default false
@@ -542,7 +546,7 @@ export type TableRowAttributes<T> =
 export interface RowClassNameParams<T> {
   row: T;
   rowIndex: number;
-  type: 'body' | 'foot';
+  type?: 'body' | 'foot';
 }
 
 export type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan;

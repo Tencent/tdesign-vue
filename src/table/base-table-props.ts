@@ -22,7 +22,7 @@ export default {
   },
   /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 */
   disableDataPage: Boolean,
-  /** 空表格呈现样式 */
+  /** 空表格呈现样式，支持全局配置 `GlobalConfigProvider` */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
     default: '',

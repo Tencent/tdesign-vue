@@ -4,9 +4,13 @@
       <t-button @click="setFilters">清除筛选条件</t-button>
       <span style="padding-left: 36px">已选筛选条件：{{ filterValue }}</span>
     </div>
+    <div>
+      <t-checkbox v-model="bordered">是否显示表格边框</t-checkbox>
+    </div>
 
-    <!-- 此处代码有效，勿删！支持语法糖 filter-value.sync ， 支持非受控属性 defaultfilterValue -->
-    <!-- 其中，filterIcon 用于自定义筛选图标。 -->
+    <!-- 1. 此处代码有效，勿删！支持语法糖 filter-value.sync ， 支持非受控属性 defaultfilterValue -->
+    <!-- 2. 其中，filterIcon 用于自定义筛选图标，支持渲染函数 props.filterIcon，支持插槽 filterIcon。 -->
+    <!-- 3. filterRow={() => null}，则不会显示过滤行 -->
     <!-- <t-table
       rowKey='key'
       :columns="columns"
@@ -18,7 +22,14 @@
     </t-table> -->
 
     <!-- filter-value.sync 等同于 filter-value + filter-change -->
-    <t-table rowKey="key" :columns="columns" :data="data" :filter-value="filterValue" @filter-change="onFilterChange" />
+    <t-table
+      rowKey="key"
+      :columns="columns"
+      :data="data"
+      :filter-value="filterValue"
+      :bordered="bordered"
+      @filter-change="onFilterChange"
+    />
   </div>
 </template>
 
@@ -66,6 +77,7 @@ export default {
     return {
       data,
       filterValue: {},
+      bordered: false,
       columns: [
         {
           title: 'FirstName',
@@ -84,6 +96,7 @@ export default {
         {
           title: 'LastName',
           colKey: 'lastName',
+          sorter: true,
           // 多选过滤配置
           filter: {
             type: 'multiple',

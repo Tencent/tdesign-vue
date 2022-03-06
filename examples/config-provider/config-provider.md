@@ -141,13 +141,14 @@ confirmBtnTheme | Object | - | 确认按钮主题色，即 Popconfirm 的 `theme
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 empty | String / Slot / Function | '暂无数据' | 语言配置，'暂无数据' 描述文本。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-expandIcon | Slot / Function | undefined | 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+expandIcon | Slot / Function | undefined | 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+filterIcon | Slot / Function | undefined | 过滤图标，如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loadingMoreText | String | '点击加载更多' | 语言配置，'点击加载更多' 描述文本 | N
 loadingText | String | '正在加载中，请稍后' | 语言配置，'正在加载中，请稍后' 描述文本 | N
 sortAscendingOperationText | String | '点击升序' | 语言配置，'点击升序' 描述文本 | N
 sortCancelOperationText | String | '点击取消排序' | 语言配置，'点击取消排序' 描述文本 | N
 sortDescendingOperationText | String | '点击降序' | 语言配置，'点击降序' 描述文本 | N
-sortIcon | Slot / Function | undefined | 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+sortIcon | Slot / Function | undefined | 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### SelectConfig
 
@@ -180,7 +181,7 @@ placeholder | String | '请选择' | 占位符描述文本 | N
 loadingMoreText | String | '点击加载更多' | 语言配置，'点击加载更多' 描述文本 | N
 loadingText | String | '正在加载中，请稍后' | 语言配置，'正在加载中，请稍后' 描述文本 | N
 
-### 【开发中】UploadConfig
+### UploadConfig
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
@@ -191,7 +192,7 @@ progress | Object | - | 语言配置，上传进度相关。示例：{ uploadTex
 sizeLimitMessage | String | '文件大小不能超过 {sizeLimit}' | 语言配置，文件大小超出限制时提醒文本 | N
 triggerUploadText | Object | - | 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }。TS 类型：`UploadTriggerUploadText` `interface UploadTriggerUploadText { image?: string, normal?: string,  fileInput?: string,  reupload?: string,  delete?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 
-### 【开发中】UploadConfigProgress
+### UploadConfigProgress
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
@@ -200,7 +201,7 @@ successText | String | '上传成功' | 语言配置，“上传成功”文本�
 uploadingText | String | '上传中' | 语言配置，“上传中”文本描述 | N
 waitingText | String | '待上传' | 语言配置，“待上传”文本描述 | N
 
-### 【开发中】UploadConfigDragger
+### UploadConfigDragger
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
@@ -208,7 +209,7 @@ clickAndDragText | String | '点击上方“选择文件”或将文件拖到此
 dragDropText | String | '释放图标' | 语言配置，'释放图标' 描述文本 | N
 draggingText | String | '拖拽到此区域' | 语言配置，'拖拽到此区域' 描述文本 | N
 
-### 【开发中】UploadConfigFileList
+### UploadConfigFileList
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --

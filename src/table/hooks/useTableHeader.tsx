@@ -124,10 +124,10 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
         <div class={tableSortClasses.title}>
           <div>{title}</div>
           {Boolean(sortIcon || filterIcon) && (
-            <span>
+            <div class={tableFilterClasses.iconWrap}>
               {sortIcon}
               {filterIcon}
-            </span>
+            </div>
           )}
         </div>
       </div>

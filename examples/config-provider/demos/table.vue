@@ -22,10 +22,17 @@ const columns = [
   {
     colKey: 'platform',
     title: 'Platform',
+    filter: {
+      type: 'single',
+    },
   },
   {
     colKey: 'property',
     title: 'Property',
+    sorter: true,
+    filter: {
+      type: 'single',
+    },
   },
 ];
 
@@ -46,6 +53,7 @@ export default {
           // empty: (h) => h && <div class='custom-empty-content'>Empty Data</div>,
           expandIcon: (h) => h && <ChevronRightIcon />,
           sortIcon: (h) => h && <CaretDownSmallIcon size="18px" />,
+          // filterIcon: () => <span>Filter</span>,
           filterInputPlaceholder: 'Enter Keyword',
           loadingMoreText: 'Load More',
           loadingText: 'Loading',

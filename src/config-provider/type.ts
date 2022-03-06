@@ -421,9 +421,13 @@ export interface TableConfig {
    */
   empty?: string | TNode;
   /**
-   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
+   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标
    */
   expandIcon?: TNode;
+  /**
+   * 过滤图标，如果没有配置，组件会内置默认图标
+   */
+  filterIcon?: TNode;
   /**
    * 语言配置，'点击加载更多' 描述文本
    * @default '点击加载更多'
@@ -450,7 +454,7 @@ export interface TableConfig {
    */
   sortDescendingOperationText?: string;
   /**
-   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件
+   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标
    */
   sortIcon?: TNode;
 }

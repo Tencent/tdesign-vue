@@ -107,6 +107,7 @@ export default function useClassName() {
       inner: `${prefix}-table__row-filter-inner`,
       bottomButtons: `${prefix}-table__filter--bottom-buttons`,
       contentInner: `${prefix}-table__filter-pop-content-inner`,
+      iconWrap: `${prefix}-table__filter-icon-wrap`,
     },
 
     // 通用类名
