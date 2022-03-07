@@ -5,8 +5,8 @@
         row-key="id"
         :columns="columns"
         :data="data"
-        :height="300"
         :scroll="{ type: 'virtual', rowHeight: 48, bufferSize: 30 }"
+        :height="300"
       >
       </t-table>
     </div>
@@ -18,19 +18,16 @@ const columns = [
   {
     colKey: 'id',
     title: 'id',
-    width: 300,
   },
   {
     colKey: 'instance',
     title: '集群名称',
-    width: 300,
   },
   {
     colKey: 'survivalTime',
     title: '存活时间(s)',
-    width: 300,
   },
-  { colKey: 'owner', title: '管理员', width: 300 },
+  { colKey: 'owner', title: '管理员' },
 ];
 
 const initData = [
