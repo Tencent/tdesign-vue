@@ -12,35 +12,37 @@ const publicPathMap = {
 };
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: publicPathMap[process.env.NODE_ENV],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '../'),
-      '@docs': path.resolve(__dirname, './docs'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@common': path.resolve(__dirname, '../src/_common'),
-      'tdesign-vue': path.resolve(__dirname, '../src'),
+export default ({ mode }) => {
+  return defineConfig({
+    base: publicPathMap[mode],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../'),
+        '@docs': path.resolve(__dirname, './docs'),
+        '@components': path.resolve(__dirname, './src/components'),
+        '@common': path.resolve(__dirname, '../src/_common'),
+        'tdesign-vue': path.resolve(__dirname, '../src'),
+      },
     },
-  },
-  build: {
-    outDir: '../_site',
-  },
-  server: {
-    host: '0.0.0.0',
-    port: 16000,
-    open: '/',
-    https: false,
-    fs: {
-      strict: false,
+    build: {
+      outDir: '../_site',
     },
-  },
-  plugins: [
-    createVuePlugin({
-      include: /(\.md|\.vue)$/,
-      jsx: true,
-    }),
-    tdocPlugin(),
-    VitePWA(pwaConfig),
-  ],
-});
+    server: {
+      host: '0.0.0.0',
+      port: 16000,
+      open: '/',
+      https: false,
+      fs: {
+        strict: false,
+      },
+    },
+    plugins: [
+      createVuePlugin({
+        include: /(\.md|\.vue)$/,
+        jsx: true,
+      }),
+      tdocPlugin(),
+      VitePWA(pwaConfig),
+    ],
+  });
+}
