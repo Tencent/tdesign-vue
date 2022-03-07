@@ -57,4 +57,10 @@ export default {
   },
   /** 是否显示校验成功的边框，默认不显示 */
   successBorder: Boolean,
+
+  /** 校验不通过时，是否显示错误提示信息，优先级高于 Form.showErrorMessage  */
+  showErrorMessage: {
+    type: Boolean,
+    default: undefined,
+  },
 };

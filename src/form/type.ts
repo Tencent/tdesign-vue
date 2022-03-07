@@ -172,6 +172,11 @@ export interface TdFormItemProps {
    * @default false
    */
   successBorder?: boolean;
+  /**
+   * 校验不通过时，是否显示错误提示信息，优先级高于 Form.showErrorMessage
+   * @default undefined
+   * */
+  showErrorMessage?: boolean;
 }
 
 export interface FormRule {

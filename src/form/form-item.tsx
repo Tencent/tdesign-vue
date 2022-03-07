@@ -68,6 +68,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
   },
 
   computed: {
+    needErrorMessage(): Boolean {
+      if (typeof this.showErrorMessage === 'boolean') return this.showErrorMessage;
+
+      const parent = this.form;
+      return parent?.showErrorMessage;
+    },
     classes(): ClassName {
       return [
         CLASS_NAMES.formItem,
@@ -95,8 +101,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       ];
     },
     errorClasses(): string {
-      const parent = this.form;
-      if (!parent.showErrorMessage) return '';
+      if (!this.needErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
       }
@@ -284,13 +289,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       );
     },
     renderTipsInfo(): VNode {
-      const parent = this.form;
       let helpVNode: VNode;
       if (this.help) {
         helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
       }
       const list = this.errorList;
-      if (parent.showErrorMessage && list && list[0] && list[0].message) {
+      if (this.needErrorMessage && list && list[0] && list[0].message) {
         return <p class={CLASS_NAMES.extra}>{list[0].message}</p>;
       }
       if (this.successList.length) {
