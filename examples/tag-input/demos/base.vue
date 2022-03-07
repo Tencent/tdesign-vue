@@ -14,7 +14,7 @@ export default {
       tags1: ['Vue', 'React1'],
       tags2: ['Vue', 'React2'],
       tags3: ['Vue', 'React3'],
-      inputValue: '123',
+      inputValue: '',
     };
   },
   methods: {
