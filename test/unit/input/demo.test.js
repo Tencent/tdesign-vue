@@ -3,7 +3,6 @@ import base from '@/examples/input/demos/base.vue';
 import addon from '@/examples/input/demos/addon.vue';
 import group from '@/examples/input/demos/group.vue';
 import password from '@/examples/input/demos/password.vue';
-import disabled from '@/examples/input/demos/disabled.vue';
 import status from '@/examples/input/demos/status.vue';
 import size from '@/examples/input/demos/size.vue';
 
@@ -22,10 +21,6 @@ describe('Input', () => {
   });
   it('password demo works fine', () => {
     const wrapper = mount(password);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('disabled demo works fine', () => {
-    const wrapper = mount(disabled);
     expect(wrapper.element).toMatchSnapshot();
   });
   it('status demo works fine', () => {

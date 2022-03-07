@@ -120,6 +120,22 @@ export default {
     type: Boolean,
     default: true,
   },
+  /**
+   * 上传时是否只使用一个接口上传所有的文件，需配合 multiple 使用。
+   * */
+  uploadAllFilesInOneRequest: {
+    type: Boolean,
+    default: false,
+  },
+  /** 
+   * 是否为合并上传模式，配合 multiple 与 uploadAllFilesInOneRequest 一起使用。
+   当处于合并上传模式时，每次选择上传文件都会清空已上传的文件列表，等待再次合并上传。 
+   * */
+  batchUpload: {
+    type: Boolean,
+    default: false,
+  },
+
   /** 上传请求时是否携带 cookie */
   withCredentials: Boolean,
   /** 点击「取消上传」时触发 */

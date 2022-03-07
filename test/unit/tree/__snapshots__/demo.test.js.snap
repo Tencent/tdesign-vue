@@ -1287,6 +1287,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -1307,6 +1308,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -1327,6 +1329,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -3971,6 +3974,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
       class="t-input t-size-m"
     >
       <input
+        autocomplete=""
         class="t-input__inner"
         placeholder="请输入"
         type="text"
@@ -7149,6 +7153,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -7496,6 +7501,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -7516,6 +7522,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
@@ -7536,6 +7543,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
         class="t-input t-size-m"
       >
         <input
+          autocomplete=""
           class="t-input__inner"
           placeholder="请输入"
           type="text"
