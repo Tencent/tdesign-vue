@@ -11,3 +11,4 @@ script/test/cypress
 _site
 temp*
 static/
+site/
