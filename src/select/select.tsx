@@ -47,7 +47,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       visible: false,
       searchInput: '',
       showCreateOption: false,
-      hasOptions: false, // select的slot是否有options组件
+      hasSlotOptions: false, // select的slot是否有options组件
       defaultProps: {
         trigger: 'click',
         placement: 'bottom-left' as string,
@@ -405,7 +405,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
       );
       if (!tmp.length) {
-        this.hasOptions = true;
+        this.hasSlotOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
@@ -675,7 +675,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           </ul>
           {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
           {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
-          {!this.hasOptions && displayOptions.length && !loading ? (
+          {!this.hasSlotOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
             <ul v-show={!loading && displayOptions.length} class={[`${prefix}-select__groups`, listName]}>
@@ -696,6 +696,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       if (children) {
         this.realOptions = parseOptions(children);
         this.isInited = true;
+        this.hasSlotOptions = true;
       }
 
       function parseOptions(vnodes: VNode[]): TdOptionProps[] {
