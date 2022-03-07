@@ -13667,10 +13667,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
         <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
-            <col style="width:300px;">
-            <col style="width:300px;">
-            <col style="width:300px;">
-            <col style="width:300px;">
+            <col>
+            <col>
+            <col>
+            <col>
           </colgroup>
           <thead class="t-table__header">
             <tr>
