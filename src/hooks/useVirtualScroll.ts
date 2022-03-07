@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ref, toRefs, reactive, onMounted, computed, watch } from '@vue/composition-api';
+import { ref, toRefs, reactive, onMounted, computed, watch, nextTick } from '@vue/composition-api';
 
 // 虚拟滚动Hooks的完整实现，只所以封装成hooks，主要是为了方便跟其他组件搭配使用，比如说表格或者下拉框
 const useVirtualScroll = ({
@@ -21,7 +21,7 @@ const useVirtualScroll = ({
     cachedScrollY: [],
   });
   const updateId = ref(0);
-  let trs = new Map(); // 当前展示的行元素和数据
+  const trs = new Map(); // 当前展示的行元素和数据
 
   let visibleCount = 0; // 可见的节点数量
   let beforeScrollTop = 0; // 上一次的滚动条位置
@@ -38,6 +38,9 @@ const useVirtualScroll = ({
         state.cachedScrollY[i] = i * lineHeight;
       }
     });
+    if (!fixedHeight) {
+      state.cachedScrollY[data.value.length - 1] = undefined; // 初始化cachedScrollY数组的长度
+    }
   };
   reset();
 
@@ -138,20 +141,24 @@ const useVirtualScroll = ({
       }
       // revising = false;
     }
-    if (last === data.value.length) {
-      // 滚动到底部时，修正底部有空余的问题
-      // revising = true;
-      for (let i = last - 1; i >= start; i--) {
-        if (i === last - 1) {
-          // state.cachedScrollY[i] = scrollHeight.value - state.cachedHeight[i];
-          state.cachedScrollY.splice(i, 1, scrollHeight.value - state.cachedHeight[i]);
-        } else {
-          // state.cachedScrollY[i] = state.cachedScrollY[i + 1] - state.cachedHeight[i];
-          state.cachedScrollY.splice(i, 1, state.cachedScrollY[i + 1] - state.cachedHeight[i]);
+    nextTick(() => {
+      // setTimeout是为了保证快速拖动到底部时，以下逻辑能够正常执行
+      const { scrollTop, scrollHeight, clientHeight } = container.value;
+      if (scrollTop + clientHeight === scrollHeight) {
+        // 滚动到底部时，修正底部有空余的问题
+        // revising = true;
+        for (let i = last - 1; i >= start; i--) {
+          if (i === last - 1) {
+            // state.cachedScrollY[i] = scrollHeight.value - state.cachedHeight[i];
+            state.cachedScrollY.splice(i, 1, scrollHeight.value - state.cachedHeight[i]);
+          } else {
+            // state.cachedScrollY[i] = state.cachedScrollY[i + 1] - state.cachedHeight[i];
+            state.cachedScrollY.splice(i, 1, state.cachedScrollY[i + 1] - state.cachedHeight[i]);
+          }
         }
+        // revising = false;
       }
-      // revising = false;
-    }
+    });
   };
 
   // 滚动时动态计算和渲染
@@ -184,7 +191,7 @@ const useVirtualScroll = ({
       if (scrollTop + clientHeight === scrollHeight) {
         // 滚动条到底了
         index = data.value.length - visibleCount + 1;
-        calculateScrollY();
+        // calculateScrollY();
       }
       if (start <= index - bufferSize) {
         // 计算第一个挂载元素
@@ -231,7 +238,7 @@ const useVirtualScroll = ({
     offset = 0;
     start = 0;
     // revising = false;
-    trs = new Map();
+    trs.clear();
     updateVisibleData();
     container.value && (container.value.scrollTop = 0);
   });
