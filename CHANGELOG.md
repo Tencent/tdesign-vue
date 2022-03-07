@@ -5,6 +5,39 @@ toc: false
 docClass: timeline
 ---
 
+## 0.36.0 `2022-03-07`
+
+### BREAKING CHANGES
+* Input: input 元素 `ref` 名称由 `refInputElem` 更为 `inputRef，`[pr #428](https://github.com/Tencent/tdesign-vue/pull/433)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+### Bug Fixes
+
+* Select:
+  - 修复选项无法跟随 options slot 改变而变化的问题，[issue #495](https://github.com/Tencent/tdesign-vue/issues/495)，[@YikaJ](https://github.com/YikaJ)
+  - 可创建新条目的选择器在输入框中没有值时，依然显示 `createOption` 的问题，[issue #482](https://github.com/Tencent/tdesign-vue/issues/482)，[@xiecz123](https://github.com/xiecz123)
+* Drawer: 修复 `destroyOnClose` 为 `true` 时报错的问题，[issue #504](https://github.com/Tencent/tdesign-vue/issues/504)，[@uyarn](https://github.com/uyarn)
+* Breadcrumb: 修复 breadcrumb-item 设置 `disabled` 样式失效的问题，[issue #461](https://github.com/Tencent/tdesign-vue/issues/461)，[@Zwow](https://github.com/Zwow)
+* Cascader: 修复大数据量下卡顿的问题，[issue #477](https://github.com/Tencent/tdesign-vue/issues/477)，[@delenzhang](https://github.com/delenzhang)
+* Dialog: 修复传入 `closeBtn = false` 时，依旧渲染关闭按钮元素的问题，[pr #451](https://github.com/Tencent/tdesign-vue/pull/451)，[@gh-mrhuang](https://github.com/gh-mrhuang)
+* Timepicker: 修复禁用态时仍可打开弹窗的问题，[pr #494](https://github.com/Tencent/tdesign-vue/pull/494)，[@uyarn](https://github.com/uyarn)
+* Datepicker: [@xiaosansiji](https://github.com/xiaosansiji)
+  - 修复点击选择日期面板的顶部年份、月份按钮导致面板隐藏的问题，[issue #443](https://github.com/Tencent/tdesign-vue/issues/443)
+  - 修复传入 `onChange` 事件未能正常触发的问题，[issue #449](https://github.com/Tencent/tdesign-vue/issues/449)
+  - 修复无法清除面板中已选值的问题，[issue #448](https://github.com/Tencent/tdesign-vue/issues/448)
+
+### Features
+
+* Upload: 支持单请求上传批量文件，[pr #486](https://github.com/Tencent/tdesign-vue/pull/486)，[@YikaJ](https://github.com/YikaJ)
+* Checkbox: [pr #433](https://github.com/Tencent/tdesign-vue/pull/433)，[@pengYYYYY](https://github.com/pengYYYYY)
+  - `change` 事件新增参数 `context.current` 表示当前变化的数据项， `context.type` 表示引起选中数据变化的是选中或是取消选中操作
+  - CheckboxGroup: 渲染 `key` 换为 index+vale，增加点击事件
+* Input:
+  - 同时支持驼峰命名和中划线命名的 `suffix` 和 `prefix`
+  - 增加 `autoWith` 属性
+* 新增 SelectInput 和 TagInput 组件，[pr #433](https://github.com/Tencent/tdesign-vue/pull/433)，[@pengYYYYY](https://github.com/pengYYYYY)
+* 全局配置：支持全局关闭斜八度波纹动画，[pr #488](https://github.com/Tencent/tdesign-vue/pull/488)，[@uyarn](https://github.com/uyarn)
+* Form: 支持通过 `setValidateMessage` 设置自定义校验结果，`[pr #479](https://github.com/Tencent/tdesign-vue/pull/479)，[@dellyoung](https://github.com/dellyoung)
+
 ## 0.35.1 `2022-02-25`
 
 ### Bug Fixes
