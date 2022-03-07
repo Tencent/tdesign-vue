@@ -149,7 +149,7 @@ export default mixins(keepAnimationMixins).extend({
     this.tSelect && this.tSelect.getOptions(this);
   },
   beforeDestroy() {
-    this.tSelect && this.tSelect.hasOptions && this.tSelect.destroyOptions(this);
+    this.tSelect && this.tSelect.hasSlotOptions && this.tSelect.destroyOptions(this);
   },
   render(): VNode {
     const {
