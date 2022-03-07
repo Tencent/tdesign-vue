@@ -5,9 +5,15 @@ import { VitePWA } from 'vite-plugin-pwa';
 import tdocPlugin from './plugin-tdoc';
 import pwaConfig from './pwaConfig';
 
+const publicPathMap = {
+  preview: '/',
+  intranet: '/vue/',
+  production: 'https://static.tdesign.tencent.com/vue/',
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? 'https://static.tdesign.tencent.com/vue/' : '/',
+  base: publicPathMap[process.env.NODE_ENV],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../'),
