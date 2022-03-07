@@ -184,6 +184,13 @@ export default defineComponent({
       </div>
     );
 
+    const translate = `translate(0, ${this.scrollHeight}px)`;
+    const virtualStyle = {
+      transform: translate,
+      '-ms-transform': translate,
+      '-moz-transform': translate,
+      '-webkit-transform': translate,
+    };
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -191,9 +198,7 @@ export default defineComponent({
         style={this.tableContentStyles}
         onScroll={onScroll}
       >
-        {isVirtual && (
-          <div class={this.virtualScrollClasses.cursor} style={{ transform: `translate(0, ${this.scrollHeight}px)` }} />
-        )}
+        {isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
 
         <table class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}

@@ -77,6 +77,8 @@ export default function useClassName() {
       row: `${prefix}-table__expanded-row`,
       rowInner: `${prefix}-table__expanded-row-inner`,
       td: `${prefix}-table__row--full`,
+      expanded: `${prefix}-table__row--expanded`,
+      collapsed: `${prefix}-table__row--collapsed`,
     },
 
     // 排序功能，全部类名
@@ -129,6 +131,9 @@ export default function useClassName() {
       cursor: `${prefix}-table__virtual-scroll-cursor`,
       header: `${prefix}-table__virtual-scroll-header`,
     },
+
+    positiveRoate90: `${prefix}-positive-rotate-90`,
+    negativeRoate180: `${prefix}-negative-rotate-180`,
   };
 
   return classNames;

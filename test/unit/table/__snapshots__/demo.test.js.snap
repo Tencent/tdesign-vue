@@ -1412,7 +1412,7 @@ exports[`Table expandable demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -1483,7 +1483,7 @@ exports[`Table expandable demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -1554,7 +1554,7 @@ exports[`Table expandable demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -1625,7 +1625,7 @@ exports[`Table expandable demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -1696,7 +1696,7 @@ exports[`Table expandable demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -3661,8 +3661,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                       >
                         <span>
                           <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc"
-                            style="transform: rotate(-180deg);"
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
                           >
                             <svg
                               class="t-icon t-icon-chevron-down"

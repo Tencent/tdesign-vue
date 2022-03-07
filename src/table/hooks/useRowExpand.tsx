@@ -19,7 +19,7 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
   const { t, global } = useConfig<TableConfig>('table');
-  const { tableExpandClasses } = useClassName();
+  const { tableExpandClasses, positiveRoate90 } = useClassName();
   // controlled and uncontrolled
   const [tExpandedRowKeys, setTExpandedRowKeys] = useDefaultValue(
     expandedRowKeys,
@@ -58,9 +58,13 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
       params: { row, index: rowIndex },
     });
     if (!icon) return null;
-    const styles = { transform: expanded ? 'rotate(90deg)' : undefined };
+    const classes = [
+      tableExpandClasses.iconBox,
+      tableExpandClasses[expanded ? 'expanded' : 'collapsed'],
+      { [positiveRoate90]: expanded },
+    ];
     return (
-      <span class={tableExpandClasses.iconBox} style={styles} onClick={(e: MouseEvent) => onToggleExpand(e, row)}>
+      <span class={classes} onClick={(e: MouseEvent) => onToggleExpand(e, row)}>
         {icon}
       </span>
     );

@@ -158,11 +158,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     ];
     const isEmpty = !data?.length && !props.loading;
 
+    const translate = `translate(0, ${translateY}px)`;
+    const posStyle = {
+      transform: translate,
+      '-ms-transform': translate,
+      '-moz-transform': translate,
+      '-webkit-transform': translate,
+    };
     return (
-      <tbody
-        class={tbodyClases.value}
-        style={scrollType === 'virtual' && { transform: `translate(0, ${translateY}px)` }}
-      >
+      <tbody class={tbodyClases.value} style={scrollType === 'virtual' && { ...posStyle }}>
         {isEmpty ? renderEmpty(h, columns) : list}
       </tbody>
     );
