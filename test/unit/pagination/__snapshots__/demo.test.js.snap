@@ -259,7 +259,8 @@ exports[`Pagination customizable demo works fine 1`] = `
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" class="t-input__inner"></div>
+        <div class="t-input"><input autocomplete="off" ref="refInputElem" unselectable="off" class="t-input__inner"></div>
+        <div class="t-input-number__tips t-input-number__tips--normal"></div>
       </div>页</div>
   </div>
 </div>
@@ -411,8 +412,12 @@ exports[`Pagination disabled demo works fine 1`] = `
             autocomplete="off"
             class="t-input__inner"
             ref="refInputElem"
+            unselectable="off"
           />
         </div>
+        <div
+          class="t-input-number__tips t-input-number__tips--normal"
+        />
       </div>
       页
     </div>
@@ -658,8 +663,12 @@ exports[`Pagination jump demo works fine 1`] = `
             autocomplete="off"
             class="t-input__inner"
             ref="refInputElem"
+            unselectable="off"
           />
         </div>
+        <div
+          class="t-input-number__tips t-input-number__tips--normal"
+        />
       </div>
       页
     </div>
