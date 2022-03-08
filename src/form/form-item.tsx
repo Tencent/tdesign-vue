@@ -224,7 +224,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         .filter((item) => item.result !== true)
         .map((item) => {
           Object.keys(item).forEach((key) => {
-            if (!item.message && this.errorMessages[key]) {
+            if (typeof item.message === 'undefined' && this.errorMessages[key]) {
               const compiled = lodashTemplate(this.errorMessages[key]);
               // eslint-disable-next-line no-param-reassign
               item.message = compiled({
