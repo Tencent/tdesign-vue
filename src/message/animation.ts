@@ -20,7 +20,7 @@ function fadeOut(dom: HTMLElement, placement: string, onFinish: Function) {
   if (!dom) return;
   const offsetHeight = dom?.offsetHeight || 0;
   const fadeOutKeyframes: Array<Keyframe> | null = getFadeOutKeyframes(placement, offsetHeight);
-  if (!fadeOutKeyframes) return;
+  if (!fadeOutKeyframes) return onFinish();
   const styleAfterFadeOut = fadeOutKeyframes[fadeOutKeyframes.length - 1];
   setDomStyleAfterAnimation(dom, styleAfterFadeOut);
 

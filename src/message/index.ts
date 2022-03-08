@@ -1,4 +1,3 @@
-import 'web-animations-js'; // web animations polyfill
 import _Message from './message';
 import withInstall from '../utils/withInstall';
 import { TdMessageProps } from './type';
