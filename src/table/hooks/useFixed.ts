@@ -41,7 +41,7 @@ export interface FixedColumnInfo {
   right?: number;
   top?: number;
   bottom?: number;
-  parent?: string;
+  parent?: FixedColumnInfo;
   children?: string[];
   width?: number;
   height?: number;
@@ -127,6 +127,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     lastFullRow,
     maxHeight,
     headerAffixedTop,
+    bordered,
   } = toRefs(props);
   const tableContentRef = ref<HTMLDivElement>();
   const tableRef = ref<HTMLDivElement>();
@@ -156,7 +157,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     map: RowAndColFixedPosition = new Map(),
     levelNodes: FixedColumnInfo[][] = [],
     level = 0,
-    parent = '',
+    parent?: FixedColumnInfo,
   ) {
     for (let i = 0, len = columns.length; i < len; i++) {
       const col = columns[i];
@@ -167,7 +168,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       const columnInfo: FixedColumnInfo = { col, parent, index: i };
       map.set(key, columnInfo);
       if (col.children?.length) {
-        getColumnMap(col.children, map, levelNodes, level + 1, col.colKey);
+        getColumnMap(col.children, map, levelNodes, level + 1, columnInfo);
       }
       if (levelNodes[level]) {
         levelNodes[level].push(columnInfo);
@@ -189,7 +190,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   ) => {
     for (let i = 0, len = columns.length; i < len; i++) {
       const col = columns[i];
-      if (!col.fixed) return;
+      if (col.fixed !== 'left') return;
       const colInfo = initialColumnMap.get(col.colKey || i);
       // 多级表头，使用父元素作为初始基本位置
       const defaultWidth = i === 0 ? parent?.left || 0 : 0;
@@ -210,7 +211,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   ) => {
     for (let i = columns.length - 1; i >= 0; i--) {
       const col = columns[i];
-      if (!col.fixed) return;
+      if (col.fixed !== 'right') return;
       const colInfo = initialColumnMap.get(col.colKey || i);
       const lastCol = columns[i + 1];
       // 多级表头，使用父元素作为初始基本位置
@@ -341,11 +342,14 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       for (let i = 0, len = nodes.length; i < len; i++) {
         const colMapInfo = nodes[i];
         const nextColMapInfo = nodes[i + 1];
-        if (colMapInfo.col.fixed === 'left' && nextColMapInfo?.col.fixed !== 'left') {
+        const { parent } = colMapInfo;
+        const isParentLastLeftFixedCol = !parent || parent?.lastLeftFixedCol;
+        if (isParentLastLeftFixedCol && colMapInfo.col.fixed === 'left' && nextColMapInfo?.col.fixed !== 'left') {
           colMapInfo.lastLeftFixedCol = true;
         }
         const lastColMapInfo = nodes[i - 1];
-        if (colMapInfo.col.fixed === 'right' && lastColMapInfo?.col.fixed !== 'right') {
+        const isParentFirstRigthFixedCol = !parent || parent?.firstRightFixedCol;
+        if (isParentFirstRigthFixedCol && colMapInfo.col.fixed === 'right' && lastColMapInfo?.col.fixed !== 'right') {
           colMapInfo.firstRightFixedCol = true;
         }
       }
@@ -401,7 +405,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
     thWidthList.value = widthMap;
     const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = rect.width - scrollbarWidth.value / 2;
+    tableWidth.value = rect.width - scrollbarWidth.value / 2 + (bordered.value ? 0.5 : 2);
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -425,18 +429,18 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   watch(
-    [data, columns, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow],
+    [data, columns, bordered, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow],
     updateFixedStatus,
     { immediate: true },
   );
 
   watch([isFixedColumn, columns], updateFixedColumnHandler, { immediate: true });
 
-  watch([maxHeight, data, columns], updateFixedHeader, { immediate: true });
+  watch([maxHeight, data, columns, bordered], updateFixedHeader, { immediate: true });
 
   // 影响表头宽度的元素
   watch(
-    [data, columns, tableLayout, fixedRows, isFixedHeader, headerAffixedTop, tableContentWidth],
+    [data, columns, bordered, tableLayout, fixedRows, isFixedHeader, headerAffixedTop, tableContentWidth],
     setThWidthListHander,
     { immediate: true },
   );
