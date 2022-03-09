@@ -11245,7 +11245,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 0 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11255,7 +11255,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11265,7 +11265,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11275,7 +11275,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11285,7 +11285,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
@@ -11401,7 +11401,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 0 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11411,7 +11411,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11421,7 +11421,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11431,7 +11431,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -11441,7 +11441,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
@@ -11494,7 +11494,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 0 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
@@ -11504,7 +11504,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
@@ -11514,7 +11514,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
@@ -12268,7 +12268,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 0 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12278,7 +12278,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12288,7 +12288,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12298,7 +12298,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12308,7 +12308,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12318,7 +12318,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 5 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 5 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12328,7 +12328,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 6 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 6 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12338,7 +12338,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 7 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12348,7 +12348,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 8 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 8 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12358,7 +12358,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 9 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12368,7 +12368,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 10 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 10 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12378,7 +12378,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 11 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 11 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12388,7 +12388,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 12 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 12 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12398,7 +12398,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 13 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 13 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12408,7 +12408,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 14 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 14 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12418,7 +12418,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 15 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 15 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12428,7 +12428,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 16 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 16 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12438,7 +12438,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 17 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 17 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12448,7 +12448,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 18 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 18 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -12458,7 +12458,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 19 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 19 个数据的嵌套信息值</div>
             </td>
             <td>数据源</td>
           </tr>
@@ -13238,7 +13238,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 0 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -13248,7 +13248,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -13258,7 +13258,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -13268,7 +13268,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
@@ -13278,7 +13278,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
@@ -13792,10 +13792,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <tbody class="t-table__body">
           <tr>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">0</div>
+              <div class="t-table__ellipsis t-text-ellipsis">0</div>
             </td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
@@ -13810,10 +13810,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           </tr>
           <tr>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">1</div>
+              <div class="t-table__ellipsis t-text-ellipsis">1</div>
             </td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
@@ -13828,10 +13828,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           </tr>
           <tr>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">2</div>
+              <div class="t-table__ellipsis t-text-ellipsis">2</div>
             </td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
@@ -13846,10 +13846,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           </tr>
           <tr>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">3</div>
+              <div class="t-table__ellipsis t-text-ellipsis">3</div>
             </td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
@@ -13864,10 +13864,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           </tr>
           <tr>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">4</div>
+              <div class="t-table__ellipsis t-text-ellipsis">4</div>
             </td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>

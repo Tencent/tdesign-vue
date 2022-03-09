@@ -14,6 +14,7 @@ import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useAsyncLoading from './hooks/useAsyncLoading';
+import { PageInfo } from '../pagination';
 
 export const BASE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.concat(BASE_EVENTS);
@@ -53,8 +54,9 @@ export default defineComponent({
       const arr: PrimaryTableCol<TableRowData>[] = [];
       for (let i = 0, len = columns.length; i < len; i++) {
         let item = { ...columns[i] };
+        // 自定义列显示控制
         const isDisplayColumn = item.children?.length || displayColumnKeys.value?.includes(item.colKey);
-        if (!isDisplayColumn) continue;
+        if (!isDisplayColumn && props.columnController) continue;
         item = formatToRowSelectColumn(item);
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
@@ -84,6 +86,20 @@ export default defineComponent({
       return cols;
     });
 
+    const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      props.onPageChange?.(pageInfo, newData);
+      // Vue3 ignore next line
+      context.emit('page-change', pageInfo, newData);
+
+      const changeParams: Parameters<TdPrimaryTableProps['onChange']> = [
+        { pagination: pageInfo },
+        { trigger: 'pagination', currentData: newData },
+      ];
+      props.onChange?.(...changeParams);
+      // Vue3 ignore next line
+      context.emit('change', ...changeParams);
+    };
+
     return {
       tColumns,
       showExpandedRow,
@@ -95,6 +111,7 @@ export default defineComponent({
       onInnerExpandRowClick,
       renderFirstFilterRow,
       renderAsyncLoading,
+      onInnerPageChange,
     };
   },
 
@@ -128,7 +145,7 @@ export default defineComponent({
 
   render() {
     const topContent = this.formatNode('topContent', this.renderColumnController, !!this.columnController);
-    const firstFullRow = this.formatNode('firstFullRow', this.renderFirstFilterRow, this.hasEmptyCondition);
+    const firstFullRow = this.formatNode('firstFullRow', this.renderFirstFilterRow, !this.hasEmptyCondition);
     const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
     const props = {
@@ -142,7 +159,10 @@ export default defineComponent({
     };
 
     // 事件，Vue3 do not need this.getListenser
-    const on: PrimaryTableListeners = this.getListenser();
+    const on: PrimaryTableListeners = {
+      ...this.getListenser(),
+      'page-change': this.onInnerPageChange,
+    };
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;
     }

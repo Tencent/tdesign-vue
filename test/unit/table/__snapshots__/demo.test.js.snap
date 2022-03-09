@@ -203,7 +203,7 @@ exports[`Table base demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 0 个数据的嵌套信息值
               </div>
@@ -241,7 +241,7 @@ exports[`Table base demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 1 个数据的嵌套信息值
               </div>
@@ -279,7 +279,7 @@ exports[`Table base demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 2 个数据的嵌套信息值
               </div>
@@ -317,7 +317,7 @@ exports[`Table base demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 3 个数据的嵌套信息值
               </div>
@@ -355,7 +355,7 @@ exports[`Table base demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 4 个数据的嵌套信息值
               </div>
@@ -571,7 +571,7 @@ exports[`Table base demo works fine 2`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 0 个数据的嵌套信息值
               </div>
@@ -609,7 +609,7 @@ exports[`Table base demo works fine 2`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 1 个数据的嵌套信息值
               </div>
@@ -647,7 +647,7 @@ exports[`Table base demo works fine 2`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 2 个数据的嵌套信息值
               </div>
@@ -685,7 +685,7 @@ exports[`Table base demo works fine 2`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 3 个数据的嵌套信息值
               </div>
@@ -723,7 +723,7 @@ exports[`Table base demo works fine 2`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 4 个数据的嵌套信息值
               </div>
@@ -2484,7 +2484,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 0 个数据的嵌套信息值
               </div>
@@ -2522,7 +2522,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 1 个数据的嵌套信息值
               </div>
@@ -2560,7 +2560,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 2 个数据的嵌套信息值
               </div>
@@ -2598,7 +2598,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 3 个数据的嵌套信息值
               </div>
@@ -2636,7 +2636,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 4 个数据的嵌套信息值
               </div>
@@ -2674,7 +2674,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 5 个数据的嵌套信息值
               </div>
@@ -2712,7 +2712,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 6 个数据的嵌套信息值
               </div>
@@ -2750,7 +2750,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 7 个数据的嵌套信息值
               </div>
@@ -2788,7 +2788,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 8 个数据的嵌套信息值
               </div>
@@ -2826,7 +2826,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 9 个数据的嵌套信息值
               </div>
@@ -2864,7 +2864,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 10 个数据的嵌套信息值
               </div>
@@ -2902,7 +2902,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 11 个数据的嵌套信息值
               </div>
@@ -2940,7 +2940,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 12 个数据的嵌套信息值
               </div>
@@ -2978,7 +2978,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 13 个数据的嵌套信息值
               </div>
@@ -3016,7 +3016,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 14 个数据的嵌套信息值
               </div>
@@ -3054,7 +3054,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 15 个数据的嵌套信息值
               </div>
@@ -3092,7 +3092,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 16 个数据的嵌套信息值
               </div>
@@ -3130,7 +3130,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 17 个数据的嵌套信息值
               </div>
@@ -3168,7 +3168,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 18 个数据的嵌套信息值
               </div>
@@ -3206,7 +3206,7 @@ exports[`Table fixedHeader demo works fine 1`] = `
               class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__ellipsis"
+                class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 19 个数据的嵌套信息值
               </div>

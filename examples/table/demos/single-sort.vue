@@ -13,7 +13,15 @@
 
     <p>排序：{{ sort }}</p>
     <!-- 受控用法，示例代码有效，勿删 -->
-    <t-table rowKey="id" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" bordered>
+    <t-table
+      rowKey="id"
+      :columns="columns"
+      :data="data"
+      :sort="sort"
+      @sort-change="sortChange"
+      @change="onChange"
+      bordered
+    >
       <order-descending-icon slot="op-column" />
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
@@ -95,9 +103,13 @@ export default {
   },
   methods: {
     sortChange(sort) {
-      // 这里的赋值很重要，不可缺少
+      // 对于受控属性而言，这里的赋值很重要，不可缺少
       this.sort = sort;
       this.request(sort);
+    },
+    // 排序、分页、过滤等发生变化时会出发 change 事件
+    onChange(info, context) {
+      console.log(info, context);
     },
     // 非受控用法，不需要传递 sort 给 Table 组件，因而此处无需执行 this.sort = sort 进行赋值
     defaultSortChange(sort) {
