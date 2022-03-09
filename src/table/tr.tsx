@@ -130,7 +130,7 @@ export default defineComponent({
 
   setup(props: TrProps, context: SetupContext) {
     const {
-      tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses,
+      tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses, tdAlignClasses,
     } = useClassName();
     const { row, rowIndex, dataLength } = props;
     // 固定列、固定行样式和类名
@@ -143,7 +143,6 @@ export default defineComponent({
       props.rowAndColFixedPosition,
       tableRowFixedClasses,
     ));
-    // const trStyles = computed<{ classes?: ClassName; style?: Styles }>(() => ({}));
 
     const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' }));
 
@@ -247,6 +246,7 @@ export default defineComponent({
       tSlots: context.slots,
       tdEllipsisClass,
       tableBaseClass,
+      tdAlignClasses,
       trStyles,
       classes,
       trAttributes,
@@ -292,6 +292,7 @@ export default defineComponent({
         {
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
+          [this.tdAlignClasses[col.align]]: col.align !== 'left',
         },
       ];
       // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};

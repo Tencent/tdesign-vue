@@ -24,6 +24,12 @@ export default function useClassName() {
       scrollbarDivider: `${prefix}-table__scroll-bar-divider`,
     },
 
+    tdAlignClasses: {
+      left: `${prefix}-align-left`,
+      right: `${prefix}-align-right`,
+      center: `${prefix}-align-center`,
+    },
+
     tableHeaderClasses: {
       header: `${prefix}-table__header`,
       thBordered: `${prefix}-table__header-th--bordered`,

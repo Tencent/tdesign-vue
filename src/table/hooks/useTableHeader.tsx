@@ -41,7 +41,12 @@ export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col:
 
 export default function useTableHeader(props: TdBaseTableProps, context: SetupContext) {
   const {
-    tableSortClasses, tableFilterClasses, tableHeaderClasses, tableBaseClass, tableColFixedClasses,
+    tableSortClasses,
+    tableFilterClasses,
+    tableHeaderClasses,
+    tableBaseClass,
+    tableColFixedClasses,
+    tdAlignClasses,
   } = useClassName();
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
@@ -90,6 +95,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
             // 受 rowspan 影响，部分 tr > th:first-child 需要补足左边框
             [tableHeaderClasses.thBordered]: thBorderMap.get(col),
             [`${prefix}-table__th-${col.colKey}`]: col.colKey,
+            [tdAlignClasses[col.align]]: col.align !== 'left',
           },
         ];
         const withoutChildren = !col.children?.length;
