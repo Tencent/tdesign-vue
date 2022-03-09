@@ -140,6 +140,7 @@ export default defineComponent({
       showAffixHeader,
       statusClassNames,
       scrollbarWidth,
+      isMultipleHeader,
       renderColgroup,
       renderTableHeader,
       renderTableBody,
@@ -262,11 +263,13 @@ export default defineComponent({
 
         {loadingContent}
 
-        {this.bordered && this.isFixedHeader && this.isWidthOverflow && (
-          <div
-            class={this.tableBaseClass.scrollbarDivider}
-            style={{ right: `${this.scrollbarWidth / 2 - 1.5}px`, height: `${this.tableContentRef.offsetHeight}px` }}
-          ></div>
+        {this.bordered
+          && this.isFixedHeader
+          && ((this.isMultipleHeader && this.isWidthOverflow) || !this.isMultipleHeader) && (
+            <div
+              class={this.tableBaseClass.scrollbarDivider}
+              style={{ right: `${this.scrollbarWidth / 2 - 1.5}px`, height: `${this.tableContentRef.offsetHeight}px` }}
+            ></div>
         )}
 
         {this.renderPagination(h)}

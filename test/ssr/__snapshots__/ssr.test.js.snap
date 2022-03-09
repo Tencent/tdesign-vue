@@ -12110,7 +12110,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
+<div class="tdesign-demo-block-column" style="width:100%;">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="fixed" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: fixed</span></label> <label class="t-radio-button"><input type="radio" value="auto" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: auto</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
