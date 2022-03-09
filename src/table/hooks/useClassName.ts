@@ -16,9 +16,12 @@ export default function useClassName() {
       emptyRow: `${prefix}-table__empty-row`,
       headerFixed: `${prefix}-table--header-fixed`,
       columnFixed: `${prefix}-table--column-fixed`,
+      widthOverflow: `${prefix}-table--width-overflow`,
       multipleHeader: `${prefix}-table--multiple-header`,
       affixedHeader: `${prefix}-table--affixed-header`,
       affixedHeaderElm: `${prefix}-table__affixed-header-elm`,
+      // 边框模式，固定表头，横向滚动时，右侧添加边线，分隔滚动条
+      scrollbarDivider: `${prefix}-table__scroll-bar-divider`,
     },
 
     tableHeaderClasses: {

@@ -2,7 +2,6 @@ import {
   ref, reactive, watch, toRefs, SetupContext, onMounted, onUnmounted, computed,
 } from '@vue/composition-api';
 import get from 'lodash/get';
-import debounce from 'lodash/debounce';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
@@ -130,8 +129,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     bordered,
   } = toRefs(props);
   const tableContentRef = ref<HTMLDivElement>();
-  const tableRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
+  const isWidthOverflow = ref(false);
   const affixHeaderRef = ref<HTMLDivElement>();
   // 当表格完全滚动消失在视野时，需要隐藏吸顶表头
   const showAffixHeader = ref(true);
@@ -297,8 +296,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   const updateColumnFixedShadow = (target: HTMLElement) => {
-    const isShowRight = target.clientWidth + target.scrollLeft !== target.scrollWidth;
-    showColumnShadow.left = target.scrollLeft !== 0;
+    if (!isFixedColumn.value) return;
+    const isShowRight = target.clientWidth + target.scrollLeft <= target.scrollWidth;
+    showColumnShadow.left = target.scrollLeft > 0;
     showColumnShadow.right = isShowRight;
   };
 
@@ -320,6 +320,11 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
   const onTableContentScroll = (e: WheelEvent) => {
+    const target = (e.target || e.srcElement) as HTMLElement;
+    // 阴影更新
+    updateColumnFixedShadow(target);
+    // 表头滚动位置更新
+    updateHeaderScroll(target);
     props.onScrollX?.({ e });
     // Vue3 ignore next line
     context.emit('scroll-x', { e });
@@ -329,10 +334,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     props.onScroll?.({ e });
     // Vue3 ignore next line
     context.emit('scroll', { e });
-    const target = (e.target || e.srcElement) as HTMLElement;
-    // 阴影更新
-    updateColumnFixedShadow(target);
-    updateHeaderScroll(target);
   };
 
   // 多级表头场景较为复杂：为了滚动的阴影效果，需要知道哪些列是边界列，左侧固定列的最后一列，右侧固定列的第一列，每一层表头都需要兼顾
@@ -375,6 +376,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     const timer = setTimeout(() => {
       if (!tableContentRef.value) return;
       isFixedHeader.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
+      isWidthOverflow.value = tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth;
       const pos = tableContentRef.value.getBoundingClientRect();
       virtualScrollHeaderPos.value = {
         top: pos.top,
@@ -405,7 +407,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
     thWidthList.value = widthMap;
     const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = rect.width - scrollbarWidth.value / 2 + (bordered.value ? 0.5 : 2);
+    tableWidth.value = isFixedHeader.value
+      ? rect.width - scrollbarWidth.value / 2 + (bordered.value ? 0.5 : 0)
+      : rect.width - (bordered.value ? 1 : 0);
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -446,7 +450,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   );
 
   watch([headerAffixedTop], () => {
-    document.addEventListener('scroll', debounce(onDocumentScroll, 60));
+    document.addEventListener('scroll', onDocumentScroll);
   });
 
   onMounted(() => {
@@ -481,7 +485,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     tableWidth,
     thWidthList,
     isFixedHeader,
-    tableRef,
+    isWidthOverflow,
     tableContentRef,
     showAffixHeader,
     isFixedColumn,
@@ -489,6 +493,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition,
     virtualScrollHeaderPos,
     affixHeaderRef,
+    scrollbarWidth,
     setThWidthListHander,
     updateHeaderScroll,
     onTableContentScroll,

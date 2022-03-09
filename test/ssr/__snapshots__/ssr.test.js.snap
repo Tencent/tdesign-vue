@@ -3055,11 +3055,12 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
           <tr>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable">
+                <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
                     <div>Type</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <!---->
                     </div>
                   </div>
                 </div>
@@ -3122,11 +3123,12 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             </th>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable">
+                <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
                     <div>Type</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <!---->
                     </div>
                   </div>
                 </div>
@@ -11226,11 +11228,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--sortable t-table__cell--filterable">
                     <div class="t-table__cell--title">
                       <div>状态</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                        <!---->
                       </div>
                     </div>
                   </div>
@@ -11238,11 +11241,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--sortable t-table__cell--filterable">
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                        <!---->
                       </div>
                     </div>
                   </div>
@@ -12106,7 +12110,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue correctly 1`] = `
-<div class="tdesign-demo-block-column" style="width:100%;">
+<div class="tdesign-demo-block-column">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="fixed" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: fixed</span></label> <label class="t-radio-button"><input type="radio" value="auto" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: auto</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -12652,7 +12656,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="type_default" colspan="3" class="t-table__th-type_default">
               <div class="t-table__th-cell-inner">类型及默认值</div>
             </th>
-            <th data-colkey="property" colspan="3" class="t-table__th-property">
+            <th data-colkey="property" rowspan="2" class="t-table__th-property">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
@@ -12666,7 +12670,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
                 </div>
               </div>
             </th>
-            <th data-colkey="description" rowspan="2" class="t-table__th-description">
+            <th data-colkey="description" colspan="3" class="t-table__th-description">
               <div class="t-table__th-cell-inner">说明</div>
             </th>
           </tr>
@@ -12676,11 +12680,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </th>
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable">
+                <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
                     <div>默认值</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <!---->
                     </div>
                   </div>
                 </div>
@@ -12742,11 +12747,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--sortable t-table__cell--filterable">
                     <div class="t-table__cell--title">
                       <div>状态</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                        <!---->
                       </div>
                     </div>
                   </div>
@@ -12754,11 +12760,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable">
+                  <div class="t-table__cell--sortable t-table__cell--filterable">
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                        <!---->
                       </div>
                     </div>
                   </div>
@@ -13301,11 +13308,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             </th>
             <th data-colkey="status" class="t-table__th-status">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable">
+                <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
                     <div>状态</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <!---->
                     </div>
                   </div>
                 </div>
@@ -13313,11 +13321,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             </th>
             <th data-colkey="survivalTime" class="t-table__th-survivalTime">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable">
+                <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
                     <div>存活时间(s)</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <!---->
                     </div>
                   </div>
                 </div>

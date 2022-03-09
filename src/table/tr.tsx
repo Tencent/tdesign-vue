@@ -84,6 +84,7 @@ export interface TrProps extends TrCommonProps {
   skipSpansMap: Map<any, boolean>;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
   scrollType: string;
+  isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
@@ -124,6 +125,7 @@ export default defineComponent({
     rowHeight: Number,
     trs: Map,
     bufferSize: Number,
+    isVirtual: Boolean,
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -201,14 +203,18 @@ export default defineComponent({
           isInit.value = true;
         });
     };
-    const { trs, row: rowData, scrollType } = props;
+    const {
+      trs, row: rowData, scrollType, isVirtual,
+    } = props;
 
     onMounted(() => {
       const { rowIndex, rowHeight, bufferSize } = props;
       if (scrollType === 'virtual') {
-        const { $index } = rowData;
-        trs.set($index, tr.value);
-        context.emit('onRowMounted');
+        if (isVirtual) {
+          const { $index } = rowData;
+          trs.set($index, tr.value);
+          context.emit('onRowMounted');
+        }
       } else if (scrollType === 'lazy') {
         const tableContentRef: Ref = inject('tableContentRef');
         const rowHeightRef: Ref = inject('rowHeightRef');
@@ -230,7 +236,7 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      if (scrollType === 'virtual') {
+      if (props.isVirtual) {
         const { $index } = rowData;
         trs.delete($index);
       }

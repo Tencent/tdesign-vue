@@ -6,6 +6,7 @@
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <!-- 只要有 maxHeight，就有固定表头，无论该值是否存在 -->
       <t-checkbox v-model="fixedHeader">显示固定表头</t-checkbox>
+      <!-- 为保证组件收益最大化，当数据量小于 `100` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动 -->
       <t-checkbox v-model="virtualScroll">虚拟滚动</t-checkbox>
       <t-checkbox v-model="fixedLeftCol">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightCol">固定右侧列</t-checkbox>
@@ -25,7 +26,7 @@
       :filterRow="() => null"
       :headerAffixProps="{ offsetTop: 0 }"
       :headerAffixedTop="headerAffixedTop"
-      :scroll="virtualScroll ? { type: 'virtual', rowHeight: 48, bufferSize: 10 } : undefined"
+      :scroll="virtualScroll ? { type: 'virtual', threshold: 2, rowHeight: 48, bufferSize: 10 } : undefined"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
     ></t-table>
@@ -153,6 +154,14 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               { label: 'D', value: 'D' },
             ],
           },
+        },
+        {
+          align: 'left',
+          ellipsis: true,
+          colKey: 'description',
+          title: '说明',
+          fixed: fixedRightCol && 'right',
+          width: 100,
           children: [
             {
               colKey: 'field6',
@@ -173,14 +182,6 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               width: 100,
             },
           ],
-        },
-        {
-          align: 'left',
-          ellipsis: true,
-          colKey: 'description',
-          title: '说明',
-          fixed: fixedRightCol && 'right',
-          width: 100,
         },
       ],
     },

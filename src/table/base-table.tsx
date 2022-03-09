@@ -30,6 +30,8 @@ export default defineComponent({
 
   setup(props: BaseTableProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
+    const tableRef = ref<HTMLTableElement>();
+    const tableElmRef = ref<HTMLTableElement>();
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
@@ -39,12 +41,13 @@ export default defineComponent({
     const { global } = useConfig<TableConfig>('table');
     // 固定表头和固定列逻辑
     const {
-      tableRef,
       affixHeaderRef,
+      scrollbarWidth,
       virtualScrollHeaderPos,
       tableWidth,
       tableContentRef,
       isFixedHeader,
+      isWidthOverflow,
       isFixedColumn,
       thWidthList,
       showColumnShadow,
@@ -64,10 +67,13 @@ export default defineComponent({
       tableClasses.value,
       { [tableBaseClass.headerFixed]: isFixedHeader.value },
       { [tableBaseClass.columnFixed]: isFixedColumn.value },
+      { [tableBaseClass.widthOverflow]: isWidthOverflow.value },
       { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
       { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
       { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
     ]);
+
+    const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
 
     const onFixedChange = (val: number | false) => {
       if (val !== false) {
@@ -88,7 +94,7 @@ export default defineComponent({
       translateY = null,
       handleScroll = null,
       handleRowMounted = null,
-    } = type === 'virtual'
+    } = isVirtual.value
       ? useVirtualScroll({
         container: tableContentRef,
         data,
@@ -101,10 +107,12 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     return {
+      isVirtual,
       global,
       virtualScrollHeaderPos,
       tableWidth,
       tableRef,
+      tableElmRef,
       tableBaseClass,
       spansAndLeafNodes,
       dynamicBaseTableClasses,
@@ -114,6 +122,7 @@ export default defineComponent({
       tableLayoutClasses,
       tableContentRef,
       isFixedHeader,
+      isWidthOverflow,
       isFixedColumn,
       rowAndColFixedPosition,
       showColumnShadow,
@@ -130,6 +139,7 @@ export default defineComponent({
       affixHeaderRef,
       showAffixHeader,
       statusClassNames,
+      scrollbarWidth,
       renderColgroup,
       renderTableHeader,
       renderTableBody,
@@ -147,8 +157,7 @@ export default defineComponent({
   render(h) {
     const { rowAndColFixedPosition, onTableContentScroll } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
-    const isVirtual = this.scrollType === 'virtual';
-    const onScroll = isVirtual
+    const onScroll = this.isVirtual
       ? (e: WheelEvent) => {
         onTableContentScroll(e);
         this.handleVirtualScroll();
@@ -160,7 +169,7 @@ export default defineComponent({
       isFixedHeader: this.isFixedHeader,
       rowAndColFixedPosition,
     });
-    const fixedHeader = (isVirtual || this.headerAffixedTop) && !!Object.keys(this.thWidthList).length
+    const fixedHeader = (this.isVirtual || this.headerAffixedTop) && !!Object.keys(this.thWidthList).length
       ? this.renderTableHeader(h, {
         isFixedHeader: this.isFixedHeader,
         rowAndColFixedPosition,
@@ -168,11 +177,11 @@ export default defineComponent({
       })
       : null;
 
-    const affixedHeader = Boolean((this.headerAffixedTop || isVirtual) && this.tableWidth) && (
+    const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
         style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
-        class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || isVirtual }}
+        class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
       >
         <table
           class={[this.tableLayoutClasses[this.tableLayout]]}
@@ -198,18 +207,19 @@ export default defineComponent({
         style={this.tableContentStyles}
         onScroll={onScroll}
       >
-        {isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
+        {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
 
-        <table class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
+        <table ref="tableElmRef" class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
           {header}
           {this.renderTableBody(h, {
             rowAndColFixedPosition,
             showColumnShadow: this.showColumnShadow,
-            data: isVirtual ? this.visibleData : data,
+            data: this.isVirtual ? this.visibleData : data,
             columns: this.spansAndLeafNodes.leafColumns,
             translateY: this.translateY,
             scrollType: this.scrollType,
+            isVirtual: this.isVirtual,
             rowHeight: this.rowHeight,
             trs: this.trs,
             bufferSize: this.bufferSize,
@@ -241,15 +251,23 @@ export default defineComponent({
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {this.renderTNode('topContent')}
 
-        {this.headerAffixedTop ? (
-          <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
-            {affixedHeader}
-          </Affix>
-        ) : (
-          affixedHeader
-        )}
+        {!!(this.isVirtual || this.headerAffixedTop)
+          && (this.headerAffixedTop ? (
+            <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
+              {affixedHeader}
+            </Affix>
+          ) : (
+            this.isFixedHeader && affixedHeader
+          ))}
 
         {loadingContent}
+
+        {this.bordered && this.isFixedHeader && this.isWidthOverflow && (
+          <div
+            class={this.tableBaseClass.scrollbarDivider}
+            style={{ right: `${this.scrollbarWidth / 2 - 1.5}px`, height: `${this.tableContentRef.offsetHeight}px` }}
+          ></div>
+        )}
 
         {this.renderPagination(h)}
       </div>

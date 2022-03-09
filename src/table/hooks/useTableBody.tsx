@@ -24,6 +24,7 @@ export interface RenderTableBodyParams {
   showColumnShadow: { left: boolean; right: boolean };
   translateY: object;
   scrollType: string;
+  isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
@@ -102,6 +103,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       data,
       columns,
       scrollType,
+      isVirtual,
       rowHeight,
       trs,
       bufferSize,
@@ -125,6 +127,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
+        isVirtual,
         scrollType,
         rowHeight,
         trs,
@@ -166,7 +169,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
       '-webkit-transform': translate,
     };
     return (
-      <tbody class={tbodyClases.value} style={scrollType === 'virtual' && { ...posStyle }}>
+      <tbody class={tbodyClases.value} style={isVirtual && { ...posStyle }}>
         {isEmpty ? renderEmpty(h, columns) : list}
       </tbody>
     );

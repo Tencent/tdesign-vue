@@ -3574,8 +3574,8 @@ exports[`Table multiHeader demo works fine 1`] = `
             </th>
             <th
               class="t-table__th-property"
-              colspan="3"
               data-colkey="property"
+              rowspan="2"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -3616,8 +3616,8 @@ exports[`Table multiHeader demo works fine 1`] = `
             </th>
             <th
               class="t-table__th-description"
+              colspan="3"
               data-colkey="description"
-              rowspan="2"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -3645,7 +3645,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                 class="t-table__th-cell-inner"
               >
                 <div
-                  class="t-table__cell--sortable"
+                  class="t-table__cell--sortable t-table__cell--filterable"
                 >
                   <div
                     class="t-table__cell--title"
@@ -3696,6 +3696,7 @@ exports[`Table multiHeader demo works fine 1`] = `
                           </span>
                         </span>
                       </div>
+                      <!---->
                     </div>
                   </div>
                 </div>
