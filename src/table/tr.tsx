@@ -264,8 +264,8 @@ export default defineComponent({
     ) {
       const { columnLength, cellNode } = params;
       const { col, colIndex } = cellParams;
-      // 最后一个元素，底部有对齐，避免信息右侧超出父元素
-      const placement = colIndex === columnLength - 1 ? 'bottom-right' : 'bottom-left';
+      // 最后两列元素，底部右对齐，避免信息右侧超出父元素
+      const placement = colIndex >= columnLength - 2 ? 'bottom-right' : 'bottom-left';
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
 
       return (
@@ -335,9 +335,9 @@ export default defineComponent({
             };
             if (isFunction(this.rowspanAndColspan)) {
               const o = this.rowspanAndColspan(params);
-              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-              this.onTrRowspanOrColspan?.(params, cellSpans);
+                o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+                o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+                this.onTrRowspanOrColspan?.(params, cellSpans);
             }
             const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
             if (skipped) return null;

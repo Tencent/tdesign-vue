@@ -1,15 +1,12 @@
 /** 超出省略显示 */
 import {
-  defineComponent, PropType, ref, computed, watch, toRefs,
+  defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
 import { TNode } from '../common';
-import { prefix } from '../config';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
 import TPopup, { PopupProps } from '../popup';
-
-const ELLIPSIS_CLASS = `${prefix}-table__ellipsis`;
-const ELLIPSIS_CLASS_TEXT = `${prefix}-text-ellipsis`;
+import { useConfig } from '../config-provider/useConfig';
 
 export default defineComponent({
   name: 'TEllipsis',
@@ -34,32 +31,28 @@ export default defineComponent({
     zIndex: Number,
   },
 
-  setup(props) {
-    const { popupContent, content, default: defaultNode } = toRefs(props);
+  setup() {
+    const { classPrefix: prefix } = useConfig();
     const root = ref();
     const isOverflow = ref(false);
 
-    const ellipsisClasses = computed(() => [ELLIPSIS_CLASS, { [ELLIPSIS_CLASS_TEXT]: isOverflow.value }]);
+    const ellipsisClasses = computed(() => [`${prefix}-table__ellipsis`, `${prefix}-text-ellipsis`]);
 
+    // 鼠标 hover 的时候显示浮层
     const updateIsOverflow = () => {
       if (!root.value) return;
-      const timer = setTimeout(() => {
-        isOverflow.value = isNodeOverflow(root.value);
-        clearTimeout(timer);
-      });
+      isOverflow.value = isNodeOverflow(root.value);
     };
 
-    watch([popupContent, content, root, defaultNode], () => {
-      updateIsOverflow();
-    });
-
-    return { root, isOverflow, ellipsisClasses };
+    return {
+      root, isOverflow, ellipsisClasses, updateIsOverflow,
+    };
   },
 
   render() {
     const cellNode = renderContent(this, 'default', 'content');
     const ellipsisContent = (
-      <div ref="root" class={this.ellipsisClasses}>
+      <div ref="root" class={this.ellipsisClasses} onMouseenter={this.updateIsOverflow}>
         {cellNode}
       </div>
     );
