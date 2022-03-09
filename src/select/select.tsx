@@ -188,6 +188,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           return get(target[target.length - 1], this.realLabel);
         }
+        return this.value.toString();
       }
       const showText = get(this.value, this.realLabel);
       // label为空时显示value值
