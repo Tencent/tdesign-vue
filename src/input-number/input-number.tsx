@@ -378,8 +378,11 @@ export default Vue.extend({
             icon={this.decreaseIcon}
           />
         )}
-        <div {...this.inputWrapProps}>
-          <input value={this.displayValue} {...this.inputClasses} {...this.inputAttrs} {...this.inputEvents} />
+        {/* // 保持和input结构相同 */}
+        <div class={`${prefix}-input__wrap`}>
+          <div {...this.inputWrapProps}>
+            <input value={this.displayValue} {...this.inputClasses} {...this.inputAttrs} {...this.inputEvents} />
+          </div>
         </div>
         {this.theme !== 'normal' && (
           <t-button

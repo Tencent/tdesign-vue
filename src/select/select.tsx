@@ -84,6 +84,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     classes(): ClassName {
       return [
         `${name}`,
+        `${prefix}-select-polyfill`, // 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
         {
           [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
