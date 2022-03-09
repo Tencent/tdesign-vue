@@ -315,6 +315,29 @@ export default defineComponent({
     } = this;
     const hasHolder = scrollType === 'lazy' && !isInit;
     const rowHeightRef: Ref = inject('rowHeightRef');
+    const columVNodeList = this.columns?.map((col, colIndex) => {
+      const cellSpans: RowspanColspan = {};
+      const params = {
+        row,
+        col,
+        rowIndex,
+        colIndex,
+      };
+      if (isFunction(this.rowspanAndColspan)) {
+        const o = this.rowspanAndColspan(params);
+        o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+        o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+        this.onTrRowspanOrColspan?.(params, cellSpans);
+      }
+      const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
+      if (skipped) return null;
+      return this.renderTd(h, params, {
+        dataLength,
+        rowAndColFixedPosition,
+        columnLength: this.columns.length,
+        cellSpans,
+      });
+    });
     return (
       <tr
         ref="tr"
@@ -323,31 +346,7 @@ export default defineComponent({
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {hasHolder
-          ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />]
-          : this.columns?.map((col, colIndex) => {
-            const cellSpans: RowspanColspan = {};
-            const params = {
-              row,
-              col,
-              rowIndex,
-              colIndex,
-            };
-            if (isFunction(this.rowspanAndColspan)) {
-              const o = this.rowspanAndColspan(params);
-                o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-                o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-                this.onTrRowspanOrColspan?.(params, cellSpans);
-            }
-            const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
-            if (skipped) return null;
-            return this.renderTd(h, params, {
-              dataLength,
-              rowAndColFixedPosition,
-              columnLength: this.columns.length,
-              cellSpans,
-            });
-          })}
+        {hasHolder ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />] : columVNodeList}
       </tr>
     );
   },
