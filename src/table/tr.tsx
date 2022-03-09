@@ -292,10 +292,9 @@ export default defineComponent({
         {
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
-          [this.tdAlignClasses[col.align]]: col.align !== 'left',
+          [this.tdAlignClasses[col.align]]: col.align && col.align !== 'left',
         },
       ];
-      // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};
       const onClick = (e: MouseEvent) => {
         const p = { ...params, e };
         this.onCellClick?.(p);

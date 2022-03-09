@@ -107,7 +107,7 @@ exports[`Table base demo works fine 1`] = `
         >
           <tr>
             <th
-              class="row t-table__th-index"
+              class="row t-table__th-index t-align-center"
               data-colkey="index"
             >
               <div
@@ -175,7 +175,7 @@ exports[`Table base demo works fine 1`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               0
             </td>
@@ -213,7 +213,7 @@ exports[`Table base demo works fine 1`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               1
             </td>
@@ -251,7 +251,7 @@ exports[`Table base demo works fine 1`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               2
             </td>
@@ -289,7 +289,7 @@ exports[`Table base demo works fine 1`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               3
             </td>
@@ -327,7 +327,7 @@ exports[`Table base demo works fine 1`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               4
             </td>
@@ -475,7 +475,7 @@ exports[`Table base demo works fine 2`] = `
         >
           <tr>
             <th
-              class="row t-table__th-index"
+              class="row t-table__th-index t-align-center"
               data-colkey="index"
             >
               <div
@@ -543,7 +543,7 @@ exports[`Table base demo works fine 2`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               0
             </td>
@@ -581,7 +581,7 @@ exports[`Table base demo works fine 2`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               1
             </td>
@@ -619,7 +619,7 @@ exports[`Table base demo works fine 2`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               2
             </td>
@@ -657,7 +657,7 @@ exports[`Table base demo works fine 2`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               3
             </td>
@@ -695,7 +695,7 @@ exports[`Table base demo works fine 2`] = `
             class=""
           >
             <td
-              class="row"
+              class="row t-align-center"
             >
               4
             </td>
@@ -1956,7 +1956,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
         >
           <tr>
             <th
-              class="t-table__th-index"
+              class="t-table__th-index t-align-center"
               data-colkey="index"
             >
               <div
@@ -2044,7 +2044,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             class=""
           >
             <td
-              class=""
+              class="t-align-center"
             >
               0
             </td>
@@ -2092,7 +2092,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             class=""
           >
             <td
-              class=""
+              class="t-align-center"
             >
               1
             </td>
@@ -2140,7 +2140,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             class=""
           >
             <td
-              class=""
+              class="t-align-center"
             >
               2
             </td>
@@ -2188,7 +2188,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             class=""
           >
             <td
-              class=""
+              class="t-align-center"
             >
               3
             </td>
@@ -2236,7 +2236,7 @@ exports[`Table fixedColumn demo works fine 1`] = `
             class=""
           >
             <td
-              class=""
+              class="t-align-center"
             >
               4
             </td>

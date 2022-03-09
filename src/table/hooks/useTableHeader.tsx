@@ -2,13 +2,13 @@ import { SetupContext, computed } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
-import { prefix } from '../../config';
 import { BaseTableCol, TdBaseTableProps } from '../type';
 import { RowAndColFixedPosition, getColumnFixedStyles } from './useFixed';
 import { formatCSSUnit } from './useStyle';
 import { TableColums, getThRowspanAndColspan, getThList } from './useMultiHeader';
 import useClassName from './useClassName';
 import { TNodeReturnValue } from '../../common';
+import { useConfig } from '../../config-provider/useConfig';
 
 export interface RenderTableHeaderParams {
   // 是否固定表头
@@ -53,6 +53,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
   // 表头二维数据
   const thList = computed(() => getThList(props.columns));
   const isMultipleHeader = computed(() => thList.value.length > 1);
+  const { classPrefix: prefix } = useConfig();
 
   // eslint-disable-next-line
   const renderColgroup = (h: CreateElement, columns: BaseTableCol[]) => (
@@ -95,7 +96,7 @@ export default function useTableHeader(props: TdBaseTableProps, context: SetupCo
             // 受 rowspan 影响，部分 tr > th:first-child 需要补足左边框
             [tableHeaderClasses.thBordered]: thBorderMap.get(col),
             [`${prefix}-table__th-${col.colKey}`]: col.colKey,
-            [tdAlignClasses[col.align]]: col.align !== 'left',
+            [tdAlignClasses[col.align]]: col.align && col.align !== 'left',
           },
         ];
         const withoutChildren = !col.children?.length;

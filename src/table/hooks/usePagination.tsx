@@ -2,14 +2,13 @@ import {
   computed, ref, SetupContext, toRefs, watch,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
+import { useConfig } from '../../config-provider/useConfig';
 import Pagination, { PageInfo } from '../../pagination';
 import { TdBaseTableProps } from '../type';
-import { prefix } from '../../config';
-
-const TABLE_PAGINATION_CLASS = `${prefix}-table__pagination`;
 
 export default function usePagination(props: TdBaseTableProps, context: SetupContext) {
   const { pagination } = toRefs(props);
+  const { classPrefix: prefix } = useConfig();
 
   const current = ref<number>(pagination.value?.current || pagination.value?.defaultCurrent);
   const pageSize = ref<number>(pagination.value?.pageSize || pagination.value?.defaultPageSize);
@@ -36,7 +35,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
   const renderPagination = (h: CreateElement) => {
     if (!pagination.value) return null;
     return (
-      <div class={TABLE_PAGINATION_CLASS}>
+      <div class={`${prefix}-table__pagination`}>
         <Pagination
           {...{
             props: pagination.value,

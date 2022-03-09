@@ -8,11 +8,11 @@ import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
 import Checkbox, { CheckboxGroup, CheckboxGroupValue, CheckboxOptionObj } from '../../checkbox';
-import { prefix } from '../../config';
 import { DialogPlugin } from '../../dialog/plugin';
 import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
+import { useConfig } from '../../config-provider/useConfig';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -28,6 +28,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
+  const { classPrefix: prefix } = useConfig();
   const { columns, columnController } = toRefs(props);
 
   const enabledColKeys = computed(() => {

@@ -297,7 +297,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const updateColumnFixedShadow = (target: HTMLElement) => {
     if (!isFixedColumn.value) return;
-    const isShowRight = target.clientWidth + target.scrollLeft <= target.scrollWidth;
+    const isShowRight = target.clientWidth + target.scrollLeft < target.scrollWidth;
     showColumnShadow.left = target.scrollLeft > 0;
     showColumnShadow.right = isShowRight;
   };

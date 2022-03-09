@@ -11217,7 +11217,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index">
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -11239,7 +11239,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11249,7 +11249,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11259,7 +11259,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11269,7 +11269,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row">3</td>
+            <td class="row t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -11279,7 +11279,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row">4</td>
+            <td class="row t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11373,7 +11373,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index">
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -11395,7 +11395,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11405,7 +11405,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11415,7 +11415,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11425,7 +11425,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">3</td>
+            <td class="row t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -11435,7 +11435,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">4</td>
+            <td class="row t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11466,7 +11466,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index">
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -11488,7 +11488,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </thead>
         <tbody class="t-table__body">
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11498,7 +11498,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11508,7 +11508,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12136,7 +12136,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="t-table__th-index">
+            <th data-colkey="index" class="t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -12164,7 +12164,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td>0</td>
+            <td class="t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12174,7 +12174,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>1</td>
+            <td class="t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12184,7 +12184,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>2</td>
+            <td class="t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12194,7 +12194,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>3</td>
+            <td class="t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12204,7 +12204,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>4</td>
+            <td class="t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12502,7 +12502,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="t-table__th-index">
+            <th data-colkey="index" class="t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -12530,7 +12530,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td>0</td>
+            <td class="t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12540,7 +12540,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>1</td>
+            <td class="t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12550,7 +12550,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>2</td>
+            <td class="t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12560,7 +12560,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>3</td>
+            <td class="t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12570,7 +12570,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>4</td>
+            <td class="t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12580,7 +12580,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>5</td>
+            <td class="t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12590,7 +12590,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>6</td>
+            <td class="t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12600,7 +12600,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>7</td>
+            <td class="t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12610,7 +12610,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>8</td>
+            <td class="t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12620,7 +12620,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>9</td>
+            <td class="t-align-center">9</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12630,7 +12630,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>10</td>
+            <td class="t-align-center">10</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12640,7 +12640,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>11</td>
+            <td class="t-align-center">11</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12650,7 +12650,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>12</td>
+            <td class="t-align-center">12</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12660,7 +12660,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>13</td>
+            <td class="t-align-center">13</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12670,7 +12670,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>14</td>
+            <td class="t-align-center">14</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12680,7 +12680,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>15</td>
+            <td class="t-align-center">15</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12690,7 +12690,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>16</td>
+            <td class="t-align-center">16</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12700,7 +12700,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>17</td>
+            <td class="t-align-center">17</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12710,7 +12710,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>18</td>
+            <td class="t-align-center">18</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12720,7 +12720,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td>19</td>
+            <td class="t-align-center">19</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13210,7 +13210,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index">
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -13232,7 +13232,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13242,7 +13242,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13252,7 +13252,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13262,7 +13262,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">3</td>
+            <td class="row t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13272,7 +13272,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row">4</td>
+            <td class="row t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13784,7 +13784,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">类型</div>
             </th>
-            <th data-colkey="operate" class="t-table__th-operate">
+            <th data-colkey="operate" class="t-table__th-operate t-align-center">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
           </tr>
@@ -13804,7 +13804,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td>共有</td>
             <td>String</td>
-            <td>
+            <td class="t-align-center">
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
@@ -13822,7 +13822,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td>私有</td>
             <td>Number</td>
-            <td>
+            <td class="t-align-center">
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
@@ -13840,7 +13840,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td>共有</td>
             <td>Array</td>
-            <td>
+            <td class="t-align-center">
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
@@ -13858,7 +13858,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td>私有</td>
             <td>Object</td>
-            <td>
+            <td class="t-align-center">
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
@@ -13876,7 +13876,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td>共有</td>
             <td>String</td>
-            <td>
+            <td class="t-align-center">
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
