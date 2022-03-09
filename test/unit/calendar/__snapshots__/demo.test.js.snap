@@ -34,7 +34,7 @@ exports[`Calendar base demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -72,7 +72,7 @@ exports[`Calendar base demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -772,7 +772,7 @@ exports[`Calendar card demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -851,7 +851,7 @@ exports[`Calendar card demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -889,7 +889,7 @@ exports[`Calendar card demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -1574,7 +1574,7 @@ exports[`Calendar cell demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -1612,7 +1612,7 @@ exports[`Calendar cell demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -2391,7 +2391,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -2429,7 +2429,7 @@ exports[`Calendar cellAppend demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -3389,7 +3389,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -3427,7 +3427,7 @@ exports[`Calendar controllerConfig demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -4139,7 +4139,7 @@ exports[`Calendar events demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -4177,7 +4177,7 @@ exports[`Calendar events demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -4878,7 +4878,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -4929,7 +4929,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -4967,7 +4967,7 @@ exports[`Calendar firstDayOfWeek demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -5783,7 +5783,7 @@ exports[`Calendar head demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -5821,7 +5821,7 @@ exports[`Calendar head demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -6521,7 +6521,7 @@ exports[`Calendar mode demo works fine 1`] = `
           +0
         </span>
         <svg
-          class="t-fake-arrow t-select__right-icon"
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
           fill="none"
           height="16"
           viewBox="0 0 16 16"
@@ -6572,7 +6572,7 @@ exports[`Calendar mode demo works fine 1`] = `
                 +0
               </span>
               <svg
-                class="t-fake-arrow t-select__right-icon"
+                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                 fill="none"
                 height="16"
                 viewBox="0 0 16 16"
@@ -6884,7 +6884,7 @@ exports[`Calendar range demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -6922,7 +6922,7 @@ exports[`Calendar range demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -7633,7 +7633,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -7671,7 +7671,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -8376,7 +8376,7 @@ exports[`Calendar value demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -8414,7 +8414,7 @@ exports[`Calendar value demo works fine 1`] = `
               +0
             </span>
             <svg
-              class="t-fake-arrow t-select__right-icon"
+              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
               fill="none"
               height="16"
               viewBox="0 0 16 16"
@@ -9233,7 +9233,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -9271,7 +9271,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -9984,7 +9984,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -10022,7 +10022,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -10721,7 +10721,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"
@@ -10759,7 +10759,7 @@ exports[`Calendar week demo works fine 1`] = `
                   +0
                 </span>
                 <svg
-                  class="t-fake-arrow t-select__right-icon"
+                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
                   fill="none"
                   height="16"
                   viewBox="0 0 16 16"

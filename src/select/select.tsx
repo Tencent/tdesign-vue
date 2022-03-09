@@ -594,7 +594,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder || this.t(this.global.placeholder);
     },
     getCloseIcon() {
-      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`];
+      // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`, `${name}__right-icon-polyfill`];
       if (isFunction(this.global.clearIcon)) {
         return (
           <span class={closeIconClass} onClick={this.clearSelect}>
@@ -817,10 +818,17 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
               />
             )}
             {this.showRightArrow && !this.showLoading && (
-              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.tDisabled} />
+              // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+              <fake-arrow
+                overlayClassName={`${name}__right-icon ${name}__right-icon-polyfill`}
+                isActive={this.visible && !this.tDisabled}
+              />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
-            {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
+            {/* TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名 */}
+            {this.showLoading && (
+              <t-loading class={`${name}__right-icon ${name}__active-icon ${name}__right-icon-polyfill`} size="small" />
+            )}
           </div>
           {this.renderContent()}
         </Popup>
