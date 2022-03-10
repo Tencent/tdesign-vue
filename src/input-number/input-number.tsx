@@ -9,8 +9,10 @@ import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource, TdInputNumberProps } from './type';
 import { ClassName, TNodeReturnValue } from '../common';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const name = `${prefix}-input-number`;
+const INPUT_NUMBER_TIPS_CLASS = `${prefix}-input-number__tips`;
 
 type InputNumberEvent = {
   on: {
@@ -29,10 +31,11 @@ type ChangeContextEvent = InputEvent | MouseEvent | FocusEvent;
 type InputNumberAttr = {
   attrs: {
     disabled?: boolean;
-    readonly?: any;
+    readonly?: boolean;
     autocomplete?: string;
     ref: string;
     placeholder: string;
+    unselectable?: string;
   };
 };
 
@@ -140,6 +143,7 @@ export default Vue.extend({
           `${prefix}-input`,
           {
             [`${prefix}-is-error`]: this.isError,
+            [`${prefix}-is-${this.status}`]: this.status,
             [`${prefix}-align-${this.align}`]: this.align,
           },
         ],
@@ -151,6 +155,7 @@ export default Vue.extend({
           `${prefix}-input__inner`,
           {
             [CLASSNAMES.STATUS.disabled]: this.tDisabled,
+            [`${prefix}-is-readonly`]: this.readonly,
             [`${name}-text-align`]: this.theme === 'row',
           },
         ],
@@ -172,9 +177,11 @@ export default Vue.extend({
       return {
         attrs: {
           disabled: this.tDisabled,
+          readonly: this.readonly,
           autocomplete: 'off',
           ref: 'refInputElem',
           placeholder: this.placeholder,
+          unselectable: this.readonly ? 'on' : 'off',
         },
       };
     },
@@ -367,6 +374,7 @@ export default Vue.extend({
     },
   },
   render(): VNode {
+    const tips = renderTNodeJSX(this, 'tips');
     return (
       <div {...this.cmptWrapClasses}>
         {this.theme !== 'normal' && (
@@ -393,6 +401,7 @@ export default Vue.extend({
             icon={this.increaseIcon}
           />
         )}
+        <div class={`${INPUT_NUMBER_TIPS_CLASS} ${prefix}-input-number__tips--${this.status || 'normal'}`}>{tips}</div>
       </div>
     );
   },
