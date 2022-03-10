@@ -1,5 +1,7 @@
 import Vue, { VNode } from 'vue';
-import { AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon } from 'tdesign-icons-vue';
+import {
+  AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+} from 'tdesign-icons-vue';
 import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import TButton from '../button';
@@ -68,10 +70,9 @@ export default Vue.extend({
       return this.tDisabled || this.isError || Number(this.value) + this.step > this.max;
     },
     valueDecimalPlaces(): number {
-      const tempVal =
-        this.filterValue !== null && !isNaN(Number(this.filterValue)) && !isNaN(parseFloat(this.filterValue))
-          ? this.filterValue
-          : String(this.value);
+      const tempVal = this.filterValue !== null && !isNaN(Number(this.filterValue)) && !isNaN(parseFloat(this.filterValue))
+        ? this.filterValue
+        : String(this.value);
       const tempIndex = tempVal.indexOf('.') + 1;
       return tempIndex > 0 ? tempVal.length - tempIndex : 0;
     },

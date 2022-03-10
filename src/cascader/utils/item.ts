@@ -16,9 +16,10 @@ export function getLabelIsEllipsis(node: TreeNode, size: CascaderContextType['si
 }
 
 export function getNodeStatusClass(node: TreeNode, CLASSNAMES: any, cascaderContext: CascaderContextType) {
-  const { checkStrictly, multiple, value, max } = cascaderContext;
-  const expandedActive =
-    (!checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true)) || (checkStrictly && node.expanded);
+  const {
+    checkStrictly, multiple, value, max,
+  } = cascaderContext;
+  const expandedActive = (!checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true)) || (checkStrictly && node.expanded);
 
   const isLeaf = node.isLeaf();
 

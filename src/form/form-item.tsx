@@ -217,8 +217,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
     async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;
       // 过滤不需要校验的规则
-      const rules =
-        trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
       // 校验结果，包含正确的校验信息
       const r = await validate(this.value, rules);
       const errorList = r
@@ -311,11 +310,10 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       }
       if (list && list[0]) {
         const type = list[0].type || 'error';
-        const icon =
-          {
-            error: CloseCircleFilledIcon,
-            warning: ErrorCircleFilledIcon,
-          }[type] || CheckCircleFilledIcon;
+        const icon = {
+          error: CloseCircleFilledIcon,
+          warning: ErrorCircleFilledIcon,
+        }[type] || CheckCircleFilledIcon;
         return resultIcon(icon);
       }
       return null;

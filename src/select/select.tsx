@@ -16,7 +16,9 @@ import Tag from '../tag/index';
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import props from './props';
-import { SelectOption, TdOptionProps, SelectValue, TdSelectProps, SelectOptionGroup } from './type';
+import {
+  SelectOption, TdOptionProps, SelectValue, TdSelectProps, SelectOptionGroup,
+} from './type';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
 
@@ -117,12 +119,12 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     showPlaceholder(): boolean {
       if (
-        !this.showFilter &&
-        ((!this.multiple && !this.selectedSingle) ||
-          (!this.multiple && typeof this.value === 'object' && !this.selectedSingle) ||
-          (this.multiple && !this.selectedMultiple.length) ||
-          this.value === null ||
-          this.value === undefined)
+        !this.showFilter
+        && ((!this.multiple && !this.selectedSingle)
+          || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
+          || (this.multiple && !this.selectedMultiple.length)
+          || this.value === null
+          || this.value === undefined)
       ) {
         return true;
       }
@@ -144,21 +146,21 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     showClose(): boolean {
       return Boolean(
-        this.clearable &&
-          this.isHover &&
-          !this.tDisabled &&
-          ((!this.multiple && (this.value || this.value === 0)) ||
-            (this.multiple && Array.isArray(this.value) && this.value.length)),
+        this.clearable
+          && this.isHover
+          && !this.tDisabled
+          && ((!this.multiple && (this.value || this.value === 0))
+            || (this.multiple && Array.isArray(this.value) && this.value.length)),
       );
     },
     showRightArrow(): boolean {
       if (!this.showArrow) return false;
       return (
-        !this.clearable ||
-        !this.isHover ||
-        this.tDisabled ||
-        (!this.multiple && !this.value && this.value !== 0) ||
-        (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
+        !this.clearable
+        || !this.isHover
+        || this.tDisabled
+        || (!this.multiple && !this.value && this.value !== 0)
+        || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
       );
     },
     canFilter(): boolean {
@@ -222,8 +224,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       if (this.filterable) {
         // 仅有filterable属性时，默认不区分大小写过滤label
         return this.realOptions.filter(
-          (option) =>
-            option[this.realLabel].toString().toLowerCase().indexOf(this.searchInput.toString().toLowerCase()) !== -1,
+          (option) => option[this.realLabel].toString().toLowerCase().indexOf(this.searchInput.toString().toLowerCase()) !== -1,
         );
       }
       return [];
@@ -401,8 +402,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     getOptions(option: OptionInstance) {
       // create option值不push到options里
-      if (option.$el && option.$el.className && option.$el.className.indexOf(`${name}__create-option--special`) !== -1)
-        return;
+      if (option.$el && option.$el.className && option.$el.className.indexOf(`${name}__create-option--special`) !== -1) return;
       const tmp = this.realOptions.filter(
         (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
       );
@@ -499,8 +499,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           if (this.showCreateOption && this.hoverIndex === 0) {
             this.createOption(this.searchInput);
           }
-          this.hoverOptions[this.hoverIndex] &&
-            this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
+          this.hoverOptions[this.hoverIndex]
+            && this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
           break;
         case 'Escape':
         case 'Tab':
@@ -560,16 +560,14 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       this.$nextTick(() => {
         let styles = (this.popupProps && this.popupProps.overlayStyle) || {};
         if (this.popupProps && isFunction(this.popupProps.overlayStyle)) {
-          styles =
-            this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
+          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
         }
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
           const popupWidth = this.getOverlayElm().getBoundingClientRect().width;
-          const width =
-            elWidth > DEFAULT_MAX_OVERLAY_WIDTH
-              ? elWidth
-              : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
+          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH
+            ? elWidth
+            : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
           Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width)}px` });
           // issuse-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
           if (this.checkScroll) {
@@ -658,9 +656,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       } else if (this.multiple && Array.isArray(this.value) && this.value.length) {
         this.value.some((item: string | number | TdOptionProps) => {
           const targetIndex = Object.keys(this.hoverOptions).filter(
-            (i) =>
-              (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue)) ||
-              get(this.hoverOptions[i], this.realValue) === item,
+            (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
+              || get(this.hoverOptions[i], this.realValue) === item,
           );
           this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
           return this.hoverIndex !== -1;
@@ -772,8 +769,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
             {this.valueDisplay || this.$scopedSlots.valueDisplay
               ? renderTNodeJSX(this, 'valueDisplay', {
-                  params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
-                })
+                params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
+              })
               : selectedMultiple.map((item: TdOptionProps, index: number) => (
                   <tag
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
@@ -788,7 +785,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                   >
                     {get(item, realLabel)}
                   </tag>
-                ))}
+              ))}
             {this.collapsedItems || this.$scopedSlots.collapsedItems ? (
               renderTNodeJSX(this, 'collapsedItems', {
                 params: {
