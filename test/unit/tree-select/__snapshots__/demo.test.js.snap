@@ -23,7 +23,7 @@ exports[`TreeSelect base demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m"
@@ -168,7 +168,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         +1
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -308,7 +308,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         更多...
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -461,7 +461,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         shenzhen
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -558,7 +558,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -704,7 +704,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         +2
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -812,7 +812,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -916,7 +916,7 @@ exports[`TreeSelect props demo works fine 1`] = `
         shenzhen
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -1020,7 +1020,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         [object Object]
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
@@ -1160,7 +1160,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         +2
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
         <div
