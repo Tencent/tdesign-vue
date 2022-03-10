@@ -75,6 +75,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     classes(): ClassName {
       return [
         `${prefix}-select`,
+        `${prefix}-select-polyfill`,
         {
           [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
@@ -102,11 +103,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     showArrow(): boolean {
       return (
-        !this.clearable
-        || !this.isHover
-        || this.tDisabled
-        || (!this.multiple && !this.value && this.value !== 0)
-        || (this.multiple && isArray(this.value) && isEmpty(this.value))
+        !this.clearable ||
+        !this.isHover ||
+        this.tDisabled ||
+        (!this.multiple && !this.value && this.value !== 0) ||
+        (this.multiple && isArray(this.value) && isEmpty(this.value))
       );
     },
     showLoading(): boolean {
@@ -114,19 +115,19 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     showClose(): boolean {
       return (
-        this.clearable
-        && this.isHover
-        && !this.tDisabled
-        && ((!this.multiple && (!!this.value || this.value === 0))
-          || (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>)))
+        this.clearable &&
+        this.isHover &&
+        !this.tDisabled &&
+        ((!this.multiple && (!!this.value || this.value === 0)) ||
+          (this.multiple && !isEmpty(this.value as Array<TreeSelectValue>)))
       );
     },
     showPlaceholder(): boolean {
       if (
-        !this.showFilter
-        && ((isString(this.value) && this.value === '' && !this.selectedSingle)
-          || (isArray(this.value) && isEmpty(this.value))
-          || isNil(this.value))
+        !this.showFilter &&
+        ((isString(this.value) && this.value === '' && !this.selectedSingle) ||
+          (isArray(this.value) && isEmpty(this.value)) ||
+          isNil(this.value))
       ) {
         return true;
       }
@@ -356,9 +357,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
   },
   render(): VNode {
-    const {
-      treeProps, popupObject, classes, popupClass, treeKey,
-    } = this;
+    const { treeProps, popupObject, classes, popupClass, treeKey } = this;
     const iconStyle = { 'font-size': this.size };
     const treeItem = (
       <Tree
@@ -401,14 +400,15 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
       />
     );
-    const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)
-      ? renderTNodeJSX(this, 'valueDisplay', {
-        params: {
-          value: this.nodeInfo,
-          onClose: (index: number) => this.removeTag(index, null),
-        },
-      })
-      : this.tagList.map((label, index) => (
+    const tagItem =
+      !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)
+        ? renderTNodeJSX(this, 'valueDisplay', {
+            params: {
+              value: this.nodeInfo,
+              onClose: (index: number) => this.removeTag(index, null),
+            },
+          })
+        : this.tagList.map((label, index) => (
             <Tag
               v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
               key={index}
@@ -421,19 +421,21 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             >
               {label}
             </Tag>
-      ));
-    const selectedSingle = this.valueDisplay || this.$scopedSlots.valueDisplay ? (
-      renderTNodeJSX(this, 'valueDisplay', {
-        params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
-      })
-    ) : (
+          ));
+    const selectedSingle =
+      this.valueDisplay || this.$scopedSlots.valueDisplay ? (
+        renderTNodeJSX(this, 'valueDisplay', {
+          params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
+        })
+      ) : (
         <span title={this.selectedSingle} class={`${prefix}-select__single`}>
           {this.selectedSingle}
         </span>
-    );
-    const collapsedItem = (this.collapsedItems || this.$scopedSlots.collapsedItems)
-      && this.minCollapsedNum > 0
-      && this.tagList.length > this.minCollapsedNum ? (
+      );
+    const collapsedItem =
+      (this.collapsedItems || this.$scopedSlots.collapsedItems) &&
+      this.minCollapsedNum > 0 &&
+      this.tagList.length > this.minCollapsedNum ? (
         renderTNodeJSX(this, 'collapsedItems', {
           params: {
             count: this.tagList.length - this.minCollapsedNum,
@@ -471,25 +473,29 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
-                overlayClassName={`${prefix}-select__right-icon`}
+                overlayClassName={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill`}
                 overlayStyle={iconStyle}
                 isActive={this.visible && !this.tDisabled}
               />
             )}
             <CloseCircleFilledIcon
               v-show={this.showClose && !this.showLoading}
-              class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
+              class={[
+                `${prefix}-select__right-icon`,
+                `${prefix}-select__right-icon-polyfill`,
+                `${prefix}-select__right-icon-clear`,
+              ]}
               size={this.size}
               nativeOnClick={this.clear}
             />
             <Loading
               v-show={this.showLoading}
-              class={`${prefix}-select__right-icon ${prefix}-select__active-icon`}
+              class={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill ${prefix}-select__active-icon`}
               size="small"
             />
           </div>
           <div slot="content">
-            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips`}>
+            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips ${prefix}-select__right-icon-polyfill`}>
               {this.loadingTextSlot}
             </p>
             {treeItem}
