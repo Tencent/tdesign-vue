@@ -6,7 +6,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -62,7 +62,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -123,7 +123,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -191,7 +191,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -234,7 +234,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -295,7 +295,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -381,7 +381,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -459,7 +459,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -564,7 +564,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -625,7 +625,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -692,7 +692,7 @@ exports[`TagInput TagInput maxVue demo works fine 1`] = `
   style="width: 100%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -718,7 +718,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-s t-input--prefix"
@@ -774,7 +774,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -830,7 +830,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-l t-input--prefix"
@@ -900,7 +900,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
         class="t-input t-size-m t-is-disabled t-input--prefix"
@@ -944,7 +944,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
         class="t-input t-size-m t-is-readonly t-input--prefix"
@@ -993,7 +993,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
         class="t-input t-size-m t-is-success t-input--prefix"
@@ -1080,7 +1080,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
         class="t-input t-size-m t-is-warning t-input--prefix"
@@ -1167,7 +1167,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
     </label>
      
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap"
     >
       <div
         class="t-input t-size-m t-is-error t-input--prefix"
@@ -1254,7 +1254,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
   style="width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -1328,7 +1328,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -1402,7 +1402,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
@@ -1476,7 +1476,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input__wrap t-tag-input"
+    class="t-input__wrap"
   >
     <div
       class="t-input t-size-m t-input--prefix"
