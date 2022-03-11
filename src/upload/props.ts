@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-30 19:36:40
  * */
 
 import { TdUploadProps } from './type';
@@ -40,6 +39,10 @@ export default {
   disabled: Boolean,
   /** 是否启用拖拽上传 */
   draggable: Boolean,
+  /** 【开发中】用于完全自定义文件列表内容 */
+  fileListDisplay: {
+    type: Function as PropType<TdUploadProps['fileListDisplay']>,
+  },
   /** 已上传文件列表 */
   files: {
     type: Array as PropType<TdUploadProps['files']>,
@@ -60,6 +63,8 @@ export default {
   headers: {
     type: Object as PropType<TdUploadProps['headers']>,
   },
+  /** 文件是否作为一个独立文件包，整体替换，整体删除。不允许追加文件，只允许替换文件 */
+  isBatchUpload: Boolean,
   /** 用于控制文件上传数量，值为 0 则不限制 */
   max: {
     type: Number,
@@ -70,6 +75,7 @@ export default {
     type: String as PropType<TdUploadProps['method']>,
     default: 'POST' as TdUploadProps['method'],
     validator(val: TdUploadProps['method']): boolean {
+      if (!val) return true;
       return ['POST', 'GET', 'PUT', 'OPTION'].includes(val);
     },
   },
@@ -103,6 +109,7 @@ export default {
     type: String as PropType<TdUploadProps['theme']>,
     default: 'file' as TdUploadProps['theme'],
     validator(val: TdUploadProps['theme']): boolean {
+      if (!val) return true;
       return ['custom', 'file', 'file-input', 'file-flow', 'image', 'image-flow'].includes(val);
     },
   },
@@ -115,27 +122,13 @@ export default {
   trigger: {
     type: [String, Function] as PropType<TdUploadProps['trigger']>,
   },
+  /** 是否在同一个请求中上传全部文件，默认一个请求上传一个文件 */
+  uploadAllFilesInOneRequest: Boolean,
   /** 是否显示为模拟进度。上传进度有模拟进度和真实进度两种。一般大小的文件上传，真实的上传进度只有 0 和 100，不利于交互呈现，因此组件内置模拟上传进度。真实上传进度一般用于大文件上传 */
   useMockProgress: {
     type: Boolean,
     default: true,
   },
-  /**
-   * 上传时是否只使用一个接口上传所有的文件，需配合 multiple 使用。
-   * */
-  uploadAllFilesInOneRequest: {
-    type: Boolean,
-    default: false,
-  },
-  /** 
-   * 是否为合并上传模式，配合 multiple 与 uploadAllFilesInOneRequest 一起使用。
-   当处于合并上传模式时，每次选择上传文件都会清空已上传的文件列表，等待再次合并上传。 
-   * */
-  batchUpload: {
-    type: Boolean,
-    default: false,
-  },
-
   /** 上传请求时是否携带 cookie */
   withCredentials: Boolean,
   /** 点击「取消上传」时触发 */
@@ -154,6 +147,8 @@ export default {
   onProgress: Function as PropType<TdUploadProps['onProgress']>,
   /** 移除文件时触发 */
   onRemove: Function as PropType<TdUploadProps['onRemove']>,
-  /** 上传成功后触发 */
+  /** 文件选择后，上传开始前，触发 */
+  onSelectChange: Function as PropType<TdUploadProps['onSelectChange']>,
+  /** 上传成功后触发，`context.currentFiles` 表示当次请求上传的文件，`context.fileList` 表示上传成功后的文件，`context.response` 表示上传请求的返回数据。<br />⚠️ `context.file` 请勿使用 */
   onSuccess: Function as PropType<TdUploadProps['onSuccess']>,
 };
