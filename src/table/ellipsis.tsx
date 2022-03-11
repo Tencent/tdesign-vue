@@ -1,15 +1,22 @@
 /** 超出省略显示 */
 import {
-  defineComponent, PropType, ref, computed, watch, toRefs,
+  defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
 import { TNode } from '../common';
-import { prefix } from '../config';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
 import TPopup, { PopupProps } from '../popup';
+import { useConfig } from '../config-provider/useConfig';
 
-const ELLIPSIS_CLASS = `${prefix}-table__ellipsis`;
-const ELLIPSIS_CLASS_TEXT = `${prefix}-text-ellipsis`;
+export interface EllipsisProps {
+  content: string | TNode;
+  default: string | TNode;
+  popupContent: string | number | TNode;
+  placement: PopupProps['placement'];
+  attach: () => HTMLElement;
+  popupProps: PopupProps;
+  zIndex: number;
+}
 
 export default defineComponent({
   name: 'TEllipsis',
@@ -17,65 +24,75 @@ export default defineComponent({
   props: {
     /** 内容 */
     content: {
-      type: [String, Function] as PropType<string | TNode>,
+      type: [String, Function] as PropType<EllipsisProps['content']>,
     },
     /** 内容，同 content */
     default: {
-      type: [String, Function] as PropType<string | TNode>,
+      type: [String, Function] as PropType<EllipsisProps['default']>,
     },
     /** 内容，同 content，可以单独自定义浮层内容，无需和触发元素保持一致 */
     popupContent: {
-      type: [String, Number, Function] as PropType<string | TNode>,
+      type: [String, Number, Function] as PropType<EllipsisProps['popupContent']>,
     },
     /** 浮层位置 */
-    placement: String as PropType<PopupProps['placement']>,
+    placement: String as PropType<EllipsisProps['placement']>,
+    /** 挂载元素 */
+    attach: Function as PropType<EllipsisProps['attach']>,
     /** 透传 Popup 组件属性 */
-    popupProps: Object as PropType<PopupProps>,
+    popupProps: Object as PropType<EllipsisProps['popupProps']>,
     zIndex: Number,
   },
 
-  setup(props) {
-    const { popupContent, content, default: defaultNode } = toRefs(props);
+  // 空 props 是为了 TS 类型检测
+  // eslint-disable-next-line
+  setup(props: EllipsisProps) {
+    const { classPrefix: prefix } = useConfig();
     const root = ref();
     const isOverflow = ref(false);
 
-    const ellipsisClasses = computed(() => [ELLIPSIS_CLASS, { [ELLIPSIS_CLASS_TEXT]: isOverflow.value }]);
+    const ellipsisClasses = computed(() => [`${prefix}-table__ellipsis`, `${prefix}-text-ellipsis`]);
 
+    // 鼠标 hover 的时候显示浮层
     const updateIsOverflow = () => {
       if (!root.value) return;
-      const timer = setTimeout(() => {
-        isOverflow.value = isNodeOverflow(root.value);
-        clearTimeout(timer);
-      });
+      isOverflow.value = isNodeOverflow(root.value);
     };
 
-    watch([popupContent, content, root, defaultNode], () => {
-      updateIsOverflow();
-    });
+    const onMouseleave = () => {
+      isOverflow.value = false;
+    };
 
-    return { root, isOverflow, ellipsisClasses };
+    return {
+      root,
+      isOverflow,
+      ellipsisClasses,
+      updateIsOverflow,
+      onMouseleave,
+    };
   },
 
   render() {
     const cellNode = renderContent(this, 'default', 'content');
     const ellipsisContent = (
-      <div ref="root" class={this.ellipsisClasses}>
+      <div
+        ref="root"
+        class={this.ellipsisClasses}
+        onMouseenter={this.updateIsOverflow}
+        onMouseleave={this.onMouseleave}
+      >
         {cellNode}
       </div>
     );
     if (this.isOverflow) {
-      return (
-        <TPopup
-          content={this.popupContent || (() => cellNode)}
-          destroyOnClose={true}
-          zIndex={this.zIndex || 1}
-          attach={() => this.root}
-          placement={this.placement}
-          props={this.popupProps}
-        >
-          {ellipsisContent}
-        </TPopup>
-      );
+      const rProps = {
+        content: this.popupContent || (() => cellNode),
+        destroyOnClose: true,
+        zIndex: this.zIndex || 1,
+        attach: this.attach || (() => this.root),
+        placement: this.placement,
+        ...(this.popupProps || {}),
+      };
+      return <TPopup props={rProps}>{ellipsisContent}</TPopup>;
     }
     return ellipsisContent;
   },

@@ -39,6 +39,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -59,6 +60,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -79,6 +81,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -123,6 +126,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -143,6 +147,7 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -173,26 +178,27 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
       <tbody class="t-table__body">
         <tr class="">
           <td class="t-table-td--ellipsis">
-            <div class="t-table__ellipsis">1</div>
+            <div class="t-table__ellipsis t-text-ellipsis">1</div>
           </td>
           <td class="">Number</td>
           <td class="">1</td>
         </tr>
         <tr class="">
           <td class="t-table-td--ellipsis">
-            <div class="t-table__ellipsis">2</div>
+            <div class="t-table__ellipsis t-text-ellipsis">2</div>
           </td>
           <td class="">Number</td>
           <td class="">2</td>
         </tr>
         <tr class="">
           <td class="t-table-td--ellipsis">
-            <div class="t-table__ellipsis">3</div>
+            <div class="t-table__ellipsis t-text-ellipsis">3</div>
           </td>
           <td class="">Number</td>
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -248,45 +254,46 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
       <tbody class="t-table__body">
         <tr class="">
           <td class="test t-table-td--ellipsis">
-            <div class="t-table__ellipsis">公有</div>
+            <div class="t-table__ellipsis t-text-ellipsis">公有</div>
           </td>
           <td class="row t-table-td--ellipsis">
-            <div class="t-table__ellipsis">any[]</div>
+            <div class="t-table__ellipsis t-text-ellipsis">any[]</div>
           </td>
           <td class="test4 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">[]</div>
+            <div class="t-table__ellipsis t-text-ellipsis">[]</div>
           </td>
           <td class="test3 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">Y</div>
+            <div class="t-table__ellipsis t-text-ellipsis">Y</div>
           </td>
           <td class="test2 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">data</div>
+            <div class="t-table__ellipsis t-text-ellipsis">data</div>
           </td>
           <td class="row t-table-td--ellipsis">
-            <div class="t-table__ellipsis">数据源</div>
+            <div class="t-table__ellipsis t-text-ellipsis">数据源</div>
           </td>
         </tr>
         <tr class="">
           <td class="test t-table-td--ellipsis">
-            <div class="t-table__ellipsis">公有</div>
+            <div class="t-table__ellipsis t-text-ellipsis">公有</div>
           </td>
           <td class="row t-table-td--ellipsis">
-            <div class="t-table__ellipsis">String</div>
+            <div class="t-table__ellipsis t-text-ellipsis">String</div>
           </td>
           <td class="test4 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">-1</div>
+            <div class="t-table__ellipsis t-text-ellipsis">-1</div>
           </td>
           <td class="test3 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">Y</div>
+            <div class="t-table__ellipsis t-text-ellipsis">Y</div>
           </td>
           <td class="test2 t-table-td--ellipsis">
-            <div class="t-table__ellipsis">rowkey</div>
+            <div class="t-table__ellipsis t-text-ellipsis">rowkey</div>
           </td>
           <td class="row t-table-td--ellipsis">
-            <div class="t-table__ellipsis">指定rowkey</div>
+            <div class="t-table__ellipsis t-text-ellipsis">指定rowkey</div>
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -331,6 +338,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>

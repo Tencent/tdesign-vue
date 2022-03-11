@@ -26,15 +26,19 @@ exports[`Form base demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入内容"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -61,15 +65,19 @@ exports[`Form base demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入内容"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -34,7 +34,6 @@ export interface RenderTdExtra {
 }
 
 export interface RenderEllipsisCellParams {
-  columnLength: number;
   cellNode: any;
 }
 
@@ -84,9 +83,11 @@ export interface TrProps extends TrCommonProps {
   skipSpansMap: Map<any, boolean>;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
   scrollType: string;
+  isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableElm: HTMLDivElement;
 }
 
 export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -110,6 +111,8 @@ export function renderCell(params: BaseTableCellParams<TableRowData>, slots: Set
 
 // 表格行组件
 export default defineComponent({
+  name: 'TR',
+
   props: {
     row: Object as PropType<TableRowData>,
     rowIndex: Number,
@@ -124,11 +127,13 @@ export default defineComponent({
     rowHeight: Number,
     trs: Map,
     bufferSize: Number,
+    isVirtual: Boolean,
+    tableElm: HTMLDivElement as PropType<TrProps['tableElm']>,
   },
 
   setup(props: TrProps, context: SetupContext) {
     const {
-      tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses,
+      tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses, tdAlignClasses,
     } = useClassName();
     const { row, rowIndex, dataLength } = props;
     // 固定列、固定行样式和类名
@@ -141,7 +146,6 @@ export default defineComponent({
       props.rowAndColFixedPosition,
       tableRowFixedClasses,
     ));
-    // const trStyles = computed<{ classes?: ClassName; style?: Styles }>(() => ({}));
 
     const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' }));
 
@@ -201,14 +205,18 @@ export default defineComponent({
           isInit.value = true;
         });
     };
-    const { trs, row: rowData, scrollType } = props;
+    const {
+      trs, row: rowData, scrollType, isVirtual,
+    } = props;
 
     onMounted(() => {
       const { rowIndex, rowHeight, bufferSize } = props;
       if (scrollType === 'virtual') {
-        const { $index } = rowData;
-        trs.set($index, tr.value);
-        context.emit('onRowMounted');
+        if (isVirtual) {
+          const { $index } = rowData;
+          trs.set($index, tr.value);
+          context.emit('onRowMounted');
+        }
       } else if (scrollType === 'lazy') {
         const tableContentRef: Ref = inject('tableContentRef');
         const rowHeightRef: Ref = inject('rowHeightRef');
@@ -230,17 +238,22 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      if (scrollType === 'virtual') {
+      if (props.isVirtual) {
         const { $index } = rowData;
         trs.delete($index);
       }
     });
+
+    // onUpdated(() => {
+    //   console.log('tr updated', props.row.index);
+    // });
 
     return {
       tableColFixedClasses,
       tSlots: context.slots,
       tdEllipsisClass,
       tableBaseClass,
+      tdAlignClasses,
       trStyles,
       classes,
       trAttributes,
@@ -256,15 +269,15 @@ export default defineComponent({
       cellParams: BaseTableCellParams<TableRowData>,
       params: RenderEllipsisCellParams,
     ) {
-      const { columnLength, cellNode } = params;
+      const { cellNode } = params;
       const { col, colIndex } = cellParams;
-      // 最后一个元素，底部有对齐，避免信息右侧超出父元素
-      const placement = colIndex === columnLength - 1 ? 'bottom-right' : 'bottom-left';
+      // 前两列左对齐显示
+      const placement = colIndex < 2 ? 'top-left' : 'top-right';
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
-
       return (
         <TEllipsis
           placement={placement}
+          attach={this.tableElm ? () => this.tableElm : undefined}
           popupContent={content && (() => content)}
           popupProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
         >
@@ -272,11 +285,10 @@ export default defineComponent({
         </TEllipsis>
       );
     },
+
     renderTd(h: CreateElement, params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) {
       const { col, colIndex, rowIndex } = params;
-      const {
-        columnLength, cellSpans, dataLength, rowAndColFixedPosition,
-      } = extra;
+      const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
       const cellNode = renderCell(params, this.tSlots);
       const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
       const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
@@ -286,9 +298,9 @@ export default defineComponent({
         {
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
+          [this.tdAlignClasses[col.align]]: col.align && col.align !== 'left',
         },
       ];
-      // const attrs: { [key: string]: any } = col.attrs ? col.attrs : {};
       const onClick = (e: MouseEvent) => {
         const p = { ...params, e };
         this.onCellClick?.(p);
@@ -297,7 +309,7 @@ export default defineComponent({
       };
       return (
         <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
-          {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode, columnLength }) : cellNode}
+          {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
       );
     },
@@ -309,6 +321,29 @@ export default defineComponent({
     } = this;
     const hasHolder = scrollType === 'lazy' && !isInit;
     const rowHeightRef: Ref = inject('rowHeightRef');
+    const columVNodeList = this.columns?.map((col, colIndex) => {
+      const cellSpans: RowspanColspan = {};
+      const params = {
+        row,
+        col,
+        rowIndex,
+        colIndex,
+      };
+      if (isFunction(this.rowspanAndColspan)) {
+        const o = this.rowspanAndColspan(params);
+        o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
+        o?.colspan > 1 && (cellSpans.colspan = o.colspan);
+        this.onTrRowspanOrColspan?.(params, cellSpans);
+      }
+      const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
+      if (skipped) return null;
+      return this.renderTd(h, params, {
+        dataLength,
+        rowAndColFixedPosition,
+        columnLength: this.columns.length,
+        cellSpans,
+      });
+    });
     return (
       <tr
         ref="tr"
@@ -317,31 +352,7 @@ export default defineComponent({
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {hasHolder
-          ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />]
-          : this.columns?.map((col, colIndex) => {
-            const cellSpans: RowspanColspan = {};
-            const params = {
-              row,
-              col,
-              rowIndex,
-              colIndex,
-            };
-            if (isFunction(this.rowspanAndColspan)) {
-              const o = this.rowspanAndColspan(params);
-              o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-              o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-              this.onTrRowspanOrColspan?.(params, cellSpans);
-            }
-            const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
-            if (skipped) return null;
-            return this.renderTd(h, params, {
-              dataLength,
-              rowAndColFixedPosition,
-              columnLength: this.columns.length,
-              cellSpans,
-            });
-          })}
+        {hasHolder ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />] : columVNodeList}
       </tr>
     );
   },

@@ -22,8 +22,10 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
+  tableElm: HTMLDivElement;
   translateY: object;
   scrollType: string;
+  isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
@@ -96,12 +98,14 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   // eslint-disable-next-line
-  const renderTableBody = (h: CreateElement, p: RenderTableBodyParams) => {
+  const renderTableBody = (h: CreateElement, p: Partial<RenderTableBodyParams>) => {
     const {
       rowAndColFixedPosition,
       data,
       columns,
+      tableElm,
       scrollType,
+      isVirtual,
       rowHeight,
       trs,
       bufferSize,
@@ -125,10 +129,12 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         skipSpansMap,
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
+        isVirtual,
         scrollType,
         rowHeight,
         trs,
         bufferSize,
+        tableElm,
       };
       if (props.onCellClick) {
         trProps.onCellClick = props.onCellClick;
@@ -158,11 +164,15 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     ];
     const isEmpty = !data?.length && !props.loading;
 
+    const translate = `translate(0, ${translateY}px)`;
+    const posStyle = {
+      transform: translate,
+      '-ms-transform': translate,
+      '-moz-transform': translate,
+      '-webkit-transform': translate,
+    };
     return (
-      <tbody
-        class={tbodyClases.value}
-        style={scrollType === 'virtual' && { transform: `translate(0, ${translateY}px)` }}
-      >
+      <tbody class={tbodyClases.value} style={isVirtual && { ...posStyle }}>
         {isEmpty ? renderEmpty(h, columns) : list}
       </tbody>
     );

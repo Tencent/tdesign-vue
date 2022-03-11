@@ -27,7 +27,7 @@ export default defineComponent({
   },
 
   setup(props, context) {
-    const { tableSortClasses } = useClassName();
+    const { tableSortClasses, negativeRoate180 } = useClassName();
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig<TableConfig>('table');
 
@@ -41,6 +41,7 @@ export default defineComponent({
       t,
       global,
       tableSortClasses,
+      negativeRoate180,
       allowSortTypes,
       onClick,
       renderTNode,
@@ -51,19 +52,13 @@ export default defineComponent({
     getSortIcon(direction: string, activeClass: string) {
       const defaultIcon = this.t(this.global.sortIcon) || <ChevronDownIcon />;
       const icon = this.renderTNode('sortIcon', defaultIcon);
-      const styles = {
-        transform: direction === 'asc' ? 'rotate(-180deg)' : undefined,
-      };
       const sortClassName = [
         activeClass,
         this.tableSortClasses.sortIcon,
         this.tableSortClasses.iconDirection[direction],
+        { [this.negativeRoate180]: direction === 'asc' },
       ];
-      return (
-        <span style={styles} class={sortClassName}>
-          {icon}
-        </span>
-      );
+      return <span class={sortClassName}>{icon}</span>;
     },
   },
 

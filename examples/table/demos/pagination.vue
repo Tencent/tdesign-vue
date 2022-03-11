@@ -90,8 +90,8 @@ export default {
       console.log('change:', params, context);
     },
     // 分页变化时触发该事件
-    onPageChange(pageInfo) {
-      console.log('page-change:', pageInfo);
+    onPageChange(pageInfo, newData) {
+      console.log('page-change:', pageInfo, newData);
     },
   },
 };

@@ -75,6 +75,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     classes(): ClassName {
       return [
         `${prefix}-select`,
+        `${prefix}-select-polyfill`,
         {
           [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
@@ -471,25 +472,29 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
-                overlayClassName={`${prefix}-select__right-icon`}
+                overlayClassName={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill`}
                 overlayStyle={iconStyle}
                 isActive={this.visible && !this.tDisabled}
               />
             )}
             <CloseCircleFilledIcon
               v-show={this.showClose && !this.showLoading}
-              class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
+              class={[
+                `${prefix}-select__right-icon`,
+                `${prefix}-select__right-icon-polyfill`,
+                `${prefix}-select__right-icon-clear`,
+              ]}
               size={this.size}
               nativeOnClick={this.clear}
             />
             <Loading
               v-show={this.showLoading}
-              class={`${prefix}-select__right-icon ${prefix}-select__active-icon`}
+              class={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill ${prefix}-select__active-icon`}
               size="small"
             />
           </div>
           <div slot="content">
-            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips`}>
+            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips ${prefix}-select__right-icon-polyfill`}>
               {this.loadingTextSlot}
             </p>
             {treeItem}

@@ -112,7 +112,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   rowspanAndColspan?: TableRowspanAndColspanFunc<T>;
   /**
-   * 懒加载和虚拟滚动
+   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
    */
   scroll?: TableScroll;
   /**
@@ -275,10 +275,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   columns?: Array<PrimaryTableCol<T>>;
   /**
-   * 是否开启拖拽排序
-   * @default false
+   * 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`drag-col` 表示通过专门的 拖拽列 进行拖拽排序
+   * @default drag-col
    */
-  dragSort?: boolean;
+  dragSort?: 'row' | 'drag-col';
   /**
    * 展开行内容，泛型 T 指表格数据类型
    */
@@ -331,11 +331,6 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 选中的行，控制属性，非受控属性
    */
   defaultSelectedRowKeys?: Array<string | number>;
-  /**
-   * 【讨论中-待定】是否显示为通过拖拽图标进行排序
-   * @default false
-   */
-  showDragCol?: boolean;
   /**
    * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
    */
@@ -408,11 +403,16 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   cell?: string | TNode<PrimaryTableCellParams<T>>;
   /**
-   * 透传参数，colKey 值为 row-select 时，配置有效。具体定义参考 Checkbox 组件 和 Radio 组件。泛型 T 指表格数据类型
+   * 透传参数，`colKey` 值为 `row-select` 时，配置有效。具体定义参考 Checkbox 组件 和 Radio 组件。泛型 T 指表格数据类型
    */
   checkProps?: CheckProps<T>;
   /**
-   * 是否禁用行选中，colKey 值为 row-select 时，配置有效
+   * 渲染列所需字段，必须唯一。值为 `row-select` 表示当前列为行选中操作列。值为 `drag` 表示当前列为拖拽排序操作列
+   * @default ''
+   */
+  colKey?: string;
+  /**
+   * 是否禁用行选中，`colKey` 值为 `row-select` 时，配置有效
    */
   disabled?: (options: { row: T; rowIndex: number }) => boolean;
   /**
@@ -438,7 +438,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   title?: string | TNode<{ col: PrimaryTableCol; colIndex: number }>;
   /**
-   * 行选中有两种模式：单选和多选。`colKey` 值为 `row-select` 时，表示当前列选中项， `type=single/multiple` 有效
+   * `colKey` 值为 `row-select` 时表示行选中列，有两种模式：单选和多选。 `type=single` 表示单选，`type=multiple` 表示多选
    * @default single
    */
   type?: 'single' | 'multiple';
@@ -548,6 +548,11 @@ export interface TableScroll {
    * 表格的行高，不会给`<tr>`元素添加样式高度，仅作为滚动时的行高参考。<br />`scroll.type` 为 `lazy` 时，`rowHeight` 用于给未渲染的行节点指定一个初始高度，该属性默认会设置为表格第一行的行高（滚动加载行数量 = 滚动距离 / rowHeight）。<br />`scroll.type` 为 `virtual` 时，`rowHeight` 用于估算每行的大致高度，从而决定应该渲染哪些行，请尽量将该属性设置为表格每行平均高度，从而使得表格滚动过程更加平滑
    */
   rowHeight?: number;
+  /**
+   * 启动虚拟滚动的阈值。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动
+   * @default 100
+   */
+  threshold?: number;
   /**
    * 表格滚动加载类型，有两种：懒加载和虚拟滚动。<br />值为 `lazy` ，表示表格滚动时会进行懒加载，非可视区域内的表格内容将不会默认渲染，直到该内容可见时，才会进行渲染，并且已渲染的内容滚动到不可见时，不会被销毁；<br />值为`virtual`时，表示表格会进行虚拟滚动，无论滚动条滚动到哪个位置，同一时刻，表格仅渲染该可视区域内的表格内容，当表格需要展示的数据量较大时，建议开启该特性
    */

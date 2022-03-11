@@ -171,6 +171,8 @@ const useVirtualScroll = ({
     beforeScrollTop = scrollTop;
     distance += offset;
     let lastIndex = index;
+    // !disatance 可能为横向滚动，不做任何计算
+    if (!distance) return;
     if (distance >= 0) {
       // 向下滚动
       while (lastIndex < data.value.length && distance > (state.cachedHeight[lastIndex] || lineHeight)) {
@@ -224,6 +226,7 @@ const useVirtualScroll = ({
     }
     updateVisibleData();
   };
+
   !fixedHeight && watch(updateId, calculateScrollY, { flush: 'post' });
   const handleRowMounted = () => {
     updateId.value++;

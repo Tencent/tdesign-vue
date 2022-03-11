@@ -1,6 +1,7 @@
 <template>
   <div class="demo-container">
     <div class="item">
+      <!-- 为保证组件收益最大化，当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值为 100 -->
       <t-table
         row-key="id"
         :columns="columns"

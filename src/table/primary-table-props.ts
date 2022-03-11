@@ -25,8 +25,15 @@ export default {
     type: Array as PropType<TdPrimaryTableProps['columns']>,
     default: (): TdPrimaryTableProps['columns'] => [],
   },
-  /** 是否开启拖拽排序 */
-  dragSort: Boolean,
+  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`drag-col` 表示通过专门的 拖拽列 进行拖拽排序 */
+  dragSort: {
+    type: String as PropType<TdPrimaryTableProps['dragSort']>,
+    default: 'drag-col' as TdPrimaryTableProps['dragSort'],
+    validator(val: TdPrimaryTableProps['dragSort']): boolean {
+      if (!val) return true;
+      return ['row', 'drag-col'].includes(val);
+    },
+  },
   /** 展开行内容，泛型 T 指表格数据类型 */
   expandedRow: {
     type: [String, Function] as PropType<TdPrimaryTableProps['expandedRow']>,
@@ -74,8 +81,6 @@ export default {
   defaultSelectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['defaultSelectedRowKeys']>,
   },
-  /** 【讨论中-待定】是否显示为通过拖拽图标进行排序 */
-  showDragCol: Boolean,
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
