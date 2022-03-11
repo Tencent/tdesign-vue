@@ -22,6 +22,7 @@ export interface RenderTableBodyParams {
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
+  tableElm: HTMLDivElement;
   translateY: object;
   scrollType: string;
   isVirtual: boolean;
@@ -97,11 +98,12 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
   };
 
   // eslint-disable-next-line
-  const renderTableBody = (h: CreateElement, p: RenderTableBodyParams) => {
+  const renderTableBody = (h: CreateElement, p: Partial<RenderTableBodyParams>) => {
     const {
       rowAndColFixedPosition,
       data,
       columns,
+      tableElm,
       scrollType,
       isVirtual,
       rowHeight,
@@ -132,6 +134,7 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
         rowHeight,
         trs,
         bufferSize,
+        tableElm,
       };
       if (props.onCellClick) {
         trProps.onCellClick = props.onCellClick;

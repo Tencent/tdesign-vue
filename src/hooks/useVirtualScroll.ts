@@ -226,6 +226,7 @@ const useVirtualScroll = ({
     }
     updateVisibleData();
   };
+
   !fixedHeight && watch(updateId, calculateScrollY, { flush: 'post' });
   const handleRowMounted = () => {
     updateId.value++;

@@ -39,6 +39,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -59,6 +60,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -79,6 +81,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -123,6 +126,7 @@ exports[`Table :props :props.bordered, :props:hover, :props.stripe, :props.size,
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -143,6 +147,7 @@ exports[`Table :props :props.columns \`columns\` is undefined 1`] = `
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -193,6 +198,7 @@ exports[`Table :props :props.columns \`columns\` with align, width, minWidth and
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -287,6 +293,7 @@ exports[`Table :props :props.columns \`columns\` with children 1`] = `
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -331,6 +338,7 @@ exports[`Table :props :props.columns \`columns\` with fixed column 1`] = `
           <td class="">3</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>

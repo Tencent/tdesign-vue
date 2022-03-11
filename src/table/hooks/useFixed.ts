@@ -9,9 +9,6 @@ import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 
 // 固定表头，固定列，固定行，不麻烦。但是加上多级表头，你试试，加上合并单元格，你再试试。
 
-// 固定行的数量不得超过 70 - 50 = 20
-const FIXED_ROW_MAX_Z_INDEX = 70;
-
 export interface ColumnStickyLeftAndRight {
   left: number[];
   right: number[];
@@ -98,16 +95,9 @@ export function getRowFixedStyles(
     [tableRowFixedClasses.firstBottom]: rowIndex === firstFixedBottomRow,
     [tableRowFixedClasses.withoutBorderBottom]: rowIndex === firstFixedBottomRow - 1,
   };
-  let zIndex = FIXED_ROW_MAX_Z_INDEX;
-  if (fixedTop) {
-    zIndex = FIXED_ROW_MAX_Z_INDEX - rowIndex;
-  } else if (fixedBottom) {
-    zIndex = FIXED_ROW_MAX_Z_INDEX - rowIndex + 1;
-  }
   const rowStyles = {
     top: fixedTop ? `${fixedPos.top}px` : undefined,
     bottom: fixedBottom ? `${fixedPos.bottom}px` : undefined,
-    zIndex,
   };
   return {
     style: rowStyles,
@@ -134,7 +124,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const affixHeaderRef = ref<HTMLDivElement>();
   // 当表格完全滚动消失在视野时，需要隐藏吸顶表头
   const showAffixHeader = ref(true);
-  const scrollbarWidth = ref(0);
+  // CSS 样式设置了固定 6px
+  const scrollbarWidth = ref(6);
   // 固定列、固定表头、固定表尾等内容的位置信息
   const rowAndColFixedPosition = ref<RowAndColFixedPosition>(new Map());
   const showColumnShadow = reactive({
@@ -310,7 +301,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     const newTarget = target || tableContentRef.value;
     if (notNeedThWidthList.value || !newTarget) return;
     // 固定列左右滚动时，更新吸顶表头滚动
-    if (lastScrollLeft === newTarget.scrollLeft) return;
+    const left = newTarget.scrollLeft;
+    if (lastScrollLeft === left) return;
     if (affixHeaderRef.value) {
       const left = newTarget.scrollLeft;
       lastScrollLeft = left;
@@ -407,9 +399,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
     thWidthList.value = widthMap;
     const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = isFixedHeader.value
-      ? rect.width - scrollbarWidth.value / 2 + (bordered.value ? 0.5 : 0)
-      : rect.width - (bordered.value ? 1 : 0);
+    tableWidth.value = rect.width - scrollbarWidth.value - 1;
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -497,6 +487,5 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     setThWidthListHander,
     updateHeaderScroll,
     onTableContentScroll,
-    updateColumnFixedShadow,
   };
 }

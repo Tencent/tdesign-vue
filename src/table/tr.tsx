@@ -34,7 +34,6 @@ export interface RenderTdExtra {
 }
 
 export interface RenderEllipsisCellParams {
-  columnLength: number;
   cellNode: any;
 }
 
@@ -88,6 +87,7 @@ export interface TrProps extends TrCommonProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableElm: HTMLDivElement;
 }
 
 export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -111,6 +111,8 @@ export function renderCell(params: BaseTableCellParams<TableRowData>, slots: Set
 
 // 表格行组件
 export default defineComponent({
+  name: 'TR',
+
   props: {
     row: Object as PropType<TableRowData>,
     rowIndex: Number,
@@ -126,6 +128,7 @@ export default defineComponent({
     trs: Map,
     bufferSize: Number,
     isVirtual: Boolean,
+    tableElm: HTMLDivElement as PropType<TrProps['tableElm']>,
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -241,6 +244,10 @@ export default defineComponent({
       }
     });
 
+    // onUpdated(() => {
+    //   console.log('tr updated', props.row.index);
+    // });
+
     return {
       tableColFixedClasses,
       tSlots: context.slots,
@@ -262,15 +269,15 @@ export default defineComponent({
       cellParams: BaseTableCellParams<TableRowData>,
       params: RenderEllipsisCellParams,
     ) {
-      const { columnLength, cellNode } = params;
+      const { cellNode } = params;
       const { col, colIndex } = cellParams;
-      // 最后两列元素，底部右对齐，避免信息右侧超出父元素
-      const placement = colIndex >= columnLength - 2 ? 'bottom-right' : 'bottom-left';
+      // 前两列左对齐显示
+      const placement = colIndex < 2 ? 'top-left' : 'top-right';
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
-
       return (
         <TEllipsis
           placement={placement}
+          attach={this.tableElm ? () => this.tableElm : undefined}
           popupContent={content && (() => content)}
           popupProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
         >
@@ -278,11 +285,10 @@ export default defineComponent({
         </TEllipsis>
       );
     },
+
     renderTd(h: CreateElement, params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) {
       const { col, colIndex, rowIndex } = params;
-      const {
-        columnLength, cellSpans, dataLength, rowAndColFixedPosition,
-      } = extra;
+      const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
       const cellNode = renderCell(params, this.tSlots);
       const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
       const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
@@ -303,7 +309,7 @@ export default defineComponent({
       };
       return (
         <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
-          {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode, columnLength }) : cellNode}
+          {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
       );
     },

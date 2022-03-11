@@ -87,11 +87,6 @@ export default {
           width: 150,
         },
         {
-          colKey: 'detail.postion',
-          title: '详情信息',
-          width: 250,
-        },
-        {
           colKey: 'description',
           title: '说明',
           width: 100,
@@ -106,8 +101,15 @@ export default {
           colKey: 'operation',
           title: '操作',
           width: 100,
-          fixed: 'right',
           cell: 'operation',
+        },
+        {
+          colKey: 'detail.postion',
+          title: '详情信息',
+          width: 120,
+          fixed: 'right',
+          // 允许自定义浮层 Popup 全部属性
+          ellipsis: { placement: 'bottom-right' },
         },
       ];
     },

@@ -2,20 +2,23 @@ import {
   computed, defineComponent, SetupContext, toRefs, ref, provide, nextTick,
 } from '@vue/composition-api';
 import props from './base-table-props';
+// import pick from 'lodash/pick';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
-import useTableFooter from './hooks/useTableFooter';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
+// import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
-import useStyle from './hooks/useStyle';
+import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
 import { Affix } from '../affix';
 import useCommonClassName from '../hooks/useCommonClassName';
+import THead from './thead';
+import TFoot from './tfoot';
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -30,7 +33,7 @@ export default defineComponent({
 
   setup(props: BaseTableProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
-    const tableRef = ref<HTMLTableElement>();
+    const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
@@ -56,11 +59,8 @@ export default defineComponent({
       onTableContentScroll,
       updateHeaderScroll,
     } = useFixed(props, context);
-    const {
-      renderTableHeader, renderColgroup, isMultipleHeader, spansAndLeafNodes,
-    } = useTableHeader(props, context);
+    const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { renderTableBody } = useTableBody(props, context);
-    const { renderTableFooter } = useTableFooter(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     const dynamicBaseTableClasses = computed(() => [
@@ -74,6 +74,12 @@ export default defineComponent({
     ]);
 
     const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
+
+    const showRightDivider = computed(() => (
+      props.bordered
+        && isFixedHeader.value
+        && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value)
+    ));
 
     const onFixedChange = (val: number | false) => {
       if (val !== false) {
@@ -92,7 +98,7 @@ export default defineComponent({
       scrollHeight = null,
       visibleData = null,
       translateY = null,
-      handleScroll = null,
+      handleScroll: handleVirtualScroll = null,
       handleRowMounted = null,
     } = isVirtual.value
       ? useVirtualScroll({
@@ -106,7 +112,26 @@ export default defineComponent({
     provide('tableContentRef', tableContentRef);
     provide('rowHeightRef', ref(rowHeight));
 
+    let lastScrollY = -1;
+    const onInnerScroll = isVirtual.value
+      ? (e: WheelEvent) => {
+        onTableContentScroll(e);
+        const target = (e.target || e.srcElement) as HTMLElement;
+        const top = target.scrollTop;
+        // 排除横向滚动出发的纵向虚拟滚动计算
+        if (Math.abs(lastScrollY - top) > 5) {
+          handleVirtualScroll();
+          lastScrollY = top;
+        } else {
+          lastScrollY = -1;
+        }
+      }
+      : onTableContentScroll;
+
     return {
+      // Vue2，组件之间的插槽透传，必须使用 context.slots，直接使用 this.$slots 无效
+      slots: context.slots,
+      thList,
       isVirtual,
       global,
       virtualScrollHeaderPos,
@@ -141,42 +166,29 @@ export default defineComponent({
       statusClassNames,
       scrollbarWidth,
       isMultipleHeader,
-      renderColgroup,
-      renderTableHeader,
+      showRightDivider,
       renderTableBody,
-      renderTableFooter,
       onTableContentScroll,
       renderPagination,
       renderTNode,
       handleRowMounted,
       onFixedChange,
       updateHeaderScroll,
-      handleVirtualScroll: handleScroll,
+      onInnerScroll,
     };
   },
 
   render(h) {
-    const { rowAndColFixedPosition, onTableContentScroll } = this;
+    const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
-    const onScroll = this.isVirtual
-      ? (e: WheelEvent) => {
-        onTableContentScroll(e);
-        this.handleVirtualScroll();
-      }
-      : onTableContentScroll;
 
-    const colgroup = this.renderColgroup(h, this.spansAndLeafNodes?.leafColumns || this.columns);
-    const header = this.renderTableHeader(h, {
-      isFixedHeader: this.isFixedHeader,
-      rowAndColFixedPosition,
-    });
-    const fixedHeader = (this.isVirtual || this.headerAffixedTop) && !!Object.keys(this.thWidthList).length
-      ? this.renderTableHeader(h, {
-        isFixedHeader: this.isFixedHeader,
-        rowAndColFixedPosition,
-        thWidthList: this.thWidthList,
-      })
-      : null;
+    const colgroup = (
+      <colgroup>
+        {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
+          <col style={{ width: formatCSSUnit(col.width) }}></col>
+        ))}
+      </colgroup>
+    );
 
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
@@ -189,7 +201,17 @@ export default defineComponent({
           style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}
         >
           {colgroup}
-          {fixedHeader}
+          {
+            <THead
+              isFixedHeader={this.isFixedHeader}
+              rowAndColFixedPosition={this.rowAndColFixedPosition}
+              isMultipleHeader={this.isMultipleHeader}
+              bordered={this.bordered}
+              spansAndLeafNodes={this.spansAndLeafNodes}
+              thList={this.thList}
+              thWidthList={this.thWidthList}
+            />
+          }
         </table>
       </div>
     );
@@ -201,35 +223,56 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
+    const tableBodyProps = {
+      rowAndColFixedPosition,
+      showColumnShadow: this.showColumnShadow,
+      data: this.isVirtual ? this.visibleData : data,
+      columns: this.spansAndLeafNodes.leafColumns,
+      tableElm: this.tableRef,
+      translateY: this.translateY,
+      scrollType: this.scrollType,
+      isVirtual: this.isVirtual,
+      rowHeight: this.rowHeight,
+      trs: this.trs,
+      bufferSize: this.bufferSize,
+      handleRowMounted: this.handleRowMounted,
+      // ...pick(this.$props, extendTableProps),
+    };
     const tableContent = (
       <div
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
-        onScroll={onScroll}
+        onScroll={this.onInnerScroll}
       >
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
 
         <table ref="tableElmRef" class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
-          {header}
-          {this.renderTableBody(h, {
-            rowAndColFixedPosition,
-            showColumnShadow: this.showColumnShadow,
-            data: this.isVirtual ? this.visibleData : data,
-            columns: this.spansAndLeafNodes.leafColumns,
-            translateY: this.translateY,
-            scrollType: this.scrollType,
-            isVirtual: this.isVirtual,
-            rowHeight: this.rowHeight,
-            trs: this.trs,
-            bufferSize: this.bufferSize,
-            handleRowMounted: this.handleRowMounted,
-          })}
-          {this.renderTableFooter(h, {
-            isFixedHeader: this.isFixedHeader,
-            rowAndColFixedPosition,
-          })}
+          <THead
+            scopedSlots={this.slots}
+            isFixedHeader={this.isFixedHeader}
+            rowAndColFixedPosition={this.rowAndColFixedPosition}
+            isMultipleHeader={this.isMultipleHeader}
+            bordered={this.bordered}
+            spansAndLeafNodes={this.spansAndLeafNodes}
+            thList={this.thList}
+          />
+          {/* replace scopedSlots of slots in Vue3
+           * 保留 TBody 和 renderTableBody，探索两种写法性能差异，目前没发现明显差异。
+           * 就 tbody 而言，差异甚小，绝对部分的数据变化都会涉及到内容重绘。暂时使用 renderTableBody，因为 TBody 要多一层监听，且 TBody 的虚拟滚动会出现空白
+           * */}
+          {/* <TBody scopedSlots={this.$slots} props={tableBodyProps} /> */}
+          {this.renderTableBody(h, tableBodyProps)}
+          <TFoot
+            scopedSlots={this.slots}
+            isFixedHeader={this.isFixedHeader}
+            rowAndColFixedPosition={rowAndColFixedPosition}
+            footData={this.footData}
+            columns={this.columns}
+            rowAttributes={this.rowAttributes}
+            rowClassName={this.rowClassName}
+          ></TFoot>
         </table>
       </div>
     );
@@ -263,13 +306,11 @@ export default defineComponent({
 
         {loadingContent}
 
-        {this.bordered
-          && this.isFixedHeader
-          && ((this.isMultipleHeader && this.isWidthOverflow) || !this.isMultipleHeader) && (
-            <div
-              class={this.tableBaseClass.scrollbarDivider}
-              style={{ right: `${this.scrollbarWidth / 2 - 1.5}px`, height: `${this.tableContentRef.offsetHeight}px` }}
-            ></div>
+        {this.showRightDivider && (
+          <div
+            class={this.tableBaseClass.scrollbarDivider}
+            style={{ right: `${this.scrollbarWidth}px`, height: `${this.tableContentRef.offsetHeight}px` }}
+          ></div>
         )}
 
         {this.renderPagination(h)}

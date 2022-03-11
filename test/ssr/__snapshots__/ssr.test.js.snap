@@ -3134,6 +3134,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div> <br><br>
@@ -3215,6 +3216,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             <td>C</td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div> <br><br>
@@ -11195,6 +11197,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11289,6 +11292,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11346,6 +11350,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
             <td>render 方法渲染单元格: 1-3</td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11445,6 +11450,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11572,6 +11578,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
           <td>rowkey</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -11669,6 +11676,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               <td>peter</td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
     </div>
@@ -11746,6 +11754,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>peter</td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
     </div>
@@ -11795,6 +11804,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11838,6 +11848,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11881,6 +11892,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -11986,6 +11998,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -12098,6 +12111,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
             <td>2022-03-01</td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -12129,10 +12143,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
           <col style="width:100px;">
           <col style="width:150px;">
           <col style="width:150px;">
-          <col style="width:250px;">
           <col style="width:100px;">
           <col style="width:150px;">
           <col style="width:100px;">
+          <col style="width:120px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -12148,9 +12162,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
-            </th>
             <th data-colkey="description" class="t-table__th-description">
               <div class="t-table__th-cell-inner">说明</div>
             </th>
@@ -12160,6 +12171,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <th data-colkey="operation" class="t-table__th-operation">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
+            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+              <div class="t-table__th-cell-inner">详情信息</div>
+            </th>
           </tr>
         </thead>
         <tbody class="t-table__body">
@@ -12168,52 +12182,63 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <td>共有</td>
             <td>String</td>
             <td>-</td>
-            <td>读取 0 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>是</td>
             <td><a class="link">删除</a></td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
+            </td>
           </tr>
           <tr>
             <td class="t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
-            <td>读取 1 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>否</td>
             <td><a class="link">删除</a></td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
+            </td>
           </tr>
           <tr>
             <td class="t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
-            <td>读取 2 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>否</td>
             <td><a class="link">删除</a></td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
+            </td>
           </tr>
           <tr>
             <td class="t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
-            <td>读取 3 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>否</td>
             <td><a class="link">删除</a></td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
+            </td>
           </tr>
           <tr>
             <td class="t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
-            <td>读取 4 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>是</td>
             <td><a class="link">删除</a></td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
+            </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -12785,6 +12810,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </tr>
           </thead>
           <tbody class="t-table__body"></tbody>
+          <!---->
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12831,6 +12857,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </tr>
           </thead>
           <tbody class="t-table__body"></tbody>
+          <!---->
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
@@ -12875,6 +12902,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
             </tr>
           </thead>
           <tbody class="t-table__body"></tbody>
+          <!---->
         </table>
       </div>
       <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
@@ -12958,6 +12986,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           <td>Number 类型</td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
 </div>
@@ -13082,6 +13111,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -13188,6 +13218,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               <td>peter</td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
     </div>
@@ -13282,6 +13313,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination">
@@ -13339,7 +13371,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
             <div class="t-table__th-cell-inner">性别</div>
           </th>
           <th data-colkey="phone" class="t-table__th-phone">
-            <div class="t-table__th-cell-inner"></div>
+            <div class="t-table__th-cell-inner">联系方式</div>
           </th>
           <th data-colkey="email" class="t-table__th-email">
             <div class="t-table__th-cell-inner">邮箱</div>
@@ -13353,6 +13385,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
           </td>
         </tr>
       </tbody>
+      <!---->
     </table>
   </div>
   <div class="t-table__pagination">
@@ -13471,6 +13504,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -13571,6 +13605,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -13652,6 +13687,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -13751,6 +13787,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             <td>peter</td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -13881,6 +13918,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination">
@@ -14034,6 +14072,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td>important.</td>
           </tr>
         </tbody>
+        <!---->
       </table>
     </div>
   </div>
@@ -14076,6 +14115,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
               </td>
             </tr>
           </tbody>
+          <!---->
         </table>
       </div>
     </div>

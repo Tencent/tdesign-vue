@@ -46,7 +46,7 @@ export default defineComponent({
     const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props, context);
     // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
-    const { renderTitleWidthIcon } = useTableHeader(props, context);
+    const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
