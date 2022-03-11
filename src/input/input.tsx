@@ -120,6 +120,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       if (classList.includes(INPUT_WRAP_CLASS)) {
         this.attrInputClass = classList.filter((item) => item !== INPUT_WRAP_CLASS);
       }
+      this.$el.setAttribute('class', INPUT_WRAP_CLASS);
     },
     addListenders() {
       this.$watch(

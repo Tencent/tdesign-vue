@@ -19,7 +19,7 @@ export function getNodeStatusClass(node: TreeNode, CLASSNAMES: any, cascaderCont
   const {
     checkStrictly, multiple, value, max,
   } = cascaderContext;
-  const expandedActive = !checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true);
+  const expandedActive = (!checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true)) || (checkStrictly && node.expanded);
 
   const isLeaf = node.isLeaf();
 

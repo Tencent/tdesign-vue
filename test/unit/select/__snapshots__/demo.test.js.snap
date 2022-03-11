@@ -342,7 +342,7 @@ exports[`Steps Steps creatable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -768,7 +768,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -815,7 +815,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -867,7 +867,7 @@ exports[`Steps Steps group demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -913,7 +913,7 @@ exports[`Steps Steps group demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -1672,7 +1672,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
@@ -1719,7 +1719,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap t-select__input"
+        class="t-input__wrap"
       >
         <div
           class="t-input t-size-m t-is-readonly"
