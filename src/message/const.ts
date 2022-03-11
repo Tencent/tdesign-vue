@@ -1,11 +1,4 @@
-export const THEME_LIST: string[] = [
-  'info',
-  'success',
-  'warning',
-  'error',
-  'question',
-  'loading',
-];
+export const THEME_LIST: string[] = ['info', 'success', 'warning', 'error', 'question', 'loading'];
 
 const DISTANCE = '32px';
 
@@ -34,6 +27,9 @@ export const PLACEMENT_OFFSET = {
     right: DISTANCE,
     top: '50%',
     transform: 'translateY(-50%)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   'top-left': {
     left: DISTANCE,
@@ -42,10 +38,16 @@ export const PLACEMENT_OFFSET = {
   'top-right': {
     right: DISTANCE,
     top: DISTANCE,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   'bottom-right': {
     right: DISTANCE,
     bottom: DISTANCE,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   'bottom-left': {
     left: DISTANCE,
