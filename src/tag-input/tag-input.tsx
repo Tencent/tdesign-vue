@@ -11,7 +11,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import useTagScroll from './useTagScroll';
 import useTagList from './useTagList';
 import useHover from './useHover';
-import useDefault from '../hooks/useDefaultValue';
+import useDefaultValue from '../hooks/useDefaultValue';
 
 // constants class
 const NAME_CLASS = `${prefix}-tag-input`;
@@ -25,11 +25,10 @@ export default defineComponent({
 
   setup(props: TdTagInputProps, context) {
     const { inputValue } = toRefs(props);
-    const [tInputValue, setTInputValue] = useDefault(
+    const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
       props.defaultInputValue,
       props.onInputChange,
-      context.emit,
       'inputValue',
       'input-change',
     );
@@ -49,10 +48,7 @@ export default defineComponent({
     // handle tag add and remove
     const {
       tagValue, onInnerEnter, onInputBackspaceKeyUp, clearAll, renderLabel, onClose,
-    } = useTagList(
-      props,
-      context,
-    );
+    } = useTagList(props);
 
     const classes = computed(() => [
       NAME_CLASS,

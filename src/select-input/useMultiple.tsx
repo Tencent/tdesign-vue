@@ -8,7 +8,7 @@ import { SelectInputCommonProperties } from './interface';
 import { InputValue } from '../input';
 import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
-import useDefault from '../hooks/useDefaultValue';
+import useDefaultValue from '../hooks/useDefaultValue';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
@@ -25,7 +25,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
   const { inputValue } = toRefs(props);
   const instance = getCurrentInstance();
   const tagInputRef = ref();
-  const [tInputValue, setTInputValue] = useDefault(
+  const [tInputValue, setTInputValue] = useDefaultValue(
     inputValue,
     props.defaultInputValue,
     props.onInputChange,

@@ -1,4 +1,4 @@
-import { Ref, ref, SetupContext } from '@vue/composition-api';
+import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
@@ -7,10 +7,10 @@ export default function useVModel<T, P extends any[]>(
   modelValue: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
-  // emit 和 eventName 用于支持 v-model 和 v-model:xxx 语法糖
-  emit?: SetupContext['emit'],
-  propsName?: string,
+  eventName?: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
+  const { emit } = getCurrentInstance();
+
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
 
@@ -21,7 +21,7 @@ export default function useVModel<T, P extends any[]>(
       (newValue, ...args) => {
         emit?.('input', newValue, ...args);
         onChange?.(newValue, ...args);
-        emit?.('change', newValue, ...args);
+        emit?.(eventName, newValue, ...args);
       },
     ];
   }
@@ -37,9 +37,7 @@ export default function useVModel<T, P extends any[]>(
     (newValue, ...args) => {
       internalValue.value = newValue;
       onChange?.(newValue, ...args);
-      emit?.('change', ...args);
-      emit?.(`update:${propsName}`, newValue);
-      emit?.('input', newValue);
+      emit?.(eventName, newValue, ...args);
     },
   ];
 }
