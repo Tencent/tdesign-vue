@@ -229,6 +229,7 @@ export type ResponseType = { error?: string; url?: string } & Record<string, any
 
 export interface FormatResponseContext {
   file: UploadFile;
+  currentFiles?: UploadFile[];
 }
 
 export interface RequestMethodResponse {
@@ -278,7 +279,6 @@ export interface UploadRemoveContext {
 export interface SuccessContext {
   e?: ProgressEvent;
   file?: UploadFile;
-  currentFiles?: UploadFile[];
   fileList?: UploadFile[];
   response: any;
 }
