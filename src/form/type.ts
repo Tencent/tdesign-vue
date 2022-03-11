@@ -69,7 +69,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   scrollToFirstError?: 'smooth' | 'auto';
   /**
-   * 校验不通过时，是否显示错误提示信息
+   * 校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性
    * @default true
    */
   showErrorMessage?: boolean;
@@ -120,7 +120,7 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
    */
   submit?: () => void;
   /**
-   * 校验函数，泛型 `FormData` 表示表单数据 TS 类型。【关于参数】params.fields 表示校验字段，如果设置了 fields ，本次校验将仅对这些字段进行校验。params.trigger 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
+   * 校验函数，泛型 `FormData` 表示表单数据 TS 类型。<br/>【关于参数】`params.fields` 表示校验字段，如果设置了 `fields`，本次校验将仅对这些字段进行校验。`params.trigger` 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
    */
   validate?: (params?: FormValidateParams) => FormValidateResult<FormData>;
 }
@@ -164,6 +164,10 @@ export interface TdFormItemProps {
    */
   rules?: Array<FormRule>;
   /**
+   * 校验不通过时，是否显示错误提示信息，优先级高于 `Form.showErrorMessage`
+   */
+  showErrorMessage?: boolean;
+  /**
    * 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。优先级高级 Form 的 statusIcon
    */
   statusIcon?: boolean | TNode;
@@ -172,11 +176,6 @@ export interface TdFormItemProps {
    * @default false
    */
   successBorder?: boolean;
-  /**
-   * 校验不通过时，是否显示错误提示信息，优先级高于 Form.showErrorMessage
-   * @default undefined
-   * */
-  showErrorMessage?: boolean;
 }
 
 export interface FormRule {
