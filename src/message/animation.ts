@@ -13,7 +13,7 @@ function fadeIn(dom: HTMLElement, placement: string) {
   if (!fadeInKeyframes) return;
   const styleAfterFadeIn = fadeInKeyframes[fadeInKeyframes.length - 1];
   setDomStyleAfterAnimation(dom, styleAfterFadeIn);
-  dom.animate(fadeInKeyframes, ANIMATION_OPTION);
+  dom?.animate(fadeInKeyframes, ANIMATION_OPTION);
 }
 
 function fadeOut(dom: HTMLElement, placement: string, onFinish: Function) {
@@ -24,7 +24,7 @@ function fadeOut(dom: HTMLElement, placement: string, onFinish: Function) {
   const styleAfterFadeOut = fadeOutKeyframes[fadeOutKeyframes.length - 1];
   setDomStyleAfterAnimation(dom, styleAfterFadeOut);
 
-  const animation = dom.animate(fadeOutKeyframes, ANIMATION_OPTION);
+  const animation = dom?.animate(fadeOutKeyframes, ANIMATION_OPTION);
   animation.onfinish = () => {
     // eslint-disable-next-line no-param-reassign
     dom.style.display = 'none';
