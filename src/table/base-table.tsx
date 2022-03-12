@@ -1,24 +1,32 @@
 import {
   computed, defineComponent, SetupContext, toRefs, ref, provide, nextTick,
 } from '@vue/composition-api';
+import pick from 'lodash/pick';
 import props from './base-table-props';
-// import pick from 'lodash/pick';
 import useTableHeader from './hooks/useTableHeader';
 import useTableBody from './hooks/useTableBody';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 import Loading from '../loading';
-// import TBody, { extendTableProps } from './tbody';
+import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
 import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
 import { Affix } from '../affix';
+import { ROW_LISTENERS } from './tr';
 import useCommonClassName from '../hooks/useCommonClassName';
 import THead from './thead';
 import TFoot from './tfoot';
+
+export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
+export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
+
+export interface TableListeners {
+  [key: string]: Function;
+}
 
 export default defineComponent({
   name: 'TBaseTable',
@@ -75,11 +83,11 @@ export default defineComponent({
 
     const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
 
-    const showRightDivider = computed(() => (
-      props.bordered
+    const showRightDivider = computed(
+      () => props.bordered
         && isFixedHeader.value
-        && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value)
-    ));
+        && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value),
+    );
 
     const onFixedChange = (val: number | false) => {
       if (val !== false) {
@@ -87,6 +95,17 @@ export default defineComponent({
           updateHeaderScroll();
         });
       }
+    };
+
+    // Vue3 do not need getListenser
+    const getListenser = () => {
+      const listenser: TableListeners = {};
+      BASE_TABLE_ALL_EVENTS.forEach((key) => {
+        listenser[key] = (...args: any) => {
+          context.emit(key, ...args);
+        };
+      });
+      return listenser;
     };
 
     const {
@@ -129,8 +148,6 @@ export default defineComponent({
       : onTableContentScroll;
 
     return {
-      // Vue2，组件之间的插槽透传，必须使用 context.slots，直接使用 this.$slots 无效
-      slots: context.slots,
       thList,
       isVirtual,
       global,
@@ -167,6 +184,7 @@ export default defineComponent({
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
+      getListenser,
       renderTableBody,
       onTableContentScroll,
       renderPagination,
@@ -229,15 +247,18 @@ export default defineComponent({
       data: this.isVirtual ? this.visibleData : data,
       columns: this.spansAndLeafNodes.leafColumns,
       tableElm: this.tableRef,
+      // 虚拟滚动相关属性
+      isVirtual: this.isVirtual,
       translateY: this.translateY,
       scrollType: this.scrollType,
-      isVirtual: this.isVirtual,
       rowHeight: this.rowHeight,
       trs: this.trs,
       bufferSize: this.bufferSize,
       handleRowMounted: this.handleRowMounted,
-      // ...pick(this.$props, extendTableProps),
+      ...pick(this.$props, extendTableProps),
     };
+    // Vue3 do not need getListenser
+    const on = this.getListenser();
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -262,10 +283,10 @@ export default defineComponent({
            * 保留 TBody 和 renderTableBody，探索两种写法性能差异，目前没发现明显差异。
            * 就 tbody 而言，差异甚小，绝对部分的数据变化都会涉及到内容重绘。暂时使用 renderTableBody，因为 TBody 要多一层监听，且 TBody 的虚拟滚动会出现空白
            * */}
-          {/* <TBody scopedSlots={this.$slots} props={tableBodyProps} /> */}
-          {this.renderTableBody(h, tableBodyProps)}
+          <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
+          {/* {this.renderTableBody(h, tableBodyProps)} */}
           <TFoot
-            scopedSlots={this.slots}
+            scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}
             footData={this.footData}

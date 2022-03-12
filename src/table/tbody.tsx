@@ -7,9 +7,7 @@ import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from './tr';
 import { TableConfig, useConfig } from '../config-provider/useConfig';
-import {
-  RowspanColspan, TdBaseTableProps, TableRowData, BaseTableCellParams,
-} from './type';
+import { RowspanColspan, TableRowData, BaseTableCellParams } from './type';
 import { BaseTableProps } from './interface';
 import { RowAndColFixedPosition } from './hooks/useFixed';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -125,10 +123,8 @@ export default defineComponent({
       // eslint-disable-next-line
       h: CreateElement,
       columnLength: number,
-      fullRow: TdBaseTableProps['firstFullRow'],
       type: 'first-full-row' | 'last-full-row',
     ) => {
-      if (!fullRow) return null;
       const fullRowNode = this.renderTNode(camelCase(type));
       if (['', null, undefined, false].includes(fullRowNode)) return null;
       const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[type]];
@@ -203,9 +199,9 @@ export default defineComponent({
     });
 
     const list = [
-      getFullRow(h, columnLength, this.firstFullRow, 'first-full-row'),
+      getFullRow(h, columnLength, 'first-full-row'),
       trNodeList,
-      getFullRow(h, columnLength, this.lastFullRow, 'last-full-row'),
+      getFullRow(h, columnLength, 'last-full-row'),
     ];
     const isEmpty = !this.data?.length && !this.loading;
 

@@ -244,10 +244,6 @@ export default defineComponent({
       }
     });
 
-    // onUpdated(() => {
-    //   console.log('tr updated', props.row.index);
-    // });
-
     return {
       tableColFixedClasses,
       tSlots: context.slots,
