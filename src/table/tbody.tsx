@@ -35,6 +35,7 @@ export interface TableBodyProps extends BaseTableProps {
 export const extendTableProps = [
   'rowKey',
   'loading',
+  'empty',
   'firstFullRow',
   'lastFullRow',
   'onCellClick',
@@ -125,9 +126,10 @@ export default defineComponent({
       columnLength: number,
       type: 'first-full-row' | 'last-full-row',
     ) => {
-      const fullRowNode = this.renderTNode(camelCase(type));
+      const tType = camelCase(type);
+      const fullRowNode = this.renderTNode(tType);
       if (['', null, undefined, false].includes(fullRowNode)) return null;
-      const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[type]];
+      const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[tType]];
       return (
         <tr class={classes}>
           <td colspan={columnLength}>{fullRowNode}</td>

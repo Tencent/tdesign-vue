@@ -75,8 +75,8 @@ export default function useClassName() {
     // 行通栏，一列铺满整行
     tableFullRowClasses: {
       base: `${prefix}-table__row--full`,
-      firstRow: `${prefix}-table__row-first-full-row`,
-      lastRow: `${prefix}-table__row-last-full-row`,
+      firstFullRow: `${prefix}-table__first-full-row`,
+      lastFullRow: `${prefix}-table__last-full-row`,
     },
 
     // 展开/收起行，全部类名
