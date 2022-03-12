@@ -57,10 +57,8 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     // eslint-disable-next-line
     h: CreateElement,
     columnLength: number,
-    fullRow: TdBaseTableProps['firstFullRow'],
     type: 'first-full-row' | 'last-full-row',
   ) => {
-    if (!fullRow) return null;
     const fullRowNode = renderTNode(camelCase(type));
     if (['', null, undefined, false].includes(fullRowNode)) return null;
     const classes = [tableFullRowClasses.base, tableFullRowClasses[type]];
@@ -158,9 +156,9 @@ export default function useTableBody(props: BaseTableProps, { emit, slots }: Set
     });
 
     const list = [
-      getFullRow(h, columnLength, props.firstFullRow, 'first-full-row'),
+      getFullRow(h, columnLength, 'first-full-row'),
       trNodeList,
-      getFullRow(h, columnLength, props.lastFullRow, 'last-full-row'),
+      getFullRow(h, columnLength, 'last-full-row'),
     ];
     const isEmpty = !data?.length && !props.loading;
 
