@@ -246,7 +246,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class="t-table__row--full"
+            class="t-table__row--full t-table__last-full-row"
           >
             <td
               colspan="3"
@@ -2297,7 +2297,9 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__empty"
               >
-                暂无数据
+                <span>
+                  😊 使用渲染函数自定义的空内容 😊
+                </span>
               </div>
             </td>
           </tr>
