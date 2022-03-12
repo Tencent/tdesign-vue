@@ -4,13 +4,14 @@ import {
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
-import PrimaryTable, { PrimaryTableListeners, BASE_TABLE_ALL_EVENTS, BASE_EVENTS } from './primary-table';
+import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
 import { TdEnhancedTableProps, PrimaryTableCol, TableRowData } from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
 
 const PRIMARY_B_EVENTS = [
   'change',
+  'page-change',
   'expand-change',
   'filter-change',
   'sort-change',
@@ -18,7 +19,7 @@ const PRIMARY_B_EVENTS = [
   'drag-sort',
   'async-loading-click',
 ];
-const NOT_ROW_EVENTS = BASE_EVENTS.concat(PRIMARY_B_EVENTS);
+
 const PRIMARY_ALL_EVENTS = BASE_TABLE_ALL_EVENTS.concat(PRIMARY_B_EVENTS);
 
 export default defineComponent({
@@ -76,9 +77,8 @@ export default defineComponent({
     getListenser(): PrimaryTableListeners {
       const listenser: PrimaryTableListeners = {};
       PRIMARY_ALL_EVENTS.forEach((key) => {
-        const name = NOT_ROW_EVENTS.includes(key) ? key : `row-${key}`;
-        listenser[name] = (...args: any) => {
-          this.$emit(name, ...args);
+        listenser[key] = (...args: any) => {
+          this.$emit(key, ...args);
         };
       });
       return listenser;

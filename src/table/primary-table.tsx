@@ -3,12 +3,11 @@ import {
 } from '@vue/composition-api';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
-import BaseTable from './base-table';
+import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
 import { useTNodeJSX } from '../hooks/tnode';
 import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
 import useTableHeader, { renderTitle } from './hooks/useTableHeader';
-import { ROW_LISTENERS } from './tr';
 import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
@@ -16,12 +15,7 @@ import useFilter from './hooks/useFilter';
 import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 
-export const BASE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
-export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.concat(BASE_EVENTS);
-
-export interface PrimaryTableListeners {
-  [key: string]: Function;
-}
+export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
 export default defineComponent({
   name: 'TPrimaryTable',
@@ -117,12 +111,11 @@ export default defineComponent({
 
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
-    getListenser(): PrimaryTableListeners {
-      const listenser: PrimaryTableListeners = {};
+    getListenser() {
+      const listenser: TableListeners = {};
       BASE_TABLE_ALL_EVENTS.forEach((key) => {
-        const name = BASE_EVENTS.includes(key) ? key : `row-${key}`;
-        listenser[name] = (...args: any) => {
-          this.$emit(name, ...args);
+        listenser[key] = (...args: any) => {
+          this.$emit(key, ...args);
         };
       });
       return listenser;
@@ -159,7 +152,7 @@ export default defineComponent({
     };
 
     // 事件，Vue3 do not need this.getListenser
-    const on: PrimaryTableListeners = {
+    const on: TableListeners = {
       ...this.getListenser(),
       'page-change': this.onInnerPageChange,
     };
