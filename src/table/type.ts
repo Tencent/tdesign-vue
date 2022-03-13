@@ -95,7 +95,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   pagination?: PaginationProps;
   /**
-   * HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，示例二：[{ draggable: true }, { title: '超出省略显示' }]
+   * HTML 标签 `tr` 的属性。类型为 Function 时，参数说明：`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=foot` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，<br />示例二：[{ draggable: true }, { title: '超出省略显示' }]。<br /> 示例三：() => [{ draggable: true }]
    */
   rowAttributes?: TableRowAttributes<T>;
   /**
@@ -159,11 +159,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
    * 行双击时触发，泛型 T 指表格数据类型
    */
-  onRowDbClick?: (context: RowEventContext<T>) => void;
-  /**
-   * 鼠标悬浮到行时触发，泛型 T 指表格数据类型
-   */
-  onRowHover?: (context: RowEventContext<T>) => void;
+  onRowDblclick?: (context: RowEventContext<T>) => void;
   /**
    * 鼠标在表格行按下时触发，泛型 T 指表格数据类型
    */
@@ -176,6 +172,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * 鼠标在表格行离开时触发，泛型 T 指表格数据类型
    */
   onRowMouseleave?: (context: RowEventContext<T>) => void;
+  /**
+   * 鼠标悬浮到行时触发，泛型 T 指表格数据类型
+   */
+  onRowMouseover?: (context: RowEventContext<T>) => void;
   /**
    * 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型
    */

@@ -295,7 +295,7 @@ export default defineComponent({
     const customLoadingText = this.renderTNode('loading');
     const loadingContent = this.loading ? (
       <Loading
-        loading={!!this.loading}
+        loading={!!(this.loading || customLoadingText)}
         text={customLoadingText ? () => customLoadingText : undefined}
         props={this.loadingProps}
         showOverlay
@@ -306,9 +306,10 @@ export default defineComponent({
       tableContent
     );
 
+    const topContent = this.renderTNode('topContent');
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
-        {this.renderTNode('topContent')}
+        {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
 
         {!!(this.isVirtual || this.headerAffixedTop)
           && (this.headerAffixedTop ? (

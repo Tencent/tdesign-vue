@@ -125,14 +125,17 @@ export default defineComponent({
       if (!condition) return this[api];
       const innerNode = renderInnerNode(h);
       const propsNode = this.renderTNode(api);
-      return innerNode || propsNode
-        ? () => (
-            <div>
-              {innerNode}
-              {propsNode}
-            </div>
-        )
-        : null;
+      if (innerNode && !propsNode) return () => innerNode;
+      if (propsNode && !innerNode) return () => propsNode;
+      if (innerNode && propsNode) {
+        return () => (
+          <div>
+            {innerNode}
+            {propsNode}
+          </div>
+        );
+      }
+      return null;
     },
   },
 

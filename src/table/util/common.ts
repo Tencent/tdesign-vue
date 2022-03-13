@@ -37,7 +37,7 @@ export function formatRowAttributes(attributes: TdBaseTableProps['rowAttributes'
     const attrItem = attrList[i];
     if (!attrItem) continue;
     const attrProperty = isFunction(attrItem) ? attrItem(params) : attrItem;
-    result = Object.assign(result, attrProperty);
+    result = attrProperty instanceof Array ? formatRowAttributes(attrProperty, params) : Object.assign(result, attrProperty);
   }
   return result;
 }

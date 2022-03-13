@@ -50,6 +50,124 @@ TABLES.forEach((TTable) => {
       });
     });
 
+    // 测试边框
+    describe(':props.rowAttributes', () => {
+      it('props.rowAttributes could be an object', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                rowKey="index"
+                rowAttributes={{ 'data-level': 'level-1' }}
+                data={data}
+                columns={SIMPLE_COLUMNS}
+              ></TTable>
+            );
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+      });
+
+      it('props.rowAttributes could be an Array<object>', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+
+      it('props.rowAttributes could be a function', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = () => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+
+      it('props.rowAttributes could be a Array<Function>', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = [() => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+    });
+
+    describe(':props.rowClassName', () => {
+      it('props.rowClassName could be a string', () => {
+        const rowClassName = 'tdesign-class';
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes(rowClassName)).toBeTruthy();
+      });
+
+      it('props.rowClassName could be an object ', () => {
+        const rowClassName = {
+          'tdesign-class': true,
+          'tdesign-class-next': false,
+        };
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+
+      it('props.rowClassName could be an Array ', () => {
+        const rowClassName = [
+          'tdesign-class-default',
+          {
+            'tdesign-class': true,
+            'tdesign-class-next': false,
+          },
+        ];
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class-default')).toBe(true);
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+
+      it('props.rowClassName could be a function ', () => {
+        const rowClassName = () => ({
+          'tdesign-class': true,
+          'tdesign-class-next': false,
+        });
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+    });
+
     // 测试空数据
     describe(':props.empty', () => {
       it('empty default value is 暂无数据', () => {
@@ -128,6 +246,7 @@ TABLES.forEach((TTable) => {
         });
         expect(wrapper.find('.t-table__row--full').exists()).toBeTruthy();
       });
+
       it('props.firstFullRow works fine as a function', () => {
         const wrapper = mount({
           render() {
@@ -144,6 +263,7 @@ TABLES.forEach((TTable) => {
         expect(wrapper.find('.t-table__row--full').exists()).toBeTruthy();
         expect(wrapper.find('.t-table__first-full-row').exists()).toBeTruthy();
       });
+
       // 支持插槽驼峰
       it('slots.firstFullRow works fine', () => {
         const wrapper = mount({
@@ -161,6 +281,7 @@ TABLES.forEach((TTable) => {
         expect(wrapper.find('.t-table__row--full').exists()).toBeTruthy();
         expect(wrapper.find('.t-table__first-full-row').exists()).toBeTruthy();
       });
+
       // 支持插槽中划线
       it('slots[first-full-row] works fine', () => {
         const wrapper = mount({
@@ -249,9 +370,197 @@ TABLES.forEach((TTable) => {
       });
     });
 
-    // describe(':props.loading', () => {
-    //   it('props.loading = true', () => {
-    //   });
-    // });
+    describe(':props.loading', () => {
+      it('props.loading = true works fine', () => {
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} loading={true}></TTable>;
+          },
+        });
+        expect(wrapper.find('.t-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-icon-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').exists()).toBeFalsy();
+      });
+
+      it('props.loading works fine as a function', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} loading={() => 'function loading'}></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-icon-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').text()).toBe('function loading');
+      });
+
+      it('props.loading hide loading icon with `loadingProps`', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                rowKey="index"
+                data={data}
+                columns={SIMPLE_COLUMNS}
+                loading={() => 'function loading'}
+                loadingProps={{ indicator: false }}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-icon-loading').exists()).toBeFalsy();
+        expect(wrapper.find('.t-loading__text').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').text()).toBe('function loading');
+      });
+
+      it('slots.loading works fine', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                loading={true}
+                rowKey="index"
+                data={[]}
+                columns={SIMPLE_COLUMNS}
+                scopedSlots={{ loading: () => <span>slots loading</span> }}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-icon-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').text()).toBe('slots loading');
+      });
+
+      it('slots.loading hide indicator(loading icon) with `loadingProps`', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                loading={true}
+                loadingProps={{ indicator: false }}
+                rowKey="index"
+                data={[]}
+                columns={SIMPLE_COLUMNS}
+                scopedSlots={{ loading: () => <span>slots loading</span> }}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-loading').exists()).toBeTruthy();
+        expect(wrapper.find('.t-icon-loading').exists()).toBeFalsy();
+        expect(wrapper.find('.t-loading__text').exists()).toBeTruthy();
+        expect(wrapper.find('.t-loading__text').text()).toBe('slots loading');
+      });
+    });
+
+    describe(':props.verticalAlign', () => {
+      it('props.verticalAlign default value is middle, do not need t-vertical-align-middle', () => {
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} verticalAlign="middle"></TTable>;
+          },
+        });
+        // 垂直居中对齐不需要 t-vertical-align-middle
+        expect(wrapper.classes('t-vertical-align-middle')).toBeFalsy();
+      });
+
+      it('props.verticalAlign = bottom', () => {
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} verticalAlign="bottom"></TTable>;
+          },
+        });
+        expect(wrapper.classes('t-vertical-align-bottom')).toBe(true);
+      });
+      it('props.verticalAlign = top', () => {
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} verticalAlign="top"></TTable>;
+          },
+        });
+        expect(wrapper.classes('t-vertical-align-top')).toBe(true);
+      });
+      it('props.verticalAlign = middle, do not need t-vertical-align-middle', () => {
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" data={data} columns={SIMPLE_COLUMNS} verticalAlign="middle"></TTable>;
+          },
+        });
+        // 垂直居中对齐不需要 t-vertical-align-middle
+        expect(wrapper.classes('t-vertical-align-middle')).toBeFalsy();
+      });
+    });
+
+    describe(':props.topContent', () => {
+      it('props.topContent could be a string', () => {
+        const topContentText = 'This is top content';
+        const wrapper = mount({
+          render() {
+            return <TTable topContent={topContentText} rowKey="index" data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        expect(wrapper.find('.t-table__top-content').exists()).toBeTruthy();
+        expect(wrapper.find('.t-table__top-content').text()).toBe(topContentText);
+      });
+
+      it('props.topContent could be a function', () => {
+        const topContentText = 'This is top content';
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                topContent={() => <span>{topContentText}</span>}
+                rowKey="index"
+                data={data}
+                columns={SIMPLE_COLUMNS}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-table__top-content').exists()).toBeTruthy();
+        expect(wrapper.find('.t-table__top-content').text()).toBe(topContentText);
+      });
+
+      it('slots.topContent works fine', () => {
+        const topContentText = 'This is top content';
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                scopedSlots={{ topContent: () => <span>{topContentText}</span> }}
+                rowKey="index"
+                data={data}
+                columns={SIMPLE_COLUMNS}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-table__top-content').exists()).toBeTruthy();
+        expect(wrapper.find('.t-table__top-content').text()).toBe(topContentText);
+      });
+
+      it('slots.top-content works fine', () => {
+        const topContentText = 'This is top content';
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                scopedSlots={{ 'top-content': () => <span>{topContentText}</span> }}
+                rowKey="index"
+                data={data}
+                columns={SIMPLE_COLUMNS}
+              ></TTable>
+            );
+          },
+        });
+        expect(wrapper.find('.t-table__top-content').exists()).toBeTruthy();
+        expect(wrapper.find('.t-table__top-content').text()).toBe(topContentText);
+      });
+    });
   });
 });

@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <!-- <div>默认加载状态</div> -->
     <t-table :data="data" :columns="columns" :rowKey="rowKey" :size="size" :loading="true" height="150"></t-table>
 
     <!-- loading-props 用于透传全部加载组件特性，以便实现更多自定义内容-->
+    <!-- loadingProps.indicator=false 隐藏加载图标 -->
     <t-table
       :data="[]"
       :columns="columns"
@@ -16,6 +16,7 @@
       <div slot="loading" class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
     </t-table>
 
+    <!-- loadingProps.indicator=false 隐藏加载图标 -->
     <t-table
       :data="[]"
       :columns="columns"

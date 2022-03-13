@@ -6,8 +6,7 @@ import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
-
-// 固定表头，固定列，固定行，不麻烦。但是加上多级表头，你试试，加上合并单元格，你再试试。
+import { on, off } from '../../utils/dom';
 
 export interface ColumnStickyLeftAndRight {
   left: number[];
@@ -423,7 +422,19 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   watch(
-    [data, columns, bordered, tableLayout, tableContentWidth, isFixedHeader, fixedRows, firstFullRow, lastFullRow],
+    [
+      data,
+      columns,
+      bordered,
+      tableLayout,
+      tableContentWidth,
+      isFixedHeader,
+      isWidthOverflow,
+      isFixedColumn,
+      fixedRows,
+      firstFullRow,
+      lastFullRow,
+    ],
     updateFixedStatus,
     { immediate: true },
   );
@@ -440,34 +451,36 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   );
 
   watch([headerAffixedTop], () => {
-    document.addEventListener('scroll', onDocumentScroll);
+    if (headerAffixedTop) {
+      on(document, 'scroll', onDocumentScroll);
+    } else {
+      off(document, 'scroll', onDocumentScroll);
+    }
   });
+
+  const onResize = () => {
+    if (!notNeedThWidthList.value) {
+      setThWidthListHander();
+    }
+    if (isFixedColumn.value || isFixedHeader.value) {
+      updateFixedStatus();
+      updateColumnFixedShadow(tableContentRef.value);
+    }
+  };
 
   onMounted(() => {
     scrollbarWidth.value = getScrollbarWidth();
-    if (notNeedThWidthList.value) return;
-    const tWindow = window as any;
-    if (tWindow.attachEvent) {
-      tWindow.attachEvent('onresize', setThWidthListHander);
-    } else if (window.addEventListener) {
-      window.addEventListener('resize', setThWidthListHander, true);
-    } else {
-      log.warn('table', 'The browser does not support Javascript event binding');
+    if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
+      on(window, 'resize', onResize);
     }
   });
 
   onUnmounted(() => {
-    if (notNeedThWidthList.value) return;
-    const tWindow = window as any;
-    if (tWindow.detachEvent) {
-      tWindow.detachEvent('onresize', setThWidthListHander);
-    } else if (window.removeEventListener) {
-      window.removeEventListener('resize', setThWidthListHander, true);
-    } else {
-      log.warn('table', 'The browser does not support Javascript event binding');
+    if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
+      off(window, 'resize', onResize);
     }
     if (props.headerAffixedTop) {
-      document.removeEventListener('scroll', onDocumentScroll);
+      off(document, 'scroll', onDocumentScroll);
     }
   });
 
