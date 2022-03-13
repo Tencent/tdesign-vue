@@ -738,12 +738,32 @@ exports[`Table Table customCellVue demo works fine 1`] = `
             <td
               class=""
             >
-              any[]
+               自定义插槽名称：any[] 
             </td>
             <td
               class=""
             >
-              公有
+              <svg
+                class="t-icon t-icon-attach"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M12.13 3.86a2.02 2.02 0 00-2.85 0l-7.2 7.21-.71-.7 7.2-7.21a3.02 3.02 0 114.27 4.26L7 13.26a1.88 1.88 0 01-2.66-2.66L10 4.93l.71.7-5.67 5.68a.88.88 0 101.25 1.25l5.84-5.84c.79-.8.78-2.08-.01-2.86z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              <a
+                class="link"
+                href="#"
+              >
+                公有
+              </a>
+              （插槽自定义单元格）
+    
             </td>
             <td
               class=""
@@ -764,12 +784,32 @@ exports[`Table Table customCellVue demo works fine 1`] = `
             <td
               class=""
             >
-              String
+               自定义插槽名称：String 
             </td>
             <td
               class=""
             >
-              公有
+              <svg
+                class="t-icon t-icon-attach"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M12.13 3.86a2.02 2.02 0 00-2.85 0l-7.2 7.21-.71-.7 7.2-7.21a3.02 3.02 0 114.27 4.26L7 13.26a1.88 1.88 0 01-2.66-2.66L10 4.93l.71.7-5.67 5.68a.88.88 0 101.25 1.25l5.84-5.84c.79-.8.78-2.08-.01-2.86z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              <a
+                class="link"
+                href="#"
+              >
+                公有
+              </a>
+              （插槽自定义单元格）
+    
             </td>
             <td
               class=""
@@ -1215,7 +1255,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
           class="t-table__body"
         >
           <tr
-            class=""
+            class="t-tdesign__custom-body-tr"
           >
             <td
               class="row t-align-center"
@@ -1253,7 +1293,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-tdesign__custom-body-tr"
           >
             <td
               class="row t-align-center"
@@ -1291,7 +1331,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-tdesign__custom-body-tr"
           >
             <td
               class="row t-align-center"
@@ -1398,7 +1438,20 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              title-slot-name
+              <svg
+                class="t-icon t-icon-app"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+               类型 
             </div>
           </th>
           <th
@@ -1704,7 +1757,13 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                0
+                <p
+                  class="status"
+                >
+                  
+            健康
+          
+                </p>
               </td>
               <td
                 class=""
@@ -1728,7 +1787,13 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <p
+                  class="status warning"
+                >
+                  
+            警告
+          
+                </p>
               </td>
               <td
                 class=""
@@ -1752,7 +1817,13 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                2
+                <p
+                  class="status unhealth"
+                >
+                  
+            异常
+          
+                </p>
               </td>
               <td
                 class=""
@@ -1776,7 +1847,13 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <p
+                  class="status warning"
+                >
+                  
+            警告
+          
+                </p>
               </td>
               <td
                 class=""
@@ -1889,7 +1966,13 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                0
+                <p
+                  class="status"
+                >
+                  
+          健康
+        
+                </p>
               </td>
               <td
                 class=""
@@ -1913,7 +1996,13 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <p
+                  class="status warning"
+                >
+                  
+          警告
+        
+                </p>
               </td>
               <td
                 class=""
@@ -1937,7 +2026,13 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                2
+                <p
+                  class="status unhealth"
+                >
+                  
+          异常
+        
+                </p>
               </td>
               <td
                 class=""
@@ -1961,7 +2056,13 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <p
+                  class="status warning"
+                >
+                  
+          警告
+        
+                </p>
               </td>
               <td
                 class=""
@@ -2479,7 +2580,9 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                op-column
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -2524,7 +2627,13 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -2538,7 +2647,19 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -2577,7 +2698,13 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -2591,7 +2718,19 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -2600,7 +2739,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box t-table__row--collapsed"
+                class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -2630,7 +2769,13 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -2644,7 +2789,74 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="t-table__expanded-row"
+          >
+            <td
+              class="t-table__row--full"
+              colspan="6"
+            >
+              <div
+                class="t-table__expanded-row-inner"
+              >
+                <div
+                  class="more-detail"
+                >
+                  <p
+                    class="title"
+                  >
+                    <b>
+                      集群名称:
+                    </b>
+                  </p>
+                  <p
+                    class="content"
+                  >
+                    JQTest3
+                  </p>
+                  <br />
+                  <p
+                    class="title"
+                  >
+                    <b>
+                      管理员:
+                    </b>
+                  </p>
+                  <p
+                    class="content"
+                  >
+                    jenny;peter
+                  </p>
+                  <br />
+                  <p
+                    class="title"
+                  >
+                    <b>
+                      描述:
+                    </b>
+                  </p>
+                  <p
+                    class="content"
+                  >
+                    test
+                  </p>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr
             class=""
@@ -2683,7 +2895,13 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -2697,7 +2915,19 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -2736,7 +2966,13 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -2750,7 +2986,19 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
         </tbody>
         <!---->
@@ -3468,7 +3716,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -3514,7 +3768,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -3560,7 +3820,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -3606,7 +3872,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -3652,7 +3924,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -3910,7 +4188,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -3952,7 +4236,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -3994,7 +4284,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4036,7 +4332,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4078,7 +4380,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4120,7 +4428,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4162,7 +4476,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4204,7 +4524,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4246,7 +4572,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4288,7 +4620,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4330,7 +4668,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4372,7 +4716,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4414,7 +4764,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4456,7 +4812,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4498,7 +4860,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4540,7 +4908,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4582,7 +4956,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4624,7 +5004,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4666,7 +5052,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -4708,7 +5100,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
         </tbody>
         <tfoot
@@ -10955,9 +11353,6 @@ exports[`Table Table loadingVue demo works fine 1`] = `
             />
           </foreignobject>
         </svg>
-        <div
-          class="t-loading__text"
-        />
       </div>
     </div>
   </div>
@@ -12235,7 +12630,15 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                0
+                <p
+                  class="status"
+                >
+                  健康
+                </p>
+                 
+                <!---->
+                 
+                <!---->
               </td>
               <td
                 class=""
@@ -12259,7 +12662,15 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <!---->
+                 
+                <p
+                  class="status warning"
+                >
+                  警告
+                </p>
+                 
+                <!---->
               </td>
               <td
                 class=""
@@ -12283,7 +12694,15 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                2
+                <!---->
+                 
+                <!---->
+                 
+                <p
+                  class="status unhealth"
+                >
+                  异常
+                </p>
               </td>
               <td
                 class=""
@@ -12307,7 +12726,15 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                1
+                <!---->
+                 
+                <p
+                  class="status warning"
+                >
+                  警告
+                </p>
+                 
+                <!---->
               </td>
               <td
                 class=""
@@ -13074,7 +13501,9 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                op-column
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -13112,7 +13541,13 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13126,7 +13561,19 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13159,7 +13606,13 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13173,7 +13626,19 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13205,7 +13670,13 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13219,7 +13690,19 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13252,7 +13735,13 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13266,7 +13755,19 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13298,7 +13799,13 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13312,7 +13819,19 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
         </tbody>
         <!---->
@@ -13409,7 +13928,9 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                op-column
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -13448,7 +13969,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13462,10 +13989,22 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
-            class=""
+            class="t-table__row--disabled"
           >
             <td
               class="demo-single-select-cell"
@@ -13496,7 +14035,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13510,7 +14055,19 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13543,7 +14100,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13557,10 +14120,22 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
-            class=""
+            class="t-table__row--disabled"
           >
             <td
               class="demo-single-select-cell"
@@ -13591,7 +14166,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13605,7 +14186,19 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13638,7 +14231,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13652,7 +14251,19 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
         </tbody>
         <!---->
@@ -13739,7 +14350,9 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                op-column
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -13758,7 +14371,13 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13772,7 +14391,19 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13785,7 +14416,13 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13799,7 +14436,19 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13812,7 +14461,13 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -13826,7 +14481,19 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
           <tr
             class=""
@@ -13839,7 +14506,13 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -13853,7 +14526,19 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
             </td>
             <td
               class=""
-            />
+            >
+              <a
+                class="link"
+              >
+                管理
+              </a>
+               
+              <a
+                class="link"
+              >
+                删除
+              </a>
+            </td>
           </tr>
         </tbody>
         <!---->
@@ -14068,7 +14753,15 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              <p
+                class="status"
+              >
+                健康
+              </p>
+               
+              <!---->
+               
+              <!---->
             </td>
             <td
               class=""
@@ -14092,7 +14785,15 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status warning"
+              >
+                警告
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""
@@ -14116,7 +14817,15 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              2
+              <!---->
+               
+              <!---->
+               
+              <p
+                class="status unhealth"
+              >
+                异常
+              </p>
             </td>
             <td
               class=""
@@ -14140,7 +14849,15 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              1
+              <!---->
+               
+              <p
+                class="status warning"
+              >
+                警告
+              </p>
+               
+              <!---->
             </td>
             <td
               class=""

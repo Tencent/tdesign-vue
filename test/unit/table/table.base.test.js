@@ -17,10 +17,10 @@ const SIMPLE_COLUMNS = [
   { title: 'Instance', colKey: 'instance' },
 ];
 
-const tables = [Table, BaseTable, PrimaryTable, EnhancedTable];
+const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
 
-// 每一个表格组件都需要单独测试，避免出现组件之间属性或事件透传不成功的情况
-tables.forEach((TTable) => {
+// 每一种表格组件都需要单独测试，避免出现组件之间属性或事件透传不成功的情况
+TABLES.forEach((TTable) => {
   describe(TTable.name, () => {
     // 测试边框
     describe(':props.bordered', () => {
@@ -248,5 +248,10 @@ tables.forEach((TTable) => {
         expect(wrapper.find('.t-table__last-full-row').exists()).toBeTruthy();
       });
     });
+
+    // describe(':props.loading', () => {
+    //   it('props.loading = true', () => {
+    //   });
+    // });
   });
 });

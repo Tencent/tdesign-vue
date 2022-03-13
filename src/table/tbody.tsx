@@ -34,6 +34,7 @@ export interface TableBodyProps extends BaseTableProps {
 // table 到 body 的相同属性
 export const extendTableProps = [
   'rowKey',
+  'rowClassName',
   'loading',
   'empty',
   'firstFullRow',
@@ -189,7 +190,12 @@ export default defineComponent({
 
       // replace scopedSlots of slots in Vue3
       const trNode = (
-        <TrElement scopedSlots={this.$slots} key={get(row, this.rowKey || 'id')} on={on} props={trProps}></TrElement>
+        <TrElement
+          scopedSlots={this.$scopedSlots}
+          key={get(row, this.rowKey || 'id')}
+          on={on}
+          props={trProps}
+        ></TrElement>
       );
       trNodeList.push(trNode);
 

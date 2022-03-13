@@ -221,6 +221,7 @@ export default defineComponent({
           {colgroup}
           {
             <THead
+              scopedSlots={this.$scopedSlots}
               isFixedHeader={this.isFixedHeader}
               rowAndColFixedPosition={this.rowAndColFixedPosition}
               isMultipleHeader={this.isMultipleHeader}
@@ -255,6 +256,7 @@ export default defineComponent({
       trs: this.trs,
       bufferSize: this.bufferSize,
       handleRowMounted: this.handleRowMounted,
+      renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
     };
     // Vue3 do not need getListenser
@@ -271,7 +273,7 @@ export default defineComponent({
         <table ref="tableElmRef" class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
           <THead
-            scopedSlots={this.slots}
+            scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={this.rowAndColFixedPosition}
             isMultipleHeader={this.isMultipleHeader}
