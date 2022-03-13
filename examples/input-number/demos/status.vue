@@ -60,6 +60,8 @@ export default {
 
 .t-input-number {
   width: 300px;
-  margin-bottom: 0px;
+}
+.tdesign-demo-item--input-number .t-input-number {
+  margin-bottom: 16px;
 }
 </style>

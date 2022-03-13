@@ -12,7 +12,7 @@ export interface TdInputNumberProps {
    */
   align?: 'left' | 'center' | 'right';
   /**
-   * 【开发中】宽度随内容自适应
+   * 宽度随内容自适应
    * @default false
    */
   autoWidth?: boolean;
