@@ -106,10 +106,11 @@ export default {
       // 对于受控属性而言，这里的赋值很重要，不可缺少
       this.sort = sort;
       this.request(sort);
+      console.log('sort-change', sort);
     },
     // 排序、分页、过滤等发生变化时会出发 change 事件
     onChange(info, context) {
-      console.log(info, context);
+      console.log('change', info, context);
     },
     // 非受控用法，不需要传递 sort 给 Table 组件，因而此处无需执行 this.sort = sort 进行赋值
     defaultSortChange(sort) {

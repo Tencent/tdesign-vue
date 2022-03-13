@@ -140,13 +140,14 @@ export default {
   methods: {
     // filters 参数包含自定义过滤组件 日期选择器 的值
     onFilterChange(filters) {
+      console.log('filter-change', filters);
       this.filterValue = filters;
       // 模拟异步请求进行数据过滤
       this.request(this.filterValue);
     },
     // 筛选、分页、排序等功能发生变化时，均会出发 change 事件
     onChange(info, context) {
-      console.log(info, context);
+      console.log('change', info, context, '筛选、分页、排序等功能发生变化均会触发');
     },
     setFilters() {
       this.filterValue = {};

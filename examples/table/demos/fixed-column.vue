@@ -95,13 +95,13 @@ export default {
           colKey: 'needed',
           title: '是否必传',
           width: 150,
-          fixed: this.rightFixedColumn >= 2 ? 'right' : undefined,
         },
         {
           colKey: 'operation',
           title: '操作',
           width: 100,
           cell: 'operation',
+          fixed: this.rightFixedColumn >= 2 ? 'right' : undefined,
         },
         {
           colKey: 'detail.postion',
