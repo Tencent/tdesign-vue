@@ -11472,9 +11472,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
           <div
             class="t-table--loading-message"
           >
-            
-      😊 这里使用插槽自定义加载状态 😊
-    
+            😊 这里使用插槽自定义加载状态 😊
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ export type TrPropsKeys =
   | 'onCellClick'
   | 'onRowClick'
   | 'onRowDblclick'
-  | 'onRowHover'
+  | 'onRowMouseover'
   | 'onRowMousedown'
   | 'onRowMouseenter'
   | 'onRowMouseleave'
@@ -67,7 +67,7 @@ export const TABLE_PROPS: TrPropsKeys[] = [
   'onCellClick',
   'onRowClick',
   'onRowDblclick',
-  'onRowHover',
+  'onRowMouseover',
   'onRowMousedown',
   'onRowMouseenter',
   'onRowMouseleave',

@@ -73,9 +73,9 @@ export default {
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },
-  /** HTML 标签 `tr` 的属性。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=body` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，示例二：[{ draggable: true }, { title: '超出省略显示' }] */
+  /** HTML 标签 `tr` 的属性。类型为 Function 时，参数说明：`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=foot` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，<br />示例二：[{ draggable: true }, { title: '超出省略显示' }]。<br /> 示例三：() => [{ draggable: true }] */
   rowAttributes: {
-    type: [Object, Array] as PropType<TdBaseTableProps['rowAttributes']>,
+    type: [Object, Array, Function] as PropType<TdBaseTableProps['rowAttributes']>,
   },
   /** 行类名，泛型 T 指表格数据类型。`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body`  表示类名作用于 `tbody` 中的元素；`params.type=body` 表示类名作用于 `tfoot` 中的元素 */
   rowClassName: {
@@ -141,14 +141,14 @@ export default {
   onRowClick: Function as PropType<TdBaseTableProps['onRowClick']>,
   /** 行双击时触发，泛型 T 指表格数据类型 */
   onRowDblclick: Function as PropType<TdBaseTableProps['onRowDblclick']>,
-  /** 鼠标悬浮到行时触发，泛型 T 指表格数据类型 */
-  onRowHover: Function as PropType<TdBaseTableProps['onRowHover']>,
   /** 鼠标在表格行按下时触发，泛型 T 指表格数据类型 */
   onRowMousedown: Function as PropType<TdBaseTableProps['onRowMousedown']>,
   /** 鼠标在表格行进入时触发，泛型 T 指表格数据类型 */
   onRowMouseenter: Function as PropType<TdBaseTableProps['onRowMouseenter']>,
   /** 鼠标在表格行离开时触发，泛型 T 指表格数据类型 */
   onRowMouseleave: Function as PropType<TdBaseTableProps['onRowMouseleave']>,
+  /** 鼠标悬浮到行时触发，泛型 T 指表格数据类型 */
+  onRowMouseover: Function as PropType<TdBaseTableProps['onRowMouseover']>,
   /** 鼠标在表格行按下又弹起时触发，泛型 T 指表格数据类型 */
   onRowMouseup: Function as PropType<TdBaseTableProps['onRowMouseup']>,
   /** 表格内容滚动时触发 */

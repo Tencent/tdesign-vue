@@ -50,6 +50,124 @@ TABLES.forEach((TTable) => {
       });
     });
 
+    // 测试边框
+    describe(':props.rowAttributes', () => {
+      it('props.rowAttributes could be an object', () => {
+        const wrapper = mount({
+          render() {
+            return (
+              <TTable
+                rowKey="index"
+                rowAttributes={{ 'data-level': 'level-1' }}
+                data={data}
+                columns={SIMPLE_COLUMNS}
+              ></TTable>
+            );
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+      });
+
+      it('props.rowAttributes could be an Array<object>', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+
+      it('props.rowAttributes could be a function', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = () => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+
+      it('props.rowAttributes could be a Array<Function>', () => {
+        const wrapper = mount({
+          render() {
+            const rowAttrs = [() => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]];
+            return <TTable rowKey="index" rowAttributes={rowAttrs} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.attributes('data-level')).toBe('level-1');
+        expect(trWrapper.attributes('data-name')).toBe('tdesign');
+      });
+    });
+
+    describe(':props.rowClassName', () => {
+      it('props.rowClassName could be a string', () => {
+        const rowClassName = 'tdesign-class';
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes(rowClassName)).toBeTruthy();
+      });
+
+      it('props.rowClassName could be an object ', () => {
+        const rowClassName = {
+          'tdesign-class': true,
+          'tdesign-class-next': false,
+        };
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+
+      it('props.rowClassName could be an Array ', () => {
+        const rowClassName = [
+          'tdesign-class-default',
+          {
+            'tdesign-class': true,
+            'tdesign-class-next': false,
+          },
+        ];
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class-default')).toBe(true);
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+
+      it('props.rowClassName could be a function ', () => {
+        const rowClassName = () => ({
+          'tdesign-class': true,
+          'tdesign-class-next': false,
+        });
+        const wrapper = mount({
+          render() {
+            return <TTable rowKey="index" rowClassName={rowClassName} data={data} columns={SIMPLE_COLUMNS}></TTable>;
+          },
+        });
+        const trWrapper = wrapper.find('tbody').find('tr');
+        expect(trWrapper.classes('tdesign-class')).toBe(true);
+        expect(trWrapper.classes('tdesign-class-next')).toBe(false);
+      });
+    });
+
     // 测试空数据
     describe(':props.empty', () => {
       it('empty default value is 暂无数据', () => {

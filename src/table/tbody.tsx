@@ -35,6 +35,7 @@ export interface TableBodyProps extends BaseTableProps {
 export const extendTableProps = [
   'rowKey',
   'rowClassName',
+  'rowAttributes',
   'loading',
   'empty',
   'firstFullRow',
@@ -43,7 +44,7 @@ export const extendTableProps = [
   'onPageChange',
   'onRowClick',
   'onRowDblclick',
-  'onRowHover',
+  'onRowMouseover',
   'onRowMousedown',
   'onRowMouseenter',
   'onRowMouseleave',
