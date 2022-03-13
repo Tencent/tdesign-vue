@@ -141,7 +141,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   // eslint-disable-next-line
   const renderColumnController = (h: CreateElement) => {
     return (
-      <div class={`${prefix}-table__top-content`}>
+      <div class={`${prefix}-table__column-controller`}>
         <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
           <SettingIcon slot="icon" />
           列配置

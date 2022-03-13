@@ -42,7 +42,7 @@ export const extendTableProps = [
   'onCellClick',
   'onPageChange',
   'onRowClick',
-  'onRowDbClick',
+  'onRowDblclick',
   'onRowHover',
   'onRowMousedown',
   'onRowMouseenter',

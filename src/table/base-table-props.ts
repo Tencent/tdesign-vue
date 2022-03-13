@@ -140,7 +140,7 @@ export default {
   /** 行点击时触发，泛型 T 指表格数据类型 */
   onRowClick: Function as PropType<TdBaseTableProps['onRowClick']>,
   /** 行双击时触发，泛型 T 指表格数据类型 */
-  onRowDbClick: Function as PropType<TdBaseTableProps['onRowDbClick']>,
+  onRowDblclick: Function as PropType<TdBaseTableProps['onRowDblclick']>,
   /** 鼠标悬浮到行时触发，泛型 T 指表格数据类型 */
   onRowHover: Function as PropType<TdBaseTableProps['onRowHover']>,
   /** 鼠标在表格行按下时触发，泛型 T 指表格数据类型 */

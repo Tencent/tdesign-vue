@@ -47,7 +47,7 @@ export type TrPropsKeys =
   | 'rowspanAndColspan'
   | 'onCellClick'
   | 'onRowClick'
-  | 'onRowDbClick'
+  | 'onRowDblclick'
   | 'onRowHover'
   | 'onRowMousedown'
   | 'onRowMouseenter'
@@ -66,7 +66,7 @@ export const TABLE_PROPS: TrPropsKeys[] = [
   'rowspanAndColspan',
   'onCellClick',
   'onRowClick',
-  'onRowDbClick',
+  'onRowDblclick',
   'onRowHover',
   'onRowMousedown',
   'onRowMouseenter',
@@ -90,7 +90,7 @@ export interface TrProps extends TrCommonProps {
   tableElm: HTMLDivElement;
 }
 
-export const ROW_LISTENERS = ['click', 'dbclick', 'hover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
+export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
 
 export function renderCell(params: BaseTableCellParams<TableRowData>, slots: SetupContext['slots']) {
   const { col, row } = params;

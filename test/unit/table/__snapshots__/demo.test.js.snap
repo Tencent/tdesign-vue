@@ -251,38 +251,36 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
             <td
               colspan="3"
             >
-              <div>
+              <div
+                class="t-table__async-loading t-is-loading"
+              >
                 <div
-                  class="t-table__async-loading t-is-loading"
+                  class="t-loading--center t-size-m t-loading"
                 >
-                  <div
-                    class="t-loading--center t-size-m t-loading"
+                  <svg
+                    class="t-loading__gradient t-icon-loading"
+                    height="1em"
+                    size="medium"
+                    version="1.1"
+                    viewBox="0 0 14 14"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      class="t-loading__gradient t-icon-loading"
-                      height="1em"
-                      size="medium"
-                      version="1.1"
-                      viewBox="0 0 14 14"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <foreignobject
+                      height="12"
+                      width="12"
+                      x="1"
+                      y="1"
                     >
-                      <foreignobject
-                        height="12"
-                        width="12"
-                        x="1"
-                        y="1"
-                      >
-                        <div
-                          class="t-loading__gradient-conic"
-                        />
-                      </foreignobject>
-                    </svg>
-                    <div
-                      class="t-loading__text"
-                    >
-                      正在加载中，请稍后
-                    </div>
+                      <div
+                        class="t-loading__gradient-conic"
+                      />
+                    </foreignobject>
+                  </svg>
+                  <div
+                    class="t-loading__text"
+                  >
+                    正在加载中，请稍后
                   </div>
                 </div>
               </div>
@@ -840,9 +838,11 @@ exports[`Table Table customColVue demo works fine 1`] = `
     class="t-table t-size-m t-table--bordered t-table--striped"
     style="position: relative;"
   >
-    <div>
+    <div
+      class="t-table__top-content"
+    >
       <div
-        class="t-table__top-content"
+        class="t-table__column-controller"
       >
         <button
           class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -11472,7 +11472,9 @@ exports[`Table Table loadingVue demo works fine 1`] = `
           <div
             class="t-table--loading-message"
           >
-            😊 这里使用插槽自定义加载状态 😊
+            
+      😊 这里使用插槽自定义加载状态 😊
+    
           </div>
         </div>
       </div>
@@ -12010,9 +12012,11 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
     class="t-table t-size-m t-table--bordered t-table--multiple-header"
     style="position: relative;"
   >
-    <div>
+    <div
+      class="t-table__top-content"
+    >
       <div
-        class="t-table__top-content"
+        class="t-table__column-controller"
       >
         <button
           class="t-button t-size-m t-button--variant-outline t-button--theme-default"

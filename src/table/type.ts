@@ -159,7 +159,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
    * 行双击时触发，泛型 T 指表格数据类型
    */
-  onRowDbClick?: (context: RowEventContext<T>) => void;
+  onRowDblclick?: (context: RowEventContext<T>) => void;
   /**
    * 鼠标悬浮到行时触发，泛型 T 指表格数据类型
    */
