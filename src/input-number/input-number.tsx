@@ -165,7 +165,7 @@ export default Vue.extend({
           unselectable: this.readonly ? 'on' : 'off',
           tips: this.tips,
           autoWidth: this.autoWidth,
-          align: this.align || 'center',
+          align: this.align || (this.theme === 'row' ? 'center' : undefined),
           status: this.isError ? 'error' : this.status,
         },
       };
@@ -188,11 +188,11 @@ export default Vue.extend({
       return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
-      if (this.disabledAdd) return;
+      if (this.disabledAdd || this.readonly) return;
       this.handleAction(this.getClickValue('add'), 'add', e);
     },
     handleReduce(e: MouseEvent) {
-      if (this.disabledReduce) return;
+      if (this.disabledReduce || this.readonly) return;
       this.handleAction(this.getClickValue('reduce'), 'reduce', e);
     },
     getClickValue(op: string) {
@@ -345,7 +345,7 @@ export default Vue.extend({
     toDecimalPlaces(value: number): number {
       const decimalPlaces = this.decimalPlaces === undefined ? this.digitsNum : this.decimalPlaces;
       const factor = 10 ** decimalPlaces;
-      return Math.round(value * factor) / factor;
+      return Math.round(value) / factor;
     },
   },
   watch: {
