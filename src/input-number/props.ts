@@ -16,7 +16,7 @@ export default {
       return ['left', 'center', 'right'].includes(val);
     },
   },
-  /** 【开发中】宽度随内容自适应 */
+  /** 宽度随内容自适应 */
   autoWidth: Boolean,
   /** [小数位数](https://en.wiktionary.org/wiki/decimal_place) */
   decimalPlaces: {
