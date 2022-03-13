@@ -272,7 +272,7 @@ exports[`InputNumber left demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m"
         ref="refInputElem"
       >
         <input
