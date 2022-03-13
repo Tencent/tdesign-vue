@@ -11386,7 +11386,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             <td>Croson</td>
             <td>zcroson5@virginia.edu</td>
           </tr>
-          <tr class="t-table__row--full">
+          <tr class="t-table__row--full t-table__last-full-row">
             <td colspan="3">
               <div>
                 <div class="t-table__async-loading t-is-loading">
@@ -12170,7 +12170,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -12179,6 +12179,20 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td>jenny;peter</td>
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
+          </tr>
+          <tr class="t-table__expanded-row">
+            <td colspan="6" class="t-table__row--full">
+              <div class="t-table__expanded-row-inner">
+                <div class="more-detail">
+                  <p class="title"><b>集群名称:</b></p>
+                  <p class="content">JQTest3</p><br>
+                  <p class="title"><b>管理员:</b></p>
+                  <p class="content">jenny;peter</p><br>
+                  <p class="title"><b>描述:</b></p>
+                  <p class="content">test</p>
+                </div>
+              </div>
+            </td>
           </tr>
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
@@ -13022,9 +13036,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
           <foreignObject x="1" y="1" width="12" height="12">
             <div class="t-loading__gradient-conic"></div>
           </foreignObject>
-        </svg>
-        <div class="t-loading__text"></div>
-      </div>
+        </svg></div>
     </div>
   </div>
   <div class="t-table t-size-s" style="position:relative;">
@@ -13159,16 +13171,20 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
           <td>公有</td>
           <td>Array&lt;any&gt;</td>
           <td>[]</td>
-          <td colspan="2">Y</td>
+          <td>Y</td>
+          <td>数据源</td>
         </tr>
         <tr>
           <td>私有</td>
-          <td rowspan="2" colspan="2">String/&quot;&quot;</td>
+          <td>String/&quot;&quot;</td>
+          <td>&quot;&quot;</td>
           <td>Y</td>
           <td>描述</td>
         </tr>
         <tr>
           <td>私有</td>
+          <td>Object / {}</td>
+          <td>{}</td>
           <td>Y</td>
           <td>复杂类型</td>
         </tr>
@@ -13182,12 +13198,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
         <tr>
           <td>公有</td>
           <td>Number</td>
-          <td rowspan="2" colspan="2" class="t-table__td-last-row">-1 / N</td>
+          <td>-1 / N</td>
+          <td>Y</td>
           <td>位置</td>
         </tr>
         <tr>
           <td>私有</td>
           <td>Number</td>
+          <td>-1</td>
+          <td>N</td>
           <td>Number 类型</td>
         </tr>
       </tbody>

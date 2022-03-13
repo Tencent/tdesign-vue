@@ -238,10 +238,6 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 列最小宽度
-   */
-  minWidth?: string | number;
-  /**
    * 自定义表头或单元格，泛型 T 指表格数据类型
    */
   render?: TNode<BaseTableRenderParams<T>>;

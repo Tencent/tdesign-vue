@@ -76,7 +76,6 @@ colKey | String | - | 渲染列所需字段 | N
 ellipsis | Boolean / Object / Slot / Function | false | 内容超出时，是否显示省略号。值为 `true`，则浮层默认显示单元格内容；值类型为 `Function` 则自定义浮层显示内容；值类型为 `Object`，则自动透传属性到 Popup 组件。TS 类型：`boolean | TNode<BaseTableCellParams<T>> | PopupProps`，[Popup API Documents](./popup?tab=api)。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 fixed | String | left | 固定列显示位置。可选项：left/right | N
 foot | String / Function | - | 自定义表尾表尾。值类型为 Function 表示以函数形式渲染表尾内容。值类型为 string 表示使用插槽渲染，插槽名称为 `foot` 值。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-minWidth | String / Number | - | 列最小宽度 | N
 render | Function | - | 自定义表头或单元格，泛型 T 指表格数据类型。TS 类型：`TNode<BaseTableRenderParams<T>>` `interface BaseTableRenderParams<T> extends BaseTableCellParams<T> { type: RenderType }` `type RenderType = 'cell' | 'title'`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 title | String / Function | - | 自定义表头渲染。值类型为 Function 表示以函数形式渲染表头。值类型为 string 表示使用插槽渲染，插槽名称为 title 的值。优先级高于 render。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 width | String / Number | - | 列宽 | N

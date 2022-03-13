@@ -17,6 +17,7 @@
 
     <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
 
+    <!-- :defaultExpandedRowKeys="defaultExpandedRowKeys" -->
     <t-table
       row-key="id"
       :columns="columns"
@@ -87,8 +88,8 @@ export default {
       columns,
       data,
       // 有哪些 data.id 在 expandedRowKeys 中，就显示这些 id 对应的行
-      expandedRowKeys: ['2'],
-      // defaultExpandedRowKeys: ['2', 4],
+      expandedRowKeys: [102],
+      // defaultExpandedRowKeys: [102, 104],
       expandedRow: (h, { row }) => (
         <div class="more-detail">
           <p class="title">

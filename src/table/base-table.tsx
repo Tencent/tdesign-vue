@@ -4,7 +4,6 @@ import {
 import pick from 'lodash/pick';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
-import useTableBody from './hooks/useTableBody';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScroll';
@@ -68,7 +67,6 @@ export default defineComponent({
       updateHeaderScroll,
     } = useFixed(props, context);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
-    const { renderTableBody } = useTableBody(props, context);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     const dynamicBaseTableClasses = computed(() => [
@@ -185,7 +183,6 @@ export default defineComponent({
       isMultipleHeader,
       showRightDivider,
       getListenser,
-      renderTableBody,
       onTableContentScroll,
       renderPagination,
       renderTNode,
@@ -221,6 +218,7 @@ export default defineComponent({
           {colgroup}
           {
             <THead
+              scopedSlots={this.$scopedSlots}
               isFixedHeader={this.isFixedHeader}
               rowAndColFixedPosition={this.rowAndColFixedPosition}
               isMultipleHeader={this.isMultipleHeader}
@@ -255,6 +253,7 @@ export default defineComponent({
       trs: this.trs,
       bufferSize: this.bufferSize,
       handleRowMounted: this.handleRowMounted,
+      renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
     };
     // Vue3 do not need getListenser
@@ -271,7 +270,7 @@ export default defineComponent({
         <table ref="tableElmRef" class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
           {colgroup}
           <THead
-            scopedSlots={this.slots}
+            scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={this.rowAndColFixedPosition}
             isMultipleHeader={this.isMultipleHeader}
@@ -279,12 +278,7 @@ export default defineComponent({
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
           />
-          {/* replace scopedSlots of slots in Vue3
-           * 保留 TBody 和 renderTableBody，探索两种写法性能差异，目前没发现明显差异。
-           * 就 tbody 而言，差异甚小，绝对部分的数据变化都会涉及到内容重绘。暂时使用 renderTableBody，因为 TBody 要多一层监听，且 TBody 的虚拟滚动会出现空白
-           * */}
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
-          {/* {this.renderTableBody(h, tableBodyProps)} */}
           <TFoot
             scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}

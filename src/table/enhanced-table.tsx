@@ -8,6 +8,7 @@ import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
 import { TdEnhancedTableProps, PrimaryTableCol, TableRowData } from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
+import { TableListeners } from './base-table';
 
 const PRIMARY_B_EVENTS = [
   'change',
@@ -74,8 +75,8 @@ export default defineComponent({
 
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
-    getListenser(): PrimaryTableListeners {
-      const listenser: PrimaryTableListeners = {};
+    getListenser() {
+      const listenser: TableListeners = {};
       PRIMARY_ALL_EVENTS.forEach((key) => {
         listenser[key] = (...args: any) => {
           this.$emit(key, ...args);
@@ -94,7 +95,7 @@ export default defineComponent({
       disableDataPage: Boolean(this.tree && Object.keys(this.tree).length),
     };
     // 事件，Vue3 do not need this.getListenser
-    const on: PrimaryTableListeners = {
+    const on: TableListeners = {
       ...this.getListenser(),
       'select-change': this.onInnerSelectChange,
     };

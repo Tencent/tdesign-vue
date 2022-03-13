@@ -34,7 +34,9 @@ export interface TableBodyProps extends BaseTableProps {
 // table 到 body 的相同属性
 export const extendTableProps = [
   'rowKey',
+  'rowClassName',
   'loading',
+  'empty',
   'firstFullRow',
   'lastFullRow',
   'onCellClick',
@@ -125,9 +127,10 @@ export default defineComponent({
       columnLength: number,
       type: 'first-full-row' | 'last-full-row',
     ) => {
-      const fullRowNode = this.renderTNode(camelCase(type));
+      const tType = camelCase(type);
+      const fullRowNode = this.renderTNode(tType);
       if (['', null, undefined, false].includes(fullRowNode)) return null;
-      const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[type]];
+      const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[tType]];
       return (
         <tr class={classes}>
           <td colspan={columnLength}>{fullRowNode}</td>
@@ -187,7 +190,12 @@ export default defineComponent({
 
       // replace scopedSlots of slots in Vue3
       const trNode = (
-        <TrElement scopedSlots={this.$slots} key={get(row, this.rowKey || 'id')} on={on} props={trProps}></TrElement>
+        <TrElement
+          scopedSlots={this.$scopedSlots}
+          key={get(row, this.rowKey || 'id')}
+          on={on}
+          props={trProps}
+        ></TrElement>
       );
       trNodeList.push(trNode);
 

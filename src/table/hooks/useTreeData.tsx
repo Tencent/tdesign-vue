@@ -33,8 +33,11 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     ([val]) => {
       if (!val) return [];
       // 如果没有树形解构，则不需要相关逻辑
-      if (!props.tree || !Object.keys(props.tree).length) return val;
-      const newVal = [...cloneDeep(val)];
+      if (!props.tree || !Object.keys(props.tree).length) {
+        dataSource.value = val;
+        return;
+      }
+      const newVal = cloneDeep(val);
       dataSource.value = newVal;
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
     },

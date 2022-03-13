@@ -14,11 +14,13 @@ export interface JSXRenderContext {
   silent?: boolean;
 }
 
-export function isVNode(p: any) {
-  return typeof p === 'object' && p?.context?.$root;
-}
-
 export type OptionsType = VNode | JSXRenderContext | string;
+
+const isVNode = (obj: OptionsType) => {
+  const vNode = h('span', '');
+  const VNode = vNode.constructor;
+  return obj instanceof VNode;
+};
 
 export function getDefaultNode(options?: OptionsType) {
   let defaultNode;

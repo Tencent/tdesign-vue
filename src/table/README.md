@@ -23,8 +23,6 @@
 - hooks/useRowSelect 行选中，PrimaryTable
 - hooks/useSorter 排序，PrimaryTable
 - hooks/useStyle 基础样式，BaseTable
-- hooks/useTableBody 表内容，BaseTable
-- hooks/useTableFooter 表尾，BaseTable
 - hooks/useTableHeader 表头，BaseTable
 - hooks/useTreeData 树形结构，EnhancedTable
 - hooks/useTreeSelect 树形选择，EnhancedTable

@@ -6,7 +6,6 @@
     <!-- 使用插槽自定义的空内容 -->
 
     <t-table :data="[]" :columns="columns" :rowKey="rowKey">
-      <!-- <template slot="empty"> -->
       <template #empty>
         <span>😊 使用插槽自定义的空内容 😊</span>
       </template>
