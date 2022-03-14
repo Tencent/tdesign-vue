@@ -4,7 +4,7 @@ import {
 import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
-import TableTreeStore from '../enhanced-table/tree-store';
+import TableTreeStore from './tree-store';
 import {
   TdEnhancedTableProps,
   PrimaryTableCol,
