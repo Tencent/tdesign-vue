@@ -12,34 +12,38 @@ exports[`DatePicker base demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择日期"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择日期"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-calendar"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -57,34 +61,38 @@ exports[`DatePicker datePresets demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择日期"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择日期"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-calendar"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -104,34 +112,38 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
         class="t-form-controls t-date-picker__popup-reference"
       >
         <div
-          allowinput="0"
-          class="t-input t-size-m t-is-readonly t-input--suffix"
+          class="t-input__wrap"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请选择日期"
-            readonly="readonly"
-            type="text"
-            unselectable="on"
-          />
-          <span
-            class="t-input__suffix t-input__suffix-icon"
+          <div
+            allowinput="0"
+            class="t-input t-size-m t-is-readonly t-input--suffix"
           >
-            <svg
-              class="t-icon t-icon-calendar"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请选择日期"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
             >
-              <path
-                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -146,6 +158,59 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
     >
       <div
         class="t-form-controls t-date-picker__popup-reference"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            allowinput="0"
+            class="t-input t-size-m t-is-readonly t-input--suffix"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请选择日期"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DatePicker datePresetsTime demo works fine 1`] = `
+<div
+  class="tdesign-demo-item--datepicker"
+>
+  <div
+    class="t-date-picker t-size-m"
+  >
+    <div
+      class="t-form-controls t-date-picker__popup-reference"
+    >
+      <div
+        class="t-input__wrap"
       >
         <div
           allowinput="0"
@@ -183,51 +248,6 @@ exports[`DatePicker datePresetsAlt demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker datePresetsTime demo works fine 1`] = `
-<div
-  class="tdesign-demo-item--datepicker"
->
-  <div
-    class="t-date-picker t-size-m"
-  >
-    <div
-      class="t-form-controls t-date-picker__popup-reference"
-    >
-      <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择日期"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
-        >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`DatePicker dateRange demo works fine 1`] = `
 <div
   class="tdesign-demo-item--datepicker"
@@ -239,34 +259,38 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="开始时间 至 结束时间"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="开始时间 至 结束时间"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-calendar"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -283,39 +307,43 @@ exports[`DatePicker dateRange demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择日期"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-time"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择日期"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-            <path
-              d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-time"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+              <path
+                d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -333,34 +361,38 @@ exports[`DatePicker month demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择月份"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择月份"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-calendar"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -378,34 +410,38 @@ exports[`DatePicker year demo works fine 1`] = `
       class="t-form-controls t-date-picker__popup-reference"
     >
       <div
-        allowinput="0"
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input__wrap"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择年份"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          allowinput="0"
+          class="t-input t-size-m t-is-readonly t-input--suffix"
         >
-          <svg
-            class="t-icon t-icon-calendar"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择年份"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
           >
-            <path
-              d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <svg
+              class="t-icon t-icon-calendar"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>

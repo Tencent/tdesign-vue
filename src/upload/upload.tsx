@@ -163,7 +163,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return this.multiple && this.uploadAllFilesInOneRequest;
     },
     canBatchUpload(): boolean {
-      return this.uploadInOneRequest && this.batchUpload;
+      return this.uploadInOneRequest && this.isBatchUpload;
     },
     uploadListTriggerText(): string {
       let uploadText = '选择文件';

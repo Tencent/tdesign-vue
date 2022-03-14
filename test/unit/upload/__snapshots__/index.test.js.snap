@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Upload :props :batchUpload 1`] = `
+exports[`Upload :props :isBatchUpload 1`] = `
 <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
   <div class="t-upload__single t-upload__single-file">
     <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-upload">
