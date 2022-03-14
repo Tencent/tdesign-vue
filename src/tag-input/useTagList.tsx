@@ -1,4 +1,4 @@
-import { ref, SetupContext, toRefs } from '@vue/composition-api';
+import { ref, toRefs } from '@vue/composition-api';
 import { TagInputValue, TdTagInputProps, TagInputChangeContext } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
@@ -9,21 +9,14 @@ import { useTNodeJSX } from '../hooks/tnode';
 export type ChangeParams = [TagInputChangeContext];
 
 // handle tag add and remove
-export default function useTagList(props: TdTagInputProps, context: SetupContext) {
+export default function useTagList(props: TdTagInputProps) {
   const renderTNode = useTNodeJSX();
   const {
     value, onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
   } = toRefs(props);
 
   // handle controlled property and uncontrolled property
-  const [tagValue, setTagValue] = useVModel(
-    value,
-    value,
-    props.defaultValue || [],
-    props.onChange,
-    context.emit,
-    'value',
-  );
+  const [tagValue, setTagValue] = useVModel(value, props.defaultValue || [], props.onChange, 'change');
   // const { onChange } = props;
   const oldInputValue = ref<InputValue>();
 

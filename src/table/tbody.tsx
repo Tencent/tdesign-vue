@@ -20,6 +20,8 @@ export interface TableBodyProps extends BaseTableProps {
   rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
   tableElm: HTMLDivElement;
+  tableWidth: number;
+  isWidthOverflow: boolean;
 
   // 以下内容为虚拟滚动所需参数
   translateY: number;
@@ -63,6 +65,8 @@ export default defineComponent({
     rowAndColFixedPosition: Map as PropType<TableBodyProps['rowAndColFixedPosition']>,
     showColumnShadow: Object as PropType<TableBodyProps['showColumnShadow']>,
     tableElm: HTMLDivElement as PropType<TableBodyProps['tableElm']>,
+    tableWidth: Number,
+    isWidthOverflow: Boolean,
     // 以下内容为虚拟滚动所需参数
     translateY: Number,
     scrollType: String,
@@ -114,9 +118,14 @@ export default defineComponent({
     // eslint-disable-next-line
     const renderEmpty = (h: CreateElement, columns: TableBodyProps['columns']) => {
       return (
-        <tr class={this.tableBaseClass.emptyRow}>
+        <tr class={[this.tableBaseClass.emptyRow, { [this.tableFullRowClasses.base]: this.isWidthOverflow }]}>
           <td colspan={columns.length}>
-            <div class={this.tableBaseClass.empty}>{this.renderTNode('empty') || this.t(this.global.empty)}</div>
+            <div
+              class={[this.tableBaseClass.empty, { [this.tableFullRowClasses.innerFullRow]: this.isWidthOverflow }]}
+              style={this.isWidthOverflow ? { width: `${this.tableWidth}px` } : {}}
+            >
+              {this.renderTNode('empty') || this.t(this.global.empty)}
+            </div>
           </td>
         </tr>
       );
@@ -131,10 +140,19 @@ export default defineComponent({
       const tType = camelCase(type);
       const fullRowNode = this.renderTNode(tType);
       if (['', null, undefined, false].includes(fullRowNode)) return null;
+      const isFixedToLeft = this.isWidthOverflow && this.columns.find((col) => col.fixed === 'left');
       const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[tType]];
+      /** innerFullRow 和 innerFullElement 同时存在，是为了保证 固定列时，当前行不随内容进行横向滚动 */
       return (
         <tr class={classes}>
-          <td colspan={columnLength}>{fullRowNode}</td>
+          <td colspan={columnLength}>
+            <div
+              class={{ [this.tableFullRowClasses.innerFullRow]: isFixedToLeft }}
+              style={isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
+            >
+              <div class={{ [this.tableFullRowClasses.innerFullElement]: isFixedToLeft }}>{fullRowNode}</div>
+            </div>
+          </td>
         </tr>
       );
     };
@@ -202,7 +220,14 @@ export default defineComponent({
 
       // 执行展开行渲染
       if (this.renderExpandedRow) {
-        const expandedContent = this.renderExpandedRow(h, { row, index: rowIndex, columns: this.columns });
+        const p = {
+          row,
+          index: rowIndex,
+          columns: this.columns,
+          tableWidth: this.tableContentWidth,
+          isWidthOverflow: this.isWidthOverflow,
+        };
+        const expandedContent = this.renderExpandedRow(h, p);
         expandedContent && trNodeList.push(expandedContent);
       }
     });

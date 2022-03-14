@@ -398,7 +398,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
     thWidthList.value = widthMap;
     const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = rect.width - scrollbarWidth.value - 1;
+    tableWidth.value = rect.width - scrollbarWidth.value - (props.bordered ? 1 : 0);
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -469,7 +469,13 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   onMounted(() => {
-    scrollbarWidth.value = getScrollbarWidth();
+    const scrollWidth = getScrollbarWidth();
+    scrollbarWidth.value = scrollWidth;
+    const timer = setTimeout(() => {
+      const rect = tableContentRef.value.getBoundingClientRect();
+      tableWidth.value = rect.width - scrollWidth - (props.bordered ? 1 : 0);
+      clearTimeout(timer);
+    });
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       on(window, 'resize', onResize);
     }
