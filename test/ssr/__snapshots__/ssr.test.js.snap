@@ -11366,7 +11366,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
             <td>Croson</td>
             <td>zcroson5@virginia.edu</td>
           </tr>
-          <tr class="t-table__row--full">
+          <tr class="t-table__row--full t-table__last-full-row">
             <td colspan="3">
               <div>
                 <div>
@@ -13362,8 +13362,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="field7" class="t-table__th-field7">
               <div class="t-table__th-cell-inner">字段7</div>
             </th>
-            <th data-colkey="field8" class="t-table__th-field8">
-              <div class="t-table__th-cell-inner">字段8</div>
+            <th data-colkey="text" class="t-table__th-text">
+              <div class="t-table__th-cell-inner">描述</div>
             </th>
           </tr>
         </thead>

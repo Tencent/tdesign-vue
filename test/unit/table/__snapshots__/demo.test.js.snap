@@ -12666,13 +12666,13 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-field8"
-              data-colkey="field8"
+              class="t-table__th-text"
+              data-colkey="text"
             >
               <div
                 class="t-table__th-cell-inner"
               >
-                字段8
+                描述
               </div>
             </th>
           </tr>

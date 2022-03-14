@@ -55,6 +55,7 @@ for (let i = 0; i < 600; i++) {
     field6: '字段6',
     field7: '字段7',
     field8: '字段8',
+    text: '这是一段很长很长很长的文本',
   });
 }
 
@@ -176,9 +177,10 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               width: 100,
             },
             {
-              colKey: 'field8',
-              title: '字段8',
+              colKey: 'text',
+              title: '描述',
               fixed: fixedRightCol && 'right',
+              ellipsis: true,
               width: 100,
             },
           ],

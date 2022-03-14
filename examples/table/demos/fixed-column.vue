@@ -82,6 +82,7 @@ export default {
           colKey: 'type',
           title: '类型',
           width: 150,
+          // fixed: 'left',
         },
         {
           colKey: 'default',
@@ -97,6 +98,7 @@ export default {
           colKey: 'needed',
           title: '是否必传',
           width: 150,
+          // fixed: 'right',
         },
         {
           colKey: 'operation',
