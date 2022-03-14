@@ -163,6 +163,10 @@ export default defineComponent({
           this.onBlur?.(this.tagValue, { e: context.e, inputValue });
           this.$emit('blur', this.tagValue, { e: context.e, inputValue });
         }}
+        onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
+          this.onPaste?.(context);
+          this.$emit('paste', context);
+        }}
       />
     );
   },

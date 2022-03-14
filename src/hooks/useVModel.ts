@@ -7,7 +7,7 @@ export default function useVModel<T, P extends any[]>(
   modelValue: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
-  eventName?: string,
+  eventName: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
   const { emit } = getCurrentInstance();
 

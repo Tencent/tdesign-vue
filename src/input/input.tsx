@@ -217,7 +217,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
-      if (this.tDisabled) return;
+      if (this.tDisabled || this.readonly) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
