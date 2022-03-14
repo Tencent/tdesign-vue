@@ -8,7 +8,7 @@ docClass: timeline
 ## 0.37.0 `2022-03-14`
 
 ### BREAKING CHANGES
-* Input: `DOM` 结构调整，最外层调整为 `t-input-warp`，有覆盖过 Input 相关组件样式的同学请注意，[common pr #276](https://github.com/Tencent/tdesign-common/pull/276)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Input: `DOM` 结构调整，最外层调整为 `t-input-wrap`，有覆盖过 Input 相关组件样式的同学请注意，[common pr #276](https://github.com/Tencent/tdesign-common/pull/276)，[@pengYYYYY](https://github.com/pengYYYYY)
 ### Bug Fixes
 
 * Select:
