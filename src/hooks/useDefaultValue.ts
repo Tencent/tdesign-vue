@@ -20,9 +20,9 @@ export default function useDefaultValue<T, P extends any[]>(
     return [
       value,
       (newValue, ...args) => {
-        emit?.(`update:${propsName}`, newValue, ...args);
+        emit(`update:${propsName}`, newValue, ...args);
         onChange?.(newValue, ...args);
-        emit?.(eventName, newValue, ...args);
+        emit(eventName, newValue, ...args);
       },
     ];
   }
@@ -32,7 +32,7 @@ export default function useDefaultValue<T, P extends any[]>(
     internalValue,
     (newValue, ...args) => {
       internalValue.value = newValue;
-      emit?.(eventName, newValue, ...args);
+      emit(eventName, newValue, ...args);
       onChange?.(newValue, ...args);
     },
   ];

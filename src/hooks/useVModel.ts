@@ -4,31 +4,29 @@ export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
 export default function useVModel<T, P extends any[]>(
   value: Ref<T>,
-  modelValue: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
-  eventName: string,
+  // eventName 不是 input 时，需要单独传入 eventName 用于事件输出
+  eventName?: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
   const { emit } = getCurrentInstance();
 
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
 
-  // 受控模式:modelValue
-  if (typeof modelValue.value !== 'undefined') {
-    return [
-      modelValue,
-      (newValue, ...args) => {
-        emit?.('input', newValue, ...args);
-        onChange?.(newValue, ...args);
-        emit?.(eventName, newValue, ...args);
-      },
-    ];
-  }
-
   // 受控模式
   if (typeof value.value !== 'undefined') {
-    return [value, onChange || (() => {})];
+    return [
+      value,
+      (newValue, ...args) => {
+        // input 事件为 v-model 语法糖
+        emit?.('input', newValue, ...args);
+        onChange?.(newValue, ...args);
+        if (eventName && eventName !== 'input') {
+          emit?.(eventName, newValue, ...args);
+        }
+      },
+    ];
   }
 
   // 非受控模式
@@ -37,7 +35,9 @@ export default function useVModel<T, P extends any[]>(
     (newValue, ...args) => {
       internalValue.value = newValue;
       onChange?.(newValue, ...args);
-      emit?.(eventName, newValue, ...args);
+      if (eventName && eventName !== 'input') {
+        emit?.(eventName, newValue, ...args);
+      }
     },
   ];
 }

@@ -16,7 +16,7 @@ export default function useTagList(props: TdTagInputProps) {
   } = toRefs(props);
 
   // handle controlled property and uncontrolled property
-  const [tagValue, setTagValue] = useVModel(value, value, props.defaultValue || [], props.onChange, 'change');
+  const [tagValue, setTagValue] = useVModel(value, props.defaultValue || [], props.onChange, 'change');
   // const { onChange } = props;
   const oldInputValue = ref<InputValue>();
 
