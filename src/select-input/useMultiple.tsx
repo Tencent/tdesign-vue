@@ -29,7 +29,6 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     inputValue,
     props.defaultInputValue,
     props.onInputChange,
-    context.emit,
     'inputValue',
     'input-change',
   );
