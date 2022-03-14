@@ -5,7 +5,7 @@ import get from 'lodash/get';
 import {
   TdEnhancedTableProps, TdPrimaryTableProps, TableRowData, PrimaryTableCol,
 } from '../type';
-import TableTreeStore, { KeysType, TableTreeDataMap } from '../enhanced-table/tree-store';
+import TableTreeStore, { KeysType, TableTreeDataMap } from './tree-store';
 import useDefault from '../../hooks/useDefaultValue';
 
 export const childreMap = new Map();

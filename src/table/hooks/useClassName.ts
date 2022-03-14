@@ -42,7 +42,6 @@ export default function useClassName() {
       footer: `${prefix}-table__footer`,
       fixed: `${prefix}-table__footer--fixed`,
     },
-    // 多级表头类名
 
     tableAlignClasses: {
       top: `${prefix}-vertical-align-top`,

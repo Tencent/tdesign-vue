@@ -87,12 +87,10 @@ export default defineComponent({
         && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value),
     );
 
-    const onFixedChange = (val: number | false) => {
-      if (val !== false) {
-        nextTick(() => {
-          updateHeaderScroll();
-        });
-      }
+    const onFixedChange = () => {
+      nextTick(() => {
+        updateHeaderScroll();
+      });
     };
 
     // Vue3 do not need getListenser

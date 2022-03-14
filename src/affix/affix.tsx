@@ -23,11 +23,6 @@ export default (Vue as VueConstructor<Affix>).extend({
       oldWidthHeight: { width: '0px', height: '0px' },
     };
   },
-  computed: {
-    isFixed(): boolean {
-      return this.fixedTop !== false;
-    },
-  },
   watch: {
     offsetTop() {
       this.calcInitValue();

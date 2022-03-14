@@ -2,6 +2,7 @@
  * 该文件为由脚本 `npm run test:demo` 自动生成，如需修改，执行脚本命令即可。请勿手写直接修改，否则会被覆盖
  */
 
+import MockDate from 'mockdate';
 import { mount } from '@vue/test-utils';
 import asyncLoadingVue from '@/examples/table/demos/async-loading.vue';
 import baseVue from '@/examples/table/demos/base.vue';
@@ -31,7 +32,6 @@ import singleSortVue from '@/examples/table/demos/single-sort.vue';
 import treeSelectVue from '@/examples/table/demos/tree-select.vue';
 import treeVue from '@/examples/table/demos/tree.vue';
 import virtualScrollVue from '@/examples/table/demos/virtual-scroll.vue';
-import MockDate from 'mockdate';
 
 MockDate.set('2020-12-28');
 
