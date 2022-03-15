@@ -75,6 +75,8 @@ export default function useClassName() {
     // 行通栏，一列铺满整行
     tableFullRowClasses: {
       base: `${prefix}-table__row--full`,
+      innerFullRow: `${prefix}-table__row-full-inner`,
+      innerFullElement: `${prefix}-table__row-full-element`,
       firstFullRow: `${prefix}-table__first-full-row`,
       lastFullRow: `${prefix}-table__last-full-row`,
     },
@@ -85,7 +87,6 @@ export default function useClassName() {
       iconCell: `${prefix}-table__expandable-icon-cell`,
       row: `${prefix}-table__expanded-row`,
       rowInner: `${prefix}-table__expanded-row-inner`,
-      td: `${prefix}-table__row--full`,
       expanded: `${prefix}-table__row--expanded`,
       collapsed: `${prefix}-table__row--collapsed`,
     },

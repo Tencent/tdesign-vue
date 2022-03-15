@@ -49,10 +49,7 @@ export default defineComponent({
     // handle tag add and remove
     const {
       tagValue, onInnerEnter, onInputBackspaceKeyUp, clearAll, renderLabel, onClose,
-    } = useTagList(
-      props,
-      context,
-    );
+    } = useTagList(props);
 
     const classes = computed(() => [
       NAME_CLASS,

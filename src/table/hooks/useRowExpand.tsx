@@ -19,7 +19,7 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
   const { t, global } = useConfig<TableConfig>('table');
-  const { tableExpandClasses, positiveRoate90 } = useClassName();
+  const { tableExpandClasses, positiveRoate90, tableFullRowClasses } = useClassName();
   // controlled and uncontrolled
   const [tExpandedRowKeys, setTExpandedRowKeys] = useDefaultValue(
     expandedRowKeys,
@@ -83,12 +83,21 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
   };
 
   // eslint-disable-next-line
-  const renderExpandedRow = (h: CreateElement, p: TableExpandedRowParams<TableRowData>) => {
+  const renderExpandedRow = (
+    h: CreateElement,
+    p: TableExpandedRowParams<TableRowData> & { tableWidth: number; isWidthOverflow: boolean },
+  ) => {
     if (!tExpandedRowKeys.value.includes(get(p.row, props.rowKey || 'id'))) return null;
+    const isFixedLeft = p.isWidthOverflow && props.columns.find((item) => item.fixed === 'left');
     return (
-      <tr class={tableExpandClasses.row}>
-        <td colspan={p.columns.length} class={tableExpandClasses.td}>
-          <div class={tableExpandClasses.rowInner}>{renderTNode('expandedRow', { params: p })}</div>
+      <tr class={[tableExpandClasses.row, { [tableFullRowClasses.base]: isFixedLeft }]}>
+        <td colspan={p.columns.length}>
+          <div
+            class={[tableExpandClasses.rowInner, { [tableFullRowClasses.innerFullRow]: isFixedLeft }]}
+            style={isFixedLeft ? { width: `${p.tableWidth}px` } : {}}
+          >
+            <div class={tableFullRowClasses.innerFullElement}>{renderTNode('expandedRow', { params: p })}</div>
+          </div>
         </td>
       </tr>
     );

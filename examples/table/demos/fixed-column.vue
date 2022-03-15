@@ -19,12 +19,13 @@
         <t-radio-button value="fixed">table-layout: fixed</t-radio-button>
         <t-radio-button value="auto">table-layout: auto</t-radio-button>
       </t-radio-group>
+      <t-checkbox v-model="emptyData" style="margin-left: 16px; vertical-align: middle">空数据</t-checkbox>
     </div>
 
     <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。这种模式下的固定列，必须指定 tableContentWidth -->
     <t-table
       rowKey="index"
-      :data="data"
+      :data="emptyData ? [] : data"
       :columns="columns"
       :table-layout="tableLayout"
       :table-content-width="tableLayout === 'fixed' ? undefined : '1200px'"
@@ -58,6 +59,7 @@ export default {
       tableLayout: 'fixed',
       leftFixedColumn: 2,
       rightFixedColumn: 1,
+      emptyData: false,
     };
   },
   computed: {
@@ -80,6 +82,7 @@ export default {
           colKey: 'type',
           title: '类型',
           width: 150,
+          // fixed: 'left',
         },
         {
           colKey: 'default',
@@ -95,6 +98,7 @@ export default {
           colKey: 'needed',
           title: '是否必传',
           width: 150,
+          // fixed: 'right',
         },
         {
           colKey: 'operation',

@@ -243,6 +243,8 @@ export default defineComponent({
       data: this.isVirtual ? this.visibleData : data,
       columns: this.spansAndLeafNodes.leafColumns,
       tableElm: this.tableRef,
+      tableWidth: this.tableWidth,
+      isWidthOverflow: this.isWidthOverflow,
       // 虚拟滚动相关属性
       isVirtual: this.isVirtual,
       translateY: this.translateY,

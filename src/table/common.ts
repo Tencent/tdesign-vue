@@ -3,8 +3,8 @@ import isString from 'lodash/isString';
 import get from 'lodash/get';
 import {
   PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
-} from '../type';
-import { ClassName, HTMLElementAttributes } from '../../common';
+} from './type';
+import { ClassName, HTMLElementAttributes } from '../common';
 
 export function toString(obj: any): string {
   return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();

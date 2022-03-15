@@ -252,35 +252,43 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
               colspan="3"
             >
               <div
-                class="t-table__async-loading t-is-loading"
+                class=""
               >
                 <div
-                  class="t-loading--center t-size-m t-loading"
+                  class=""
                 >
-                  <svg
-                    class="t-loading__gradient t-icon-loading"
-                    height="1em"
-                    size="medium"
-                    version="1.1"
-                    viewBox="0 0 14 14"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <foreignobject
-                      height="12"
-                      width="12"
-                      x="1"
-                      y="1"
-                    >
-                      <div
-                        class="t-loading__gradient-conic"
-                      />
-                    </foreignobject>
-                  </svg>
                   <div
-                    class="t-loading__text"
+                    class="t-table__async-loading t-is-loading"
                   >
-                    正在加载中，请稍后
+                    <div
+                      class="t-loading--center t-size-m t-loading"
+                    >
+                      <svg
+                        class="t-loading__gradient t-icon-loading"
+                        height="1em"
+                        size="medium"
+                        version="1.1"
+                        viewBox="0 0 14 14"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <foreignobject
+                          height="12"
+                          width="12"
+                          x="1"
+                          y="1"
+                        >
+                          <div
+                            class="t-loading__gradient-conic"
+                          />
+                        </foreignobject>
+                      </svg>
+                      <div
+                        class="t-loading__text"
+                      >
+                        正在加载中，请稍后
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2415,6 +2423,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
 exports[`Table Table expandableVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
+  style="width: 100%;"
 >
   <div>
     <div
@@ -2483,23 +2492,63 @@ exports[`Table Table expandableVue demo works fine 1`] = `
     </div>
   </div>
    
-  <label
-    class="t-checkbox t-is-checked"
-  >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+  <div>
+    <label
+      class="t-checkbox t-is-checked"
     >
-      允许点击行之后展开/收起
-    </span>
-  </label>
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        允许点击行之后展开/收起
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        固定列
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        空数据
+      </span>
+    </label>
+  </div>
    
   <div
     class="t-table t-size-m"
@@ -2509,12 +2558,19 @@ exports[`Table Table expandableVue demo works fine 1`] = `
       class="t-table__content"
     >
       <table
-        class="t-table--layout-fixed"
+        class="t-table--layout-auto"
+        style="width: 1200px;"
       >
         <colgroup>
           <col
             style="width: 64px;"
           />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
           <col />
           <col />
           <col />
@@ -2571,6 +2627,66 @@ exports[`Table Table expandableVue demo works fine 1`] = `
                 class="t-table__th-cell-inner"
               >
                 描述
+              </div>
+            </th>
+            <th
+              class="t-table__th-field1"
+              data-colkey="field1"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 1
+              </div>
+            </th>
+            <th
+              class="t-table__th-field2"
+              data-colkey="field2"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 2
+              </div>
+            </th>
+            <th
+              class="t-table__th-field3"
+              data-colkey="field3"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 3
+              </div>
+            </th>
+            <th
+              class="t-table__th-field4"
+              data-colkey="field4"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 4
+              </div>
+            </th>
+            <th
+              class="t-table__th-field5"
+              data-colkey="field5"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 5
+              </div>
+            </th>
+            <th
+              class="t-table__th-field6"
+              data-colkey="field6"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                字段 6
               </div>
             </th>
             <th
@@ -2643,7 +2759,37 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              test
+              description
+            </td>
+            <td
+              class=""
+            >
+              field1
+            </td>
+            <td
+              class=""
+            >
+              field2
+            </td>
+            <td
+              class=""
+            >
+              field3
+            </td>
+            <td
+              class=""
+            >
+              field4
+            </td>
+            <td
+              class=""
+            >
+              field5
+            </td>
+            <td
+              class=""
+            >
+              field6
             </td>
             <td
               class=""
@@ -2714,7 +2860,37 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              test
+              description
+            </td>
+            <td
+              class=""
+            >
+              field1
+            </td>
+            <td
+              class=""
+            >
+              field2
+            </td>
+            <td
+              class=""
+            >
+              field3
+            </td>
+            <td
+              class=""
+            >
+              field4
+            </td>
+            <td
+              class=""
+            >
+              field5
+            </td>
+            <td
+              class=""
+            >
+              field6
             </td>
             <td
               class=""
@@ -2785,7 +2961,37 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              test
+              description
+            </td>
+            <td
+              class=""
+            >
+              field1
+            </td>
+            <td
+              class=""
+            >
+              field2
+            </td>
+            <td
+              class=""
+            >
+              field3
+            </td>
+            <td
+              class=""
+            >
+              field4
+            </td>
+            <td
+              class=""
+            >
+              field5
+            </td>
+            <td
+              class=""
+            >
+              field6
             </td>
             <td
               class=""
@@ -2807,53 +3013,56 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             class="t-table__expanded-row"
           >
             <td
-              class="t-table__row--full"
-              colspan="6"
+              colspan="12"
             >
               <div
                 class="t-table__expanded-row-inner"
               >
                 <div
-                  class="more-detail"
+                  class="t-table__row-full-element"
                 >
-                  <p
-                    class="title"
+                  <div
+                    class="more-detail"
                   >
-                    <b>
-                      集群名称:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    JQTest3
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      管理员:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    jenny;peter
-                  </p>
-                  <br />
-                  <p
-                    class="title"
-                  >
-                    <b>
-                      描述:
-                    </b>
-                  </p>
-                  <p
-                    class="content"
-                  >
-                    test
-                  </p>
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        集群名称:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      JQTest3
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        管理员:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      jenny;peter
+                    </p>
+                    <br />
+                    <p
+                      class="title"
+                    >
+                      <b>
+                        描述:
+                      </b>
+                    </p>
+                    <p
+                      class="content"
+                    >
+                      description
+                    </p>
+                  </div>
                 </div>
               </div>
             </td>
@@ -2911,7 +3120,37 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              test
+              description
+            </td>
+            <td
+              class=""
+            >
+              field1
+            </td>
+            <td
+              class=""
+            >
+              field2
+            </td>
+            <td
+              class=""
+            >
+              field3
+            </td>
+            <td
+              class=""
+            >
+              field4
+            </td>
+            <td
+              class=""
+            >
+              field5
+            </td>
+            <td
+              class=""
+            >
+              field6
             </td>
             <td
               class=""
@@ -2982,7 +3221,37 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             <td
               class=""
             >
-              test
+              description
+            </td>
+            <td
+              class=""
+            >
+              field1
+            </td>
+            <td
+              class=""
+            >
+              field2
+            </td>
+            <td
+              class=""
+            >
+              field3
+            </td>
+            <td
+              class=""
+            >
+              field4
+            </td>
+            <td
+              class=""
+            >
+              field5
+            </td>
+            <td
+              class=""
+            >
+              field6
             </td>
             <td
               class=""
@@ -3554,6 +3823,25 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
         style="width: 0px; left: 0px;"
       />
     </div>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 16px; vertical-align: middle;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        空数据
+      </span>
+    </label>
   </div>
    
   <div
@@ -12378,13 +12666,13 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-field8"
-              data-colkey="field8"
+              class="t-table__th-text"
+              data-colkey="text"
             >
               <div
                 class="t-table__th-cell-inner"
               >
-                字段8
+                描述
               </div>
             </th>
           </tr>

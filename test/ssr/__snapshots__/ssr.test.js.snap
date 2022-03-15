@@ -11368,13 +11368,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
           </tr>
           <tr class="t-table__row--full t-table__last-full-row">
             <td colspan="3">
-              <div class="t-table__async-loading t-is-loading">
-                <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-                    <foreignObject x="1" y="1" width="12" height="12">
-                      <div class="t-loading__gradient-conic"></div>
-                    </foreignObject>
-                  </svg>
-                  <div class="t-loading__text">正在加载中，请稍后</div>
+              <div>
+                <div>
+                  <div class="t-table__async-loading t-is-loading">
+                    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+                        <foreignObject x="1" y="1" width="12" height="12">
+                          <div class="t-loading__gradient-conic"></div>
+                        </foreignObject>
+                      </svg>
+                      <div class="t-loading__text">正在加载中，请稍后</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </td>
@@ -12083,17 +12087,24 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
+<div class="tdesign-demo-block-column" style="width:100%;">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">显示展开图标</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">隐藏展开图标</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义展开图标</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
-  </div> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label>
+  </div>
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定列</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">空数据</span></label></div>
   <div class="t-table t-size-m" style="position:relative;">
     <div class="t-table__content">
-      <table class="t-table--layout-fixed" style="width:;">
+      <table class="t-table--layout-auto" style="width:1200px;">
         <colgroup>
           <col style="width:64px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
           <col>
           <col>
           <col>
@@ -12117,6 +12128,24 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <th data-colkey="description" class="t-table__th-description">
               <div class="t-table__th-cell-inner">描述</div>
             </th>
+            <th data-colkey="field1" class="t-table__th-field1">
+              <div class="t-table__th-cell-inner">字段 1</div>
+            </th>
+            <th data-colkey="field2" class="t-table__th-field2">
+              <div class="t-table__th-cell-inner">字段 2</div>
+            </th>
+            <th data-colkey="field3" class="t-table__th-field3">
+              <div class="t-table__th-cell-inner">字段 3</div>
+            </th>
+            <th data-colkey="field4" class="t-table__th-field4">
+              <div class="t-table__th-cell-inner">字段 4</div>
+            </th>
+            <th data-colkey="field5" class="t-table__th-field5">
+              <div class="t-table__th-cell-inner">字段 5</div>
+            </th>
+            <th data-colkey="field6" class="t-table__th-field6">
+              <div class="t-table__th-cell-inner">字段 6</div>
+            </th>
             <th data-colkey="op" class="t-table__th-op">
               <div class="t-table__th-cell-inner">
                 <p>操作</p>
@@ -12133,7 +12162,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <!---->
             </td>
             <td>jenny;peter</td>
-            <td>test</td>
+            <td>description</td>
+            <td>field1</td>
+            <td>field2</td>
+            <td>field3</td>
+            <td>field4</td>
+            <td>field5</td>
+            <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
@@ -12144,7 +12179,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
-            <td>test</td>
+            <td>description</td>
+            <td>field1</td>
+            <td>field2</td>
+            <td>field3</td>
+            <td>field4</td>
+            <td>field5</td>
+            <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
@@ -12155,19 +12196,27 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <!---->
             </td>
             <td>jenny;peter</td>
-            <td>test</td>
+            <td>description</td>
+            <td>field1</td>
+            <td>field2</td>
+            <td>field3</td>
+            <td>field4</td>
+            <td>field5</td>
+            <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__expanded-row">
-            <td colspan="6" class="t-table__row--full">
+            <td colspan="12">
               <div class="t-table__expanded-row-inner">
-                <div class="more-detail">
-                  <p class="title"><b>集群名称:</b></p>
-                  <p class="content">JQTest3</p><br>
-                  <p class="title"><b>管理员:</b></p>
-                  <p class="content">jenny;peter</p><br>
-                  <p class="title"><b>描述:</b></p>
-                  <p class="content">test</p>
+                <div class="t-table__row-full-element">
+                  <div class="more-detail">
+                    <p class="title"><b>集群名称:</b></p>
+                    <p class="content">JQTest3</p><br>
+                    <p class="title"><b>管理员:</b></p>
+                    <p class="content">jenny;peter</p><br>
+                    <p class="title"><b>描述:</b></p>
+                    <p class="content">description</p>
+                  </div>
                 </div>
               </div>
             </td>
@@ -12180,7 +12229,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
-            <td>test</td>
+            <td>description</td>
+            <td>field1</td>
+            <td>field2</td>
+            <td>field3</td>
+            <td>field4</td>
+            <td>field5</td>
+            <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
@@ -12191,7 +12246,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
               <!---->
             </td>
             <td>jenny;peter</td>
-            <td>test</td>
+            <td>description</td>
+            <td>field1</td>
+            <td>field2</td>
+            <td>field3</td>
+            <td>field4</td>
+            <td>field5</td>
+            <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
         </tbody>
@@ -12330,7 +12391,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="fixed" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: fixed</span></label> <label class="t-radio-button"><input type="radio" value="auto" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: auto</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-    </div>
+    </div> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">空数据</span></label>
   </div>
   <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content">
@@ -13301,8 +13362,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             <th data-colkey="field7" class="t-table__th-field7">
               <div class="t-table__th-cell-inner">字段7</div>
             </th>
-            <th data-colkey="field8" class="t-table__th-field8">
-              <div class="t-table__th-cell-inner">字段8</div>
+            <th data-colkey="text" class="t-table__th-text">
+              <div class="t-table__th-cell-inner">描述</div>
             </th>
           </tr>
         </thead>
