@@ -131,6 +131,9 @@ export default Vue.extend({
     if (hasTrigger.hover) {
       on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
       on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
+      on(reference, 'click', () => {
+        this.refClicked = true;
+      });
     } else if (hasTrigger.focus) {
       on(reference, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
       on(reference, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
@@ -332,12 +335,12 @@ export default Vue.extend({
           directives: destroyOnClose
             ? undefined
             : [
-                {
-                  name: 'show',
-                  rawName: 'v-show',
-                  value: visible,
-                  expression: 'visible',
-                } as VNodeDirective,
+                    {
+                      name: 'show',
+                      rawName: 'v-show',
+                      value: visible,
+                      expression: 'visible',
+                    } as VNodeDirective,
             ],
           on: {
             mousedown: () => {
