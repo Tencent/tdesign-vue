@@ -403,16 +403,14 @@ export default mixins(
         case 'date':
         case 'month':
         case 'year':
-          // submit formate date
-          this.$emit('input', selectedDates.join(multiSeparator));
           if (triggerChange) {
+            this.$emit('input', selectedDates.join(multiSeparator));
             this.$emit('change', selectedDates.join(multiSeparator));
           }
           break;
         case 'range':
-          // submit formate date
-          this.$emit('input', selectedDates);
           if (triggerChange) {
+            this.$emit('input', selectedDates);
             this.$emit('change', selectedDates);
           }
           break;

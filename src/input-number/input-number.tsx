@@ -197,9 +197,8 @@ export default Vue.extend({
     },
     getClickValue(op: string) {
       const value = this.value || 0;
-      const factor = 10 ** this.digitsNum;
       const addOrReduce = { add: 1, reduce: -1 }[op];
-      let clickVal = this.toDecimalPlaces(value * factor + addOrReduce * this.step * factor);
+      let clickVal = this.toDecimalPlaces(value + addOrReduce * this.step);
       if (this.value === undefined) {
         clickVal = Math.min(Math.max(clickVal, this.min), this.max);
       }
@@ -345,7 +344,7 @@ export default Vue.extend({
     toDecimalPlaces(value: number): number {
       const decimalPlaces = this.decimalPlaces === undefined ? this.digitsNum : this.decimalPlaces;
       const factor = 10 ** decimalPlaces;
-      return Math.round(value) / factor;
+      return Math.round(value * factor) / factor;
     },
   },
   watch: {
