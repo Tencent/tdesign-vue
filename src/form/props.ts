@@ -82,7 +82,7 @@ export default {
       return ['smooth', 'auto'].includes(val);
     },
   },
-  /** 校验不通过时，是否显示错误提示信息 */
+  /** 校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性 */
   showErrorMessage: {
     type: Boolean,
     default: true,
@@ -103,10 +103,6 @@ export default {
   },
   /** 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件 */
   submitWithWarningMessage: Boolean,
-  /** 校验信息提示，主要用于非组件内部的校验信息呈现，如：表单初次呈现的远程校验结果。如果要启动组件内部的校验功能，该值必须设置为空。`FormData` 是泛型约束，表单的数据类型 */
-  validateMessage: {
-    type: Object as PropType<TdFormProps['validateMessage']>,
-  },
   /** 表单重置时触发 */
   onReset: Function as PropType<TdFormProps['onReset']>,
   /** 表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表 */

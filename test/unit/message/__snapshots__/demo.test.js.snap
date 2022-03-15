@@ -53,25 +53,35 @@ exports[`Message placement demo works fine 1`] = `
     class="t-message-offset"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input__wrap"
     >
-      <input
-        class="t-input__inner"
-        placeholder="请输入横向偏移量"
-        type="text"
-        unselectable="off"
-      />
+      <div
+        class="t-input t-size-m"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="请输入横向偏移量"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
      
     <div
-      class="t-input t-size-m"
+      class="t-input__wrap"
     >
-      <input
-        class="t-input__inner"
-        placeholder="请输入纵向偏移量"
-        type="text"
-        unselectable="off"
-      />
+      <div
+        class="t-input t-size-m"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="请输入纵向偏移量"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
   </div>
    

@@ -4,6 +4,7 @@ import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import isObject from 'lodash/isObject';
 import { TNode } from '../common';
 
 // 组件render属性的ts类型
@@ -71,6 +72,8 @@ export const RenderTNodeTemplate = Vue.extend({
 interface JSXRenderContext {
   defaultNode?: VNode;
   params?: Record<string, any>;
+  // 是否不打印 LOG
+  silent?: boolean;
 }
 
 /**
@@ -83,7 +86,10 @@ interface JSXRenderContext {
  * @example renderTNodeJSX(this, 'closeBtn', { defaultNode: <t-icon-close />, params })。 params 为渲染节点时所需的参数
  */
 export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
-  if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true) {
+  // 是否静默日志
+  const isSilent = Boolean(isObject(options) && 'silent' in options && options.silent);
+
+  if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true && !isSilent) {
     console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
   }
   const params = typeof options === 'object' && 'params' in options ? options.params : null;

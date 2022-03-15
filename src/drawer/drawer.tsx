@@ -119,7 +119,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     visible: {
       handler(val) {
         if (val) {
-          (this.$refs.drawerContainer as HTMLDivElement).focus?.();
+          (this.$refs.drawerContainer as HTMLDivElement)?.focus?.();
         }
 
         this.handleScrollThrough(val);

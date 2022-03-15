@@ -1,13 +1,10 @@
-import debounce from 'lodash/debounce';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
-import Vue from 'vue';
 import { CalendarIcon, TimeIcon } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import props from './props';
 import { TdDatePickerProps } from './type';
 import CLASSNAMES from '../utils/classnames';
-import { clickOut } from '../utils/dom';
 import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
 import TPopup from '../popup';
@@ -25,10 +22,6 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 
 dayjs.extend(isBetween);
-
-const onOpenDebounce = debounce((vm?: any) => {
-  vm.createPopover();
-}, 250);
 
 const name = `${prefix}-date-picker`;
 
@@ -63,7 +56,6 @@ export default mixins(
       multiSeparator: ',',
       inlineView: false,
       showTime: false,
-      els: [],
       isOpen: false,
       // 表单控制禁用态时的变量
       formDisabled: undefined,
@@ -205,16 +197,7 @@ export default mixins(
         this.dateClick(new Date(end));
       }
     },
-    initClickAway(el: Element) {
-      this.els.push(el);
-      if (this.els.length > 1) {
-        clickOut(this.els, () => {
-          this.clickAway();
-        });
-      }
-    },
     attachDatePicker(): any {
-      this.initClickAway(this.$el);
       const startDate: Date = new Date();
       const endDate: Date = new Date();
       this.dateFormat = this.format || this.global.format;
@@ -334,7 +317,6 @@ export default mixins(
         // open
         this.isOpen = true;
         this.$nextTick(() => {
-          onOpenDebounce(this);
           this.$emit('open', this.selectedDates);
         });
       }
@@ -358,6 +340,7 @@ export default mixins(
       });
       // submit formate date
       this.submitInput(selectedDates, true);
+      this.$emit('onChange', selectedDates);
 
       if (closePicker) {
         this.close();
@@ -407,6 +390,8 @@ export default mixins(
         const selectedDates: any[] = [];
         this.selectedDates = selectedDates;
         this.formattedValue = '';
+        this.start = new Date();
+        this.end = new Date();
         this.submitInput(selectedDates, triggerChange);
       }
     },
@@ -418,16 +403,14 @@ export default mixins(
         case 'date':
         case 'month':
         case 'year':
-          // submit formate date
-          this.$emit('input', selectedDates.join(multiSeparator));
           if (triggerChange) {
+            this.$emit('input', selectedDates.join(multiSeparator));
             this.$emit('change', selectedDates.join(multiSeparator));
           }
           break;
         case 'range':
-          // submit formate date
-          this.$emit('input', selectedDates);
           if (triggerChange) {
+            this.$emit('input', selectedDates);
             this.$emit('change', selectedDates);
           }
           break;
@@ -569,22 +552,6 @@ export default mixins(
       const d1 = new Date(date);
       return dayjs(d1).format(dateFormat);
     },
-
-    createPopover() {
-      if (this.inlineView) {
-        return;
-      }
-      const nativeInput = this.$refs.native as Vue;
-
-      const tip: HTMLElement = this.$refs.dropdownPopup as HTMLElement;
-      const refEl: Element = ((nativeInput && nativeInput.$el) || this.$el) as Element;
-
-      if (!tip || !refEl) {
-        return;
-      }
-
-      this.initClickAway(tip);
-    },
     getPlaceholderText() {
       const { placeholder, mode } = this;
       let placeholderStr = placeholder || this.global?.placeholder?.[mode];
@@ -592,6 +559,16 @@ export default mixins(
         placeholderStr = placeholder.join(this.global.rangeSeparator);
       }
       return placeholderStr;
+    },
+    onPopupVisibleChange(
+      visible: boolean,
+      context: {
+        trigger: string;
+      },
+    ) {
+      if (context.trigger === 'document') {
+        this.toggle();
+      }
     },
   },
   render() {
@@ -704,6 +681,7 @@ export default mixins(
           overlayClassName={name}
           content={popupContent}
           expandAnimation={true}
+          on={{ 'visible-change': this.onPopupVisibleChange }}
         >
           <div class={inputClassNames} onClick={this.toggle}>
             <t-input

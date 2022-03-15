@@ -2,9 +2,11 @@ import Vue, { VNode } from 'vue';
 import {
   AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
 } from 'tdesign-icons-vue';
+
+import TButton from '../button';
+import TInput from '../input';
 import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
-import TButton from '../button';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource, TdInputNumberProps } from './type';
@@ -29,10 +31,15 @@ type ChangeContextEvent = InputEvent | MouseEvent | FocusEvent;
 type InputNumberAttr = {
   attrs: {
     disabled?: boolean;
-    readonly?: any;
+    readonly?: boolean;
     autocomplete?: string;
     ref: string;
     placeholder: string;
+    unselectable?: string;
+    tips: TdInputNumberProps['tips'];
+    autoWidth: boolean;
+    align: TdInputNumberProps['align'];
+    status: TdInputNumberProps['status'];
   };
 };
 
@@ -45,6 +52,7 @@ export default Vue.extend({
     ChevronDownIcon,
     ChevronUpIcon,
     TButton,
+    TInput,
   },
   data() {
     return {
@@ -53,7 +61,7 @@ export default Vue.extend({
       userInput: null,
       filterValue: null,
       isError: false,
-      inputing: false,
+      inputting: false,
     };
   },
   computed: {
@@ -129,29 +137,8 @@ export default Vue.extend({
           {
             [CLASSNAMES.STATUS.disabled]: this.tDisabled,
             [`${prefix}-is-controls-right`]: this.theme === 'column',
-            [`${name}--normal`]: this.theme === 'normal',
-          },
-        ],
-      };
-    },
-    inputWrapProps(): ClassName {
-      return {
-        class: [
-          `${prefix}-input`,
-          {
-            [`${prefix}-is-error`]: this.isError,
-            [`${prefix}-align-${this.align}`]: this.align,
-          },
-        ],
-      };
-    },
-    inputClasses(): ClassName {
-      return {
-        class: [
-          `${prefix}-input__inner`,
-          {
-            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-            [`${name}-text-align`]: this.theme === 'row',
+            [`${name}--${this.theme}`]: this.theme,
+            [`${name}--auto-width`]: this.autoWidth,
           },
         ],
       };
@@ -159,7 +146,6 @@ export default Vue.extend({
     inputEvents(): InputNumberEvent {
       return {
         on: {
-          input: this.handleInput,
           blur: this.handleBlur,
           focus: this.handleFocus,
           keydown: this.handleKeydown,
@@ -172,20 +158,26 @@ export default Vue.extend({
       return {
         attrs: {
           disabled: this.tDisabled,
+          readonly: this.readonly,
           autocomplete: 'off',
           ref: 'refInputElem',
           placeholder: this.placeholder,
+          unselectable: this.readonly ? 'on' : 'off',
+          tips: this.tips,
+          autoWidth: this.autoWidth,
+          align: this.align || (this.theme === 'row' ? 'center' : undefined),
+          status: this.isError ? 'error' : this.status,
         },
       };
     },
     displayValue(): string | number {
-      // inputing
-      if (this.inputing && this.userInput !== null) {
+      // inputting
+      if (this.inputting && this.userInput !== null) {
         return this.filterValue;
       }
       if (this.value === undefined) return '';
       // end input
-      return this.format && !this.inputing ? this.format(this.value) : this.value.toFixed(this.digitsNum);
+      return this.format && !this.inputting ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
   },
   methods: {
@@ -196,11 +188,11 @@ export default Vue.extend({
       return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
-      if (this.disabledAdd) return;
+      if (this.disabledAdd || this.readonly) return;
       this.handleAction(this.getClickValue('add'), 'add', e);
     },
     handleReduce(e: MouseEvent) {
-      if (this.disabledReduce) return;
+      if (this.disabledReduce || this.readonly) return;
       this.handleAction(this.getClickValue('reduce'), 'reduce', e);
     },
     getClickValue(op: string) {
@@ -213,9 +205,9 @@ export default Vue.extend({
       }
       return Number(clickVal.toFixed(this.digitsNum));
     },
-    handleInput(e: InputEvent) {
+    handleInput(val: string, e: InputEvent) {
       // get
-      this.userInput = (e.target as HTMLInputElement).value;
+      this.userInput = val;
       // filter
       this.filterValue = this.toValidStringNumber(this.userInput);
       this.userInput = '';
@@ -287,12 +279,12 @@ export default Vue.extend({
       emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, { e });
     },
     handleStartInput() {
-      this.inputing = true;
+      this.inputting = true;
       if (this.value === undefined) return;
       this.filterValue = this.value.toFixed(this.digitsNum);
     },
     handleEndInput(e: FocusEvent) {
-      this.inputing = false;
+      this.inputting = false;
       let value = this.toValidNumber(this.filterValue);
       if (value !== undefined) {
         value = this.toDecimalPlaces(value);
@@ -353,7 +345,7 @@ export default Vue.extend({
     toDecimalPlaces(value: number): number {
       const decimalPlaces = this.decimalPlaces === undefined ? this.digitsNum : this.decimalPlaces;
       const factor = 10 ** decimalPlaces;
-      return Math.round(value * factor) / factor;
+      return Math.round(value) / factor;
     },
   },
   watch: {
@@ -378,9 +370,12 @@ export default Vue.extend({
             icon={this.decreaseIcon}
           />
         )}
-        <div {...this.inputWrapProps}>
-          <input value={this.displayValue} {...this.inputClasses} {...this.inputAttrs} {...this.inputEvents} />
-        </div>
+        <t-input
+          {...this.inputAttrs}
+          {...this.inputEvents}
+          value={this.displayValue}
+          onChange={(val: string, { e }: { e: InputEvent }) => this.handleInput(val, e)}
+        />
         {this.theme !== 'normal' && (
           <t-button
             {...this.addClasses}

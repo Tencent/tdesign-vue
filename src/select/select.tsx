@@ -47,7 +47,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       visible: false,
       searchInput: '',
       showCreateOption: false,
-      hasOptions: false, // select的slot是否有options组件
+      hasSlotOptions: false, // select的slot是否有options组件
       defaultProps: {
         trigger: 'click',
         placement: 'bottom-left' as string,
@@ -84,6 +84,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     classes(): ClassName {
       return [
         `${name}`,
+        `${prefix}-select-polyfill`, // 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
         {
           [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
@@ -187,6 +188,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           return get(target[target.length - 1], this.realLabel);
         }
+        return this.value.toString();
       }
       const showText = get(this.value, this.realLabel);
       // label为空时显示value值
@@ -294,6 +296,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
+      !this.visible && (this.showCreateOption = false);
     },
   },
   methods: {
@@ -404,7 +407,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
       );
       if (!tmp.length) {
-        this.hasOptions = true;
+        this.hasSlotOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
@@ -592,7 +595,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder || this.t(this.global.placeholder);
     },
     getCloseIcon() {
-      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`];
+      // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`, `${name}__right-icon-polyfill`];
       if (isFunction(this.global.clearIcon)) {
         return (
           <span class={closeIconClass} onClick={this.clearSelect}>
@@ -674,7 +678,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           </ul>
           {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
           {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
-          {!this.hasOptions && displayOptions.length && !loading ? (
+          {!this.hasSlotOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
             <ul v-show={!loading && displayOptions.length} class={[`${prefix}-select__groups`, listName]}>
@@ -695,6 +699,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       if (children) {
         this.realOptions = parseOptions(children);
         this.isInited = true;
+        this.hasSlotOptions = true;
       }
 
       function parseOptions(vnodes: VNode[]): TdOptionProps[] {
@@ -814,10 +819,17 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
               />
             )}
             {this.showRightArrow && !this.showLoading && (
-              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.tDisabled} />
+              // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+              <fake-arrow
+                overlayClassName={`${name}__right-icon ${name}__right-icon-polyfill`}
+                isActive={this.visible && !this.tDisabled}
+              />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
-            {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
+            {/* TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名 */}
+            {this.showLoading && (
+              <t-loading class={`${name}__right-icon ${name}__active-icon ${name}__right-icon-polyfill`} size="small" />
+            )}
           </div>
           {this.renderContent()}
         </Popup>

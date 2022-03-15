@@ -1,13 +1,17 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { CloseIcon } from 'tdesign-icons-vue';
+import mixins from '../utils/mixins';
 import { prefix } from '../config';
 import { TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
 import tabProps from './props';
 import tabPanelProps from './tab-panel-props';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 
-export default Vue.extend({
+const keepAnimationMixins = getKeepAnimationMixins();
+
+export default mixins(keepAnimationMixins).extend({
   name: 'TTabNavItem',
   components: {
     CloseIcon,
@@ -55,7 +59,7 @@ export default Vue.extend({
     },
     renderCardItem(): VNode {
       return (
-        <div class={this.navItemClass} onClick={this.onClickNav} v-ripple>
+        <div class={this.navItemClass} onClick={this.onClickNav} v-ripple={this.keepAnimation.ripple}>
           <span class={`${prefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
           {this.removable && !this.disabled ? (
             <CloseIcon class="remove-btn" nativeOnClick={this.removeBtnClick} />
@@ -74,7 +78,7 @@ export default Vue.extend({
                 [`${prefix}-is-active`]: this.active,
               },
             ]}
-            v-ripple
+            v-ripple={this.keepAnimation.ripple}
           >
             <span class={`${prefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
           </div>
