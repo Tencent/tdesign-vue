@@ -9434,7 +9434,7 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/autocomplete.vu
 <div>
   <div class="t-input__wrap t-select-input--empty" style="width:300px;">
     <div class="t-input t-size-m t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入任意关键词" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入任意关键词" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-search"><path fill="currentColor" d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
@@ -9463,8 +9463,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/autowidth-multi
 exports[`ssr snapshot test renders ./examples/select-input/demos/borderless.vue correctly 1`] = `
 <div>
   <div class="t-input__wrap t-select-input--borderless" style="width:200px;">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="tdesign-vue" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+    <div class="t-input t-size-m t-is-readonly t-input--prefix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="tdesign-vue" class="t-input__inner">
     </div>
   </div>
 </div>
@@ -9503,10 +9503,10 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/collapsed-items
 exports[`ssr snapshot test renders ./examples/select-input/demos/custom-tag.vue correctly 1`] = `
 <div class="tdesign-demo-select-input-custom-tag">
   <div class="t-input__wrap">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-readonly t-input--prefix">
       <div class="t-input__prefix"><span class="displaySpan"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-control-platform tdesign-demo-select-input__img"><path fill="currentColor" d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         tdesign-vue
-      </span></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      </span></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" class="t-input__inner">
     </div>
   </div> <br><br>
   <div class="t-input__wrap t-tag-input t-select-input--multiple">
@@ -9553,13 +9553,13 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/label-suffix.vu
 <div>
   <div class="t-input__wrap" style="width:300px;">
     <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix">前置内容：</div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="tdesign-vue" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input__prefix">前置内容：</div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="tdesign-vue" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div> <br><br>
   <div class="t-input__wrap" style="width:300px;">
     <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="tdesign-vue" class="t-input__inner">
-      <div class="t-input__suffix">单位：元</div><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input__suffix">单位：元</div><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
@@ -9583,7 +9583,7 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/single.vue corr
 <div>
   <div class="t-input__wrap" style="width:300px;">
     <div class="t-input t-size-m t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input autocomplete="" placeholder="Please Select" type="text" unselectable="off" value="tdesign-vue" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input__prefix"></div><input autocomplete="" placeholder="Please Select" type="text" unselectable="off" value="tdesign-vue" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
@@ -9594,8 +9594,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
   <div><span>禁用状态：</span>
     <div class="t-select-input__wrap">
       <div class="t-input__wrap">
-        <div class="t-input t-size-m t-is-disabled t-is-readonly t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+        <div class="t-input t-size-m t-is-disabled t-is-readonly t-input--prefix">
+          <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
       <div class="t-input__tips t-input__tips--normal">这是禁用状态文本提示</div>
@@ -9604,8 +9604,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
   <div><span>只读状态：</span>
     <div class="t-select-input__wrap">
       <div class="t-input__wrap">
-        <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+        <div class="t-input t-size-m t-is-readonly t-input--prefix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
       <div class="t-input__tips t-input__tips--normal">这是普通状态的文本提示</div>
@@ -9614,8 +9614,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
   <div><span>成功状态：</span>
     <div class="t-select-input__wrap">
       <div class="t-input__wrap">
-        <div class="t-input t-size-m t-is-success t-is-readonly t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+        <div class="t-input t-size-m t-is-success t-is-readonly t-input--prefix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
       <div class="t-input__tips t-input__tips--success">校验通过文本提示</div>
@@ -9624,8 +9624,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
   <div><span>警告状态：</span>
     <div class="t-select-input__wrap">
       <div class="t-input__wrap">
-        <div class="t-input t-size-m t-is-warning t-is-readonly t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+        <div class="t-input t-size-m t-is-warning t-is-readonly t-input--prefix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
       <div class="t-input__tips t-input__tips--warning">校验不通过文本提示</div>
@@ -9634,8 +9634,8 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
   <div><span>错误状态：</span>
     <div class="t-select-input__wrap">
       <div class="t-input__wrap">
-        <div class="t-input t-size-m t-is-error t-is-readonly t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+        <div class="t-input t-size-m t-is-error t-is-readonly t-input--prefix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
       <div class="t-input__tips t-input__tips--error">校验存在严重问题文本提示</div>
@@ -9648,29 +9648,29 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/width.vue corre
 <div class="tdesign-demo__select-input-width">
   <div><span>下拉框默认宽度：</span>
     <div class="t-demo-normal t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input t-size-m t-is-readonly t-input--prefix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
       </div>
     </div>
   </div> <br>
   <div><span>下拉框最大宽度：</span>
     <div class="t-demo-normal t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input t-size-m t-is-readonly t-input--prefix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
       </div>
     </div>
   </div> <br>
   <div><span>与内容宽度一致：</span>
     <div class="t-demo-normal t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input t-size-m t-is-readonly t-input--prefix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
       </div>
     </div>
   </div> <br>
   <div><span>下拉框固定宽度：</span>
     <div class="t-demo-normal t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon t-input__clear"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-input__suffix-clear"><path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path></svg></span>
+      <div class="t-input t-size-m t-is-readonly t-input--prefix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
       </div>
     </div>
   </div> <br>
