@@ -3868,7 +3868,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/clear-validate.vue corr
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="female" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
       </div>
     </div>
@@ -4567,15 +4567,30 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
         <div class="t-form__help">这是用户名字段帮助说明</div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+    <div class="t-form__item t-form-item__age">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">年龄</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-input__wrap">
-            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+          <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+                <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
+              </svg></button>
+            <div class="t-input__wrap">
+              <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="年龄" type="text" unselectable="off" value="" class="t-input__inner"></div>
+            </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+                <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+              </svg></button>
           </div>
         </div>
-        <div class="t-form__help">一句话介绍自己</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__region">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">籍贯</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-cascader t-size-m t-cascader__popup"><span class="t-cascader__placeholder">请选择籍贯</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon">
+              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+            </svg></div>
+        </div>
       </div>
     </div>
     <div class="t-form__item t-form-item__password">
@@ -4602,7 +4617,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="female" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
       </div>
     </div>
@@ -4619,9 +4634,13 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="demo-select-base t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+              <div class="t-input__wrap t-select__input">
+                <div class="t-input t-size-m t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请输入" type="text" unselectable="on" value="" class="t-input__inner"></div>
+              </div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-              </svg></div>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -4630,8 +4649,12 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-input__wrap">
-            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+          <div class="t-date-picker t-size-m t-date-picker--month-picker">
+            <div class="t-form-controls t-date-picker__popup-reference">
+              <div class="t-input__wrap">
+                <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择月份" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -4642,6 +4665,38 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
         <div class="t-form__controls-content">
           <div class="t-input__wrap">
             <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner"></textarea></div>
+        </div>
+        <div class="t-form__help">一句话介绍自己</div>
+      </div>
+    </div>
+    <div class="t-form__item t-form-item__hobby">
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">兴趣爱好</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-select__wrap">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-select__placeholder" style="display:none;">请选择你的兴趣爱好</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span>
+              <div class="t-input__wrap t-select__input">
+                <div class="t-input t-size-m"><input autocomplete="" placeholder="请选择你的兴趣爱好" type="text" unselectable="off" value="" class="t-input__inner"></div>
+              </div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill" style="font-size:medium;">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear" style="display:none;">
+                <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+              </svg>
+              <div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon" style="display:none;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+                  <foreignObject x="1" y="1" width="12" height="12">
+                    <div class="t-loading__gradient-conic"></div>
+                  </foreignObject>
+                </svg></div>
+            </div>
           </div>
         </div>
       </div>
