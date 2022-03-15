@@ -180,6 +180,18 @@ exports[`InputNumber :props :value, 6 1`] = `
 </div>
 `;
 
+exports[`InputNumber :props :value, 6.55 1`] = `
+<div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+      <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
+    </svg></button>
+  <div class="t-input__wrap">
+    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+  </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
+      <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
+    </svg></button>
+</div>
+`;
+
 exports[`InputNumber :props class, with class t-input-number 1`] = `
 <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
