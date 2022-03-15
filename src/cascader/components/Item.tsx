@@ -32,7 +32,9 @@ export default mixins(keepAnimationMixins).extend({
   name,
 
   directives: { ripple },
-
+  components: {
+    Tooltip,
+  },
   props: {
     node: {
       type: Object as PropType<CascaderItemPropsType['node']>,
@@ -109,12 +111,12 @@ export default mixins(keepAnimationMixins).extend({
       const isEllipsis = getLabelIsEllipsis(node, cascaderContext.size);
       if (isEllipsis) {
         return (
-          <span class={`${ComponentClassName}-label`} role="label">
-            {label}
-            <div class={`${ComponentClassName}-label--ellipsis`}>
-              <Tooltip content={node.label} placement="top-left" />
-            </div>
-          </span>
+          <Tooltip content={node.label} placement="top-left">
+            <span class={`${ComponentClassName}-label`} role="label">
+              {label}
+              <div class={`${ComponentClassName}-label--ellipsis`}></div>
+            </span>
+          </Tooltip>
         );
       }
       return (
