@@ -38,7 +38,6 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     filterValue,
     props.defaultFilterValue,
     props.onFilterChange,
-    context.emit,
     'filterValue',
     'filter-change',
   );

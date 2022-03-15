@@ -1,7 +1,7 @@
 // 行选中相关功能：单选 + 多选
 
 import {
-  computed, SetupContext, toRefs, h, ref, watch,
+  computed, toRefs, h, ref, watch,
 } from '@vue/composition-api';
 import intersection from 'lodash/intersection';
 import get from 'lodash/get';
@@ -22,7 +22,7 @@ import Radio from '../../radio';
 import { ClassName } from '../../common';
 import log from '../../_common/js/log';
 
-export default function useRowSelect(props: TdPrimaryTableProps, context: SetupContext) {
+export default function useRowSelect(props: TdPrimaryTableProps) {
   const {
     selectedRowKeys, columns, data, rowClassName,
   } = toRefs(props);
@@ -32,7 +32,6 @@ export default function useRowSelect(props: TdPrimaryTableProps, context: SetupC
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
     props.onSelectChange,
-    context.emit,
     'selectedRowKeys',
     'select-change',
   );

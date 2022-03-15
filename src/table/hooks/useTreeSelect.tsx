@@ -1,6 +1,4 @@
-import {
-  computed, SetupContext, toRefs, Ref,
-} from '@vue/composition-api';
+import { computed, toRefs, Ref } from '@vue/composition-api';
 import get from 'lodash/get';
 import {
   TdEnhancedTableProps, TdPrimaryTableProps, TableRowData, PrimaryTableCol,
@@ -95,18 +93,13 @@ export interface GetChildrenDataReturnValue {
   allChildrenKeys: Array<string | number>;
 }
 
-export default function useTreeSelect(
-  props: TdEnhancedTableProps,
-  treeDataMap: Ref<TableTreeDataMap>,
-  context: SetupContext,
-) {
+export default function useTreeSelect(props: TdEnhancedTableProps, treeDataMap: Ref<TableTreeDataMap>) {
   const { selectedRowKeys } = toRefs(props);
   // eslint-disable-next-line
   const [_, setTSelectedRowKeys] = useDefault(
     selectedRowKeys,
     props.defaultSelectedRowKeys,
     props.onSelectChange,
-    context.emit,
     'selectedRowKeys',
     'select-change',
   );
