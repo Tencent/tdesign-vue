@@ -301,6 +301,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
+      this.filterByText = null;
     },
     onInputChange() {
       this.filterByText = (node: TreeNodeModel<TreeOptionData>) => {
