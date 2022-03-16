@@ -1,12 +1,10 @@
-import {
-  computed, SetupContext, toRefs, Ref,
-} from '@vue/composition-api';
+import { computed, toRefs, Ref } from '@vue/composition-api';
 import get from 'lodash/get';
 import {
   TdEnhancedTableProps, TdPrimaryTableProps, TableRowData, PrimaryTableCol,
 } from '../type';
 import TableTreeStore, { KeysType, TableTreeDataMap } from './tree-store';
-import useDefault from '../../hooks/useDefaultValue';
+import useDefaultValue from '../../hooks/useDefaultValue';
 
 export const childreMap = new Map();
 
@@ -95,18 +93,13 @@ export interface GetChildrenDataReturnValue {
   allChildrenKeys: Array<string | number>;
 }
 
-export default function useTreeSelect(
-  props: TdEnhancedTableProps,
-  treeDataMap: Ref<TableTreeDataMap>,
-  context: SetupContext,
-) {
+export default function useTreeSelect(props: TdEnhancedTableProps, treeDataMap: Ref<TableTreeDataMap>) {
   const { selectedRowKeys } = toRefs(props);
   // eslint-disable-next-line
-  const [_, setTSelectedRowKeys] = useDefault(
+  const [_, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys,
     props.onSelectChange,
-    context.emit,
     'selectedRowKeys',
     'select-change',
   );

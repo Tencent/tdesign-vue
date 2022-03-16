@@ -15,14 +15,7 @@ export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: S
   const { sort, data } = toRefs(props);
   const originalData = ref();
   // uncontroll and controll
-  const [tSortInfo, setTSortInfo] = useDefaultValue(
-    sort,
-    props.defaultSort,
-    props.onSortChange,
-    emit,
-    'sort',
-    'sort-change',
-  );
+  const [tSortInfo, setTSortInfo] = useDefaultValue(sort, props.defaultSort, props.onSortChange, 'sort', 'sort-change');
   const [tData, setTData] = useDefaultValue(data, [], props.onDataChange, emit, 'data', 'data-change');
   // 本地数据排序：用于记录哪些字段是自定义排序函数
   const sorterFuncMap = computed(() => getSorterFuncMap(props.columns));

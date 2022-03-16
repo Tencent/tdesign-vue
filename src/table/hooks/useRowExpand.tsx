@@ -25,7 +25,6 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
     expandedRowKeys,
     props.defaultExpandedRowKeys,
     props.onExpandChange,
-    context.emit,
     'expandedRowKeys',
     'expand-change',
   );
