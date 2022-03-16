@@ -10,8 +10,7 @@ import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
-
-const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
+import BaseTab from './baseTab';
 
 const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTMLElement => {
   for (let i = 0; i < navs.length; i++) {
@@ -20,45 +19,6 @@ const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTML
     }
   }
   return null;
-};
-
-interface GetLeftCoverWidth {
-  leftZone: HTMLElement;
-  leftIcon: HTMLElement;
-  totalWidthBeforeActiveTab: number;
-}
-
-interface GetRightCoverWidth {
-  rightZone: HTMLElement;
-  rightIcon: HTMLElement;
-  wrap: HTMLElement;
-  totalWidthBeforeActiveTab: number;
-  activeTabWidth: number;
-}
-
-// 如果要当前tab左边对齐左操作栏的右边以展示完整的tab，需要获取左边操作栏的宽度
-const getLeftCoverWidth = (o: GetLeftCoverWidth) => {
-  const leftOperationsZoneWidth = getDomWidth(o.leftZone);
-  const leftIconWidth = getDomWidth(o.leftIcon);
-  // 判断当前tab是不是第一个tab
-  if (o.totalWidthBeforeActiveTab === 0) {
-    // 如果是第一个tab要移动到最左边，则要减去左箭头的宽度，因为此时左箭头会被隐藏起来
-    return leftOperationsZoneWidth - leftIconWidth;
-  }
-  return leftOperationsZoneWidth;
-};
-
-// 如果要当前tab右边对齐右操作栏的左边以展示完整的tab，需要获取右边操作栏的宽度
-const getRightCoverWidth = (o: GetRightCoverWidth) => {
-  const rightOperationsZoneWidth = getDomWidth(o.rightZone);
-  const rightIconWidth = getDomWidth(o.rightIcon as HTMLElement);
-  const wrapWidth = getDomWidth(o.wrap);
-  // 判断当前tab是不是最后一个tab，小于1是防止小数像素导致值不相等的情况
-  if (Math.abs(o.totalWidthBeforeActiveTab + o.activeTabWidth - wrapWidth) < 1) {
-    // 如果是最后一个tab，则要减去右箭头的宽度，因为此时右箭头会被隐藏
-    return rightOperationsZoneWidth - rightIconWidth;
-  }
-  return rightOperationsZoneWidth;
 };
 
 export default Vue.extend({
@@ -87,6 +47,7 @@ export default Vue.extend({
       canToLeft: false,
       canToRight: false,
       navBarStyle: {},
+      baseEntity: null,
     };
   },
   computed: {
@@ -177,7 +138,7 @@ export default Vue.extend({
   watch: {
     dataCanUpdateArrow() {
       this.$nextTick(() => {
-        this.calculateCanShowArrow();
+        this.baseEntity.adjustArrowDisplay();
       });
     },
     dataCanUpdateNavBarStyle() {
@@ -192,44 +153,11 @@ export default Vue.extend({
     },
     navs() {
       this.$nextTick(() => {
-        this.fixScrollLeft();
+        this.baseEntity.adjustScrollbar();
       });
     },
   },
   methods: {
-    calculateCanShowArrow() {
-      this.calculateCanToLeft();
-      this.calculateCanToRight();
-    },
-
-    calculateCanToLeft() {
-      if (['left', 'right'].includes(this.placement.toLowerCase())) {
-        this.canToLeft = false;
-      }
-      const container = this.$refs.navsContainer as HTMLElement;
-      const wrap = this.$refs.navsWrap as HTMLElement;
-      if (!wrap || !container) {
-        this.canToLeft = false;
-      }
-      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
-      const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
-      this.canToLeft = this.scrollLeft + Math.round(leftOperationsZoneWidth - leftIconWidth) > 0;
-    },
-
-    calculateCanToRight() {
-      if (['left', 'right'].includes(this.placement.toLowerCase())) {
-        this.canToRight = false;
-      }
-      const container = this.$refs.navsContainer as HTMLElement;
-      const wrap = this.$refs.navsWrap as HTMLElement;
-      if (!wrap || !container) {
-        this.canToRight = false;
-      }
-      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
-      const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
-      this.canToRight = this.scrollLeft + getDomWidth(container) - (rightOperationsZoneWidth - rightIconWidth) - getDomWidth(wrap) < -1; // 小数像素不精确，所以这里判断小于-1
-    },
-
     calculateNavBarStyle() {
       const getNavBarStyle = () => {
         if (this.theme === 'card') return {};
@@ -259,7 +187,8 @@ export default Vue.extend({
 
     watchDomChange() {
       const onResize = debounce(() => {
-        this.resetScrollPosition();
+        this.baseEntity.adjustScrollbar();
+        this.baseEntity.adjustArrowDisplay();
       }, 300);
       window.addEventListener('resize', onResize);
       this.$once('beforeDestroy', () => {
@@ -274,75 +203,16 @@ export default Vue.extend({
       });
     },
 
-    resetScrollPosition() {
-      this.fixScrollLeft();
-      this.calculateCanShowArrow();
-    },
-
     handleScrollToLeft() {
-      const container = this.$refs.navsContainer as HTMLElement;
-      if (!container) return;
-      const leftOperationsZoneWidth = getDomWidth(this.$refs.leftOperationsZone as HTMLElement);
-      const leftIconWidth = getDomWidth(this.$refs.leftIcon as HTMLElement);
-      const containerWidth = getDomWidth(container);
-      this.scrollLeft = Math.max(-(leftOperationsZoneWidth - leftIconWidth), this.scrollLeft - containerWidth);
+      this.baseEntity.scrollToLeft();
     },
 
     handleScrollToRight() {
-      const container = this.$refs.navsContainer as HTMLElement;
-      const wrap = this.$refs.navsWrap as HTMLElement;
-      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
-      const rightIconWidth = getDomWidth(this.$refs.rightIcon as HTMLElement);
-      const containerWidth = getDomWidth(container);
-      const wrapWidth = getDomWidth(wrap);
-      this.scrollLeft = Math.min(
-        this.scrollLeft + containerWidth,
-        wrapWidth - containerWidth + rightOperationsZoneWidth - rightIconWidth,
-      );
-    },
-
-    shouldMoveToLeftSide(activeTabEl: HTMLElement) {
-      const totalWidthBeforeActiveTab = activeTabEl.offsetLeft;
-      const container = this.$refs.navsContainer as HTMLElement;
-      if (!container) return;
-      const leftCoverWidth = getLeftCoverWidth({
-        leftZone: this.$refs.leftOperationsZone as HTMLElement,
-        leftIcon: this.$refs.leftIcon as HTMLElement,
-        totalWidthBeforeActiveTab,
-      });
-      // 判断当前tab是不是在左边被隐藏
-      const isCurrentTabHiddenInLeftZone = () => this.scrollLeft + leftCoverWidth > totalWidthBeforeActiveTab;
-      if (isCurrentTabHiddenInLeftZone()) {
-        this.scrollLeft = totalWidthBeforeActiveTab - leftCoverWidth;
-        return true;
-      }
-      return false;
-    },
-
-    shouldMoveToRightSide(activeTabEl: HTMLElement) {
-      const totalWidthBeforeActiveTab = activeTabEl.offsetLeft;
-      const activeTabWidth = activeTabEl.offsetWidth;
-      const container = this.$refs.navsContainer as HTMLElement;
-      const wrap = this.$refs.navsWrap as HTMLElement;
-      if (!container || !wrap) return;
-      const containerWidth = getDomWidth(container);
-      const rightCoverWidth = getRightCoverWidth({
-        rightZone: this.$refs.rightOperationsZone as HTMLElement,
-        rightIcon: this.$refs.rightIcon as HTMLElement,
-        wrap,
-        totalWidthBeforeActiveTab,
-        activeTabWidth,
-      });
-      // 判断当前tab是不是在右边被隐藏
-      const isCurrentTabHiddenInRightZone = () => this.scrollLeft + containerWidth - rightCoverWidth < totalWidthBeforeActiveTab + activeTabWidth;
-      if (isCurrentTabHiddenInRightZone()) {
-        this.scrollLeft = totalWidthBeforeActiveTab + activeTabWidth - containerWidth + rightCoverWidth;
-        return true;
-      }
-      return false;
+      this.baseEntity.scrollToRight();
     },
 
     moveActiveTabIntoView({ needCheckUpdate } = { needCheckUpdate: true }) {
+      const { baseEntity } = this;
       if (['left', 'right'].includes(this.placement)) {
         return false;
       }
@@ -356,37 +226,7 @@ export default Vue.extend({
         }
         return false;
       }
-      return this.shouldMoveToLeftSide(activeTabEl) || this.shouldMoveToRightSide(activeTabEl);
-    },
-
-    fixIfLastItemNotTouchRightSide(containerWidth: number, wrapWidth: number) {
-      const rightOperationsZoneWidth = getDomWidth(this.$refs.rightOperationsZone as HTMLElement);
-      if (this.scrollLeft + containerWidth - rightOperationsZoneWidth > wrapWidth) {
-        this.scrollLeft = wrapWidth + rightOperationsZoneWidth - containerWidth;
-        return true;
-      }
-      return false;
-    },
-
-    fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth: number, wrapWidth: number) {
-      if (wrapWidth <= containerWidth) {
-        this.scrollLeft = 0;
-        return true;
-      }
-      return false;
-    },
-
-    fixScrollLeft() {
-      if (['left', 'right'].includes(this.placement.toLowerCase())) return;
-      const container = this.$refs.navsContainer as HTMLElement;
-      const wrap = this.$refs.navsWrap as HTMLElement;
-      if (!wrap || !container) return false;
-      const containerWidth = getDomWidth(container);
-      const wrapWidth = getDomWidth(wrap);
-      return (
-        this.fixIfItemTotalWidthIsLessThenContainerWidth(containerWidth, wrapWidth)
-        || this.fixIfLastItemNotTouchRightSide(containerWidth, wrapWidth)
-      );
+      return baseEntity.shouldMoveToLeftSide(activeTabEl) || baseEntity.shouldMoveToRightSide(activeTabEl);
     },
 
     handleAddTab(e: MouseEvent) {
@@ -450,10 +290,15 @@ export default Vue.extend({
     },
   },
   mounted() {
+    this.baseEntity = new BaseTab({
+      getState: (prop: string) => this[prop],
+      getElement: (refName: string) => this.$refs[refName] as HTMLElement,
+      setState: (key: string, value: any) => (this[key] = value),
+    });
     this.$nextTick(() => {
       this.watchDomChange();
       this.calculateNavBarStyle();
-      this.calculateCanShowArrow();
+      this.baseEntity.adjustArrowDisplay();
     });
   },
   render() {
