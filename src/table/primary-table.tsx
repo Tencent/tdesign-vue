@@ -37,7 +37,7 @@ export default defineComponent({
     // 排序功能
     const { renderSortIcon } = useSorter(props, context);
     // 行选中功能
-    const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props, context);
+    const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props);
     // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
 

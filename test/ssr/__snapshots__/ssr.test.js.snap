@@ -11478,7 +11478,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -11636,7 +11638,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -11730,7 +11734,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -12485,7 +12491,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <div class="t-table__th-cell-inner">操作</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -12592,7 +12600,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <div class="t-table__th-cell-inner">必传</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
               <div class="t-table__th-cell-inner">说明</div>
@@ -13103,22 +13113,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">类型</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+                </div>
               </th>
               <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">平台</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+                </div>
               </th>
               <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">属性</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+                </div>
               </th>
               <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">默认值</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+                </div>
               </th>
               <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">是否必传</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+                </div>
               </th>
               <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">说明</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -13148,22 +13170,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">类型</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+                </div>
               </th>
               <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">平台</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+                </div>
               </th>
               <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">属性</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+                </div>
               </th>
               <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">默认值</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+                </div>
               </th>
               <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">是否必传</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+                </div>
               </th>
               <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">说明</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -13193,22 +13227,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
           <thead class="t-table__header">
             <tr>
               <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">类型</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+                </div>
               </th>
               <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">平台</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+                </div>
               </th>
               <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">属性</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+                </div>
               </th>
               <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">默认值</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+                </div>
               </th>
               <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">是否必传</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+                </div>
               </th>
               <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">说明</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -13375,20 +13421,24 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </th>
             <th data-colkey="property" rowspan="2" class="t-table__th-property">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--filterable">
-                  <div class="t-table__cell--title">
-                    <div>属性</div>
-                    <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
-                          <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
-                        </svg></div>
+                <div class="t-table__ellipsis t-text-ellipsis">
+                  <div class="t-table__cell--filterable">
+                    <div class="t-table__cell--title">
+                      <div>属性</div>
+                      <div class="t-table__filter-icon-wrap">
+                        <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                            <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                          </svg></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </th>
             <th data-colkey="description" colspan="3" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
           </tr>
           <tr>
@@ -13418,7 +13468,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
               <div class="t-table__th-cell-inner">字段7</div>
             </th>
             <th data-colkey="text" class="t-table__th-text">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -13575,7 +13627,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
             <th data-colkey="detail.postion" class="t-table__th-detail.postion">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -14128,10 +14182,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <thead class="t-table__header">
           <tr>
             <th data-colkey="id" class="t-table__th-id">
-              <div class="t-table__th-cell-inner">编号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">编号</div>
+              </div>
             </th>
             <th data-colkey="key" class="t-table__th-key">
-              <div class="t-table__th-cell-inner">名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">名称</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
               <div class="t-table__th-cell-inner">平台</div>
