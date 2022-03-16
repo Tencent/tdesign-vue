@@ -181,13 +181,13 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       const col = columns[i];
       if (col.fixed === 'right') return;
       const colInfo = initialColumnMap.get(col.colKey || i);
-      // 多级表头，使用父元素作为初始基本位置
-      const defaultWidth = i === 0 ? parent?.left || 0 : 0;
       let lastColIndex = i - 1;
       while (lastColIndex >= 0 && columns[lastColIndex].fixed !== 'left') {
         lastColIndex -= 1;
       }
       const lastCol = columns[lastColIndex];
+      // 多级表头，使用父元素作为初始基本位置
+      const defaultWidth = i === 0 ? parent?.left || 0 : 0;
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i - 1);
       colInfo.left = (lastColInfo?.left || defaultWidth) + (lastColInfo?.width || 0);
       // 多级表头
@@ -207,7 +207,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       if (col.fixed === 'left') return;
       const colInfo = initialColumnMap.get(col.colKey || i);
       let lastColIndex = i + 1;
-      while (lastColIndex < columns.length && columns[lastColIndex].fixed !== 'left') {
+      while (lastColIndex < columns.length && columns[lastColIndex].fixed !== 'right') {
         lastColIndex += 1;
       }
       const lastCol = columns[lastColIndex];
