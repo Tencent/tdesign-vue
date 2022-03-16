@@ -109,21 +109,19 @@ export default mixins(keepAnimationMixins).extend({
     function RenderLabelContent(node: TreeNode, cascaderContext: CascaderContextType) {
       const label = RenderLabelInner(node, cascaderContext);
       const isEllipsis = getLabelIsEllipsis(node, cascaderContext.size);
-      if (isEllipsis) {
-        return (
-          <Tooltip content={node.label} placement="top-left">
-            <span class={`${ComponentClassName}-label`} role="label">
-              {label}
-              <div class={`${ComponentClassName}-label--ellipsis`}></div>
-            </span>
-          </Tooltip>
-        );
-      }
-      return (
+      const labelNode = (
         <span class={[`${ComponentClassName}-label`]} role="label">
           {label}
         </span>
       );
+      if (isEllipsis) {
+        return (
+          <Tooltip content={node.label} placement="top-left">
+            {labelNode}
+          </Tooltip>
+        );
+      }
+      return labelNode;
     }
 
     function RenderCheckBox(
