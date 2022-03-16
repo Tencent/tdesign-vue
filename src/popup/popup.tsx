@@ -143,6 +143,10 @@ export default Vue.extend({
         // override nested popups with trigger hover since higher priority
         this.visibleState = 0;
         this.handleToggle({ e, trigger: 'trigger-element-click' });
+        // ie9-10 trigger propagation
+        if (getIEVersion() < 11) {
+          this.handleDocumentClick();
+        }
       });
     } else if (hasTrigger['context-menu']) {
       on(reference, 'contextmenu', (e: MouseEvent) => {
