@@ -45,6 +45,30 @@ describe('InputNumber', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it(':value, 6.55', () => {
+      const wrapper = mount({
+        render() {
+          return <InputNumber value={6.55} />;
+        },
+      });
+      const inputNumber = wrapper.find('input');
+      expect(inputNumber.element.value).toEqual('6.55');
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it(':value, 3.22 and step 1.2, value will become 4.22 after clicking increase button', async () => {
+      const wrapper = mount({
+        render() {
+          return <InputNumber defaultValue={3.22} step={1.2} decimalPlaces={2} theme="row" />;
+        },
+      });
+      const inputNumber = wrapper.find('input');
+      wrapper.find('.t-input-number__increase').trigger('click');
+      await wrapper.vm.$nextTick();
+
+      expect(inputNumber.element.value).toEqual('4.42');
+    });
+
     it(':defaultValue, default value 6', () => {
       const wrapper = mount({
         render() {

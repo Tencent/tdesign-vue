@@ -5,6 +5,32 @@ toc: false
 docClass: timeline
 ---
 
+## 0.37.0 `2022-03-14`
+
+### BREAKING CHANGES
+* Input: `DOM` 结构调整，最外层调整为 `t-input-wrap`，有覆盖过 Input 相关组件样式的同学请注意，[common pr #276](https://github.com/Tencent/tdesign-common/pull/276)，[@pengYYYYY](https://github.com/pengYYYYY)
+### Bug Fixes
+
+* Select:
+  - 修复已选值不在可选时不显示的问题，[issue #526](https://github.com/Tencent/tdesign-vue/issues/526)，[@geff1991](https://github.com/geff1991)
+  - 增加 `icon`的兼容 `class`，解决样式问题，[pr #529](https://github.com/Tencent/tdesign-vue/pull/529)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Form: 修复当 `rule message` 为空时，不显示具体文案的问题，[issue #520](https://github.com/Tencent/tdesign-vue/issues/520)，[@YikaJ](https://github.com/YikaJ)
+* Cascader: 修复 Cascade 组件可选任意一级时缺少高亮状态的问题，[pr #531](https://github.com/Tencent/tdesign-vue/pull/531)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Input/TagInput: [pr #522](https://github.com/Tencent/tdesign-vue/pull/522)，[@pengYYYYY](https://github.com/pengYYYYY)
+  - Input 修复前后置标签输入框同时存在时，左侧样式异常的问题
+  - TagInput 修复不同状态的标签输入框，样式异常的问题
+
+### Features
+
+* Form: `FormItem` 提供控件级别的 `showErrorMessage` 配置，优先级高于 `Form.showErrorMessage`，[pr #514](https://github.com/Tencent/tdesign-vue/pull/514)，[@YikaJ](https://github.com/YikaJ)
+* Message: 新增组件出现和消失有线性渐入渐出动画，[pr #405](https://github.com/Tencent/tdesign-vue/pull/405)，[@Zack921](https://github.com/Zack921)
+* InputNumber:
+  - 支持 `autoWidth` 属性，[pr #541](https://github.com/Tencent/tdesign-vue/pull/541)，[@uyarn](https://github.com/uyarn)
+  - 增加状态设置与提示设置功能，[pr #519](https://github.com/Tencent/tdesign-vue/pull/519)，[@jchalex](https://github.com/jchalex)
+
+
+
+
 ## 0.36.0 `2022-03-07`
 
 ### BREAKING CHANGES
