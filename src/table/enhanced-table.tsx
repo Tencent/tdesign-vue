@@ -39,7 +39,7 @@ export default defineComponent({
 
     const treeDataMap = ref(store.value.treeDataMap);
 
-    const { onInnerSelectChange } = useTreeSelect(props, treeDataMap, context);
+    const { onInnerSelectChange } = useTreeSelect(props, treeDataMap);
 
     // 影响列和单元格内容的因素有：树形节点需要添加操作符 [+] [-]
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
