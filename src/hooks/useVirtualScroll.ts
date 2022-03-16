@@ -8,18 +8,21 @@ const useVirtualScroll = ({
   fixedHeight = false,
   lineHeight = 30,
   bufferSize = 20,
+  threshold = 100,
 }: {
   data: any;
   container: any;
   fixedHeight: boolean;
   lineHeight: number;
   bufferSize: number;
+  threshold: number;
 }) => {
   const state = reactive({
     visibleData: [],
     cachedHeight: [],
     cachedScrollY: [],
   });
+  const isVirtual = computed(() => data.value.length > threshold);
   const updateId = ref(0);
   const trs = new Map(); // 当前展示的行元素和数据
 
@@ -56,7 +59,7 @@ const useVirtualScroll = ({
       const average = maxScrollY / cachedHeight.length; // 平均高度
       return maxScrollY + (data.value.length - cachedHeight.length) * average; // 预估总高度
     }
-    return data.value.length * lineHeight;
+    return isVirtual.value ? data.value.length * lineHeight : 0;
   });
   const translateY = computed(() => {
     const { visibleData } = state;
@@ -163,6 +166,7 @@ const useVirtualScroll = ({
 
   // 滚动时动态计算和渲染
   const handleScroll = () => {
+    if (!isVirtual.value) return;
     // if (revising) {
     //   return false; // 修正滚动条时，暂停滚动逻辑
     // }
@@ -229,6 +233,7 @@ const useVirtualScroll = ({
 
   !fixedHeight && watch(updateId, calculateScrollY, { flush: 'post' });
   const handleRowMounted = () => {
+    if (!isVirtual.value) return;
     updateId.value++;
   };
   watch(data, () => {
@@ -240,6 +245,9 @@ const useVirtualScroll = ({
     index = 0;
     offset = 0;
     start = 0;
+    if (data.value.length < threshold) {
+      state.visibleData = data.value;
+    }
     // revising = false;
     trs.clear();
     updateVisibleData();
