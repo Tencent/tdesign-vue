@@ -7,7 +7,7 @@ import intersection from 'lodash/intersection';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import useDefault from '../../hooks/useDefaultValue';
+import useDefaultValue from '../../hooks/useDefaultValue';
 import {
   PrimaryTableCellParams,
   PrimaryTableCol,
@@ -28,7 +28,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   } = toRefs(props);
   const { tableSelectedClasses } = useClassName();
   const tRowClassNames = ref();
-  const [tSelectedRowKeys, setTSelectedRowKeys] = useDefault(
+  const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
     props.onSelectChange,

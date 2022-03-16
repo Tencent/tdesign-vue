@@ -4,7 +4,7 @@ import {
   TdEnhancedTableProps, TdPrimaryTableProps, TableRowData, PrimaryTableCol,
 } from '../type';
 import TableTreeStore, { KeysType, TableTreeDataMap } from './tree-store';
-import useDefault from '../../hooks/useDefaultValue';
+import useDefaultValue from '../../hooks/useDefaultValue';
 
 export const childreMap = new Map();
 
@@ -96,7 +96,7 @@ export interface GetChildrenDataReturnValue {
 export default function useTreeSelect(props: TdEnhancedTableProps, treeDataMap: Ref<TableTreeDataMap>) {
   const { selectedRowKeys } = toRefs(props);
   // eslint-disable-next-line
-  const [_, setTSelectedRowKeys] = useDefault(
+  const [_, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys,
     props.onSelectChange,
