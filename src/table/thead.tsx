@@ -7,6 +7,7 @@ import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
 import { BaseTableCol, TableRowData } from './type';
 import { renderTitle } from './hooks/useTableHeader';
+import TEllipsis from './ellipsis';
 
 export interface TheadeProps {
   // 是否固定表头
@@ -97,9 +98,12 @@ export default defineComponent({
           const withoutChildren = !col.children?.length;
           const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
           const styles = { ...(thStyles.style || {}), width };
+          const innerTh = renderTitle(h, this.slots, col, index);
           return (
             <th data-colkey={col.colKey} class={thClasses} style={styles} attrs={{ ...rospanAndColspan }}>
-              <div class={this.tableBaseClass.thCellInner}>{renderTitle(h, this.slots, col, index)}</div>
+              <div class={this.tableBaseClass.thCellInner}>
+                {col.ellipsis ? <TEllipsis>{innerTh}</TEllipsis> : innerTh}
+              </div>
             </th>
           );
         });
