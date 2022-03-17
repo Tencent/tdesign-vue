@@ -79,6 +79,8 @@ export default defineComponent({
       { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
     ]);
 
+    const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
+
     const showRightDivider = computed(
       () => props.bordered
         && isFixedHeader.value
@@ -105,7 +107,6 @@ export default defineComponent({
     const {
       type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
     } = props.scroll || {};
-    const isVirtual = type === 'virtual';
     const { data } = toRefs<any>(props);
     const {
       trs = null,
@@ -128,7 +129,7 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     let lastScrollY = -1;
-    const onInnerScroll = isVirtual
+    const onInnerScroll = type === 'virtual'
       ? (e: WheelEvent) => {
         onTableContentScroll(e);
         const target = (e.target || e.srcElement) as HTMLElement;

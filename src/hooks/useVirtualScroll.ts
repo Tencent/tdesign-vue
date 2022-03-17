@@ -245,12 +245,13 @@ const useVirtualScroll = ({
     index = 0;
     offset = 0;
     start = 0;
-    if (data.value.length < threshold) {
-      state.visibleData = data.value;
-    }
     // revising = false;
     trs.clear();
-    updateVisibleData();
+    if (data.value.length <= threshold) {
+      state.visibleData = data.value;
+    } else {
+      updateVisibleData();
+    }
     container.value && (container.value.scrollTop = 0);
   });
   let mounted = false;
@@ -268,7 +269,7 @@ const useVirtualScroll = ({
       const entry = entries[0];
       if (entry.isIntersecting || entry.intersectionRatio) {
         mounted = true;
-        refreshContainer();
+        isVirtual.value && refreshContainer();
         ob.unobserve(container.value);
       }
     });
