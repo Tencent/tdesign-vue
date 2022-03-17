@@ -120,16 +120,15 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       const nodesMap = this.getNodesMap();
       const allNodes = store.getNodes();
       this.treeNodes = allNodes.map((node: TreeNode) => {
+        // 维持住已经渲染的节点，不进行dom的增删
+        let nodeView = nodesMap.get(node.value);
         // 如果有，重新生成新的vnode
-        if (node.visible) {
+        if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
-          const nodeView = this.renderItem(node);
+          nodeView = this.renderItem(node);
           nodesMap.set(node.value, nodeView);
-          return nodeView;
         }
-        // 维持住已经渲染的节点，不进行dom的增删
-        const nodeView = nodesMap.get(node.value);
         return nodeView;
       });
     },
