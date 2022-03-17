@@ -115,20 +115,21 @@ export default defineComponent({
       translateY = null,
       handleScroll: handleVirtualScroll = null,
       handleRowMounted = null,
-    } = isVirtual.value
+    } = type === 'virtual'
       ? useVirtualScroll({
         container: tableContentRef,
         data,
         fixedHeight: isFixedRowHeight,
         lineHeight: rowHeight,
         bufferSize,
+        threshold: props.scroll?.threshold,
       })
       : {};
     provide('tableContentRef', tableContentRef);
     provide('rowHeightRef', ref(rowHeight));
 
     let lastScrollY = -1;
-    const onInnerScroll = isVirtual.value
+    const onInnerScroll = type === 'virtual'
       ? (e: WheelEvent) => {
         onTableContentScroll(e);
         const target = (e.target || e.srcElement) as HTMLElement;
