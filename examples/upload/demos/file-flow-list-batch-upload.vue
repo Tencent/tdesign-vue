@@ -6,7 +6,7 @@
       placeholder="批量合并上传，会通过一个接口上传所有的文件"
       theme="file-flow"
       multiple
-      batchUpload
+      isBatchUpload
       uploadAllFilesInOneRequest
       :auto-upload="false"
       :max="10"

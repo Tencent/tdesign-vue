@@ -42,6 +42,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       focused: false,
       renderType: this.type,
       inputValue: this.value,
+      attrInputClass: [],
     };
   },
   computed: {
@@ -52,7 +53,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       return this.placeholder ?? this.t(this.global.placeholder);
     },
     showClear(): boolean {
-      return (this.value && !this.disabled && this.clearable && this.isHover) || this.showClearIconOnEmpty;
+      return (
+        (this.value && !this.disabled && this.clearable && this.isHover && !props.readonly) || this.showClearIconOnEmpty
+      );
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
@@ -110,19 +113,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     }
   },
   mounted() {
-    this.adjustInputClass();
-  },
-  updated() {
-    this.adjustInputClass();
+    this.getAttrClass();
   },
   methods: {
     // fix behave differently with vue3 https://v3.cn.vuejs.org/guide/migration/attrs-includes-class-style.html
-    adjustInputClass() {
+    getAttrClass() {
       const classList = [...this.$el.classList];
       if (classList.includes(INPUT_WRAP_CLASS)) {
-        this.$el.children[0].classList.add(...classList);
-        this.$el.setAttribute('class', INPUT_WRAP_CLASS);
+        this.attrInputClass = classList.filter((item) => item !== INPUT_WRAP_CLASS);
       }
+      this.$el.setAttribute('class', INPUT_WRAP_CLASS);
     },
     addListenders() {
       this.$watch(
@@ -217,7 +217,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
-      if (this.tDisabled) return;
+      if (this.tDisabled || this.readonly) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
@@ -308,6 +308,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         [`${name}--prefix`]: prefixIcon || labelContent,
         [`${name}--suffix`]: suffixIcon || suffixContent,
       },
+      ...this.attrInputClass,
     ];
     const inputNode = (
       <div
@@ -343,14 +344,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     );
 
     const tips = renderTNodeJSX(this, 'tips');
-    if (tips) {
-      return (
-        <div class={INPUT_WRAP_CLASS}>
-          {inputNode}
-          <div class={`${INPUT_TIPS_CLASS} ${prefix}-input__tips--${this.status || 'normal'}`}>{tips}</div>
-        </div>
-      );
-    }
-    return inputNode;
+    return (
+      <div class={INPUT_WRAP_CLASS}>
+        {inputNode}
+        {tips && <div class={`${INPUT_TIPS_CLASS} ${prefix}-input__tips--${this.status || 'normal'}`}>{tips}</div>}
+      </div>
+    );
   },
 });

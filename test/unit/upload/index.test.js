@@ -14,10 +14,10 @@ describe('Upload', () => {
       expect(wrapper.exists()).toBe(true);
     });
 
-    it(':batchUpload', () => {
+    it(':isBatchUpload', () => {
       const wrapper = mount({
         render() {
-          return <Upload multiple uploadAllFilesInOneRequest batchUpload></Upload>;
+          return <Upload multiple uploadAllFilesInOneRequest isBatchUpload></Upload>;
         },
       });
 

@@ -25,6 +25,7 @@ import { TreeSelectValue, TdTreeSelectProps, TreeSelectNodeValue } from './type'
 import { ClassName, TreeOptionData } from '../common';
 import { prefix } from '../config';
 import { RemoveOptions, NodeOptions } from './interface';
+import { TreeInstanceFunctions } from '../tree/type';
 
 export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect')).extend({
   name: 'TTreeSelect',
@@ -75,6 +76,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     classes(): ClassName {
       return [
         `${prefix}-select`,
+        `${prefix}-select-polyfill`,
         {
           [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
@@ -313,6 +315,13 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       };
       this.search(this.filterText);
     },
+    // get tree data, even load async load
+    getTreeData() {
+      return ((this.$refs.tree as TreeInstanceFunctions)?.getItems() || []).map((item) => ({
+        label: item.data[this.realLabel],
+        value: item.data[this.realValue],
+      }));
+    },
     async changeNodeInfo() {
       await this.value;
 
@@ -342,8 +351,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         if (data[i][this.realValue] === targetValue) {
           return { label: data[i][this.realLabel], value: data[i][this.realValue] };
         }
-        if (data[i]?.children) {
-          const result = this.getTreeNode(data[i]?.children, targetValue);
+        const childrenData = data[i]?.children;
+        if (childrenData) {
+          const data = Array.isArray(childrenData) ? childrenData : this.getTreeData();
+          const result = this.getTreeNode(data, targetValue);
           if (!isNil(result)) {
             return result;
           }
@@ -471,25 +482,29 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             {searchInput}
             {this.showArrow && !this.showLoading && (
               <FakeArrow
-                overlayClassName={`${prefix}-select__right-icon`}
+                overlayClassName={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill`}
                 overlayStyle={iconStyle}
                 isActive={this.visible && !this.tDisabled}
               />
             )}
             <CloseCircleFilledIcon
               v-show={this.showClose && !this.showLoading}
-              class={[`${prefix}-select__right-icon`, `${prefix}-select__right-icon-clear`]}
+              class={[
+                `${prefix}-select__right-icon`,
+                `${prefix}-select__right-icon-polyfill`,
+                `${prefix}-select__right-icon-clear`,
+              ]}
               size={this.size}
               nativeOnClick={this.clear}
             />
             <Loading
               v-show={this.showLoading}
-              class={`${prefix}-select__right-icon ${prefix}-select__active-icon`}
+              class={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill ${prefix}-select__active-icon`}
               size="small"
             />
           </div>
           <div slot="content">
-            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips`}>
+            <p v-show={this.showLoading} class={`${prefix}-select__loading-tips ${prefix}-select__right-icon-polyfill`}>
               {this.loadingTextSlot}
             </p>
             {treeItem}
