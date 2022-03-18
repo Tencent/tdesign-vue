@@ -122,7 +122,7 @@
     "cli-color": "^2.0.0",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",
-    "cypress": "~9.1.1",
+    "cypress": "~9.5.2",
     "cz-conventional-changelog": "^3.0.2",
     "dom-parser": "^0.1.6",
     "esbuild": "^0.14.9",
