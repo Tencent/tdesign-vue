@@ -303,6 +303,11 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       this.$emit('change', undefined);
       e.stopPropagation();
     },
+    handleTInputFocus() {
+      // TODO: 待改成select-input后删除
+      // hack 在input聚焦时马上blur 避免出现输入光标
+      (this.$refs.tInput as HTMLInputElement).blur();
+    },
     renderInput() {
       const classes = [
         `${name}__group`,
@@ -317,10 +322,11 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             size={this.size}
             onClear={this.clear}
             clearable={this.clearable}
-            readonly
             placeholder=" "
             value={this.time ? ' ' : undefined}
             class={this.isShowPanel ? `${prefix}-is-focused` : ''}
+            onFocus={this.handleTInputFocus}
+            ref="tInput"
           >
             <time-icon slot="suffix-icon"></time-icon>
           </t-input>

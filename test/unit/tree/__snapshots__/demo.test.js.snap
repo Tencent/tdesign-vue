@@ -3177,13 +3177,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3195,13 +3188,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3213,13 +3199,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3233,13 +3212,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
