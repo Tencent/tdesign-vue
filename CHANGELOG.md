@@ -5,6 +5,22 @@ toc: false
 docClass: timeline
 ---
 
+## 0.37.1 `2022-03-18`
+### Bug Fixes
+
+* Button: 修复 `disabled` 不生效的问题，[pr #584](https://github.com/Tencent/tdesign-vue/pull/584)，[@lanniuniu](https://github.com/lanniuniu)
+* Cascader: 修复文字过长时不显示 `tooltip` 的问题，[pr #560](https://github.com/Tencent/tdesign-vue/pull/560)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Datepicker: 修复 Form 中使用时，触发校验时机错误的问题，[pr #551](https://github.com/Tencent/tdesign-vue/pull/551)，[@zeosun](https://github.com/zeosun)
+* InputNumber: 修复小数计算错误的问题，[issue #559](https://github.com/Tencent/tdesign-vue/issues/559)，[@uyarn](https://github.com/uyarn)
+* Input: 修复 `readonly` 状态下未响应 focus 事件的问题，[issue #580](https://github.com/Tencent/tdesign-vue/issues/580)，[@YikaJ](https://github.com/YikaJ)
+* Popup: trigger 为 hover 时点击引用元素保持开启状态，防止菜单消失，[issue #565](https://github.com/Tencent/tdesign-vue/issues/565)，[@ikeq](https://github.com/ikeq)
+* TagInput: [pr #548](https://github.com/Tencent/tdesign-vue/pull/548)，[@pengYYYYY](https://github.com/pengYYYYY)
+  - 修复 `breakline` 模式下的 clearIcon 样式重叠的问题
+  - 修复 `autowidth` 模式下的 padding 不对称
+  - 修复超出滚动失效
+  - 修复 `paste` 事件未生效
+* TreeSelect: 修复异步加载数据的情况下，`label` 展示错误的问题，[issue #537](https://github.com/Tencent/tdesign-vue/issues/537)，[@YikaJ](https://github.com/YikaJ)
+
 ## 0.37.0 `2022-03-14`
 
 ### BREAKING CHANGES
@@ -27,9 +43,6 @@ docClass: timeline
 * InputNumber:
   - 支持 `autoWidth` 属性，[pr #541](https://github.com/Tencent/tdesign-vue/pull/541)，[@uyarn](https://github.com/uyarn)
   - 增加状态设置与提示设置功能，[pr #519](https://github.com/Tencent/tdesign-vue/pull/519)，[@jchalex](https://github.com/jchalex)
-
-
-
 
 ## 0.36.0 `2022-03-07`
 
