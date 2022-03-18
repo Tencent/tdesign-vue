@@ -139,13 +139,13 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
       if (this.tDisabled) return;
-      if (context) {
+      if (context.trigger) {
         const isClickDoc = context.trigger === 'document';
         this.isShowPanel = !isClickDoc;
-        this.$emit(isClickDoc ? 'close' : 'open');
+        this.$emit(isClickDoc ? 'close' : 'open', context);
       } else {
         this.isShowPanel = val;
-        this.$emit(val ? 'open' : 'close');
+        this.$emit(val ? 'open' : 'close', context);
       }
     },
     // 切换上下午
@@ -195,8 +195,8 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       shouldUpdatePanel && panelRef.panelColUpdate();
     },
     // 确定按钮
-    makeSure() {
-      this.panelVisibleChange(false);
+    makeSure(e: MouseEvent) {
+      this.panelVisibleChange(false, { e });
     },
     // 设置输入框展示
     updateInputTime() {
