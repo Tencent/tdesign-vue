@@ -175,7 +175,7 @@ export default Vue.extend({
       if (this.inputting && this.userInput !== null) {
         return this.filterValue;
       }
-      if (this.value === undefined) return '';
+      if (this.value === undefined || this.value === null) return '';
       // end input
       return this.format && !this.inputting ? this.format(this.value) : this.value.toFixed(this.digitsNum);
     },
@@ -279,7 +279,7 @@ export default Vue.extend({
     },
     handleStartInput() {
       this.inputting = true;
-      if (this.value === undefined) return;
+      if (this.value === undefined || this.value === null) return;
       this.filterValue = this.value.toFixed(this.digitsNum);
     },
     handleEndInput(e: FocusEvent) {
