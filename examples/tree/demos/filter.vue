@@ -110,10 +110,19 @@ export default {
   methods: {
     onInput(state) {
       console.info('onInput:', state);
-      this.filterByText = (node) => {
-        const rs = node.data.label.indexOf(this.filterText) >= 0;
-        return rs;
-      };
+      if (this.filterText) {
+        // 存在过滤文案，才启用过滤
+        this.filterByText = (node) => {
+          const rs = node.data.label.indexOf(this.filterText) >= 0;
+          // 命中的节点会强制展示
+          // 命中节点的路径节点会锁定展示
+          // 未命中的节点会隐藏
+          return rs;
+        };
+      } else {
+        // 过滤文案为空，则还原 tree 为无过滤状态
+        this.filterByText = null;
+      }
     },
   },
 };
