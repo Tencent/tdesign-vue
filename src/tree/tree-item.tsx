@@ -304,9 +304,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       this.data = this.node.data;
     }
   },
+  beforeDestroy() {
+    this.data = null;
+  },
   render(createElement: CreateElement) {
     const { node } = this;
-
     const { tree, level, value } = node;
 
     if (!tree || !tree.nodeMap.get(value)) {
@@ -317,7 +319,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
     return (
       <div
         class={classList}
-        data-value={node.value}
+        data-value={value}
         data-level={level}
         style={styles}
         onClick={(evt: MouseEvent) => this.handleClick(evt)}

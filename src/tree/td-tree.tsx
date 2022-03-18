@@ -119,7 +119,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       const { store } = this;
       const nodesMap = this.getNodesMap();
       const allNodes = store.getNodes();
+      const curNodesMap = new Map();
       this.treeNodes = allNodes.map((node: TreeNode) => {
+        curNodesMap.set(node.value, 1);
         // 维持住已经渲染的节点，不进行dom的增删
         let nodeView = nodesMap.get(node.value);
         // 如果有，重新生成新的vnode
@@ -131,6 +133,19 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         }
         return nodeView;
       });
+
+      // 更新缓存后，不再使用的节点要移除掉，避免内存泄露
+      const removedNodes: VNode[] = [];
+      const keys = [...nodesMap.keys()];
+      keys.forEach((value: string) => {
+        if (!curNodesMap.get(value)) {
+          const view = nodesMap.get(value);
+          removedNodes.push(view);
+          nodesMap.delete(value);
+        }
+      });
+      curNodesMap.clear();
+      removedNodes.length = 0;
     },
     // 同步 Store 选项
     updateStoreConfig() {
