@@ -304,7 +304,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       this.data = this.node.data;
     }
   },
-  beforeDestroy() {
+  destroyed() {
     this.data = null;
   },
   render(createElement: CreateElement) {

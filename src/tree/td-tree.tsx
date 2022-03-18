@@ -124,7 +124,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         curNodesMap.set(node.value, 1);
         // 维持住已经渲染的节点，不进行dom的增删
         let nodeView = nodesMap.get(node.value);
-        // 如果有，重新生成新的vnode
+        // 如果需要展示，生成新的vnode
         if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
@@ -134,18 +134,16 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         return nodeView;
       });
 
-      // 更新缓存后，不再使用的节点要移除掉，避免内存泄露
-      const removedNodes: VNode[] = [];
-      const keys = [...nodesMap.keys()];
-      keys.forEach((value: string) => {
-        if (!curNodesMap.get(value)) {
-          const view = nodesMap.get(value);
-          removedNodes.push(view);
-          nodesMap.delete(value);
-        }
+      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
+      this.$nextTick(() => {
+        const keys = [...nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
       });
-      curNodesMap.clear();
-      removedNodes.length = 0;
     },
     // 同步 Store 选项
     updateStoreConfig() {
@@ -487,11 +485,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       </transition-group>
     );
 
-    return (
-      <div class={classList}>
-        {treeNodeList}
-        {emptyNode}
-      </div>
-    );
+    return <div class={classList}>{emptyNode || treeNodeList}</div>;
   },
 });
