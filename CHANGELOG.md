@@ -21,6 +21,10 @@ docClass: timeline
   - 修复 `paste` 事件未生效
 * TreeSelect: 修复异步加载数据的情况下，`label` 展示错误的问题，[issue #537](https://github.com/Tencent/tdesign-vue/issues/537)，[@YikaJ](https://github.com/YikaJ)
 
+### Features
+
+* Timepicker: `close`、`open` 事件回调增加参数
+
 ## 0.37.0 `2022-03-14`
 
 ### BREAKING CHANGES
