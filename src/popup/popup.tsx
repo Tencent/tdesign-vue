@@ -131,6 +131,9 @@ export default Vue.extend({
     if (hasTrigger.hover) {
       on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
       on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
+      on(reference, 'click', () => {
+        this.refClicked = true;
+      });
     } else if (hasTrigger.focus) {
       on(reference, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
       on(reference, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
@@ -140,6 +143,10 @@ export default Vue.extend({
         // override nested popups with trigger hover since higher priority
         this.visibleState = 0;
         this.handleToggle({ e, trigger: 'trigger-element-click' });
+        // ie9-10 trigger propagation
+        if (getIEVersion() < 11) {
+          this.handleDocumentClick();
+        }
       });
     } else if (hasTrigger['context-menu']) {
       on(reference, 'contextmenu', (e: MouseEvent) => {
@@ -332,12 +339,12 @@ export default Vue.extend({
           directives: destroyOnClose
             ? undefined
             : [
-                {
-                  name: 'show',
-                  rawName: 'v-show',
-                  value: visible,
-                  expression: 'visible',
-                } as VNodeDirective,
+                    {
+                      name: 'show',
+                      rawName: 'v-show',
+                      value: visible,
+                      expression: 'visible',
+                    } as VNodeDirective,
             ],
           on: {
             mousedown: () => {

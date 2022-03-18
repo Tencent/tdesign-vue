@@ -30,6 +30,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
   data() {
     return {
       data: null,
+      clicked: false,
     };
   },
   methods: {
@@ -280,6 +281,14 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       return itemNodes;
     },
     handleClick(evt: MouseEvent) {
+      // checkbox 上也有 emit click 事件
+      // 用这个逻辑避免重复的 click 事件被触发
+      if (this.clicked) return;
+      this.clicked = true;
+      setTimeout(() => {
+        this.clicked = false;
+      });
+
       const { node } = this;
       const state: TypeEventState = {
         mouseEvent: evt,
@@ -304,9 +313,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       this.data = this.node.data;
     }
   },
+  destroyed() {
+    this.data = null;
+  },
   render(createElement: CreateElement) {
     const { node } = this;
-
     const { tree, level, value } = node;
 
     if (!tree || !tree.nodeMap.get(value)) {
@@ -317,7 +328,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
     return (
       <div
         class={classList}
-        data-value={node.value}
+        data-value={value}
         data-level={level}
         style={styles}
         onClick={(evt: MouseEvent) => this.handleClick(evt)}

@@ -32,7 +32,9 @@ export default mixins(keepAnimationMixins).extend({
   name,
 
   directives: { ripple },
-
+  components: {
+    Tooltip,
+  },
   props: {
     node: {
       type: Object as PropType<CascaderItemPropsType['node']>,
@@ -107,21 +109,19 @@ export default mixins(keepAnimationMixins).extend({
     function RenderLabelContent(node: TreeNode, cascaderContext: CascaderContextType) {
       const label = RenderLabelInner(node, cascaderContext);
       const isEllipsis = getLabelIsEllipsis(node, cascaderContext.size);
-      if (isEllipsis) {
-        return (
-          <span class={`${ComponentClassName}-label`} role="label">
-            {label}
-            <div class={`${ComponentClassName}-label--ellipsis`}>
-              <Tooltip content={node.label} placement="top-left" />
-            </div>
-          </span>
-        );
-      }
-      return (
+      const labelNode = (
         <span class={[`${ComponentClassName}-label`]} role="label">
           {label}
         </span>
       );
+      if (isEllipsis) {
+        return (
+          <Tooltip content={node.label} placement="top-left">
+            {labelNode}
+          </Tooltip>
+        );
+      }
+      return labelNode;
     }
 
     function RenderCheckBox(
