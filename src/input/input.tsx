@@ -54,7 +54,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     showClear(): boolean {
       return (
-        (this.value && !this.disabled && this.clearable && this.isHover && !props.readonly) || this.showClearIconOnEmpty
+        (this.value && !this.disabled && this.clearable && this.isHover && !this.readonly) || this.showClearIconOnEmpty
       );
     },
     inputAttrs(): Record<string, any> {

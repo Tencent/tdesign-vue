@@ -11,15 +11,14 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
           class="t-input__inner"
           placeholder=" "
-          readonly="readonly"
           type="text"
-          unselectable="on"
+          unselectable="off"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -85,15 +84,14 @@ exports[`Time-picker base demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-readonly t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
           class="t-input__inner"
           placeholder=" "
-          readonly="readonly"
           type="text"
-          unselectable="on"
+          unselectable="off"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
