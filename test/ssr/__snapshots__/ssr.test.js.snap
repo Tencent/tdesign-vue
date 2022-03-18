@@ -2777,42 +2777,42 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/date-picker.
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select date" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select date" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select date" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select date" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select month" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select month" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select month" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select month" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select year" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select year" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="select year" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="select year" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br><br>
@@ -2963,7 +2963,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
   </div> <br><br>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">select time</span></div>
   </div> <br><br><br> <span class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close">Fearure Tag<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle t-tag__icon-close"><path fill="currentColor" d="M4.98 10.31L7.3 8 5 5.69l.7-.7L8 7.28 10.31 5l.7.7L8.72 8l2.3 2.31-.7.7L8 8.72 5.69 11l-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2z" fill-opacity="0.9"></path></svg></span> <span class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close">Fearure Tag<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle t-tag__icon-close"><path fill="currentColor" d="M4.98 10.31L7.3 8 5 5.69l.7-.7L8 7.28 10.31 5l.7.7L8.72 8l2.3 2.31-.7.7L8 8.72 5.69 11l-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2z" fill-opacity="0.9"></path></svg></span> <span class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close">Fearure Tag<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle t-tag__icon-close"><path fill="currentColor" d="M4.98 10.31L7.3 8 5 5.69l.7-.7L8 7.28 10.31 5l.7.7L8.72 8l2.3 2.31-.7.7L8 8.72 5.69 11l-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2z" fill-opacity="0.9"></path></svg></span> <span class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close">Fearure Tag<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle t-tag__icon-close"><path fill="currentColor" d="M4.98 10.31L7.3 8 5 5.69l.7-.7L8 7.28 10.31 5l.7.7L8.72 8l2.3 2.31-.7.7L8 8.72 5.69 11l-.7-.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 1a7 7 0 110 14A7 7 0 018 1zm0 1a6 6 0 100 12A6 6 0 008 2z" fill-opacity="0.9"></path></svg></span> <br><br>
@@ -3159,7 +3159,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correct
   <div theme="primary" class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3171,7 +3171,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/custom-icon.vue 
   <div theme="primary" class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"><span class="t-input__prefix t-input__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg></span><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-lock-on"><path fill="currentColor" d="M6 10v1h4v-1H6z" fill-opacity="0.9"></path><path fill="currentColor" d="M4.5 5v1H3a.5.5 0 00-.5.5v7c0 .28.22.5.5.5h10a.5.5 0 00.5-.5v-7A.5.5 0 0013 6h-1.5V5a3.5 3.5 0 00-7 0zm6 1h-5V5a2.5 2.5 0 015 0v1zm-7 1h9v6h-9V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--prefix t-input--suffix"><span class="t-input__prefix t-input__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg></span><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-lock-on"><path fill="currentColor" d="M6 10v1h4v-1H6z" fill-opacity="0.9"></path><path fill="currentColor" d="M4.5 5v1H3a.5.5 0 00-.5.5v7c0 .28.22.5.5.5h10a.5.5 0 00.5-.5v-7A.5.5 0 0013 6h-1.5V5a3.5 3.5 0 00-7 0zm6 1h-5V5a2.5 2.5 0 015 0v1zm-7 1h9v6h-9V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3183,7 +3183,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets.vue
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3196,7 +3196,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
     <div theme="primary" class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2021-12-31 至 2021-12-31" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="2021-12-31 至 2021-12-31" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3205,7 +3205,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
     <div theme="primary" class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2021-12-31" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="2021-12-31" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3218,7 +3218,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-tim
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3230,14 +3230,14 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-range.vue c
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="开始时间 至 结束时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="开始时间 至 结束时间" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div> <br> <br>
   <div class="t-date-picker t-size-m" style="width:350px;">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3249,7 +3249,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-time.vue co
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2021-05-01 11:30:20" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="2021-05-01 11:30:20" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3262,7 +3262,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
     <div class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3271,7 +3271,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
     <div class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3280,7 +3280,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
     <div class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3289,7 +3289,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
     <div class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3298,7 +3298,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
     <div class="t-date-picker t-size-m">
       <div class="t-form-controls t-date-picker__popup-reference">
         <div class="t-input__wrap">
-          <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+          <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
         </div>
       </div>
     </div>
@@ -3311,7 +3311,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/first-day-of-wee
   <div class="t-date-picker t-size-m">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3323,7 +3323,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/month.vue correc
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择月份" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择月份" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -3335,7 +3335,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/year.vue correct
   <div class="t-date-picker t-size-m t-date-picker--month-picker">
     <div class="t-form-controls t-date-picker__popup-reference">
       <div class="t-input__wrap">
-        <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择年份" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+        <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择年份" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
       </div>
     </div>
   </div>
@@ -4035,7 +4035,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/disabled.vue correctly 
           <div class="t-date-picker t-size-m">
             <div class="t-form-controls t-date-picker__popup-reference">
               <div class="t-input__wrap">
-                <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+                <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
               </div>
             </div>
           </div>
@@ -4652,7 +4652,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
           <div class="t-date-picker t-size-m t-date-picker--month-picker">
             <div class="t-form-controls t-date-picker__popup-reference">
               <div class="t-input__wrap">
-                <div allowInput="0" class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder="请选择月份" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
+                <div allowInput="0" class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder="请选择月份" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span></div>
               </div>
             </div>
           </div>
@@ -14380,13 +14380,13 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/base.vue correct
 <div class="tdesign-demo-block">
   <div class="demos t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span></div>
   </div>
   <div class="demos t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="NaN" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14398,14 +14398,14 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/clearable.vue co
   <h3>具备清空按钮</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="11" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="12" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span></div>
   </div>
   <h3>禁止清空按钮</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="11" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="12" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14416,7 +14416,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/disabled.vue cor
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-disabled t-is-readonly t-input--suffix"><input disabled="disabled" readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-is-disabled t-input--suffix"><input disabled="disabled" autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item t-time-picker__input-item-disabled"><input disabled="disabled" value="11" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item t-time-picker__input-item-disabled">:<input disabled="disabled" value="12" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item t-time-picker__input-item-disabled">:<input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14427,7 +14427,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/format.vue corre
 <div class="tdesign-demo-block">
   <div class="demos t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="0" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="0" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="0" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item"><input readonly="readonly" disabled="disabled" value="上午" class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"></span></div>
   </div>
@@ -14439,14 +14439,14 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/hide-clear-butto
   <h3>具备清空按钮</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="11" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="12" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span></div>
   </div>
   <h3>禁止清空按钮</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
   </div>
@@ -14457,7 +14457,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/hm.vue correctly
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
   </div>
@@ -14468,7 +14468,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/hms.vue correctl
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="12" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="20" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="30" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14480,14 +14480,14 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/keyboard.vue cor
   <h3>允许输入</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input value="20" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="22" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="33" class="t-time-picker__input-item-input"></span></div>
   </div>
   <h3>禁止输入</h3>
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="22" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="22" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="22" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14498,7 +14498,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/range.vue correc
 <div class="tdesign-demo-block">
   <div class="demos t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input value="00" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="00" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="00" class="t-time-picker__input-item-input"></span>-<span class="t-time-picker__input-item"><input value="23" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="59" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input value="59" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14509,7 +14509,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/show-steps.vue c
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
   </div>
@@ -14520,7 +14520,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/step.vue correct
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="09" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="18" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="17" class="t-time-picker__input-item-input"></span></div>
   </div>
@@ -14531,7 +14531,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/twelve-hour.vue 
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="20" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="30" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item"><input readonly="readonly" disabled="disabled" value="上午" class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"></span></div>
   </div>
@@ -14542,7 +14542,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/twelve-hour-meri
 <div class="tdesign-demo-block">
   <div class="t-time-picker__group t-time-picker t-size-m">
     <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-readonly t-input--suffix"><input readonly="readonly" autocomplete="" placeholder=" " type="text" unselectable="on" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" value=" " class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
     <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-item"><input readonly="readonly" disabled="disabled" value="下午" class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"></span><span class="t-time-picker__input-item"><input disabled="disabled" value="10" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="20" class="t-time-picker__input-item-input"></span><span class="t-time-picker__input-item">:<input disabled="disabled" value="30" class="t-time-picker__input-item-input"></span></div>
   </div>
