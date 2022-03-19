@@ -255,7 +255,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
                 class=""
               >
                 <div
-                  class=""
+                  class="t-table__row-full-element"
                 >
                   <div
                     class="t-table__async-loading t-is-loading"
@@ -12036,7 +12036,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
       >
         <tr>
           <th
-            class="t-table__th-platform"
+            class="test t-table__th-platform"
             data-colkey="platform"
           >
             <div
@@ -12046,7 +12046,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             </div>
           </th>
           <th
-            class="t-table__th-type"
+            class="row t-table__th-type"
             data-colkey="type"
           >
             <div
@@ -12056,7 +12056,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             </div>
           </th>
           <th
-            class="t-table__th-default"
+            class="test4 t-table__th-default"
             data-colkey="default"
           >
             <div
@@ -12066,7 +12066,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             </div>
           </th>
           <th
-            class="t-table__th-needed"
+            class="test3 t-table__th-needed"
             data-colkey="needed"
           >
             <div
@@ -12076,7 +12076,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             </div>
           </th>
           <th
-            class="t-table__th-description"
+            class="row t-table__th-description"
             data-colkey="description"
           >
             <div
@@ -12094,56 +12094,49 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class=""
+            class="test"
           >
             公有
           </td>
           <td
-            class=""
+            class="row"
           >
             Array&lt;any&gt;
           </td>
           <td
-            class=""
+            class="test4"
           >
             []
           </td>
           <td
-            class=""
+            class="test3"
+            colspan="2"
           >
             Y
-          </td>
-          <td
-            class=""
-          >
-            数据源
           </td>
         </tr>
         <tr
           class=""
         >
           <td
-            class=""
+            class="test"
           >
-            私有
+            公有
           </td>
           <td
-            class=""
+            class="row"
+            colspan="2"
+            rowspan="2"
           >
-            String/""
+            String
           </td>
           <td
-            class=""
-          >
-            ""
-          </td>
-          <td
-            class=""
+            class="test3"
           >
             Y
           </td>
           <td
-            class=""
+            class="row"
           >
             描述
           </td>
@@ -12152,27 +12145,17 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class=""
+            class="test"
           >
-            私有
+            公有
           </td>
           <td
-            class=""
-          >
-            Object / {}
-          </td>
-          <td
-            class=""
-          >
-            {}
-          </td>
-          <td
-            class=""
+            class="test3"
           >
             Y
           </td>
           <td
-            class=""
+            class="row"
           >
             复杂类型
           </td>
@@ -12181,27 +12164,27 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class=""
+            class="test"
           >
             公有
           </td>
           <td
-            class=""
+            class="row"
           >
             Boolean
           </td>
           <td
-            class=""
+            class="test4"
           >
             false
           </td>
           <td
-            class=""
+            class="test3"
           >
-            N
+            Y
           </td>
           <td
-            class=""
+            class="row"
           >
             标识符
           </td>
@@ -12210,58 +12193,45 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class=""
+            class="test"
           >
             公有
           </td>
           <td
-            class=""
+            class="row"
           >
-            Number
+            Array&lt;any&gt;
           </td>
           <td
-            class=""
+            class="test4 t-table__td-last-row"
+            colspan="2"
+            rowspan="2"
           >
-            -1 / N
+            -1
           </td>
           <td
-            class=""
+            class="row"
           >
-            Y
-          </td>
-          <td
-            class=""
-          >
-            位置
+            数据源
           </td>
         </tr>
         <tr
           class=""
         >
           <td
-            class=""
+            class="test"
           >
-            私有
+            公有
           </td>
           <td
-            class=""
+            class="row"
           >
-            Number
+            String
           </td>
           <td
-            class=""
+            class="row"
           >
-            -1
-          </td>
-          <td
-            class=""
-          >
-            N
-          </td>
-          <td
-            class=""
-          >
-            Number 类型
+            描述
           </td>
         </tr>
       </tbody>

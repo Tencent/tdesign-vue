@@ -11424,7 +11424,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
           <tr class="t-table__row--full t-table__last-full-row">
             <td colspan="3">
               <div>
-                <div>
+                <div class="t-table__row-full-element">
                   <div class="t-table__async-loading t-is-loading">
                     <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
                         <foreignObject x="1" y="1" width="12" height="12">
@@ -13289,65 +13289,58 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="platform" class="t-table__th-platform">
+          <th data-colkey="platform" class="test t-table__th-platform">
             <div class="t-table__th-cell-inner">平台</div>
           </th>
-          <th data-colkey="type" class="t-table__th-type">
+          <th data-colkey="type" class="row t-table__th-type">
             <div class="t-table__th-cell-inner">类型</div>
           </th>
-          <th data-colkey="default" class="t-table__th-default">
+          <th data-colkey="default" class="test4 t-table__th-default">
             <div class="t-table__th-cell-inner">默认值</div>
           </th>
-          <th data-colkey="needed" class="t-table__th-needed">
+          <th data-colkey="needed" class="test3 t-table__th-needed">
             <div class="t-table__th-cell-inner">是否必传</div>
           </th>
-          <th data-colkey="description" class="t-table__th-description">
+          <th data-colkey="description" class="row t-table__th-description">
             <div class="t-table__th-cell-inner">说明</div>
           </th>
         </tr>
       </thead>
       <tbody class="t-table__body">
         <tr>
-          <td>公有</td>
-          <td>Array&lt;any&gt;</td>
-          <td>[]</td>
-          <td>Y</td>
-          <td>数据源</td>
+          <td class="test">公有</td>
+          <td class="row">Array&lt;any&gt;</td>
+          <td class="test4">[]</td>
+          <td colspan="2" class="test3">Y</td>
         </tr>
         <tr>
-          <td>私有</td>
-          <td>String/&quot;&quot;</td>
-          <td>&quot;&quot;</td>
-          <td>Y</td>
-          <td>描述</td>
+          <td class="test">公有</td>
+          <td rowspan="2" colspan="2" class="row">String</td>
+          <td class="test3">Y</td>
+          <td class="row">描述</td>
         </tr>
         <tr>
-          <td>私有</td>
-          <td>Object / {}</td>
-          <td>{}</td>
-          <td>Y</td>
-          <td>复杂类型</td>
+          <td class="test">公有</td>
+          <td class="test3">Y</td>
+          <td class="row">复杂类型</td>
         </tr>
         <tr>
-          <td>公有</td>
-          <td>Boolean</td>
-          <td>false</td>
-          <td>N</td>
-          <td>标识符</td>
+          <td class="test">公有</td>
+          <td class="row">Boolean</td>
+          <td class="test4">false</td>
+          <td class="test3">Y</td>
+          <td class="row">标识符</td>
         </tr>
         <tr>
-          <td>公有</td>
-          <td>Number</td>
-          <td>-1 / N</td>
-          <td>Y</td>
-          <td>位置</td>
+          <td class="test">公有</td>
+          <td class="row">Array&lt;any&gt;</td>
+          <td rowspan="2" colspan="2" class="test4 t-table__td-last-row">-1</td>
+          <td class="row">数据源</td>
         </tr>
         <tr>
-          <td>私有</td>
-          <td>Number</td>
-          <td>-1</td>
-          <td>N</td>
-          <td>Number 类型</td>
+          <td class="test">公有</td>
+          <td class="row">String</td>
+          <td class="row">描述</td>
         </tr>
       </tbody>
       <!---->

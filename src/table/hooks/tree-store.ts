@@ -1,5 +1,5 @@
 import get from 'lodash/get';
-import { isRowSelectedDisabled } from '../util/common';
+import { isRowSelectedDisabled } from '../utils';
 import {
   PrimaryTableCol, TableRowState, TableRowValue, PrimaryTableCellParams, TableRowData,
 } from '../type';

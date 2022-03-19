@@ -1,95 +1,69 @@
 <template>
   <t-table
+    rowKey="i"
     :bordered="true"
     :data="data"
     :columns="columns"
-    :rowKey="rowKey"
     :size="size"
     :rowspanAndColspan="rowspanAndColspan"
   >
   </t-table>
 </template>
 <script>
+const data = new Array(6).fill(null).map((_, i) => ({
+  i,
+  platform: ['公有', '私有'][i % 1],
+  type: ['Array<any>', 'String', 'Object', 'Boolean', 'Number'][i % 4],
+  default: ['[]', '""', '{}', 'false', '-1', '0'][i % 5],
+  needed: ['Y', 'N'][i % 1],
+  description: ['数据源', '描述', '复杂类型', '标识符', '位置'][i % 4],
+}));
 export default {
   data() {
     return {
-      data: [
-        {
-          platform: '公有',
-          type: 'Array<any>',
-          default: '[]',
-          needed: 'Y',
-          description: '数据源',
-        },
-        {
-          platform: '私有',
-          type: 'String/""',
-          default: '""',
-          needed: 'Y',
-          description: '描述',
-        },
-        {
-          platform: '私有',
-          type: 'Object / {}',
-          default: '{}',
-          needed: 'Y',
-          description: '复杂类型',
-        },
-        {
-          platform: '公有',
-          type: 'Boolean',
-          default: 'false',
-          needed: 'N',
-          description: '标识符',
-        },
-        {
-          platform: '公有',
-          type: 'Number',
-          default: '-1 / N',
-          needed: 'Y',
-          description: '位置',
-        },
-        {
-          platform: '私有',
-          type: 'Number',
-          default: '-1',
-          needed: 'N',
-          description: 'Number 类型',
-        },
-      ],
+      data,
       columns: [
         {
           align: 'left',
           width: '100',
+          minWidth: '100',
+          className: 'test',
           colKey: 'platform',
           title: '平台',
         },
         {
           align: 'left',
           width: '100',
+          minWidth: '100',
+          className: 'row',
           colKey: 'type',
           title: '类型',
         },
         {
           align: 'left',
           width: '100',
+          minWidth: '100',
+          className: 'test4',
           colKey: 'default',
           title: '默认值',
         },
         {
           align: 'left',
           width: '100',
+          minWidth: '100',
+          className: 'test3',
           colKey: 'needed',
           title: '是否必传',
         },
         {
           align: 'left',
           width: '100',
+          minWidth: '100',
+          className: 'row',
           colKey: 'description',
           title: '说明',
         },
       ],
-      rowKey: 'default',
       size: 'small',
     };
   },

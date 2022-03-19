@@ -42,6 +42,7 @@ export const extendTableProps = [
   'empty',
   'firstFullRow',
   'lastFullRow',
+  'rowspanAndColspan',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -150,7 +151,7 @@ export default defineComponent({
               class={{ [this.tableFullRowClasses.innerFullRow]: isFixedToLeft }}
               style={isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
             >
-              <div class={{ [this.tableFullRowClasses.innerFullElement]: isFixedToLeft }}>{fullRowNode}</div>
+              <div class={this.tableFullRowClasses.innerFullElement}>{fullRowNode}</div>
             </div>
           </td>
         </tr>
