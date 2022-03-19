@@ -162,13 +162,13 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
       if (this.tDisabled) return;
-      if (context) {
+      if (context.trigger) {
         const isClickDoc = context.trigger === 'document';
         this.isShowPanel = !isClickDoc;
-        this.$emit(isClickDoc ? 'close' : 'open');
+        this.$emit(isClickDoc ? 'close' : 'open', context);
       } else {
         this.isShowPanel = val;
-        this.$emit(val ? 'open' : 'close');
+        this.$emit(val ? 'open' : 'close', context);
       }
     },
     // 切换上下午
@@ -216,8 +216,8 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       this.$emit('change', formatValue);
     },
     // 确定按钮
-    makeSure() {
-      this.panelVisibleChange(false);
+    makeSure(e: MouseEvent) {
+      this.panelVisibleChange(false, { e });
       this.output();
     },
     // 此刻按钮
@@ -303,6 +303,11 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       this.$emit('change', undefined);
       e.stopPropagation();
     },
+    handleTInputFocus() {
+      // TODO: 待改成select-input后删除
+      // hack 在input聚焦时马上blur 避免出现输入光标
+      (this.$refs.tInput as HTMLInputElement).blur();
+    },
     renderInput() {
       const classes = [
         `${name}__group`,
@@ -317,10 +322,11 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             size={this.size}
             onClear={this.clear}
             clearable={this.clearable}
-            readonly
             placeholder=" "
             value={this.time ? ' ' : undefined}
             class={this.isShowPanel ? `${prefix}-is-focused` : ''}
+            onFocus={this.handleTInputFocus}
+            ref="tInput"
           >
             <time-icon slot="suffix-icon"></time-icon>
           </t-input>

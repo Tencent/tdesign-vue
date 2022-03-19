@@ -182,6 +182,11 @@ export default mixins(
     this.attachDatePicker();
   },
   methods: {
+    handleTInputFocus() {
+      // TODO: 待改成select-input后删除
+      // hack 在input聚焦时马上blur 避免出现输入光标
+      (this.$refs.native as HTMLInputElement).blur();
+    },
     handleTimePick(col: EPickerCols, time: number, index: number) {
       if (!this.range || index === 0) {
         const start = new Date(this.start);
@@ -690,7 +695,6 @@ export default mixins(
               disabled={tDisabled}
               clearable={clearable}
               placeholder={this.getPlaceholderText()}
-              readonly={!allowInput}
               allowInput={allowInput ? 1 : 0}
               size={size}
               inputProps={inputProps}
@@ -701,6 +705,7 @@ export default mixins(
               {...{ props: { ...this.inputListeners } }}
               prefixIcon={prefixIcon}
               suffixIcon={suffixIcon}
+              onFocus={this.handleTInputFocus}
             />
           </div>
         </t-popup>

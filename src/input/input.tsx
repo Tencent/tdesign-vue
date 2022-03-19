@@ -54,7 +54,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     showClear(): boolean {
       return (
-        (this.value && !this.disabled && this.clearable && this.isHover && !props.readonly) || this.showClearIconOnEmpty
+        (this.value && !this.disabled && this.clearable && this.isHover && !this.readonly) || this.showClearIconOnEmpty
       );
     },
     inputAttrs(): Record<string, any> {
@@ -217,7 +217,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
-      if (this.tDisabled || this.readonly) return;
+      if (this.tDisabled) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
