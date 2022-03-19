@@ -9,8 +9,8 @@
     <br /><br />
     <div><t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox></div>
     <br /><br />
-    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。需同时设置 table-content-width -->
-    <!-- fixedRows: [2, 2] 表示冻结表头的两行，和表尾的两行 -->
+    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。如果列字段过多超出表格宽度，还需同时设置 table-content-width -->
+    <!-- fixedRows: [2, 2] 表示冻结表头两行和表尾两行 -->
     <!-- footData 可以是多行，均支持固定在底部 -->
     <t-table
       rowKey="index"

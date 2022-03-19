@@ -88,11 +88,6 @@ export function getRowDataByKeys(p: GetRowDataParams) {
 
 type SelectChangeParams = Parameters<TdPrimaryTableProps['onSelectChange']>;
 
-export interface GetChildrenDataReturnValue {
-  allChildren: Array<any>;
-  allChildrenKeys: Array<string | number>;
-}
-
 export default function useTreeSelect(props: TdEnhancedTableProps, treeDataMap: Ref<TableTreeDataMap>) {
   const { selectedRowKeys } = toRefs(props);
   // eslint-disable-next-line

@@ -125,7 +125,7 @@ export default defineComponent({
     ...pick(baseTableProps, TABLE_PROPS),
     scrollType: String,
     rowHeight: Number,
-    trs: Map,
+    trs: Map as PropType<TrProps['trs']>,
     bufferSize: Number,
     isVirtual: Boolean,
     tableElm: HTMLDivElement as PropType<TrProps['tableElm']>,
@@ -135,24 +135,21 @@ export default defineComponent({
     const {
       tdEllipsisClass, tableBaseClass, tableColFixedClasses, tableRowFixedClasses, tdAlignClasses,
     } = useClassName();
-    const { row, rowIndex, dataLength } = props;
-    // 固定列、固定行样式和类名
-    const rowId = get(row, props.rowKey || 'id');
     const trStyles = computed(() => getRowFixedStyles(
-      rowId,
-      rowIndex,
-      dataLength,
+      get(props.row, props.rowKey || 'id'),
+      props.rowIndex,
+      props.dataLength,
       props.fixedRows,
       props.rowAndColFixedPosition,
       tableRowFixedClasses,
     ));
 
-    const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row, rowIndex, type: 'body' }));
+    const trAttributes = computed(() => formatRowAttributes(props.rowAttributes, { row: props.row, rowIndex: props.rowIndex, type: 'body' }));
 
     const classes = computed(() => {
       const customClasses = formatRowClassNames(
         props.rowClassName,
-        { row, rowIndex, type: 'body' },
+        { row: props.row, rowIndex: props.rowIndex, type: 'body' },
         props.rowKey || 'id',
       );
       return [trStyles.value?.classes, customClasses];

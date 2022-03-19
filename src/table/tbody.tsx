@@ -40,6 +40,7 @@ export const extendTableProps = [
   'rowAttributes',
   'loading',
   'empty',
+  'fixedRows',
   'firstFullRow',
   'lastFullRow',
   'rowspanAndColspan',
@@ -77,8 +78,8 @@ export default defineComponent({
     bufferSize: Number,
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
-    firstFullRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
-    lastFullRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
+    firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
+    lastFullRow: [String, Function] as PropType<TableBodyProps['lastFullRow']>,
     ...pick(baseTableProps, extendTableProps),
   },
 

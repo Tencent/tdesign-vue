@@ -87,7 +87,7 @@ export default defineComponent({
       const rProps = {
         content: this.popupContent || (() => cellNode),
         destroyOnClose: true,
-        zIndex: this.zIndex || 1,
+        zIndex: this.zIndex,
         attach: this.attach || (() => this.root),
         placement: this.placement,
         ...(this.popupProps || {}),

@@ -1,4 +1,6 @@
-import { defineComponent, computed, SetupContext } from '@vue/composition-api';
+import {
+  defineComponent, computed, SetupContext, PropType,
+} from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
 import { RowAndColFixedPosition, getColumnFixedStyles } from './hooks/useFixed';
@@ -9,7 +11,7 @@ import { BaseTableCol, TableRowData } from './type';
 import { renderTitle } from './hooks/useTableHeader';
 import TEllipsis from './ellipsis';
 
-export interface TheadeProps {
+export interface TheadProps {
   // 是否固定表头
   isFixedHeader: boolean;
   // 固定列 left/right 具体值
@@ -30,15 +32,15 @@ export default defineComponent({
 
   props: {
     isFixedHeader: Boolean,
-    rowAndColFixedPosition: Map,
-    thWidthList: Object,
+    rowAndColFixedPosition: Map as PropType<TheadProps['rowAndColFixedPosition']>,
+    thWidthList: Object as PropType<TheadProps['thWidthList']>,
     bordered: Boolean,
     isMultipleHeader: Boolean,
-    spansAndLeafNodes: Object,
-    thList: Array,
+    spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
+    thList: Array as PropType<TheadProps['thList']>,
   },
 
-  setup(props: TheadeProps, { slots }: SetupContext) {
+  setup(props: TheadProps, { slots }: SetupContext) {
     const classnames = useClassName();
     const { tableHeaderClasses, tableBaseClass } = classnames;
     const { classPrefix } = useConfig();
@@ -64,7 +66,7 @@ export default defineComponent({
     const renderThNodeList = (
       h: CreateElement,
       rowAndColFixedPosition: RowAndColFixedPosition,
-      thWidthList: TheadeProps['thWidthList'],
+      thWidthList: TheadProps['thWidthList'],
     ) => {
       // thBorderMap: rowspan 会影响 tr > th 是否为第一列表头，从而影响边框
       const thBorderMap = new Map<any, boolean>();

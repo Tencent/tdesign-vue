@@ -1,5 +1,4 @@
 import isFunction from 'lodash/isFunction';
-import isString from 'lodash/isString';
 import get from 'lodash/get';
 import {
   PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
@@ -118,49 +117,6 @@ export const getRecord = (record: Record<any, any>) => {
   });
   return result;
 };
-
-// 该方法主要用于排序、过滤等需要调整表头的功能
-export function getTitle(vm: Vue, column: PrimaryTableCol, colIndex: number) {
-  let result = null;
-  if (isFunction(column.title)) {
-    result = column.title(vm.$createElement, { col: column, colIndex });
-  } else if (isString(column.title)) {
-    result = vm.$scopedSlots[column.title] ? vm.$scopedSlots[column.title](null) : column.title;
-  } else if (isFunction(column.render)) {
-    result = column.render(vm.$createElement, {
-      type: 'title',
-      col: column,
-      colIndex,
-      row: undefined,
-      rowIndex: undefined,
-    });
-  }
-  return result;
-}
-
-export interface GetCellParams<T extends TableRowData = TableRowData> {
-  row: T;
-  rowIndex: number;
-  col: PrimaryTableCol;
-  colIndex: number;
-}
-
-// 该方法主要用于设置单元格（树形结构等功能会使用）
-export function getCell(vm: Vue, p: GetCellParams) {
-  const { col, row } = p;
-  let result = null;
-  if (isFunction(col.cell)) {
-    result = col.cell(vm.$createElement, { ...p });
-  } else if (isString(col.cell)) {
-    result = vm.$scopedSlots[col.cell] ? vm.$scopedSlots[col.cell](p) : row[col.colKey];
-  } else if (isFunction(col.render)) {
-    result = col.render(vm.$createElement, {
-      type: 'cell',
-      ...p,
-    });
-  }
-  return result || row[col.colKey];
-}
 
 export function isRowSelectedDisabled(
   selectColumn: PrimaryTableCol,

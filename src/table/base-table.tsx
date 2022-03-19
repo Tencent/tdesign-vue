@@ -1,5 +1,12 @@
 import {
-  computed, defineComponent, SetupContext, toRefs, ref, provide, nextTick,
+  computed,
+  defineComponent,
+  SetupContext,
+  toRefs,
+  ref,
+  provide,
+  nextTick,
+  PropType,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import props from './base-table-props';
@@ -35,7 +42,7 @@ export default defineComponent({
     /**
      * 渲染展开行，非公开属性，请勿在业务中使用
      */
-    renderExpandedRow: Function,
+    renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
