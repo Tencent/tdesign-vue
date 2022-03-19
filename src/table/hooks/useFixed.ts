@@ -1,5 +1,13 @@
 import {
-  ref, reactive, watch, toRefs, SetupContext, onMounted, onUnmounted, computed,
+  ref,
+  reactive,
+  watch,
+  toRefs,
+  SetupContext,
+  onMounted,
+  onUnmounted,
+  computed,
+  onUpdated,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
@@ -475,6 +483,15 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       updateColumnFixedShadow(tableContentRef.value);
     }
   };
+
+  onUpdated(() => {
+    // 如果元素的父元素状态为 display: none，表格宽度为 0，无法计算固定列宽和阴影，因此需要在元素更新的时候再次更新固定列宽
+    // 添加条件 !tableContentRef.value.clientWidth 只为执行一次，避免重复计算影响表格组件性能
+    if (!tableContentRef.value.clientWidth && (isFixedColumn.value || isFixedHeader.value)) {
+      updateFixedStatus();
+      updateColumnFixedShadow(tableContentRef.value);
+    }
+  });
 
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
