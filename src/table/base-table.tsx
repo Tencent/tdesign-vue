@@ -222,18 +222,16 @@ export default defineComponent({
           style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}
         >
           {colgroup}
-          {
-            <THead
-              scopedSlots={this.$scopedSlots}
-              isFixedHeader={this.isFixedHeader}
-              rowAndColFixedPosition={this.rowAndColFixedPosition}
-              isMultipleHeader={this.isMultipleHeader}
-              bordered={this.bordered}
-              spansAndLeafNodes={this.spansAndLeafNodes}
-              thList={this.thList}
-              thWidthList={this.thWidthList}
-            />
-          }
+          <THead
+            scopedSlots={this.$scopedSlots}
+            isFixedHeader={this.isFixedHeader}
+            rowAndColFixedPosition={this.rowAndColFixedPosition}
+            isMultipleHeader={this.isMultipleHeader}
+            bordered={this.bordered}
+            spansAndLeafNodes={this.spansAndLeafNodes}
+            thList={this.thList}
+            thWidthList={this.thWidthList}
+          />
         </table>
       </div>
     );

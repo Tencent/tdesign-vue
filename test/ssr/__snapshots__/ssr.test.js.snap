@@ -12322,8 +12322,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
 exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span></div>
-  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
+  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12419,10 +12419,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
             <td>2022-02-01</td>
           </tr>
           <tr>
-            <td>Zandra</td>
-            <td>Croson</td>
-            <td>zcroson5@virginia.edu</td>
-            <td>2022-03-01</td>
+            <td>Eric</td>
+            <td>Spinke</td>
+            <td>espinke0@apache.org</td>
+            <td>2021-11-01</td>
           </tr>
         </tbody>
         <!---->
@@ -13345,7 +13345,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:90%;">
+<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">虚拟滚动</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
   <div class="t-table t-size-m t-table--bordered t-table--multiple-header" style="position:relative;">
     <div class="t-table__top-content">
@@ -13360,7 +13360,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:110px;">
           <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:100px;">
@@ -13620,53 +13620,53 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row t-align-center">0</td>
-            <td>共有</td>
-            <td>String</td>
-            <td>-</td>
-            <td>是</td>
-            <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="row t-align-center">1</td>
+            <td class="row t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 5 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">2</td>
+            <td class="row t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 6 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">3</td>
+            <td class="row t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">4</td>
+            <td class="row t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 8 个数据的嵌套信息值</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="row t-align-center">9</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
@@ -13681,12 +13681,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
             </svg></div>
         </div>
-        <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+        <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
             <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
           </svg></div>
         <ul class="t-pagination__pager">
-          <li class="t-pagination__number t-is-current">1</li>
-          <li class="t-pagination__number">2</li>
+          <li class="t-pagination__number">1</li>
+          <li class="t-pagination__number t-is-current">2</li>
           <li class="t-pagination__number">3</li>
           <li class="t-pagination__number">4</li>
           <li class="t-pagination__number">5</li>
@@ -13700,7 +13700,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
           </svg></div>
         <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
             <div class="t-input__wrap">
-              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
             </div>
           </div>页</div>
       </div>
@@ -13710,7 +13710,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div data-a="sheep" class="t-table t-size-m t-table--bordered t-table--striped t-vertical-align-top" style="position:relative;">
+<div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -13731,7 +13731,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
             <div class="t-table__th-cell-inner">联系方式</div>
           </th>
           <th data-colkey="email" class="t-table__th-email">
-            <div class="t-table__th-cell-inner">邮箱</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">邮箱</div>
+            </div>
           </th>
         </tr>
       </thead>
@@ -13762,6 +13764,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <div disabled="disabled" class="t-pagination__btn t-pagination__btn-next t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></div>
+      <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
+          <div class="t-input__wrap">
+            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          </div>
+        </div>页</div>
     </div>
   </div>
 </div>
@@ -13928,8 +13935,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-          <tr>
-            <td class="demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+          <tr class="t-table__row--selected">
+            <td class="demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -14160,7 +14167,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           <col style="width:220px;">
           <col>
           <col>
-          <col style="width:250px;">
+          <col style="width:280px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -14195,7 +14202,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 0 号（第 1 页）</div>
+                  </svg>我是 0_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -14213,7 +14220,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 1 号（第 1 页）</div>
+                  </svg>我是 1_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -14231,7 +14238,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 2 号（第 1 页）</div>
+                  </svg>我是 2_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -14249,7 +14256,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 3 号（第 1 页）</div>
+                  </svg>我是 3_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -14267,7 +14274,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
                 <div class="t-table__tree-col"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
                     <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
                     <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 4 号（第 1 页）</div>
+                  </svg>我是 4_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
